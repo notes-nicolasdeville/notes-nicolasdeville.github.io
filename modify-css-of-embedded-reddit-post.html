@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Modify CSS of embedded Reddit post - Nic's Notes</title>
+        <meta charset="utf-8" />
+        <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet" />
+        <link href="./theme/static/css/style.css" rel="stylesheet" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    </head>
+
+    <body id="index" class="archive">
+        <div class="container">
+            <div class="header">
+                <ul class="nav nav-pills pull-right">
+                    <li class=""><a href=".">Home</a></li>
+                    <li><a href="./pages/about-me.html">About me</a></li>
+                    <li><a href="./archives.html">Archives</a></li>
+                </ul>
+                <h3 class="text-muted"><a href=".">Nic's Notes</a></h3>
+				<h2 class="text-muted"></h2>
+             </div>
+<section id="content" class="article content">
+  <header>
+    <h2 class="entry-title">
+      <a href="./modify-css-of-embedded-reddit-post.html" rel="bookmark"
+         title="Permalink to Modify CSS of embedded Reddit post">Modify CSS of embedded Reddit post</a></h2>
+ 
+  </header>
+  
+     
+  <div class="entry-content">
+    <p><img src="images/Image-2020-02-12-at-9.31.48-am.png" alt="Image-2020-02-12-at-9.31.48-am.png" width="200"/></p>
+<p>I lost almost an hour, trying to do this, so thought I'd share, with a post title that was my keyword search for a solution 😁.</p>
+<p>Didn't find the solution using a search engine.</p>
+<p>What I wanted to do, is display a Reddit post on my Ghost page, with a white background (as my page's background is black).</p>
+<p>It appears that the CSS class which I first looked up with the Developer Tools in my browser was <code>reddit-post</code>.</p>
+<p>But for some reason, after multiple refresh, while testing solutions, a new CSS class appeared for the same element: <code>embedly-card</code>.</p>
+<p><img alt="" src="__GHOST_URL__/content/images/2020/02/Image-2020-02-12-at-9.36.32-am.png">It appears Reddit is using <a href="https://embed.ly/">Embedly</a></p>
+<p><a href="https://embed.ly/">Embedly makes your content more engaging and easier to share | EmbedlyEmbedly delivers the ultra-fast, easy to use products and tools for richer sites and apps.<img alt="" src="https://embed.ly/static/images/apple-touch-icon-144x144.png?v=5d8bb">EmbedlyEmbedly<img alt="" src="http://embed.ly/static/images/logos/logo_color.png?v=4b245"></a>So using Embedly's underlying CSS class name is what did the trick for me 😁</p>
+<p><code>.embedly-card {</code>  </p>
+<p><code>background: #FFFFFF</code>  </p>
+<p><code>}</code></p>
+<p><img alt="" src="__GHOST_URL__/content/images/2020/02/Image-2020-02-12-at-9.31.48-am-1.png"></p>
+  </div><!-- /.entry-content -->
+   <footer class="post-info text-muted">
+    Posted on <abbr class="published" title="2020-02-12T00:00:00+01:00">
+      Wed 12 February 2020
+    </abbr>
+    <address class="vcard author">
+      by <a class="url fn" href="./author/nic.html">Nic</a>
+    </address> in <a href="./category/old-blog.html">old blog</a> Tagged <a href="./tag/old-blog.html">old blog </a>  </footer><!-- /.post-info -->
+</section>
+            <footer id="contentinfo" class="footer">
+                    <nav class="pull-right bottom-nav">
+                        <a href="/None">RSS</a>
+                    </nav>
+                    <address id="about" class="vcard body">
+                    &copy; <a href=".">Nic's Notes</a> Proudly powered by <a href="http://getpelican.com/">Pelican</a>
+                    </address><!-- /#about -->
+            </footer><!-- /#contentinfo -->
+        </div><!-- container -->
+    </body>
+</html>
