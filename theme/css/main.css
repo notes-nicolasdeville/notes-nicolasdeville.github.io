@@ -367,10 +367,6 @@ div.figure p.caption, figure p.caption { /* margin provided by figure */
 	padding: 20px;
 	text-align: left;
 	max-width: 760px;
-
-	border-radius: 10px;
-	-moz-border-radius: 10px;
-	-webkit-border-radius: 10px;
 }
 
 #about .primary {float: left; max-width: 165px;}
@@ -428,9 +424,6 @@ li:first-child .hentry, #content > .hentry {border: 0; margin: 0;}
 		margin: 2em 0;
 		padding: 10px 20px 15px 20px;
 
-		/* border-radius: 5px;
-		-moz-border-radius: 5px;
-		-webkit-border-radius: 5px; */
 	}
 
 	#about-author strong {
@@ -450,10 +443,6 @@ li:first-child .hentry, #content > .hentry {border: 0; margin: 0;}
 		font-style: normal;
 		margin: 0;
 		padding: 15px 20px;
-
-		/* border-radius: 5px;
-		-moz-border-radius: 5px;
-		-webkit-border-radius: 5px; */
 	}
 	#comments-list footer {color: #888; padding: .5em 1em 0 0; text-align: right;}
 
@@ -471,3 +460,9 @@ li:first-child .hentry, #content > .hentry {border: 0; margin: 0;}
 
 	#add-comment input[type='submit'] {float: right; margin: 0 .5em;}
 	#add-comment * {margin-bottom: .5em;}
+
+  	/* TEST */
+
+.header {
+  width: 800px;
+}

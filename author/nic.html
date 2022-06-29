@@ -12,8 +12,15 @@
         <header id="banner" class="body">
                 <h1><a href="../">Nic's Notes</a></h1>
                 <nav><ul>
+                    <li><a href="../category/apps.html">apps</a></li>
+                    <li><a href="../category/audio.html">audio</a></li>
+                    <li><a href="../category/b2b-sales.html">b2b sales</a></li>
+                    <li><a href="../category/books.html">books</a></li>
+                    <li><a href="../category/careerplaybook.html">#CareerPlaybook</a></li>
+                    <li><a href="../category/misc.html">misc</a></li>
                     <li><a href="../category/old-blog.html">old blog</a></li>
                     <li><a href="../category/python.html">python</a></li>
+                    <li><a href="../category/startupplaybook.html">#StartupPlaybook</a></li>
                     <li><a href="../category/test.html">test</a></li>
                 </ul></nav>
         </header><!-- /#banner -->
@@ -30,14 +37,61 @@
         
 <p>in <a href="../category/test.html">test</a>.</p>
 <p>tags: <a href="../tag/test.html">test</a> </p>
-</footer><!-- /.post-info --><p><img src="images/CP022_blog.svg" alt="CP022_blog.svg" width="200"/></p>
-<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">collections</span> <span class="kn">import</span> <span class="n">namedtuple</span>
+</footer><!-- /.post-info --><p><img src="images/CP022_blog.svg" alt="CP022_blog.svg" width="500"/></p>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">json</span>
+<span class="kn">from</span> <span class="nn">markdownify</span> <span class="kn">import</span> <span class="n">markdownify</span>
 
-<span class="n">person</span> <span class="o">=</span> <span class="n">namedtuple</span><span class="p">(</span><span class="s1">&#39;Person&#39;</span><span class="p">,</span> <span class="p">[</span><span class="s1">&#39;first&#39;</span><span class="p">,</span> <span class="s1">&#39;last&#39;</span><span class="p">])</span>
-<span class="n">x</span> <span class="o">=</span> <span class="n">person</span><span class="p">(</span><span class="n">first</span><span class="o">=</span><span class="s1">&#39;Nic&#39;</span><span class="p">,</span> <span class="n">last</span><span class="o">=</span><span class="s1">&#39;X&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n\n\n</span><span class="s2">NEW RUN:</span><span class="se">\n\n</span><span class="s2">&quot;</span><span class="p">)</span>
 
-<span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="o">.</span><span class="n">last</span><span class="p">)</span>
+<span class="n">data</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;x.json&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+    <span class="n">data</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">f</span><span class="p">)</span>
+
+    <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;db&#39;</span><span class="p">][</span><span class="mi">0</span><span class="p">][</span><span class="s1">&#39;data&#39;</span><span class="p">][</span><span class="s1">&#39;posts&#39;</span><span class="p">]:</span>
+        <span class="n">count</span> <span class="o">+=</span> <span class="mi">1</span>
+
+        <span class="n">published</span> <span class="o">=</span> <span class="n">x</span><span class="p">[</span><span class="s1">&#39;published_at&#39;</span><span class="p">]</span>
+
+        <span class="k">if</span> <span class="n">published</span> <span class="ow">not</span> <span class="ow">in</span> <span class="p">[</span><span class="kc">None</span><span class="p">,</span> <span class="s1">&#39;None&#39;</span><span class="p">]:</span>
+
+            <span class="c1"># published = published[:10] + &#39; 01:00&#39;</span>
+            <span class="n">published</span> <span class="o">=</span> <span class="n">published</span><span class="p">[:</span><span class="mi">10</span><span class="p">]</span>
+
+            <span class="n">slug</span> <span class="o">=</span> <span class="n">x</span><span class="p">[</span><span class="s1">&#39;slug&#39;</span><span class="p">]</span>
+            <span class="n">title</span> <span class="o">=</span> <span class="n">x</span><span class="p">[</span><span class="s1">&#39;title&#39;</span><span class="p">]</span>
+            <span class="n">summary</span> <span class="o">=</span> <span class="n">x</span><span class="p">[</span><span class="s1">&#39;custom_excerpt&#39;</span><span class="p">]</span>
+
+            <span class="n">feature_image</span> <span class="o">=</span> <span class="n">x</span><span class="p">[</span><span class="s1">&#39;feature_image&#39;</span><span class="p">]</span>
+            <span class="n">image</span> <span class="o">=</span> <span class="n">feature_image</span><span class="p">[</span><span class="mi">37</span><span class="p">:]</span>
+            <span class="n">image_html</span> <span class="o">=</span> <span class="sa">f</span><span class="s1">&#39;&lt;img src=&quot;images/</span><span class="si">{</span><span class="n">image</span><span class="si">}</span><span class="s1">&quot; alt=&quot;</span><span class="si">{</span><span class="n">image</span><span class="si">}</span><span class="s1">&quot; width=&quot;200&quot;/&gt;&#39;</span>
+
+            <span class="n">html</span> <span class="o">=</span> <span class="n">x</span><span class="p">[</span><span class="s1">&#39;html&#39;</span><span class="p">]</span>
+
+            <span class="n">md</span> <span class="o">=</span> <span class="n">markdownify</span><span class="p">(</span><span class="n">html</span><span class="p">)</span>
+
+            <span class="n">output</span> <span class="o">=</span> <span class="n">image_html</span> <span class="o">+</span> <span class="s1">&#39;</span><span class="se">\n\n</span><span class="s1">&#39;</span> <span class="o">+</span> <span class="n">md</span>
+
+            <span class="n">output</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;Title: </span><span class="si">{</span><span class="n">title</span><span class="si">}</span><span class="se">\n</span><span class="s2">Date: </span><span class="si">{</span><span class="n">published</span><span class="si">}</span><span class="se">\n</span><span class="s2">Modified: </span><span class="si">{</span><span class="n">published</span><span class="si">}</span><span class="se">\n</span><span class="s2">Category: old blog</span><span class="se">\n</span><span class="s2">Tags: old blog</span><span class="se">\n</span><span class="s2">Slug: </span><span class="si">{</span><span class="n">slug</span><span class="si">}</span><span class="se">\n</span><span class="s2">Author: Nic</span><span class="se">\n</span><span class="s2">Summary: </span><span class="si">{</span><span class="n">summary</span><span class="si">}</span><span class="se">\n</span><span class="si">{</span><span class="n">output</span><span class="si">}</span><span class="s2">&quot;</span>
+
+            <span class="nb">print</span><span class="p">(</span><span class="n">count</span><span class="p">,</span> <span class="n">slug</span><span class="p">)</span>
+            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Title: </span><span class="si">{</span><span class="n">title</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Published: </span><span class="si">{</span><span class="n">published</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Summary: </span><span class="si">{</span><span class="n">summary</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Image: </span><span class="si">{</span><span class="n">image_html</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+            <span class="c1"># print(f&quot;HTML: {html}&quot;)</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Markdown:</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">,</span> <span class="n">output</span><span class="p">)</span>
+
+            <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;/Users/nic/Python/homee/notes/content/</span><span class="si">{</span><span class="n">slug</span><span class="si">}</span><span class="s2">.md&quot;</span><span class="p">,</span> <span class="s1">&#39;w&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+                <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">output</span><span class="p">)</span>
+
+        <span class="nb">print</span><span class="p">()</span>
 </code></pre></div>
+
+<p>Now on to embed a Vimeo video:</p>
+<div style="padding:56.25% 0 0 0;position:relative;"><iframe src="https://player.vimeo.com/video/693602020?h=04131e9e25&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen style="position:absolute;top:0;left:0;width:100%;height:100%;" title="Introducing Descript"></iframe></div>
+<script src="https://player.vimeo.com/api/player.js"></script>
+
+<p>that's it for today</p>
                 </article>
             </aside>
                 <section id="content" class="body">
@@ -58,8 +112,8 @@
                 Wed 03 June 2020
         </abbr>
         
-<p>in <a href="../category/old-blog.html">old blog</a>.</p>
-<p>tags: <a href="../tag/old-blog.html">old blog</a> </p>
+<p>in <a href="../category/careerplaybook.html">#CareerPlaybook</a>.</p>
+
 </footer><!-- /.post-info -->                <p>Good questions can sell you.</p>
                 <a class="readmore" href="../careerplaybook-022-asking-questions.html">read</a>
 
@@ -80,8 +134,8 @@
                 Mon 01 June 2020
         </abbr>
         
-<p>in <a href="../category/old-blog.html">old blog</a>.</p>
-<p>tags: <a href="../tag/old-blog.html">old blog</a> </p>
+<p>in <a href="../category/careerplaybook.html">#CareerPlaybook</a>.</p>
+
 </footer><!-- /.post-info -->                <p>Past success is definitely not always a predictor of future success. Even if it is in the same role.</p>
                 <a class="readmore" href="../careerplaybook-021-hiring.html">read</a>
 
@@ -102,8 +156,8 @@
                 Fri 29 May 2020
         </abbr>
         
-<p>in <a href="../category/old-blog.html">old blog</a>.</p>
-<p>tags: <a href="../tag/old-blog.html">old blog</a> </p>
+<p>in <a href="../category/careerplaybook.html">#CareerPlaybook</a>.</p>
+
 </footer><!-- /.post-info -->                <p>Owning up to our mistakes can have a power all of its own.</p>
                 <a class="readmore" href="../careerplaybook-020-owning-your-mistakes.html">read</a>
 
@@ -124,7 +178,7 @@
                 Wed 27 May 2020
         </abbr>
         
-<p>in <a href="../category/old-blog.html">old blog</a>.</p>
+<p>in <a href="../category/careerplaybook.html">#CareerPlaybook</a>.</p>
 <p>tags: <a href="../tag/old-blog.html">old blog</a> </p>
 </footer><!-- /.post-info -->                <p>Thank You. Just 2 simple little words. But they have immense power.</p>
                 <a class="readmore" href="../careerplaybook-019-the-power-of-thank-you.html">read</a>
@@ -146,7 +200,7 @@
                 Sat 23 May 2020
         </abbr>
         
-<p>in <a href="../category/old-blog.html">old blog</a>.</p>
+<p>in <a href="../category/careerplaybook.html">#CareerPlaybook</a>.</p>
 <p>tags: <a href="../tag/old-blog.html">old blog</a> </p>
 </footer><!-- /.post-info -->                <p>Identify those around you as leaders or managers then watch how they operate.</p>
                 <a class="readmore" href="../careerplaybook-018-leaders-and-managers.html">read</a>
@@ -168,8 +222,8 @@
                 Mon 30 March 2020
         </abbr>
         
-<p>in <a href="../category/old-blog.html">old blog</a>.</p>
-<p>tags: <a href="../tag/old-blog.html">old blog</a> </p>
+<p>in <a href="../category/python.html">python</a>.</p>
+<p>tags: <a href="../tag/learning.html">learning</a> <a href="../tag/python.html">python</a> </p>
 </footer><!-- /.post-info -->                <p>Learning Python is easier thank you think. If you work in an office, it's also more valuable than you think. I wish I had started learning earlier. Here is my guide to help you get started.</p>
                 <a class="readmore" href="../learn-python.html">read</a>
 
@@ -190,7 +244,7 @@
                 Fri 27 March 2020
         </abbr>
         
-<p>in <a href="../category/old-blog.html">old blog</a>.</p>
+<p>in <a href="../category/careerplaybook.html">#CareerPlaybook</a>.</p>
 <p>tags: <a href="../tag/old-blog.html">old blog</a> </p>
 </footer><!-- /.post-info -->                <p>While I started to learn because of a critical need, I wish I had done so years (or even decades) earlier. And I believe now everyone should learn programming.</p>
                 <a class="readmore" href="../careerplaybook-017-everyone-should-learn-programming.html">read</a>
@@ -234,7 +288,7 @@
                 Wed 18 March 2020
         </abbr>
         
-<p>in <a href="../category/old-blog.html">old blog</a>.</p>
+<p>in <a href="../category/apps.html">apps</a>.</p>
 <p>tags: <a href="../tag/old-blog.html">old blog</a> </p>
 </footer><!-- /.post-info -->                <p>"A picture is worth a thousand words" - this applies especially when communicating online. CloudApp is a must-have in my remote working toolkit.</p>
                 <a class="readmore" href="../cloudapp.html">read</a>
@@ -256,8 +310,8 @@
                 Mon 02 March 2020
         </abbr>
         
-<p>in <a href="../category/old-blog.html">old blog</a>.</p>
-<p>tags: <a href="../tag/old-blog.html">old blog</a> </p>
+<p>in <a href="../category/careerplaybook.html">#CareerPlaybook</a>.</p>
+<p>tags: <a href="../tag/learning.html">learning</a> </p>
 </footer><!-- /.post-info -->                <p>Meetings are expensive, especially in startups. Make sure to maximise their ROI.</p>
                 <a class="readmore" href="../careerplaybook-016-taking-notes.html">read</a>
 
@@ -278,8 +332,8 @@
                 Mon 24 February 2020
         </abbr>
         
-<p>in <a href="../category/old-blog.html">old blog</a>.</p>
-<p>tags: <a href="../tag/old-blog.html">old blog</a> </p>
+<p>in <a href="../category/careerplaybook.html">#CareerPlaybook</a>.</p>
+<p>tags: <a href="../tag/learning.html">learning</a> </p>
 </footer><!-- /.post-info -->                <p>I was very bad at that early in my career. Learning to "read" others has helped me a lot over the years.</p>
                 <a class="readmore" href="../careerplaybook-015-learning-to-read-body-language.html">read</a>
 
@@ -300,8 +354,8 @@
                 Sun 23 February 2020
         </abbr>
         
-<p>in <a href="../category/old-blog.html">old blog</a>.</p>
-<p>tags: <a href="../tag/old-blog.html">old blog</a> </p>
+<p>in <a href="../category/books.html">books</a>.</p>
+
 </footer><!-- /.post-info -->                <p>As I started my 1st bootstrapped startup, I deep dived into understanding how platform businesses are built. This book was the most valuable and most comprehensive resource for me.</p>
                 <a class="readmore" href="../platform-revolution.html">read</a>
 
@@ -322,8 +376,8 @@
                 Thu 20 February 2020
         </abbr>
         
-<p>in <a href="../category/python.html">python</a>.</p>
-<p>tags: <a href="../tag/books.html">books</a> </p>
+<p>in <a href="../category/books.html">books</a>.</p>
+<p>tags: <a href="../tag/python.html">python</a> </p>
 </footer><!-- /.post-info -->                <p>In my journey of learning how to program in Python - which has led me to build a startup heavily relying on automation, and my current startup, focusing entirely on it - this one book has made all the difference for me.</p>
                 <a class="readmore" href="../automate-the-boring-stuff.html">read</a>
 
@@ -344,32 +398,10 @@
                 Thu 20 February 2020
         </abbr>
         
-<p>in <a href="../category/old-blog.html">old blog</a>.</p>
-<p>tags: <a href="../tag/old-blog.html">old blog</a> </p>
+<p>in <a href="../category/misc.html">misc</a>.</p>
+<p>tags: <a href="../tag/tesla.html">Tesla</a> </p>
 </footer><!-- /.post-info -->                <p>Last week, 4 pages of Tesla's employee handbook leaked. Here is what I like about it.</p>
                 <a class="readmore" href="../tesla-handbook.html">read</a>
-
-                </div>
-                
-            </article></li>
-            
-
-            <li><article class="hentry">
-                <header>
-                    <h1><a href="../cv.html" rel="bookmark"
-                           title="Permalink to CV Nicolas Deville">CV Nicolas Deville</a></h1>
-                </header>
-
-                <div class="entry-content">
-<footer class="post-info">
-        <abbr class="published" title="2020-02-19T00:00:00+01:00">
-                Wed 19 February 2020
-        </abbr>
-        
-<p>in <a href="../category/old-blog.html">old blog</a>.</p>
-<p>tags: <a href="../tag/old-blog.html">old blog</a> </p>
-</footer><!-- /.post-info -->                <p>None</p>
-                <a class="readmore" href="../cv.html">read</a>
 
                 </div>
                 
@@ -388,32 +420,10 @@
                 Wed 19 February 2020
         </abbr>
         
-<p>in <a href="../category/old-blog.html">old blog</a>.</p>
-<p>tags: <a href="../tag/old-blog.html">old blog</a> </p>
+<p>in <a href="../category/startupplaybook.html">#StartupPlaybook</a>.</p>
+<p>tags: <a href="../tag/learning.html">learning</a> <a href="../tag/python.html">python</a> </p>
 </footer><!-- /.post-info -->                <p>I wish someone had told me earlier that programming, and building tech solutions, is not that hard to learn, especially with tools available these days, and for the purpose of a MVP or early stage startup.</p>
                 <a class="readmore" href="../startupplaybook-01-how-to-bootstrap-a-tech-startup.html">read</a>
-
-                </div>
-                
-            </article></li>
-            
-
-            <li><article class="hentry">
-                <header>
-                    <h1><a href="../techstars.html" rel="bookmark"
-                           title="Permalink to Techstars">Techstars</a></h1>
-                </header>
-
-                <div class="entry-content">
-<footer class="post-info">
-        <abbr class="published" title="2020-02-19T00:00:00+01:00">
-                Wed 19 February 2020
-        </abbr>
-        
-<p>in <a href="../category/old-blog.html">old blog</a>.</p>
-<p>tags: <a href="../tag/old-blog.html">old blog</a> </p>
-</footer><!-- /.post-info -->                <p>None</p>
-                <a class="readmore" href="../techstars.html">read</a>
 
                 </div>
                 
@@ -432,7 +442,7 @@
                 Mon 17 February 2020
         </abbr>
         
-<p>in <a href="../category/old-blog.html">old blog</a>.</p>
+<p>in <a href="../category/careerplaybook.html">#CareerPlaybook</a>.</p>
 <p>tags: <a href="../tag/old-blog.html">old blog</a> </p>
 </footer><!-- /.post-info -->                <p>The documents you share represent you.</p>
                 <a class="readmore" href="../careerplaybook-014-why-format-matters.html">read</a>
@@ -454,7 +464,7 @@
                 Sun 16 February 2020
         </abbr>
         
-<p>in <a href="../category/old-blog.html">old blog</a>.</p>
+<p>in <a href="../category/apps.html">apps</a>.</p>
 <p>tags: <a href="../tag/video.html">video</a> </p>
 </footer><!-- /.post-info -->                <p>When I see a Youtube video that looks interesting I download it for later viewing, rather than interrupt my flow and take my focus away.</p>
                 <a class="readmore" href="../4k-video-downloader.html">read</a>
@@ -498,8 +508,8 @@
                 Fri 14 February 2020
         </abbr>
         
-<p>in <a href="../category/old-blog.html">old blog</a>.</p>
-<p>tags: <a href="../tag/old-blog.html">old blog</a> </p>
+<p>in <a href="../category/startupplaybook.html">#StartupPlaybook</a>.</p>
+<p>tags: <a href="../tag/learning.html">learning</a> </p>
 </footer><!-- /.post-info -->                <p>My learnings (so far) as a current founder, exited founder of a bootstrapped Startup and former executive in VC-backed B2B SaaS Startups ($1M-$10M and $10M-$100M ARR).</p>
                 <a class="readmore" href="../startupplaybook-00-my-learnings.html">read</a>
 
@@ -520,32 +530,10 @@
                 Fri 14 February 2020
         </abbr>
         
-<p>in <a href="../category/old-blog.html">old blog</a>.</p>
-<p>tags: <a href="../tag/old-blog.html">old blog</a> </p>
+<p>in <a href="../category/books.html">books</a>.</p>
+<p>tags: <a href="../tag/startups.html">startups</a> </p>
 </footer><!-- /.post-info -->                <p>A must-read for anyone building a startup (or thinking about doing so). And anyone working in, or desiring to work in Innovation.</p>
                 <a class="readmore" href="../the-lean-startup.html">read</a>
-
-                </div>
-                
-            </article></li>
-            
-
-            <li><article class="hentry">
-                <header>
-                    <h1><a href="../ramp.html" rel="bookmark"
-                           title="Permalink to Ramp | business card 2.0">Ramp | business card 2.0</a></h1>
-                </header>
-
-                <div class="entry-content">
-<footer class="post-info">
-        <abbr class="published" title="2020-02-13T00:00:00+01:00">
-                Thu 13 February 2020
-        </abbr>
-        
-<p>in <a href="../category/old-blog.html">old blog</a>.</p>
-<p>tags: <a href="../tag/old-blog.html">old blog</a> </p>
-</footer><!-- /.post-info -->                <p>Ramp, just came out of stealth after a $25M funding round. An interesting FinTech solution for businesses.</p>
-                <a class="readmore" href="../ramp.html">read</a>
 
                 </div>
                 
@@ -576,28 +564,6 @@
 
             <li><article class="hentry">
                 <header>
-                    <h1><a href="../modify-css-of-embedded-reddit-post.html" rel="bookmark"
-                           title="Permalink to Modify CSS of embedded Reddit post">Modify CSS of embedded Reddit post</a></h1>
-                </header>
-
-                <div class="entry-content">
-<footer class="post-info">
-        <abbr class="published" title="2020-02-12T00:00:00+01:00">
-                Wed 12 February 2020
-        </abbr>
-        
-<p>in <a href="../category/old-blog.html">old blog</a>.</p>
-<p>tags: <a href="../tag/old-blog.html">old blog</a> </p>
-</footer><!-- /.post-info -->                <p>I lost almost an hour, trying to do this, so thought I'd share, with a post title that was my keyword search for a solution 😁</p>
-                <a class="readmore" href="../modify-css-of-embedded-reddit-post.html">read</a>
-
-                </div>
-                
-            </article></li>
-            
-
-            <li><article class="hentry">
-                <header>
                     <h1><a href="../what-every-body-is-saying.html" rel="bookmark"
                            title="Permalink to What Every BODY is Saying">What Every BODY is Saying</a></h1>
                 </header>
@@ -608,32 +574,10 @@
                 Wed 12 February 2020
         </abbr>
         
-<p>in <a href="../category/old-blog.html">old blog</a>.</p>
-<p>tags: <a href="../tag/old-blog.html">old blog</a> </p>
+<p>in <a href="../category/books.html">books</a>.</p>
+<p>tags: <a href="../tag/learning.html">learning</a> </p>
 </footer><!-- /.post-info -->                <p>Be it this book, or another, I think everyone can benefit from getting better at "reading" people.</p>
                 <a class="readmore" href="../what-every-body-is-saying.html">read</a>
-
-                </div>
-                
-            </article></li>
-            
-
-            <li><article class="hentry">
-                <header>
-                    <h1><a href="../whois.html" rel="bookmark"
-                           title="Permalink to About Me">About Me</a></h1>
-                </header>
-
-                <div class="entry-content">
-<footer class="post-info">
-        <abbr class="published" title="2020-02-10T00:00:00+01:00">
-                Mon 10 February 2020
-        </abbr>
-        
-<p>in <a href="../category/old-blog.html">old blog</a>.</p>
-<p>tags: <a href="../tag/old-blog.html">old blog</a> </p>
-</footer><!-- /.post-info -->                <p>None</p>
-                <a class="readmore" href="../whois.html">read</a>
 
                 </div>
                 
@@ -652,8 +596,8 @@
                 Sun 09 February 2020
         </abbr>
         
-<p>in <a href="../category/old-blog.html">old blog</a>.</p>
-<p>tags: <a href="../tag/old-blog.html">old blog</a> </p>
+<p>in <a href="../category/careerplaybook.html">#CareerPlaybook</a>.</p>
+<p>tags: <a href="../tag/mindset.html">mindset</a> </p>
 </footer><!-- /.post-info -->                <p>Every situation has something positive to it - or will trigger something positive later on, even if it's just learning something that will help you in the future.</p>
                 <a class="readmore" href="../careerplaybook-013-every-situation-has-something-positive-to-it.html">read</a>
 
@@ -674,10 +618,32 @@
                 Thu 06 February 2020
         </abbr>
         
-<p>in <a href="../category/old-blog.html">old blog</a>.</p>
-<p>tags: <a href="../tag/old-blog.html">old blog</a> </p>
+<p>in <a href="../category/careerplaybook.html">#CareerPlaybook</a>.</p>
+
 </footer><!-- /.post-info -->                <p>A lot of good things in life come after negotiation - learning the basics of negotiation can benefit anyone.</p>
                 <a class="readmore" href="../careerplaybook-012-learning-the-art-of-negotiation.html">read</a>
+
+                </div>
+                
+            </article></li>
+            
+
+            <li><article class="hentry">
+                <header>
+                    <h1><a href="../template.html" rel="bookmark"
+                           title="Permalink to Template">Template</a></h1>
+                </header>
+
+                <div class="entry-content">
+<footer class="post-info">
+        <abbr class="published" title="2020-02-06T00:00:00+01:00">
+                Thu 06 February 2020
+        </abbr>
+        
+<p>in <a href="../category/misc.html">misc</a>.</p>
+
+</footer><!-- /.post-info -->                <p>template</p>
+                <a class="readmore" href="../template.html">read</a>
 
                 </div>
                 
@@ -696,8 +662,8 @@
                 Thu 06 February 2020
         </abbr>
         
-<p>in <a href="../category/old-blog.html">old blog</a>.</p>
-<p>tags: <a href="../tag/old-blog.html">old blog</a> </p>
+<p>in <a href="../category/misc.html">misc</a>.</p>
+<p>tags: <a href="../tag/startups.html">startups</a> </p>
 </footer><!-- /.post-info -->                <p>Why helping others? It takes (valuable) time. Is it worth it? Are questions I am getting lately…. let me share an example…</p>
                 <a class="readmore" href="../why-helping-others.html">read</a>
 
@@ -718,8 +684,8 @@
                 Tue 04 February 2020
         </abbr>
         
-<p>in <a href="../category/old-blog.html">old blog</a>.</p>
-<p>tags: <a href="../tag/old-blog.html">old blog</a> </p>
+<p>in <a href="../category/careerplaybook.html">#CareerPlaybook</a>.</p>
+
 </footer><!-- /.post-info -->                <p>You can get more from people with this. And the world would be a better place.</p>
                 <a class="readmore" href="../careerplaybook-011-putting-yourself-in-the-other-ones-shoes.html">read</a>
 
@@ -740,32 +706,10 @@
                 Sun 02 February 2020
         </abbr>
         
-<p>in <a href="../category/old-blog.html">old blog</a>.</p>
-<p>tags: <a href="../tag/old-blog.html">old blog</a> </p>
+<p>in <a href="../category/audio.html">audio</a>.</p>
+
 </footer><!-- /.post-info -->                <p>I use this for a lot of my working time, and every commute or business travel for the last decade.</p>
                 <a class="readmore" href="../custom-iems.html">read</a>
-
-                </div>
-                
-            </article></li>
-            
-
-            <li><article class="hentry">
-                <header>
-                    <h1><a href="../i-can-relate-to-that.html" rel="bookmark"
-                           title="Permalink to I can relate to that, both for programming and for business 😂">I can relate to that, both for programming and for business 😂</a></h1>
-                </header>
-
-                <div class="entry-content">
-<footer class="post-info">
-        <abbr class="published" title="2020-01-30T00:00:00+01:00">
-                Thu 30 January 2020
-        </abbr>
-        
-<p>in <a href="../category/old-blog.html">old blog</a>.</p>
-<p>tags: <a href="../tag/old-blog.html">old blog</a> </p>
-</footer><!-- /.post-info -->                <p>None</p>
-                <a class="readmore" href="../i-can-relate-to-that.html">read</a>
 
                 </div>
                 
@@ -784,8 +728,8 @@
                 Wed 29 January 2020
         </abbr>
         
-<p>in <a href="../category/old-blog.html">old blog</a>.</p>
-<p>tags: <a href="../tag/old-blog.html">old blog</a> </p>
+<p>in <a href="../category/misc.html">misc</a>.</p>
+
 </footer><!-- /.post-info -->                <p>I am somewhat disappointed by Linkedin. When I signed up 13 years ago, the premise was that you could build your professional network - a digital Rollodex.</p>
                 <a class="readmore" href="../disappointed-by-linkedin.html">read</a>
 
@@ -806,8 +750,8 @@
                 Tue 28 January 2020
         </abbr>
         
-<p>in <a href="../category/old-blog.html">old blog</a>.</p>
-<p>tags: <a href="../tag/old-blog.html">old blog</a> </p>
+<p>in <a href="../category/careerplaybook.html">#CareerPlaybook</a>.</p>
+
 </footer><!-- /.post-info -->                <p>Hope I did not make your head hurt with that title. But I do think this way a lot, and it helps guide my decisions in the present.</p>
                 <a class="readmore" href="../careerplaybook-010-the-present-is-our-futures-past.html">read</a>
 
@@ -828,7 +772,7 @@
                 Sun 26 January 2020
         </abbr>
         
-<p>in <a href="../category/old-blog.html">old blog</a>.</p>
+<p>in <a href="../category/careerplaybook.html">#CareerPlaybook</a>.</p>
 <p>tags: <a href="../tag/old-blog.html">old blog</a> </p>
 </footer><!-- /.post-info -->                <p>Ultimately, it is not about doing everything oneself. Low-value tasks should be delegated. Tasks for which your skills are not good enough, should be delegated.</p>
                 <a class="readmore" href="../careerplaybook-009-outsourcing-tasks.html">read</a>
@@ -850,7 +794,7 @@
                 Thu 23 January 2020
         </abbr>
         
-<p>in <a href="../category/old-blog.html">old blog</a>.</p>
+<p>in <a href="../category/careerplaybook.html">#CareerPlaybook</a>.</p>
 <p>tags: <a href="../tag/old-blog.html">old blog</a> </p>
 </footer><!-- /.post-info -->                <p>"The bad news is, time flies. The good news is, you're the pilot"</p>
                 <a class="readmore" href="../careerplaybook-008-being-in-control-of-your-day.html">read</a>
@@ -872,7 +816,7 @@
                 Tue 21 January 2020
         </abbr>
         
-<p>in <a href="../category/old-blog.html">old blog</a>.</p>
+<p>in <a href="../category/careerplaybook.html">#CareerPlaybook</a>.</p>
 <p>tags: <a href="../tag/old-blog.html">old blog</a> </p>
 </footer><!-- /.post-info -->                <p>None</p>
                 <a class="readmore" href="../careerplaybook-007-why-having-a-goal-matters.html">read</a>
@@ -916,8 +860,8 @@
                 Sun 19 January 2020
         </abbr>
         
-<p>in <a href="../category/old-blog.html">old blog</a>.</p>
-<p>tags: <a href="../tag/old-blog.html">old blog</a> </p>
+<p>in <a href="../category/careerplaybook.html">#CareerPlaybook</a>.</p>
+
 </footer><!-- /.post-info -->                <p>A simple word change leading to a mindset and perception shift.</p>
                 <a class="readmore" href="../careerplaybook-006-there-are-no-problems-only-challenges.html">read</a>
 
@@ -938,8 +882,8 @@
                 Fri 17 January 2020
         </abbr>
         
-<p>in <a href="../category/old-blog.html">old blog</a>.</p>
-<p>tags: <a href="../tag/old-blog.html">old blog</a> </p>
+<p>in <a href="../category/misc.html">misc</a>.</p>
+<p>tags: <a href="../tag/mars.html">mars</a> </p>
 </footer><!-- /.post-info -->                <p>Elon Musk’s space colonisation plan, with a colony on Mars, is taking shape and it is mind-blowing 🤯.</p>
                 <a class="readmore" href="../i-am-seriously-considering-being-part-of-the-first-colons-to-mars.html">read</a>
 
@@ -960,8 +904,8 @@
                 Thu 16 January 2020
         </abbr>
         
-<p>in <a href="../category/old-blog.html">old blog</a>.</p>
-<p>tags: <a href="../tag/old-blog.html">old blog</a> </p>
+<p>in <a href="../category/careerplaybook.html">#CareerPlaybook</a>.</p>
+
 </footer><!-- /.post-info -->                <p>Getting feedback is a critical step in the process of improving anything - especially yourself or your work.</p>
                 <a class="readmore" href="../careerplaybook-005-asking-for-blunt-feedback.html">read</a>
 
@@ -982,8 +926,8 @@
                 Wed 15 January 2020
         </abbr>
         
-<p>in <a href="../category/old-blog.html">old blog</a>.</p>
-<p>tags: <a href="../tag/old-blog.html">old blog</a> </p>
+<p>in <a href="../category/apps.html">apps</a>.</p>
+
 </footer><!-- /.post-info -->                <p>For the last 4 years or so, I have been using FollowUpThen and could not work without it anymore.</p>
                 <a class="readmore" href="../follow-up-then.html">read</a>
 
@@ -1004,9 +948,9 @@
                 Tue 14 January 2020
         </abbr>
         
-<p>in <a href="../category/old-blog.html">old blog</a>.</p>
-<p>tags: <a href="../tag/old-blog.html">old blog</a> </p>
-</footer><!-- /.post-info -->                <p>Are you frustrated by how your company is currently executing?</p>
+<p>in <a href="../category/careerplaybook.html">#CareerPlaybook</a>.</p>
+
+</footer><!-- /.post-info -->                <p>Are you frustrated by how your company is currently executing? Or you just want a specific promotion? The Jerry Maguire play could unlock it for you.</p>
                 <a class="readmore" href="../careerplaybook-004-the-jerry-maguire-play.html">read</a>
 
                 </div>
@@ -1026,8 +970,8 @@
                 Sun 12 January 2020
         </abbr>
         
-<p>in <a href="../category/old-blog.html">old blog</a>.</p>
-<p>tags: <a href="../tag/old-blog.html">old blog</a> </p>
+<p>in <a href="../category/careerplaybook.html">#CareerPlaybook</a>.</p>
+<p>tags: <a href="../tag/management.html">management</a> </p>
 </footer><!-- /.post-info -->                <p>There is really no reason to not do some of your meetings walking outside.</p>
                 <a class="readmore" href="../careerplaybook-003-walking-meetings.html">read</a>
 
@@ -1048,8 +992,8 @@
                 Thu 09 January 2020
         </abbr>
         
-<p>in <a href="../category/old-blog.html">old blog</a>.</p>
-<p>tags: <a href="../tag/old-blog.html">old blog</a> </p>
+<p>in <a href="../category/careerplaybook.html">#CareerPlaybook</a>.</p>
+
 </footer><!-- /.post-info -->                <p>I come across as confident, yet I had imposter syndrome every step of the way in my career. I'm thankful for it.</p>
                 <a class="readmore" href="../careerplaybook-002-imposter-syndrome-is-more-widespread-than-you-think.html">read</a>
 
@@ -1070,8 +1014,8 @@
                 Tue 07 January 2020
         </abbr>
         
-<p>in <a href="../category/old-blog.html">old blog</a>.</p>
-<p>tags: <a href="../tag/old-blog.html">old blog</a> </p>
+<p>in <a href="../category/careerplaybook.html">#CareerPlaybook</a>.</p>
+<p>tags: <a href="../tag/learning.html">learning</a> </p>
 </footer><!-- /.post-info -->                <p>Learning is the best investment you can make in yourself. It will pay dividends over time. And it has become much easier than in the past.</p>
                 <a class="readmore" href="../careerplaybook-001-always-be-learning.html">read</a>
 
@@ -1092,8 +1036,8 @@
                 Sun 05 January 2020
         </abbr>
         
-<p>in <a href="../category/old-blog.html">old blog</a>.</p>
-<p>tags: <a href="../tag/old-blog.html">old blog</a> </p>
+<p>in <a href="../category/careerplaybook.html">#CareerPlaybook</a>.</p>
+
 </footer><!-- /.post-info -->                <p>New year, new resolution: #CareerPlaybook will be a series of posts from me this year.</p>
                 <a class="readmore" href="../careerplaybook-000-introduction.html">read</a>
 
@@ -1136,8 +1080,8 @@
                 Wed 01 January 2020
         </abbr>
         
-<p>in <a href="../category/old-blog.html">old blog</a>.</p>
-<p>tags: <a href="../tag/old-blog.html">old blog</a> </p>
+<p>in <a href="../category/b2b-sales.html">b2b sales</a>.</p>
+
 </footer><!-- /.post-info -->                <p>You have to build a thick skin to be in Sales.</p>
                 <a class="readmore" href="../a-no-is-just-a-delayed-yes.html">read</a>
 
@@ -1158,8 +1102,8 @@
                 Wed 01 January 2020
         </abbr>
         
-<p>in <a href="../category/old-blog.html">old blog</a>.</p>
-<p>tags: <a href="../tag/old-blog.html">old blog</a> </p>
+<p>in <a href="../category/b2b-sales.html">b2b sales</a>.</p>
+
 </footer><!-- /.post-info -->                <p>For the last 10 years or so, I have been using this concept in a lot of sales trainings and sales presentations.</p>
                 <a class="readmore" href="../are-you-selling-aspirin-a-vaccine-or-a-vitamin.html">read</a>
 
@@ -1180,8 +1124,8 @@
                 Wed 01 January 2020
         </abbr>
         
-<p>in <a href="../category/old-blog.html">old blog</a>.</p>
-<p>tags: <a href="../tag/old-blog.html">old blog</a> </p>
+<p>in <a href="../category/misc.html">misc</a>.</p>
+<p>tags: <a href="../tag/learning.html">learning</a> </p>
 </footer><!-- /.post-info -->                <p>When I mentor people, if there is one piece of advice I always give, it is to never stop learning.</p>
                 <a class="readmore" href="../the-advice-i-always-give-when-mentoring.html">read</a>
 
@@ -1202,8 +1146,8 @@
                 Wed 01 January 2020
         </abbr>
         
-<p>in <a href="../category/old-blog.html">old blog</a>.</p>
-<p>tags: <a href="../tag/old-blog.html">old blog</a> </p>
+<p>in <a href="../category/books.html">books</a>.</p>
+<p>tags: <a href="../tag/startups.html">startups</a> </p>
 </footer><!-- /.post-info -->                <p>Wish I had read it earlier! Highly recommend to all early-stage startup founders.</p>
                 <a class="readmore" href="../the-mom-test.html">read</a>
 
@@ -1224,8 +1168,8 @@
                 Wed 01 January 2020
         </abbr>
         
-<p>in <a href="../category/old-blog.html">old blog</a>.</p>
-<p>tags: <a href="../tag/old-blog.html">old blog</a> </p>
+<p>in <a href="../category/b2b-sales.html">b2b sales</a>.</p>
+<p>tags: <a href="../tag/b2b-sales.html">b2b sales</a> </p>
 </footer><!-- /.post-info -->                <p>What Sales is for me.</p>
                 <a class="readmore" href="../what-is-sales.html">read</a>
 

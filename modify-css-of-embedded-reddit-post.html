@@ -13,8 +13,13 @@
         <header id="banner" class="body">
                 <h1><a href="./">Nic's Notes</a></h1>
                 <nav><ul>
+                    <li><a href="./category/apps.html">apps</a></li>
+                    <li><a href="./category/b2b-sales.html">b2b sales</a></li>
+                    <li><a href="./category/books.html">books</a></li>
+                    <li><a href="./category/careerplaybook.html">#CareerPlaybook</a></li>
+                    <li><a href="./category/meme.html">meme</a></li>
+                    <li><a href="./category/misc.html">misc</a></li>
                     <li class="active"><a href="./category/old-blog.html">old blog</a></li>
-                    <li><a href="./category/python.html">python</a></li>
                     <li><a href="./category/test.html">test</a></li>
                 </ul></nav>
         </header><!-- /#banner -->
@@ -34,18 +39,18 @@
         
 <p>in <a href="./category/old-blog.html">old blog</a>.</p>
 <p>tags: <a href="./tag/old-blog.html">old blog</a> </p>
-</footer><!-- /.post-info -->      <p><img src="images/Image-2020-02-12-at-9.31.48-am.png" alt="Image-2020-02-12-at-9.31.48-am.png" width="200"/></p>
+</footer><!-- /.post-info -->      <p><img src="images/Image-2020-02-12-at-9.31.48-am.png" alt="Image-2020-02-12-at-9.31.48-am.png"/></p>
 <p>I lost almost an hour, trying to do this, so thought I'd share, with a post title that was my keyword search for a solution 😁.</p>
 <p>Didn't find the solution using a search engine.</p>
 <p>What I wanted to do, is display a Reddit post on my Ghost page, with a white background (as my page's background is black).</p>
 <p>It appears that the CSS class which I first looked up with the Developer Tools in my browser was <code>reddit-post</code>.</p>
 <p>But for some reason, after multiple refresh, while testing solutions, a new CSS class appeared for the same element: <code>embedly-card</code>.</p>
-<p><img alt="" src="__GHOST_URL__/content/images/2020/02/Image-2020-02-12-at-9.36.32-am.png">It appears Reddit is using <a href="https://embed.ly/">Embedly</a></p>
+<p><img alt="" src="images/2020/02/Image-2020-02-12-at-9.36.32-am.png">It appears Reddit is using <a href="https://embed.ly/">Embedly</a></p>
 <p><a href="https://embed.ly/">Embedly makes your content more engaging and easier to share | EmbedlyEmbedly delivers the ultra-fast, easy to use products and tools for richer sites and apps.<img alt="" src="https://embed.ly/static/images/apple-touch-icon-144x144.png?v=5d8bb">EmbedlyEmbedly<img alt="" src="http://embed.ly/static/images/logos/logo_color.png?v=4b245"></a>So using Embedly's underlying CSS class name is what did the trick for me 😁</p>
 <p><code>.embedly-card {</code>  </p>
 <p><code>background: #FFFFFF</code>  </p>
 <p><code>}</code></p>
-<p><img alt="" src="__GHOST_URL__/content/images/2020/02/Image-2020-02-12-at-9.31.48-am-1.png"></p>
+<p><img alt="" src="images/2020/02/Image-2020-02-12-at-9.31.48-am-1.png"></p>
     </div><!-- /.entry-content -->
 
   </article>
