@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta name="generator" content="Pelican" />
+        <title>Nic's Notes - test, audio</title>
+        <link rel="stylesheet" href="../theme/css/main.css" />
+</head>
+
+<body id="index" class="home">
+        <header id="banner" class="body">
+            <div class="title_container">
+                <div>
+                    <img src="images/edelweiss_black.svg" alt="Edelweiss logo" width="60"/>
+                    <h1><a href="../">Nic's Notes</a></h1>
+                </div>
+            </div>
+            <nav><ul>
+                <li><a href="../category/apps.html">apps</a></li>
+                <li><a href="../category/audio.html">audio</a></li>
+                <li><a href="../category/b2b-sales.html">b2b sales</a></li>
+                <li><a href="../category/books.html">books</a></li>
+                <li><a href="../category/careerplaybook.html">#CareerPlaybook</a></li>
+                <li><a href="../category/misc.html">misc</a></li>
+                <li><a href="../category/old-blog.html">old blog</a></li>
+                <li><a href="../category/python.html">python</a></li>
+                <li><a href="../category/startupplaybook.html">#StartupPlaybook</a></li>
+                <li class="active"><a href="../category/test-audio.html">test, audio</a></li>
+            </ul></nav>
+        </header><!-- /#banner -->
+
+            <aside id="featured" class="body">
+            <h1>Latest note</h1>
+            <hr />
+                <article>
+                    <h1 class="entry-title"><a href="../test.html">TEST POST</a></h1>
+<footer class="post-info">
+        <abbr class="published" title="2022-06-28T00:00:00+02:00">
+                Tue 28 June 2022
+        </abbr>
+        
+<p>in <a href="../category/test-audio.html">test, audio</a>.</p>
+<p>tags: <a href="../tag/test.html">test</a> </p>
+</footer><!-- /.post-info --><p><img src="images/CP022_blog.svg" alt="CP022_blog.svg" width="500"/></p>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">json</span>
+<span class="kn">from</span> <span class="nn">markdownify</span> <span class="kn">import</span> <span class="n">markdownify</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n\n\n</span><span class="s2">NEW RUN:</span><span class="se">\n\n</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="n">data</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;x.json&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+    <span class="n">data</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">f</span><span class="p">)</span>
+
+    <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;db&#39;</span><span class="p">][</span><span class="mi">0</span><span class="p">][</span><span class="s1">&#39;data&#39;</span><span class="p">][</span><span class="s1">&#39;posts&#39;</span><span class="p">]:</span>
+        <span class="n">count</span> <span class="o">+=</span> <span class="mi">1</span>
+
+        <span class="n">published</span> <span class="o">=</span> <span class="n">x</span><span class="p">[</span><span class="s1">&#39;published_at&#39;</span><span class="p">]</span>
+
+        <span class="k">if</span> <span class="n">published</span> <span class="ow">not</span> <span class="ow">in</span> <span class="p">[</span><span class="kc">None</span><span class="p">,</span> <span class="s1">&#39;None&#39;</span><span class="p">]:</span>
+
+            <span class="c1"># published = published[:10] + &#39; 01:00&#39;</span>
+            <span class="n">published</span> <span class="o">=</span> <span class="n">published</span><span class="p">[:</span><span class="mi">10</span><span class="p">]</span>
+
+            <span class="n">slug</span> <span class="o">=</span> <span class="n">x</span><span class="p">[</span><span class="s1">&#39;slug&#39;</span><span class="p">]</span>
+            <span class="n">title</span> <span class="o">=</span> <span class="n">x</span><span class="p">[</span><span class="s1">&#39;title&#39;</span><span class="p">]</span>
+            <span class="n">summary</span> <span class="o">=</span> <span class="n">x</span><span class="p">[</span><span class="s1">&#39;custom_excerpt&#39;</span><span class="p">]</span>
+
+            <span class="n">feature_image</span> <span class="o">=</span> <span class="n">x</span><span class="p">[</span><span class="s1">&#39;feature_image&#39;</span><span class="p">]</span>
+            <span class="n">image</span> <span class="o">=</span> <span class="n">feature_image</span><span class="p">[</span><span class="mi">37</span><span class="p">:]</span>
+            <span class="n">image_html</span> <span class="o">=</span> <span class="sa">f</span><span class="s1">&#39;&lt;img src=&quot;images/</span><span class="si">{</span><span class="n">image</span><span class="si">}</span><span class="s1">&quot; alt=&quot;</span><span class="si">{</span><span class="n">image</span><span class="si">}</span><span class="s1">&quot; width=&quot;200&quot;/&gt;&#39;</span>
+
+            <span class="n">html</span> <span class="o">=</span> <span class="n">x</span><span class="p">[</span><span class="s1">&#39;html&#39;</span><span class="p">]</span>
+
+            <span class="n">md</span> <span class="o">=</span> <span class="n">markdownify</span><span class="p">(</span><span class="n">html</span><span class="p">)</span>
+
+            <span class="n">output</span> <span class="o">=</span> <span class="n">image_html</span> <span class="o">+</span> <span class="s1">&#39;</span><span class="se">\n\n</span><span class="s1">&#39;</span> <span class="o">+</span> <span class="n">md</span>
+
+            <span class="n">output</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;Title: </span><span class="si">{</span><span class="n">title</span><span class="si">}</span><span class="se">\n</span><span class="s2">Date: </span><span class="si">{</span><span class="n">published</span><span class="si">}</span><span class="se">\n</span><span class="s2">Modified: </span><span class="si">{</span><span class="n">published</span><span class="si">}</span><span class="se">\n</span><span class="s2">Category: old blog</span><span class="se">\n</span><span class="s2">Tags: old blog</span><span class="se">\n</span><span class="s2">Slug: </span><span class="si">{</span><span class="n">slug</span><span class="si">}</span><span class="se">\n</span><span class="s2">Author: Nic</span><span class="se">\n</span><span class="s2">Summary: </span><span class="si">{</span><span class="n">summary</span><span class="si">}</span><span class="se">\n</span><span class="si">{</span><span class="n">output</span><span class="si">}</span><span class="s2">&quot;</span>
+
+            <span class="nb">print</span><span class="p">(</span><span class="n">count</span><span class="p">,</span> <span class="n">slug</span><span class="p">)</span>
+            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Title: </span><span class="si">{</span><span class="n">title</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Published: </span><span class="si">{</span><span class="n">published</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Summary: </span><span class="si">{</span><span class="n">summary</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Image: </span><span class="si">{</span><span class="n">image_html</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+            <span class="c1"># print(f&quot;HTML: {html}&quot;)</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Markdown:</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">,</span> <span class="n">output</span><span class="p">)</span>
+
+            <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;/Users/nic/Python/homee/notes/content/</span><span class="si">{</span><span class="n">slug</span><span class="si">}</span><span class="s2">.md&quot;</span><span class="p">,</span> <span class="s1">&#39;w&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+                <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">output</span><span class="p">)</span>
+
+        <span class="nb">print</span><span class="p">()</span>
+</code></pre></div>
+
+<p>Now on to embed a Vimeo video:</p>
+<div style="padding:56.25% 0 0 0;position:relative;"><iframe src="https://player.vimeo.com/video/693602020?h=04131e9e25&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen style="position:absolute;top:0;left:0;width:100%;height:100%;" title="Introducing Descript"></iframe></div>
+<script src="https://player.vimeo.com/api/player.js"></script>
+
+<p>that's it for today</p>
+                </article>
+            </aside>
+            
+        <section id="extras" class="body">
+                <div class="blogroll">
+                        <h2>links</h2>
+                        <ul>
+                            <li><a href="https://getpelican.com/">Built with Pelican</a></li>
+                            <li><a href="https://www.python.org/">Built with Python</a></li>
+                        </ul>
+                </div><!-- /.blogroll -->
+                <div class="social">
+                        <h2>social</h2>
+                        <ul>
+
+                            <li><a href="#">You can add links in your config file</a></li>
+                            <li><a href="#">Another social link</a></li>
+                        </ul>
+                </div><!-- /.social -->
+        </section><!-- /#extras -->
+
+        <footer id="contentinfo" class="body">
+                <address id="about" class="vcard body">
+                Powered by <a href="https://getpelican.com/">Pelican</a>, with <a href="https://www.python.org/">Python</a>.
+                </address><!-- /#about -->
+
+        </footer><!-- /#contentinfo -->
+
+</body>
+</html>

@@ -30,7 +30,10 @@ body {
 
 /* Headings */
 h1 {font-size: 1.5em }
-h2 {font-size: 1.4em}
+h2 {
+  font-size: 1.4em;
+  margin-top: 2em;
+}
 h3 {font-size: 1.3em}
 h4 {font-size: 1.2em}
 h5 {font-size: 1.1em}
@@ -109,8 +112,37 @@ pre{background-color:  rgb(238, 238, 238); padding: 10px; margin: 10px; overflow
 
 /* Quotes */
 blockquote {
-    margin: 20px;
-    font-style: italic;
+
+    display:block;
+    background: #fff;
+    padding: 15px 20px 15px 45px;
+    margin: 0 0 20px;
+    position: relative;
+
+    font-family: Georgia, serif;
+    font-size: 14px;
+    line-height: 1.2;
+    color: #000;
+
+    /*Box Shadow*/
+    -moz-box-shadow: 1px 1px 3px #000;
+    -webkit-box-shadow: 1px 1px 3px #000;
+    box-shadow: 1px 1px 3px #000;
+
+    /*Borders - (Optional)*/
+    border-left-style: solid;
+    border-left-width: 15px;
+    border-right-style: solid;
+    border-right-width: 1px;
+    border-top-style: solid;
+    border-top-width: 1px;
+    border-bottom-style: solid;
+    border-bottom-width: 1px;
+
+    border-left-color: #000;
+    border-right-color: #000;
+    border-top-color: #000;
+    border-bottom-color: #000;
 }
 cite {}
 
@@ -465,4 +497,11 @@ li:first-child .hentry, #content > .hentry {border: 0; margin: 0;}
 
 .header {
   width: 800px;
+}
+
+.title_container {
+    display: flex;
+    /* align-items: center;
+    overflow: hidden;
+    white-space: nowrap; */
 }
