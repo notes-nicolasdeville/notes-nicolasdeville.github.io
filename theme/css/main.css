@@ -537,7 +537,7 @@ li:first-child .hentry, #content > .hentry {border: 0; margin: 0;}
 .sketchy {
     padding: 1rem 1rem;
     display: inline-block;
-    border: 3px solid #000;
+    border: 1px solid #000;
     border-radius: 2% 6% 5% 4% / 1% 1% 2% 4%;
     /* text-transform: uppercase; */
     /* letter-spacing: 0.3ch; */
@@ -561,4 +561,25 @@ li:first-child .hentry, #content > .hentry {border: 0; margin: 0;}
   box-shadow: 1px 1px 1px 1px;
   padding: 1px 0 0.1em 1em;
   /* margin: 1em; */
+}
+
+.foldtl {
+  position: relative;
+  -webkit-box-shadow: 5px 5px 5px rgba(0,0,0,0.8);
+  -moz-box-shadow: 5px 5px 5px rgba(0,0,0,0.8);
+  box-shadow: 5px 5px 5px rgba(0,0,0,0.8);
+}
+ 
+.foldtl:before {
+  content: "";
+  position: absolute;
+  top: 0%;
+  left: 0%;
+  width: 0px;
+  height: 0px;
+  border-bottom: 70px solid #eee;
+  border-left: 70px solid #272822; /*Set to background color, not transparent!*/
+  -webkit-box-shadow: 7px 7px 7px rgba(0,0,0,0.3);
+  -moz-box-shadow: 7px 7px 7px rgba(0,0,0,0.3);
+  box-shadow: 7px 7px 7px rgba(0,0,0,0.3);
 }
