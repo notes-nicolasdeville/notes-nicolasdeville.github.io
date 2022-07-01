@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta name="generator" content="Pelican" />
+        <title>Nic's notes - kindle</title>
+        <link rel="stylesheet" href="https://notes.nicolasdeville.com/theme/css/main.css" />
+</head>
+
+<body id="index" class="home">
+        <header id="banner" class="body">
+
+            <table class="header_table">
+                <tr>
+                  <td style="width:50px;"><img src="https://notes.nicolasdeville.com/images/edelweiss_black.svg" alt="Edelweiss logo" width="50"/></td>
+                  <td><h1><a href="https://notes.nicolasdeville.com/">Nic's notes</a></h1></td>
+                </tr>
+              </table>
+
+            <nav><ul>
+                <li><a href="https://notes.nicolasdeville.com/category/apps.html">apps</a></li>
+                <li><a href="https://notes.nicolasdeville.com/category/audio.html">audio</a></li>
+                <li><a href="https://notes.nicolasdeville.com/category/b2b-sales.html">b2b sales</a></li>
+                <li><a href="https://notes.nicolasdeville.com/category/books.html">books</a></li>
+                <li><a href="https://notes.nicolasdeville.com/category/careerplaybook.html">#careerplaybook</a></li>
+                <li><a href="https://notes.nicolasdeville.com/category/crypto.html">crypto</a></li>
+                <li><a href="https://notes.nicolasdeville.com/category/helpers.html">helpers</a></li>
+                <li><a href="https://notes.nicolasdeville.com/category/home-office.html">home office</a></li>
+                <li><a href="https://notes.nicolasdeville.com/category/misc.html">misc</a></li>
+                <li><a href="https://notes.nicolasdeville.com/category/python.html">python</a></li>
+                <li><a href="https://notes.nicolasdeville.com/category/space.html">space</a></li>
+                <li><a href="https://notes.nicolasdeville.com/category/startupplaybook.html">#startupplaybook</a></li>
+            </ul></nav>
+        </header>
+
+
+
+
+            <aside id="featured" class="body">
+            <!-- LATEST NOTE -->
+            <p class="notes-section">latest note</p>
+            <hr/>
+
+                <article class="hentry">
+                    <h1 class="entry-title"><a href="https://notes.nicolasdeville.com/articles/kindle.html">Kindle</a></h1>
+<footer class="post-info">
+
+    <p>
+        02 Jul 2022 | in <a class="link_tag" href="https://notes.nicolasdeville.com/category/helpers.html">helpers</a>
+ tags: <a class="link_tag" href="https://notes.nicolasdeville.com/tag/kindle.html">kindle</a>
+<a class="link_tag" href="https://notes.nicolasdeville.com/tag/python.html">python</a>
+    </p>
+
+    
+
+</footer><p>Access highlights:</p>
+<p><a href="https://read.amazon.co.uk/notebook" target="_blank">https://read.amazon.co.uk/notebook</a></p>
+<p>Get Kindle highlights from a book with Python:</p>
+<p>1) download the page from link above with the book's highlights (in browser <code>File &gt; Save Page As...</code>, select <code>Webpage, complete</code> or <code>Webpage, HTML only</code>)
+2) in your (virtual) environment <code>pip3 install beautifulsoup4</code>
+3) use following script:</p>
+<div class="highlight"><pre><span></span><code><span class="n">file</span> <span class="o">=</span> <span class="s1">&#39;/your/path/Kindle_ Your Notes and Highlights.html&#39;</span>
+
+<span class="n">soup</span> <span class="o">=</span> <span class="n">BeautifulSoup</span><span class="p">(</span><span class="nb">open</span><span class="p">(</span><span class="n">file</span><span class="p">),</span> <span class="s1">&#39;html.parser&#39;</span><span class="p">)</span>
+
+<span class="n">highlights</span> <span class="o">=</span> <span class="n">soup</span><span class="o">.</span><span class="n">find_all</span><span class="p">(</span><span class="nb">id</span><span class="o">=</span><span class="s1">&#39;highlight&#39;</span><span class="p">,</span> <span class="n">class_</span><span class="o">=</span><span class="s1">&#39;a-size-base-plus a-color-base&#39;</span><span class="p">)</span>
+
+<span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">highlights</span><span class="p">:</span>
+    <span class="n">count</span> <span class="o">+=</span> <span class="mi">1</span>
+    <span class="n">highlight</span> <span class="o">=</span> <span class="n">x</span><span class="o">.</span><span class="n">text</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;&gt; </span><span class="si">{</span><span class="n">highlight</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">()</span>
+
+    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;highlights.txt&quot;</span><span class="p">,</span> <span class="s1">&#39;a&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">file</span><span class="p">:</span>
+        <span class="n">file</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
+        <span class="c1"># file.write(&#39;---\n&#39;)</span>
+        <span class="n">file</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;&gt; </span><span class="si">{</span><span class="n">highlight</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="n">file</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
+</code></pre></div>
+                </article>
+            </aside>
+
+            
+
+        <section id="extras" class="body">
+                <div class="blogroll">
+                        <h2>links</h2>
+                        <ul>
+                            <li><a href="https://indeXall.io">Side project: indeXall.io</a></li>
+                        </ul>
+                </div><!-- /.blogroll -->
+
+                <div class="social">
+                        <h2>social</h2>
+                        <ul>
+
+                            <li><a href="https://www.linkedin.com/in/ndeville/">Linkedin</a></li>
+                            <li><a href="https://www.twitter.com/ndeville">Twitter</a></li>
+                        </ul>
+                </div><!-- /.social -->
+        </section><!-- /#extras -->
+
+        <footer id="contentinfo" class="body">
+                <address id="about" class="vcard body">
+                Powered by <a href="https://getpelican.com/">Pelican</a>, with <a href="https://www.python.org/">Python</a>
+                </address><!-- /#about -->
+
+        </footer><!-- /#contentinfo -->
+
+</body>
+</html>

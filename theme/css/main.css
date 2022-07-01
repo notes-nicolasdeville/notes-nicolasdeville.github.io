@@ -1,6 +1,11 @@
 @import url("pygment.css");
 @import url('https://fonts.googleapis.com/css?family=Lato');
-/* @import url('https://fonts.googleapis.com/css?family=Literata'); */
+
+/* Global reset / clean slate */
+html, body, div, h1, h2, h3, h4, h5, h6, ul, ol, li, p, blockquote, pre, form, fieldset, table, th, td { 
+    margin: 0; 
+    padding: 0; 
+}
 
 body {
     background: #fff;
@@ -618,6 +623,15 @@ li:first-child .hentry, #content > .hentry {
 .hfeed { /* removes the indent in post feeds */
   padding: 0;
   margin: 0;
+}
+
+.notes-section {
+    font-size: 2em;
+    line-height: 1em;
+    text-decoration: underline;
+    text-decoration-thickness: 8px;
+    margin-bottom: 0px;
+    padding: 0px;
 }
 
 .title_container {
