@@ -21,9 +21,11 @@ h1 {
 }
 h2 {
   font-size: 1.4em;
+  color: #C64350;
 }
 h3 {
   font-size: 1.3em;
+  color: #C64350;
 }
 h4 {
   font-size: 1.2em;
@@ -96,13 +98,12 @@ li { margin-top: 0.5em;
     padding: 0 10px 0 0;
     border-right: 2px solid #eee;
     border-bottom: 2px solid #eee;
-    box-shadow: 2px 1px #eee;
+    box-shadow: 0 0px 0px 0 #eee; /* offset-x | offset-y | blur-radius | spread-radius | color */
 }
 
 /* .post-info p{
     /* margin-top: 1px;
     margin-bottom: 1px; */
-} */
 
 .readmore { float: right }
 
@@ -158,7 +159,7 @@ code {
     color: #C74350;
     border-radius: 0.3em;
     padding: 3px 5px 3px 5px; /* top | right | bottom | left */
-    white-space: nowrap;
+    /* white-space: nowrap; */
 }
 
 cite {}
@@ -420,9 +421,19 @@ div.figure p.caption, figure p.caption { /* margin provided by figure */
 	max-width: 760px;
 }
 
-#about .primary {float: left; max-width: 165px;}
-#about .primary strong {color: #C64350; display: block; font-size: 1.286em;}
-#about .photo {float: left; margin: 5px 20px;}
+#about .primary {
+  float: left;
+  max-width: 165px;
+}
+#about .primary strong {
+  color: #C64350;
+  display: block;
+  font-size: 1.286em;
+}
+#about .photo {
+  float: left;
+  margin: 5px 20px;
+}
 
 #about .url:link, #about .url:visited {text-decoration: none;}
 
@@ -431,7 +442,10 @@ div.figure p.caption, figure p.caption { /* margin provided by figure */
 /*
 	Footer
 *****************/
-#contentinfo {padding-bottom: 2em; text-align: right;}
+#contentinfo {
+  padding-bottom: 2em;
+  text-align: right;
+}
 
 /***** Sections *****/
 /* Blog */
@@ -442,8 +456,14 @@ div.figure p.caption, figure p.caption { /* margin provided by figure */
   border-left: 2px solid #eee;
 	padding: 0 0 0 1em; /* top | right | bottom | left */
 }
-li:first-child .hentry, #content > .hentry {border: 0; margin: 0;}
-#content > .hentry {padding: 0 0 0 1em;}
+li:first-child .hentry, #content > .hentry {
+  border: 0;
+  margin: 0;
+}
+
+#content > .hentry {
+  padding: 0 0 0 1em;
+}
 /* .hentry img{display : none ;} */
 
 .entry-title {
@@ -464,9 +484,16 @@ li:first-child .hentry, #content > .hentry {border: 0; margin: 0;}
 }
 
 	/* Content */
-	.hentry footer {margin-bottom: 1em;}
-	.hentry footer address {display: inline;}
-	#posts-list footer address {display: block;}
+	.hentry footer {
+    margin-bottom: 1em;
+  }
+	.hentry footer address {
+    display: inline;
+  }
+
+	#posts-list footer address {
+    display: block;
+  }
 
 	/* Blog Index */
 	#posts-list {
@@ -479,7 +506,7 @@ li:first-child .hentry, #content > .hentry {border: 0; margin: 0;}
 		/* left: 10px; */
 		position: relative;
     float: left;
-		top: 0.5em;
+		/* top: 0.5em; */
 		/* max-width: 190px; */
 	}
 
@@ -511,7 +538,11 @@ li:first-child .hentry, #content > .hentry {border: 0; margin: 0;}
 		margin: 0;
 		padding: 15px 20px;
 	}
-	#comments-list footer {color: #888; padding: .5em 1em 0 0; text-align: right;}
+	#comments-list footer {
+    color: #888;
+    padding: .5em 1em 0 0;
+    text-align: right;
+  }
 
 	#comments-list li:nth-child(2n) blockquote {background: #F5f5f5;}
 
@@ -564,6 +595,10 @@ li:first-child .hentry, #content > .hentry {border: 0; margin: 0;}
 
 /* TEST */
 
+.illustration {
+  box-shadow: 4px 4px 10px #eee; /* offset-x | offset-y | blur-radius | color */
+}
+
 .header {
   width: 800px;
 }
@@ -601,7 +636,8 @@ li:first-child .hentry, #content > .hentry {border: 0; margin: 0;}
 }
 
 .shadow {
-  box-shadow: 1px 1px 1px 1px;
+  /* box-shadow: 1px 1px 1px 1px; */
+  box-shadow: 4px 4px 10px #eee;
   padding: 1px 0 0.1em 1em;
   /* margin: 1em; */
 }
@@ -625,4 +661,15 @@ li:first-child .hentry, #content > .hentry {border: 0; margin: 0;}
   -webkit-box-shadow: 7px 7px 7px rgba(0,0,0,0.3);
   -moz-box-shadow: 7px 7px 7px rgba(0,0,0,0.3);
   box-shadow: 7px 7px 7px rgba(0,0,0,0.3);
+}
+
+.test {
+    display: block;
+    width: 100%;
+    text-align: right;
+    margin: 0px;
+    padding: 0 10px 0 0;
+    border-right: 2px solid #eee;
+    border-bottom: 2px solid #eee;
+    box-shadow: 3px 6px 0 0 #eee; /* offset-x | offset-y | blur-radius | spread-radius | color */
 }

@@ -5,7 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <meta name="generator" content="Pelican" />
         <title>Nic's notes - css</title>
-        <link rel="stylesheet" href="https://notes.nicolasdeville.com/theme/css/main.css" />
+        <link rel="stylesheet" href="../theme/css/main.css" />
 </head>
 
 <body id="index" class="home">
@@ -14,23 +14,23 @@
             <table class="header_table">
                 <tr>
                   <td style="width:50px;"><img src="images/edelweiss_black.svg" alt="Edelweiss logo" width="50"/></td>
-                  <td><h1><a href="https://notes.nicolasdeville.com/">Nic's notes</a></h1></td>
+                  <td><h1><a href="../">Nic's notes</a></h1></td>
                 </tr>
               </table>
 
             <nav><ul>
-                <li><a href="https://notes.nicolasdeville.com/category/apps.html">apps</a></li>
-                <li><a href="https://notes.nicolasdeville.com/category/audio.html">audio</a></li>
-                <li><a href="https://notes.nicolasdeville.com/category/b2b-sales.html">b2b sales</a></li>
-                <li><a href="https://notes.nicolasdeville.com/category/books.html">books</a></li>
-                <li><a href="https://notes.nicolasdeville.com/category/careerplaybook.html">#careerplaybook</a></li>
-                <li><a href="https://notes.nicolasdeville.com/category/crypto.html">crypto</a></li>
-                <li><a href="https://notes.nicolasdeville.com/category/helpers.html">helpers</a></li>
-                <li><a href="https://notes.nicolasdeville.com/category/home-office.html">home office</a></li>
-                <li><a href="https://notes.nicolasdeville.com/category/misc.html">misc</a></li>
-                <li><a href="https://notes.nicolasdeville.com/category/python.html">python</a></li>
-                <li><a href="https://notes.nicolasdeville.com/category/space.html">space</a></li>
-                <li><a href="https://notes.nicolasdeville.com/category/startupplaybook.html">#startupplaybook</a></li>
+                <li><a href="../category/apps.html">apps</a></li>
+                <li><a href="../category/audio.html">audio</a></li>
+                <li><a href="../category/b2b-sales.html">b2b sales</a></li>
+                <li><a href="../category/books.html">books</a></li>
+                <li><a href="../category/careerplaybook.html">#careerplaybook</a></li>
+                <li><a href="../category/crypto.html">crypto</a></li>
+                <li><a href="../category/helpers.html">helpers</a></li>
+                <li><a href="../category/home-office.html">home office</a></li>
+                <li><a href="../category/misc.html">misc</a></li>
+                <li><a href="../category/python.html">python</a></li>
+                <li><a href="../category/space.html">space</a></li>
+                <li><a href="../category/startupplaybook.html">#startupplaybook</a></li>
             </ul></nav>
         </header>
 
@@ -43,12 +43,12 @@
             <hr/>
 
                 <article class="hentry">
-                    <h1 class="entry-title"><a href="https://notes.nicolasdeville.com/css-tools.html">CSS Tools</a></h1>
+                    <h1 class="entry-title"><a href="../css.html">CSS Tools</a></h1>
 <footer class="post-info">
 
     <p>
-        14 Feb 2020 | in <a class="link_tag" href="https://notes.nicolasdeville.com/category/helpers.html">helpers</a>
- tags: <a class="link_tag" href="https://notes.nicolasdeville.com/tag/css.html">css</a>
+        14 Feb 2020 | in <a class="link_tag" href="../category/helpers.html">helpers</a>
+ tags: <a class="link_tag" href="../tag/css.html">css</a>
     </p>
 
     
@@ -64,6 +64,33 @@ When you need to check the difference between 2 CSS files.</p>
 <p>I used this tool and tasked a freelancer to do the work, by sharing the link with him (see <a href="careerplaybook-009-outsourcing-tasks.html">careerplaybook-009-outsourcing-tasks/</a>)</p>
 <h3>CSS examples</h3>
 <p><a href="https://www.csscodelab.com/css-examples/" target="_blank">https://www.csscodelab.com/css-examples/</a></p>
+<h3>Box shadow syntax</h3>
+<p><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/box-shadow" target="_blank">https://developer.mozilla.org/en-US/docs/Web/CSS/box-shadow</a></p>
+<div class="highlight"><pre><span></span><code><span class="c">/* Keyword values */</span><span class="w">  </span>
+<span class="nt">box-shadow</span><span class="o">:</span><span class="w"> </span><span class="nt">none</span><span class="o">;</span><span class="w">  </span>
+
+<span class="c">/* offset-x | offset-y | color */</span><span class="w">  </span>
+<span class="nt">box-shadow</span><span class="o">:</span><span class="w"> </span><span class="nt">60px</span><span class="w"> </span><span class="nt">-16px</span><span class="w"> </span><span class="nt">teal</span><span class="o">;</span><span class="w">  </span>
+
+<span class="c">/* offset-x | offset-y | blur-radius | color */</span><span class="w">  </span>
+<span class="nt">box-shadow</span><span class="o">:</span><span class="w"> </span><span class="nt">10px</span><span class="w"> </span><span class="nt">5px</span><span class="w"> </span><span class="nt">5px</span><span class="w"> </span><span class="nt">black</span><span class="o">;</span><span class="w">  </span>
+
+<span class="c">/* offset-x | offset-y | blur-radius | spread-radius | color */</span><span class="w">  </span>
+<span class="nt">box-shadow</span><span class="o">:</span><span class="w"> </span><span class="nt">2px</span><span class="w"> </span><span class="nt">2px</span><span class="w"> </span><span class="nt">2px</span><span class="w"> </span><span class="nt">1px</span><span class="w"> </span><span class="nt">rgba</span><span class="o">(</span><span class="nt">0</span><span class="o">,</span><span class="w"> </span><span class="nt">0</span><span class="o">,</span><span class="w"> </span><span class="nt">0</span><span class="o">,</span><span class="w"> </span><span class="nt">0</span><span class="p">.</span><span class="nc">2</span><span class="o">);</span><span class="w">  </span>
+
+<span class="c">/* inset | offset-x | offset-y | color */</span><span class="w">  </span>
+<span class="nt">box-shadow</span><span class="o">:</span><span class="w"> </span><span class="nt">inset</span><span class="w"> </span><span class="nt">5em</span><span class="w"> </span><span class="nt">1em</span><span class="w"> </span><span class="nt">gold</span><span class="o">;</span><span class="w">  </span>
+
+<span class="c">/* Any number of shadows, separated by commas */</span><span class="w">  </span>
+<span class="nt">box-shadow</span><span class="o">:</span><span class="w"> </span><span class="nt">3px</span><span class="w"> </span><span class="nt">3px</span><span class="w"> </span><span class="nt">red</span><span class="o">,</span><span class="w"> </span><span class="nt">-1em</span><span class="w"> </span><span class="nt">0</span><span class="w"> </span><span class="nt">0</span><span class="p">.</span><span class="nc">4em</span><span class="w"> </span><span class="nt">olive</span><span class="o">;</span><span class="w">  </span>
+
+<span class="c">/* Global values */</span><span class="w">  </span>
+<span class="nt">box-shadow</span><span class="o">:</span><span class="w"> </span><span class="nt">inherit</span><span class="o">;</span><span class="w">  </span>
+<span class="nt">box-shadow</span><span class="o">:</span><span class="w"> </span><span class="nt">initial</span><span class="o">;</span><span class="w">  </span>
+<span class="nt">box-shadow</span><span class="o">:</span><span class="w"> </span><span class="nt">revert</span><span class="o">;</span><span class="w">  </span>
+<span class="nt">box-shadow</span><span class="o">:</span><span class="w"> </span><span class="nt">revert-layer</span><span class="o">;</span><span class="w">  </span>
+<span class="nt">box-shadow</span><span class="o">:</span><span class="w"> </span><span class="nt">unset</span><span class="o">;</span><span class="w">  </span>
+</code></pre></div>
                 </article>
             </aside>
 
