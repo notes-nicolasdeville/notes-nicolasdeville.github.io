@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta name="generator" content="Pelican" />
+        <title>Nic's notes - terminal</title>
+        <link rel="stylesheet" href="https://notes.nicolasdeville.com/theme/css/main.css" />
+</head>
+
+<body id="index" class="home">
+        <header id="banner" class="body">
+
+            <table class="header_table">
+                <tr>
+                  <td style="width:50px;"><img src="https://notes.nicolasdeville.com/images/edelweiss_black.svg" alt="Edelweiss logo" width="50"/></td>
+                  <td><h1><a href="https://notes.nicolasdeville.com/">Nic's notes</a></h1></td>
+                </tr>
+              </table>
+
+            <nav><ul>
+                <li><a href="https://notes.nicolasdeville.com/pages/about.html">ABOUT</a></li>
+                <li><a href="https://notes.nicolasdeville.com/category/apps.html">apps</a></li>
+                <li><a href="https://notes.nicolasdeville.com/category/b2b-sales.html">b2b sales</a></li>
+                <li><a href="https://notes.nicolasdeville.com/category/books.html">books</a></li>
+                <li><a href="https://notes.nicolasdeville.com/category/careerplaybook.html">#careerplaybook</a></li>
+                <li><a href="https://notes.nicolasdeville.com/category/helpers.html">helpers</a></li>
+                <li><a href="https://notes.nicolasdeville.com/category/home-office.html">home office</a></li>
+                <li><a href="https://notes.nicolasdeville.com/category/misc.html">misc</a></li>
+                <li><a href="https://notes.nicolasdeville.com/category/python.html">python</a></li>
+                <li><a href="https://notes.nicolasdeville.com/category/space.html">space</a></li>
+                <li><a href="https://notes.nicolasdeville.com/category/startupplaybook.html">#startupplaybook</a></li>
+            </ul></nav>
+        </header>
+
+
+
+
+            <aside id="featured" class="body">
+            <!-- LATEST NOTE -->
+            <p class="notes-section">latest note</p>
+            <hr/>
+
+                <article class="hentry">
+                    <h1 class="entry-title"><a href="https://notes.nicolasdeville.com/articles/ascii-tree.html">ASCII tree</a></h1>
+<footer class="post-info">
+
+    <p>
+        02 Jul 2022 | in <a class="link_tag" href="https://notes.nicolasdeville.com/category/helpers.html">helpers</a>
+ tags: <a class="link_tag" href="https://notes.nicolasdeville.com/tag/terminal.html">terminal</a>
+    </p>
+
+    
+
+</footer><p>To build an ASCII tree, ie folder structure:</p>
+<p>in Terminal:</p>
+<ul>
+<li>install homebrew</li>
+<li><code>brew install tree</code> </li>
+<li>navigate to folder</li>
+<li><code>tree foldername</code></li>
+</ul>
+<p>Example (edited for length)</p>
+<div class="highlight"><pre><span></span><code><span class="n">notes</span><span class="w"></span>
+<span class="err">├──</span><span class="w"> </span><span class="n">Makefile</span><span class="w"></span>
+<span class="err">├──</span><span class="w"> </span><span class="n">content</span><span class="w"></span>
+<span class="err">│</span><span class="w">   </span><span class="err">├──</span><span class="w"> </span><span class="n">articles</span><span class="w"></span>
+<span class="err">│</span><span class="w">   </span><span class="err">│</span><span class="w">   </span><span class="err">├──</span><span class="w"> </span><span class="c1">#careerplaybook</span><span class="w"></span>
+<span class="err">│</span><span class="w">   </span><span class="err">│</span><span class="w">   </span><span class="err">│</span><span class="w">   </span><span class="err">├──</span><span class="w"> </span><span class="mi">000</span><span class="o">-</span><span class="n">introduction</span><span class="o">.</span><span class="n">md</span><span class="w"></span>
+<span class="err">│</span><span class="w">   </span><span class="err">│</span><span class="w">   </span><span class="err">│</span><span class="w">   </span><span class="err">├──</span><span class="w"> </span><span class="mi">001</span><span class="o">-</span><span class="n">always</span><span class="o">-</span><span class="n">be</span><span class="o">-</span><span class="n">learning</span><span class="o">.</span><span class="n">md</span><span class="w"></span>
+<span class="err">│</span><span class="w">   </span><span class="err">│</span><span class="w">   </span><span class="err">│</span><span class="w">   </span><span class="err">├──</span><span class="w"> </span><span class="mi">002</span><span class="o">-</span><span class="n">imposter</span><span class="o">-</span><span class="n">syndrome</span><span class="o">-</span><span class="k">is</span><span class="o">-</span><span class="n">more</span><span class="o">-</span><span class="n">widespread</span><span class="o">-</span><span class="n">than</span><span class="o">-</span><span class="n">you</span><span class="o">-</span><span class="n">think</span><span class="o">.</span><span class="n">md</span><span class="w"></span>
+<span class="err">│</span><span class="w">   </span><span class="err">│</span><span class="w">   </span><span class="err">│</span><span class="w">   </span><span class="err">├──</span><span class="w"> </span><span class="mi">003</span><span class="o">-</span><span class="n">walking</span><span class="o">-</span><span class="n">meetings</span><span class="o">.</span><span class="n">md</span><span class="w"></span>
+<span class="err">│</span><span class="w">   </span><span class="err">│</span><span class="w">   </span><span class="err">│</span><span class="w">   </span><span class="err">├──</span><span class="w"> </span><span class="mi">004</span><span class="o">-</span><span class="n">the</span><span class="o">-</span><span class="n">jerry</span><span class="o">-</span><span class="n">maguire</span><span class="o">-</span><span class="n">play</span><span class="o">.</span><span class="n">md</span><span class="w"></span>
+<span class="err">│</span><span class="w">   </span><span class="err">│</span><span class="w">   </span><span class="err">├──</span><span class="w"> </span><span class="c1">#startupplaybook</span><span class="w"></span>
+<span class="err">│</span><span class="w">   </span><span class="err">│</span><span class="w">   </span><span class="err">│</span><span class="w">   </span><span class="err">├──</span><span class="w"> </span><span class="mi">00</span><span class="o">-</span><span class="n">my</span><span class="o">-</span><span class="n">learnings</span><span class="o">.</span><span class="n">md</span><span class="w"></span>
+<span class="err">│</span><span class="w">   </span><span class="err">│</span><span class="w">   </span><span class="err">│</span><span class="w">   </span><span class="err">└──</span><span class="w"> </span><span class="mi">01</span><span class="o">-</span><span class="n">how</span><span class="o">-</span><span class="n">to</span><span class="o">-</span><span class="n">bootstrap</span><span class="o">-</span><span class="n">a</span><span class="o">-</span><span class="n">tech</span><span class="o">-</span><span class="n">startup</span><span class="o">.</span><span class="n">md</span><span class="w"></span>
+<span class="err">│</span><span class="w">   </span><span class="err">│</span><span class="w">   </span><span class="err">├──</span><span class="w"> </span><span class="n">apps</span><span class="w"></span>
+<span class="err">│</span><span class="w">   </span><span class="err">│</span><span class="w">   </span><span class="err">│</span><span class="w">   </span><span class="err">├──</span><span class="w"> </span><span class="mi">4</span><span class="n">K</span><span class="o">.</span><span class="n">md</span><span class="w"></span>
+<span class="err">│</span><span class="w">   </span><span class="err">│</span><span class="w">   </span><span class="err">│</span><span class="w">   </span><span class="err">├──</span><span class="w"> </span><span class="n">cloudapp</span><span class="o">.</span><span class="n">md</span><span class="w"></span>
+<span class="err">│</span><span class="w">   </span><span class="err">│</span><span class="w">   </span><span class="err">│</span><span class="w">   </span><span class="err">├──</span><span class="w"> </span><span class="n">follow</span><span class="o">-</span><span class="n">up</span><span class="o">-</span><span class="n">then</span><span class="o">.</span><span class="n">md</span><span class="w"></span>
+<span class="err">│</span><span class="w">   </span><span class="err">│</span><span class="w">   </span><span class="err">│</span><span class="w">   </span><span class="err">├──</span><span class="w"> </span><span class="n">freedom</span><span class="o">.</span><span class="n">md</span><span class="w"></span>
+<span class="err">│</span><span class="w">   </span><span class="err">│</span><span class="w">   </span><span class="err">│</span><span class="w">   </span><span class="err">└──</span><span class="w"> </span><span class="n">ulysses</span><span class="o">.</span><span class="n">md</span><span class="w"></span>
+<span class="err">│</span><span class="w">   </span><span class="err">│</span><span class="w">   </span><span class="err">├──</span><span class="w"> </span><span class="n">b2b</span><span class="w"> </span><span class="n">sales</span><span class="w"></span>
+<span class="err">│</span><span class="w">   </span><span class="err">│</span><span class="w">   </span><span class="err">│</span><span class="w">   </span><span class="err">├──</span><span class="w"> </span><span class="n">a</span><span class="o">-</span><span class="n">no</span><span class="o">-</span><span class="k">is</span><span class="o">-</span><span class="n">just</span><span class="o">-</span><span class="n">a</span><span class="o">-</span><span class="n">delayed</span><span class="o">-</span><span class="n">yes</span><span class="o">.</span><span class="n">md</span><span class="w"></span>
+<span class="err">│</span><span class="w">   </span><span class="err">│</span><span class="w">   </span><span class="err">│</span><span class="w">   </span><span class="err">├──</span><span class="w"> </span><span class="n">are</span><span class="o">-</span><span class="n">you</span><span class="o">-</span><span class="n">selling</span><span class="o">-</span><span class="n">aspirin</span><span class="o">-</span><span class="n">a</span><span class="o">-</span><span class="n">vaccine</span><span class="o">-</span><span class="ow">or</span><span class="o">-</span><span class="n">a</span><span class="o">-</span><span class="n">vitamin</span><span class="o">.</span><span class="n">md</span><span class="w"></span>
+<span class="err">│</span><span class="w">   </span><span class="err">│</span><span class="w">   </span><span class="err">│</span><span class="w">   </span><span class="err">├──</span><span class="w"> </span><span class="n">planning</span><span class="o">-</span><span class="n">meetings</span><span class="o">.</span><span class="n">md</span><span class="w"></span>
+<span class="err">│</span><span class="w">   </span><span class="err">│</span><span class="w">   </span><span class="err">│</span><span class="w">   </span><span class="err">├──</span><span class="w"> </span><span class="n">the</span><span class="o">-</span><span class="n">advice</span><span class="o">-</span><span class="n">i</span><span class="o">-</span><span class="n">always</span><span class="o">-</span><span class="n">give</span><span class="o">-</span><span class="n">when</span><span class="o">-</span><span class="n">mentoring</span><span class="o">.</span><span class="n">md</span><span class="w"></span>
+<span class="err">│</span><span class="w">   </span><span class="err">│</span><span class="w">   </span><span class="err">│</span><span class="w">   </span><span class="err">└──</span><span class="w"> </span><span class="n">what</span><span class="o">-</span><span class="k">is</span><span class="o">-</span><span class="n">sales</span><span class="o">.</span><span class="n">md</span><span class="w"></span>
+<span class="err">│</span><span class="w">   </span><span class="err">│</span><span class="w">   </span><span class="err">├──</span><span class="w"> </span><span class="n">books</span><span class="w"></span>
+<span class="err">│</span><span class="w">   </span><span class="err">│</span><span class="w">   </span><span class="err">│</span><span class="w">   </span><span class="err">├──</span><span class="w"> </span><span class="n">automate</span><span class="o">-</span><span class="n">the</span><span class="o">-</span><span class="n">boring</span><span class="o">-</span><span class="n">stuff</span><span class="o">.</span><span class="n">md</span><span class="w"></span>
+<span class="err">│</span><span class="w">   </span><span class="err">│</span><span class="w">   </span><span class="err">│</span><span class="w">   </span><span class="err">├──</span><span class="w"> </span><span class="n">platform</span><span class="o">-</span><span class="n">revolution</span><span class="o">.</span><span class="n">md</span><span class="w"></span>
+<span class="err">│</span><span class="w">   </span><span class="err">│</span><span class="w">   </span><span class="err">│</span><span class="w">   </span><span class="err">├──</span><span class="w"> </span><span class="n">simply</span><span class="o">-</span><span class="n">said</span><span class="o">.</span><span class="n">md</span><span class="w"></span>
+<span class="err">│</span><span class="w">   </span><span class="err">│</span><span class="w">   </span><span class="err">│</span><span class="w">   </span><span class="err">├──</span><span class="w"> </span><span class="n">the</span><span class="o">-</span><span class="n">lean</span><span class="o">-</span><span class="n">startup</span><span class="o">.</span><span class="n">md</span><span class="w"></span>
+<span class="err">│</span><span class="w">   </span><span class="err">│</span><span class="w">   </span><span class="err">│</span><span class="w">   </span><span class="err">├──</span><span class="w"> </span><span class="n">the</span><span class="o">-</span><span class="n">mom</span><span class="o">-</span><span class="n">test</span><span class="o">.</span><span class="n">md</span><span class="w"></span>
+<span class="err">│</span><span class="w">   </span><span class="err">│</span><span class="w">   </span><span class="err">│</span><span class="w">   </span><span class="err">└──</span><span class="w"> </span><span class="n">what</span><span class="o">-</span><span class="n">every</span><span class="o">-</span><span class="n">body</span><span class="o">-</span><span class="k">is</span><span class="o">-</span><span class="n">saying</span><span class="o">.</span><span class="n">md</span><span class="w"></span>
+<span class="err">│</span><span class="w">   </span><span class="err">│</span><span class="w">   </span><span class="err">├──</span><span class="w"> </span><span class="n">helpers</span><span class="w"></span>
+<span class="err">│</span><span class="w">   </span><span class="err">│</span><span class="w">   </span><span class="err">│</span><span class="w">   </span><span class="err">├──</span><span class="w"> </span><span class="n">css</span><span class="o">-</span><span class="n">tools</span><span class="o">.</span><span class="n">md</span><span class="w"></span>
+<span class="err">│</span><span class="w">   </span><span class="err">│</span><span class="w">   </span><span class="err">│</span><span class="w">   </span><span class="err">└──</span><span class="w"> </span><span class="n">kindle</span><span class="o">.</span><span class="n">md</span><span class="w"></span>
+<span class="err">│</span><span class="w">   </span><span class="err">│</span><span class="w">   </span><span class="err">├──</span><span class="w"> </span><span class="n">home</span><span class="w"> </span><span class="n">office</span><span class="w"></span>
+<span class="err">│</span><span class="w">   </span><span class="err">│</span><span class="w">   </span><span class="err">│</span><span class="w">   </span><span class="err">├──</span><span class="w"> </span><span class="n">controllers</span><span class="o">.</span><span class="n">md</span><span class="w"></span>
+<span class="err">│</span><span class="w">   </span><span class="err">│</span><span class="w">   </span><span class="err">│</span><span class="w">   </span><span class="err">├──</span><span class="w"> </span><span class="n">setup</span><span class="o">.</span><span class="n">md</span><span class="w"></span>
+<span class="err">│</span><span class="w">   </span><span class="err">│</span><span class="w">   </span><span class="err">│</span><span class="w">   </span><span class="err">└──</span><span class="w"> </span><span class="n">setup_1</span><span class="o">.</span><span class="n">md</span><span class="w"></span>
+<span class="err">│</span><span class="w">   </span><span class="err">│</span><span class="w">   </span><span class="err">├──</span><span class="w"> </span><span class="n">misc</span><span class="w"></span>
+<span class="err">│</span><span class="w">   </span><span class="err">│</span><span class="w">   </span><span class="err">│</span><span class="w">   </span><span class="err">├──</span><span class="w"> </span><span class="n">crypto_bubble</span><span class="o">.</span><span class="n">md</span><span class="w"></span>
+<span class="err">│</span><span class="w">   </span><span class="err">│</span><span class="w">   </span><span class="err">│</span><span class="w">   </span><span class="err">├──</span><span class="w"> </span><span class="n">custom</span><span class="o">-</span><span class="n">iems</span><span class="o">.</span><span class="n">md</span><span class="w"></span>
+<span class="err">│</span><span class="w">   </span><span class="err">│</span><span class="w">   </span><span class="err">│</span><span class="w">   </span><span class="err">├──</span><span class="w"> </span><span class="n">disappointed</span><span class="o">-</span><span class="n">by</span><span class="o">-</span><span class="n">linkedin</span><span class="o">.</span><span class="n">md</span><span class="w"></span>
+<span class="err">│</span><span class="w">   </span><span class="err">│</span><span class="w">   </span><span class="err">│</span><span class="w">   </span><span class="err">├──</span><span class="w"> </span><span class="n">elon_musk</span><span class="o">.</span><span class="n">md</span><span class="w"></span>
+<span class="err">│</span><span class="w">   </span><span class="err">│</span><span class="w">   </span><span class="err">│</span><span class="w">   </span><span class="err">├──</span><span class="w"> </span><span class="n">embedding</span><span class="o">-</span><span class="n">the</span><span class="o">-</span><span class="n">success</span><span class="o">-</span><span class="n">question</span><span class="o">-</span><span class="n">into</span><span class="o">-</span><span class="n">the</span><span class="o">-</span><span class="n">design</span><span class="o">-</span><span class="ow">or</span><span class="o">-</span><span class="n">selection</span><span class="o">-</span><span class="n">of</span><span class="o">-</span><span class="n">a</span><span class="o">-</span><span class="n">project</span><span class="o">.</span><span class="n">md</span><span class="w"></span>
+<span class="err">│</span><span class="w">   </span><span class="err">│</span><span class="w">   </span><span class="err">│</span><span class="w">   </span><span class="err">├──</span><span class="w"> </span><span class="n">tesla</span><span class="o">-</span><span class="n">handbook</span><span class="o">.</span><span class="n">md</span><span class="w"></span>
+<span class="err">│</span><span class="w">   </span><span class="err">│</span><span class="w">   </span><span class="err">│</span><span class="w">   </span><span class="err">├──</span><span class="w"> </span><span class="n">why</span><span class="o">-</span><span class="n">helping</span><span class="o">-</span><span class="n">others</span><span class="o">.</span><span class="n">md</span><span class="w"></span>
+<span class="err">│</span><span class="w">   </span><span class="err">│</span><span class="w">   </span><span class="err">│</span><span class="w">   </span><span class="err">└──</span><span class="w"> </span><span class="n">you</span><span class="o">-</span><span class="n">dont</span><span class="o">-</span><span class="n">need</span><span class="o">-</span><span class="n">to</span><span class="o">-</span><span class="n">mansplain</span><span class="o">-</span><span class="n">to</span><span class="o">-</span><span class="n">me</span><span class="o">.</span><span class="n">md</span><span class="w"></span>
+<span class="err">│</span><span class="w">   </span><span class="err">│</span><span class="w">   </span><span class="err">├──</span><span class="w"> </span><span class="n">python</span><span class="w"></span>
+<span class="err">│</span><span class="w">   </span><span class="err">│</span><span class="w">   </span><span class="err">│</span><span class="w">   </span><span class="err">├──</span><span class="w"> </span><span class="n">learn</span><span class="o">-</span><span class="n">python</span><span class="o">.</span><span class="n">md</span><span class="w"></span>
+<span class="err">│</span><span class="w">   </span><span class="err">│</span><span class="w">   </span><span class="err">│</span><span class="w">   </span><span class="err">└──</span><span class="w"> </span><span class="n">pelican</span><span class="o">.</span><span class="n">md</span><span class="w"></span>
+<span class="err">│</span><span class="w">   </span><span class="err">│</span><span class="w">   </span><span class="err">└──</span><span class="w"> </span><span class="n">space</span><span class="w"></span>
+<span class="err">│</span><span class="w">   </span><span class="err">│</span><span class="w">       </span><span class="err">├──</span><span class="w"> </span><span class="n">i</span><span class="o">-</span><span class="n">am</span><span class="o">-</span><span class="n">seriously</span><span class="o">-</span><span class="n">considering</span><span class="o">-</span><span class="n">being</span><span class="o">-</span><span class="n">part</span><span class="o">-</span><span class="n">of</span><span class="o">-</span><span class="n">the</span><span class="o">-</span><span class="n">first</span><span class="o">-</span><span class="n">colons</span><span class="o">-</span><span class="n">to</span><span class="o">-</span><span class="n">mars</span><span class="o">.</span><span class="n">md</span><span class="w"></span>
+<span class="err">│</span><span class="w">   </span><span class="err">│</span><span class="w">       </span><span class="err">└──</span><span class="w"> </span><span class="n">space_how</span><span class="o">-</span><span class="n">long</span><span class="o">.</span><span class="n">md</span><span class="w"></span>
+<span class="err">│</span><span class="w">   </span><span class="err">├──</span><span class="w"> </span><span class="n">extra</span><span class="w"></span>
+<span class="err">│</span><span class="w">   </span><span class="err">│</span><span class="w">   </span><span class="err">└──</span><span class="w"> </span><span class="n">CNAME</span><span class="w"></span>
+<span class="err">│</span><span class="w">   </span><span class="err">├──</span><span class="w"> </span><span class="n">images</span><span class="w"></span>
+<span class="err">│</span><span class="w">   </span><span class="err">│</span><span class="w">   </span><span class="err">├──</span><span class="w"> </span><span class="n">CP001_Audible</span><span class="o">.</span><span class="n">jpeg</span><span class="w"></span>
+<span class="err">│</span><span class="w">   </span><span class="err">│</span><span class="w">   </span><span class="err">├──</span><span class="w"> </span><span class="n">CP001_AudibleStats</span><span class="o">.</span><span class="n">gif</span><span class="w"></span>
+<span class="err">│</span><span class="w">   </span><span class="err">│</span><span class="w">   </span><span class="err">├──</span><span class="w"> </span><span class="n">CP001_BookNotes</span><span class="o">.</span><span class="n">png</span><span class="w"></span>
+<span class="err">│</span><span class="w">   </span><span class="err">│</span><span class="w">   </span><span class="err">├──</span><span class="w"> </span><span class="n">CP001_KindleBooks</span><span class="o">.</span><span class="n">png</span><span class="w"></span>
+<span class="err">│</span><span class="w">   </span><span class="err">│</span><span class="w">   </span><span class="err">├──</span><span class="w"> </span><span class="n">CP001_KindleBooks_OfficeBots</span><span class="o">.</span><span class="n">png</span><span class="w"></span>
+<span class="err">│</span><span class="w">   </span><span class="err">│</span><span class="w">   </span><span class="err">├──</span><span class="w"> </span><span class="n">CP001_Meetup</span><span class="o">.</span><span class="n">png</span><span class="w"></span>
+<span class="err">│</span><span class="w">   </span><span class="err">│</span><span class="w">   </span><span class="err">├──</span><span class="w"> </span><span class="n">CP001_Pocket</span><span class="o">.</span><span class="n">jpg</span><span class="w"></span>
+<span class="err">│</span><span class="w">   </span><span class="err">│</span><span class="w">   </span><span class="err">└──</span><span class="w"> </span><span class="n">web1_bubble</span><span class="o">.</span><span class="n">png</span><span class="w"></span>
+<span class="err">│</span><span class="w">   </span><span class="err">├──</span><span class="w"> </span><span class="n">pages</span><span class="w"></span>
+<span class="err">│</span><span class="w">   </span><span class="err">│</span><span class="w">   </span><span class="err">└──</span><span class="w"> </span><span class="n">ABOUT</span><span class="o">.</span><span class="n">md</span><span class="w"></span>
+<span class="err">│</span><span class="w">   </span><span class="err">└──</span><span class="w"> </span><span class="n">pdfs</span><span class="w"></span>
+<span class="err">│</span><span class="w">       </span><span class="err">└──</span><span class="w"> </span><span class="n">Kinesis</span><span class="w"> </span><span class="n">Adv2</span><span class="o">-</span><span class="n">Users</span><span class="o">-</span><span class="n">Manual</span><span class="o">-</span><span class="mi">01</span><span class="o">-</span><span class="mi">07</span><span class="o">-</span><span class="mi">19</span><span class="n">_us</span><span class="o">.</span><span class="n">pdf</span><span class="w"></span>
+<span class="err">├──</span><span class="w"> </span><span class="n">output</span><span class="w"></span>
+<span class="err">│</span><span class="w">   </span><span class="err">├──</span><span class="w"> </span><span class="n">CNAME</span><span class="w"></span>
+<span class="err">│</span><span class="w">   </span><span class="err">├──</span><span class="w"> </span><span class="n">archives</span><span class="o">.</span><span class="n">html</span><span class="w"></span>
+<span class="err">│</span><span class="w">   </span><span class="err">├──</span><span class="w"> </span><span class="n">articles</span><span class="w"></span>
+<span class="err">│</span><span class="w">   </span><span class="err">│</span><span class="w">   </span><span class="err">├──</span><span class="w"> </span><span class="mi">4</span><span class="n">k</span><span class="o">-</span><span class="n">video</span><span class="o">-</span><span class="n">downloader</span><span class="o">.</span><span class="n">html</span><span class="w"></span>
+<span class="err">│</span><span class="w">   </span><span class="err">│</span><span class="w">   </span><span class="err">├──</span><span class="w"> </span><span class="n">a</span><span class="o">-</span><span class="n">no</span><span class="o">-</span><span class="k">is</span><span class="o">-</span><span class="n">just</span><span class="o">-</span><span class="n">a</span><span class="o">-</span><span class="n">delayed</span><span class="o">-</span><span class="n">yes</span><span class="o">.</span><span class="n">html</span><span class="w"></span>
+<span class="err">│</span><span class="w">   </span><span class="err">│</span><span class="w">   </span><span class="err">├──</span><span class="w"> </span><span class="n">are</span><span class="o">-</span><span class="n">you</span><span class="o">-</span><span class="n">selling</span><span class="o">-</span><span class="n">aspirin</span><span class="o">-</span><span class="n">a</span><span class="o">-</span><span class="n">vaccine</span><span class="o">-</span><span class="ow">or</span><span class="o">-</span><span class="n">a</span><span class="o">-</span><span class="n">vitamin</span><span class="o">.</span><span class="n">html</span><span class="w"></span>
+<span class="err">│</span><span class="w">   </span><span class="err">│</span><span class="w">   </span><span class="err">├──</span><span class="w"> </span><span class="n">automate</span><span class="o">-</span><span class="n">the</span><span class="o">-</span><span class="n">boring</span><span class="o">-</span><span class="n">stuff</span><span class="o">.</span><span class="n">html</span><span class="w"></span>
+<span class="err">│</span><span class="w">   </span><span class="err">│</span><span class="w">   </span><span class="err">└──</span><span class="w"> </span><span class="n">you</span><span class="o">-</span><span class="n">dont</span><span class="o">-</span><span class="n">need</span><span class="o">-</span><span class="n">to</span><span class="o">-</span><span class="n">mansplain</span><span class="o">-</span><span class="n">to</span><span class="o">-</span><span class="n">me</span><span class="o">.</span><span class="n">html</span><span class="w"></span>
+<span class="err">│</span><span class="w">   </span><span class="err">├──</span><span class="w"> </span><span class="n">author</span><span class="w"></span>
+<span class="err">│</span><span class="w">   </span><span class="err">│</span><span class="w">   </span><span class="err">└──</span><span class="w"> </span><span class="n">nic</span><span class="o">.</span><span class="n">html</span><span class="w"></span>
+<span class="err">│</span><span class="w">   </span><span class="err">├──</span><span class="w"> </span><span class="n">authors</span><span class="o">.</span><span class="n">html</span><span class="w"></span>
+<span class="err">│</span><span class="w">   </span><span class="err">├──</span><span class="w"> </span><span class="n">categories</span><span class="o">.</span><span class="n">html</span><span class="w"></span>
+<span class="err">│</span><span class="w">   </span><span class="err">├──</span><span class="w"> </span><span class="n">category</span><span class="w"></span>
+<span class="err">│</span><span class="w">   </span><span class="err">│</span><span class="w">   </span><span class="err">├──</span><span class="w"> </span><span class="n">apps</span><span class="o">.</span><span class="n">html</span><span class="w"></span>
+<span class="err">│</span><span class="w">   </span><span class="err">│</span><span class="w">   </span><span class="err">├──</span><span class="w"> </span><span class="n">audio</span><span class="o">.</span><span class="n">html</span><span class="w"></span>
+<span class="err">│</span><span class="w">   </span><span class="err">│</span><span class="w">   </span><span class="err">├──</span><span class="w"> </span><span class="n">b2b</span><span class="o">-</span><span class="n">sales</span><span class="o">.</span><span class="n">html</span><span class="w"></span>
+<span class="err">│</span><span class="w">   </span><span class="err">│</span><span class="w">   </span><span class="err">├──</span><span class="w"> </span><span class="n">books</span><span class="o">.</span><span class="n">html</span><span class="w"></span>
+<span class="err">│</span><span class="w">   </span><span class="err">│</span><span class="w">   </span><span class="err">├──</span><span class="w"> </span><span class="n">careerplaybook</span><span class="o">.</span><span class="n">html</span><span class="w"></span>
+<span class="err">│</span><span class="w">   </span><span class="err">│</span><span class="w">   </span><span class="err">├──</span><span class="w"> </span><span class="n">crypto</span><span class="o">.</span><span class="n">html</span><span class="w"></span>
+<span class="err">│</span><span class="w">   </span><span class="err">│</span><span class="w">   </span><span class="err">├──</span><span class="w"> </span><span class="n">helpers</span><span class="o">.</span><span class="n">html</span><span class="w"></span>
+<span class="err">│</span><span class="w">   </span><span class="err">│</span><span class="w">   </span><span class="err">├──</span><span class="w"> </span><span class="n">home</span><span class="o">-</span><span class="n">office</span><span class="o">.</span><span class="n">html</span><span class="w"></span>
+<span class="err">│</span><span class="w">   </span><span class="err">│</span><span class="w">   </span><span class="err">├──</span><span class="w"> </span><span class="n">misc</span><span class="o">.</span><span class="n">html</span><span class="w"></span>
+<span class="err">│</span><span class="w">   </span><span class="err">│</span><span class="w">   </span><span class="err">├──</span><span class="w"> </span><span class="n">python</span><span class="o">.</span><span class="n">html</span><span class="w"></span>
+<span class="err">│</span><span class="w">   </span><span class="err">│</span><span class="w">   </span><span class="err">├──</span><span class="w"> </span><span class="n">space</span><span class="o">.</span><span class="n">html</span><span class="w"></span>
+<span class="err">│</span><span class="w">   </span><span class="err">│</span><span class="w">   </span><span class="err">└──</span><span class="w"> </span><span class="n">startupplaybook</span><span class="o">.</span><span class="n">html</span><span class="w"></span>
+<span class="err">│</span><span class="w">   </span><span class="err">├──</span><span class="w"> </span><span class="n">images</span><span class="w"></span>
+<span class="err">│</span><span class="w">   </span><span class="err">│</span><span class="w">   </span><span class="err">├──</span><span class="w"> </span><span class="n">CP001_Audible</span><span class="o">.</span><span class="n">jpeg</span><span class="w"></span>
+<span class="err">│</span><span class="w">   </span><span class="err">│</span><span class="w">   </span><span class="err">├──</span><span class="w"> </span><span class="n">CP001_AudibleStats</span><span class="o">.</span><span class="n">gif</span><span class="w"></span>
+<span class="err">│</span><span class="w">   </span><span class="err">│</span><span class="w">   </span><span class="err">├──</span><span class="w"> </span><span class="n">CP001_BookNotes</span><span class="o">.</span><span class="n">png</span><span class="w"></span>
+<span class="err">│</span><span class="w">   </span><span class="err">│</span><span class="w">   </span><span class="err">├──</span><span class="w"> </span><span class="n">CP001_KindleBooks</span><span class="o">.</span><span class="n">png</span><span class="w"></span>
+<span class="err">│</span><span class="w">   </span><span class="err">│</span><span class="w">   </span><span class="err">├──</span><span class="w"> </span><span class="n">CP001_KindleBooks_OfficeBots</span><span class="o">.</span><span class="n">png</span><span class="w"></span>
+<span class="err">│</span><span class="w">   </span><span class="err">│</span><span class="w">   </span><span class="err">├──</span><span class="w"> </span><span class="n">CP001_Meetup</span><span class="o">.</span><span class="n">png</span><span class="w"></span>
+<span class="err">│</span><span class="w">   </span><span class="err">│</span><span class="w">   </span><span class="err">└──</span><span class="w"> </span><span class="n">web1_bubble</span><span class="o">.</span><span class="n">png</span><span class="w"></span>
+<span class="err">│</span><span class="w">   </span><span class="err">├──</span><span class="w"> </span><span class="n">index</span><span class="o">.</span><span class="n">html</span><span class="w"></span>
+<span class="err">│</span><span class="w">   </span><span class="err">├──</span><span class="w"> </span><span class="n">pages</span><span class="w"></span>
+<span class="err">│</span><span class="w">   </span><span class="err">│</span><span class="w">   </span><span class="err">└──</span><span class="w"> </span><span class="n">about</span><span class="o">.</span><span class="n">html</span><span class="w"></span>
+<span class="err">│</span><span class="w">   </span><span class="err">├──</span><span class="w"> </span><span class="n">pdfs</span><span class="w"></span>
+<span class="err">│</span><span class="w">   </span><span class="err">│</span><span class="w">   </span><span class="err">└──</span><span class="w"> </span><span class="n">Kinesis</span><span class="w"> </span><span class="n">Adv2</span><span class="o">-</span><span class="n">Users</span><span class="o">-</span><span class="n">Manual</span><span class="o">-</span><span class="mi">01</span><span class="o">-</span><span class="mi">07</span><span class="o">-</span><span class="mi">19</span><span class="n">_us</span><span class="o">.</span><span class="n">pdf</span><span class="w"></span>
+<span class="err">│</span><span class="w">   </span><span class="err">├──</span><span class="w"> </span><span class="n">tag</span><span class="w"></span>
+<span class="err">│</span><span class="w">   </span><span class="err">│</span><span class="w">   </span><span class="err">├──</span><span class="w"> </span><span class="n">b2b</span><span class="o">-</span><span class="n">sales</span><span class="o">.</span><span class="n">html</span><span class="w"></span>
+<span class="err">│</span><span class="w">   </span><span class="err">│</span><span class="w">   </span><span class="err">├──</span><span class="w"> </span><span class="n">careeer</span><span class="o">.</span><span class="n">html</span><span class="w"></span>
+<span class="err">│</span><span class="w">   </span><span class="err">│</span><span class="w">   </span><span class="err">├──</span><span class="w"> </span><span class="n">career</span><span class="o">.</span><span class="n">html</span><span class="w"></span>
+<span class="err">│</span><span class="w">   </span><span class="err">│</span><span class="w">   </span><span class="err">├──</span><span class="w"> </span><span class="n">communication</span><span class="o">.</span><span class="n">html</span><span class="w"></span>
+<span class="err">│</span><span class="w">   </span><span class="err">│</span><span class="w">   </span><span class="err">├──</span><span class="w"> </span><span class="n">crypto</span><span class="o">.</span><span class="n">html</span><span class="w"></span>
+<span class="err">│</span><span class="w">   </span><span class="err">│</span><span class="w">   </span><span class="err">├──</span><span class="w"> </span><span class="n">css</span><span class="o">.</span><span class="n">html</span><span class="w"></span>
+<span class="err">│</span><span class="w">   </span><span class="err">│</span><span class="w">   </span><span class="err">├──</span><span class="w"> </span><span class="n">kindle</span><span class="o">.</span><span class="n">html</span><span class="w"></span>
+<span class="err">│</span><span class="w">   </span><span class="err">│</span><span class="w">   </span><span class="err">├──</span><span class="w"> </span><span class="n">learning</span><span class="o">.</span><span class="n">html</span><span class="w"></span>
+<span class="err">│</span><span class="w">   </span><span class="err">│</span><span class="w">   </span><span class="err">├──</span><span class="w"> </span><span class="n">management</span><span class="o">.</span><span class="n">html</span><span class="w"></span>
+<span class="err">│</span><span class="w">   </span><span class="err">│</span><span class="w">   </span><span class="err">├──</span><span class="w"> </span><span class="n">mars</span><span class="o">.</span><span class="n">html</span><span class="w"></span>
+<span class="err">│</span><span class="w">   </span><span class="err">│</span><span class="w">   </span><span class="err">├──</span><span class="w"> </span><span class="n">mindset</span><span class="o">.</span><span class="n">html</span><span class="w"></span>
+<span class="err">│</span><span class="w">   </span><span class="err">│</span><span class="w">   </span><span class="err">├──</span><span class="w"> </span><span class="n">productivity</span><span class="o">.</span><span class="n">html</span><span class="w"></span>
+<span class="err">│</span><span class="w">   </span><span class="err">│</span><span class="w">   </span><span class="err">├──</span><span class="w"> </span><span class="n">programming</span><span class="o">.</span><span class="n">html</span><span class="w"></span>
+<span class="err">│</span><span class="w">   </span><span class="err">│</span><span class="w">   </span><span class="err">├──</span><span class="w"> </span><span class="n">python</span><span class="o">.</span><span class="n">html</span><span class="w"></span>
+<span class="err">│</span><span class="w">   </span><span class="err">│</span><span class="w">   </span><span class="err">├──</span><span class="w"> </span><span class="n">resources</span><span class="o">.</span><span class="n">html</span><span class="w"></span>
+<span class="err">│</span><span class="w">   </span><span class="err">│</span><span class="w">   </span><span class="err">├──</span><span class="w"> </span><span class="n">startups</span><span class="o">.</span><span class="n">html</span><span class="w"></span>
+<span class="err">│</span><span class="w">   </span><span class="err">│</span><span class="w">   </span><span class="err">├──</span><span class="w"> </span><span class="n">tesla</span><span class="o">.</span><span class="n">html</span><span class="w"></span>
+<span class="err">│</span><span class="w">   </span><span class="err">│</span><span class="w">   </span><span class="err">└──</span><span class="w"> </span><span class="n">video</span><span class="o">.</span><span class="n">html</span><span class="w"></span>
+<span class="err">│</span><span class="w">   </span><span class="err">├──</span><span class="w"> </span><span class="n">tags</span><span class="o">.</span><span class="n">html</span><span class="w"></span>
+<span class="err">│</span><span class="w">   </span><span class="err">└──</span><span class="w"> </span><span class="n">theme</span><span class="w"></span>
+<span class="err">│</span><span class="w">       </span><span class="err">├──</span><span class="w"> </span><span class="n">css</span><span class="w"></span>
+<span class="err">│</span><span class="w">       </span><span class="err">│</span><span class="w">   </span><span class="err">├──</span><span class="w"> </span><span class="n">main</span><span class="o">.</span><span class="n">css</span><span class="w"></span>
+<span class="err">│</span><span class="w">       </span><span class="err">│</span><span class="w">   </span><span class="err">└──</span><span class="w"> </span><span class="n">pygment</span><span class="o">.</span><span class="n">css</span><span class="w"></span>
+<span class="err">│</span><span class="w">       </span><span class="err">└──</span><span class="w"> </span><span class="n">images</span><span class="w"></span>
+<span class="err">│</span><span class="w">           </span><span class="err">└──</span><span class="w"> </span><span class="n">icons</span><span class="w"></span>
+<span class="err">├──</span><span class="w"> </span><span class="n">pelicanconf</span><span class="o">.</span><span class="n">py</span><span class="w"></span>
+<span class="err">├──</span><span class="w"> </span><span class="n">publishconf</span><span class="o">.</span><span class="n">py</span><span class="w"></span>
+<span class="err">├──</span><span class="w"> </span><span class="n">tasks</span><span class="o">.</span><span class="n">py</span><span class="w"></span>
+<span class="err">└──</span><span class="w"> </span><span class="n">theme</span><span class="w"></span>
+<span class="w">    </span><span class="err">├──</span><span class="w"> </span><span class="k">static</span><span class="w"></span>
+<span class="w">    </span><span class="err">│</span><span class="w">   </span><span class="err">├──</span><span class="w"> </span><span class="n">css</span><span class="w"></span>
+<span class="w">    </span><span class="err">│</span><span class="w">   </span><span class="err">│</span><span class="w">   </span><span class="err">├──</span><span class="w"> </span><span class="n">main</span><span class="o">.</span><span class="n">css</span><span class="w"></span>
+<span class="w">    </span><span class="err">│</span><span class="w">   </span><span class="err">│</span><span class="w">   </span><span class="err">└──</span><span class="w"> </span><span class="n">pygment</span><span class="o">.</span><span class="n">css</span><span class="w"></span>
+<span class="w">    </span><span class="err">│</span><span class="w">   </span><span class="err">└──</span><span class="w"> </span><span class="n">images</span><span class="w"></span>
+<span class="w">    </span><span class="err">│</span><span class="w">       </span><span class="err">└──</span><span class="w"> </span><span class="n">icons</span><span class="w"></span>
+<span class="w">    </span><span class="err">├──</span><span class="w"> </span><span class="n">templates</span><span class="w"></span>
+<span class="w">    </span><span class="err">│</span><span class="w">   </span><span class="err">├──</span><span class="w"> </span><span class="n">analytics</span><span class="o">.</span><span class="n">html</span><span class="w"></span>
+<span class="w">    </span><span class="err">│</span><span class="w">   </span><span class="err">├──</span><span class="w"> </span><span class="n">archives</span><span class="o">.</span><span class="n">html</span><span class="w"></span>
+<span class="w">    </span><span class="err">│</span><span class="w">   </span><span class="err">├──</span><span class="w"> </span><span class="n">article</span><span class="o">.</span><span class="n">html</span><span class="w"></span>
+<span class="w">    </span><span class="err">│</span><span class="w">   </span><span class="err">├──</span><span class="w"> </span><span class="n">article_infos</span><span class="o">.</span><span class="n">html</span><span class="w"></span>
+<span class="w">    </span><span class="err">│</span><span class="w">   </span><span class="err">├──</span><span class="w"> </span><span class="n">author</span><span class="o">.</span><span class="n">html</span><span class="w"></span>
+<span class="w">    </span><span class="err">│</span><span class="w">   </span><span class="err">├──</span><span class="w"> </span><span class="n">authors</span><span class="o">.</span><span class="n">html</span><span class="w"></span>
+<span class="w">    </span><span class="err">│</span><span class="w">   </span><span class="err">├──</span><span class="w"> </span><span class="n">base</span><span class="o">.</span><span class="n">html</span><span class="w"></span>
+<span class="w">    </span><span class="err">│</span><span class="w">   </span><span class="err">├──</span><span class="w"> </span><span class="n">categories</span><span class="o">.</span><span class="n">html</span><span class="w"></span>
+<span class="w">    </span><span class="err">│</span><span class="w">   </span><span class="err">├──</span><span class="w"> </span><span class="n">category</span><span class="o">.</span><span class="n">html</span><span class="w"></span>
+<span class="w">    </span><span class="err">│</span><span class="w">   </span><span class="err">├──</span><span class="w"> </span><span class="n">comments</span><span class="o">.</span><span class="n">html</span><span class="w"></span>
+<span class="w">    </span><span class="err">│</span><span class="w">   </span><span class="err">├──</span><span class="w"> </span><span class="n">disqus_script</span><span class="o">.</span><span class="n">html</span><span class="w"></span>
+<span class="w">    </span><span class="err">│</span><span class="w">   </span><span class="err">├──</span><span class="w"> </span><span class="n">github</span><span class="o">.</span><span class="n">html</span><span class="w"></span>
+<span class="w">    </span><span class="err">│</span><span class="w">   </span><span class="err">├──</span><span class="w"> </span><span class="n">index</span><span class="o">.</span><span class="n">html</span><span class="w"></span>
+<span class="w">    </span><span class="err">│</span><span class="w">   </span><span class="err">├──</span><span class="w"> </span><span class="n">page</span><span class="o">.</span><span class="n">html</span><span class="w"></span>
+<span class="w">    </span><span class="err">│</span><span class="w">   </span><span class="err">├──</span><span class="w"> </span><span class="n">period_archives</span><span class="o">.</span><span class="n">html</span><span class="w"></span>
+<span class="w">    </span><span class="err">│</span><span class="w">   </span><span class="err">├──</span><span class="w"> </span><span class="n">tag</span><span class="o">.</span><span class="n">html</span><span class="w"></span>
+<span class="w">    </span><span class="err">│</span><span class="w">   </span><span class="err">├──</span><span class="w"> </span><span class="n">taglist</span><span class="o">.</span><span class="n">html</span><span class="w"></span>
+<span class="w">    </span><span class="err">│</span><span class="w">   </span><span class="err">├──</span><span class="w"> </span><span class="n">tags</span><span class="o">.</span><span class="n">html</span><span class="w"></span>
+<span class="w">    </span><span class="err">│</span><span class="w">   </span><span class="err">├──</span><span class="w"> </span><span class="n">translations</span><span class="o">.</span><span class="n">html</span><span class="w"></span>
+<span class="w">    </span><span class="err">│</span><span class="w">   </span><span class="err">└──</span><span class="w"> </span><span class="n">twitter</span><span class="o">.</span><span class="n">html</span><span class="w"></span>
+<span class="w">    </span><span class="err">└──</span><span class="w"> </span><span class="n">templates_bxup</span><span class="w"></span>
+<span class="w">        </span><span class="err">├──</span><span class="w"> </span><span class="n">analytics</span><span class="o">.</span><span class="n">html</span><span class="w"></span>
+<span class="w">        </span><span class="err">├──</span><span class="w"> </span><span class="n">archives</span><span class="o">.</span><span class="n">html</span><span class="w"></span>
+<span class="w">        </span><span class="err">├──</span><span class="w"> </span><span class="n">article</span><span class="o">.</span><span class="n">html</span><span class="w"></span>
+<span class="w">        </span><span class="err">├──</span><span class="w"> </span><span class="n">article_infos</span><span class="o">.</span><span class="n">html</span><span class="w"></span>
+<span class="w">        </span><span class="err">├──</span><span class="w"> </span><span class="n">author</span><span class="o">.</span><span class="n">html</span><span class="w"></span>
+<span class="w">        </span><span class="err">├──</span><span class="w"> </span><span class="n">authors</span><span class="o">.</span><span class="n">html</span><span class="w"></span>
+<span class="w">        </span><span class="err">├──</span><span class="w"> </span><span class="n">base</span><span class="o">.</span><span class="n">html</span><span class="w"></span>
+<span class="w">        </span><span class="err">├──</span><span class="w"> </span><span class="n">categories</span><span class="o">.</span><span class="n">html</span><span class="w"></span>
+<span class="w">        </span><span class="err">├──</span><span class="w"> </span><span class="n">category</span><span class="o">.</span><span class="n">html</span><span class="w"></span>
+<span class="w">        </span><span class="err">├──</span><span class="w"> </span><span class="n">comments</span><span class="o">.</span><span class="n">html</span><span class="w"></span>
+<span class="w">        </span><span class="err">├──</span><span class="w"> </span><span class="n">disqus_script</span><span class="o">.</span><span class="n">html</span><span class="w"></span>
+<span class="w">        </span><span class="err">├──</span><span class="w"> </span><span class="n">github</span><span class="o">.</span><span class="n">html</span><span class="w"></span>
+<span class="w">        </span><span class="err">├──</span><span class="w"> </span><span class="n">index</span><span class="o">.</span><span class="n">html</span><span class="w"></span>
+<span class="w">        </span><span class="err">├──</span><span class="w"> </span><span class="n">page</span><span class="o">.</span><span class="n">html</span><span class="w"></span>
+<span class="w">        </span><span class="err">├──</span><span class="w"> </span><span class="n">period_archives</span><span class="o">.</span><span class="n">html</span><span class="w"></span>
+<span class="w">        </span><span class="err">├──</span><span class="w"> </span><span class="n">tag</span><span class="o">.</span><span class="n">html</span><span class="w"></span>
+<span class="w">        </span><span class="err">├──</span><span class="w"> </span><span class="n">taglist</span><span class="o">.</span><span class="n">html</span><span class="w"></span>
+<span class="w">        </span><span class="err">├──</span><span class="w"> </span><span class="n">tags</span><span class="o">.</span><span class="n">html</span><span class="w"></span>
+<span class="w">        </span><span class="err">├──</span><span class="w"> </span><span class="n">translations</span><span class="o">.</span><span class="n">html</span><span class="w"></span>
+<span class="w">        </span><span class="err">└──</span><span class="w"> </span><span class="n">twitter</span><span class="o">.</span><span class="n">html</span><span class="w"></span>
+</code></pre></div>
+                </article>
+            </aside>
+
+            
+
+        <section id="extras" class="body">
+                <div class="blogroll">
+                        <h2>links</h2>
+                        <ul>
+                            <li><a href="https://indeXall.io">Side project: indeXall.io</a></li>
+                        </ul>
+                </div><!-- /.blogroll -->
+
+                <div class="social">
+                        <h2>social</h2>
+                        <ul>
+
+                            <li><a href="https://www.linkedin.com/in/ndeville/">Linkedin</a></li>
+                            <li><a href="https://www.twitter.com/ndeville">Twitter</a></li>
+                        </ul>
+                </div><!-- /.social -->
+        </section><!-- /#extras -->
+
+        <footer id="contentinfo" class="body">
+                <address id="about" class="vcard body">
+                Powered by <a href="https://getpelican.com/">Pelican</a>, with <a href="https://www.python.org/">Python</a>
+                </address><!-- /#about -->
+
+        </footer><!-- /#contentinfo -->
+
+</body>
+</html>
