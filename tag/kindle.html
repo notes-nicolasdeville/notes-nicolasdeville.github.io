@@ -56,9 +56,9 @@
 </footer><p>Access highlights:</p>
 <p><a href="https://read.amazon.co.uk/notebook" target="_blank">https://read.amazon.co.uk/notebook</a></p>
 <p>Get Kindle highlights from a book with Python:</p>
-<p>1) download the page from link above with the book's highlights (in browser <code>File &gt; Save Page As...</code>, select <code>Webpage, complete</code> or <code>Webpage, HTML only</code>)
-2) in your (virtual) environment <code>pip3 install beautifulsoup4</code>
-3) use following script:</p>
+<p>1) download the page from link above with the book's highlights (in browser <code>File &gt; Save Page As...</code>, select <code>Webpage, complete</code> or <code>Webpage, HTML only</code>)<br>
+2) in your (virtual) environment <code>pip3 install beautifulsoup4</code><br>
+3) use following script:  </p>
 <div class="highlight"><pre><span></span><code><span class="n">file</span> <span class="o">=</span> <span class="s1">&#39;/your/path/Kindle_ Your Notes and Highlights.html&#39;</span>
 
 <span class="n">soup</span> <span class="o">=</span> <span class="n">BeautifulSoup</span><span class="p">(</span><span class="nb">open</span><span class="p">(</span><span class="n">file</span><span class="p">),</span> <span class="s1">&#39;html.parser&#39;</span><span class="p">)</span>
