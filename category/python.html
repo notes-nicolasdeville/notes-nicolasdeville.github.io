@@ -5,7 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <meta name="generator" content="Pelican" />
         <title>Nic's notes - python</title>
-        <link rel="stylesheet" href="https://notes.nicolasdeville.com/theme/css/main.css" />
+        <link rel="stylesheet" href="../theme/css/main.css" />
 </head>
 
 <body id="index" class="home">
@@ -13,25 +13,24 @@
 
             <!-- <table class="header_table">
                 <tr>
-                  <td style="width:50px;"><a href="https://notes.nicolasdeville.com/"><img src="https://notes.nicolasdeville.com/images/edelweiss_black.svg" alt="Edelweiss logo" width="50"/></a></td>
-                  <td><h1><a href="https://notes.nicolasdeville.com/">Nic's notes</a></h1></td>
+                  <td style="width:50px;"><a href="../"><img src="../images/edelweiss_black.svg" alt="Edelweiss logo" width="50"/></a></td>
+                  <td><h1><a href="../">Nic's notes</a></h1></td>
                 </tr>
               </table> -->
 
-            <a href="https://notes.nicolasdeville.com/"><img src="https://notes.nicolasdeville.com/images/nic_notes_header.svg" alt="Nic's notes" width="266"/></a>
+            <a href="../"><img src="../images/nic_notes_header.svg" alt="Nic's notes" width="266"/></a>
               
             <nav><ul>
-                <li><a href="https://notes.nicolasdeville.com/pages/about.html">ABOUT</a></li>
-                <li><a href="https://notes.nicolasdeville.com/category/apps.html">apps</a></li>
-                <li><a href="https://notes.nicolasdeville.com/category/b2b-sales.html">b2b sales</a></li>
-                <li><a href="https://notes.nicolasdeville.com/category/books.html">books</a></li>
-                <li><a href="https://notes.nicolasdeville.com/category/careerplaybook.html">#careerplaybook</a></li>
-                <li><a href="https://notes.nicolasdeville.com/category/helpers.html">helpers</a></li>
-                <li><a href="https://notes.nicolasdeville.com/category/home-office.html">home office</a></li>
-                <li><a href="https://notes.nicolasdeville.com/category/misc.html">misc</a></li>
-                <li class="active"><a href="https://notes.nicolasdeville.com/category/python.html">python</a></li>
-                <li><a href="https://notes.nicolasdeville.com/category/space.html">space</a></li>
-                <li><a href="https://notes.nicolasdeville.com/category/startupplaybook.html">#startupplaybook</a></li>
+                <li><a href="../category/apps.html">apps</a></li>
+                <li><a href="../category/b2b-sales.html">b2b sales</a></li>
+                <li><a href="../category/books.html">books</a></li>
+                <li><a href="../category/careerplaybook.html">#careerplaybook</a></li>
+                <li><a href="../category/helpers.html">helpers</a></li>
+                <li><a href="../category/home-office.html">home office</a></li>
+                <li><a href="../category/misc.html">misc</a></li>
+                <li class="active"><a href="../category/python.html">python</a></li>
+                <li><a href="../category/space.html">space</a></li>
+                <li><a href="../category/startupplaybook.html">#startupplaybook</a></li>
             </ul></nav>
         </header>
 
@@ -44,26 +43,72 @@
             <hr/>
 
                 <article class="hentry">
-                    <h1 class="entry-title"><a href="https://notes.nicolasdeville.com/articles/pelican.html">Building a static site with Pelican</a></h1>
+                    <h1 class="entry-title"><a href="../articles/pelican.html">Building a static site with Pelican</a></h1>
 <footer class="post-info">
 
     <p>
-        02 Jul 2022 | in <a class="link_tag" href="https://notes.nicolasdeville.com/category/python.html">python</a>
+        02 Jul 2022 <span class="separator">|</span> in <a class="link_tag" href="../category/python.html">python</a>
     </p>
 
     
 
 </footer><h1>WIP</h1>
-<p>My blog hosting journey: Wordpress &gt; Ghost &gt; Pelican (current)</p>
-<p>Pelican documentation
+<p>My blog hosting journey: Wordpress &gt; Ghost &gt; Pelican (current)  </p>
+<p>My blog writing journey: limited :)  </p>
+<p>Started learning/using Pelican on 27th June 2022.
+Migrated 29th June. </p>
+<h2>Useful resources</h2>
+<h3>Pelican documentation</h3>
+<p>comprehensive and well written<br>
 <a href="https://docs.getpelican.com/en/stable/index.html" target="_blank">https://docs.getpelican.com/en/stable/index.html</a></p>
-<p>Code HiLite
-<a href="https://yakworks.github.io/docmark/extensions/codehilite/" target="_blank">https://yakworks.github.io/docmark/extensions/codehilite/</a></p>
-<p>Pelican Folder Structure
+<h3>Code HiLite</h3>
+<p><a href="https://yakworks.github.io/docmark/extensions/codehilite/" target="_blank">https://yakworks.github.io/docmark/extensions/codehilite/</a></p>
+<h3>Pelican Folder Structure</h3>
+<p>helped me rework my project structure based on subfolfers in <code>content</code>
 <a href="https://www.archerimagine.com/articles/pelican/pelican-folder-structure.html" target="_blank">https://www.archerimagine.com/articles/pelican/pelican-folder-structure.html</a></p>
-<p>Algolia Search: A Plugin for Pelican
+<h3>Algolia Search: A Plugin for Pelican</h3>
+<p>(to test)
 <a href="https://github.com/rehanhaider/pelican-algolia" target="_blank">https://github.com/rehanhaider/pelican-algolia</a></p>
-<p>Once generated, I'm using Github Pages to host for free. See my note <a href="github-pages.html">Githug Pages</a>.</p>
+<h2>What tripped me up</h2>
+<h3>Paths</h3>
+<p>figuring out the path syntax to use for images (and pdfs, etc). From subfolder in <code>content</code> I now use: </p>
+<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">img</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;header&quot;</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;{static}../../images/CP011_blog.svg&quot;</span> <span class="na">alt</span><span class="o">=</span><span class="s">&quot;CP011_blog.svg&quot;</span><span class="p">/&gt;</span>
+</code></pre></div>
+
+<h3>make vs pelican</h3>
+<p>using <code>make html</code> does not seem to take the <code>OUTPUT_PATH = '</code> config in <code>pelicanconf.py</code> into consideration. Use the <code>pelican</code> command instead (no need to pass content source, settings file, or output dir each time, just running <code>pelican</code> in the project folder)  </p>
+<h3>Slug</h3>
+<p>the article slug can be defined in <code>peliconconf.py</code> to automatically use the <code>Title:</code> metadata (with <code>FILENAME_METADATA = '(?P&lt;title&gt;.*)'</code>), and can be overriden on an article basis by adding the <code>Slug:</code> metadata.<br>
+So: </p>
+<div class="highlight"><pre><span></span><code>Title: Hosting my static website with Github Pages
+Tags: 
+</code></pre></div>
+
+<p>will get the slug <code>hosting-my-static-website-with-github-pages.html</code>, whereas</p>
+<div class="highlight"><pre><span></span><code>Title: Hosting my static website with Github Pages
+Tags: 
+Slug: github-pages
+</code></pre></div>
+
+<p>will get the slug <code>github-pages.html</code></p>
+<h3>Syntax highlighting</h3>
+<p>3 ways:</p>
+<p>1) my current default using <code>``` python</code>:</p>
+<div class="highlight"><pre><span></span><code><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;this is how it will be displayed&#39;</span><span class="p">)</span>
+</code></pre></div>
+
+<p>2) or <em>starting each line with 4 spaces across code block</em>, with the first line including language preceded by <code>:::</code>, eg <code>::: python</code>. No need to close code block, indentation suffices.</p>
+<div class="highlight"><pre><span></span><code><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;this is how it will be displayed&#39;</span><span class="p">)</span>
+</code></pre></div>
+
+<p>3) or <em>starting each line with 4 spaces across code block</em>, with shebang (indicates line numbers):</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;this is how it will be displayed&#39;</span><span class="p">)</span>
+</code></pre></div></td></tr></table></div>
+
+<p>(note to self: need to rework my css when line numbers are showing)</p>
+<h2>Hosting</h2>
+<p>Once generated, I'm using Github Pages to host for free.<br>
+See my note <a href="github-pages.html">Githug Pages</a>.  </p>
                 </article>
             </aside>
 
@@ -82,7 +127,7 @@
                 <article class="hentry">
                     <header>
                         <!-- PREVIOUS NOTE TITLE -->
-                        <h1><a href="https://notes.nicolasdeville.com/articles/learn-python.html" rel="bookmark"
+                        <h1><a href="../articles/learn-python.html" rel="bookmark"
                             title="My guide to start learning programming in Python (for Business People)">My guide to start learning programming in Python (for Business People)</a></h1>
                         <!-- PREVIOUS NOTE SUMMARY -->
                         <div class="entry-content">
@@ -95,9 +140,9 @@
 <footer class="post-info">
 
     <p>
-        30 Mar 2020 | in <a class="link_tag" href="https://notes.nicolasdeville.com/category/python.html">python</a>
- tags: <a class="link_tag" href="https://notes.nicolasdeville.com/tag/learning.html">learning</a>
-<a class="link_tag" href="https://notes.nicolasdeville.com/tag/python.html">python</a>
+        30 Mar 2020 <span class="separator">|</span> in <a class="link_tag" href="../category/python.html">python</a>
+ tags: <a class="link_tag" href="../tag/learning.html">learning</a>
+<a class="link_tag" href="../tag/python.html">python</a>
     </p>
 
     
