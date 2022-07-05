@@ -227,8 +227,14 @@ aside, nav, article, figure {
 }
 
 /***** Layout *****/
-.body {clear: both; margin: 0 auto; max-width: 800px;}
-img { max-width: 100%; }
+.body {
+  clear: both;
+  margin: 0 auto;
+  max-width: 800px;
+}
+img { 
+  max-width: 100%;
+}
 img.right, figure.right, div.figure.align-right {
     float: right;
     margin: 0 0 2em 2em;

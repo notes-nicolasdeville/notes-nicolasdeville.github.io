@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta name="generator" content="Pelican" />
+        <title>Nic's notes - script</title>
+        <link rel="stylesheet" href="https://notes.nicolasdeville.com/theme/css/main.css" />
+</head>
+
+<body id="index" class="home">
+        <header id="banner" class="body">
+
+            <!-- <table class="header_table">
+                <tr>
+                  <td style="width:50px;"><a href="https://notes.nicolasdeville.com/"><img src="https://notes.nicolasdeville.com/images/edelweiss_black.svg" alt="Edelweiss logo" width="50"/></a></td>
+                  <td><h1><a href="https://notes.nicolasdeville.com/">Nic's notes</a></h1></td>
+                </tr>
+              </table> -->
+
+            <a href="https://notes.nicolasdeville.com/"><img src="https://notes.nicolasdeville.com/images/nic_notes_header.svg" alt="Nic's notes" width="266"/></a>
+              
+            <nav><ul>
+                <li><a href="https://notes.nicolasdeville.com/category/apps.html">apps</a></li>
+                <li><a href="https://notes.nicolasdeville.com/category/b2b-sales.html">b2b sales</a></li>
+                <li><a href="https://notes.nicolasdeville.com/category/books.html">books</a></li>
+                <li><a href="https://notes.nicolasdeville.com/category/careerplaybook.html">#careerplaybook</a></li>
+                <li><a href="https://notes.nicolasdeville.com/category/helpers.html">helpers</a></li>
+                <li><a href="https://notes.nicolasdeville.com/category/home-office.html">home office</a></li>
+                <li><a href="https://notes.nicolasdeville.com/category/misc.html">misc</a></li>
+                <li><a href="https://notes.nicolasdeville.com/category/python.html">python</a></li>
+                <li><a href="https://notes.nicolasdeville.com/category/salesleaderplaybook.html">#salesleaderplaybook</a></li>
+                <li><a href="https://notes.nicolasdeville.com/category/snippets.html">snippets</a></li>
+                <li><a href="https://notes.nicolasdeville.com/category/startupplaybook.html">#startupplaybook</a></li>
+            </ul></nav>
+        </header>
+
+
+
+
+            <aside id="featured" class="body">
+            <!-- LATEST NOTE -->
+            <p class="notes-section">latest note</p>
+            <hr/>
+
+                <article class="hentry">
+                    <h1 class="entry-title"><a href="https://notes.nicolasdeville.com/articles/converting-text-to-html-with-python.html">Converting text to HTML with Python</a></h1>
+
+                    <!-- added 4/7 -->
+                    <div class="header_summary">
+                        <p>simple script to add HTML tags</p>
+                    </div>
+
+<footer class="post-info">
+
+    <p>
+        05 Jul 2022 <span class="separator">|</span> in <a class="link_tag" href="https://notes.nicolasdeville.com/category/snippets.html">snippets</a>
+ tags: <a class="link_tag" href="https://notes.nicolasdeville.com/tag/python.html">python</a>
+<a class="link_tag" href="https://notes.nicolasdeville.com/tag/html.html">html</a>
+<a class="link_tag" href="https://notes.nicolasdeville.com/tag/script.html">script</a>
+
+        <!-- added 4/7 -->
+		<br />
+        <abbr class="modified" title="2022-07-05T23:05:50.343773+02:00">
+                Updated: 05 Jul 2022
+        </abbr>
+
+    </p>
+
+    
+
+</footer><p>I had to copy/paste a lot of text to make it into my static website </p>
+<p>Here is the short script I wrote:</p>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">pandas.io.clipboard</span> <span class="kn">import</span> <span class="n">clipboard_get</span>
+<span class="kn">import</span> <span class="nn">subprocess</span>
+
+<span class="c1"># function to write output to clipboard after processing, ready to past</span>
+<span class="k">def</span> <span class="nf">write_to_clipboard</span><span class="p">(</span><span class="n">output</span><span class="p">):</span>
+    <span class="n">process</span> <span class="o">=</span> <span class="n">subprocess</span><span class="o">.</span><span class="n">Popen</span><span class="p">(</span>
+        <span class="s1">&#39;pbcopy&#39;</span><span class="p">,</span> <span class="n">env</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;LANG&#39;</span><span class="p">:</span> <span class="s1">&#39;en_US.UTF-8&#39;</span><span class="p">},</span> <span class="n">stdin</span><span class="o">=</span><span class="n">subprocess</span><span class="o">.</span><span class="n">PIPE</span><span class="p">)</span>
+    <span class="n">process</span><span class="o">.</span><span class="n">communicate</span><span class="p">(</span><span class="n">output</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span><span class="s1">&#39;utf-8&#39;</span><span class="p">))</span>
+
+<span class="n">output</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span>
+
+<span class="c1"># get text from clipboard</span>
+<span class="n">text</span> <span class="o">=</span> <span class="n">clipboard_get</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;--- repr(text):</span><span class="se">\n\n</span><span class="si">{</span><span class="nb">repr</span><span class="p">(</span><span class="n">text</span><span class="p">)</span><span class="si">}</span><span class="se">\n\n</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="c1"># split on line breaks</span>
+<span class="n">parts</span> <span class="o">=</span> <span class="n">text</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="c1"># add &lt;p&gt; tags</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;--- HTML to copy/paste:</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">parts</span><span class="p">:</span>
+    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="n">add</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;&lt;p&gt;</span><span class="si">{</span><span class="n">x</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span><span class="si">}</span><span class="s2">&lt;/p&gt;&quot;</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">add</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">output</span> <span class="o">==</span> <span class="s1">&#39;&#39;</span><span class="p">:</span>
+            <span class="n">output</span> <span class="o">=</span> <span class="n">add</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">output</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">output</span><span class="si">}</span><span class="se">\n</span><span class="si">{</span><span class="n">add</span><span class="si">}</span><span class="s2">&quot;</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">continue</span>
+
+<span class="c1"># add back to clipboard</span>
+<span class="n">write_to_clipboard</span><span class="p">(</span><span class="n">output</span><span class="p">)</span>
+</code></pre></div>
+                </article>
+            </aside>
+
+            
+
+        <section id="extras" class="body">
+                <div class="blogroll">
+                        <h2>links</h2>
+                        <ul>
+                            <li><a href="https://indeXall.io">Side project: indeXall.io</a></li>
+                        </ul>
+                </div><!-- /.blogroll -->
+
+                <div class="social">
+                        <h2>social</h2>
+                        <ul>
+
+                            <li><a href="https://www.linkedin.com/in/ndeville/">Linkedin</a></li>
+                            <li><a href="https://www.twitter.com/ndeville">Twitter</a></li>
+                        </ul>
+                </div><!-- /.social -->
+        </section><!-- /#extras -->
+
+        <footer id="contentinfo" class="body">
+                <address id="about" class="vcard body">
+                Powered by <a href="https://getpelican.com/">Pelican</a>, with <img src="https://notes.nicolasdeville.com/images/python.svg" alt="Nic's notes" width="16" style="vertical-align: middle;"/><a href="https://www.python.org/">Python</a>
+                </address><!-- /#about -->
+
+        </footer><!-- /#contentinfo -->
+
+</body>
+</html>

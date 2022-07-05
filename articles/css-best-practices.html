@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta name="generator" content="Pelican" />
+        <title>CSS Best Practices</title>
+        <link rel="stylesheet" href="https://notes.nicolasdeville.com/theme/css/main.css" />
+        <meta name="description" content="collection of snippets and advice for CSS" />
+</head>
+
+<body id="index" class="home">
+        <header id="banner" class="body">
+
+            <!-- <table class="header_table">
+                <tr>
+                  <td style="width:50px;"><a href="https://notes.nicolasdeville.com/"><img src="https://notes.nicolasdeville.com/images/edelweiss_black.svg" alt="Edelweiss logo" width="50"/></a></td>
+                  <td><h1><a href="https://notes.nicolasdeville.com/">Nic's notes</a></h1></td>
+                </tr>
+              </table> -->
+
+            <a href="https://notes.nicolasdeville.com/"><img src="https://notes.nicolasdeville.com/images/nic_notes_header.svg" alt="Nic's notes" width="266"/></a>
+              
+            <nav><ul>
+                <li><a href="https://notes.nicolasdeville.com/category/apps.html">apps</a></li>
+                <li><a href="https://notes.nicolasdeville.com/category/b2b-sales.html">b2b sales</a></li>
+                <li><a href="https://notes.nicolasdeville.com/category/books.html">books</a></li>
+                <li><a href="https://notes.nicolasdeville.com/category/careerplaybook.html">#careerplaybook</a></li>
+                <li class="active"><a href="https://notes.nicolasdeville.com/category/helpers.html">helpers</a></li>
+                <li><a href="https://notes.nicolasdeville.com/category/home-office.html">home office</a></li>
+                <li><a href="https://notes.nicolasdeville.com/category/misc.html">misc</a></li>
+                <li><a href="https://notes.nicolasdeville.com/category/python.html">python</a></li>
+                <li><a href="https://notes.nicolasdeville.com/category/salesleaderplaybook.html">#salesleaderplaybook</a></li>
+                <li><a href="https://notes.nicolasdeville.com/category/snippets.html">snippets</a></li>
+                <li><a href="https://notes.nicolasdeville.com/category/startupplaybook.html">#startupplaybook</a></li>
+            </ul></nav>
+        </header>
+
+<section id="content" class="body">
+  <article>
+    <header>
+      <h1 class="entry-title">
+        <a href="https://notes.nicolasdeville.com/articles/css-best-practices.html" rel="bookmark"
+           title="Permalink to CSS Best Practices">CSS Best Practices</a></h1>
+    </header>
+
+    <div class="entry-content">
+<footer class="post-info">
+
+    <p>
+        05 Jul 2022 <span class="separator">|</span> in <a class="link_tag" href="https://notes.nicolasdeville.com/category/helpers.html">helpers</a>
+ tags: <a class="link_tag" href="https://notes.nicolasdeville.com/tag/css.html">css</a>
+
+        <!-- added 4/7 -->
+		<br />
+        <abbr class="modified" title="2022-07-05T22:38:31.314244+02:00">
+                Updated: 05 Jul 2022
+        </abbr>
+
+    </p>
+
+    
+
+</footer>      <h2>ensures padding and borders are included in width/heights definitions</h2>
+<p>to be included in all CSS files</p>
+<div class="highlight"><pre><span></span><code><span class="o">*,</span><span class="w"></span>
+<span class="p">::</span><span class="nd">after</span><span class="o">,</span><span class="w"></span>
+<span class="p">::</span><span class="nd">before</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="k">box-sizing</span><span class="p">:</span><span class="w"> </span><span class="kc">border-box</span><span class="p">;</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</code></pre></div>
+
+<h2>global reset / clean slate</h2>
+<div class="highlight"><pre><span></span><code><span class="nt">html</span><span class="o">,</span><span class="w"> </span><span class="nt">body</span><span class="o">,</span><span class="w"> </span><span class="nt">div</span><span class="o">,</span><span class="w"> </span><span class="nt">h1</span><span class="o">,</span><span class="w"> </span><span class="nt">h2</span><span class="o">,</span><span class="w"> </span><span class="nt">h3</span><span class="o">,</span><span class="w"> </span><span class="nt">h4</span><span class="o">,</span><span class="w"> </span><span class="nt">h5</span><span class="o">,</span><span class="w"> </span><span class="nt">h6</span><span class="o">,</span><span class="w"> </span><span class="nt">ul</span><span class="o">,</span><span class="w"> </span><span class="nt">ol</span><span class="o">,</span><span class="w"> </span><span class="nt">li</span><span class="o">,</span><span class="w"> </span><span class="nt">p</span><span class="o">,</span><span class="w"> </span><span class="nt">blockquote</span><span class="o">,</span><span class="w"> </span><span class="nt">pre</span><span class="o">,</span><span class="w"> </span><span class="nt">form</span><span class="o">,</span><span class="w"> </span><span class="nt">fieldset</span><span class="o">,</span><span class="w"> </span><span class="nt">table</span><span class="o">,</span><span class="w"> </span><span class="nt">th</span><span class="o">,</span><span class="w"> </span><span class="nt">td</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="k">margin</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="k">padding</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</code></pre></div>
+
+<h2>Bulletproof @font-face Syntax</h2>
+<p><a href="https://www.paulirish.com/2009/bulletproof-font-face-implementation-syntax/" target="_blank">https://www.paulirish.com/2009/bulletproof-font-face-implementation-syntax/</a></p>
+    </div><!-- /.entry-content -->
+
+  </article>
+</section>
+        <section id="extras" class="body">
+                <div class="blogroll">
+                        <h2>links</h2>
+                        <ul>
+                            <li><a href="https://indeXall.io">Side project: indeXall.io</a></li>
+                        </ul>
+                </div><!-- /.blogroll -->
+
+                <div class="social">
+                        <h2>social</h2>
+                        <ul>
+
+                            <li><a href="https://www.linkedin.com/in/ndeville/">Linkedin</a></li>
+                            <li><a href="https://www.twitter.com/ndeville">Twitter</a></li>
+                        </ul>
+                </div><!-- /.social -->
+        </section><!-- /#extras -->
+
+        <footer id="contentinfo" class="body">
+                <address id="about" class="vcard body">
+                Powered by <a href="https://getpelican.com/">Pelican</a>, with <img src="https://notes.nicolasdeville.com/images/python.svg" alt="Nic's notes" width="16" style="vertical-align: middle;"/><a href="https://www.python.org/">Python</a>
+                </address><!-- /#about -->
+
+        </footer><!-- /#contentinfo -->
+
+</body>
+</html>

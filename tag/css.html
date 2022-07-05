@@ -30,6 +30,7 @@
                 <li><a href="https://notes.nicolasdeville.com/category/misc.html">misc</a></li>
                 <li><a href="https://notes.nicolasdeville.com/category/python.html">python</a></li>
                 <li><a href="https://notes.nicolasdeville.com/category/salesleaderplaybook.html">#salesleaderplaybook</a></li>
+                <li><a href="https://notes.nicolasdeville.com/category/snippets.html">snippets</a></li>
                 <li><a href="https://notes.nicolasdeville.com/category/startupplaybook.html">#startupplaybook</a></li>
             </ul></nav>
         </header>
@@ -43,13 +44,75 @@
             <hr/>
 
                 <article class="hentry">
-                    <h1 class="entry-title"><a href="https://notes.nicolasdeville.com/articles/css.html">CSS Tools</a></h1>
+                    <h1 class="entry-title"><a href="https://notes.nicolasdeville.com/articles/css-best-practices.html">CSS Best Practices</a></h1>
 
                     <!-- added 4/7 -->
                     <div class="header_summary">
-                        <p>Handy tools I use when dealing with CSS files.</p>
+                        <p>collection of snippets and advice for CSS</p>
                     </div>
 
+<footer class="post-info">
+
+    <p>
+        05 Jul 2022 <span class="separator">|</span> in <a class="link_tag" href="https://notes.nicolasdeville.com/category/helpers.html">helpers</a>
+ tags: <a class="link_tag" href="https://notes.nicolasdeville.com/tag/css.html">css</a>
+
+        <!-- added 4/7 -->
+		<br />
+        <abbr class="modified" title="2022-07-05T22:38:31.314244+02:00">
+                Updated: 05 Jul 2022
+        </abbr>
+
+    </p>
+
+    
+
+</footer><h2>ensures padding and borders are included in width/heights definitions</h2>
+<p>to be included in all CSS files</p>
+<div class="highlight"><pre><span></span><code><span class="o">*,</span><span class="w"></span>
+<span class="p">::</span><span class="nd">after</span><span class="o">,</span><span class="w"></span>
+<span class="p">::</span><span class="nd">before</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="k">box-sizing</span><span class="p">:</span><span class="w"> </span><span class="kc">border-box</span><span class="p">;</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</code></pre></div>
+
+<h2>global reset / clean slate</h2>
+<div class="highlight"><pre><span></span><code><span class="nt">html</span><span class="o">,</span><span class="w"> </span><span class="nt">body</span><span class="o">,</span><span class="w"> </span><span class="nt">div</span><span class="o">,</span><span class="w"> </span><span class="nt">h1</span><span class="o">,</span><span class="w"> </span><span class="nt">h2</span><span class="o">,</span><span class="w"> </span><span class="nt">h3</span><span class="o">,</span><span class="w"> </span><span class="nt">h4</span><span class="o">,</span><span class="w"> </span><span class="nt">h5</span><span class="o">,</span><span class="w"> </span><span class="nt">h6</span><span class="o">,</span><span class="w"> </span><span class="nt">ul</span><span class="o">,</span><span class="w"> </span><span class="nt">ol</span><span class="o">,</span><span class="w"> </span><span class="nt">li</span><span class="o">,</span><span class="w"> </span><span class="nt">p</span><span class="o">,</span><span class="w"> </span><span class="nt">blockquote</span><span class="o">,</span><span class="w"> </span><span class="nt">pre</span><span class="o">,</span><span class="w"> </span><span class="nt">form</span><span class="o">,</span><span class="w"> </span><span class="nt">fieldset</span><span class="o">,</span><span class="w"> </span><span class="nt">table</span><span class="o">,</span><span class="w"> </span><span class="nt">th</span><span class="o">,</span><span class="w"> </span><span class="nt">td</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="k">margin</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="k">padding</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</code></pre></div>
+
+<h2>Bulletproof @font-face Syntax</h2>
+<p><a href="https://www.paulirish.com/2009/bulletproof-font-face-implementation-syntax/" target="_blank">https://www.paulirish.com/2009/bulletproof-font-face-implementation-syntax/</a></p>
+                </article>
+            </aside>
+
+                <section id="content" class="body">
+
+                <!-- PREVIOUS NOTES -->
+				<p class="notes-section">previous notes</p>
+                <hr/>
+
+                <ol id="posts-list" class="hfeed">
+            
+
+
+
+            <li>
+                <article class="hentry">
+                    <header>
+                        <!-- PREVIOUS NOTE TITLE -->
+                        <h1><a href="https://notes.nicolasdeville.com/articles/css.html" rel="bookmark"
+                            title="CSS Tools">CSS Tools</a></h1>
+                        <!-- PREVIOUS NOTE SUMMARY -->
+                        <div class="entry-content">
+                            <p>Handy tools I use when dealing with CSS files.</p>
+                        </div>
+                    </header>
+
+                    <div class="entry-content">
+                        <!-- PREVIOUS NOTE METADATA -->
 <footer class="post-info">
 
     <p>
@@ -66,60 +129,14 @@
 
     
 
-</footer><p>Here are handy tools I use when dealing with CSS files.</p>
-<h3>CSS Beautifier</h3>
-<p><a href="https://www.freeformatter.com/css-beautifier.html" target="_blank">https://www.freeformatter.com/css-beautifier.html</a></p>
-<h3>Diffchecker</h3>
-<p><a href="https://www.diffchecker.com" target="_blank">https://www.diffchecker.com</a></p>
-<p>Diffchecker is an online diff tool to compare text to find the difference between two text files.
-When you need to check the difference between 2 CSS files.</p>
-<p>I once heavily changed the wrong CSS file, so had to do code cleanup by extracting the changes 😅</p>
-<p>I used this tool and tasked a freelancer to do the work, by sharing the link with him (see <a href="careerplaybook-009-outsourcing-tasks.html">careerplaybook-009-outsourcing-tasks/</a>)</p>
-<h3>CSS examples</h3>
-<p><a href="https://www.csscodelab.com/css-examples/" target="_blank">https://www.csscodelab.com/css-examples/</a></p>
-<h3>Box shadow syntax</h3>
-<p><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/box-shadow" target="_blank">https://developer.mozilla.org/en-US/docs/Web/CSS/box-shadow</a></p>
-<div class="highlight"><pre><span></span><code><span class="c">/* Keyword values */</span><span class="w">  </span>
-<span class="nt">box-shadow</span><span class="o">:</span><span class="w"> </span><span class="nt">none</span><span class="o">;</span><span class="w">  </span>
-
-<span class="c">/* offset-x | offset-y | color */</span><span class="w">  </span>
-<span class="nt">box-shadow</span><span class="o">:</span><span class="w"> </span><span class="nt">60px</span><span class="w"> </span><span class="nt">-16px</span><span class="w"> </span><span class="nt">teal</span><span class="o">;</span><span class="w">  </span>
-
-<span class="c">/* offset-x | offset-y | blur-radius | color */</span><span class="w">  </span>
-<span class="nt">box-shadow</span><span class="o">:</span><span class="w"> </span><span class="nt">10px</span><span class="w"> </span><span class="nt">5px</span><span class="w"> </span><span class="nt">5px</span><span class="w"> </span><span class="nt">black</span><span class="o">;</span><span class="w">  </span>
-
-<span class="c">/* offset-x | offset-y | blur-radius | spread-radius | color */</span><span class="w">  </span>
-<span class="nt">box-shadow</span><span class="o">:</span><span class="w"> </span><span class="nt">2px</span><span class="w"> </span><span class="nt">2px</span><span class="w"> </span><span class="nt">2px</span><span class="w"> </span><span class="nt">1px</span><span class="w"> </span><span class="nt">rgba</span><span class="o">(</span><span class="nt">0</span><span class="o">,</span><span class="w"> </span><span class="nt">0</span><span class="o">,</span><span class="w"> </span><span class="nt">0</span><span class="o">,</span><span class="w"> </span><span class="nt">0</span><span class="p">.</span><span class="nc">2</span><span class="o">);</span><span class="w">  </span>
-
-<span class="c">/* inset | offset-x | offset-y | color */</span><span class="w">  </span>
-<span class="nt">box-shadow</span><span class="o">:</span><span class="w"> </span><span class="nt">inset</span><span class="w"> </span><span class="nt">5em</span><span class="w"> </span><span class="nt">1em</span><span class="w"> </span><span class="nt">gold</span><span class="o">;</span><span class="w">  </span>
-
-<span class="c">/* Any number of shadows, separated by commas */</span><span class="w">  </span>
-<span class="nt">box-shadow</span><span class="o">:</span><span class="w"> </span><span class="nt">3px</span><span class="w"> </span><span class="nt">3px</span><span class="w"> </span><span class="nt">red</span><span class="o">,</span><span class="w"> </span><span class="nt">-1em</span><span class="w"> </span><span class="nt">0</span><span class="w"> </span><span class="nt">0</span><span class="p">.</span><span class="nc">4em</span><span class="w"> </span><span class="nt">olive</span><span class="o">;</span><span class="w">  </span>
-
-<span class="c">/* Global values */</span><span class="w">  </span>
-<span class="nt">box-shadow</span><span class="o">:</span><span class="w"> </span><span class="nt">inherit</span><span class="o">;</span><span class="w">  </span>
-<span class="nt">box-shadow</span><span class="o">:</span><span class="w"> </span><span class="nt">initial</span><span class="o">;</span><span class="w">  </span>
-<span class="nt">box-shadow</span><span class="o">:</span><span class="w"> </span><span class="nt">revert</span><span class="o">;</span><span class="w">  </span>
-<span class="nt">box-shadow</span><span class="o">:</span><span class="w"> </span><span class="nt">revert-layer</span><span class="o">;</span><span class="w">  </span>
-<span class="nt">box-shadow</span><span class="o">:</span><span class="w"> </span><span class="nt">unset</span><span class="o">;</span><span class="w">  </span>
-</code></pre></div>
-
-<h3>Reset Your Margin and Padding</h3>
-<p>from <a href="https://wpmudev.com/blog/css-workflow/" target="_blank">https://wpmudev.com/blog/css-workflow/</a></p>
-<p>"Since all browsers have their own set of default settings for pages and they aren’t all the same across the board when it comes to margin and padding, it’s a good idea to start with a clean slate and, in a manner of speaking, erase or ignore what those browsers have set and start from margins and paddings of zero. This is called a reset.</p>
-<p>Before you start adding your own styles, enter in a reset first. It saves you time trying to enter styles to compensate for every browser.</p>
-<p>A simple reset can look something like the example below, but there are many out there you can use such as Eric Meyer’s Reset and which one you use is up to you and your specific needs.:</p>
-<div class="highlight"><pre><span></span><code><span class="n">html</span><span class="p">,</span> <span class="n">body</span><span class="p">,</span> <span class="n">div</span><span class="p">,</span> <span class="n">h1</span><span class="p">,</span> <span class="n">h2</span><span class="p">,</span> <span class="n">h3</span><span class="p">,</span> <span class="n">h4</span><span class="p">,</span> <span class="n">h5</span><span class="p">,</span> <span class="n">h6</span><span class="p">,</span> <span class="n">ul</span><span class="p">,</span> <span class="n">ol</span><span class="p">,</span> <span class="n">li</span><span class="p">,</span> <span class="n">p</span><span class="p">,</span> <span class="n">blockquote</span><span class="p">,</span> <span class="n">pre</span><span class="p">,</span> <span class="n">form</span><span class="p">,</span> <span class="n">fieldset</span><span class="p">,</span> <span class="n">table</span><span class="p">,</span> <span class="n">th</span><span class="p">,</span> <span class="n">td</span> <span class="p">{</span> <span class="n">margin</span><span class="p">:</span> <span class="mi">0</span><span class="p">;</span> <span class="n">padding</span><span class="p">:</span> <span class="mi">0</span><span class="p">;</span> <span class="p">}</span>
-</code></pre></div>
-
-<h3>"Some Little Improvements to My VS Code Workflow"</h3>
-<p>How to use Workspaces and Tasks (automation) in VS Code:</p>
-<p><a href="https://css-tricks.com/some-little-improvements-to-my-vs-code-workflow-workspaces-icons-tasks/" target="_blank">https://css-tricks.com/some-little-improvements-to-my-vs-code-workflow-workspaces-icons-tasks/</a></p>
+</footer>                    </div>
+                    
                 </article>
-            </aside>
-
+                <hr/>
+            </li>
             
+                </ol><!-- /#posts-list -->
+                </section><!-- /#content -->
 
         <section id="extras" class="body">
                 <div class="blogroll">
