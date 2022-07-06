@@ -178,6 +178,7 @@ blockquote {
 }
 
 code {
+    width: 100%;
     font-family: SFMono-Regular, Consolas, Liberation Mono, Menlo, monospace, Courier;
     font-size: .7rem;
     /* line-height: 1.4rem; */
@@ -435,10 +436,10 @@ div.figure p.caption, figure p.caption { /* margin provided by figure */
       background-size: 16px 16px;
     }
 
-    .blogroll a[href*='indeXall.io'] {
+    /* .blogroll a[href*='indeXall.io'] {
       background-image: url('../images/icons/indeXall.svg');
       background-size: 16px 16px;
-    }
+    } */
 
 /*
 	About
