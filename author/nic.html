@@ -44,67 +44,34 @@
             <hr/>
 
                 <article class="hentry">
-                    <h1 class="entry-title"><a href="https://notes.nicolasdeville.com/articles/converting-text-to-html-with-python.html">Converting text to HTML with Python</a></h1>
+                    <h1 class="entry-title"><a href="https://notes.nicolasdeville.com/articles/how-to-reference-a-site-in-search-engines.html">How to reference a site in search engines</a></h1>
 
                     <!-- added 4/7 -->
                     <div class="header_summary">
-                        <p>simple script to add HTML tags</p>
+                        <p>my ongoing notes on referencing my sites to search engines</p>
                     </div>
 
 <footer class="post-info">
 
     <p>
-        05 Jul 2022 <span class="separator">|</span> in <a class="link_tag" href="https://notes.nicolasdeville.com/category/snippets.html">snippets</a>
- tags: <a class="link_tag" href="https://notes.nicolasdeville.com/tag/python.html">python</a>
-<a class="link_tag" href="https://notes.nicolasdeville.com/tag/html.html">html</a>
-<a class="link_tag" href="https://notes.nicolasdeville.com/tag/script.html">script</a>
+        06 Jul 2022 <span class="separator">|</span> in <a class="link_tag" href="https://notes.nicolasdeville.com/category/helpers.html">helpers</a>
+ tags: <a class="link_tag" href="https://notes.nicolasdeville.com/tag/html.html">html</a>
+<a class="link_tag" href="https://notes.nicolasdeville.com/tag/wip.html">WIP</a>
 
         <!-- added 4/7 -->
 		<br />
-        <abbr class="modified" title="2022-07-05T23:05:50.343773+02:00">
-                Updated: 05 Jul 2022
+        <abbr class="modified" title="2022-07-06T10:21:59.679486+02:00">
+                Updated: 06 Jul 2022
         </abbr>
 
     </p>
 
     
 
-</footer><p>I had to copy/paste a lot of text to make it into my static website </p>
-<p>Here is the short script I wrote:</p>
-<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">pandas.io.clipboard</span> <span class="kn">import</span> <span class="n">clipboard_get</span>
-<span class="kn">import</span> <span class="nn">subprocess</span>
-
-<span class="c1"># function to write output to clipboard after processing, ready to past</span>
-<span class="k">def</span> <span class="nf">write_to_clipboard</span><span class="p">(</span><span class="n">output</span><span class="p">):</span>
-    <span class="n">process</span> <span class="o">=</span> <span class="n">subprocess</span><span class="o">.</span><span class="n">Popen</span><span class="p">(</span>
-        <span class="s1">&#39;pbcopy&#39;</span><span class="p">,</span> <span class="n">env</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;LANG&#39;</span><span class="p">:</span> <span class="s1">&#39;en_US.UTF-8&#39;</span><span class="p">},</span> <span class="n">stdin</span><span class="o">=</span><span class="n">subprocess</span><span class="o">.</span><span class="n">PIPE</span><span class="p">)</span>
-    <span class="n">process</span><span class="o">.</span><span class="n">communicate</span><span class="p">(</span><span class="n">output</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span><span class="s1">&#39;utf-8&#39;</span><span class="p">))</span>
-
-<span class="n">output</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span>
-
-<span class="c1"># get text from clipboard</span>
-<span class="n">text</span> <span class="o">=</span> <span class="n">clipboard_get</span><span class="p">()</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;--- repr(text):</span><span class="se">\n\n</span><span class="si">{</span><span class="nb">repr</span><span class="p">(</span><span class="n">text</span><span class="p">)</span><span class="si">}</span><span class="se">\n\n</span><span class="s2">&quot;</span><span class="p">)</span>
-
-<span class="c1"># split on line breaks</span>
-<span class="n">parts</span> <span class="o">=</span> <span class="n">text</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
-
-<span class="c1"># add &lt;p&gt; tags</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;--- HTML to copy/paste:</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
-<span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">parts</span><span class="p">:</span>
-    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
-        <span class="n">add</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;&lt;p&gt;</span><span class="si">{</span><span class="n">x</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span><span class="si">}</span><span class="s2">&lt;/p&gt;&quot;</span>
-        <span class="nb">print</span><span class="p">(</span><span class="n">add</span><span class="p">)</span>
-        <span class="k">if</span> <span class="n">output</span> <span class="o">==</span> <span class="s1">&#39;&#39;</span><span class="p">:</span>
-            <span class="n">output</span> <span class="o">=</span> <span class="n">add</span>
-        <span class="k">else</span><span class="p">:</span>
-            <span class="n">output</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">output</span><span class="si">}</span><span class="se">\n</span><span class="si">{</span><span class="n">add</span><span class="si">}</span><span class="s2">&quot;</span>
-    <span class="k">else</span><span class="p">:</span>
-        <span class="k">continue</span>
-
-<span class="c1"># add back to clipboard</span>
-<span class="n">write_to_clipboard</span><span class="p">(</span><span class="n">output</span><span class="p">)</span>
-</code></pre></div>
+</footer><h1>WIP</h1>
+<h2>Generic</h2>
+<h2>Google</h2>
+<h2>Bing</h2>
                 </article>
             </aside>
 
@@ -115,6 +82,86 @@
                 <hr/>
 
                 <ol id="posts-list" class="hfeed">
+            
+
+
+
+            <li>
+                <article class="hentry">
+                    <header>
+                        <!-- PREVIOUS NOTE TITLE -->
+                        <h1><a href="https://notes.nicolasdeville.com/articles/netflix.html" rel="bookmark"
+                            title="How to see and download viewing history">How to see and download viewing history</a></h1>
+                        <!-- PREVIOUS NOTE SUMMARY -->
+                        <div class="entry-content">
+                            <p>download your viewing history in CSV format</p>
+                        </div>
+                    </header>
+
+                    <div class="entry-content">
+                        <!-- PREVIOUS NOTE METADATA -->
+<footer class="post-info">
+
+    <p>
+        06 Jul 2022 <span class="separator">|</span> in <a class="link_tag" href="https://notes.nicolasdeville.com/category/misc.html">misc</a>
+ tags: <a class="link_tag" href="https://notes.nicolasdeville.com/tag/misc.html">misc</a>
+
+        <!-- added 4/7 -->
+		<br />
+        <abbr class="modified" title="2022-07-06T15:24:19.379756+02:00">
+                Updated: 06 Jul 2022
+        </abbr>
+
+    </p>
+
+    
+
+</footer>                    </div>
+                    
+                </article>
+                <hr/>
+            </li>
+            
+
+
+
+            <li>
+                <article class="hentry">
+                    <header>
+                        <!-- PREVIOUS NOTE TITLE -->
+                        <h1><a href="https://notes.nicolasdeville.com/articles/converting-text-to-html-with-python.html" rel="bookmark"
+                            title="Converting text to HTML with Python">Converting text to HTML with Python</a></h1>
+                        <!-- PREVIOUS NOTE SUMMARY -->
+                        <div class="entry-content">
+                            <p>simple script to add HTML tags</p>
+                        </div>
+                    </header>
+
+                    <div class="entry-content">
+                        <!-- PREVIOUS NOTE METADATA -->
+<footer class="post-info">
+
+    <p>
+        05 Jul 2022 <span class="separator">|</span> in <a class="link_tag" href="https://notes.nicolasdeville.com/category/snippets.html">snippets</a>
+ tags: <a class="link_tag" href="https://notes.nicolasdeville.com/tag/python.html">python</a>
+<a class="link_tag" href="https://notes.nicolasdeville.com/tag/html.html">html</a>
+<a class="link_tag" href="https://notes.nicolasdeville.com/tag/script.html">script</a>
+
+        <!-- added 4/7 -->
+		<br />
+        <abbr class="modified" title="2022-07-06T10:25:44.591365+02:00">
+                Updated: 06 Jul 2022
+        </abbr>
+
+    </p>
+
+    
+
+</footer>                    </div>
+                    
+                </article>
+                <hr/>
+            </li>
             
 
 
@@ -608,8 +655,8 @@
 
         <!-- added 4/7 -->
 		<br />
-        <abbr class="modified" title="2022-07-03T23:10:29.413293+02:00">
-                Updated: 03 Jul 2022
+        <abbr class="modified" title="2022-07-06T15:28:39.964720+02:00">
+                Updated: 06 Jul 2022
         </abbr>
 
     </p>
@@ -3898,89 +3945,11 @@
                 <hr/>
             </li>
             
-
-
-
-            <li>
-                <article class="hentry">
-                    <header>
-                        <!-- PREVIOUS NOTE TITLE -->
-                        <h1><a href="https://notes.nicolasdeville.com/articles/product-demos.html" rel="bookmark"
-                            title="Product Demos">Product Demos</a></h1>
-                        <!-- PREVIOUS NOTE SUMMARY -->
-                        <div class="entry-content">
-                            
-                        </div>
-                    </header>
-
-                    <div class="entry-content">
-                        <!-- PREVIOUS NOTE METADATA -->
-<footer class="post-info">
-
-    <p>
-        01 Jul 2022 <span class="separator">|</span> in <a class="link_tag" href="https://notes.nicolasdeville.com/category/b2b-sales.html">b2b sales</a>
- tags: <a class="link_tag" href="https://notes.nicolasdeville.com/tag/wip.html">WIP</a>
-
-        <!-- added 4/7 -->
-		<br />
-        <abbr class="modified" title="2022-07-04T18:43:33.995593+02:00">
-                Updated: 04 Jul 2022
-        </abbr>
-
-    </p>
-
-    
-
-</footer>                    </div>
-                    
-                </article>
-                <hr/>
-            </li>
-            
-
-
-
-            <li>
-                <article class="hentry">
-                    <header>
-                        <!-- PREVIOUS NOTE TITLE -->
-                        <h1><a href="https://notes.nicolasdeville.com/articles/proving-it-to-yourself.html" rel="bookmark"
-                            title="Proving it to yourself">Proving it to yourself</a></h1>
-                        <!-- PREVIOUS NOTE SUMMARY -->
-                        <div class="entry-content">
-                            
-                        </div>
-                    </header>
-
-                    <div class="entry-content">
-                        <!-- PREVIOUS NOTE METADATA -->
-<footer class="post-info">
-
-    <p>
-        01 Jul 2022 <span class="separator">|</span> in <a class="link_tag" href="https://notes.nicolasdeville.com/category/b2b-sales.html">b2b sales</a>
- tags: <a class="link_tag" href="https://notes.nicolasdeville.com/tag/wip.html">WIP</a>
-
-        <!-- added 4/7 -->
-		<br />
-        <abbr class="modified" title="2022-07-04T18:43:33.986581+02:00">
-                Updated: 04 Jul 2022
-        </abbr>
-
-    </p>
-
-    
-
-</footer>                    </div>
-                    
-                </article>
-                <hr/>
-            </li>
-            
                 </ol><!-- /#posts-list -->
 <p class="paginator">
-    Page 1 / 2
+    Page 1 / 3
         <a href="https://notes.nicolasdeville.com/author/nic2.html">&raquo;</a>
-        <a href="https://notes.nicolasdeville.com/author/nic2.html">&#8649;</a>
+        <a href="https://notes.nicolasdeville.com/author/nic3.html">&#8649;</a>
 </p>
                 </section><!-- /#content -->
 

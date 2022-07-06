@@ -61,8 +61,8 @@
 
         <!-- added 4/7 -->
 		<br />
-        <abbr class="modified" title="2022-07-05T23:05:50.343773+02:00">
-                Updated: 05 Jul 2022
+        <abbr class="modified" title="2022-07-06T10:25:44.591365+02:00">
+                Updated: 06 Jul 2022
         </abbr>
 
     </p>
@@ -70,7 +70,14 @@
     
 
 </footer><p>I had to copy/paste a lot of text to make it into my static website </p>
-<p>Here is the short script I wrote:</p>
+<p>Below is the short script I wrote, to enclose each line of raw text with the <code>&lt;p&gt;</code> tags.</p>
+<p>Workflow:
+- copy text
+- run script</p>
+<blockquote>
+<p>in my case: <code>Cmd + Tab</code> to switch to VS Code, then <code>Cmd + 5</code> - custom keybinding - to run the script).  Note: if used ongoing, script can be run from a key on Streamdeck or with a global keyboard shortcut)
+- paste html</p>
+</blockquote>
 <div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">pandas.io.clipboard</span> <span class="kn">import</span> <span class="n">clipboard_get</span>
 <span class="kn">import</span> <span class="nn">subprocess</span>
 
