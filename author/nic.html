@@ -36,6 +36,9 @@
 
 
 
+<!-- <p>100</p> -->
+<p class="body" style="text-align: right">206 notes</p>
+
 
             <aside id="featured" class="body">
             <!-- LATEST NOTE -->
@@ -43,13 +46,189 @@
             <hr/>
 
                 <article class="hentry">
-                    <h1 class="entry-title"><a href="https://notes.nicolasdeville.com/articles/github-pages.html">Hosting my static website(s) with Github Pages</a></h1>
+                    <h1 class="entry-title"><a href="https://notes.nicolasdeville.com/articles/importing-ghost-blog-posts-to-pelican-with-python.html">Import Ghost blog posts to Pelican with Python</a></h1>
 
                     <!-- added 4/7 -->
                     <div class="header_summary">
-                        <p>WIP</p>
+                        <p>quick script to import Markdown files from Ghost to Pelican format</p>
                     </div>
 
+<footer class="post-info">
+
+    <p>
+        07 Jul 2022 <span class="separator">|</span> in <a class="link_tag" href="https://notes.nicolasdeville.com/category/python.html">python</a>
+ tags: <a class="link_tag" href="https://notes.nicolasdeville.com/tag/scripts.html">scripts</a>
+
+        <!-- added 4/7 -->
+		<br />
+        <abbr class="modified" title="2022-07-07T12:02:44.043006+02:00">
+                Updated: 07 Jul 2022
+        </abbr>
+
+    </p>
+
+    
+
+</footer><p>Export from Ghost as JSON first, then:  </p>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">json</span>
+<span class="kn">from</span> <span class="nn">markdownify</span> <span class="kn">import</span> <span class="n">markdownify</span>
+
+<span class="n">count</span> <span class="o">=</span> <span class="mi">0</span> <span class="c1"># to keep track</span>
+
+<span class="n">data</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;/path/to/Ghost/backup/file/2022-02-28_MasterBackup.json&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+    <span class="n">data</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">f</span><span class="p">)</span>
+
+    <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;db&#39;</span><span class="p">][</span><span class="mi">0</span><span class="p">][</span><span class="s1">&#39;data&#39;</span><span class="p">][</span><span class="s1">&#39;posts&#39;</span><span class="p">]:</span>
+        <span class="n">count</span> <span class="o">+=</span> <span class="mi">1</span>
+
+        <span class="n">published</span> <span class="o">=</span> <span class="n">x</span><span class="p">[</span><span class="s1">&#39;published_at&#39;</span><span class="p">]</span>
+
+        <span class="k">if</span> <span class="n">published</span> <span class="ow">not</span> <span class="ow">in</span> <span class="p">[</span><span class="kc">None</span><span class="p">,</span> <span class="s1">&#39;None&#39;</span><span class="p">]:</span>
+
+            <span class="n">published</span> <span class="o">=</span> <span class="n">published</span><span class="p">[:</span><span class="mi">10</span><span class="p">]</span> <span class="c1"># string slicing to get date in YYYY-MM-DD format</span>
+
+            <span class="n">slug</span> <span class="o">=</span> <span class="n">x</span><span class="p">[</span><span class="s1">&#39;slug&#39;</span><span class="p">]</span>
+            <span class="n">title</span> <span class="o">=</span> <span class="n">x</span><span class="p">[</span><span class="s1">&#39;title&#39;</span><span class="p">]</span>
+            <span class="n">summary</span> <span class="o">=</span> <span class="n">x</span><span class="p">[</span><span class="s1">&#39;custom_excerpt&#39;</span><span class="p">]</span>
+
+            <span class="n">feature_image</span> <span class="o">=</span> <span class="n">x</span><span class="p">[</span><span class="s1">&#39;feature_image&#39;</span><span class="p">]</span>
+            <span class="n">image</span> <span class="o">=</span> <span class="n">feature_image</span><span class="p">[</span><span class="mi">37</span><span class="p">:]</span> <span class="c1"># to get the relative path, removing the &#39;GHOST&#39; prefix</span>
+            <span class="n">image_html</span> <span class="o">=</span> <span class="sa">f</span><span class="s1">&#39;&lt;img src=&quot;images/</span><span class="si">{</span><span class="n">image</span><span class="si">}</span><span class="s1">&quot; alt=&quot;</span><span class="si">{</span><span class="n">image</span><span class="si">}</span><span class="s1">&quot; width=&quot;200&quot;/&gt;&#39;</span>
+
+            <span class="n">html</span> <span class="o">=</span> <span class="n">x</span><span class="p">[</span><span class="s1">&#39;html&#39;</span><span class="p">]</span>
+
+            <span class="n">md</span> <span class="o">=</span> <span class="n">markdownify</span><span class="p">(</span><span class="n">html</span><span class="p">)</span>
+
+            <span class="n">output</span> <span class="o">=</span> <span class="n">image_html</span> <span class="o">+</span> <span class="s1">&#39;</span><span class="se">\n\n</span><span class="s1">&#39;</span> <span class="o">+</span> <span class="n">md</span>
+
+            <span class="n">category_name</span> <span class="o">=</span> <span class="s1">&#39;XXX&#39;</span> <span class="c1"># fill out Category to be assigned in Pelican</span>
+
+            <span class="n">tags</span> <span class="o">=</span> <span class="s1">&#39;XXX, XXX&#39;</span> <span class="c1"># fill out Tags to be assigned in Pelican (can be automated further if tag assignment logic required)</span>
+
+            <span class="n">author</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span> <span class="c1"># author name to be assigned in Pelican (can be automated further if author assignment logic required)</span>
+
+            <span class="n">output</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;Title: </span><span class="si">{</span><span class="n">title</span><span class="si">}</span><span class="se">\n</span><span class="s2">Date: </span><span class="si">{</span><span class="n">published</span><span class="si">}</span><span class="se">\n</span><span class="s2">Modified: </span><span class="si">{</span><span class="n">published</span><span class="si">}</span><span class="se">\n</span><span class="s2">Category: </span><span class="si">{</span><span class="n">category_name</span><span class="si">}</span><span class="se">\n</span><span class="s2">Tags: </span><span class="si">{</span><span class="n">tags</span><span class="si">}</span><span class="se">\n</span><span class="s2">Slug: </span><span class="si">{</span><span class="n">slug</span><span class="si">}</span><span class="se">\n</span><span class="s2">Author: </span><span class="si">{</span><span class="n">author</span><span class="si">}</span><span class="se">\n</span><span class="s2">Summary: </span><span class="si">{</span><span class="n">summary</span><span class="si">}</span><span class="se">\n</span><span class="si">{</span><span class="n">output</span><span class="si">}</span><span class="s2">&quot;</span>
+
+            <span class="nb">print</span><span class="p">(</span><span class="n">count</span><span class="p">,</span> <span class="n">slug</span><span class="p">)</span>
+            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Title: </span><span class="si">{</span><span class="n">title</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Published: </span><span class="si">{</span><span class="n">published</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Summary: </span><span class="si">{</span><span class="n">summary</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Image: </span><span class="si">{</span><span class="n">image_html</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Markdown:</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">,</span> <span class="n">output</span><span class="p">)</span>
+
+            <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;/path/to/folder/in/Pelican/project/named/content/</span><span class="si">{</span><span class="n">slug</span><span class="si">}</span><span class="s2">.md&quot;</span><span class="p">,</span> <span class="s1">&#39;w&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+                <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">output</span><span class="p">)</span>
+
+        <span class="nb">print</span><span class="p">()</span>
+</code></pre></div>
+                </article>
+            </aside>
+
+                <section id="content" class="body">
+
+                <!-- PREVIOUS NOTES -->
+				<p class="notes-section">previous notes</p>
+                <hr/>
+
+                <ol id="posts-list" class="hfeed">
+            
+
+
+
+            <li>
+                <article class="hentry">
+                    <header>
+                        <!-- PREVIOUS NOTE TITLE -->
+                        <h1><a href="https://notes.nicolasdeville.com/articles/importing-notion-markdown-files-to-pelican-with-python.html" rel="bookmark"
+                            title="Notion Markdown files to Pelican Markdown files with Python">Notion Markdown files to Pelican Markdown files with Python</a></h1>
+                        <!-- PREVIOUS NOTE SUMMARY -->
+                        <div class="entry-content">
+                            <p>quick script that helped me import notes hosted on Notion to this static site</p>
+                        </div>
+                    </header>
+
+                    <div class="entry-content">
+                        <!-- PREVIOUS NOTE METADATA -->
+<footer class="post-info">
+
+    <p>
+        07 Jul 2022 <span class="separator">|</span> in <a class="link_tag" href="https://notes.nicolasdeville.com/category/python.html">python</a>
+ tags: <a class="link_tag" href="https://notes.nicolasdeville.com/tag/scripts.html">scripts</a>
+
+        <!-- added 4/7 -->
+		<br />
+        <abbr class="modified" title="2022-07-07T10:44:11.823690+02:00">
+                Updated: 07 Jul 2022
+        </abbr>
+
+    </p>
+
+    
+
+</footer>                    </div>
+                    
+                </article>
+                <hr/>
+            </li>
+            
+
+
+
+            <li>
+                <article class="hentry">
+                    <header>
+                        <!-- PREVIOUS NOTE TITLE -->
+                        <h1><a href="https://notes.nicolasdeville.com/articles/python-notion.html" rel="bookmark"
+                            title="Fetch Notion database data with Python">Fetch Notion database data with Python</a></h1>
+                        <!-- PREVIOUS NOTE SUMMARY -->
+                        <div class="entry-content">
+                            <p>Get data from Notion with Python</p>
+                        </div>
+                    </header>
+
+                    <div class="entry-content">
+                        <!-- PREVIOUS NOTE METADATA -->
+<footer class="post-info">
+
+    <p>
+        07 Jul 2022 <span class="separator">|</span> in <a class="link_tag" href="https://notes.nicolasdeville.com/category/python.html">python</a>
+ tags: <a class="link_tag" href="https://notes.nicolasdeville.com/tag/scripts.html">scripts</a>
+<a class="link_tag" href="https://notes.nicolasdeville.com/tag/notion.html">notion</a>
+
+        <!-- added 4/7 -->
+		<br />
+        <abbr class="modified" title="2022-07-07T10:33:22.947512+02:00">
+                Updated: 07 Jul 2022
+        </abbr>
+
+    </p>
+
+    
+
+</footer>                    </div>
+                    
+                </article>
+                <hr/>
+            </li>
+            
+
+
+
+            <li>
+                <article class="hentry">
+                    <header>
+                        <!-- PREVIOUS NOTE TITLE -->
+                        <h1><a href="https://notes.nicolasdeville.com/articles/github-pages.html" rel="bookmark"
+                            title="Hosting my static website(s) with Github Pages">Hosting my static website(s) with Github Pages</a></h1>
+                        <!-- PREVIOUS NOTE SUMMARY -->
+                        <div class="entry-content">
+                            <p>WIP</p>
+                        </div>
+                    </header>
+
+                    <div class="entry-content">
+                        <!-- PREVIOUS NOTE METADATA -->
 <footer class="post-info">
 
     <p>
@@ -65,30 +244,11 @@
 
     
 
-</footer><h1>WIP</h1>
-<p><a href="https://pages.github.com/" target="_blank">https://pages.github.com/</a></p>
-<p><img class="header" src="https://notes.nicolasdeville.com/images/github-pages.jpg" alt="github-pages.jpg"/>  </p>
-<p>Currently hosting with Github Pages:<br>
-- this site (<a href="https://notes.nicolasdeville.com/" target="_blank">https://notes.nicolasdeville.com/</a>)<br>
-- my side project, indeXall.io (<a href="https://indexall.io/" target="_blank">https://indexall.io/</a>)</p>
-<h3>Github's documentation</h3>
-<p>The Github documentation is well written and very helpful.  </p>
-<p>eg Configuring a custom domain for your GitHub Pages site<br>
-<a href="https://docs.github.com/en/pages/configuring-a-custom-domain-for-your-github-pages-site" target="_blank">https://docs.github.com/en/pages/configuring-a-custom-domain-for-your-github-pages-site</a></p>
-<h3>Other resources</h3>
-<p>Some that have helped me:</p>
-<p>How to Host a Static Website on Github for Free<br>
-<a href="https://medium.com/any-writers/how-to-host-a-static-website-on-github-for-free-f47b12790775" target="_blank">https://medium.com/any-writers/how-to-host-a-static-website-on-github-for-free-f47b12790775</a></p>
+</footer>                    </div>
+                    
                 </article>
-            </aside>
-
-                <section id="content" class="body">
-
-                <!-- PREVIOUS NOTES -->
-				<p class="notes-section">previous notes</p>
                 <hr/>
-
-                <ol id="posts-list" class="hfeed">
+            </li>
             
 
 
@@ -156,7 +316,7 @@
 
         <!-- added 4/7 -->
 		<br />
-        <abbr class="modified" title="2022-07-07T00:29:21.975512+02:00">
+        <abbr class="modified" title="2022-07-07T00:57:37.581825+02:00">
                 Updated: 07 Jul 2022
         </abbr>
 
@@ -703,7 +863,7 @@
 
         <!-- added 4/7 -->
 		<br />
-        <abbr class="modified" title="2022-07-07T00:26:07.104801+02:00">
+        <abbr class="modified" title="2022-07-07T11:58:40.223167+02:00">
                 Updated: 07 Jul 2022
         </abbr>
 
@@ -3823,123 +3983,6 @@
         <!-- added 4/7 -->
 		<br />
         <abbr class="modified" title="2022-07-06T23:11:36.103119+02:00">
-                Updated: 06 Jul 2022
-        </abbr>
-
-    </p>
-
-    
-
-</footer>                    </div>
-                    
-                </article>
-                <hr/>
-            </li>
-            
-
-
-
-            <li>
-                <article class="hentry">
-                    <header>
-                        <!-- PREVIOUS NOTE TITLE -->
-                        <h1><a href="https://notes.nicolasdeville.com/articles/not-mistaking-the-forest-for-the-tree.html" rel="bookmark"
-                            title="Not mistaking the forest for the tree">Not mistaking the forest for the tree</a></h1>
-                        <!-- PREVIOUS NOTE SUMMARY -->
-                        <div class="entry-content">
-                            
-                        </div>
-                    </header>
-
-                    <div class="entry-content">
-                        <!-- PREVIOUS NOTE METADATA -->
-<footer class="post-info">
-
-    <p>
-        01 Nov 2021 <span class="separator">|</span> in <a class="link_tag" href="https://notes.nicolasdeville.com/category/b2b-sales.html">b2b sales</a>
- tags: <a class="link_tag" href="https://notes.nicolasdeville.com/tag/wip.html">WIP</a>
-
-        <!-- added 4/7 -->
-		<br />
-        <abbr class="modified" title="2022-07-06T23:11:36.898984+02:00">
-                Updated: 06 Jul 2022
-        </abbr>
-
-    </p>
-
-    
-
-</footer>                    </div>
-                    
-                </article>
-                <hr/>
-            </li>
-            
-
-
-
-            <li>
-                <article class="hentry">
-                    <header>
-                        <!-- PREVIOUS NOTE TITLE -->
-                        <h1><a href="https://notes.nicolasdeville.com/articles/observing-to-learn.html" rel="bookmark"
-                            title="Observing to learn">Observing to learn</a></h1>
-                        <!-- PREVIOUS NOTE SUMMARY -->
-                        <div class="entry-content">
-                            
-                        </div>
-                    </header>
-
-                    <div class="entry-content">
-                        <!-- PREVIOUS NOTE METADATA -->
-<footer class="post-info">
-
-    <p>
-        01 Nov 2021 <span class="separator">|</span> in <a class="link_tag" href="https://notes.nicolasdeville.com/category/b2b-sales.html">b2b sales</a>
- tags: <a class="link_tag" href="https://notes.nicolasdeville.com/tag/wip.html">WIP</a>
-
-        <!-- added 4/7 -->
-		<br />
-        <abbr class="modified" title="2022-07-06T23:11:36.100485+02:00">
-                Updated: 06 Jul 2022
-        </abbr>
-
-    </p>
-
-    
-
-</footer>                    </div>
-                    
-                </article>
-                <hr/>
-            </li>
-            
-
-
-
-            <li>
-                <article class="hentry">
-                    <header>
-                        <!-- PREVIOUS NOTE TITLE -->
-                        <h1><a href="https://notes.nicolasdeville.com/articles/offering-alternatives.html" rel="bookmark"
-                            title="Offering alternatives">Offering alternatives</a></h1>
-                        <!-- PREVIOUS NOTE SUMMARY -->
-                        <div class="entry-content">
-                            
-                        </div>
-                    </header>
-
-                    <div class="entry-content">
-                        <!-- PREVIOUS NOTE METADATA -->
-<footer class="post-info">
-
-    <p>
-        01 Nov 2021 <span class="separator">|</span> in <a class="link_tag" href="https://notes.nicolasdeville.com/category/b2b-sales.html">b2b sales</a>
- tags: <a class="link_tag" href="https://notes.nicolasdeville.com/tag/wip.html">WIP</a>
-
-        <!-- added 4/7 -->
-		<br />
-        <abbr class="modified" title="2022-07-06T23:11:36.100554+02:00">
                 Updated: 06 Jul 2022
         </abbr>
 

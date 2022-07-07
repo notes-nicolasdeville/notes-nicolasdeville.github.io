@@ -51,7 +51,7 @@
 
         <!-- added 4/7 -->
 		<br />
-        <abbr class="modified" title="2022-07-07T00:26:07.104801+02:00">
+        <abbr class="modified" title="2022-07-07T11:58:40.223167+02:00">
                 Updated: 07 Jul 2022
         </abbr>
 
@@ -111,23 +111,46 @@ Slug: github-pages
 <p>(note to self: need to rework my css when line numbers are showing)</p>
 <p>I have not been able to make 2) and 3) work. </p>
 <p>Also not able to make the line highlights work with <code>``` python hl_lines="3 4"</code> (from <a href="https://yakworks.github.io/docmark/extensions/codehilite/" target="_blank">https://yakworks.github.io/docmark/extensions/codehilite/</a>)</p>
+<h2>Variables</h2>
+<p>To show "Authors" instead of "Author" when there are more than 1 authors for the same article:</p>
+<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">div</span><span class="p">&gt;</span>
+    {% set i = article.authors|count %}
+    {% if i != 1 %}
+        Authors:<span class="p">&lt;</span><span class="nt">br</span><span class="p">&gt;</span>
+    {% endif %}
+    {% if i == 1 %}
+        Author:<span class="p">&lt;</span><span class="nt">br</span><span class="p">&gt;</span>
+    {% endif %}
+    {% if article.authors %}
+        {% for author in article.authors %}
+            <span class="p">&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;{{ SITEURL }}/{{ author.url }}&quot;</span><span class="p">&gt;</span>{{ author }}<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;&lt;</span><span class="nt">br</span><span class="p">&gt;</span>
+        {% endfor %}
+    {% endif %}
+<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+</code></pre></div>
+
+<p>source: <a href="https://stackoverflow.com/questions/41112939/how-to-count-authors-in-pelican-blogs" target="_blank">https://stackoverflow.com/questions/41112939/how-to-count-authors-in-pelican-blogs</a></p>
 <h2>Hosting</h2>
 <p>Once generated, I'm using Github Pages to host for free.<br>
 See my note <a href="github-pages.html">Githug Pages</a>.  </p>
 <h2>Useful resources</h2>
 <h3>Pelican documentation</h3>
 <p>comprehensive and well written<br>
-<a href="https://docs.getpelican.com/en/stable/index.html" target="_blank">https://docs.getpelican.com/en/stable/index.html</a></p>
+<a href="https://docs.getpelican.com/en/stable/index.html" target="_blank">https://docs.getpelican.com/en/stable/index.html</a>  </p>
 <h3>Code HiLite</h3>
-<p><a href="https://yakworks.github.io/docmark/extensions/codehilite/" target="_blank">https://yakworks.github.io/docmark/extensions/codehilite/</a></p>
+<p><a href="https://yakworks.github.io/docmark/extensions/codehilite/" target="_blank">https://yakworks.github.io/docmark/extensions/codehilite/</a>  </p>
 <h3>Pelican Folder Structure</h3>
 <p>helped me rework my project structure based on subfolfers in <code>content</code>
-<a href="https://www.archerimagine.com/articles/pelican/pelican-folder-structure.html" target="_blank">https://www.archerimagine.com/articles/pelican/pelican-folder-structure.html</a></p>
+<a href="https://www.archerimagine.com/articles/pelican/pelican-folder-structure.html" target="_blank">https://www.archerimagine.com/articles/pelican/pelican-folder-structure.html</a>  </p>
 <h3>Pelican's USE_FOLDER_AS_CATEGORY setting and behaviour</h3>
-<p><a href="http://louistiao.me/posts/pelicans-use_folder_as_category-setting-and-behaviour/" target="_blank">http://louistiao.me/posts/pelicans-use_folder_as_category-setting-and-behaviour/</a></p>
+<p><a href="http://louistiao.me/posts/pelicans-use_folder_as_category-setting-and-behaviour/" target="_blank">http://louistiao.me/posts/pelicans-use_folder_as_category-setting-and-behaviour/</a>  </p>
 <h3>Algolia Search: A Plugin for Pelican</h3>
 <p>(to test)
-<a href="https://github.com/rehanhaider/pelican-algolia" target="_blank">https://github.com/rehanhaider/pelican-algolia</a></p>
+<a href="https://github.com/rehanhaider/pelican-algolia" target="_blank">https://github.com/rehanhaider/pelican-algolia</a>  </p>
+<h2>Theme example + word count + search feature</h2>
+<p><a href="https://github.com/pilosus/pilosus-pelican-theme/" target="_blank">https://github.com/pilosus/pilosus-pelican-theme/</a>  </p>
+<h2>Summary plugin to test</h2>
+<p><a href="https://github.com/getpelican/pelican-plugins/tree/master/summary" target="_blank">https://github.com/getpelican/pelican-plugins/tree/master/summary</a>  </p>
     </div><!-- /.entry-content -->
 
   </article>
