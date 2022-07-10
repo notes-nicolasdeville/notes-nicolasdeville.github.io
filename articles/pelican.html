@@ -51,8 +51,8 @@
 
         <!-- added 4/7 -->
         <!-- 		<br />
-        <abbr class="modified" title="2022-07-07T11:58:40.223167+02:00">
-                Updated: 07 Jul 2022
+        <abbr class="modified" title="2022-07-10T22:31:55.894761+02:00">
+                Updated: 10 Jul 2022
         </abbr>
  -->
 
@@ -65,14 +65,31 @@
 <p>My blog writing journey: limited :)  </p>
 <p>Started learning/using Pelican on 27th June 2022.
 Migrated 29th June. </p>
-<h2>To keep it running in the background, ongoing</h2>
+<h2>Syntax highlighting</h2>
+<p>Pelican installs the syntax highlighter Pygments. Haven't read the Pygments doc though: <a href="https://pygments.org/" target="_blank">https://pygments.org/</a>  </p>
+<p>Changed the formatting of my code blocks to reflect my VS Code theme.</p>
+<p>Tedious way:</p>
+<ul>
+<li>use same code in VS code and a rendered HTML version of it</li>
+<li>inspecting the rendered code provides the class used for it (eg <code>&lt;span class="kn"&gt;from&lt;/span&gt;</code> = the initial "from" word in my script uses CSS class "kn")</li>
+<li>classes can be found in <code>theme/static/css/pygment.css</code></li>
+<li>using a colour picker (<a href="https://setapp.com/apps/aquarelo" target="_blank">Aquarelo</a> just installed from my <a href="../apps/setapp.md">SetApp</a> subscription, I picked the color code for each highlight color in VS code, matched to its CSS class, and updated the <code>pygment.css</code> file.</li>
+</ul>
+<p>I'm sure there is an easier way. </p>
+<p>Weirdly enough, some classes were missing in the <code>pygments.css</code> file. Added them manually to fix.</p>
+<h2>To render</h2>
+<p>Takes ~1s to run.</p>
+<h3>run once</h3>
 <p>in a Terminal window:</p>
 <ol>
 <li><code>cd</code> to project directory</li>
 <li><code>. venv/bin/activate</code> (to activate Pelican, installed in venv)</li>
 <li><code>cd</code> to <code>notes</code> folder (your name may vary)</li>
-<li><code>pelican -r</code> (for reload)</li>
+<li><code>pelican</code>  </li>
 </ol>
+<h3>keeping it running in the background, ongoing</h3>
+<p>best for development:</p>
+<p><code>pelican -r</code> (for reload) instead of just <code>pelican</code></p>
 <h2>What tripped me up</h2>
 <h3>Paths</h3>
 <p>figuring out the path syntax to use for images (and pdfs, etc). From subfolder in <code>content</code> I now use: </p>
