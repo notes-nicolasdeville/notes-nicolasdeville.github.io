@@ -2,7 +2,7 @@
 @import url('https://fonts.googleapis.com/css?family=Lato');
 
 /* Global reset / clean slate */
-html, body, div, h1, h2, h3, h4, h5, h6, ul, ol, li, p, blockquote, pre, form, fieldset, table, th, td {
+html, body, div, h1, h2, h3, h4, h5, h6, ul, ol, li, p, blockquote, pre, form, fieldset, table, th, td, p {
     margin: 0;
     padding: 0;
 }
@@ -14,9 +14,26 @@ body {
     font-family: 'Lato', Arial, sans-serif;
     line-height: 1.429;
     margin: 0;
-    margin-right: 0.5em;
+    /* margin-right: 0.5em; */
     padding: 0;
     text-align: left;
+}
+
+.notes_count {
+    background: #fff;
+    color: #000305;
+    font-size: 90%; /* Base font size: 14px */
+    font-family: 'Lato', Arial, sans-serif;
+    margin-right: 0.5em;
+    margin-top: 0;
+    margin-left: 0;
+    margin-bottom: 0;
+    padding: 0;
+    text-align: right;
+}
+
+.header_image {
+    padding: 10px;
 }
 
 /* Headings */
@@ -118,12 +135,14 @@ ol {
 li {
     margin-top: 0.5em;
     margin-bottom: 1em;
+    margin-right: 0.5em;
 }
 
 .post-info {
     width: 100%;
     text-align: right;
     margin: 0;
+    margin-right: 0.5em;
     padding: 0;
     /* border-right: 2px solid #eee;
     border-bottom: 2px solid #eee; */
@@ -246,7 +265,8 @@ aside, nav, article, figure {
 /***** Layout *****/
 .body {
     clear: both;
-    margin: 0 auto;
+    /* margin: 0 auto; */
+    margin: 0;
     max-width: 800px;
 }
 img {
@@ -274,16 +294,16 @@ div.figure p.caption, figure p.caption { /* margin provided by figure */
 	Header
 *****************/
 #banner {
-	margin: 0 auto;
-	padding: 0.8em 0 0 0;
+	margin: 0;
+	padding: 0;
 }
 
 	/* Banner */
 	#banner h1 {
-		font-size: 2.2em;
+		font-size: 2em;
 		line-height: 1.0;
 		margin-bottom: .2em;
-    margin-top: .2em;
+        margin-top: .2em;
 	}
 
 	#banner h1 a:link, #banner h1 a:visited {
@@ -312,6 +332,7 @@ div.figure p.caption, figure p.caption { /* margin provided by figure */
 		line-height: 30px;
 		/* margin: 0 auto 2em auto; */
 		padding: 0;
+        margin: 0;
 		text-align: center;
 		max-width: 800px;
 
@@ -322,7 +343,8 @@ div.figure p.caption, figure p.caption { /* margin provided by figure */
 
 	#banner nav ul {
     list-style: none;
-    margin: 0 auto; /* top | right | bottom | left */
+    /* margin: 0 auto; top | right | bottom | left */
+    margin: 0;
     max-width: 800px;
     }
 	#banner nav li {
@@ -348,8 +370,9 @@ div.figure p.caption, figure p.caption { /* margin provided by figure */
 /*
 	Featured
 *****************/
-/* #featured {
-	background: #fffeee;
+#featured {
+    margin-right: 0.5em;
+	/* background: #fffeee;
 	margin-bottom: 2em;
 	overflow: hidden;
 	padding: 20px;
@@ -357,10 +380,10 @@ div.figure p.caption, figure p.caption { /* margin provided by figure */
 
 	border-radius: 10px;
 	-moz-border-radius: 10px;
-	-webkit-border-radius: 10px;
+	-webkit-border-radius: 10px; */
 }
 
-#featured figure {
+/* #featured figure {
 	border: 2px solid #eee;
 	float: right;
 	margin: 0.786em 2em 0 5em;
@@ -591,7 +614,7 @@ li:first-child .hentry, #content > .hentry {
     color: #888;
     padding: .5em 1em 0 0;
     text-align: right;
-  }
+    }
 
 	#comments-list li:nth-child(2n) blockquote {background: #F5f5f5;}
 
@@ -680,13 +703,13 @@ li:first-child .hentry, #content > .hentry {
 }
 
 .hfeed { /* removes the indent in post feeds */
-  padding: 0;
-  margin: 0;
+    padding: 0;
+    margin-right: 0.5em;
 }
 
 .separator {
-  color: #C64350;
-  font-size: 1.2em;
+    color: #C64350;
+    font-size: 1.2em;
 }
 
 .notes-section {
