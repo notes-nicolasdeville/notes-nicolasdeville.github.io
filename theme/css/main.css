@@ -188,7 +188,7 @@ code {
     color: #C74350;
     border-radius: 0.3em;
     padding: 3px 5px 3px 5px; /* top | right | bottom | left */
-    white-space: nowrap;
+    /* white-space: nowrap; */
 }
 
 cite {}
