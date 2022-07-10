@@ -170,6 +170,7 @@ pre {
     /* margin: 10px;  */
     overflow: auto;
     border-radius: 0.5em;
+    font-size: .7rem;
 }
 /* pre:hover, pre:focus {
     width: min-content; 
