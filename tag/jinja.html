@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta name="generator" content="Pelican" />
+        <title>Nic's notes - jinja</title>
+        <link rel="stylesheet" href="../theme/css/main.css" />
+</head>
+
+<body id="index" class="home">
+        <header id="banner" class="body">
+
+            <!-- <table class="header_table">
+                <tr>
+                  <td style="width:50px;"><a href="../"><img src="../images/edelweiss_black.svg" alt="Edelweiss logo" width="50"/></a></td>
+                  <td><h1><a href="../">Nic's notes</a></h1></td>
+                </tr>
+              </table> -->
+
+            <a href="../"><img src="../images/nic_notes_header.svg" alt="Nic's notes" width="266"/></a>
+              
+            <nav><ul>
+                <li><a href="../category/apps.html">apps</a></li>
+                <li><a href="../category/b2b-sales.html">b2b sales</a></li>
+                <li><a href="../category/books.html">books</a></li>
+                <li><a href="../category/careerplaybook.html">#careerplaybook</a></li>
+                <li><a href="../category/helpers.html">helpers</a></li>
+                <li><a href="../category/home-office.html">home office</a></li>
+                <li><a href="../category/misc.html">misc</a></li>
+                <li><a href="../category/python.html">python</a></li>
+                <li><a href="../category/salesleaderplaybook.html">#salesleaderplaybook</a></li>
+                <li><a href="../category/startups.html">startups</a></li>
+            </ul></nav>
+        </header>
+
+
+
+<!-- <p>1</p> -->
+<p class="body" style="text-align: right">1 notes</p>
+
+
+            <aside id="featured" class="body">
+            <!-- LATEST NOTE -->
+            <p class="notes-section">latest note</p>
+            <hr/>
+
+                <article class="hentry">
+                    <h1 class="entry-title"><a href="../articles/generate-sitemap-with-python.html">Generate Sitemap with Python</a></h1>
+
+                    <!-- added 4/7 -->
+                    <div class="header_summary">
+                        <p>simple script to generate my sitemaps</p>
+                    </div>
+
+<footer class="post-info">
+
+    <p>
+        07 Jul 2022 <span class="separator">|</span> in <a class="link_tag" href="../category/python.html">python</a>
+ tags: <a class="link_tag" href="../tag/scripts.html">scripts</a>
+<a class="link_tag" href="../tag/jinja.html">jinja</a>
+
+        <!-- added 4/7 -->
+        <!-- 		<br />
+        <abbr class="modified" title="2022-07-08T00:39:51.309867+02:00">
+                Updated: 08 Jul 2022
+        </abbr>
+ -->
+
+    </p>
+
+    
+
+</footer><p>Using <code>jinja2</code> with <code>pip3 install jinja2</code>  </p>
+<p><a href="https://pypi.org/project/Jinja2/" target="_blank">https://pypi.org/project/Jinja2/</a>  </p>
+<p>Assuming list of links gathered separately as <code>links</code>.  </p>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">jinja2</span> <span class="kn">import</span> <span class="n">Template</span>
+<span class="kn">from</span> <span class="nn">datetime</span> <span class="kn">import</span> <span class="n">datetime</span>
+
+<span class="n">sitemap_template</span><span class="o">=</span><span class="s1">&#39;&#39;&#39;&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;</span>
+<span class="s1">&lt;urlset xmlns=&quot;http://www.sitemaps.org/schemas/sitemap/0.9&quot;&gt;</span>
+<span class="s1">    {</span><span class="si">% f</span><span class="s1">or link in links %}</span>
+<span class="s1">    &lt;url&gt;</span>
+<span class="s1">        &lt;loc&gt;{{ link[&#39;link&#39;] }}&lt;/loc&gt;</span>
+<span class="s1">        &lt;lastmod&gt;{{ link[&#39;lastmod&#39;] }}&lt;/lastmod&gt;</span>
+<span class="s1">        &lt;priority&gt;{{ link[&#39;priority&#39;] }}&lt;/priority&gt;        </span>
+<span class="s1">    &lt;/url&gt;</span>
+<span class="s1">    {</span><span class="si">% e</span><span class="s1">ndfor %}</span>
+<span class="s1">&lt;/urlset&gt;&#39;&#39;&#39;</span>
+
+<span class="n">template_sitemap</span> <span class="o">=</span> <span class="n">Template</span><span class="p">(</span><span class="n">sitemap_template</span><span class="p">)</span>
+
+<span class="n">lastmod_date</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">now</span><span class="p">()</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="s1">&#39;%Y-%m-</span><span class="si">%d</span><span class="s1">&#39;</span><span class="p">)</span>
+
+<span class="n">list_meta_urls</span> <span class="o">=</span> <span class="p">[]</span>
+
+<span class="k">for</span> <span class="n">link</span> <span class="ow">in</span> <span class="n">links</span><span class="p">:</span>
+    <span class="c1"># each link as &#39;priority: 1.0&#39; - additional logic required for tiering</span>
+    <span class="n">list_meta_urls</span><span class="o">.</span><span class="n">append</span><span class="p">({</span><span class="s1">&#39;link&#39;</span><span class="p">:</span> <span class="n">link</span><span class="p">,</span> <span class="s1">&#39;lastmod&#39;</span><span class="p">:</span> <span class="n">lastmod_date</span><span class="p">,</span> <span class="s1">&#39;priority&#39;</span><span class="p">:</span> <span class="s1">&#39;1.0&#39;</span><span class="p">})</span>
+
+<span class="c1"># Render each row / column in the sitemap</span>
+<span class="n">sitemap_output</span> <span class="o">=</span> <span class="n">template_sitemap</span><span class="o">.</span><span class="n">render</span><span class="p">(</span><span class="n">links</span><span class="o">=</span><span class="n">list_meta_urls</span><span class="p">)</span> 
+
+<span class="n">sitemap_filename</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;/path/to/folder/sitemap.xml&quot;</span> 
+
+<span class="c1"># Write the File to Your Working Folder</span>
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">sitemap_filename</span><span class="p">,</span> <span class="s1">&#39;wt&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>   
+    <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">sitemap_output</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Sitemap generated at </span><span class="si">{</span><span class="n">sitemap_filename</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</code></pre></div>
+                </article>
+            </aside>
+
+            
+
+        <section id="extras" class="body">
+                <div class="blogroll">
+                        <h2>links</h2>
+                        <ul>
+                            <li><a href="https://indeXall.io">Side project: indeXall.io</a></li>
+                        </ul>
+                </div><!-- /.blogroll -->
+
+                <div class="social">
+                        <h2>social</h2>
+                        <ul>
+
+                            <li><a href="https://www.linkedin.com/in/ndeville/">Linkedin</a></li>
+                            <li><a href="https://www.twitter.com/ndeville">Twitter</a></li>
+                        </ul>
+                </div><!-- /.social -->
+        </section><!-- /#extras -->
+
+        <footer id="contentinfo" class="body">
+                <address id="about" class="vcard body">
+                Powered by <a href="https://getpelican.com/">Pelican</a>, with <img src="../images/python.svg" alt="Nic's notes" width="16" style="vertical-align: middle;"/><a href="https://www.python.org/">Python</a>
+                </address><!-- /#about -->
+
+        </footer><!-- /#contentinfo -->
+
+</body>
+</html>
