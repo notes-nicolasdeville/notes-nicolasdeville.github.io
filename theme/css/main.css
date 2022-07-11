@@ -532,49 +532,49 @@ div.figure p.caption, figure p.caption { /* margin provided by figure */
 	padding: 0 0 0 1em; /* top | right | bottom | left */
 }
 li:first-child .hentry, #content > .hentry {
-  border: 0;
-  margin: 0;
+    border: 0;
+    margin: 0;
 }
 
 #content > .hentry {
-  padding: 0 0 0 1em;
+    padding: 0 0 0 1em;
 }
 /* .hentry img{display : none ;} */
 
 .entry-title {
-  font-size: 2em;
-  margin-bottom: 5px;
+    font-size: 2em;
+    margin-bottom: 5px;
   /* margin-top: 1em; */
 }
 .entry-title a:link, .entry-title a:visited {
-  text-decoration: none;
-  color: #333;
+    text-decoration: none;
+    color: #333;
 }
 .entry-title a:visited {
-  background-color: #fff;
+    background-color: #fff;
 }
 
 .hentry .post-info * {
-  font-style: normal;
+    font-style: normal;
 }
 
 	/* Content */
 	.hentry footer {
     margin-bottom: 1em;
-  }
+}
 	.hentry footer address {
     display: inline;
-  }
+}
 
 	#posts-list footer address {
     display: block;
-  }
+}
 
 	/* Blog Index */
 	#posts-list {
     list-style: none;
     margin: 0;
-  }
+}
 	/* #posts-list .hentry {padding-left: 10px; position: relative;} */
 
 	#posts-list footer {
