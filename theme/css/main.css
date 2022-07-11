@@ -171,7 +171,7 @@ pre {
     /* margin: 10px;  */
     overflow: auto;
     border-radius: 0.5em;
-    font-size: .7rem;
+    /* font-size: .7rem; */
 }
 /* pre:hover, pre:focus {
     width: min-content; 
@@ -181,7 +181,7 @@ code {
     background-color: #1d1d1d;
     /* width: 100%; */
     font-family: SFMono-Regular, Consolas, Liberation Mono, Menlo, monospace, Courier;
-    font-size: .7em;
+    font-size: .9em;
     line-height: 1.2rem;
     overflow-wrap: normal;
     display: inline-block;
@@ -676,19 +676,19 @@ li:first-child .hentry, #content > .hentry {
 
 .iphone {
   box-shadow: 4px 4px 10px #eee; /* offset-x | offset-y | blur-radius | color */
-  width: 400px;
-  text-align: center;
+    width: 400px;
+    text-align: center;
 }
 
 .header {
-  width: 800px;
+    width: 800px;
 }
 
 .header_table {
-  vertical-align: middle;
-  border-collapse: collapse;
-  padding: 0;
-  margin: 0;
+    ertical-align: middle;
+    border-collapse: collapse;
+    padding: 0;
+    margin: 0;
 }
 
 .header_summary {
@@ -742,30 +742,30 @@ li:first-child .hentry, #content > .hentry {
 
 .shadow {
   /* box-shadow: 1px 1px 1px 1px; */
-  box-shadow: 4px 4px 10px #eee;
-  padding: 1px 0 0.1em 1em;
+    box-shadow: 4px 4px 10px #eee;
+    padding: 1px 0 0.1em 1em;
   /* margin: 1em; */
 }
 
 .foldtl {
-  position: relative;
-  -webkit-box-shadow: 5px 5px 5px rgba(0,0,0,0.8);
-  -moz-box-shadow: 5px 5px 5px rgba(0,0,0,0.8);
-  box-shadow: 5px 5px 5px rgba(0,0,0,0.8);
+    position: relative;
+    -webkit-box-shadow: 5px 5px 5px rgba(0,0,0,0.8);
+    -moz-box-shadow: 5px 5px 5px rgba(0,0,0,0.8);
+    box-shadow: 5px 5px 5px rgba(0,0,0,0.8);
 }
 
 .foldtl:before {
-  content: "";
-  position: absolute;
-  top: 0%;
-  left: 0%;
-  width: 0px;
-  height: 0px;
-  border-bottom: 70px solid #eee;
-  border-left: 70px solid #272822; /*Set to background color, not transparent!*/
-  -webkit-box-shadow: 7px 7px 7px rgba(0,0,0,0.3);
-  -moz-box-shadow: 7px 7px 7px rgba(0,0,0,0.3);
-  box-shadow: 7px 7px 7px rgba(0,0,0,0.3);
+    content: "";
+    position: absolute;
+    top: 0%;
+    left: 0%;
+    width: 0px;
+    height: 0px;
+    border-bottom: 70px solid #eee;
+    border-left: 70px solid #272822; /*Set to background color, not transparent!*/
+    -webkit-box-shadow: 7px 7px 7px rgba(0,0,0,0.3);
+    -moz-box-shadow: 7px 7px 7px rgba(0,0,0,0.3);
+    box-shadow: 7px 7px 7px rgba(0,0,0,0.3);
 }
 
 .test {
