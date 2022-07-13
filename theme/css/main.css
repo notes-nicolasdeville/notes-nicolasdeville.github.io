@@ -447,14 +447,15 @@ div.figure p.caption, figure p.caption { /* margin provided by figure */
 	padding: .3em .25em;
 }
 
-#extras a:hover, #extras a:active {color: #fff;}
+#extras a:hover, #extras a:active {color: #C74350;}
 
 	/* Blogroll */
 	#extras .blogroll {
         margin-left: 1em;
         margin-right: 0.5em;
+        line-height: 2em;
 		float: left;
-		max-width: 615px;
+		max-width: 200px;
 	}
 
 	#extras .blogroll li {float: left; margin: 0 20px 0 0; max-width: 185px;}
