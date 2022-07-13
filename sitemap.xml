@@ -1,0 +1,1275 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset
+      xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
+            http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+
+<url>
+  <loc>https://notes.nicolasdeville.com/</loc>
+  <lastmod>2022-07-07T10:11:01+00:00</lastmod>
+  <priority>1.00</priority>
+</url>
+<url>
+  <loc>https://notes.nicolasdeville.com/category/apps.html</loc>
+  <lastmod>2022-07-07T10:11:00+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://notes.nicolasdeville.com/category/b2b-sales.html</loc>
+  <lastmod>2022-07-07T10:11:00+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://notes.nicolasdeville.com/category/books.html</loc>
+  <lastmod>2022-07-07T10:11:00+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://notes.nicolasdeville.com/category/careerplaybook.html</loc>
+  <lastmod>2022-07-07T10:11:00+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://notes.nicolasdeville.com/category/helpers.html</loc>
+  <lastmod>2022-07-07T10:11:00+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://notes.nicolasdeville.com/category/home-office.html</loc>
+  <lastmod>2022-07-07T10:11:00+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://notes.nicolasdeville.com/category/misc.html</loc>
+  <lastmod>2022-07-07T10:11:00+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://notes.nicolasdeville.com/category/python.html</loc>
+  <lastmod>2022-07-07T10:11:00+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://notes.nicolasdeville.com/category/salesleaderplaybook.html</loc>
+  <lastmod>2022-07-07T10:11:00+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://notes.nicolasdeville.com/category/startups.html</loc>
+  <lastmod>2022-07-07T10:11:00+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://notes.nicolasdeville.com/articles/importing-ghost-blog-posts-to-pelican-with-python.html</loc>
+  <lastmod>2022-07-07T10:11:00+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://notes.nicolasdeville.com/tag/scripts.html</loc>
+  <lastmod>2022-07-07T10:11:01+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://notes.nicolasdeville.com/articles/importing-notion-markdown-files-to-pelican-with-python.html</loc>
+  <lastmod>2022-07-07T10:11:00+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://notes.nicolasdeville.com/articles/python-notion.html</loc>
+  <lastmod>2022-07-07T10:11:00+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://notes.nicolasdeville.com/tag/notion.html</loc>
+  <lastmod>2022-07-07T10:11:01+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://notes.nicolasdeville.com/articles/github-pages.html</loc>
+  <lastmod>2022-07-07T10:11:00+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://notes.nicolasdeville.com/articles/chrome-extensions-for-sales.html</loc>
+  <lastmod>2022-07-07T10:11:00+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://notes.nicolasdeville.com/tag/sales.html</loc>
+  <lastmod>2022-07-07T10:11:01+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://notes.nicolasdeville.com/tag/chrome.html</loc>
+  <lastmod>2022-07-07T10:11:01+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://notes.nicolasdeville.com/articles/how-to-reference-a-site-in-search-engines.html</loc>
+  <lastmod>2022-07-07T10:11:00+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://notes.nicolasdeville.com/tag/html.html</loc>
+  <lastmod>2022-07-07T10:11:01+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://notes.nicolasdeville.com/tag/wip.html</loc>
+  <lastmod>2022-07-07T10:11:01+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://notes.nicolasdeville.com/articles/netflix.html</loc>
+  <lastmod>2022-07-07T10:11:00+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://notes.nicolasdeville.com/tag/netflix.html</loc>
+  <lastmod>2022-07-07T10:11:01+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://notes.nicolasdeville.com/articles/converting-text-to-html-with-python.html</loc>
+  <lastmod>2022-07-07T10:11:00+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://notes.nicolasdeville.com/articles/css-best-practices.html</loc>
+  <lastmod>2022-07-07T10:11:00+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://notes.nicolasdeville.com/tag/css.html</loc>
+  <lastmod>2022-07-07T10:11:01+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://notes.nicolasdeville.com/articles/ascii-tree.html</loc>
+  <lastmod>2022-07-07T10:11:00+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://notes.nicolasdeville.com/tag/terminal.html</loc>
+  <lastmod>2022-07-07T10:11:01+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://notes.nicolasdeville.com/articles/download-a-website-with-python.html</loc>
+  <lastmod>2022-07-07T10:11:00+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://notes.nicolasdeville.com/tag/python.html</loc>
+  <lastmod>2022-07-07T10:11:01+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://notes.nicolasdeville.com/tag/snippet.html</loc>
+  <lastmod>2022-07-07T10:11:01+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://notes.nicolasdeville.com/articles/ev.html</loc>
+  <lastmod>2022-07-07T10:11:00+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://notes.nicolasdeville.com/tag/ev.html</loc>
+  <lastmod>2022-07-07T10:11:01+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://notes.nicolasdeville.com/articles/memes.html</loc>
+  <lastmod>2022-07-07T10:11:00+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://notes.nicolasdeville.com/articles/alfred.html</loc>
+  <lastmod>2022-07-07T10:11:00+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://notes.nicolasdeville.com/articles/apps.html</loc>
+  <lastmod>2022-07-07T10:11:00+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://notes.nicolasdeville.com/tag/apps.html</loc>
+  <lastmod>2022-07-07T10:11:01+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://notes.nicolasdeville.com/articles/github.html</loc>
+  <lastmod>2022-07-07T10:11:00+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://notes.nicolasdeville.com/tag/github.html</loc>
+  <lastmod>2022-07-07T10:11:01+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://notes.nicolasdeville.com/articles/readwise.html</loc>
+  <lastmod>2022-07-07T10:11:00+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://notes.nicolasdeville.com/tag/productivity.html</loc>
+  <lastmod>2022-07-07T10:11:01+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://notes.nicolasdeville.com/tag/learning.html</loc>
+  <lastmod>2022-07-07T10:11:01+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://notes.nicolasdeville.com/articles/snippetslab.html</loc>
+  <lastmod>2022-07-07T10:11:00+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://notes.nicolasdeville.com/articles/kindle.html</loc>
+  <lastmod>2022-07-07T10:11:00+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://notes.nicolasdeville.com/tag/kindle.html</loc>
+  <lastmod>2022-07-07T10:11:01+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://notes.nicolasdeville.com/articles/pelican.html</loc>
+  <lastmod>2022-07-07T10:11:00+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://notes.nicolasdeville.com/articles/planning-meetings.html</loc>
+  <lastmod>2022-07-07T10:11:00+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://notes.nicolasdeville.com/articles/setapp.html</loc>
+  <lastmod>2022-07-07T10:11:00+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://notes.nicolasdeville.com/articles/simply-said.html</loc>
+  <lastmod>2022-07-07T10:11:00+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://notes.nicolasdeville.com/tag/career.html</loc>
+  <lastmod>2022-07-07T10:11:01+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://notes.nicolasdeville.com/tag/communication.html</loc>
+  <lastmod>2022-07-07T10:11:01+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://notes.nicolasdeville.com/articles/home-office-setup.html</loc>
+  <lastmod>2022-07-07T10:11:00+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://notes.nicolasdeville.com/articles/vs-code-my-ide-of-choice.html</loc>
+  <lastmod>2022-07-07T10:11:00+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://notes.nicolasdeville.com/articles/how-long-will-the-earth-remain-habitable.html</loc>
+  <lastmod>2022-07-07T10:11:00+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://notes.nicolasdeville.com/tag/resources.html</loc>
+  <lastmod>2022-07-07T10:11:01+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://notes.nicolasdeville.com/articles/rfp-and-tribal-knowledge.html</loc>
+  <lastmod>2022-07-07T10:11:00+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://notes.nicolasdeville.com/articles/home-office-setup-jan-22.html</loc>
+  <lastmod>2022-07-07T10:11:00+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://notes.nicolasdeville.com/articles/having-a-vision-is-critical.html</loc>
+  <lastmod>2022-07-07T10:11:00+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://notes.nicolasdeville.com/articles/overcommunicate.html</loc>
+  <lastmod>2022-07-07T10:11:00+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://notes.nicolasdeville.com/articles/we.html</loc>
+  <lastmod>2022-07-07T10:11:00+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://notes.nicolasdeville.com/articles/what-are-we-doing-wrong.html</loc>
+  <lastmod>2022-07-07T10:11:00+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://notes.nicolasdeville.com/articles/what-do-you-need-to-be-more-successful.html</loc>
+  <lastmod>2022-07-07T10:11:00+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://notes.nicolasdeville.com/articles/nasdaq-bubble.html</loc>
+  <lastmod>2022-07-07T10:11:00+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://notes.nicolasdeville.com/tag/crypto.html</loc>
+  <lastmod>2022-07-07T10:11:01+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://notes.nicolasdeville.com/articles/past-success-does-not-guarantee-future-success.html</loc>
+  <lastmod>2022-07-07T10:11:00+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://notes.nicolasdeville.com/articles/1-year-of-savings.html</loc>
+  <lastmod>2022-07-07T10:11:00+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://notes.nicolasdeville.com/articles/a-no-is-just-a-delayed-yes.html</loc>
+  <lastmod>2022-07-07T10:11:00+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://notes.nicolasdeville.com/articles/acknowledging-receipt-and-setting-expectations.html</loc>
+  <lastmod>2022-07-07T10:11:00+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://notes.nicolasdeville.com/articles/acting.html</loc>
+  <lastmod>2022-07-07T10:11:00+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://notes.nicolasdeville.com/articles/active-disqualification-as-self-qualification-strategy.html</loc>
+  <lastmod>2022-07-07T10:11:00+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://notes.nicolasdeville.com/articles/always-be-learning-and-how-to.html</loc>
+  <lastmod>2022-07-07T10:11:00+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://notes.nicolasdeville.com/articles/apologising.html</loc>
+  <lastmod>2022-07-07T10:11:00+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://notes.nicolasdeville.com/articles/are-you-taking-notes.html</loc>
+  <lastmod>2022-07-07T10:11:00+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://notes.nicolasdeville.com/articles/asking-for-blunt-feedback-and-how-to-handle-it.html</loc>
+  <lastmod>2022-07-07T10:11:00+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://notes.nicolasdeville.com/articles/asking-many-questions.html</loc>
+  <lastmod>2022-07-07T10:11:00+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://notes.nicolasdeville.com/articles/being-a-human-api.html</loc>
+  <lastmod>2022-07-07T10:11:00+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://notes.nicolasdeville.com/articles/being-a-whalehunter.html</loc>
+  <lastmod>2022-07-07T10:11:00+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://notes.nicolasdeville.com/articles/being-bad-at-something-is-the-first-step-to-being-good-at-something.html</loc>
+  <lastmod>2022-07-07T10:11:00+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://notes.nicolasdeville.com/articles/being-different.html</loc>
+  <lastmod>2022-07-07T10:11:00+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://notes.nicolasdeville.com/articles/being-good-is-not-good-enough.html</loc>
+  <lastmod>2022-07-07T10:11:00+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://notes.nicolasdeville.com/articles/being-in-sales-as-an-introvert.html</loc>
+  <lastmod>2022-07-07T10:11:00+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://notes.nicolasdeville.com/articles/being-on-the-front-line.html</loc>
+  <lastmod>2022-07-07T10:11:00+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://notes.nicolasdeville.com/articles/being-passionate.html</loc>
+  <lastmod>2022-07-07T10:11:00+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://notes.nicolasdeville.com/articles/beware-of-appearances.html</loc>
+  <lastmod>2022-07-07T10:11:00+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://notes.nicolasdeville.com/articles/bluf-bottom-line-up-front.html</loc>
+  <lastmod>2022-07-07T10:11:00+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://notes.nicolasdeville.com/articles/breaking-the-rules.html</loc>
+  <lastmod>2022-07-07T10:11:00+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://notes.nicolasdeville.com/articles/buffering-or-the-art-to-deliver-on-time.html</loc>
+  <lastmod>2022-07-07T10:11:00+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://notes.nicolasdeville.com/articles/build-systems.html</loc>
+  <lastmod>2022-07-07T10:11:00+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://notes.nicolasdeville.com/articles/business-creativity.html</loc>
+  <lastmod>2022-07-07T10:11:00+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://notes.nicolasdeville.com/articles/business-experience-and-mountaineering.html</loc>
+  <lastmod>2022-07-07T10:11:00+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://notes.nicolasdeville.com/articles/c-level-are-just-like-you.html</loc>
+  <lastmod>2022-07-07T10:11:00+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://notes.nicolasdeville.com/articles/carving-out-deep-work-time.html</loc>
+  <lastmod>2022-07-07T10:11:00+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://notes.nicolasdeville.com/articles/challenging.html</loc>
+  <lastmod>2022-07-07T10:11:00+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://notes.nicolasdeville.com/articles/communicating-context-to-maximise-buy-in.html</loc>
+  <lastmod>2022-07-07T10:11:00+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://notes.nicolasdeville.com/articles/concede-and-go-on-to-demonstrate-that-it-does-not-matter.html</loc>
+  <lastmod>2022-07-07T10:11:00+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://notes.nicolasdeville.com/articles/copy-strategies-invent-tactics.html</loc>
+  <lastmod>2022-07-07T10:11:00+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://notes.nicolasdeville.com/articles/crm-implementations.html</loc>
+  <lastmod>2022-07-07T10:11:00+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://notes.nicolasdeville.com/articles/deliberate-practice-makes-perfect.html</loc>
+  <lastmod>2022-07-07T10:11:00+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://notes.nicolasdeville.com/articles/dont-quit.html</loc>
+  <lastmod>2022-07-07T10:11:00+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://notes.nicolasdeville.com/articles/easy-is-boring.html</loc>
+  <lastmod>2022-07-07T10:11:00+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://notes.nicolasdeville.com/articles/engineering-the-narrative.html</loc>
+  <lastmod>2022-07-07T10:11:00+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://notes.nicolasdeville.com/articles/every-situation-has-something-positive-to-it.html</loc>
+  <lastmod>2022-07-07T10:11:00+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://notes.nicolasdeville.com/articles/every-tunnel-has-an-end.html</loc>
+  <lastmod>2022-07-07T10:11:00+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://notes.nicolasdeville.com/articles/fear-as-a-driver.html</loc>
+  <lastmod>2022-07-07T10:11:00+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://notes.nicolasdeville.com/articles/finding-a-mentor.html</loc>
+  <lastmod>2022-07-07T10:11:00+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://notes.nicolasdeville.com/articles/finding-email-addresses.html</loc>
+  <lastmod>2022-07-07T10:11:00+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://notes.nicolasdeville.com/articles/first-impression-counts.html</loc>
+  <lastmod>2022-07-07T10:11:00+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://notes.nicolasdeville.com/articles/focus-on-quality-of-work-vs-quantity.html</loc>
+  <lastmod>2022-07-07T10:11:00+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://notes.nicolasdeville.com/articles/following-the-law-of-diminishing-returns.html</loc>
+  <lastmod>2022-07-07T10:11:00+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://notes.nicolasdeville.com/articles/fud-fear-uncertainty-doubt.html</loc>
+  <lastmod>2022-07-07T10:11:00+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://notes.nicolasdeville.com/articles/going-over-your-boss-head-just-be-careful.html</loc>
+  <lastmod>2022-07-07T10:11:00+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://notes.nicolasdeville.com/articles/happy-holidays.html</loc>
+  <lastmod>2022-07-07T10:11:00+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://notes.nicolasdeville.com/articles/hate-to-lose-rather-than-will-to-win.html</loc>
+  <lastmod>2022-07-07T10:11:00+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://notes.nicolasdeville.com/articles/have-a-sales-playbook-before-scaling-your-team.html</loc>
+  <lastmod>2022-07-07T10:11:00+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://notes.nicolasdeville.com/articles/high-work-ethics.html</loc>
+  <lastmod>2022-07-07T10:11:00+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://notes.nicolasdeville.com/articles/hire-for-potential-not-experience.html</loc>
+  <lastmod>2022-07-07T10:11:00+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://notes.nicolasdeville.com/articles/how-to-close-larger-deals.html</loc>
+  <lastmod>2022-07-07T10:11:00+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://notes.nicolasdeville.com/articles/i-for-errors-we-for-successes.html</loc>
+  <lastmod>2022-07-07T10:11:00+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://notes.nicolasdeville.com/articles/keeping-the-door-open.html</loc>
+  <lastmod>2022-07-07T10:11:00+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://notes.nicolasdeville.com/articles/learning-to-read-body-language-face-expressions.html</loc>
+  <lastmod>2022-07-07T10:11:00+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://notes.nicolasdeville.com/articles/learning-touch-typing.html</loc>
+  <lastmod>2022-07-07T10:11:00+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://notes.nicolasdeville.com/articles/leaving-on-a-high.html</loc>
+  <lastmod>2022-07-07T10:11:00+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://notes.nicolasdeville.com/articles/losing.html</loc>
+  <lastmod>2022-07-07T10:11:00+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://notes.nicolasdeville.com/articles/making-it-real.html</loc>
+  <lastmod>2022-07-07T10:11:00+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://notes.nicolasdeville.com/articles/making-reporting-work-for-you.html</loc>
+  <lastmod>2022-07-07T10:11:00+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://notes.nicolasdeville.com/articles/managing-people-out.html</loc>
+  <lastmod>2022-07-07T10:11:00+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://notes.nicolasdeville.com/articles/mastering-the-3-levels-of-networking.html</loc>
+  <lastmod>2022-07-07T10:11:00+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://notes.nicolasdeville.com/articles/multi-year-discounts.html</loc>
+  <lastmod>2022-07-07T10:11:00+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://notes.nicolasdeville.com/articles/not-being-a-yes-wo-man.html</loc>
+  <lastmod>2022-07-07T10:11:00+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://notes.nicolasdeville.com/articles/not-misspelling-peoples-names.html</loc>
+  <lastmod>2022-07-07T10:11:00+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://notes.nicolasdeville.com/index2.html</loc>
+  <lastmod>2022-07-07T10:11:01+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://notes.nicolasdeville.com/index3.html</loc>
+  <lastmod>2022-07-07T10:11:01+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://notes.nicolasdeville.com/articles/freedom.html</loc>
+  <lastmod>2022-07-07T10:11:00+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://notes.nicolasdeville.com/articles/cloudapp.html</loc>
+  <lastmod>2022-07-07T10:11:00+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://notes.nicolasdeville.com/articles/4k-video-downloader.html</loc>
+  <lastmod>2022-07-07T10:11:00+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://notes.nicolasdeville.com/tag/video.html</loc>
+  <lastmod>2022-07-07T10:11:01+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://notes.nicolasdeville.com/articles/ulysses.html</loc>
+  <lastmod>2022-07-07T10:11:00+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://notes.nicolasdeville.com/articles/follow-up-then.html</loc>
+  <lastmod>2022-07-07T10:11:00+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://notes.nicolasdeville.com/articles/not-mistaking-the-forest-for-the-tree.html</loc>
+  <lastmod>2022-07-07T10:11:00+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://notes.nicolasdeville.com/articles/observing-to-learn.html</loc>
+  <lastmod>2022-07-07T10:11:00+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://notes.nicolasdeville.com/articles/offering-alternatives.html</loc>
+  <lastmod>2022-07-07T10:11:00+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://notes.nicolasdeville.com/articles/opening-the-prospect%E2%80%99s-eyes-on-the-opportunity.html</loc>
+  <lastmod>2022-07-07T10:11:00+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://notes.nicolasdeville.com/articles/over-prepare.html</loc>
+  <lastmod>2022-07-07T10:11:00+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://notes.nicolasdeville.com/articles/overcommunicating.html</loc>
+  <lastmod>2022-07-07T10:11:00+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://notes.nicolasdeville.com/articles/paradoxical-situation-of-sales.html</loc>
+  <lastmod>2022-07-07T10:11:00+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://notes.nicolasdeville.com/articles/people-hear-what-they-want-to-hear.html</loc>
+  <lastmod>2022-07-07T10:11:00+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://notes.nicolasdeville.com/articles/perception-is-reality.html</loc>
+  <lastmod>2022-07-07T10:11:00+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://notes.nicolasdeville.com/articles/play-the-cards-you-have.html</loc>
+  <lastmod>2022-07-07T10:11:00+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://notes.nicolasdeville.com/articles/playing-the-long-game.html</loc>
+  <lastmod>2022-07-07T10:11:00+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://notes.nicolasdeville.com/articles/price-add-on-for-custom-t&amp;cs.html</loc>
+  <lastmod>2022-07-07T10:11:00+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://notes.nicolasdeville.com/articles/product-demos.html</loc>
+  <lastmod>2022-07-07T10:11:00+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://notes.nicolasdeville.com/articles/proving-it-to-yourself.html</loc>
+  <lastmod>2022-07-07T10:11:00+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://notes.nicolasdeville.com/articles/putting-the-business-first.html</loc>
+  <lastmod>2022-07-07T10:11:00+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://notes.nicolasdeville.com/articles/putting-yourself-in-the-other-ones-shoes-your-shoe-size-does-not-matter.html</loc>
+  <lastmod>2022-07-07T10:11:00+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://notes.nicolasdeville.com/articles/reactivity-time.html</loc>
+  <lastmod>2022-07-07T10:11:00+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://notes.nicolasdeville.com/articles/reading-the-users-manual.html</loc>
+  <lastmod>2022-07-07T10:11:00+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://notes.nicolasdeville.com/articles/reality-distortion-field.html</loc>
+  <lastmod>2022-07-07T10:11:00+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://notes.nicolasdeville.com/articles/recommendations-and-references.html</loc>
+  <lastmod>2022-07-07T10:11:00+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://notes.nicolasdeville.com/articles/rfps.html</loc>
+  <lastmod>2022-07-07T10:11:00+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://notes.nicolasdeville.com/articles/sales-is-a-game.html</loc>
+  <lastmod>2022-07-07T10:11:00+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://notes.nicolasdeville.com/articles/sales-is-like-dating.html</loc>
+  <lastmod>2022-07-07T10:11:00+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://notes.nicolasdeville.com/articles/scaling.html</loc>
+  <lastmod>2022-07-07T10:11:00+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://notes.nicolasdeville.com/articles/selling-against-own-reseller.html</loc>
+  <lastmod>2022-07-07T10:11:00+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://notes.nicolasdeville.com/articles/sharing-pricing.html</loc>
+  <lastmod>2022-07-07T10:11:00+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://notes.nicolasdeville.com/articles/sleeping-over-it.html</loc>
+  <lastmod>2022-07-07T10:11:00+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://notes.nicolasdeville.com/articles/smykm-show-me-you-know-me.html</loc>
+  <lastmod>2022-07-07T10:11:00+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://notes.nicolasdeville.com/articles/solution-selling-v2.html</loc>
+  <lastmod>2022-07-07T10:11:00+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://notes.nicolasdeville.com/articles/solving-problems-the-client-was-not-aware-of.html</loc>
+  <lastmod>2022-07-07T10:11:00+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://notes.nicolasdeville.com/articles/speaking-up.html</loc>
+  <lastmod>2022-07-07T10:11:00+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://notes.nicolasdeville.com/articles/specialise-or-outsource.html</loc>
+  <lastmod>2022-07-07T10:11:00+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://notes.nicolasdeville.com/articles/take-one-step-back-to-jump-two-steps-forward.html</loc>
+  <lastmod>2022-07-07T10:11:00+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://notes.nicolasdeville.com/articles/the-benefits-of-calling-routines.html</loc>
+  <lastmod>2022-07-07T10:11:00+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://notes.nicolasdeville.com/articles/the-power-of-silences.html</loc>
+  <lastmod>2022-07-07T10:11:00+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://notes.nicolasdeville.com/articles/the-power-of-%E2%80%98thank-you%E2%80%99.html</loc>
+  <lastmod>2022-07-07T10:11:00+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://notes.nicolasdeville.com/articles/the-present-is-our-futures-past.html</loc>
+  <lastmod>2022-07-07T10:11:00+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://notes.nicolasdeville.com/articles/there-are-no-problems-only-challenges.html</loc>
+  <lastmod>2022-07-07T10:11:00+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://notes.nicolasdeville.com/category/b2b-sales2.html</loc>
+  <lastmod>2022-07-07T10:11:00+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://notes.nicolasdeville.com/articles/platform-revolution.html</loc>
+  <lastmod>2022-07-07T10:11:00+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://notes.nicolasdeville.com/tag/startups.html</loc>
+  <lastmod>2022-07-07T10:11:01+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://notes.nicolasdeville.com/articles/automate-the-boring-stuff.html</loc>
+  <lastmod>2022-07-07T10:11:00+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://notes.nicolasdeville.com/articles/the-lean-startup.html</loc>
+  <lastmod>2022-07-07T10:11:00+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://notes.nicolasdeville.com/articles/what-every-body-is-saying.html</loc>
+  <lastmod>2022-07-07T10:11:00+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://notes.nicolasdeville.com/articles/the-mom-test.html</loc>
+  <lastmod>2022-07-07T10:11:00+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://notes.nicolasdeville.com/articles/careerplaybook-022-asking-questions.html</loc>
+  <lastmod>2022-07-07T10:11:00+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://notes.nicolasdeville.com/articles/careerplaybook-021-hiring.html</loc>
+  <lastmod>2022-07-07T10:11:00+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://notes.nicolasdeville.com/articles/careerplaybook-020-owning-your-mistakes.html</loc>
+  <lastmod>2022-07-07T10:11:00+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://notes.nicolasdeville.com/tag/careeer.html</loc>
+  <lastmod>2022-07-07T10:11:01+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://notes.nicolasdeville.com/articles/careerplaybook-019-the-power-of-thank-you.html</loc>
+  <lastmod>2022-07-07T10:11:00+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://notes.nicolasdeville.com/articles/careerplaybook-018-leaders-and-managers.html</loc>
+  <lastmod>2022-07-07T10:11:00+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://notes.nicolasdeville.com/articles/careerplaybook-017-everyone-should-learn-programming.html</loc>
+  <lastmod>2022-07-07T10:11:00+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://notes.nicolasdeville.com/tag/programming.html</loc>
+  <lastmod>2022-07-07T10:11:01+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://notes.nicolasdeville.com/articles/careerplaybook-016-taking-notes.html</loc>
+  <lastmod>2022-07-07T10:11:00+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://notes.nicolasdeville.com/articles/careerplaybook-015-learning-to-read-body-language.html</loc>
+  <lastmod>2022-07-07T10:11:00+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://notes.nicolasdeville.com/articles/careerplaybook-014-why-format-matters.html</loc>
+  <lastmod>2022-07-07T10:11:00+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://notes.nicolasdeville.com/articles/careerplaybook-013-every-situation-has-something-positive-to-it.html</loc>
+  <lastmod>2022-07-07T10:11:00+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://notes.nicolasdeville.com/tag/mindset.html</loc>
+  <lastmod>2022-07-07T10:11:01+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://notes.nicolasdeville.com/articles/careerplaybook-012-learning-the-art-of-negotiation.html</loc>
+  <lastmod>2022-07-07T10:11:00+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://notes.nicolasdeville.com/articles/careerplaybook-011-putting-yourself-in-the-other-ones-shoes.html</loc>
+  <lastmod>2022-07-07T10:11:00+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://notes.nicolasdeville.com/articles/careerplaybook-010-the-present-is-our-futures-past.html</loc>
+  <lastmod>2022-07-07T10:11:00+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://notes.nicolasdeville.com/articles/careerplaybook-009-outsourcing-tasks.html</loc>
+  <lastmod>2022-07-07T10:11:00+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://notes.nicolasdeville.com/articles/careerplaybook-008-being-in-control-of-your-day.html</loc>
+  <lastmod>2022-07-07T10:11:00+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://notes.nicolasdeville.com/articles/careerplaybook-007-why-having-a-goal-matters.html</loc>
+  <lastmod>2022-07-07T10:11:00+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://notes.nicolasdeville.com/articles/careerplaybook-006-there-are-no-problems-only-challenges.html</loc>
+  <lastmod>2022-07-07T10:11:00+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://notes.nicolasdeville.com/articles/careerplaybook-005-asking-for-blunt-feedback.html</loc>
+  <lastmod>2022-07-07T10:11:00+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://notes.nicolasdeville.com/articles/careerplaybook-004-the-jerry-maguire-play.html</loc>
+  <lastmod>2022-07-07T10:11:00+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://notes.nicolasdeville.com/articles/careerplaybook-003-walking-meetings.html</loc>
+  <lastmod>2022-07-07T10:11:00+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://notes.nicolasdeville.com/tag/management.html</loc>
+  <lastmod>2022-07-07T10:11:01+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://notes.nicolasdeville.com/articles/careerplaybook-002-imposter-syndrome-is-more-widespread-than-you-think.html</loc>
+  <lastmod>2022-07-07T10:11:00+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://notes.nicolasdeville.com/articles/careerplaybook-001-always-be-learning.html</loc>
+  <lastmod>2022-07-07T10:11:00+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://notes.nicolasdeville.com/articles/careerplaybook-000-introduction.html</loc>
+  <lastmod>2022-07-07T10:11:00+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://notes.nicolasdeville.com/articles/css.html</loc>
+  <lastmod>2022-07-07T10:11:00+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://notes.nicolasdeville.com/articles/home-office-controllers.html</loc>
+  <lastmod>2022-07-07T10:11:00+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://notes.nicolasdeville.com/articles/tesla-handbook.html</loc>
+  <lastmod>2022-07-07T10:11:00+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://notes.nicolasdeville.com/tag/tesla.html</loc>
+  <lastmod>2022-07-07T10:11:01+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://notes.nicolasdeville.com/articles/why-helping-others.html</loc>
+  <lastmod>2022-07-07T10:11:00+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://notes.nicolasdeville.com/articles/custom-iems.html</loc>
+  <lastmod>2022-07-07T10:11:00+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://notes.nicolasdeville.com/articles/disappointed-by-linkedin.html</loc>
+  <lastmod>2022-07-07T10:11:00+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://notes.nicolasdeville.com/articles/you-dont-need-to-mansplain-to-me.html</loc>
+  <lastmod>2022-07-07T10:11:00+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://notes.nicolasdeville.com/articles/i-am-seriously-considering-being-part-of-the-first-colons-to-mars.html</loc>
+  <lastmod>2022-07-07T10:11:00+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://notes.nicolasdeville.com/tag/mars.html</loc>
+  <lastmod>2022-07-07T10:11:01+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://notes.nicolasdeville.com/articles/embedding-the-success-question-into-the-design-or-selection-of-a-project.html</loc>
+  <lastmod>2022-07-07T10:11:00+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://notes.nicolasdeville.com/articles/the-advice-i-always-give-when-mentoring.html</loc>
+  <lastmod>2022-07-07T10:11:00+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://notes.nicolasdeville.com/articles/learn-python.html</loc>
+  <lastmod>2022-07-07T10:11:00+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://notes.nicolasdeville.com/articles/underpromise-overdeliver.html</loc>
+  <lastmod>2022-07-07T10:11:00+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://notes.nicolasdeville.com/articles/why-having-a-goal-matters.html</loc>
+  <lastmod>2022-07-07T10:11:00+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://notes.nicolasdeville.com/articles/2-types-of-successful-saas-sales-people.html</loc>
+  <lastmod>2022-07-07T10:11:00+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://notes.nicolasdeville.com/articles/startupplaybook-01-how-to-bootstrap-a-tech-startup.html</loc>
+  <lastmod>2022-07-07T10:11:00+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://notes.nicolasdeville.com/articles/startupplaybook-00-my-learnings.html</loc>
+  <lastmod>2022-07-07T10:11:00+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://notes.nicolasdeville.com/tag/wip2.html</loc>
+  <lastmod>2022-07-07T10:11:01+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://notes.nicolasdeville.com/articles/thinking-like-an-entrepreneur.html</loc>
+  <lastmod>2022-07-07T10:11:00+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://notes.nicolasdeville.com/articles/thinking-outside-of-the-box.html</loc>
+  <lastmod>2022-07-07T10:11:00+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://notes.nicolasdeville.com/articles/turning-mistakes-into-opportunities.html</loc>
+  <lastmod>2022-07-07T10:11:00+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://notes.nicolasdeville.com/articles/using-your-customers-own-word.html</loc>
+  <lastmod>2022-07-07T10:11:00+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://notes.nicolasdeville.com/articles/value-is-in-the-eye-of-the-beholder.html</loc>
+  <lastmod>2022-07-07T10:11:00+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://notes.nicolasdeville.com/articles/walking-meetings.html</loc>
+  <lastmod>2022-07-07T10:11:00+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://notes.nicolasdeville.com/articles/what-is-your-cost-per-error.html</loc>
+  <lastmod>2022-07-07T10:11:00+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://notes.nicolasdeville.com/articles/what-more-can-i-do.html</loc>
+  <lastmod>2022-07-07T10:11:00+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://notes.nicolasdeville.com/articles/whats-the-worst-that-can-happen.html</loc>
+  <lastmod>2022-07-07T10:11:00+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://notes.nicolasdeville.com/articles/when-in-doubt-be-transparent.html</loc>
+  <lastmod>2022-07-07T10:11:00+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://notes.nicolasdeville.com/articles/why-format-matters.html</loc>
+  <lastmod>2022-07-07T10:11:00+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://notes.nicolasdeville.com/articles/wiify-whats-in-it-for-you.html</loc>
+  <lastmod>2022-07-07T10:11:00+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://notes.nicolasdeville.com/articles/win-win.html</loc>
+  <lastmod>2022-07-07T10:11:00+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://notes.nicolasdeville.com/articles/you-can-always-be-someones-expert.html</loc>
+  <lastmod>2022-07-07T10:11:00+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://notes.nicolasdeville.com/articles/you-know-who-you-are-you-dont-know-who-you-may-be.html</loc>
+  <lastmod>2022-07-07T10:11:00+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://notes.nicolasdeville.com/articles/you-never-lose-you-either-win-or-you-learn.html</loc>
+  <lastmod>2022-07-07T10:11:00+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://notes.nicolasdeville.com/articles/you-will-be-directed-to-who-you-sound-like.html</loc>
+  <lastmod>2022-07-07T10:11:00+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://notes.nicolasdeville.com/index.html</loc>
+  <lastmod>2022-07-07T10:11:01+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://notes.nicolasdeville.com/articles/are-you-selling-aspirin-a-vaccine-or-a-vitamin.html</loc>
+  <lastmod>2022-07-07T10:11:00+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://notes.nicolasdeville.com/articles/what-is-sales.html</loc>
+  <lastmod>2022-07-07T10:11:00+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://notes.nicolasdeville.com/tag/b2b-sales.html</loc>
+  <lastmod>2022-07-07T10:11:01+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://notes.nicolasdeville.com/pdfs/UlyssesMacShortcuts.pdf</loc>
+  <lastmod>2022-07-07T10:11:01+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+
+
+</urlset>
