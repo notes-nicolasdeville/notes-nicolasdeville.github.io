@@ -778,3 +778,7 @@ li:first-child .hentry, #content > .hentry {
     border-bottom: 2px solid #eee;
     box-shadow: 3px 6px 0 0 #eee; /* offset-x | offset-y | blur-radius | spread-radius | color */
 }
+
+.twitter-tweet {
+    margin: auto;
+}
