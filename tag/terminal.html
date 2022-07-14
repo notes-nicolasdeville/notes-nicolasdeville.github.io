@@ -5,31 +5,31 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <meta name="generator" content="Pelican" />
         <title>Nic's notes - terminal</title>
-        <link rel="stylesheet" href="https://notes.nicolasdeville.com/theme/css/main.css" />
+        <link rel="stylesheet" href="../theme/css/main.css" />
 </head>
 
 <body id="index" class="body">
         <header id="banner" class="body">
 
-            <a href="https://notes.nicolasdeville.com/"><img class="header_image" src="https://notes.nicolasdeville.com/images/nic_notes_header.svg" alt="Nic's notes" width="266"/></a>
+            <a href="../"><img class="header_image" src="../images/nic_notes_header.svg" alt="Nic's notes" width="266"/></a>
 
             <nav><ul>
-                <li><a href="https://notes.nicolasdeville.com/category/apps/">apps</a></li>
-                <li><a href="https://notes.nicolasdeville.com/category/b2b-sales/">b2b sales</a></li>
-                <li><a href="https://notes.nicolasdeville.com/category/books/">books</a></li>
-                <li><a href="https://notes.nicolasdeville.com/category/careerplaybook/">#careerplaybook</a></li>
-                <li><a href="https://notes.nicolasdeville.com/category/helpers/">helpers</a></li>
-                <li><a href="https://notes.nicolasdeville.com/category/home-office/">home office</a></li>
-                <li><a href="https://notes.nicolasdeville.com/category/misc/">misc</a></li>
-                <li><a href="https://notes.nicolasdeville.com/category/python/">python</a></li>
-                <li><a href="https://notes.nicolasdeville.com/category/salesleaderplaybook/">#salesleaderplaybook</a></li>
-                <li><a href="https://notes.nicolasdeville.com/category/startups/">startups</a></li>
+                <li><a href="../category/apps/">apps</a></li>
+                <li><a href="../category/b2b-sales/">b2b sales</a></li>
+                <li><a href="../category/books/">books</a></li>
+                <li><a href="../category/careerplaybook/">#careerplaybook</a></li>
+                <li><a href="../category/helpers/">helpers</a></li>
+                <li><a href="../category/home-office/">home office</a></li>
+                <li><a href="../category/misc/">misc</a></li>
+                <li><a href="../category/python/">python</a></li>
+                <li><a href="../category/salesleaderplaybook/">#salesleaderplaybook</a></li>
+                <li><a href="../category/startups/">startups</a></li>
             </ul></nav>
         </header>
 
 
 
-<p class="notes_count">1 notes <span style="color:#C74350">|</span> <a href="https://notes.nicolasdeville.com/tags">by tags</a></p>
+<p class="notes_count">2 notes <span style="color:#C74350">|</span> <a href="../tags">by tags</a></p>
 
 
             <aside id="featured" class="body">
@@ -38,20 +38,73 @@
             <hr/>
 
                 <article class="hentry">
-                    <h1 class="entry-title"><a href="https://notes.nicolasdeville.com/ascii-tree">ASCII tree</a></h1>
+                    <h1 class="entry-title"><a href="../unzip-split-zip-files-from-google-takeout">Unzip split zip files (from Google Takeout)</a></h1>
 
                     <!-- added 4/7 -->
                     <div>
                         <p class="header_summary">
-                            <p>how to build an ascii tree</p>
+                            
                         </p>
                     </div>
 
 <footer class="post-info">
 
     <p>
-        04 Jul 2022 <span class="separator">|</span> in <a class="link_tag" href="https://notes.nicolasdeville.com/category/helpers/">helpers</a>
- tags: <a class="link_tag" href="https://notes.nicolasdeville.com/tag/terminal.html">terminal</a>
+        14 Jul 2022 <span class="separator">|</span> in <a class="link_tag" href="../category/helpers/">helpers</a>
+ tags: <a class="link_tag" href="../tag/terminal.html">terminal</a>
+
+        <!-- added 4/7 -->
+        <!-- 		<br />
+        <abbr class="modified" title="2022-07-14T16:23:00.005903+02:00">
+                Updated: 14 Jul 2022
+        </abbr>
+ -->
+
+    </p>
+
+    
+
+</footer><h3>How to unzip split files on OS X</h3>
+<p>Google Takeout generates split zip files, without numberered file extensions. <br>
+Unzipping each individually results in most images not generated, with only the <code>.json</code> file for it.  </p>
+<p>Solution:  </p>
+<p>in Terminal, navigate to folder where the split zip files are and run:  </p>
+<p><code>unzip '*.zip' -d /path/to/unzip/destination</code></p>
+<p>Source:<br>
+<a href="https://superuser.com/questions/365643/how-to-unzip-split-files-on-os-x" target="_blank">https://superuser.com/questions/365643/how-to-unzip-split-files-on-os-x</a></p>
+                </article>
+            </aside>
+
+                <section id="content" class="body">
+
+                <!-- PREVIOUS NOTES -->
+				<p class="notes-section">previous notes</p>
+                <hr>
+
+                <ol id="posts-list" class="hfeed">
+            
+
+
+
+            <li>
+                <article class="hentry">
+                    <header>
+                        <!-- PREVIOUS NOTE TITLE -->
+                        <h1><a href="../ascii-tree" rel="bookmark"
+                            title="ASCII tree">ASCII tree</a></h1>
+                        <!-- PREVIOUS NOTE SUMMARY -->
+                        <div class="entry-content">
+                            <p>how to build an ascii tree</p>
+                        </div>
+                    </header>
+
+                    <div class="entry-content">
+                        <!-- PREVIOUS NOTE METADATA -->
+<footer class="post-info">
+
+    <p>
+        04 Jul 2022 <span class="separator">|</span> in <a class="link_tag" href="../category/helpers/">helpers</a>
+ tags: <a class="link_tag" href="../tag/terminal.html">terminal</a>
 
         <!-- added 4/7 -->
         <!-- 		<br />
@@ -64,140 +117,14 @@
 
     
 
-</footer><p>To build an ASCII tree, ie folder structure:</p>
-<p>in Terminal:</p>
-<ul>
-<li>install homebrew</li>
-<li><code>brew install tree</code> </li>
-<li>navigate to folder</li>
-<li><code>tree foldername</code></li>
-</ul>
-<p>Example (edited for length)</p>
-<div class="highlight"><pre><span></span><code>notes
-├── Makefile
-├── content
-│   ├── articles
-│   │   ├── <span class="ni">#careerplaybook</span>
-│   │   │   ├── 001-always-be-learning.md
-│   │   │   ├── 002-imposter-syndrome-is-more-widespread-than-you-think.md
-│   │   │   ├── 003-walking-meetings.md
-│   │   │   ├── 004-the-jerry-maguire-play.md
-│   │   ├── <span class="ni">#startupplaybook</span>
-│   │   │   ├── 00-my-learnings.md
-│   │   │   └── 01-how-to-bootstrap-a-tech-startup.md
-│   │   ├── apps
-│   │   │   ├── cloudapp.md
-│   │   │   ├── follow-up-then.md
-│   │   │   └── ulysses.md
-│   │   ├── b2b sales
-│   │   │   ├── a-no-is-just-a-delayed-yes.md
-│   │   │   ├── are-you-selling-aspirin-a-vaccine-or-a-vitamin.md
-│   │   │   ├── planning-meetings.md
-│   │   │   ├── the-advice-i-always-give-when-mentoring.md
-│   │   │   └── what-is-sales.md
-│   │   ├── books
-│   │   │   ├── automate-the-boring-stuff.md
-│   │   │   ├── platform-revolution.md
-│   │   │   ├── the-lean-startup.md
-│   │   │   ├── the-mom-test.md
-│   │   │   └── what-every-body-is-saying.md
-│   │   ├── helpers
-│   │   │   ├── css-tools.md
-│   │   │   └── kindle.md
-│   │   ├── home office
-│   │   │   ├── controllers.md
-│   │   │   └── setup.md
-│   │   ├── misc
-│   │   │   ├── crypto_bubble.md
-│   │   │   ├── custom-iems.md
-│   │   │   └── you-dont-need-to-mansplain-to-me.md
-│   │   ├── python
-│   │   │   ├── learn-python.md
-│   │   │   └── pelican.md
-│   │   └── space
-│   │       ├── i-am-seriously-considering-being-part-of-the-first-colons-to-mars.md
-│   │       └── space_how-long.md
-│   ├── extra
-│   │   └── CNAME
-│   ├── images
-│   │   ├── CP001_Audible.jpeg
-│   │   ├── CP001_AudibleStats.gif
-│   │   ├── CP001_Pocket.jpg
-│   │   └── web1_bubble.png
-│   ├── pages
-│   │   └── ABOUT.md
-│   └── pdfs
-│       └── Kinesis Adv2-Users-Manual-01-07-19_us.pdf
-├── output
-│   ├── CNAME
-│   ├── archives.html
-│   ├── articles
-│   │   ├── 4k-video-downloader.html
-│   │   ├── are-you-selling-aspirin-a-vaccine-or-a-vitamin.html
-│   │   └── you-dont-need-to-mansplain-to-me.html
-│   ├── author
-│   │   └── nic.html
-│   ├── authors.html
-│   ├── categories.html
-│   ├── category
-│   │   ├── apps.html
-│   │   ├── audio.html
-│   │   ├── b2b-sales.html
-│   │   └── startupplaybook.html
-│   ├── images
-│   │   ├── CP001_Audible.jpeg
-│   │   ├── CP001_AudibleStats.gif
-│   │   └── web1_bubble.png
-│   ├── index.html
-│   ├── pages
-│   │   └── about.html
-│   ├── pdfs
-│   │   └── Kinesis Adv2-Users-Manual-01-07-19_us.pdf
-│   ├── tag
-│   │   ├── b2b-sales.html
-│   │   ├── careeer.html
-│   │   └── video.html
-│   ├── tags.html
-│   └── theme
-│       ├── css
-│       │   ├── main.css
-│       │   └── pygment.css
-│       └── images
-│           └── icons
-├── pelicanconf.py
-├── publishconf.py
-├── tasks.py
-└── theme
-    ├── static
-    │   ├── css
-    │   │   ├── main.css
-    │   │   └── pygment.css
-    │   └── images
-    │       └── icons
-    ├── templates
-    │   ├── analytics.html
-    │   ├── archives.html
-    │   └── twitter.html
-    └── templates_bxup
-        ├── analytics.html
-        ├── archives.html
-        └── twitter.html
-</code></pre></div>
-
-<p>To restrict the number of levels use <code>-L</code> option followed the level number to reduce the depth, eg <code>tree -L 1</code> for first level only:</p>
-<div class="highlight"><pre><span></span><code>notes
-├── Makefile
-├── content
-├── output
-├── pelicanconf.py
-├── publishconf.py
-├── tasks.py
-└── theme
-</code></pre></div>
+</footer>                    </div>
+                    
                 </article>
-            </aside>
-
+                <hr/>
+            </li>
             
+                </ol><!-- /#posts-list -->
+                </section><!-- /#content -->
 
         <section id="extras" class="body">
                 <div class="blogroll">
@@ -220,7 +147,7 @@
 
         <footer id="contentinfo" class="body">
                 <address id="about" class="vcard body">
-                Powered by <a href="https://getpelican.com/">Pelican</a>, with <img src="https://notes.nicolasdeville.com/images/python.svg" alt="Nic's notes" width="16" style="vertical-align: middle;"/><a href="https://www.python.org/">Python</a>
+                Powered by <a href="https://getpelican.com/">Pelican</a>, with <img src="../images/python.svg" alt="Nic's notes" width="16" style="vertical-align: middle;"/><a href="https://www.python.org/">Python</a>
                 </address><!-- /#about -->
 
         </footer><!-- /#contentinfo -->
