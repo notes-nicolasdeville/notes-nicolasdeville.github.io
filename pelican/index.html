@@ -44,8 +44,8 @@
 
         <!-- added 4/7 -->
         <!-- 		<br />
-        <abbr class="modified" title="2022-07-14T22:48:00.178066+02:00">
-                Updated: 14 Jul 2022
+        <abbr class="modified" title="2022-07-15T00:05:29.217072+02:00">
+                Updated: 15 Jul 2022
         </abbr>
  -->
 
@@ -58,18 +58,6 @@
 <p>My blog writing journey: limited :)  </p>
 <p>Started learning/using Pelican on 27th June 2022.
 Migrated 29th June. </p>
-<h2>Syntax highlighting</h2>
-<p>Pelican installs the syntax highlighter Pygments. Haven't read the Pygments doc though: <a href="https://pygments.org/" target="_blank">https://pygments.org/</a>  </p>
-<p>Changed the formatting of my code blocks to reflect my VS Code theme.</p>
-<p>Tedious way:</p>
-<ul>
-<li>use same code in VS code and a rendered HTML version of it</li>
-<li>inspecting the rendered code provides the class used for it (eg <code>&lt;span class="kn"&gt;from&lt;/span&gt;</code> = the initial "from" word in my script uses CSS class "kn")</li>
-<li>classes can be found in <code>theme/static/css/pygment.css</code></li>
-<li>using a colour picker (<a href="https://setapp.com/apps/aquarelo" target="_blank">Aquarelo</a> just installed from my <a href="../apps/setapp.md">SetApp</a> subscription, I picked the color code for each highlight color in VS code, matched to its CSS class, and updated the <code>pygment.css</code> file.</li>
-</ul>
-<p>I'm sure there is an easier way. </p>
-<p>Weirdly enough, some classes were missing in the <code>pygments.css</code> file. Added them manually to fix.</p>
 <h2>To render</h2>
 <p>Takes ~1s to run.</p>
 <h3>run once</h3>
@@ -106,6 +94,18 @@ Slug: github-pages
 
 <p>will get the slug <code>github-pages.html</code></p>
 <h3>Syntax highlighting</h3>
+<p>Pelican installs the syntax highlighter Pygments. Haven't read the Pygments doc though: <a href="https://pygments.org/" target="_blank">https://pygments.org/</a>  </p>
+<p>Changed the formatting of my code blocks to reflect my VS Code theme.</p>
+<p>Tedious way:</p>
+<ul>
+<li>use same code in VS code and a rendered HTML version of it</li>
+<li>inspecting the rendered code provides the class used for it (eg <code>&lt;span class="kn"&gt;from&lt;/span&gt;</code> = the initial "from" word in my script uses CSS class "kn")</li>
+<li>classes can be found in <code>theme/static/css/pygment.css</code></li>
+<li>using a colour picker (<a href="https://setapp.com/apps/aquarelo" target="_blank">Aquarelo</a> just installed from my <a href="../apps/setapp.md">SetApp</a> subscription, I picked the color code for each highlight color in VS code, matched to its CSS class, and updated the <code>pygment.css</code> file.</li>
+</ul>
+<p>I'm sure there is an easier way. </p>
+<p>Weirdly enough, some classes were missing in the <code>pygments.css</code> file. Added them manually to fix.</p>
+<h4>for code</h4>
 <p>3 ways:</p>
 <p>1) my current default using <code>``` python</code>:</p>
 <div class="highlight"><pre><span></span><code><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;this is how it will be displayed&#39;</span><span class="p">)</span>
@@ -122,6 +122,60 @@ Slug: github-pages
 <p>(note to self: need to rework my css when line numbers are showing)</p>
 <p>I have not been able to make 2) and 3) work. </p>
 <p>Also not able to make the line highlights work with <code>``` python hl_lines="3 4"</code> (from <a href="https://yakworks.github.io/docmark/extensions/codehilite/" target="_blank">https://yakworks.github.io/docmark/extensions/codehilite/</a>)</p>
+<h4>for tables:</h4>
+<p>from: <a href="https://www.dj-bauer.de/use-tables-in-pelican-markdown-en.html" target="_blank">https://www.dj-bauer.de/use-tables-in-pelican-markdown-en.html</a>  </p>
+<p>Add to <code>pelicanconf.py</code>:  </p>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">markdown.extensions.tables</span> <span class="kn">import</span> <span class="n">TableExtension</span>
+<span class="n">MARKDOWN</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s2">&quot;extensions&quot;</span><span class="p">:</span> <span class="p">[</span><span class="n">TableExtension</span><span class="p">()]</span>    
+<span class="p">}</span>
+</code></pre></div>
+
+<p><strong><em>Note: adding the above broke my code syntax highlighting. Uncommenting it restored it.. and the table rendering still works. Not sure how/why.</em></strong></p>
+<p>Markdown syntax:</p>
+<div class="highlight"><pre><span></span><code>header1 | header2 | header3 | header4 | header5 |
+---|---|---|---|---|
+A1 | A2 | A3 | A4 | A5 |
+B1 | B2 | B3 | B4 | B5 |
+C1 | C2 | C3 | C4 | C5 |
+</code></pre></div>
+
+<p>renders:</p>
+<table>
+<thead>
+<tr>
+<th>header1</th>
+<th>header2</th>
+<th>header3</th>
+<th>header4</th>
+<th>header5</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>A1</td>
+<td>A2</td>
+<td>A3</td>
+<td>A4</td>
+<td>A5</td>
+</tr>
+<tr>
+<td>B1</td>
+<td>B2</td>
+<td>B3</td>
+<td>B4</td>
+<td>B5</td>
+</tr>
+<tr>
+<td>C1</td>
+<td>C2</td>
+<td>C3</td>
+<td>C4</td>
+<td>C5</td>
+</tr>
+</tbody>
+</table>
+<p>Can be styled with the <code>thead</code>/<code>th</code> and <code>tbody</code>/<code>td</code> CSS classes.</p>
 <h2>Variables</h2>
 <p>To show "Authors" instead of "Author" when there are more than 1 authors for the same article:</p>
 <div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">div</span><span class="p">&gt;</span>
@@ -154,6 +208,8 @@ See my note <a href="github-pages.html">Githug Pages</a>.  </p>
 <h3>Search</h3>
 <p>using Stork: <a href="https://stork-search.net/" target="_blank">https://stork-search.net/</a> (on Github: <a href="https://github.com/jameslittle230/stork" target="_blank">https://github.com/jameslittle230/stork</a>) <br>
 + plug-in: <a href="https://github.com/pelican-plugins/search" target="_blank">https://github.com/pelican-plugins/search</a>  </p>
+<h3>Add a Table of Contents using Markdown in Pelican</h3>
+<p><a href="https://cloudbytes.dev/snippets/add-a-table-of-contents-using-markdown-in-pelican" target="_blank">https://cloudbytes.dev/snippets/add-a-table-of-contents-using-markdown-in-pelican</a></p>
 <h2>Useful resources</h2>
 <h3>Pelican documentation</h3>
 <p>comprehensive and well written<br>

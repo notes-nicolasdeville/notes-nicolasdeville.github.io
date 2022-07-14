@@ -190,8 +190,8 @@ code {
     background-color: #1d1d1d;
     /* width: 100%; */
     font-family: SFMono-Regular, Consolas, Liberation Mono, Menlo, monospace, Courier;
-    font-size: .9em;
-    line-height: 1.2rem;
+    font-size: .8em;
+    /* line-height: 1.2rem; */
     overflow-wrap: normal;
     display: inline-block;
     /* border: solid 2px #5882FA; */
@@ -199,7 +199,7 @@ code {
     color: #9CDAFC;
     /* border: solid 1px #fff; */
     border-radius: 0.3em;
-    padding: 2px 10px 2px 10px; /* top | right | bottom | left */
+    padding: 2px 5px 2px 5px; /* top | right | bottom | left */
     margin: 0px 3px 0px 3px;
     /* white-space: nowrap; puts all on one line */
 }
@@ -811,3 +811,11 @@ li:first-child .hentry, #content > .hentry {
 .twitter-tweet {
     margin: auto;
 }
+
+/* for line number colouring in code blocks */
+.normal {  
+    color: #fff;
+    font-weight: bold;
+    font-size: 1.1em;
+}
+
