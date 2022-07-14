@@ -29,7 +29,18 @@
 
 
 
-<p class="notes_count">8 notes <span style="color:#C74350">|</span> <a href="https://notes.nicolasdeville.com/tags">by tags</a></p>
+<p class="notes_count">
+    9 notes 
+    <span style="color:#C74350">|</span> 
+    <a href="https://notes.nicolasdeville.com/tags">by tags</a> 
+    <span style="color:#C74350">|</span> 
+    <a href="https://notes.nicolasdeville.com/2022/">2022</a> 
+    <span style="color:#C74350">|</span> 
+    <a href="https://notes.nicolasdeville.com/2021/">2021</a> 
+    <span style="color:#C74350">|</span> 
+    <a href="https://notes.nicolasdeville.com/2020/">2020</a>
+</p>
+
 
 
             <aside id="featured" class="body">
@@ -38,15 +49,95 @@
             <hr/>
 
                 <article class="hentry">
-                    <h1 class="entry-title"><a href="https://notes.nicolasdeville.com/generate-sitemap-with-python">Generate Sitemap with Python</a></h1>
+                    <h1 class="entry-title"><a href="https://notes.nicolasdeville.com/how-to-find-broken-links-with-python">How to Find Broken Links With Python</a></h1>
 
                     <!-- added 4/7 -->
                     <div>
                         <p class="header_summary">
-                            <p>simple script to generate my sitemaps</p>
+                            
                         </p>
                     </div>
 
+<footer class="post-info">
+
+    <p>
+        14 Jul 2022 <span class="separator">|</span> in <a class="link_tag" href="https://notes.nicolasdeville.com/category/python/">python</a>
+ tags: <a class="link_tag" href="https://notes.nicolasdeville.com/tag/python.html">python</a>
+<a class="link_tag" href="https://notes.nicolasdeville.com/tag/scripts.html">scripts</a>
+
+        <!-- added 4/7 -->
+        <!-- 		<br />
+        <abbr class="modified" title="2022-07-14T23:08:32.124985+02:00">
+                Updated: 14 Jul 2022
+        </abbr>
+ -->
+
+    </p>
+
+    
+
+</footer><p>Source: <a href="https://brianli.com/2021/06/how-to-find-broken-links-with-python/" target="_blank">https://brianli.com/2021/06/how-to-find-broken-links-with-python/</a>   </p>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">requests</span>
+<span class="kn">from</span> <span class="nn">bs4</span> <span class="kn">import</span> <span class="n">BeautifulSoup</span>
+<span class="kn">from</span> <span class="nn">concurrent.futures</span> <span class="kn">import</span> <span class="n">ThreadPoolExecutor</span>
+
+<span class="k">def</span> <span class="nf">get_broken_links</span><span class="p">(</span><span class="n">url</span><span class="p">):</span>
+
+    <span class="c1"># Set root domain.</span>
+    <span class="n">root_domain</span> <span class="o">=</span> <span class="n">domain</span><span class="o">.</span><span class="n">com</span>
+
+    <span class="c1"># Internal function for validating HTTP status code.</span>
+    <span class="k">def</span> <span class="nf">_validate_url</span><span class="p">(</span><span class="n">url</span><span class="p">):</span>
+        <span class="n">r</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">r</span><span class="o">.</span><span class="n">status_code</span> <span class="o">==</span> <span class="mi">404</span><span class="p">:</span>
+            <span class="n">broken_links</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
+
+    <span class="c1"># Make request to URL.      </span>
+    <span class="n">data</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="p">)</span><span class="o">.</span><span class="n">text</span>
+
+    <span class="c1"># Parse HTML from request.</span>
+    <span class="n">soup</span> <span class="o">=</span> <span class="n">BeautifulSoup</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">features</span><span class="o">=</span><span class="s2">&quot;html.parser&quot;</span><span class="p">)</span>
+
+    <span class="c1"># Create a list containing all links with the root domain.</span>
+    <span class="n">links</span> <span class="o">=</span> <span class="p">[</span><span class="n">link</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;href&quot;</span><span class="p">)</span> <span class="k">for</span> <span class="n">link</span> <span class="ow">in</span> <span class="n">soup</span><span class="o">.</span><span class="n">find_all</span><span class="p">(</span><span class="s2">&quot;a&quot;</span><span class="p">)</span> <span class="k">if</span> <span class="sa">f</span><span class="s2">&quot;//</span><span class="si">{</span><span class="n">root_domain</span><span class="si">}</span><span class="s2">&quot;</span> <span class="ow">in</span> <span class="n">link</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;href&quot;</span><span class="p">)]</span>
+
+    <span class="c1"># Initialize list for broken links.</span>
+    <span class="n">broken_links</span> <span class="o">=</span> <span class="p">[]</span>
+
+    <span class="c1"># Loop through links checking for 404 responses, and append to list.</span>
+    <span class="k">with</span> <span class="n">ThreadPoolExecutor</span><span class="p">(</span><span class="n">max_workers</span><span class="o">=</span><span class="mi">8</span><span class="p">)</span> <span class="k">as</span> <span class="n">executor</span><span class="p">:</span>
+        <span class="n">executor</span><span class="o">.</span><span class="n">map</span><span class="p">(</span><span class="n">_validate_url</span><span class="p">,</span> <span class="n">links</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">broken_links</span>
+</code></pre></div>
+                </article>
+            </aside>
+
+                <section id="content" class="body">
+
+                <!-- PREVIOUS NOTES -->
+				<p class="notes-section">previous notes</p>
+                <hr>
+
+                <ol id="posts-list" class="hfeed">
+            
+
+
+
+            <li>
+                <article class="hentry">
+                    <header>
+                        <!-- PREVIOUS NOTE TITLE -->
+                        <h1><a href="https://notes.nicolasdeville.com/generate-sitemap-with-python" rel="bookmark"
+                            title="Generate Sitemap with Python">Generate Sitemap with Python</a></h1>
+                        <!-- PREVIOUS NOTE SUMMARY -->
+                        <div class="entry-content">
+                            <p>simple script to generate my sitemaps</p>
+                        </div>
+                    </header>
+
+                    <div class="entry-content">
+                        <!-- PREVIOUS NOTE METADATA -->
 <footer class="post-info">
 
     <p>
@@ -65,54 +156,11 @@
 
     
 
-</footer><p>Using <code>jinja2</code> with <code>pip3 install jinja2</code>  </p>
-<p><a href="https://pypi.org/project/Jinja2/" target="_blank">https://pypi.org/project/Jinja2/</a>  </p>
-<p>Assuming list of links gathered separately as <code>links</code>.  </p>
-<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">jinja2</span> <span class="kn">import</span> <span class="n">Template</span>
-<span class="kn">from</span> <span class="nn">datetime</span> <span class="kn">import</span> <span class="n">datetime</span>
-
-<span class="n">sitemap_template</span><span class="o">=</span><span class="s1">&#39;&#39;&#39;&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;</span>
-<span class="s1">&lt;urlset xmlns=&quot;http://www.sitemaps.org/schemas/sitemap/0.9&quot;&gt;</span>
-<span class="s1">    {</span><span class="si">% f</span><span class="s1">or link in links %}</span>
-<span class="s1">    &lt;url&gt;</span>
-<span class="s1">        &lt;loc&gt;{{ link[&#39;link&#39;] }}&lt;/loc&gt;</span>
-<span class="s1">        &lt;lastmod&gt;{{ link[&#39;lastmod&#39;] }}&lt;/lastmod&gt;</span>
-<span class="s1">        &lt;priority&gt;{{ link[&#39;priority&#39;] }}&lt;/priority&gt;        </span>
-<span class="s1">    &lt;/url&gt;</span>
-<span class="s1">    {</span><span class="si">% e</span><span class="s1">ndfor %}</span>
-<span class="s1">&lt;/urlset&gt;&#39;&#39;&#39;</span>
-
-<span class="n">template_sitemap</span> <span class="o">=</span> <span class="n">Template</span><span class="p">(</span><span class="n">sitemap_template</span><span class="p">)</span>
-
-<span class="n">lastmod_date</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">now</span><span class="p">()</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="s1">&#39;%Y-%m-</span><span class="si">%d</span><span class="s1">&#39;</span><span class="p">)</span>
-
-<span class="n">list_meta_urls</span> <span class="o">=</span> <span class="p">[]</span>
-
-<span class="k">for</span> <span class="n">link</span> <span class="ow">in</span> <span class="n">links</span><span class="p">:</span>
-    <span class="c1"># each link as &#39;priority: 1.0&#39; - additional logic required for tiering</span>
-    <span class="n">list_meta_urls</span><span class="o">.</span><span class="n">append</span><span class="p">({</span><span class="s1">&#39;link&#39;</span><span class="p">:</span> <span class="n">link</span><span class="p">,</span> <span class="s1">&#39;lastmod&#39;</span><span class="p">:</span> <span class="n">lastmod_date</span><span class="p">,</span> <span class="s1">&#39;priority&#39;</span><span class="p">:</span> <span class="s1">&#39;1.0&#39;</span><span class="p">})</span>
-
-<span class="c1"># Render each row / column in the sitemap</span>
-<span class="n">sitemap_output</span> <span class="o">=</span> <span class="n">template_sitemap</span><span class="o">.</span><span class="n">render</span><span class="p">(</span><span class="n">links</span><span class="o">=</span><span class="n">list_meta_urls</span><span class="p">)</span> 
-
-<span class="n">sitemap_filename</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;/path/to/folder/sitemap.xml&quot;</span> 
-
-<span class="c1"># Write the File to Your Working Folder</span>
-<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">sitemap_filename</span><span class="p">,</span> <span class="s1">&#39;wt&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>   
-    <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">sitemap_output</span><span class="p">)</span>
-
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Sitemap generated at </span><span class="si">{</span><span class="n">sitemap_filename</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-</code></pre></div>
+</footer>                    </div>
+                    
                 </article>
-            </aside>
-
-                <section id="content" class="body">
-
-                <!-- PREVIOUS NOTES -->
-				<p class="notes-section">previous notes</p>
-                <hr>
-
-                <ol id="posts-list" class="hfeed">
+                <hr/>
+            </li>
             
 
 
@@ -341,7 +389,7 @@
 
         <!-- added 4/7 -->
         <!-- 		<br />
-        <abbr class="modified" title="2022-07-14T22:34:57.855258+02:00">
+        <abbr class="modified" title="2022-07-14T22:48:00.178066+02:00">
                 Updated: 14 Jul 2022
         </abbr>
  -->
