@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta name="generator" content="Pelican" />
+        <title>Python library: Beautifulsoup</title>
+        <link rel="stylesheet" href="https://notes.nicolasdeville.com/theme/css/main.css" />
+        <meta name="description" content="makes it easy to scrape information from web pages" />
+</head>
+
+<body id="index" class="body">
+        <header id="banner" class="body">
+
+            <a href="https://notes.nicolasdeville.com/"><img class="header_image" src="https://notes.nicolasdeville.com/images/nic_notes_header.svg" alt="Nic's notes" width="266"/></a>
+
+            <nav><ul>
+                <li><a href="https://notes.nicolasdeville.com/apps/">apps</a></li>
+                <li><a href="https://notes.nicolasdeville.com/b2b-sales/">b2b sales</a></li>
+                <li><a href="https://notes.nicolasdeville.com/books/">books</a></li>
+                <li><a href="https://notes.nicolasdeville.com/careerplaybook/">#careerplaybook</a></li>
+                <li><a href="https://notes.nicolasdeville.com/helpers/">helpers</a></li>
+                <li><a href="https://notes.nicolasdeville.com/home-office/">home office</a></li>
+                <li><a href="https://notes.nicolasdeville.com/misc/">misc</a></li>
+                <li class="active"><a href="https://notes.nicolasdeville.com/python/">python</a></li>
+                <li><a href="https://notes.nicolasdeville.com/salesleaderplaybook/">#salesleaderplaybook</a></li>
+                <li><a href="https://notes.nicolasdeville.com/startups/">startups</a></li>
+            </ul></nav>
+        </header>
+
+<section id="content" class="body">
+  <article>
+    <header>
+      <h1 class="entry-title">
+        <a href="https://notes.nicolasdeville.com/python/library-beautifulsoup" rel="bookmark"
+           title="Permalink to Python library: Beautifulsoup">Python library: Beautifulsoup</a></h1>
+    </header>
+
+    <div class="entry-content">
+<footer class="post-info">
+
+    <p>
+        15 Jul 2022 <span class="separator">|</span> in <a class="link_tag" href="https://notes.nicolasdeville.com/python/">python</a>
+ tags: <a class="link_tag" href="https://notes.nicolasdeville.com/tag/python.html">python</a>
+<a class="link_tag" href="https://notes.nicolasdeville.com/tag/library.html">library</a>
+
+        <!-- added 4/7 -->
+        <!-- 		<br />
+        <abbr class="modified" title="2022-07-15T21:57:50.482408+02:00">
+                Updated: 15 Jul 2022
+        </abbr>
+ -->
+
+    </p>
+
+    
+
+</footer>      <p>Documentation: <a href="https://beautiful-soup-4.readthedocs.io/en/latest/" target="_blank">https://beautiful-soup-4.readthedocs.io/en/latest/</a>  </p>
+<p>PIP: <a href="https://pypi.org/project/beautifulsoup4/" target="_blank">https://pypi.org/project/beautifulsoup4/</a>  </p>
+<h3>Target by ID with wildcard</h3>
+<p>useful when IDs or classes have random strings within them, eg:<br>
+-<code>&lt;div id="content-author-B00CR42MOY" class="information_row"&gt;C. S. Lewis&lt;/div&gt;</code>
+-<code>&lt;div id="content-author-B08CGP9TJ7" class="information_row"&gt;Ernest Cline&lt;/div&gt;</code></p>
+<p>Snippet:</p>
+<div class="highlight"><pre><span></span><code><span class="n">author</span> <span class="o">=</span> <span class="n">x</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s2">&quot;div&quot;</span><span class="p">,</span> <span class="p">{</span><span class="s2">&quot;id&quot;</span> <span class="p">:</span> <span class="k">lambda</span> <span class="n">L</span><span class="p">:</span> <span class="n">L</span> <span class="ow">and</span> <span class="n">L</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s1">&#39;content-author&#39;</span><span class="p">)})</span><span class="o">.</span><span class="n">text</span>
+</code></pre></div>
+    </div><!-- /.entry-content -->
+
+  </article>
+</section>
+        <section id="extras" class="body">
+                <div class="blogroll">
+                        <h2>links</h2>
+                        <ul>
+                            <li><a href="https://indeXall.io">Side project: indeXall.io</a></li>
+                            <li><a href="https://btobsales.eu">Services: BtoBSales.EU</a></li>
+                        </ul>
+                </div><!-- /.blogroll -->
+
+                <div class="social">
+                        <h2>social</h2>
+                        <ul>
+
+                            <li><a href="https://www.linkedin.com/in/ndeville/">Linkedin</a></li>
+                            <li><a href="https://www.twitter.com/ndeville">Twitter</a></li>
+                        </ul>
+                </div><!-- /.social -->
+        </section><!-- /#extras -->
+
+        <footer id="contentinfo" class="body">
+                <address id="about" class="vcard body">
+                Powered by <a href="https://getpelican.com/">Pelican</a>, with <img src="https://notes.nicolasdeville.com/images/python.svg" alt="Nic's notes" width="16" style="vertical-align: middle;"/><a href="https://www.python.org/">Python</a>
+                </address><!-- /#about -->
+
+        </footer><!-- /#contentinfo -->
+
+</body>
+</html>
