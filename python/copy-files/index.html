@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta name="generator" content="Pelican" />
+        <title>Mass copy selected files with Python</title>
+        <link rel="stylesheet" href="https://notes.nicolasdeville.com/theme/css/main.css" />
+        <meta name="description" content="quick script to copy ~80k media files with duplicates" />
+</head>
+
+<body id="index" class="body">
+        <header id="banner" class="body">
+
+            <a href="https://notes.nicolasdeville.com/"><img class="header_image" src="https://notes.nicolasdeville.com/images/nic_notes_header.svg" alt="Nic's notes" width="266"/></a>
+
+            <nav><ul>
+                <li><a href="https://notes.nicolasdeville.com/apps/">apps</a></li>
+                <li><a href="https://notes.nicolasdeville.com/b2b-sales/">b2b sales</a></li>
+                <li><a href="https://notes.nicolasdeville.com/books/">books</a></li>
+                <li><a href="https://notes.nicolasdeville.com/careerplaybook/">#careerplaybook</a></li>
+                <li><a href="https://notes.nicolasdeville.com/helpers/">helpers</a></li>
+                <li><a href="https://notes.nicolasdeville.com/home-office/">home office</a></li>
+                <li class="active"><a href="https://notes.nicolasdeville.com/python/">python</a></li>
+                <li><a href="https://notes.nicolasdeville.com/random/">random</a></li>
+                <li><a href="https://notes.nicolasdeville.com/salesleaderplaybook/">#salesleaderplaybook</a></li>
+                <li><a href="https://notes.nicolasdeville.com/startups/">startups</a></li>
+            </ul></nav>
+        </header>
+
+<section id="content" class="body">
+    <article>
+        <header>
+            <h1 class="entry-title">
+                <a href="https://notes.nicolasdeville.com/python/copy-files" rel="bookmark"
+                title="Permalink to Mass copy selected files with Python">Mass copy selected files with Python
+                </a>
+            </h1>
+            <p class="header_summary">
+                <p>quick script to copy ~80k media files with duplicates</p>
+            </p>
+        </header>
+
+        <div class="entry-content">
+<footer class="post-info">
+
+    <p>
+        16 Jul 2022 <span class="separator">|</span> in <a class="link_tag" href="https://notes.nicolasdeville.com/python/">python</a>
+ tags: <a class="link_tag" href="https://notes.nicolasdeville.com/tag/python.html">python</a>
+<a class="link_tag" href="https://notes.nicolasdeville.com/tag/scripts.html">scripts</a>
+
+        <!-- added 4/7 -->
+        <!-- 		<br />
+        <abbr class="modified" title="2022-07-16T13:35:29.465428+02:00">
+                Updated: 16 Jul 2022
+        </abbr>
+ -->
+
+    </p>
+
+    
+
+</footer>            <p>I needed to copy selected media files (based on extension) from a server with complicated sub-folder structure and many duplicates.  </p>
+<p>A raw copy process sing (Path)Finder, it took 12+ hours and ended up with some errors.  </p>
+<p>So I decided to write a quick script and start again.  </p>
+<p>First I walked the root folder to identify all file extensions at play:   </p>
+<p>Then I used that list of extensions to filter the file types I needed to copy over:</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># Copy Pictures from server folder to local</span>
+
+<span class="kn">import</span> <span class="nn">os</span>
+<span class="kn">import</span> <span class="nn">shutil</span>
+
+<span class="kn">import</span> <span class="nn">time</span>
+<span class="n">start_time</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>
+
+<span class="n">test</span> <span class="o">=</span> <span class="kc">True</span>
+
+<span class="n">count</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">count_file</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">count_duplicate_name</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">file_copied</span> <span class="o">=</span> <span class="p">[]</span>
+
+<span class="n">valid_extensions</span> <span class="o">=</span> <span class="p">(</span>
+    <span class="c1"># &#39;&#39;, </span>
+    <span class="c1"># &#39;.jso&#39;, </span>
+    <span class="s1">&#39;.png&#39;</span><span class="p">,</span> 
+    <span class="s1">&#39;.mp4&#39;</span><span class="p">,</span> 
+    <span class="s1">&#39;.jpg_&#39;</span><span class="p">,</span> 
+    <span class="s1">&#39;.PNG&#39;</span><span class="p">,</span> 
+    <span class="s1">&#39;.mov&#39;</span><span class="p">,</span> 
+    <span class="c1"># &#39;.json&#39;, </span>
+    <span class="c1"># &#39;.js&#39;, </span>
+    <span class="c1"># &#39;.j&#39;, </span>
+    <span class="s1">&#39;.bmp&#39;</span><span class="p">,</span> 
+    <span class="s1">&#39;.m4v&#39;</span><span class="p">,</span> 
+    <span class="c1"># &#39;.mp3&#39;, </span>
+    <span class="s1">&#39;.jpeg&#39;</span><span class="p">,</span> 
+    <span class="c1"># &#39;.url&#39;, </span>
+    <span class="s1">&#39;.AVI&#39;</span><span class="p">,</span> 
+    <span class="s1">&#39;.mpg&#39;</span><span class="p">,</span> 
+    <span class="s1">&#39;.m4a&#39;</span><span class="p">,</span> 
+    <span class="s1">&#39;.psd&#39;</span><span class="p">,</span> 
+    <span class="s1">&#39;.JPG&#39;</span><span class="p">,</span> 
+    <span class="c1"># &#39;.tmp&#39;, </span>
+    <span class="c1"># &#39;.m&#39;, </span>
+    <span class="s1">&#39;.jpg&#39;</span><span class="p">,</span> 
+    <span class="c1"># &#39;.ini&#39;, </span>
+    <span class="c1"># &#39;.rss&#39;, </span>
+    <span class="s1">&#39;.avi&#39;</span>
+<span class="p">)</span>
+
+<span class="n">total_size</span> <span class="o">=</span> <span class="mi">0</span>
+
+<span class="k">for</span> <span class="n">root</span><span class="p">,</span> <span class="n">dirs</span><span class="p">,</span> <span class="n">files</span> <span class="ow">in</span> <span class="n">os</span><span class="o">.</span><span class="n">walk</span><span class="p">(</span><span class="s2">&quot;/path/to/source/folder&quot;</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">name</span> <span class="ow">in</span> <span class="n">files</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">name</span><span class="o">.</span><span class="n">endswith</span><span class="p">(</span><span class="n">valid_extensions</span><span class="p">):</span>
+            <span class="n">count_file</span> <span class="o">+=</span> <span class="mi">1</span>
+            <span class="n">file_size</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">getsize</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">root</span><span class="si">}</span><span class="s2">/</span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+            <span class="n">file_size_mb</span> <span class="o">=</span> <span class="n">file_size</span> <span class="o">/</span> <span class="mf">1e+6</span>
+            <span class="n">total_size</span> <span class="o">+=</span> <span class="n">file_size</span>
+            <span class="nb">print</span><span class="p">(</span><span class="n">count_file</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="s1">&#39;</span><span class="se">\t</span><span class="s1">&#39;</span><span class="p">,</span> <span class="n">file_size</span><span class="p">,</span> <span class="sa">f</span><span class="s2">&quot; = </span><span class="si">{</span><span class="nb">round</span><span class="p">(</span><span class="n">file_size_mb</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span><span class="si">}</span><span class="s2"> Mb&quot;</span><span class="p">)</span>
+
+            <span class="k">if</span> <span class="n">name</span> <span class="ow">in</span> <span class="n">file_copied</span><span class="p">:</span>
+                <span class="n">count_duplicate_name</span> <span class="o">+=</span> <span class="mi">1</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="k">if</span> <span class="ow">not</span> <span class="n">test</span><span class="p">:</span>
+                    <span class="n">shutil</span><span class="o">.</span><span class="n">copy2</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">root</span><span class="si">}</span><span class="s1">/</span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">,</span> <span class="s1">&#39;/path/to/destination/folder&#39;</span><span class="p">)</span>
+                <span class="n">file_copied</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
+
+<span class="c1">##########</span>
+
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">()</span>
+    <span class="nb">print</span><span class="p">()</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;-------------------------------&#39;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">basename</span><span class="p">(</span><span class="vm">__file__</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">()</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;count_file = </span><span class="si">{</span><span class="n">count_file</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;count_duplicate_name = </span><span class="si">{</span><span class="n">count_duplicate_name</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;total_size = </span><span class="si">{</span><span class="n">total_size</span><span class="si">}</span><span class="s2"> bytes&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;total_size_mb = </span><span class="si">{</span><span class="nb">int</span><span class="p">(</span><span class="n">total_size</span> <span class="o">/</span> <span class="mf">1e+6</span><span class="p">)</span><span class="si">}</span><span class="s2"> Mb&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;total_size_gb = </span><span class="si">{</span><span class="nb">int</span><span class="p">(</span><span class="n">total_size</span> <span class="o">/</span> <span class="mf">1e+6</span> <span class="o">/</span> <span class="mi">1024</span><span class="p">)</span><span class="si">}</span><span class="s2"> Gb&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">()</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;file_copied = </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">file_copied</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;count_duplicate_name = </span><span class="si">{</span><span class="n">count_duplicate_name</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;-------------------------------&#39;</span><span class="p">)</span>
+    <span class="n">run_time</span> <span class="o">=</span> <span class="nb">round</span><span class="p">((</span><span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span> <span class="o">-</span> <span class="n">start_time</span><span class="p">),</span> <span class="mi">1</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">run_time</span> <span class="o">&gt;</span> <span class="mi">60</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">basename</span><span class="p">(</span><span class="vm">__file__</span><span class="p">)</span><span class="si">}</span><span class="s1"> finished in </span><span class="si">{</span><span class="nb">round</span><span class="p">(</span><span class="n">run_time</span><span class="o">/</span><span class="mi">60</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span><span class="si">}</span><span class="s1"> minutes.&#39;</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">basename</span><span class="p">(</span><span class="vm">__file__</span><span class="p">)</span><span class="si">}</span><span class="s1"> finished in </span><span class="si">{</span><span class="nb">round</span><span class="p">(</span><span class="n">run_time</span><span class="p">,</span> <span class="mi">1</span> <span class="p">)</span><span class="si">}</span><span class="s1">s.&#39;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">()</span>
+</code></pre></div>
+
+<h3>Notes</h3>
+<ul>
+<li>everything under <code>##########</code> is my standard footer for Python script, ie optional</li>
+<li>the <code>test</code> variable enables to run tests without copying anything while <code>True</code>. Changing to <code>False</code> enables to run the copy process.</li>
+<li>I copied the list of all extensions from the first run and commented out the extensions I don't want to copy</li>
+<li>the <code>shutil.copy2</code> method overwrites files, ie taking care of duplicates natively</li>
+</ul>
+<p>prints:  </p>
+<p><img class="illustration" src="https://notes.nicolasdeville.com/images/python_script_pictures-dsd1.jpg" alt="python_script_pictures-dsd1.jpg"/>  </p>
+<p>test result:   </p>
+<p><img class="illustration" src="https://notes.nicolasdeville.com/images/python_script_pictures-dsd-test-result.jpg" alt="python_script_pictures-dsd-test-result.jpg"/>  </p>
+<p>run result (copying files):  </p>
+<p><img class="illustration" src="https://notes.nicolasdeville.com/images/python_script_pictures-dsd-run-result.jpg" alt="python_script_pictures-dsd-run-result.jpg"/>  </p>
+        </div><!-- /.entry-content -->
+    </article>
+</section>
+        <section id="extras" class="body">
+                <div class="blogroll">
+                        <h2>links</h2>
+                        <ul>
+                            <li><a href="https://indeXall.io">Side project: indeXall.io</a></li>
+                            <li><a href="https://btobsales.eu">Services: BtoBSales.EU</a></li>
+                        </ul>
+                </div><!-- /.blogroll -->
+
+                <div class="social">
+                        <h2>social</h2>
+                        <ul>
+
+                            <li><a href="https://www.linkedin.com/in/ndeville/">Linkedin</a></li>
+                            <li><a href="https://www.twitter.com/ndeville">Twitter</a></li>
+                        </ul>
+                </div><!-- /.social -->
+        </section><!-- /#extras -->
+
+        <footer id="contentinfo" class="body">
+                <address id="about" class="vcard body">
+                Powered by <a href="https://getpelican.com/">Pelican</a>, with <img src="https://notes.nicolasdeville.com/images/python.svg" alt="Nic's notes" width="16" style="vertical-align: middle;"/><a href="https://www.python.org/">Python</a>
+                </address><!-- /#about -->
+
+        </footer><!-- /#contentinfo -->
+
+</body>
+</html>

@@ -21,22 +21,27 @@
                 <li><a href="https://notes.nicolasdeville.com/careerplaybook/">#careerplaybook</a></li>
                 <li><a href="https://notes.nicolasdeville.com/helpers/">helpers</a></li>
                 <li><a href="https://notes.nicolasdeville.com/home-office/">home office</a></li>
-                <li><a href="https://notes.nicolasdeville.com/misc/">misc</a></li>
                 <li class="active"><a href="https://notes.nicolasdeville.com/python/">python</a></li>
+                <li><a href="https://notes.nicolasdeville.com/random/">random</a></li>
                 <li><a href="https://notes.nicolasdeville.com/salesleaderplaybook/">#salesleaderplaybook</a></li>
                 <li><a href="https://notes.nicolasdeville.com/startups/">startups</a></li>
             </ul></nav>
         </header>
 
 <section id="content" class="body">
-  <article>
-    <header>
-      <h1 class="entry-title">
-        <a href="https://notes.nicolasdeville.com/python/export-kindle-library" rel="bookmark"
-           title="Permalink to Exporting my Kindle library data">Exporting my Kindle library data</a></h1>
-    </header>
+    <article>
+        <header>
+            <h1 class="entry-title">
+                <a href="https://notes.nicolasdeville.com/python/export-kindle-library" rel="bookmark"
+                title="Permalink to Exporting my Kindle library data">Exporting my Kindle library data
+                </a>
+            </h1>
+            <p class="header_summary">
+                <p>basic script to export base data from HTML files</p>
+            </p>
+        </header>
 
-    <div class="entry-content">
+        <div class="entry-content">
 <footer class="post-info">
 
     <p>
@@ -46,8 +51,8 @@
 
         <!-- added 4/7 -->
         <!-- 		<br />
-        <abbr class="modified" title="2022-07-15T23:59:41.569332+02:00">
-                Updated: 15 Jul 2022
+        <abbr class="modified" title="2022-07-16T13:34:32.708461+02:00">
+                Updated: 16 Jul 2022
         </abbr>
  -->
 
@@ -55,7 +60,7 @@
 
     
 
-</footer>      <p>I'm trying to consolidate a list of all the books I have read. This includes my Kindle library, which has been the primary consumption method over the last 10 years.  </p>
+</footer>            <p>I'm trying to consolidate a list of all the books I have read. This includes my Kindle library, which has been the primary consumption method over the last 10 years.  </p>
 <p>It does not seem that there is an easy way to get one's Kindle data from Amazon (is that not a breach of some kind? At the very least it's bad software practice these days).   </p>
 <p>So I went ahead with the only way I know: scraping data with Python.   </p>
 <p>Ideally, one would query the pages directly on the server (calls with <code>requests</code> library) but as they sit behind a login, it was too tiresome to figure out the authentication (always a pain).  </p>
@@ -86,15 +91,18 @@
 <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">books</span><span class="p">:</span>
     <span class="c1"># this piece is what took me the most time to figure out, helping target CSS IDs STARTING WITH a specific string as each has a custom ID appended with a random string: {&quot;id&quot; : lambda L: L and L.startswith(&#39;content-title&#39;)})</span>
     <span class="n">title_block</span> <span class="o">=</span> <span class="n">x</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s2">&quot;div&quot;</span><span class="p">,</span> <span class="p">{</span><span class="s2">&quot;id&quot;</span> <span class="p">:</span> <span class="k">lambda</span> <span class="n">L</span><span class="p">:</span> <span class="n">L</span> <span class="ow">and</span> <span class="n">L</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s1">&#39;content-title&#39;</span><span class="p">)})</span><span class="o">.</span><span class="n">text</span>
-    <span class="k">if</span> <span class="s1">&#39;:&#39;</span> <span class="ow">in</span> <span class="n">title_block</span><span class="p">:</span>
+    <span class="k">if</span> <span class="s1">&#39;:&#39;</span> <span class="ow">in</span> <span class="n">title_block</span><span class="p">:</span> <span class="c1"># to separate title and tagline, where tagline is in the title, eg &#39;title: tagline&#39;</span>
         <span class="n">title</span> <span class="o">=</span> <span class="n">title_block</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;:&#39;</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
         <span class="n">tagline</span> <span class="o">=</span> <span class="n">title_block</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;:&#39;</span><span class="p">)[</span><span class="mi">1</span><span class="p">]</span>
     <span class="k">else</span><span class="p">:</span>
         <span class="n">title</span> <span class="o">=</span> <span class="n">title_block</span>
         <span class="n">tagline</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span>
+    <span class="n">slug</span> <span class="o">=</span> <span class="n">slugify</span><span class="p">(</span><span class="n">title</span><span class="p">)</span> <span class="c1"># slugify the title. Used for deduplication, cover image naming, file naming and slug definition</span>
     <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">title</span><span class="si">=}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">slug</span><span class="si">=}</span><span class="s2">&quot;</span><span class="p">)</span>
     <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">tagline</span><span class="si">=}</span><span class="s2">&quot;</span><span class="p">)</span>
 
+    <span class="c1"># same lambda logic to target the other tag based on CSS id starting with</span>
     <span class="n">author</span> <span class="o">=</span> <span class="n">x</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s2">&quot;div&quot;</span><span class="p">,</span> <span class="p">{</span><span class="s2">&quot;id&quot;</span> <span class="p">:</span> <span class="k">lambda</span> <span class="n">L</span><span class="p">:</span> <span class="n">L</span> <span class="ow">and</span> <span class="n">L</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s1">&#39;content-author&#39;</span><span class="p">)})</span><span class="o">.</span><span class="n">text</span>
     <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">author</span><span class="si">=}</span><span class="s2">&quot;</span><span class="p">)</span>
 
@@ -104,7 +112,6 @@
     <span class="nb">print</span><span class="p">()</span>
 </code></pre></div>
 
-<p>Instead of just printing, I can export the data to the target of my choice (Grist in my case: <a href="https://www.getgrist.com/" target="_blank">https://www.getgrist.com/</a>)  </p>
 <p>To run the script on all files in the folder where the HTML files have been downloaded, I just add:</p>
 <div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">os</span>
 
@@ -112,9 +119,27 @@
     <span class="k">for</span> <span class="n">name</span> <span class="ow">in</span> <span class="n">files</span><span class="p">:</span>
         <span class="k">if</span> <span class="n">name</span><span class="o">.</span><span class="n">endswith</span><span class="p">((</span><span class="s2">&quot;.html&quot;</span><span class="p">)):</span>
 </code></pre></div>
-    </div><!-- /.entry-content -->
 
-  </article>
+<p>Instead of just printing, you can export the data to the target of your choice.  </p>
+<p>Grist in my case: <a href="https://www.getgrist.com/" target="_blank">https://www.getgrist.com/</a>), with this addition to the code:  </p>
+<div class="highlight"><pre><span></span><code>                <span class="k">if</span> <span class="n">slug</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">books_slugs</span><span class="p">:</span>
+
+                    <span class="n">count_added</span> <span class="o">+=</span> <span class="mi">1</span>
+
+                    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">count_added</span><span class="si">}</span><span class="s2"> ADDED in Grist: </span><span class="si">{</span><span class="n">title</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+                    <span class="n">grist_PE</span><span class="o">.</span><span class="n">Books</span><span class="o">.</span><span class="n">add_records</span><span class="p">(</span><span class="s1">&#39;Master&#39;</span><span class="p">,</span> <span class="p">[</span>
+                                                    <span class="p">{</span>   <span class="s1">&#39;Title&#39;</span><span class="p">:</span> <span class="n">title</span><span class="p">,</span>
+                                                        <span class="s1">&#39;Author&#39;</span><span class="p">:</span> <span class="n">author</span><span class="p">,</span>
+                                                        <span class="s1">&#39;Slug&#39;</span><span class="p">:</span> <span class="n">slug</span><span class="p">,</span>
+                                                        <span class="s1">&#39;Tagline&#39;</span><span class="p">:</span> <span class="n">tagline</span><span class="p">,</span>
+                                                        <span class="s1">&#39;Bought&#39;</span><span class="p">:</span> <span class="n">date</span><span class="p">,</span>
+                                                        <span class="s1">&#39;Cover&#39;</span><span class="p">:</span> <span class="sa">f</span><span class="s2">&quot;book_</span><span class="si">{</span><span class="n">slug</span><span class="si">}</span><span class="s2">.jpg&quot;</span><span class="p">,</span>
+                                                        <span class="p">}</span>
+                                                <span class="p">])</span>
+</code></pre></div>
+        </div><!-- /.entry-content -->
+    </article>
 </section>
         <section id="extras" class="body">
                 <div class="blogroll">

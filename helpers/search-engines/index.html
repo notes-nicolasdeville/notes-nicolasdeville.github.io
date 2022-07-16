@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta name="generator" content="Pelican" />
+        <title>How to reference a site in search engines</title>
+        <link rel="stylesheet" href="https://notes.nicolasdeville.com/theme/css/main.css" />
+        <meta name="description" content="my ongoing notes on referencing my sites to search engines" />
+</head>
+
+<body id="index" class="body">
+        <header id="banner" class="body">
+
+            <a href="https://notes.nicolasdeville.com/"><img class="header_image" src="https://notes.nicolasdeville.com/images/nic_notes_header.svg" alt="Nic's notes" width="266"/></a>
+
+            <nav><ul>
+                <li><a href="https://notes.nicolasdeville.com/apps/">apps</a></li>
+                <li><a href="https://notes.nicolasdeville.com/b2b-sales/">b2b sales</a></li>
+                <li><a href="https://notes.nicolasdeville.com/books/">books</a></li>
+                <li><a href="https://notes.nicolasdeville.com/careerplaybook/">#careerplaybook</a></li>
+                <li class="active"><a href="https://notes.nicolasdeville.com/helpers/">helpers</a></li>
+                <li><a href="https://notes.nicolasdeville.com/home-office/">home office</a></li>
+                <li><a href="https://notes.nicolasdeville.com/python/">python</a></li>
+                <li><a href="https://notes.nicolasdeville.com/random/">random</a></li>
+                <li><a href="https://notes.nicolasdeville.com/salesleaderplaybook/">#salesleaderplaybook</a></li>
+                <li><a href="https://notes.nicolasdeville.com/startups/">startups</a></li>
+            </ul></nav>
+        </header>
+
+<section id="content" class="body">
+    <article>
+        <header>
+            <h1 class="entry-title">
+                <a href="https://notes.nicolasdeville.com/helpers/search-engines" rel="bookmark"
+                title="Permalink to How to reference a site in search engines">How to reference a site in search engines
+                </a>
+            </h1>
+            <p class="header_summary">
+                <p>my ongoing notes on referencing my sites to search engines</p>
+            </p>
+        </header>
+
+        <div class="entry-content">
+<footer class="post-info">
+
+    <p>
+        06 Jul 2022 <span class="separator">|</span> in <a class="link_tag" href="https://notes.nicolasdeville.com/helpers/">helpers</a>
+ tags: <a class="link_tag" href="https://notes.nicolasdeville.com/tag/html.html">html</a>
+<a class="link_tag" href="https://notes.nicolasdeville.com/tag/wip.html">WIP</a>
+
+        <!-- added 4/7 -->
+        <!-- 		<br />
+        <abbr class="modified" title="2022-07-14T23:04:56.857517+02:00">
+                Updated: 14 Jul 2022
+        </abbr>
+ -->
+
+    </p>
+
+    
+
+</footer>            <h1>WIP</h1>
+<h2>Generic</h2>
+<p>Create a sitemap (guidelines: <a href="https://www.sitemaps.org/protocol.html" target="_blank">https://www.sitemaps.org/protocol.html</a>):    </p>
+<ul>
+<li>free Sitemap generator: <a href="https://www.xml-sitemaps.com/" target="_blank">https://www.xml-sitemaps.com/</a>  </li>
+<li>or Python (see <a href="sitemap-generator/">NN: Sitemap Generator with Python</a>)</li>
+<li>or with Pelican, this plug-in is available: <a href="https://github.com/pelican-plugins/sitemap" target="_blank">https://github.com/pelican-plugins/sitemap</a> (to test)    </li>
+</ul>
+<h3>Hiding pages</h3>
+<p>Insert the following line anywhere in <code>robots.txt</code>, specifying the path to your sitemap:   </p>
+<div class="highlight"><pre><span></span><code>Sitemap: https://example.com/sitemap_location.xml
+</code></pre></div>
+
+<p>On pages to hide from search engines, eg "Contact Us", add to HTML page:  </p>
+<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">meta</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;robots&quot;</span> <span class="na">content</span><span class="o">=</span><span class="s">&quot;noindex&quot;</span><span class="p">&gt;</span>
+</code></pre></div>
+
+<h1>Adding to search engines</h1>
+<p>Each time, create account, upload file with authentication key to root of server for verification, then submit <code>/sitemap.xml</code> URL:    </p>
+<h2>Google</h2>
+<p><a href="https://www.google.com/webmasters/tools/sitemap-list" target="_blank">https://www.google.com/webmasters/tools/sitemap-list</a>  </p>
+<h2>Bing</h2>
+<p><a href="https://www.bing.com/toolbox/webmaster" target="_blank">https://www.bing.com/toolbox/webmaster</a>  </p>
+<p>Submit changes via API with Python, to avoid relying on inconsistent organic crawling: <a href="https://brianli.com/submitting-changed-urls-to-bing-webmaster-tools-with-python/" target="_blank">https://brianli.com/submitting-changed-urls-to-bing-webmaster-tools-with-python/</a></p>
+<h2>Yandex</h2>
+<p>Russian search engine   </p>
+<p><a href="https://webmaster.yandex.com/" target="_blank">https://webmaster.yandex.com/</a>  </p>
+<h2>Baidu</h2>
+<p>Chinese search engine   </p>
+<p><a href="https://zhanzhang.baidu.com/" target="_blank">https://zhanzhang.baidu.com/</a>  </p>
+        </div><!-- /.entry-content -->
+    </article>
+</section>
+        <section id="extras" class="body">
+                <div class="blogroll">
+                        <h2>links</h2>
+                        <ul>
+                            <li><a href="https://indeXall.io">Side project: indeXall.io</a></li>
+                            <li><a href="https://btobsales.eu">Services: BtoBSales.EU</a></li>
+                        </ul>
+                </div><!-- /.blogroll -->
+
+                <div class="social">
+                        <h2>social</h2>
+                        <ul>
+
+                            <li><a href="https://www.linkedin.com/in/ndeville/">Linkedin</a></li>
+                            <li><a href="https://www.twitter.com/ndeville">Twitter</a></li>
+                        </ul>
+                </div><!-- /.social -->
+        </section><!-- /#extras -->
+
+        <footer id="contentinfo" class="body">
+                <address id="about" class="vcard body">
+                Powered by <a href="https://getpelican.com/">Pelican</a>, with <img src="https://notes.nicolasdeville.com/images/python.svg" alt="Nic's notes" width="16" style="vertical-align: middle;"/><a href="https://www.python.org/">Python</a>
+                </address><!-- /#about -->
+
+        </footer><!-- /#contentinfo -->
+
+</body>
+</html>

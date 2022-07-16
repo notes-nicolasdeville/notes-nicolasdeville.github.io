@@ -559,7 +559,7 @@ li:first-child .hentry, #content > .hentry {
 .entry-title {
     font-size: 2em;
     margin-bottom: 5px;
-    margin-left: 0.5em;
+    /* margin-left: 0.5em; */
   /* margin-top: 1em; */
 }
 .entry-title a:link, .entry-title a:visited {
