@@ -1,0 +1,1123 @@
+[input]
+base_directory = "/Users/nic/Github/notes-nicolasdeville.github.io/"
+html_selector = "main"
+
+[[input.files]]
+path = "ABOUT/index.html"
+url = "ABOUT/"
+title = ""
+
+[[input.files]]
+path = "python/copy-files/index.html"
+url = "python/copy-files"
+title = "Mass copy selected files with Python"
+
+[[input.files]]
+path = "apps/newsletter-readers/index.html"
+url = "apps/newsletter-readers"
+title = "Newsletter readers"
+
+[[input.files]]
+path = "python/pelican/index.html"
+url = "python/pelican"
+title = "Building a static site with Pelican"
+
+[[input.files]]
+path = "python/export-kindle-library/index.html"
+url = "python/export-kindle-library"
+title = "Exporting my Kindle library data"
+
+[[input.files]]
+path = "books/library/index.html"
+url = "books/library"
+title = "My Books Library"
+
+[[input.files]]
+path = "python/library-beautifulsoup/index.html"
+url = "python/library-beautifulsoup"
+title = "Python library: Beautifulsoup"
+
+[[input.files]]
+path = "python/library-datetime/index.html"
+url = "python/library-datetime"
+title = "Python library: `datetime`"
+
+[[input.files]]
+path = "python/library-dateutil/index.html"
+url = "python/library-dateutil"
+title = "Python library: `dateutil`"
+
+[[input.files]]
+path = "python/broken-links/index.html"
+url = "python/broken-links"
+title = "How to Find Broken Links With Python"
+
+[[input.files]]
+path = "helpers/unzip-split-zip-files/index.html"
+url = "helpers/unzip-split-zip-files"
+title = "Unzip split zip files (from Google Takeout)"
+
+[[input.files]]
+path = "helpers/css-best-practices/index.html"
+url = "helpers/css-best-practices"
+title = "CSS Best Practices"
+
+[[input.files]]
+path = "b2b-sales/overselling-vs-underselling/index.html"
+url = "b2b-sales/overselling-vs-underselling"
+title = "Overselling vs Underselling"
+
+[[input.files]]
+path = "random/ark-invest/index.html"
+url = "random/ark-invest"
+title = "Ark Invest"
+
+[[input.files]]
+path = "b2b-sales/b2b-sales-resources/index.html"
+url = "b2b-sales/b2b-sales-resources"
+title = "B2B Sales Resources"
+
+[[input.files]]
+path = "random/supplements/index.html"
+url = "random/supplements"
+title = "Supplements"
+
+[[input.files]]
+path = "random/ai/index.html"
+url = "random/ai"
+title = "AI"
+
+[[input.files]]
+path = "helpers/learning-javascript/index.html"
+url = "helpers/learning-javascript"
+title = "Learning Javascript"
+
+[[input.files]]
+path = "helpers/regex/index.html"
+url = "helpers/regex"
+title = "Regex"
+
+[[input.files]]
+path = "python/generate-sitemap-with-python/index.html"
+url = "python/generate-sitemap-with-python"
+title = "Generate Sitemap with Python"
+
+[[input.files]]
+path = "python/importing-ghost-blog-posts-to-pelican-with-python/index.html"
+url = "python/importing-ghost-blog-posts-to-pelican-with-python"
+title = "Import Ghost blog posts to Pelican with Python"
+
+[[input.files]]
+path = "python/importing-notion-markdown-files-to-pelican-with-python/index.html"
+url = "python/importing-notion-markdown-files-to-pelican-with-python"
+title = "Notion Markdown files to Pelican Markdown files with Python"
+
+[[input.files]]
+path = "python/python-notion/index.html"
+url = "python/python-notion"
+title = "Fetch Notion database data with Python"
+
+[[input.files]]
+path = "helpers/github-pages/index.html"
+url = "helpers/github-pages"
+title = "Hosting my static website(s) with Github Pages"
+
+[[input.files]]
+path = "b2b-sales/chrome-extensions-for-sales/index.html"
+url = "b2b-sales/chrome-extensions-for-sales"
+title = "Google Chrome extensions for Sales"
+
+[[input.files]]
+path = "random/netflix/index.html"
+url = "random/netflix"
+title = "How to see and download Netflix viewing history"
+
+[[input.files]]
+path = "helpers/search-engines/index.html"
+url = "helpers/search-engines"
+title = "How to reference a site in search engines"
+
+[[input.files]]
+path = "python/text-to-html/index.html"
+url = "python/text-to-html"
+title = "Converting text to HTML with Python"
+
+[[input.files]]
+path = "helpers/ascii-tree/index.html"
+url = "helpers/ascii-tree"
+title = "ASCII tree"
+
+[[input.files]]
+path = "python/download-website/index.html"
+url = "python/download-website"
+title = "Download a website with Python"
+
+[[input.files]]
+path = "random/ev/index.html"
+url = "random/ev"
+title = "Electric Vehicles"
+
+[[input.files]]
+path = "random/memes/index.html"
+url = "random/memes"
+title = "Memes"
+
+[[input.files]]
+path = "apps/alfred/index.html"
+url = "apps/alfred"
+title = "Alfred"
+
+[[input.files]]
+path = "apps/apps/index.html"
+url = "apps/apps"
+title = "Apps I use"
+
+[[input.files]]
+path = "helpers/github/index.html"
+url = "helpers/github"
+title = "Github"
+
+[[input.files]]
+path = "apps/readwise/index.html"
+url = "apps/readwise"
+title = "Readwise | helps me retain what I read"
+
+[[input.files]]
+path = "apps/snippetslab/index.html"
+url = "apps/snippetslab"
+title = "SnippetsLab | Snippets manager"
+
+[[input.files]]
+path = "helpers/kindle/index.html"
+url = "helpers/kindle"
+title = "Kindle"
+
+[[input.files]]
+path = "b2b-sales/planning-meetings/index.html"
+url = "b2b-sales/planning-meetings"
+title = "Planning Meetings"
+
+[[input.files]]
+path = "apps/setapp/index.html"
+url = "apps/setapp"
+title = "Setapp: macOS app subsciption"
+
+[[input.files]]
+path = "books/simply-said/index.html"
+url = "books/simply-said"
+title = "Simply Said"
+
+[[input.files]]
+path = "home-office/home-office-setup/index.html"
+url = "home-office/home-office-setup"
+title = "Home Office Setup (since June '22)"
+
+[[input.files]]
+path = "apps/vs-code/index.html"
+url = "apps/vs-code"
+title = "VS Code | my IDE of choice"
+
+[[input.files]]
+path = "random/space_how-long/index.html"
+url = "random/space_how-long"
+title = "How long will the Earth remain habitable?"
+
+[[input.files]]
+path = "salesleaderplaybook/rfp-and-tribal-knowledge/index.html"
+url = "salesleaderplaybook/rfp-and-tribal-knowledge"
+title = "RFP and tribal knowledge"
+
+[[input.files]]
+path = "home-office/home-office-setup-jan-22/index.html"
+url = "home-office/home-office-setup-jan-22"
+title = "Home Office Setup (-May '22)"
+
+[[input.files]]
+path = "salesleaderplaybook/having-a-vision-is-critical/index.html"
+url = "salesleaderplaybook/having-a-vision-is-critical"
+title = "Having a vision is critical"
+
+[[input.files]]
+path = "salesleaderplaybook/overcommunicate/index.html"
+url = "salesleaderplaybook/overcommunicate"
+title = "Overcommunicate"
+
+[[input.files]]
+path = "salesleaderplaybook/we/index.html"
+url = "salesleaderplaybook/we"
+title = "We"
+
+[[input.files]]
+path = "salesleaderplaybook/what-are-we-doing-wrong/index.html"
+url = "salesleaderplaybook/what-are-we-doing-wrong"
+title = "What are we doing wrong"
+
+[[input.files]]
+path = "salesleaderplaybook/what-do-you-need-to-be-more-successful/index.html"
+url = "salesleaderplaybook/what-do-you-need-to-be-more-successful"
+title = "What do you need to be more successful?"
+
+[[input.files]]
+path = "random/nasdaq-bubble/index.html"
+url = "random/nasdaq-bubble"
+title = "NASDAQ historical chart - the Bubble effect"
+
+[[input.files]]
+path = "salesleaderplaybook/past-success-does-not-guarantee-future-success/index.html"
+url = "salesleaderplaybook/past-success-does-not-guarantee-future-success"
+title = "Past success does not guarantee future success"
+
+[[input.files]]
+path = "b2b-sales/1-year-of-savings/index.html"
+url = "b2b-sales/1-year-of-savings"
+title = "1 year of savings"
+
+[[input.files]]
+path = "b2b-sales/a-no-is-just-a-delayed-yes/index.html"
+url = "b2b-sales/a-no-is-just-a-delayed-yes"
+title = "A no is just a delayed yes"
+
+[[input.files]]
+path = "b2b-sales/acknowledging-receipt-and-setting-expectations/index.html"
+url = "b2b-sales/acknowledging-receipt-and-setting-expectations"
+title = "Acknowledging receipt and setting expectations"
+
+[[input.files]]
+path = "b2b-sales/acting/index.html"
+url = "b2b-sales/acting"
+title = "Acting"
+
+[[input.files]]
+path = "b2b-sales/active-disqualification-as-self-qualification-strategy/index.html"
+url = "b2b-sales/active-disqualification-as-self-qualification-strategy"
+title = "Active Disqualification as self-qualification strategy"
+
+[[input.files]]
+path = "b2b-sales/always-be-learning-and-how-to/index.html"
+url = "b2b-sales/always-be-learning-and-how-to"
+title = "Always Be Learning (and How To)"
+
+[[input.files]]
+path = "b2b-sales/apologising/index.html"
+url = "b2b-sales/apologising"
+title = "Apologising"
+
+[[input.files]]
+path = "b2b-sales/are-you-taking-notes/index.html"
+url = "b2b-sales/are-you-taking-notes"
+title = "Are you taking notes?"
+
+[[input.files]]
+path = "b2b-sales/asking-for-blunt-feedback-and-how-to-handle-it/index.html"
+url = "b2b-sales/asking-for-blunt-feedback-and-how-to-handle-it"
+title = "Asking for blunt feedback (and how to handle it)"
+
+[[input.files]]
+path = "b2b-sales/asking-many-questions/index.html"
+url = "b2b-sales/asking-many-questions"
+title = "Asking many questions"
+
+[[input.files]]
+path = "b2b-sales/being-a-human-api/index.html"
+url = "b2b-sales/being-a-human-api"
+title = "Being a human API"
+
+[[input.files]]
+path = "b2b-sales/being-a-whalehunter/index.html"
+url = "b2b-sales/being-a-whalehunter"
+title = "Being a whalehunter"
+
+[[input.files]]
+path = "b2b-sales/being-bad-at-something-is-the-first-step-to-being-good-at-something/index.html"
+url = "b2b-sales/being-bad-at-something-is-the-first-step-to-being-good-at-something"
+title = "Being bad at something is the first step to being good at something"
+
+[[input.files]]
+path = "b2b-sales/being-different/index.html"
+url = "b2b-sales/being-different"
+title = "Being different"
+
+[[input.files]]
+path = "b2b-sales/being-good-is-not-good-enough/index.html"
+url = "b2b-sales/being-good-is-not-good-enough"
+title = "Being good is not good enough"
+
+[[input.files]]
+path = "b2b-sales/being-in-sales-as-an-introvert/index.html"
+url = "b2b-sales/being-in-sales-as-an-introvert"
+title = "Being in Sales as an introvert"
+
+[[input.files]]
+path = "salesleaderplaybook/being-on-the-front-line/index.html"
+url = "salesleaderplaybook/being-on-the-front-line"
+title = "Being on the front-line"
+
+[[input.files]]
+path = "b2b-sales/being-passionate/index.html"
+url = "b2b-sales/being-passionate"
+title = "Being passionate"
+
+[[input.files]]
+path = "b2b-sales/beware-of-appearances/index.html"
+url = "b2b-sales/beware-of-appearances"
+title = "Beware of appearances"
+
+[[input.files]]
+path = "b2b-sales/bluf-bottom-line-up-front/index.html"
+url = "b2b-sales/bluf-bottom-line-up-front"
+title = "BLUF - Bottom Line Up Front"
+
+[[input.files]]
+path = "b2b-sales/breaking-the-rules/index.html"
+url = "b2b-sales/breaking-the-rules"
+title = "Breaking the rules"
+
+[[input.files]]
+path = "b2b-sales/buffering-or-the-art-to-deliver-on-time/index.html"
+url = "b2b-sales/buffering-or-the-art-to-deliver-on-time"
+title = "Buffering or the art to deliver on time"
+
+[[input.files]]
+path = "b2b-sales/build-systems/index.html"
+url = "b2b-sales/build-systems"
+title = "Build systems"
+
+[[input.files]]
+path = "b2b-sales/business-creativity/index.html"
+url = "b2b-sales/business-creativity"
+title = "Business Creativity"
+
+[[input.files]]
+path = "b2b-sales/business-experience-and-mountaineering/index.html"
+url = "b2b-sales/business-experience-and-mountaineering"
+title = "Business Experience and mountaineering"
+
+[[input.files]]
+path = "b2b-sales/c-level-are-just-like-you/index.html"
+url = "b2b-sales/c-level-are-just-like-you"
+title = "C-Level are just like you"
+
+[[input.files]]
+path = "b2b-sales/carving-out-deep-work-time/index.html"
+url = "b2b-sales/carving-out-deep-work-time"
+title = "Carving out Deep Work time"
+
+[[input.files]]
+path = "b2b-sales/challenging/index.html"
+url = "b2b-sales/challenging"
+title = "Challenging"
+
+[[input.files]]
+path = "b2b-sales/communicating-context-to-maximise-buy-in/index.html"
+url = "b2b-sales/communicating-context-to-maximise-buy-in"
+title = "Communicating context to maximise buy-in"
+
+[[input.files]]
+path = "b2b-sales/concede-and-go-on-to-demonstrate-that-it-does-not-matter/index.html"
+url = "b2b-sales/concede-and-go-on-to-demonstrate-that-it-does-not-matter"
+title = "Concede and go on to demonstrate that it does not matter"
+
+[[input.files]]
+path = "b2b-sales/copy-strategies-invent-tactics/index.html"
+url = "b2b-sales/copy-strategies-invent-tactics"
+title = "Copy strategies, invent tactics."
+
+[[input.files]]
+path = "b2b-sales/crm-implementations/index.html"
+url = "b2b-sales/crm-implementations"
+title = "CRM implementations"
+
+[[input.files]]
+path = "b2b-sales/deliberate-practice-makes-perfect/index.html"
+url = "b2b-sales/deliberate-practice-makes-perfect"
+title = "Deliberate practice makes perfect"
+
+[[input.files]]
+path = "b2b-sales/dont-quit/index.html"
+url = "b2b-sales/dont-quit"
+title = "DOn't quIT"
+
+[[input.files]]
+path = "b2b-sales/easy-is-boring/index.html"
+url = "b2b-sales/easy-is-boring"
+title = "Easy is boring"
+
+[[input.files]]
+path = "b2b-sales/engineering-the-narrative/index.html"
+url = "b2b-sales/engineering-the-narrative"
+title = "Engineering the narrative"
+
+[[input.files]]
+path = "b2b-sales/every-situation-has-something-positive-to-it/index.html"
+url = "b2b-sales/every-situation-has-something-positive-to-it"
+title = "Every situation has something positive to it"
+
+[[input.files]]
+path = "b2b-sales/every-tunnel-has-an-end/index.html"
+url = "b2b-sales/every-tunnel-has-an-end"
+title = "Every tunnel has an end"
+
+[[input.files]]
+path = "b2b-sales/fear-as-a-driver/index.html"
+url = "b2b-sales/fear-as-a-driver"
+title = "Fear as a driver"
+
+[[input.files]]
+path = "b2b-sales/finding-a-mentor/index.html"
+url = "b2b-sales/finding-a-mentor"
+title = "Finding a mentor"
+
+[[input.files]]
+path = "b2b-sales/finding-email-addresses/index.html"
+url = "b2b-sales/finding-email-addresses"
+title = "Finding email addresses"
+
+[[input.files]]
+path = "b2b-sales/first-impression-counts/index.html"
+url = "b2b-sales/first-impression-counts"
+title = "First impression counts"
+
+[[input.files]]
+path = "b2b-sales/focus-on-quality-of-work-vs-quantity/index.html"
+url = "b2b-sales/focus-on-quality-of-work-vs-quantity"
+title = "Focus on quality of work vs quantity"
+
+[[input.files]]
+path = "b2b-sales/following-the-law-of-diminishing-returns/index.html"
+url = "b2b-sales/following-the-law-of-diminishing-returns"
+title = "Following the Law of Diminishing Returns"
+
+[[input.files]]
+path = "b2b-sales/fud-fear-uncertainty-doubt/index.html"
+url = "b2b-sales/fud-fear-uncertainty-doubt"
+title = "FUD - Fear, Uncertainty, Doubt"
+
+[[input.files]]
+path = "b2b-sales/going-over-your-boss-head-just-be-careful/index.html"
+url = "b2b-sales/going-over-your-boss-head-just-be-careful"
+title = "Going over your boss' head (just be careful)."
+
+[[input.files]]
+path = "b2b-sales/happy-holidays/index.html"
+url = "b2b-sales/happy-holidays"
+title = "Happy Holidays"
+
+[[input.files]]
+path = "b2b-sales/hate-to-lose-rather-than-will-to-win/index.html"
+url = "b2b-sales/hate-to-lose-rather-than-will-to-win"
+title = "Hate to Lose rather than Will to Win"
+
+[[input.files]]
+path = "salesleaderplaybook/have-a-sales-playbook-before-scaling-your-team/index.html"
+url = "salesleaderplaybook/have-a-sales-playbook-before-scaling-your-team"
+title = "Have a Sales playbook before scaling your team"
+
+[[input.files]]
+path = "b2b-sales/high-work-ethics/index.html"
+url = "b2b-sales/high-work-ethics"
+title = "High work ethics"
+
+[[input.files]]
+path = "salesleaderplaybook/hire-for-potential-not-experience/index.html"
+url = "salesleaderplaybook/hire-for-potential-not-experience"
+title = "Hire for potential, not experience"
+
+[[input.files]]
+path = "b2b-sales/how-to-close-larger-deals/index.html"
+url = "b2b-sales/how-to-close-larger-deals"
+title = "How to close larger deals"
+
+[[input.files]]
+path = "salesleaderplaybook/i-for-errors-we-for-successes/index.html"
+url = "salesleaderplaybook/i-for-errors-we-for-successes"
+title = "I for errors, We for successes"
+
+[[input.files]]
+path = "b2b-sales/keeping-the-door-open/index.html"
+url = "b2b-sales/keeping-the-door-open"
+title = "Keeping the door open"
+
+[[input.files]]
+path = "b2b-sales/learning-to-read-body-language-face-expressions/index.html"
+url = "b2b-sales/learning-to-read-body-language-face-expressions"
+title = "Learning to read body language & face expressions"
+
+[[input.files]]
+path = "b2b-sales/learning-touch-typing/index.html"
+url = "b2b-sales/learning-touch-typing"
+title = "Learning touch typing"
+
+[[input.files]]
+path = "b2b-sales/leaving-on-a-high/index.html"
+url = "b2b-sales/leaving-on-a-high"
+title = "Leaving On A High"
+
+[[input.files]]
+path = "b2b-sales/losing/index.html"
+url = "b2b-sales/losing"
+title = "Losing"
+
+[[input.files]]
+path = "b2b-sales/making-it-real/index.html"
+url = "b2b-sales/making-it-real"
+title = "Making it real"
+
+[[input.files]]
+path = "b2b-sales/making-reporting-work-for-you/index.html"
+url = "b2b-sales/making-reporting-work-for-you"
+title = "Making reporting work for you"
+
+[[input.files]]
+path = "salesleaderplaybook/managing-people-out/index.html"
+url = "salesleaderplaybook/managing-people-out"
+title = "Managing people out"
+
+[[input.files]]
+path = "b2b-sales/mastering-the-3-levels-of-networking/index.html"
+url = "b2b-sales/mastering-the-3-levels-of-networking"
+title = "Mastering the 3 levels of networking"
+
+[[input.files]]
+path = "b2b-sales/multi-year-discounts/index.html"
+url = "b2b-sales/multi-year-discounts"
+title = "Multi-year discounts"
+
+[[input.files]]
+path = "b2b-sales/not-being-a-yes-wo-man/index.html"
+url = "b2b-sales/not-being-a-yes-wo-man"
+title = "Not being a \"Yes (wo)man\""
+
+[[input.files]]
+path = "b2b-sales/not-misspelling-peoples-names/index.html"
+url = "b2b-sales/not-misspelling-peoples-names"
+title = "Not misspelling people's names"
+
+[[input.files]]
+path = "b2b-sales/not-mistaking-the-forest-for-the-tree/index.html"
+url = "b2b-sales/not-mistaking-the-forest-for-the-tree"
+title = "Not mistaking the forest for the tree"
+
+[[input.files]]
+path = "b2b-sales/observing-to-learn/index.html"
+url = "b2b-sales/observing-to-learn"
+title = "Observing to learn"
+
+[[input.files]]
+path = "b2b-sales/offering-alternatives/index.html"
+url = "b2b-sales/offering-alternatives"
+title = "Offering alternatives"
+
+[[input.files]]
+path = "b2b-sales/opening-the-prospect’s-eyes-on-the-opportunity/index.html"
+url = "b2b-sales/opening-the-prospect’s-eyes-on-the-opportunity"
+title = "Opening the prospect’s eyes on the opportunity"
+
+[[input.files]]
+path = "b2b-sales/over-prepare/index.html"
+url = "b2b-sales/over-prepare"
+title = "(Over)Prepare"
+
+[[input.files]]
+path = "b2b-sales/overcommunicating/index.html"
+url = "b2b-sales/overcommunicating"
+title = "Overcommunicating"
+
+[[input.files]]
+path = "b2b-sales/paradoxical-situation-of-sales/index.html"
+url = "b2b-sales/paradoxical-situation-of-sales"
+title = "Paradoxical situation of Sales"
+
+[[input.files]]
+path = "b2b-sales/people-hear-what-they-want-to-hear/index.html"
+url = "b2b-sales/people-hear-what-they-want-to-hear"
+title = "People Hear What They Want To Hear"
+
+[[input.files]]
+path = "b2b-sales/perception-is-reality/index.html"
+url = "b2b-sales/perception-is-reality"
+title = "Perception is reality"
+
+[[input.files]]
+path = "b2b-sales/play-the-cards-you-have/index.html"
+url = "b2b-sales/play-the-cards-you-have"
+title = "Play the cards you have"
+
+[[input.files]]
+path = "b2b-sales/playing-the-long-game/index.html"
+url = "b2b-sales/playing-the-long-game"
+title = "Playing the long game"
+
+[[input.files]]
+path = "b2b-sales/price-add-on-for-custom-t&cs/index.html"
+url = "b2b-sales/price-add-on-for-custom-t&cs"
+title = "Price add-on for custom T&Cs"
+
+[[input.files]]
+path = "b2b-sales/product-demos/index.html"
+url = "b2b-sales/product-demos"
+title = "Product Demos"
+
+[[input.files]]
+path = "b2b-sales/proving-it-to-yourself/index.html"
+url = "b2b-sales/proving-it-to-yourself"
+title = "Proving it to yourself"
+
+[[input.files]]
+path = "b2b-sales/putting-the-business-first/index.html"
+url = "b2b-sales/putting-the-business-first"
+title = "Putting the business first"
+
+[[input.files]]
+path = "b2b-sales/putting-yourself-in-the-other-ones-shoes-your-shoe-size-does-not-matter/index.html"
+url = "b2b-sales/putting-yourself-in-the-other-ones-shoes-your-shoe-size-does-not-matter"
+title = "Putting yourself in the other one's shoes (your shoe size does not matter)"
+
+[[input.files]]
+path = "b2b-sales/reactivity-time/index.html"
+url = "b2b-sales/reactivity-time"
+title = "Reactivity Time"
+
+[[input.files]]
+path = "b2b-sales/reading-the-users-manual/index.html"
+url = "b2b-sales/reading-the-users-manual"
+title = "Reading the User's Manual"
+
+[[input.files]]
+path = "b2b-sales/reality-distortion-field/index.html"
+url = "b2b-sales/reality-distortion-field"
+title = "Reality Distortion Field"
+
+[[input.files]]
+path = "b2b-sales/recommendations-and-references/index.html"
+url = "b2b-sales/recommendations-and-references"
+title = "Recommendations and References"
+
+[[input.files]]
+path = "b2b-sales/rfps/index.html"
+url = "b2b-sales/rfps"
+title = "RFPs"
+
+[[input.files]]
+path = "b2b-sales/sales-is-a-game/index.html"
+url = "b2b-sales/sales-is-a-game"
+title = "Sales is a Game"
+
+[[input.files]]
+path = "b2b-sales/sales-is-like-dating/index.html"
+url = "b2b-sales/sales-is-like-dating"
+title = "Sales is like Dating"
+
+[[input.files]]
+path = "b2b-sales/scaling/index.html"
+url = "b2b-sales/scaling"
+title = "Scaling"
+
+[[input.files]]
+path = "b2b-sales/selling-against-own-reseller/index.html"
+url = "b2b-sales/selling-against-own-reseller"
+title = "Selling against own reseller."
+
+[[input.files]]
+path = "b2b-sales/sharing-pricing/index.html"
+url = "b2b-sales/sharing-pricing"
+title = "Sharing Pricing"
+
+[[input.files]]
+path = "b2b-sales/sleeping-over-it/index.html"
+url = "b2b-sales/sleeping-over-it"
+title = "Sleeping Over It"
+
+[[input.files]]
+path = "b2b-sales/smykm-show-me-you-know-me/index.html"
+url = "b2b-sales/smykm-show-me-you-know-me"
+title = "SMYKM - Show Me You Know Me"
+
+[[input.files]]
+path = "b2b-sales/solution-selling-v2/index.html"
+url = "b2b-sales/solution-selling-v2"
+title = "Solution Selling v2"
+
+[[input.files]]
+path = "b2b-sales/solving-problems-the-client-was-not-aware-of/index.html"
+url = "b2b-sales/solving-problems-the-client-was-not-aware-of"
+title = "Solving problems the client was not aware of"
+
+[[input.files]]
+path = "b2b-sales/speaking-up/index.html"
+url = "b2b-sales/speaking-up"
+title = "Speaking Up"
+
+[[input.files]]
+path = "b2b-sales/specialise-or-outsource/index.html"
+url = "b2b-sales/specialise-or-outsource"
+title = "Specialise or outsource"
+
+[[input.files]]
+path = "b2b-sales/take-one-step-back-to-jump-two-steps-forward/index.html"
+url = "b2b-sales/take-one-step-back-to-jump-two-steps-forward"
+title = "Take one step back, to jump two steps forward"
+
+[[input.files]]
+path = "b2b-sales/the-benefits-of-calling-routines/index.html"
+url = "b2b-sales/the-benefits-of-calling-routines"
+title = "The benefits of calling routines"
+
+[[input.files]]
+path = "b2b-sales/the-power-of-silences/index.html"
+url = "b2b-sales/the-power-of-silences"
+title = "The power of silences"
+
+[[input.files]]
+path = "b2b-sales/the-power-of-‘thank-you’/index.html"
+url = "b2b-sales/the-power-of-‘thank-you’"
+title = "The Power of ‘Thank You’"
+
+[[input.files]]
+path = "b2b-sales/the-present-is-our-futures-past/index.html"
+url = "b2b-sales/the-present-is-our-futures-past"
+title = "The present is our future's past"
+
+[[input.files]]
+path = "b2b-sales/there-are-no-problems-only-challenges/index.html"
+url = "b2b-sales/there-are-no-problems-only-challenges"
+title = "There are no problems, only challenges"
+
+[[input.files]]
+path = "b2b-sales/thinking-like-an-entrepreneur/index.html"
+url = "b2b-sales/thinking-like-an-entrepreneur"
+title = "Thinking like an entrepreneur"
+
+[[input.files]]
+path = "b2b-sales/thinking-outside-of-the-box/index.html"
+url = "b2b-sales/thinking-outside-of-the-box"
+title = "Thinking outside of the box"
+
+[[input.files]]
+path = "b2b-sales/turning-mistakes-into-opportunities/index.html"
+url = "b2b-sales/turning-mistakes-into-opportunities"
+title = "Turning mistakes into opportunities"
+
+[[input.files]]
+path = "b2b-sales/using-your-customers-own-word/index.html"
+url = "b2b-sales/using-your-customers-own-word"
+title = "Using your customer's own word"
+
+[[input.files]]
+path = "b2b-sales/value-is-in-the-eye-of-the-beholder/index.html"
+url = "b2b-sales/value-is-in-the-eye-of-the-beholder"
+title = "Value is in the eye of the beholder"
+
+[[input.files]]
+path = "b2b-sales/walking-meetings/index.html"
+url = "b2b-sales/walking-meetings"
+title = "Walking meetings"
+
+[[input.files]]
+path = "b2b-sales/what-is-your-cost-per-error/index.html"
+url = "b2b-sales/what-is-your-cost-per-error"
+title = "What is your cost per error"
+
+[[input.files]]
+path = "b2b-sales/what-more-can-i-do/index.html"
+url = "b2b-sales/what-more-can-i-do"
+title = "What more can I do?"
+
+[[input.files]]
+path = "b2b-sales/whats-the-worst-that-can-happen/index.html"
+url = "b2b-sales/whats-the-worst-that-can-happen"
+title = "What's The Worst That Can Happen?"
+
+[[input.files]]
+path = "b2b-sales/when-in-doubt-be-transparent/index.html"
+url = "b2b-sales/when-in-doubt-be-transparent"
+title = "When in doubt, be transparent"
+
+[[input.files]]
+path = "b2b-sales/why-format-matters/index.html"
+url = "b2b-sales/why-format-matters"
+title = "Why format matters"
+
+[[input.files]]
+path = "b2b-sales/wiify-whats-in-it-for-you/index.html"
+url = "b2b-sales/wiify-whats-in-it-for-you"
+title = "WIIFY - What's In It For You"
+
+[[input.files]]
+path = "b2b-sales/win-win/index.html"
+url = "b2b-sales/win-win"
+title = "Win-Win"
+
+[[input.files]]
+path = "b2b-sales/you-can-always-be-someones-expert/index.html"
+url = "b2b-sales/you-can-always-be-someones-expert"
+title = "You can always be someone's expert"
+
+[[input.files]]
+path = "b2b-sales/you-know-who-you-are-you-dont-know-who-you-may-be/index.html"
+url = "b2b-sales/you-know-who-you-are-you-dont-know-who-you-may-be"
+title = "\"You know who you are, you don't know who you may be\""
+
+[[input.files]]
+path = "b2b-sales/you-never-lose-you-either-win-or-you-learn/index.html"
+url = "b2b-sales/you-never-lose-you-either-win-or-you-learn"
+title = "You never lose, you either win or you learn"
+
+[[input.files]]
+path = "b2b-sales/you-will-be-directed-to-who-you-sound-like/index.html"
+url = "b2b-sales/you-will-be-directed-to-who-you-sound-like"
+title = "You Will Be Directed To Who You Sound Like"
+
+[[input.files]]
+path = "salesleaderplaybook/underpromise-overdeliver/index.html"
+url = "salesleaderplaybook/underpromise-overdeliver"
+title = "Underpromise, Overdeliver"
+
+[[input.files]]
+path = "salesleaderplaybook/why-having-a-goal-matters/index.html"
+url = "salesleaderplaybook/why-having-a-goal-matters"
+title = "Why having a goal matters"
+
+[[input.files]]
+path = "salesleaderplaybook/2-types-of-successful-saas-sales-people/index.html"
+url = "salesleaderplaybook/2-types-of-successful-saas-sales-people"
+title = "2 types of successful SaaS Sales people"
+
+[[input.files]]
+path = "careerplaybook/careerplaybook-022-asking-questions/index.html"
+url = "careerplaybook/careerplaybook-022-asking-questions"
+title = "#CareerPlaybook 022: Asking many questions"
+
+[[input.files]]
+path = "careerplaybook/careerplaybook-021-hiring/index.html"
+url = "careerplaybook/careerplaybook-021-hiring"
+title = "#CareerPlaybook 021: Hiring for enthusiasm and ability to learn"
+
+[[input.files]]
+path = "careerplaybook/careerplaybook-020-owning-your-mistakes/index.html"
+url = "careerplaybook/careerplaybook-020-owning-your-mistakes"
+title = "#CareerPlaybook 020: Owning your mistakes"
+
+[[input.files]]
+path = "careerplaybook/careerplaybook-019-the-power-of-thank-you/index.html"
+url = "careerplaybook/careerplaybook-019-the-power-of-thank-you"
+title = "#CareerPlaybook 019: The Power of ‘Thank You’"
+
+[[input.files]]
+path = "careerplaybook/careerplaybook-018-leaders-and-managers/index.html"
+url = "careerplaybook/careerplaybook-018-leaders-and-managers"
+title = "#CareerPlaybook 018: Knowing the difference between a good Leader and a good Manager"
+
+[[input.files]]
+path = "python/learning-python/index.html"
+url = "python/learning-python"
+title = "My guide to start learning programming in Python (for Business People)"
+
+[[input.files]]
+path = "careerplaybook/careerplaybook-017-everyone-should-learn-programming/index.html"
+url = "careerplaybook/careerplaybook-017-everyone-should-learn-programming"
+title = "#CareerPlaybook 017: Everyone should learn programming"
+
+[[input.files]]
+path = "apps/freedom/index.html"
+url = "apps/freedom"
+title = "Freedom | Block distracting websites and apps"
+
+[[input.files]]
+path = "apps/cloudapp/index.html"
+url = "apps/cloudapp"
+title = "CloudApp | A visual collaboration solution"
+
+[[input.files]]
+path = "careerplaybook/careerplaybook-016-taking-notes/index.html"
+url = "careerplaybook/careerplaybook-016-taking-notes"
+title = "#CareerPlaybook 016: Are you taking notes?"
+
+[[input.files]]
+path = "careerplaybook/careerplaybook-015-learning-to-read-body-language/index.html"
+url = "careerplaybook/careerplaybook-015-learning-to-read-body-language"
+title = "#CareerPlaybook 015: Learning to read body language & face expressions"
+
+[[input.files]]
+path = "books/platform-revolution/index.html"
+url = "books/platform-revolution"
+title = "Platform Revolution"
+
+[[input.files]]
+path = "books/automate-the-boring-stuff/index.html"
+url = "books/automate-the-boring-stuff"
+title = "Automate the Boring Stuff with Python"
+
+[[input.files]]
+path = "random/tesla-handbook/index.html"
+url = "random/tesla-handbook"
+title = "Tesla's Anti-Handbook Handbook"
+
+[[input.files]]
+path = "startups/startupplaybook-01-how-to-bootstrap-a-tech-startup/index.html"
+url = "startups/startupplaybook-01-how-to-bootstrap-a-tech-startup"
+title = "#StartupPlaybook 01: How to bootstrap a Tech startup, without a Tech cofounder (it's easier than you think...)"
+
+[[input.files]]
+path = "careerplaybook/careerplaybook-014-why-format-matters/index.html"
+url = "careerplaybook/careerplaybook-014-why-format-matters"
+title = "#CareerPlaybook 014: Why format matters"
+
+[[input.files]]
+path = "apps/4k-video-downloader/index.html"
+url = "apps/4k-video-downloader"
+title = "4K Video Downloader | download Youtube videos"
+
+[[input.files]]
+path = "helpers/css/index.html"
+url = "helpers/css"
+title = "CSS Tools"
+
+[[input.files]]
+path = "startups/startupplaybook-00-my-learnings/index.html"
+url = "startups/startupplaybook-00-my-learnings"
+title = "#StartupPlaybook 00: My learnings (so far)"
+
+[[input.files]]
+path = "books/the-lean-startup/index.html"
+url = "books/the-lean-startup"
+title = "The Lean Startup"
+
+[[input.files]]
+path = "apps/ulysses/index.html"
+url = "apps/ulysses"
+title = "Ulysses | the ultimate writing and note-taking app"
+
+[[input.files]]
+path = "books/what-every-body-is-saying/index.html"
+url = "books/what-every-body-is-saying"
+title = "What Every BODY is Saying"
+
+[[input.files]]
+path = "careerplaybook/careerplaybook-013-every-situation-has-something-positive-to-it/index.html"
+url = "careerplaybook/careerplaybook-013-every-situation-has-something-positive-to-it"
+title = "#CareerPlaybook 013: Every situation has something positive to it"
+
+[[input.files]]
+path = "careerplaybook/careerplaybook-012-learning-the-art-of-negotiation/index.html"
+url = "careerplaybook/careerplaybook-012-learning-the-art-of-negotiation"
+title = "#CareerPlaybook 012: Learning The Art of Negotiation is helpful for everyone"
+
+[[input.files]]
+path = "random/why-helping-others/index.html"
+url = "random/why-helping-others"
+title = "Why helping others?"
+
+[[input.files]]
+path = "careerplaybook/careerplaybook-011-putting-yourself-in-the-other-ones-shoes/index.html"
+url = "careerplaybook/careerplaybook-011-putting-yourself-in-the-other-ones-shoes"
+title = "#CareerPlaybook 011: Putting yourself in the other one's shoes (your shoe size does not matter)"
+
+[[input.files]]
+path = "random/custom-iems/index.html"
+url = "random/custom-iems"
+title = "The music lover's best kept secret? Custom IEMs."
+
+[[input.files]]
+path = "random/disappointed-by-linkedin/index.html"
+url = "random/disappointed-by-linkedin"
+title = "Disappointed by Linkedin"
+
+[[input.files]]
+path = "careerplaybook/careerplaybook-010-the-present-is-our-futures-past/index.html"
+url = "careerplaybook/careerplaybook-010-the-present-is-our-futures-past"
+title = "#CareerPlaybook 010: The present is our future's past"
+
+[[input.files]]
+path = "careerplaybook/careerplaybook-009-outsourcing-tasks/index.html"
+url = "careerplaybook/careerplaybook-009-outsourcing-tasks"
+title = "#CareerPlaybook 009: Outsourcing Tasks (are you still doing everything yourself?)"
+
+[[input.files]]
+path = "careerplaybook/careerplaybook-008-being-in-control-of-your-day/index.html"
+url = "careerplaybook/careerplaybook-008-being-in-control-of-your-day"
+title = "#CareerPlaybook 008: Being in control of your day (with a jar of pickles)"
+
+[[input.files]]
+path = "careerplaybook/careerplaybook-007-why-having-a-goal-matters/index.html"
+url = "careerplaybook/careerplaybook-007-why-having-a-goal-matters"
+title = "#CareerPlaybook 007: Why having a goal matters"
+
+[[input.files]]
+path = "random/you-dont-need-to-mansplain-to-me/index.html"
+url = "random/you-dont-need-to-mansplain-to-me"
+title = "\"You don't need to mansplain to me\""
+
+[[input.files]]
+path = "careerplaybook/careerplaybook-006-there-are-no-problems-only-challenges/index.html"
+url = "careerplaybook/careerplaybook-006-there-are-no-problems-only-challenges"
+title = "#CareerPlaybook 006: There are no problems, only challenges"
+
+[[input.files]]
+path = "random/i-am-seriously-considering-being-part-of-the-first-colons-to-mars/index.html"
+url = "random/i-am-seriously-considering-being-part-of-the-first-colons-to-mars"
+title = "I am seriously considering being part of the first colons to Mars. You?"
+
+[[input.files]]
+path = "careerplaybook/careerplaybook-005-asking-for-blunt-feedback/index.html"
+url = "careerplaybook/careerplaybook-005-asking-for-blunt-feedback"
+title = "#CareerPlaybook 005: Asking for blunt feedback (and how to handle it)"
+
+[[input.files]]
+path = "apps/follow-up-then/index.html"
+url = "apps/follow-up-then"
+title = "FollowUpThen: Are you struggling to consistently follow-up on (your) emails?"
+
+[[input.files]]
+path = "careerplaybook/careerplaybook-004-the-jerry-maguire-play/index.html"
+url = "careerplaybook/careerplaybook-004-the-jerry-maguire-play"
+title = "#CareerPlaybook 004: The Jerry Maguire play (and how to make it work for you)"
+
+[[input.files]]
+path = "careerplaybook/careerplaybook-003-walking-meetings/index.html"
+url = "careerplaybook/careerplaybook-003-walking-meetings"
+title = "#CareerPlaybook 003: Walking Meetings"
+
+[[input.files]]
+path = "home-office/home-office-controllers/index.html"
+url = "home-office/home-office-controllers"
+title = "Home Office: Controllers"
+
+[[input.files]]
+path = "careerplaybook/careerplaybook-002-imposter-syndrome-is-more-widespread-than-you-think/index.html"
+url = "careerplaybook/careerplaybook-002-imposter-syndrome-is-more-widespread-than-you-think"
+title = "#CareerPlaybook 002: Imposter syndrome is more widespread than you think"
+
+[[input.files]]
+path = "careerplaybook/careerplaybook-001-always-be-learning/index.html"
+url = "careerplaybook/careerplaybook-001-always-be-learning"
+title = "#CareerPlaybook 001: Always Be Learning (and How To)"
+
+[[input.files]]
+path = "careerplaybook/careerplaybook-000-introduction/index.html"
+url = "careerplaybook/careerplaybook-000-introduction"
+title = "#CareerPlaybook 000: Introduction"
+
+[[input.files]]
+path = "random/embedding-the-success-question-into-the-design-or-selection-of-a-project/index.html"
+url = "random/embedding-the-success-question-into-the-design-or-selection-of-a-project"
+title = "Embedding the success question into the design or selection of a project"
+
+[[input.files]]
+path = "b2b-sales/are-you-selling-aspirin-a-vaccine-or-a-vitamin/index.html"
+url = "b2b-sales/are-you-selling-aspirin-a-vaccine-or-a-vitamin"
+title = "Are You Selling Aspirin, a Vaccine or a Vitamin?"
+
+[[input.files]]
+path = "b2b-sales/the-advice-i-always-give-when-mentoring/index.html"
+url = "b2b-sales/the-advice-i-always-give-when-mentoring"
+title = "The advice I always give when mentoring"
+
+[[input.files]]
+path = "books/the-mom-test/index.html"
+url = "books/the-mom-test"
+title = "The Mom Test"
+
+[[input.files]]
+path = "b2b-sales/what-is-sales/index.html"
+url = "b2b-sales/what-is-sales"
+title = "What Is Sales?"

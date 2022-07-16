@@ -1,29 +1,40 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-        <meta charset="utf-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <meta name="generator" content="Pelican" />
-        <title>Nic's notes - python</title>
-        <link rel="stylesheet" href="https://notes.nicolasdeville.com/theme/css/main.css" />
+
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="generator" content="Pelican" />
+    <title>Nic's notes - python</title>
+    <link rel="stylesheet" href="../theme/css/main.css" />
+
+    <!-- for Stork seach engine -->
+    <link rel="stylesheet" href="https://files.stork-search.net/basic.css" /> 
+
 </head>
 
 <body id="index" class="body">
         <header id="banner" class="body">
 
-            <a href="https://notes.nicolasdeville.com/"><img class="header_image" src="https://notes.nicolasdeville.com/images/nic_notes_header.svg" alt="Nic's notes" width="266"/></a>
+            <a href="../"><img class="header_image" src="../images/nic_notes_header.svg" alt="Nic's notes" width="266"/></a>
+
+            <!-- for Stork seach engine -->
+            <div class="search-input-block">
+                Search: <input data-stork="sitesearch" class="search-input"/>
+                <div data-stork="sitesearch-output"></div>
+            </div>
 
             <nav><ul>
-                <li><a href="https://notes.nicolasdeville.com/apps/">apps</a></li>
-                <li><a href="https://notes.nicolasdeville.com/b2b-sales/">b2b sales</a></li>
-                <li><a href="https://notes.nicolasdeville.com/books/">books</a></li>
-                <li><a href="https://notes.nicolasdeville.com/careerplaybook/">#careerplaybook</a></li>
-                <li><a href="https://notes.nicolasdeville.com/helpers/">helpers</a></li>
-                <li><a href="https://notes.nicolasdeville.com/home-office/">home office</a></li>
-                <li><a href="https://notes.nicolasdeville.com/python/">python</a></li>
-                <li><a href="https://notes.nicolasdeville.com/random/">random</a></li>
-                <li><a href="https://notes.nicolasdeville.com/salesleaderplaybook/">#salesleaderplaybook</a></li>
-                <li><a href="https://notes.nicolasdeville.com/startups/">startups</a></li>
+                <li><a href="../apps/">apps</a></li>
+                <li><a href="../b2b-sales/">b2b sales</a></li>
+                <li><a href="../books/">books</a></li>
+                <li><a href="../careerplaybook/">#careerplaybook</a></li>
+                <li><a href="../helpers/">helpers</a></li>
+                <li><a href="../home-office/">home office</a></li>
+                <li><a href="../python/">python</a></li>
+                <li><a href="../random/">random</a></li>
+                <li><a href="../salesleaderplaybook/">#salesleaderplaybook</a></li>
+                <li><a href="../startups/">startups</a></li>
             </ul></nav>
         </header>
 
@@ -32,7 +43,7 @@
 <p class="notes_count">
     12 notes 
     <span style="color:#C74350">|</span> 
-    <a href="https://notes.nicolasdeville.com/tags">by tags</a> 
+    <a href="../tags">by tags</a> 
     <span style="color:#C74350">|</span> 
     <a href="https://notes.nicolasdeville.com/2022/">2022</a> 
     <span style="color:#C74350">|</span> 
@@ -49,7 +60,7 @@
             <hr/>
 
                 <article class="hentry">
-                    <h1 class="entry-title"><a href="https://notes.nicolasdeville.com/python/copy-files">Mass copy selected files with Python</a></h1>
+                    <h1 class="entry-title"><a href="../python/copy-files">Mass copy selected files with Python</a></h1>
 
                     <!-- added 4/7 -->
                     <div>
@@ -61,13 +72,13 @@
 <footer class="post-info">
 
     <p>
-        16 Jul 2022 <span class="separator">|</span> in <a class="link_tag" href="https://notes.nicolasdeville.com/python/">python</a>
- tags: <a class="link_tag" href="https://notes.nicolasdeville.com/tag/python.html">python</a>
-<a class="link_tag" href="https://notes.nicolasdeville.com/tag/scripts.html">scripts</a>
+        16 Jul 2022 <span class="separator">|</span> in <a class="link_tag" href="../python/">python</a>
+ tags: <a class="link_tag" href="../tag/python.html">python</a>
+<a class="link_tag" href="../tag/scripts.html">scripts</a>
 
         <!-- added 4/7 -->
         <!-- 		<br />
-        <abbr class="modified" title="2022-07-16T13:35:29.465428+02:00">
+        <abbr class="modified" title="2022-07-16T15:09:59.347429+02:00">
                 Updated: 16 Jul 2022
         </abbr>
  -->
@@ -96,6 +107,7 @@
 <span class="n">count_duplicate_name</span> <span class="o">=</span> <span class="mi">0</span>
 <span class="n">file_copied</span> <span class="o">=</span> <span class="p">[]</span>
 
+<span class="c1"># commenting out the extensions I don&#39;t want to copy over, from the set obtained with an initial os.walk</span>
 <span class="n">valid_extensions</span> <span class="o">=</span> <span class="p">(</span>
     <span class="c1"># &#39;&#39;, </span>
     <span class="c1"># &#39;.jso&#39;, </span>
@@ -176,11 +188,11 @@
 <li>the <code>shutil.copy2</code> method overwrites files, ie taking care of duplicates natively</li>
 </ul>
 <p>prints:  </p>
-<p><img class="illustration" src="https://notes.nicolasdeville.com/images/python_script_pictures-dsd1.jpg" alt="python_script_pictures-dsd1.jpg"/>  </p>
+<p><img class="illustration" src="../images/python_script_pictures-dsd1.jpg" alt="python_script_pictures-dsd1.jpg"/>  </p>
 <p>test result:   </p>
-<p><img class="illustration" src="https://notes.nicolasdeville.com/images/python_script_pictures-dsd-test-result.jpg" alt="python_script_pictures-dsd-test-result.jpg"/>  </p>
+<p><img class="illustration" src="../images/python_script_pictures-dsd-test-result.jpg" alt="python_script_pictures-dsd-test-result.jpg"/>  </p>
 <p>run result (copying files):  </p>
-<p><img class="illustration" src="https://notes.nicolasdeville.com/images/python_script_pictures-dsd-run-result.jpg" alt="python_script_pictures-dsd-run-result.jpg"/>  </p>
+<p><img class="illustration" src="../images/python_script_pictures-dsd-run-result.jpg" alt="python_script_pictures-dsd-run-result.jpg"/>  </p>
                 </article>
             </aside>
 
@@ -199,7 +211,7 @@
                 <article class="hentry">
                     <header>
                         <!-- PREVIOUS NOTE TITLE -->
-                        <h1><a href="https://notes.nicolasdeville.com/python/export-kindle-library" rel="bookmark"
+                        <h1><a href="../python/export-kindle-library" rel="bookmark"
                             title="Exporting my Kindle library data">Exporting my Kindle library data</a></h1>
                         <!-- PREVIOUS NOTE SUMMARY -->
                         <div class="entry-content">
@@ -212,9 +224,9 @@
 <footer class="post-info">
 
     <p>
-        15 Jul 2022 <span class="separator">|</span> in <a class="link_tag" href="https://notes.nicolasdeville.com/python/">python</a>
- tags: <a class="link_tag" href="https://notes.nicolasdeville.com/tag/python.html">python</a>
-<a class="link_tag" href="https://notes.nicolasdeville.com/tag/scripts.html">scripts</a>
+        15 Jul 2022 <span class="separator">|</span> in <a class="link_tag" href="../python/">python</a>
+ tags: <a class="link_tag" href="../tag/python.html">python</a>
+<a class="link_tag" href="../tag/scripts.html">scripts</a>
 
         <!-- added 4/7 -->
         <!-- 		<br />
@@ -240,7 +252,7 @@
                 <article class="hentry">
                     <header>
                         <!-- PREVIOUS NOTE TITLE -->
-                        <h1><a href="https://notes.nicolasdeville.com/python/library-beautifulsoup" rel="bookmark"
+                        <h1><a href="../python/library-beautifulsoup" rel="bookmark"
                             title="Python library: Beautifulsoup">Python library: Beautifulsoup</a></h1>
                         <!-- PREVIOUS NOTE SUMMARY -->
                         <div class="entry-content">
@@ -253,9 +265,9 @@
 <footer class="post-info">
 
     <p>
-        15 Jul 2022 <span class="separator">|</span> in <a class="link_tag" href="https://notes.nicolasdeville.com/python/">python</a>
- tags: <a class="link_tag" href="https://notes.nicolasdeville.com/tag/python.html">python</a>
-<a class="link_tag" href="https://notes.nicolasdeville.com/tag/library.html">library</a>
+        15 Jul 2022 <span class="separator">|</span> in <a class="link_tag" href="../python/">python</a>
+ tags: <a class="link_tag" href="../tag/python.html">python</a>
+<a class="link_tag" href="../tag/library.html">library</a>
 
         <!-- added 4/7 -->
         <!-- 		<br />
@@ -281,7 +293,7 @@
                 <article class="hentry">
                     <header>
                         <!-- PREVIOUS NOTE TITLE -->
-                        <h1><a href="https://notes.nicolasdeville.com/python/library-datetime" rel="bookmark"
+                        <h1><a href="../python/library-datetime" rel="bookmark"
                             title="Python library: `datetime`">Python library: `datetime`</a></h1>
                         <!-- PREVIOUS NOTE SUMMARY -->
                         <div class="entry-content">
@@ -294,9 +306,9 @@
 <footer class="post-info">
 
     <p>
-        15 Jul 2022 <span class="separator">|</span> in <a class="link_tag" href="https://notes.nicolasdeville.com/python/">python</a>
- tags: <a class="link_tag" href="https://notes.nicolasdeville.com/tag/python.html">python</a>
-<a class="link_tag" href="https://notes.nicolasdeville.com/tag/libraries.html">libraries</a>
+        15 Jul 2022 <span class="separator">|</span> in <a class="link_tag" href="../python/">python</a>
+ tags: <a class="link_tag" href="../tag/python.html">python</a>
+<a class="link_tag" href="../tag/libraries.html">libraries</a>
 
         <!-- added 4/7 -->
         <!-- 		<br />
@@ -322,7 +334,7 @@
                 <article class="hentry">
                     <header>
                         <!-- PREVIOUS NOTE TITLE -->
-                        <h1><a href="https://notes.nicolasdeville.com/python/library-dateutil" rel="bookmark"
+                        <h1><a href="../python/library-dateutil" rel="bookmark"
                             title="Python library: `dateutil`">Python library: `dateutil`</a></h1>
                         <!-- PREVIOUS NOTE SUMMARY -->
                         <div class="entry-content">
@@ -335,9 +347,9 @@
 <footer class="post-info">
 
     <p>
-        15 Jul 2022 <span class="separator">|</span> in <a class="link_tag" href="https://notes.nicolasdeville.com/python/">python</a>
- tags: <a class="link_tag" href="https://notes.nicolasdeville.com/tag/python.html">python</a>
-<a class="link_tag" href="https://notes.nicolasdeville.com/tag/libraries.html">libraries</a>
+        15 Jul 2022 <span class="separator">|</span> in <a class="link_tag" href="../python/">python</a>
+ tags: <a class="link_tag" href="../tag/python.html">python</a>
+<a class="link_tag" href="../tag/libraries.html">libraries</a>
 
         <!-- added 4/7 -->
         <!-- 		<br />
@@ -363,7 +375,7 @@
                 <article class="hentry">
                     <header>
                         <!-- PREVIOUS NOTE TITLE -->
-                        <h1><a href="https://notes.nicolasdeville.com/python/broken-links" rel="bookmark"
+                        <h1><a href="../python/broken-links" rel="bookmark"
                             title="How to Find Broken Links With Python">How to Find Broken Links With Python</a></h1>
                         <!-- PREVIOUS NOTE SUMMARY -->
                         <div class="entry-content">
@@ -376,9 +388,9 @@
 <footer class="post-info">
 
     <p>
-        14 Jul 2022 <span class="separator">|</span> in <a class="link_tag" href="https://notes.nicolasdeville.com/python/">python</a>
- tags: <a class="link_tag" href="https://notes.nicolasdeville.com/tag/python.html">python</a>
-<a class="link_tag" href="https://notes.nicolasdeville.com/tag/scripts.html">scripts</a>
+        14 Jul 2022 <span class="separator">|</span> in <a class="link_tag" href="../python/">python</a>
+ tags: <a class="link_tag" href="../tag/python.html">python</a>
+<a class="link_tag" href="../tag/scripts.html">scripts</a>
 
         <!-- added 4/7 -->
         <!-- 		<br />
@@ -404,7 +416,7 @@
                 <article class="hentry">
                     <header>
                         <!-- PREVIOUS NOTE TITLE -->
-                        <h1><a href="https://notes.nicolasdeville.com/python/download-website" rel="bookmark"
+                        <h1><a href="../python/download-website" rel="bookmark"
                             title="Download a website with Python">Download a website with Python</a></h1>
                         <!-- PREVIOUS NOTE SUMMARY -->
                         <div class="entry-content">
@@ -417,9 +429,9 @@
 <footer class="post-info">
 
     <p>
-        04 Jul 2022 <span class="separator">|</span> in <a class="link_tag" href="https://notes.nicolasdeville.com/python/">python</a>
- tags: <a class="link_tag" href="https://notes.nicolasdeville.com/tag/python.html">python</a>
-<a class="link_tag" href="https://notes.nicolasdeville.com/tag/snippet.html">snippet</a>
+        04 Jul 2022 <span class="separator">|</span> in <a class="link_tag" href="../python/">python</a>
+ tags: <a class="link_tag" href="../tag/python.html">python</a>
+<a class="link_tag" href="../tag/snippet.html">snippet</a>
 
         <!-- added 4/7 -->
         <!-- 		<br />
@@ -445,7 +457,7 @@
                 <article class="hentry">
                     <header>
                         <!-- PREVIOUS NOTE TITLE -->
-                        <h1><a href="https://notes.nicolasdeville.com/helpers/kindle" rel="bookmark"
+                        <h1><a href="../helpers/kindle" rel="bookmark"
                             title="Kindle">Kindle</a></h1>
                         <!-- PREVIOUS NOTE SUMMARY -->
                         <div class="entry-content">
@@ -458,9 +470,9 @@
 <footer class="post-info">
 
     <p>
-        02 Jul 2022 <span class="separator">|</span> in <a class="link_tag" href="https://notes.nicolasdeville.com/helpers/">helpers</a>
- tags: <a class="link_tag" href="https://notes.nicolasdeville.com/tag/kindle.html">kindle</a>
-<a class="link_tag" href="https://notes.nicolasdeville.com/tag/python.html">python</a>
+        02 Jul 2022 <span class="separator">|</span> in <a class="link_tag" href="../helpers/">helpers</a>
+ tags: <a class="link_tag" href="../tag/kindle.html">kindle</a>
+<a class="link_tag" href="../tag/python.html">python</a>
 
         <!-- added 4/7 -->
         <!-- 		<br />
@@ -486,7 +498,7 @@
                 <article class="hentry">
                     <header>
                         <!-- PREVIOUS NOTE TITLE -->
-                        <h1><a href="https://notes.nicolasdeville.com/python/learning-python" rel="bookmark"
+                        <h1><a href="../python/learning-python" rel="bookmark"
                             title="My guide to start learning programming in Python (for Business People)">My guide to start learning programming in Python (for Business People)</a></h1>
                         <!-- PREVIOUS NOTE SUMMARY -->
                         <div class="entry-content">
@@ -499,9 +511,9 @@
 <footer class="post-info">
 
     <p>
-        30 Mar 2020 <span class="separator">|</span> in <a class="link_tag" href="https://notes.nicolasdeville.com/python/">python</a>
- tags: <a class="link_tag" href="https://notes.nicolasdeville.com/tag/learning.html">learning</a>
-<a class="link_tag" href="https://notes.nicolasdeville.com/tag/python.html">python</a>
+        30 Mar 2020 <span class="separator">|</span> in <a class="link_tag" href="../python/">python</a>
+ tags: <a class="link_tag" href="../tag/learning.html">learning</a>
+<a class="link_tag" href="../tag/python.html">python</a>
 
         <!-- added 4/7 -->
         <!-- 		<br />
@@ -527,7 +539,7 @@
                 <article class="hentry">
                     <header>
                         <!-- PREVIOUS NOTE TITLE -->
-                        <h1><a href="https://notes.nicolasdeville.com/careerplaybook/careerplaybook-017-everyone-should-learn-programming" rel="bookmark"
+                        <h1><a href="../careerplaybook/careerplaybook-017-everyone-should-learn-programming" rel="bookmark"
                             title="#CareerPlaybook 017: Everyone should learn programming">#CareerPlaybook 017: Everyone should learn programming</a></h1>
                         <!-- PREVIOUS NOTE SUMMARY -->
                         <div class="entry-content">
@@ -540,9 +552,9 @@
 <footer class="post-info">
 
     <p>
-        27 Mar 2020 <span class="separator">|</span> in <a class="link_tag" href="https://notes.nicolasdeville.com/careerplaybook/">#careerplaybook</a>
- tags: <a class="link_tag" href="https://notes.nicolasdeville.com/tag/programming.html">programming</a>
-<a class="link_tag" href="https://notes.nicolasdeville.com/tag/python.html">python</a>
+        27 Mar 2020 <span class="separator">|</span> in <a class="link_tag" href="../careerplaybook/">#careerplaybook</a>
+ tags: <a class="link_tag" href="../tag/programming.html">programming</a>
+<a class="link_tag" href="../tag/python.html">python</a>
 
         <!-- added 4/7 -->
         <!-- 		<br />
@@ -568,7 +580,7 @@
                 <article class="hentry">
                     <header>
                         <!-- PREVIOUS NOTE TITLE -->
-                        <h1><a href="https://notes.nicolasdeville.com/books/automate-the-boring-stuff" rel="bookmark"
+                        <h1><a href="../books/automate-the-boring-stuff" rel="bookmark"
                             title="Automate the Boring Stuff with Python">Automate the Boring Stuff with Python</a></h1>
                         <!-- PREVIOUS NOTE SUMMARY -->
                         <div class="entry-content">
@@ -581,8 +593,8 @@
 <footer class="post-info">
 
     <p>
-        20 Feb 2020 <span class="separator">|</span> in <a class="link_tag" href="https://notes.nicolasdeville.com/books/">books</a>
- tags: <a class="link_tag" href="https://notes.nicolasdeville.com/tag/python.html">python</a>
+        20 Feb 2020 <span class="separator">|</span> in <a class="link_tag" href="../books/">books</a>
+ tags: <a class="link_tag" href="../tag/python.html">python</a>
 
         <!-- added 4/7 -->
         <!-- 		<br />
@@ -608,7 +620,7 @@
                 <article class="hentry">
                     <header>
                         <!-- PREVIOUS NOTE TITLE -->
-                        <h1><a href="https://notes.nicolasdeville.com/startups/startupplaybook-01-how-to-bootstrap-a-tech-startup" rel="bookmark"
+                        <h1><a href="../startups/startupplaybook-01-how-to-bootstrap-a-tech-startup" rel="bookmark"
                             title="#StartupPlaybook 01: How to bootstrap a Tech startup, without a Tech cofounder (it's easier than you think...)">#StartupPlaybook 01: How to bootstrap a Tech startup, without a Tech cofounder (it's easier than you think...)</a></h1>
                         <!-- PREVIOUS NOTE SUMMARY -->
                         <div class="entry-content">
@@ -621,9 +633,9 @@
 <footer class="post-info">
 
     <p>
-        19 Feb 2020 <span class="separator">|</span> in <a class="link_tag" href="https://notes.nicolasdeville.com/startups/">startups</a>
- tags: <a class="link_tag" href="https://notes.nicolasdeville.com/tag/learning.html">learning</a>
-<a class="link_tag" href="https://notes.nicolasdeville.com/tag/python.html">python</a>
+        19 Feb 2020 <span class="separator">|</span> in <a class="link_tag" href="../startups/">startups</a>
+ tags: <a class="link_tag" href="../tag/learning.html">learning</a>
+<a class="link_tag" href="../tag/python.html">python</a>
 
         <!-- added 4/7 -->
         <!-- 		<br />
@@ -646,14 +658,17 @@
                 </section><!-- /#content -->
 
         <section id="extras" class="body">
+
+        <!-- /.blogroll -->
                 <div class="blogroll">
                         <h2>links</h2>
                         <ul>
                             <li><a href="https://indeXall.io">Side project: indeXall.io</a></li>
                             <li><a href="https://btobsales.eu">Services: BtoBSales.EU</a></li>
                         </ul>
-                </div><!-- /.blogroll -->
+                </div>
 
+        <!-- /.social -->
                 <div class="social">
                         <h2>social</h2>
                         <ul>
@@ -661,15 +676,22 @@
                             <li><a href="https://www.linkedin.com/in/ndeville/">Linkedin</a></li>
                             <li><a href="https://www.twitter.com/ndeville">Twitter</a></li>
                         </ul>
-                </div><!-- /.social -->
+                </div>
         </section><!-- /#extras -->
 
         <footer id="contentinfo" class="body">
                 <address id="about" class="vcard body">
-                Powered by <a href="https://getpelican.com/">Pelican</a>, with <img src="https://notes.nicolasdeville.com/images/python.svg" alt="Nic's notes" width="16" style="vertical-align: middle;"/><a href="https://www.python.org/">Python</a>
+                Powered by <a href="https://getpelican.com/">Pelican</a>, with <img src="../images/python.svg" alt="Nic's notes" width="16" style="vertical-align: middle;"/><a href="https://www.python.org/">Python</a>
                 </address><!-- /#about -->
 
         </footer><!-- /#contentinfo -->
+
+
+<!-- for Stork seach engine -->
+<script src="https://files.stork-search.net/releases/v1.2.1/stork.js"></script>
+<script>
+    stork.register("sitesearch", "../search-index.st")
+</script>
 
 </body>
 </html>
