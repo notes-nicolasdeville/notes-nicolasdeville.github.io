@@ -21,7 +21,7 @@
 
             <!-- for Stork seach engine -->
             <div class="search-input-block">
-                Search: <input data-stork="sitesearch" class="search-input"/>
+                <input data-stork="sitesearch" class="search-input" placeholder="Search..."/>
                 <div data-stork="sitesearch-output"></div>
             </div>
 
@@ -64,7 +64,7 @@
 
         <!-- added 4/7 -->
         <!-- 		<br />
-        <abbr class="modified" title="2022-07-16T21:47:25.278330+02:00">
+        <abbr class="modified" title="2022-07-16T22:46:16.193702+02:00">
                 Updated: 16 Jul 2022
         </abbr>
  -->
@@ -200,7 +200,12 @@ C1 | C2 | C3 | C4 | C5 |
 </tbody>
 </table>
 <p>Can be styled with the <code>thead</code>/<code>th</code> and <code>tbody</code>/<code>td</code> CSS classes.</p>
+<h3>Escaping quotes in article titles</h3>
+<p>See issue below when I tried to implement the <code>pelican-search</code> plugin, using Stork. <br>
+Stork was failing to read the <code>.toml</code> file (which contains all page links) because the title quotes were breaking the structure.
+Learning: escape quotes in article titles, eg <code>I \"like\" spam</code>.  </p>
 <h2>Variables</h2>
+<p>Not my case, but listing here if needed + logic can be re-used elsewhere I think:  </p>
 <p>To show "Authors" instead of "Author" when there are more than 1 authors for the same article:</p>
 <div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">div</span><span class="p">&gt;</span>
     {% set i = article.authors|count %}
@@ -245,7 +250,7 @@ creator's personal website, with nice search input animation: <a href="https://j
 <p>Questions:<br>
 - <code>SEARCH_HTML_SELECTOR = "main"</code>: why not use simply <code>&lt;body&gt;</code>?
     -&gt; Answer: with repeating content in header and footer, using <code>&lt;body&gt;</code> results in showing all pages in search results when using a search variable included in those.  </p>
-<p>First implementation - error:  </p>
+<p>First implementation - error:    </p>
 <div class="highlight"><pre><span></span><code>% pelican
 <span class="o">[</span><span class="m">20</span>:39:09<span class="o">]</span> CRITICAL Exception: Search plugin reported Error:      __init__.py:566
                     Couldn<span class="err">&#39;</span>t <span class="nb">read</span> the configuration file: Cannot                 
@@ -254,6 +259,8 @@ creator's personal website, with nice search input animation: <a href="https://j
                     line <span class="m">278</span> column <span class="m">13</span><span class="sb">`</span> 
 </code></pre></div>
 
+<p>Solved: <a href="https://github.com/pelican-plugins/search/issues/3" target="_blank">https://github.com/pelican-plugins/search/issues/3</a><br>
+The issue was that some of my article titles had quotes that were not escaped.</p>
 <h3>Algolia Search: A Plugin for Pelican</h3>
 <p>decided against, preferring Stork (see above)
 <a href="https://github.com/rehanhaider/pelican-algolia" target="_blank">https://github.com/rehanhaider/pelican-algolia</a>  </p>
@@ -308,7 +315,10 @@ creator's personal website, with nice search input animation: <a href="https://j
 
         <footer id="contentinfo" class="body">
                 <address id="about" class="vcard body">
-                Powered by <a href="https://getpelican.com/">Pelican</a>, with <img src="../../images/python.svg" alt="Nic's notes" width="16" style="vertical-align: middle;"/><a href="https://www.python.org/">Python</a>
+                Powered by <a href="https://github.com/getpelican/pelican" target="_blank">Pelican</a>, 
+                with <a href="https://stork-search.net/" target="_blank">Stork</a> & <a href="https://github.com/pelican-plugins/search" target="_blank">Pelican Search plugin</a>.
+                <span style="color:#C74350">|</span> <img src="../../images/python.svg" alt="python_logo" width="16" style="vertical-align: middle;"/> <a href="https://www.python.org/" target="_blank">Python</a> 
+                
                 </address><!-- /#about -->
 
         </footer><!-- /#contentinfo -->
