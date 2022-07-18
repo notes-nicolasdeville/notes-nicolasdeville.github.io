@@ -36,14 +36,14 @@ body {
 /* Headings */
 h1 {
     font-size: 1.5em;
-    margin-top: 1em;
+    margin-top: 2em;
     color: #C64350;
 }
 
 h2 {
     font-size: 1.4em;
     margin-top: 1.4em;
-    color: #C64350;
+    /* color: #C64350; */
 }
 h2:before {
     content: '>> ';

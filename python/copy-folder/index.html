@@ -5,8 +5,9 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="generator" content="Pelican" />
-    <title>Nic's notes - Categories</title>
+    <title>Copy folders with Python</title>
     <link rel="stylesheet" href="https://notes.nicolasdeville.com/theme/css/main.css" />
+        <meta name="description" content="one line to copy entire folders" />
 
     <!-- for Stork seach engine -->
     <link rel="stylesheet" href="https://files.stork-search.net/basic.css" /> 
@@ -31,30 +32,60 @@
                 <li><a href="https://notes.nicolasdeville.com/careerplaybook/">#careerplaybook</a></li>
                 <li><a href="https://notes.nicolasdeville.com/helpers/">helpers</a></li>
                 <li><a href="https://notes.nicolasdeville.com/home-office/">home office</a></li>
-                <li><a href="https://notes.nicolasdeville.com/python/">python</a></li>
+                <li class="active"><a href="https://notes.nicolasdeville.com/python/">python</a></li>
                 <li><a href="https://notes.nicolasdeville.com/random/">random</a></li>
                 <li><a href="https://notes.nicolasdeville.com/salesleaderplaybook/">#salesleaderplaybook</a></li>
                 <li><a href="https://notes.nicolasdeville.com/startups/">startups</a></li>
             </ul></nav>
         </header>
 
-
 <section id="content" class="body">
-    <h1>Categories for Nic's notes</h1>
-    <ul>
-        <li><a href="https://notes.nicolasdeville.com/apps/">apps</a> (12)</li>
-        <li><a href="https://notes.nicolasdeville.com/b2b-sales/">b2b sales</a> (122)</li>
-        <li><a href="https://notes.nicolasdeville.com/books/">books</a> (7)</li>
-        <li><a href="https://notes.nicolasdeville.com/careerplaybook/">#careerplaybook</a> (23)</li>
-        <li><a href="https://notes.nicolasdeville.com/helpers/">helpers</a> (10)</li>
-        <li><a href="https://notes.nicolasdeville.com/home-office/">home office</a> (4)</li>
-        <li><a href="https://notes.nicolasdeville.com/python/">python</a> (16)</li>
-        <li><a href="https://notes.nicolasdeville.com/random/">random</a> (15)</li>
-        <li><a href="https://notes.nicolasdeville.com/salesleaderplaybook/">#salesleaderplaybook</a> (16)</li>
-        <li><a href="https://notes.nicolasdeville.com/startups/">startups</a> (2)</li>
-    </ul>
-</section>
+    <article>
+        <header>
+            <h1 class="entry-title">
+                <main> <!-- for indexing by Stork -->
+                    <a href="https://notes.nicolasdeville.com/python/copy-folder" rel="bookmark"
+                    title="Permalink to Copy folders with Python">Copy folders with Python
+                    </a>
+                </main>
+            </h1>
+            <p class="header_summary">
+                <main> <!-- for indexing by Stork -->
+                    <p>one line to copy entire folders</p>
+                </main>
+            </p>
+        </header>
 
+        <div class="entry-content">
+<footer class="post-info">
+
+    <p>
+        18 Jul 2022 <span class="separator">|</span> in <a class="link_tag" href="https://notes.nicolasdeville.com/python/">python</a>
+ tags: <a class="link_tag" href="https://notes.nicolasdeville.com/tag/snippets.html">snippets</a>
+
+        <!-- added 4/7 -->
+        <!-- 		<br />
+        <abbr class="modified" title="2022-07-18T09:55:49.115803+02:00">
+                Updated: 18 Jul 2022
+        </abbr>
+ -->
+
+    </p>
+
+    
+
+</footer>            <main> <!-- for indexing by Stork -->
+                <p>Having had issues copying large folders (100Gb+) with (Path)Finder, here is the code snippet I used to perform the task with Python (much faster too):</p>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">shutil</span>
+
+<span class="n">shutil</span><span class="o">.</span><span class="n">copytree</span><span class="p">(</span><span class="s1">&#39;/path/to/source/folder/on/network/Pictures&#39;</span><span class="p">,</span> <span class="s1">&#39;/path/to/destination/folder&#39;</span><span class="p">,</span> <span class="n">dirs_exist_ok</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</code></pre></div>
+
+<p><code>dirs_exist_ok=True</code> ensures files are overwritten when present, taking care of possible past file corruptions.</p>
+            </main>
+        </div><!-- /.entry-content -->
+    </article>
+</section>
         <section id="extras" class="body">
 
         <!-- /.blogroll -->

@@ -8,6 +8,26 @@ url = "ABOUT/"
 title = ""
 
 [[input.files]]
+path = "python/copy-folder/index.html"
+url = "python/copy-folder"
+title = "Copy folders with Python"
+
+[[input.files]]
+path = "home-office/ups/index.html"
+url = "home-office/ups"
+title = "Uninterrupted Power Supply"
+
+[[input.files]]
+path = "python/library-tmdbv3api/index.html"
+url = "python/library-tmdbv3api"
+title = "Library: tmdbv3api | fetching movie data"
+
+[[input.files]]
+path = "salesleaderplaybook/visualising-target-achievement/index.html"
+url = "salesleaderplaybook/visualising-target-achievement"
+title = "Visualing the target and achievement"
+
+[[input.files]]
 path = "python/copy-files/index.html"
 url = "python/copy-files"
 title = "Mass copy selected files with Python"
@@ -195,7 +215,7 @@ title = "Kindle"
 [[input.files]]
 path = "b2b-sales/planning-meetings/index.html"
 url = "b2b-sales/planning-meetings"
-title = "Planning Meetings"
+title = "Scheduling Meetings"
 
 [[input.files]]
 path = "apps/setapp/index.html"
