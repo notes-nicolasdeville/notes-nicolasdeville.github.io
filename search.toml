@@ -8,9 +8,59 @@ url = "ABOUT/"
 title = ""
 
 [[input.files]]
+path = "apps/gpg/index.html"
+url = "apps/gpg"
+title = "GPG Suite"
+
+[[input.files]]
+path = "b2b-sales/producing-videos/index.html"
+url = "b2b-sales/producing-videos"
+title = "Producing Sales videos"
+
+[[input.files]]
+path = "apps/promptsmart/index.html"
+url = "apps/promptsmart"
+title = "Promptsmart - the teleprompter companion"
+
+[[input.files]]
+path = "apps/screenflow/index.html"
+url = "apps/screenflow"
+title = "Producing videos with Screenflow"
+
+[[input.files]]
+path = "home-office/teleprompter/index.html"
+url = "home-office/teleprompter"
+title = "Using a teleprompter for business users"
+
+[[input.files]]
+path = "random/wutang/index.html"
+url = "random/wutang"
+title = "Wutang"
+
+[[input.files]]
+path = "random/chickens-are-weird/index.html"
+url = "random/chickens-are-weird"
+title = "Chickens are weird"
+
+[[input.files]]
 path = "python/copy-folder/index.html"
 url = "python/copy-folder"
 title = "Copy folders with Python"
+
+[[input.files]]
+path = "helpers/keyboard-shortcuts/index.html"
+url = "helpers/keyboard-shortcuts"
+title = "My keyboard shortcuts"
+
+[[input.files]]
+path = "apps/moom/index.html"
+url = "apps/moom"
+title = "Moom | Window management"
+
+[[input.files]]
+path = "apps/screenshotx/index.html"
+url = "apps/screenshotx"
+title = "ScreenShotX"
 
 [[input.files]]
 path = "home-office/ups/index.html"
@@ -21,6 +71,11 @@ title = "Uninterrupted Power Supply"
 path = "python/library-tmdbv3api/index.html"
 url = "python/library-tmdbv3api"
 title = "Library: tmdbv3api | fetching movie data"
+
+[[input.files]]
+path = "home-office/streamdeck/index.html"
+url = "home-office/streamdeck"
+title = "Streamdeck for business users"
 
 [[input.files]]
 path = "salesleaderplaybook/visualising-target-achievement/index.html"
@@ -78,8 +133,8 @@ url = "helpers/unzip-split-zip-files"
 title = "Unzip split zip files (from Google Takeout)"
 
 [[input.files]]
-path = "helpers/css-best-practices/index.html"
-url = "helpers/css-best-practices"
+path = "learning/css/index.html"
+url = "learning/css"
 title = "CSS Best Practices"
 
 [[input.files]]
@@ -178,8 +233,8 @@ url = "random/ev"
 title = "Electric Vehicles"
 
 [[input.files]]
-path = "random/memes/index.html"
-url = "random/memes"
+path = "random/meme, funny/index.html"
+url = "random/meme, funny"
 title = "Memes"
 
 [[input.files]]
@@ -188,14 +243,14 @@ url = "apps/alfred"
 title = "Alfred"
 
 [[input.files]]
-path = "apps/apps/index.html"
-url = "apps/apps"
-title = "Apps I use"
-
-[[input.files]]
 path = "helpers/github/index.html"
 url = "helpers/github"
 title = "Github"
+
+[[input.files]]
+path = "apps/my-stack/index.html"
+url = "apps/my-stack"
+title = "Apps I use"
 
 [[input.files]]
 path = "apps/readwise/index.html"
@@ -228,8 +283,8 @@ url = "books/simply-said"
 title = "Simply Said"
 
 [[input.files]]
-path = "home-office/home-office-setup/index.html"
-url = "home-office/home-office-setup"
+path = "home-office/setup/index.html"
+url = "home-office/setup"
 title = "Home Office Setup (since June '22)"
 
 [[input.files]]
@@ -868,6 +923,11 @@ url = "b2b-sales/win-win"
 title = "Win-Win"
 
 [[input.files]]
+path = "apps/you/index.html"
+url = "apps/you"
+title = "You.com - my new primary search engine"
+
+[[input.files]]
 path = "b2b-sales/you-can-always-be-someones-expert/index.html"
 url = "b2b-sales/you-can-always-be-someones-expert"
 title = "You can always be someone's expert"
@@ -903,6 +963,21 @@ url = "salesleaderplaybook/2-types-of-successful-saas-sales-people"
 title = "2 types of successful SaaS Sales people"
 
 [[input.files]]
+path = "home-office/deep-work/index.html"
+url = "home-office/deep-work"
+title = "Resources for Deep Work"
+
+[[input.files]]
+path = "home-office/dictation/index.html"
+url = "home-office/dictation"
+title = "Dictating instead of typing"
+
+[[input.files]]
+path = "helpers/excel/index.html"
+url = "helpers/excel"
+title = "Excel"
+
+[[input.files]]
 path = "careerplaybook/careerplaybook-022-asking-questions/index.html"
 url = "careerplaybook/careerplaybook-022-asking-questions"
 title = "#CareerPlaybook 022: Asking many questions"
@@ -911,6 +986,11 @@ title = "#CareerPlaybook 022: Asking many questions"
 path = "careerplaybook/careerplaybook-021-hiring/index.html"
 url = "careerplaybook/careerplaybook-021-hiring"
 title = "#CareerPlaybook 021: Hiring for enthusiasm and ability to learn"
+
+[[input.files]]
+path = "apps/descript/index.html"
+url = "apps/descript"
+title = "Descript | All-in-one audio/video editing, as easy as a doc."
 
 [[input.files]]
 path = "careerplaybook/careerplaybook-020-owning-your-mistakes/index.html"
@@ -1128,6 +1208,11 @@ url = "b2b-sales/are-you-selling-aspirin-a-vaccine-or-a-vitamin"
 title = "Are You Selling Aspirin, a Vaccine or a Vitamin?"
 
 [[input.files]]
+path = "interests/tesla/index.html"
+url = "interests/tesla"
+title = "Tesla resources"
+
+[[input.files]]
 path = "b2b-sales/the-advice-i-always-give-when-mentoring/index.html"
 url = "b2b-sales/the-advice-i-always-give-when-mentoring"
 title = "The advice I always give when mentoring"
@@ -1141,3 +1226,13 @@ title = "The Mom Test"
 path = "b2b-sales/what-is-sales/index.html"
 url = "b2b-sales/what-is-sales"
 title = "What Is Sales?"
+
+[[input.files]]
+path = "helpers/css/index.html"
+url = "helpers/css"
+title = "CSS Tools"
+
+[[input.files]]
+path = "learning/css/index.html"
+url = "learning/css"
+title = "CSS Best Practices"

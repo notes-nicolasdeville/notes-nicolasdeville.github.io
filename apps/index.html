@@ -31,6 +31,8 @@
                 <li><a href="https://notes.nicolasdeville.com/careerplaybook/">#careerplaybook</a></li>
                 <li><a href="https://notes.nicolasdeville.com/helpers/">helpers</a></li>
                 <li><a href="https://notes.nicolasdeville.com/home-office/">home office</a></li>
+                <li><a href="https://notes.nicolasdeville.com/interests/">interests</a></li>
+                <li><a href="https://notes.nicolasdeville.com/learning/">learning</a></li>
                 <li><a href="https://notes.nicolasdeville.com/python/">python</a></li>
                 <li><a href="https://notes.nicolasdeville.com/random/">random</a></li>
                 <li><a href="https://notes.nicolasdeville.com/salesleaderplaybook/">#salesleaderplaybook</a></li>
@@ -41,7 +43,7 @@
 
 
 <p class="notes_count">
-    12 notes 
+    19 notes 
     <span style="color:#C74350">|</span> 
     <a href="https://notes.nicolasdeville.com/tags">by tags</a> 
     <span style="color:#C74350">|</span> 
@@ -60,15 +62,260 @@
             <hr/>
 
                 <article class="hentry">
-                    <h1 class="entry-title"><a href="https://notes.nicolasdeville.com/apps/newsletter-readers">Newsletter readers</a></h1>
+                    <h1 class="entry-title"><a href="https://notes.nicolasdeville.com/apps/gpg">GPG Suite</a></h1>
 
                     <!-- added 4/7 -->
                     <div>
                         <p class="header_summary">
-                            <p>ongoing search for managing email newsletters better.</p>
+                            
                         </p>
                     </div>
 
+<footer class="post-info">
+
+    <p>
+        19 Jul 2022 <span class="separator">|</span> in <a class="link_tag" href="https://notes.nicolasdeville.com/apps/">apps</a>
+ tags: <a class="link_tag" href="https://notes.nicolasdeville.com/tag/encryption.html">encryption</a>
+
+        <!-- added 4/7 -->
+        <!-- 		<br />
+        <abbr class="modified" title="2022-07-19T22:04:42.935157+02:00">
+                Updated: 19 Jul 2022
+        </abbr>
+ -->
+
+    </p>
+
+    
+
+</footer><p><a href="https://gpgtools.org/" target="_blank">https://gpgtools.org/</a>  </p>
+<p>"GPG Suite: One simple package with everything you need, to protect your emails and files."  </p>
+<p>With the tools installed by this package, you can encrypt, decrypt, sign and verify files or messages.  </p>
+<h1>Encrypting emails</h1>
+<p>This can be done with GPG Mail - a paid-for add-on.<br>
+Allows to encrypt emails straight within Apple's Mail app.   </p>
+<p>I am not using that myself, though I do think that encryption should be natively supported by all mail providers and clients, and become mainstream. <br>
+It's crazy that emails by default is like sending an open postcard by mail.<br>
+I have used encrypted emails for a while a decade ago, but considering most people do not encrypt emails, it was a very clunky, time-consuming (setup and troubleshooting) and friction-creating workflow.  </p>
+<h1>Encrypting text</h1>
+<p>My main use for it. Text can be encrypted and copy/pasted anywhere you like - email, DM, etc..</p>
+<h1>Terminal commands</h1>
+<h2>Exporting private key(s)</h2>
+<p>export the private key with the command-line tool from GPG:</p>
+<p><code>gpg --export-secret-keys</code>   </p>
+<p>A normal export with <code>--export</code> will not include any private keys, therefore you have to use <code>--export-secret-keys</code>.  </p>
+<p>This is the command that allows you to export a specific key with the ID 1234ABCD to the file <code>secret.asc</code>:  </p>
+<p><code>gpg --export-secret-keys --armor 1234ABCD &gt; secret.asc</code>   </p>
+<p>You can find the ID that you need using the following command - usually an email address:</p>
+<p><code>gpg --list-keys</code>  </p>
+<p>To export just 1 specific secret key instead of all of them:  </p>
+<p><code>gpg --export-secret-keys keyIDNumber &gt; exportedKeyFilename.asc</code>   </p>
+<p>If issues, one crucial step is to edit the imported key and "ultimately trust" that key:   </p>
+<div class="highlight"><pre><span></span><code>gpg --edit-key (keyIDNumber)
+gpg&gt; trust
+
+Please decide how far you trust this user to correctly verify other users&#39; keys:
+
+  1 = I don&#39;t know or won&#39;t say
+  2 = I do NOT trust
+  3 = I trust marginally
+  4 = I trust fully
+  5 = I trust ultimately
+  m = back to the main menu
+</code></pre></div>
+
+<p>Source: <a href="https://stackoverflow.com/questions/5587513/how-to-export-private-secret-asc-key-to-decrypt-gpg-files#5588513" target="_blank">https://stackoverflow.com/questions/5587513/how-to-export-private-secret-asc-key-to-decrypt-gpg-files#5588513</a>   </p>
+                </article>
+            </aside>
+
+                <section id="content" class="body">
+
+                <!-- PREVIOUS NOTES -->
+				<p class="notes-section">previous notes</p>
+                <hr>
+
+                <ol id="posts-list" class="hfeed">
+            
+
+
+
+            <li>
+                <article class="hentry">
+                    <header>
+                        <!-- PREVIOUS NOTE TITLE -->
+                        <h1><a href="https://notes.nicolasdeville.com/apps/promptsmart" rel="bookmark"
+                            title="Promptsmart - the teleprompter companion">Promptsmart - the teleprompter companion</a></h1>
+                        <!-- PREVIOUS NOTE SUMMARY -->
+                        <div class="entry-content">
+                            <p>you need an app when using a teleprompter - this is the one I use</p>
+                        </div>
+                    </header>
+
+                    <div class="entry-content">
+                        <!-- PREVIOUS NOTE METADATA -->
+<footer class="post-info">
+
+    <p>
+        19 Jul 2022 <span class="separator">|</span> in <a class="link_tag" href="https://notes.nicolasdeville.com/apps/">apps</a>
+ tags: <a class="link_tag" href="https://notes.nicolasdeville.com/tag/video.html">video</a>
+<a class="link_tag" href="https://notes.nicolasdeville.com/tag/teleprompter.html">teleprompter</a>
+
+        <!-- added 4/7 -->
+        <!-- 		<br />
+        <abbr class="modified" title="2022-07-19T15:46:38.950256+02:00">
+                Updated: 19 Jul 2022
+        </abbr>
+ -->
+
+    </p>
+
+    
+
+</footer>                    </div>
+                    
+                </article>
+                <hr/>
+            </li>
+            
+
+
+
+            <li>
+                <article class="hentry">
+                    <header>
+                        <!-- PREVIOUS NOTE TITLE -->
+                        <h1><a href="https://notes.nicolasdeville.com/apps/screenflow" rel="bookmark"
+                            title="Producing videos with Screenflow">Producing videos with Screenflow</a></h1>
+                        <!-- PREVIOUS NOTE SUMMARY -->
+                        <div class="entry-content">
+                            <p>A great video production software, halfway between too simple and too complex alternatives.</p>
+                        </div>
+                    </header>
+
+                    <div class="entry-content">
+                        <!-- PREVIOUS NOTE METADATA -->
+<footer class="post-info">
+
+    <p>
+        19 Jul 2022 <span class="separator">|</span> in <a class="link_tag" href="https://notes.nicolasdeville.com/apps/">apps</a>
+ tags: <a class="link_tag" href="https://notes.nicolasdeville.com/tag/productivity.html">productivity</a>
+
+        <!-- added 4/7 -->
+        <!-- 		<br />
+        <abbr class="modified" title="2022-07-19T15:35:20.163062+02:00">
+                Updated: 19 Jul 2022
+        </abbr>
+ -->
+
+    </p>
+
+    
+
+</footer>                    </div>
+                    
+                </article>
+                <hr/>
+            </li>
+            
+
+
+
+            <li>
+                <article class="hentry">
+                    <header>
+                        <!-- PREVIOUS NOTE TITLE -->
+                        <h1><a href="https://notes.nicolasdeville.com/apps/moom" rel="bookmark"
+                            title="Moom | Window management">Moom | Window management</a></h1>
+                        <!-- PREVIOUS NOTE SUMMARY -->
+                        <div class="entry-content">
+                            <p>keyboard controlled window management</p>
+                        </div>
+                    </header>
+
+                    <div class="entry-content">
+                        <!-- PREVIOUS NOTE METADATA -->
+<footer class="post-info">
+
+    <p>
+        18 Jul 2022 <span class="separator">|</span> in <a class="link_tag" href="https://notes.nicolasdeville.com/apps/">apps</a>
+ tags: <a class="link_tag" href="https://notes.nicolasdeville.com/tag/shortcuts.html">shortcuts</a>
+<a class="link_tag" href="https://notes.nicolasdeville.com/tag/productivity.html">productivity</a>
+<a class="link_tag" href="https://notes.nicolasdeville.com/tag/macos.html">macOS</a>
+
+        <!-- added 4/7 -->
+        <!-- 		<br />
+        <abbr class="modified" title="2022-07-19T15:38:48.137290+02:00">
+                Updated: 19 Jul 2022
+        </abbr>
+ -->
+
+    </p>
+
+    
+
+</footer>                    </div>
+                    
+                </article>
+                <hr/>
+            </li>
+            
+
+
+
+            <li>
+                <article class="hentry">
+                    <header>
+                        <!-- PREVIOUS NOTE TITLE -->
+                        <h1><a href="https://notes.nicolasdeville.com/apps/screenshotx" rel="bookmark"
+                            title="ScreenShotX">ScreenShotX</a></h1>
+                        <!-- PREVIOUS NOTE SUMMARY -->
+                        <div class="entry-content">
+                            <p>current screenshot and screen recording solution, after testing a few over the years.</p>
+                        </div>
+                    </header>
+
+                    <div class="entry-content">
+                        <!-- PREVIOUS NOTE METADATA -->
+<footer class="post-info">
+
+    <p>
+        18 Jul 2022 <span class="separator">|</span> in <a class="link_tag" href="https://notes.nicolasdeville.com/apps/">apps</a>
+ tags: <a class="link_tag" href="https://notes.nicolasdeville.com/tag/productivity.html">productivity</a>
+
+        <!-- added 4/7 -->
+        <!-- 		<br />
+        <abbr class="modified" title="2022-07-18T11:14:00.486275+02:00">
+                Updated: 18 Jul 2022
+        </abbr>
+ -->
+
+    </p>
+
+    
+
+</footer>                    </div>
+                    
+                </article>
+                <hr/>
+            </li>
+            
+
+
+
+            <li>
+                <article class="hentry">
+                    <header>
+                        <!-- PREVIOUS NOTE TITLE -->
+                        <h1><a href="https://notes.nicolasdeville.com/apps/newsletter-readers" rel="bookmark"
+                            title="Newsletter readers">Newsletter readers</a></h1>
+                        <!-- PREVIOUS NOTE SUMMARY -->
+                        <div class="entry-content">
+                            <p>ongoing search for managing email newsletters better.</p>
+                        </div>
+                    </header>
+
+                    <div class="entry-content">
+                        <!-- PREVIOUS NOTE METADATA -->
 <footer class="post-info">
 
     <p>
@@ -86,28 +333,11 @@
 
     
 
-</footer><p>I have used Instapaper mostly over the last year to read my email newsletters (<a href="https://www.instapaper.com/" target="_blank">https://www.instapaper.com/</a>). <br>
-Combination of high price ($25+/year) and awful layout rendering for newsletters (it's intended for webpages) made me search for an alternative.</p>
-<h3>SlickInbox</h3>
-<p>recommended to me on Reddit. Testing currently.<br>
-A unique email address is generated (+: can be chosen, so easy to remember) and needs to be used to (re)subscribe to all newsletters. </p>
-<p><a href="https://slickinbox.com/" target="_blank">https://slickinbox.com/</a></p>
-<h3>Newsletterss</h3>
-<p>next try if SlickInbox doesn't work as expected. <br>
-<a href="https://newsletterss.com/" target="_blank">https://newsletterss.com/</a></p>
-<h3>Meco</h3>
-<p>tried, did not work. Works only with Gmail - fetches newsletters automatically, in theory.
-<a href="https://apps.apple.com/us/app/id1505542541" target="_blank">https://apps.apple.com/us/app/id1505542541</a></p>
+</footer>                    </div>
+                    
                 </article>
-            </aside>
-
-                <section id="content" class="body">
-
-                <!-- PREVIOUS NOTES -->
-				<p class="notes-section">previous notes</p>
-                <hr>
-
-                <ol id="posts-list" class="hfeed">
+                <hr/>
+            </li>
             
 
 
@@ -155,7 +385,7 @@ A unique email address is generated (+: can be chosen, so easy to remember) and 
                 <article class="hentry">
                     <header>
                         <!-- PREVIOUS NOTE TITLE -->
-                        <h1><a href="https://notes.nicolasdeville.com/apps/apps" rel="bookmark"
+                        <h1><a href="https://notes.nicolasdeville.com/apps/my-stack" rel="bookmark"
                             title="Apps I use">Apps I use</a></h1>
                         <!-- PREVIOUS NOTE SUMMARY -->
                         <div class="entry-content">
@@ -173,8 +403,8 @@ A unique email address is generated (+: can be chosen, so easy to remember) and 
 
         <!-- added 4/7 -->
         <!-- 		<br />
-        <abbr class="modified" title="2022-07-10T20:03:34.150651+02:00">
-                Updated: 10 Jul 2022
+        <abbr class="modified" title="2022-07-19T15:38:40.669722+02:00">
+                Updated: 19 Jul 2022
         </abbr>
  -->
 
@@ -293,8 +523,8 @@ A unique email address is generated (+: can be chosen, so easy to remember) and 
 
         <!-- added 4/7 -->
         <!-- 		<br />
-        <abbr class="modified" title="2022-07-04T10:25:59.930020+02:00">
-                Updated: 04 Jul 2022
+        <abbr class="modified" title="2022-07-19T22:25:36.439160+02:00">
+                Updated: 19 Jul 2022
         </abbr>
  -->
 
@@ -334,6 +564,88 @@ A unique email address is generated (+: can be chosen, so easy to remember) and 
         <!-- 		<br />
         <abbr class="modified" title="2022-07-15T00:18:05.207192+02:00">
                 Updated: 15 Jul 2022
+        </abbr>
+ -->
+
+    </p>
+
+    
+
+</footer>                    </div>
+                    
+                </article>
+                <hr/>
+            </li>
+            
+
+
+
+            <li>
+                <article class="hentry">
+                    <header>
+                        <!-- PREVIOUS NOTE TITLE -->
+                        <h1><a href="https://notes.nicolasdeville.com/apps/you" rel="bookmark"
+                            title="You.com - my new primary search engine">You.com - my new primary search engine</a></h1>
+                        <!-- PREVIOUS NOTE SUMMARY -->
+                        <div class="entry-content">
+                            <p>replacing DuckDuckGo when at my desk</p>
+                        </div>
+                    </header>
+
+                    <div class="entry-content">
+                        <!-- PREVIOUS NOTE METADATA -->
+<footer class="post-info">
+
+    <p>
+        01 Nov 2021 <span class="separator">|</span> in <a class="link_tag" href="https://notes.nicolasdeville.com/apps/">apps</a>
+ tags: <a class="link_tag" href="https://notes.nicolasdeville.com/tag/productivity.html">productivity</a>
+<a class="link_tag" href="https://notes.nicolasdeville.com/tag/webapp.html">webapp</a>
+
+        <!-- added 4/7 -->
+        <!-- 		<br />
+        <abbr class="modified" title="2022-07-19T16:00:14.715264+02:00">
+                Updated: 19 Jul 2022
+        </abbr>
+ -->
+
+    </p>
+
+    
+
+</footer>                    </div>
+                    
+                </article>
+                <hr/>
+            </li>
+            
+
+
+
+            <li>
+                <article class="hentry">
+                    <header>
+                        <!-- PREVIOUS NOTE TITLE -->
+                        <h1><a href="https://notes.nicolasdeville.com/apps/descript" rel="bookmark"
+                            title="Descript | All-in-one audio/video editing, as easy as a doc.">Descript | All-in-one audio/video editing, as easy as a doc.</a></h1>
+                        <!-- PREVIOUS NOTE SUMMARY -->
+                        <div class="entry-content">
+                            <p>a game changing way to produce videos</p>
+                        </div>
+                    </header>
+
+                    <div class="entry-content">
+                        <!-- PREVIOUS NOTE METADATA -->
+<footer class="post-info">
+
+    <p>
+        01 Jun 2020 <span class="separator">|</span> in <a class="link_tag" href="https://notes.nicolasdeville.com/apps/">apps</a>
+ tags: <a class="link_tag" href="https://notes.nicolasdeville.com/tag/video.html">video</a>
+<a class="link_tag" href="https://notes.nicolasdeville.com/tag/macos.html">macOS</a>
+
+        <!-- added 4/7 -->
+        <!-- 		<br />
+        <abbr class="modified" title="2022-07-19T22:20:40.073754+02:00">
+                Updated: 19 Jul 2022
         </abbr>
  -->
 
@@ -409,11 +721,13 @@ A unique email address is generated (+: can be chosen, so easy to remember) and 
     <p>
         18 Mar 2020 <span class="separator">|</span> in <a class="link_tag" href="https://notes.nicolasdeville.com/apps/">apps</a>
  tags: <a class="link_tag" href="https://notes.nicolasdeville.com/tag/productivity.html">productivity</a>
+<a class="link_tag" href="https://notes.nicolasdeville.com/tag/macos.html">macOS</a>
+<a class="link_tag" href="https://notes.nicolasdeville.com/tag/webapp.html">webapp</a>
 
         <!-- added 4/7 -->
         <!-- 		<br />
-        <abbr class="modified" title="2022-07-02T14:38:05.077075+02:00">
-                Updated: 02 Jul 2022
+        <abbr class="modified" title="2022-07-19T15:38:03.282531+02:00">
+                Updated: 19 Jul 2022
         </abbr>
  -->
 
@@ -449,11 +763,12 @@ A unique email address is generated (+: can be chosen, so easy to remember) and 
     <p>
         16 Feb 2020 <span class="separator">|</span> in <a class="link_tag" href="https://notes.nicolasdeville.com/apps/">apps</a>
  tags: <a class="link_tag" href="https://notes.nicolasdeville.com/tag/video.html">video</a>
+<a class="link_tag" href="https://notes.nicolasdeville.com/tag/macos.html">macOS</a>
 
         <!-- added 4/7 -->
         <!-- 		<br />
-        <abbr class="modified" title="2022-07-16T13:08:47.059473+02:00">
-                Updated: 16 Jul 2022
+        <abbr class="modified" title="2022-07-19T22:24:17.479341+02:00">
+                Updated: 19 Jul 2022
         </abbr>
  -->
 

@@ -19,6 +19,23 @@ body {
     text-align: left;
 }
 
+.body {
+    clear: both;
+    margin: 0 auto;
+    max-width: 800px;
+}
+img {
+    max-width: 100%;
+}
+img.right, figure.right, div.figure.align-right {
+    float: right;
+    margin: 0 0 2em 2em;
+}
+img.left, figure.left, div.figure.align-left {
+    float: left;
+    margin: 0 2em 2em 0;
+}
+
 .notes_count {
     background: #fff;
     max-width: 800px;
@@ -144,6 +161,7 @@ li {
     margin-left: 1.5em;
 }
 
+/* Articles */
 .post-info {
     width: 100%;
     text-align: right;
@@ -247,14 +265,27 @@ div.note {
 }
 
 /* Tables */
-table {margin: .5em auto 1.5em auto; width: 98%;}
+table {
+    margin: .5em auto 1.5em auto; 
+    width: 100%;
+}
 
 	/* Thead */
-	thead th {padding: .5em .4em; text-align: left;}
+	thead th {
+        padding: .5em .4em; 
+        text-align: left;
+        font-weight: bold;
+        font-size: 1.1em;
+        border-bottom: 1px solid black;
+        vertical-align: bottom;
+    }
 	thead td {}
 
 	/* Tbody */
-	tbody td {padding: .5em .4em;}
+	tbody td {
+        padding: .5em .4em;
+        vertical-align: top;
+    }
 	tbody th {}
 
 	tbody .alt td {}
@@ -264,38 +295,14 @@ table {margin: .5em auto 1.5em auto; width: 98%;}
 	tfoot th {}
 	tfoot td {}
 
+    tbody > tr:first-child > td:first-child {
+        white-space: nowrap;
+    }
+
 /* HTML5 tags */
 header, section, footer,
 aside, nav, article, figure {
 	display: block;
-}
-
-/***** Layout *****/
-.body {
-    clear: both;
-    margin: 0 auto;
-    /* margin: 0; */
-    max-width: 800px;
-}
-img {
-    max-width: 100%;
-}
-img.right, figure.right, div.figure.align-right {
-    float: right;
-    margin: 0 0 2em 2em;
-}
-img.left, figure.left, div.figure.align-left {
-    float: left;
-    margin: 0 2em 2em 0;
-}
-
-/* .rst support */
-div.figure img, figure img {  /* to fill figure exactly */
-    max-width: 100%;
-}
-div.figure p.caption, figure p.caption { /* margin provided by figure */
-    margin-top: 0;
-    margin-bottom: 0;
 }
 
 /*
@@ -686,10 +693,16 @@ li:first-child .hentry, #content > .hentry {
     /* border: 2px solid white; */
 }
 
-/* TEST */
 
 .illustration {
-  box-shadow: 4px 4px 10px #000; /* offset-x | offset-y | blur-radius | color */
+    box-shadow: 4px 4px 10px #000; /* offset-x | offset-y | blur-radius | color */
+    margin: auto;
+    display: block;
+}
+
+.screenshot {
+    margin: auto;
+    display: block;
 }
 
 .iphone {
@@ -834,4 +847,15 @@ li:first-child .hentry, #content > .hentry {
 .search-input {
     width: 200px;
     font-family: 'Lato', Arial, sans-serif;
+}
+
+.datestamp {
+    font-size: 0.8em;
+    font-weight: bold;
+    color: #333;
+    background-color: #ddd;
+    padding: 0.3em 0.5em 0.3em 0.5em;
+    border: solid 3px #999;
+    border-radius: 1.5em;
+    line-height: 3em; /* to avoid overlap over lines */
 }

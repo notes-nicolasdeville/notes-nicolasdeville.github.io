@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="generator" content="Pelican" />
+    <title>Nic's notes - encryption</title>
+    <link rel="stylesheet" href="https://notes.nicolasdeville.com/theme/css/main.css" />
+
+    <!-- for Stork seach engine -->
+    <link rel="stylesheet" href="https://files.stork-search.net/basic.css" /> 
+
+</head>
+
+<body id="index" class="body">
+        <header id="banner" class="body">
+
+            <a href="https://notes.nicolasdeville.com/"><img class="header_image" src="https://notes.nicolasdeville.com/images/nic_notes_header.svg" alt="Nic's notes" width="266"/></a>
+
+            <!-- for Stork seach engine -->
+            <div class="search-input-block">
+                <input data-stork="sitesearch" class="search-input" placeholder="Search..."/>
+                <div data-stork="sitesearch-output"></div>
+            </div>
+
+            <nav><ul>
+                <li><a href="https://notes.nicolasdeville.com/apps/">apps</a></li>
+                <li><a href="https://notes.nicolasdeville.com/b2b-sales/">b2b sales</a></li>
+                <li><a href="https://notes.nicolasdeville.com/books/">books</a></li>
+                <li><a href="https://notes.nicolasdeville.com/careerplaybook/">#careerplaybook</a></li>
+                <li><a href="https://notes.nicolasdeville.com/helpers/">helpers</a></li>
+                <li><a href="https://notes.nicolasdeville.com/home-office/">home office</a></li>
+                <li><a href="https://notes.nicolasdeville.com/interests/">interests</a></li>
+                <li><a href="https://notes.nicolasdeville.com/learning/">learning</a></li>
+                <li><a href="https://notes.nicolasdeville.com/python/">python</a></li>
+                <li><a href="https://notes.nicolasdeville.com/random/">random</a></li>
+                <li><a href="https://notes.nicolasdeville.com/salesleaderplaybook/">#salesleaderplaybook</a></li>
+                <li><a href="https://notes.nicolasdeville.com/startups/">startups</a></li>
+            </ul></nav>
+        </header>
+
+
+
+<p class="notes_count">
+    1 notes 
+    <span style="color:#C74350">|</span> 
+    <a href="https://notes.nicolasdeville.com/tags">by tags</a> 
+    <span style="color:#C74350">|</span> 
+    <a href="https://notes.nicolasdeville.com/2022/">2022</a> 
+    <span style="color:#C74350">|</span> 
+    <a href="https://notes.nicolasdeville.com/2021/">2021</a> 
+    <span style="color:#C74350">|</span> 
+    <a href="https://notes.nicolasdeville.com/2020/">2020</a>
+</p>
+
+
+
+            <aside id="featured" class="body">
+            <!-- LATEST NOTE -->
+            <p class="notes-section">latest note</p>
+            <hr/>
+
+                <article class="hentry">
+                    <h1 class="entry-title"><a href="https://notes.nicolasdeville.com/apps/gpg">GPG Suite</a></h1>
+
+                    <!-- added 4/7 -->
+                    <div>
+                        <p class="header_summary">
+                            
+                        </p>
+                    </div>
+
+<footer class="post-info">
+
+    <p>
+        19 Jul 2022 <span class="separator">|</span> in <a class="link_tag" href="https://notes.nicolasdeville.com/apps/">apps</a>
+ tags: <a class="link_tag" href="https://notes.nicolasdeville.com/tag/encryption.html">encryption</a>
+
+        <!-- added 4/7 -->
+        <!-- 		<br />
+        <abbr class="modified" title="2022-07-19T22:04:42.935157+02:00">
+                Updated: 19 Jul 2022
+        </abbr>
+ -->
+
+    </p>
+
+    
+
+</footer><p><a href="https://gpgtools.org/" target="_blank">https://gpgtools.org/</a>  </p>
+<p>"GPG Suite: One simple package with everything you need, to protect your emails and files."  </p>
+<p>With the tools installed by this package, you can encrypt, decrypt, sign and verify files or messages.  </p>
+<h1>Encrypting emails</h1>
+<p>This can be done with GPG Mail - a paid-for add-on.<br>
+Allows to encrypt emails straight within Apple's Mail app.   </p>
+<p>I am not using that myself, though I do think that encryption should be natively supported by all mail providers and clients, and become mainstream. <br>
+It's crazy that emails by default is like sending an open postcard by mail.<br>
+I have used encrypted emails for a while a decade ago, but considering most people do not encrypt emails, it was a very clunky, time-consuming (setup and troubleshooting) and friction-creating workflow.  </p>
+<h1>Encrypting text</h1>
+<p>My main use for it. Text can be encrypted and copy/pasted anywhere you like - email, DM, etc..</p>
+<h1>Terminal commands</h1>
+<h2>Exporting private key(s)</h2>
+<p>export the private key with the command-line tool from GPG:</p>
+<p><code>gpg --export-secret-keys</code>   </p>
+<p>A normal export with <code>--export</code> will not include any private keys, therefore you have to use <code>--export-secret-keys</code>.  </p>
+<p>This is the command that allows you to export a specific key with the ID 1234ABCD to the file <code>secret.asc</code>:  </p>
+<p><code>gpg --export-secret-keys --armor 1234ABCD &gt; secret.asc</code>   </p>
+<p>You can find the ID that you need using the following command - usually an email address:</p>
+<p><code>gpg --list-keys</code>  </p>
+<p>To export just 1 specific secret key instead of all of them:  </p>
+<p><code>gpg --export-secret-keys keyIDNumber &gt; exportedKeyFilename.asc</code>   </p>
+<p>If issues, one crucial step is to edit the imported key and "ultimately trust" that key:   </p>
+<div class="highlight"><pre><span></span><code>gpg --edit-key (keyIDNumber)
+gpg&gt; trust
+
+Please decide how far you trust this user to correctly verify other users&#39; keys:
+
+  1 = I don&#39;t know or won&#39;t say
+  2 = I do NOT trust
+  3 = I trust marginally
+  4 = I trust fully
+  5 = I trust ultimately
+  m = back to the main menu
+</code></pre></div>
+
+<p>Source: <a href="https://stackoverflow.com/questions/5587513/how-to-export-private-secret-asc-key-to-decrypt-gpg-files#5588513" target="_blank">https://stackoverflow.com/questions/5587513/how-to-export-private-secret-asc-key-to-decrypt-gpg-files#5588513</a>   </p>
+                </article>
+            </aside>
+
+            
+
+        <section id="extras" class="body">
+
+        <!-- /.blogroll -->
+                <div class="blogroll">
+                        <h2>links</h2>
+                        <ul>
+                            <li><a href="https://indeXall.io">Side project: indeXall.io</a></li>
+                            <li><a href="https://btobsales.eu">Services: BtoBSales.EU</a></li>
+                        </ul>
+                </div>
+
+        <!-- /.social -->
+                <div class="social">
+                        <h2>social</h2>
+                        <ul>
+
+                            <li><a href="https://www.linkedin.com/in/ndeville/">Linkedin</a></li>
+                            <li><a href="https://www.twitter.com/ndeville">Twitter</a></li>
+                        </ul>
+                </div>
+        </section><!-- /#extras -->
+
+        <footer id="contentinfo" class="body">
+                <address id="about" class="vcard body">
+                Powered by <a href="https://github.com/getpelican/pelican" target="_blank">Pelican</a>, 
+                with <a href="https://stork-search.net/" target="_blank">Stork</a> & <a href="https://github.com/pelican-plugins/search" target="_blank">Pelican Search plugin</a>.
+                <span style="color:#C74350">|</span> <img src="https://notes.nicolasdeville.com/images/python.svg" alt="python_logo" width="16" style="vertical-align: middle;"/> <a href="https://www.python.org/" target="_blank">Python</a> 
+                
+                </address><!-- /#about -->
+
+        </footer><!-- /#contentinfo -->
+
+
+<!-- for Stork seach engine -->
+<script src="https://files.stork-search.net/releases/v1.2.1/stork.js"></script>
+<script>
+    stork.register("sitesearch", "https://notes.nicolasdeville.com/search-index.st")
+</script>
+
+</body>
+</html>

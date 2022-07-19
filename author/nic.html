@@ -31,6 +31,8 @@
                 <li><a href="https://notes.nicolasdeville.com/careerplaybook/">#careerplaybook</a></li>
                 <li><a href="https://notes.nicolasdeville.com/helpers/">helpers</a></li>
                 <li><a href="https://notes.nicolasdeville.com/home-office/">home office</a></li>
+                <li><a href="https://notes.nicolasdeville.com/interests/">interests</a></li>
+                <li><a href="https://notes.nicolasdeville.com/learning/">learning</a></li>
                 <li><a href="https://notes.nicolasdeville.com/python/">python</a></li>
                 <li><a href="https://notes.nicolasdeville.com/random/">random</a></li>
                 <li><a href="https://notes.nicolasdeville.com/salesleaderplaybook/">#salesleaderplaybook</a></li>
@@ -41,7 +43,7 @@
 
 
 <p class="notes_count">
-    227 notes 
+    244 notes 
     <span style="color:#C74350">|</span> 
     <a href="https://notes.nicolasdeville.com/tags">by tags</a> 
     <span style="color:#C74350">|</span> 
@@ -60,15 +62,339 @@
             <hr/>
 
                 <article class="hentry">
-                    <h1 class="entry-title"><a href="https://notes.nicolasdeville.com/python/copy-folder">Copy folders with Python</a></h1>
+                    <h1 class="entry-title"><a href="https://notes.nicolasdeville.com/apps/gpg">GPG Suite</a></h1>
 
                     <!-- added 4/7 -->
                     <div>
                         <p class="header_summary">
-                            <p>one line to copy entire folders</p>
+                            
                         </p>
                     </div>
 
+<footer class="post-info">
+
+    <p>
+        19 Jul 2022 <span class="separator">|</span> in <a class="link_tag" href="https://notes.nicolasdeville.com/apps/">apps</a>
+ tags: <a class="link_tag" href="https://notes.nicolasdeville.com/tag/encryption.html">encryption</a>
+
+        <!-- added 4/7 -->
+        <!-- 		<br />
+        <abbr class="modified" title="2022-07-19T22:04:42.935157+02:00">
+                Updated: 19 Jul 2022
+        </abbr>
+ -->
+
+    </p>
+
+    
+
+</footer><p><a href="https://gpgtools.org/" target="_blank">https://gpgtools.org/</a>  </p>
+<p>"GPG Suite: One simple package with everything you need, to protect your emails and files."  </p>
+<p>With the tools installed by this package, you can encrypt, decrypt, sign and verify files or messages.  </p>
+<h1>Encrypting emails</h1>
+<p>This can be done with GPG Mail - a paid-for add-on.<br>
+Allows to encrypt emails straight within Apple's Mail app.   </p>
+<p>I am not using that myself, though I do think that encryption should be natively supported by all mail providers and clients, and become mainstream. <br>
+It's crazy that emails by default is like sending an open postcard by mail.<br>
+I have used encrypted emails for a while a decade ago, but considering most people do not encrypt emails, it was a very clunky, time-consuming (setup and troubleshooting) and friction-creating workflow.  </p>
+<h1>Encrypting text</h1>
+<p>My main use for it. Text can be encrypted and copy/pasted anywhere you like - email, DM, etc..</p>
+<h1>Terminal commands</h1>
+<h2>Exporting private key(s)</h2>
+<p>export the private key with the command-line tool from GPG:</p>
+<p><code>gpg --export-secret-keys</code>   </p>
+<p>A normal export with <code>--export</code> will not include any private keys, therefore you have to use <code>--export-secret-keys</code>.  </p>
+<p>This is the command that allows you to export a specific key with the ID 1234ABCD to the file <code>secret.asc</code>:  </p>
+<p><code>gpg --export-secret-keys --armor 1234ABCD &gt; secret.asc</code>   </p>
+<p>You can find the ID that you need using the following command - usually an email address:</p>
+<p><code>gpg --list-keys</code>  </p>
+<p>To export just 1 specific secret key instead of all of them:  </p>
+<p><code>gpg --export-secret-keys keyIDNumber &gt; exportedKeyFilename.asc</code>   </p>
+<p>If issues, one crucial step is to edit the imported key and "ultimately trust" that key:   </p>
+<div class="highlight"><pre><span></span><code>gpg --edit-key (keyIDNumber)
+gpg&gt; trust
+
+Please decide how far you trust this user to correctly verify other users&#39; keys:
+
+  1 = I don&#39;t know or won&#39;t say
+  2 = I do NOT trust
+  3 = I trust marginally
+  4 = I trust fully
+  5 = I trust ultimately
+  m = back to the main menu
+</code></pre></div>
+
+<p>Source: <a href="https://stackoverflow.com/questions/5587513/how-to-export-private-secret-asc-key-to-decrypt-gpg-files#5588513" target="_blank">https://stackoverflow.com/questions/5587513/how-to-export-private-secret-asc-key-to-decrypt-gpg-files#5588513</a>   </p>
+                </article>
+            </aside>
+
+                <section id="content" class="body">
+
+                <!-- PREVIOUS NOTES -->
+				<p class="notes-section">previous notes</p>
+                <hr>
+
+                <ol id="posts-list" class="hfeed">
+            
+
+
+
+            <li>
+                <article class="hentry">
+                    <header>
+                        <!-- PREVIOUS NOTE TITLE -->
+                        <h1><a href="https://notes.nicolasdeville.com/b2b-sales/producing-videos" rel="bookmark"
+                            title="Producing Sales videos">Producing Sales videos</a></h1>
+                        <!-- PREVIOUS NOTE SUMMARY -->
+                        <div class="entry-content">
+                            <p>because it's easy, effective and helps standing out</p>
+                        </div>
+                    </header>
+
+                    <div class="entry-content">
+                        <!-- PREVIOUS NOTE METADATA -->
+<footer class="post-info">
+
+    <p>
+        19 Jul 2022 <span class="separator">|</span> in <a class="link_tag" href="https://notes.nicolasdeville.com/b2b-sales/">b2b sales</a>
+ tags: <a class="link_tag" href="https://notes.nicolasdeville.com/tag/communication.html">communication</a>
+<a class="link_tag" href="https://notes.nicolasdeville.com/tag/video.html">video</a>
+<a class="link_tag" href="https://notes.nicolasdeville.com/tag/b2b-sales.html">b2b sales</a>
+
+        <!-- added 4/7 -->
+        <!-- 		<br />
+        <abbr class="modified" title="2022-07-19T22:28:31.106601+02:00">
+                Updated: 19 Jul 2022
+        </abbr>
+ -->
+
+    </p>
+
+    
+
+</footer>                    </div>
+                    
+                </article>
+                <hr/>
+            </li>
+            
+
+
+
+            <li>
+                <article class="hentry">
+                    <header>
+                        <!-- PREVIOUS NOTE TITLE -->
+                        <h1><a href="https://notes.nicolasdeville.com/apps/promptsmart" rel="bookmark"
+                            title="Promptsmart - the teleprompter companion">Promptsmart - the teleprompter companion</a></h1>
+                        <!-- PREVIOUS NOTE SUMMARY -->
+                        <div class="entry-content">
+                            <p>you need an app when using a teleprompter - this is the one I use</p>
+                        </div>
+                    </header>
+
+                    <div class="entry-content">
+                        <!-- PREVIOUS NOTE METADATA -->
+<footer class="post-info">
+
+    <p>
+        19 Jul 2022 <span class="separator">|</span> in <a class="link_tag" href="https://notes.nicolasdeville.com/apps/">apps</a>
+ tags: <a class="link_tag" href="https://notes.nicolasdeville.com/tag/video.html">video</a>
+<a class="link_tag" href="https://notes.nicolasdeville.com/tag/teleprompter.html">teleprompter</a>
+
+        <!-- added 4/7 -->
+        <!-- 		<br />
+        <abbr class="modified" title="2022-07-19T15:46:38.950256+02:00">
+                Updated: 19 Jul 2022
+        </abbr>
+ -->
+
+    </p>
+
+    
+
+</footer>                    </div>
+                    
+                </article>
+                <hr/>
+            </li>
+            
+
+
+
+            <li>
+                <article class="hentry">
+                    <header>
+                        <!-- PREVIOUS NOTE TITLE -->
+                        <h1><a href="https://notes.nicolasdeville.com/apps/screenflow" rel="bookmark"
+                            title="Producing videos with Screenflow">Producing videos with Screenflow</a></h1>
+                        <!-- PREVIOUS NOTE SUMMARY -->
+                        <div class="entry-content">
+                            <p>A great video production software, halfway between too simple and too complex alternatives.</p>
+                        </div>
+                    </header>
+
+                    <div class="entry-content">
+                        <!-- PREVIOUS NOTE METADATA -->
+<footer class="post-info">
+
+    <p>
+        19 Jul 2022 <span class="separator">|</span> in <a class="link_tag" href="https://notes.nicolasdeville.com/apps/">apps</a>
+ tags: <a class="link_tag" href="https://notes.nicolasdeville.com/tag/productivity.html">productivity</a>
+
+        <!-- added 4/7 -->
+        <!-- 		<br />
+        <abbr class="modified" title="2022-07-19T15:35:20.163062+02:00">
+                Updated: 19 Jul 2022
+        </abbr>
+ -->
+
+    </p>
+
+    
+
+</footer>                    </div>
+                    
+                </article>
+                <hr/>
+            </li>
+            
+
+
+
+            <li>
+                <article class="hentry">
+                    <header>
+                        <!-- PREVIOUS NOTE TITLE -->
+                        <h1><a href="https://notes.nicolasdeville.com/home-office/teleprompter" rel="bookmark"
+                            title="Using a teleprompter for business users">Using a teleprompter for business users</a></h1>
+                        <!-- PREVIOUS NOTE SUMMARY -->
+                        <div class="entry-content">
+                            <p>improves online presence &amp; experience, for both sides</p>
+                        </div>
+                    </header>
+
+                    <div class="entry-content">
+                        <!-- PREVIOUS NOTE METADATA -->
+<footer class="post-info">
+
+    <p>
+        19 Jul 2022 <span class="separator">|</span> in <a class="link_tag" href="https://notes.nicolasdeville.com/home-office/">home office</a>
+
+        <!-- added 4/7 -->
+        <!-- 		<br />
+        <abbr class="modified" title="2022-07-19T22:04:07.801458+02:00">
+                Updated: 19 Jul 2022
+        </abbr>
+ -->
+
+    </p>
+
+    
+
+</footer>                    </div>
+                    
+                </article>
+                <hr/>
+            </li>
+            
+
+
+
+            <li>
+                <article class="hentry">
+                    <header>
+                        <!-- PREVIOUS NOTE TITLE -->
+                        <h1><a href="https://notes.nicolasdeville.com/random/wutang" rel="bookmark"
+                            title="Wutang">Wutang</a></h1>
+                        <!-- PREVIOUS NOTE SUMMARY -->
+                        <div class="entry-content">
+                            
+                        </div>
+                    </header>
+
+                    <div class="entry-content">
+                        <!-- PREVIOUS NOTE METADATA -->
+<footer class="post-info">
+
+    <p>
+        19 Jul 2022 <span class="separator">|</span> in <a class="link_tag" href="https://notes.nicolasdeville.com/random/">random</a>
+ tags: <a class="link_tag" href="https://notes.nicolasdeville.com/tag/funny.html">funny</a>
+
+        <!-- added 4/7 -->
+        <!-- 		<br />
+        <abbr class="modified" title="2022-07-19T22:00:03.888784+02:00">
+                Updated: 19 Jul 2022
+        </abbr>
+ -->
+
+    </p>
+
+    
+
+</footer>                    </div>
+                    
+                </article>
+                <hr/>
+            </li>
+            
+
+
+
+            <li>
+                <article class="hentry">
+                    <header>
+                        <!-- PREVIOUS NOTE TITLE -->
+                        <h1><a href="https://notes.nicolasdeville.com/random/chickens-are-weird" rel="bookmark"
+                            title="Chickens are weird">Chickens are weird</a></h1>
+                        <!-- PREVIOUS NOTE SUMMARY -->
+                        <div class="entry-content">
+                            
+                        </div>
+                    </header>
+
+                    <div class="entry-content">
+                        <!-- PREVIOUS NOTE METADATA -->
+<footer class="post-info">
+
+    <p>
+        18 Jul 2022 <span class="separator">|</span> in <a class="link_tag" href="https://notes.nicolasdeville.com/random/">random</a>
+ tags: <a class="link_tag" href="https://notes.nicolasdeville.com/tag/funny.html">funny</a>
+
+        <!-- added 4/7 -->
+        <!-- 		<br />
+        <abbr class="modified" title="2022-07-19T22:27:42.764053+02:00">
+                Updated: 19 Jul 2022
+        </abbr>
+ -->
+
+    </p>
+
+    
+
+</footer>                    </div>
+                    
+                </article>
+                <hr/>
+            </li>
+            
+
+
+
+            <li>
+                <article class="hentry">
+                    <header>
+                        <!-- PREVIOUS NOTE TITLE -->
+                        <h1><a href="https://notes.nicolasdeville.com/python/copy-folder" rel="bookmark"
+                            title="Copy folders with Python">Copy folders with Python</a></h1>
+                        <!-- PREVIOUS NOTE SUMMARY -->
+                        <div class="entry-content">
+                            <p>one line to copy entire folders</p>
+                        </div>
+                    </header>
+
+                    <div class="entry-content">
+                        <!-- PREVIOUS NOTE METADATA -->
 <footer class="post-info">
 
     <p>
@@ -86,23 +412,134 @@
 
     
 
-</footer><p>Having had issues copying large folders (100Gb+) with (Path)Finder, here is the code snippet I used to perform the task with Python (much faster too):</p>
-<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">shutil</span>
-
-<span class="n">shutil</span><span class="o">.</span><span class="n">copytree</span><span class="p">(</span><span class="s1">&#39;/path/to/source/folder/on/network/Pictures&#39;</span><span class="p">,</span> <span class="s1">&#39;/path/to/destination/folder&#39;</span><span class="p">,</span> <span class="n">dirs_exist_ok</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-</code></pre></div>
-
-<p><code>dirs_exist_ok=True</code> ensures files are overwritten when present, taking care of possible past file corruptions.</p>
+</footer>                    </div>
+                    
                 </article>
-            </aside>
+                <hr/>
+            </li>
+            
 
-                <section id="content" class="body">
 
-                <!-- PREVIOUS NOTES -->
-				<p class="notes-section">previous notes</p>
-                <hr>
 
-                <ol id="posts-list" class="hfeed">
+            <li>
+                <article class="hentry">
+                    <header>
+                        <!-- PREVIOUS NOTE TITLE -->
+                        <h1><a href="https://notes.nicolasdeville.com/helpers/keyboard-shortcuts" rel="bookmark"
+                            title="My keyboard shortcuts">My keyboard shortcuts</a></h1>
+                        <!-- PREVIOUS NOTE SUMMARY -->
+                        <div class="entry-content">
+                            <p>for reference</p>
+                        </div>
+                    </header>
+
+                    <div class="entry-content">
+                        <!-- PREVIOUS NOTE METADATA -->
+<footer class="post-info">
+
+    <p>
+        18 Jul 2022 <span class="separator">|</span> in <a class="link_tag" href="https://notes.nicolasdeville.com/helpers/">helpers</a>
+ tags: <a class="link_tag" href="https://notes.nicolasdeville.com/tag/keyboard.html">keyboard</a>
+<a class="link_tag" href="https://notes.nicolasdeville.com/tag/shortcuts.html">shortcuts</a>
+
+        <!-- added 4/7 -->
+        <!-- 		<br />
+        <abbr class="modified" title="2022-07-19T22:21:26.489920+02:00">
+                Updated: 19 Jul 2022
+        </abbr>
+ -->
+
+    </p>
+
+    
+
+</footer>                    </div>
+                    
+                </article>
+                <hr/>
+            </li>
+            
+
+
+
+            <li>
+                <article class="hentry">
+                    <header>
+                        <!-- PREVIOUS NOTE TITLE -->
+                        <h1><a href="https://notes.nicolasdeville.com/apps/moom" rel="bookmark"
+                            title="Moom | Window management">Moom | Window management</a></h1>
+                        <!-- PREVIOUS NOTE SUMMARY -->
+                        <div class="entry-content">
+                            <p>keyboard controlled window management</p>
+                        </div>
+                    </header>
+
+                    <div class="entry-content">
+                        <!-- PREVIOUS NOTE METADATA -->
+<footer class="post-info">
+
+    <p>
+        18 Jul 2022 <span class="separator">|</span> in <a class="link_tag" href="https://notes.nicolasdeville.com/apps/">apps</a>
+ tags: <a class="link_tag" href="https://notes.nicolasdeville.com/tag/shortcuts.html">shortcuts</a>
+<a class="link_tag" href="https://notes.nicolasdeville.com/tag/productivity.html">productivity</a>
+<a class="link_tag" href="https://notes.nicolasdeville.com/tag/macos.html">macOS</a>
+
+        <!-- added 4/7 -->
+        <!-- 		<br />
+        <abbr class="modified" title="2022-07-19T15:38:48.137290+02:00">
+                Updated: 19 Jul 2022
+        </abbr>
+ -->
+
+    </p>
+
+    
+
+</footer>                    </div>
+                    
+                </article>
+                <hr/>
+            </li>
+            
+
+
+
+            <li>
+                <article class="hentry">
+                    <header>
+                        <!-- PREVIOUS NOTE TITLE -->
+                        <h1><a href="https://notes.nicolasdeville.com/apps/screenshotx" rel="bookmark"
+                            title="ScreenShotX">ScreenShotX</a></h1>
+                        <!-- PREVIOUS NOTE SUMMARY -->
+                        <div class="entry-content">
+                            <p>current screenshot and screen recording solution, after testing a few over the years.</p>
+                        </div>
+                    </header>
+
+                    <div class="entry-content">
+                        <!-- PREVIOUS NOTE METADATA -->
+<footer class="post-info">
+
+    <p>
+        18 Jul 2022 <span class="separator">|</span> in <a class="link_tag" href="https://notes.nicolasdeville.com/apps/">apps</a>
+ tags: <a class="link_tag" href="https://notes.nicolasdeville.com/tag/productivity.html">productivity</a>
+
+        <!-- added 4/7 -->
+        <!-- 		<br />
+        <abbr class="modified" title="2022-07-18T11:14:00.486275+02:00">
+                Updated: 18 Jul 2022
+        </abbr>
+ -->
+
+    </p>
+
+    
+
+</footer>                    </div>
+                    
+                </article>
+                <hr/>
+            </li>
             
 
 
@@ -172,6 +609,46 @@
         <!-- 		<br />
         <abbr class="modified" title="2022-07-17T11:59:44.583207+02:00">
                 Updated: 17 Jul 2022
+        </abbr>
+ -->
+
+    </p>
+
+    
+
+</footer>                    </div>
+                    
+                </article>
+                <hr/>
+            </li>
+            
+
+
+
+            <li>
+                <article class="hentry">
+                    <header>
+                        <!-- PREVIOUS NOTE TITLE -->
+                        <h1><a href="https://notes.nicolasdeville.com/home-office/streamdeck" rel="bookmark"
+                            title="Streamdeck for business users">Streamdeck for business users</a></h1>
+                        <!-- PREVIOUS NOTE SUMMARY -->
+                        <div class="entry-content">
+                            <p>a game-changing (pun not intended) piece of kit for any knowledge worker</p>
+                        </div>
+                    </header>
+
+                    <div class="entry-content">
+                        <!-- PREVIOUS NOTE METADATA -->
+<footer class="post-info">
+
+    <p>
+        17 Jul 2022 <span class="separator">|</span> in <a class="link_tag" href="https://notes.nicolasdeville.com/home-office/">home office</a>
+ tags: <a class="link_tag" href="https://notes.nicolasdeville.com/tag/productivity.html">productivity</a>
+
+        <!-- added 4/7 -->
+        <!-- 		<br />
+        <abbr class="modified" title="2022-07-19T22:10:07.606275+02:00">
+                Updated: 19 Jul 2022
         </abbr>
  -->
 
@@ -331,7 +808,7 @@
 
         <!-- added 4/7 -->
         <!-- 		<br />
-        <abbr class="modified" title="2022-07-18T10:05:03.209351+02:00">
+        <abbr class="modified" title="2022-07-18T11:22:40.135392+02:00">
                 Updated: 18 Jul 2022
         </abbr>
  -->
@@ -638,7 +1115,7 @@
                 <article class="hentry">
                     <header>
                         <!-- PREVIOUS NOTE TITLE -->
-                        <h1><a href="https://notes.nicolasdeville.com/helpers/css-best-practices" rel="bookmark"
+                        <h1><a href="https://notes.nicolasdeville.com/learning/css" rel="bookmark"
                             title="CSS Best Practices">CSS Best Practices</a></h1>
                         <!-- PREVIOUS NOTE SUMMARY -->
                         <div class="entry-content">
@@ -651,19 +1128,21 @@
 <footer class="post-info">
 
     <p>
-        13 Jul 2022 <span class="separator">|</span> in <a class="link_tag" href="https://notes.nicolasdeville.com/helpers/">helpers</a>
+        13 Jul 2022 <span class="separator">|</span> in <a class="link_tag" href="https://notes.nicolasdeville.com/learning/">learning</a>
  tags: <a class="link_tag" href="https://notes.nicolasdeville.com/tag/css.html">css</a>
 
         <!-- added 4/7 -->
         <!-- 		<br />
-        <abbr class="modified" title="2022-07-13T19:03:16.962827+02:00">
-                Updated: 13 Jul 2022
+        <abbr class="modified" title="2022-07-19T09:30:23.109333+02:00">
+                Updated: 19 Jul 2022
         </abbr>
  -->
 
     </p>
 
-    
+    Translations:
+        <a href="https://notes.nicolasdeville.com/helpers/css" hreflang="en">en</a>
+
 
 </footer>                    </div>
                     
@@ -1446,7 +1925,7 @@
                 <article class="hentry">
                     <header>
                         <!-- PREVIOUS NOTE TITLE -->
-                        <h1><a href="https://notes.nicolasdeville.com/random/memes" rel="bookmark"
+                        <h1><a href="https://notes.nicolasdeville.com/random/meme, funny" rel="bookmark"
                             title="Memes">Memes</a></h1>
                         <!-- PREVIOUS NOTE SUMMARY -->
                         <div class="entry-content">
@@ -1463,8 +1942,8 @@
 
         <!-- added 4/7 -->
         <!-- 		<br />
-        <abbr class="modified" title="2022-07-14T21:07:13.920382+02:00">
-                Updated: 14 Jul 2022
+        <abbr class="modified" title="2022-07-19T21:58:08.289614+02:00">
+                Updated: 19 Jul 2022
         </abbr>
  -->
 
@@ -1524,46 +2003,6 @@
                 <article class="hentry">
                     <header>
                         <!-- PREVIOUS NOTE TITLE -->
-                        <h1><a href="https://notes.nicolasdeville.com/apps/apps" rel="bookmark"
-                            title="Apps I use">Apps I use</a></h1>
-                        <!-- PREVIOUS NOTE SUMMARY -->
-                        <div class="entry-content">
-                            <p>current snapshot</p>
-                        </div>
-                    </header>
-
-                    <div class="entry-content">
-                        <!-- PREVIOUS NOTE METADATA -->
-<footer class="post-info">
-
-    <p>
-        03 Jul 2022 <span class="separator">|</span> in <a class="link_tag" href="https://notes.nicolasdeville.com/apps/">apps</a>
- tags: <a class="link_tag" href="https://notes.nicolasdeville.com/tag/apps.html">apps</a>
-
-        <!-- added 4/7 -->
-        <!-- 		<br />
-        <abbr class="modified" title="2022-07-10T20:03:34.150651+02:00">
-                Updated: 10 Jul 2022
-        </abbr>
- -->
-
-    </p>
-
-    
-
-</footer>                    </div>
-                    
-                </article>
-                <hr/>
-            </li>
-            
-
-
-
-            <li>
-                <article class="hentry">
-                    <header>
-                        <!-- PREVIOUS NOTE TITLE -->
                         <h1><a href="https://notes.nicolasdeville.com/helpers/github" rel="bookmark"
                             title="Github">Github</a></h1>
                         <!-- PREVIOUS NOTE SUMMARY -->
@@ -1584,6 +2023,46 @@
         <!-- 		<br />
         <abbr class="modified" title="2022-07-12T20:53:13.017579+02:00">
                 Updated: 12 Jul 2022
+        </abbr>
+ -->
+
+    </p>
+
+    
+
+</footer>                    </div>
+                    
+                </article>
+                <hr/>
+            </li>
+            
+
+
+
+            <li>
+                <article class="hentry">
+                    <header>
+                        <!-- PREVIOUS NOTE TITLE -->
+                        <h1><a href="https://notes.nicolasdeville.com/apps/my-stack" rel="bookmark"
+                            title="Apps I use">Apps I use</a></h1>
+                        <!-- PREVIOUS NOTE SUMMARY -->
+                        <div class="entry-content">
+                            <p>current snapshot</p>
+                        </div>
+                    </header>
+
+                    <div class="entry-content">
+                        <!-- PREVIOUS NOTE METADATA -->
+<footer class="post-info">
+
+    <p>
+        03 Jul 2022 <span class="separator">|</span> in <a class="link_tag" href="https://notes.nicolasdeville.com/apps/">apps</a>
+ tags: <a class="link_tag" href="https://notes.nicolasdeville.com/tag/apps.html">apps</a>
+
+        <!-- added 4/7 -->
+        <!-- 		<br />
+        <abbr class="modified" title="2022-07-19T15:38:40.669722+02:00">
+                Updated: 19 Jul 2022
         </abbr>
  -->
 
@@ -1783,8 +2262,8 @@
 
         <!-- added 4/7 -->
         <!-- 		<br />
-        <abbr class="modified" title="2022-07-04T10:25:59.930020+02:00">
-                Updated: 04 Jul 2022
+        <abbr class="modified" title="2022-07-19T22:25:36.439160+02:00">
+                Updated: 19 Jul 2022
         </abbr>
  -->
 
@@ -1846,7 +2325,7 @@
                 <article class="hentry">
                     <header>
                         <!-- PREVIOUS NOTE TITLE -->
-                        <h1><a href="https://notes.nicolasdeville.com/home-office/home-office-setup" rel="bookmark"
+                        <h1><a href="https://notes.nicolasdeville.com/home-office/setup" rel="bookmark"
                             title="Home Office Setup (since June '22)">Home Office Setup (since June '22)</a></h1>
                         <!-- PREVIOUS NOTE SUMMARY -->
                         <div class="entry-content">
@@ -1864,8 +2343,8 @@
 
         <!-- added 4/7 -->
         <!-- 		<br />
-        <abbr class="modified" title="2022-07-04T09:34:15.496848+02:00">
-                Updated: 04 Jul 2022
+        <abbr class="modified" title="2022-07-19T15:30:54.132408+02:00">
+                Updated: 19 Jul 2022
         </abbr>
  -->
 
@@ -3624,446 +4103,6 @@
         <!-- added 4/7 -->
         <!-- 		<br />
         <abbr class="modified" title="2022-07-06T23:11:36.259585+02:00">
-                Updated: 06 Jul 2022
-        </abbr>
- -->
-
-    </p>
-
-    
-
-</footer>                    </div>
-                    
-                </article>
-                <hr/>
-            </li>
-            
-
-
-
-            <li>
-                <article class="hentry">
-                    <header>
-                        <!-- PREVIOUS NOTE TITLE -->
-                        <h1><a href="https://notes.nicolasdeville.com/b2b-sales/dont-quit" rel="bookmark"
-                            title="DOn't quIT">DOn't quIT</a></h1>
-                        <!-- PREVIOUS NOTE SUMMARY -->
-                        <div class="entry-content">
-                            
-                        </div>
-                    </header>
-
-                    <div class="entry-content">
-                        <!-- PREVIOUS NOTE METADATA -->
-<footer class="post-info">
-
-    <p>
-        01 Nov 2021 <span class="separator">|</span> in <a class="link_tag" href="https://notes.nicolasdeville.com/b2b-sales/">b2b sales</a>
- tags: <a class="link_tag" href="https://notes.nicolasdeville.com/tag/wip.html">WIP</a>
-
-        <!-- added 4/7 -->
-        <!-- 		<br />
-        <abbr class="modified" title="2022-07-06T23:11:36.102570+02:00">
-                Updated: 06 Jul 2022
-        </abbr>
- -->
-
-    </p>
-
-    
-
-</footer>                    </div>
-                    
-                </article>
-                <hr/>
-            </li>
-            
-
-
-
-            <li>
-                <article class="hentry">
-                    <header>
-                        <!-- PREVIOUS NOTE TITLE -->
-                        <h1><a href="https://notes.nicolasdeville.com/b2b-sales/easy-is-boring" rel="bookmark"
-                            title="Easy is boring">Easy is boring</a></h1>
-                        <!-- PREVIOUS NOTE SUMMARY -->
-                        <div class="entry-content">
-                            
-                        </div>
-                    </header>
-
-                    <div class="entry-content">
-                        <!-- PREVIOUS NOTE METADATA -->
-<footer class="post-info">
-
-    <p>
-        01 Nov 2021 <span class="separator">|</span> in <a class="link_tag" href="https://notes.nicolasdeville.com/b2b-sales/">b2b sales</a>
- tags: <a class="link_tag" href="https://notes.nicolasdeville.com/tag/wip.html">WIP</a>
-
-        <!-- added 4/7 -->
-        <!-- 		<br />
-        <abbr class="modified" title="2022-07-06T23:11:36.100656+02:00">
-                Updated: 06 Jul 2022
-        </abbr>
- -->
-
-    </p>
-
-    
-
-</footer>                    </div>
-                    
-                </article>
-                <hr/>
-            </li>
-            
-
-
-
-            <li>
-                <article class="hentry">
-                    <header>
-                        <!-- PREVIOUS NOTE TITLE -->
-                        <h1><a href="https://notes.nicolasdeville.com/b2b-sales/engineering-the-narrative" rel="bookmark"
-                            title="Engineering the narrative">Engineering the narrative</a></h1>
-                        <!-- PREVIOUS NOTE SUMMARY -->
-                        <div class="entry-content">
-                            
-                        </div>
-                    </header>
-
-                    <div class="entry-content">
-                        <!-- PREVIOUS NOTE METADATA -->
-<footer class="post-info">
-
-    <p>
-        01 Nov 2021 <span class="separator">|</span> in <a class="link_tag" href="https://notes.nicolasdeville.com/b2b-sales/">b2b sales</a>
- tags: <a class="link_tag" href="https://notes.nicolasdeville.com/tag/wip.html">WIP</a>
-
-        <!-- added 4/7 -->
-        <!-- 		<br />
-        <abbr class="modified" title="2022-07-06T23:11:36.100507+02:00">
-                Updated: 06 Jul 2022
-        </abbr>
- -->
-
-    </p>
-
-    
-
-</footer>                    </div>
-                    
-                </article>
-                <hr/>
-            </li>
-            
-
-
-
-            <li>
-                <article class="hentry">
-                    <header>
-                        <!-- PREVIOUS NOTE TITLE -->
-                        <h1><a href="https://notes.nicolasdeville.com/b2b-sales/every-situation-has-something-positive-to-it" rel="bookmark"
-                            title="Every situation has something positive to it">Every situation has something positive to it</a></h1>
-                        <!-- PREVIOUS NOTE SUMMARY -->
-                        <div class="entry-content">
-                            
-                        </div>
-                    </header>
-
-                    <div class="entry-content">
-                        <!-- PREVIOUS NOTE METADATA -->
-<footer class="post-info">
-
-    <p>
-        01 Nov 2021 <span class="separator">|</span> in <a class="link_tag" href="https://notes.nicolasdeville.com/b2b-sales/">b2b sales</a>
- tags: <a class="link_tag" href="https://notes.nicolasdeville.com/tag/wip.html">WIP</a>
-
-        <!-- added 4/7 -->
-        <!-- 		<br />
-        <abbr class="modified" title="2022-07-06T23:11:36.259859+02:00">
-                Updated: 06 Jul 2022
-        </abbr>
- -->
-
-    </p>
-
-    
-
-</footer>                    </div>
-                    
-                </article>
-                <hr/>
-            </li>
-            
-
-
-
-            <li>
-                <article class="hentry">
-                    <header>
-                        <!-- PREVIOUS NOTE TITLE -->
-                        <h1><a href="https://notes.nicolasdeville.com/b2b-sales/every-tunnel-has-an-end" rel="bookmark"
-                            title="Every tunnel has an end">Every tunnel has an end</a></h1>
-                        <!-- PREVIOUS NOTE SUMMARY -->
-                        <div class="entry-content">
-                            
-                        </div>
-                    </header>
-
-                    <div class="entry-content">
-                        <!-- PREVIOUS NOTE METADATA -->
-<footer class="post-info">
-
-    <p>
-        01 Nov 2021 <span class="separator">|</span> in <a class="link_tag" href="https://notes.nicolasdeville.com/b2b-sales/">b2b sales</a>
- tags: <a class="link_tag" href="https://notes.nicolasdeville.com/tag/wip.html">WIP</a>
-
-        <!-- added 4/7 -->
-        <!-- 		<br />
-        <abbr class="modified" title="2022-07-06T23:11:36.102448+02:00">
-                Updated: 06 Jul 2022
-        </abbr>
- -->
-
-    </p>
-
-    
-
-</footer>                    </div>
-                    
-                </article>
-                <hr/>
-            </li>
-            
-
-
-
-            <li>
-                <article class="hentry">
-                    <header>
-                        <!-- PREVIOUS NOTE TITLE -->
-                        <h1><a href="https://notes.nicolasdeville.com/b2b-sales/fear-as-a-driver" rel="bookmark"
-                            title="Fear as a driver">Fear as a driver</a></h1>
-                        <!-- PREVIOUS NOTE SUMMARY -->
-                        <div class="entry-content">
-                            
-                        </div>
-                    </header>
-
-                    <div class="entry-content">
-                        <!-- PREVIOUS NOTE METADATA -->
-<footer class="post-info">
-
-    <p>
-        01 Nov 2021 <span class="separator">|</span> in <a class="link_tag" href="https://notes.nicolasdeville.com/b2b-sales/">b2b sales</a>
- tags: <a class="link_tag" href="https://notes.nicolasdeville.com/tag/wip.html">WIP</a>
-
-        <!-- added 4/7 -->
-        <!-- 		<br />
-        <abbr class="modified" title="2022-07-06T23:11:36.102699+02:00">
-                Updated: 06 Jul 2022
-        </abbr>
- -->
-
-    </p>
-
-    
-
-</footer>                    </div>
-                    
-                </article>
-                <hr/>
-            </li>
-            
-
-
-
-            <li>
-                <article class="hentry">
-                    <header>
-                        <!-- PREVIOUS NOTE TITLE -->
-                        <h1><a href="https://notes.nicolasdeville.com/b2b-sales/finding-a-mentor" rel="bookmark"
-                            title="Finding a mentor">Finding a mentor</a></h1>
-                        <!-- PREVIOUS NOTE SUMMARY -->
-                        <div class="entry-content">
-                            
-                        </div>
-                    </header>
-
-                    <div class="entry-content">
-                        <!-- PREVIOUS NOTE METADATA -->
-<footer class="post-info">
-
-    <p>
-        01 Nov 2021 <span class="separator">|</span> in <a class="link_tag" href="https://notes.nicolasdeville.com/b2b-sales/">b2b sales</a>
- tags: <a class="link_tag" href="https://notes.nicolasdeville.com/tag/wip.html">WIP</a>
-
-        <!-- added 4/7 -->
-        <!-- 		<br />
-        <abbr class="modified" title="2022-07-06T23:11:36.259701+02:00">
-                Updated: 06 Jul 2022
-        </abbr>
- -->
-
-    </p>
-
-    
-
-</footer>                    </div>
-                    
-                </article>
-                <hr/>
-            </li>
-            
-
-
-
-            <li>
-                <article class="hentry">
-                    <header>
-                        <!-- PREVIOUS NOTE TITLE -->
-                        <h1><a href="https://notes.nicolasdeville.com/b2b-sales/finding-email-addresses" rel="bookmark"
-                            title="Finding email addresses">Finding email addresses</a></h1>
-                        <!-- PREVIOUS NOTE SUMMARY -->
-                        <div class="entry-content">
-                            
-                        </div>
-                    </header>
-
-                    <div class="entry-content">
-                        <!-- PREVIOUS NOTE METADATA -->
-<footer class="post-info">
-
-    <p>
-        01 Nov 2021 <span class="separator">|</span> in <a class="link_tag" href="https://notes.nicolasdeville.com/b2b-sales/">b2b sales</a>
- tags: <a class="link_tag" href="https://notes.nicolasdeville.com/tag/wip.html">WIP</a>
-
-        <!-- added 4/7 -->
-        <!-- 		<br />
-        <abbr class="modified" title="2022-07-06T23:11:36.259657+02:00">
-                Updated: 06 Jul 2022
-        </abbr>
- -->
-
-    </p>
-
-    
-
-</footer>                    </div>
-                    
-                </article>
-                <hr/>
-            </li>
-            
-
-
-
-            <li>
-                <article class="hentry">
-                    <header>
-                        <!-- PREVIOUS NOTE TITLE -->
-                        <h1><a href="https://notes.nicolasdeville.com/b2b-sales/first-impression-counts" rel="bookmark"
-                            title="First impression counts">First impression counts</a></h1>
-                        <!-- PREVIOUS NOTE SUMMARY -->
-                        <div class="entry-content">
-                            
-                        </div>
-                    </header>
-
-                    <div class="entry-content">
-                        <!-- PREVIOUS NOTE METADATA -->
-<footer class="post-info">
-
-    <p>
-        01 Nov 2021 <span class="separator">|</span> in <a class="link_tag" href="https://notes.nicolasdeville.com/b2b-sales/">b2b sales</a>
- tags: <a class="link_tag" href="https://notes.nicolasdeville.com/tag/wip.html">WIP</a>
-
-        <!-- added 4/7 -->
-        <!-- 		<br />
-        <abbr class="modified" title="2022-07-06T23:11:36.100473+02:00">
-                Updated: 06 Jul 2022
-        </abbr>
- -->
-
-    </p>
-
-    
-
-</footer>                    </div>
-                    
-                </article>
-                <hr/>
-            </li>
-            
-
-
-
-            <li>
-                <article class="hentry">
-                    <header>
-                        <!-- PREVIOUS NOTE TITLE -->
-                        <h1><a href="https://notes.nicolasdeville.com/b2b-sales/focus-on-quality-of-work-vs-quantity" rel="bookmark"
-                            title="Focus on quality of work vs quantity">Focus on quality of work vs quantity</a></h1>
-                        <!-- PREVIOUS NOTE SUMMARY -->
-                        <div class="entry-content">
-                            
-                        </div>
-                    </header>
-
-                    <div class="entry-content">
-                        <!-- PREVIOUS NOTE METADATA -->
-<footer class="post-info">
-
-    <p>
-        01 Nov 2021 <span class="separator">|</span> in <a class="link_tag" href="https://notes.nicolasdeville.com/b2b-sales/">b2b sales</a>
- tags: <a class="link_tag" href="https://notes.nicolasdeville.com/tag/wip.html">WIP</a>
-
-        <!-- added 4/7 -->
-        <!-- 		<br />
-        <abbr class="modified" title="2022-07-06T23:11:36.241009+02:00">
-                Updated: 06 Jul 2022
-        </abbr>
- -->
-
-    </p>
-
-    
-
-</footer>                    </div>
-                    
-                </article>
-                <hr/>
-            </li>
-            
-
-
-
-            <li>
-                <article class="hentry">
-                    <header>
-                        <!-- PREVIOUS NOTE TITLE -->
-                        <h1><a href="https://notes.nicolasdeville.com/b2b-sales/following-the-law-of-diminishing-returns" rel="bookmark"
-                            title="Following the Law of Diminishing Returns">Following the Law of Diminishing Returns</a></h1>
-                        <!-- PREVIOUS NOTE SUMMARY -->
-                        <div class="entry-content">
-                            
-                        </div>
-                    </header>
-
-                    <div class="entry-content">
-                        <!-- PREVIOUS NOTE METADATA -->
-<footer class="post-info">
-
-    <p>
-        01 Nov 2021 <span class="separator">|</span> in <a class="link_tag" href="https://notes.nicolasdeville.com/b2b-sales/">b2b sales</a>
- tags: <a class="link_tag" href="https://notes.nicolasdeville.com/tag/wip.html">WIP</a>
-
-        <!-- added 4/7 -->
-        <!-- 		<br />
-        <abbr class="modified" title="2022-07-06T23:11:36.102419+02:00">
                 Updated: 06 Jul 2022
         </abbr>
  -->
