@@ -66,11 +66,12 @@
  tags: <a class="link_tag" href="https://notes.nicolasdeville.com/tag/python.html">python</a>
 <a class="link_tag" href="https://notes.nicolasdeville.com/tag/libraries.html">libraries</a>
 <a class="link_tag" href="https://notes.nicolasdeville.com/tag/scripts.html">scripts</a>
+<a class="link_tag" href="https://notes.nicolasdeville.com/tag/api.html">api</a>
 
         <!-- added 4/7 -->
         <!-- 		<br />
-        <abbr class="modified" title="2022-07-17T11:59:44.583207+02:00">
-                Updated: 17 Jul 2022
+        <abbr class="modified" title="2022-07-20T22:13:18.158126+02:00">
+                Updated: 20 Jul 2022
         </abbr>
  -->
 
@@ -248,6 +249,32 @@ All movies where that person is listed as CREW:
         <span class="nb">print</span><span class="p">(</span><span class="n">movie_found</span><span class="p">)</span>
     <span class="k">return</span> <span class="n">list_movies_ids_from_director</span>
 </code></pre></div>
+
+<h1>Getting list of top rated movies</h1>
+<p>This works, but returns only 20 movies:   </p>
+<div class="highlight"><pre><span></span><code><span class="n">movie</span> <span class="o">=</span> <span class="n">Movie</span><span class="p">()</span>
+<span class="n">popular</span> <span class="o">=</span> <span class="n">movie</span><span class="o">.</span><span class="n">top_rated</span><span class="p">()</span>
+
+<span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="n">popular</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">p</span><span class="o">.</span><span class="n">id</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">p</span><span class="o">.</span><span class="n">title</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;https://image.tmdb.org/t/p/original/</span><span class="si">{</span><span class="n">p</span><span class="o">.</span><span class="n">poster_path</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">()</span>
+</code></pre></div>
+
+<p>It seems this might be a limitation of the API v3, with v4 solving this:</p>
+<blockquote>
+<p>What are some of the improvements in v4?<br>
+You can import "unlimited" items in a single request<br>
+You can use mixed type (movie and TV) lists<br>
+You can use private lists<br>
+You can add and use comments per item<br>
+There are more sort options<br>
+They are faster  </p>
+</blockquote>
+<p>Though the wrapper is called tmdb<strong>v3</strong>api so does not support v4.   <br>
+Might need to scrap the library and do manual requests instead. It's a pain - I always struggle with authentication.   </p>
+<p>The quest continues at <a href="../../python/library-tmdbapis/index.html">Nic Note: Library: tmdbapis | fetching movie data</a>...  </p>
             </main>
         </div><!-- /.entry-content -->
     </article>

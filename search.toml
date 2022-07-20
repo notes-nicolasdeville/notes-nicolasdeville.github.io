@@ -8,9 +8,34 @@ url = "ABOUT/"
 title = ""
 
 [[input.files]]
+path = "python/fetching-data-from-tmdb/index.html"
+url = "python/fetching-data-from-tmdb"
+title = "Fetching data from TMDB"
+
+[[input.files]]
+path = "python/library-tmdbapis/index.html"
+url = "python/library-tmdbapis"
+title = "Library: tmdbapis | fetching movie data"
+
+[[input.files]]
+path = "apps/pixelsnap/index.html"
+url = "apps/pixelsnap"
+title = "Pixelsnap"
+
+[[input.files]]
+path = "apps/text-expanders/index.html"
+url = "apps/text-expanders"
+title = "Text expanders"
+
+[[input.files]]
 path = "apps/gpg/index.html"
 url = "apps/gpg"
 title = "GPG Suite"
+
+[[input.files]]
+path = "helpers/keyboard-shortcuts/index.html"
+url = "helpers/keyboard-shortcuts"
+title = "My keyboard shortcuts"
 
 [[input.files]]
 path = "b2b-sales/producing-videos/index.html"
@@ -46,11 +71,6 @@ title = "Chickens are weird"
 path = "python/copy-folder/index.html"
 url = "python/copy-folder"
 title = "Copy folders with Python"
-
-[[input.files]]
-path = "helpers/keyboard-shortcuts/index.html"
-url = "helpers/keyboard-shortcuts"
-title = "My keyboard shortcuts"
 
 [[input.files]]
 path = "apps/moom/index.html"
@@ -218,11 +238,6 @@ url = "python/text-to-html"
 title = "Converting text to HTML with Python"
 
 [[input.files]]
-path = "helpers/ascii-tree/index.html"
-url = "helpers/ascii-tree"
-title = "ASCII tree"
-
-[[input.files]]
 path = "python/download-website/index.html"
 url = "python/download-website"
 title = "Download a website with Python"
@@ -281,6 +296,11 @@ title = "Setapp: macOS app subsciption"
 path = "books/simply-said/index.html"
 url = "books/simply-said"
 title = "Simply Said"
+
+[[input.files]]
+path = "helpers/ascii-tree/index.html"
+url = "helpers/ascii-tree"
+title = "ASCII tree"
 
 [[input.files]]
 path = "home-office/setup/index.html"
@@ -978,6 +998,11 @@ url = "helpers/excel"
 title = "Excel"
 
 [[input.files]]
+path = "interests/speedcubing/index.html"
+url = "interests/speedcubing"
+title = "Solving the Rubik's cube"
+
+[[input.files]]
 path = "careerplaybook/careerplaybook-022-asking-questions/index.html"
 url = "careerplaybook/careerplaybook-022-asking-questions"
 title = "#CareerPlaybook 022: Asking many questions"
@@ -1068,8 +1093,8 @@ url = "apps/4k-video-downloader"
 title = "4K Video Downloader | download Youtube videos"
 
 [[input.files]]
-path = "helpers/css/index.html"
-url = "helpers/css"
+path = "helpers/css-tools/index.html"
+url = "helpers/css-tools"
 title = "CSS Tools"
 
 [[input.files]]
@@ -1226,13 +1251,3 @@ title = "The Mom Test"
 path = "b2b-sales/what-is-sales/index.html"
 url = "b2b-sales/what-is-sales"
 title = "What Is Sales?"
-
-[[input.files]]
-path = "helpers/css/index.html"
-url = "helpers/css"
-title = "CSS Tools"
-
-[[input.files]]
-path = "learning/css/index.html"
-url = "learning/css"
-title = "CSS Best Practices"

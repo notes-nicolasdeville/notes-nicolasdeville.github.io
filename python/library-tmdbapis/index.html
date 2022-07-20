@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="generator" content="Pelican" />
+    <title>Library: tmdbapis | fetching movie data</title>
+    <link rel="stylesheet" href="https://notes.nicolasdeville.com/theme/css/main.css" />
+        <meta name="description" content="Python wrapper for the TMDB API - themoviedb.org - with support for API v4" />
+
+    <!-- for Stork seach engine -->
+    <link rel="stylesheet" href="https://files.stork-search.net/basic.css" /> 
+
+</head>
+
+<body id="index" class="body">
+        <header id="banner" class="body">
+
+            <a href="https://notes.nicolasdeville.com/"><img class="header_image" src="https://notes.nicolasdeville.com/images/nic_notes_header.svg" alt="Nic's notes" width="266"/></a>
+
+            <!-- for Stork seach engine -->
+            <div class="search-input-block">
+                <input data-stork="sitesearch" class="search-input" placeholder="Search..."/>
+                <div data-stork="sitesearch-output"></div>
+            </div>
+
+            <nav><ul>
+                <li><a href="https://notes.nicolasdeville.com/apps/">apps</a></li>
+                <li><a href="https://notes.nicolasdeville.com/b2b-sales/">b2b sales</a></li>
+                <li><a href="https://notes.nicolasdeville.com/books/">books</a></li>
+                <li><a href="https://notes.nicolasdeville.com/careerplaybook/">#careerplaybook</a></li>
+                <li><a href="https://notes.nicolasdeville.com/helpers/">helpers</a></li>
+                <li><a href="https://notes.nicolasdeville.com/home-office/">home office</a></li>
+                <li><a href="https://notes.nicolasdeville.com/interests/">interests</a></li>
+                <li><a href="https://notes.nicolasdeville.com/learning/">learning</a></li>
+                <li class="active"><a href="https://notes.nicolasdeville.com/python/">python</a></li>
+                <li><a href="https://notes.nicolasdeville.com/random/">random</a></li>
+                <li><a href="https://notes.nicolasdeville.com/salesleaderplaybook/">#salesleaderplaybook</a></li>
+                <li><a href="https://notes.nicolasdeville.com/startups/">startups</a></li>
+            </ul></nav>
+        </header>
+
+<section id="content" class="body">
+    <article>
+        <header>
+            <h1 class="entry-title">
+                <main> <!-- for indexing by Stork -->
+                    <a href="https://notes.nicolasdeville.com/python/library-tmdbapis" rel="bookmark"
+                    title="Permalink to Library: tmdbapis | fetching movie data">Library: tmdbapis | fetching movie data
+                    </a>
+                </main>
+            </h1>
+            <p class="header_summary">
+                <main> <!-- for indexing by Stork -->
+                    <p>Python wrapper for the TMDB API - themoviedb.org - with support for API v4</p>
+                </main>
+            </p>
+        </header>
+
+        <div class="entry-content">
+<footer class="post-info">
+
+    <p>
+        20 Jul 2022 <span class="separator">|</span> in <a class="link_tag" href="https://notes.nicolasdeville.com/python/">python</a>
+ tags: <a class="link_tag" href="https://notes.nicolasdeville.com/tag/python.html">python</a>
+<a class="link_tag" href="https://notes.nicolasdeville.com/tag/libraries.html">libraries</a>
+<a class="link_tag" href="https://notes.nicolasdeville.com/tag/scripts.html">scripts</a>
+<a class="link_tag" href="https://notes.nicolasdeville.com/tag/api.html">api</a>
+
+        <!-- added 4/7 -->
+        <!-- 		<br />
+        <abbr class="modified" title="2022-07-21T00:11:21.748981+02:00">
+                Updated: 21 Jul 2022
+        </abbr>
+ -->
+
+    </p>
+
+    
+
+</footer>            <main> <!-- for indexing by Stork -->
+                <p>Continuing from <a href="../../python/library-tmdbv3api/index.html">Nic Note: Library: tmdbv3api | fetching movie data</a> as I need API v4 support to get large lists.   </p>
+<p>Exploring: <a href="https://tmdbapis.metamanager.wiki/en/latest/index.html" target="_blank">https://tmdbapis.metamanager.wiki/en/latest/index.html</a> / <a href="https://github.com/meisnate12/tmdbapis" target="_blank">https://github.com/meisnate12/tmdbapis</a> <br>
+Has been updated 4 days ago, so valid library.   </p>
+<p><code>pip3 install tmdbapis</code></p>
+<p>Successful 2-step authentication with:   </p>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">tmdbapis</span> <span class="kn">import</span> <span class="n">TMDbAPIs</span>
+
+<span class="n">tmdb_api_key</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">getenv</span><span class="p">(</span><span class="s2">&quot;TMDB_API_KEY&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">tmdb_api_key</span><span class="si">=}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="n">tmdb_v4_token</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">getenv</span><span class="p">(</span><span class="s2">&quot;TMDB_V4_TOKEN&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">tmdb_v4_token</span><span class="si">=}</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="n">tmdb</span> <span class="o">=</span> <span class="n">TMDbAPIs</span><span class="p">(</span><span class="n">tmdb_api_key</span><span class="p">,</span> <span class="n">v4_access_token</span><span class="o">=</span><span class="n">tmdb_v4_token</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">tmdb</span><span class="o">.</span><span class="n">v4_authenticate</span><span class="p">())</span>
+<span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Navigate to the URL and then hit enter when Authenticated&quot;</span><span class="p">)</span>
+<span class="n">tmdb</span><span class="o">.</span><span class="n">v4_approved</span><span class="p">()</span>
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;tmdb_access_token.txt&quot;</span><span class="p">,</span> <span class="s2">&quot;w&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">text_file</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">tmdb</span><span class="o">.</span><span class="n">v4_access_token</span><span class="p">,</span> <span class="n">file</span><span class="o">=</span><span class="n">text_file</span><span class="p">)</span>
+</code></pre></div>
+
+<p>To load the authenticated token saved in a <code>.txt</code> file (note to self: rework logic to save in <code>.env</code>?):   </p>
+<p>CAREFUL: remove <code>\n</code> at end of line in <code>tmdb_access_token.txt</code> if error. Not sure how to avoid this at write stage.   </p>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">tmdbapis</span> <span class="kn">import</span> <span class="n">TMDbAPIs</span>
+
+<span class="n">tmdb_api_key</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">getenv</span><span class="p">(</span><span class="s2">&quot;TMDB_API_KEY&quot;</span><span class="p">)</span>
+
+<span class="n">v4_access_token</span> <span class="o">=</span> <span class="kc">None</span>
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;tmdb_access_token.txt&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">text_file</span><span class="p">:</span>
+    <span class="n">v4_access_token</span> <span class="o">=</span> <span class="n">text_file</span><span class="o">.</span><span class="n">readline</span><span class="p">()</span>
+
+<span class="n">tmdb</span> <span class="o">=</span> <span class="n">TMDbAPIs</span><span class="p">(</span><span class="n">tmdb_api_key</span><span class="p">,</span> <span class="n">v4_access_token</span><span class="o">=</span><span class="n">v4_access_token</span><span class="p">)</span>
+</code></pre></div>
+
+<h1>Fetching my lists</h1>
+<p>Works with following code, but still only returns 20:   </p>
+<div class="highlight"><pre><span></span><code><span class="c1"># my_top_1000_list_id = int(my_list_id)</span>
+<span class="n">my_1000</span> <span class="o">=</span> <span class="n">tmdb</span><span class="o">.</span><span class="n">list</span><span class="p">(</span><span class="n">my_top_1000_list_id</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">m</span> <span class="ow">in</span> <span class="n">my_1000</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">m</span><span class="o">.</span><span class="n">id</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">m</span><span class="o">.</span><span class="n">title</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;https://image.tmdb.org/t/p/original/</span><span class="si">{</span><span class="n">m</span><span class="o">.</span><span class="n">poster_path</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">()</span> 
+</code></pre></div>
+
+<p>Pagination:   </p>
+<div class="highlight"><pre><span></span><code><span class="n">my_1000</span> <span class="o">=</span> <span class="n">tmdb</span><span class="o">.</span><span class="n">list</span><span class="p">(</span><span class="n">my_top_1000_list_id</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">my_1000</span><span class="o">.</span><span class="n">page</span><span class="si">=}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">my_1000</span><span class="o">.</span><span class="n">total_pages</span><span class="si">=}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">my_1000</span><span class="o">.</span><span class="n">total_results</span><span class="si">=}</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+</code></pre></div>
+
+<p>Call me weak, but after losing 2 hours of my life trying to make pagination work with both <code>tmdbapis</code> and <code>tmdbv3api</code>, I reverted back to just using Python's <code>requests</code> and it worked in 5mns!    </p>
+<p>See <a href="../../python/fetching-data-from-tmdb/index.html">Nic Note: Fetching data from TMDB</a></p>
+            </main>
+        </div><!-- /.entry-content -->
+    </article>
+</section>
+        <section id="extras" class="body">
+
+        <!-- /.blogroll -->
+                <div class="blogroll">
+                        <h2>links</h2>
+                        <ul>
+                            <li><a href="https://indeXall.io">Side project: indeXall.io</a></li>
+                            <li><a href="https://btobsales.eu">Services: BtoBSales.EU</a></li>
+                        </ul>
+                </div>
+
+        <!-- /.social -->
+                <div class="social">
+                        <h2>social</h2>
+                        <ul>
+
+                            <li><a href="https://www.linkedin.com/in/ndeville/">Linkedin</a></li>
+                            <li><a href="https://www.twitter.com/ndeville">Twitter</a></li>
+                        </ul>
+                </div>
+        </section><!-- /#extras -->
+
+        <footer id="contentinfo" class="body">
+                <address id="about" class="vcard body">
+                Powered by <a href="https://github.com/getpelican/pelican" target="_blank">Pelican</a>, 
+                with <a href="https://stork-search.net/" target="_blank">Stork</a> & <a href="https://github.com/pelican-plugins/search" target="_blank">Pelican Search plugin</a>.
+                <span style="color:#C74350">|</span> <img src="https://notes.nicolasdeville.com/images/python.svg" alt="python_logo" width="16" style="vertical-align: middle;"/> <a href="https://www.python.org/" target="_blank">Python</a> 
+                
+                </address><!-- /#about -->
+
+        </footer><!-- /#contentinfo -->
+
+
+<!-- for Stork seach engine -->
+<script src="https://files.stork-search.net/releases/v1.2.1/stork.js"></script>
+<script>
+    stork.register("sitesearch", "https://notes.nicolasdeville.com/search-index.st")
+</script>
+
+</body>
+</html>

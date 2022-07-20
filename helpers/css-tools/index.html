@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="generator" content="Pelican" />
+    <title>CSS Tools</title>
+    <link rel="stylesheet" href="https://notes.nicolasdeville.com/theme/css/main.css" />
+        <meta name="description" content="Handy tools I use when dealing with CSS files." />
+
+    <!-- for Stork seach engine -->
+    <link rel="stylesheet" href="https://files.stork-search.net/basic.css" /> 
+
+</head>
+
+<body id="index" class="body">
+        <header id="banner" class="body">
+
+            <a href="https://notes.nicolasdeville.com/"><img class="header_image" src="https://notes.nicolasdeville.com/images/nic_notes_header.svg" alt="Nic's notes" width="266"/></a>
+
+            <!-- for Stork seach engine -->
+            <div class="search-input-block">
+                <input data-stork="sitesearch" class="search-input" placeholder="Search..."/>
+                <div data-stork="sitesearch-output"></div>
+            </div>
+
+            <nav><ul>
+                <li><a href="https://notes.nicolasdeville.com/apps/">apps</a></li>
+                <li><a href="https://notes.nicolasdeville.com/b2b-sales/">b2b sales</a></li>
+                <li><a href="https://notes.nicolasdeville.com/books/">books</a></li>
+                <li><a href="https://notes.nicolasdeville.com/careerplaybook/">#careerplaybook</a></li>
+                <li class="active"><a href="https://notes.nicolasdeville.com/helpers/">helpers</a></li>
+                <li><a href="https://notes.nicolasdeville.com/home-office/">home office</a></li>
+                <li><a href="https://notes.nicolasdeville.com/interests/">interests</a></li>
+                <li><a href="https://notes.nicolasdeville.com/learning/">learning</a></li>
+                <li><a href="https://notes.nicolasdeville.com/python/">python</a></li>
+                <li><a href="https://notes.nicolasdeville.com/random/">random</a></li>
+                <li><a href="https://notes.nicolasdeville.com/salesleaderplaybook/">#salesleaderplaybook</a></li>
+                <li><a href="https://notes.nicolasdeville.com/startups/">startups</a></li>
+            </ul></nav>
+        </header>
+
+<section id="content" class="body">
+    <article>
+        <header>
+            <h1 class="entry-title">
+                <main> <!-- for indexing by Stork -->
+                    <a href="https://notes.nicolasdeville.com/helpers/css-tools" rel="bookmark"
+                    title="Permalink to CSS Tools">CSS Tools
+                    </a>
+                </main>
+            </h1>
+            <p class="header_summary">
+                <main> <!-- for indexing by Stork -->
+                    <p>Handy tools I use when dealing with CSS files.</p>
+                </main>
+            </p>
+        </header>
+
+        <div class="entry-content">
+<footer class="post-info">
+
+    <p>
+        14 Feb 2020 <span class="separator">|</span> in <a class="link_tag" href="https://notes.nicolasdeville.com/helpers/">helpers</a>
+ tags: <a class="link_tag" href="https://notes.nicolasdeville.com/tag/css.html">css</a>
+
+        <!-- added 4/7 -->
+        <!-- 		<br />
+        <abbr class="modified" title="2022-07-20T09:44:54.113358+02:00">
+                Updated: 20 Jul 2022
+        </abbr>
+ -->
+
+    </p>
+
+    
+
+</footer>            <main> <!-- for indexing by Stork -->
+                <p>Here are handy tools I use when dealing with CSS files.</p>
+<h3>CSS Beautifier</h3>
+<p><a href="https://www.freeformatter.com/css-beautifier.html" target="_blank">https://www.freeformatter.com/css-beautifier.html</a></p>
+<h3>Diffchecker</h3>
+<p><a href="https://www.diffchecker.com" target="_blank">https://www.diffchecker.com</a></p>
+<p>Diffchecker is an online diff tool to compare text to find the difference between two text files.
+When you need to check the difference between 2 CSS files.</p>
+<p>I once heavily changed the wrong CSS file, so had to do code cleanup by extracting the changes 😅</p>
+<p>I used this tool and tasked a freelancer to do the work, by sharing the link with him (see <a href="careerplaybook-009-outsourcing-tasks.html">careerplaybook-009-outsourcing-tasks/</a>)</p>
+<h3>CSS examples</h3>
+<p><a href="https://www.csscodelab.com/css-examples/" target="_blank">https://www.csscodelab.com/css-examples/</a></p>
+<h3>Box shadow syntax</h3>
+<p><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/box-shadow" target="_blank">https://developer.mozilla.org/en-US/docs/Web/CSS/box-shadow</a></p>
+<div class="highlight"><pre><span></span><code><span class="c">/* Keyword values */</span><span class="w">  </span>
+<span class="nt">box-shadow</span><span class="o">:</span><span class="w"> </span><span class="nt">none</span><span class="o">;</span><span class="w">  </span>
+
+<span class="c">/* offset-x | offset-y | color */</span><span class="w">  </span>
+<span class="nt">box-shadow</span><span class="o">:</span><span class="w"> </span><span class="nt">60px</span><span class="w"> </span><span class="nt">-16px</span><span class="w"> </span><span class="nt">teal</span><span class="o">;</span><span class="w">  </span>
+
+<span class="c">/* offset-x | offset-y | blur-radius | color */</span><span class="w">  </span>
+<span class="nt">box-shadow</span><span class="o">:</span><span class="w"> </span><span class="nt">10px</span><span class="w"> </span><span class="nt">5px</span><span class="w"> </span><span class="nt">5px</span><span class="w"> </span><span class="nt">black</span><span class="o">;</span><span class="w">  </span>
+
+<span class="c">/* offset-x | offset-y | blur-radius | spread-radius | color */</span><span class="w">  </span>
+<span class="nt">box-shadow</span><span class="o">:</span><span class="w"> </span><span class="nt">2px</span><span class="w"> </span><span class="nt">2px</span><span class="w"> </span><span class="nt">2px</span><span class="w"> </span><span class="nt">1px</span><span class="w"> </span><span class="nt">rgba</span><span class="o">(</span><span class="nt">0</span><span class="o">,</span><span class="w"> </span><span class="nt">0</span><span class="o">,</span><span class="w"> </span><span class="nt">0</span><span class="o">,</span><span class="w"> </span><span class="nt">0</span><span class="p">.</span><span class="nc">2</span><span class="o">);</span><span class="w">  </span>
+
+<span class="c">/* inset | offset-x | offset-y | color */</span><span class="w">  </span>
+<span class="nt">box-shadow</span><span class="o">:</span><span class="w"> </span><span class="nt">inset</span><span class="w"> </span><span class="nt">5em</span><span class="w"> </span><span class="nt">1em</span><span class="w"> </span><span class="nt">gold</span><span class="o">;</span><span class="w">  </span>
+
+<span class="c">/* Any number of shadows, separated by commas */</span><span class="w">  </span>
+<span class="nt">box-shadow</span><span class="o">:</span><span class="w"> </span><span class="nt">3px</span><span class="w"> </span><span class="nt">3px</span><span class="w"> </span><span class="nt">red</span><span class="o">,</span><span class="w"> </span><span class="nt">-1em</span><span class="w"> </span><span class="nt">0</span><span class="w"> </span><span class="nt">0</span><span class="p">.</span><span class="nc">4em</span><span class="w"> </span><span class="nt">olive</span><span class="o">;</span><span class="w">  </span>
+
+<span class="c">/* Global values */</span><span class="w">  </span>
+<span class="nt">box-shadow</span><span class="o">:</span><span class="w"> </span><span class="nt">inherit</span><span class="o">;</span><span class="w">  </span>
+<span class="nt">box-shadow</span><span class="o">:</span><span class="w"> </span><span class="nt">initial</span><span class="o">;</span><span class="w">  </span>
+<span class="nt">box-shadow</span><span class="o">:</span><span class="w"> </span><span class="nt">revert</span><span class="o">;</span><span class="w">  </span>
+<span class="nt">box-shadow</span><span class="o">:</span><span class="w"> </span><span class="nt">revert-layer</span><span class="o">;</span><span class="w">  </span>
+<span class="nt">box-shadow</span><span class="o">:</span><span class="w"> </span><span class="nt">unset</span><span class="o">;</span><span class="w">  </span>
+</code></pre></div>
+
+<h3>Reset Your Margin and Padding</h3>
+<p>from <a href="https://wpmudev.com/blog/css-workflow/" target="_blank">https://wpmudev.com/blog/css-workflow/</a></p>
+<p>"Since all browsers have their own set of default settings for pages and they aren’t all the same across the board when it comes to margin and padding, it’s a good idea to start with a clean slate and, in a manner of speaking, erase or ignore what those browsers have set and start from margins and paddings of zero. This is called a reset.</p>
+<p>Before you start adding your own styles, enter in a reset first. It saves you time trying to enter styles to compensate for every browser.</p>
+<p>A simple reset can look something like the example below, but there are many out there you can use such as Eric Meyer’s Reset and which one you use is up to you and your specific needs.:</p>
+<div class="highlight"><pre><span></span><code><span class="n">html</span><span class="p">,</span> <span class="n">body</span><span class="p">,</span> <span class="n">div</span><span class="p">,</span> <span class="n">h1</span><span class="p">,</span> <span class="n">h2</span><span class="p">,</span> <span class="n">h3</span><span class="p">,</span> <span class="n">h4</span><span class="p">,</span> <span class="n">h5</span><span class="p">,</span> <span class="n">h6</span><span class="p">,</span> <span class="n">ul</span><span class="p">,</span> <span class="n">ol</span><span class="p">,</span> <span class="n">li</span><span class="p">,</span> <span class="n">p</span><span class="p">,</span> <span class="n">blockquote</span><span class="p">,</span> <span class="n">pre</span><span class="p">,</span> <span class="n">form</span><span class="p">,</span> <span class="n">fieldset</span><span class="p">,</span> <span class="n">table</span><span class="p">,</span> <span class="n">th</span><span class="p">,</span> <span class="n">td</span> <span class="p">{</span> <span class="n">margin</span><span class="p">:</span> <span class="mi">0</span><span class="p">;</span> <span class="n">padding</span><span class="p">:</span> <span class="mi">0</span><span class="p">;</span> <span class="p">}</span>
+</code></pre></div>
+
+<h3>"Some Little Improvements to My VS Code Workflow"</h3>
+<p>How to use Workspaces and Tasks (automation) in VS Code:</p>
+<p><a href="https://css-tricks.com/some-little-improvements-to-my-vs-code-workflow-workspaces-icons-tasks/" target="_blank">https://css-tricks.com/some-little-improvements-to-my-vs-code-workflow-workspaces-icons-tasks/</a></p>
+            </main>
+        </div><!-- /.entry-content -->
+    </article>
+</section>
+        <section id="extras" class="body">
+
+        <!-- /.blogroll -->
+                <div class="blogroll">
+                        <h2>links</h2>
+                        <ul>
+                            <li><a href="https://indeXall.io">Side project: indeXall.io</a></li>
+                            <li><a href="https://btobsales.eu">Services: BtoBSales.EU</a></li>
+                        </ul>
+                </div>
+
+        <!-- /.social -->
+                <div class="social">
+                        <h2>social</h2>
+                        <ul>
+
+                            <li><a href="https://www.linkedin.com/in/ndeville/">Linkedin</a></li>
+                            <li><a href="https://www.twitter.com/ndeville">Twitter</a></li>
+                        </ul>
+                </div>
+        </section><!-- /#extras -->
+
+        <footer id="contentinfo" class="body">
+                <address id="about" class="vcard body">
+                Powered by <a href="https://github.com/getpelican/pelican" target="_blank">Pelican</a>, 
+                with <a href="https://stork-search.net/" target="_blank">Stork</a> & <a href="https://github.com/pelican-plugins/search" target="_blank">Pelican Search plugin</a>.
+                <span style="color:#C74350">|</span> <img src="https://notes.nicolasdeville.com/images/python.svg" alt="python_logo" width="16" style="vertical-align: middle;"/> <a href="https://www.python.org/" target="_blank">Python</a> 
+                
+                </address><!-- /#about -->
+
+        </footer><!-- /#contentinfo -->
+
+
+<!-- for Stork seach engine -->
+<script src="https://files.stork-search.net/releases/v1.2.1/stork.js"></script>
+<script>
+    stork.register("sitesearch", "https://notes.nicolasdeville.com/search-index.st")
+</script>
+
+</body>
+</html>
