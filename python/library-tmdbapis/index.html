@@ -21,7 +21,7 @@
 
             <!-- for Stork seach engine -->
             <div class="search-input-block">
-                <input data-stork="sitesearch" class="search-input" placeholder="Search..."/>
+                <input data-stork="sitesearch" class="search-input" placeholder="Search..." autofocus="autofocus"/>
                 <div data-stork="sitesearch-output"></div>
             </div>
 
@@ -70,7 +70,7 @@
 
         <!-- added 4/7 -->
         <!-- 		<br />
-        <abbr class="modified" title="2022-07-21T00:11:21.748981+02:00">
+        <abbr class="modified" title="2022-07-21T13:04:25.205827+02:00">
                 Updated: 21 Jul 2022
         </abbr>
  -->
@@ -88,7 +88,7 @@ Has been updated 4 days ago, so valid library.   </p>
 <div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">tmdbapis</span> <span class="kn">import</span> <span class="n">TMDbAPIs</span>
 
 <span class="n">tmdb_api_key</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">getenv</span><span class="p">(</span><span class="s2">&quot;TMDB_API_KEY&quot;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">tmdb_api_key</span><span class="si">=}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">tmdb_api_key</span><span class="si">=}</span><span class="s2">&quot;</span><span class="p">)</span> <span class="c1"># print to check that proper key is passed in the payload later</span>
 <span class="n">tmdb_v4_token</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">getenv</span><span class="p">(</span><span class="s2">&quot;TMDB_V4_TOKEN&quot;</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">tmdb_v4_token</span><span class="si">=}</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
 
@@ -132,6 +132,7 @@ Has been updated 4 days ago, so valid library.   </p>
 <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">my_1000</span><span class="o">.</span><span class="n">total_results</span><span class="si">=}</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
 </code></pre></div>
 
+<p>Can't figure out how to get data from page 2 onwards though.  </p>
 <p>Call me weak, but after losing 2 hours of my life trying to make pagination work with both <code>tmdbapis</code> and <code>tmdbv3api</code>, I reverted back to just using Python's <code>requests</code> and it worked in 5mns!    </p>
 <p>See <a href="../../python/fetching-data-from-tmdb/index.html">Nic Note: Fetching data from TMDB</a></p>
             </main>

@@ -20,7 +20,7 @@
 
             <!-- for Stork seach engine -->
             <div class="search-input-block">
-                <input data-stork="sitesearch" class="search-input" placeholder="Search..."/>
+                <input data-stork="sitesearch" class="search-input" placeholder="Search..." autofocus="autofocus"/>
                 <div data-stork="sitesearch-output"></div>
             </div>
 
@@ -43,7 +43,7 @@
 
 
 <p class="notes_count">
-    18 notes 
+    20 notes 
     <span style="color:#C74350">|</span> 
     <a href="https://notes.nicolasdeville.com/tags">by tags</a> 
     <span style="color:#C74350">|</span> 
@@ -62,12 +62,12 @@
             <hr/>
 
                 <article class="hentry">
-                    <h1 class="entry-title"><a href="https://notes.nicolasdeville.com/python/fetching-data-from-tmdb">Fetching data from TMDB</a></h1>
+                    <h1 class="entry-title"><a href="https://notes.nicolasdeville.com/python/boilerplate">My Python scripts boilerplate</a></h1>
 
                     <!-- added 4/7 -->
                     <div>
                         <p class="header_summary">
-                            <p>after failing with 2 libraries, just using Python's requests to fetch movie data from TMDB API - themoviedb.org</p>
+                            <p>this is the boilerplate I use as a snippet in VS Code when I create a new Python script</p>
                         </p>
                     </div>
 
@@ -76,12 +76,11 @@
     <p>
         21 Jul 2022 <span class="separator">|</span> in <a class="link_tag" href="https://notes.nicolasdeville.com/python/">python</a>
  tags: <a class="link_tag" href="https://notes.nicolasdeville.com/tag/python.html">python</a>
-<a class="link_tag" href="https://notes.nicolasdeville.com/tag/scripts.html">scripts</a>
-<a class="link_tag" href="https://notes.nicolasdeville.com/tag/api.html">api</a>
+<a class="link_tag" href="https://notes.nicolasdeville.com/tag/snippets.html">snippets</a>
 
         <!-- added 4/7 -->
         <!-- 		<br />
-        <abbr class="modified" title="2022-07-21T00:35:18.125719+02:00">
+        <abbr class="modified" title="2022-07-21T09:20:47.433785+02:00">
                 Updated: 21 Jul 2022
         </abbr>
  -->
@@ -90,171 +89,67 @@
 
     
 
-</footer><p>Goal to fetch my private lists of movies on TMDB:<br>
-<a href="https://www.themoviedb.org/" target="_blank">https://www.themoviedb.org/</a><br>
-The Movie Database (TMDB) is a popular, user editable database for movies and TV shows.  </p>
-<p>API documentation: <a href="https://developers.themoviedb.org/3/getting-started/introduction" target="_blank">https://developers.themoviedb.org/3/getting-started/introduction</a>    </p>
-<p>See unsuccessful attempts: <br>
-<a href="../../python/library-tmdbv3api/index.html">Nic Note: Library: tmdbv3api</a> <br>
-<a href="../../python/library-tmdbapis/index.html">Nic Note: Library: tmdbapis</a></p>
-<p>Successful attempt in 5mns with:    </p>
-<div class="highlight"><pre><span></span><code><span class="n">tmdb_api_key</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">getenv</span><span class="p">(</span><span class="s2">&quot;TMDB_API_KEY&quot;</span><span class="p">)</span> <span class="c1"># TMDB API v3 key</span>
+</footer><p>When I create a new Python file, I just type my shortcut <code>bp</code> (=boilerplate) and select my snippet <code>bp_python</code> to insert all the below at once - massive time saver.   </p>
+<p>In VS Code: <code>Code &gt; Preferences &gt; Configure User Snippets &gt; python.json</code>    </p>
+<div class="highlight"><pre><span></span><code><span class="w">    </span><span class="nt">&quot;Nic: Python boilerplate&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="nt">&quot;prefix&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;bp_python&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">        </span><span class="nt">&quot;body&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"></span>
+<span class="w">            </span><span class="s2">&quot;from datetime import datetime&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">            </span><span class="s2">&quot;import os&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">            </span><span class="s2">&quot;print(\&quot;----------\&quot;)&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">            </span><span class="s2">&quot;ts_file = f\&quot;{datetime.now().strftime(&#39;%y%m%d-%H%M&#39;)}\&quot;&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">            </span><span class="s2">&quot;ts_db = f\&quot;{datetime.now().strftime(&#39;%Y-%m-%d %H:%M&#39;)}\&quot;&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">            </span><span class="s2">&quot;ts_time = f\&quot;{datetime.now().strftime(&#39;%H:%M:%S&#39;)}\&quot;&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">            </span><span class="s2">&quot;print(f\&quot;{ts_time} starting {os.path.basename(__file__)}\&quot;)&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">            </span><span class="s2">&quot;import time&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">            </span><span class="s2">&quot;start_time = time.time()&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">            </span><span class="s2">&quot;&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">            </span><span class="s2">&quot;#####&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">            </span><span class="s2">&quot;import sys&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">            </span><span class="s2">&quot;sys.path.append(\&quot;/Users/path/to/additional/script1\&quot;)&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">            </span><span class="s2">&quot;sys.path.append(\&quot;/Users/path/to/additional/script2\&quot;)&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">            </span><span class="s2">&quot;#from dotenv import load_dotenv&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">            </span><span class="s2">&quot;#load_dotenv()&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">            </span><span class="s2">&quot;&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">            </span><span class="s2">&quot;# import my_utils&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">            </span><span class="s2">&quot;# import grist_XX&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">            </span><span class="s2">&quot;# import dbee&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">            </span><span class="s2">&quot;&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">            </span><span class="s2">&quot;import pprint&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">            </span><span class="s2">&quot;pp = pprint.PrettyPrinter(indent=4)&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">            </span><span class="s2">&quot;print()&quot;</span><span class="p">,</span><span class="w"></span>
 
-<span class="n">my_top_1000_list_id</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">my_list_id</span><span class="p">)</span> <span class="c1"># as found in the URL of my list</span>
+<span class="w">            </span><span class="s2">&quot;count = 0&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">            </span><span class="s2">&quot;count_row = 0&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">            </span><span class="s2">&quot;print(f\&quot;{os.path.basename(__file__)} boilerplate loaded -----------\&quot;)&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">            </span><span class="s2">&quot;print()&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">            </span><span class="s2">&quot;####################&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">            </span><span class="s2">&quot;# $1&quot;</span><span class="p">,</span><span class="w"></span>
 
-<span class="c1"># Fetching movie data for movie ID 100</span>
-<span class="n">movie_url</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;https://api.themoviedb.org/3/movie/100?api_key=</span><span class="si">{</span><span class="n">tmdb_api_key</span><span class="si">}</span><span class="s2">&quot;</span>
-<span class="n">res_movie</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">movie_url</span><span class="p">)</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
-<span class="n">pp</span><span class="o">.</span><span class="n">pprint</span><span class="p">(</span><span class="n">res_movie</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">()</span>
-<span class="n">title</span> <span class="o">=</span> <span class="n">res_movie</span><span class="p">[</span><span class="s2">&quot;title&quot;</span><span class="p">]</span>
-<span class="n">original_language</span> <span class="o">=</span> <span class="n">res_movie</span><span class="p">[</span><span class="s2">&quot;original_language&quot;</span><span class="p">]</span>
-<span class="n">original_title</span> <span class="o">=</span> <span class="n">res_movie</span><span class="p">[</span><span class="s2">&quot;original_title&quot;</span><span class="p">]</span>
-<span class="n">tagline</span> <span class="o">=</span> <span class="n">res_movie</span><span class="p">[</span><span class="s2">&quot;tagline&quot;</span><span class="p">]</span>
-<span class="n">budget</span> <span class="o">=</span> <span class="n">res_movie</span><span class="p">[</span><span class="s2">&quot;budget&quot;</span><span class="p">]</span>
-<span class="n">tmdb_id</span> <span class="o">=</span> <span class="n">res_movie</span><span class="p">[</span><span class="s2">&quot;id&quot;</span><span class="p">]</span>
-<span class="n">imdb_id</span> <span class="o">=</span> <span class="n">res_movie</span><span class="p">[</span><span class="s2">&quot;imdb_id&quot;</span><span class="p">]</span>
-<span class="n">original_language</span> <span class="o">=</span> <span class="n">res_movie</span><span class="p">[</span><span class="s2">&quot;original_language&quot;</span><span class="p">]</span>
-<span class="n">overview</span> <span class="o">=</span> <span class="n">res_movie</span><span class="p">[</span><span class="s2">&quot;overview&quot;</span><span class="p">]</span>
-<span class="n">release_date</span> <span class="o">=</span> <span class="n">res_movie</span><span class="p">[</span><span class="s2">&quot;release_date&quot;</span><span class="p">]</span>
-<span class="n">revenue</span> <span class="o">=</span> <span class="n">res_movie</span><span class="p">[</span><span class="s2">&quot;revenue&quot;</span><span class="p">]</span>
-<span class="n">runtime</span> <span class="o">=</span> <span class="n">res_movie</span><span class="p">[</span><span class="s2">&quot;runtime&quot;</span><span class="p">]</span>
-<span class="n">poster_path</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;https://image.tmdb.org/t/p/original/</span><span class="si">{</span><span class="n">res_movie</span><span class="p">[</span><span class="s1">&#39;poster_path&#39;</span><span class="p">]</span><span class="si">}</span><span class="s2">&quot;</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">title</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">original_language</span><span class="si">=}</span><span class="s2">&quot;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">original_title</span><span class="si">=}</span><span class="s2">&quot;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">tagline</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">budget</span><span class="si">=}</span><span class="s2">&quot;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">tmdb_id</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">imdb_id</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">original_language</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">overview</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">release_date</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">revenue</span><span class="si">=}</span><span class="s2">&quot;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">runtime</span><span class="si">=}</span><span class="s2">&quot;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">poster_path</span><span class="p">)</span>
-</code></pre></div>
+<span class="w">            </span><span class="s2">&quot;&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">            </span><span class="s2">&quot;$2&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">            </span><span class="s2">&quot;&quot;</span><span class="p">,</span><span class="w"></span>
 
-<p>and I can get movie data for each movie in my list with:   </p>
-<div class="highlight"><pre><span></span><code><span class="n">tmdb_api_key</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">getenv</span><span class="p">(</span><span class="s2">&quot;TMDB_API_KEY&quot;</span><span class="p">)</span>
-<span class="n">my_top_1000_list_id</span> <span class="o">=</span> <span class="mi">8210669</span>
-
-<span class="n">count</span> <span class="o">=</span> <span class="mi">0</span>
-
-<span class="n">my_1000_url</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;https://api.themoviedb.org/4/list/</span><span class="si">{</span><span class="n">my_top_1000_list_id</span><span class="si">}</span><span class="s2">?page=1&amp;api_key=</span><span class="si">{</span><span class="n">tmdb_api_key</span><span class="si">}</span><span class="s2">&quot;</span>
-<span class="n">res_list</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">my_1000_url</span><span class="p">)</span><span class="o">.</span><span class="n">json</span><span class="p">()</span> 
-<span class="c1"># returns dict with 19 fields:</span>
-    <span class="c1"># average_rating</span>
-    <span class="c1"># backdrop_path</span>
-    <span class="c1"># comments</span>
-    <span class="c1"># created_by</span>
-    <span class="c1"># description</span>
-    <span class="c1"># id</span>
-    <span class="c1"># iso_3166_1</span>
-    <span class="c1"># iso_639_1</span>
-    <span class="c1"># name</span>
-    <span class="c1"># object_ids</span>
-    <span class="c1"># page</span>
-    <span class="c1"># poster_path</span>
-    <span class="c1"># public</span>
-    <span class="c1"># results</span>
-    <span class="c1"># revenue</span>
-    <span class="c1"># runtime</span>
-    <span class="c1"># sort_by</span>
-    <span class="c1"># total_pages</span>
-    <span class="c1"># total_results</span>
-    <span class="c1"># pp.pprint(m)</span>
-
-    <span class="c1"># the object_ids object includes the list of all movie ids in my list. Will be using that. </span>
-
-<span class="k">for</span> <span class="n">m</span> <span class="ow">in</span> <span class="n">res_list</span><span class="p">[</span><span class="s1">&#39;object_ids&#39;</span><span class="p">]:</span>
-    <span class="n">count</span> <span class="o">+=</span> <span class="mi">1</span> <span class="c1"># to validate number of movies processed</span>
-    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">m</span><span class="si">=}</span><span class="s2">&quot;</span><span class="p">)</span> <span class="c1"># m is a string like &#39;movie:100&#39; (print res_list[&#39;object_ids&#39;] to check), so need to remove first 6 characters to grab the movie id.</span>
-    <span class="n">movie_id</span> <span class="o">=</span> <span class="n">m</span><span class="p">[</span><span class="mi">6</span><span class="p">:]</span> <span class="c1"># </span>
-    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">movie_id</span><span class="si">=}</span><span class="s2">&quot;</span><span class="p">)</span>
-
-    <span class="n">movie_url</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;https://api.themoviedb.org/3/movie/</span><span class="si">{</span><span class="n">movie_id</span><span class="si">}</span><span class="s2">?api_key=</span><span class="si">{</span><span class="n">tmdb_api_key</span><span class="si">}</span><span class="s2">&quot;</span>
-    <span class="n">res_movie</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">movie_url</span><span class="p">)</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
-
-    <span class="n">title</span> <span class="o">=</span> <span class="n">res_movie</span><span class="p">[</span><span class="s2">&quot;title&quot;</span><span class="p">]</span>
-    <span class="n">original_language</span> <span class="o">=</span> <span class="n">res_movie</span><span class="p">[</span><span class="s2">&quot;original_language&quot;</span><span class="p">]</span>
-    <span class="n">original_title</span> <span class="o">=</span> <span class="n">res_movie</span><span class="p">[</span><span class="s2">&quot;original_title&quot;</span><span class="p">]</span>
-    <span class="n">tagline</span> <span class="o">=</span> <span class="n">res_movie</span><span class="p">[</span><span class="s2">&quot;tagline&quot;</span><span class="p">]</span>
-    <span class="n">budget</span> <span class="o">=</span> <span class="n">res_movie</span><span class="p">[</span><span class="s2">&quot;budget&quot;</span><span class="p">]</span>
-    <span class="n">tmdb_id</span> <span class="o">=</span> <span class="n">res_movie</span><span class="p">[</span><span class="s2">&quot;id&quot;</span><span class="p">]</span>
-    <span class="n">imdb_id</span> <span class="o">=</span> <span class="n">res_movie</span><span class="p">[</span><span class="s2">&quot;imdb_id&quot;</span><span class="p">]</span>
-    <span class="n">original_language</span> <span class="o">=</span> <span class="n">res_movie</span><span class="p">[</span><span class="s2">&quot;original_language&quot;</span><span class="p">]</span>
-    <span class="n">overview</span> <span class="o">=</span> <span class="n">res_movie</span><span class="p">[</span><span class="s2">&quot;overview&quot;</span><span class="p">]</span>
-    <span class="n">release_date</span> <span class="o">=</span> <span class="n">res_movie</span><span class="p">[</span><span class="s2">&quot;release_date&quot;</span><span class="p">]</span>
-    <span class="n">revenue</span> <span class="o">=</span> <span class="n">res_movie</span><span class="p">[</span><span class="s2">&quot;revenue&quot;</span><span class="p">]</span>
-    <span class="n">runtime</span> <span class="o">=</span> <span class="n">res_movie</span><span class="p">[</span><span class="s2">&quot;runtime&quot;</span><span class="p">]</span>
-    <span class="n">poster_path</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;https://image.tmdb.org/t/p/original/</span><span class="si">{</span><span class="n">res_movie</span><span class="p">[</span><span class="s1">&#39;poster_path&#39;</span><span class="p">]</span><span class="si">}</span><span class="s2">&quot;</span>
-    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">title</span><span class="si">=}</span><span class="s2">&quot;</span><span class="p">)</span>
-    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">original_language</span><span class="si">=}</span><span class="s2">&quot;</span><span class="p">)</span>
-    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">original_title</span><span class="si">=}</span><span class="s2">&quot;</span><span class="p">)</span>
-    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">tagline</span><span class="si">=}</span><span class="s2">&quot;</span><span class="p">)</span>
-    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">budget</span><span class="si">=}</span><span class="s2">&quot;</span><span class="p">)</span>
-    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">tmdb_id</span><span class="si">=}</span><span class="s2">&quot;</span><span class="p">)</span>
-    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">imdb_id</span><span class="si">=}</span><span class="s2">&quot;</span><span class="p">)</span>
-    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">original_language</span><span class="si">=}</span><span class="s2">&quot;</span><span class="p">)</span>
-    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">overview</span><span class="si">=}</span><span class="s2">&quot;</span><span class="p">)</span>
-    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">release_date</span><span class="si">=}</span><span class="s2">&quot;</span><span class="p">)</span>
-    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">revenue</span><span class="si">=}</span><span class="s2">&quot;</span><span class="p">)</span>
-    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">runtime</span><span class="si">=}</span><span class="s2">&quot;</span><span class="p">)</span>
-    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">poster_path</span><span class="si">=}</span><span class="s2">&quot;</span><span class="p">)</span>
-    <span class="nb">print</span><span class="p">()</span>
-
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">count</span><span class="si">=}</span><span class="s2">&quot;</span><span class="p">)</span> <span class="c1"># to validate number of movies processed</span>
-</code></pre></div>
-
-<p>returns (edited for length):   </p>
-<div class="highlight"><pre><span></span><code>m=&#39;movie:100&#39;
-movie_id=&#39;100&#39;
-title=&#39;Lock, Stock and Two Smoking Barrels&#39;
-original_language=&#39;en&#39;
-original_title=&#39;Lock, Stock and Two Smoking Barrels&#39;
-tagline=&#39;A Disgrace to Criminals Everywhere.&#39;
-budget=1350000
-tmdb_id=100
-imdb_id=&#39;tt0120735&#39;
-original_language=&#39;en&#39;
-overview=&#39;A card shark and his unwillingly-enlisted friends need to make a lot of cash quick after losing a sketchy poker match. To do this they decide to pull a heist on a small-time gang who happen to be operating out of the flat next door.&#39;
-release_date=&#39;1998-08-28&#39;
-revenue=28356188
-runtime=105
-poster_path=&#39;https://image.tmdb.org/t/p/original//8kSerJrhrJWKLk1LViesGcnrUPE.jpg&#39;
-
-m=&#39;movie:101&#39;
-movie_id=&#39;101&#39;
-title=&#39;Léon: The Professional&#39;
-original_language=&#39;en&#39;
-original_title=&#39;Léon: The Professional&#39;
-tagline=&#39;If you want a job done well, hire a professional.&#39;
-budget=16000000
-tmdb_id=101
-imdb_id=&#39;tt0110413&#39;
-original_language=&#39;en&#39;
-overview=&#39;Léon, the top hit man in New York, has earned a rep as an effective &quot;cleaner&quot;. But when his next-door neighbors are wiped out by a loose-cannon DEA agent, he becomes the unwilling custodian of 12-year-old Mathilda. Before long, Mathilda\&#39;s thoughts turn to revenge, and she considers following in Léon\&#39;s footsteps.&#39;
-release_date=&#39;1994-09-14&#39;
-revenue=45284974
-runtime=111
-poster_path=&#39;https://image.tmdb.org/t/p/original//yI6X2cCM5YPJtxMhUd3dPGqDAhw.jpg&#39;
-
-m=&#39;movie:103&#39;
-movie_id=&#39;103&#39;
-title=&#39;Taxi Driver&#39;
-original_language=&#39;en&#39;
-original_title=&#39;Taxi Driver&#39;
-tagline=&quot;On every street in every city, there&#39;s a nobody who dreams of being a somebody.&quot;
-budget=1300000
-tmdb_id=103
-imdb_id=&#39;tt0075314&#39;
-original_language=&#39;en&#39;
-overview=&#39;A mentally unstable Vietnam War veteran works as a night-time taxi driver in New York City where the perceived decadence and sleaze feed his urge for violent action.&#39;
-release_date=&#39;1976-02-09&#39;
-revenue=28570902
-runtime=114
-poster_path=&#39;https://image.tmdb.org/t/p/original//ekstpH614fwDX8DUln1a2Opz0N8.jpg&#39;
+<span class="w">            </span><span class="s2">&quot;########################################################################################################&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">            </span><span class="s2">&quot;&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">            </span><span class="s2">&quot;if __name__ == &#39;__main__&#39;:&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">            </span><span class="s2">&quot;    print()&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">            </span><span class="s2">&quot;    print()&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">            </span><span class="s2">&quot;    print(&#39;-------------------------------&#39;)&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">            </span><span class="s2">&quot;    print(f\&quot;{os.path.basename(__file__)}\&quot;)&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">            </span><span class="s2">&quot;    print()&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">            </span><span class="s2">&quot;    print(f\&quot;Count = {count}\&quot;)&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">            </span><span class="s2">&quot;    print()&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">            </span><span class="s2">&quot;    print(&#39;-------------------------------&#39;)&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">            </span><span class="s2">&quot;    run_time = round((time.time() - start_time), 1)&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">            </span><span class="s2">&quot;    if run_time &gt; 60:&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">            </span><span class="s2">&quot;        print(f&#39;{os.path.basename(__file__)} finished in {run_time/60} minutes.&#39;)&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">            </span><span class="s2">&quot;    else:&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">            </span><span class="s2">&quot;        print(f&#39;{os.path.basename(__file__)} finished in {run_time}s.&#39;)&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">            </span><span class="s2">&quot;    print()&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">        </span><span class="p">],</span><span class="w"></span>
+<span class="w">        </span><span class="nt">&quot;description&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Nic: Python boilerplate&quot;</span><span class="w"></span>
+<span class="w">    </span><span class="p">},</span><span class="w"></span>
 </code></pre></div>
                 </article>
             </aside>
@@ -266,6 +161,89 @@ poster_path=&#39;https://image.tmdb.org/t/p/original//ekstpH614fwDX8DUln1a2Opz0N
                 <hr>
 
                 <ol id="posts-list" class="hfeed">
+            
+
+
+
+            <li>
+                <article class="hentry">
+                    <header>
+                        <!-- PREVIOUS NOTE TITLE -->
+                        <h1><a href="https://notes.nicolasdeville.com/python/fetching-data-from-tmdb" rel="bookmark"
+                            title="Fetching data from TMDB">Fetching data from TMDB</a></h1>
+                        <!-- PREVIOUS NOTE SUMMARY -->
+                        <div class="entry-content">
+                            <p>after failing with 2 libraries, just using Python's requests to fetch movie data from TMDB API - themoviedb.org</p>
+                        </div>
+                    </header>
+
+                    <div class="entry-content">
+                        <!-- PREVIOUS NOTE METADATA -->
+<footer class="post-info">
+
+    <p>
+        21 Jul 2022 <span class="separator">|</span> in <a class="link_tag" href="https://notes.nicolasdeville.com/python/">python</a>
+ tags: <a class="link_tag" href="https://notes.nicolasdeville.com/tag/python.html">python</a>
+<a class="link_tag" href="https://notes.nicolasdeville.com/tag/scripts.html">scripts</a>
+<a class="link_tag" href="https://notes.nicolasdeville.com/tag/api.html">api</a>
+
+        <!-- added 4/7 -->
+        <!-- 		<br />
+        <abbr class="modified" title="2022-07-22T09:39:23.275249+02:00">
+                Updated: 22 Jul 2022
+        </abbr>
+ -->
+
+    </p>
+
+    
+
+</footer>                    </div>
+                    
+                </article>
+                <hr/>
+            </li>
+            
+
+
+
+            <li>
+                <article class="hentry">
+                    <header>
+                        <!-- PREVIOUS NOTE TITLE -->
+                        <h1><a href="https://notes.nicolasdeville.com/python/library-dotenv" rel="bookmark"
+                            title="How to save confidential data in environment variables with dotenv">How to save confidential data in environment variables with dotenv</a></h1>
+                        <!-- PREVIOUS NOTE SUMMARY -->
+                        <div class="entry-content">
+                            <p>best practice is to never have passwords and alike in clear text in Python scripts - here is the solution I use</p>
+                        </div>
+                    </header>
+
+                    <div class="entry-content">
+                        <!-- PREVIOUS NOTE METADATA -->
+<footer class="post-info">
+
+    <p>
+        21 Jul 2022 <span class="separator">|</span> in <a class="link_tag" href="https://notes.nicolasdeville.com/python/">python</a>
+ tags: <a class="link_tag" href="https://notes.nicolasdeville.com/tag/python.html">python</a>
+<a class="link_tag" href="https://notes.nicolasdeville.com/tag/snippets.html">snippets</a>
+
+        <!-- added 4/7 -->
+        <!-- 		<br />
+        <abbr class="modified" title="2022-07-21T09:22:51.369304+02:00">
+                Updated: 21 Jul 2022
+        </abbr>
+ -->
+
+    </p>
+
+    
+
+</footer>                    </div>
+                    
+                </article>
+                <hr/>
+            </li>
             
 
 
@@ -295,7 +273,7 @@ poster_path=&#39;https://image.tmdb.org/t/p/original//ekstpH614fwDX8DUln1a2Opz0N
 
         <!-- added 4/7 -->
         <!-- 		<br />
-        <abbr class="modified" title="2022-07-21T00:11:21.748981+02:00">
+        <abbr class="modified" title="2022-07-21T13:04:25.205827+02:00">
                 Updated: 21 Jul 2022
         </abbr>
  -->
@@ -378,8 +356,8 @@ poster_path=&#39;https://image.tmdb.org/t/p/original//ekstpH614fwDX8DUln1a2Opz0N
 
         <!-- added 4/7 -->
         <!-- 		<br />
-        <abbr class="modified" title="2022-07-20T22:13:18.158126+02:00">
-                Updated: 20 Jul 2022
+        <abbr class="modified" title="2022-07-21T13:04:47.011568+02:00">
+                Updated: 21 Jul 2022
         </abbr>
  -->
 

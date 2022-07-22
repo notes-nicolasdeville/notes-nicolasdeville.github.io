@@ -20,7 +20,7 @@
 
             <!-- for Stork seach engine -->
             <div class="search-input-block">
-                <input data-stork="sitesearch" class="search-input" placeholder="Search..."/>
+                <input data-stork="sitesearch" class="search-input" placeholder="Search..." autofocus="autofocus"/>
                 <div data-stork="sitesearch-output"></div>
             </div>
 
@@ -81,8 +81,8 @@
 
         <!-- added 4/7 -->
         <!-- 		<br />
-        <abbr class="modified" title="2022-07-21T00:35:18.125719+02:00">
-                Updated: 21 Jul 2022
+        <abbr class="modified" title="2022-07-22T09:39:23.275249+02:00">
+                Updated: 22 Jul 2022
         </abbr>
  -->
 
@@ -97,8 +97,10 @@ The Movie Database (TMDB) is a popular, user editable database for movies and TV
 <p>See unsuccessful attempts: <br>
 <a href="../../python/library-tmdbv3api/index.html">Nic Note: Library: tmdbv3api</a> <br>
 <a href="../../python/library-tmdbapis/index.html">Nic Note: Library: tmdbapis</a></p>
-<p>Successful attempt in 5mns with:    </p>
+<h1>Fetching data from my private list(s) on TMDB</h1>
+<p>Successful attempt in 5mns to fetch one movie's data with:    </p>
 <div class="highlight"><pre><span></span><code><span class="n">tmdb_api_key</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">getenv</span><span class="p">(</span><span class="s2">&quot;TMDB_API_KEY&quot;</span><span class="p">)</span> <span class="c1"># TMDB API v3 key</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">tmdb_api_key</span><span class="si">=}</span><span class="s2">&quot;</span><span class="p">)</span> <span class="c1"># print to check that proper key is passed in the payload later</span>
 
 <span class="n">my_top_1000_list_id</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">my_list_id</span><span class="p">)</span> <span class="c1"># as found in the URL of my list</span>
 
@@ -135,9 +137,12 @@ The Movie Database (TMDB) is a popular, user editable database for movies and TV
 <span class="nb">print</span><span class="p">(</span><span class="n">poster_path</span><span class="p">)</span>
 </code></pre></div>
 
+<blockquote>
+<p>for storing the API key, see <a href="../../python/library-dotenv/index.html">Nic Note: How to save confidential data in environment variables with dotenv</a>   </p>
+</blockquote>
 <p>and I can get movie data for each movie in my list with:   </p>
 <div class="highlight"><pre><span></span><code><span class="n">tmdb_api_key</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">getenv</span><span class="p">(</span><span class="s2">&quot;TMDB_API_KEY&quot;</span><span class="p">)</span>
-<span class="n">my_top_1000_list_id</span> <span class="o">=</span> <span class="mi">8210669</span>
+<span class="n">my_top_1000_list_id</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">my_list_id</span><span class="p">)</span>
 
 <span class="n">count</span> <span class="o">=</span> <span class="mi">0</span>
 
@@ -256,6 +261,167 @@ revenue=28570902
 runtime=114
 poster_path=&#39;https://image.tmdb.org/t/p/original//ekstpH614fwDX8DUln1a2Opz0N8.jpg&#39;
 </code></pre></div>
+
+<h1>Fetching Top Rated movies on TMDB</h1>
+<div class="highlight"><pre><span></span><code><span class="n">top_rated_movies_url</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;https://api.themoviedb.org/3/movie/top_rated?page=1&amp;api_key=</span><span class="si">{</span><span class="n">tmdb_api_key</span><span class="si">}</span><span class="s2">&quot;</span>
+<span class="n">res_list</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">top_rated_movies_url</span><span class="p">)</span><span class="o">.</span><span class="n">json</span><span class="p">()</span> 
+<span class="n">pp</span><span class="o">.</span><span class="n">pprint</span><span class="p">(</span><span class="n">res_list</span><span class="p">)</span>
+</code></pre></div>
+
+<p>returns:</p>
+<p><code>&lt;class 'dict'&gt;</code>
+Keys:
+- page
+- results
+- total_pages
+- total_results</p>
+<p>output (edited for length):  </p>
+<div class="highlight"><pre><span></span><code><span class="o">{</span>   <span class="s1">&#39;page&#39;</span>: <span class="m">1</span>,
+    <span class="s1">&#39;results&#39;</span>: <span class="o">[</span>   <span class="o">{</span>   <span class="s1">&#39;adult&#39;</span>: False,
+                       <span class="s1">&#39;backdrop_path&#39;</span>: <span class="s1">&#39;/kXfqcdQKsToO0OUXHcrrNCHDBzO.jpg&#39;</span>,
+                       <span class="s1">&#39;genre_ids&#39;</span>: <span class="o">[</span><span class="m">18</span>, <span class="m">80</span><span class="o">]</span>,
+                       <span class="s1">&#39;id&#39;</span>: <span class="m">278</span>,
+                       <span class="s1">&#39;original_language&#39;</span>: <span class="s1">&#39;en&#39;</span>,
+                       <span class="s1">&#39;original_title&#39;</span>: <span class="s1">&#39;The Shawshank Redemption&#39;</span>,
+                       <span class="s1">&#39;overview&#39;</span>: <span class="s1">&#39;Framed in the 1940s for the double murder &#39;</span>
+                                   <span class="s1">&#39;of his wife and her lover, upstanding &#39;</span>
+                                   <span class="s1">&#39;banker Andy Dufresne begins a new life at &#39;</span>
+                                   <span class="s1">&#39;the Shawshank prison, where he puts his &#39;</span>
+                                   <span class="s1">&#39;accounting skills to work for an amoral &#39;</span>
+                                   <span class="s1">&#39;warden. During his long stretch in prison, &#39;</span>
+                                   <span class="s1">&#39;Dufresne comes to be admired by the other &#39;</span>
+                                   <span class="s1">&#39;inmates -- including an older prisoner &#39;</span>
+                                   <span class="s1">&#39;named Red -- for his integrity and &#39;</span>
+                                   <span class="s1">&#39;unquenchable sense of hope.&#39;</span>,
+                       <span class="s1">&#39;popularity&#39;</span>: <span class="m">82</span>.945,
+                       <span class="s1">&#39;poster_path&#39;</span>: <span class="s1">&#39;/q6y0Go1tsGEsmtFryDOJo3dEmqu.jpg&#39;</span>,
+                       <span class="s1">&#39;release_date&#39;</span>: <span class="s1">&#39;1994-09-23&#39;</span>,
+                       <span class="s1">&#39;title&#39;</span>: <span class="s1">&#39;The Shawshank Redemption&#39;</span>,
+                       <span class="s1">&#39;video&#39;</span>: False,
+                       <span class="s1">&#39;vote_average&#39;</span>: <span class="m">8</span>.7,
+                       <span class="s1">&#39;vote_count&#39;</span>: <span class="m">21823</span><span class="o">}</span>,
+                   <span class="o">{</span>   <span class="s1">&#39;adult&#39;</span>: False,
+                       <span class="s1">&#39;backdrop_path&#39;</span>: <span class="s1">&#39;/90ez6ArvpO8bvpyIngBuwXOqJm5.jpg&#39;</span>,
+                       <span class="s1">&#39;genre_ids&#39;</span>: <span class="o">[</span><span class="m">35</span>, <span class="m">18</span>, <span class="m">10749</span><span class="o">]</span>,
+                       <span class="s1">&#39;id&#39;</span>: <span class="m">19404</span>,
+                       <span class="s1">&#39;original_language&#39;</span>: <span class="s1">&#39;hi&#39;</span>,
+                       <span class="s1">&#39;original_title&#39;</span>: <span class="s1">&#39;दिलवाले दुल्हनिया ले जायेंगे&#39;</span>,
+                       <span class="s1">&#39;overview&#39;</span>: <span class="s1">&#39;Raj is a rich, carefree, happy-go-lucky &#39;</span>
+                                   <span class="s1">&#39;second generation NRI. Simran is the &#39;</span>
+                                   <span class="s1">&#39;daughter of Chaudhary Baldev Singh, who in &#39;</span>
+                                   <span class="s1">&#39;spite of being an NRI is very strict about &#39;</span>
+                                   <span class="s1">&#39;adherence to Indian values. Simran has &#39;</span>
+                                   <span class="s1">&#39;left for India to be married to her &#39;</span>
+                                   <span class="s1">&#39;childhood fiancé. Raj leaves for India &#39;</span>
+                                   <span class="s1">&#39;with a mission at his hands, to claim his &#39;</span>
+                                   <span class="s1">&#39;lady love under the noses of her whole &#39;</span>
+                                   <span class="s1">&#39;family. Thus begins a saga.&#39;</span>,
+                       <span class="s1">&#39;popularity&#39;</span>: <span class="m">23</span>.792,
+                       <span class="s1">&#39;poster_path&#39;</span>: <span class="s1">&#39;/2CAL2433ZeIihfX1Hb2139CX0pW.jpg&#39;</span>,
+                       <span class="s1">&#39;release_date&#39;</span>: <span class="s1">&#39;1995-10-19&#39;</span>,
+                       <span class="s1">&#39;title&#39;</span>: <span class="s1">&#39;Dilwale Dulhania Le Jayenge&#39;</span>,
+                       <span class="s1">&#39;video&#39;</span>: False,
+                       <span class="s1">&#39;vote_average&#39;</span>: <span class="m">8</span>.7,
+                       <span class="s1">&#39;vote_count&#39;</span>: <span class="m">3722</span><span class="o">}</span>,
+                   <span class="o">{</span>   <span class="s1">&#39;adult&#39;</span>: False,
+                       <span class="s1">&#39;backdrop_path&#39;</span>: <span class="s1">&#39;/rSPw7tgCH9c6NqICZef4kZjFOQ5.jpg&#39;</span>,
+                       <span class="s1">&#39;genre_ids&#39;</span>: <span class="o">[</span><span class="m">18</span>, <span class="m">80</span><span class="o">]</span>,
+                       <span class="s1">&#39;id&#39;</span>: <span class="m">238</span>,
+                       <span class="s1">&#39;original_language&#39;</span>: <span class="s1">&#39;en&#39;</span>,
+                       <span class="s1">&#39;original_title&#39;</span>: <span class="s1">&#39;The Godfather&#39;</span>,
+                       <span class="s1">&#39;overview&#39;</span>: <span class="s1">&#39;Spanning the years 1945 to 1955, a &#39;</span>
+                                   <span class="s1">&#39;chronicle of the fictional &#39;</span>
+                                   <span class="s1">&#39;Italian-American Corleone crime family. &#39;</span>
+                                   <span class="s1">&#39;When organized crime family patriarch, &#39;</span>
+                                   <span class="s1">&#39;Vito Corleone barely survives an attempt &#39;</span>
+                                   <span class="s1">&#39;on his life, his youngest son, Michael &#39;</span>
+                                   <span class="s1">&#39;steps in to take care of the would-be &#39;</span>
+                                   <span class="s1">&#39;killers, launching a campaign of bloody &#39;</span>
+                                   <span class="s1">&#39;revenge.&#39;</span>,
+                       <span class="s1">&#39;popularity&#39;</span>: <span class="m">89</span>.756,
+                       <span class="s1">&#39;poster_path&#39;</span>: <span class="s1">&#39;/3bhkrj58Vtu7enYsRolD1fZdja1.jpg&#39;</span>,
+                       <span class="s1">&#39;release_date&#39;</span>: <span class="s1">&#39;1972-03-14&#39;</span>,
+                       <span class="s1">&#39;title&#39;</span>: <span class="s1">&#39;The Godfather&#39;</span>,
+                       <span class="s1">&#39;video&#39;</span>: False,
+                       <span class="s1">&#39;vote_average&#39;</span>: <span class="m">8</span>.7,
+                       <span class="s1">&#39;vote_count&#39;</span>: <span class="m">16247</span><span class="o">}</span>,
+</code></pre></div>
+
+<p>full script to fetch data per page:   </p>
+<div class="highlight"><pre><span></span><code><span class="n">tmdb_api_key</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">getenv</span><span class="p">(</span><span class="s2">&quot;TMDB_API_KEY&quot;</span><span class="p">)</span>
+<span class="c1"># print(f&quot;{tmdb_api_key=}&quot;)</span>
+<span class="n">tmdb_v4_token</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">getenv</span><span class="p">(</span><span class="s2">&quot;TMDB_V4_TOKEN&quot;</span><span class="p">)</span>
+<span class="c1"># print(f&quot;{tmdb_v4_token=}&quot;)</span>
+
+<span class="n">count</span> <span class="o">=</span> <span class="mi">0</span>
+
+<span class="c1"># Per page request</span>
+
+<span class="n">top_rated_movies_url</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;https://api.themoviedb.org/3/movie/top_rated?page=1&amp;api_key=</span><span class="si">{</span><span class="n">tmdb_api_key</span><span class="si">}</span><span class="s2">&quot;</span>
+
+<span class="n">res_list</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">top_rated_movies_url</span><span class="p">)</span><span class="o">.</span><span class="n">json</span><span class="p">()</span> 
+<span class="n">pp</span><span class="o">.</span><span class="n">pprint</span><span class="p">(</span><span class="n">res_list</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">()</span>
+<span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">res_list</span><span class="p">[</span><span class="s1">&#39;results&#39;</span><span class="p">][</span><span class="mi">0</span><span class="p">]:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+
+<span class="c1"># returns dict with 4 fields:</span>
+    <span class="c1"># page: int</span>
+    <span class="c1"># results: list of dicts with 14 fields per movie, 20 movies per page: </span>
+        <span class="c1"># adult</span>
+        <span class="c1"># backdrop_path</span>
+        <span class="c1"># genre_ids</span>
+        <span class="c1"># id</span>
+        <span class="c1"># original_language</span>
+        <span class="c1"># original_title</span>
+        <span class="c1"># overview</span>
+        <span class="c1"># popularity</span>
+        <span class="c1"># poster_path</span>
+        <span class="c1"># release_date</span>
+        <span class="c1"># title</span>
+        <span class="c1"># video</span>
+        <span class="c1"># vote_average</span>
+        <span class="c1"># vote_count</span>
+    <span class="c1"># total_pages: int / 507</span>
+    <span class="c1"># total_results: int / 10127</span>
+
+    <span class="c1"># the results object includes the list of all movies. Will be using that. </span>
+
+<span class="k">for</span> <span class="n">m</span> <span class="ow">in</span> <span class="n">res_list</span><span class="p">[</span><span class="s1">&#39;results&#39;</span><span class="p">]:</span>
+    <span class="n">count</span> <span class="o">+=</span> <span class="mi">1</span>
+    <span class="n">title</span> <span class="o">=</span> <span class="n">m</span><span class="p">[</span><span class="s2">&quot;title&quot;</span><span class="p">]</span>
+    <span class="n">original_language</span> <span class="o">=</span> <span class="n">m</span><span class="p">[</span><span class="s2">&quot;original_language&quot;</span><span class="p">]</span>
+    <span class="n">original_title</span> <span class="o">=</span> <span class="n">m</span><span class="p">[</span><span class="s2">&quot;original_title&quot;</span><span class="p">]</span>
+    <span class="c1"># tagline = m[&quot;tagline&quot;] # NO tagline returned here</span>
+    <span class="c1"># budget = m[&quot;budget&quot;] # NO budget returned here</span>
+    <span class="n">tmdb_id</span> <span class="o">=</span> <span class="n">m</span><span class="p">[</span><span class="s2">&quot;id&quot;</span><span class="p">]</span>
+    <span class="c1"># imdb_id = m[&quot;imdb_id&quot;] # NO imdb_id returned here</span>
+    <span class="n">original_language</span> <span class="o">=</span> <span class="n">m</span><span class="p">[</span><span class="s2">&quot;original_language&quot;</span><span class="p">]</span>
+    <span class="n">overview</span> <span class="o">=</span> <span class="n">m</span><span class="p">[</span><span class="s2">&quot;overview&quot;</span><span class="p">]</span>
+    <span class="n">release_date</span> <span class="o">=</span> <span class="n">m</span><span class="p">[</span><span class="s2">&quot;release_date&quot;</span><span class="p">]</span>
+    <span class="c1"># revenue = m[&quot;revenue&quot;] # NO revenue returned here</span>
+    <span class="c1"># runtime = m[&quot;runtime&quot;] # NO runtime returned here</span>
+    <span class="n">poster_path</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;https://image.tmdb.org/t/p/original/</span><span class="si">{</span><span class="n">m</span><span class="p">[</span><span class="s1">&#39;poster_path&#39;</span><span class="p">]</span><span class="si">}</span><span class="s2">&quot;</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">title</span><span class="si">=}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">original_language</span><span class="si">=}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">original_title</span><span class="si">=}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="c1"># print(f&quot;{tagline=}&quot;)</span>
+    <span class="c1"># print(f&quot;{budget=}&quot;)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">tmdb_id</span><span class="si">=}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="c1"># print(f&quot;{imdb_id=}&quot;)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">original_language</span><span class="si">=}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">overview</span><span class="si">=}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">release_date</span><span class="si">=}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="c1"># print(f&quot;{revenue=}&quot;)</span>
+    <span class="c1"># print(f&quot;{runtime=}&quot;)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">poster_path</span><span class="si">=}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">()</span>
+
+    <span class="c1"># =&gt; need to use the https://api.themoviedb.org/3/movie/{movie_id}?api_key={tmdb_api_key} endpoint for each to get missing fields</span>
+</code></pre></div>
+
+<p>need to add logic to loop per page + use the <code>/movie</code> endpoint to get missing fields.    </p>
                 </article>
             </aside>
 
@@ -295,7 +461,7 @@ poster_path=&#39;https://image.tmdb.org/t/p/original//ekstpH614fwDX8DUln1a2Opz0N
 
         <!-- added 4/7 -->
         <!-- 		<br />
-        <abbr class="modified" title="2022-07-21T00:11:21.748981+02:00">
+        <abbr class="modified" title="2022-07-21T13:04:25.205827+02:00">
                 Updated: 21 Jul 2022
         </abbr>
  -->
@@ -338,8 +504,8 @@ poster_path=&#39;https://image.tmdb.org/t/p/original//ekstpH614fwDX8DUln1a2Opz0N
 
         <!-- added 4/7 -->
         <!-- 		<br />
-        <abbr class="modified" title="2022-07-20T22:13:18.158126+02:00">
-                Updated: 20 Jul 2022
+        <abbr class="modified" title="2022-07-21T13:04:47.011568+02:00">
+                Updated: 21 Jul 2022
         </abbr>
  -->
 

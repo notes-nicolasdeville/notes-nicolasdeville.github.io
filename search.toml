@@ -8,9 +8,24 @@ url = "ABOUT/"
 title = ""
 
 [[input.files]]
+path = "random/ankle-twisting/index.html"
+url = "random/ankle-twisting"
+title = "Twisted my ankle - one lesson"
+
+[[input.files]]
+path = "python/boilerplate/index.html"
+url = "python/boilerplate"
+title = "My Python scripts boilerplate"
+
+[[input.files]]
 path = "python/fetching-data-from-tmdb/index.html"
 url = "python/fetching-data-from-tmdb"
 title = "Fetching data from TMDB"
+
+[[input.files]]
+path = "python/library-dotenv/index.html"
+url = "python/library-dotenv"
+title = "How to save confidential data in environment variables with dotenv"
 
 [[input.files]]
 path = "python/library-tmdbapis/index.html"
