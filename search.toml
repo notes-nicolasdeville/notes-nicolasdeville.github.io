@@ -8,9 +8,9 @@ url = "ABOUT/"
 title = ""
 
 [[input.files]]
-path = "random/ankle-twisting/index.html"
-url = "random/ankle-twisting"
-title = "Twisted my ankle - one lesson"
+path = "apps/espanso/index.html"
+url = "apps/espanso"
+title = "Espanso"
 
 [[input.files]]
 path = "python/boilerplate/index.html"
@@ -1008,8 +1008,8 @@ url = "home-office/dictation"
 title = "Dictating instead of typing"
 
 [[input.files]]
-path = "helpers/excel/index.html"
-url = "helpers/excel"
+path = "apps/excel/index.html"
+url = "apps/excel"
 title = "Excel"
 
 [[input.files]]

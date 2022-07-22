@@ -62,25 +62,26 @@
             <hr/>
 
                 <article class="hentry">
-                    <h1 class="entry-title"><a href="https://notes.nicolasdeville.com/random/ankle-twisting">Twisted my ankle - one lesson</a></h1>
+                    <h1 class="entry-title"><a href="https://notes.nicolasdeville.com/apps/espanso">Espanso</a></h1>
 
                     <!-- added 4/7 -->
                     <div>
                         <p class="header_summary">
-                            <p>Go straight to the hospital</p>
+                            <p>Trying out a new, open-source and powerful text expander</p>
                         </p>
                     </div>
 
 <footer class="post-info">
 
     <p>
-        21 Jul 2022 <span class="separator">|</span> in <a class="link_tag" href="https://notes.nicolasdeville.com/random/">random</a>
- tags: <a class="link_tag" href="https://notes.nicolasdeville.com/tag/health.html">health</a>
+        22 Jul 2022 <span class="separator">|</span> in <a class="link_tag" href="https://notes.nicolasdeville.com/apps/">apps</a>
+ tags: <a class="link_tag" href="https://notes.nicolasdeville.com/tag/productivity.html">productivity</a>
+<a class="link_tag" href="https://notes.nicolasdeville.com/tag/macos.html">macOS</a>
 
         <!-- added 4/7 -->
         <!-- 		<br />
-        <abbr class="modified" title="2022-07-21T12:54:49.976521+02:00">
-                Updated: 21 Jul 2022
+        <abbr class="modified" title="2022-07-22T23:16:08.036132+02:00">
+                Updated: 22 Jul 2022
         </abbr>
  -->
 
@@ -88,13 +89,28 @@
 
     
 
-</footer><p>Twisted my ankle 6 weeks ago.  </p>
-<p>I had plans to travel immediately after, which I did.   </p>
-<p>When I came back I booked an appointment at the GP - takes time.   </p>
-<p>She booked me for a MRT scan - takes time, and happened 4 weeks after injury. Got diagnosed with broken ligaments ("Bänder"), well actually just one, which isn't that bad.  </p>
-<p>Then needed to go to a specialist at the hospital - takes time, and happened 6 weeks after injury.  </p>
-<p>It appears the first 6 weeks of such an injury are critical for the healing process, which takes 12 weeks in total.  </p>
-<p>Lesson for next time: go to the hospital ASAP after the incident, even if you can walk and the pain is managable (for me A&amp;E are for proper emergencies).</p>
+</footer><p>See <a href="../../apps/text-expanders/index.html">Nic Note: Text Expanders</a> for background.    </p>
+<p><a href="https://espanso.org/" target="_blank">https://espanso.org/</a>   </p>
+<p>Install: <a href="https://espanso.org/docs/install/mac/#problems-you-may-experience" target="_blank">https://espanso.org/docs/install/mac/#problems-you-may-experience</a>    </p>
+<p>Getting started: <a href="https://espanso.org/docs/get-started/" target="_blank">https://espanso.org/docs/get-started/</a>   </p>
+<p>Error upon installation - let's see consequences:  </p>
+<p><img class="screenshot" src="https://notes.nicolasdeville.com/images/app_espanso-path-error.jpg" alt="app_espanso-path-error.jpg"/>  </p>
+<p>Configuration:<br>
+(run <code>espanson path</code> in Terminal for the list) <br>
+Config: <code>/Users/user_folder/Library/Application Support/espanso</code> <br>
+Packages: <code>/Users/user_folder/Library/Application Support/espanso/match/packages</code><br>
+Runtime: <code>/Users/user_folder/Library/Caches/espanso</code>  </p>
+<p>5mns in, love it. Managing config and snippets via <code>default.yaml</code> and <code>base.yaml</code> is great.  <br>
+Snippets unfurl in file dialog windows, which was not working with Alfred's snippets feature - see <a href="../../apps/alfred/index.html">Nic Note: Alfred</a>    </p>
+<div class="highlight"><pre><span></span><code><span class="c1"># Print the current date</span><span class="w"></span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">trigger</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;;d&quot;</span><span class="w"></span>
+<span class="nt">replace</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;{{mydate}}&quot;</span><span class="w"></span>
+<span class="nt">vars</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">mydate</span><span class="w"></span>
+<span class="w">    </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">date</span><span class="w"></span>
+<span class="w">    </span><span class="nt">params</span><span class="p">:</span><span class="w"></span>
+<span class="w">        </span><span class="nt">format</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;%y%m%d</span><span class="nv"> </span><span class="s">&quot;</span><span class="w"></span>
+</code></pre></div>
                 </article>
             </aside>
 
@@ -215,8 +231,8 @@
 
         <!-- added 4/7 -->
         <!-- 		<br />
-        <abbr class="modified" title="2022-07-21T09:22:51.369304+02:00">
-                Updated: 21 Jul 2022
+        <abbr class="modified" title="2022-07-22T11:02:54.428604+02:00">
+                Updated: 22 Jul 2022
         </abbr>
  -->
 

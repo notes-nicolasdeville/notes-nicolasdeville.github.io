@@ -5,8 +5,9 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="generator" content="Pelican" />
-    <title>Nic's notes - excel</title>
+    <title>Espanso</title>
     <link rel="stylesheet" href="https://notes.nicolasdeville.com/theme/css/main.css" />
+        <meta name="description" content="Trying out a new, open-source and powerful text expander" />
 
     <!-- for Stork seach engine -->
     <link rel="stylesheet" href="https://files.stork-search.net/basic.css" /> 
@@ -25,7 +26,7 @@
             </div>
 
             <nav><ul>
-                <li><a href="https://notes.nicolasdeville.com/apps/">apps</a></li>
+                <li class="active"><a href="https://notes.nicolasdeville.com/apps/">apps</a></li>
                 <li><a href="https://notes.nicolasdeville.com/b2b-sales/">b2b sales</a></li>
                 <li><a href="https://notes.nicolasdeville.com/books/">books</a></li>
                 <li><a href="https://notes.nicolasdeville.com/careerplaybook/">#careerplaybook</a></li>
@@ -40,48 +41,34 @@
             </ul></nav>
         </header>
 
+<section id="content" class="body">
+    <article>
+        <header>
+            <h1 class="entry-title">
+                <main> <!-- for indexing by Stork -->
+                    <a href="https://notes.nicolasdeville.com/apps/espanso" rel="bookmark"
+                    title="Permalink to Espanso">Espanso
+                    </a>
+                </main>
+            </h1>
+            <p class="header_summary">
+                <main> <!-- for indexing by Stork -->
+                    <p>Trying out a new, open-source and powerful text expander</p>
+                </main>
+            </p>
+        </header>
 
-
-<p class="notes_count">
-    1 notes 
-    <span style="color:#C74350">|</span> 
-    <a href="https://notes.nicolasdeville.com/tags">by tags</a> 
-    <span style="color:#C74350">|</span> 
-    <a href="https://notes.nicolasdeville.com/2022/">2022</a> 
-    <span style="color:#C74350">|</span> 
-    <a href="https://notes.nicolasdeville.com/2021/">2021</a> 
-    <span style="color:#C74350">|</span> 
-    <a href="https://notes.nicolasdeville.com/2020/">2020</a>
-</p>
-
-
-
-            <aside id="featured" class="body">
-            <!-- LATEST NOTE -->
-            <p class="notes-section">latest note</p>
-            <hr/>
-
-                <article class="hentry">
-                    <h1 class="entry-title"><a href="https://notes.nicolasdeville.com/apps/excel">Excel</a></h1>
-
-                    <!-- added 4/7 -->
-                    <div>
-                        <p class="header_summary">
-                            <p>useful Excel tips</p>
-                        </p>
-                    </div>
-
+        <div class="entry-content">
 <footer class="post-info">
 
     <p>
-        01 Oct 2021 <span class="separator">|</span> in <a class="link_tag" href="https://notes.nicolasdeville.com/apps/">apps</a>
+        22 Jul 2022 <span class="separator">|</span> in <a class="link_tag" href="https://notes.nicolasdeville.com/apps/">apps</a>
  tags: <a class="link_tag" href="https://notes.nicolasdeville.com/tag/productivity.html">productivity</a>
-<a class="link_tag" href="https://notes.nicolasdeville.com/tag/excel.html">excel</a>
 <a class="link_tag" href="https://notes.nicolasdeville.com/tag/macos.html">macOS</a>
 
         <!-- added 4/7 -->
         <!-- 		<br />
-        <abbr class="modified" title="2022-07-22T16:19:20.621509+02:00">
+        <abbr class="modified" title="2022-07-22T23:16:08.036132+02:00">
                 Updated: 22 Jul 2022
         </abbr>
  -->
@@ -90,31 +77,33 @@
 
     
 
-</footer><h2>Automated row &amp; column highlighting</h2>
-<p>Neat trick when using a large dataset - should be a native Excel feature: "Highlight the Active Row and Column in a Data Range in Excel"  </p>
-<h3>Step 1: Conditional Formatting</h3>
-<p>select data set and create rule using formula:  </p>
-<p><code>=OR(CELL("COL")=COLUMN(),CELL("ROW")=ROW())</code></p>
-<h3>Step 2: VBA</h3>
-<p>under <code>Developer &gt; Visual Basic</code>: double-click sheet and add code.  </p>
-<div class="highlight"><pre><span></span><code><span class="nv">Private</span> <span class="nv">Sub</span> <span class="nv">Worksheet_SelectionChange</span><span class="ss">(</span><span class="nv">ByVal</span> <span class="nv">Target</span> <span class="nv">As</span> <span class="nv">Range</span><span class="ss">)</span>
-<span class="k">If</span> <span class="nv">Application</span>.<span class="nv">CutCopyMode</span> <span class="o">=</span> <span class="nv">False</span> <span class="k">Then</span>
-<span class="nv">Application</span>.<span class="nv">Calculate</span>
-<span class="k">End</span> <span class="k">If</span>
-<span class="k">End</span> <span class="nv">Sub</span>
+</footer>            <main> <!-- for indexing by Stork -->
+                <p>See <a href="../../apps/text-expanders/index.html">Nic Note: Text Expanders</a> for background.    </p>
+<p><a href="https://espanso.org/" target="_blank">https://espanso.org/</a>   </p>
+<p>Install: <a href="https://espanso.org/docs/install/mac/#problems-you-may-experience" target="_blank">https://espanso.org/docs/install/mac/#problems-you-may-experience</a>    </p>
+<p>Getting started: <a href="https://espanso.org/docs/get-started/" target="_blank">https://espanso.org/docs/get-started/</a>   </p>
+<p>Error upon installation - let's see consequences:  </p>
+<p><img class="screenshot" src="https://notes.nicolasdeville.com/images/app_espanso-path-error.jpg" alt="app_espanso-path-error.jpg"/>  </p>
+<p>Configuration:<br>
+(run <code>espanson path</code> in Terminal for the list) <br>
+Config: <code>/Users/user_folder/Library/Application Support/espanso</code> <br>
+Packages: <code>/Users/user_folder/Library/Application Support/espanso/match/packages</code><br>
+Runtime: <code>/Users/user_folder/Library/Caches/espanso</code>  </p>
+<p>5mns in, love it. Managing config and snippets via <code>default.yaml</code> and <code>base.yaml</code> is great.  <br>
+Snippets unfurl in file dialog windows, which was not working with Alfred's snippets feature - see <a href="../../apps/alfred/index.html">Nic Note: Alfred</a>    </p>
+<div class="highlight"><pre><span></span><code><span class="c1"># Print the current date</span><span class="w"></span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">trigger</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;;d&quot;</span><span class="w"></span>
+<span class="nt">replace</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;{{mydate}}&quot;</span><span class="w"></span>
+<span class="nt">vars</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">mydate</span><span class="w"></span>
+<span class="w">    </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">date</span><span class="w"></span>
+<span class="w">    </span><span class="nt">params</span><span class="p">:</span><span class="w"></span>
+<span class="w">        </span><span class="nt">format</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;%y%m%d</span><span class="nv"> </span><span class="s">&quot;</span><span class="w"></span>
 </code></pre></div>
-
-<p>Save as <code>.xlsm</code> file to support the macro  </p>
-<p><img class="illustration" src="https://notes.nicolasdeville.com/images/excel-highlight.gif" alt="excel-highlight.gif"/>  </p>
-<h2>Custom cell formats</h2>
-<h3>with text appended</h3>
-<p>eg <code>0 "events"</code></p>
-<p><img class="illustration" src="https://notes.nicolasdeville.com/images/apps_excel-custom-format1.jpg" alt="apps_excel-custom-format1.jpg"/>  </p>
-                </article>
-            </aside>
-
-            
-
+            </main>
+        </div><!-- /.entry-content -->
+    </article>
+</section>
         <section id="extras" class="body">
 
         <!-- /.blogroll -->

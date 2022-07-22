@@ -43,7 +43,7 @@
 
 
 <p class="notes_count">
-    5 notes 
+    7 notes 
     <span style="color:#C74350">|</span> 
     <a href="https://notes.nicolasdeville.com/tags">by tags</a> 
     <span style="color:#C74350">|</span> 
@@ -62,15 +62,83 @@
             <hr/>
 
                 <article class="hentry">
-                    <h1 class="entry-title"><a href="https://notes.nicolasdeville.com/apps/text-expanders">Text expanders</a></h1>
+                    <h1 class="entry-title"><a href="https://notes.nicolasdeville.com/apps/espanso">Espanso</a></h1>
 
                     <!-- added 4/7 -->
                     <div>
                         <p class="header_summary">
-                            <p>tried a few, still looking for the perfect one</p>
+                            <p>Trying out a new, open-source and powerful text expander</p>
                         </p>
                     </div>
 
+<footer class="post-info">
+
+    <p>
+        22 Jul 2022 <span class="separator">|</span> in <a class="link_tag" href="https://notes.nicolasdeville.com/apps/">apps</a>
+ tags: <a class="link_tag" href="https://notes.nicolasdeville.com/tag/productivity.html">productivity</a>
+<a class="link_tag" href="https://notes.nicolasdeville.com/tag/macos.html">macOS</a>
+
+        <!-- added 4/7 -->
+        <!-- 		<br />
+        <abbr class="modified" title="2022-07-22T23:16:08.036132+02:00">
+                Updated: 22 Jul 2022
+        </abbr>
+ -->
+
+    </p>
+
+    
+
+</footer><p>See <a href="../../apps/text-expanders/index.html">Nic Note: Text Expanders</a> for background.    </p>
+<p><a href="https://espanso.org/" target="_blank">https://espanso.org/</a>   </p>
+<p>Install: <a href="https://espanso.org/docs/install/mac/#problems-you-may-experience" target="_blank">https://espanso.org/docs/install/mac/#problems-you-may-experience</a>    </p>
+<p>Getting started: <a href="https://espanso.org/docs/get-started/" target="_blank">https://espanso.org/docs/get-started/</a>   </p>
+<p>Error upon installation - let's see consequences:  </p>
+<p><img class="screenshot" src="https://notes.nicolasdeville.com/images/app_espanso-path-error.jpg" alt="app_espanso-path-error.jpg"/>  </p>
+<p>Configuration:<br>
+(run <code>espanson path</code> in Terminal for the list) <br>
+Config: <code>/Users/user_folder/Library/Application Support/espanso</code> <br>
+Packages: <code>/Users/user_folder/Library/Application Support/espanso/match/packages</code><br>
+Runtime: <code>/Users/user_folder/Library/Caches/espanso</code>  </p>
+<p>5mns in, love it. Managing config and snippets via <code>default.yaml</code> and <code>base.yaml</code> is great.  <br>
+Snippets unfurl in file dialog windows, which was not working with Alfred's snippets feature - see <a href="../../apps/alfred/index.html">Nic Note: Alfred</a>    </p>
+<div class="highlight"><pre><span></span><code><span class="c1"># Print the current date</span><span class="w"></span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">trigger</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;;d&quot;</span><span class="w"></span>
+<span class="nt">replace</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;{{mydate}}&quot;</span><span class="w"></span>
+<span class="nt">vars</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">mydate</span><span class="w"></span>
+<span class="w">    </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">date</span><span class="w"></span>
+<span class="w">    </span><span class="nt">params</span><span class="p">:</span><span class="w"></span>
+<span class="w">        </span><span class="nt">format</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;%y%m%d</span><span class="nv"> </span><span class="s">&quot;</span><span class="w"></span>
+</code></pre></div>
+                </article>
+            </aside>
+
+                <section id="content" class="body">
+
+                <!-- PREVIOUS NOTES -->
+				<p class="notes-section">previous notes</p>
+                <hr>
+
+                <ol id="posts-list" class="hfeed">
+            
+
+
+
+            <li>
+                <article class="hentry">
+                    <header>
+                        <!-- PREVIOUS NOTE TITLE -->
+                        <h1><a href="https://notes.nicolasdeville.com/apps/text-expanders" rel="bookmark"
+                            title="Text expanders">Text expanders</a></h1>
+                        <!-- PREVIOUS NOTE SUMMARY -->
+                        <div class="entry-content">
+                            <p>tried a few, still looking for the perfect one</p>
+                        </div>
+                    </header>
+
+                    <div class="entry-content">
+                        <!-- PREVIOUS NOTE METADATA -->
 <footer class="post-info">
 
     <p>
@@ -89,51 +157,11 @@
 
     
 
-</footer><h1>Tried</h1>
-<h2>TextExpander</h2>
-<p><a href="https://textexpander.com/" target="_blank">https://textexpander.com/</a> <br>
-My first proper text expander app. Used it for years. <br>
-I had some issues though (snippets blocked) and at $40/year, looked for an alternative in 2019.   </p>
-<h2>aText</h2>
-<p><a href="https://trankynam.com/atext/" target="_blank">https://trankynam.com/atext/</a>  <br>
-currently using.   </p>
-<div style="padding:56.25% 0 0 0;position:relative;"><iframe src="https://player.vimeo.com/video/731650061?h=85fa6b0b73&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen style="position:absolute;top:0;left:0;width:100%;height:100%;" title="aText Quick Start"></iframe></div>
-<script src="https://player.vimeo.com/api/player.js"></script>
-
-<h2>Alfred</h2>
-<p>Since I discovered Alfred, I can't use a Mac without it anymore. It is so powerful and convenient. <br>
-It has text expander capabilities (Snippets) but they do not seem to work in most cases (file dialogs, VS Code, etc.. ).   </p>
-<p>See <a href="../../apps/alfred/index.html">Nic Note: Alfred</a></p>
-<h1>To test</h1>
-<h2>Espanso</h2>
-<p><a href="https://espanso.org/" target="_blank">https://espanso.org/</a>    </p>
-<p>Open source!! <a href="https://github.com/espanso/espanso" target="_blank">https://github.com/espanso/espanso</a>    </p>
-<p>Getting started: <a href="https://espanso.org/docs/get-started/" target="_blank">https://espanso.org/docs/get-started/</a>   </p>
-<p>Looks amazing at first read of doc 😍. Though 165 bug issues open on Github (297 closed) - 32/53 for bugs on macOS.<br>
-<a href="https://github.com/espanso/espanso/issues/1155" target="_blank">https://github.com/espanso/espanso/issues/1155</a><br>
-Developer looks responsive.    </p>
-<p>Innovative use of it: <a href="https://www.linkedin.com/pulse/innovating-tech-fluency-language-learning-james-clark/" target="_blank">https://www.linkedin.com/pulse/innovating-tech-fluency-language-learning-james-clark/</a>   </p>
-<p>Espanso Hub: <a href="https://hub.espanso.org/search" target="_blank">https://hub.espanso.org/search</a> <br>
-a few interesting packages for me, eg: <br>
-- basic-emojis: <a href="https://hub.espanso.org/basic-emojis" target="_blank">https://hub.espanso.org/basic-emojis</a><br>
-- git: <a href="https://hub.espanso.org/git" target="_blank">https://hub.espanso.org/git</a> <br>
-- mac-symbols: <a href="https://hub.espanso.org/mac-symbols" target="_blank">https://hub.espanso.org/mac-symbols</a><br>
-- foreign-thanks <a href="https://hub.espanso.org/foreign-thanks" target="_blank">https://hub.espanso.org/foreign-thanks</a> <br>
-- french-accents: <a href="https://hub.espanso.org/french-accents" target="_blank">https://hub.espanso.org/french-accents</a> <br>
-- markdown-shortcuts: <a href="https://hub.espanso.org/markdown-shortcuts" target="_blank">https://hub.espanso.org/markdown-shortcuts</a> (note a lot of keystrokes saved though)  <br>
-- espanso-get-ip-pack: <a href="https://hub.espanso.org/get-ip" target="_blank">https://hub.espanso.org/get-ip</a>   </p>
-<p>Pondering going down the rabbit hole.. <br>
-I wonder sometimes if the time spent troubleshooting text expanders does not nullify the time benefits of using such an app 😂 🤓  </p>
+</footer>                    </div>
+                    
                 </article>
-            </aside>
-
-                <section id="content" class="body">
-
-                <!-- PREVIOUS NOTES -->
-				<p class="notes-section">previous notes</p>
-                <hr>
-
-                <ol id="posts-list" class="hfeed">
+                <hr/>
+            </li>
             
 
 
@@ -164,6 +192,48 @@ I wonder sometimes if the time spent troubleshooting text expanders does not nul
         <!-- 		<br />
         <abbr class="modified" title="2022-07-19T15:38:48.137290+02:00">
                 Updated: 19 Jul 2022
+        </abbr>
+ -->
+
+    </p>
+
+    
+
+</footer>                    </div>
+                    
+                </article>
+                <hr/>
+            </li>
+            
+
+
+
+            <li>
+                <article class="hentry">
+                    <header>
+                        <!-- PREVIOUS NOTE TITLE -->
+                        <h1><a href="https://notes.nicolasdeville.com/apps/excel" rel="bookmark"
+                            title="Excel">Excel</a></h1>
+                        <!-- PREVIOUS NOTE SUMMARY -->
+                        <div class="entry-content">
+                            <p>useful Excel tips</p>
+                        </div>
+                    </header>
+
+                    <div class="entry-content">
+                        <!-- PREVIOUS NOTE METADATA -->
+<footer class="post-info">
+
+    <p>
+        01 Oct 2021 <span class="separator">|</span> in <a class="link_tag" href="https://notes.nicolasdeville.com/apps/">apps</a>
+ tags: <a class="link_tag" href="https://notes.nicolasdeville.com/tag/productivity.html">productivity</a>
+<a class="link_tag" href="https://notes.nicolasdeville.com/tag/excel.html">excel</a>
+<a class="link_tag" href="https://notes.nicolasdeville.com/tag/macos.html">macOS</a>
+
+        <!-- added 4/7 -->
+        <!-- 		<br />
+        <abbr class="modified" title="2022-07-22T16:19:20.621509+02:00">
+                Updated: 22 Jul 2022
         </abbr>
  -->
 
