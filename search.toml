@@ -8,19 +8,39 @@ url = "ABOUT/"
 title = ""
 
 [[input.files]]
-path = "apps/espanso/index.html"
-url = "apps/espanso"
-title = "Espanso"
-
-[[input.files]]
-path = "python/boilerplate/index.html"
-url = "python/boilerplate"
-title = "My Python scripts boilerplate"
+path = "projects/1000-movies/index.html"
+url = "projects/1000-movies"
+title = "List of my Top 1000 movies"
 
 [[input.files]]
 path = "python/fetching-data-from-tmdb/index.html"
 url = "python/fetching-data-from-tmdb"
 title = "Fetching data from TMDB"
+
+[[input.files]]
+path = "apps/espanso/index.html"
+url = "apps/espanso"
+title = "Espanso"
+
+[[input.files]]
+path = "projects/nicai/index.html"
+url = "projects/nicai"
+title = "nicAI | my personal AI assistant"
+
+[[input.files]]
+path = "projects/indexall/index.html"
+url = "projects/indexall"
+title = "indeXall | indexing the worlds of passions"
+
+[[input.files]]
+path = "apps/grist/index.html"
+url = "apps/grist"
+title = "Grist | The Evolution of Spreadsheets"
+
+[[input.files]]
+path = "python/boilerplate/index.html"
+url = "python/boilerplate"
+title = "My Python scripts boilerplate"
 
 [[input.files]]
 path = "python/library-dotenv/index.html"

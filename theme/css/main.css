@@ -701,7 +701,7 @@ li:first-child .hentry, #content > .hentry {
 }
 
 .screenshot {
-    margin: auto;
+    margin: auto, auto, auto, 0;
     display: block;
 }
 
@@ -858,4 +858,5 @@ li:first-child .hentry, #content > .hentry {
     border: solid 3px #999;
     border-radius: 1.5em;
     line-height: 3em; /* to avoid overlap over lines */
+    margin-right: 0.5em;
 }
