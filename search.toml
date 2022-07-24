@@ -13,6 +13,11 @@ url = "projects/1000-movies"
 title = "List of my Top 1000 movies"
 
 [[input.files]]
+path = "helpers/keyboard-shortcuts/index.html"
+url = "helpers/keyboard-shortcuts"
+title = "My keyboard shortcuts"
+
+[[input.files]]
 path = "python/library-pelican/index.html"
 url = "python/library-pelican"
 title = "Building a static site with Pelican"
@@ -36,11 +41,6 @@ title = "Grist | The Evolution of Spreadsheets"
 path = "projects/indexall/index.html"
 url = "projects/indexall"
 title = "indeXall | indexing the worlds of passions"
-
-[[input.files]]
-path = "helpers/keyboard-shortcuts/index.html"
-url = "helpers/keyboard-shortcuts"
-title = "My keyboard shortcuts"
 
 [[input.files]]
 path = "home-office/streamdeck/index.html"
