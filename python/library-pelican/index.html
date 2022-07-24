@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="generator" content="Pelican" />
     <title>Building a static site with Pelican</title>
-    <link rel="stylesheet" href="../../theme/css/main.css" />
+    <link rel="stylesheet" href="https://notes.nicolasdeville.com/theme/css/main.css" />
         <meta name="description" content="How I built this site, migrating away from (expensive) Ghost." />
 
     <!-- for Stork seach engine -->
@@ -17,7 +17,7 @@
 <body id="index" class="body">
         <header id="banner" class="body">
 
-            <a href="../../"><img class="header_image" src="../../images/nic_notes_header.svg" alt="Nic's notes" width="266"/></a>
+            <a href="https://notes.nicolasdeville.com/"><img class="header_image" src="https://notes.nicolasdeville.com/images/nic_notes_header.svg" alt="Nic's notes" width="266"/></a>
 
             <!-- for Stork seach engine -->
             <div class="search-input-block">
@@ -26,19 +26,19 @@
             </div>
 
             <nav><ul>
-                <li><a href="../../apps/">apps</a></li>
-                <li><a href="../../b2b-sales/">b2b sales</a></li>
-                <li><a href="../../books/">books</a></li>
-                <li><a href="../../careerplaybook/">#careerplaybook</a></li>
-                <li><a href="../../helpers/">helpers</a></li>
-                <li><a href="../../home-office/">home office</a></li>
-                <li><a href="../../interests/">interests</a></li>
-                <li><a href="../../learning/">learning</a></li>
-                <li><a href="../../projects/">projects</a></li>
-                <li class="active"><a href="../../python/">python</a></li>
-                <li><a href="../../random/">random</a></li>
-                <li><a href="../../salesleaderplaybook/">#salesleaderplaybook</a></li>
-                <li><a href="../../startups/">startups</a></li>
+                <li><a href="https://notes.nicolasdeville.com/apps/">apps</a></li>
+                <li><a href="https://notes.nicolasdeville.com/b2b-sales/">b2b sales</a></li>
+                <li><a href="https://notes.nicolasdeville.com/books/">books</a></li>
+                <li><a href="https://notes.nicolasdeville.com/careerplaybook/">#careerplaybook</a></li>
+                <li><a href="https://notes.nicolasdeville.com/helpers/">helpers</a></li>
+                <li><a href="https://notes.nicolasdeville.com/home-office/">home office</a></li>
+                <li><a href="https://notes.nicolasdeville.com/interests/">interests</a></li>
+                <li><a href="https://notes.nicolasdeville.com/learning/">learning</a></li>
+                <li><a href="https://notes.nicolasdeville.com/projects/">projects</a></li>
+                <li class="active"><a href="https://notes.nicolasdeville.com/python/">python</a></li>
+                <li><a href="https://notes.nicolasdeville.com/random/">random</a></li>
+                <li><a href="https://notes.nicolasdeville.com/salesleaderplaybook/">#salesleaderplaybook</a></li>
+                <li><a href="https://notes.nicolasdeville.com/startups/">startups</a></li>
             </ul></nav>
         </header>
 
@@ -47,7 +47,7 @@
         <header>
             <h1 class="entry-title">
                 <main> <!-- for indexing by Stork -->
-                    <a href="../../python/library-pelican" rel="bookmark"
+                    <a href="https://notes.nicolasdeville.com/python/library-pelican" rel="bookmark"
                     title="Permalink to Building a static site with Pelican">Building a static site with Pelican
                     </a>
                 </main>
@@ -63,13 +63,13 @@
 <footer class="post-info">
 
     <p>
-        23 Jul 2022 <span class="separator">|</span> in <a class="link_tag" href="../../python/">python</a>
- tags: <a class="link_tag" href="../../tag/static.html">static</a>
+        24 Jul 2022 <span class="separator">|</span> in <a class="link_tag" href="https://notes.nicolasdeville.com/python/">python</a>
+ tags: <a class="link_tag" href="https://notes.nicolasdeville.com/tag/static.html">static</a>
 
         <!-- added 4/7 -->
         <!-- 		<br />
-        <abbr class="modified" title="2022-07-23T19:56:04.579836+02:00">
-                Updated: 23 Jul 2022
+        <abbr class="modified" title="2022-07-24T13:59:29.384640+02:00">
+                Updated: 24 Jul 2022
         </abbr>
  -->
 
@@ -108,7 +108,7 @@ Migrated 29th June. </p>
 <h2>Install</h2>
 <p>in venv: <code>pip3 install "pelican[markdown]"</code></p>
 <h2>To render</h2>
-<p>Takes ~1.3s to run.</p>
+<p>Takes ~1.3s to run | <span class="datestamp">24 Jul 2022</span> now 1.9s with 260 articles.  </p>
 <h3>run once</h3>
 <p>in a Terminal window:</p>
 <ol>
@@ -121,14 +121,14 @@ Migrated 29th June. </p>
 <p>best for development:</p>
 <p><code>pelican -r</code> (for reload) instead of just <code>pelican</code></p>
 <h2>What tripped me up</h2>
-<h3>Paths</h3>
+<h3>paths</h3>
 <p>figuring out the path syntax to use for images (and pdfs, etc). From subfolder in <code>content</code> I now use: </p>
 <div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">img</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;header&quot;</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;{static}../../images/CP011_blog.svg&quot;</span> <span class="na">alt</span><span class="o">=</span><span class="s">&quot;CP011_blog.svg&quot;</span><span class="p">/&gt;</span>
 </code></pre></div>
 
 <h3>make vs pelican</h3>
 <p>using <code>make html</code> does not seem to take the <code>OUTPUT_PATH = '</code> config in <code>pelicanconf.py</code> into consideration. Use the <code>pelican</code> command instead (no need to pass content source, settings file, or output dir each time, just running <code>pelican</code> in the project folder)  </p>
-<h3>Slug</h3>
+<h3>slug</h3>
 <p>the article slug can be defined in <code>peliconconf.py</code> to automatically use the <code>Title:</code> metadata (with <code>FILENAME_METADATA = '(?P&lt;title&gt;.*)'</code>), and can be overriden on an article basis by adding the <code>Slug:</code> metadata.<br>
 So: </p>
 <div class="highlight"><pre><span></span><code>Title: Hosting my static website with Github Pages
@@ -142,7 +142,7 @@ Slug: github-pages
 </code></pre></div>
 
 <p>will get the slug <code>github-pages.html</code></p>
-<h3>Syntax highlighting</h3>
+<h3>syntax highlighting</h3>
 <p>Pelican installs the syntax highlighter Pygments. Haven't read the Pygments doc though: <a href="https://pygments.org/" target="_blank">https://pygments.org/</a>  </p>
 <p>Changed the formatting of my code blocks to reflect my VS Code theme.</p>
 <p>Tedious way:</p>
@@ -225,7 +225,7 @@ C1 | C2 | C3 | C4 | C5 |
 </tbody>
 </table>
 <p>Can be styled with the <code>thead</code>/<code>th</code> and <code>tbody</code>/<code>td</code> CSS classes.</p>
-<h3>Escaping quotes in article titles</h3>
+<h3>escaping quotes in article titles</h3>
 <p>See issue below when I tried to implement the <code>pelican-search</code> plugin, using Stork. <br>
 Stork was failing to read the <code>.toml</code> file (which contains all page links) because the title quotes were breaking the structure.
 Learning: escape quotes in article titles, eg <code>I \"like\" spam</code>.  </p>
@@ -253,13 +253,13 @@ Learning: escape quotes in article titles, eg <code>I \"like\" spam</code>.  </p
 <p>Once generated, I'm using Github Pages to host for free.<br>
 See my note <a href="github-pages.html">Githug Pages</a>.  </p>
 <h2>Plugins to test</h2>
-<h3>More Categories</h3>
+<h3>more Categories</h3>
 <p>for subcategories and more than 1 category per article <br>
 <a href="https://github.com/pelican-plugins/more-categories" target="_blank">https://github.com/pelican-plugins/more-categories</a></p>
-<h3>Sitemap</h3>
+<h3>sitemap</h3>
 <p>for auto-generation of <code>sitemap.xml</code><br>
 <a href="https://github.com/pelican-plugins/sitemap" target="_blank">https://github.com/pelican-plugins/sitemap</a></p>
-<h3>Search</h3>
+<h3>search</h3>
 <p>using: 
 Stork<br>
 <a href="https://stork-search.net/" target="_blank">https://stork-search.net/</a><br>
@@ -292,17 +292,17 @@ The issue was that some of my article titles had quotes that were not escaped.</
 <h3>Staticman | comments for static sites</h3>
 <p>found here: <a href="https://snipcart.com/blog/pelican-blog-tutorial-search-comments" target="_blank">https://snipcart.com/blog/pelican-blog-tutorial-search-comments</a> <br>
 <a href="https://github.com/eduardoboucas/staticman" target="_blank">https://github.com/eduardoboucas/staticman</a>   </p>
-<h3>Add a Table of Contents using Markdown in Pelican</h3>
+<h3>add a Table of Contents using Markdown in Pelican</h3>
 <p><a href="https://cloudbytes.dev/snippets/add-a-table-of-contents-using-markdown-in-pelican" target="_blank">https://cloudbytes.dev/snippets/add-a-table-of-contents-using-markdown-in-pelican</a></p>
-<h3>Theme example + word count + search feature</h3>
+<h3>theme example + word count + search feature</h3>
 <p><a href="https://github.com/pilosus/pilosus-pelican-theme/" target="_blank">https://github.com/pilosus/pilosus-pelican-theme/</a>  </p>
-<h3>Summary plugin</h3>
+<h3>summary plugin</h3>
 <p><a href="https://github.com/getpelican/pelican-plugins/tree/master/summary" target="_blank">https://github.com/getpelican/pelican-plugins/tree/master/summary</a>  </p>
-<h2>Useful resources</h2>
+<h2>useful resources</h2>
 <h3>Pelican documentation</h3>
 <p>comprehensive and well written<br>
 <a href="https://docs.getpelican.com/en/stable/index.html" target="_blank">https://docs.getpelican.com/en/stable/index.html</a>  </p>
-<h3>Markdown syntax</h3>
+<h3>markdown syntax</h3>
 <p>helpful guide at the beginning to get used to the Markdown syntax <br>
 <a href="https://www.markdownguide.org/basic-syntax" target="_blank">https://www.markdownguide.org/basic-syntax</a></p>
 <h3>Code HiLite</h3>
@@ -342,7 +342,7 @@ The issue was that some of my article titles had quotes that were not escaped.</
                 <address id="about" class="vcard body">
                 Powered by <a href="https://github.com/getpelican/pelican" target="_blank">Pelican</a>, 
                 with <a href="https://stork-search.net/" target="_blank">Stork</a> & <a href="https://github.com/pelican-plugins/search" target="_blank">Pelican Search plugin</a>.
-                <span style="color:#C74350">|</span> <img src="../../images/python.svg" alt="python_logo" width="16" style="vertical-align: middle;"/> <a href="https://www.python.org/" target="_blank">Python</a> 
+                <span style="color:#C74350">|</span> <img src="https://notes.nicolasdeville.com/images/python.svg" alt="python_logo" width="16" style="vertical-align: middle;"/> <a href="https://www.python.org/" target="_blank">Python</a> 
                 
                 </address><!-- /#about -->
 
@@ -352,7 +352,7 @@ The issue was that some of my article titles had quotes that were not escaped.</
 <!-- for Stork seach engine -->
 <script src="https://files.stork-search.net/releases/v1.2.1/stork.js"></script>
 <script>
-    stork.register("sitesearch", "../../search-index.st")
+    stork.register("sitesearch", "https://notes.nicolasdeville.com/search-index.st")
 </script>
 
 </body>

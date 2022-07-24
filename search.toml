@@ -8,6 +8,21 @@ url = "ABOUT/"
 title = ""
 
 [[input.files]]
+path = "projects/1000-movies/index.html"
+url = "projects/1000-movies"
+title = "List of my Top 1000 movies"
+
+[[input.files]]
+path = "python/library-pelican/index.html"
+url = "python/library-pelican"
+title = "Building a static site with Pelican"
+
+[[input.files]]
+path = "interests/elon/index.html"
+url = "interests/elon"
+title = "Elon Musk"
+
+[[input.files]]
 path = "apps/espanso/index.html"
 url = "apps/espanso"
 title = "Espanso"
@@ -33,11 +48,6 @@ url = "home-office/streamdeck"
 title = "Streamdeck for business users"
 
 [[input.files]]
-path = "projects/1000-movies/index.html"
-url = "projects/1000-movies"
-title = "List of my Top 1000 movies"
-
-[[input.files]]
 path = "python/save-images/index.html"
 url = "python/save-images"
 title = "Save images with Python"
@@ -51,11 +61,6 @@ title = "Library: tmdbv3api | fetching movie data"
 path = "python/library-tmdbapis/index.html"
 url = "python/library-tmdbapis"
 title = "Library: tmdbapis | fetching movie data"
-
-[[input.files]]
-path = "python/library-pelican/index.html"
-url = "python/library-pelican"
-title = "Building a static site with Pelican"
 
 [[input.files]]
 path = "python/library-dotenv/index.html"
