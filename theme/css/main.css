@@ -278,6 +278,9 @@ table {
         font-size: 1.1em;
         border-bottom: 1px solid black;
         vertical-align: bottom;
+        color: white;
+        background-color: black;
+        line-height: 1em;
     }
 	thead td {}
 
@@ -285,6 +288,7 @@ table {
 	tbody td {
         padding: .5em .4em;
         vertical-align: top;
+        border-bottom: 1px solid black;
     }
 	tbody th {}
 
@@ -295,8 +299,9 @@ table {
 	tfoot th {}
 	tfoot td {}
 
+    /* to ensure content in first column does not wrap */
     tbody > tr:first-child > td:first-child {
-        white-space: nowrap;
+        white-space: nowrap; 
     }
 
 /* HTML5 tags */

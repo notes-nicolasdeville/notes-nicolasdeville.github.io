@@ -8,29 +8,9 @@ url = "ABOUT/"
 title = ""
 
 [[input.files]]
-path = "projects/1000-movies/index.html"
-url = "projects/1000-movies"
-title = "List of my Top 1000 movies"
-
-[[input.files]]
-path = "python/fetching-data-from-tmdb/index.html"
-url = "python/fetching-data-from-tmdb"
-title = "Fetching data from TMDB"
-
-[[input.files]]
 path = "apps/espanso/index.html"
 url = "apps/espanso"
 title = "Espanso"
-
-[[input.files]]
-path = "projects/nicai/index.html"
-url = "projects/nicai"
-title = "nicAI | my personal AI assistant"
-
-[[input.files]]
-path = "projects/indexall/index.html"
-url = "projects/indexall"
-title = "indeXall | indexing the worlds of passions"
 
 [[input.files]]
 path = "apps/grist/index.html"
@@ -38,9 +18,44 @@ url = "apps/grist"
 title = "Grist | The Evolution of Spreadsheets"
 
 [[input.files]]
-path = "python/boilerplate/index.html"
-url = "python/boilerplate"
-title = "My Python scripts boilerplate"
+path = "projects/indexall/index.html"
+url = "projects/indexall"
+title = "indeXall | indexing the worlds of passions"
+
+[[input.files]]
+path = "helpers/keyboard-shortcuts/index.html"
+url = "helpers/keyboard-shortcuts"
+title = "My keyboard shortcuts"
+
+[[input.files]]
+path = "home-office/streamdeck/index.html"
+url = "home-office/streamdeck"
+title = "Streamdeck for business users"
+
+[[input.files]]
+path = "projects/1000-movies/index.html"
+url = "projects/1000-movies"
+title = "List of my Top 1000 movies"
+
+[[input.files]]
+path = "python/save-images/index.html"
+url = "python/save-images"
+title = "Save images with Python"
+
+[[input.files]]
+path = "python/library-tmdbv3api/index.html"
+url = "python/library-tmdbv3api"
+title = "Library: tmdbv3api | fetching movie data"
+
+[[input.files]]
+path = "python/library-tmdbapis/index.html"
+url = "python/library-tmdbapis"
+title = "Library: tmdbapis | fetching movie data"
+
+[[input.files]]
+path = "python/library-pelican/index.html"
+url = "python/library-pelican"
+title = "Building a static site with Pelican"
 
 [[input.files]]
 path = "python/library-dotenv/index.html"
@@ -48,9 +63,44 @@ url = "python/library-dotenv"
 title = "How to save confidential data in environment variables with dotenv"
 
 [[input.files]]
-path = "python/library-tmdbapis/index.html"
-url = "python/library-tmdbapis"
-title = "Library: tmdbapis | fetching movie data"
+path = "python/library-dateutil/index.html"
+url = "python/library-dateutil"
+title = "Python library: dateutil"
+
+[[input.files]]
+path = "python/library-datetime/index.html"
+url = "python/library-datetime"
+title = "Python library: datetime"
+
+[[input.files]]
+path = "python/library-beautifulsoup/index.html"
+url = "python/library-beautifulsoup"
+title = "Python library: Beautifulsoup"
+
+[[input.files]]
+path = "python/library-requests/index.html"
+url = "python/library-requests"
+title = "Library: requests"
+
+[[input.files]]
+path = "python/library-slugify/index.html"
+url = "python/library-slugify"
+title = "Library: slugify"
+
+[[input.files]]
+path = "python/tmdb-api/index.html"
+url = "python/tmdb-api"
+title = "Fetching data from TMDB API"
+
+[[input.files]]
+path = "projects/nicai/index.html"
+url = "projects/nicai"
+title = "nicAI | my personal AI assistant"
+
+[[input.files]]
+path = "python/boilerplate/index.html"
+url = "python/boilerplate"
+title = "My Python scripts boilerplate"
 
 [[input.files]]
 path = "apps/pixelsnap/index.html"
@@ -66,11 +116,6 @@ title = "Text expanders"
 path = "apps/gpg/index.html"
 url = "apps/gpg"
 title = "GPG Suite"
-
-[[input.files]]
-path = "helpers/keyboard-shortcuts/index.html"
-url = "helpers/keyboard-shortcuts"
-title = "My keyboard shortcuts"
 
 [[input.files]]
 path = "b2b-sales/producing-videos/index.html"
@@ -123,16 +168,6 @@ url = "home-office/ups"
 title = "Uninterrupted Power Supply"
 
 [[input.files]]
-path = "python/library-tmdbv3api/index.html"
-url = "python/library-tmdbv3api"
-title = "Library: tmdbv3api | fetching movie data"
-
-[[input.files]]
-path = "home-office/streamdeck/index.html"
-url = "home-office/streamdeck"
-title = "Streamdeck for business users"
-
-[[input.files]]
 path = "salesleaderplaybook/visualising-target-achievement/index.html"
 url = "salesleaderplaybook/visualising-target-achievement"
 title = "Visualing the target and achievement"
@@ -148,11 +183,6 @@ url = "apps/newsletter-readers"
 title = "Newsletter readers"
 
 [[input.files]]
-path = "python/pelican/index.html"
-url = "python/pelican"
-title = "Building a static site with Pelican"
-
-[[input.files]]
 path = "python/export-kindle-library/index.html"
 url = "python/export-kindle-library"
 title = "Exporting my Kindle library data"
@@ -161,21 +191,6 @@ title = "Exporting my Kindle library data"
 path = "books/library/index.html"
 url = "books/library"
 title = "My Books Library"
-
-[[input.files]]
-path = "python/library-beautifulsoup/index.html"
-url = "python/library-beautifulsoup"
-title = "Python library: Beautifulsoup"
-
-[[input.files]]
-path = "python/library-datetime/index.html"
-url = "python/library-datetime"
-title = "Python library: `datetime`"
-
-[[input.files]]
-path = "python/library-dateutil/index.html"
-url = "python/library-dateutil"
-title = "Python library: `dateutil`"
 
 [[input.files]]
 path = "python/broken-links/index.html"
