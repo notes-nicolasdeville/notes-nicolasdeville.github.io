@@ -13,14 +13,14 @@ url = "movies/1000"
 title = "My Top 1,000 Movies"
 
 [[input.files]]
-path = "python/namedtuples/index.html"
-url = "python/namedtuples"
-title = "namedtuples"
-
-[[input.files]]
 path = "projects/1000-movies/index.html"
 url = "projects/1000-movies"
 title = "List of my Top 1000 movies"
+
+[[input.files]]
+path = "python/namedtuples/index.html"
+url = "python/namedtuples"
+title = "namedtuples"
 
 [[input.files]]
 path = "python/library-datetime/index.html"
