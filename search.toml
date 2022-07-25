@@ -8,9 +8,29 @@ url = "ABOUT/"
 title = ""
 
 [[input.files]]
+path = "apps/grist/index.html"
+url = "apps/grist"
+title = "Grist | The Evolution of Spreadsheets"
+
+[[input.files]]
+path = "python/library-requests/index.html"
+url = "python/library-requests"
+title = "Library: requests"
+
+[[input.files]]
+path = "python/tmdb-api/index.html"
+url = "python/tmdb-api"
+title = "Fetching data from TMDB API"
+
+[[input.files]]
 path = "projects/1000-movies/index.html"
 url = "projects/1000-movies"
 title = "List of my Top 1000 movies"
+
+[[input.files]]
+path = "interests/elon/index.html"
+url = "interests/elon"
+title = "Elon Musk"
 
 [[input.files]]
 path = "helpers/keyboard-shortcuts/index.html"
@@ -23,19 +43,9 @@ url = "python/library-pelican"
 title = "Building a static site with Pelican"
 
 [[input.files]]
-path = "interests/elon/index.html"
-url = "interests/elon"
-title = "Elon Musk"
-
-[[input.files]]
 path = "apps/espanso/index.html"
 url = "apps/espanso"
 title = "Espanso"
-
-[[input.files]]
-path = "apps/grist/index.html"
-url = "apps/grist"
-title = "Grist | The Evolution of Spreadsheets"
 
 [[input.files]]
 path = "projects/indexall/index.html"
@@ -83,19 +93,9 @@ url = "python/library-beautifulsoup"
 title = "Python library: Beautifulsoup"
 
 [[input.files]]
-path = "python/library-requests/index.html"
-url = "python/library-requests"
-title = "Library: requests"
-
-[[input.files]]
 path = "python/library-slugify/index.html"
 url = "python/library-slugify"
 title = "Library: slugify"
-
-[[input.files]]
-path = "python/tmdb-api/index.html"
-url = "python/tmdb-api"
-title = "Fetching data from TMDB API"
 
 [[input.files]]
 path = "projects/nicai/index.html"
