@@ -58,6 +58,11 @@ url = "home-office/streamdeck"
 title = "Streamdeck for business users"
 
 [[input.files]]
+path = "random/20-scariest-theories/index.html"
+url = "random/20-scariest-theories"
+title = "20 Scariest Theories Known to Man"
+
+[[input.files]]
 path = "python/save-images/index.html"
 url = "python/save-images"
 title = "Save images with Python"
