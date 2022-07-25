@@ -33,6 +33,7 @@
                 <li><a href="https://notes.nicolasdeville.com/home-office/">home office</a></li>
                 <li><a href="https://notes.nicolasdeville.com/interests/">interests</a></li>
                 <li><a href="https://notes.nicolasdeville.com/learning/">learning</a></li>
+                <li><a href="https://notes.nicolasdeville.com/movies/">movies</a></li>
                 <li><a href="https://notes.nicolasdeville.com/projects/">projects</a></li>
                 <li><a href="https://notes.nicolasdeville.com/python/">python</a></li>
                 <li><a href="https://notes.nicolasdeville.com/random/">random</a></li>
@@ -81,7 +82,7 @@
 
         <!-- added 4/7 -->
         <!-- 		<br />
-        <abbr class="modified" title="2022-07-25T09:11:32.892134+02:00">
+        <abbr class="modified" title="2022-07-25T16:54:39.603499+02:00">
                 Updated: 25 Jul 2022
         </abbr>
  -->
@@ -399,8 +400,76 @@ Write code to generate movie library list for this site.   </p>
 <p>8,118 movies added.   </p>
 <p>Script failed though on page 501/507. Missing a <code>try/except</code> statement. Seems to be API limitation at 10k records? (500 * 20).</p>
 <h3>add movies from top rated list on Grist to my TMDB list</h3>
+<p><span class="datestamp">25 Jul 2022</span>   </p>
+<p>struggling to authenticate to add/delete movies from my TMDB list.</p>
+<p>Asked for help: <a href="https://www.themoviedb.org/talk/62de52250d9f5a0067b7fb72" target="_blank">https://www.themoviedb.org/talk/62de52250d9f5a0067b7fb72</a>   </p>
+<h3>adding missing director for each movie in Grist (data point not available from top_rated or list)</h3>
+<p>Working code, adding to Grist directly [<a href="../../apps/grist/index.html">Nic Note: Grist</a>]:  </p>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">dotenv</span> <span class="kn">import</span> <span class="n">load_dotenv</span>
+<span class="n">load_dotenv</span><span class="p">()</span>
+
+<span class="kn">import</span> <span class="nn">grist_PE</span> <span class="c1"># my own module to add to Grist</span>
+
+<span class="n">tmdb_api_key</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">getenv</span><span class="p">(</span><span class="s2">&quot;TMDB_API_KEY&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n</span><span class="si">{</span><span class="n">tmdb_api_key</span><span class="si">=}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="kn">from</span> <span class="nn">tmdbv3api</span> <span class="kn">import</span> <span class="n">TMDb</span><span class="p">,</span> <span class="n">Movie</span><span class="p">,</span> <span class="n">Person</span>
+<span class="n">tmdb</span> <span class="o">=</span> <span class="n">TMDb</span><span class="p">()</span>
+<span class="n">tmdb</span><span class="o">.</span><span class="n">api_key</span> <span class="o">=</span> <span class="n">tmdb_api_key</span>
+<span class="n">tmdb</span><span class="o">.</span><span class="n">language</span> <span class="o">=</span> <span class="s1">&#39;en&#39;</span>
+<span class="n">tmdb</span><span class="o">.</span><span class="n">debug</span> <span class="o">=</span> <span class="kc">True</span>
+
+<span class="k">def</span> <span class="nf">director_by_movie_id</span><span class="p">(</span><span class="n">movie_id</span><span class="p">):</span> <span class="c1"># returns list of strings/directors</span>
+    <span class="n">list_directors</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="n">movie</span> <span class="o">=</span> <span class="n">Movie</span><span class="p">()</span>
+    <span class="n">movie_title</span> <span class="o">=</span> <span class="n">movie</span><span class="o">.</span><span class="n">details</span><span class="p">(</span><span class="n">movie_id</span><span class="p">)[</span><span class="s1">&#39;title&#39;</span><span class="p">]</span>
+    <span class="n">m</span> <span class="o">=</span> <span class="n">movie</span><span class="o">.</span><span class="n">credits</span><span class="p">(</span><span class="n">movie_id</span><span class="p">)</span> 
+    <span class="k">for</span> <span class="n">crew</span> <span class="ow">in</span> <span class="n">m</span><span class="o">.</span><span class="n">crew</span><span class="p">:</span> <span class="c1"># list of dict</span>
+        <span class="k">if</span> <span class="n">crew</span><span class="p">[</span><span class="s1">&#39;job&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;Director&#39;</span><span class="p">:</span>
+            <span class="n">list_directors</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">crew</span><span class="p">[</span><span class="s1">&#39;name&#39;</span><span class="p">])</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Checked </span><span class="si">{</span><span class="n">movie_title</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="s1">&#39; &#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">list_directors</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">list_directors</span>
+
+<span class="n">top_1000_data</span> <span class="o">=</span> <span class="n">grist_PE</span><span class="o">.</span><span class="n">Movies</span><span class="o">.</span><span class="n">fetch_table</span><span class="p">(</span><span class="s1">&#39;Master&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">top_1000_data</span><span class="p">)</span><span class="si">}</span><span class="s2"> movies in Grist Top 1000</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="k">for</span> <span class="n">m</span> <span class="ow">in</span> <span class="n">top_1000_data</span><span class="p">:</span>
+    <span class="n">count_row</span> <span class="o">+=</span> <span class="mi">1</span>
+
+    <span class="k">if</span> <span class="n">m</span><span class="o">.</span><span class="n">director</span> <span class="ow">in</span> <span class="p">[</span><span class="kc">None</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">]:</span>
+        <span class="n">count</span> <span class="o">+=</span><span class="mi">1</span>
+
+        <span class="n">movie_id</span> <span class="o">=</span> <span class="n">m</span><span class="o">.</span><span class="n">tmdb_id</span>
+
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Processing </span><span class="si">{</span><span class="n">m</span><span class="o">.</span><span class="n">title</span><span class="si">}</span><span class="s2"> with ID </span><span class="si">{</span><span class="n">movie_id</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="n">director</span> <span class="o">=</span> <span class="n">director_by_movie_id</span><span class="p">(</span><span class="n">movie_id</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span> <span class="c1"># fetch first one only in list / could be reworked with a join for multi-director movies</span>
+
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;row</span><span class="si">{</span><span class="n">count_row</span><span class="si">}</span><span class="s2"> #</span><span class="si">{</span><span class="n">count</span><span class="si">}</span><span class="s2"> updating </span><span class="si">{</span><span class="n">m</span><span class="o">.</span><span class="n">title</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+        <span class="n">grist_PE</span><span class="o">.</span><span class="n">Movies</span><span class="o">.</span><span class="n">update_records</span><span class="p">(</span><span class="s1">&#39;Master&#39;</span><span class="p">,</span> <span class="p">[</span>
+                                                    <span class="p">{</span><span class="s1">&#39;id&#39;</span><span class="p">:</span> <span class="n">m</span><span class="o">.</span><span class="n">id</span><span class="p">,</span>
+                                                    <span class="s1">&#39;director&#39;</span><span class="p">:</span> <span class="n">director</span><span class="p">,</span>
+                                                <span class="p">}</span>
+        <span class="p">])</span>
+</code></pre></div>
+
 <h3>code to generate movie library list for this site</h3>
 <p>TODO</p>
+<p>Working script:   </p>
+<div class="highlight"><pre><span></span><code>
+</code></pre></div>
+
+<p>prints:</p>
+<div class="highlight"><pre><span></span><code>499 movies in Grist Top 1000
+
+-------------------------------
+generate_1000-movies.py
+
+count_row = 499
+
+-------------------------------
+generate_1000-movies.py finished in 1.2s.
+</code></pre></div>
                 </article>
             </aside>
 

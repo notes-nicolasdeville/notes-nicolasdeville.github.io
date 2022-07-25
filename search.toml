@@ -8,6 +8,56 @@ url = "ABOUT/"
 title = ""
 
 [[input.files]]
+path = "movies/1000/index.html"
+url = "movies/1000"
+title = "My Top 1,000 Movies"
+
+[[input.files]]
+path = "python/namedtuples/index.html"
+url = "python/namedtuples"
+title = "namedtuples"
+
+[[input.files]]
+path = "projects/1000-movies/index.html"
+url = "projects/1000-movies"
+title = "List of my Top 1000 movies"
+
+[[input.files]]
+path = "python/library-datetime/index.html"
+url = "python/library-datetime"
+title = "Python library: datetime"
+
+[[input.files]]
+path = "python/library-notion-py/index.html"
+url = "python/library-notion-py"
+title = "Fetching data from Notion API with Python"
+
+[[input.files]]
+path = "home-office/streamdeck/index.html"
+url = "home-office/streamdeck"
+title = "Streamdeck for business users"
+
+[[input.files]]
+path = "interests/diabolo/index.html"
+url = "interests/diabolo"
+title = "Diabolo"
+
+[[input.files]]
+path = "interests/f1/index.html"
+url = "interests/f1"
+title = "F1"
+
+[[input.files]]
+path = "learning/markdown/index.html"
+url = "learning/markdown"
+title = "Markdown"
+
+[[input.files]]
+path = "random/meme/index.html"
+url = "random/meme"
+title = "Memes"
+
+[[input.files]]
 path = "apps/grist/index.html"
 url = "apps/grist"
 title = "Grist | The Evolution of Spreadsheets"
@@ -21,11 +71,6 @@ title = "Library: requests"
 path = "python/tmdb-api/index.html"
 url = "python/tmdb-api"
 title = "Fetching data from TMDB API"
-
-[[input.files]]
-path = "projects/1000-movies/index.html"
-url = "projects/1000-movies"
-title = "List of my Top 1000 movies"
 
 [[input.files]]
 path = "interests/elon/index.html"
@@ -51,11 +96,6 @@ title = "Espanso"
 path = "projects/indexall/index.html"
 url = "projects/indexall"
 title = "indeXall | indexing the worlds of passions"
-
-[[input.files]]
-path = "home-office/streamdeck/index.html"
-url = "home-office/streamdeck"
-title = "Streamdeck for business users"
 
 [[input.files]]
 path = "random/20-scariest-theories/index.html"
@@ -86,11 +126,6 @@ title = "How to save confidential data in environment variables with dotenv"
 path = "python/library-dateutil/index.html"
 url = "python/library-dateutil"
 title = "Python library: dateutil"
-
-[[input.files]]
-path = "python/library-datetime/index.html"
-url = "python/library-datetime"
-title = "Python library: datetime"
 
 [[input.files]]
 path = "python/library-beautifulsoup/index.html"
@@ -306,11 +341,6 @@ title = "Download a website with Python"
 path = "random/ev/index.html"
 url = "random/ev"
 title = "Electric Vehicles"
-
-[[input.files]]
-path = "random/meme, funny/index.html"
-url = "random/meme, funny"
-title = "Memes"
 
 [[input.files]]
 path = "apps/alfred/index.html"

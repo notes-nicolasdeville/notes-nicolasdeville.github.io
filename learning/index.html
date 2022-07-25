@@ -33,6 +33,7 @@
                 <li><a href="https://notes.nicolasdeville.com/home-office/">home office</a></li>
                 <li><a href="https://notes.nicolasdeville.com/interests/">interests</a></li>
                 <li class="active"><a href="https://notes.nicolasdeville.com/learning/">learning</a></li>
+                <li><a href="https://notes.nicolasdeville.com/movies/">movies</a></li>
                 <li><a href="https://notes.nicolasdeville.com/projects/">projects</a></li>
                 <li><a href="https://notes.nicolasdeville.com/python/">python</a></li>
                 <li><a href="https://notes.nicolasdeville.com/random/">random</a></li>
@@ -44,7 +45,7 @@
 
 
 <p class="notes_count">
-    1 notes 
+    2 notes 
     <span style="color:#C74350">|</span> 
     <a href="https://notes.nicolasdeville.com/tags">by tags</a> 
     <span style="color:#C74350">|</span> 
@@ -63,15 +64,64 @@
             <hr/>
 
                 <article class="hentry">
-                    <h1 class="entry-title"><a href="https://notes.nicolasdeville.com/learning/css">CSS Best Practices</a></h1>
+                    <h1 class="entry-title"><a href="https://notes.nicolasdeville.com/learning/markdown">Markdown</a></h1>
 
                     <!-- added 4/7 -->
                     <div>
                         <p class="header_summary">
-                            <p>collection of snippets and advice for CSS</p>
+                            <p>resources</p>
                         </p>
                     </div>
 
+<footer class="post-info">
+
+    <p>
+        25 Jul 2022 <span class="separator">|</span> in <a class="link_tag" href="https://notes.nicolasdeville.com/learning/">learning</a>
+ tags: <a class="link_tag" href="https://notes.nicolasdeville.com/tag/markdown.html">markdown</a>
+<a class="link_tag" href="https://notes.nicolasdeville.com/tag/programming.html">programming</a>
+
+        <!-- added 4/7 -->
+        <!-- 		<br />
+        <abbr class="modified" title="2022-07-25T11:01:18.823092+02:00">
+                Updated: 25 Jul 2022
+        </abbr>
+ -->
+
+    </p>
+
+    
+
+</footer><p><span class="datestamp">25 Jul 2022</span> starting note <em>(note date indicates latest update)</em>   </p>
+<p>GitHub Pages Markdown Reference  <br>
+<a href="https://www.markdownguide.org/tools/github-pages/" target="_blank">https://www.markdownguide.org/tools/github-pages/</a>   </p>
+                </article>
+            </aside>
+
+                <section id="content" class="body">
+
+                <!-- PREVIOUS NOTES -->
+				<p class="notes-section">previous notes</p>
+                <hr>
+
+                <ol id="posts-list" class="hfeed">
+            
+
+
+
+            <li>
+                <article class="hentry">
+                    <header>
+                        <!-- PREVIOUS NOTE TITLE -->
+                        <h1><a href="https://notes.nicolasdeville.com/learning/css" rel="bookmark"
+                            title="CSS Best Practices">CSS Best Practices</a></h1>
+                        <!-- PREVIOUS NOTE SUMMARY -->
+                        <div class="entry-content">
+                            <p>collection of snippets and advice for CSS</p>
+                        </div>
+                    </header>
+
+                    <div class="entry-content">
+                        <!-- PREVIOUS NOTE METADATA -->
 <footer class="post-info">
 
     <p>
@@ -89,74 +139,14 @@
 
     
 
-</footer><h3>ensures padding and borders are included in width/heights definitions</h3>
-<p>to be included in all CSS files</p>
-<div class="highlight"><pre><span></span><code><span class="o">*,</span><span class="w"></span>
-<span class="p">::</span><span class="nd">after</span><span class="o">,</span><span class="w"></span>
-<span class="p">::</span><span class="nd">before</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">    </span><span class="k">box-sizing</span><span class="p">:</span><span class="w"> </span><span class="kc">border-box</span><span class="p">;</span><span class="w"></span>
-<span class="p">}</span><span class="w"></span>
-</code></pre></div>
-
-<h3>global reset / clean slate</h3>
-<div class="highlight"><pre><span></span><code><span class="nt">html</span><span class="o">,</span><span class="w"> </span><span class="nt">body</span><span class="o">,</span><span class="w"> </span><span class="nt">div</span><span class="o">,</span><span class="w"> </span><span class="nt">h1</span><span class="o">,</span><span class="w"> </span><span class="nt">h2</span><span class="o">,</span><span class="w"> </span><span class="nt">h3</span><span class="o">,</span><span class="w"> </span><span class="nt">h4</span><span class="o">,</span><span class="w"> </span><span class="nt">h5</span><span class="o">,</span><span class="w"> </span><span class="nt">h6</span><span class="o">,</span><span class="w"> </span><span class="nt">ul</span><span class="o">,</span><span class="w"> </span><span class="nt">ol</span><span class="o">,</span><span class="w"> </span><span class="nt">li</span><span class="o">,</span><span class="w"> </span><span class="nt">p</span><span class="o">,</span><span class="w"> </span><span class="nt">blockquote</span><span class="o">,</span><span class="w"> </span><span class="nt">pre</span><span class="o">,</span><span class="w"> </span><span class="nt">form</span><span class="o">,</span><span class="w"> </span><span class="nt">fieldset</span><span class="o">,</span><span class="w"> </span><span class="nt">table</span><span class="o">,</span><span class="w"> </span><span class="nt">th</span><span class="o">,</span><span class="w"> </span><span class="nt">td</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">    </span><span class="k">margin</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"></span>
-<span class="w">    </span><span class="k">padding</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"></span>
-<span class="p">}</span><span class="w"></span>
-</code></pre></div>
-
-<h3>center an image</h3>
-<p>Needs all 3 properties:  </p>
-<div class="highlight"><pre><span></span><code><span class="p">.</span><span class="nc">book</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">    </span><span class="k">width</span><span class="p">:</span><span class="w"> </span><span class="mi">60</span><span class="kt">%</span><span class="p">;</span><span class="w"></span>
-<span class="w">    </span><span class="k">margin</span><span class="p">:</span><span class="w"> </span><span class="kc">auto</span><span class="p">;</span><span class="w"></span>
-<span class="w">    </span><span class="k">display</span><span class="p">:</span><span class="w"> </span><span class="kc">block</span><span class="p">;</span><span class="w"></span>
-<span class="p">}</span><span class="w"></span>
-</code></pre></div>
-
-<h3>Target first column of tables</h3>
-<p>eg to avoid whitespace wrapping</p>
-<div class="highlight"><pre><span></span><code><span class="nt">tbody</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="nt">tr</span><span class="p">:</span><span class="nd">first-child</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="nt">td</span><span class="p">:</span><span class="nd">first-child</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">    </span><span class="k">white-space</span><span class="p">:</span><span class="w"> </span><span class="kc">nowrap</span><span class="p">;</span><span class="w"></span>
-<span class="p">}</span><span class="w"></span>
-</code></pre></div>
-
-<h3>target last row of table</h3>
-<p>eg to have a border bottom at end of table</p>
-<div class="highlight"><pre><span></span><code><span class="nt">tr</span><span class="p">:</span><span class="nd">last-child</span><span class="p">{</span><span class="w"> </span><span class="c">/*this will select last tr*/</span><span class="w"></span>
-<span class="w">      </span><span class="k">border</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="kt">px</span><span class="w"> </span><span class="kc">solid</span><span class="w"> </span><span class="kc">black</span><span class="p">;</span><span class="w"></span>
-<span class="w">      </span><span class="k">background-color</span><span class="p">:</span><span class="w"> </span><span class="kc">yellow</span><span class="p">;</span><span class="w"></span>
-<span class="w">      </span><span class="p">}</span><span class="w"></span>
-</code></pre></div>
-
-<h3>Custom properties (--*): CSS variables</h3>
-<p>Property names that are prefixed with <code>--</code>, like <code>--example-name</code>, represent custom properties that contain a value that can be used in other declarations using the <code>var()</code> function.</p>
-<p>Syntax</p>
-<div class="highlight"><pre><span></span><code><span class="nt">--somekeyword</span><span class="o">:</span><span class="w"> </span><span class="nt">left</span><span class="o">;</span><span class="w"></span>
-<span class="nt">--somecolor</span><span class="o">:</span><span class="w"> </span><span class="p">#</span><span class="nn">0000ff</span><span class="o">;</span><span class="w"></span>
-<span class="nt">--somecomplexvalue</span><span class="o">:</span><span class="w"> </span><span class="nt">3px</span><span class="w"> </span><span class="nt">6px</span><span class="w"> </span><span class="nt">rgb</span><span class="o">(</span><span class="nt">20</span><span class="o">,</span><span class="w"> </span><span class="nt">32</span><span class="o">,</span><span class="w"> </span><span class="nt">54</span><span class="o">);</span><span class="w"></span>
-</code></pre></div>
-
-<h3>Bulletproof @font-face Syntax</h3>
-<p><a href="https://www.paulirish.com/2009/bulletproof-font-face-implementation-syntax/" target="_blank">https://www.paulirish.com/2009/bulletproof-font-face-implementation-syntax/</a></p>
-<h3>Considerations for styling the <code>pre</code> tag</h3>
-<p><a href="https://css-tricks.com/considerations-styling-pre-tag/" target="_blank">https://css-tricks.com/considerations-styling-pre-tag/</a></p>
-<h3>Create A Simple Responsive HTML Table Using Pure CSS</h3>
-<p>with collapsed rows<br>
-<a href="https://www.exeideas.com/2020/10/simple-responsive-html-table.html" target="_blank">https://www.exeideas.com/2020/10/simple-responsive-html-table.html</a></p>
-<h2>Learning resources</h2>
-<h3>A Basic Walkthrough of the CSS Box Model</h3>
-<p><a href="https://blog.hubspot.com/website/css-box-model" target="_blank">https://blog.hubspot.com/website/css-box-model</a></p>
-<h3>A Complete Guide to Flexbox</h3>
-<p><a href="https://css-tricks.com/snippets/css/a-guide-to-flexbox/" target="_blank">https://css-tricks.com/snippets/css/a-guide-to-flexbox/</a>  </p>
-<h2>Quotes</h2>
-<p>"The aim of web design is not to use all available screen space. It is legibility. Text is most legible with no more than 70 characters per line."<br>
-- Paul Graham<br>
-(note: 120 characters here!)</p>
+</footer>                    </div>
+                    
                 </article>
-            </aside>
-
+                <hr/>
+            </li>
             
+                </ol><!-- /#posts-list -->
+                </section><!-- /#content -->
 
         <section id="extras" class="body">
 
