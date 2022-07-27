@@ -45,7 +45,7 @@
 
 
 <p class="notes_count">
-    7 notes 
+    12 notes 
     <span style="color:#C74350">|</span> 
     <a href="https://notes.nicolasdeville.com/tags">by tags</a> 
     <span style="color:#C74350">|</span> 
@@ -64,15 +64,473 @@
             <hr/>
 
                 <article class="hentry">
-                    <h1 class="entry-title"><a href="https://notes.nicolasdeville.com/python/library-datetime">Python library: datetime</a></h1>
+                    <h1 class="entry-title"><a href="https://notes.nicolasdeville.com/python/library-sqlite3">Library: sqlite3</a></h1>
 
                     <!-- added 4/7 -->
                     <div>
                         <p class="header_summary">
-                            <p>The datetime module supplies classes for manipulating dates and times.</p>
+                            <p>built-in library for managing SQLite database</p>
                         </p>
                     </div>
 
+<footer class="post-info">
+
+    <p>
+        26 Jul 2022 <span class="separator">|</span> in <a class="link_tag" href="https://notes.nicolasdeville.com/python/">python</a>
+ tags: <a class="link_tag" href="https://notes.nicolasdeville.com/tag/libraries.html">libraries</a>
+
+        <!-- added 4/7 -->
+        <!-- 		<br />
+        <abbr class="modified" title="2022-07-26T10:14:09.317369+02:00">
+                Updated: 26 Jul 2022
+        </abbr>
+ -->
+
+    </p>
+
+    
+
+</footer><p><span class="datestamp">26 Jul 2022</span> starting note <em>(note date indicates latest update)</em>   </p>
+<table>
+<thead>
+<tr>
+<th>Library resources</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>PyPI</td>
+<td>---</td>
+</tr>
+<tr>
+<td>Github</td>
+<td>---</td>
+</tr>
+<tr>
+<td>Documentation</td>
+<td><a href="https://docs.python.org/3/library/sqlite3.html" target="_blank">https://docs.python.org/3/library/sqlite3.html</a></td>
+</tr>
+</tbody>
+</table>
+<p>Started using a local database earlier this year, to manage large datasets (eg <code>twittee</code> and database of B2B companies) to overcome the limitations of Grist [<a href="../../apps/grist/index.html">Nic Note: Grist</a>] - size &amp; latency.    </p>
+<table>
+<thead>
+<tr>
+<th>Tutorials</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>"How To Use the sqlite3 Module in Python 3"</td>
+<td><a href="https://www.digitalocean.com/community/tutorials/how-to-use-the-sqlite3-module-in-python-3" target="_blank">https://www.digitalocean.com/community/tutorials/how-to-use-the-sqlite3-module-in-python-3</a></td>
+</tr>
+<tr>
+<td>TutorialsPoint - SQLite with Python</td>
+<td><a href="https://www.tutorialspoint.com/sqlite/sqlite_python.htm" target="_blank">https://www.tutorialspoint.com/sqlite/sqlite_python.htm</a></td>
+</tr>
+<tr>
+<td>Documentation</td>
+<td>---</td>
+</tr>
+</tbody>
+</table>
+<h1>Snippets</h1>
+<h2>SELECT</h2>
+<div class="highlight"><pre><span></span><code><span class="c1">####################</span>
+<span class="c1"># Connect to database</span>
+<span class="kn">import</span> <span class="nn">sqlite3</span>
+<span class="n">db</span> <span class="o">=</span> <span class="n">sqlite3</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="s1">&#39;/path/to/local/database.db&#39;</span><span class="p">)</span>
+<span class="kn">from</span> <span class="nn">collections</span> <span class="kn">import</span> <span class="n">namedtuple</span>
+
+<span class="k">def</span> <span class="nf">namedtuple_factory</span><span class="p">(</span><span class="n">cursor</span><span class="p">,</span> <span class="n">row</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Returns sqlite rows as named tuples.&quot;&quot;&quot;</span>
+    <span class="n">fields</span> <span class="o">=</span> <span class="p">[</span><span class="n">col</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="k">for</span> <span class="n">col</span> <span class="ow">in</span> <span class="n">cursor</span><span class="o">.</span><span class="n">description</span><span class="p">]</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="n">namedtuple</span><span class="p">(</span><span class="s2">&quot;x&quot;</span><span class="p">,</span> <span class="n">fields</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">x</span><span class="p">(</span><span class="o">*</span><span class="n">row</span><span class="p">)</span>
+<span class="n">db</span><span class="o">.</span><span class="n">row_factory</span> <span class="o">=</span> <span class="n">namedtuple_factory</span>
+<span class="n">c</span> <span class="o">=</span> <span class="n">db</span><span class="o">.</span><span class="n">cursor</span><span class="p">()</span>
+<span class="c1">####################</span>
+
+<span class="n">c</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="s2">&quot;&quot;&quot;</span>
+<span class="s2">        SELECT domain</span>
+<span class="s2">        FROM companies</span>
+<span class="s2">        WHERE name IS NULL;</span>
+<span class="s2">        &quot;&quot;&quot;</span><span class="p">)</span>
+
+<span class="n">items</span> <span class="o">=</span> <span class="p">[</span><span class="n">x</span><span class="o">.</span><span class="n">domain</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">c</span><span class="o">.</span><span class="n">fetchall</span><span class="p">()]</span>
+
+<span class="nb">print</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">items</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;items&#39;</span><span class="p">,</span> <span class="nb">type</span><span class="p">(</span><span class="n">items</span><span class="p">),</span> <span class="nb">len</span><span class="p">(</span><span class="n">items</span><span class="p">))</span>
+
+<span class="c1">####################</span>
+<span class="c1"># Commit command</span>
+<span class="n">db</span><span class="o">.</span><span class="n">commit</span><span class="p">()</span>
+<span class="c1"># Close connection</span>
+<span class="n">db</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+</code></pre></div>
+
+<h3>SELECT with variable string</h3>
+<div class="highlight"><pre><span></span><code><span class="n">c</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="s2">&quot;&quot;&quot;</span>
+<span class="s2">            SELECT rowid, domain, url</span>
+<span class="s2">            FROM twitter_webinars</span>
+<span class="s2">            WHERE url LIKE &quot;%jdsupra%&quot;</span>
+<span class="s2">            &quot;&quot;&quot;</span><span class="p">)</span>
+
+<span class="c1">#######</span>
+
+<span class="n">db</span> <span class="o">=</span> <span class="n">sqlite3</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="s1">&#39;/path/to/local/database.db&#39;</span><span class="p">)</span>
+<span class="n">c</span> <span class="o">=</span> <span class="n">db</span><span class="o">.</span><span class="n">cursor</span><span class="p">()</span>
+<span class="n">c</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="s2">&quot;&quot;&quot;</span>
+<span class="s2">        SELECT first</span>
+<span class="s2">        FROM first</span>
+<span class="s2">        WHERE first LIKE ?;</span>
+<span class="s2">        &quot;&quot;&quot;</span><span class="p">,</span>
+        <span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">email_prefix</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span><span class="si">}</span><span class="s2">%&quot;</span><span class="p">,)</span>
+        <span class="p">)</span>
+<span class="n">potential_first</span> <span class="o">=</span> <span class="p">[</span><span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">c</span><span class="o">.</span><span class="n">fetchall</span><span class="p">()]</span>
+</code></pre></div>
+
+<h2>initial test</h2>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">sqlite3</span>
+<span class="c1"># Connect to database</span>
+<span class="n">conn</span> <span class="o">=</span> <span class="n">sqlite3</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="s1">&#39;/path/to/local/database.db&#39;</span><span class="p">)</span>
+<span class="c1"># Create a cursor</span>
+<span class="n">c</span> <span class="o">=</span> <span class="n">conn</span><span class="o">.</span><span class="n">cursor</span><span class="p">()</span>
+<span class="c1"># Query The Database</span>
+<span class="n">c</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="s2">&quot;SELECT * FROM Companies&quot;</span><span class="p">)</span>
+
+<span class="n">items</span> <span class="o">=</span> <span class="n">c</span><span class="o">.</span><span class="n">fetchall</span><span class="p">()</span>
+<span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">items</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">item</span><span class="p">)</span>
+
+
+<span class="c1"># Commit our command</span>
+<span class="n">conn</span><span class="o">.</span><span class="n">commit</span><span class="p">()</span>
+<span class="c1"># Close our connection</span>
+<span class="n">conn</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+</code></pre></div>
+
+<h2>SQL headers</h2>
+<div class="highlight"><pre><span></span><code><span class="n">conn</span> <span class="o">=</span> <span class="n">sqlite3</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="s1">&#39;/path/to/local/database.db&#39;</span><span class="p">)</span>
+<span class="c1"># Create a cursor</span>
+<span class="n">c</span> <span class="o">=</span> <span class="n">conn</span><span class="o">.</span><span class="n">cursor</span><span class="p">()</span>
+<span class="c1"># Query The Database</span>
+<span class="n">c</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="s2">&quot;SELECT * FROM Companies&quot;</span><span class="p">)</span>
+
+<span class="k">with</span> <span class="n">conn</span><span class="p">:</span>
+    <span class="n">headers</span> <span class="o">=</span> <span class="p">[</span><span class="n">i</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">c</span><span class="o">.</span><span class="n">description</span><span class="p">]</span>
+</code></pre></div>
+
+<h2>SQL results as namedtuples</h2>
+<p>mimics Grist objects [<a href="../../apps/grist/index.html">Nic Note: Grist</a>]   </p>
+<div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">namedtuple_factory</span><span class="p">(</span><span class="n">cursor</span><span class="p">,</span> <span class="n">row</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Returns sqlite rows as named tuples.&quot;&quot;&quot;</span>
+    <span class="n">fields</span> <span class="o">=</span> <span class="p">[</span><span class="n">col</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="k">for</span> <span class="n">col</span> <span class="ow">in</span> <span class="n">cursor</span><span class="o">.</span><span class="n">description</span><span class="p">]</span>
+    <span class="n">Tweet</span> <span class="o">=</span> <span class="n">namedtuple</span><span class="p">(</span><span class="s2">&quot;Tweet&quot;</span><span class="p">,</span> <span class="n">fields</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">Tweet</span><span class="p">(</span><span class="o">*</span><span class="n">row</span><span class="p">)</span>
+
+<span class="n">conn</span><span class="o">.</span><span class="n">row_factory</span> <span class="o">=</span> <span class="n">namedtuple_factory</span>
+</code></pre></div>
+
+<h2>import CSV to SQLite</h2>
+<div class="highlight"><pre><span></span><code><span class="c1"># EASIEST</span>
+
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="n">db</span> <span class="o">=</span> <span class="n">sqlite3</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="s1">&#39;/path/to/local/database.db&#39;</span><span class="p">)</span>
+<span class="n">c</span> <span class="o">=</span> <span class="n">db</span><span class="o">.</span><span class="n">cursor</span><span class="p">()</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;/path/to/local/Master.csv&#39;</span><span class="p">)</span>
+<span class="n">df</span><span class="o">.</span><span class="n">to_sql</span><span class="p">(</span><span class="s1">&#39;companies&#39;</span><span class="p">,</span> <span class="n">db</span><span class="p">)</span>
+
+<span class="c1">####</span>
+
+<span class="kn">import</span> <span class="nn">csv</span>
+<span class="kn">import</span> <span class="nn">sqlite3</span>
+
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;/path/to/local/Master_copy.csv&#39;</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+    <span class="n">d</span> <span class="o">=</span> <span class="n">csv</span><span class="o">.</span><span class="n">DictReader</span><span class="p">(</span><span class="n">f</span><span class="p">)</span>
+    <span class="n">existing</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="n">content</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">d</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">i</span><span class="p">[</span><span class="s1">&#39;tweet_id&#39;</span><span class="p">]</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">existing</span><span class="p">:</span>
+            <span class="n">existing</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">i</span><span class="p">[</span><span class="s1">&#39;tweet_id&#39;</span><span class="p">])</span>
+            <span class="n">content</span><span class="o">.</span><span class="n">append</span><span class="p">(</span> 
+                <span class="p">(</span>
+                <span class="n">i</span><span class="p">[</span><span class="s1">&#39;tweet_id&#39;</span><span class="p">],</span> 
+                <span class="n">i</span><span class="p">[</span><span class="s1">&#39;tweeted&#39;</span><span class="p">],</span> 
+                <span class="n">i</span><span class="p">[</span><span class="s1">&#39;tweet_url&#39;</span><span class="p">],</span> 
+                <span class="n">i</span><span class="p">[</span><span class="s1">&#39;text&#39;</span><span class="p">],</span> 
+                <span class="n">i</span><span class="p">[</span><span class="s1">&#39;author_name&#39;</span><span class="p">],</span> 
+                <span class="n">i</span><span class="p">[</span><span class="s1">&#39;author_website&#39;</span><span class="p">],</span> 
+                <span class="n">i</span><span class="p">[</span><span class="s1">&#39;domain&#39;</span><span class="p">],</span> 
+                <span class="n">i</span><span class="p">[</span><span class="s1">&#39;known&#39;</span><span class="p">],</span> 
+                <span class="n">i</span><span class="p">[</span><span class="s1">&#39;url&#39;</span><span class="p">],</span> 
+                <span class="n">i</span><span class="p">[</span><span class="s1">&#39;provider&#39;</span><span class="p">],</span> 
+                <span class="n">i</span><span class="p">[</span><span class="s1">&#39;process&#39;</span><span class="p">],</span> 
+                <span class="n">i</span><span class="p">[</span><span class="s1">&#39;src&#39;</span><span class="p">],</span> 
+                <span class="n">i</span><span class="p">[</span><span class="s1">&#39;created&#39;</span><span class="p">],</span> 
+                <span class="n">i</span><span class="p">[</span><span class="s1">&#39;updated&#39;</span><span class="p">],</span>
+                <span class="p">)</span>
+            <span class="p">)</span>
+
+
+<span class="c1">######</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;CSV loaded with </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">content</span><span class="p">)</span><span class="si">}</span><span class="s2"> records.&quot;</span><span class="p">)</span>
+
+<span class="c1"># Connect to SQLite</span>
+<span class="n">sqliteConnection</span> <span class="o">=</span> <span class="n">sqlite3</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="s1">&#39;/path/to/local/database.db&#39;</span><span class="p">)</span>
+<span class="n">cursor</span> <span class="o">=</span> <span class="n">sqliteConnection</span><span class="o">.</span><span class="n">cursor</span><span class="p">()</span>
+
+<span class="n">cursor</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="s2">&quot;DROP TABLE IF EXISTS twitter_webinars&quot;</span><span class="p">)</span>
+
+<span class="c1"># Create table</span>
+<span class="n">table</span> <span class="o">=</span> <span class="s2">&quot;&quot;&quot;</span>
+<span class="s2">        CREATE TABLE twitter_webinars(</span>
+<span class="s2">        tweet_id VARCHAR(255) PRIMARY KEY,</span>
+<span class="s2">        tweeted INT,</span>
+<span class="s2">        tweet_url CHAR(255),</span>
+<span class="s2">        text VARCHAR(255),</span>
+<span class="s2">        author_name VARCHAR(255),</span>
+<span class="s2">        author_website VARCHAR(255),</span>
+<span class="s2">        domain VARCHAR(255),</span>
+<span class="s2">        known VARCHAR(255),</span>
+<span class="s2">        url VARCHAR(255),</span>
+<span class="s2">        provider VARCHAR(255),</span>
+<span class="s2">        process VARCHAR(255),</span>
+<span class="s2">        src VARCHAR(25),</span>
+<span class="s2">        created FLOAT,</span>
+<span class="s2">        updated FLOAT</span>
+<span class="s2">        );</span>
+<span class="s2">        &quot;&quot;&quot;</span>
+
+<span class="n">cursor</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="n">table</span><span class="p">)</span>
+
+<span class="n">cursor</span><span class="o">.</span><span class="n">executemany</span><span class="p">(</span>
+    <span class="s2">&quot;INSERT INTO twitter_webinars (tweet_id, tweeted, tweet_url, text, author_name, author_website, domain, known, url, provider, process, src, created, updated) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?);&quot;</span><span class="p">,</span> <span class="n">content</span><span class="p">)</span>
+
+<span class="n">cursor</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="s1">&#39;SELECT tweet_id FROM twitter_webinars;&#39;</span><span class="p">)</span>
+
+<span class="c1"># View result</span>
+<span class="n">result</span> <span class="o">=</span> <span class="n">cursor</span><span class="o">.</span><span class="n">fetchall</span><span class="p">()</span>
+
+<span class="n">existing</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">result</span><span class="p">:</span>
+    <span class="k">if</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">existing</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;ISSUE: </span><span class="si">{</span><span class="n">x</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">existing</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+
+<span class="c1"># Commit work and close connection</span>
+<span class="n">sqliteConnection</span><span class="o">.</span><span class="n">commit</span><span class="p">()</span>
+<span class="n">cursor</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+
+<span class="n">sqliteConnection</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+</code></pre></div>
+
+<h2>test in-memory (faster)</h2>
+<div class="highlight"><pre><span></span><code><span class="n">test</span> <span class="o">=</span> <span class="kc">True</span>
+
+<span class="k">if</span> <span class="n">test</span><span class="p">:</span>
+    <span class="n">source</span> <span class="o">=</span> <span class="n">sqlite3</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="s1">&#39;/path/to/local/database.db&#39;</span><span class="p">)</span>
+    <span class="n">db</span> <span class="o">=</span> <span class="n">sqlite3</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="s1">&#39;:memory:&#39;</span><span class="p">)</span>
+    <span class="n">source</span><span class="o">.</span><span class="n">backup</span><span class="p">(</span><span class="n">db</span><span class="p">)</span>
+    <span class="n">source</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+
+<span class="k">else</span><span class="p">:</span>
+    <span class="n">db</span> <span class="o">=</span> <span class="n">sqlite3</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="s1">&#39;/path/to/local/database.db&#39;</span><span class="p">)</span>
+</code></pre></div>
+                </article>
+            </aside>
+
+                <section id="content" class="body">
+
+                <!-- PREVIOUS NOTES -->
+				<p class="notes-section">previous notes</p>
+                <hr>
+
+                <ol id="posts-list" class="hfeed">
+            
+
+
+
+            <li>
+                <article class="hentry">
+                    <header>
+                        <!-- PREVIOUS NOTE TITLE -->
+                        <h1><a href="https://notes.nicolasdeville.com/python/library-re" rel="bookmark"
+                            title="Library: re (regex)">Library: re (regex)</a></h1>
+                        <!-- PREVIOUS NOTE SUMMARY -->
+                        <div class="entry-content">
+                            
+                        </div>
+                    </header>
+
+                    <div class="entry-content">
+                        <!-- PREVIOUS NOTE METADATA -->
+<footer class="post-info">
+
+    <p>
+        26 Jul 2022 <span class="separator">|</span> in <a class="link_tag" href="https://notes.nicolasdeville.com/python/">python</a>
+ tags: <a class="link_tag" href="https://notes.nicolasdeville.com/tag/libraries.html">libraries</a>
+
+        <!-- added 4/7 -->
+        <!-- 		<br />
+        <abbr class="modified" title="2022-07-26T10:14:04.990288+02:00">
+                Updated: 26 Jul 2022
+        </abbr>
+ -->
+
+    </p>
+
+    
+
+</footer>                    </div>
+                    
+                </article>
+                <hr/>
+            </li>
+            
+
+
+
+            <li>
+                <article class="hentry">
+                    <header>
+                        <!-- PREVIOUS NOTE TITLE -->
+                        <h1><a href="https://notes.nicolasdeville.com/python/library-openpyxl" rel="bookmark"
+                            title="Library: openpyxl">Library: openpyxl</a></h1>
+                        <!-- PREVIOUS NOTE SUMMARY -->
+                        <div class="entry-content">
+                            <p>A Python library to read/write Excel 2010 xlsx/xlsm files</p>
+                        </div>
+                    </header>
+
+                    <div class="entry-content">
+                        <!-- PREVIOUS NOTE METADATA -->
+<footer class="post-info">
+
+    <p>
+        26 Jul 2022 <span class="separator">|</span> in <a class="link_tag" href="https://notes.nicolasdeville.com/python/">python</a>
+ tags: <a class="link_tag" href="https://notes.nicolasdeville.com/tag/libraries.html">libraries</a>
+
+        <!-- added 4/7 -->
+        <!-- 		<br />
+        <abbr class="modified" title="2022-07-26T09:48:17.342616+02:00">
+                Updated: 26 Jul 2022
+        </abbr>
+ -->
+
+    </p>
+
+    
+
+</footer>                    </div>
+                    
+                </article>
+                <hr/>
+            </li>
+            
+
+
+
+            <li>
+                <article class="hentry">
+                    <header>
+                        <!-- PREVIOUS NOTE TITLE -->
+                        <h1><a href="https://notes.nicolasdeville.com/python/library-mutagen" rel="bookmark"
+                            title="Library: mutagen">Library: mutagen</a></h1>
+                        <!-- PREVIOUS NOTE SUMMARY -->
+                        <div class="entry-content">
+                            <p>read and write audio tags for many formats</p>
+                        </div>
+                    </header>
+
+                    <div class="entry-content">
+                        <!-- PREVIOUS NOTE METADATA -->
+<footer class="post-info">
+
+    <p>
+        26 Jul 2022 <span class="separator">|</span> in <a class="link_tag" href="https://notes.nicolasdeville.com/python/">python</a>
+ tags: <a class="link_tag" href="https://notes.nicolasdeville.com/tag/libraries.html">libraries</a>
+
+        <!-- added 4/7 -->
+        <!-- 		<br />
+        <abbr class="modified" title="2022-07-26T08:51:53.047849+02:00">
+                Updated: 26 Jul 2022
+        </abbr>
+ -->
+
+    </p>
+
+    
+
+</footer>                    </div>
+                    
+                </article>
+                <hr/>
+            </li>
+            
+
+
+
+            <li>
+                <article class="hentry">
+                    <header>
+                        <!-- PREVIOUS NOTE TITLE -->
+                        <h1><a href="https://notes.nicolasdeville.com/python/library-tinytag" rel="bookmark"
+                            title="Library: tinytag">Library: tinytag</a></h1>
+                        <!-- PREVIOUS NOTE SUMMARY -->
+                        <div class="entry-content">
+                            <p>Read music meta data and length of MP3, OGG, OPUS, MP4, M4A, FLAC, WMA and Wave files</p>
+                        </div>
+                    </header>
+
+                    <div class="entry-content">
+                        <!-- PREVIOUS NOTE METADATA -->
+<footer class="post-info">
+
+    <p>
+        26 Jul 2022 <span class="separator">|</span> in <a class="link_tag" href="https://notes.nicolasdeville.com/python/">python</a>
+ tags: <a class="link_tag" href="https://notes.nicolasdeville.com/tag/libraries.html">libraries</a>
+
+        <!-- added 4/7 -->
+        <!-- 		<br />
+        <abbr class="modified" title="2022-07-26T08:27:58.885973+02:00">
+                Updated: 26 Jul 2022
+        </abbr>
+ -->
+
+    </p>
+
+    
+
+</footer>                    </div>
+                    
+                </article>
+                <hr/>
+            </li>
+            
+
+
+
+            <li>
+                <article class="hentry">
+                    <header>
+                        <!-- PREVIOUS NOTE TITLE -->
+                        <h1><a href="https://notes.nicolasdeville.com/python/library-datetime" rel="bookmark"
+                            title="Python library: datetime">Python library: datetime</a></h1>
+                        <!-- PREVIOUS NOTE SUMMARY -->
+                        <div class="entry-content">
+                            <p>The datetime module supplies classes for manipulating dates and times.</p>
+                        </div>
+                    </header>
+
+                    <div class="entry-content">
+                        <!-- PREVIOUS NOTE METADATA -->
 <footer class="post-info">
 
     <p>
@@ -91,44 +549,11 @@
 
     
 
-</footer><p><span class="datestamp">15 Jul 2022</span> starting note *<em>note date indicates latest update.</em>    </p>
-<table>
-<thead>
-<tr>
-<th>Library resources</th>
-<th></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>PyPI</td>
-<td>N/A</td>
-</tr>
-<tr>
-<td>Github</td>
-<td>N/A</td>
-</tr>
-<tr>
-<td>Documentation</td>
-<td><a href="https://docs.python.org/3/library/datetime.html" target="_blank">https://docs.python.org/3/library/datetime.html</a></td>
-</tr>
-</tbody>
-</table>
-<p><code>strptime</code> = "string parse time"
-<code>strftime</code> = "string format time"
-Pronounce it out loud today &amp; you won't have to search for it again in 6 months.</p>
-<h3>Date from Unix time</h3>
-<p><code>date = datetime.utcfromtimestamp(date_grist)</code> </p>
+</footer>                    </div>
+                    
                 </article>
-            </aside>
-
-                <section id="content" class="body">
-
-                <!-- PREVIOUS NOTES -->
-				<p class="notes-section">previous notes</p>
-                <hr>
-
-                <ol id="posts-list" class="hfeed">
+                <hr/>
+            </li>
             
 
 

@@ -76,13 +76,13 @@
 <footer class="post-info">
 
     <p>
-        24 Jul 2022 <span class="separator">|</span> in <a class="link_tag" href="https://notes.nicolasdeville.com/python/">python</a>
+        26 Jul 2022 <span class="separator">|</span> in <a class="link_tag" href="https://notes.nicolasdeville.com/python/">python</a>
  tags: <a class="link_tag" href="https://notes.nicolasdeville.com/tag/static.html">static</a>
 
         <!-- added 4/7 -->
         <!-- 		<br />
-        <abbr class="modified" title="2022-07-24T13:59:29.384640+02:00">
-                Updated: 24 Jul 2022
+        <abbr class="modified" title="2022-07-26T09:13:29.112619+02:00">
+                Updated: 26 Jul 2022
         </abbr>
  -->
 
@@ -261,9 +261,107 @@ Learning: escape quotes in article titles, eg <code>I \"like\" spam</code>.  </p
 </code></pre></div>
 
 <p>source: <a href="https://stackoverflow.com/questions/41112939/how-to-count-authors-in-pelican-blogs" target="_blank">https://stackoverflow.com/questions/41112939/how-to-count-authors-in-pelican-blogs</a></p>
+<h2>My Config file</h2>
+<p><span class="datestamp">26 Jul 2022</span>   current status:    </p>
+<div class="highlight"><pre><span></span><code><span class="n">AUTHOR</span> <span class="o">=</span> <span class="s1">&#39;Nic&#39;</span>
+<span class="n">SITENAME</span> <span class="o">=</span> <span class="s2">&quot;Nic&#39;s notes&quot;</span>
+<span class="n">SITEURL</span> <span class="o">=</span> <span class="s1">&#39;https://notes.nicolasdeville.com&#39;</span>
+
+<span class="n">PATH</span> <span class="o">=</span> <span class="s1">&#39;content&#39;</span>
+<span class="n">OUTPUT_PATH</span> <span class="o">=</span> <span class="s1">&#39;/path/to/output/folder/outside/of/pelican/project/&#39;</span>
+
+<span class="n">DISPLAY_PAGES_ON_MENU</span> <span class="o">=</span> <span class="kc">False</span>
+
+<span class="n">USE_FOLDER_AS_CATEGORY</span> <span class="o">=</span> <span class="kc">True</span>
+<span class="n">DEFAULT_CATEGORY</span> <span class="o">=</span> <span class="s1">&#39;misc&#39;</span>
+
+<span class="n">ARTICLE_PATHS</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;articles&#39;</span><span class="p">,]</span>
+<span class="n">ARTICLE_URL</span> <span class="o">=</span> <span class="s2">&quot;</span><span class="si">{category}</span><span class="s2">/</span><span class="si">{slug}</span><span class="s2">&quot;</span>
+<span class="n">ARTICLE_SAVE_AS</span> <span class="o">=</span> <span class="s2">&quot;</span><span class="si">{category}</span><span class="s2">/</span><span class="si">{slug}</span><span class="s2">/index.html&quot;</span>
+<span class="n">PAGE_URL</span> <span class="o">=</span> <span class="s2">&quot;</span><span class="si">{slug}</span><span class="s2">/&quot;</span>
+<span class="n">PAGE_SAVE_AS</span> <span class="o">=</span> <span class="s2">&quot;</span><span class="si">{slug}</span><span class="s2">/index.html&quot;</span>
+
+<span class="n">CATEGORY_URL</span> <span class="o">=</span> <span class="s2">&quot;</span><span class="si">{slug}</span><span class="s2">/&quot;</span>
+<span class="n">CATEGORY_SAVE_AS</span> <span class="o">=</span> <span class="s2">&quot;</span><span class="si">{slug}</span><span class="s2">/index.html&quot;</span>
+<span class="n">CATEGORIES_URL</span> <span class="o">=</span> <span class="s2">&quot;categories/&quot;</span>
+<span class="n">CATEGORIES_SAVE_AS</span> <span class="o">=</span> <span class="s2">&quot;categories/index.html&quot;</span>
+
+<span class="n">FILENAME_METADATA</span> <span class="o">=</span> <span class="s1">&#39;(?P&lt;slug&gt;.*)&#39;</span> <span class="c1"># makes Slug optional in markdown / uses filename instead</span>
+
+<span class="n">PAGE_PATHS</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;pages&#39;</span><span class="p">]</span>
+
+<span class="n">TIMEZONE</span> <span class="o">=</span> <span class="s1">&#39;Europe/Rome&#39;</span>
+
+<span class="n">DEFAULT_DATE</span> <span class="o">=</span> <span class="s1">&#39;fs&#39;</span>
+<span class="n">DEFAULT_DATE_FORMAT</span> <span class="o">=</span> <span class="s1">&#39;</span><span class="si">%d</span><span class="s1"> %b %Y&#39;</span>
+
+<span class="n">STATIC_PATHS</span> <span class="o">=</span> <span class="p">[</span>
+                <span class="s1">&#39;images&#39;</span><span class="p">,</span> 
+                <span class="s1">&#39;extra&#39;</span><span class="p">,</span> 
+                <span class="s1">&#39;pdfs&#39;</span><span class="p">,</span> 
+                <span class="s1">&#39;pages&#39;</span><span class="p">,</span>
+                <span class="s1">&#39;csvs&#39;</span><span class="p">,</span>
+                <span class="p">]</span>
+
+<span class="n">EXTRA_PATH_METADATA</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s1">&#39;extra/CNAME&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;path&#39;</span><span class="p">:</span> <span class="s1">&#39;CNAME&#39;</span><span class="p">},</span>
+    <span class="s1">&#39;extra/gitignore&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;path&#39;</span><span class="p">:</span> <span class="s1">&#39;.gitignore&#39;</span><span class="p">},</span>
+    <span class="s1">&#39;extra/sitemap.xml&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;path&#39;</span><span class="p">:</span> <span class="s1">&#39;sitemap.xml&#39;</span><span class="p">},</span> <span class="c1"># generated manually for now / see helpers section</span>
+    <span class="s1">&#39;extra/robots.txt&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;path&#39;</span><span class="p">:</span> <span class="s1">&#39;robots.txt&#39;</span><span class="p">},</span>
+    <span class="s1">&#39;extra/googlexxxxxxxxxxxxxxxx.html&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;path&#39;</span><span class="p">:</span> <span class="s1">&#39;googlexxxxxxxxxxxxxxxx.html&#39;</span><span class="p">},</span> <span class="c1"># Google Search ID</span>
+    <span class="s1">&#39;extra/BingSiteAuth.xml&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;path&#39;</span><span class="p">:</span> <span class="s1">&#39;BingSiteAuth.xml&#39;</span><span class="p">},</span> <span class="c1"># Bing Search ID</span>
+    <span class="p">}</span>
+
+<span class="n">DEFAULT_LANG</span> <span class="o">=</span> <span class="s1">&#39;en&#39;</span>
+
+<span class="c1">#With these settings, Pelican will create an archive of all your posts for the year</span>
+<span class="c1"># at (for instance) posts/2011/index.html</span>
+<span class="c1"># and an archive of all your posts for the month at posts/2011/Aug/index.html.</span>
+<span class="n">YEAR_ARCHIVE_SAVE_AS</span> <span class="o">=</span> <span class="s1">&#39;{date:%Y}/index.html&#39;</span>
+<span class="n">MONTH_ARCHIVE_SAVE_AS</span> <span class="o">=</span> <span class="s1">&#39;{date:%Y}/{date:%m}/index.html&#39;</span>
+
+<span class="n">AUTHOR_SAVE_AS</span> <span class="o">=</span> <span class="s1">&#39;author/</span><span class="si">{slug}</span><span class="s1">.html&#39;</span> <span class="c1"># to avoid generating author page as it&#39;s only me.</span>
+
+<span class="c1"># Feed generation is usually not desired when developing</span>
+<span class="n">FEED_ALL_ATOM</span> <span class="o">=</span> <span class="kc">None</span>
+<span class="n">CATEGORY_FEED_ATOM</span> <span class="o">=</span> <span class="kc">None</span>
+<span class="n">TRANSLATION_FEED_ATOM</span> <span class="o">=</span> <span class="kc">None</span>
+<span class="n">AUTHOR_FEED_ATOM</span> <span class="o">=</span> <span class="kc">None</span>
+<span class="n">AUTHOR_FEED_RSS</span> <span class="o">=</span> <span class="kc">None</span>
+
+<span class="c1"># Blogroll</span>
+<span class="n">LINKS</span> <span class="o">=</span> <span class="p">(</span>
+        <span class="p">(</span><span class="s1">&#39;Side project: indeXall.io&#39;</span><span class="p">,</span> <span class="s1">&#39;https://indeXall.io&#39;</span><span class="p">),</span>
+        <span class="p">(</span><span class="s1">&#39;Services: BtoBSales.EU&#39;</span><span class="p">,</span> <span class="s1">&#39;https://btobsales.eu&#39;</span><span class="p">),</span>
+        <span class="p">)</span>
+
+<span class="c1"># Social widget</span>
+<span class="n">SOCIAL</span> <span class="o">=</span> <span class="p">(</span>
+        <span class="p">(</span><span class="s1">&#39;Linkedin&#39;</span><span class="p">,</span> <span class="s1">&#39;https://www.linkedin.com/in/ndeville/&#39;</span><span class="p">),</span>
+        <span class="p">(</span><span class="s1">&#39;Twitter&#39;</span><span class="p">,</span> <span class="s1">&#39;https://www.twitter.com/ndeville&#39;</span><span class="p">),</span>
+        <span class="p">)</span>
+
+<span class="n">DEFAULT_PAGINATION</span> <span class="o">=</span> <span class="mi">100</span>
+
+<span class="n">THEME</span> <span class="o">=</span> <span class="s1">&#39;/path/to/Pelican/project/folder/notes/theme&#39;</span>
+
+<span class="n">OUTPUT_RETENTION</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;.gitignore&quot;</span><span class="p">]</span> <span class="c1"># probably of no use if not in `content` folder?</span>
+
+<span class="c1"># to add capability to support tables. Source: https://www.dj-bauer.de/use-tables-in-pelican-markdown-en.html</span>
+<span class="c1"># from markdown.extensions.tables import TableExtension</span>
+<span class="c1"># MARKDOWN = {</span>
+<span class="c1">#     &quot;extensions&quot;: [TableExtension()]    </span>
+<span class="c1"># }</span>
+
+<span class="n">SEARCH_HTML_SELECTOR</span> <span class="o">=</span> <span class="s2">&quot;main&quot;</span> <span class="c1"># for the pelican plugin &quot;search&quot; using Stork. Using the default &lt;main&gt; tag means repeating sections can be carved out of search index.</span>
+
+<span class="c1"># Uncomment following line if you want document-relative URLs when developing</span>
+<span class="c1"># RELATIVE_URLS = True</span>
+</code></pre></div>
+
 <h2>Hosting</h2>
-<p>Once generated, I'm using Github Pages to host for free.<br>
-See my note <a href="github-pages.html">Githug Pages</a>.  </p>
+<p>Once generated, I'm using Github Pages to host for free.  </p>
+<p>[<a href="../../helpers/github-pages/index.html">Nic Note: Github Pages</a>]    </p>
 <h2>Plugins to test</h2>
 <h3>more Categories</h3>
 <p>for subcategories and more than 1 category per article <br>
@@ -272,7 +370,7 @@ See my note <a href="github-pages.html">Githug Pages</a>.  </p>
 <p>for auto-generation of <code>sitemap.xml</code><br>
 <a href="https://github.com/pelican-plugins/sitemap" target="_blank">https://github.com/pelican-plugins/sitemap</a></p>
 <h3>search</h3>
-<p>using: 
+<p>(implemented) <br>
 Stork<br>
 <a href="https://stork-search.net/" target="_blank">https://stork-search.net/</a><br>
 especially: <a href="https://stork-search.net/docs/install" target="_blank">https://stork-search.net/docs/install</a><br>
@@ -297,33 +395,33 @@ creator's personal website, with nice search input animation: <a href="https://j
 </code></pre></div>
 
 <p>Solved: <a href="https://github.com/pelican-plugins/search/issues/3" target="_blank">https://github.com/pelican-plugins/search/issues/3</a><br>
-The issue was that some of my article titles had quotes that were not escaped.</p>
+The issue was that some of my article titles had quotes that were not escaped.   </p>
+<p><span class="datestamp">26 Jul 2022</span>   noticed an error when searching on a page other than the homepage (wrong path). TODO investigate.    </p>
 <h3>Algolia Search: A Plugin for Pelican</h3>
-<p>decided against, preferring Stork (see above)
+<p>decided against, preferring Stork (see above)  <br>
 <a href="https://github.com/rehanhaider/pelican-algolia" target="_blank">https://github.com/rehanhaider/pelican-algolia</a>  </p>
 <h3>Staticman | comments for static sites</h3>
-<p>found here: <a href="https://snipcart.com/blog/pelican-blog-tutorial-search-comments" target="_blank">https://snipcart.com/blog/pelican-blog-tutorial-search-comments</a> <br>
-<a href="https://github.com/eduardoboucas/staticman" target="_blank">https://github.com/eduardoboucas/staticman</a>   </p>
+<p>found here:
+<a href="https://snipcart.com/blog/pelican-blog-tutorial-search-comments" target="_blank">https://snipcart.com/blog/pelican-blog-tutorial-search-comments</a>     </p>
+<p><a href="https://github.com/eduardoboucas/staticman" target="_blank">https://github.com/eduardoboucas/staticman</a>      </p>
 <h3>add a Table of Contents using Markdown in Pelican</h3>
-<p><a href="https://cloudbytes.dev/snippets/add-a-table-of-contents-using-markdown-in-pelican" target="_blank">https://cloudbytes.dev/snippets/add-a-table-of-contents-using-markdown-in-pelican</a></p>
+<p><a href="https://cloudbytes.dev/snippets/add-a-table-of-contents-using-markdown-in-pelican" target="_blank">https://cloudbytes.dev/snippets/add-a-table-of-contents-using-markdown-in-pelican</a>    </p>
 <h3>theme example + word count + search feature</h3>
 <p><a href="https://github.com/pilosus/pilosus-pelican-theme/" target="_blank">https://github.com/pilosus/pilosus-pelican-theme/</a>  </p>
 <h3>summary plugin</h3>
 <p><a href="https://github.com/getpelican/pelican-plugins/tree/master/summary" target="_blank">https://github.com/getpelican/pelican-plugins/tree/master/summary</a>  </p>
-<h2>useful resources</h2>
-<h3>Pelican documentation</h3>
-<p>comprehensive and well written<br>
-<a href="https://docs.getpelican.com/en/stable/index.html" target="_blank">https://docs.getpelican.com/en/stable/index.html</a>  </p>
+<h2>additional resources</h2>
 <h3>markdown syntax</h3>
-<p>helpful guide at the beginning to get used to the Markdown syntax <br>
-<a href="https://www.markdownguide.org/basic-syntax" target="_blank">https://www.markdownguide.org/basic-syntax</a></p>
+<p>helpful guide at the beginning to get used to the Markdown syntax  <br>
+<a href="https://www.markdownguide.org/basic-syntax" target="_blank">https://www.markdownguide.org/basic-syntax</a>   </p>
 <h3>Code HiLite</h3>
-<p><a href="https://yakworks.github.io/docmark/extensions/codehilite/" target="_blank">https://yakworks.github.io/docmark/extensions/codehilite/</a>  </p>
+<p><a href="https://yakworks.github.io/docmark/extensions/codehilite/" target="_blank">https://yakworks.github.io/docmark/extensions/codehilite/</a>    </p>
 <h3>Pelican Folder Structure</h3>
-<p>helped me rework my project structure based on subfolfers in <code>content</code>
+<p>helped me rework my project structure based on subfolfers in <code>content</code>   <br>
 <a href="https://www.archerimagine.com/articles/pelican/pelican-folder-structure.html" target="_blank">https://www.archerimagine.com/articles/pelican/pelican-folder-structure.html</a>  </p>
 <h3>Pelican's USE_FOLDER_AS_CATEGORY setting and behaviour</h3>
-<p><a href="http://louistiao.me/posts/pelicans-use_folder_as_category-setting-and-behaviour/" target="_blank">http://louistiao.me/posts/pelicans-use_folder_as_category-setting-and-behaviour/</a>  </p>
+<p>clear once logic is understood, but good overview:  <br>
+<a href="http://louistiao.me/posts/pelicans-use_folder_as_category-setting-and-behaviour/" target="_blank">http://louistiao.me/posts/pelicans-use_folder_as_category-setting-and-behaviour/</a>    </p>
                 </article>
             </aside>
 

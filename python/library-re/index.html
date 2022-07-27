@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="generator" content="Pelican" />
+    <title>Library: re (regex)</title>
+    <link rel="stylesheet" href="https://notes.nicolasdeville.com/theme/css/main.css" />
+
+    <!-- for Stork seach engine -->
+    <link rel="stylesheet" href="https://files.stork-search.net/basic.css" /> 
+
+</head>
+
+<body id="index" class="body">
+        <header id="banner" class="body">
+
+            <a href="https://notes.nicolasdeville.com/"><img class="header_image" src="https://notes.nicolasdeville.com/images/nic_notes_header.svg" alt="Nic's notes" width="266"/></a>
+
+            <!-- for Stork seach engine -->
+            <div class="search-input-block">
+                <input data-stork="sitesearch" class="search-input" placeholder="Search..." autofocus="autofocus"/>
+                <div data-stork="sitesearch-output"></div>
+            </div>
+
+            <nav><ul>
+                <li><a href="https://notes.nicolasdeville.com/apps/">apps</a></li>
+                <li><a href="https://notes.nicolasdeville.com/b2b-sales/">b2b sales</a></li>
+                <li><a href="https://notes.nicolasdeville.com/books/">books</a></li>
+                <li><a href="https://notes.nicolasdeville.com/careerplaybook/">#careerplaybook</a></li>
+                <li><a href="https://notes.nicolasdeville.com/helpers/">helpers</a></li>
+                <li><a href="https://notes.nicolasdeville.com/home-office/">home office</a></li>
+                <li><a href="https://notes.nicolasdeville.com/interests/">interests</a></li>
+                <li><a href="https://notes.nicolasdeville.com/learning/">learning</a></li>
+                <li><a href="https://notes.nicolasdeville.com/movies/">movies</a></li>
+                <li><a href="https://notes.nicolasdeville.com/projects/">projects</a></li>
+                <li class="active"><a href="https://notes.nicolasdeville.com/python/">python</a></li>
+                <li><a href="https://notes.nicolasdeville.com/random/">random</a></li>
+                <li><a href="https://notes.nicolasdeville.com/salesleaderplaybook/">#salesleaderplaybook</a></li>
+                <li><a href="https://notes.nicolasdeville.com/startups/">startups</a></li>
+            </ul></nav>
+        </header>
+
+<section id="content" class="body">
+    <article>
+        <header>
+            <h1 class="entry-title">
+                <main> <!-- for indexing by Stork -->
+                    <a href="https://notes.nicolasdeville.com/python/library-re" rel="bookmark"
+                    title="Permalink to Library: re (regex)">Library: re (regex)
+                    </a>
+                </main>
+            </h1>
+            <p class="header_summary">
+                <main> <!-- for indexing by Stork -->
+                    
+                </main>
+            </p>
+        </header>
+
+        <div class="entry-content">
+<footer class="post-info">
+
+    <p>
+        26 Jul 2022 <span class="separator">|</span> in <a class="link_tag" href="https://notes.nicolasdeville.com/python/">python</a>
+ tags: <a class="link_tag" href="https://notes.nicolasdeville.com/tag/libraries.html">libraries</a>
+
+        <!-- added 4/7 -->
+        <!-- 		<br />
+        <abbr class="modified" title="2022-07-26T10:14:04.990288+02:00">
+                Updated: 26 Jul 2022
+        </abbr>
+ -->
+
+    </p>
+
+    
+
+</footer>            <main> <!-- for indexing by Stork -->
+                <p><span class="datestamp">26 Jul 2022</span> starting note <em>(note date indicates latest update)</em>   </p>
+<p>New app:  <br>
+"English to RegEx with Natural Language Processing" <br>
+"Regex is difficult to write and comprehend to the average human reader because of its complex patterns. This website uses GPT-3 to translate back and forth between English and RegEx" <br>
+<a href="https://www.autoregex.xyz/" target="_blank">https://www.autoregex.xyz/</a></p>
+<p><img class="screenshot" src="https://notes.nicolasdeville.com/images/apps_autoregex.jpg" alt="apps_autoregex.jpg"/>  </p>
+<h1>Script examples</h1>
+<h2>spilt on first uppercase letter in string</h2>
+<p>Given the following, I want to split each string on first uppercase letter to separate command and description (separated by a variable amount of spaces, no tab):   </p>
+<div class="highlight"><pre><span></span><code>&#39;afconvert Audio File Convert&#39;
+&#39;afinfo    Audio File Info&#39;
+&#39;afplay    Audio File Play&#39;
+&#39;airport   Manage Apple AirPort&#39;
+&#39;alias     Create an alias •&#39;
+&#39;alloc     List used and free memory&#39;
+&#39;apropos   Search the whatis database for strings&#39;
+&#39;asr       Apple Software Restore&#39;
+&#39;atsutil   Font registration system utility&#39;
+</code></pre></div>
+
+<p>working code:    </p>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">re</span>
+
+<span class="k">for</span> <span class="n">row</span> <span class="ow">in</span> <span class="n">ws</span><span class="p">:</span>
+    <span class="n">count_row</span> <span class="o">+=</span> <span class="mi">1</span>
+    <span class="n">first</span> <span class="o">=</span> <span class="n">row</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">value</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
+    <span class="n">command</span> <span class="o">=</span> <span class="p">[</span><span class="n">s</span> <span class="k">for</span> <span class="n">s</span> <span class="ow">in</span> <span class="n">re</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;([A-Z][^A-Z]*)&quot;</span><span class="p">,</span> <span class="n">first</span><span class="p">)</span> <span class="k">if</span> <span class="n">s</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
+    <span class="n">description</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">findall</span><span class="p">(</span><span class="s1">&#39;[A-Z][^A-Z]*&#39;</span><span class="p">,</span> <span class="n">first</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">command</span><span class="si">=}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">description</span><span class="si">=}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">()</span>
+</code></pre></div>
+
+<h2>regex email addresses</h2>
+<div class="highlight"><pre><span></span><code><span class="n">x</span><span class="o">=</span><span class="n">re</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="s1">&#39;(\w+[.|\w])*@(\w+[.])*\w+&#39;</span><span class="p">,</span><span class="n">email4</span><span class="p">)</span>
+<span class="n">x</span><span class="o">.</span><span class="n">group</span><span class="p">()</span>
+
+<span class="c1"># EXAMPLE:</span>
+
+<span class="n">x</span> <span class="o">=</span> <span class="s1">&#39;(\w+[.|\w])*@(\w+[.])*\w+&#39;</span>
+
+<span class="n">listEmails</span> <span class="o">=</span> <span class="nb">list</span><span class="p">()</span>
+
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;/path/to/folder/recipients.txt&#39;</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+    <span class="n">f</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+    <span class="n">string</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">f</span><span class="p">)</span>
+    <span class="n">array</span> <span class="o">=</span> <span class="n">string</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;,&quot;</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">array</span><span class="p">:</span>
+        <span class="n">x</span> <span class="o">=</span> <span class="n">x</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;&lt;&#39;</span><span class="p">,</span> <span class="mi">1</span><span class="p">)[</span><span class="mi">1</span><span class="p">]</span>
+        <span class="n">x</span> <span class="o">=</span> <span class="n">x</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;&gt;&#39;</span><span class="p">,</span> <span class="mi">1</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+        <span class="n">listEmails</span><span class="o">.</span><span class="n">append</span><span class="p">([</span><span class="n">x</span><span class="p">])</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="nb">list</span><span class="p">)</span>
+</code></pre></div>
+
+<h2>remove invisible characters</h2>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">re</span>
+
+<span class="c1">##GETS RID OF SPACES    </span>
+
+<span class="c1"># string contains the \u2003 character</span>
+<span class="n">string</span> <span class="o">=</span> <span class="sa">u</span><span class="s1">&#39;This is a   test string ’&#39;</span>
+<span class="c1"># this regex will replace all special characters with a space</span>
+<span class="n">re</span><span class="o">.</span><span class="n">sub</span><span class="p">(</span><span class="s1">&#39;\W+&#39;</span><span class="p">,</span><span class="s1">&#39; &#39;</span><span class="p">,</span><span class="n">string</span><span class="p">)</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
+
+<span class="c1">#PRESERVES SPACES:</span>
+<span class="n">re</span><span class="o">.</span><span class="n">sub</span><span class="p">(</span><span class="s1">&#39;[^!-~ ]+&#39;</span><span class="p">,</span><span class="s1">&#39; &#39;</span><span class="p">,</span><span class="n">country</span><span class="p">)</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
+</code></pre></div>
+            </main>
+        </div><!-- /.entry-content -->
+    </article>
+</section>
+        <section id="extras" class="body">
+
+        <!-- /.blogroll -->
+                <div class="blogroll">
+                        <h2>links</h2>
+                        <ul>
+                            <li><a href="https://indeXall.io">Side project: indeXall.io</a></li>
+                            <li><a href="https://btobsales.eu">Services: BtoBSales.EU</a></li>
+                        </ul>
+                </div>
+
+        <!-- /.social -->
+                <div class="social">
+                        <h2>social</h2>
+                        <ul>
+
+                            <li><a href="https://www.linkedin.com/in/ndeville/">Linkedin</a></li>
+                            <li><a href="https://www.twitter.com/ndeville">Twitter</a></li>
+                        </ul>
+                </div>
+        </section><!-- /#extras -->
+
+        <footer id="contentinfo" class="body">
+                <address id="about" class="vcard body">
+                Powered by <a href="https://github.com/getpelican/pelican" target="_blank">Pelican</a>, 
+                with <a href="https://stork-search.net/" target="_blank">Stork</a> & <a href="https://github.com/pelican-plugins/search" target="_blank">Pelican Search plugin</a>.
+                <span style="color:#C74350">|</span> <img src="https://notes.nicolasdeville.com/images/python.svg" alt="python_logo" width="16" style="vertical-align: middle;"/> <a href="https://www.python.org/" target="_blank">Python</a> 
+                
+                </address><!-- /#about -->
+
+        </footer><!-- /#contentinfo -->
+
+
+<!-- for Stork seach engine -->
+<script src="https://files.stork-search.net/releases/v1.2.1/stork.js"></script>
+<script>
+    stork.register("sitesearch", "https://notes.nicolasdeville.com/search-index.st")
+</script>
+
+</body>
+</html>

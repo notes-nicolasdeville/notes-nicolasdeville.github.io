@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="generator" content="Pelican" />
+    <title>Libraree</title>
+    <link rel="stylesheet" href="https://notes.nicolasdeville.com/theme/css/main.css" />
+        <meta name="description" content="toolbox of Python scripts for music/video/photo library management" />
+
+    <!-- for Stork seach engine -->
+    <link rel="stylesheet" href="https://files.stork-search.net/basic.css" /> 
+
+</head>
+
+<body id="index" class="body">
+        <header id="banner" class="body">
+
+            <a href="https://notes.nicolasdeville.com/"><img class="header_image" src="https://notes.nicolasdeville.com/images/nic_notes_header.svg" alt="Nic's notes" width="266"/></a>
+
+            <!-- for Stork seach engine -->
+            <div class="search-input-block">
+                <input data-stork="sitesearch" class="search-input" placeholder="Search..." autofocus="autofocus"/>
+                <div data-stork="sitesearch-output"></div>
+            </div>
+
+            <nav><ul>
+                <li><a href="https://notes.nicolasdeville.com/apps/">apps</a></li>
+                <li><a href="https://notes.nicolasdeville.com/b2b-sales/">b2b sales</a></li>
+                <li><a href="https://notes.nicolasdeville.com/books/">books</a></li>
+                <li><a href="https://notes.nicolasdeville.com/careerplaybook/">#careerplaybook</a></li>
+                <li><a href="https://notes.nicolasdeville.com/helpers/">helpers</a></li>
+                <li><a href="https://notes.nicolasdeville.com/home-office/">home office</a></li>
+                <li><a href="https://notes.nicolasdeville.com/interests/">interests</a></li>
+                <li><a href="https://notes.nicolasdeville.com/learning/">learning</a></li>
+                <li><a href="https://notes.nicolasdeville.com/movies/">movies</a></li>
+                <li class="active"><a href="https://notes.nicolasdeville.com/projects/">projects</a></li>
+                <li><a href="https://notes.nicolasdeville.com/python/">python</a></li>
+                <li><a href="https://notes.nicolasdeville.com/random/">random</a></li>
+                <li><a href="https://notes.nicolasdeville.com/salesleaderplaybook/">#salesleaderplaybook</a></li>
+                <li><a href="https://notes.nicolasdeville.com/startups/">startups</a></li>
+            </ul></nav>
+        </header>
+
+<section id="content" class="body">
+    <article>
+        <header>
+            <h1 class="entry-title">
+                <main> <!-- for indexing by Stork -->
+                    <a href="https://notes.nicolasdeville.com/projects/libraree" rel="bookmark"
+                    title="Permalink to Libraree">Libraree
+                    </a>
+                </main>
+            </h1>
+            <p class="header_summary">
+                <main> <!-- for indexing by Stork -->
+                    <p>toolbox of Python scripts for music/video/photo library management</p>
+                </main>
+            </p>
+        </header>
+
+        <div class="entry-content">
+<footer class="post-info">
+
+    <p>
+        26 Jul 2022 <span class="separator">|</span> in <a class="link_tag" href="https://notes.nicolasdeville.com/projects/">projects</a>
+ tags: <a class="link_tag" href="https://notes.nicolasdeville.com/tag/python.html">python</a>
+<a class="link_tag" href="https://notes.nicolasdeville.com/tag/music.html">music</a>
+<a class="link_tag" href="https://notes.nicolasdeville.com/tag/videos.html">videos</a>
+
+        <!-- added 4/7 -->
+        <!-- 		<br />
+        <abbr class="modified" title="2022-07-26T08:52:46.853280+02:00">
+                Updated: 26 Jul 2022
+        </abbr>
+ -->
+
+    </p>
+
+    
+
+</footer>            <main> <!-- for indexing by Stork -->
+                <p><span class="datestamp">26 Jul 2022</span> starting note <em>(note date indicates latest update)</em>   </p>
+<h1>Music</h1>
+<p>Using the following libraries:   </p>
+<ul>
+<li><code>tinytag</code> [<a href="../../python/library-tinytag/index.html">Nic Note: Library: tinytag</a>]  </li>
+<li><code>mutagen</code> [<a href="../../python/library-mutagen/index.html">Nic Note: Library: mutagen</a>]      </li>
+</ul>
+<h2>Count</h2>
+<div class="highlight"><pre><span></span><code><span class="n">count_file</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">count_flac</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">count_m4a</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">count_name_updated</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">count_to_be_deleted</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">count_folders_with_files</span> <span class="o">=</span> <span class="mi">0</span>
+
+<span class="n">blacklist</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="s1">&#39;recycle&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;.fseventsd&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;.Spotlight-V100&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;Trashes&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;Covers&#39;</span><span class="p">,</span>
+<span class="p">]</span>
+
+<span class="n">suffixes</span> <span class="o">=</span> <span class="p">(</span>        <span class="c1">#needs to be a tuple</span>
+            <span class="s1">&#39;.flac&#39;</span><span class="p">,</span> 
+            <span class="s1">&#39;.m4a&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;.jpg&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;.png&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;.bmp&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;.txt&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;.zip&#39;</span><span class="p">,</span>
+            <span class="p">)</span> 
+
+<span class="n">valid_music</span> <span class="o">=</span> <span class="p">(</span>        <span class="c1">#needs to be a tuple</span>
+            <span class="s1">&#39;.flac&#39;</span><span class="p">,</span> 
+            <span class="s1">&#39;.m4a&#39;</span><span class="p">,</span>
+            <span class="p">)</span> 
+
+<span class="c1">## DELETE FILES</span>
+
+<span class="n">undesired</span> <span class="o">=</span> <span class="p">(</span>        <span class="c1">#needs to be a tuple</span>
+<span class="s1">&#39;.m3u&#39;</span><span class="p">,</span> 
+<span class="s1">&#39;.nfo&#39;</span><span class="p">,</span>
+<span class="s1">&#39;.sfv&#39;</span><span class="p">,</span>
+<span class="s1">&#39;.log&#39;</span><span class="p">,</span>
+<span class="s1">&#39;.cue&#39;</span><span class="p">,</span>
+<span class="s1">&#39;.txt&#39;</span><span class="p">,</span>
+<span class="s1">&#39;.md5&#39;</span><span class="p">,</span>
+<span class="s1">&#39;.pls&#39;</span><span class="p">,</span>
+<span class="p">)</span> 
+
+<span class="k">for</span> <span class="n">root</span><span class="p">,</span> <span class="n">dirs</span><span class="p">,</span> <span class="n">files</span> <span class="ow">in</span> <span class="n">os</span><span class="o">.</span><span class="n">walk</span><span class="p">(</span><span class="s2">&quot;/path/to/folder/Music&quot;</span><span class="p">):</span>
+
+    <span class="c1"># if not any(ele in root for ele in blacklist):</span>
+    <span class="k">if</span> <span class="nb">any</span><span class="p">(</span><span class="n">ele</span> <span class="ow">in</span> <span class="n">root</span> <span class="k">for</span> <span class="n">ele</span> <span class="ow">in</span> <span class="n">valid_music</span><span class="p">):</span>
+
+        <span class="k">for</span> <span class="n">name</span> <span class="ow">in</span> <span class="n">files</span><span class="p">:</span>
+            <span class="n">count_file</span> <span class="o">+=</span> <span class="mi">1</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">count_file</span><span class="si">=}</span><span class="s2">&quot;</span><span class="p">)</span>
+</code></pre></div>
+
+<h2>Bulk rename based on tags</h2>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">mutagen.flac</span> <span class="kn">import</span> <span class="n">FLAC</span>
+<span class="kn">from</span> <span class="nn">tinytag</span> <span class="kn">import</span> <span class="n">TinyTag</span>
+
+<span class="n">test</span> <span class="o">=</span> <span class="kc">False</span>
+<span class="n">v</span> <span class="o">=</span> <span class="kc">False</span> <span class="c1"># verbose, for debugging</span>
+
+<span class="n">count_folders</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">count_file</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">count_flac</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">count_m4a</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">count_name_updated</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">count_to_be_deleted</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">count_folders_with_files</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">count_renamed</span> <span class="o">=</span> <span class="mi">0</span>
+
+<span class="n">blacklist</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="s1">&#39;recycle&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;.fseventsd&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;.Spotlight-V100&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;Trashes&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;Covers&#39;</span><span class="p">,</span>
+<span class="p">]</span>
+
+
+<span class="n">suffixes</span> <span class="o">=</span> <span class="p">(</span>        <span class="c1">#needs to be a tuple</span>
+            <span class="s1">&#39;.flac&#39;</span><span class="p">,</span> 
+            <span class="s1">&#39;.m4a&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;.jpg&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;.png&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;.bmp&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;.txt&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;.zip&#39;</span><span class="p">,</span>
+            <span class="p">)</span> 
+
+<span class="n">valid_music</span> <span class="o">=</span> <span class="p">(</span>        <span class="c1">#needs to be a tuple</span>
+            <span class="s1">&#39;.flac&#39;</span><span class="p">,</span> 
+            <span class="s1">&#39;.m4a&#39;</span><span class="p">,</span>
+            <span class="p">)</span> 
+
+<span class="nb">print</span><span class="p">()</span>
+
+<span class="n">error_folders</span> <span class="o">=</span> <span class="p">[]</span>
+
+<span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">os</span><span class="o">.</span><span class="n">walk</span><span class="p">(</span><span class="s2">&quot;/path/to/folder/Music/&quot;</span><span class="p">):</span>
+
+    <span class="k">if</span> <span class="n">v</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">()</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;&gt;&gt;&gt;&gt;&gt;&gt;&#39;</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;X:&#39;</span><span class="p">)</span>
+        <span class="n">pp</span><span class="o">.</span><span class="n">pprint</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+
+
+    <span class="n">root</span> <span class="o">=</span> <span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+    <span class="n">folders</span> <span class="o">=</span> <span class="n">x</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+    <span class="n">files</span> <span class="o">=</span> <span class="n">x</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span>
+
+
+    <span class="k">if</span> <span class="ow">not</span> <span class="nb">len</span><span class="p">(</span><span class="n">files</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+
+        <span class="k">if</span> <span class="n">files</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">endswith</span><span class="p">(</span><span class="s1">&#39;.m4a&#39;</span><span class="p">)</span> <span class="ow">or</span> <span class="n">files</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">endswith</span><span class="p">(</span><span class="s1">&#39;.flac&#39;</span><span class="p">):</span>
+            <span class="nb">print</span><span class="p">()</span>
+            <span class="n">count_folders</span> <span class="o">+=</span> <span class="mi">1</span>
+
+            <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;root: </span><span class="se">\t\t</span><span class="s1"> &#39;</span><span class="p">,</span> <span class="n">root</span><span class="p">)</span>
+            <span class="n">sample_file</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">root</span><span class="si">}</span><span class="s2">/</span><span class="si">{</span><span class="n">files</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="si">}</span><span class="s2">&quot;</span>
+            <span class="k">if</span> <span class="n">v</span><span class="p">:</span>
+                <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;sample_file: &#39;</span><span class="p">,</span> <span class="n">sample_file</span><span class="p">)</span>
+
+            <span class="n">audio</span> <span class="o">=</span> <span class="n">TinyTag</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">sample_file</span><span class="p">)</span>
+            <span class="k">if</span> <span class="n">v</span><span class="p">:</span>
+                <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;audio: &#39;</span><span class="p">,</span> <span class="nb">type</span><span class="p">(</span><span class="n">audio</span><span class="p">),</span> <span class="n">audio</span><span class="p">)</span>
+            <span class="n">year</span> <span class="o">=</span> <span class="n">audio</span><span class="o">.</span><span class="n">year</span>
+
+            <span class="k">if</span> <span class="n">year</span> <span class="o">!=</span> <span class="kc">None</span><span class="p">:</span>
+                <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">year</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">4</span><span class="p">:</span>
+                    <span class="n">year</span> <span class="o">=</span> <span class="n">year</span><span class="p">[:</span><span class="mi">4</span><span class="p">]</span>
+            <span class="n">album</span> <span class="o">=</span> <span class="n">audio</span><span class="o">.</span><span class="n">album</span>
+            <span class="n">samplerate</span> <span class="o">=</span> <span class="n">audio</span><span class="o">.</span><span class="n">samplerate</span>
+            <span class="n">bitrate</span> <span class="o">=</span> <span class="n">audio</span><span class="o">.</span><span class="n">bitrate</span>
+
+            <span class="k">if</span> <span class="n">v</span><span class="p">:</span>
+                <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;bitrate: type &#39;</span><span class="p">,</span> <span class="nb">type</span><span class="p">(</span><span class="n">bitrate</span><span class="p">),</span> <span class="n">bitrate</span><span class="p">)</span>
+                <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;samplerate: type &#39;</span><span class="p">,</span> <span class="nb">type</span><span class="p">(</span><span class="n">samplerate</span><span class="p">),</span> <span class="n">samplerate</span><span class="p">)</span>
+
+            <span class="n">hd</span> <span class="o">=</span> <span class="kc">False</span>
+            <span class="k">if</span> <span class="n">bitrate</span> <span class="o">!=</span> <span class="kc">None</span><span class="p">:</span>
+                <span class="k">if</span> <span class="n">bitrate</span> <span class="o">&gt;</span> <span class="mi">1500</span><span class="p">:</span>
+                    <span class="n">hd</span> <span class="o">=</span> <span class="kc">True</span>
+
+            <span class="k">if</span> <span class="n">files</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">endswith</span><span class="p">(</span><span class="s1">&#39;.m4a&#39;</span><span class="p">):</span>
+                <span class="k">if</span> <span class="n">hd</span><span class="p">:</span>
+                    <span class="n">new_folder_name</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">dirname</span><span class="p">(</span><span class="n">root</span><span class="p">)</span><span class="si">}</span><span class="s2">/</span><span class="si">{</span><span class="n">year</span><span class="si">}</span><span class="s2"> </span><span class="si">{</span><span class="n">album</span><span class="si">}</span><span class="s2"> (M4A HD)&quot;</span>
+                <span class="k">else</span><span class="p">:</span>
+                    <span class="n">new_folder_name</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">dirname</span><span class="p">(</span><span class="n">root</span><span class="p">)</span><span class="si">}</span><span class="s2">/</span><span class="si">{</span><span class="n">year</span><span class="si">}</span><span class="s2"> </span><span class="si">{</span><span class="n">album</span><span class="si">}</span><span class="s2"> (M4A)&quot;</span>
+            <span class="k">if</span> <span class="n">files</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">endswith</span><span class="p">(</span><span class="s1">&#39;.flac&#39;</span><span class="p">):</span>
+                <span class="k">if</span> <span class="n">hd</span><span class="p">:</span>
+                    <span class="n">new_folder_name</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">dirname</span><span class="p">(</span><span class="n">root</span><span class="p">)</span><span class="si">}</span><span class="s2">/</span><span class="si">{</span><span class="n">year</span><span class="si">}</span><span class="s2"> </span><span class="si">{</span><span class="n">album</span><span class="si">}</span><span class="s2"> (FLAC HD)&quot;</span>
+                <span class="k">else</span><span class="p">:</span>
+                    <span class="n">new_folder_name</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">dirname</span><span class="p">(</span><span class="n">root</span><span class="p">)</span><span class="si">}</span><span class="s2">/</span><span class="si">{</span><span class="n">year</span><span class="si">}</span><span class="s2"> </span><span class="si">{</span><span class="n">album</span><span class="si">}</span><span class="s2"> (FLAC)&quot;</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;new_folder_name: &#39;</span><span class="p">,</span> <span class="n">new_folder_name</span><span class="p">)</span>
+
+            <span class="k">if</span> <span class="ow">not</span> <span class="n">test</span> <span class="ow">and</span> <span class="s1">&#39;QB&#39;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">root</span><span class="p">:</span> <span class="c1"># carving out albums bought on Qobuz</span>
+                <span class="k">try</span><span class="p">:</span>
+                    <span class="n">os</span><span class="o">.</span><span class="n">rename</span><span class="p">(</span><span class="n">root</span><span class="p">,</span> <span class="n">new_folder_name</span><span class="p">)</span>
+                    <span class="n">count_renamed</span> <span class="o">+=</span> <span class="mi">1</span>
+                <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+                    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;ERROR </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2"> WITH </span><span class="si">{</span><span class="n">root</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+                    <span class="n">error_folders</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="n">root</span><span class="p">,</span> <span class="n">e</span><span class="p">))</span>
+
+    <span class="k">if</span> <span class="n">v</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&#39;</span><span class="p">)</span>
+
+
+<span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">error_folders</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n\n</span><span class="s2">ERRORS:&quot;</span><span class="p">)</span>
+    <span class="n">count_errors</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">error_folders</span><span class="p">:</span>
+        <span class="n">count_errors</span> <span class="o">+=</span> <span class="mi">1</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">count_errors</span><span class="p">,</span> <span class="s1">&#39;</span><span class="se">\t</span><span class="s1">&#39;</span><span class="p">,</span> <span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="s1">&#39;</span><span class="se">\t</span><span class="s1">&#39;</span><span class="p">,</span> <span class="n">x</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">()</span>
+    <span class="nb">print</span><span class="p">()</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;-------------------------------&#39;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">basename</span><span class="p">(</span><span class="vm">__file__</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">()</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;count_folders = </span><span class="si">{</span><span class="n">count_folders</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;count_file = </span><span class="si">{</span><span class="n">count_file</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;count_renamed = </span><span class="si">{</span><span class="n">count_renamed</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;count = </span><span class="si">{</span><span class="n">count</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;count_folders_with_files = </span><span class="si">{</span><span class="n">count_folders_with_files</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;count_flac = </span><span class="si">{</span><span class="n">count_flac</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;count_m4a = </span><span class="si">{</span><span class="n">count_m4a</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;count_name_updated = </span><span class="si">{</span><span class="n">count_name_updated</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;count_to_be_deleted = </span><span class="si">{</span><span class="n">count_to_be_deleted</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">()</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;-------------------------------&#39;</span><span class="p">)</span>
+    <span class="n">run_time</span> <span class="o">=</span> <span class="nb">round</span><span class="p">((</span><span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span> <span class="o">-</span> <span class="n">start_time</span><span class="p">)</span><span class="o">/</span><span class="mi">60</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">()</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">basename</span><span class="p">(</span><span class="vm">__file__</span><span class="p">)</span><span class="si">}</span><span class="s2"> finished in </span><span class="si">{</span><span class="n">run_time</span><span class="si">}</span><span class="s2"> minutes at </span><span class="si">{</span><span class="n">datetime</span><span class="o">.</span><span class="n">now</span><span class="p">()</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="s1">&#39;%H:%M:%S&#39;</span><span class="p">)</span><span class="si">}</span><span class="s2">.&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">()</span>
+</code></pre></div>
+
+<h2>Buld delete unwanted files in folders</h2>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">mutagen.flac</span> <span class="kn">import</span> <span class="n">FLAC</span>
+<span class="kn">from</span> <span class="nn">tinytag</span> <span class="kn">import</span> <span class="n">TinyTag</span>
+
+<span class="c1">#####</span>
+
+<span class="n">test</span> <span class="o">=</span> <span class="kc">True</span>
+
+<span class="c1">#####</span>
+
+<span class="n">count_file</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">count_flac</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">count_m4a</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">count_name_updated</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">count_to_be_deleted</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">count_folders_with_files</span> <span class="o">=</span> <span class="mi">0</span>
+
+<span class="n">blacklist</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="s1">&#39;recycle&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;.fseventsd&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;.Spotlight-V100&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;Trashes&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;Covers&#39;</span><span class="p">,</span>
+<span class="p">]</span>
+
+<span class="n">suffixes</span> <span class="o">=</span> <span class="p">(</span>        <span class="c1">#needs to be a tuple</span>
+            <span class="s1">&#39;.flac&#39;</span><span class="p">,</span> 
+            <span class="s1">&#39;.m4a&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;.jpg&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;.png&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;.bmp&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;.txt&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;.zip&#39;</span><span class="p">,</span>
+            <span class="p">)</span> 
+
+<span class="n">valid_music</span> <span class="o">=</span> <span class="p">(</span>        <span class="c1">#needs to be a tuple</span>
+            <span class="s1">&#39;.flac&#39;</span><span class="p">,</span> 
+            <span class="s1">&#39;.m4a&#39;</span><span class="p">,</span>
+            <span class="p">)</span> 
+
+<span class="c1">## DELETE FILES</span>
+
+<span class="n">undesired</span> <span class="o">=</span> <span class="p">(</span>        <span class="c1">#needs to be a tuple</span>
+<span class="s1">&#39;.m3u&#39;</span><span class="p">,</span> 
+<span class="s1">&#39;.nfo&#39;</span><span class="p">,</span>
+<span class="s1">&#39;.sfv&#39;</span><span class="p">,</span>
+<span class="s1">&#39;.log&#39;</span><span class="p">,</span>
+<span class="s1">&#39;.cue&#39;</span><span class="p">,</span>
+<span class="s1">&#39;.CUE&#39;</span><span class="p">,</span>
+<span class="s1">&#39;.txt&#39;</span><span class="p">,</span>
+<span class="s1">&#39;.md5&#39;</span><span class="p">,</span>
+<span class="s1">&#39;.pls&#39;</span><span class="p">,</span>
+<span class="p">)</span> 
+
+<span class="k">for</span> <span class="n">root</span><span class="p">,</span> <span class="n">dirs</span><span class="p">,</span> <span class="n">files</span> <span class="ow">in</span> <span class="n">os</span><span class="o">.</span><span class="n">walk</span><span class="p">(</span><span class="s2">&quot;/path/to/folder/Music&quot;</span><span class="p">):</span>
+
+    <span class="k">if</span> <span class="ow">not</span> <span class="nb">any</span><span class="p">(</span><span class="n">ele</span> <span class="ow">in</span> <span class="n">root</span> <span class="k">for</span> <span class="n">ele</span> <span class="ow">in</span> <span class="n">blacklist</span><span class="p">):</span>
+
+        <span class="k">for</span> <span class="n">name</span> <span class="ow">in</span> <span class="n">files</span><span class="p">:</span>
+            <span class="n">count_file</span> <span class="o">+=</span> <span class="mi">1</span>
+
+            <span class="k">if</span> <span class="nb">any</span><span class="p">(</span><span class="n">ele</span> <span class="ow">in</span> <span class="n">name</span> <span class="k">for</span> <span class="n">ele</span> <span class="ow">in</span> <span class="n">undesired</span><span class="p">)</span> <span class="ow">and</span> <span class="s1">&#39;Doors&#39;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">root</span> <span class="ow">and</span> <span class="s1">&#39;Tesla&#39;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">name</span><span class="p">:</span>
+            <span class="c1"># if name.endswith((&quot;.CUE&quot;)):</span>
+            <span class="c1"># # if name == &#39;DR5.txt&#39;:</span>
+                <span class="n">count_to_be_deleted</span> <span class="o">+=</span> <span class="mi">1</span>
+                <span class="c1"># print(&#39;&gt;&gt;&gt; &#39;, count_file, name)</span>
+                <span class="n">path</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">root</span><span class="si">}</span><span class="s2">/</span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s2">&quot;</span>
+
+                <span class="k">if</span> <span class="ow">not</span> <span class="n">test</span><span class="p">:</span>
+                    <span class="n">os</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="n">path</span><span class="p">)</span>
+                    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;DELETED path: &#39;</span><span class="p">,</span> <span class="n">path</span><span class="p">)</span>
+                <span class="k">else</span><span class="p">:</span>
+                    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;TO BE DELETED path: &#39;</span><span class="p">,</span> <span class="n">path</span><span class="p">)</span>
+
+<span class="k">if</span> <span class="n">test</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n\n</span><span class="s2">&gt;&gt;&gt;&gt; RERUN live to delete.&quot;</span><span class="p">)</span>
+</code></pre></div>
+            </main>
+        </div><!-- /.entry-content -->
+    </article>
+</section>
+        <section id="extras" class="body">
+
+        <!-- /.blogroll -->
+                <div class="blogroll">
+                        <h2>links</h2>
+                        <ul>
+                            <li><a href="https://indeXall.io">Side project: indeXall.io</a></li>
+                            <li><a href="https://btobsales.eu">Services: BtoBSales.EU</a></li>
+                        </ul>
+                </div>
+
+        <!-- /.social -->
+                <div class="social">
+                        <h2>social</h2>
+                        <ul>
+
+                            <li><a href="https://www.linkedin.com/in/ndeville/">Linkedin</a></li>
+                            <li><a href="https://www.twitter.com/ndeville">Twitter</a></li>
+                        </ul>
+                </div>
+        </section><!-- /#extras -->
+
+        <footer id="contentinfo" class="body">
+                <address id="about" class="vcard body">
+                Powered by <a href="https://github.com/getpelican/pelican" target="_blank">Pelican</a>, 
+                with <a href="https://stork-search.net/" target="_blank">Stork</a> & <a href="https://github.com/pelican-plugins/search" target="_blank">Pelican Search plugin</a>.
+                <span style="color:#C74350">|</span> <img src="https://notes.nicolasdeville.com/images/python.svg" alt="python_logo" width="16" style="vertical-align: middle;"/> <a href="https://www.python.org/" target="_blank">Python</a> 
+                
+                </address><!-- /#about -->
+
+        </footer><!-- /#contentinfo -->
+
+
+<!-- for Stork seach engine -->
+<script src="https://files.stork-search.net/releases/v1.2.1/stork.js"></script>
+<script>
+    stork.register("sitesearch", "https://notes.nicolasdeville.com/search-index.st")
+</script>
+
+</body>
+</html>
