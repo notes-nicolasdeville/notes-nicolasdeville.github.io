@@ -8,6 +8,36 @@ url = "ABOUT/"
 title = ""
 
 [[input.files]]
+path = "python/tmdb-api/index.html"
+url = "python/tmdb-api"
+title = "Fetching data from TMDB API"
+
+[[input.files]]
+path = "home-office/desk/index.html"
+url = "home-office/desk"
+title = "Standing desk: Leetdesk"
+
+[[input.files]]
+path = "home-office/deep-work/index.html"
+url = "home-office/deep-work"
+title = "Resources for Deep Work"
+
+[[input.files]]
+path = "apps/hazel/index.html"
+url = "apps/hazel"
+title = "Hazel"
+
+[[input.files]]
+path = "home-office/scanner/index.html"
+url = "home-office/scanner"
+title = "Fujitsu ScanSnap iX500"
+
+[[input.files]]
+path = "python/copy-folder/index.html"
+url = "python/copy-folder"
+title = "Copy folders with Python"
+
+[[input.files]]
 path = "movies/1000/index.html"
 url = "movies/1000"
 title = "My Top 1,000 Movies"
@@ -21,11 +51,6 @@ title = "Project: Top 1000 movies"
 path = "projects/mailingee/index.html"
 url = "projects/mailingee"
 title = "Mailingee"
-
-[[input.files]]
-path = "apps/hazel/index.html"
-url = "apps/hazel"
-title = "Hazel"
 
 [[input.files]]
 path = "python/my-utils/index.html"
@@ -131,11 +156,6 @@ title = "Grist | The Evolution of Spreadsheets"
 path = "python/library-requests/index.html"
 url = "python/library-requests"
 title = "Library: requests"
-
-[[input.files]]
-path = "python/tmdb-api/index.html"
-url = "python/tmdb-api"
-title = "Fetching data from TMDB API"
 
 [[input.files]]
 path = "interests/elon/index.html"
@@ -246,11 +266,6 @@ title = "Wutang"
 path = "random/chickens-are-weird/index.html"
 url = "random/chickens-are-weird"
 title = "Chickens are weird"
-
-[[input.files]]
-path = "python/copy-folder/index.html"
-url = "python/copy-folder"
-title = "Copy folders with Python"
 
 [[input.files]]
 path = "apps/moom/index.html"
@@ -1126,11 +1141,6 @@ title = "Why having a goal matters"
 path = "salesleaderplaybook/2-types-of-successful-saas-sales-people/index.html"
 url = "salesleaderplaybook/2-types-of-successful-saas-sales-people"
 title = "2 types of successful SaaS Sales people"
-
-[[input.files]]
-path = "home-office/deep-work/index.html"
-url = "home-office/deep-work"
-title = "Resources for Deep Work"
 
 [[input.files]]
 path = "home-office/dictation/index.html"

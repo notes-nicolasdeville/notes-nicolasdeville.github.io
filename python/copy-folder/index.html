@@ -64,13 +64,13 @@
 <footer class="post-info">
 
     <p>
-        18 Jul 2022 <span class="separator">|</span> in <a class="link_tag" href="https://notes.nicolasdeville.com/python/">python</a>
+        27 Jul 2022 <span class="separator">|</span> in <a class="link_tag" href="https://notes.nicolasdeville.com/python/">python</a>
  tags: <a class="link_tag" href="https://notes.nicolasdeville.com/tag/snippets.html">snippets</a>
 
         <!-- added 4/7 -->
         <!-- 		<br />
-        <abbr class="modified" title="2022-07-18T09:55:49.115803+02:00">
-                Updated: 18 Jul 2022
+        <abbr class="modified" title="2022-07-27T15:39:08.771413+02:00">
+                Updated: 27 Jul 2022
         </abbr>
  -->
 
@@ -79,13 +79,24 @@
     
 
 </footer>            <main> <!-- for indexing by Stork -->
-                <p>Having had issues copying large folders (100Gb+) with (Path)Finder, here is the code snippet I used to perform the task with Python (much faster too):</p>
+                <p><span class="datestamp">18 Jul 2022</span> starting note <em>(note date indicates latest update)</em>    </p>
+<p>Having had issues copying large folders (100Gb+) with (Path)Finder, here is the code snippet I used to perform the task with Python (much faster too):</p>
 <div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">shutil</span>
 
 <span class="n">shutil</span><span class="o">.</span><span class="n">copytree</span><span class="p">(</span><span class="s1">&#39;/path/to/source/folder/on/network/Pictures&#39;</span><span class="p">,</span> <span class="s1">&#39;/path/to/destination/folder&#39;</span><span class="p">,</span> <span class="n">dirs_exist_ok</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 </code></pre></div>
 
 <p><code>dirs_exist_ok=True</code> ensures files are overwritten when present, taking care of possible past file corruptions.</p>
+<p>with printing progress:</p>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">datetime</span> <span class="kn">import</span> <span class="n">datetime</span>
+<span class="kn">from</span> <span class="nn">shutil</span> <span class="kn">import</span> <span class="n">copytree</span><span class="p">,</span><span class="n">copy2</span>
+
+<span class="k">def</span> <span class="nf">copy2_verbose</span><span class="p">(</span><span class="n">src</span><span class="p">,</span> <span class="n">dst</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">datetime</span><span class="o">.</span><span class="n">now</span><span class="p">()</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="s1">&#39;%H:%M:%S&#39;</span><span class="p">)</span><span class="si">}</span><span class="s2"> copying: </span><span class="si">{</span><span class="n">src</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="n">copy2</span><span class="p">(</span><span class="n">src</span><span class="p">,</span><span class="n">dst</span><span class="p">)</span>
+
+<span class="n">copytree</span><span class="p">(</span><span class="s1">&#39;/Volumes/Nisubz’s Public Folder/movies&#39;</span><span class="p">,</span> <span class="s1">&#39;/Volumes/Videos/Movies&#39;</span><span class="p">,</span> <span class="n">dirs_exist_ok</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">copy_function</span><span class="o">=</span><span class="n">copy2_verbose</span><span class="p">)</span>
+</code></pre></div>
             </main>
         </div><!-- /.entry-content -->
     </article>

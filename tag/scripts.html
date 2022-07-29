@@ -76,15 +76,15 @@
 <footer class="post-info">
 
     <p>
-        25 Jul 2022 <span class="separator">|</span> in <a class="link_tag" href="https://notes.nicolasdeville.com/python/">python</a>
+        28 Jul 2022 <span class="separator">|</span> in <a class="link_tag" href="https://notes.nicolasdeville.com/python/">python</a>
  tags: <a class="link_tag" href="https://notes.nicolasdeville.com/tag/python.html">python</a>
 <a class="link_tag" href="https://notes.nicolasdeville.com/tag/scripts.html">scripts</a>
 <a class="link_tag" href="https://notes.nicolasdeville.com/tag/api.html">api</a>
 
         <!-- added 4/7 -->
         <!-- 		<br />
-        <abbr class="modified" title="2022-07-25T10:05:52.892741+02:00">
-                Updated: 25 Jul 2022
+        <abbr class="modified" title="2022-07-28T18:27:50.032357+02:00">
+                Updated: 28 Jul 2022
         </abbr>
  -->
 
@@ -98,11 +98,39 @@ The Movie Database (TMDB) is a popular, user editable database for movies and TV
 <blockquote>
 <p>787,956 Movies on TMDB as of <span class="datestamp">25 Jul 2022</span>   </p>
 </blockquote>
-<p>API documentation: <a href="https://developers.themoviedb.org/3/getting-started/introduction" target="_blank">https://developers.themoviedb.org/3/getting-started/introduction</a>    </p>
-<p>Attribution required: <a href="https://www.themoviedb.org/about/logos-attribution" target="_blank">https://www.themoviedb.org/about/logos-attribution</a>   </p>
 <p>See unsuccessful attempts: <br>
 <a href="../../python/library-tmdbv3api/index.html">Nic Note: Library: tmdbv3api</a> <br>
 <a href="../../python/library-tmdbapis/index.html">Nic Note: Library: tmdbapis</a></p>
+<table>
+<thead>
+<tr>
+<th>Library resources</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Documentation</td>
+<td><a href="https://developers.themoviedb.org/3/getting-started/introduction" target="_blank">https://developers.themoviedb.org/3/getting-started/introduction</a></td>
+</tr>
+<tr>
+<td>Support forum</td>
+<td><a href="https://www.themoviedb.org/talk/category/5047958519c29526b50017d6" target="_blank">https://www.themoviedb.org/talk/category/5047958519c29526b50017d6</a></td>
+</tr>
+<tr>
+<td>Wrappers &amp; libraries</td>
+<td><a href="https://www.themoviedb.org/documentation/api/wrappers-libraries" target="_blank">https://www.themoviedb.org/documentation/api/wrappers-libraries</a></td>
+</tr>
+<tr>
+<td>Service status</td>
+<td><a href="https://status.themoviedb.org" target="_blank">https://status.themoviedb.org</a></td>
+</tr>
+</tbody>
+</table>
+<p>Here's an example API request: <br>
+<code>https://api.themoviedb.org/3/movie/550?api_key=xxxxxxxxxxxxxxxxxxx</code></p>
+<p>Attribution required: <br>
+<a href="https://www.themoviedb.org/about/logos-attribution" target="_blank">https://www.themoviedb.org/about/logos-attribution</a>   </p>
 <h1>Fetching data from my private list(s) on TMDB</h1>
 <p>Successful attempt in 5mns to fetch one movie's data with:    </p>
 <div class="highlight"><pre><span></span><code><span class="n">tmdb_api_key</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">getenv</span><span class="p">(</span><span class="s2">&quot;TMDB_API_KEY&quot;</span><span class="p">)</span> <span class="c1"># TMDB API v3 key</span>

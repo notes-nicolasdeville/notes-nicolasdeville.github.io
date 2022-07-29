@@ -64,15 +64,78 @@
             <hr/>
 
                 <article class="hentry">
-                    <h1 class="entry-title"><a href="https://notes.nicolasdeville.com/python/save-images">Save images with Python</a></h1>
+                    <h1 class="entry-title"><a href="https://notes.nicolasdeville.com/python/copy-folder">Copy folders with Python</a></h1>
 
                     <!-- added 4/7 -->
                     <div>
                         <p class="header_summary">
-                            <p>how to save images on disk with Python</p>
+                            <p>one line to copy entire folders</p>
                         </p>
                     </div>
 
+<footer class="post-info">
+
+    <p>
+        27 Jul 2022 <span class="separator">|</span> in <a class="link_tag" href="https://notes.nicolasdeville.com/python/">python</a>
+ tags: <a class="link_tag" href="https://notes.nicolasdeville.com/tag/snippets.html">snippets</a>
+
+        <!-- added 4/7 -->
+        <!-- 		<br />
+        <abbr class="modified" title="2022-07-27T15:39:08.771413+02:00">
+                Updated: 27 Jul 2022
+        </abbr>
+ -->
+
+    </p>
+
+    
+
+</footer><p><span class="datestamp">18 Jul 2022</span> starting note <em>(note date indicates latest update)</em>    </p>
+<p>Having had issues copying large folders (100Gb+) with (Path)Finder, here is the code snippet I used to perform the task with Python (much faster too):</p>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">shutil</span>
+
+<span class="n">shutil</span><span class="o">.</span><span class="n">copytree</span><span class="p">(</span><span class="s1">&#39;/path/to/source/folder/on/network/Pictures&#39;</span><span class="p">,</span> <span class="s1">&#39;/path/to/destination/folder&#39;</span><span class="p">,</span> <span class="n">dirs_exist_ok</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</code></pre></div>
+
+<p><code>dirs_exist_ok=True</code> ensures files are overwritten when present, taking care of possible past file corruptions.</p>
+<p>with printing progress:</p>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">datetime</span> <span class="kn">import</span> <span class="n">datetime</span>
+<span class="kn">from</span> <span class="nn">shutil</span> <span class="kn">import</span> <span class="n">copytree</span><span class="p">,</span><span class="n">copy2</span>
+
+<span class="k">def</span> <span class="nf">copy2_verbose</span><span class="p">(</span><span class="n">src</span><span class="p">,</span> <span class="n">dst</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">datetime</span><span class="o">.</span><span class="n">now</span><span class="p">()</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="s1">&#39;%H:%M:%S&#39;</span><span class="p">)</span><span class="si">}</span><span class="s2"> copying: </span><span class="si">{</span><span class="n">src</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="n">copy2</span><span class="p">(</span><span class="n">src</span><span class="p">,</span><span class="n">dst</span><span class="p">)</span>
+
+<span class="n">copytree</span><span class="p">(</span><span class="s1">&#39;/Volumes/Nisubz’s Public Folder/movies&#39;</span><span class="p">,</span> <span class="s1">&#39;/Volumes/Videos/Movies&#39;</span><span class="p">,</span> <span class="n">dirs_exist_ok</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">copy_function</span><span class="o">=</span><span class="n">copy2_verbose</span><span class="p">)</span>
+</code></pre></div>
+                </article>
+            </aside>
+
+                <section id="content" class="body">
+
+                <!-- PREVIOUS NOTES -->
+				<p class="notes-section">previous notes</p>
+                <hr>
+
+                <ol id="posts-list" class="hfeed">
+            
+
+
+
+            <li>
+                <article class="hentry">
+                    <header>
+                        <!-- PREVIOUS NOTE TITLE -->
+                        <h1><a href="https://notes.nicolasdeville.com/python/save-images" rel="bookmark"
+                            title="Save images with Python">Save images with Python</a></h1>
+                        <!-- PREVIOUS NOTE SUMMARY -->
+                        <div class="entry-content">
+                            <p>how to save images on disk with Python</p>
+                        </div>
+                    </header>
+
+                    <div class="entry-content">
+                        <!-- PREVIOUS NOTE METADATA -->
 <footer class="post-info">
 
     <p>
@@ -90,22 +153,11 @@
 
     
 
-</footer><p><span class="datestamp">23 Jul 2022</span> starting note (<em>Note date indicates latest update.</em>).  </p>
-<h2>from URL</h2>
-<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">urllib.request</span>
-
-<span class="n">urllib</span><span class="o">.</span><span class="n">request</span><span class="o">.</span><span class="n">urlretrieve</span><span class="p">(</span><span class="s2">&quot;http://url/logo.jpg&quot;</span><span class="p">,</span> <span class="s2">&quot;local-filename.jpg&quot;</span><span class="p">)</span>
-</code></pre></div>
+</footer>                    </div>
+                    
                 </article>
-            </aside>
-
-                <section id="content" class="body">
-
-                <!-- PREVIOUS NOTES -->
-				<p class="notes-section">previous notes</p>
-                <hr>
-
-                <ol id="posts-list" class="hfeed">
+                <hr/>
+            </li>
             
 
 
@@ -176,46 +228,6 @@
         <!-- 		<br />
         <abbr class="modified" title="2022-07-21T09:20:47.433785+02:00">
                 Updated: 21 Jul 2022
-        </abbr>
- -->
-
-    </p>
-
-    
-
-</footer>                    </div>
-                    
-                </article>
-                <hr/>
-            </li>
-            
-
-
-
-            <li>
-                <article class="hentry">
-                    <header>
-                        <!-- PREVIOUS NOTE TITLE -->
-                        <h1><a href="https://notes.nicolasdeville.com/python/copy-folder" rel="bookmark"
-                            title="Copy folders with Python">Copy folders with Python</a></h1>
-                        <!-- PREVIOUS NOTE SUMMARY -->
-                        <div class="entry-content">
-                            <p>one line to copy entire folders</p>
-                        </div>
-                    </header>
-
-                    <div class="entry-content">
-                        <!-- PREVIOUS NOTE METADATA -->
-<footer class="post-info">
-
-    <p>
-        18 Jul 2022 <span class="separator">|</span> in <a class="link_tag" href="https://notes.nicolasdeville.com/python/">python</a>
- tags: <a class="link_tag" href="https://notes.nicolasdeville.com/tag/snippets.html">snippets</a>
-
-        <!-- added 4/7 -->
-        <!-- 		<br />
-        <abbr class="modified" title="2022-07-18T09:55:49.115803+02:00">
-                Updated: 18 Jul 2022
         </abbr>
  -->
 

@@ -64,27 +64,27 @@
             <hr/>
 
                 <article class="hentry">
-                    <h1 class="entry-title"><a href="https://notes.nicolasdeville.com/projects/1000-movies">Project: Top 1000 movies</a></h1>
+                    <h1 class="entry-title"><a href="https://notes.nicolasdeville.com/python/tmdb-api">Fetching data from TMDB API</a></h1>
 
                     <!-- added 4/7 -->
                     <div>
                         <p class="header_summary">
-                            <p>because why not</p>
+                            <p>after failing with 2 libraries, just using Python's requests to fetch movie data from TMDB API - themoviedb.org</p>
                         </p>
                     </div>
 
 <footer class="post-info">
 
     <p>
-        27 Jul 2022 <span class="separator">|</span> in <a class="link_tag" href="https://notes.nicolasdeville.com/projects/">projects</a>
- tags: <a class="link_tag" href="https://notes.nicolasdeville.com/tag/movies.html">movies</a>
-<a class="link_tag" href="https://notes.nicolasdeville.com/tag/python.html">python</a>
+        28 Jul 2022 <span class="separator">|</span> in <a class="link_tag" href="https://notes.nicolasdeville.com/python/">python</a>
+ tags: <a class="link_tag" href="https://notes.nicolasdeville.com/tag/python.html">python</a>
+<a class="link_tag" href="https://notes.nicolasdeville.com/tag/scripts.html">scripts</a>
 <a class="link_tag" href="https://notes.nicolasdeville.com/tag/api.html">api</a>
 
         <!-- added 4/7 -->
         <!-- 		<br />
-        <abbr class="modified" title="2022-07-27T10:08:46.342171+02:00">
-                Updated: 27 Jul 2022
+        <abbr class="modified" title="2022-07-28T18:27:50.032357+02:00">
+                Updated: 28 Jul 2022
         </abbr>
  -->
 
@@ -92,49 +92,93 @@
 
     
 
-</footer><p><span class="datestamp">15 Jul 2022</span> starting note <em>(note date indicates latest update)</em>   </p>
-<p>Goals:   </p>
-<ul>
-<li>remind myself of past great movies and rewatch them   </li>
-<li>guide the lifetime movies journey of my kids   </li>
-<li>structure better my watch time (great movies to watch rather than random-Netflixing)   </li>
-<li>tinker with TMDB API and create an effective workflow   </li>
-</ul>
-<p>Reference: 787,956 Movies on TMDB.     </p>
-<p><span class="datestamp">17 Jul 2022</span>   </p>
-<p>Steps:    </p>
-<ul>
-<li>add selected movies to a private list on TMDB [<a href="../../python/tmdb-api/index.html">Nic Note: TMDB API</a>]   </li>
-<li>fetch data from TMDB into Grist spreadsheet [<a href="../../apps/grist/index.html">Nic Note: Grist</a>] for movie management    </li>
-<li>generate Markdown files for this site [<a href="../../python/library-pelican/index.html">Nic Note: Pelican</a>]</li>
-</ul>
-<p><span class="datestamp">24 Jul 2022</span>   </p>
-<h2>Download private list from TMDB, add to Grist for management and prepare for upload to this site</h2>
-<p>TMDB list up and running with ~500 movies to start with:    </p>
-<p><img class="screenshot" src="https://notes.nicolasdeville.com/images/projects_1000-movies_tmdb-view1.jpg" alt="projects_1000-movies_tmdb-view1.jpg"/>  </p>
-<p>Working code, including adding to Grist for management (single source of truth):    </p>
-<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">requests</span>
-<span class="kn">import</span> <span class="nn">urllib.request</span>
-<span class="kn">from</span> <span class="nn">slugify</span> <span class="kn">import</span> <span class="n">slugify</span>
+</footer><p>Goal to fetch my private lists of movies on TMDB [<a href="../../projects/1000-movies/index.html">Nic Note: List of my Top 1000 movies</a>]:<br>
+<a href="https://www.themoviedb.org/" target="_blank">https://www.themoviedb.org/</a><br>
+The Movie Database (TMDB) is a popular, user editable database for movies and TV shows.  </p>
+<blockquote>
+<p>787,956 Movies on TMDB as of <span class="datestamp">25 Jul 2022</span>   </p>
+</blockquote>
+<p>See unsuccessful attempts: <br>
+<a href="../../python/library-tmdbv3api/index.html">Nic Note: Library: tmdbv3api</a> <br>
+<a href="../../python/library-tmdbapis/index.html">Nic Note: Library: tmdbapis</a></p>
+<table>
+<thead>
+<tr>
+<th>Library resources</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Documentation</td>
+<td><a href="https://developers.themoviedb.org/3/getting-started/introduction" target="_blank">https://developers.themoviedb.org/3/getting-started/introduction</a></td>
+</tr>
+<tr>
+<td>Support forum</td>
+<td><a href="https://www.themoviedb.org/talk/category/5047958519c29526b50017d6" target="_blank">https://www.themoviedb.org/talk/category/5047958519c29526b50017d6</a></td>
+</tr>
+<tr>
+<td>Wrappers &amp; libraries</td>
+<td><a href="https://www.themoviedb.org/documentation/api/wrappers-libraries" target="_blank">https://www.themoviedb.org/documentation/api/wrappers-libraries</a></td>
+</tr>
+<tr>
+<td>Service status</td>
+<td><a href="https://status.themoviedb.org" target="_blank">https://status.themoviedb.org</a></td>
+</tr>
+</tbody>
+</table>
+<p>Here's an example API request: <br>
+<code>https://api.themoviedb.org/3/movie/550?api_key=xxxxxxxxxxxxxxxxxxx</code></p>
+<p>Attribution required: <br>
+<a href="https://www.themoviedb.org/about/logos-attribution" target="_blank">https://www.themoviedb.org/about/logos-attribution</a>   </p>
+<h1>Fetching data from my private list(s) on TMDB</h1>
+<p>Successful attempt in 5mns to fetch one movie's data with:    </p>
+<div class="highlight"><pre><span></span><code><span class="n">tmdb_api_key</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">getenv</span><span class="p">(</span><span class="s2">&quot;TMDB_API_KEY&quot;</span><span class="p">)</span> <span class="c1"># TMDB API v3 key</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">tmdb_api_key</span><span class="si">=}</span><span class="s2">&quot;</span><span class="p">)</span> <span class="c1"># print to check that proper key is passed in the payload later</span>
 
-<span class="n">tmdb_api_key</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">getenv</span><span class="p">(</span><span class="s2">&quot;TMDB_API_KEY&quot;</span><span class="p">)</span>
-<span class="n">tmdb_v4_token</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">getenv</span><span class="p">(</span><span class="s2">&quot;TMDB_V4_TOKEN&quot;</span><span class="p">)</span>
+<span class="n">my_top_1000_list_id</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">my_list_id</span><span class="p">)</span> <span class="c1"># as found in the URL of my list</span>
 
-<span class="n">grist_movies_doc_id</span> <span class="o">=</span> <span class="n">grist_PE</span><span class="o">.</span><span class="n">get_grist_movies_doc_id</span><span class="p">()</span>
-<span class="n">grist_api_key</span> <span class="o">=</span> <span class="n">grist_PE</span><span class="o">.</span><span class="n">get_grist_api_key</span><span class="p">()</span>
+<span class="c1"># Fetching movie data for movie ID 100</span>
+<span class="n">movie_url</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;https://api.themoviedb.org/3/movie/100?api_key=</span><span class="si">{</span><span class="n">tmdb_api_key</span><span class="si">}</span><span class="s2">&quot;</span>
+<span class="n">res_movie</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">movie_url</span><span class="p">)</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
+<span class="n">pp</span><span class="o">.</span><span class="n">pprint</span><span class="p">(</span><span class="n">res_movie</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">()</span>
+<span class="n">title</span> <span class="o">=</span> <span class="n">res_movie</span><span class="p">[</span><span class="s2">&quot;title&quot;</span><span class="p">]</span>
+<span class="n">original_language</span> <span class="o">=</span> <span class="n">res_movie</span><span class="p">[</span><span class="s2">&quot;original_language&quot;</span><span class="p">]</span>
+<span class="n">original_title</span> <span class="o">=</span> <span class="n">res_movie</span><span class="p">[</span><span class="s2">&quot;original_title&quot;</span><span class="p">]</span>
+<span class="n">tagline</span> <span class="o">=</span> <span class="n">res_movie</span><span class="p">[</span><span class="s2">&quot;tagline&quot;</span><span class="p">]</span>
+<span class="n">budget</span> <span class="o">=</span> <span class="n">res_movie</span><span class="p">[</span><span class="s2">&quot;budget&quot;</span><span class="p">]</span>
+<span class="n">tmdb_id</span> <span class="o">=</span> <span class="n">res_movie</span><span class="p">[</span><span class="s2">&quot;id&quot;</span><span class="p">]</span>
+<span class="n">imdb_id</span> <span class="o">=</span> <span class="n">res_movie</span><span class="p">[</span><span class="s2">&quot;imdb_id&quot;</span><span class="p">]</span>
+<span class="n">original_language</span> <span class="o">=</span> <span class="n">res_movie</span><span class="p">[</span><span class="s2">&quot;original_language&quot;</span><span class="p">]</span>
+<span class="n">overview</span> <span class="o">=</span> <span class="n">res_movie</span><span class="p">[</span><span class="s2">&quot;overview&quot;</span><span class="p">]</span>
+<span class="n">release_date</span> <span class="o">=</span> <span class="n">res_movie</span><span class="p">[</span><span class="s2">&quot;release_date&quot;</span><span class="p">]</span>
+<span class="n">revenue</span> <span class="o">=</span> <span class="n">res_movie</span><span class="p">[</span><span class="s2">&quot;revenue&quot;</span><span class="p">]</span>
+<span class="n">runtime</span> <span class="o">=</span> <span class="n">res_movie</span><span class="p">[</span><span class="s2">&quot;runtime&quot;</span><span class="p">]</span>
+<span class="n">poster_path</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;https://image.tmdb.org/t/p/original/</span><span class="si">{</span><span class="n">res_movie</span><span class="p">[</span><span class="s1">&#39;poster_path&#39;</span><span class="p">]</span><span class="si">}</span><span class="s2">&quot;</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">title</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">original_language</span><span class="si">=}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">original_title</span><span class="si">=}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">tagline</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">budget</span><span class="si">=}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">tmdb_id</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">imdb_id</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">original_language</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">overview</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">release_date</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">revenue</span><span class="si">=}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">runtime</span><span class="si">=}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">poster_path</span><span class="p">)</span>
+</code></pre></div>
 
-<span class="n">my_top_1000_list_id</span> <span class="o">=</span> <span class="mi">8210669</span>
-
-<span class="n">existing_movies_tmdb_ids</span> <span class="o">=</span> <span class="n">grist_PE</span><span class="o">.</span><span class="n">get_movies_tmdb_ids</span><span class="p">()</span>
-<span class="c1"># print(f&quot;{existing_movies_tmdb_ids=}&quot;)</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">existing_movies_tmdb_ids</span><span class="p">)</span><span class="si">}</span><span class="s2"> movies in DB.</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+<blockquote>
+<p>for storing the API key, see <a href="../../python/library-dotenv/index.html">Nic Note: How to save confidential data in environment variables with dotenv</a>   </p>
+</blockquote>
+<p>and I can get movie data for each movie in my list with:   </p>
+<div class="highlight"><pre><span></span><code><span class="n">tmdb_api_key</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">getenv</span><span class="p">(</span><span class="s2">&quot;TMDB_API_KEY&quot;</span><span class="p">)</span>
+<span class="n">my_top_1000_list_id</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">my_list_id</span><span class="p">)</span>
 
 <span class="n">count</span> <span class="o">=</span> <span class="mi">0</span>
-<span class="n">count_added</span> <span class="o">=</span> <span class="mi">0</span>
-
-<span class="n">total_pages</span> <span class="o">=</span> <span class="mi">1</span>
-
-<span class="c1"># add logic to loop through all the pages</span>
 
 <span class="n">my_1000_url</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;https://api.themoviedb.org/4/list/</span><span class="si">{</span><span class="n">my_top_1000_list_id</span><span class="si">}</span><span class="s2">?page=1&amp;api_key=</span><span class="si">{</span><span class="n">tmdb_api_key</span><span class="si">}</span><span class="s2">&quot;</span>
 <span class="n">res_list</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">my_1000_url</span><span class="p">)</span><span class="o">.</span><span class="n">json</span><span class="p">()</span> 
@@ -163,541 +207,295 @@
     <span class="c1"># the object_ids object includes the list of all movie ids in my list. Will be using that. </span>
 
 <span class="k">for</span> <span class="n">m</span> <span class="ow">in</span> <span class="n">res_list</span><span class="p">[</span><span class="s1">&#39;object_ids&#39;</span><span class="p">]:</span>
-    <span class="n">count</span> <span class="o">+=</span> <span class="mi">1</span>
-
-    <span class="c1"># print(f&quot;{m=}&quot;) # m is a string like &#39;movie:100&#39; (print res_list[&#39;object_ids&#39;] to check), so need to remove first 6 characters to grab the movie id.</span>
+    <span class="n">count</span> <span class="o">+=</span> <span class="mi">1</span> <span class="c1"># to validate number of movies processed</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">m</span><span class="si">=}</span><span class="s2">&quot;</span><span class="p">)</span> <span class="c1"># m is a string like &#39;movie:100&#39; (print res_list[&#39;object_ids&#39;] to check), so need to remove first 6 characters to grab the movie id.</span>
     <span class="n">movie_id</span> <span class="o">=</span> <span class="n">m</span><span class="p">[</span><span class="mi">6</span><span class="p">:]</span> <span class="c1"># </span>
-    <span class="c1"># print(f&quot;{movie_id=}&quot;)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">movie_id</span><span class="si">=}</span><span class="s2">&quot;</span><span class="p">)</span>
 
-    <span class="k">if</span> <span class="nb">int</span><span class="p">(</span><span class="n">movie_id</span><span class="p">)</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">existing_movies_tmdb_ids</span><span class="p">:</span>
-        <span class="c1"># print(f&quot;New movie: processing...&quot;)</span>
-        <span class="n">movie_url</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;https://api.themoviedb.org/3/movie/</span><span class="si">{</span><span class="n">movie_id</span><span class="si">}</span><span class="s2">?api_key=</span><span class="si">{</span><span class="n">tmdb_api_key</span><span class="si">}</span><span class="s2">&quot;</span>
-        <span class="n">res_movie</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">movie_url</span><span class="p">)</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
+    <span class="n">movie_url</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;https://api.themoviedb.org/3/movie/</span><span class="si">{</span><span class="n">movie_id</span><span class="si">}</span><span class="s2">?api_key=</span><span class="si">{</span><span class="n">tmdb_api_key</span><span class="si">}</span><span class="s2">&quot;</span>
+    <span class="n">res_movie</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">movie_url</span><span class="p">)</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
 
-        <span class="n">title</span> <span class="o">=</span> <span class="n">res_movie</span><span class="p">[</span><span class="s2">&quot;title&quot;</span><span class="p">]</span>
-        <span class="n">slug</span> <span class="o">=</span> <span class="n">slugify</span><span class="p">(</span><span class="n">title</span><span class="p">)</span>
-        <span class="n">original_language</span> <span class="o">=</span> <span class="n">res_movie</span><span class="p">[</span><span class="s2">&quot;original_language&quot;</span><span class="p">]</span>
-        <span class="n">original_title</span> <span class="o">=</span> <span class="n">res_movie</span><span class="p">[</span><span class="s2">&quot;original_title&quot;</span><span class="p">]</span>
-        <span class="n">tagline</span> <span class="o">=</span> <span class="n">res_movie</span><span class="p">[</span><span class="s2">&quot;tagline&quot;</span><span class="p">]</span>
-        <span class="n">budget</span> <span class="o">=</span> <span class="n">res_movie</span><span class="p">[</span><span class="s2">&quot;budget&quot;</span><span class="p">]</span>
-        <span class="n">tmdb_id</span> <span class="o">=</span> <span class="n">res_movie</span><span class="p">[</span><span class="s2">&quot;id&quot;</span><span class="p">]</span>
-        <span class="n">imdb_id</span> <span class="o">=</span> <span class="n">res_movie</span><span class="p">[</span><span class="s2">&quot;imdb_id&quot;</span><span class="p">]</span>
-        <span class="n">overview</span> <span class="o">=</span> <span class="n">res_movie</span><span class="p">[</span><span class="s2">&quot;overview&quot;</span><span class="p">]</span>
-        <span class="n">release_date</span> <span class="o">=</span> <span class="n">res_movie</span><span class="p">[</span><span class="s2">&quot;release_date&quot;</span><span class="p">]</span>
-        <span class="n">revenue</span> <span class="o">=</span> <span class="n">res_movie</span><span class="p">[</span><span class="s2">&quot;revenue&quot;</span><span class="p">]</span>
-        <span class="n">runtime</span> <span class="o">=</span> <span class="n">res_movie</span><span class="p">[</span><span class="s2">&quot;runtime&quot;</span><span class="p">]</span>
-        <span class="n">poster_path</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;https://image.tmdb.org/t/p/original</span><span class="si">{</span><span class="n">res_movie</span><span class="p">[</span><span class="s1">&#39;poster_path&#39;</span><span class="p">]</span><span class="si">}</span><span class="s2">&quot;</span>
-        <span class="n">poster_path_w154</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;https://image.tmdb.org/t/p/w154</span><span class="si">{</span><span class="n">res_movie</span><span class="p">[</span><span class="s1">&#39;poster_path&#39;</span><span class="p">]</span><span class="si">}</span><span class="s2">&quot;</span>
-        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n</span><span class="si">{</span><span class="n">count</span><span class="si">}</span><span class="s2"> adding </span><span class="si">{</span><span class="n">title</span><span class="si">=}</span><span class="s2">&quot;</span><span class="p">)</span>
-        <span class="c1"># print(f&quot;{original_language=}&quot;)</span>
-        <span class="c1"># print(f&quot;{original_title=}&quot;)</span>
-        <span class="c1"># print(f&quot;{tagline=}&quot;)</span>
-        <span class="c1"># print(f&quot;{budget=}&quot;)</span>
-        <span class="c1"># print(f&quot;{tmdb_id=}&quot;)</span>
-        <span class="c1"># print(f&quot;{imdb_id=}&quot;)</span>
-        <span class="c1"># print(f&quot;{overview=}&quot;)</span>
-        <span class="c1"># print(f&quot;{release_date=}&quot;)</span>
-        <span class="c1"># print(f&quot;{revenue=}&quot;)</span>
-        <span class="c1"># print(f&quot;{runtime=}&quot;)</span>
-        <span class="c1"># print(f&quot;{poster_path=}&quot;)</span>
+    <span class="n">title</span> <span class="o">=</span> <span class="n">res_movie</span><span class="p">[</span><span class="s2">&quot;title&quot;</span><span class="p">]</span>
+    <span class="n">original_language</span> <span class="o">=</span> <span class="n">res_movie</span><span class="p">[</span><span class="s2">&quot;original_language&quot;</span><span class="p">]</span>
+    <span class="n">original_title</span> <span class="o">=</span> <span class="n">res_movie</span><span class="p">[</span><span class="s2">&quot;original_title&quot;</span><span class="p">]</span>
+    <span class="n">tagline</span> <span class="o">=</span> <span class="n">res_movie</span><span class="p">[</span><span class="s2">&quot;tagline&quot;</span><span class="p">]</span>
+    <span class="n">budget</span> <span class="o">=</span> <span class="n">res_movie</span><span class="p">[</span><span class="s2">&quot;budget&quot;</span><span class="p">]</span>
+    <span class="n">tmdb_id</span> <span class="o">=</span> <span class="n">res_movie</span><span class="p">[</span><span class="s2">&quot;id&quot;</span><span class="p">]</span>
+    <span class="n">imdb_id</span> <span class="o">=</span> <span class="n">res_movie</span><span class="p">[</span><span class="s2">&quot;imdb_id&quot;</span><span class="p">]</span>
+    <span class="n">original_language</span> <span class="o">=</span> <span class="n">res_movie</span><span class="p">[</span><span class="s2">&quot;original_language&quot;</span><span class="p">]</span>
+    <span class="n">overview</span> <span class="o">=</span> <span class="n">res_movie</span><span class="p">[</span><span class="s2">&quot;overview&quot;</span><span class="p">]</span>
+    <span class="n">release_date</span> <span class="o">=</span> <span class="n">res_movie</span><span class="p">[</span><span class="s2">&quot;release_date&quot;</span><span class="p">]</span>
+    <span class="n">revenue</span> <span class="o">=</span> <span class="n">res_movie</span><span class="p">[</span><span class="s2">&quot;revenue&quot;</span><span class="p">]</span>
+    <span class="n">runtime</span> <span class="o">=</span> <span class="n">res_movie</span><span class="p">[</span><span class="s2">&quot;runtime&quot;</span><span class="p">]</span>
+    <span class="n">poster_path</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;https://image.tmdb.org/t/p/original/</span><span class="si">{</span><span class="n">res_movie</span><span class="p">[</span><span class="s1">&#39;poster_path&#39;</span><span class="p">]</span><span class="si">}</span><span class="s2">&quot;</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">title</span><span class="si">=}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">original_language</span><span class="si">=}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">original_title</span><span class="si">=}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">tagline</span><span class="si">=}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">budget</span><span class="si">=}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">tmdb_id</span><span class="si">=}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">imdb_id</span><span class="si">=}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">original_language</span><span class="si">=}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">overview</span><span class="si">=}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">release_date</span><span class="si">=}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">revenue</span><span class="si">=}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">runtime</span><span class="si">=}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">poster_path</span><span class="si">=}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">()</span>
 
-        <span class="c1"># Save poster original size locally</span>
-        <span class="n">poster_filepath</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;/Users/nic/Pictures/movie_posters/</span><span class="si">{</span><span class="n">slug</span><span class="si">}</span><span class="s2">.jpg&quot;</span>
-
-        <span class="c1"># Save poster small size locally for easier upload to Grist + notes publishing later</span>
-        <span class="n">poster_small_filepath</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;/path/to/folder/poster_</span><span class="si">{</span><span class="n">slug</span><span class="si">}</span><span class="s2">_w154.jpg&quot;</span>
-
-        <span class="n">urllib</span><span class="o">.</span><span class="n">request</span><span class="o">.</span><span class="n">urlretrieve</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">poster_path</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">poster_filepath</span><span class="p">)</span>
-        <span class="n">urllib</span><span class="o">.</span><span class="n">request</span><span class="o">.</span><span class="n">urlretrieve</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">poster_path_w154</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">poster_small_filepath</span><span class="p">)</span>
-
-        <span class="c1"># Upload small poster to Grist</span>
-        <span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">post</span><span class="p">(</span>
-                                <span class="sa">f</span><span class="s2">&quot;https://docs.getgrist.com/api/docs/</span><span class="si">{</span><span class="n">grist_movies_doc_id</span><span class="si">}</span><span class="s2">/attachments&quot;</span><span class="p">,</span>
-                                <span class="n">files</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;upload&quot;</span><span class="p">:</span> <span class="nb">open</span><span class="p">(</span><span class="n">poster_small_filepath</span><span class="p">,</span> <span class="s2">&quot;rb&quot;</span><span class="p">)},</span>
-                                <span class="n">headers</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;Authorization&quot;</span><span class="p">:</span> <span class="sa">f</span><span class="s2">&quot;Bearer </span><span class="si">{</span><span class="n">grist_api_key</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">},</span>
-                                <span class="p">)</span>
-        <span class="n">attachment_id</span> <span class="o">=</span> <span class="n">response</span><span class="o">.</span><span class="n">json</span><span class="p">()[</span><span class="mi">0</span><span class="p">]</span>
-        <span class="c1"># print(f&quot;{attachment_id=}&quot;) # to check</span>
-        <span class="n">poster_file</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;L&quot;</span><span class="p">,</span> <span class="n">attachment_id</span><span class="p">]</span>
-        <span class="c1"># print(f&quot;{poster_file=}&quot;) # to check</span>
-
-        <span class="n">grist_PE</span><span class="o">.</span><span class="n">Movies</span><span class="o">.</span><span class="n">add_records</span><span class="p">(</span><span class="s1">&#39;Master&#39;</span><span class="p">,</span> <span class="p">[</span>
-                                        <span class="p">{</span>   <span class="s1">&#39;title&#39;</span><span class="p">:</span> <span class="n">title</span><span class="p">,</span>
-                                            <span class="s1">&#39;slug&#39;</span><span class="p">:</span> <span class="n">slug</span><span class="p">,</span>
-                                            <span class="s1">&#39;og_title&#39;</span><span class="p">:</span> <span class="n">original_title</span><span class="p">,</span>
-                                            <span class="s1">&#39;language&#39;</span><span class="p">:</span> <span class="n">original_language</span><span class="p">,</span>
-                                            <span class="s1">&#39;tagline&#39;</span><span class="p">:</span> <span class="n">tagline</span><span class="p">,</span>
-                                            <span class="s1">&#39;budget&#39;</span><span class="p">:</span> <span class="n">budget</span><span class="p">,</span>
-                                            <span class="s1">&#39;tmdb_id&#39;</span><span class="p">:</span> <span class="n">tmdb_id</span><span class="p">,</span>
-                                            <span class="s1">&#39;imdb_id&#39;</span><span class="p">:</span> <span class="n">imdb_id</span><span class="p">,</span>
-                                            <span class="s1">&#39;overview&#39;</span><span class="p">:</span> <span class="n">overview</span><span class="p">,</span>
-                                            <span class="s1">&#39;release_date&#39;</span><span class="p">:</span> <span class="n">release_date</span><span class="p">,</span>
-                                            <span class="s1">&#39;revenue&#39;</span><span class="p">:</span> <span class="n">revenue</span><span class="p">,</span>
-                                            <span class="s1">&#39;runtime&#39;</span><span class="p">:</span> <span class="n">runtime</span><span class="p">,</span>
-                                            <span class="s1">&#39;poster&#39;</span><span class="p">:</span> <span class="n">poster_file</span><span class="p">,</span>
-                                            <span class="p">}</span>
-                                    <span class="p">])</span>
-        <span class="n">count_added</span> <span class="o">+=</span> <span class="mi">1</span>
-        <span class="nb">print</span><span class="p">()</span>
-
-    <span class="c1"># else:</span>
-    <span class="c1">#     print(f&quot;{count} {movie_id=} already in Grist.&quot;)</span>
-
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Count ADDED: </span><span class="si">{</span><span class="n">count_added</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">count</span><span class="si">=}</span><span class="s2">&quot;</span><span class="p">)</span> <span class="c1"># to validate number of movies processed</span>
 </code></pre></div>
 
-<p>First run with 492 movies in my list on TMDB:   </p>
-<div style="padding:56.25% 0 0 0;position:relative;"><iframe src="https://player.vimeo.com/video/732918803?h=494e7f92a3&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen style="position:absolute;top:0;left:0;width:100%;height:100%;" title="projects_1000-movies_tmdb-fetch1"></iframe></div>
-<script src="https://player.vimeo.com/api/player.js"></script>
+<p>returns (edited for length):   </p>
+<div class="highlight"><pre><span></span><code>m=&#39;movie:100&#39;
+movie_id=&#39;100&#39;
+title=&#39;Lock, Stock and Two Smoking Barrels&#39;
+original_language=&#39;en&#39;
+original_title=&#39;Lock, Stock and Two Smoking Barrels&#39;
+tagline=&#39;A Disgrace to Criminals Everywhere.&#39;
+budget=1350000
+tmdb_id=100
+imdb_id=&#39;tt0120735&#39;
+original_language=&#39;en&#39;
+overview=&#39;A card shark and his unwillingly-enlisted friends need to make a lot of cash quick after losing a sketchy poker match. To do this they decide to pull a heist on a small-time gang who happen to be operating out of the flat next door.&#39;
+release_date=&#39;1998-08-28&#39;
+revenue=28356188
+runtime=105
+poster_path=&#39;https://image.tmdb.org/t/p/original//8kSerJrhrJWKLk1LViesGcnrUPE.jpg&#39;
 
-<p>Result:   </p>
-<div class="highlight"><pre><span></span><code>-------------------------------
-tmdb_1000.py
+m=&#39;movie:101&#39;
+movie_id=&#39;101&#39;
+title=&#39;Léon: The Professional&#39;
+original_language=&#39;en&#39;
+original_title=&#39;Léon: The Professional&#39;
+tagline=&#39;If you want a job done well, hire a professional.&#39;
+budget=16000000
+tmdb_id=101
+imdb_id=&#39;tt0110413&#39;
+original_language=&#39;en&#39;
+overview=&#39;Léon, the top hit man in New York, has earned a rep as an effective &quot;cleaner&quot;. But when his next-door neighbors are wiped out by a loose-cannon DEA agent, he becomes the unwilling custodian of 12-year-old Mathilda. Before long, Mathilda\&#39;s thoughts turn to revenge, and she considers following in Léon\&#39;s footsteps.&#39;
+release_date=&#39;1994-09-14&#39;
+revenue=45284974
+runtime=111
+poster_path=&#39;https://image.tmdb.org/t/p/original//yI6X2cCM5YPJtxMhUd3dPGqDAhw.jpg&#39;
 
-Count = 492
-
--------------------------------
-tmdb_1000.py finished in 13.281666666666666 minutes.
+m=&#39;movie:103&#39;
+movie_id=&#39;103&#39;
+title=&#39;Taxi Driver&#39;
+original_language=&#39;en&#39;
+original_title=&#39;Taxi Driver&#39;
+tagline=&quot;On every street in every city, there&#39;s a nobody who dreams of being a somebody.&quot;
+budget=1300000
+tmdb_id=103
+imdb_id=&#39;tt0075314&#39;
+original_language=&#39;en&#39;
+overview=&#39;A mentally unstable Vietnam War veteran works as a night-time taxi driver in New York City where the perceived decadence and sleaze feed his urge for violent action.&#39;
+release_date=&#39;1976-02-09&#39;
+revenue=28570902
+runtime=114
+poster_path=&#39;https://image.tmdb.org/t/p/original//ekstpH614fwDX8DUln1a2Opz0N8.jpg&#39;
 </code></pre></div>
 
-<p>Seems to run well. <br>
-Running the script from now on (runs in 5s-ish) will add to Grist only the new additions in TMDB.   </p>
-<p>Next steps:  </p>
-<ul>
-<li>Add new movies to TMDB &amp; refine workflow as needed.  </li>
-<li>Write code to generate movie library list for this site.   </li>
-</ul>
-<h2>add new movies</h2>
-<p>First hurdle: no way to see on TMDB's Top Rated page which movies are already in my list. Impossibly painful to continue adding movies like that :(    </p>
-<p>Streamline the process by fetching movies from TMDB's Top Rated list (<a href="https://www.themoviedb.org/movie/top-rated" target="_blank">https://www.themoviedb.org/movie/top-rated</a>) and filtering out:   </p>
-<ul>
-<li>those already in my list  </li>
-<li>movies where original language is not <code>en</code>, <code>fr</code> or <code>de</code> (by large most movies I have seen)   </li>
-</ul>
-<p>Adding them to Grist where I can easily select which ones to add to my list, and update my list on TMDB back via API (using TMDB ID).  </p>
-<p>Working code:    </p>
-<div class="highlight"><pre><span></span><code><span class="c1">####################</span>
-<span class="c1"># Getting Top Rated movied from TMDB, filtering out:   </span>
-<span class="c1"># - those already in my list  </span>
-<span class="c1"># - movies where original language is not `en`, `fr` or `de` (only movies I have seen)   </span>
+<h1>Fetching Top Rated movies on TMDB</h1>
+<div class="highlight"><pre><span></span><code><span class="n">top_rated_movies_url</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;https://api.themoviedb.org/3/movie/top_rated?page=1&amp;api_key=</span><span class="si">{</span><span class="n">tmdb_api_key</span><span class="si">}</span><span class="s2">&quot;</span>
+<span class="n">res_list</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">top_rated_movies_url</span><span class="p">)</span><span class="o">.</span><span class="n">json</span><span class="p">()</span> 
+<span class="n">pp</span><span class="o">.</span><span class="n">pprint</span><span class="p">(</span><span class="n">res_list</span><span class="p">)</span>
+</code></pre></div>
 
-<span class="kn">import</span> <span class="nn">requests</span>
-<span class="kn">import</span> <span class="nn">urllib.request</span>
-<span class="kn">from</span> <span class="nn">slugify</span> <span class="kn">import</span> <span class="n">slugify</span>
+<p>returns:</p>
+<p><code>&lt;class 'dict'&gt;</code>
+Keys:
+- page
+- results
+- total_pages
+- total_results</p>
+<p>output (edited for length):  </p>
+<div class="highlight"><pre><span></span><code><span class="o">{</span>   <span class="s1">&#39;page&#39;</span>: <span class="m">1</span>,
+    <span class="s1">&#39;results&#39;</span>: <span class="o">[</span>   <span class="o">{</span>   <span class="s1">&#39;adult&#39;</span>: False,
+                       <span class="s1">&#39;backdrop_path&#39;</span>: <span class="s1">&#39;/kXfqcdQKsToO0OUXHcrrNCHDBzO.jpg&#39;</span>,
+                       <span class="s1">&#39;genre_ids&#39;</span>: <span class="o">[</span><span class="m">18</span>, <span class="m">80</span><span class="o">]</span>,
+                       <span class="s1">&#39;id&#39;</span>: <span class="m">278</span>,
+                       <span class="s1">&#39;original_language&#39;</span>: <span class="s1">&#39;en&#39;</span>,
+                       <span class="s1">&#39;original_title&#39;</span>: <span class="s1">&#39;The Shawshank Redemption&#39;</span>,
+                       <span class="s1">&#39;overview&#39;</span>: <span class="s1">&#39;Framed in the 1940s for the double murder &#39;</span>
+                                   <span class="s1">&#39;of his wife and her lover, upstanding &#39;</span>
+                                   <span class="s1">&#39;banker Andy Dufresne begins a new life at &#39;</span>
+                                   <span class="s1">&#39;the Shawshank prison, where he puts his &#39;</span>
+                                   <span class="s1">&#39;accounting skills to work for an amoral &#39;</span>
+                                   <span class="s1">&#39;warden. During his long stretch in prison, &#39;</span>
+                                   <span class="s1">&#39;Dufresne comes to be admired by the other &#39;</span>
+                                   <span class="s1">&#39;inmates -- including an older prisoner &#39;</span>
+                                   <span class="s1">&#39;named Red -- for his integrity and &#39;</span>
+                                   <span class="s1">&#39;unquenchable sense of hope.&#39;</span>,
+                       <span class="s1">&#39;popularity&#39;</span>: <span class="m">82</span>.945,
+                       <span class="s1">&#39;poster_path&#39;</span>: <span class="s1">&#39;/q6y0Go1tsGEsmtFryDOJo3dEmqu.jpg&#39;</span>,
+                       <span class="s1">&#39;release_date&#39;</span>: <span class="s1">&#39;1994-09-23&#39;</span>,
+                       <span class="s1">&#39;title&#39;</span>: <span class="s1">&#39;The Shawshank Redemption&#39;</span>,
+                       <span class="s1">&#39;video&#39;</span>: False,
+                       <span class="s1">&#39;vote_average&#39;</span>: <span class="m">8</span>.7,
+                       <span class="s1">&#39;vote_count&#39;</span>: <span class="m">21823</span><span class="o">}</span>,
+                   <span class="o">{</span>   <span class="s1">&#39;adult&#39;</span>: False,
+                       <span class="s1">&#39;backdrop_path&#39;</span>: <span class="s1">&#39;/90ez6ArvpO8bvpyIngBuwXOqJm5.jpg&#39;</span>,
+                       <span class="s1">&#39;genre_ids&#39;</span>: <span class="o">[</span><span class="m">35</span>, <span class="m">18</span>, <span class="m">10749</span><span class="o">]</span>,
+                       <span class="s1">&#39;id&#39;</span>: <span class="m">19404</span>,
+                       <span class="s1">&#39;original_language&#39;</span>: <span class="s1">&#39;hi&#39;</span>,
+                       <span class="s1">&#39;original_title&#39;</span>: <span class="s1">&#39;दिलवाले दुल्हनिया ले जायेंगे&#39;</span>,
+                       <span class="s1">&#39;overview&#39;</span>: <span class="s1">&#39;Raj is a rich, carefree, happy-go-lucky &#39;</span>
+                                   <span class="s1">&#39;second generation NRI. Simran is the &#39;</span>
+                                   <span class="s1">&#39;daughter of Chaudhary Baldev Singh, who in &#39;</span>
+                                   <span class="s1">&#39;spite of being an NRI is very strict about &#39;</span>
+                                   <span class="s1">&#39;adherence to Indian values. Simran has &#39;</span>
+                                   <span class="s1">&#39;left for India to be married to her &#39;</span>
+                                   <span class="s1">&#39;childhood fiancé. Raj leaves for India &#39;</span>
+                                   <span class="s1">&#39;with a mission at his hands, to claim his &#39;</span>
+                                   <span class="s1">&#39;lady love under the noses of her whole &#39;</span>
+                                   <span class="s1">&#39;family. Thus begins a saga.&#39;</span>,
+                       <span class="s1">&#39;popularity&#39;</span>: <span class="m">23</span>.792,
+                       <span class="s1">&#39;poster_path&#39;</span>: <span class="s1">&#39;/2CAL2433ZeIihfX1Hb2139CX0pW.jpg&#39;</span>,
+                       <span class="s1">&#39;release_date&#39;</span>: <span class="s1">&#39;1995-10-19&#39;</span>,
+                       <span class="s1">&#39;title&#39;</span>: <span class="s1">&#39;Dilwale Dulhania Le Jayenge&#39;</span>,
+                       <span class="s1">&#39;video&#39;</span>: False,
+                       <span class="s1">&#39;vote_average&#39;</span>: <span class="m">8</span>.7,
+                       <span class="s1">&#39;vote_count&#39;</span>: <span class="m">3722</span><span class="o">}</span>,
+                   <span class="o">{</span>   <span class="s1">&#39;adult&#39;</span>: False,
+                       <span class="s1">&#39;backdrop_path&#39;</span>: <span class="s1">&#39;/rSPw7tgCH9c6NqICZef4kZjFOQ5.jpg&#39;</span>,
+                       <span class="s1">&#39;genre_ids&#39;</span>: <span class="o">[</span><span class="m">18</span>, <span class="m">80</span><span class="o">]</span>,
+                       <span class="s1">&#39;id&#39;</span>: <span class="m">238</span>,
+                       <span class="s1">&#39;original_language&#39;</span>: <span class="s1">&#39;en&#39;</span>,
+                       <span class="s1">&#39;original_title&#39;</span>: <span class="s1">&#39;The Godfather&#39;</span>,
+                       <span class="s1">&#39;overview&#39;</span>: <span class="s1">&#39;Spanning the years 1945 to 1955, a &#39;</span>
+                                   <span class="s1">&#39;chronicle of the fictional &#39;</span>
+                                   <span class="s1">&#39;Italian-American Corleone crime family. &#39;</span>
+                                   <span class="s1">&#39;When organized crime family patriarch, &#39;</span>
+                                   <span class="s1">&#39;Vito Corleone barely survives an attempt &#39;</span>
+                                   <span class="s1">&#39;on his life, his youngest son, Michael &#39;</span>
+                                   <span class="s1">&#39;steps in to take care of the would-be &#39;</span>
+                                   <span class="s1">&#39;killers, launching a campaign of bloody &#39;</span>
+                                   <span class="s1">&#39;revenge.&#39;</span>,
+                       <span class="s1">&#39;popularity&#39;</span>: <span class="m">89</span>.756,
+                       <span class="s1">&#39;poster_path&#39;</span>: <span class="s1">&#39;/3bhkrj58Vtu7enYsRolD1fZdja1.jpg&#39;</span>,
+                       <span class="s1">&#39;release_date&#39;</span>: <span class="s1">&#39;1972-03-14&#39;</span>,
+                       <span class="s1">&#39;title&#39;</span>: <span class="s1">&#39;The Godfather&#39;</span>,
+                       <span class="s1">&#39;video&#39;</span>: False,
+                       <span class="s1">&#39;vote_average&#39;</span>: <span class="m">8</span>.7,
+                       <span class="s1">&#39;vote_count&#39;</span>: <span class="m">16247</span><span class="o">}</span>,
+</code></pre></div>
 
-<span class="n">tmdb_api_key</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">getenv</span><span class="p">(</span><span class="s2">&quot;TMDB_API_KEY&quot;</span><span class="p">)</span>
+<p>full script to fetch data per page:   </p>
+<div class="highlight"><pre><span></span><code><span class="n">tmdb_api_key</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">getenv</span><span class="p">(</span><span class="s2">&quot;TMDB_API_KEY&quot;</span><span class="p">)</span>
+<span class="c1"># print(f&quot;{tmdb_api_key=}&quot;)</span>
 <span class="n">tmdb_v4_token</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">getenv</span><span class="p">(</span><span class="s2">&quot;TMDB_V4_TOKEN&quot;</span><span class="p">)</span>
-
-<span class="n">grist_movies_doc_id</span> <span class="o">=</span> <span class="n">grist_PE</span><span class="o">.</span><span class="n">get_grist_movies_doc_id</span><span class="p">()</span>
-<span class="n">grist_api_key</span> <span class="o">=</span> <span class="n">grist_PE</span><span class="o">.</span><span class="n">get_grist_api_key</span><span class="p">()</span>
+<span class="c1"># print(f&quot;{tmdb_v4_token=}&quot;)</span>
 
 <span class="n">count</span> <span class="o">=</span> <span class="mi">0</span>
-<span class="n">count_added</span> <span class="o">=</span> <span class="mi">0</span>
 
-<span class="n">existing_movies_tmdb_ids</span> <span class="o">=</span> <span class="n">grist_PE</span><span class="o">.</span><span class="n">get_movies_tmdb_ids</span><span class="p">()</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">existing_movies_tmdb_ids</span><span class="p">)</span><span class="si">}</span><span class="s2"> movies in my DB.</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
-<span class="n">existing_top_rated_movies_tmdb_ids</span> <span class="o">=</span> <span class="n">grist_PE</span><span class="o">.</span><span class="n">get_top_rated_movies_tmdb_ids</span><span class="p">()</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">existing_top_rated_movies_tmdb_ids</span><span class="p">)</span><span class="si">}</span><span class="s2"> Top Rated movies in DB.</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="c1"># Per page request</span>
 
-<span class="n">total_pages</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;https://api.themoviedb.org/3/movie/top_rated?page=1&amp;api_key=</span><span class="si">{</span><span class="n">tmdb_api_key</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">json</span><span class="p">()[</span><span class="s1">&#39;total_pages&#39;</span><span class="p">]</span>
-<span class="c1"># total_pages = 3 # for tests purposes</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">total_pages</span><span class="si">}</span><span class="s2"> pages of Top Rated movies on TMDB.</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="n">top_rated_movies_url</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;https://api.themoviedb.org/3/movie/top_rated?page=1&amp;api_key=</span><span class="si">{</span><span class="n">tmdb_api_key</span><span class="si">}</span><span class="s2">&quot;</span>
 
-<span class="k">for</span> <span class="n">page</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">total_pages</span><span class="p">):</span>
+<span class="n">res_list</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">top_rated_movies_url</span><span class="p">)</span><span class="o">.</span><span class="n">json</span><span class="p">()</span> 
+<span class="n">pp</span><span class="o">.</span><span class="n">pprint</span><span class="p">(</span><span class="n">res_list</span><span class="p">)</span>
 
-    <span class="n">top_rated_movies_url</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;https://api.themoviedb.org/3/movie/top_rated?page=</span><span class="si">{</span><span class="n">page</span><span class="si">}</span><span class="s2">&amp;api_key=</span><span class="si">{</span><span class="n">tmdb_api_key</span><span class="si">}</span><span class="s2">&quot;</span>
-    <span class="n">res_list</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">top_rated_movies_url</span><span class="p">)</span><span class="o">.</span><span class="n">json</span><span class="p">()</span> 
-    <span class="c1"># pp.pprint(res_list)</span>
-
-    <span class="k">for</span> <span class="n">m</span> <span class="ow">in</span> <span class="n">res_list</span><span class="p">[</span><span class="s1">&#39;results&#39;</span><span class="p">]:</span>
-
-        <span class="c1"># returns dict with 4 fields:</span>
-        <span class="c1">#     page: int</span>
-        <span class="c1">#     results: list of dicts with 14 fields per movie, 20 movies per page: </span>
-        <span class="c1">#         adult</span>
-        <span class="c1">#         backdrop_path</span>
-        <span class="c1">#         genre_ids</span>
-        <span class="c1">#         id</span>
-        <span class="c1">#         original_language</span>
-        <span class="c1">#         original_title</span>
-        <span class="c1">#         overview</span>
-        <span class="c1">#         popularity</span>
-        <span class="c1">#         poster_path</span>
-        <span class="c1">#         release_date</span>
-        <span class="c1">#         title</span>
-        <span class="c1">#         video</span>
-        <span class="c1">#         vote_average</span>
-        <span class="c1">#         vote_count</span>
-        <span class="c1">#     total_pages: int / 507</span>
-        <span class="c1">#     total_results: int / 10127</span>
-
-        <span class="c1">#     the results object includes the list of all movies. Will be using that. </span>
-
-        <span class="n">movie_id</span> <span class="o">=</span> <span class="n">m</span><span class="p">[</span><span class="s2">&quot;id&quot;</span><span class="p">]</span>
-
-        <span class="k">if</span> <span class="nb">int</span><span class="p">(</span><span class="n">movie_id</span><span class="p">)</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">existing_movies_tmdb_ids</span><span class="p">:</span>
-
-            <span class="k">if</span> <span class="nb">int</span><span class="p">(</span><span class="n">movie_id</span><span class="p">)</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">existing_top_rated_movies_tmdb_ids</span><span class="p">:</span>
-
-                <span class="n">original_language</span> <span class="o">=</span> <span class="n">m</span><span class="p">[</span><span class="s2">&quot;original_language&quot;</span><span class="p">]</span>
-
-                <span class="k">if</span> <span class="n">original_language</span> <span class="ow">in</span> <span class="p">[</span><span class="s1">&#39;en&#39;</span><span class="p">,</span> <span class="s1">&#39;de&#39;</span><span class="p">,</span> <span class="s1">&#39;fr&#39;</span><span class="p">]:</span>
-
-                    <span class="n">movie_url</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;https://api.themoviedb.org/3/movie/</span><span class="si">{</span><span class="n">movie_id</span><span class="si">}</span><span class="s2">?api_key=</span><span class="si">{</span><span class="n">tmdb_api_key</span><span class="si">}</span><span class="s2">&quot;</span>
-                    <span class="n">res_movie</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">movie_url</span><span class="p">)</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
-
-                    <span class="n">title</span> <span class="o">=</span> <span class="n">m</span><span class="p">[</span><span class="s2">&quot;title&quot;</span><span class="p">]</span>
-                    <span class="n">slug</span> <span class="o">=</span> <span class="n">slugify</span><span class="p">(</span><span class="n">title</span><span class="p">)</span>
-                    <span class="n">original_title</span> <span class="o">=</span> <span class="n">m</span><span class="p">[</span><span class="s2">&quot;original_title&quot;</span><span class="p">]</span>
-                    <span class="n">tmdb_id</span> <span class="o">=</span> <span class="n">m</span><span class="p">[</span><span class="s2">&quot;id&quot;</span><span class="p">]</span>
-                    <span class="n">tmdb_url</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;https://www.themoviedb.org/movie/</span><span class="si">{</span><span class="n">movie_id</span><span class="si">}</span><span class="s2">-</span><span class="si">{</span><span class="n">slug</span><span class="si">}</span><span class="s2">&quot;</span> <span class="c1"># adding the TMDB URL for easy cheching</span>
-                    <span class="n">overview</span> <span class="o">=</span> <span class="n">m</span><span class="p">[</span><span class="s2">&quot;overview&quot;</span><span class="p">]</span>
-                    <span class="n">release_date</span> <span class="o">=</span> <span class="n">m</span><span class="p">[</span><span class="s2">&quot;release_date&quot;</span><span class="p">]</span>
-                    <span class="n">poster_path_w154</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;https://image.tmdb.org/t/p/w154</span><span class="si">{</span><span class="n">res_movie</span><span class="p">[</span><span class="s1">&#39;poster_path&#39;</span><span class="p">]</span><span class="si">}</span><span class="s2">&quot;</span> <span class="c1"># only need small version for check purposes</span>
-                    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">title</span><span class="si">=}</span><span class="s2">&quot;</span><span class="p">)</span>
-                    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">original_language</span><span class="si">=}</span><span class="s2">&quot;</span><span class="p">)</span>
-                    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">original_title</span><span class="si">=}</span><span class="s2">&quot;</span><span class="p">)</span>
-                    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">tmdb_id</span><span class="si">=}</span><span class="s2">&quot;</span><span class="p">)</span>
-                    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">original_language</span><span class="si">=}</span><span class="s2">&quot;</span><span class="p">)</span>
-                    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">release_date</span><span class="si">=}</span><span class="s2">&quot;</span><span class="p">)</span>
-                    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">poster_path_w154</span><span class="si">=}</span><span class="s2">&quot;</span><span class="p">)</span>
-                    <span class="nb">print</span><span class="p">()</span>
-
-                    <span class="c1"># =&gt; when importing selected movies to Master table (Top 1000), need to use the https://api.themoviedb.org/3/movie/{movie_id}?api_key={tmdb_api_key} endpoint for each to get missing fields</span>
-
-                    <span class="c1"># Save poster small size locally for easier upload to Grist</span>
-                    <span class="n">poster_filepath</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;/Users/nic/Pictures/movie_posters/154/</span><span class="si">{</span><span class="n">slug</span><span class="si">}</span><span class="s2">_154.jpg&quot;</span>
-                    <span class="n">urllib</span><span class="o">.</span><span class="n">request</span><span class="o">.</span><span class="n">urlretrieve</span><span class="p">(</span><span class="n">poster_path_w154</span><span class="p">,</span> <span class="n">poster_filepath</span><span class="p">)</span>
-
-                    <span class="c1"># Upload small poster to Grist</span>
-                    <span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">post</span><span class="p">(</span>
-                                            <span class="sa">f</span><span class="s2">&quot;https://docs.getgrist.com/api/docs/</span><span class="si">{</span><span class="n">grist_movies_doc_id</span><span class="si">}</span><span class="s2">/attachments&quot;</span><span class="p">,</span>
-                                            <span class="n">files</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;upload&quot;</span><span class="p">:</span> <span class="nb">open</span><span class="p">(</span><span class="n">poster_filepath</span><span class="p">,</span> <span class="s2">&quot;rb&quot;</span><span class="p">)},</span>
-                                            <span class="n">headers</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;Authorization&quot;</span><span class="p">:</span> <span class="sa">f</span><span class="s2">&quot;Bearer </span><span class="si">{</span><span class="n">grist_api_key</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">},</span>
-                                            <span class="p">)</span>
-                    <span class="n">attachment_id</span> <span class="o">=</span> <span class="n">response</span><span class="o">.</span><span class="n">json</span><span class="p">()[</span><span class="mi">0</span><span class="p">]</span>
-                    <span class="c1"># print(f&quot;{attachment_id=}&quot;) # to check</span>
-                    <span class="n">poster_file</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;L&quot;</span><span class="p">,</span> <span class="n">attachment_id</span><span class="p">]</span>
-                    <span class="c1"># print(f&quot;{poster_file=}&quot;) # to check</span>
-
-                    <span class="n">grist_PE</span><span class="o">.</span><span class="n">Movies</span><span class="o">.</span><span class="n">add_records</span><span class="p">(</span><span class="s1">&#39;TopRated&#39;</span><span class="p">,</span> <span class="p">[</span>
-                                                    <span class="p">{</span>   <span class="s1">&#39;title&#39;</span><span class="p">:</span> <span class="n">title</span><span class="p">,</span>
-                                                        <span class="s1">&#39;og_title&#39;</span><span class="p">:</span> <span class="n">original_title</span><span class="p">,</span>
-                                                        <span class="s1">&#39;language&#39;</span><span class="p">:</span> <span class="n">original_language</span><span class="p">,</span>
-                                                        <span class="s1">&#39;tmdb_url&#39;</span><span class="p">:</span> <span class="n">tmdb_url</span><span class="p">,</span>
-                                                        <span class="s1">&#39;tmdb_id&#39;</span><span class="p">:</span> <span class="n">tmdb_id</span><span class="p">,</span>
-                                                        <span class="s1">&#39;release_date&#39;</span><span class="p">:</span> <span class="n">release_date</span><span class="p">,</span>
-                                                        <span class="s1">&#39;poster&#39;</span><span class="p">:</span> <span class="n">poster_file</span><span class="p">,</span>
-                                                        <span class="p">}</span>
-                                                <span class="p">])</span>
-                    <span class="n">count_added</span> <span class="o">+=</span> <span class="mi">1</span>
-                    <span class="nb">print</span><span class="p">()</span>
-
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Count ADDED: </span><span class="si">{</span><span class="n">count_added</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-</code></pre></div>
-
-<p>First run with 507 pages of top-rated movies on TMDB:   </p>
-<div style="padding:56.25% 0 0 0;position:relative;"><iframe src="https://player.vimeo.com/video/733002563?h=ee5a61f2f1&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen style="position:absolute;top:0;left:0;width:100%;height:100%;" title="projects_1000-movies_tmdb-fetch-top-rated"></iframe></div>
-<script src="https://player.vimeo.com/api/player.js"></script>
-
-<p>Result:   </p>
-<p>8,118 movies added.   </p>
-<p>Script failed though on page 501/507. Missing a <code>try/except</code> statement. Seems to be API limitation at 10k records? (500 * 20).</p>
-<h2>add movies from top rated list on Grist to my TMDB list</h2>
-<p><span class="datestamp">25 Jul 2022</span>   </p>
-<p>struggling to authenticate to add/delete movies from my TMDB list.</p>
-<p>Asked for help: <a href="https://www.themoviedb.org/talk/62de52250d9f5a0067b7fb72" target="_blank">https://www.themoviedb.org/talk/62de52250d9f5a0067b7fb72</a>   </p>
-<p>Get back to it later...   </p>
-<h2>adding missing director for each movie in Grist (data point not available from top_rated or list)</h2>
-<p>Working code, adding to Grist directly [<a href="../../apps/grist/index.html">Nic Note: Grist</a>]:  </p>
-<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">dotenv</span> <span class="kn">import</span> <span class="n">load_dotenv</span>
-<span class="n">load_dotenv</span><span class="p">()</span>
-
-<span class="kn">import</span> <span class="nn">grist_PE</span> <span class="c1"># my own module to add to Grist</span>
-
-<span class="n">tmdb_api_key</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">getenv</span><span class="p">(</span><span class="s2">&quot;TMDB_API_KEY&quot;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n</span><span class="si">{</span><span class="n">tmdb_api_key</span><span class="si">=}</span><span class="s2">&quot;</span><span class="p">)</span>
-
-<span class="kn">from</span> <span class="nn">tmdbv3api</span> <span class="kn">import</span> <span class="n">TMDb</span><span class="p">,</span> <span class="n">Movie</span><span class="p">,</span> <span class="n">Person</span>
-<span class="n">tmdb</span> <span class="o">=</span> <span class="n">TMDb</span><span class="p">()</span>
-<span class="n">tmdb</span><span class="o">.</span><span class="n">api_key</span> <span class="o">=</span> <span class="n">tmdb_api_key</span>
-<span class="n">tmdb</span><span class="o">.</span><span class="n">language</span> <span class="o">=</span> <span class="s1">&#39;en&#39;</span>
-<span class="n">tmdb</span><span class="o">.</span><span class="n">debug</span> <span class="o">=</span> <span class="kc">True</span>
-
-<span class="k">def</span> <span class="nf">director_by_movie_id</span><span class="p">(</span><span class="n">movie_id</span><span class="p">):</span> <span class="c1"># returns list of strings/directors</span>
-    <span class="n">list_directors</span> <span class="o">=</span> <span class="p">[]</span>
-    <span class="n">movie</span> <span class="o">=</span> <span class="n">Movie</span><span class="p">()</span>
-    <span class="n">movie_title</span> <span class="o">=</span> <span class="n">movie</span><span class="o">.</span><span class="n">details</span><span class="p">(</span><span class="n">movie_id</span><span class="p">)[</span><span class="s1">&#39;title&#39;</span><span class="p">]</span>
-    <span class="n">m</span> <span class="o">=</span> <span class="n">movie</span><span class="o">.</span><span class="n">credits</span><span class="p">(</span><span class="n">movie_id</span><span class="p">)</span> 
-    <span class="k">for</span> <span class="n">crew</span> <span class="ow">in</span> <span class="n">m</span><span class="o">.</span><span class="n">crew</span><span class="p">:</span> <span class="c1"># list of dict</span>
-        <span class="k">if</span> <span class="n">crew</span><span class="p">[</span><span class="s1">&#39;job&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;Director&#39;</span><span class="p">:</span>
-            <span class="n">list_directors</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">crew</span><span class="p">[</span><span class="s1">&#39;name&#39;</span><span class="p">])</span>
-    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Checked </span><span class="si">{</span><span class="n">movie_title</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="s1">&#39; &#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">list_directors</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-    <span class="k">return</span> <span class="n">list_directors</span>
-
-<span class="n">top_1000_data</span> <span class="o">=</span> <span class="n">grist_PE</span><span class="o">.</span><span class="n">Movies</span><span class="o">.</span><span class="n">fetch_table</span><span class="p">(</span><span class="s1">&#39;Master&#39;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">top_1000_data</span><span class="p">)</span><span class="si">}</span><span class="s2"> movies in Grist Top 1000</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
-
-<span class="k">for</span> <span class="n">m</span> <span class="ow">in</span> <span class="n">top_1000_data</span><span class="p">:</span>
-    <span class="n">count_row</span> <span class="o">+=</span> <span class="mi">1</span>
-
-    <span class="k">if</span> <span class="n">m</span><span class="o">.</span><span class="n">director</span> <span class="ow">in</span> <span class="p">[</span><span class="kc">None</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">]:</span>
-        <span class="n">count</span> <span class="o">+=</span><span class="mi">1</span>
-
-        <span class="n">movie_id</span> <span class="o">=</span> <span class="n">m</span><span class="o">.</span><span class="n">tmdb_id</span>
-
-        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Processing </span><span class="si">{</span><span class="n">m</span><span class="o">.</span><span class="n">title</span><span class="si">}</span><span class="s2"> with ID </span><span class="si">{</span><span class="n">movie_id</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-        <span class="n">director</span> <span class="o">=</span> <span class="n">director_by_movie_id</span><span class="p">(</span><span class="n">movie_id</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span> <span class="c1"># fetch first one only in list / could be reworked with a join for multi-director movies</span>
-
-        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;row</span><span class="si">{</span><span class="n">count_row</span><span class="si">}</span><span class="s2"> #</span><span class="si">{</span><span class="n">count</span><span class="si">}</span><span class="s2"> updating </span><span class="si">{</span><span class="n">m</span><span class="o">.</span><span class="n">title</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-
-        <span class="n">grist_PE</span><span class="o">.</span><span class="n">Movies</span><span class="o">.</span><span class="n">update_records</span><span class="p">(</span><span class="s1">&#39;Master&#39;</span><span class="p">,</span> <span class="p">[</span>
-                                                    <span class="p">{</span><span class="s1">&#39;id&#39;</span><span class="p">:</span> <span class="n">m</span><span class="o">.</span><span class="n">id</span><span class="p">,</span>
-                                                    <span class="s1">&#39;director&#39;</span><span class="p">:</span> <span class="n">director</span><span class="p">,</span>
-                                                <span class="p">}</span>
-        <span class="p">])</span>
-</code></pre></div>
-
-<h2>code to generate movie library list for this site</h2>
-<p>Working script:   </p>
-<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">dotenv</span> <span class="kn">import</span> <span class="n">load_dotenv</span>
-<span class="n">load_dotenv</span><span class="p">()</span>
-
-<span class="kn">import</span> <span class="nn">grist_PE</span> 
-
-<span class="kn">from</span> <span class="nn">operator</span> <span class="kn">import</span> <span class="n">attrgetter</span> <span class="c1"># to sort namedtuple returned from Grist</span>
-<span class="kn">from</span> <span class="nn">datetime</span> <span class="kn">import</span> <span class="n">datetime</span>
-<span class="kn">from</span> <span class="nn">slugify</span> <span class="kn">import</span> <span class="n">slugify</span>
-
-<span class="n">top_1000_data</span> <span class="o">=</span> <span class="n">grist_PE</span><span class="o">.</span><span class="n">Movies</span><span class="o">.</span><span class="n">fetch_table</span><span class="p">(</span><span class="s1">&#39;Master&#39;</span><span class="p">)</span> <span class="c1"># list of namedtuples</span>
-<span class="n">total</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">top_1000_data</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">total</span><span class="si">}</span><span class="s2"> movies in Grist Top 1000</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
-
-<span class="n">today</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">now</span><span class="p">()</span>
-<span class="n">date_today</span> <span class="o">=</span> <span class="n">today</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="s1">&#39;%Y-%m-</span><span class="si">%d</span><span class="s1">&#39;</span><span class="p">)</span>
-
-<span class="n">total_runtime</span> <span class="o">=</span> <span class="mi">0</span>
-
-<span class="n">output</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span>
-
-<span class="n">top_1000_data_sorted_by_release_date</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">top_1000_data</span><span class="p">,</span> <span class="n">key</span><span class="o">=</span><span class="n">attrgetter</span><span class="p">(</span><span class="s1">&#39;release_date&#39;</span><span class="p">))</span>
-
-<span class="k">for</span> <span class="n">m</span> <span class="ow">in</span> <span class="n">top_1000_data_sorted_by_release_date</span><span class="p">:</span>
-
-    <span class="n">count_row</span> <span class="o">+=</span> <span class="mi">1</span>
-
-    <span class="k">if</span> <span class="n">m</span><span class="o">.</span><span class="n">delete</span> <span class="o">==</span> <span class="kc">False</span><span class="p">:</span>
-
-        <span class="n">count</span> <span class="o">+=</span> <span class="mi">1</span>
-
-        <span class="n">poster_path</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;&lt;img class=</span><span class="se">\&quot;</span><span class="s2">screenshot</span><span class="se">\&quot;</span><span class="s2"> src=</span><span class="se">\&quot;</span><span class="s2">https://notes.nicolasdeville.com/images/movies/poster_</span><span class="si">{</span><span class="n">m</span><span class="o">.</span><span class="n">slug</span><span class="si">}</span><span class="s2">_w154.jpg</span><span class="se">\&quot;</span><span class="s2"> alt=</span><span class="se">\&quot;</span><span class="si">{</span><span class="n">m</span><span class="o">.</span><span class="n">slug</span><span class="si">}</span><span class="se">\&quot;</span><span class="s2">/&gt;&quot;</span>
-        <span class="n">title</span> <span class="o">=</span> <span class="n">m</span><span class="o">.</span><span class="n">title</span>
-        <span class="n">slug</span> <span class="o">=</span> <span class="n">slugify</span><span class="p">(</span><span class="n">title</span><span class="p">)</span>
-        <span class="n">director</span> <span class="o">=</span> <span class="n">m</span><span class="o">.</span><span class="n">director</span>
-        <span class="n">year</span> <span class="o">=</span> <span class="n">date</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">utcfromtimestamp</span><span class="p">(</span><span class="n">m</span><span class="o">.</span><span class="n">release_date</span><span class="p">)</span><span class="o">.</span><span class="n">year</span> <span class="c1">#&lt;class &#39;datetime.datetime&#39;&gt; 2019-02-07 00:00:00</span>
-        <span class="n">tagline</span> <span class="o">=</span> <span class="n">m</span><span class="o">.</span><span class="n">tagline</span>
-        <span class="n">rating</span> <span class="o">=</span> <span class="s2">&quot;⭐️&quot;</span> <span class="o">*</span> <span class="n">m</span><span class="o">.</span><span class="n">rating</span>
-        <span class="n">total_runtime</span> <span class="o">+=</span> <span class="n">m</span><span class="o">.</span><span class="n">runtime</span>
-        <span class="n">tmdb_url</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;https://www.themoviedb.org/movie/</span><span class="si">{</span><span class="n">m</span><span class="o">.</span><span class="n">tmdb_id</span><span class="si">}</span><span class="s2">-</span><span class="si">{</span><span class="n">slug</span><span class="si">}</span><span class="s2">&quot;</span>
-
-        <span class="n">output</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">output</span><span class="si">}</span><span class="se">\n</span><span class="si">{</span><span class="n">poster_path</span><span class="si">}</span><span class="s2"> | &lt;a href=</span><span class="se">\&quot;</span><span class="si">{</span><span class="n">tmdb_url</span><span class="si">}</span><span class="se">\&quot;</span><span class="s2"> target=</span><span class="se">\&quot;</span><span class="s2">_blank</span><span class="se">\&quot;</span><span class="s2">&gt;</span><span class="si">{</span><span class="n">title</span><span class="si">}</span><span class="s2">&lt;/a&gt; | </span><span class="si">{</span><span class="n">director</span><span class="si">}</span><span class="s2"> | </span><span class="si">{</span><span class="n">year</span><span class="si">}</span><span class="s2"> | </span><span class="si">{</span><span class="n">tagline</span><span class="si">}</span><span class="s2"> | </span><span class="si">{</span><span class="n">rating</span><span class="si">}</span><span class="s2"> | &quot;</span>
-
-<span class="c1"># Adding the header at the end to ensure proper movie count</span>
-<span class="n">header</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;Title: My Top 1,000 Movies  </span><span class="se">\n</span><span class="s2">Summary: an ongoing project...</span><span class="se">\n\n</span><span class="s2">[[Nic Note: 1000 Movies Project](../../projects/1000-movies/index.html)]   </span><span class="se">\n\n</span><span class="si">{</span><span class="n">count</span><span class="si">}</span><span class="s2"> movies so far, for a total runtime of </span><span class="si">{</span><span class="nb">int</span><span class="p">(</span><span class="n">total_runtime</span> <span class="o">/</span> <span class="mi">60</span><span class="p">)</span><span class="si">}</span><span class="s2">h or </span><span class="si">{</span><span class="nb">round</span><span class="p">(((</span><span class="n">total_runtime</span> <span class="o">/</span> <span class="mi">60</span><span class="p">)</span> <span class="o">/</span> <span class="mi">24</span><span class="p">),</span> <span class="mi">1</span><span class="p">)</span><span class="si">}</span><span class="s2"> days...</span><span class="se">\n\n</span><span class="s2">poster | title | director | year | tagline | rating |</span><span class="se">\n</span><span class="s2">---|---|---|---|---|---|&quot;</span>
-
-<span class="n">output</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">header</span><span class="si">}</span><span class="s2">  </span><span class="si">{</span><span class="n">output</span><span class="si">}</span><span class="s2">  </span><span class="se">\n\n</span><span class="s2">Data &amp; images from TMDB: &lt;a href=</span><span class="se">\&quot;</span><span class="s2">https://www.themoviedb.org/</span><span class="se">\&quot;</span><span class="s2"> target=</span><span class="se">\&quot;</span><span class="s2">_blank</span><span class="se">\&quot;</span><span class="s2">&gt;&lt;img src=</span><span class="se">\&quot;</span><span class="s2">https://notes.nicolasdeville.com/images/logo_tmdb.svg</span><span class="se">\&quot;</span><span class="s2"> alt=</span><span class="se">\&quot;</span><span class="s2">logo_tmdb.svg</span><span class="se">\&quot;</span><span class="s2">/&gt;  &lt;/a&gt;&quot;</span>
-
-<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;notes/content/articles/movies/1000.md&quot;</span><span class="p">,</span> <span class="s1">&#39;w&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">file</span><span class="p">:</span>
-    <span class="n">file</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">output</span><span class="p">)</span>
-</code></pre></div>
-
-<p>Output:   </p>
-<div class="highlight"><pre><span></span><code>Title: My Top 1,000 Movies  
-Summary: an ongoing project...
-
-[[Nic Note: 1000 Movies Project](../../projects/1000-movies/index.html)]   
-
-445 movies so far, for a total runtime of 945h or 39.4 days...
-
-poster | title | director | year | tagline | rating |
----|---|---|---|---|---|  
-&lt;img class=&quot;screenshot&quot; src=&quot;https://notes.nicolasdeville.com/images/movies/poster_the-adventures-of-robin-hood_w154.jpg&quot; alt=&quot;the-adventures-of-robin-hood&quot;/&gt; | &lt;a href=&quot;https://www.themoviedb.org/movie/10907-the-adventures-of-robin-hood&quot; target=&quot;_blank&quot;&gt;The Adventures of Robin Hood&lt;/a&gt; | Michael Curtiz | 1938 | Excitement... Danger... Suspense... as this classic adventure story sweeps across the screen! | ⭐️⭐️⭐️ | 
-&lt;img class=&quot;screenshot&quot; src=&quot;https://notes.nicolasdeville.com/images/movies/poster_mr-smith-goes-to-washington_w154.jpg&quot; alt=&quot;mr-smith-goes-to-washington&quot;/&gt; | &lt;a href=&quot;https://www.themoviedb.org/movie/3083-mr-smith-goes-to-washington&quot; target=&quot;_blank&quot;&gt;Mr. Smith Goes to Washington&lt;/a&gt; | Frank Capra | 1939 | Romance, drama, laughter and heartbreak... created out of the very heart and soil of America! | ⭐️⭐️⭐️⭐️ | 
-&lt;img class=&quot;screenshot&quot; src=&quot;https://notes.nicolasdeville.com/images/movies/poster_gone-with-the-wind_w154.jpg&quot; alt=&quot;gone-with-the-wind&quot;/&gt; | &lt;a href=&quot;https://www.themoviedb.org/movie/770-gone-with-the-wind&quot; target=&quot;_blank&quot;&gt;Gone with the Wind&lt;/a&gt; | Victor Fleming | 1939 | The greatest romance of all time! | ⭐️⭐️⭐️ | 
-</code></pre></div>
-
-<p>Converted to HTML with Pelican [<a href="../../python/library-pelican/index.html">Nic Note: Pelican | Static Site Generator</a>]:    </p>
-<p><a href="../../movies/1000/index.html">Nic Note: My Top 1,000 Movies</a> 😁     </p>
-<h2>add movies from top rated list on Grist to my TMDB list</h2>
-<p><span class="datestamp">27 Jul 2022</span>   </p>
-<p>Unable to solve authentication issue (see above).  </p>
-<p>Workaround: add movies from Grist "Top Rated" to Grist "Master" directly - no need to update TMDB list thinking about it.   </p>
-<p>working script:    </p>
-<div class="highlight"><pre><span></span><code><span class="c1">####################</span>
-<span class="c1"># Fetching movie data from Grist &quot;Top Rated&quot; list to Grist Master / with dedupe</span>
-
-<span class="kn">from</span> <span class="nn">datetime</span> <span class="kn">import</span> <span class="n">datetime</span>
-<span class="kn">import</span> <span class="nn">os</span>
-<span class="kn">import</span> <span class="nn">time</span>
-<span class="n">start_time</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>
-<span class="kn">import</span> <span class="nn">sys</span>
-
-<span class="kn">from</span> <span class="nn">dotenv</span> <span class="kn">import</span> <span class="n">load_dotenv</span>
-<span class="n">load_dotenv</span><span class="p">()</span>
-
-<span class="kn">import</span> <span class="nn">grist_PE</span>
-
-<span class="kn">import</span> <span class="nn">pprint</span>
-<span class="n">pp</span> <span class="o">=</span> <span class="n">pprint</span><span class="o">.</span><span class="n">PrettyPrinter</span><span class="p">(</span><span class="n">indent</span><span class="o">=</span><span class="mi">4</span><span class="p">)</span>
-
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">basename</span><span class="p">(</span><span class="vm">__file__</span><span class="p">)</span><span class="si">}</span><span class="s2"> boilerplate loaded -----------&quot;</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">()</span>
+<span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">res_list</span><span class="p">[</span><span class="s1">&#39;results&#39;</span><span class="p">][</span><span class="mi">0</span><span class="p">]:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
 
-<span class="kn">import</span> <span class="nn">requests</span>
-<span class="kn">import</span> <span class="nn">urllib.request</span>
-<span class="kn">from</span> <span class="nn">slugify</span> <span class="kn">import</span> <span class="n">slugify</span>
+<span class="c1"># returns dict with 4 fields:</span>
+    <span class="c1"># page: int</span>
+    <span class="c1"># results: list of dicts with 14 fields per movie, 20 movies per page: </span>
+        <span class="c1"># adult</span>
+        <span class="c1"># backdrop_path</span>
+        <span class="c1"># genre_ids</span>
+        <span class="c1"># id</span>
+        <span class="c1"># original_language</span>
+        <span class="c1"># original_title</span>
+        <span class="c1"># overview</span>
+        <span class="c1"># popularity</span>
+        <span class="c1"># poster_path</span>
+        <span class="c1"># release_date</span>
+        <span class="c1"># title</span>
+        <span class="c1"># video</span>
+        <span class="c1"># vote_average</span>
+        <span class="c1"># vote_count</span>
+    <span class="c1"># total_pages: int / 507</span>
+    <span class="c1"># total_results: int / 10127</span>
 
-<span class="n">tmdb_api_key</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">getenv</span><span class="p">(</span><span class="s2">&quot;TMDB_API_KEY&quot;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n</span><span class="si">{</span><span class="n">tmdb_api_key</span><span class="si">=}</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="c1"># the results object includes the list of all movies. Will be using that. </span>
 
-<span class="n">grist_movies_doc_id</span> <span class="o">=</span> <span class="n">grist_PE</span><span class="o">.</span><span class="n">get_grist_movies_doc_id</span><span class="p">()</span>
-<span class="n">grist_api_key</span> <span class="o">=</span> <span class="n">grist_PE</span><span class="o">.</span><span class="n">get_grist_api_key</span><span class="p">()</span>
-
-<span class="n">existing_movies_tmdb_ids</span> <span class="o">=</span> <span class="n">grist_PE</span><span class="o">.</span><span class="n">get_movies_tmdb_ids</span><span class="p">()</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">existing_movies_tmdb_ids</span><span class="p">)</span><span class="si">}</span><span class="s2"> movies in DB.</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
-
-<span class="n">count_row</span> <span class="o">=</span> <span class="mi">0</span>
-<span class="n">count</span> <span class="o">=</span> <span class="mi">0</span>
-<span class="n">count_added</span> <span class="o">=</span> <span class="mi">0</span>
-
-<span class="c1"># Boilerplate for director search</span>
-
-<span class="kn">from</span> <span class="nn">tmdbv3api</span> <span class="kn">import</span> <span class="n">TMDb</span><span class="p">,</span> <span class="n">Movie</span><span class="p">,</span> <span class="n">Person</span>
-<span class="n">tmdb</span> <span class="o">=</span> <span class="n">TMDb</span><span class="p">()</span>
-<span class="n">tmdb</span><span class="o">.</span><span class="n">api_key</span> <span class="o">=</span> <span class="n">tmdb_api_key</span>
-<span class="n">tmdb</span><span class="o">.</span><span class="n">language</span> <span class="o">=</span> <span class="s1">&#39;en&#39;</span>
-<span class="n">tmdb</span><span class="o">.</span><span class="n">debug</span> <span class="o">=</span> <span class="kc">True</span>
-
-<span class="k">def</span> <span class="nf">director_by_movie_id</span><span class="p">(</span><span class="n">movie_id</span><span class="p">):</span> <span class="c1"># returns list of strings</span>
-    <span class="n">list_directors</span> <span class="o">=</span> <span class="p">[]</span>
-    <span class="n">movie</span> <span class="o">=</span> <span class="n">Movie</span><span class="p">()</span>
-    <span class="n">movie_title</span> <span class="o">=</span> <span class="n">movie</span><span class="o">.</span><span class="n">details</span><span class="p">(</span><span class="n">movie_id</span><span class="p">)[</span><span class="s1">&#39;title&#39;</span><span class="p">]</span>
-    <span class="n">m</span> <span class="o">=</span> <span class="n">movie</span><span class="o">.</span><span class="n">credits</span><span class="p">(</span><span class="n">movie_id</span><span class="p">)</span> 
-    <span class="k">for</span> <span class="n">crew</span> <span class="ow">in</span> <span class="n">m</span><span class="o">.</span><span class="n">crew</span><span class="p">:</span> <span class="c1"># list of dict</span>
-        <span class="k">if</span> <span class="n">crew</span><span class="p">[</span><span class="s1">&#39;job&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;Director&#39;</span><span class="p">:</span>
-            <span class="n">list_directors</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">crew</span><span class="p">[</span><span class="s1">&#39;name&#39;</span><span class="p">])</span>
-    <span class="k">return</span> <span class="n">list_directors</span>
-
-<span class="c1"># TopRated data</span>
-<span class="n">movies_top_rated_data</span> <span class="o">=</span> <span class="n">grist_PE</span><span class="o">.</span><span class="n">Movies</span><span class="o">.</span><span class="n">fetch_table</span><span class="p">(</span><span class="s1">&#39;TopRated&#39;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">movies_top_rated_data</span><span class="p">)</span><span class="si">}</span><span class="s2"> movies in Grist TopRated</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
-
-<span class="k">for</span> <span class="n">m</span> <span class="ow">in</span> <span class="n">movies_top_rated_data</span><span class="p">:</span>
-    <span class="n">count_row</span> <span class="o">+=</span> <span class="mi">1</span>
-
-    <span class="n">movie_id</span> <span class="o">=</span> <span class="n">m</span><span class="o">.</span><span class="n">tmdb_id</span>
-
-    <span class="k">if</span> <span class="nb">int</span><span class="p">(</span><span class="n">movie_id</span><span class="p">)</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">existing_movies_tmdb_ids</span><span class="p">:</span>
-
-        <span class="k">if</span> <span class="n">m</span><span class="o">.</span><span class="n">add_top_1000</span> <span class="o">==</span> <span class="kc">True</span> <span class="ow">or</span> <span class="n">m</span><span class="o">.</span><span class="n">to_watch</span> <span class="o">==</span> <span class="kc">True</span><span class="p">:</span>
-            <span class="n">count</span> <span class="o">+=</span> <span class="mi">1</span>
-
-            <span class="n">movie_url</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;https://api.themoviedb.org/3/movie/</span><span class="si">{</span><span class="n">movie_id</span><span class="si">}</span><span class="s2">?api_key=</span><span class="si">{</span><span class="n">tmdb_api_key</span><span class="si">}</span><span class="s2">&quot;</span>
-            <span class="n">res_movie</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">movie_url</span><span class="p">)</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
-
-            <span class="n">title</span> <span class="o">=</span> <span class="n">res_movie</span><span class="p">[</span><span class="s2">&quot;title&quot;</span><span class="p">]</span>
-            <span class="n">slug</span> <span class="o">=</span> <span class="n">slugify</span><span class="p">(</span><span class="n">title</span><span class="p">)</span>
-            <span class="n">original_language</span> <span class="o">=</span> <span class="n">res_movie</span><span class="p">[</span><span class="s2">&quot;original_language&quot;</span><span class="p">]</span>
-            <span class="n">original_title</span> <span class="o">=</span> <span class="n">res_movie</span><span class="p">[</span><span class="s2">&quot;original_title&quot;</span><span class="p">]</span>
-            <span class="n">tagline</span> <span class="o">=</span> <span class="n">res_movie</span><span class="p">[</span><span class="s2">&quot;tagline&quot;</span><span class="p">]</span>
-            <span class="n">budget</span> <span class="o">=</span> <span class="n">res_movie</span><span class="p">[</span><span class="s2">&quot;budget&quot;</span><span class="p">]</span>
-            <span class="n">tmdb_id</span> <span class="o">=</span> <span class="n">res_movie</span><span class="p">[</span><span class="s2">&quot;id&quot;</span><span class="p">]</span>
-            <span class="n">tmdb_url</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;https://www.themoviedb.org/movie/</span><span class="si">{</span><span class="n">movie_id</span><span class="si">}</span><span class="s2">-</span><span class="si">{</span><span class="n">slug</span><span class="si">}</span><span class="s2">&quot;</span>
-            <span class="n">imdb_id</span> <span class="o">=</span> <span class="n">res_movie</span><span class="p">[</span><span class="s2">&quot;imdb_id&quot;</span><span class="p">]</span>
-            <span class="n">overview</span> <span class="o">=</span> <span class="n">res_movie</span><span class="p">[</span><span class="s2">&quot;overview&quot;</span><span class="p">]</span>
-            <span class="n">release_date</span> <span class="o">=</span> <span class="n">res_movie</span><span class="p">[</span><span class="s2">&quot;release_date&quot;</span><span class="p">]</span>
-            <span class="n">release_year</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">release_date</span><span class="p">[:</span><span class="mi">4</span><span class="p">])</span>
-            <span class="n">revenue</span> <span class="o">=</span> <span class="n">res_movie</span><span class="p">[</span><span class="s2">&quot;revenue&quot;</span><span class="p">]</span>
-            <span class="n">runtime</span> <span class="o">=</span> <span class="n">res_movie</span><span class="p">[</span><span class="s2">&quot;runtime&quot;</span><span class="p">]</span>
-            <span class="n">poster_path</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;https://image.tmdb.org/t/p/original</span><span class="si">{</span><span class="n">res_movie</span><span class="p">[</span><span class="s1">&#39;poster_path&#39;</span><span class="p">]</span><span class="si">}</span><span class="s2">&quot;</span>
-            <span class="n">poster_path_w154</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;https://image.tmdb.org/t/p/w154</span><span class="si">{</span><span class="n">res_movie</span><span class="p">[</span><span class="s1">&#39;poster_path&#39;</span><span class="p">]</span><span class="si">}</span><span class="s2">&quot;</span>
-
-            <span class="n">director</span> <span class="o">=</span> <span class="n">director_by_movie_id</span><span class="p">(</span><span class="n">movie_id</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
-
-            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n</span><span class="si">{</span><span class="n">count</span><span class="si">}</span><span class="s2"> adding </span><span class="si">{</span><span class="n">title</span><span class="si">}</span><span class="s2"> by </span><span class="si">{</span><span class="n">director</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-
-            <span class="c1"># Save poster original size locally</span>
-            <span class="n">poster_filepath</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;/path/to/folder/movie_posters/</span><span class="si">{</span><span class="n">slug</span><span class="si">}</span><span class="s2">.jpg&quot;</span>
-
-            <span class="c1"># Save poster small size locally for easier upload to Grist + notes publishing later</span>
-            <span class="n">poster_small_filepath</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;/path/to/pelican/folder/notes/content/images/movies/poster_</span><span class="si">{</span><span class="n">slug</span><span class="si">}</span><span class="s2">_w154.jpg&quot;</span>
-
-            <span class="n">urllib</span><span class="o">.</span><span class="n">request</span><span class="o">.</span><span class="n">urlretrieve</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">poster_path</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">poster_filepath</span><span class="p">)</span>
-            <span class="n">urllib</span><span class="o">.</span><span class="n">request</span><span class="o">.</span><span class="n">urlretrieve</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">poster_path_w154</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">poster_small_filepath</span><span class="p">)</span>
-
-            <span class="c1"># Upload small poster to Grist</span>
-            <span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">post</span><span class="p">(</span>
-                                    <span class="sa">f</span><span class="s2">&quot;https://docs.getgrist.com/api/docs/</span><span class="si">{</span><span class="n">grist_movies_doc_id</span><span class="si">}</span><span class="s2">/attachments&quot;</span><span class="p">,</span>
-                                    <span class="n">files</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;upload&quot;</span><span class="p">:</span> <span class="nb">open</span><span class="p">(</span><span class="n">poster_small_filepath</span><span class="p">,</span> <span class="s2">&quot;rb&quot;</span><span class="p">)},</span>
-                                    <span class="n">headers</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;Authorization&quot;</span><span class="p">:</span> <span class="sa">f</span><span class="s2">&quot;Bearer </span><span class="si">{</span><span class="n">grist_api_key</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">},</span>
-                                    <span class="p">)</span>
-            <span class="n">attachment_id</span> <span class="o">=</span> <span class="n">response</span><span class="o">.</span><span class="n">json</span><span class="p">()[</span><span class="mi">0</span><span class="p">]</span>
-            <span class="n">poster_file</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;L&quot;</span><span class="p">,</span> <span class="n">attachment_id</span><span class="p">]</span>
-
-            <span class="n">grist_PE</span><span class="o">.</span><span class="n">Movies</span><span class="o">.</span><span class="n">add_records</span><span class="p">(</span><span class="s1">&#39;Master&#39;</span><span class="p">,</span> <span class="p">[</span>
-                                            <span class="p">{</span>   <span class="s1">&#39;title&#39;</span><span class="p">:</span> <span class="n">title</span><span class="p">,</span>
-                                                <span class="s1">&#39;slug&#39;</span><span class="p">:</span> <span class="n">slug</span><span class="p">,</span>
-                                                <span class="s1">&#39;og_title&#39;</span><span class="p">:</span> <span class="n">original_title</span><span class="p">,</span>
-                                                <span class="s1">&#39;language&#39;</span><span class="p">:</span> <span class="n">original_language</span><span class="p">,</span>
-                                                <span class="s1">&#39;tagline&#39;</span><span class="p">:</span> <span class="n">tagline</span><span class="p">,</span>
-                                                <span class="s1">&#39;budget&#39;</span><span class="p">:</span> <span class="n">budget</span><span class="p">,</span>
-                                                <span class="s1">&#39;tmdb_id&#39;</span><span class="p">:</span> <span class="n">tmdb_id</span><span class="p">,</span>
-                                                <span class="s1">&#39;imdb_id&#39;</span><span class="p">:</span> <span class="n">imdb_id</span><span class="p">,</span>
-                                                <span class="s1">&#39;overview&#39;</span><span class="p">:</span> <span class="n">overview</span><span class="p">,</span>
-                                                <span class="s1">&#39;release_date&#39;</span><span class="p">:</span> <span class="n">release_date</span><span class="p">,</span>
-                                                <span class="s1">&#39;release_year&#39;</span><span class="p">:</span> <span class="n">release_year</span><span class="p">,</span>
-                                                <span class="s1">&#39;revenue&#39;</span><span class="p">:</span> <span class="n">revenue</span><span class="p">,</span>
-                                                <span class="s1">&#39;runtime&#39;</span><span class="p">:</span> <span class="n">runtime</span><span class="p">,</span>
-                                                <span class="s1">&#39;poster&#39;</span><span class="p">:</span> <span class="n">poster_file</span><span class="p">,</span>
-                                                <span class="s1">&#39;tmdb_url&#39;</span><span class="p">:</span> <span class="n">tmdb_url</span><span class="p">,</span>
-                                                <span class="s1">&#39;director&#39;</span><span class="p">:</span> <span class="n">director</span><span class="p">,</span>
-                                                <span class="p">}</span>
-                                        <span class="p">])</span>
-            <span class="n">count_added</span> <span class="o">+=</span> <span class="mi">1</span>
-
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Count ADDED: </span><span class="si">{</span><span class="n">count_added</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-
-<span class="c1">########################################################################################################</span>
-
-<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
+<span class="k">for</span> <span class="n">m</span> <span class="ow">in</span> <span class="n">res_list</span><span class="p">[</span><span class="s1">&#39;results&#39;</span><span class="p">]:</span>
+    <span class="n">count</span> <span class="o">+=</span> <span class="mi">1</span>
+    <span class="n">title</span> <span class="o">=</span> <span class="n">m</span><span class="p">[</span><span class="s2">&quot;title&quot;</span><span class="p">]</span>
+    <span class="n">original_language</span> <span class="o">=</span> <span class="n">m</span><span class="p">[</span><span class="s2">&quot;original_language&quot;</span><span class="p">]</span>
+    <span class="n">original_title</span> <span class="o">=</span> <span class="n">m</span><span class="p">[</span><span class="s2">&quot;original_title&quot;</span><span class="p">]</span>
+    <span class="c1"># tagline = m[&quot;tagline&quot;] # NO tagline returned here</span>
+    <span class="c1"># budget = m[&quot;budget&quot;] # NO budget returned here</span>
+    <span class="n">tmdb_id</span> <span class="o">=</span> <span class="n">m</span><span class="p">[</span><span class="s2">&quot;id&quot;</span><span class="p">]</span>
+    <span class="c1"># imdb_id = m[&quot;imdb_id&quot;] # NO imdb_id returned here</span>
+    <span class="n">original_language</span> <span class="o">=</span> <span class="n">m</span><span class="p">[</span><span class="s2">&quot;original_language&quot;</span><span class="p">]</span>
+    <span class="n">overview</span> <span class="o">=</span> <span class="n">m</span><span class="p">[</span><span class="s2">&quot;overview&quot;</span><span class="p">]</span>
+    <span class="n">release_date</span> <span class="o">=</span> <span class="n">m</span><span class="p">[</span><span class="s2">&quot;release_date&quot;</span><span class="p">]</span>
+    <span class="c1"># revenue = m[&quot;revenue&quot;] # NO revenue returned here</span>
+    <span class="c1"># runtime = m[&quot;runtime&quot;] # NO runtime returned here</span>
+    <span class="n">poster_path</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;https://image.tmdb.org/t/p/original/</span><span class="si">{</span><span class="n">m</span><span class="p">[</span><span class="s1">&#39;poster_path&#39;</span><span class="p">]</span><span class="si">}</span><span class="s2">&quot;</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">title</span><span class="si">=}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">original_language</span><span class="si">=}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">original_title</span><span class="si">=}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="c1"># print(f&quot;{tagline=}&quot;)</span>
+    <span class="c1"># print(f&quot;{budget=}&quot;)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">tmdb_id</span><span class="si">=}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="c1"># print(f&quot;{imdb_id=}&quot;)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">original_language</span><span class="si">=}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">overview</span><span class="si">=}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">release_date</span><span class="si">=}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="c1"># print(f&quot;{revenue=}&quot;)</span>
+    <span class="c1"># print(f&quot;{runtime=}&quot;)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">poster_path</span><span class="si">=}</span><span class="s2">&quot;</span><span class="p">)</span>
     <span class="nb">print</span><span class="p">()</span>
-    <span class="nb">print</span><span class="p">()</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;-------------------------------&#39;</span><span class="p">)</span>
-    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">basename</span><span class="p">(</span><span class="vm">__file__</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-    <span class="nb">print</span><span class="p">()</span>
-    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;count_row = </span><span class="si">{</span><span class="n">count_row</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;count = </span><span class="si">{</span><span class="n">count</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;count_added = </span><span class="si">{</span><span class="n">count_added</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-    <span class="nb">print</span><span class="p">()</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;-------------------------------&#39;</span><span class="p">)</span>
-    <span class="n">run_time</span> <span class="o">=</span> <span class="nb">round</span><span class="p">((</span><span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span> <span class="o">-</span> <span class="n">start_time</span><span class="p">),</span> <span class="mi">1</span><span class="p">)</span>
-    <span class="k">if</span> <span class="n">run_time</span> <span class="o">&gt;</span> <span class="mi">60</span><span class="p">:</span>
-        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">basename</span><span class="p">(</span><span class="vm">__file__</span><span class="p">)</span><span class="si">}</span><span class="s1"> finished in </span><span class="si">{</span><span class="n">run_time</span><span class="o">/</span><span class="mi">60</span><span class="si">}</span><span class="s1"> minutes.&#39;</span><span class="p">)</span>
-    <span class="k">else</span><span class="p">:</span>
-        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">basename</span><span class="p">(</span><span class="vm">__file__</span><span class="p">)</span><span class="si">}</span><span class="s1"> finished in </span><span class="si">{</span><span class="n">run_time</span><span class="si">}</span><span class="s1">s.&#39;</span><span class="p">)</span>
-    <span class="nb">print</span><span class="p">()</span>
+
+    <span class="c1"># =&gt; need to use the https://api.themoviedb.org/3/movie/{movie_id}?api_key={tmdb_api_key} endpoint for each to get missing fields</span>
 </code></pre></div>
 
-<p>result:   </p>
-<div class="highlight"><pre><span></span><code>-------------------------------
-add_from_grist_top_rated.py
-
-count_row = 8118
-count = 353
-count_added = 353
-
--------------------------------
-add_from_grist_top_rated.py finished in 12.32 minutes.
+<p>TODO need to add logic to loop per page + use the <code>/movie</code> endpoint to get missing fields.    </p>
+<h1>Resources</h1>
+<h2>How to fetch different sizes of movie posters</h2>
+<p><code>http://image.tmdb.org/t/p/wXXX/</code>, eg <code>http://image.tmdb.org/t/p/w500/</code>   </p>
+<p>Available sizes, for reference:</p>
+<div class="highlight"><pre><span></span><code><span class="s2">&quot;backdrop_sizes&quot;</span><span class="p">:</span> <span class="p">[</span>
+  <span class="s2">&quot;w300&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;w780&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;w1280&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;original&quot;</span>
+<span class="p">],</span>
+<span class="s2">&quot;logo_sizes&quot;</span><span class="p">:</span> <span class="p">[</span>
+  <span class="s2">&quot;w45&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;w92&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;w154&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;w185&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;w300&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;w500&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;original&quot;</span>
+<span class="p">],</span>
+<span class="s2">&quot;poster_sizes&quot;</span><span class="p">:</span> <span class="p">[</span>
+  <span class="s2">&quot;w92&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;w154&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;w185&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;w342&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;w500&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;w780&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;original&quot;</span>
+<span class="p">],</span>
+<span class="s2">&quot;profile_sizes&quot;</span><span class="p">:</span> <span class="p">[</span>
+  <span class="s2">&quot;w45&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;w185&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;h632&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;original&quot;</span>
+<span class="p">],</span>
+<span class="s2">&quot;still_sizes&quot;</span><span class="p">:</span> <span class="p">[</span>
+  <span class="s2">&quot;w92&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;w185&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;w300&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;original&quot;</span>
+<span class="p">]</span>
 </code></pre></div>
                 </article>
             </aside>
@@ -709,6 +507,48 @@ add_from_grist_top_rated.py finished in 12.32 minutes.
                 <hr>
 
                 <ol id="posts-list" class="hfeed">
+            
+
+
+
+            <li>
+                <article class="hentry">
+                    <header>
+                        <!-- PREVIOUS NOTE TITLE -->
+                        <h1><a href="https://notes.nicolasdeville.com/projects/1000-movies" rel="bookmark"
+                            title="Project: Top 1000 movies">Project: Top 1000 movies</a></h1>
+                        <!-- PREVIOUS NOTE SUMMARY -->
+                        <div class="entry-content">
+                            <p>because why not</p>
+                        </div>
+                    </header>
+
+                    <div class="entry-content">
+                        <!-- PREVIOUS NOTE METADATA -->
+<footer class="post-info">
+
+    <p>
+        27 Jul 2022 <span class="separator">|</span> in <a class="link_tag" href="https://notes.nicolasdeville.com/projects/">projects</a>
+ tags: <a class="link_tag" href="https://notes.nicolasdeville.com/tag/movies.html">movies</a>
+<a class="link_tag" href="https://notes.nicolasdeville.com/tag/python.html">python</a>
+<a class="link_tag" href="https://notes.nicolasdeville.com/tag/api.html">api</a>
+
+        <!-- added 4/7 -->
+        <!-- 		<br />
+        <abbr class="modified" title="2022-07-27T10:08:46.342171+02:00">
+                Updated: 27 Jul 2022
+        </abbr>
+ -->
+
+    </p>
+
+    
+
+</footer>                    </div>
+                    
+                </article>
+                <hr/>
+            </li>
             
 
 
@@ -946,48 +786,6 @@ add_from_grist_top_rated.py finished in 12.32 minutes.
         <!-- added 4/7 -->
         <!-- 		<br />
         <abbr class="modified" title="2022-07-25T10:43:02.386274+02:00">
-                Updated: 25 Jul 2022
-        </abbr>
- -->
-
-    </p>
-
-    
-
-</footer>                    </div>
-                    
-                </article>
-                <hr/>
-            </li>
-            
-
-
-
-            <li>
-                <article class="hentry">
-                    <header>
-                        <!-- PREVIOUS NOTE TITLE -->
-                        <h1><a href="https://notes.nicolasdeville.com/python/tmdb-api" rel="bookmark"
-                            title="Fetching data from TMDB API">Fetching data from TMDB API</a></h1>
-                        <!-- PREVIOUS NOTE SUMMARY -->
-                        <div class="entry-content">
-                            <p>after failing with 2 libraries, just using Python's requests to fetch movie data from TMDB API - themoviedb.org</p>
-                        </div>
-                    </header>
-
-                    <div class="entry-content">
-                        <!-- PREVIOUS NOTE METADATA -->
-<footer class="post-info">
-
-    <p>
-        25 Jul 2022 <span class="separator">|</span> in <a class="link_tag" href="https://notes.nicolasdeville.com/python/">python</a>
- tags: <a class="link_tag" href="https://notes.nicolasdeville.com/tag/python.html">python</a>
-<a class="link_tag" href="https://notes.nicolasdeville.com/tag/scripts.html">scripts</a>
-<a class="link_tag" href="https://notes.nicolasdeville.com/tag/api.html">api</a>
-
-        <!-- added 4/7 -->
-        <!-- 		<br />
-        <abbr class="modified" title="2022-07-25T10:05:52.892741+02:00">
                 Updated: 25 Jul 2022
         </abbr>
  -->
