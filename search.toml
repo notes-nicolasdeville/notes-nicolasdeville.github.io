@@ -8,6 +8,16 @@ url = "ABOUT/"
 title = ""
 
 [[input.files]]
+path = "python/print/index.html"
+url = "python/print"
+title = "Print statement tricks"
+
+[[input.files]]
+path = "movies/1000/index.html"
+url = "movies/1000"
+title = "My Top 1,000 Movies"
+
+[[input.files]]
 path = "python/my-utils/index.html"
 url = "python/my-utils"
 title = "my-utils"
@@ -16,11 +26,6 @@ title = "my-utils"
 path = "python/venv/index.html"
 url = "python/venv"
 title = "Managing Virtual Environments in Python"
-
-[[input.files]]
-path = "python/print/index.html"
-url = "python/print"
-title = "Print statement tricks"
 
 [[input.files]]
 path = "python/library-imap-tools/index.html"
@@ -61,11 +66,6 @@ title = "Fujitsu ScanSnap iX500"
 path = "python/copy-folder/index.html"
 url = "python/copy-folder"
 title = "Copy folders with Python"
-
-[[input.files]]
-path = "movies/1000/index.html"
-url = "movies/1000"
-title = "My Top 1,000 Movies"
 
 [[input.files]]
 path = "projects/1000-movies/index.html"
