@@ -64,12 +64,12 @@
 <footer class="post-info">
 
     <p>
-        26 Jul 2022 <span class="separator">|</span> in <a class="link_tag" href="https://notes.nicolasdeville.com/python/">python</a>
+        30 Jul 2022 <span class="separator">|</span> in <a class="link_tag" href="https://notes.nicolasdeville.com/python/">python</a>
 
         <!-- added 4/7 -->
         <!-- 		<br />
-        <abbr class="modified" title="2022-07-26T10:17:22.103359+02:00">
-                Updated: 26 Jul 2022
+        <abbr class="modified" title="2022-07-30T17:35:16.155926+02:00">
+                Updated: 30 Jul 2022
         </abbr>
  -->
 
@@ -83,25 +83,25 @@
     <span class="kn">import</span> <span class="nn">re</span>
     <span class="n">allEmails</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">findall</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;[a-z0-9.\-+_]+@[a-z0-9.\-+_]+\.[a-z]+&quot;</span><span class="p">,</span> <span class="n">res</span><span class="o">.</span><span class="n">text</span><span class="p">,</span> <span class="n">re</span><span class="o">.</span><span class="n">I</span><span class="p">)</span>
     <span class="k">return</span> <span class="n">allEmails</span>
+</code></pre></div>
 
-
-<span class="k">def</span> <span class="nf">is_website_root</span><span class="p">(</span><span class="n">url</span><span class="p">):</span>
+<div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">is_website_root</span><span class="p">(</span><span class="n">url</span><span class="p">):</span>
     <span class="kn">from</span> <span class="nn">urllib.parse</span> <span class="kn">import</span> <span class="n">urlparse</span>
     <span class="n">site</span> <span class="o">=</span> <span class="n">urlparse</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
     <span class="k">if</span> <span class="ow">not</span> <span class="n">site</span><span class="o">.</span><span class="n">path</span> <span class="ow">or</span> <span class="n">site</span><span class="o">.</span><span class="n">path</span> <span class="o">==</span> <span class="s1">&#39;/&#39;</span><span class="p">:</span>
         <span class="k">return</span> <span class="kc">True</span>
     <span class="k">return</span> <span class="kc">False</span>
+</code></pre></div>
 
-
-<span class="k">def</span> <span class="nf">get_website_root</span><span class="p">(</span><span class="n">url</span><span class="p">):</span>
+<div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">get_website_root</span><span class="p">(</span><span class="n">url</span><span class="p">):</span>
     <span class="kn">from</span> <span class="nn">urllib.parse</span> <span class="kn">import</span> <span class="n">urlparse</span>
     <span class="n">site</span> <span class="o">=</span> <span class="n">urlparse</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
     <span class="k">if</span> <span class="ow">not</span> <span class="n">site</span><span class="o">.</span><span class="n">scheme</span><span class="p">:</span>
         <span class="k">raise</span> <span class="ne">KeyError</span><span class="p">(</span><span class="s1">&#39;Invalid URL, must include http or https scheme&#39;</span><span class="p">)</span>
     <span class="k">return</span> <span class="n">site</span><span class="o">.</span><span class="n">scheme</span> <span class="o">+</span> <span class="s1">&#39;://&#39;</span> <span class="o">+</span> <span class="n">site</span><span class="o">.</span><span class="n">netloc</span>
+</code></pre></div>
 
-
-<span class="k">def</span> <span class="nf">is_valid_email</span><span class="p">(</span><span class="n">email</span><span class="p">,</span> <span class="n">website</span><span class="p">):</span>
+<div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">is_valid_email</span><span class="p">(</span><span class="n">email</span><span class="p">,</span> <span class="n">website</span><span class="p">):</span>
     <span class="kn">from</span> <span class="nn">urllib.parse</span> <span class="kn">import</span> <span class="n">urlparse</span>
     <span class="n">site</span> <span class="o">=</span> <span class="n">urlparse</span><span class="p">(</span><span class="n">website</span><span class="p">)</span>
     <span class="n">domain</span> <span class="o">=</span> <span class="n">site</span><span class="o">.</span><span class="n">netloc</span> <span class="k">if</span> <span class="n">site</span><span class="o">.</span><span class="n">netloc</span> <span class="k">else</span> <span class="n">site</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">strip</span><span class="p">(</span><span class="s1">&#39;/&#39;</span><span class="p">)</span>

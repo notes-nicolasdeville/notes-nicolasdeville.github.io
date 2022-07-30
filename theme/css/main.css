@@ -13,7 +13,7 @@ aside, article, figure {
 	display: block;
 }
 
-header {
+#banner {
     display: flex;
     flex-flow: row wrap;
     width: 100%;
@@ -29,12 +29,6 @@ nav {
     flex-flow: row wrap;
     width: 100%;
 }
-
-/* nav ul {
-    display: flex;
-    flex-flow: row wrap;
-    width: 100%;
-} */
 
 nav ul,li {
     justify-content: space-between;
@@ -233,6 +227,8 @@ pre {
     overflow: auto;
     border-radius: 0.5em;
     /* font-size: .7rem; */
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
 }
 /* pre:hover, pre:focus {
     width: min-content; 
