@@ -7,7 +7,42 @@ html, body, div, h1, h2, h3, h4, h5, h6, ul, ol, li, p, blockquote, pre, form, f
     padding: 0;
 }
 
+/* HTML5 tags */
+section, footer,
+aside, article, figure {
+	display: block;
+}
+
+header {
+    display: flex;
+    flex-flow: row wrap;
+    width: 100%;
+}
+
+.header {
+    max-width: 800px;
+    width: 100%;
+}
+
+nav {
+    display: flex;
+    flex-flow: row wrap;
+    width: 100%;
+}
+
+/* nav ul {
+    display: flex;
+    flex-flow: row wrap;
+    width: 100%;
+} */
+
+nav ul,li {
+    justify-content: space-between;
+}
+
 body {
+    display: flex;
+    flex-flow: row wrap;
     background: #fff;
     color: #000305;
     font-size: 90%; /* Base font size: 14px */
@@ -147,6 +182,7 @@ ul {
     /* list-style: square inside url(https://notes.nicolasdeville.com/images/edelweiss_black.svg); */
     list-style-image: url(https://notes.nicolasdeville.com/images/edelweiss_black.svg);
     /* margin: 0em 0 0 1.5em; */
+    width: 100%;
 }
 
 ol {
@@ -159,6 +195,7 @@ li {
     margin-bottom: 1em;
     margin-right: 0.5em;
     margin-left: 1.5em;
+    /* width: 100%; */
 }
 
 /* Articles */
@@ -221,10 +258,10 @@ code {
 
 blockquote {
 
-    display:block;
-    background: #fff;
-    padding: 15px 20px 15px 45px;
-    margin: 0 0 20px;
+    display: block;
+    background: #ddd;
+    padding: 0.5em 1em 0.5em 1em;
+    /* margin: 0 0 20px; */
     position: relative;
 
     /* font-family: Georgia, serif; */
@@ -232,10 +269,13 @@ blockquote {
     line-height: 1.2;
     color: #000;
 
+    margin-top: 1em;
+    margin-bottom: 1em;
+
     /*Box Shadow*/
-    -moz-box-shadow: 1px 1px 3px #000;
+    /* -moz-box-shadow: 1px 1px 3px #000;
     -webkit-box-shadow: 1px 1px 3px #000;
-    box-shadow: 1px 1px 3px #000;
+    box-shadow: 1px 1px 3px #000; */
 
     /*Borders - (Optional)*/
     border-left-style: solid;
@@ -304,11 +344,8 @@ table {
         white-space: nowrap; 
     }
 
-/* HTML5 tags */
-header, section, footer,
-aside, nav, article, figure {
-	display: block;
-}
+
+
 
 /*
 	Header
@@ -355,10 +392,6 @@ aside, nav, article, figure {
         margin: 0;
 		text-align: center;
 		max-width: 800px;
-
-		/* border-radius: 5px;
-		-moz-border-radius: 5px;
-		-webkit-border-radius: 5px; */
 	}
 
 	#banner nav ul {
@@ -393,30 +426,6 @@ aside, nav, article, figure {
 #featured {
     padding-right: 0.5em;
 }
-	/* background: #fffeee;
-	margin-bottom: 2em;
-	overflow: hidden;
-	padding: 20px;
-	max-width: 760px;
-
-	border-radius: 10px;
-	-moz-border-radius: 10px;
-	-webkit-border-radius: 10px; */
-
-
-/* #featured figure {
-	border: 2px solid #eee;
-	float: right;
-	margin: 0.786em 2em 0 5em;
-	max-width: 248px;
-}
-#featured figure img {display: block; float: right;}
-
-#featured h2 {color: #C74451; font-size: 1.714em; margin-bottom: 0.333em;}
-#featured h3 {font-size: 1.429em; margin-bottom: .5em;}
-
-#featured h3 a:link, #featured h3 a:visited {color: #000305; text-decoration: none;}
-#featured h3 a:hover, #featured h3 a:active {color: #000;} */
 
 
 /*
@@ -724,10 +733,6 @@ li:first-child .hentry, #content > .hentry {
     display: block;
 }
 
-.header {
-    width: 800px;
-}
-
 .header_image {
     padding: 5px 0px 3px 0px;
 }
@@ -836,7 +841,8 @@ li:first-child .hentry, #content > .hentry {
 
 .search-input-block {
     float: right;
-    padding-top: 5px;
+    padding-top: 1em;
+    padding-bottom: 1em;
     vertical-align: top;
 }
 

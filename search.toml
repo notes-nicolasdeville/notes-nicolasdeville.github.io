@@ -8,6 +8,26 @@ url = "ABOUT/"
 title = ""
 
 [[input.files]]
+path = "python/venv/index.html"
+url = "python/venv"
+title = "Managing Virtual Environments in Python"
+
+[[input.files]]
+path = "python/print/index.html"
+url = "python/print"
+title = "Print statement tricks"
+
+[[input.files]]
+path = "python/library-imap-tools/index.html"
+url = "python/library-imap-tools"
+title = "Library: imap-tools"
+
+[[input.files]]
+path = "projects/imapee/index.html"
+url = "projects/imapee"
+title = "Imapee"
+
+[[input.files]]
 path = "python/tmdb-api/index.html"
 url = "python/tmdb-api"
 title = "Fetching data from TMDB API"
