@@ -13,6 +13,11 @@ url = "python/print"
 title = "Print statement tricks"
 
 [[input.files]]
+path = "apps/grist/index.html"
+url = "apps/grist"
+title = "Grist | The Evolution of Spreadsheets"
+
+[[input.files]]
 path = "movies/1000/index.html"
 url = "movies/1000"
 title = "My Top 1,000 Movies"
@@ -166,11 +171,6 @@ title = "Markdown"
 path = "random/meme/index.html"
 url = "random/meme"
 title = "Memes"
-
-[[input.files]]
-path = "apps/grist/index.html"
-url = "apps/grist"
-title = "Grist | The Evolution of Spreadsheets"
 
 [[input.files]]
 path = "python/library-requests/index.html"
@@ -481,6 +481,11 @@ title = "Simply Said"
 path = "helpers/ascii-tree/index.html"
 url = "helpers/ascii-tree"
 title = "ASCII tree"
+
+[[input.files]]
+path = "random/germany-tax/index.html"
+url = "random/germany-tax"
+title = "Germany taxes"
 
 [[input.files]]
 path = "home-office/setup/index.html"
