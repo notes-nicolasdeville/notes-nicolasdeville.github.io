@@ -8,14 +8,14 @@ url = "ABOUT/"
 title = ""
 
 [[input.files]]
-path = "python/library-pelican/index.html"
-url = "python/library-pelican"
-title = "Building a static site with Pelican"
-
-[[input.files]]
 path = "python/print/index.html"
 url = "python/print"
 title = "Print statement tricks"
+
+[[input.files]]
+path = "python/library-pelican/index.html"
+url = "python/library-pelican"
+title = "Building a static site with Pelican"
 
 [[input.files]]
 path = "apps/grist/index.html"
