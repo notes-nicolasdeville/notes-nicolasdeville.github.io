@@ -8,6 +8,21 @@ url = "/ABOUT/"
 title = ""
 
 [[input.files]]
+path = "projects/books_library/index.html"
+url = "/projects/books_library"
+title = "Managing my books library with Python"
+
+[[input.files]]
+path = "python/libraries/index.html"
+url = "/python/libraries"
+title = "Libraries for Python"
+
+[[input.files]]
+path = "python/library-beautifulsoup/index.html"
+url = "/python/library-beautifulsoup"
+title = "Python library: Beautifulsoup"
+
+[[input.files]]
 path = "projects/imapee/index.html"
 url = "/projects/imapee"
 title = "Imapee"
@@ -226,11 +241,6 @@ title = "How to save confidential data in environment variables with dotenv"
 path = "python/library-dateutil/index.html"
 url = "/python/library-dateutil"
 title = "Python library: dateutil"
-
-[[input.files]]
-path = "python/library-beautifulsoup/index.html"
-url = "/python/library-beautifulsoup"
-title = "Python library: Beautifulsoup"
 
 [[input.files]]
 path = "python/library-slugify/index.html"
