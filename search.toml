@@ -8,6 +8,11 @@ url = "/ABOUT/"
 title = ""
 
 [[input.files]]
+path = "projects/imapee/index.html"
+url = "/projects/imapee"
+title = "Imapee"
+
+[[input.files]]
 path = "python/print/index.html"
 url = "/python/print"
 title = "Print statement tricks"
@@ -41,11 +46,6 @@ title = "Managing Virtual Environments in Python"
 path = "python/library-imap-tools/index.html"
 url = "/python/library-imap-tools"
 title = "Library: imap-tools"
-
-[[input.files]]
-path = "projects/imapee/index.html"
-url = "/projects/imapee"
-title = "Imapee"
 
 [[input.files]]
 path = "python/tmdb-api/index.html"
