@@ -8,6 +8,11 @@ url = "/ABOUT/"
 title = ""
 
 [[input.files]]
+path = "python/virtual-environments/index.html"
+url = "/python/virtual-environments"
+title = "Managing Virtual Environments in Python"
+
+[[input.files]]
 path = "projects/books_library/index.html"
 url = "/projects/books_library"
 title = "Managing my books library with Python"
@@ -51,11 +56,6 @@ title = "My Top 1,000 Movies"
 path = "python/my-utils/index.html"
 url = "/python/my-utils"
 title = "my-utils"
-
-[[input.files]]
-path = "python/venv/index.html"
-url = "/python/venv"
-title = "Managing Virtual Environments in Python"
 
 [[input.files]]
 path = "python/library-imap-tools/index.html"
