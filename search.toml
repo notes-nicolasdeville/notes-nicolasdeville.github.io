@@ -48,6 +48,11 @@ url = "/python/books"
 title = "My Python Books Library"
 
 [[input.files]]
+path = "helpers/clipper/index.html"
+url = "/helpers/clipper"
+title = "My web clipboard"
+
+[[input.files]]
 path = "books/library/index.html"
 url = "/books/library"
 title = "My Books Library"
