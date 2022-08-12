@@ -8,6 +8,21 @@ url = "/ABOUT/"
 title = ""
 
 [[input.files]]
+path = "python/libraries/index.html"
+url = "/python/libraries"
+title = "Libraries for Python"
+
+[[input.files]]
+path = "movies/1000/index.html"
+url = "/movies/1000"
+title = "My Top 1,000 Movies"
+
+[[input.files]]
+path = "python/library-beautifulsoup/index.html"
+url = "/python/library-beautifulsoup"
+title = "Python library: Beautifulsoup"
+
+[[input.files]]
 path = "python/virtual-environments/index.html"
 url = "/python/virtual-environments"
 title = "Managing Virtual Environments in Python"
@@ -18,19 +33,24 @@ url = "/projects/books_library"
 title = "Managing my books library with Python"
 
 [[input.files]]
-path = "python/libraries/index.html"
-url = "/python/libraries"
-title = "Libraries for Python"
-
-[[input.files]]
-path = "python/library-beautifulsoup/index.html"
-url = "/python/library-beautifulsoup"
-title = "Python library: Beautifulsoup"
-
-[[input.files]]
 path = "projects/imapee/index.html"
 url = "/projects/imapee"
 title = "Imapee"
+
+[[input.files]]
+path = "b2b-sales/books/index.html"
+url = "/b2b-sales/books"
+title = "My B2B Books List"
+
+[[input.files]]
+path = "python/books/index.html"
+url = "/python/books"
+title = "My Python Books List"
+
+[[input.files]]
+path = "books/library/index.html"
+url = "/books/library"
+title = "My Books List"
 
 [[input.files]]
 path = "python/print/index.html"
@@ -46,11 +66,6 @@ title = "Building a static site with Pelican"
 path = "apps/grist/index.html"
 url = "/apps/grist"
 title = "Grist | The Evolution of Spreadsheets"
-
-[[input.files]]
-path = "movies/1000/index.html"
-url = "/movies/1000"
-title = "My Top 1,000 Movies"
 
 [[input.files]]
 path = "python/my-utils/index.html"
@@ -331,11 +346,6 @@ title = "Newsletter readers"
 path = "python/export-kindle-library/index.html"
 url = "/python/export-kindle-library"
 title = "Exporting my Kindle library data"
-
-[[input.files]]
-path = "books/library/index.html"
-url = "/books/library"
-title = "My Books Library"
 
 [[input.files]]
 path = "python/broken-links/index.html"
@@ -1441,3 +1451,13 @@ title = "The Mom Test"
 path = "b2b-sales/what-is-sales/index.html"
 url = "/b2b-sales/what-is-sales"
 title = "What Is Sales?"
+
+[[input.files]]
+path = "python/books/index.html"
+url = "/python/books"
+title = "My Python Books List"
+
+[[input.files]]
+path = "b2b-sales/books/index.html"
+url = "/b2b-sales/books"
+title = "My B2B Books List"
