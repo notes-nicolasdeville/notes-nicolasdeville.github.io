@@ -40,17 +40,17 @@ title = "Imapee"
 [[input.files]]
 path = "b2b-sales/books/index.html"
 url = "/b2b-sales/books"
-title = "My B2B Books List"
+title = "My B2B Books Library"
 
 [[input.files]]
 path = "python/books/index.html"
 url = "/python/books"
-title = "My Python Books List"
+title = "My Python Books Library"
 
 [[input.files]]
 path = "books/library/index.html"
 url = "/books/library"
-title = "My Books List"
+title = "My Books Library"
 
 [[input.files]]
 path = "python/print/index.html"
@@ -1455,9 +1455,9 @@ title = "What Is Sales?"
 [[input.files]]
 path = "python/books/index.html"
 url = "/python/books"
-title = "My Python Books List"
+title = "My Python Books Library"
 
 [[input.files]]
 path = "b2b-sales/books/index.html"
 url = "/b2b-sales/books"
-title = "My B2B Books List"
+title = "My B2B Books Library"
