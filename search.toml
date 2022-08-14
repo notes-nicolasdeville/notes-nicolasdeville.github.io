@@ -8,14 +8,74 @@ url = "/ABOUT/"
 title = ""
 
 [[input.files]]
-path = "python/libraries/index.html"
-url = "/python/libraries"
-title = "Libraries for Python"
+path = "interests/the-doors/index.html"
+url = "/interests/the-doors"
+title = "The Doors"
+
+[[input.files]]
+path = "projects/notes/index.html"
+url = "/projects/notes"
+title = "This site"
+
+[[input.files]]
+path = "interests/crypto/index.html"
+url = "/interests/crypto"
+title = "Crypto"
 
 [[input.files]]
 path = "movies/1000/index.html"
 url = "/movies/1000"
 title = "My Top 1,000 Movies"
+
+[[input.files]]
+path = "interests/web3/index.html"
+url = "/interests/web3"
+title = "Web3"
+
+[[input.files]]
+path = "interests/fidget-spinners/index.html"
+url = "/interests/fidget-spinners"
+title = "Fidget Spinners"
+
+[[input.files]]
+path = "salesleaderplaybook/resources/index.html"
+url = "/salesleaderplaybook/resources"
+title = "Resources about Sales Leadership"
+
+[[input.files]]
+path = "interests/f1/index.html"
+url = "/interests/f1"
+title = "F1"
+
+[[input.files]]
+path = "interests/elon/index.html"
+url = "/interests/elon"
+title = "Elon Musk"
+
+[[input.files]]
+path = "apps/library/index.html"
+url = "/apps/library"
+title = "My Apps Library"
+
+[[input.files]]
+path = "interests/longboarding/index.html"
+url = "/interests/longboarding"
+title = "Longboarding & Skateboarding"
+
+[[input.files]]
+path = "python/library-defaultdict/index.html"
+url = "/python/library-defaultdict"
+title = "Library: defaultdict"
+
+[[input.files]]
+path = "apps/pathfinder/index.html"
+url = "/apps/pathfinder"
+title = "Pathfinder - Finder alternative"
+
+[[input.files]]
+path = "python/libraries/index.html"
+url = "/python/libraries"
+title = "Libraries for Python"
 
 [[input.files]]
 path = "python/library-beautifulsoup/index.html"
@@ -31,11 +91,6 @@ title = "Managing Virtual Environments in Python"
 path = "projects/books_library/index.html"
 url = "/projects/books_library"
 title = "Managing my books library with Python"
-
-[[input.files]]
-path = "projects/imapee/index.html"
-url = "/projects/imapee"
-title = "Imapee"
 
 [[input.files]]
 path = "b2b-sales/books/index.html"
@@ -56,6 +111,11 @@ title = "My web clipboard"
 path = "books/library/index.html"
 url = "/books/library"
 title = "My Books Library"
+
+[[input.files]]
+path = "projects/imapee/index.html"
+url = "/projects/imapee"
+title = "Imapee"
 
 [[input.files]]
 path = "python/print/index.html"
@@ -193,11 +253,6 @@ url = "/interests/diabolo"
 title = "Diabolo"
 
 [[input.files]]
-path = "interests/f1/index.html"
-url = "/interests/f1"
-title = "F1"
-
-[[input.files]]
 path = "learning/markdown/index.html"
 url = "/learning/markdown"
 title = "Markdown"
@@ -211,11 +266,6 @@ title = "Memes"
 path = "python/library-requests/index.html"
 url = "/python/library-requests"
 title = "Library: requests"
-
-[[input.files]]
-path = "interests/elon/index.html"
-url = "/interests/elon"
-title = "Elon Musk"
 
 [[input.files]]
 path = "helpers/keyboard-shortcuts/index.html"
@@ -1458,6 +1508,11 @@ url = "/b2b-sales/what-is-sales"
 title = "What Is Sales?"
 
 [[input.files]]
+path = "books/library/index.html"
+url = "/books/library"
+title = "My Books Library"
+
+[[input.files]]
 path = "python/books/index.html"
 url = "/python/books"
 title = "My Python Books Library"
@@ -1466,3 +1521,8 @@ title = "My Python Books Library"
 path = "b2b-sales/books/index.html"
 url = "/b2b-sales/books"
 title = "My B2B Books Library"
+
+[[input.files]]
+path = "apps/library/index.html"
+url = "/apps/library"
+title = "My Apps Library"

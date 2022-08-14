@@ -45,7 +45,7 @@
 
 
 <p class="notes_count">
-    36 notes 
+    37 notes 
     <span style="color:#C74350">|</span> 
     <a href="https://notes.nicolasdeville.com/tags">by tags</a> 
     <span style="color:#C74350">|</span> 
@@ -64,15 +64,113 @@
             <hr/>
 
                 <article class="hentry">
-                    <h1 class="entry-title"><a href="https://notes.nicolasdeville.com/python/libraries">Libraries for Python</a></h1>
+                    <h1 class="entry-title"><a href="https://notes.nicolasdeville.com/python/library-defaultdict">Library: defaultdict</a></h1>
 
                     <!-- added 4/7 -->
                     <div>
                         <p class="header_summary">
-                            
+                            <p>standard Python libraries useful when creating dicts</p>
                         </p>
                     </div>
 
+<footer class="post-info">
+
+    <p>
+        12 Aug 2022 <span class="separator">|</span> in <a class="link_tag" href="https://notes.nicolasdeville.com/python/">python</a>
+ tags: <a class="link_tag" href="https://notes.nicolasdeville.com/tag/libraries.html">libraries</a>
+
+        <!-- added 4/7 -->
+        <!-- 		<br />
+        <abbr class="modified" title="2022-08-12T20:28:50.967566+02:00">
+                Updated: 12 Aug 2022
+        </abbr>
+ -->
+
+    </p>
+
+    
+
+</footer><p><span class="datestamp">12 Aug 2022</span> starting note <em>(note date indicates latest update)</em>   </p>
+<h1>Resources</h1>
+<p><a href="https://realpython.com/python-defaultdict/" target="_blank">https://realpython.com/python-defaultdict/</a>  </p>
+<h2>Grouping items</h2>
+<div class="highlight"><pre><span></span><code><span class="n">dep</span> <span class="o">=</span> <span class="p">[(</span><span class="s1">&#39;Sales&#39;</span><span class="p">,</span> <span class="s1">&#39;John Doe&#39;</span><span class="p">),</span>
+       <span class="p">(</span><span class="s1">&#39;Sales&#39;</span><span class="p">,</span> <span class="s1">&#39;Martin Smith&#39;</span><span class="p">),</span>
+       <span class="p">(</span><span class="s1">&#39;Accounting&#39;</span><span class="p">,</span> <span class="s1">&#39;Jane Doe&#39;</span><span class="p">),</span>
+       <span class="p">(</span><span class="s1">&#39;Marketing&#39;</span><span class="p">,</span> <span class="s1">&#39;Elizabeth Smith&#39;</span><span class="p">),</span>
+       <span class="p">(</span><span class="s1">&#39;Marketing&#39;</span><span class="p">,</span> <span class="s1">&#39;Adam Doe&#39;</span><span class="p">)]</span>
+<span class="n">Now</span><span class="p">,</span> <span class="n">you</span> <span class="n">need</span> <span class="n">to</span> <span class="n">create</span> <span class="n">a</span> <span class="n">dictionary</span> <span class="n">that</span> <span class="n">groups</span> <span class="n">the</span> <span class="n">employees</span> <span class="n">by</span> <span class="n">department</span><span class="o">.</span> <span class="n">To</span> <span class="n">do</span> <span class="n">this</span><span class="p">,</span> <span class="n">you</span> <span class="n">can</span> <span class="n">use</span> <span class="n">a</span> <span class="n">defaultdict</span> <span class="k">as</span> <span class="n">follows</span><span class="p">:</span>
+
+<span class="kn">from</span> <span class="nn">collections</span> <span class="kn">import</span> <span class="n">defaultdict</span>
+
+<span class="n">dep_dd</span> <span class="o">=</span> <span class="n">defaultdict</span><span class="p">(</span><span class="nb">list</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">department</span><span class="p">,</span> <span class="n">employee</span> <span class="ow">in</span> <span class="n">dep</span><span class="p">:</span>
+    <span class="n">dep_dd</span><span class="p">[</span><span class="n">department</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">employee</span><span class="p">)</span>
+</code></pre></div>
+
+<h2>Grouping UNIQUE items</h2>
+<div class="highlight"><pre><span></span><code><span class="n">dep</span> <span class="o">=</span> <span class="p">[(</span><span class="s1">&#39;Sales&#39;</span><span class="p">,</span> <span class="s1">&#39;John Doe&#39;</span><span class="p">),</span>
+       <span class="p">(</span><span class="s1">&#39;Sales&#39;</span><span class="p">,</span> <span class="s1">&#39;Martin Smith&#39;</span><span class="p">),</span>
+       <span class="p">(</span><span class="s1">&#39;Accounting&#39;</span><span class="p">,</span> <span class="s1">&#39;Jane Doe&#39;</span><span class="p">),</span>
+       <span class="p">(</span><span class="s1">&#39;Marketing&#39;</span><span class="p">,</span> <span class="s1">&#39;Elizabeth Smith&#39;</span><span class="p">),</span>
+       <span class="p">(</span><span class="s1">&#39;Marketing&#39;</span><span class="p">,</span> <span class="s1">&#39;Elizabeth Smith&#39;</span><span class="p">),</span>
+       <span class="p">(</span><span class="s1">&#39;Marketing&#39;</span><span class="p">,</span> <span class="s1">&#39;Adam Doe&#39;</span><span class="p">),</span>
+       <span class="p">(</span><span class="s1">&#39;Marketing&#39;</span><span class="p">,</span> <span class="s1">&#39;Adam Doe&#39;</span><span class="p">),</span>
+       <span class="p">(</span><span class="s1">&#39;Marketing&#39;</span><span class="p">,</span> <span class="s1">&#39;Adam Doe&#39;</span><span class="p">)]</span>
+
+<span class="n">dep_dd</span> <span class="o">=</span> <span class="n">defaultdict</span><span class="p">(</span><span class="nb">set</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">department</span><span class="p">,</span> <span class="n">employee</span> <span class="ow">in</span> <span class="n">dep</span><span class="p">:</span>
+    <span class="n">dep_dd</span><span class="p">[</span><span class="n">department</span><span class="p">]</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">employee</span><span class="p">)</span>
+</code></pre></div>
+
+<h2>Counting items</h2>
+<div class="highlight"><pre><span></span><code><span class="n">incomes</span> <span class="o">=</span> <span class="p">[(</span><span class="s1">&#39;Books&#39;</span><span class="p">,</span> <span class="mf">1250.00</span><span class="p">),</span>
+           <span class="p">(</span><span class="s1">&#39;Books&#39;</span><span class="p">,</span> <span class="mf">1300.00</span><span class="p">),</span>
+           <span class="p">(</span><span class="s1">&#39;Books&#39;</span><span class="p">,</span> <span class="mf">1420.00</span><span class="p">),</span>
+           <span class="p">(</span><span class="s1">&#39;Tutorials&#39;</span><span class="p">,</span> <span class="mf">560.00</span><span class="p">),</span>
+           <span class="p">(</span><span class="s1">&#39;Tutorials&#39;</span><span class="p">,</span> <span class="mf">630.00</span><span class="p">),</span>
+           <span class="p">(</span><span class="s1">&#39;Tutorials&#39;</span><span class="p">,</span> <span class="mf">750.00</span><span class="p">),</span>
+           <span class="p">(</span><span class="s1">&#39;Courses&#39;</span><span class="p">,</span> <span class="mf">2500.00</span><span class="p">),</span>
+           <span class="p">(</span><span class="s1">&#39;Courses&#39;</span><span class="p">,</span> <span class="mf">2430.00</span><span class="p">),</span>
+           <span class="p">(</span><span class="s1">&#39;Courses&#39;</span><span class="p">,</span> <span class="mf">2750.00</span><span class="p">),]</span>
+
+<span class="kn">from</span> <span class="nn">collections</span> <span class="kn">import</span> <span class="n">defaultdict</span>
+
+<span class="n">dd</span> <span class="o">=</span> <span class="n">defaultdict</span><span class="p">(</span><span class="nb">float</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">product</span><span class="p">,</span> <span class="n">income</span> <span class="ow">in</span> <span class="n">incomes</span><span class="p">:</span>
+    <span class="n">dd</span><span class="p">[</span><span class="n">product</span><span class="p">]</span> <span class="o">+=</span> <span class="n">income</span>
+
+<span class="k">for</span> <span class="n">product</span><span class="p">,</span> <span class="n">income</span> <span class="ow">in</span> <span class="n">dd</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Total income for </span><span class="si">{</span><span class="n">product</span><span class="si">}</span><span class="s1">: $</span><span class="si">{</span><span class="n">income</span><span class="si">:</span><span class="s1">,.2f</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+</code></pre></div>
+                </article>
+            </aside>
+
+                <section id="content" class="body">
+
+                <!-- PREVIOUS NOTES -->
+				<p class="notes-section">previous notes</p>
+                <hr>
+
+                <ol id="posts-list" class="hfeed">
+            
+
+
+
+            <li>
+                <article class="hentry">
+                    <header>
+                        <!-- PREVIOUS NOTE TITLE -->
+                        <h1><a href="https://notes.nicolasdeville.com/python/libraries" rel="bookmark"
+                            title="Libraries for Python">Libraries for Python</a></h1>
+                        <!-- PREVIOUS NOTE SUMMARY -->
+                        <div class="entry-content">
+                            
+                        </div>
+                    </header>
+
+                    <div class="entry-content">
+                        <!-- PREVIOUS NOTE METADATA -->
 <footer class="post-info">
 
     <p>
@@ -91,20 +189,11 @@
 
     
 
-</footer><p><span class="datestamp">11 Aug 2022</span> starting note <em>(note date indicates latest update)</em>   </p>
-<h2>Awesome Python</h2>
-<p>A curated list of awesome Python frameworks, libraries, software and resources   </p>
-<p><a href="https://github.com/vinta/awesome-python" target="_blank">https://github.com/vinta/awesome-python</a></p>
+</footer>                    </div>
+                    
                 </article>
-            </aside>
-
-                <section id="content" class="body">
-
-                <!-- PREVIOUS NOTES -->
-				<p class="notes-section">previous notes</p>
-                <hr>
-
-                <ol id="posts-list" class="hfeed">
+                <hr/>
+            </li>
             
 
 
@@ -206,13 +295,13 @@
 <footer class="post-info">
 
     <p>
-        11 Aug 2022 <span class="separator">|</span> in <a class="link_tag" href="https://notes.nicolasdeville.com/python/">python</a>
+        12 Aug 2022 <span class="separator">|</span> in <a class="link_tag" href="https://notes.nicolasdeville.com/python/">python</a>
  tags: <a class="link_tag" href="https://notes.nicolasdeville.com/tag/books.html">books</a>
 
         <!-- added 4/7 -->
         <!-- 		<br />
-        <abbr class="modified" title="2022-08-12T16:34:05.015262+02:00">
-                Updated: 12 Aug 2022
+        <abbr class="modified" title="2022-08-13T17:53:32.588198+02:00">
+                Updated: 13 Aug 2022
         </abbr>
  -->
 
