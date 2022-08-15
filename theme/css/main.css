@@ -92,7 +92,7 @@ h1 {
 h2 {
     font-size: 1.4em;
     margin-top: 1.4em;
-    /* color: #C64350; */
+    color: #C64350;
 }
 h2:before {
     content: '>> ';
@@ -707,7 +707,6 @@ li:first-child .hentry, #content > .hentry {
     /* border: 2px solid white; */
 }
 
-
 /* TAGS */
 
 .tag {
@@ -736,6 +735,12 @@ li:first-child .hentry, #content > .hentry {
 .screenshot {
     margin: auto, auto, auto, 0;
     display: block;
+}
+
+.app_icon {
+    margin: 0;
+    display: block;
+    width:50px;
 }
 
 .iphone {
@@ -839,8 +844,6 @@ li:first-child .hentry, #content > .hentry {
     -moz-box-shadow: 7px 7px 7px rgba(0,0,0,0.3);
     box-shadow: 7px 7px 7px rgba(0,0,0,0.3);
 }
-
-
 
 .twitter-tweet {
     margin: auto;

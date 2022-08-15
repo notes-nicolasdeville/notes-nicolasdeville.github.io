@@ -8,6 +8,16 @@ url = "/ABOUT/"
 title = ""
 
 [[input.files]]
+path = "interests/airguns/index.html"
+url = "/interests/airguns"
+title = "Airguns"
+
+[[input.files]]
+path = "python/virtual-environments/index.html"
+url = "/python/virtual-environments"
+title = "Managing Virtual Environments in Python"
+
+[[input.files]]
 path = "python/libraries/index.html"
 url = "/python/libraries"
 title = "Libraries for Python"
@@ -101,11 +111,6 @@ title = "Pathfinder - Finder alternative"
 path = "python/library-beautifulsoup/index.html"
 url = "/python/library-beautifulsoup"
 title = "Python library: Beautifulsoup"
-
-[[input.files]]
-path = "python/virtual-environments/index.html"
-url = "/python/virtual-environments"
-title = "Managing Virtual Environments in Python"
 
 [[input.files]]
 path = "projects/books_library/index.html"
