@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="generator" content="Pelican" />
+    <title>Extract all app logos to PNG</title>
+    <link rel="stylesheet" href="https://notes.nicolasdeville.com/theme/css/main.css" />
+
+    <!-- for Stork seach engine -->
+    <link rel="stylesheet" href="https://files.stork-search.net/basic.css" /> 
+
+</head>
+
+<body id="index" class="body">
+        <header id="banner" class="body">
+
+            <a href="https://notes.nicolasdeville.com/"><img class="header_image" src="https://notes.nicolasdeville.com/images/nic_notes_header.svg" alt="Nic's notes" width="266"/></a>
+
+            <!-- for Stork seach engine -->
+            <div class="search-input-block">
+                <input data-stork="sitesearch" class="search-input" placeholder="Search..." autofocus="autofocus"/>
+                <div data-stork="sitesearch-output"></div>
+            </div>
+
+            <nav><ul>
+                <li><a href="https://notes.nicolasdeville.com/apps/">apps</a></li>
+                <li><a href="https://notes.nicolasdeville.com/b2b-sales/">b2b sales</a></li>
+                <li><a href="https://notes.nicolasdeville.com/books/">books</a></li>
+                <li><a href="https://notes.nicolasdeville.com/careerplaybook/">#careerplaybook</a></li>
+                <li><a href="https://notes.nicolasdeville.com/helpers/">helpers</a></li>
+                <li><a href="https://notes.nicolasdeville.com/home-office/">home office</a></li>
+                <li><a href="https://notes.nicolasdeville.com/interests/">interests</a></li>
+                <li><a href="https://notes.nicolasdeville.com/learning/">learning</a></li>
+                <li><a href="https://notes.nicolasdeville.com/movies/">movies</a></li>
+                <li><a href="https://notes.nicolasdeville.com/projects/">projects</a></li>
+                <li class="active"><a href="https://notes.nicolasdeville.com/python/">python</a></li>
+                <li><a href="https://notes.nicolasdeville.com/random/">random</a></li>
+                <li><a href="https://notes.nicolasdeville.com/salesleaderplaybook/">#salesleaderplaybook</a></li>
+                <li><a href="https://notes.nicolasdeville.com/startups/">startups</a></li>
+            </ul></nav>
+        </header>
+
+<section id="content" class="body">
+    <article>
+        <header>
+            <h1 class="entry-title">
+                <main> <!-- for indexing by Stork -->
+                    <a href="https://notes.nicolasdeville.com/python/convert-icns-files" rel="bookmark"
+                    title="Permalink to Extract all app logos to PNG">Extract all app logos to PNG
+                    </a>
+                </main>
+            </h1>
+            <p class="header_summary">
+                <main> <!-- for indexing by Stork -->
+                    
+                </main>
+            </p>
+        </header>
+
+        <div class="entry-content">
+<footer class="post-info">
+
+    <p>
+        15 Aug 2022 <span class="separator">|</span> in <a class="link_tag" href="https://notes.nicolasdeville.com/python/">python</a>
+ tags: <a class="link_tag" href="https://notes.nicolasdeville.com/tag/conversion.html">conversion</a>
+
+        <!-- added 4/7 -->
+        <!-- 		<br />
+        <abbr class="modified" title="2022-08-15T09:11:10.498860+02:00">
+                Updated: 15 Aug 2022
+        </abbr>
+ -->
+
+    </p>
+
+    
+
+</footer>            <main> <!-- for indexing by Stork -->
+                <p><span class="datestamp">15 Aug 2022</span> starting note <em>(note date indicates latest update)</em>   </p>
+<h2>Getting apps logos from local .app folders</h2>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">slugify</span> <span class="kn">import</span> <span class="n">slugify</span>
+
+<span class="kn">import</span> <span class="nn">glob</span>
+<span class="kn">import</span> <span class="nn">os</span>
+<span class="kn">import</span> <span class="nn">shutil</span>
+
+<span class="n">list_locations</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="s1">&#39;/Applications/*.app&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;/Applications/Setapp/*.app&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;/Volumes/Macintosh HD-1/Applications/*.app&#39;</span><span class="p">,</span>
+<span class="p">]</span>
+
+<span class="n">list_errors</span> <span class="o">=</span> <span class="p">[]</span>
+
+<span class="n">count_file</span> <span class="o">=</span> <span class="mi">0</span>
+
+<span class="k">for</span> <span class="n">location</span> <span class="ow">in</span> <span class="n">list_locations</span><span class="p">:</span>
+
+    <span class="n">parts</span> <span class="o">=</span> <span class="n">location</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;*&#39;</span><span class="p">)</span>
+    <span class="n">prefix</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">parts</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+
+    <span class="n">list_of_files</span> <span class="o">=</span> <span class="n">glob</span><span class="o">.</span><span class="n">glob</span><span class="p">(</span><span class="n">location</span><span class="p">)</span>
+
+    <span class="nb">print</span><span class="p">()</span>
+    <span class="k">for</span> <span class="n">file</span> <span class="ow">in</span> <span class="n">list_of_files</span><span class="p">:</span>
+        <span class="n">count</span> <span class="o">+=</span> <span class="mi">1</span>
+        <span class="c1"># print(file)</span>
+
+        <span class="n">app</span> <span class="o">=</span> <span class="n">file</span><span class="p">[</span><span class="n">prefix</span><span class="p">:</span><span class="o">-</span><span class="mi">4</span><span class="p">]</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">app</span><span class="p">)</span>
+        <span class="n">slug</span> <span class="o">=</span> <span class="n">slugify</span><span class="p">(</span><span class="n">app</span><span class="p">)</span>
+
+        <span class="k">for</span> <span class="n">root</span><span class="p">,</span> <span class="n">dirs</span><span class="p">,</span> <span class="n">files</span> <span class="ow">in</span> <span class="n">os</span><span class="o">.</span><span class="n">walk</span><span class="p">(</span><span class="n">file</span><span class="p">):</span>
+            <span class="k">for</span> <span class="n">name</span> <span class="ow">in</span> <span class="n">files</span><span class="p">:</span>
+                <span class="k">if</span> <span class="n">name</span><span class="o">.</span><span class="n">endswith</span><span class="p">((</span><span class="s2">&quot;.icns&quot;</span><span class="p">)):</span>
+                    <span class="n">count_file</span> <span class="o">+=</span> <span class="mi">1</span>
+
+                    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">root</span><span class="si">}</span><span class="s2">/</span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+                    <span class="k">try</span><span class="p">:</span>
+                        <span class="n">shutil</span><span class="o">.</span><span class="n">copy2</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">root</span><span class="si">}</span><span class="s1">/</span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">,</span> <span class="sa">f</span><span class="s2">&quot;/path/to/output/folder/</span><span class="si">{</span><span class="n">slug</span><span class="si">}</span><span class="s2">_</span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s2">.icns&quot;</span><span class="p">)</span>
+                    <span class="k">except</span><span class="p">:</span>
+                        <span class="n">list_errors</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
+                        <span class="k">continue</span>
+</code></pre></div>
+
+<h2>Batch converting all to PNG</h2>
+<div class="highlight"><pre><span></span><code><span class="c1"># Convert .icns files to .png </span>
+
+<span class="kn">import</span> <span class="nn">icnsutil</span>
+
+<span class="k">for</span> <span class="n">root</span><span class="p">,</span> <span class="n">dirs</span><span class="p">,</span> <span class="n">files</span> <span class="ow">in</span> <span class="n">os</span><span class="o">.</span><span class="n">walk</span><span class="p">(</span><span class="s2">&quot;/path/to/folder/with/icns/files&quot;</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">name</span> <span class="ow">in</span> <span class="n">files</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">name</span><span class="o">.</span><span class="n">endswith</span><span class="p">((</span><span class="s2">&quot;.icns&quot;</span><span class="p">)):</span>
+            <span class="n">count</span> <span class="o">+=</span> <span class="mi">1</span>
+            <span class="n">file_path</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">root</span><span class="si">}</span><span class="s2">/</span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s2">&quot;</span>
+            <span class="nb">print</span><span class="p">(</span><span class="n">file_path</span><span class="p">)</span>
+            <span class="n">slug</span> <span class="o">=</span> <span class="n">name</span><span class="p">[:</span><span class="o">-</span><span class="mi">5</span><span class="p">]</span>
+            <span class="nb">print</span><span class="p">(</span><span class="n">slug</span><span class="p">)</span>
+
+            <span class="n">img</span> <span class="o">=</span> <span class="n">icnsutil</span><span class="o">.</span><span class="n">IcnsFile</span><span class="p">(</span><span class="n">file_path</span><span class="p">)</span>
+            <span class="n">output_path</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;/path/to/output/folder/</span><span class="si">{</span><span class="n">slug</span><span class="si">}</span><span class="s2">&quot;</span>
+            <span class="n">os</span><span class="o">.</span><span class="n">makedirs</span><span class="p">(</span><span class="n">output_path</span><span class="p">)</span>
+            <span class="n">img</span><span class="o">.</span><span class="n">export</span><span class="p">(</span><span class="n">output_path</span><span class="p">,</span> <span class="n">allowed_ext</span><span class="o">=</span><span class="s1">&#39;png&#39;</span><span class="p">,</span> <span class="n">convert_png</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</code></pre></div>
+            </main>
+        </div><!-- /.entry-content -->
+    </article>
+</section>
+        <section id="extras" class="body">
+
+        <!-- /.blogroll -->
+                <div class="blogroll">
+                        <h2>links</h2>
+                        <ul>
+                            <li><a href="https://indeXall.io">Side project: indeXall.io</a></li>
+                            <li><a href="https://btobsales.eu">Services: BtoBSales.EU</a></li>
+                        </ul>
+                </div>
+
+        <!-- /.social -->
+                <div class="social">
+                        <h2>social</h2>
+                        <ul>
+
+                            <li><a href="https://www.linkedin.com/in/ndeville/">Linkedin</a></li>
+                            <li><a href="https://www.twitter.com/ndeville">Twitter</a></li>
+                        </ul>
+                </div>
+        </section><!-- /#extras -->
+
+        <footer id="contentinfo" class="body">
+                <address id="about" class="vcard body">
+                Powered by <a href="https://github.com/getpelican/pelican" target="_blank">Pelican</a>, 
+                with <a href="https://stork-search.net/" target="_blank">Stork</a> & <a href="https://github.com/pelican-plugins/search" target="_blank">Pelican Search plugin</a>.
+                <span style="color:#C74350">|</span> <img src="https://notes.nicolasdeville.com/images/python.svg" alt="python_logo" width="16" style="vertical-align: middle;"/> <a href="https://www.python.org/" target="_blank">Python</a> 
+                
+                </address><!-- /#about -->
+
+        </footer><!-- /#contentinfo -->
+
+
+<!-- for Stork seach engine -->
+<script src="https://files.stork-search.net/releases/v1.2.1/stork.js"></script>
+<script>
+    stork.register("sitesearch", "https://notes.nicolasdeville.com/search-index.st")
+</script>
+
+</body>
+</html>

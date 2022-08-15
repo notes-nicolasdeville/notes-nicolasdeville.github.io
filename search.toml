@@ -8,6 +8,26 @@ url = "/ABOUT/"
 title = ""
 
 [[input.files]]
+path = "python/libraries/index.html"
+url = "/python/libraries"
+title = "Libraries for Python"
+
+[[input.files]]
+path = "python/extract-app-logos/index.html"
+url = "/python/extract-app-logos"
+title = "Extract all app logos to PNG"
+
+[[input.files]]
+path = "learning/basketball/index.html"
+url = "/learning/basketball"
+title = "Learning Basketball"
+
+[[input.files]]
+path = "helpers/apis/index.html"
+url = "/helpers/apis"
+title = "APIs"
+
+[[input.files]]
 path = "interests/the-doors/index.html"
 url = "/interests/the-doors"
 title = "The Doors"
@@ -21,6 +41,11 @@ title = "This site"
 path = "interests/crypto/index.html"
 url = "/interests/crypto"
 title = "Crypto"
+
+[[input.files]]
+path = "apps/library/index.html"
+url = "/apps/library"
+title = "My Apps Library"
 
 [[input.files]]
 path = "movies/1000/index.html"
@@ -53,11 +78,6 @@ url = "/interests/elon"
 title = "Elon Musk"
 
 [[input.files]]
-path = "apps/library/index.html"
-url = "/apps/library"
-title = "My Apps Library"
-
-[[input.files]]
 path = "interests/longboarding/index.html"
 url = "/interests/longboarding"
 title = "Longboarding & Skateboarding"
@@ -71,11 +91,6 @@ title = "Library: defaultdict"
 path = "apps/pathfinder/index.html"
 url = "/apps/pathfinder"
 title = "Pathfinder - Finder alternative"
-
-[[input.files]]
-path = "python/libraries/index.html"
-url = "/python/libraries"
-title = "Libraries for Python"
 
 [[input.files]]
 path = "python/library-beautifulsoup/index.html"
