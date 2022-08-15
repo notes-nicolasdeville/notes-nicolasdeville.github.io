@@ -48,6 +48,11 @@ url = "/apps/library"
 title = "My Apps Library"
 
 [[input.files]]
+path = "apps/radar/index.html"
+url = "/apps/radar"
+title = "Apps on my radar"
+
+[[input.files]]
 path = "movies/1000/index.html"
 url = "/movies/1000"
 title = "My Top 1,000 Movies"
