@@ -13,6 +13,11 @@ url = "/interests/airguns"
 title = "Airguns"
 
 [[input.files]]
+path = "helpers/vodafone-kabel/index.html"
+url = "/helpers/vodafone-kabel"
+title = "Vodafone Kabel"
+
+[[input.files]]
 path = "helpers/iframe/index.html"
 url = "/helpers/iframe"
 title = "iFrame"
