@@ -8,9 +8,19 @@ url = "/ABOUT/"
 title = ""
 
 [[input.files]]
+path = "projects/pingee/index.html"
+url = "/projects/pingee"
+title = "Pingee"
+
+[[input.files]]
 path = "interests/airguns/index.html"
 url = "/interests/airguns"
 title = "Airguns"
+
+[[input.files]]
+path = "helpers/clipper/index.html"
+url = "/helpers/clipper"
+title = "My web clipboard"
 
 [[input.files]]
 path = "helpers/vodafone-kabel/index.html"
@@ -136,11 +146,6 @@ title = "My B2B Books Library"
 path = "python/books/index.html"
 url = "/python/books"
 title = "My Python Books Library"
-
-[[input.files]]
-path = "helpers/clipper/index.html"
-url = "/helpers/clipper"
-title = "My web clipboard"
 
 [[input.files]]
 path = "books/library/index.html"
