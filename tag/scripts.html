@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="generator" content="Pelican" />
     <title>Nic's notes - scripts</title>
-    <link rel="stylesheet" href="https://notes.nicolasdeville.com/theme/css/main.css" />
+    <link rel="stylesheet" href="../theme/css/main.css" />
 
     <!-- for Stork seach engine -->
     <link rel="stylesheet" href="https://files.stork-search.net/basic.css" /> 
@@ -16,7 +16,7 @@
 <body id="index" class="body">
         <header id="banner" class="body">
 
-            <a href="https://notes.nicolasdeville.com/"><img class="header_image" src="https://notes.nicolasdeville.com/images/nic_notes_header.svg" alt="Nic's notes" width="266"/></a>
+            <a href="../"><img class="header_image" src="../images/nic_notes_header.svg" alt="Nic's notes" width="266"/></a>
 
             <!-- for Stork seach engine -->
             <div class="search-input-block">
@@ -25,29 +25,29 @@
             </div>
 
             <nav><ul>
-                <li><a href="https://notes.nicolasdeville.com/apps/">apps</a></li>
-                <li><a href="https://notes.nicolasdeville.com/b2b-sales/">b2b sales</a></li>
-                <li><a href="https://notes.nicolasdeville.com/books/">books</a></li>
-                <li><a href="https://notes.nicolasdeville.com/careerplaybook/">#careerplaybook</a></li>
-                <li><a href="https://notes.nicolasdeville.com/helpers/">helpers</a></li>
-                <li><a href="https://notes.nicolasdeville.com/home-office/">home office</a></li>
-                <li><a href="https://notes.nicolasdeville.com/interests/">interests</a></li>
-                <li><a href="https://notes.nicolasdeville.com/learning/">learning</a></li>
-                <li><a href="https://notes.nicolasdeville.com/movies/">movies</a></li>
-                <li><a href="https://notes.nicolasdeville.com/projects/">projects</a></li>
-                <li><a href="https://notes.nicolasdeville.com/python/">python</a></li>
-                <li><a href="https://notes.nicolasdeville.com/random/">random</a></li>
-                <li><a href="https://notes.nicolasdeville.com/salesleaderplaybook/">#salesleaderplaybook</a></li>
-                <li><a href="https://notes.nicolasdeville.com/startups/">startups</a></li>
+                <li><a href="../apps/">apps</a></li>
+                <li><a href="../b2b-sales/">b2b sales</a></li>
+                <li><a href="../books/">books</a></li>
+                <li><a href="../careerplaybook/">#careerplaybook</a></li>
+                <li><a href="../helpers/">helpers</a></li>
+                <li><a href="../home-office/">home office</a></li>
+                <li><a href="../interests/">interests</a></li>
+                <li><a href="../learning/">learning</a></li>
+                <li><a href="../movies/">movies</a></li>
+                <li><a href="../projects/">projects</a></li>
+                <li><a href="../python/">python</a></li>
+                <li><a href="../random/">random</a></li>
+                <li><a href="../salesleaderplaybook/">#salesleaderplaybook</a></li>
+                <li><a href="../startups/">startups</a></li>
             </ul></nav>
         </header>
 
 
 
 <p class="notes_count">
-    11 notes 
+    12 notes 
     <span style="color:#C74350">|</span> 
-    <a href="https://notes.nicolasdeville.com/tags">by tags</a> 
+    <a href="../tags">by tags</a> 
     <span style="color:#C74350">|</span> 
     <a href="https://notes.nicolasdeville.com/2022/">2022</a> 
     <span style="color:#C74350">|</span> 
@@ -64,27 +64,26 @@
             <hr/>
 
                 <article class="hentry">
-                    <h1 class="entry-title"><a href="https://notes.nicolasdeville.com/python/tmdb-api">Fetching data from TMDB API</a></h1>
+                    <h1 class="entry-title"><a href="../python/python-notion">Fetch Notion database data with Python</a></h1>
 
                     <!-- added 4/7 -->
                     <div>
                         <p class="header_summary">
-                            <p>after failing with 2 libraries, just using Python's requests to fetch movie data from TMDB API - themoviedb.org</p>
+                            <p>Get data from Notion with Python</p>
                         </p>
                     </div>
 
 <footer class="post-info">
 
     <p>
-        30 Jul 2022 <span class="separator">|</span> in <a class="link_tag" href="https://notes.nicolasdeville.com/python/">python</a>
- tags: <a class="link_tag" href="https://notes.nicolasdeville.com/tag/python.html">python</a>
-<a class="link_tag" href="https://notes.nicolasdeville.com/tag/scripts.html">scripts</a>
-<a class="link_tag" href="https://notes.nicolasdeville.com/tag/api.html">api</a>
+        05 Sep 2022 <span class="separator">|</span> in <a class="link_tag" href="../python/">python</a>
+ tags: <a class="link_tag" href="../tag/scripts.html">scripts</a>
+<a class="link_tag" href="../tag/notion.html">notion</a>
 
         <!-- added 4/7 -->
         <!-- 		<br />
-        <abbr class="modified" title="2022-07-30T10:21:48.162287+02:00">
-                Updated: 30 Jul 2022
+        <abbr class="modified" title="2022-09-05T09:10:31.926746+02:00">
+                Updated: 05 Sep 2022
         </abbr>
  -->
 
@@ -92,411 +91,144 @@
 
     
 
-</footer><p>Goal to fetch my private lists of movies on TMDB [<a href="../../projects/1000-movies/index.html">Nic Note: List of my Top 1000 movies</a>]:<br>
-<a href="https://www.themoviedb.org/" target="_blank">https://www.themoviedb.org/</a><br>
-The Movie Database (TMDB) is a popular, user editable database for movies and TV shows.  </p>
-<blockquote>
-<p>787,956 Movies on TMDB as of 25 Jul 2022  </p>
-</blockquote>
-<p>See unsuccessful attempts: <br>
-<a href="../../python/library-tmdbv3api/index.html">Nic Note: Library: tmdbv3api</a> <br>
-<a href="../../python/library-tmdbapis/index.html">Nic Note: Library: tmdbapis</a></p>
-<table>
-<thead>
-<tr>
-<th>API resources</th>
-<th></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Documentation</td>
-<td><a href="https://developers.themoviedb.org/3/getting-started/introduction" target="_blank">https://developers.themoviedb.org/3/getting-started/introduction</a></td>
-</tr>
-<tr>
-<td>Support forum</td>
-<td><a href="https://www.themoviedb.org/talk/category/5047958519c29526b50017d6" target="_blank">https://www.themoviedb.org/talk/category/5047958519c29526b50017d6</a></td>
-</tr>
-<tr>
-<td>Wrappers &amp; libraries</td>
-<td><a href="https://www.themoviedb.org/documentation/api/wrappers-libraries" target="_blank">https://www.themoviedb.org/documentation/api/wrappers-libraries</a></td>
-</tr>
-<tr>
-<td>Service status</td>
-<td><a href="https://status.themoviedb.org" target="_blank">https://status.themoviedb.org</a></td>
-</tr>
-</tbody>
-</table>
-<p>Here's an example API request: <br>
-<code>https://api.themoviedb.org/3/movie/550?api_key=xxxxxxxxxxxxxxxxxxx</code></p>
-<p>Attribution required: <br>
-<a href="https://www.themoviedb.org/about/logos-attribution" target="_blank">https://www.themoviedb.org/about/logos-attribution</a>   </p>
-<h1>Fetching data from my private list(s) on TMDB</h1>
-<p>Successful attempt in 5mns to fetch one movie's data with:    </p>
-<div class="highlight"><pre><span></span><code><span class="n">tmdb_api_key</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">getenv</span><span class="p">(</span><span class="s2">&quot;TMDB_API_KEY&quot;</span><span class="p">)</span> <span class="c1"># TMDB API v3 key</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">tmdb_api_key</span><span class="si">=}</span><span class="s2">&quot;</span><span class="p">)</span> <span class="c1"># print to check that proper key is passed in the payload later</span>
+</footer><p><span class="datestamp">07 Jul 2022</span>   </p>
+<p>Needed a way to fetch data from Notion to generate Markdown files dynamically for this static site.</p>
+<h2>Reference</h2>
+<div class="link_border">
+<div class="link_title">Learn how to make your first API requests using the Notion API</div>
+<div class="link_url"><a href="https://developers.notion.com/docs/getting-started" target="_blank">https://developers.notion.com/docs/getting-started</a></div></div>
 
-<span class="n">my_top_1000_list_id</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">my_list_id</span><span class="p">)</span> <span class="c1"># as found in the URL of my list</span>
+<p>Source database:  </p>
+<p><img class="illustration" src="../images/notion-clipper.jpg" alt="notion-clipper.jpg"/>  </p>
+<h2>Generate access</h2>
+<h3>Secret / token</h3>
+<ul>
+<li>Generate secret/token at https://www.notion.so/my-integrations  </li>
+<li>Ensure all access is granted, <code>Read content</code>, <code>Update content</code> and <code>Insert content</code>. Initial tests with just giving Read rights did not work for some reason.  </li>
+<li>Set as <code>Internal integration</code></li>
+<li>Internal Integration Token will be like <code>secret_XXXXXXXXXXXXXXXX</code>: use as <code>token</code> below</li>
+</ul>
+<h3>Database ID</h3>
+<p>This can be found in the URL of the database page to fetch:</p>
+<p><code>https://www.notion.so/myworkspacename/THIS_IS_THE_DATABASE_ID?v=XXXXXXXXXXXXXXXXXXXXXXXXXXXX</code></p>
+<h2>Script</h2>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">json</span>
+<span class="kn">import</span> <span class="nn">requests</span>
+<span class="kn">import</span> <span class="nn">pprint</span>
+<span class="n">pp</span> <span class="o">=</span> <span class="n">pprint</span><span class="o">.</span><span class="n">PrettyPrinter</span><span class="p">(</span><span class="n">indent</span><span class="o">=</span><span class="mi">4</span><span class="p">)</span>
 
-<span class="c1"># Fetching movie data for movie ID 100</span>
-<span class="n">movie_url</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;https://api.themoviedb.org/3/movie/100?api_key=</span><span class="si">{</span><span class="n">tmdb_api_key</span><span class="si">}</span><span class="s2">&quot;</span>
-<span class="n">res_movie</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">movie_url</span><span class="p">)</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
-<span class="n">pp</span><span class="o">.</span><span class="n">pprint</span><span class="p">(</span><span class="n">res_movie</span><span class="p">)</span>
+<span class="n">token</span> <span class="o">=</span> <span class="s1">&#39;secret_XXXXXXXXXXXXXXXX&#39;</span>
+<span class="n">database_id</span> <span class="o">=</span> <span class="s1">&#39;XXXXXXXXXXXXXXXXX&#39;</span> <span class="c1"># first variable in database URL, ie before ?</span>
+
+<span class="n">headers</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s2">&quot;Authorization&quot;</span><span class="p">:</span> <span class="s2">&quot;Bearer &quot;</span> <span class="o">+</span> <span class="n">token</span><span class="p">,</span>
+    <span class="s2">&quot;Content-Type&quot;</span><span class="p">:</span> <span class="s2">&quot;application/json&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;Notion-Version&quot;</span><span class="p">:</span> <span class="s2">&quot;2021-05-13&quot;</span>
+<span class="p">}</span>
+
+<span class="n">url</span> <span class="o">=</span> <span class="sa">f</span><span class="s1">&#39;https://api.notion.com/v1/databases/</span><span class="si">{</span><span class="n">database_id</span><span class="si">}</span><span class="s1">/query&#39;</span>
+
+<span class="n">r</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">post</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="p">{</span>
+    <span class="s2">&quot;Authorization&quot;</span><span class="p">:</span> <span class="sa">f</span><span class="s2">&quot;Bearer </span><span class="si">{</span><span class="n">token</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;Notion-Version&quot;</span><span class="p">:</span> <span class="s2">&quot;2021-08-16&quot;</span>
+    <span class="p">})</span>
+
+<span class="n">result_dict</span> <span class="o">=</span> <span class="n">r</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
+<span class="n">results</span> <span class="o">=</span> <span class="n">result_dict</span><span class="p">[</span><span class="s1">&#39;results&#39;</span><span class="p">]</span>
+
+<span class="c1"># for analysis of results structure</span>
+<span class="n">pp</span><span class="o">.</span><span class="n">pprint</span><span class="p">(</span><span class="n">results</span><span class="p">)</span> 
 <span class="nb">print</span><span class="p">()</span>
-<span class="n">title</span> <span class="o">=</span> <span class="n">res_movie</span><span class="p">[</span><span class="s2">&quot;title&quot;</span><span class="p">]</span>
-<span class="n">original_language</span> <span class="o">=</span> <span class="n">res_movie</span><span class="p">[</span><span class="s2">&quot;original_language&quot;</span><span class="p">]</span>
-<span class="n">original_title</span> <span class="o">=</span> <span class="n">res_movie</span><span class="p">[</span><span class="s2">&quot;original_title&quot;</span><span class="p">]</span>
-<span class="n">tagline</span> <span class="o">=</span> <span class="n">res_movie</span><span class="p">[</span><span class="s2">&quot;tagline&quot;</span><span class="p">]</span>
-<span class="n">budget</span> <span class="o">=</span> <span class="n">res_movie</span><span class="p">[</span><span class="s2">&quot;budget&quot;</span><span class="p">]</span>
-<span class="n">tmdb_id</span> <span class="o">=</span> <span class="n">res_movie</span><span class="p">[</span><span class="s2">&quot;id&quot;</span><span class="p">]</span>
-<span class="n">imdb_id</span> <span class="o">=</span> <span class="n">res_movie</span><span class="p">[</span><span class="s2">&quot;imdb_id&quot;</span><span class="p">]</span>
-<span class="n">original_language</span> <span class="o">=</span> <span class="n">res_movie</span><span class="p">[</span><span class="s2">&quot;original_language&quot;</span><span class="p">]</span>
-<span class="n">overview</span> <span class="o">=</span> <span class="n">res_movie</span><span class="p">[</span><span class="s2">&quot;overview&quot;</span><span class="p">]</span>
-<span class="n">release_date</span> <span class="o">=</span> <span class="n">res_movie</span><span class="p">[</span><span class="s2">&quot;release_date&quot;</span><span class="p">]</span>
-<span class="n">revenue</span> <span class="o">=</span> <span class="n">res_movie</span><span class="p">[</span><span class="s2">&quot;revenue&quot;</span><span class="p">]</span>
-<span class="n">runtime</span> <span class="o">=</span> <span class="n">res_movie</span><span class="p">[</span><span class="s2">&quot;runtime&quot;</span><span class="p">]</span>
-<span class="n">poster_path</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;https://image.tmdb.org/t/p/original/</span><span class="si">{</span><span class="n">res_movie</span><span class="p">[</span><span class="s1">&#39;poster_path&#39;</span><span class="p">]</span><span class="si">}</span><span class="s2">&quot;</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">title</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">original_language</span><span class="si">=}</span><span class="s2">&quot;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">original_title</span><span class="si">=}</span><span class="s2">&quot;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">tagline</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">budget</span><span class="si">=}</span><span class="s2">&quot;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">tmdb_id</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">imdb_id</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">original_language</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">overview</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">release_date</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">revenue</span><span class="si">=}</span><span class="s2">&quot;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">runtime</span><span class="si">=}</span><span class="s2">&quot;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">poster_path</span><span class="p">)</span>
-</code></pre></div>
 
-<blockquote>
-<p>for storing the API key, see <a href="../../python/library-dotenv/index.html">Nic Note: How to save confidential data in environment variables with dotenv</a>   </p>
-</blockquote>
-<p>and I can get movie data for each movie in my list with:   </p>
-<div class="highlight"><pre><span></span><code><span class="n">tmdb_api_key</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">getenv</span><span class="p">(</span><span class="s2">&quot;TMDB_API_KEY&quot;</span><span class="p">)</span>
-<span class="n">my_top_1000_list_id</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">my_list_id</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">record</span> <span class="ow">in</span> <span class="n">results</span><span class="p">:</span>
+    <span class="n">created_time</span> <span class="o">=</span> <span class="n">record</span><span class="p">[</span><span class="s1">&#39;created_time&#39;</span><span class="p">][:</span><span class="mi">10</span><span class="p">]</span> <span class="c1"># only 10 first chars for YYYY-MM-DD format</span>
+    <span class="c1"># below: 2nd field in &#39;properties&#39; field will depend on column headers in database</span>
+    <span class="n">url</span> <span class="o">=</span> <span class="n">record</span><span class="p">[</span><span class="s1">&#39;properties&#39;</span><span class="p">][</span><span class="s1">&#39;URL&#39;</span><span class="p">][</span><span class="s1">&#39;url&#39;</span><span class="p">]</span>
+    <span class="n">name</span> <span class="o">=</span> <span class="n">record</span><span class="p">[</span><span class="s1">&#39;properties&#39;</span><span class="p">][</span><span class="s1">&#39;</span><span class="se">\ufeff</span><span class="s1">Name&#39;</span><span class="p">][</span><span class="s1">&#39;title&#39;</span><span class="p">][</span><span class="mi">0</span><span class="p">][</span><span class="s1">&#39;plain_text&#39;</span><span class="p">]</span> <span class="c1"># some need deep navigation / nested fields</span>
+    <span class="k">if</span> <span class="n">record</span><span class="p">[</span><span class="s1">&#39;properties&#39;</span><span class="p">][</span><span class="s1">&#39;Category&#39;</span><span class="p">][</span><span class="s1">&#39;select&#39;</span><span class="p">]</span> <span class="o">!=</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">category</span> <span class="o">=</span> <span class="n">record</span><span class="p">[</span><span class="s1">&#39;properties&#39;</span><span class="p">][</span><span class="s1">&#39;Category&#39;</span><span class="p">][</span><span class="s1">&#39;select&#39;</span><span class="p">][</span><span class="s1">&#39;name&#39;</span><span class="p">]</span> <span class="c1"># simple select = single dict</span>
+    <span class="n">tags_list</span> <span class="o">=</span> <span class="n">record</span><span class="p">[</span><span class="s1">&#39;properties&#39;</span><span class="p">][</span><span class="s1">&#39;Tags&#39;</span><span class="p">][</span><span class="s1">&#39;multi_select&#39;</span><span class="p">]</span> <span class="c1"># multi-select fields is list of dicts</span>
+    <span class="n">tags</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span>
+    <span class="k">for</span> <span class="n">tag</span> <span class="ow">in</span> <span class="n">tags_list</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">tags</span> <span class="o">==</span> <span class="s1">&#39;&#39;</span><span class="p">:</span>
+            <span class="n">tags</span> <span class="o">=</span> <span class="n">tag</span><span class="p">[</span><span class="s1">&#39;name&#39;</span><span class="p">]</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">tags</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">tags</span><span class="si">}</span><span class="s2">, </span><span class="si">{</span><span class="n">tag</span><span class="p">[</span><span class="s1">&#39;name&#39;</span><span class="p">]</span><span class="si">}</span><span class="s2">&quot;</span>
+    <span class="n">notes_list</span> <span class="o">=</span> <span class="n">record</span><span class="p">[</span><span class="s1">&#39;properties&#39;</span><span class="p">][</span><span class="s1">&#39;Notes&#39;</span><span class="p">][</span><span class="s1">&#39;rich_text&#39;</span><span class="p">]</span> <span class="c1"># Text field is a list of dict</span>
+    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">notes_list</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="n">notes</span> <span class="o">=</span> <span class="n">notes_list</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="s1">&#39;text&#39;</span><span class="p">][</span><span class="s1">&#39;content&#39;</span><span class="p">]</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">notes</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span>
 
-<span class="n">count</span> <span class="o">=</span> <span class="mi">0</span>
-
-<span class="n">my_1000_url</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;https://api.themoviedb.org/4/list/</span><span class="si">{</span><span class="n">my_top_1000_list_id</span><span class="si">}</span><span class="s2">?page=1&amp;api_key=</span><span class="si">{</span><span class="n">tmdb_api_key</span><span class="si">}</span><span class="s2">&quot;</span>
-<span class="n">res_list</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">my_1000_url</span><span class="p">)</span><span class="o">.</span><span class="n">json</span><span class="p">()</span> 
-<span class="c1"># returns dict with 19 fields:</span>
-    <span class="c1"># average_rating</span>
-    <span class="c1"># backdrop_path</span>
-    <span class="c1"># comments</span>
-    <span class="c1"># created_by</span>
-    <span class="c1"># description</span>
-    <span class="c1"># id</span>
-    <span class="c1"># iso_3166_1</span>
-    <span class="c1"># iso_639_1</span>
-    <span class="c1"># name</span>
-    <span class="c1"># object_ids</span>
-    <span class="c1"># page</span>
-    <span class="c1"># poster_path</span>
-    <span class="c1"># public</span>
-    <span class="c1"># results</span>
-    <span class="c1"># revenue</span>
-    <span class="c1"># runtime</span>
-    <span class="c1"># sort_by</span>
-    <span class="c1"># total_pages</span>
-    <span class="c1"># total_results</span>
-    <span class="c1"># pp.pprint(m)</span>
-
-    <span class="c1"># the object_ids object includes the list of all movie ids in my list. Will be using that. </span>
-
-<span class="k">for</span> <span class="n">m</span> <span class="ow">in</span> <span class="n">res_list</span><span class="p">[</span><span class="s1">&#39;object_ids&#39;</span><span class="p">]:</span>
-    <span class="n">count</span> <span class="o">+=</span> <span class="mi">1</span> <span class="c1"># to validate number of movies processed</span>
-    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">m</span><span class="si">=}</span><span class="s2">&quot;</span><span class="p">)</span> <span class="c1"># m is a string like &#39;movie:100&#39; (print res_list[&#39;object_ids&#39;] to check), so need to remove first 6 characters to grab the movie id.</span>
-    <span class="n">movie_id</span> <span class="o">=</span> <span class="n">m</span><span class="p">[</span><span class="mi">6</span><span class="p">:]</span> <span class="c1"># </span>
-    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">movie_id</span><span class="si">=}</span><span class="s2">&quot;</span><span class="p">)</span>
-
-    <span class="n">movie_url</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;https://api.themoviedb.org/3/movie/</span><span class="si">{</span><span class="n">movie_id</span><span class="si">}</span><span class="s2">?api_key=</span><span class="si">{</span><span class="n">tmdb_api_key</span><span class="si">}</span><span class="s2">&quot;</span>
-    <span class="n">res_movie</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">movie_url</span><span class="p">)</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
-
-    <span class="n">title</span> <span class="o">=</span> <span class="n">res_movie</span><span class="p">[</span><span class="s2">&quot;title&quot;</span><span class="p">]</span>
-    <span class="n">original_language</span> <span class="o">=</span> <span class="n">res_movie</span><span class="p">[</span><span class="s2">&quot;original_language&quot;</span><span class="p">]</span>
-    <span class="n">original_title</span> <span class="o">=</span> <span class="n">res_movie</span><span class="p">[</span><span class="s2">&quot;original_title&quot;</span><span class="p">]</span>
-    <span class="n">tagline</span> <span class="o">=</span> <span class="n">res_movie</span><span class="p">[</span><span class="s2">&quot;tagline&quot;</span><span class="p">]</span>
-    <span class="n">budget</span> <span class="o">=</span> <span class="n">res_movie</span><span class="p">[</span><span class="s2">&quot;budget&quot;</span><span class="p">]</span>
-    <span class="n">tmdb_id</span> <span class="o">=</span> <span class="n">res_movie</span><span class="p">[</span><span class="s2">&quot;id&quot;</span><span class="p">]</span>
-    <span class="n">imdb_id</span> <span class="o">=</span> <span class="n">res_movie</span><span class="p">[</span><span class="s2">&quot;imdb_id&quot;</span><span class="p">]</span>
-    <span class="n">original_language</span> <span class="o">=</span> <span class="n">res_movie</span><span class="p">[</span><span class="s2">&quot;original_language&quot;</span><span class="p">]</span>
-    <span class="n">overview</span> <span class="o">=</span> <span class="n">res_movie</span><span class="p">[</span><span class="s2">&quot;overview&quot;</span><span class="p">]</span>
-    <span class="n">release_date</span> <span class="o">=</span> <span class="n">res_movie</span><span class="p">[</span><span class="s2">&quot;release_date&quot;</span><span class="p">]</span>
-    <span class="n">revenue</span> <span class="o">=</span> <span class="n">res_movie</span><span class="p">[</span><span class="s2">&quot;revenue&quot;</span><span class="p">]</span>
-    <span class="n">runtime</span> <span class="o">=</span> <span class="n">res_movie</span><span class="p">[</span><span class="s2">&quot;runtime&quot;</span><span class="p">]</span>
-    <span class="n">poster_path</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;https://image.tmdb.org/t/p/original/</span><span class="si">{</span><span class="n">res_movie</span><span class="p">[</span><span class="s1">&#39;poster_path&#39;</span><span class="p">]</span><span class="si">}</span><span class="s2">&quot;</span>
-    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">title</span><span class="si">=}</span><span class="s2">&quot;</span><span class="p">)</span>
-    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">original_language</span><span class="si">=}</span><span class="s2">&quot;</span><span class="p">)</span>
-    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">original_title</span><span class="si">=}</span><span class="s2">&quot;</span><span class="p">)</span>
-    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">tagline</span><span class="si">=}</span><span class="s2">&quot;</span><span class="p">)</span>
-    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">budget</span><span class="si">=}</span><span class="s2">&quot;</span><span class="p">)</span>
-    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">tmdb_id</span><span class="si">=}</span><span class="s2">&quot;</span><span class="p">)</span>
-    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">imdb_id</span><span class="si">=}</span><span class="s2">&quot;</span><span class="p">)</span>
-    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">original_language</span><span class="si">=}</span><span class="s2">&quot;</span><span class="p">)</span>
-    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">overview</span><span class="si">=}</span><span class="s2">&quot;</span><span class="p">)</span>
-    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">release_date</span><span class="si">=}</span><span class="s2">&quot;</span><span class="p">)</span>
-    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">revenue</span><span class="si">=}</span><span class="s2">&quot;</span><span class="p">)</span>
-    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">runtime</span><span class="si">=}</span><span class="s2">&quot;</span><span class="p">)</span>
-    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">poster_path</span><span class="si">=}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;created_time: </span><span class="si">{</span><span class="n">created_time</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;URL: </span><span class="si">{</span><span class="n">url</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span> 
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Name: </span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span> 
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Category: </span><span class="si">{</span><span class="n">category</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Tags: </span><span class="si">{</span><span class="n">tags</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Notes: </span><span class="si">{</span><span class="n">notes</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
     <span class="nb">print</span><span class="p">()</span>
-
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">count</span><span class="si">=}</span><span class="s2">&quot;</span><span class="p">)</span> <span class="c1"># to validate number of movies processed</span>
 </code></pre></div>
 
-<p>returns (edited for length):   </p>
-<div class="highlight"><pre><span></span><code>m=&#39;movie:100&#39;
-movie_id=&#39;100&#39;
-title=&#39;Lock, Stock and Two Smoking Barrels&#39;
-original_language=&#39;en&#39;
-original_title=&#39;Lock, Stock and Two Smoking Barrels&#39;
-tagline=&#39;A Disgrace to Criminals Everywhere.&#39;
-budget=1350000
-tmdb_id=100
-imdb_id=&#39;tt0120735&#39;
-original_language=&#39;en&#39;
-overview=&#39;A card shark and his unwillingly-enlisted friends need to make a lot of cash quick after losing a sketchy poker match. To do this they decide to pull a heist on a small-time gang who happen to be operating out of the flat next door.&#39;
-release_date=&#39;1998-08-28&#39;
-revenue=28356188
-runtime=105
-poster_path=&#39;https://image.tmdb.org/t/p/original//8kSerJrhrJWKLk1LViesGcnrUPE.jpg&#39;
-
-m=&#39;movie:101&#39;
-movie_id=&#39;101&#39;
-title=&#39;Léon: The Professional&#39;
-original_language=&#39;en&#39;
-original_title=&#39;Léon: The Professional&#39;
-tagline=&#39;If you want a job done well, hire a professional.&#39;
-budget=16000000
-tmdb_id=101
-imdb_id=&#39;tt0110413&#39;
-original_language=&#39;en&#39;
-overview=&#39;Léon, the top hit man in New York, has earned a rep as an effective &quot;cleaner&quot;. But when his next-door neighbors are wiped out by a loose-cannon DEA agent, he becomes the unwilling custodian of 12-year-old Mathilda. Before long, Mathilda\&#39;s thoughts turn to revenge, and she considers following in Léon\&#39;s footsteps.&#39;
-release_date=&#39;1994-09-14&#39;
-revenue=45284974
-runtime=111
-poster_path=&#39;https://image.tmdb.org/t/p/original//yI6X2cCM5YPJtxMhUd3dPGqDAhw.jpg&#39;
-
-m=&#39;movie:103&#39;
-movie_id=&#39;103&#39;
-title=&#39;Taxi Driver&#39;
-original_language=&#39;en&#39;
-original_title=&#39;Taxi Driver&#39;
-tagline=&quot;On every street in every city, there&#39;s a nobody who dreams of being a somebody.&quot;
-budget=1300000
-tmdb_id=103
-imdb_id=&#39;tt0075314&#39;
-original_language=&#39;en&#39;
-overview=&#39;A mentally unstable Vietnam War veteran works as a night-time taxi driver in New York City where the perceived decadence and sleaze feed his urge for violent action.&#39;
-release_date=&#39;1976-02-09&#39;
-revenue=28570902
-runtime=114
-poster_path=&#39;https://image.tmdb.org/t/p/original//ekstpH614fwDX8DUln1a2Opz0N8.jpg&#39;
+<p>Returns a list of dict with each dict as:</p>
+<div class="highlight"><pre><span></span><code>    <span class="p">{</span>   <span class="s1">&#39;archived&#39;</span><span class="p">:</span> <span class="kc">False</span><span class="p">,</span>
+        <span class="s1">&#39;cover&#39;</span><span class="p">:</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="s1">&#39;created_by&#39;</span><span class="p">:</span> <span class="p">{</span>   <span class="s1">&#39;id&#39;</span><span class="p">:</span> <span class="s1">&#39;xxxxxxxx-0855-xxxx-xxxx-xxxxxxxx&#39;</span><span class="p">,</span>
+                          <span class="s1">&#39;object&#39;</span><span class="p">:</span> <span class="s1">&#39;user&#39;</span><span class="p">},</span>
+        <span class="s1">&#39;created_time&#39;</span><span class="p">:</span> <span class="s1">&#39;2022-07-06T21:20:00.000Z&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;icon&#39;</span><span class="p">:</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="s1">&#39;id&#39;</span><span class="p">:</span> <span class="s1">&#39;1cd954ea-xxxx-xxxx-xxxx-xxxxxxxx&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;last_edited_by&#39;</span><span class="p">:</span> <span class="p">{</span>   <span class="s1">&#39;id&#39;</span><span class="p">:</span> <span class="s1">&#39;xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxx&#39;</span><span class="p">,</span>
+                              <span class="s1">&#39;object&#39;</span><span class="p">:</span> <span class="s1">&#39;user&#39;</span><span class="p">},</span>
+        <span class="s1">&#39;last_edited_time&#39;</span><span class="p">:</span> <span class="s1">&#39;2022-07-07T07:36:00.000Z&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;object&#39;</span><span class="p">:</span> <span class="s1">&#39;page&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;parent&#39;</span><span class="p">:</span> <span class="p">{</span>   <span class="s1">&#39;database_id&#39;</span><span class="p">:</span> <span class="s1">&#39;xxxxxxxx-f088-4d47-bca5-xxxxxxxx&#39;</span><span class="p">,</span>
+                      <span class="s1">&#39;type&#39;</span><span class="p">:</span> <span class="s1">&#39;database_id&#39;</span><span class="p">},</span>
+        <span class="s1">&#39;properties&#39;</span><span class="p">:</span> <span class="p">{</span>   <span class="s1">&#39;Category&#39;</span><span class="p">:</span> <span class="p">{</span>   <span class="s1">&#39;id&#39;</span><span class="p">:</span> <span class="s1">&#39;</span><span class="si">%60%</span><span class="s1">7DkC&#39;</span><span class="p">,</span>
+                                          <span class="s1">&#39;select&#39;</span><span class="p">:</span> <span class="p">{</span>   <span class="s1">&#39;color&#39;</span><span class="p">:</span> <span class="s1">&#39;pink&#39;</span><span class="p">,</span>
+                                                        <span class="s1">&#39;id&#39;</span><span class="p">:</span> <span class="s1">&#39;xxxxxxxx-bd0a-4cf0-ab54-xxxxxxxx&#39;</span><span class="p">,</span>
+                                                        <span class="s1">&#39;name&#39;</span><span class="p">:</span> <span class="s1">&#39;macOS&#39;</span><span class="p">},</span>
+                                          <span class="s1">&#39;type&#39;</span><span class="p">:</span> <span class="s1">&#39;select&#39;</span><span class="p">},</span>
+                          <span class="s1">&#39;Notes&#39;</span><span class="p">:</span> <span class="p">{</span>   <span class="s1">&#39;id&#39;</span><span class="p">:</span> <span class="s1">&#39;teVv&#39;</span><span class="p">,</span>
+                                       <span class="s1">&#39;rich_text&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;Terminal alternative to test&#39;</span><span class="p">],</span>
+                                       <span class="s1">&#39;type&#39;</span><span class="p">:</span> <span class="s1">&#39;rich_text&#39;</span><span class="p">},</span>
+                          <span class="s1">&#39;Tags&#39;</span><span class="p">:</span> <span class="p">{</span>   <span class="s1">&#39;id&#39;</span><span class="p">:</span> <span class="s1">&#39;%5DzQp&#39;</span><span class="p">,</span>
+                                      <span class="s1">&#39;multi_select&#39;</span><span class="p">:</span> <span class="p">[</span>   <span class="p">{</span>   <span class="s1">&#39;color&#39;</span><span class="p">:</span> <span class="s1">&#39;gray&#39;</span><span class="p">,</span>
+                                                              <span class="s1">&#39;id&#39;</span><span class="p">:</span> <span class="s1">&#39;xxxxxxxx-f4c5-4236-870d-xxxxxxxx&#39;</span><span class="p">,</span>
+                                                              <span class="s1">&#39;name&#39;</span><span class="p">:</span> <span class="s1">&#39;terminal&#39;</span><span class="p">}],</span>
+                                      <span class="s1">&#39;type&#39;</span><span class="p">:</span> <span class="s1">&#39;multi_select&#39;</span><span class="p">},</span>
+                          <span class="s1">&#39;URL&#39;</span><span class="p">:</span> <span class="p">{</span>   <span class="s1">&#39;id&#39;</span><span class="p">:</span> <span class="s1">&#39;xxxxxx&#39;</span><span class="p">,</span>
+                                     <span class="s1">&#39;type&#39;</span><span class="p">:</span> <span class="s1">&#39;url&#39;</span><span class="p">,</span>
+                                     <span class="s1">&#39;url&#39;</span><span class="p">:</span> <span class="s1">&#39;https://fig.io/&#39;</span><span class="p">},</span>
+                          <span class="s1">&#39;</span><span class="se">\ufeff</span><span class="s1">Name&#39;</span><span class="p">:</span> <span class="p">{</span>   <span class="s1">&#39;id&#39;</span><span class="p">:</span> <span class="s1">&#39;title&#39;</span><span class="p">,</span>
+                                            <span class="s1">&#39;title&#39;</span><span class="p">:</span> <span class="p">[</span>   <span class="p">{</span>   <span class="s1">&#39;annotations&#39;</span><span class="p">:</span> <span class="p">{</span>   <span class="s1">&#39;bold&#39;</span><span class="p">:</span> <span class="kc">False</span><span class="p">,</span>
+                                                                                <span class="s1">&#39;code&#39;</span><span class="p">:</span> <span class="kc">False</span><span class="p">,</span>
+                                                                                <span class="s1">&#39;color&#39;</span><span class="p">:</span> <span class="s1">&#39;default&#39;</span><span class="p">,</span>
+                                                                                <span class="s1">&#39;italic&#39;</span><span class="p">:</span> <span class="kc">False</span><span class="p">,</span>
+                                                                                <span class="s1">&#39;strikethrough&#39;</span><span class="p">:</span> <span class="kc">False</span><span class="p">,</span>
+                                                                                <span class="s1">&#39;underline&#39;</span><span class="p">:</span> <span class="kc">False</span><span class="p">},</span>
+                                                             <span class="s1">&#39;href&#39;</span><span class="p">:</span> <span class="kc">None</span><span class="p">,</span>
+                                                             <span class="s1">&#39;plain_text&#39;</span><span class="p">:</span> <span class="s1">&#39;Fig &#39;</span>
+                                                                           <span class="s1">&#39;- &#39;</span>
+                                                                           <span class="s1">&#39;Your &#39;</span>
+                                                                           <span class="s1">&#39;terminal, &#39;</span>
+                                                                           <span class="s1">&#39;reimagined&#39;</span><span class="p">,</span>
+                                                             <span class="s1">&#39;text&#39;</span><span class="p">:</span> <span class="p">{</span>   <span class="s1">&#39;content&#39;</span><span class="p">:</span> <span class="s1">&#39;Fig &#39;</span>
+                                                                                    <span class="s1">&#39;- &#39;</span>
+                                                                                    <span class="s1">&#39;Your &#39;</span>
+                                                                                    <span class="s1">&#39;terminal, &#39;</span>
+                                                                                    <span class="s1">&#39;reimagined&#39;</span><span class="p">,</span>
+                                                                         <span class="s1">&#39;link&#39;</span><span class="p">:</span> <span class="kc">None</span><span class="p">},</span>
+                                                             <span class="s1">&#39;type&#39;</span><span class="p">:</span> <span class="s1">&#39;text&#39;</span><span class="p">}],</span>
+                                            <span class="s1">&#39;type&#39;</span><span class="p">:</span> <span class="s1">&#39;title&#39;</span><span class="p">}},</span>
+        <span class="s1">&#39;url&#39;</span><span class="p">:</span> <span class="s1">&#39;https://www.notion.so/Fig-Your-terminal-reimagined-1cd9xxxxxxx431199ae46a78af43ebc&#39;</span><span class="p">},</span>
 </code></pre></div>
 
-<h1>Fetching Top Rated movies on TMDB</h1>
-<div class="highlight"><pre><span></span><code><span class="n">top_rated_movies_url</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;https://api.themoviedb.org/3/movie/top_rated?page=1&amp;api_key=</span><span class="si">{</span><span class="n">tmdb_api_key</span><span class="si">}</span><span class="s2">&quot;</span>
-<span class="n">res_list</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">top_rated_movies_url</span><span class="p">)</span><span class="o">.</span><span class="n">json</span><span class="p">()</span> 
-<span class="n">pp</span><span class="o">.</span><span class="n">pprint</span><span class="p">(</span><span class="n">res_list</span><span class="p">)</span>
-</code></pre></div>
-
-<p>returns:</p>
-<p><code>&lt;class 'dict'&gt;</code>
-Keys:
-- page
-- results
-- total_pages
-- total_results</p>
-<p>output (edited for length):  </p>
-<div class="highlight"><pre><span></span><code><span class="o">{</span>   <span class="s1">&#39;page&#39;</span>: <span class="m">1</span>,
-    <span class="s1">&#39;results&#39;</span>: <span class="o">[</span>   <span class="o">{</span>   <span class="s1">&#39;adult&#39;</span>: False,
-                       <span class="s1">&#39;backdrop_path&#39;</span>: <span class="s1">&#39;/kXfqcdQKsToO0OUXHcrrNCHDBzO.jpg&#39;</span>,
-                       <span class="s1">&#39;genre_ids&#39;</span>: <span class="o">[</span><span class="m">18</span>, <span class="m">80</span><span class="o">]</span>,
-                       <span class="s1">&#39;id&#39;</span>: <span class="m">278</span>,
-                       <span class="s1">&#39;original_language&#39;</span>: <span class="s1">&#39;en&#39;</span>,
-                       <span class="s1">&#39;original_title&#39;</span>: <span class="s1">&#39;The Shawshank Redemption&#39;</span>,
-                       <span class="s1">&#39;overview&#39;</span>: <span class="s1">&#39;Framed in the 1940s for the double murder &#39;</span>
-                                   <span class="s1">&#39;of his wife and her lover, upstanding &#39;</span>
-                                   <span class="s1">&#39;banker Andy Dufresne begins a new life at &#39;</span>
-                                   <span class="s1">&#39;the Shawshank prison, where he puts his &#39;</span>
-                                   <span class="s1">&#39;accounting skills to work for an amoral &#39;</span>
-                                   <span class="s1">&#39;warden. During his long stretch in prison, &#39;</span>
-                                   <span class="s1">&#39;Dufresne comes to be admired by the other &#39;</span>
-                                   <span class="s1">&#39;inmates -- including an older prisoner &#39;</span>
-                                   <span class="s1">&#39;named Red -- for his integrity and &#39;</span>
-                                   <span class="s1">&#39;unquenchable sense of hope.&#39;</span>,
-                       <span class="s1">&#39;popularity&#39;</span>: <span class="m">82</span>.945,
-                       <span class="s1">&#39;poster_path&#39;</span>: <span class="s1">&#39;/q6y0Go1tsGEsmtFryDOJo3dEmqu.jpg&#39;</span>,
-                       <span class="s1">&#39;release_date&#39;</span>: <span class="s1">&#39;1994-09-23&#39;</span>,
-                       <span class="s1">&#39;title&#39;</span>: <span class="s1">&#39;The Shawshank Redemption&#39;</span>,
-                       <span class="s1">&#39;video&#39;</span>: False,
-                       <span class="s1">&#39;vote_average&#39;</span>: <span class="m">8</span>.7,
-                       <span class="s1">&#39;vote_count&#39;</span>: <span class="m">21823</span><span class="o">}</span>,
-                   <span class="o">{</span>   <span class="s1">&#39;adult&#39;</span>: False,
-                       <span class="s1">&#39;backdrop_path&#39;</span>: <span class="s1">&#39;/90ez6ArvpO8bvpyIngBuwXOqJm5.jpg&#39;</span>,
-                       <span class="s1">&#39;genre_ids&#39;</span>: <span class="o">[</span><span class="m">35</span>, <span class="m">18</span>, <span class="m">10749</span><span class="o">]</span>,
-                       <span class="s1">&#39;id&#39;</span>: <span class="m">19404</span>,
-                       <span class="s1">&#39;original_language&#39;</span>: <span class="s1">&#39;hi&#39;</span>,
-                       <span class="s1">&#39;original_title&#39;</span>: <span class="s1">&#39;दिलवाले दुल्हनिया ले जायेंगे&#39;</span>,
-                       <span class="s1">&#39;overview&#39;</span>: <span class="s1">&#39;Raj is a rich, carefree, happy-go-lucky &#39;</span>
-                                   <span class="s1">&#39;second generation NRI. Simran is the &#39;</span>
-                                   <span class="s1">&#39;daughter of Chaudhary Baldev Singh, who in &#39;</span>
-                                   <span class="s1">&#39;spite of being an NRI is very strict about &#39;</span>
-                                   <span class="s1">&#39;adherence to Indian values. Simran has &#39;</span>
-                                   <span class="s1">&#39;left for India to be married to her &#39;</span>
-                                   <span class="s1">&#39;childhood fiancé. Raj leaves for India &#39;</span>
-                                   <span class="s1">&#39;with a mission at his hands, to claim his &#39;</span>
-                                   <span class="s1">&#39;lady love under the noses of her whole &#39;</span>
-                                   <span class="s1">&#39;family. Thus begins a saga.&#39;</span>,
-                       <span class="s1">&#39;popularity&#39;</span>: <span class="m">23</span>.792,
-                       <span class="s1">&#39;poster_path&#39;</span>: <span class="s1">&#39;/2CAL2433ZeIihfX1Hb2139CX0pW.jpg&#39;</span>,
-                       <span class="s1">&#39;release_date&#39;</span>: <span class="s1">&#39;1995-10-19&#39;</span>,
-                       <span class="s1">&#39;title&#39;</span>: <span class="s1">&#39;Dilwale Dulhania Le Jayenge&#39;</span>,
-                       <span class="s1">&#39;video&#39;</span>: False,
-                       <span class="s1">&#39;vote_average&#39;</span>: <span class="m">8</span>.7,
-                       <span class="s1">&#39;vote_count&#39;</span>: <span class="m">3722</span><span class="o">}</span>,
-                   <span class="o">{</span>   <span class="s1">&#39;adult&#39;</span>: False,
-                       <span class="s1">&#39;backdrop_path&#39;</span>: <span class="s1">&#39;/rSPw7tgCH9c6NqICZef4kZjFOQ5.jpg&#39;</span>,
-                       <span class="s1">&#39;genre_ids&#39;</span>: <span class="o">[</span><span class="m">18</span>, <span class="m">80</span><span class="o">]</span>,
-                       <span class="s1">&#39;id&#39;</span>: <span class="m">238</span>,
-                       <span class="s1">&#39;original_language&#39;</span>: <span class="s1">&#39;en&#39;</span>,
-                       <span class="s1">&#39;original_title&#39;</span>: <span class="s1">&#39;The Godfather&#39;</span>,
-                       <span class="s1">&#39;overview&#39;</span>: <span class="s1">&#39;Spanning the years 1945 to 1955, a &#39;</span>
-                                   <span class="s1">&#39;chronicle of the fictional &#39;</span>
-                                   <span class="s1">&#39;Italian-American Corleone crime family. &#39;</span>
-                                   <span class="s1">&#39;When organized crime family patriarch, &#39;</span>
-                                   <span class="s1">&#39;Vito Corleone barely survives an attempt &#39;</span>
-                                   <span class="s1">&#39;on his life, his youngest son, Michael &#39;</span>
-                                   <span class="s1">&#39;steps in to take care of the would-be &#39;</span>
-                                   <span class="s1">&#39;killers, launching a campaign of bloody &#39;</span>
-                                   <span class="s1">&#39;revenge.&#39;</span>,
-                       <span class="s1">&#39;popularity&#39;</span>: <span class="m">89</span>.756,
-                       <span class="s1">&#39;poster_path&#39;</span>: <span class="s1">&#39;/3bhkrj58Vtu7enYsRolD1fZdja1.jpg&#39;</span>,
-                       <span class="s1">&#39;release_date&#39;</span>: <span class="s1">&#39;1972-03-14&#39;</span>,
-                       <span class="s1">&#39;title&#39;</span>: <span class="s1">&#39;The Godfather&#39;</span>,
-                       <span class="s1">&#39;video&#39;</span>: False,
-                       <span class="s1">&#39;vote_average&#39;</span>: <span class="m">8</span>.7,
-                       <span class="s1">&#39;vote_count&#39;</span>: <span class="m">16247</span><span class="o">}</span>,
-</code></pre></div>
-
-<p>full script to fetch data per page:   </p>
-<div class="highlight"><pre><span></span><code><span class="n">tmdb_api_key</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">getenv</span><span class="p">(</span><span class="s2">&quot;TMDB_API_KEY&quot;</span><span class="p">)</span>
-<span class="c1"># print(f&quot;{tmdb_api_key=}&quot;)</span>
-<span class="n">tmdb_v4_token</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">getenv</span><span class="p">(</span><span class="s2">&quot;TMDB_V4_TOKEN&quot;</span><span class="p">)</span>
-<span class="c1"># print(f&quot;{tmdb_v4_token=}&quot;)</span>
-
-<span class="n">count</span> <span class="o">=</span> <span class="mi">0</span>
-
-<span class="c1"># Per page request</span>
-
-<span class="n">top_rated_movies_url</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;https://api.themoviedb.org/3/movie/top_rated?page=1&amp;api_key=</span><span class="si">{</span><span class="n">tmdb_api_key</span><span class="si">}</span><span class="s2">&quot;</span>
-
-<span class="n">res_list</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">top_rated_movies_url</span><span class="p">)</span><span class="o">.</span><span class="n">json</span><span class="p">()</span> 
-<span class="n">pp</span><span class="o">.</span><span class="n">pprint</span><span class="p">(</span><span class="n">res_list</span><span class="p">)</span>
-
-<span class="nb">print</span><span class="p">()</span>
-<span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">res_list</span><span class="p">[</span><span class="s1">&#39;results&#39;</span><span class="p">][</span><span class="mi">0</span><span class="p">]:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
-
-<span class="c1"># returns dict with 4 fields:</span>
-    <span class="c1"># page: int</span>
-    <span class="c1"># results: list of dicts with 14 fields per movie, 20 movies per page: </span>
-        <span class="c1"># adult</span>
-        <span class="c1"># backdrop_path</span>
-        <span class="c1"># genre_ids</span>
-        <span class="c1"># id</span>
-        <span class="c1"># original_language</span>
-        <span class="c1"># original_title</span>
-        <span class="c1"># overview</span>
-        <span class="c1"># popularity</span>
-        <span class="c1"># poster_path</span>
-        <span class="c1"># release_date</span>
-        <span class="c1"># title</span>
-        <span class="c1"># video</span>
-        <span class="c1"># vote_average</span>
-        <span class="c1"># vote_count</span>
-    <span class="c1"># total_pages: int / 507</span>
-    <span class="c1"># total_results: int / 10127</span>
-
-    <span class="c1"># the results object includes the list of all movies. Will be using that. </span>
-
-<span class="k">for</span> <span class="n">m</span> <span class="ow">in</span> <span class="n">res_list</span><span class="p">[</span><span class="s1">&#39;results&#39;</span><span class="p">]:</span>
-    <span class="n">count</span> <span class="o">+=</span> <span class="mi">1</span>
-    <span class="n">title</span> <span class="o">=</span> <span class="n">m</span><span class="p">[</span><span class="s2">&quot;title&quot;</span><span class="p">]</span>
-    <span class="n">original_language</span> <span class="o">=</span> <span class="n">m</span><span class="p">[</span><span class="s2">&quot;original_language&quot;</span><span class="p">]</span>
-    <span class="n">original_title</span> <span class="o">=</span> <span class="n">m</span><span class="p">[</span><span class="s2">&quot;original_title&quot;</span><span class="p">]</span>
-    <span class="c1"># tagline = m[&quot;tagline&quot;] # NO tagline returned here</span>
-    <span class="c1"># budget = m[&quot;budget&quot;] # NO budget returned here</span>
-    <span class="n">tmdb_id</span> <span class="o">=</span> <span class="n">m</span><span class="p">[</span><span class="s2">&quot;id&quot;</span><span class="p">]</span>
-    <span class="c1"># imdb_id = m[&quot;imdb_id&quot;] # NO imdb_id returned here</span>
-    <span class="n">original_language</span> <span class="o">=</span> <span class="n">m</span><span class="p">[</span><span class="s2">&quot;original_language&quot;</span><span class="p">]</span>
-    <span class="n">overview</span> <span class="o">=</span> <span class="n">m</span><span class="p">[</span><span class="s2">&quot;overview&quot;</span><span class="p">]</span>
-    <span class="n">release_date</span> <span class="o">=</span> <span class="n">m</span><span class="p">[</span><span class="s2">&quot;release_date&quot;</span><span class="p">]</span>
-    <span class="c1"># revenue = m[&quot;revenue&quot;] # NO revenue returned here</span>
-    <span class="c1"># runtime = m[&quot;runtime&quot;] # NO runtime returned here</span>
-    <span class="n">poster_path</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;https://image.tmdb.org/t/p/original/</span><span class="si">{</span><span class="n">m</span><span class="p">[</span><span class="s1">&#39;poster_path&#39;</span><span class="p">]</span><span class="si">}</span><span class="s2">&quot;</span>
-    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">title</span><span class="si">=}</span><span class="s2">&quot;</span><span class="p">)</span>
-    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">original_language</span><span class="si">=}</span><span class="s2">&quot;</span><span class="p">)</span>
-    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">original_title</span><span class="si">=}</span><span class="s2">&quot;</span><span class="p">)</span>
-    <span class="c1"># print(f&quot;{tagline=}&quot;)</span>
-    <span class="c1"># print(f&quot;{budget=}&quot;)</span>
-    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">tmdb_id</span><span class="si">=}</span><span class="s2">&quot;</span><span class="p">)</span>
-    <span class="c1"># print(f&quot;{imdb_id=}&quot;)</span>
-    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">original_language</span><span class="si">=}</span><span class="s2">&quot;</span><span class="p">)</span>
-    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">overview</span><span class="si">=}</span><span class="s2">&quot;</span><span class="p">)</span>
-    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">release_date</span><span class="si">=}</span><span class="s2">&quot;</span><span class="p">)</span>
-    <span class="c1"># print(f&quot;{revenue=}&quot;)</span>
-    <span class="c1"># print(f&quot;{runtime=}&quot;)</span>
-    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">poster_path</span><span class="si">=}</span><span class="s2">&quot;</span><span class="p">)</span>
-    <span class="nb">print</span><span class="p">()</span>
-
-    <span class="c1"># =&gt; need to use the https://api.themoviedb.org/3/movie/{movie_id}?api_key={tmdb_api_key} endpoint for each to get missing fields</span>
-</code></pre></div>
-
-<p>TODO need to add logic to loop per page + use the <code>/movie</code> endpoint to get missing fields.    </p>
-<h1>Resources</h1>
-<h2>How to fetch different sizes of movie posters</h2>
-<p><code>http://image.tmdb.org/t/p/wXXX/</code>, eg <code>http://image.tmdb.org/t/p/w500/</code>   </p>
-<p>Available sizes, for reference:</p>
-<div class="highlight"><pre><span></span><code><span class="s2">&quot;backdrop_sizes&quot;</span><span class="p">:</span> <span class="p">[</span>
-  <span class="s2">&quot;w300&quot;</span><span class="p">,</span>
-  <span class="s2">&quot;w780&quot;</span><span class="p">,</span>
-  <span class="s2">&quot;w1280&quot;</span><span class="p">,</span>
-  <span class="s2">&quot;original&quot;</span>
-<span class="p">],</span>
-<span class="s2">&quot;logo_sizes&quot;</span><span class="p">:</span> <span class="p">[</span>
-  <span class="s2">&quot;w45&quot;</span><span class="p">,</span>
-  <span class="s2">&quot;w92&quot;</span><span class="p">,</span>
-  <span class="s2">&quot;w154&quot;</span><span class="p">,</span>
-  <span class="s2">&quot;w185&quot;</span><span class="p">,</span>
-  <span class="s2">&quot;w300&quot;</span><span class="p">,</span>
-  <span class="s2">&quot;w500&quot;</span><span class="p">,</span>
-  <span class="s2">&quot;original&quot;</span>
-<span class="p">],</span>
-<span class="s2">&quot;poster_sizes&quot;</span><span class="p">:</span> <span class="p">[</span>
-  <span class="s2">&quot;w92&quot;</span><span class="p">,</span>
-  <span class="s2">&quot;w154&quot;</span><span class="p">,</span>
-  <span class="s2">&quot;w185&quot;</span><span class="p">,</span>
-  <span class="s2">&quot;w342&quot;</span><span class="p">,</span>
-  <span class="s2">&quot;w500&quot;</span><span class="p">,</span>
-  <span class="s2">&quot;w780&quot;</span><span class="p">,</span>
-  <span class="s2">&quot;original&quot;</span>
-<span class="p">],</span>
-<span class="s2">&quot;profile_sizes&quot;</span><span class="p">:</span> <span class="p">[</span>
-  <span class="s2">&quot;w45&quot;</span><span class="p">,</span>
-  <span class="s2">&quot;w185&quot;</span><span class="p">,</span>
-  <span class="s2">&quot;h632&quot;</span><span class="p">,</span>
-  <span class="s2">&quot;original&quot;</span>
-<span class="p">],</span>
-<span class="s2">&quot;still_sizes&quot;</span><span class="p">:</span> <span class="p">[</span>
-  <span class="s2">&quot;w92&quot;</span><span class="p">,</span>
-  <span class="s2">&quot;w185&quot;</span><span class="p">,</span>
-  <span class="s2">&quot;w300&quot;</span><span class="p">,</span>
-  <span class="s2">&quot;original&quot;</span>
-<span class="p">]</span>
-</code></pre></div>
+<h2>What tripped me up</h2>
+<ul>
+<li>tried first the <code>notion</code> package on PPI (<code>pip3 install notion</code>) and another approach using the token to be found in the browser's cookie (ie without integration/token) - both to no avail.  </li>
+<li>unable to make script work when only <code>Read content</code> only activated in integration on Notion.  </li>
+<li>field <code>Name</code> is prefixed with <code>\ufeff</code> for some reason.  </li>
+</ul>
                 </article>
             </aside>
 
@@ -515,7 +247,91 @@ Keys:
                 <article class="hentry">
                     <header>
                         <!-- PREVIOUS NOTE TITLE -->
-                        <h1><a href="https://notes.nicolasdeville.com/python/library-tmdbv3api" rel="bookmark"
+                        <h1><a href="../python/fetch-metadata-from-url" rel="bookmark"
+                            title="Fetch website metadata from URL">Fetch website metadata from URL</a></h1>
+                        <!-- PREVIOUS NOTE SUMMARY -->
+                        <div class="entry-content">
+                            
+                        </div>
+                    </header>
+
+                    <div class="entry-content">
+                        <!-- PREVIOUS NOTE METADATA -->
+<footer class="post-info">
+
+    <p>
+        04 Sep 2022 <span class="separator">|</span> in <a class="link_tag" href="../python/">python</a>
+ tags: <a class="link_tag" href="../tag/functions.html">functions</a>
+<a class="link_tag" href="../tag/scripts.html">scripts</a>
+<a class="link_tag" href="../tag/python.html">python</a>
+
+        <!-- added 4/7 -->
+        <!-- 		<br />
+        <abbr class="modified" title="2022-09-04T19:36:39.253291+02:00">
+                Updated: 04 Sep 2022
+        </abbr>
+ -->
+
+    </p>
+
+    
+
+</footer>                    </div>
+                    
+                </article>
+                <hr/>
+            </li>
+            
+
+
+
+            <li>
+                <article class="hentry">
+                    <header>
+                        <!-- PREVIOUS NOTE TITLE -->
+                        <h1><a href="../python/tmdb-api" rel="bookmark"
+                            title="Fetching data from TMDB API">Fetching data from TMDB API</a></h1>
+                        <!-- PREVIOUS NOTE SUMMARY -->
+                        <div class="entry-content">
+                            <p>after failing with 2 libraries, just using Python's requests to fetch movie data from TMDB API - themoviedb.org</p>
+                        </div>
+                    </header>
+
+                    <div class="entry-content">
+                        <!-- PREVIOUS NOTE METADATA -->
+<footer class="post-info">
+
+    <p>
+        30 Jul 2022 <span class="separator">|</span> in <a class="link_tag" href="../python/">python</a>
+ tags: <a class="link_tag" href="../tag/python.html">python</a>
+<a class="link_tag" href="../tag/scripts.html">scripts</a>
+<a class="link_tag" href="../tag/api.html">api</a>
+
+        <!-- added 4/7 -->
+        <!-- 		<br />
+        <abbr class="modified" title="2022-07-30T10:21:48.162287+02:00">
+                Updated: 30 Jul 2022
+        </abbr>
+ -->
+
+    </p>
+
+    
+
+</footer>                    </div>
+                    
+                </article>
+                <hr/>
+            </li>
+            
+
+
+
+            <li>
+                <article class="hentry">
+                    <header>
+                        <!-- PREVIOUS NOTE TITLE -->
+                        <h1><a href="../python/library-tmdbv3api" rel="bookmark"
                             title="Library: tmdbv3api | fetching movie data">Library: tmdbv3api | fetching movie data</a></h1>
                         <!-- PREVIOUS NOTE SUMMARY -->
                         <div class="entry-content">
@@ -528,11 +344,11 @@ Keys:
 <footer class="post-info">
 
     <p>
-        23 Jul 2022 <span class="separator">|</span> in <a class="link_tag" href="https://notes.nicolasdeville.com/python/">python</a>
- tags: <a class="link_tag" href="https://notes.nicolasdeville.com/tag/python.html">python</a>
-<a class="link_tag" href="https://notes.nicolasdeville.com/tag/libraries.html">libraries</a>
-<a class="link_tag" href="https://notes.nicolasdeville.com/tag/scripts.html">scripts</a>
-<a class="link_tag" href="https://notes.nicolasdeville.com/tag/api.html">api</a>
+        23 Jul 2022 <span class="separator">|</span> in <a class="link_tag" href="../python/">python</a>
+ tags: <a class="link_tag" href="../tag/python.html">python</a>
+<a class="link_tag" href="../tag/libraries.html">libraries</a>
+<a class="link_tag" href="../tag/scripts.html">scripts</a>
+<a class="link_tag" href="../tag/api.html">api</a>
 
         <!-- added 4/7 -->
         <!-- 		<br />
@@ -558,7 +374,7 @@ Keys:
                 <article class="hentry">
                     <header>
                         <!-- PREVIOUS NOTE TITLE -->
-                        <h1><a href="https://notes.nicolasdeville.com/python/library-tmdbapis" rel="bookmark"
+                        <h1><a href="../python/library-tmdbapis" rel="bookmark"
                             title="Library: tmdbapis | fetching movie data">Library: tmdbapis | fetching movie data</a></h1>
                         <!-- PREVIOUS NOTE SUMMARY -->
                         <div class="entry-content">
@@ -571,11 +387,11 @@ Keys:
 <footer class="post-info">
 
     <p>
-        23 Jul 2022 <span class="separator">|</span> in <a class="link_tag" href="https://notes.nicolasdeville.com/python/">python</a>
- tags: <a class="link_tag" href="https://notes.nicolasdeville.com/tag/python.html">python</a>
-<a class="link_tag" href="https://notes.nicolasdeville.com/tag/libraries.html">libraries</a>
-<a class="link_tag" href="https://notes.nicolasdeville.com/tag/scripts.html">scripts</a>
-<a class="link_tag" href="https://notes.nicolasdeville.com/tag/api.html">api</a>
+        23 Jul 2022 <span class="separator">|</span> in <a class="link_tag" href="../python/">python</a>
+ tags: <a class="link_tag" href="../tag/python.html">python</a>
+<a class="link_tag" href="../tag/libraries.html">libraries</a>
+<a class="link_tag" href="../tag/scripts.html">scripts</a>
+<a class="link_tag" href="../tag/api.html">api</a>
 
         <!-- added 4/7 -->
         <!-- 		<br />
@@ -601,7 +417,7 @@ Keys:
                 <article class="hentry">
                     <header>
                         <!-- PREVIOUS NOTE TITLE -->
-                        <h1><a href="https://notes.nicolasdeville.com/python/copy-files" rel="bookmark"
+                        <h1><a href="../python/copy-files" rel="bookmark"
                             title="Mass copy selected files with Python">Mass copy selected files with Python</a></h1>
                         <!-- PREVIOUS NOTE SUMMARY -->
                         <div class="entry-content">
@@ -614,9 +430,9 @@ Keys:
 <footer class="post-info">
 
     <p>
-        16 Jul 2022 <span class="separator">|</span> in <a class="link_tag" href="https://notes.nicolasdeville.com/python/">python</a>
- tags: <a class="link_tag" href="https://notes.nicolasdeville.com/tag/python.html">python</a>
-<a class="link_tag" href="https://notes.nicolasdeville.com/tag/scripts.html">scripts</a>
+        16 Jul 2022 <span class="separator">|</span> in <a class="link_tag" href="../python/">python</a>
+ tags: <a class="link_tag" href="../tag/python.html">python</a>
+<a class="link_tag" href="../tag/scripts.html">scripts</a>
 
         <!-- added 4/7 -->
         <!-- 		<br />
@@ -642,7 +458,7 @@ Keys:
                 <article class="hentry">
                     <header>
                         <!-- PREVIOUS NOTE TITLE -->
-                        <h1><a href="https://notes.nicolasdeville.com/python/export-kindle-library" rel="bookmark"
+                        <h1><a href="../python/export-kindle-library" rel="bookmark"
                             title="Exporting my Kindle library data">Exporting my Kindle library data</a></h1>
                         <!-- PREVIOUS NOTE SUMMARY -->
                         <div class="entry-content">
@@ -655,14 +471,14 @@ Keys:
 <footer class="post-info">
 
     <p>
-        15 Jul 2022 <span class="separator">|</span> in <a class="link_tag" href="https://notes.nicolasdeville.com/python/">python</a>
- tags: <a class="link_tag" href="https://notes.nicolasdeville.com/tag/python.html">python</a>
-<a class="link_tag" href="https://notes.nicolasdeville.com/tag/scripts.html">scripts</a>
+        15 Jul 2022 <span class="separator">|</span> in <a class="link_tag" href="../python/">python</a>
+ tags: <a class="link_tag" href="../tag/python.html">python</a>
+<a class="link_tag" href="../tag/scripts.html">scripts</a>
 
         <!-- added 4/7 -->
         <!-- 		<br />
-        <abbr class="modified" title="2022-08-09T10:21:39.977889+02:00">
-                Updated: 09 Aug 2022
+        <abbr class="modified" title="2022-09-05T08:52:46.738152+02:00">
+                Updated: 05 Sep 2022
         </abbr>
  -->
 
@@ -683,7 +499,7 @@ Keys:
                 <article class="hentry">
                     <header>
                         <!-- PREVIOUS NOTE TITLE -->
-                        <h1><a href="https://notes.nicolasdeville.com/python/broken-links" rel="bookmark"
+                        <h1><a href="../python/broken-links" rel="bookmark"
                             title="How to Find Broken Links With Python">How to Find Broken Links With Python</a></h1>
                         <!-- PREVIOUS NOTE SUMMARY -->
                         <div class="entry-content">
@@ -696,14 +512,14 @@ Keys:
 <footer class="post-info">
 
     <p>
-        14 Jul 2022 <span class="separator">|</span> in <a class="link_tag" href="https://notes.nicolasdeville.com/python/">python</a>
- tags: <a class="link_tag" href="https://notes.nicolasdeville.com/tag/python.html">python</a>
-<a class="link_tag" href="https://notes.nicolasdeville.com/tag/scripts.html">scripts</a>
+        14 Jul 2022 <span class="separator">|</span> in <a class="link_tag" href="../python/">python</a>
+ tags: <a class="link_tag" href="../tag/python.html">python</a>
+<a class="link_tag" href="../tag/scripts.html">scripts</a>
 
         <!-- added 4/7 -->
         <!-- 		<br />
-        <abbr class="modified" title="2022-07-14T23:08:32.124985+02:00">
-                Updated: 14 Jul 2022
+        <abbr class="modified" title="2022-09-05T08:51:10.529180+02:00">
+                Updated: 05 Sep 2022
         </abbr>
  -->
 
@@ -724,7 +540,7 @@ Keys:
                 <article class="hentry">
                     <header>
                         <!-- PREVIOUS NOTE TITLE -->
-                        <h1><a href="https://notes.nicolasdeville.com/python/generate-sitemap-with-python" rel="bookmark"
+                        <h1><a href="../python/generate-sitemap-with-python" rel="bookmark"
                             title="Generate Sitemap with Python">Generate Sitemap with Python</a></h1>
                         <!-- PREVIOUS NOTE SUMMARY -->
                         <div class="entry-content">
@@ -737,9 +553,9 @@ Keys:
 <footer class="post-info">
 
     <p>
-        07 Jul 2022 <span class="separator">|</span> in <a class="link_tag" href="https://notes.nicolasdeville.com/python/">python</a>
- tags: <a class="link_tag" href="https://notes.nicolasdeville.com/tag/scripts.html">scripts</a>
-<a class="link_tag" href="https://notes.nicolasdeville.com/tag/jinja.html">jinja</a>
+        07 Jul 2022 <span class="separator">|</span> in <a class="link_tag" href="../python/">python</a>
+ tags: <a class="link_tag" href="../tag/scripts.html">scripts</a>
+<a class="link_tag" href="../tag/jinja.html">jinja</a>
 
         <!-- added 4/7 -->
         <!-- 		<br />
@@ -765,7 +581,7 @@ Keys:
                 <article class="hentry">
                     <header>
                         <!-- PREVIOUS NOTE TITLE -->
-                        <h1><a href="https://notes.nicolasdeville.com/python/importing-ghost-blog-posts-to-pelican-with-python" rel="bookmark"
+                        <h1><a href="../python/importing-ghost-blog-posts-to-pelican-with-python" rel="bookmark"
                             title="Import Ghost blog posts to Pelican with Python">Import Ghost blog posts to Pelican with Python</a></h1>
                         <!-- PREVIOUS NOTE SUMMARY -->
                         <div class="entry-content">
@@ -778,8 +594,8 @@ Keys:
 <footer class="post-info">
 
     <p>
-        07 Jul 2022 <span class="separator">|</span> in <a class="link_tag" href="https://notes.nicolasdeville.com/python/">python</a>
- tags: <a class="link_tag" href="https://notes.nicolasdeville.com/tag/scripts.html">scripts</a>
+        07 Jul 2022 <span class="separator">|</span> in <a class="link_tag" href="../python/">python</a>
+ tags: <a class="link_tag" href="../tag/scripts.html">scripts</a>
 
         <!-- added 4/7 -->
         <!-- 		<br />
@@ -805,7 +621,7 @@ Keys:
                 <article class="hentry">
                     <header>
                         <!-- PREVIOUS NOTE TITLE -->
-                        <h1><a href="https://notes.nicolasdeville.com/python/importing-notion-markdown-files-to-pelican-with-python" rel="bookmark"
+                        <h1><a href="../python/importing-notion-markdown-files-to-pelican-with-python" rel="bookmark"
                             title="Notion Markdown files to Pelican Markdown files with Python">Notion Markdown files to Pelican Markdown files with Python</a></h1>
                         <!-- PREVIOUS NOTE SUMMARY -->
                         <div class="entry-content">
@@ -818,8 +634,8 @@ Keys:
 <footer class="post-info">
 
     <p>
-        07 Jul 2022 <span class="separator">|</span> in <a class="link_tag" href="https://notes.nicolasdeville.com/python/">python</a>
- tags: <a class="link_tag" href="https://notes.nicolasdeville.com/tag/scripts.html">scripts</a>
+        07 Jul 2022 <span class="separator">|</span> in <a class="link_tag" href="../python/">python</a>
+ tags: <a class="link_tag" href="../tag/scripts.html">scripts</a>
 
         <!-- added 4/7 -->
         <!-- 		<br />
@@ -845,48 +661,7 @@ Keys:
                 <article class="hentry">
                     <header>
                         <!-- PREVIOUS NOTE TITLE -->
-                        <h1><a href="https://notes.nicolasdeville.com/python/python-notion" rel="bookmark"
-                            title="Fetch Notion database data with Python">Fetch Notion database data with Python</a></h1>
-                        <!-- PREVIOUS NOTE SUMMARY -->
-                        <div class="entry-content">
-                            <p>Get data from Notion with Python</p>
-                        </div>
-                    </header>
-
-                    <div class="entry-content">
-                        <!-- PREVIOUS NOTE METADATA -->
-<footer class="post-info">
-
-    <p>
-        07 Jul 2022 <span class="separator">|</span> in <a class="link_tag" href="https://notes.nicolasdeville.com/python/">python</a>
- tags: <a class="link_tag" href="https://notes.nicolasdeville.com/tag/scripts.html">scripts</a>
-<a class="link_tag" href="https://notes.nicolasdeville.com/tag/notion.html">notion</a>
-
-        <!-- added 4/7 -->
-        <!-- 		<br />
-        <abbr class="modified" title="2022-07-13T22:58:55.710165+02:00">
-                Updated: 13 Jul 2022
-        </abbr>
- -->
-
-    </p>
-
-    
-
-</footer>                    </div>
-                    
-                </article>
-                <hr/>
-            </li>
-            
-
-
-
-            <li>
-                <article class="hentry">
-                    <header>
-                        <!-- PREVIOUS NOTE TITLE -->
-                        <h1><a href="https://notes.nicolasdeville.com/python/text-to-html" rel="bookmark"
+                        <h1><a href="../python/text-to-html" rel="bookmark"
                             title="Converting text to HTML with Python">Converting text to HTML with Python</a></h1>
                         <!-- PREVIOUS NOTE SUMMARY -->
                         <div class="entry-content">
@@ -899,9 +674,9 @@ Keys:
 <footer class="post-info">
 
     <p>
-        05 Jul 2022 <span class="separator">|</span> in <a class="link_tag" href="https://notes.nicolasdeville.com/python/">python</a>
- tags: <a class="link_tag" href="https://notes.nicolasdeville.com/tag/html.html">html</a>
-<a class="link_tag" href="https://notes.nicolasdeville.com/tag/scripts.html">scripts</a>
+        05 Jul 2022 <span class="separator">|</span> in <a class="link_tag" href="../python/">python</a>
+ tags: <a class="link_tag" href="../tag/html.html">html</a>
+<a class="link_tag" href="../tag/scripts.html">scripts</a>
 
         <!-- added 4/7 -->
         <!-- 		<br />
@@ -949,7 +724,7 @@ Keys:
                 <address id="about" class="vcard body">
                 Powered by <a href="https://github.com/getpelican/pelican" target="_blank">Pelican</a>, 
                 with <a href="https://stork-search.net/" target="_blank">Stork</a> & <a href="https://github.com/pelican-plugins/search" target="_blank">Pelican Search plugin</a>.
-                <span style="color:#C74350">|</span> <img src="https://notes.nicolasdeville.com/images/python.svg" alt="python_logo" width="16" style="vertical-align: middle;"/> <a href="https://www.python.org/" target="_blank">Python</a> 
+                <span style="color:#C74350">|</span> <img src="../images/python.svg" alt="python_logo" width="16" style="vertical-align: middle;"/> <a href="https://www.python.org/" target="_blank">Python</a> 
                 
                 </address><!-- /#about -->
 
@@ -959,7 +734,7 @@ Keys:
 <!-- for Stork seach engine -->
 <script src="https://files.stork-search.net/releases/v1.2.1/stork.js"></script>
 <script>
-    stork.register("sitesearch", "https://notes.nicolasdeville.com/search-index.st")
+    stork.register("sitesearch", "../search-index.st")
 </script>
 
 </body>

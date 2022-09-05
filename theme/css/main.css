@@ -885,6 +885,21 @@ li:first-child .hentry, #content > .hentry {
     margin-right: 0.5em;
 }
 
+.link_border {
+    border-left: 8px solid black;
+    margin-top: 0.5em;
+}
+
+.link_title {
+    font-weight: bold;
+    margin-left: 0.8em;
+}
+
+.link_url {
+    font-size: 0.8em;
+    margin-left: 0.8em;
+}
+
 /* TEST */
 
 .test {

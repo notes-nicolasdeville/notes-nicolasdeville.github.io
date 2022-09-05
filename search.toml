@@ -8,29 +8,44 @@ url = "/ABOUT/"
 title = ""
 
 [[input.files]]
-path = "projects/pingee/index.html"
-url = "/projects/pingee"
-title = "Pingee"
+path = "python/python-notion/index.html"
+url = "/python/python-notion"
+title = "Fetch Notion database data with Python"
 
 [[input.files]]
-path = "interests/airguns/index.html"
-url = "/interests/airguns"
-title = "Airguns"
+path = "python/library-pelican/index.html"
+url = "/python/library-pelican"
+title = "Building a static site with Pelican"
 
 [[input.files]]
-path = "helpers/clipper/index.html"
-url = "/helpers/clipper"
-title = "My web clipboard"
+path = "python/library-imap-tools/index.html"
+url = "/python/library-imap-tools"
+title = "Library: imap-tools"
 
 [[input.files]]
-path = "helpers/vodafone-kabel/index.html"
-url = "/helpers/vodafone-kabel"
-title = "Vodafone Kabel"
+path = "python/namedtuples/index.html"
+url = "/python/namedtuples"
+title = "namedtuples"
 
 [[input.files]]
-path = "helpers/iframe/index.html"
-url = "/helpers/iframe"
-title = "iFrame"
+path = "home-office/streamdeck/index.html"
+url = "/home-office/streamdeck"
+title = "Streamdeck for business users"
+
+[[input.files]]
+path = "python/library-re/index.html"
+url = "/python/library-re"
+title = "Library: re (regex)"
+
+[[input.files]]
+path = "python/library-tinytag/index.html"
+url = "/python/library-tinytag"
+title = "Library: tinytag"
+
+[[input.files]]
+path = "python/print/index.html"
+url = "/python/print"
+title = "Print statement tricks"
 
 [[input.files]]
 path = "python/virtual-environments/index.html"
@@ -38,14 +53,44 @@ url = "/python/virtual-environments"
 title = "Managing Virtual Environments in Python"
 
 [[input.files]]
-path = "python/libraries/index.html"
-url = "/python/libraries"
-title = "Libraries for Python"
+path = "python/library-openpyxl/index.html"
+url = "/python/library-openpyxl"
+title = "Library: openpyxl"
 
 [[input.files]]
-path = "python/extract-app-logos/index.html"
-url = "/python/extract-app-logos"
-title = "Extract all app logos to PNG"
+path = "python/library-defaultdict/index.html"
+url = "/python/library-defaultdict"
+title = "Library: defaultdict"
+
+[[input.files]]
+path = "interests/elon/index.html"
+url = "/interests/elon"
+title = "Elon Musk"
+
+[[input.files]]
+path = "python/my-utils/index.html"
+url = "/python/my-utils"
+title = "my-utils"
+
+[[input.files]]
+path = "projects/libraree/index.html"
+url = "/projects/libraree"
+title = "Libraree"
+
+[[input.files]]
+path = "python/library-notion-py/index.html"
+url = "/python/library-notion-py"
+title = "Fetching data from Notion API with Python"
+
+[[input.files]]
+path = "python/library-mutagen/index.html"
+url = "/python/library-mutagen"
+title = "Library: mutagen"
+
+[[input.files]]
+path = "home-office/desk/index.html"
+url = "/home-office/desk"
+title = "Standing desk: Leetdesk"
 
 [[input.files]]
 path = "learning/basketball/index.html"
@@ -53,14 +98,79 @@ url = "/learning/basketball"
 title = "Learning Basketball"
 
 [[input.files]]
-path = "helpers/apis/index.html"
-url = "/helpers/apis"
-title = "APIs"
+path = "python/library-sqlite3/index.html"
+url = "/python/library-sqlite3"
+title = "Library: sqlite3"
 
 [[input.files]]
-path = "interests/the-doors/index.html"
-url = "/interests/the-doors"
-title = "The Doors"
+path = "python/libraries/index.html"
+url = "/python/libraries"
+title = "Libraries for Python"
+
+[[input.files]]
+path = "learning/markdown/index.html"
+url = "/learning/markdown"
+title = "Markdown"
+
+[[input.files]]
+path = "salesleaderplaybook/resources/index.html"
+url = "/salesleaderplaybook/resources"
+title = "Resources about Sales Leadership"
+
+[[input.files]]
+path = "projects/books_library/index.html"
+url = "/projects/books_library"
+title = "Managing my books library with Python"
+
+[[input.files]]
+path = "home-office/scanner/index.html"
+url = "/home-office/scanner"
+title = "Fujitsu ScanSnap iX500"
+
+[[input.files]]
+path = "home-office/deep-work/index.html"
+url = "/home-office/deep-work"
+title = "Resources for Deep Work"
+
+[[input.files]]
+path = "projects/1000-movies/index.html"
+url = "/projects/1000-movies"
+title = "Project: Top 1000 movies"
+
+[[input.files]]
+path = "projects/emailee/index.html"
+url = "/projects/emailee"
+title = "Emailee"
+
+[[input.files]]
+path = "projects/mailingee/index.html"
+url = "/projects/mailingee"
+title = "Mailingee"
+
+[[input.files]]
+path = "projects/indexall/index.html"
+url = "/projects/indexall"
+title = "indeXall | indexing the worlds of passions"
+
+[[input.files]]
+path = "apps/espanso/index.html"
+url = "/apps/espanso"
+title = "Espanso"
+
+[[input.files]]
+path = "projects/imapee/index.html"
+url = "/projects/imapee"
+title = "Imapee"
+
+[[input.files]]
+path = "apps/hazel/index.html"
+url = "/apps/hazel"
+title = "Hazel"
+
+[[input.files]]
+path = "apps/grist/index.html"
+url = "/apps/grist"
+title = "Grist | The Evolution of Spreadsheets"
 
 [[input.files]]
 path = "projects/notes/index.html"
@@ -68,9 +178,119 @@ url = "/projects/notes"
 title = "This site"
 
 [[input.files]]
+path = "helpers/apis/index.html"
+url = "/helpers/apis"
+title = "APIs"
+
+[[input.files]]
+path = "apps/pathfinder/index.html"
+url = "/apps/pathfinder"
+title = "Pathfinder - Finder alternative"
+
+[[input.files]]
+path = "helpers/keyboard-shortcuts/index.html"
+url = "/helpers/keyboard-shortcuts"
+title = "My keyboard shortcuts"
+
+[[input.files]]
+path = "helpers/iframe/index.html"
+url = "/helpers/iframe"
+title = "iFrame"
+
+[[input.files]]
+path = "interests/diabolo/index.html"
+url = "/interests/diabolo"
+title = "Diabolo"
+
+[[input.files]]
+path = "interests/f1/index.html"
+url = "/interests/f1"
+title = "F1"
+
+[[input.files]]
+path = "interests/the-doors/index.html"
+url = "/interests/the-doors"
+title = "The Doors"
+
+[[input.files]]
+path = "interests/web3/index.html"
+url = "/interests/web3"
+title = "Web3"
+
+[[input.files]]
+path = "interests/fidget-spinners/index.html"
+url = "/interests/fidget-spinners"
+title = "Fidget Spinners"
+
+[[input.files]]
 path = "interests/crypto/index.html"
 url = "/interests/crypto"
 title = "Crypto"
+
+[[input.files]]
+path = "interests/longboarding/index.html"
+url = "/interests/longboarding"
+title = "Longboarding & Skateboarding"
+
+[[input.files]]
+path = "random/meme/index.html"
+url = "/random/meme"
+title = "Memes"
+
+[[input.files]]
+path = "helpers/vodafone-kabel/index.html"
+url = "/helpers/vodafone-kabel"
+title = "Vodafone Kabel"
+
+[[input.files]]
+path = "python/extract-app-logos/index.html"
+url = "/python/extract-app-logos"
+title = "Extract all app logos to PNG"
+
+[[input.files]]
+path = "interests/airguns/index.html"
+url = "/interests/airguns"
+title = "Airguns"
+
+[[input.files]]
+path = "python/copy-folder/index.html"
+url = "/python/copy-folder"
+title = "Copy folders with Python"
+
+[[input.files]]
+path = "projects/pingee/index.html"
+url = "/projects/pingee"
+title = "Pingee"
+
+[[input.files]]
+path = "interests/watches/index.html"
+url = "/interests/watches"
+title = "Watches"
+
+[[input.files]]
+path = "home-office/usb-hubs-and-docks/index.html"
+url = "/home-office/usb-hubs-and-docks"
+title = "USB Hubs & Docks"
+
+[[input.files]]
+path = "python/fetch-metadata-from-url/index.html"
+url = "/python/fetch-metadata-from-url"
+title = "Fetch website metadata from URL"
+
+[[input.files]]
+path = "helpers/terminal/index.html"
+url = "/helpers/terminal"
+title = "macOS Terminal resources"
+
+[[input.files]]
+path = "python/gitignore/index.html"
+url = "/python/gitignore"
+title = "Gitignore"
+
+[[input.files]]
+path = "helpers/clipper/index.html"
+url = "/helpers/clipper"
+title = "My web clipboard"
 
 [[input.files]]
 path = "apps/library/index.html"
@@ -88,59 +308,9 @@ url = "/movies/1000"
 title = "My Top 1,000 Movies"
 
 [[input.files]]
-path = "interests/web3/index.html"
-url = "/interests/web3"
-title = "Web3"
-
-[[input.files]]
-path = "interests/fidget-spinners/index.html"
-url = "/interests/fidget-spinners"
-title = "Fidget Spinners"
-
-[[input.files]]
-path = "salesleaderplaybook/resources/index.html"
-url = "/salesleaderplaybook/resources"
-title = "Resources about Sales Leadership"
-
-[[input.files]]
-path = "interests/f1/index.html"
-url = "/interests/f1"
-title = "F1"
-
-[[input.files]]
-path = "interests/elon/index.html"
-url = "/interests/elon"
-title = "Elon Musk"
-
-[[input.files]]
-path = "interests/longboarding/index.html"
-url = "/interests/longboarding"
-title = "Longboarding & Skateboarding"
-
-[[input.files]]
-path = "python/library-defaultdict/index.html"
-url = "/python/library-defaultdict"
-title = "Library: defaultdict"
-
-[[input.files]]
-path = "apps/pathfinder/index.html"
-url = "/apps/pathfinder"
-title = "Pathfinder - Finder alternative"
-
-[[input.files]]
 path = "python/library-beautifulsoup/index.html"
 url = "/python/library-beautifulsoup"
 title = "Python library: Beautifulsoup"
-
-[[input.files]]
-path = "projects/books_library/index.html"
-url = "/projects/books_library"
-title = "Managing my books library with Python"
-
-[[input.files]]
-path = "b2b-sales/books/index.html"
-url = "/b2b-sales/books"
-title = "My B2B Books Library"
 
 [[input.files]]
 path = "python/books/index.html"
@@ -148,39 +318,14 @@ url = "/python/books"
 title = "My Python Books Library"
 
 [[input.files]]
+path = "b2b-sales/books/index.html"
+url = "/b2b-sales/books"
+title = "My B2B Books Library"
+
+[[input.files]]
 path = "books/library/index.html"
 url = "/books/library"
 title = "My Books Library"
-
-[[input.files]]
-path = "projects/imapee/index.html"
-url = "/projects/imapee"
-title = "Imapee"
-
-[[input.files]]
-path = "python/print/index.html"
-url = "/python/print"
-title = "Print statement tricks"
-
-[[input.files]]
-path = "python/library-pelican/index.html"
-url = "/python/library-pelican"
-title = "Building a static site with Pelican"
-
-[[input.files]]
-path = "apps/grist/index.html"
-url = "/apps/grist"
-title = "Grist | The Evolution of Spreadsheets"
-
-[[input.files]]
-path = "python/my-utils/index.html"
-url = "/python/my-utils"
-title = "my-utils"
-
-[[input.files]]
-path = "python/library-imap-tools/index.html"
-url = "/python/library-imap-tools"
-title = "Library: imap-tools"
 
 [[input.files]]
 path = "python/tmdb-api/index.html"
@@ -188,89 +333,9 @@ url = "/python/tmdb-api"
 title = "Fetching data from TMDB API"
 
 [[input.files]]
-path = "home-office/desk/index.html"
-url = "/home-office/desk"
-title = "Standing desk: Leetdesk"
-
-[[input.files]]
-path = "home-office/deep-work/index.html"
-url = "/home-office/deep-work"
-title = "Resources for Deep Work"
-
-[[input.files]]
-path = "apps/hazel/index.html"
-url = "/apps/hazel"
-title = "Hazel"
-
-[[input.files]]
-path = "home-office/scanner/index.html"
-url = "/home-office/scanner"
-title = "Fujitsu ScanSnap iX500"
-
-[[input.files]]
-path = "python/copy-folder/index.html"
-url = "/python/copy-folder"
-title = "Copy folders with Python"
-
-[[input.files]]
-path = "projects/1000-movies/index.html"
-url = "/projects/1000-movies"
-title = "Project: Top 1000 movies"
-
-[[input.files]]
-path = "projects/mailingee/index.html"
-url = "/projects/mailingee"
-title = "Mailingee"
-
-[[input.files]]
-path = "python/library-sqlite3/index.html"
-url = "/python/library-sqlite3"
-title = "Library: sqlite3"
-
-[[input.files]]
-path = "python/library-re/index.html"
-url = "/python/library-re"
-title = "Library: re (regex)"
-
-[[input.files]]
-path = "helpers/terminal/index.html"
-url = "/helpers/terminal"
-title = "macOS Terminal resources"
-
-[[input.files]]
-path = "python/library-openpyxl/index.html"
-url = "/python/library-openpyxl"
-title = "Library: openpyxl"
-
-[[input.files]]
-path = "projects/libraree/index.html"
-url = "/projects/libraree"
-title = "Libraree"
-
-[[input.files]]
-path = "python/library-mutagen/index.html"
-url = "/python/library-mutagen"
-title = "Library: mutagen"
-
-[[input.files]]
-path = "python/library-tinytag/index.html"
-url = "/python/library-tinytag"
-title = "Library: tinytag"
-
-[[input.files]]
 path = "projects/nicai/index.html"
 url = "/projects/nicai"
 title = "nicAI | my personal AI assistant"
-
-[[input.files]]
-path = "projects/emailee/index.html"
-url = "/projects/emailee"
-title = "Emailee"
-
-[[input.files]]
-path = "python/namedtuples/index.html"
-url = "/python/namedtuples"
-title = "namedtuples"
 
 [[input.files]]
 path = "python/library-datetime/index.html"
@@ -278,49 +343,9 @@ url = "/python/library-datetime"
 title = "Python library: datetime"
 
 [[input.files]]
-path = "python/library-notion-py/index.html"
-url = "/python/library-notion-py"
-title = "Fetching data from Notion API with Python"
-
-[[input.files]]
-path = "home-office/streamdeck/index.html"
-url = "/home-office/streamdeck"
-title = "Streamdeck for business users"
-
-[[input.files]]
-path = "interests/diabolo/index.html"
-url = "/interests/diabolo"
-title = "Diabolo"
-
-[[input.files]]
-path = "learning/markdown/index.html"
-url = "/learning/markdown"
-title = "Markdown"
-
-[[input.files]]
-path = "random/meme/index.html"
-url = "/random/meme"
-title = "Memes"
-
-[[input.files]]
 path = "python/library-requests/index.html"
 url = "/python/library-requests"
 title = "Library: requests"
-
-[[input.files]]
-path = "helpers/keyboard-shortcuts/index.html"
-url = "/helpers/keyboard-shortcuts"
-title = "My keyboard shortcuts"
-
-[[input.files]]
-path = "apps/espanso/index.html"
-url = "/apps/espanso"
-title = "Espanso"
-
-[[input.files]]
-path = "projects/indexall/index.html"
-url = "/projects/indexall"
-title = "indeXall | indexing the worlds of passions"
 
 [[input.files]]
 path = "random/20-scariest-theories/index.html"
@@ -506,11 +531,6 @@ title = "Import Ghost blog posts to Pelican with Python"
 path = "python/importing-notion-markdown-files-to-pelican-with-python/index.html"
 url = "/python/importing-notion-markdown-files-to-pelican-with-python"
 title = "Notion Markdown files to Pelican Markdown files with Python"
-
-[[input.files]]
-path = "python/python-notion/index.html"
-url = "/python/python-notion"
-title = "Fetch Notion database data with Python"
 
 [[input.files]]
 path = "helpers/github-pages/index.html"
@@ -1553,14 +1573,14 @@ url = "/books/library"
 title = "My Books Library"
 
 [[input.files]]
-path = "python/books/index.html"
-url = "/python/books"
-title = "My Python Books Library"
-
-[[input.files]]
 path = "b2b-sales/books/index.html"
 url = "/b2b-sales/books"
 title = "My B2B Books Library"
+
+[[input.files]]
+path = "python/books/index.html"
+url = "/python/books"
+title = "My Python Books Library"
 
 [[input.files]]
 path = "apps/library/index.html"
