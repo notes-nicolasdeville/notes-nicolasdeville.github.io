@@ -13,6 +13,11 @@ url = "/projects/pingee"
 title = "Pingee"
 
 [[input.files]]
+path = "projects/indexall/index.html"
+url = "/projects/indexall"
+title = "indeXall | indexing the worlds of passions"
+
+[[input.files]]
 path = "learning/touch-typing/index.html"
 url = "/learning/touch-typing"
 title = "Learning touch typing"
@@ -31,11 +36,6 @@ title = "Sending emails with Python"
 path = "learning/javascript/index.html"
 url = "/learning/javascript"
 title = "Learning Javascript"
-
-[[input.files]]
-path = "projects/indexall/index.html"
-url = "/projects/indexall"
-title = "indeXall | indexing the worlds of passions"
 
 [[input.files]]
 path = "interests/watches/index.html"
@@ -333,14 +333,14 @@ url = "/python/library-beautifulsoup"
 title = "Python library: Beautifulsoup"
 
 [[input.files]]
-path = "b2b-sales/books/index.html"
-url = "/b2b-sales/books"
-title = "My B2B Books Library"
-
-[[input.files]]
 path = "python/books/index.html"
 url = "/python/books"
 title = "My Python Books Library"
+
+[[input.files]]
+path = "b2b-sales/books/index.html"
+url = "/b2b-sales/books"
+title = "My B2B Books Library"
 
 [[input.files]]
 path = "books/library/index.html"
@@ -1588,14 +1588,14 @@ url = "/books/library"
 title = "My Books Library"
 
 [[input.files]]
-path = "python/books/index.html"
-url = "/python/books"
-title = "My Python Books Library"
-
-[[input.files]]
 path = "b2b-sales/books/index.html"
 url = "/b2b-sales/books"
 title = "My B2B Books Library"
+
+[[input.files]]
+path = "python/books/index.html"
+url = "/python/books"
+title = "My Python Books Library"
 
 [[input.files]]
 path = "apps/library/index.html"

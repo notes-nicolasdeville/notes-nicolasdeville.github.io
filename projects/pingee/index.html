@@ -70,7 +70,7 @@
 
         <!-- added 4/7 -->
         <!-- 		<br />
-        <abbr class="modified" title="2022-09-05T15:18:37.133737+02:00">
+        <abbr class="modified" title="2022-09-05T16:05:14.567633+02:00">
                 Updated: 05 Sep 2022
         </abbr>
  -->
@@ -138,22 +138,30 @@ Not a good fit.   </p>
 <div class="link_title">GitHub - ndeville/pingee: Internet Connection Monitoring Script</div>
 <div class="link_url"><a href="https://github.com/ndeville/pingee" target="_blank">https://github.com/ndeville/pingee</a></div></div>
 
-<p>Simple script, </p>
-<p>Logic:
-- identify network path automatically for devices to ping or hardcode internal IPs?
-- ping switch (1s) <br>
-- ping router (1s) <br>
-- ping remote server #1 from random list <br>
-if success: <br>
-    repeat loop <br>
-if #1 fails, ping remote server # 2 <br>
-    if #2 fails, ping remote server # 3  <br>
-        If #3 fails, log &amp; notify as internet dropout     </p>
+<p>Logic:   </p>
+<div class="highlight"><pre><span></span><code>- identify network path automatically for devices to ping or hardcode internal IPs?
+- ping switch (1s)   
+- ping router (1s)   
+- ping remote server #1 from random list   
+if success:   
+    repeat loop   
+if #1 fails, ping remote server # 2   
+    if #2 fails, ping remote server # 3    
+        If #3 fails, log &amp; notify as internet dropout     
+</code></pre></div>
+
 <p>Assuming 3s loop (by default or with added delay), ie one ping per second.    </p>
-<p>List of IPs to ping randomly:  <br>
-208.67.222.222 and 208.67.220.220 (OpenDNS)  <br>
-1.1.1.1 and 1.0.0.1 (Cloudflare)  <br>
-8.8.8.8 and 8.8.4.4 (Google DNS)    </p>
+<p>List of IPs to ping randomly:  </p>
+<div class="highlight"><pre><span></span><code><span class="p">[</span>
+<span class="s1">&#39;208.67.222.222&#39;</span><span class="p">,</span> <span class="c1"># OpenDNS</span>
+<span class="s1">&#39;208.67.220.220&#39;</span><span class="p">,</span> <span class="c1"># OpenDNS  </span>
+<span class="s1">&#39;1.1.1.1&#39;</span><span class="p">,</span> <span class="c1"># Cloudflare</span>
+<span class="s1">&#39;1.0.0.1&#39;</span><span class="p">,</span> <span class="c1"># Cloudflare</span>
+<span class="s1">&#39;8.8.8.8&#39;</span><span class="p">,</span> <span class="c1"># Google DNS</span>
+<span class="s1">&#39;8.8.4.4&#39;</span><span class="p">,</span> <span class="c1"># Google DNS</span>
+<span class="p">]</span>
+</code></pre></div>
+
 <p>My questions:  <br>
 - is that the right way to build the script? <br>
 - is the ping cadence too much, ie: <br>
