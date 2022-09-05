@@ -69,7 +69,7 @@
 
         <!-- added 4/7 -->
         <!-- 		<br />
-        <abbr class="modified" title="2022-09-05T09:42:44.259082+02:00">
+        <abbr class="modified" title="2022-09-05T10:49:03.062344+02:00">
                 Updated: 05 Sep 2022
         </abbr>
  -->
@@ -81,8 +81,8 @@
 </footer>            <main> <!-- for indexing by Stork -->
                 <p><span class="datestamp">03 Jul 2022</span>   </p>
 <h1>Get Started</h1>
-<h2>Follow this Hello World exercise to get started with GitHub.</h2>
-<p>Github's own "get started" is a good starting place:    </p>
+<h2>GitHub "Hello World"</h2>
+<p>Github's own "get started" is a good starting place - though I realised this later in the game.       </p>
 <div class="link_border">
 <div class="link_title">Hello World - GitHub Docs</div>
 <div class="link_url"><a href="https://docs.github.com/en/get-started/quickstart/hello-world" target="_blank">https://docs.github.com/en/get-started/quickstart/hello-world</a></div></div>
@@ -111,6 +111,9 @@
 <div class="link_border">
 <div class="link_title">git push hangs after Total line - Stack Overflow</div>
 <div class="link_url"><a href="https://stackoverflow.com/questions/15843937/git-push-hangs-after-total-line" target="_blank">https://stackoverflow.com/questions/15843937/git-push-hangs-after-total-line</a></div></div>
+
+<p><code>git config --global http.postBuffer 157286400</code> worked for me. <br>
+Also, in the case of pushing my static site with Pelican, deactivating <code>pelican -r</code> (auto-refresh) to avoid any updates while Git is pushing.    </p>
             </main>
         </div><!-- /.entry-content -->
     </article>
