@@ -7,7 +7,7 @@
     <meta name="generator" content="Pelican" />
     <title>Pingee</title>
     <link rel="stylesheet" href="https://notes.nicolasdeville.com/theme/css/main.css" />
-        <meta name="description" content="Internet & Network monitoring" />
+        <meta name="description" content="Internet & Network monitoring tool (script)" />
 
     <!-- for Stork seach engine -->
     <link rel="stylesheet" href="https://files.stork-search.net/basic.css" /> 
@@ -55,7 +55,7 @@
             </h1>
             <p class="header_summary">
                 <main> <!-- for indexing by Stork -->
-                    <p>Internet &amp; Network monitoring</p>
+                    <p>Internet &amp; Network monitoring tool (script)</p>
                 </main>
             </p>
         </header>
@@ -64,14 +64,14 @@
 <footer class="post-info">
 
     <p>
-        05 Sep 2022 <span class="separator">|</span> in <a class="link_tag" href="https://notes.nicolasdeville.com/projects/">projects</a>
+        06 Sep 2022 <span class="separator">|</span> in <a class="link_tag" href="https://notes.nicolasdeville.com/projects/">projects</a>
  tags: <a class="link_tag" href="https://notes.nicolasdeville.com/tag/python.html">python</a>
 <a class="link_tag" href="https://notes.nicolasdeville.com/tag/internet.html">internet</a>
 
         <!-- added 4/7 -->
         <!-- 		<br />
-        <abbr class="modified" title="2022-09-05T16:05:14.567633+02:00">
-                Updated: 05 Sep 2022
+        <abbr class="modified" title="2022-09-06T01:21:18.389928+02:00">
+                Updated: 06 Sep 2022
         </abbr>
  -->
 
@@ -97,12 +97,39 @@ Cable modem &gt; Unifi Router USG &gt; Unifi Switch US-8 &gt; Ethernet connectio
 <div class="link_title">Pinging servers in Python - Stack Overflow</div>
 <div class="link_url"><a href="https://stackoverflow.com/questions/2953462/pinging-servers-in-python" target="_blank">https://stackoverflow.com/questions/2953462/pinging-servers-in-python</a></div></div>
 
+<h2>Traceroute</h2>
+<p>Ideally, I would want the script to figure out the IP addresses of the devices to ping on the internal network. <code>Traceroute</code> seems to be the way to go.   </p>
 <div class="link_border">
 <div class="link_title">What is Traceroute: What Does it Do & How Does It Work?</div>
 <div class="link_url"><a href="https://www.fortinet.com/resources/cyberglossary/traceroutes" target="_blank">https://www.fortinet.com/resources/cyberglossary/traceroutes</a></div></div>
 
-<p><code>traceroute hostname</code> <br>
-“If there is an issue, you can use Simple Network Management Protocol (SNMP) to diagnose the problem.”   </p>
+<p>Terminal command: <code>traceroute hostname</code>   </p>
+<p>“If there is an issue, you can use Simple Network Management Protocol (SNMP) to diagnose the problem.”   </p>
+<p>Traceroute read:</p>
+<table>
+<thead>
+<tr>
+<th>hop number</th>
+<th>device name</th>
+<th>device IP</th>
+<th>hop time (back and forth)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>router</td>
+<td>(192.168.0.1)</td>
+<td>0.841 ms  0.662 ms  0.639 ms</td>
+</tr>
+<tr>
+<td>2</td>
+<td>xxxxxxxx.xxxxx.xxxxxx.com</td>
+<td>(xx.xx.xx.xx)</td>
+<td>14.854 ms  13.750 ms  13.516 ms</td>
+</tr>
+</tbody>
+</table>
 <h2>Unfit Resources / References</h2>
 <h3>Monitor download/upload speeds</h3>
 <div class="link_border">

@@ -888,6 +888,7 @@ li:first-child .hentry, #content > .hentry {
 .link_border {
     border-left: 8px solid black;
     margin-top: 0.5em;
+    margin-bottom: 0.5em;
 }
 
 .link_title {

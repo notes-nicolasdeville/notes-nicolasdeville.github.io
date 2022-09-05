@@ -13,14 +13,84 @@ url = "/projects/pingee"
 title = "Pingee"
 
 [[input.files]]
-path = "projects/indexall/index.html"
-url = "/projects/indexall"
-title = "indeXall | indexing the worlds of passions"
+path = "helpers/vodafone-kabel/index.html"
+url = "/helpers/vodafone-kabel"
+title = "Vodafone Kabel"
+
+[[input.files]]
+path = "apps/vs-code/index.html"
+url = "/apps/vs-code"
+title = "VS Code | my IDE of choice"
+
+[[input.files]]
+path = "interests/airguns/index.html"
+url = "/interests/airguns"
+title = "Airguns"
+
+[[input.files]]
+path = "interests/tactical-pens/index.html"
+url = "/interests/tactical-pens"
+title = "Tactical Pens"
+
+[[input.files]]
+path = "random/dad-bag/index.html"
+url = "/random/dad-bag"
+title = "My dad bag"
+
+[[input.files]]
+path = "interests/traditional-archery/index.html"
+url = "/interests/traditional-archery"
+title = "Traditional Archery"
+
+[[input.files]]
+path = "interests/mechanical-keyboards/index.html"
+url = "/interests/mechanical-keyboards"
+title = "Mechanical Keyboards"
+
+[[input.files]]
+path = "interests/flat-caps/index.html"
+url = "/interests/flat-caps"
+title = "Flat Caps"
+
+[[input.files]]
+path = "interests/f1/index.html"
+url = "/interests/f1"
+title = "F1"
+
+[[input.files]]
+path = "interests/watches/index.html"
+url = "/interests/watches"
+title = "Watches"
+
+[[input.files]]
+path = "interests/web3/index.html"
+url = "/interests/web3"
+title = "Web3"
+
+[[input.files]]
+path = "interests/crypto/index.html"
+url = "/interests/crypto"
+title = "Crypto"
 
 [[input.files]]
 path = "learning/touch-typing/index.html"
 url = "/learning/touch-typing"
-title = "Learning touch typing"
+title = "Learning Touch Typing"
+
+[[input.files]]
+path = "learning/markdown/index.html"
+url = "/learning/markdown"
+title = "Learning Markdown"
+
+[[input.files]]
+path = "learning/css/index.html"
+url = "/learning/css"
+title = "Learning CSS"
+
+[[input.files]]
+path = "projects/indexall/index.html"
+url = "/projects/indexall"
+title = "indeXall | indexing the worlds of passions"
 
 [[input.files]]
 path = "helpers/github/index.html"
@@ -36,11 +106,6 @@ title = "Sending emails with Python"
 path = "learning/javascript/index.html"
 url = "/learning/javascript"
 title = "Learning Javascript"
-
-[[input.files]]
-path = "interests/watches/index.html"
-url = "/interests/watches"
-title = "Watches"
 
 [[input.files]]
 path = "home-office/usb-hubs-and-docks/index.html"
@@ -148,11 +213,6 @@ url = "/python/libraries"
 title = "Libraries for Python"
 
 [[input.files]]
-path = "learning/markdown/index.html"
-url = "/learning/markdown"
-title = "Markdown"
-
-[[input.files]]
 path = "salesleaderplaybook/resources/index.html"
 url = "/salesleaderplaybook/resources"
 title = "Resources about Sales Leadership"
@@ -238,29 +298,14 @@ url = "/interests/diabolo"
 title = "Diabolo"
 
 [[input.files]]
-path = "interests/f1/index.html"
-url = "/interests/f1"
-title = "F1"
-
-[[input.files]]
 path = "interests/the-doors/index.html"
 url = "/interests/the-doors"
 title = "The Doors"
 
 [[input.files]]
-path = "interests/web3/index.html"
-url = "/interests/web3"
-title = "Web3"
-
-[[input.files]]
 path = "interests/fidget-spinners/index.html"
 url = "/interests/fidget-spinners"
 title = "Fidget Spinners"
-
-[[input.files]]
-path = "interests/crypto/index.html"
-url = "/interests/crypto"
-title = "Crypto"
 
 [[input.files]]
 path = "interests/longboarding/index.html"
@@ -273,19 +318,9 @@ url = "/random/meme"
 title = "Memes"
 
 [[input.files]]
-path = "helpers/vodafone-kabel/index.html"
-url = "/helpers/vodafone-kabel"
-title = "Vodafone Kabel"
-
-[[input.files]]
 path = "python/extract-app-logos/index.html"
 url = "/python/extract-app-logos"
 title = "Extract all app logos to PNG"
-
-[[input.files]]
-path = "interests/airguns/index.html"
-url = "/interests/airguns"
-title = "Airguns"
 
 [[input.files]]
 path = "python/copy-folder/index.html"
@@ -498,11 +533,6 @@ url = "/helpers/unzip-split-zip-files"
 title = "Unzip split zip files (from Google Takeout)"
 
 [[input.files]]
-path = "learning/css/index.html"
-url = "/learning/css"
-title = "CSS Best Practices"
-
-[[input.files]]
 path = "b2b-sales/overselling-vs-underselling/index.html"
 url = "/b2b-sales/overselling-vs-underselling"
 title = "Overselling vs Underselling"
@@ -641,11 +671,6 @@ title = "Germany taxes"
 path = "home-office/setup/index.html"
 url = "/home-office/setup"
 title = "Home Office Setup (since June '22)"
-
-[[input.files]]
-path = "apps/vs-code/index.html"
-url = "/apps/vs-code"
-title = "VS Code | my IDE of choice"
 
 [[input.files]]
 path = "random/space_how-long/index.html"
