@@ -8,6 +8,31 @@ url = "/ABOUT/"
 title = ""
 
 [[input.files]]
+path = "python/sending-emails/index.html"
+url = "/python/sending-emails"
+title = "Sending emails with Python"
+
+[[input.files]]
+path = "learning/javascript/index.html"
+url = "/learning/javascript"
+title = "Learning Javascript"
+
+[[input.files]]
+path = "projects/indexall/index.html"
+url = "/projects/indexall"
+title = "indeXall | indexing the worlds of passions"
+
+[[input.files]]
+path = "interests/watches/index.html"
+url = "/interests/watches"
+title = "Watches"
+
+[[input.files]]
+path = "home-office/usb-hubs-and-docks/index.html"
+url = "/home-office/usb-hubs-and-docks"
+title = "USB Hubs & Docks"
+
+[[input.files]]
 path = "python/python-notion/index.html"
 url = "/python/python-notion"
 title = "Fetch Notion database data with Python"
@@ -148,11 +173,6 @@ url = "/projects/mailingee"
 title = "Mailingee"
 
 [[input.files]]
-path = "projects/indexall/index.html"
-url = "/projects/indexall"
-title = "indeXall | indexing the worlds of passions"
-
-[[input.files]]
 path = "apps/espanso/index.html"
 url = "/apps/espanso"
 title = "Espanso"
@@ -261,16 +281,6 @@ title = "Copy folders with Python"
 path = "projects/pingee/index.html"
 url = "/projects/pingee"
 title = "Pingee"
-
-[[input.files]]
-path = "interests/watches/index.html"
-url = "/interests/watches"
-title = "Watches"
-
-[[input.files]]
-path = "home-office/usb-hubs-and-docks/index.html"
-url = "/home-office/usb-hubs-and-docks"
-title = "USB Hubs & Docks"
 
 [[input.files]]
 path = "python/fetch-metadata-from-url/index.html"
