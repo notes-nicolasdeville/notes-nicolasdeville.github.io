@@ -76,7 +76,7 @@
 <footer class="post-info">
 
     <p>
-        05 Sep 2022 <span class="separator">|</span> in <a class="link_tag" href="https://notes.nicolasdeville.com/apps/">apps</a>
+        06 Sep 2022 <span class="separator">|</span> in <a class="link_tag" href="https://notes.nicolasdeville.com/apps/">apps</a>
  tags: <a class="link_tag" href="https://notes.nicolasdeville.com/tag/productivity.html">productivity</a>
 <a class="link_tag" href="https://notes.nicolasdeville.com/tag/python.html">python</a>
 <a class="link_tag" href="https://notes.nicolasdeville.com/tag/excel.html">excel</a>
@@ -85,8 +85,8 @@
 
         <!-- added 4/7 -->
         <!-- 		<br />
-        <abbr class="modified" title="2022-09-05T08:54:00.151118+02:00">
-                Updated: 05 Sep 2022
+        <abbr class="modified" title="2022-09-06T15:05:18.865405+02:00">
+                Updated: 06 Sep 2022
         </abbr>
  -->
 
@@ -150,6 +150,37 @@ Where I expect to possibly have more, I break out tables in their own document, 
 <div class="highlight"><pre><span></span><code><span class="k">IF</span><span class="ss">(</span><span class="mh">$da</span><span class="nv">te_webinar</span><span class="o">!=</span> <span class="nv">None</span>,<span class="k">IF</span><span class="ss">(</span><span class="mh">$da</span><span class="nv">te_webinar</span><span class="o">&lt;</span><span class="nv">NOW</span><span class="ss">()</span>,<span class="s2">&quot;</span><span class="s">PAST</span><span class="s2">&quot;</span>,<span class="s2">&quot;</span><span class="s">FUTURE</span><span class="s2">&quot;</span><span class="ss">)</span>,<span class="s2">&quot;&quot;</span><span class="ss">)</span>
 </code></pre></div>
 
+<h2>identify duplicate values</h2>
+<ul>
+<li>create column <code>dup</code> (or other name)</li>
+<li>under Column Options, choose <code>Set formula</code> and use <code>"DUP" if len(Master.lookupRecords(domain=$domain)) &gt; 1 else ""</code> as formula. In this example, duplication check is done on the <code>domain</code> column - change as needed using the relevant column header (eg <code>email</code>). It can also be anything other than <code>"DUP"</code>. This basically fills the cell with the string <code>"DUP"</code> if there is more than one row with the same <code>domain</code> value.  </li>
+</ul>
+<p>At this stage, you can filter the <code>dup</code> column for rows where <code>DUP</code> comes up - these are the duplicates:   </p>
+<p><img class="screenshot" src="https://notes.nicolasdeville.com/images/grist/dup-filter.jpg" alt="dup-filter"/>  </p>
+<p>To prevent duplicate values being added to the table from that point on, you need to create an access rule under Access Rules, which can be accessed in the bottom left corner of the table, under "Tools"):</p>
+<p><img class="screenshot" src="https://notes.nicolasdeville.com/images/grist/access-rules.jpg" alt="access-rules"/>  </p>
+<p>The formula should be <code>newRec.dup == "DUP"</code> which will be applied when the value of the <code>dup</code> column in a new record (<code>newRec</code>) is equal to <code>"DUP"</code>. <br>
+Permissions can be defined by clicking on each as needed: <br>
+- <code>R</code> for Read
+- <code>U</code> for Update
+- <code>C</code> for Create
+- <code>D</code> for Delete</p>
+<p><img class="screenshot" src="https://notes.nicolasdeville.com/images/grist/dup-access-rule.jpg" alt="dup-access-rule"/>  </p>
+<h1>Keyboard shortcuts</h1>
+<table>
+<thead>
+<tr>
+<th>shortcut</th>
+<th>action</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>Cmd + -</code></td>
+<td>Delete Row</td>
+</tr>
+</tbody>
+</table>
 <h1>API</h1>
 <h2>Getting started</h2>
 <p><code>pip3 install grist_api</code>    </p>

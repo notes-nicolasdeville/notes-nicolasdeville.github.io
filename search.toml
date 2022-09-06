@@ -8,9 +8,74 @@ url = "/ABOUT/"
 title = ""
 
 [[input.files]]
+path = "projects/mailingee/index.html"
+url = "/projects/mailingee"
+title = "Mailingee"
+
+[[input.files]]
+path = "python/export-kindle-library/index.html"
+url = "/python/export-kindle-library"
+title = "Exporting my Kindle library data"
+
+[[input.files]]
+path = "learning/git/index.html"
+url = "/learning/git"
+title = "Learning Git"
+
+[[input.files]]
+path = "helpers/github/index.html"
+url = "/helpers/github"
+title = "Github"
+
+[[input.files]]
+path = "python/library-pynput/index.html"
+url = "/python/library-pynput"
+title = "Library: pynput"
+
+[[input.files]]
+path = "python/library-yagmail/index.html"
+url = "/python/library-yagmail"
+title = "Library: Yagmail"
+
+[[input.files]]
+path = "b2b-sales/email-automation/index.html"
+url = "/b2b-sales/email-automation"
+title = "Email Automation for Sales outreaches"
+
+[[input.files]]
+path = "python/snippets/index.html"
+url = "/python/snippets"
+title = "Python Snippets"
+
+[[input.files]]
+path = "b2b-sales/outbound/index.html"
+url = "/b2b-sales/outbound"
+title = "Outbound Lead Generation"
+
+[[input.files]]
+path = "python/library-termtables/index.html"
+url = "/python/library-termtables"
+title = "Library: termtables | Pretty tables in terminal"
+
+[[input.files]]
+path = "learning/sql/index.html"
+url = "/learning/sql"
+title = "Learning SQL"
+
+[[input.files]]
+path = "apps/grist/index.html"
+url = "/apps/grist"
+title = "Grist | The Evolution of Spreadsheets"
+
+[[input.files]]
 path = "projects/pingee/index.html"
 url = "/projects/pingee"
 title = "Pingee"
+
+[[input.files]]
+path = "interests/airguns/index.html"
+url = "/interests/airguns"
+title = "Airguns"
 
 [[input.files]]
 path = "helpers/vodafone-kabel/index.html"
@@ -21,11 +86,6 @@ title = "Vodafone Kabel"
 path = "apps/vs-code/index.html"
 url = "/apps/vs-code"
 title = "VS Code | my IDE of choice"
-
-[[input.files]]
-path = "interests/airguns/index.html"
-url = "/interests/airguns"
-title = "Airguns"
 
 [[input.files]]
 path = "interests/tactical-pens/index.html"
@@ -91,11 +151,6 @@ title = "Learning CSS"
 path = "projects/indexall/index.html"
 url = "/projects/indexall"
 title = "indeXall | indexing the worlds of passions"
-
-[[input.files]]
-path = "helpers/github/index.html"
-url = "/helpers/github"
-title = "Github"
 
 [[input.files]]
 path = "python/sending-emails/index.html"
@@ -243,11 +298,6 @@ url = "/projects/emailee"
 title = "Emailee"
 
 [[input.files]]
-path = "projects/mailingee/index.html"
-url = "/projects/mailingee"
-title = "Mailingee"
-
-[[input.files]]
 path = "apps/espanso/index.html"
 url = "/apps/espanso"
 title = "Espanso"
@@ -261,11 +311,6 @@ title = "Imapee"
 path = "apps/hazel/index.html"
 url = "/apps/hazel"
 title = "Hazel"
-
-[[input.files]]
-path = "apps/grist/index.html"
-url = "/apps/grist"
-title = "Grist | The Evolution of Spreadsheets"
 
 [[input.files]]
 path = "projects/notes/index.html"
@@ -516,11 +561,6 @@ title = "Mass copy selected files with Python"
 path = "apps/newsletter-readers/index.html"
 url = "/apps/newsletter-readers"
 title = "Newsletter readers"
-
-[[input.files]]
-path = "python/export-kindle-library/index.html"
-url = "/python/export-kindle-library"
-title = "Exporting my Kindle library data"
 
 [[input.files]]
 path = "python/broken-links/index.html"
