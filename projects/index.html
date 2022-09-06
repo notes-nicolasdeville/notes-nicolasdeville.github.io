@@ -82,7 +82,7 @@
 
         <!-- added 4/7 -->
         <!-- 		<br />
-        <abbr class="modified" title="2022-09-06T01:21:18.389928+02:00">
+        <abbr class="modified" title="2022-09-06T09:07:52.621696+02:00">
                 Updated: 06 Sep 2022
         </abbr>
  -->
@@ -109,6 +109,7 @@ Cable modem &gt; Unifi Router USG &gt; Unifi Switch US-8 &gt; Ethernet connectio
 <div class="link_url"><a href="https://stackoverflow.com/questions/2953462/pinging-servers-in-python" target="_blank">https://stackoverflow.com/questions/2953462/pinging-servers-in-python</a></div></div>
 
 <h2>Traceroute</h2>
+<p><span class="datestamp">06 Sep 2022</span>   </p>
 <p>Ideally, I would want the script to figure out the IP addresses of the devices to ping on the internal network. <code>Traceroute</code> seems to be the way to go.   </p>
 <div class="link_border">
 <div class="link_title">What is Traceroute: What Does it Do & How Does It Work?</div>
@@ -205,6 +206,112 @@ if #1 fails, ping remote server # 2
 - is the ping cadence too much, ie: <br>
 - will I run the risk to get blacklisted by remote server(s)? <br>
 - will it impact internal network?   </p>
+<h1>Tests</h1>
+<p><span class="datestamp">06 Sep 2022</span>   </p>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">subprocess</span>
+
+<span class="c1"># Internal ping</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;INTERNAL PING:</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="n">router</span> <span class="o">=</span> <span class="s1">&#39;192.168.1.1&#39;</span>
+
+<span class="n">router_command</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;ping&#39;</span><span class="p">,</span> <span class="s1">&#39;-c&#39;</span><span class="p">,</span> <span class="s1">&#39;1&#39;</span><span class="p">,</span> <span class="n">router</span><span class="p">]</span>
+
+<span class="n">router_ping</span> <span class="o">=</span> <span class="n">subprocess</span><span class="o">.</span><span class="n">call</span><span class="p">(</span><span class="n">router_command</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n</span><span class="si">{</span><span class="n">router_ping</span><span class="si">=}</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="c1"># External ping</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;EXTERNAL PING:</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="n">hostnames</span> <span class="o">=</span> <span class="p">[</span>
+<span class="s1">&#39;208.67.222.222&#39;</span><span class="p">,</span> <span class="c1"># OpenDNS</span>
+<span class="s1">&#39;208.67.220.220&#39;</span><span class="p">,</span> <span class="c1"># OpenDNS  </span>
+<span class="s1">&#39;1.1.1.1&#39;</span><span class="p">,</span> <span class="c1"># Cloudflare</span>
+<span class="s1">&#39;1.0.0.1&#39;</span><span class="p">,</span> <span class="c1"># Cloudflare</span>
+<span class="s1">&#39;8.8.8.8&#39;</span><span class="p">,</span> <span class="c1"># Google DNS</span>
+<span class="s1">&#39;8.8.4.4&#39;</span><span class="p">,</span> <span class="c1"># Google DNS</span>
+<span class="p">]</span>
+
+<span class="k">for</span> <span class="n">hostname</span> <span class="ow">in</span> <span class="n">hostnames</span><span class="p">:</span>
+
+    <span class="n">hostname_command</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;ping&#39;</span><span class="p">,</span> <span class="s1">&#39;-c&#39;</span><span class="p">,</span> <span class="s1">&#39;1&#39;</span><span class="p">,</span> <span class="n">hostname</span><span class="p">]</span>
+
+    <span class="n">external_ping</span> <span class="o">=</span> <span class="n">subprocess</span><span class="o">.</span><span class="n">call</span><span class="p">(</span><span class="n">hostname_command</span><span class="p">)</span>
+
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n</span><span class="si">{</span><span class="n">external_ping</span><span class="si">=}</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+</code></pre></div>
+
+<p>outputs:    </p>
+<div class="highlight"><pre><span></span><code>INTERNAL PING:
+
+PING 192.168.1.1 (192.168.1.1): 56 data bytes
+64 bytes from 192.168.1.1: icmp_seq=0 ttl=64 time=2.220 ms
+
+--- 192.168.1.1 ping statistics ---
+1 packets transmitted, 1 packets received, 0.0% packet loss
+round-trip min/avg/max/stddev = 2.220/2.220/2.220/0.000 ms
+
+router_ping=0
+
+EXTERNAL PING:
+
+PING 208.67.222.222 (208.67.222.222): 56 data bytes
+64 bytes from 208.67.222.222: icmp_seq=0 ttl=55 time=21.802 ms
+
+--- 208.67.222.222 ping statistics ---
+1 packets transmitted, 1 packets received, 0.0% packet loss
+round-trip min/avg/max/stddev = 21.802/21.802/21.802/0.000 ms
+
+external_ping=0
+
+PING 208.67.220.220 (208.67.220.220): 56 data bytes
+64 bytes from 208.67.220.220: icmp_seq=0 ttl=55 time=22.655 ms
+
+--- 208.67.220.220 ping statistics ---
+1 packets transmitted, 1 packets received, 0.0% packet loss
+round-trip min/avg/max/stddev = 22.655/22.655/22.655/0.000 ms
+
+external_ping=0
+
+PING 1.1.1.1 (1.1.1.1): 56 data bytes
+64 bytes from 1.1.1.1: icmp_seq=0 ttl=56 time=20.793 ms
+
+--- 1.1.1.1 ping statistics ---
+1 packets transmitted, 1 packets received, 0.0% packet loss
+round-trip min/avg/max/stddev = 20.793/20.793/20.793/0.000 ms
+
+external_ping=0
+
+PING 1.0.0.1 (1.0.0.1): 56 data bytes
+64 bytes from 1.0.0.1: icmp_seq=0 ttl=56 time=22.733 ms
+
+--- 1.0.0.1 ping statistics ---
+1 packets transmitted, 1 packets received, 0.0% packet loss
+round-trip min/avg/max/stddev = 22.733/22.733/22.733/0.000 ms
+
+external_ping=0
+
+PING 8.8.8.8 (8.8.8.8): 56 data bytes
+64 bytes from 8.8.8.8: icmp_seq=0 ttl=115 time=14.300 ms
+
+--- 8.8.8.8 ping statistics ---
+1 packets transmitted, 1 packets received, 0.0% packet loss
+round-trip min/avg/max/stddev = 14.300/14.300/14.300/0.000 ms
+
+external_ping=0
+
+PING 8.8.4.4 (8.8.4.4): 56 data bytes
+64 bytes from 8.8.4.4: icmp_seq=0 ttl=116 time=12.229 ms
+
+--- 8.8.4.4 ping statistics ---
+1 packets transmitted, 1 packets received, 0.0% packet loss
+round-trip min/avg/max/stddev = 12.229/12.229/12.229/0.000 ms
+
+external_ping=0
+</code></pre></div>
+
+<p>Need to find a way to avoid terminal printing when all OK. Lookup other method. </p>
                 </article>
             </aside>
 
