@@ -278,19 +278,23 @@ blockquote {
     box-shadow: 1px 1px 3px #000; */
 
     /*Borders - (Optional)*/
-    /* border-left-style: solid;
-    border-left-width: 15px;
-    border-right-style: solid;
-    border-right-width: 1px;
+
     border-top-style: solid;
     border-top-width: 1px;
+    border-top-color: #C64350;
+
+    border-right-style: solid;
+    border-right-width: 1px;
+    border-right-color: #C64350;
+
     border-bottom-style: solid;
     border-bottom-width: 1px;
+    border-bottom-color: #C64350;
 
-    border-left-color: #000;
-    border-right-color: #000;
-    border-top-color: #000;
-    border-bottom-color: #000; */
+    /* border-left-style: solid;
+    border-left-width: 15px;
+    border-left-color: #000; */
+
 }
 
 /* cite {} */
