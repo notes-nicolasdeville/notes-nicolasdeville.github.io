@@ -916,6 +916,8 @@ li:first-child .hentry, #content > .hentry {
     border-left: 8px solid #C64350;
     margin-top: 0.5em;
     margin-bottom: 0.5em;
+    padding-top: 0.5em;
+    padding-bottom: 0.5em;
 
     /*Borders*/
 
@@ -944,6 +946,7 @@ li:first-child .hentry, #content > .hentry {
 .book_quote_location {
     font-size: 0.8em;
     margin-left: 1.5em;
+    padding-top: 0.5em
 }
 
 .book_quote_highlight {
