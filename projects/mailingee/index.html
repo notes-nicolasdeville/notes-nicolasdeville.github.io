@@ -70,7 +70,7 @@
 
         <!-- added 4/7 -->
         <!-- 		<br />
-        <abbr class="modified" title="2022-09-07T00:52:24.551601+02:00">
+        <abbr class="modified" title="2022-09-07T09:25:20.615165+02:00">
                 Updated: 07 Sep 2022
         </abbr>
  -->
@@ -101,15 +101,55 @@
 </ul>
 <h1>Overall structure</h1>
 <p>3 components to the system: <br>
-- data management: spreadsheet-like "source of truth" of recipients and sequences, using Grist [<a href="../../apps/grist/index.html">Nic Note: Grist</a>] <br>
-- email content: text files <br>
-- sending emails: python script   </p>
+- <em>data management</em>: spreadsheet-like "source of truth" of recipients and sequences, using Grist [<a href="../../apps/grist/index.html">Nic Note: Grist</a>] <br>
+- <em>email content</em>: text files <br>
+- <em>sending emails</em>: python script   </p>
 <h1>DATA MANAGEMENT</h1>
-<p>I turned to my online spreadsheet solution of choice (Grist: [<a href="../../apps/grist/index.html">Nic Note: Grist</a>]) to manage the list of contacts and sequences.  </p>
+<p>I turned to my online spreadsheet solution of choice (Grist: [<a href="../../apps/grist/index.html">Nic Note: Grist</a>]) to manage the list of contacts and sequences. </p>
+<h2>Example</h2>
 <p>Here is an overview of a campaign in Grist:   </p>
 <p><img class="screenshot" src="https://notes.nicolasdeville.com/images/mailingee/campaign-overview.jpg" alt="campaign-overview"/>  </p>
 <p>This particular campaign was based on reaching out to webinar organisers, based on webinar data I gathered from Twitter (see [<a href="../../projects/twittee/index.html">Nic Note: Twittee</a>])</p>
+<p>The spreadsheet format enables to maintain quick and full visibility of the entire campaign, easy to filter as needed.  </p>
+<p>It includes the following fields:   </p>
+<ul>
+<li><code>email</code></li>
+<li><code>domain</code></li>
+<li><code>li</code></li>
+<li><code>first</code></li>
+<li><code>title</code></li>
+<li><code>track</code></li>
+<li><code>search</code></li>
+<li><code>company</code></li>
+<li><code>url_reg</code></li>
+<li><code>webinar_title</code></li>
+<li><code>tz</code></li>
+<li><code>status</code></li>
+<li><code>notes</code></li>
+<li><code>tweet</code></li>
+<li><code>answer</code></li>
+<li><code>src</code></li>
+<li><code>webinar_date</code></li>
+<li><code>v</code></li>
+<li><code>s_test_date</code></li>
+<li><code>s_1_date</code></li>
+<li><code>s_2_date</code></li>
+<li><code>s_3_date</code></li>
+<li><code>lang</code></li>
+<li><code>created</code></li>
+<li><code>updated</code></li>
+<li><code>dup</code></li>
+<li><code>radar</code></li>
+<li><code>send_from</code></li>
+</ul>
 <h1>EMAIL CONTENT</h1>
+<p>Each email is a text file in a folder for the campaign.  </p>
+<p>The filename of the text file follows this pattern, enabling support for tracks, language, versions and sequences:  </p>
+<p><code>TRACK_LANGUAGE_VERSION_SEQUENCE_SUBJECT LINE.txt</code>   </p>
+<p>eg. <code>GoToWebinar_E_A_1_GoToWebinar contract.txt</code> is the email content for the <code>GoToWebinar</code> track (ie recipients currently using GoToWebinar), in English (<code>E</code>), version <code>A</code> (enabling A/B testing, up to Z), <code>1</code>st email in the sequence, where the subject line of the email will be <code>GoToWebinar</code> contract.   </p>
+<p>It's therefore very easy to quickly create a new email version, sequence or language, just by creating a new text file with the right name.    </p>
+<p>For a single email campaign:   </p>
+<p><img class="screenshot" src="https://notes.nicolasdeville.com/images/mailingee/eoy-emails.jpg" alt="eoy-emails"/>  </p>
 <h1>SENDING EMAILS</h1>
 <p><span class="datestamp">06 Sep 2022</span>   </p>
 <p>This is my current script - comments inline.    </p>
@@ -202,38 +242,44 @@
 
 <span class="c1"># current_time = datetime.datetime.now()</span>
 
-<span class="c1"># Bcc Hubspot based on campaign name</span>
-<span class="k">if</span> <span class="n">client</span> <span class="o">==</span> <span class="s1">&#39;YY&#39;</span><span class="p">:</span>
-    <span class="n">bcc</span> <span class="o">=</span> <span class="s1">&#39;yyyyyyy@bcc.hubspot.com&#39;</span>
-<span class="k">elif</span> <span class="n">client</span> <span class="o">==</span> <span class="s1">&#39;XX&#39;</span><span class="p">:</span>
+<span class="c1"># Bcc Hubspot based on client</span>
+<span class="k">if</span> <span class="n">client</span> <span class="o">==</span> <span class="s1">&#39;XX&#39;</span><span class="p">:</span>
     <span class="n">bcc</span> <span class="o">=</span> <span class="s1">&#39;xxxxxxx@bcc.hubspot.com&#39;</span>
+<span class="k">elif</span> <span class="n">client</span> <span class="o">==</span> <span class="s1">&#39;YY&#39;</span><span class="p">:</span>
+    <span class="n">bcc</span> <span class="o">=</span> <span class="s1">&#39;yyyyyyy@bcc.hubspot.com&#39;</span>
+<span class="k">elif</span> <span class="n">client</span> <span class="o">==</span> <span class="s1">&#39;ZZ&#39;</span><span class="p">:</span>
+    <span class="n">bcc</span> <span class="o">=</span> <span class="s1">&#39;zzzzzzzz@bcc.hubspot.com&#39;</span>
 
 <span class="c1"># Sender based on campaign name</span>
-<span class="k">if</span> <span class="n">client</span> <span class="o">==</span> <span class="s1">&#39;YY&#39;</span><span class="p">:</span>
-    <span class="n">sender</span> <span class="o">=</span> <span class="s1">&#39;nicolas@yyyy.com&#39;</span>
-<span class="k">elif</span> <span class="n">client</span> <span class="o">==</span> <span class="s1">&#39;XX&#39;</span><span class="p">:</span>
+<span class="k">if</span> <span class="n">client</span> <span class="o">==</span> <span class="s1">&#39;XX&#39;</span><span class="p">:</span>
     <span class="n">sender</span> <span class="o">=</span> <span class="s1">&#39;nicolas@xxxx.com&#39;</span>
+<span class="k">elif</span> <span class="n">client</span> <span class="o">==</span> <span class="s1">&#39;YY&#39;</span><span class="p">:</span>
+    <span class="n">sender</span> <span class="o">=</span> <span class="s1">&#39;nicolas@yyyy.com&#39;</span>
+<span class="k">elif</span> <span class="n">client</span> <span class="o">==</span> <span class="s1">&#39;ZZ&#39;</span><span class="p">:</span>
+    <span class="n">sender</span> <span class="o">=</span> <span class="s1">&#39;nicolas@zzzz.com&#39;</span>
 
+<span class="c1"># Language assignment based on code</span>
 <span class="n">french</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;FR&#39;</span><span class="p">,</span> <span class="s1">&#39;F&#39;</span><span class="p">]</span>
 <span class="n">german</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;DE&#39;</span><span class="p">,</span> <span class="s1">&#39;D&#39;</span><span class="p">,</span> <span class="s1">&#39;AT&#39;</span><span class="p">]</span>
 
-<span class="c1"># Campaign data</span>
+<span class="c1"># Fetching campaign data from Grist (list of namedtuples)</span>
 <span class="n">data_grist_campaign</span> <span class="o">=</span> <span class="n">grist_XX</span><span class="o">.</span><span class="n">XX003</span><span class="o">.</span><span class="n">fetch_table</span><span class="p">(</span><span class="s1">&#39;Master&#39;</span><span class="p">)</span>
 
+<span class="c1"># Count left to send based on empty &quot;send date&quot; field</span>
 <span class="n">count_rest_to_send</span> <span class="o">=</span> <span class="mi">0</span>
 <span class="k">for</span> <span class="n">record</span> <span class="ow">in</span> <span class="n">data_grist_campaign</span><span class="p">:</span>
     <span class="k">if</span> <span class="n">record</span><span class="o">.</span><span class="n">send_date</span> <span class="o">==</span> <span class="kc">None</span><span class="p">:</span>
         <span class="n">count_rest_to_send</span> <span class="o">+=</span> <span class="mi">1</span>
 
+<span class="c1"># Counters</span>
 <span class="n">count_sent</span> <span class="o">=</span> <span class="mi">0</span>
 <span class="n">count_replied</span> <span class="o">=</span> <span class="mi">0</span>
-
 <span class="n">count_recipients</span> <span class="o">=</span> <span class="mi">0</span>
 
 <span class="n">recipients</span> <span class="o">=</span> <span class="p">{}</span>
-
 <span class="n">list_sent</span> <span class="o">=</span> <span class="p">[]</span>
 
+<span class="c1"># Regex to validate email format if needed</span>
 <span class="n">validEmail</span> <span class="o">=</span> <span class="s2">&quot;[^@]+@[^@]+\.[^@]+&quot;</span>
 
 

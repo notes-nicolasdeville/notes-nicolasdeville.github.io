@@ -64,14 +64,14 @@
 <footer class="post-info">
 
     <p>
-        06 Sep 2022 <span class="separator">|</span> in <a class="link_tag" href="https://notes.nicolasdeville.com/python/">python</a>
+        07 Sep 2022 <span class="separator">|</span> in <a class="link_tag" href="https://notes.nicolasdeville.com/python/">python</a>
  tags: <a class="link_tag" href="https://notes.nicolasdeville.com/tag/libraries.html">libraries</a>
 <a class="link_tag" href="https://notes.nicolasdeville.com/tag/automation.html">automation</a>
 
         <!-- added 4/7 -->
         <!-- 		<br />
-        <abbr class="modified" title="2022-09-06T20:06:36.418604+02:00">
-                Updated: 06 Sep 2022
+        <abbr class="modified" title="2022-09-07T09:32:30.331873+02:00">
+                Updated: 07 Sep 2022
         </abbr>
  -->
 
@@ -80,7 +80,7 @@
     
 
 </footer>            <main> <!-- for indexing by Stork -->
-                <p><span class="datestamp">06 Sep 2022</span>   </p>
+                <p><span class="datestamp">06 Apr 2022</span>   </p>
 <table>
 <thead>
 <tr>
@@ -104,6 +104,22 @@
 </tbody>
 </table>
 <p><code>pip3 install yagmail</code>  </p>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">yagmail</span>
+
+<span class="n">yag</span> <span class="o">=</span> <span class="n">yagmail</span><span class="o">.</span><span class="n">SMTP</span><span class="p">(</span><span class="n">XX_EMAIL</span><span class="p">,</span> <span class="n">XX_PASSWORD</span><span class="p">)</span>
+
+<span class="n">body</span> <span class="o">=</span> <span class="s1">&#39;email body</span><span class="se">\n</span><span class="s1">formattted as needed&#39;</span> 
+
+<span class="n">content</span> <span class="o">=</span> <span class="p">[</span>
+            <span class="n">body</span><span class="p">,</span>
+            <span class="c1"># additional elements can be added to list, eg: </span>
+            <span class="s1">&#39;&#39;</span><span class="p">,</span> 
+            <span class="n">yagmail</span><span class="o">.</span><span class="n">inline</span><span class="p">(</span><span class="s2">&quot;minions.gif&quot;</span><span class="p">),</span> <span class="c1"># to insert images inline</span>
+            <span class="s1">&#39;</span><span class="se">\n\n</span><span class="s1">Nic&#39;</span><span class="p">,</span> <span class="c1"># signature can be managed as variable in list</span>
+            <span class="p">]</span>
+
+<span class="n">yag</span><span class="o">.</span><span class="n">send</span><span class="p">(</span><span class="n">to</span><span class="o">=</span><span class="n">email</span><span class="p">,</span> <span class="n">bcc</span><span class="o">=</span><span class="n">bcc</span><span class="p">,</span> <span class="n">subject</span><span class="o">=</span><span class="n">subject</span><span class="p">,</span> <span class="n">contents</span><span class="o">=</span><span class="n">content</span><span class="p">)</span>
+</code></pre></div>
             </main>
         </div><!-- /.entry-content -->
     </article>

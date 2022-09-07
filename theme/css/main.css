@@ -258,16 +258,17 @@ code {
 blockquote {
 
     display: block;
-    background: #ddd;
+    /* background: #ddd; */
     padding: 0.5em 1em 0.5em 1em;
     /* margin: 0 0 20px; */
-    position: relative;
+    /* position: relative; */
 
     /* font-family: Georgia, serif; */
     font-size: 1.1em;
-    line-height: 1.2;
-    color: #000;
+    /* line-height: 1.2; */
+    /* color: #000; */
 
+    border-left: 8px solid #C64350;
     margin-top: 1em;
     margin-bottom: 1em;
 
@@ -277,7 +278,7 @@ blockquote {
     box-shadow: 1px 1px 3px #000; */
 
     /*Borders - (Optional)*/
-    border-left-style: solid;
+    /* border-left-style: solid;
     border-left-width: 15px;
     border-right-style: solid;
     border-right-width: 1px;
@@ -289,7 +290,7 @@ blockquote {
     border-left-color: #000;
     border-right-color: #000;
     border-top-color: #000;
-    border-bottom-color: #000;
+    border-bottom-color: #000; */
 }
 
 /* cite {} */

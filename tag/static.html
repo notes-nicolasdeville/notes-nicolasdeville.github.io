@@ -64,27 +64,25 @@
             <hr/>
 
                 <article class="hentry">
-                    <h1 class="entry-title"><a href="https://notes.nicolasdeville.com/projects/indexall">indeXall | indexing the worlds of passions</a></h1>
+                    <h1 class="entry-title"><a href="https://notes.nicolasdeville.com/python/library-pelican">Building a static site with Pelican</a></h1>
 
                     <!-- added 4/7 -->
                     <div>
                         <p class="header_summary">
-                            <p>a hobby project of mine since a couple years</p>
+                            <p>How I built this site, migrating away from (expensive) Ghost.</p>
                         </p>
                     </div>
 
 <footer class="post-info">
 
     <p>
-        05 Sep 2022 <span class="separator">|</span> in <a class="link_tag" href="https://notes.nicolasdeville.com/projects/">projects</a>
- tags: <a class="link_tag" href="https://notes.nicolasdeville.com/tag/indexall.html">indexall</a>
-<a class="link_tag" href="https://notes.nicolasdeville.com/tag/python.html">python</a>
-<a class="link_tag" href="https://notes.nicolasdeville.com/tag/static.html">static</a>
+        07 Sep 2022 <span class="separator">|</span> in <a class="link_tag" href="https://notes.nicolasdeville.com/python/">python</a>
+ tags: <a class="link_tag" href="https://notes.nicolasdeville.com/tag/static.html">static</a>
 
         <!-- added 4/7 -->
         <!-- 		<br />
-        <abbr class="modified" title="2022-09-05T15:21:01.390759+02:00">
-                Updated: 05 Sep 2022
+        <abbr class="modified" title="2022-09-07T09:27:38.110139+02:00">
+                Updated: 07 Sep 2022
         </abbr>
  -->
 
@@ -92,15 +90,391 @@
 
     
 
-</footer><p><span class="datestamp">05 Sep 2020</span>        </p>
-<p><a href="https://indexall.io/" target="_blank">https://indexall.io/</a>   </p>
-<h1>Why</h1>
-<h1>What</h1>
-<h1>Progress</h1>
-<h2>Adding Filtering / Search capability on tables</h2>
+</footer><p><span class="datestamp">29 Jun 2022</span>       </p>
+<table>
+<thead>
+<tr>
+<th>Library resources</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>PyPI</td>
+<td><a href="https://pypi.org/project/pelican/" target="_blank">https://pypi.org/project/pelican/</a></td>
+</tr>
+<tr>
+<td>Github</td>
+<td><a href="https://github.com/getpelican/pelican" target="_blank">https://github.com/getpelican/pelican</a></td>
+</tr>
+<tr>
+<td>Documentation</td>
+<td><a href="https://docs.getpelican.com/en/latest/" target="_blank">https://docs.getpelican.com/en/latest/</a></td>
+</tr>
+</tbody>
+</table>
+<p>My blog hosting journey: Wordpress &gt; Ghost &gt; Pelican (current)  </p>
+<p>My blog writing journey: limited :)  </p>
+<p>Started learning/using Pelican on 27th June 2022.
+Migrated 29th June. </p>
+<h2>Install</h2>
+<p>in venv: <code>pip3 install "pelican[markdown]"</code></p>
+<h2>To render</h2>
+<p>Takes ~1.3s to run  </p>
+<p><span class="datestamp">24 Jul 2022</span> now 1.9s with 260 articles.  </p>
+<p><span class="datestamp">07 Sep 2022</span>   now 3s with 320 articles.</p>
+<div class="highlight"><pre><span></span><code>Done: Processed <span class="m">328</span> articles, <span class="m">0</span> drafts, <span class="m">5</span> hidden articles, <span class="m">1</span> page, <span class="m">0</span> hidden 
+pages and <span class="m">0</span> draft pages <span class="k">in</span> <span class="m">3</span>.01 seconds.
+</code></pre></div>
+
+<h3>run once</h3>
+<p>in a Terminal window:</p>
+<ol>
+<li><code>cd</code> to project directory</li>
+<li><code>. venv/bin/activate</code> (to activate Pelican, installed in venv)</li>
+<li><code>cd</code> to <code>notes</code> folder (your name may vary)</li>
+<li><code>pelican</code>  </li>
+</ol>
+<h3>keeping it running in the background, ongoing</h3>
+<p>best for development:</p>
+<p><code>pelican -r</code> (for reload) instead of just <code>pelican</code></p>
+<h2>What tripped me up</h2>
+<h3>paths</h3>
+<p>figuring out the path syntax to use for images (and pdfs, etc). From subfolder in <code>content</code> I now use: </p>
+<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">img</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;header&quot;</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;{static}../../images/CP011_blog.svg&quot;</span> <span class="na">alt</span><span class="o">=</span><span class="s">&quot;CP011_blog.svg&quot;</span><span class="p">/&gt;</span>
+</code></pre></div>
+
+<h3>make vs pelican</h3>
+<p>using <code>make html</code> does not seem to take the <code>OUTPUT_PATH = '</code> config in <code>pelicanconf.py</code> into consideration. Use the <code>pelican</code> command instead (no need to pass content source, settings file, or output dir each time, just running <code>pelican</code> in the project folder)  </p>
+<h3>slug</h3>
+<p>the article slug can be defined in <code>peliconconf.py</code> to automatically use the <code>Title:</code> metadata (with <code>FILENAME_METADATA = '(?P&lt;title&gt;.*)'</code>), and can be overriden on an article basis by adding the <code>Slug:</code> metadata.<br>
+So: </p>
+<div class="highlight"><pre><span></span><code>Title: Hosting my static website with Github Pages
+Tags: 
+</code></pre></div>
+
+<p>will get the slug <code>hosting-my-static-website-with-github-pages.html</code>, whereas</p>
+<div class="highlight"><pre><span></span><code>Title: Hosting my static website with Github Pages
+Tags: 
+Slug: github-pages
+</code></pre></div>
+
+<p>will get the slug <code>github-pages.html</code></p>
+<h3>syntax highlighting</h3>
+<p>Pelican installs the syntax highlighter Pygments. Haven't read the Pygments doc though:      </p>
 <div class="link_border">
-<div class="link_title">How To Create a Filter/Search Table</div>
-<div class="link_url"><a href="https://www.w3schools.com/howto/howto_js_filter_table.asp" target="_blank">https://www.w3schools.com/howto/howto_js_filter_table.asp</a></div></div>
+<div class="link_title">Pygments</div>
+<div class="link_url"><a href="https://pygments.org/" target="_blank">https://pygments.org/</a></div></div>
+
+<p>Changed the formatting of my code blocks to reflect my VS Code theme.</p>
+<p>Tedious way:</p>
+<ul>
+<li>use same code in VS code and a rendered HTML version of it</li>
+<li>inspecting the rendered code provides the class used for it (eg <code>&lt;span class="kn"&gt;from&lt;/span&gt;</code> = the initial "from" word in my script uses CSS class "kn")</li>
+<li>classes can be found in <code>theme/static/css/pygment.css</code></li>
+<li>using a colour picker (<a href="https://setapp.com/apps/aquarelo" target="_blank">Aquarelo</a> just installed from my <a href="../apps/setapp.md">SetApp</a> subscription, I picked the color code for each highlight color in VS code, matched to its CSS class, and updated the <code>pygment.css</code> file.</li>
+</ul>
+<p>I'm sure there is an easier way. </p>
+<p>Weirdly enough, some classes were missing in the <code>pygments.css</code> file. Added them manually to fix.</p>
+<h4>for code</h4>
+<p>3 ways:</p>
+<p>1) my current default using <code>``` python</code>:</p>
+<div class="highlight"><pre><span></span><code><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;this is how it will be displayed&#39;</span><span class="p">)</span>
+</code></pre></div>
+
+<p>2) or <em>starting each line with 4 spaces across code block</em>, with the first line including language preceded by <code>:::</code>, eg <code>::: python</code>. No need to close code block, indentation suffices.</p>
+<div class="highlight"><pre><span></span><code><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;this is how it will be displayed&#39;</span><span class="p">)</span>
+</code></pre></div>
+
+<p>3) or <em>starting each line with 4 spaces across code block</em>, with shebang (indicates line numbers):</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;this is how it will be displayed&#39;</span><span class="p">)</span>
+</code></pre></div></td></tr></table></div>
+
+<p>(note to self: need to rework my css when line numbers are showing)</p>
+<p>I have not been able to make 2) and 3) work. </p>
+<p>Also not able to make the line highlights work with <code>``` python hl_lines="3 4"</code> (from <a href="https://yakworks.github.io/docmark/extensions/codehilite/" target="_blank">https://yakworks.github.io/docmark/extensions/codehilite/</a>)</p>
+<h4>for tables:</h4>
+<p>Add to <code>pelicanconf.py</code>:  </p>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">markdown.extensions.tables</span> <span class="kn">import</span> <span class="n">TableExtension</span>
+<span class="n">MARKDOWN</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s2">&quot;extensions&quot;</span><span class="p">:</span> <span class="p">[</span><span class="n">TableExtension</span><span class="p">()]</span>    
+<span class="p">}</span>
+</code></pre></div>
+
+<p><strong><em>Note: adding the above broke my code syntax highlighting. Uncommenting it restored it.. and the table rendering still works. Not sure how/why.</em></strong></p>
+<p>Markdown syntax:</p>
+<div class="highlight"><pre><span></span><code>header1 | header2 | header3 |
+---|---|---|
+A1 | A2 | A3 | 
+B1 | B2 | B3 | 
+C1 | C2 | C3 | 
+</code></pre></div>
+
+<p>renders:</p>
+<table>
+<thead>
+<tr>
+<th>header1</th>
+<th>header2</th>
+<th>header3</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>A1</td>
+<td>A2</td>
+<td>A3</td>
+</tr>
+<tr>
+<td>B1</td>
+<td>B2</td>
+<td>B3</td>
+</tr>
+<tr>
+<td>C1</td>
+<td>C2</td>
+<td>C3</td>
+</tr>
+</tbody>
+</table>
+<p>Can be styled with the <code>thead</code>/<code>th</code> and <code>tbody</code>/<code>td</code> CSS classes.</p>
+<h3>escaping quotes in article titles</h3>
+<p>See issue below when I tried to implement the <code>pelican-search</code> plugin, using Stork. <br>
+Stork was failing to read the <code>.toml</code> file (which contains all page links) because the title quotes were breaking the structure.
+Learning: escape quotes in article titles, eg <code>I \"like\" spam</code>.  </p>
+<h2>Variables</h2>
+<p>Not my case, but listing here if needed + logic can be re-used elsewhere I think:  </p>
+<p>To show "Authors" instead of "Author" when there are more than 1 authors for the same article:</p>
+<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">div</span><span class="p">&gt;</span>
+    {% set i = article.authors|count %}
+    {% if i != 1 %}
+        Authors:<span class="p">&lt;</span><span class="nt">br</span><span class="p">&gt;</span>
+    {% endif %}
+    {% if i == 1 %}
+        Author:<span class="p">&lt;</span><span class="nt">br</span><span class="p">&gt;</span>
+    {% endif %}
+    {% if article.authors %}
+        {% for author in article.authors %}
+            <span class="p">&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;{{ SITEURL }}/{{ author.url }}&quot;</span><span class="p">&gt;</span>{{ author }}<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;&lt;</span><span class="nt">br</span><span class="p">&gt;</span>
+        {% endfor %}
+    {% endif %}
+<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+</code></pre></div>
+
+<p>source:    </p>
+<div class="link_border">
+<div class="link_title">python - How to count authors in Pelican Blogs? - Stack Overflow</div>
+<div class="link_url"><a href="https://stackoverflow.com/questions/41112939/how-to-count-authors-in-pelican-blogs" target="_blank">https://stackoverflow.com/questions/41112939/how-to-count-authors-in-pelican-blogs</a></div></div>
+
+<h2>My Config file</h2>
+<p><span class="datestamp">26 Jul 2022</span>   current status:    </p>
+<div class="highlight"><pre><span></span><code><span class="n">AUTHOR</span> <span class="o">=</span> <span class="s1">&#39;Nic&#39;</span>
+<span class="n">SITENAME</span> <span class="o">=</span> <span class="s2">&quot;Nic&#39;s notes&quot;</span>
+<span class="n">SITEURL</span> <span class="o">=</span> <span class="s1">&#39;https://notes.nicolasdeville.com&#39;</span>
+
+<span class="n">PATH</span> <span class="o">=</span> <span class="s1">&#39;content&#39;</span>
+<span class="n">OUTPUT_PATH</span> <span class="o">=</span> <span class="s1">&#39;/path/to/output/folder/outside/of/pelican/project/&#39;</span>
+
+<span class="n">DISPLAY_PAGES_ON_MENU</span> <span class="o">=</span> <span class="kc">False</span>
+
+<span class="n">USE_FOLDER_AS_CATEGORY</span> <span class="o">=</span> <span class="kc">True</span>
+<span class="n">DEFAULT_CATEGORY</span> <span class="o">=</span> <span class="s1">&#39;misc&#39;</span>
+
+<span class="n">ARTICLE_PATHS</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;articles&#39;</span><span class="p">,]</span>
+<span class="n">ARTICLE_URL</span> <span class="o">=</span> <span class="s2">&quot;</span><span class="si">{category}</span><span class="s2">/</span><span class="si">{slug}</span><span class="s2">&quot;</span>
+<span class="n">ARTICLE_SAVE_AS</span> <span class="o">=</span> <span class="s2">&quot;</span><span class="si">{category}</span><span class="s2">/</span><span class="si">{slug}</span><span class="s2">/index.html&quot;</span>
+<span class="n">PAGE_URL</span> <span class="o">=</span> <span class="s2">&quot;</span><span class="si">{slug}</span><span class="s2">/&quot;</span>
+<span class="n">PAGE_SAVE_AS</span> <span class="o">=</span> <span class="s2">&quot;</span><span class="si">{slug}</span><span class="s2">/index.html&quot;</span>
+
+<span class="n">CATEGORY_URL</span> <span class="o">=</span> <span class="s2">&quot;</span><span class="si">{slug}</span><span class="s2">/&quot;</span>
+<span class="n">CATEGORY_SAVE_AS</span> <span class="o">=</span> <span class="s2">&quot;</span><span class="si">{slug}</span><span class="s2">/index.html&quot;</span>
+<span class="n">CATEGORIES_URL</span> <span class="o">=</span> <span class="s2">&quot;categories/&quot;</span>
+<span class="n">CATEGORIES_SAVE_AS</span> <span class="o">=</span> <span class="s2">&quot;categories/index.html&quot;</span>
+
+<span class="n">FILENAME_METADATA</span> <span class="o">=</span> <span class="s1">&#39;(?P&lt;slug&gt;.*)&#39;</span> <span class="c1"># makes Slug optional in markdown / uses filename instead</span>
+
+<span class="n">PAGE_PATHS</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;pages&#39;</span><span class="p">]</span>
+
+<span class="n">TIMEZONE</span> <span class="o">=</span> <span class="s1">&#39;Europe/Rome&#39;</span>
+
+<span class="n">DEFAULT_DATE</span> <span class="o">=</span> <span class="s1">&#39;fs&#39;</span>
+<span class="n">DEFAULT_DATE_FORMAT</span> <span class="o">=</span> <span class="s1">&#39;</span><span class="si">%d</span><span class="s1"> %b %Y&#39;</span>
+
+<span class="n">STATIC_PATHS</span> <span class="o">=</span> <span class="p">[</span>
+                <span class="s1">&#39;images&#39;</span><span class="p">,</span> 
+                <span class="s1">&#39;extra&#39;</span><span class="p">,</span> 
+                <span class="s1">&#39;pdfs&#39;</span><span class="p">,</span> 
+                <span class="s1">&#39;pages&#39;</span><span class="p">,</span>
+                <span class="s1">&#39;csvs&#39;</span><span class="p">,</span>
+                <span class="p">]</span>
+
+<span class="n">EXTRA_PATH_METADATA</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s1">&#39;extra/CNAME&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;path&#39;</span><span class="p">:</span> <span class="s1">&#39;CNAME&#39;</span><span class="p">},</span>
+    <span class="s1">&#39;extra/gitignore&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;path&#39;</span><span class="p">:</span> <span class="s1">&#39;.gitignore&#39;</span><span class="p">},</span>
+    <span class="s1">&#39;extra/sitemap.xml&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;path&#39;</span><span class="p">:</span> <span class="s1">&#39;sitemap.xml&#39;</span><span class="p">},</span> <span class="c1"># generated manually for now / see helpers section</span>
+    <span class="s1">&#39;extra/robots.txt&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;path&#39;</span><span class="p">:</span> <span class="s1">&#39;robots.txt&#39;</span><span class="p">},</span>
+    <span class="s1">&#39;extra/googlexxxxxxxxxxxxxxxx.html&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;path&#39;</span><span class="p">:</span> <span class="s1">&#39;googlexxxxxxxxxxxxxxxx.html&#39;</span><span class="p">},</span> <span class="c1"># Google Search ID</span>
+    <span class="s1">&#39;extra/BingSiteAuth.xml&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;path&#39;</span><span class="p">:</span> <span class="s1">&#39;BingSiteAuth.xml&#39;</span><span class="p">},</span> <span class="c1"># Bing Search ID</span>
+    <span class="p">}</span>
+
+<span class="n">DEFAULT_LANG</span> <span class="o">=</span> <span class="s1">&#39;en&#39;</span>
+
+<span class="c1">#With these settings, Pelican will create an archive of all your posts for the year</span>
+<span class="c1"># at (for instance) posts/2011/index.html</span>
+<span class="c1"># and an archive of all your posts for the month at posts/2011/Aug/index.html.</span>
+<span class="n">YEAR_ARCHIVE_SAVE_AS</span> <span class="o">=</span> <span class="s1">&#39;{date:%Y}/index.html&#39;</span>
+<span class="n">MONTH_ARCHIVE_SAVE_AS</span> <span class="o">=</span> <span class="s1">&#39;{date:%Y}/{date:%m}/index.html&#39;</span>
+
+<span class="n">AUTHOR_SAVE_AS</span> <span class="o">=</span> <span class="s1">&#39;author/</span><span class="si">{slug}</span><span class="s1">.html&#39;</span> <span class="c1"># to avoid generating author page as it&#39;s only me.</span>
+
+<span class="c1"># Feed generation is usually not desired when developing</span>
+<span class="n">FEED_ALL_ATOM</span> <span class="o">=</span> <span class="kc">None</span>
+<span class="n">CATEGORY_FEED_ATOM</span> <span class="o">=</span> <span class="kc">None</span>
+<span class="n">TRANSLATION_FEED_ATOM</span> <span class="o">=</span> <span class="kc">None</span>
+<span class="n">AUTHOR_FEED_ATOM</span> <span class="o">=</span> <span class="kc">None</span>
+<span class="n">AUTHOR_FEED_RSS</span> <span class="o">=</span> <span class="kc">None</span>
+
+<span class="c1"># Blogroll</span>
+<span class="n">LINKS</span> <span class="o">=</span> <span class="p">(</span>
+        <span class="p">(</span><span class="s1">&#39;Side project: indeXall.io&#39;</span><span class="p">,</span> <span class="s1">&#39;https://indeXall.io&#39;</span><span class="p">),</span>
+        <span class="p">(</span><span class="s1">&#39;Services: BtoBSales.EU&#39;</span><span class="p">,</span> <span class="s1">&#39;https://btobsales.eu&#39;</span><span class="p">),</span>
+        <span class="p">)</span>
+
+<span class="c1"># Social widget</span>
+<span class="n">SOCIAL</span> <span class="o">=</span> <span class="p">(</span>
+        <span class="p">(</span><span class="s1">&#39;Linkedin&#39;</span><span class="p">,</span> <span class="s1">&#39;https://www.linkedin.com/in/ndeville/&#39;</span><span class="p">),</span>
+        <span class="p">(</span><span class="s1">&#39;Twitter&#39;</span><span class="p">,</span> <span class="s1">&#39;https://www.twitter.com/ndeville&#39;</span><span class="p">),</span>
+        <span class="p">)</span>
+
+<span class="n">DEFAULT_PAGINATION</span> <span class="o">=</span> <span class="mi">100</span>
+
+<span class="n">THEME</span> <span class="o">=</span> <span class="s1">&#39;/path/to/Pelican/project/folder/notes/theme&#39;</span>
+
+<span class="n">OUTPUT_RETENTION</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;.gitignore&quot;</span><span class="p">]</span> <span class="c1"># probably of no use if not in `content` folder?</span>
+
+<span class="c1"># to add capability to support tables. Source: https://www.dj-bauer.de/use-tables-in-pelican-markdown-en.html</span>
+<span class="c1"># from markdown.extensions.tables import TableExtension</span>
+<span class="c1"># MARKDOWN = {</span>
+<span class="c1">#     &quot;extensions&quot;: [TableExtension()]    </span>
+<span class="c1"># }</span>
+
+<span class="n">SEARCH_HTML_SELECTOR</span> <span class="o">=</span> <span class="s2">&quot;main&quot;</span> <span class="c1"># for the pelican plugin &quot;search&quot; using Stork. Using the default &lt;main&gt; tag means repeating sections can be carved out of search index.</span>
+
+<span class="c1"># Uncomment following line if you want document-relative URLs when developing</span>
+<span class="c1"># RELATIVE_URLS = True</span>
+</code></pre></div>
+
+<h2>Hosting</h2>
+<p>Once generated, I'm using Github Pages to host for free.  </p>
+<p>[<a href="../../helpers/github-pages/index.html">Nic Note: Github Pages</a>]    </p>
+<h3>publish</h3>
+<p>in Terminal:   </p>
+<ol>
+<li><code>cd</code> to output directory</li>
+<li><code>git add .</code> (adding all files from folder)</li>
+<li><code>git commit -m 'daily update'</code> (committing with message)</li>
+<li><code>git push origin main</code> (push all static files to Github - publishing is automated by Github)  </li>
+</ol>
+<h2>Plugins to test</h2>
+<h3>more Categories</h3>
+<p>for subcategories and more than 1 category per article   </p>
+<div class="link_border">
+<div class="link_title">GitHub - pelican-plugins/more-categories: Enables nested categories and multiple categories per article</div>
+<div class="link_url"><a href="https://github.com/pelican-plugins/more-categories" target="_blank">https://github.com/pelican-plugins/more-categories</a></div></div>
+
+<h3>sitemap</h3>
+<p>for auto-generation of <code>sitemap.xml</code>  </p>
+<div class="link_border">
+<div class="link_title">GitHub - pelican-plugins/sitemap: Generates a site map for Pelican-powered sites</div>
+<div class="link_title">pelican-plugins/sitemap</div>
+<div class="link_url"><a href="https://github.com/pelican-plugins/sitemap" target="_blank">https://github.com/pelican-plugins/sitemap</a></div></div>
+
+<h3>search</h3>
+<p>(implemented)   </p>
+<p>Stork  </p>
+<div class="link_border">
+<div class="link_title">Stork Search - Impossibly Fast Web Search</div>
+<div class="link_url"><a href="https://stork-search.net/" target="_blank">https://stork-search.net/</a></div></div>
+
+<p>especially: <a href="https://stork-search.net/docs/install" target="_blank">https://stork-search.net/docs/install</a><br>
+on Github: <a href="https://github.com/jameslittle230/stork" target="_blank">https://github.com/jameslittle230/stork</a>) <br>
+creator's personal website, with nice search input animation: <a href="https://jameslittle.me/" target="_blank">https://jameslittle.me/</a>  </p>
+<p>Plus plug-in: <a href="https://github.com/pelican-plugins/search" target="_blank">https://github.com/pelican-plugins/search</a>  </p>
+<p>Testing notes (16/7/22):<br>
+- install Stork first (<code>brew install stork-search/stork-tap/stork</code>)<br>
+- then install Pelican plugin (<code>pip3 install pelican-search</code>)<br>
+- implement CSS &amp; HTML changes. Test using <code>&lt;body&gt;</code> instead of adding <code>&lt;main&gt;</code> everywhere.<br>
+- generate index file: manually each time or does the plugin take care of that? TO TEST    </p>
+<p>Questions:<br>
+- <code>SEARCH_HTML_SELECTOR = "main"</code>: why not use simply <code>&lt;body&gt;</code>?
+    -&gt; Answer: with repeating content in header and footer, using <code>&lt;body&gt;</code> results in showing all pages in search results when using a search variable included in those.  </p>
+<p>First implementation - error:    </p>
+<div class="highlight"><pre><span></span><code>% pelican
+<span class="o">[</span><span class="m">20</span>:39:09<span class="o">]</span> CRITICAL Exception: Search plugin reported Error:      __init__.py:566
+                    Couldn<span class="err">&#39;</span>t <span class="nb">read</span> the configuration file: Cannot                 
+                    parse config as TOML. Stork recieved error:                  
+                    <span class="sb">`</span>expected newline, found an identifier at                    
+                    line <span class="m">278</span> column <span class="m">13</span><span class="sb">`</span> 
+</code></pre></div>
+
+<p>Solved: <a href="https://github.com/pelican-plugins/search/issues/3" target="_blank">https://github.com/pelican-plugins/search/issues/3</a><br>
+The issue was that some of my article titles had quotes that were not escaped.   </p>
+<p><span class="datestamp">26 Jul 2022</span>   noticed an error when searching on a page other than the homepage (wrong path). TODO investigate.    </p>
+<h3>Algolia Search: A Plugin for Pelican</h3>
+<p>decided against, preferring Stork (see above)    </p>
+<div class="link_border">
+<div class="link_title">GitHub - rehanhaider/pelican-algolia: Pelican Algolia Search: A Plugin to integrated Algolia Search in Pelican</div>
+<div class="link_url"><a href="https://github.com/rehanhaider/pelican-algolia" target="_blank">https://github.com/rehanhaider/pelican-algolia</a></div></div>
+
+<h3>Staticman | comments for static sites</h3>
+<p>found here:</p>
+<div class="link_border">
+<div class="link_title">Pelican Tutorial: Static Blog with Search & Comments [Demo]</div>
+<div class="link_url"><a href="https://snipcart.com/blog/pelican-blog-tutorial-search-comments" target="_blank">https://snipcart.com/blog/pelican-blog-tutorial-search-comments</a></div></div>
+
+<p>Github:   </p>
+<div class="link_border">
+<div class="link_title">GitHub - eduardoboucas/staticman: 💪  User-generated content for Git-powered websites</div>
+<div class="link_url"><a href="https://github.com/eduardoboucas/staticman" target="_blank">https://github.com/eduardoboucas/staticman</a></div></div>
+
+<h3>add a Table of Contents using Markdown in Pelican</h3>
+<div class="link_border">
+<div class="link_title"> Add a Table of Contents using Markdown in Pelican </div>
+<div class="link_url"><a href="https://cloudbytes.dev/snippets/add-a-table-of-contents-using-markdown-in-pelican" target="_blank">https://cloudbytes.dev/snippets/add-a-table-of-contents-using-markdown-in-pelican</a></div></div>
+
+<h3>theme example + word count + search feature</h3>
+<div class="link_border">
+<div class="link_title">GitHub - pilosus/pilosus-pelican-theme: A responsive minimalistic theme for Pelican static blog generator</div>
+<div class="link_url"><a href="https://github.com/pilosus/pilosus-pelican-theme/" target="_blank">https://github.com/pilosus/pilosus-pelican-theme/</a></div></div>
+
+<h3>summary plugin</h3>
+<div class="link_border">
+<div class="link_title">Github - getpelican/pelican-plugins</div>
+<div class="link_url"><a href="https://github.com/getpelican/pelican-plugins/tree/master/summary" target="_blank">https://github.com/getpelican/pelican-plugins/tree/master/summary</a></div></div>
+
+<h2>additional resources</h2>
+<h3>markdown syntax</h3>
+<p>helpful guide at the beginning to get used to the Markdown syntax    </p>
+<div class="link_border">
+<div class="link_title">Basic Syntax | Markdown Guide</div>
+<div class="link_url"><a href="https://www.markdownguide.org/basic-syntax" target="_blank">https://www.markdownguide.org/basic-syntax</a></div></div>
+
+<h3>Code HiLite</h3>
+<div class="link_border">
+<div class="link_title">Codehilite - MkDocs Docmark</div>
+<div class="link_url"><a href="https://yakworks.github.io/docmark/extensions/codehilite/" target="_blank">https://yakworks.github.io/docmark/extensions/codehilite/</a></div></div>
+
+<h3>Pelican Folder Structure</h3>
+<p>helped me rework my project structure based on subfolfers in <code>content</code>  </p>
+<div class="link_border">
+<div class="link_title">Pelican Folder Structure  - Creating Magic  · Archer Imagine</div>
+<div class="link_url"><a href="https://www.archerimagine.com/articles/pelican/pelican-folder-structure.html" target="_blank">https://www.archerimagine.com/articles/pelican/pelican-folder-structure.html</a></div></div>
+
+<h3>Pelican's USE_FOLDER_AS_CATEGORY setting and behaviour</h3>
+<p>clear once logic is understood, but good overview:    </p>
+<div class="link_border">
+<div class="link_title">Pelican's USE_FOLDER_AS_CATEGORY setting and behaviour | Louis Tiao</div>
+<div class="link_url"><a href="http://louistiao.me/posts/pelicans-use_folder_as_category-setting-and-behaviour/" target="_blank">http://louistiao.me/posts/pelicans-use_folder_as_category-setting-and-behaviour/</a></div></div>
                 </article>
             </aside>
 
@@ -119,11 +493,11 @@
                 <article class="hentry">
                     <header>
                         <!-- PREVIOUS NOTE TITLE -->
-                        <h1><a href="https://notes.nicolasdeville.com/python/library-pelican" rel="bookmark"
-                            title="Building a static site with Pelican">Building a static site with Pelican</a></h1>
+                        <h1><a href="https://notes.nicolasdeville.com/projects/indexall" rel="bookmark"
+                            title="indeXall | indexing the worlds of passions">indeXall | indexing the worlds of passions</a></h1>
                         <!-- PREVIOUS NOTE SUMMARY -->
                         <div class="entry-content">
-                            <p>How I built this site, migrating away from (expensive) Ghost.</p>
+                            <p>a hobby project of mine since a couple years</p>
                         </div>
                     </header>
 
@@ -132,12 +506,14 @@
 <footer class="post-info">
 
     <p>
-        05 Sep 2022 <span class="separator">|</span> in <a class="link_tag" href="https://notes.nicolasdeville.com/python/">python</a>
- tags: <a class="link_tag" href="https://notes.nicolasdeville.com/tag/static.html">static</a>
+        05 Sep 2022 <span class="separator">|</span> in <a class="link_tag" href="https://notes.nicolasdeville.com/projects/">projects</a>
+ tags: <a class="link_tag" href="https://notes.nicolasdeville.com/tag/indexall.html">indexall</a>
+<a class="link_tag" href="https://notes.nicolasdeville.com/tag/python.html">python</a>
+<a class="link_tag" href="https://notes.nicolasdeville.com/tag/static.html">static</a>
 
         <!-- added 4/7 -->
         <!-- 		<br />
-        <abbr class="modified" title="2022-09-05T09:08:11.947544+02:00">
+        <abbr class="modified" title="2022-09-05T15:21:01.390759+02:00">
                 Updated: 05 Sep 2022
         </abbr>
  -->

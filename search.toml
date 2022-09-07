@@ -8,6 +8,21 @@ url = "/ABOUT/"
 title = ""
 
 [[input.files]]
+path = "learning/python/index.html"
+url = "/learning/python"
+title = "Learning Python"
+
+[[input.files]]
+path = "python/library-yagmail/index.html"
+url = "/python/library-yagmail"
+title = "Library: Yagmail"
+
+[[input.files]]
+path = "python/library-pelican/index.html"
+url = "/python/library-pelican"
+title = "Building a static site with Pelican"
+
+[[input.files]]
 path = "projects/mailingee/index.html"
 url = "/projects/mailingee"
 title = "Mailingee"
@@ -31,11 +46,6 @@ title = "Github"
 path = "python/library-pynput/index.html"
 url = "/python/library-pynput"
 title = "Library: pynput"
-
-[[input.files]]
-path = "python/library-yagmail/index.html"
-url = "/python/library-yagmail"
-title = "Library: Yagmail"
 
 [[input.files]]
 path = "b2b-sales/email-automation/index.html"
@@ -171,11 +181,6 @@ title = "USB Hubs & Docks"
 path = "python/python-notion/index.html"
 url = "/python/python-notion"
 title = "Fetch Notion database data with Python"
-
-[[input.files]]
-path = "python/library-pelican/index.html"
-url = "/python/library-pelican"
-title = "Building a static site with Pelican"
 
 [[input.files]]
 path = "python/library-imap-tools/index.html"

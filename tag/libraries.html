@@ -64,26 +64,26 @@
             <hr/>
 
                 <article class="hentry">
-                    <h1 class="entry-title"><a href="https://notes.nicolasdeville.com/python/library-pynput">Library: pynput</a></h1>
+                    <h1 class="entry-title"><a href="https://notes.nicolasdeville.com/python/library-yagmail">Library: Yagmail</a></h1>
 
                     <!-- added 4/7 -->
                     <div>
                         <p class="header_summary">
-                            <p>control mouse and keyboard with Python</p>
+                            <p>GMAIL/SMTP client that aims to make it as simple as possible to send emails.</p>
                         </p>
                     </div>
 
 <footer class="post-info">
 
     <p>
-        06 Sep 2022 <span class="separator">|</span> in <a class="link_tag" href="https://notes.nicolasdeville.com/python/">python</a>
+        07 Sep 2022 <span class="separator">|</span> in <a class="link_tag" href="https://notes.nicolasdeville.com/python/">python</a>
  tags: <a class="link_tag" href="https://notes.nicolasdeville.com/tag/libraries.html">libraries</a>
 <a class="link_tag" href="https://notes.nicolasdeville.com/tag/automation.html">automation</a>
 
         <!-- added 4/7 -->
         <!-- 		<br />
-        <abbr class="modified" title="2022-09-06T20:09:14.643553+02:00">
-                Updated: 06 Sep 2022
+        <abbr class="modified" title="2022-09-07T09:32:30.331873+02:00">
+                Updated: 07 Sep 2022
         </abbr>
  -->
 
@@ -91,7 +91,7 @@
 
     
 
-</footer><p><span class="datestamp">06 Sep 2022</span>   </p>
+</footer><p><span class="datestamp">06 Apr 2022</span>   </p>
 <table>
 <thead>
 <tr>
@@ -102,44 +102,34 @@
 <tbody>
 <tr>
 <td>PyPI</td>
-<td><a href="https://pypi.org/project/pynput/" target="_blank">https://pypi.org/project/pynput/</a></td>
+<td><a href="https://pypi.org/project/yagmail/" target="_blank">https://pypi.org/project/yagmail/</a></td>
 </tr>
 <tr>
 <td>Github</td>
-<td><a href="https://github.com/moses-palmer/pynput" target="_blank">https://github.com/moses-palmer/pynput</a></td>
+<td><a href="https://github.com/kootenpv/yagmail" target="_blank">https://github.com/kootenpv/yagmail</a></td>
 </tr>
 <tr>
 <td>Documentation</td>
-<td><a href="https://pynput.readthedocs.io/en/latest/" target="_blank">https://pynput.readthedocs.io/en/latest/</a></td>
+<td><a href="http://yagmail.readthedocs.io/en/latest/" target="_blank">http://yagmail.readthedocs.io/en/latest/</a></td>
 </tr>
 </tbody>
 </table>
-<p><code>pip3 install pynput</code>  </p>
-<h1>Snippets</h1>
-<h2>keyboard automation</h2>
-<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">pynput.keyboard</span> <span class="kn">import</span> <span class="n">Key</span><span class="p">,</span> <span class="n">Controller</span>
+<p><code>pip3 install yagmail</code>  </p>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">yagmail</span>
 
-<span class="n">keyb</span> <span class="o">=</span> <span class="n">Controller</span><span class="p">()</span>
+<span class="n">yag</span> <span class="o">=</span> <span class="n">yagmail</span><span class="o">.</span><span class="n">SMTP</span><span class="p">(</span><span class="n">XX_EMAIL</span><span class="p">,</span> <span class="n">XX_PASSWORD</span><span class="p">)</span>
 
-<span class="k">with</span> <span class="n">keyb</span><span class="o">.</span><span class="n">pressed</span><span class="p">(</span><span class="n">Key</span><span class="o">.</span><span class="n">cmd</span><span class="p">):</span>
-    <span class="n">keyb</span><span class="o">.</span><span class="n">press</span><span class="p">(</span><span class="s1">&#39;f&#39;</span><span class="p">)</span>
-    <span class="n">keyb</span><span class="o">.</span><span class="n">release</span><span class="p">(</span><span class="s1">&#39;f&#39;</span><span class="p">)</span>
-</code></pre></div>
+<span class="n">body</span> <span class="o">=</span> <span class="s1">&#39;email body</span><span class="se">\n</span><span class="s1">formattted as needed&#39;</span> 
 
-<h2>see which key is being pressed</h2>
-<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">pynput.keyboard</span> <span class="kn">import</span> <span class="n">Key</span><span class="p">,</span> <span class="n">Listener</span>
+<span class="n">content</span> <span class="o">=</span> <span class="p">[</span>
+            <span class="n">body</span><span class="p">,</span>
+            <span class="c1"># additional elements can be added to list, eg: </span>
+            <span class="s1">&#39;&#39;</span><span class="p">,</span> 
+            <span class="n">yagmail</span><span class="o">.</span><span class="n">inline</span><span class="p">(</span><span class="s2">&quot;minions.gif&quot;</span><span class="p">),</span> <span class="c1"># to insert images inline</span>
+            <span class="s1">&#39;</span><span class="se">\n\n</span><span class="s1">Nic&#39;</span><span class="p">,</span> <span class="c1"># signature can be managed as variable in list</span>
+            <span class="p">]</span>
 
-<span class="k">def</span> <span class="nf">show</span><span class="p">(</span><span class="n">key</span><span class="p">):</span>
-
-    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">You Entered </span><span class="si">{0}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span> <span class="n">key</span><span class="p">))</span>
-
-    <span class="k">if</span> <span class="n">key</span> <span class="o">==</span> <span class="n">Key</span><span class="o">.</span><span class="n">delete</span><span class="p">:</span>
-        <span class="c1"># Stop listener</span>
-        <span class="k">return</span> <span class="kc">False</span>
-
-<span class="c1"># Collect all event until released</span>
-<span class="k">with</span> <span class="n">Listener</span><span class="p">(</span><span class="n">on_press</span> <span class="o">=</span> <span class="n">show</span><span class="p">)</span> <span class="k">as</span> <span class="n">listener</span><span class="p">:</span>
-    <span class="n">listener</span><span class="o">.</span><span class="n">join</span><span class="p">()</span>
+<span class="n">yag</span><span class="o">.</span><span class="n">send</span><span class="p">(</span><span class="n">to</span><span class="o">=</span><span class="n">email</span><span class="p">,</span> <span class="n">bcc</span><span class="o">=</span><span class="n">bcc</span><span class="p">,</span> <span class="n">subject</span><span class="o">=</span><span class="n">subject</span><span class="p">,</span> <span class="n">contents</span><span class="o">=</span><span class="n">content</span><span class="p">)</span>
 </code></pre></div>
                 </article>
             </aside>
@@ -159,11 +149,11 @@
                 <article class="hentry">
                     <header>
                         <!-- PREVIOUS NOTE TITLE -->
-                        <h1><a href="https://notes.nicolasdeville.com/python/library-yagmail" rel="bookmark"
-                            title="Library: Yagmail">Library: Yagmail</a></h1>
+                        <h1><a href="https://notes.nicolasdeville.com/python/library-pynput" rel="bookmark"
+                            title="Library: pynput">Library: pynput</a></h1>
                         <!-- PREVIOUS NOTE SUMMARY -->
                         <div class="entry-content">
-                            <p>GMAIL/SMTP client that aims to make it as simple as possible to send emails.</p>
+                            <p>control mouse and keyboard with Python</p>
                         </div>
                     </header>
 
@@ -178,7 +168,7 @@
 
         <!-- added 4/7 -->
         <!-- 		<br />
-        <abbr class="modified" title="2022-09-06T20:06:36.418604+02:00">
+        <abbr class="modified" title="2022-09-06T20:09:14.643553+02:00">
                 Updated: 06 Sep 2022
         </abbr>
  -->
