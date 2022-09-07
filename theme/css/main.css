@@ -943,11 +943,11 @@ li:first-child .hentry, #content > .hentry {
 
 .book_quote_location {
     font-size: 0.8em;
-    margin-left: 0.8em;
+    margin-left: 1.5em;
 }
 
 .book_quote_highlight {
-    margin-left: 0.8em;
+    margin-left: 1.5em;
 }
 
 /* TEST */
