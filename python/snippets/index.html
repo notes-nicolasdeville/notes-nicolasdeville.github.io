@@ -64,14 +64,14 @@
 <footer class="post-info">
 
     <p>
-        06 Sep 2022 <span class="separator">|</span> in <a class="link_tag" href="https://notes.nicolasdeville.com/python/">python</a>
+        07 Sep 2022 <span class="separator">|</span> in <a class="link_tag" href="https://notes.nicolasdeville.com/python/">python</a>
  tags: <a class="link_tag" href="https://notes.nicolasdeville.com/tag/snippets.html">snippets</a>
 <a class="link_tag" href="https://notes.nicolasdeville.com/tag/scripts.html">scripts</a>
 
         <!-- added 4/7 -->
         <!-- 		<br />
-        <abbr class="modified" title="2022-09-06T19:13:01.285472+02:00">
-                Updated: 06 Sep 2022
+        <abbr class="modified" title="2022-09-07T12:15:44.781509+02:00">
+                Updated: 07 Sep 2022
         </abbr>
  -->
 
@@ -93,7 +93,7 @@
     <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">first</span><span class="si">}</span><span class="s2"> ----&gt; </span><span class="si">{</span><span class="n">new_first</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 </code></pre></div>
 
-<p>=</p>
+<p>prints:</p>
 <div class="highlight"><pre><span></span><code>AMELIE ----&gt; Amelie
 JAN ----&gt; Jan
 ERIC ----&gt; Eric
@@ -117,6 +117,28 @@ ERIC ----&gt; Eric
 
 <span class="c1"># Can be used with separator, ie</span>
 <span class="c1"># formatted = string.capwords(sentence, sep = &#39;g&#39;)</span>
+</code></pre></div>
+
+<p>prints:</p>
+<div class="highlight"><pre><span></span><code>pierre-GARCIA ----&gt; Pierre-Garcia
+</code></pre></div>
+
+<h3>print list with index</h3>
+<div class="highlight"><pre><span></span><code><span class="n">highlights</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;x&#39;</span><span class="p">,</span> <span class="s1">&#39;y&#39;</span><span class="p">,</span> <span class="s1">&#39;z&#39;</span><span class="p">]</span>
+
+<span class="k">for</span> <span class="n">index</span><span class="p">,</span> <span class="n">value</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">highlights</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">index</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span>
+</code></pre></div>
+
+<p>prints:</p>
+<div class="highlight"><pre><span></span><code><span class="m">0</span> x
+<span class="m">1</span> y
+<span class="m">2</span> z
+</code></pre></div>
+
+<p>for count instead of index:</p>
+<div class="highlight"><pre><span></span><code><span class="k">for</span> <span class="n">index</span><span class="p">,</span> <span class="n">value</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">highlights</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">index</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span>
 </code></pre></div>
             </main>
         </div><!-- /.entry-content -->

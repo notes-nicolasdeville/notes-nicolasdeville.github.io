@@ -211,7 +211,9 @@ li {
     /* margin-top: 1px;
     margin-bottom: 1px; */
 
-.readmore { float: right }
+.readmore { 
+    float: right;
+}
 
 dl {margin: 0 0 1.5em 0;}
 dt {font-weight: bold;}
@@ -884,11 +886,13 @@ li:first-child .hentry, #content > .hentry {
     color: #333;
     background-color: #ddd;
     padding: 0.3em 0.5em 0.3em 0.5em;
-    border: solid 3px #999;
-    border-radius: 1.5em;
+    border: solid 2px #999;
+    border-radius: 1em;
     line-height: 3em; /* to avoid overlap over lines */
     margin-right: 0.5em;
 }
+
+/* MY LINKS / BOOKMARKS */
 
 .link_border {
     border-left: 8px solid black;
@@ -903,6 +907,46 @@ li:first-child .hentry, #content > .hentry {
 
 .link_url {
     font-size: 0.8em;
+    margin-left: 0.8em;
+}
+
+/* BOOKS QUOTES */
+
+.book_quote {
+    border-left: 8px solid #C64350;
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+
+    /*Borders*/
+
+    border-top-style: solid;
+    border-top-width: 1px;
+    border-top-color: #000;
+
+    border-right-style: solid;
+    border-right-width: 1px;
+    border-right-color: #000;
+
+    border-bottom-style: solid;
+    border-bottom-width: 1px;
+    border-bottom-color: #000;
+
+    /* border-left-style: solid;
+    border-left-width: 15px;
+    border-left-color: #000; */
+}
+
+.book_quote_title {
+    font-weight: bold;
+    margin-left: 0.8em;
+}
+
+.book_quote_location {
+    font-size: 0.8em;
+    margin-left: 0.8em;
+}
+
+.book_quote_highlight {
     margin-left: 0.8em;
 }
 
