@@ -8,11 +8,6 @@ url = "/ABOUT/"
 title = ""
 
 [[input.files]]
-path = "books/pro-git/index.html"
-url = "/books/pro-git"
-title = "Pro Git, by Scott Chacon"
-
-[[input.files]]
 path = "projects/mailingee/index.html"
 url = "/projects/mailingee"
 title = "Mailingee"
@@ -721,6 +716,11 @@ title = "Germany taxes"
 path = "home-office/setup/index.html"
 url = "/home-office/setup"
 title = "Home Office Setup (since June '22)"
+
+[[input.files]]
+path = "books/pro-git/index.html"
+url = "/books/pro-git"
+title = "Pro Git, by Scott Chacon"
 
 [[input.files]]
 path = "random/space_how-long/index.html"
