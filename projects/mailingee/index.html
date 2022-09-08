@@ -33,6 +33,7 @@
                 <li><a href="https://notes.nicolasdeville.com/helpers/">helpers</a></li>
                 <li><a href="https://notes.nicolasdeville.com/home-office/">home office</a></li>
                 <li><a href="https://notes.nicolasdeville.com/interests/">interests</a></li>
+                <li><a href="https://notes.nicolasdeville.com/leadership/">leadership</a></li>
                 <li><a href="https://notes.nicolasdeville.com/learning/">learning</a></li>
                 <li><a href="https://notes.nicolasdeville.com/movies/">movies</a></li>
                 <li class="active"><a href="https://notes.nicolasdeville.com/projects/">projects</a></li>
@@ -70,7 +71,7 @@
 
         <!-- added 4/7 -->
         <!-- 		<br />
-        <abbr class="modified" title="2022-09-08T11:42:28.910027+02:00">
+        <abbr class="modified" title="2022-09-08T18:09:40.658983+02:00">
                 Updated: 08 Sep 2022
         </abbr>
  -->
@@ -388,7 +389,7 @@
 
     <span class="k">elif</span> <span class="n">send_type</span> <span class="o">==</span> <span class="s2">&quot;AUTO_KB&quot;</span><span class="p">:</span>
         <span class="n">mailto</span><span class="p">(</span><span class="n">email</span><span class="o">.</span><span class="n">strip</span><span class="p">(),</span> <span class="n">subject</span><span class="p">,</span> <span class="n">body</span><span class="p">,</span> <span class="n">bcc</span><span class="p">)</span>
-        <span class="n">wait</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+        <span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="n">wait_from</span><span class="p">,</span> <span class="n">wait_to</span><span class="p">)</span>
         <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;waiting </span><span class="si">{</span><span class="n">wait</span><span class="si">}</span><span class="s2"> seconds...&quot;</span><span class="p">)</span>
         <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">wait</span><span class="p">):</span>
             <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">x</span> <span class="o">+</span> <span class="mi">1</span><span class="si">}</span><span class="s2">..&quot;</span><span class="p">)</span>

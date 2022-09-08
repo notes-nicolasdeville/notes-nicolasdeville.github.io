@@ -13,6 +13,11 @@ url = "/projects/mailingee"
 title = "Mailingee"
 
 [[input.files]]
+path = "interests/apple/index.html"
+url = "/interests/apple"
+title = "Apple"
+
+[[input.files]]
 path = "projects/twittee/index.html"
 url = "/projects/twittee"
 title = "Twittee"
@@ -278,8 +283,8 @@ url = "/python/libraries"
 title = "Libraries for Python"
 
 [[input.files]]
-path = "salesleaderplaybook/resources/index.html"
-url = "/salesleaderplaybook/resources"
+path = "leadership/resources/index.html"
+url = "/leadership/resources"
 title = "Resources about Sales Leadership"
 
 [[input.files]]
@@ -423,14 +428,14 @@ url = "/python/library-beautifulsoup"
 title = "Python library: Beautifulsoup"
 
 [[input.files]]
-path = "b2b-sales/books/index.html"
-url = "/b2b-sales/books"
-title = "My B2B Books Library"
-
-[[input.files]]
 path = "python/books/index.html"
 url = "/python/books"
 title = "My Python Books Library"
+
+[[input.files]]
+path = "b2b-sales/books/index.html"
+url = "/b2b-sales/books"
+title = "My B2B Books Library"
 
 [[input.files]]
 path = "books/library/index.html"
@@ -558,8 +563,8 @@ url = "/home-office/ups"
 title = "Uninterrupted Power Supply"
 
 [[input.files]]
-path = "salesleaderplaybook/visualising-target-achievement/index.html"
-url = "/salesleaderplaybook/visualising-target-achievement"
+path = "leadership/visualising-target-achievement/index.html"
+url = "/leadership/visualising-target-achievement"
 title = "Visualing the target and achievement"
 
 [[input.files]]
@@ -733,8 +738,8 @@ url = "/random/space_how-long"
 title = "How long will the Earth remain habitable?"
 
 [[input.files]]
-path = "salesleaderplaybook/rfp-and-tribal-knowledge/index.html"
-url = "/salesleaderplaybook/rfp-and-tribal-knowledge"
+path = "leadership/rfp-and-tribal-knowledge/index.html"
+url = "/leadership/rfp-and-tribal-knowledge"
 title = "RFP and tribal knowledge"
 
 [[input.files]]
@@ -743,28 +748,28 @@ url = "/home-office/home-office-setup-jan-22"
 title = "Home Office Setup (-May '22)"
 
 [[input.files]]
-path = "salesleaderplaybook/having-a-vision-is-critical/index.html"
-url = "/salesleaderplaybook/having-a-vision-is-critical"
+path = "leadership/having-a-vision-is-critical/index.html"
+url = "/leadership/having-a-vision-is-critical"
 title = "Having a vision is critical"
 
 [[input.files]]
-path = "salesleaderplaybook/overcommunicate/index.html"
-url = "/salesleaderplaybook/overcommunicate"
+path = "leadership/overcommunicate/index.html"
+url = "/leadership/overcommunicate"
 title = "Overcommunicate"
 
 [[input.files]]
-path = "salesleaderplaybook/we/index.html"
-url = "/salesleaderplaybook/we"
+path = "leadership/we/index.html"
+url = "/leadership/we"
 title = "We"
 
 [[input.files]]
-path = "salesleaderplaybook/what-are-we-doing-wrong/index.html"
-url = "/salesleaderplaybook/what-are-we-doing-wrong"
+path = "leadership/what-are-we-doing-wrong/index.html"
+url = "/leadership/what-are-we-doing-wrong"
 title = "What are we doing wrong"
 
 [[input.files]]
-path = "salesleaderplaybook/what-do-you-need-to-be-more-successful/index.html"
-url = "/salesleaderplaybook/what-do-you-need-to-be-more-successful"
+path = "leadership/what-do-you-need-to-be-more-successful/index.html"
+url = "/leadership/what-do-you-need-to-be-more-successful"
 title = "What do you need to be more successful?"
 
 [[input.files]]
@@ -773,8 +778,8 @@ url = "/random/nasdaq-bubble"
 title = "NASDAQ historical chart - the Bubble effect"
 
 [[input.files]]
-path = "salesleaderplaybook/past-success-does-not-guarantee-future-success/index.html"
-url = "/salesleaderplaybook/past-success-does-not-guarantee-future-success"
+path = "leadership/past-success-does-not-guarantee-future-success/index.html"
+url = "/leadership/past-success-does-not-guarantee-future-success"
 title = "Past success does not guarantee future success"
 
 [[input.files]]
@@ -858,8 +863,8 @@ url = "/b2b-sales/being-in-sales-as-an-introvert"
 title = "Being in Sales as an introvert"
 
 [[input.files]]
-path = "salesleaderplaybook/being-on-the-front-line/index.html"
-url = "/salesleaderplaybook/being-on-the-front-line"
+path = "leadership/being-on-the-front-line/index.html"
+url = "/leadership/being-on-the-front-line"
 title = "Being on the front-line"
 
 [[input.files]]
@@ -1018,8 +1023,8 @@ url = "/b2b-sales/hate-to-lose-rather-than-will-to-win"
 title = "Hate to Lose rather than Will to Win"
 
 [[input.files]]
-path = "salesleaderplaybook/have-a-sales-playbook-before-scaling-your-team/index.html"
-url = "/salesleaderplaybook/have-a-sales-playbook-before-scaling-your-team"
+path = "leadership/have-a-sales-playbook-before-scaling-your-team/index.html"
+url = "/leadership/have-a-sales-playbook-before-scaling-your-team"
 title = "Have a Sales playbook before scaling your team"
 
 [[input.files]]
@@ -1028,8 +1033,8 @@ url = "/b2b-sales/high-work-ethics"
 title = "High work ethics"
 
 [[input.files]]
-path = "salesleaderplaybook/hire-for-potential-not-experience/index.html"
-url = "/salesleaderplaybook/hire-for-potential-not-experience"
+path = "leadership/hire-for-potential-not-experience/index.html"
+url = "/leadership/hire-for-potential-not-experience"
 title = "Hire for potential, not experience"
 
 [[input.files]]
@@ -1038,8 +1043,8 @@ url = "/b2b-sales/how-to-close-larger-deals"
 title = "How to close larger deals"
 
 [[input.files]]
-path = "salesleaderplaybook/i-for-errors-we-for-successes/index.html"
-url = "/salesleaderplaybook/i-for-errors-we-for-successes"
+path = "leadership/i-for-errors-we-for-successes/index.html"
+url = "/leadership/i-for-errors-we-for-successes"
 title = "I for errors, We for successes"
 
 [[input.files]]
@@ -1078,8 +1083,8 @@ url = "/b2b-sales/making-reporting-work-for-you"
 title = "Making reporting work for you"
 
 [[input.files]]
-path = "salesleaderplaybook/managing-people-out/index.html"
-url = "/salesleaderplaybook/managing-people-out"
+path = "leadership/managing-people-out/index.html"
+url = "/leadership/managing-people-out"
 title = "Managing people out"
 
 [[input.files]]
@@ -1668,19 +1673,24 @@ url = "/b2b-sales/what-is-sales"
 title = "What Is Sales?"
 
 [[input.files]]
+path = "leadership/podcast-on-leadership/index.html"
+url = "/leadership/podcast-on-leadership"
+title = "Podcast guest: On Leadership"
+
+[[input.files]]
 path = "books/library/index.html"
 url = "/books/library"
 title = "My Books Library"
 
 [[input.files]]
-path = "python/books/index.html"
-url = "/python/books"
-title = "My Python Books Library"
-
-[[input.files]]
 path = "b2b-sales/books/index.html"
 url = "/b2b-sales/books"
 title = "My B2B Books Library"
+
+[[input.files]]
+path = "python/books/index.html"
+url = "/python/books"
+title = "My Python Books Library"
 
 [[input.files]]
 path = "apps/library/index.html"
