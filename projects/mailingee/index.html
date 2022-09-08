@@ -64,14 +64,14 @@
 <footer class="post-info">
 
     <p>
-        07 Sep 2022 <span class="separator">|</span> in <a class="link_tag" href="https://notes.nicolasdeville.com/projects/">projects</a>
+        08 Sep 2022 <span class="separator">|</span> in <a class="link_tag" href="https://notes.nicolasdeville.com/projects/">projects</a>
  tags: <a class="link_tag" href="https://notes.nicolasdeville.com/tag/python.html">python</a>
 <a class="link_tag" href="https://notes.nicolasdeville.com/tag/api.html">api</a>
 
         <!-- added 4/7 -->
         <!-- 		<br />
-        <abbr class="modified" title="2022-09-07T12:40:20.200685+02:00">
-                Updated: 07 Sep 2022
+        <abbr class="modified" title="2022-09-08T11:42:28.910027+02:00">
+                Updated: 08 Sep 2022
         </abbr>
  -->
 
@@ -98,6 +98,7 @@
 <li>multi-lingual: send emails in English, French &amp; German (my main working languages) depending on the recipient's </li>
 <li>time personalisation: greetings based on time of day</li>
 <li>snippets insertion: customise emails very flexibly with any contact-level information</li>
+<li>integration: working as part of my stack and other automations, eg Twittee (lead generation using the Twitter API) [<a href="../../projects/twittee/index.html">Nic Note: Twittee</a>]  </li>
 </ul>
 <h1>Overall structure</h1>
 <p>3 components to the system: <br>
@@ -392,6 +393,7 @@
         <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">wait</span><span class="p">):</span>
             <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">x</span> <span class="o">+</span> <span class="mi">1</span><span class="si">}</span><span class="s2">..&quot;</span><span class="p">)</span>
             <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+        <span class="c1"># Send automatically by clicking Cmd + Enter</span>
         <span class="n">keyb</span> <span class="o">=</span> <span class="n">Controller</span><span class="p">()</span>
         <span class="k">with</span> <span class="n">keyb</span><span class="o">.</span><span class="n">pressed</span><span class="p">(</span><span class="n">Key</span><span class="o">.</span><span class="n">cmd</span><span class="p">):</span>
             <span class="n">keyb</span><span class="o">.</span><span class="n">press</span><span class="p">(</span><span class="n">Key</span><span class="o">.</span><span class="n">enter</span><span class="p">)</span>
@@ -434,21 +436,23 @@
     <span class="k">if</span> <span class="n">send_type</span> <span class="o">==</span> <span class="s2">&quot;TEST&quot;</span><span class="p">:</span>
         <span class="n">email_seq</span> <span class="o">=</span> <span class="s1">&#39;test&#39;</span>
 
+    <span class="k">if</span> <span class="n">client</span> <span class="o">==</span> <span class="s1">&#39;XX&#39;</span><span class="p">:</span>
+    <span class="n">grist_XX</span><span class="o">.</span><span class="n">XX003</span><span class="o">.</span><span class="n">update_records</span><span class="p">(</span><span class="s1">&#39;Master&#39;</span><span class="p">,</span> <span class="p">[</span>
+                                        <span class="p">{</span>   <span class="s1">&#39;id&#39;</span><span class="p">:</span> <span class="nb">id</span><span class="p">,</span>
+                                            <span class="sa">f</span><span class="s1">&#39;s_</span><span class="si">{</span><span class="n">email_seq</span><span class="si">}</span><span class="s1">_date&#39;</span><span class="p">:</span> <span class="n">date_today</span><span class="p">,</span>
+                                            <span class="sa">f</span><span class="s1">&#39;s_</span><span class="si">{</span><span class="n">email_seq</span><span class="si">}</span><span class="s1">_v&#39;</span><span class="p">:</span> <span class="n">email_version</span><span class="p">,</span>
+                                        <span class="p">}</span>
+                                            <span class="p">])</span>
+
     <span class="k">if</span> <span class="n">client</span> <span class="o">==</span> <span class="s1">&#39;YY&#39;</span><span class="p">:</span>
         <span class="n">grist_YY</span><span class="o">.</span><span class="n">YY001</span><span class="o">.</span><span class="n">update_records</span><span class="p">(</span><span class="s1">&#39;Master&#39;</span><span class="p">,</span> <span class="p">[</span>
-                                                            <span class="p">{</span>   <span class="s1">&#39;id&#39;</span><span class="p">:</span> <span class="nb">id</span><span class="p">,</span>
-                                                                <span class="sa">f</span><span class="s1">&#39;s_</span><span class="si">{</span><span class="n">email_seq</span><span class="si">}</span><span class="s1">_date&#39;</span><span class="p">:</span> <span class="n">date_today</span><span class="p">,</span>
-                                                                <span class="sa">f</span><span class="s1">&#39;s_</span><span class="si">{</span><span class="n">email_seq</span><span class="si">}</span><span class="s1">_v&#39;</span><span class="p">:</span> <span class="n">email_version</span><span class="p">,</span>
-                                                                <span class="p">}</span>
-                                                        <span class="p">])</span>
+                                            <span class="p">{</span>   <span class="s1">&#39;id&#39;</span><span class="p">:</span> <span class="nb">id</span><span class="p">,</span>
+                                                <span class="sa">f</span><span class="s1">&#39;s_</span><span class="si">{</span><span class="n">email_seq</span><span class="si">}</span><span class="s1">_date&#39;</span><span class="p">:</span> <span class="n">date_today</span><span class="p">,</span>
+                                                <span class="sa">f</span><span class="s1">&#39;s_</span><span class="si">{</span><span class="n">email_seq</span><span class="si">}</span><span class="s1">_v&#39;</span><span class="p">:</span> <span class="n">email_version</span><span class="p">,</span>
+                                            <span class="p">}</span>
+                                                <span class="p">])</span>
 
-    <span class="k">if</span> <span class="n">client</span> <span class="o">==</span> <span class="s1">&#39;XX&#39;</span><span class="p">:</span>
-        <span class="n">grist_XX</span><span class="o">.</span><span class="n">XX003</span><span class="o">.</span><span class="n">update_records</span><span class="p">(</span><span class="s1">&#39;Master&#39;</span><span class="p">,</span> <span class="p">[</span>
-                                                            <span class="p">{</span>   <span class="s1">&#39;id&#39;</span><span class="p">:</span> <span class="nb">id</span><span class="p">,</span>
-                                                                <span class="s1">&#39;send_date&#39;</span><span class="p">:</span> <span class="n">date_today</span><span class="p">,</span>
-                                                                <span class="p">}</span>
-                                                        <span class="p">])</span>
-    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Marked as Sent&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="nb">id</span><span class="si">}</span><span class="s2"> marked as Sent&quot;</span><span class="p">)</span>
 
 <span class="c1">####################</span>
 <span class="c1"># Loop</span>

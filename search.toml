@@ -8,14 +8,24 @@ url = "/ABOUT/"
 title = ""
 
 [[input.files]]
-path = "python/snippets/index.html"
-url = "/python/snippets"
-title = "Python Snippets"
-
-[[input.files]]
 path = "projects/mailingee/index.html"
 url = "/projects/mailingee"
 title = "Mailingee"
+
+[[input.files]]
+path = "projects/twittee/index.html"
+url = "/projects/twittee"
+title = "Twittee"
+
+[[input.files]]
+path = "projects/pingee/index.html"
+url = "/projects/pingee"
+title = "Pingee"
+
+[[input.files]]
+path = "python/snippets/index.html"
+url = "/python/snippets"
+title = "Python Snippets"
 
 [[input.files]]
 path = "python/export-kindle-library/index.html"
@@ -76,11 +86,6 @@ title = "Learning SQL"
 path = "apps/grist/index.html"
 url = "/apps/grist"
 title = "Grist | The Evolution of Spreadsheets"
-
-[[input.files]]
-path = "projects/pingee/index.html"
-url = "/projects/pingee"
-title = "Pingee"
 
 [[input.files]]
 path = "interests/airguns/index.html"
@@ -700,7 +705,7 @@ title = "Setapp: macOS app subsciption"
 [[input.files]]
 path = "books/simply-said/index.html"
 url = "/books/simply-said"
-title = "Simply Said"
+title = "Simply Said, by Jay Sullivan"
 
 [[input.files]]
 path = "helpers/ascii-tree/index.html"
@@ -1401,6 +1406,11 @@ title = "Dictating instead of typing"
 path = "apps/excel/index.html"
 url = "/apps/excel"
 title = "Excel"
+
+[[input.files]]
+path = "books/tech-powered-sales/index.html"
+url = "/books/tech-powered-sales"
+title = "Tech-Powered Sales, by Justin Michael & Tony Hughes"
 
 [[input.files]]
 path = "interests/speedcubing/index.html"
