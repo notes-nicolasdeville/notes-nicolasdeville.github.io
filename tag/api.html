@@ -83,7 +83,7 @@
 
         <!-- added 4/7 -->
         <!-- 		<br />
-        <abbr class="modified" title="2022-09-09T09:17:42.828490+02:00">
+        <abbr class="modified" title="2022-09-09T10:05:29.686376+02:00">
                 Updated: 09 Sep 2022
         </abbr>
  -->
@@ -105,18 +105,20 @@
 <p>Knowing now how to write automation scripts in Python, I decided to write my own email automation solution.   </p>
 <p>The idea was to have something that would fit my needs in terms of flexibility, including:   </p>
 <ul>
-<li>same basic capabilities as off-the-shelf tools: email sequencing, etc..</li>
-<li>easy re-use &amp; automations where possible: across both campaigns AND client engagements</li>
-<li>multi-lingual: send emails in English, French &amp; German (my main working languages) depending on the recipient's </li>
-<li>time personalisation: greetings based on time of day</li>
-<li>snippets insertion: customise emails very flexibly with any contact-level information</li>
-<li>integration: working as part of my stack and other automations, eg Twittee (lead generation using the Twitter API) [<a href="../../projects/twittee/index.html">Nic Note: Twittee</a>]  </li>
+<li><strong>same basic capabilities as off-the-shelf tools</strong>: email sequencing, etc..</li>
+<li><strong>easy re-use &amp; automations where possible</strong>: across both campaigns AND client engagements</li>
+<li><strong>multi-lingual</strong>: send emails in English, French &amp; German (my main working languages) depending on the recipient's </li>
+<li><strong>time personalisation</strong>: greetings based on time of day</li>
+<li><strong>snippets insertion</strong>: customise emails very flexibly with any contact-level information</li>
+<li><strong>integration</strong>: working as part of my stack and other automations, eg Twittee (lead generation using the Twitter API) [<a href="../../projects/twittee/index.html">Nic Note: Twittee</a>]  </li>
 </ul>
 <h1>Overall structure</h1>
-<p>3 components to the system: <br>
-- <em>data management</em>: spreadsheet-like "source of truth" of recipients and sequences, using Grist [<a href="../../apps/grist/index.html">Nic Note: Grist</a>] <br>
-- <em>email content</em>: text files <br>
-- <em>sending emails</em>: python script   </p>
+<p>3 components to the system:   </p>
+<ul>
+<li><strong>data management</strong>: spreadsheet-like "source of truth" of recipients and sequences, using Grist [<a href="../../apps/grist/index.html">Nic Note: Grist</a>]   </li>
+<li><strong>email content</strong>: text files   </li>
+<li><strong>sending emails</strong>: python script   </li>
+</ul>
 <h1>DATA MANAGEMENT</h1>
 <p>I turned to my online spreadsheet solution of choice (Grist: [<a href="../../apps/grist/index.html">Nic Note: Grist</a>]) to manage the list of contacts and sequences. </p>
 <h2>Example</h2>
@@ -159,16 +161,136 @@
 <p>Each email is a text file in a folder for the campaign.  </p>
 <p>The filename of the text file follows this pattern, enabling support for tracks, language, versions and sequences:  </p>
 <p><code>TRACK_LANGUAGE_VERSION_SEQUENCE_SUBJECT LINE.txt</code>   </p>
-<p>eg. <code>GoToWebinar_E_A_1_GoToWebinar contract.txt</code> is the email content for the <code>GoToWebinar</code> track (ie recipients currently using GoToWebinar), in English (<code>E</code>), version <code>A</code> (enabling A/B testing, up to Z), <code>1</code>st email in the sequence, where the subject line of the email will be <code>GoToWebinar</code> contract.   </p>
+<p>eg. <code>GoToWebinar_E_A_1_GoToWebinar contract.txt</code> is the email content for the <code>GoToWebinar</code> track (ie recipients currently using GoToWebinar), in English (<code>E</code>), version <code>A</code> (enabling A/B testing, up to Z), <code>1</code>st email in the sequence, where the subject line of the email will be <code>GoToWebinar contract</code>.   </p>
 <p>It's therefore very easy to quickly create a new email version, sequence or language, just by creating a new text file with the right name.    </p>
 <p>For a single email campaign:   </p>
 <p><img class="screenshot" src="https://notes.nicolasdeville.com/images/mailingee/eoy-emails.jpg" alt="eoy-emails"/>  </p>
 <h2>example of email cadence</h2>
-<p>Email #1</p>
-<p>Email #2</p>
-<p>Email #3</p>
-<p>Email #4</p>
+<p><strong>Email #1</strong></p>
+<div class="highlight"><pre><span></span><code>Filename: GoToWebinar_E_A_1_GoToWebinar contract.txt
+
+= Track: GoToWebinar
+= Language: English
+= Version: A
+= Sequence: 1
+= Subject: GoToWebinar contract
+
+Body (content of text file):
+
+Hi{first},
+
+I have seen with your webinar {webinar_title} that you are using GoToWebinar.
+
+Who is responsible for the webinar contract at {company_name}?
+And when does it expire/is set to renew?
+
+We can help you improve participants&#39; experience, increase engagement and results.
+
+Webinar.net offers a platform built from the ground up for webinars.
+It is like organising a seminar in an auditorium and not in a meeting room.
+
+If you are looking to upgrade/improve your webinar program this year, let me know who would be the right person at {company_name}, and when we should connect?
+
+Thanks,
+
+Nic
+
+
+{signature}
+</code></pre></div>
+
+<p><strong>Email #2</strong></p>
+<div class="highlight"><pre><span></span><code>Filename: GoToWebinar_E_A_2_Re GoToWebinar contract.txt
+
+= Track: GoToWebinar
+= Language: English
+= Version: A
+= Sequence: 2
+= Subject: Re GoToWebinar contract
+
+Body:
+
+Hi{first},
+
+I hate to pester, especially the wrong person at the wrong time :)
+
+Our clients all were looking to upgrade their webinar program, be it the experience for participants/presenters/producers and/or the results (engagement, number and quality of leads, etc..).
+
+If this might be of interest when renewal is in question for you, can you confirm who the person to talk to about webinars would be, and when to connect in 2022 (ie when your contract with GoToWebinar expires)?
+
+Let me know,
+
+Thanks,
+
+Nic
+
+
+{signature}
+</code></pre></div>
+
+<p><strong>Email #3</strong></p>
+<div class="highlight"><pre><span></span><code>Filename: GoToWebinar_E_A_3_Re GoToWebinar contract.txt
+
+= Track: GoToWebinar
+= Language: English
+= Version: A
+= Sequence: 3
+= Subject: Re GoToWebinar contract
+
+Body:
+
+Hi{first},
+
+Upgrading to a webinar platform designed from the ground up for that purpose, brings benefits for all involved - participants, presenters and producers.
+
+From not losing participants because a plug-in needs to be installed, to a stress-free presenter experience, a participant experience leading to a more engaged audience, better qualified leads, and more.
+
+Obviously if you are happy with what GoToWebinar has to offer and don&#39;t see improvement potential for better business results, just let me know.
+
+Else, when should we connect this year?
+
+Thanks,
+
+Nic
+
+{signature}
+</code></pre></div>
+
+<p>etc...</p>
+<p>Cadences can go up to as many emails as desired and A/B testing is possible. <br>
+I have seen good success with the above campaign, as it was personalised with the solution they used, their own webinar title, and targeting the webinar organiser(s) directly.   </p>
+<p>Typical other cadences or tests might include dropping other clients in same industry, success metrics, etc...  </p>
+<p>See [<a href="../../b2b-sales/outbound/index.html">Nic Note: Outbound Lead Generation</a>] for more.    </p>
 <h1>SENDING EMAILS</h1>
+<h2>Sending methods</h2>
+<p>Script allows for 3 ways to send emails:   </p>
+<h3>send manually</h3>
+<p><code>MAN</code>: email gets generated ready to send. Provides ability to personalise even more before hitting send.  </p>
+<p>Here is an example, with the added feature of launching both the recipient's Linkedin profile (this campaign had that info) and the company's website alongside generating the ready-to-send email. This makes hyper-personalisation of each email very efficient.   </p>
+<div style="padding:56.25% 0 0 0;position:relative;"><iframe src="https://player.vimeo.com/video/625818783?h=6becddb53f&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen style="position:absolute;top:0;left:0;width:100%;height:100%;" title="211007 Emailing Automation"></iframe></div>
+<script src="https://player.vimeo.com/api/player.js"></script>
+
+<h3>send automatically using keyboard automation</h3>
+<p><code>AUTO_KB</code>: email gets generated on desktop and sent, using keyboard shortcuts automation.   </p>
+<p>This is my preferred method.
+Why? <br>
+Emails are sent 100% as if sent manually, from email client/desktop, thus circumventing any spam filtering based on automation identification.<br>
+Plus this allows for inclusion of email signature without having to fiddle with inline image insertion via SMTP which can be a bit fiddly.   </p>
+<div style="padding:56.25% 0 0 0;position:relative;"><iframe src="https://player.vimeo.com/video/648014418?h=c43d168231&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen style="position:absolute;top:0;left:0;width:100%;height:100%;" title="211120 Mailingee"></iframe></div>
+<script src="https://player.vimeo.com/api/player.js"></script>
+
+<h3>send automatically via SMTP</h3>
+<p><code>AUTO_SMTP</code>: fully "behind-the-scenes"   </p>
+<p>The most "elegant" way to run it (vs the "hacky" approach above), used by all the emailing platforms. <br>
+Though generating emails that "look" as if they were sent manually from a metadata perspective (headers, etc..) is painful. <br>
+Sending is easy - circumventing complex spam filtering looking at email metadata is trickier.   </p>
+<h3>test</h3>
+<p>+ <code>TEST</code> which prints what would be sent, without sending the email / or send to Mailtrap:   </p>
+<div class="link_border">
+<div class="link_title">Email Sandbox Service</div>
+<div class="link_url"><a href="https://mailtrap.io/" target="_blank">https://mailtrap.io/</a></div></div>
+
+<h2>Script</h2>
 <p><span class="datestamp">06 Sep 2022</span>   </p>
 <p>This is my current script - comments inline.    </p>
 <div class="highlight"><pre><span></span><code><span class="c1"># my default Python boilerplate</span>
