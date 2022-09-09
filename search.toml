@@ -13,6 +13,31 @@ url = "/projects/mailingee"
 title = "Mailingee"
 
 [[input.files]]
+path = "home-office/setup/index.html"
+url = "/home-office/setup"
+title = "Home Office Setup (since June '22)"
+
+[[input.files]]
+path = "startups/advisable/index.html"
+url = "/startups/advisable"
+title = "Advisable"
+
+[[input.files]]
+path = "leadership/comp-plans/index.html"
+url = "/leadership/comp-plans"
+title = "Compensation Plans"
+
+[[input.files]]
+path = "python/sending-emails/index.html"
+url = "/python/sending-emails"
+title = "Sending emails with Python"
+
+[[input.files]]
+path = "python/create-executable/index.html"
+url = "/python/create-executable"
+title = "Create executable of a Pyhon application"
+
+[[input.files]]
 path = "interests/apple/index.html"
 url = "/interests/apple"
 title = "Apple"
@@ -171,11 +196,6 @@ title = "Learning CSS"
 path = "projects/indexall/index.html"
 url = "/projects/indexall"
 title = "indeXall | indexing the worlds of passions"
-
-[[input.files]]
-path = "python/sending-emails/index.html"
-url = "/python/sending-emails"
-title = "Sending emails with Python"
 
 [[input.files]]
 path = "learning/javascript/index.html"
@@ -428,14 +448,14 @@ url = "/python/library-beautifulsoup"
 title = "Python library: Beautifulsoup"
 
 [[input.files]]
-path = "python/books/index.html"
-url = "/python/books"
-title = "My Python Books Library"
-
-[[input.files]]
 path = "b2b-sales/books/index.html"
 url = "/b2b-sales/books"
 title = "My B2B Books Library"
+
+[[input.files]]
+path = "python/books/index.html"
+url = "/python/books"
+title = "My Python Books Library"
 
 [[input.files]]
 path = "books/library/index.html"
@@ -721,11 +741,6 @@ title = "ASCII tree"
 path = "random/germany-tax/index.html"
 url = "/random/germany-tax"
 title = "Germany taxes"
-
-[[input.files]]
-path = "home-office/setup/index.html"
-url = "/home-office/setup"
-title = "Home Office Setup (since June '22)"
 
 [[input.files]]
 path = "books/pro-git/index.html"
@@ -1683,14 +1698,14 @@ url = "/books/library"
 title = "My Books Library"
 
 [[input.files]]
-path = "b2b-sales/books/index.html"
-url = "/b2b-sales/books"
-title = "My B2B Books Library"
-
-[[input.files]]
 path = "python/books/index.html"
 url = "/python/books"
 title = "My Python Books Library"
+
+[[input.files]]
+path = "b2b-sales/books/index.html"
+url = "/b2b-sales/books"
+title = "My B2B Books Library"
 
 [[input.files]]
 path = "apps/library/index.html"

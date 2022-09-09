@@ -46,7 +46,7 @@
 
 
 <p class="notes_count">
-    334 notes 
+    337 notes 
     <span style="color:#C74350">|</span> 
     <a href="https://notes.nicolasdeville.com/tags">by tags</a> 
     <span style="color:#C74350">|</span> 
@@ -77,14 +77,14 @@
 <footer class="post-info">
 
     <p>
-        08 Sep 2022 <span class="separator">|</span> in <a class="link_tag" href="https://notes.nicolasdeville.com/projects/">projects</a>
+        09 Sep 2022 <span class="separator">|</span> in <a class="link_tag" href="https://notes.nicolasdeville.com/projects/">projects</a>
  tags: <a class="link_tag" href="https://notes.nicolasdeville.com/tag/python.html">python</a>
 <a class="link_tag" href="https://notes.nicolasdeville.com/tag/api.html">api</a>
 
         <!-- added 4/7 -->
         <!-- 		<br />
-        <abbr class="modified" title="2022-09-08T18:09:40.658983+02:00">
-                Updated: 08 Sep 2022
+        <abbr class="modified" title="2022-09-09T09:17:42.828490+02:00">
+                Updated: 09 Sep 2022
         </abbr>
  -->
 
@@ -102,7 +102,7 @@
 <div class="link_title">Helping US B2B SaaS companies expand in Europe</div>
 <div class="link_url"><a href="https://btobsales.eu/" target="_blank">https://btobsales.eu/</a></div></div>
 
-<p>Knowing now how to write automation scripts in Python, I decided to write my oYY email automation solution.   </p>
+<p>Knowing now how to write automation scripts in Python, I decided to write my own email automation solution.   </p>
 <p>The idea was to have something that would fit my needs in terms of flexibility, including:   </p>
 <ul>
 <li>same basic capabilities as off-the-shelf tools: email sequencing, etc..</li>
@@ -127,33 +127,33 @@
 <p>It includes the following fields:   </p>
 <ul>
 <li><code>email</code></li>
-<li><code>domain</code></li>
-<li><code>li</code></li>
+<li><code>domain</code>: enables to filter by company (TODO: add logic to space out emails from same company)</li>
+<li><code>li</code>: Linkedin search link, with pattern <code>https://www.linkedin.com/search/results/all/?keywords={first_name}%20{company_name}</code></li>
 <li><code>first</code></li>
 <li><code>title</code></li>
-<li><code>track</code></li>
-<li><code>search</code></li>
+<li><code>track</code>: different messaging by track, eg for webinar campaign each recipient assigned to track based on current solution used. Track name inserted in emails as personlisation. </li>
+<li><code>search</code>: search link when company URL not readily available, using pattern <code>https://duckduckgo.com/?q=!ducky+{domain}</code></li>
 <li><code>company</code></li>
-<li><code>url_reg</code></li>
-<li><code>webinar_title</code></li>
-<li><code>tz</code></li>
-<li><code>status</code></li>
-<li><code>notes</code></li>
-<li><code>tweet</code></li>
-<li><code>answer</code></li>
-<li><code>src</code></li>
+<li><code>url_reg</code>: webinar registration link</li>
+<li><code>webinar_title</code>: to be inserted in emails for personalisation.</li>
+<li><code>tz</code>: timezone from the webinar (assuming same as organiser)</li>
+<li><code>status</code>: <code>SEND</code> (ready to send), <code>DISCARD</code>, <code>DNE</code> (Do Not Email), <code>Engaged</code>, <code>Hold</code>, <code>No</code>, <code>Queue</code>, <code>Ready</code></li>
+<li><code>notes</code> </li>
+<li><code>tweet</code>: original tweet where lead/webinar was found</li>
+<li><code>answer</code>: date answer received (average response time can be calculated)</li>
+<li><code>src</code>: source of the email address</li>
 <li><code>webinar_date</code></li>
-<li><code>v</code></li>
-<li><code>s_test_date</code></li>
-<li><code>s_1_date</code></li>
-<li><code>s_2_date</code></li>
-<li><code>s_3_date</code></li>
-<li><code>lang</code></li>
-<li><code>created</code></li>
-<li><code>updated</code></li>
-<li><code>dup</code></li>
-<li><code>radar</code></li>
-<li><code>send_from</code></li>
+<li><code>v</code>: version of the email, eg <code>A</code>, <code>B</code>, etc..</li>
+<li><code>s_test_date</code>: test field</li>
+<li><code>s_1_date</code>: send date of email #1</li>
+<li><code>s_2_date</code>: send date of email #2</li>
+<li><code>s_3_date</code>: send date of email #3, etc..</li>
+<li><code>lang</code>: <code>EN</code>, <code>FR</code>, <code>DE</code></li>
+<li><code>created</code>: record creation date</li>
+<li><code>updated</code>: record last update</li>
+<li><code>dup</code>: duplicate flag</li>
+<li><code>radar</code>: add to Radar</li>
+<li><code>send_from</code>: logic to send from different email accounts</li>
 </ul>
 <h1>EMAIL CONTENT</h1>
 <p>Each email is a text file in a folder for the campaign.  </p>
@@ -163,6 +163,11 @@
 <p>It's therefore very easy to quickly create a new email version, sequence or language, just by creating a new text file with the right name.    </p>
 <p>For a single email campaign:   </p>
 <p><img class="screenshot" src="https://notes.nicolasdeville.com/images/mailingee/eoy-emails.jpg" alt="eoy-emails"/>  </p>
+<h2>example of email cadence</h2>
+<p>Email #1</p>
+<p>Email #2</p>
+<p>Email #3</p>
+<p>Email #4</p>
 <h1>SENDING EMAILS</h1>
 <p><span class="datestamp">06 Sep 2022</span>   </p>
 <p>This is my current script - comments inline.    </p>
@@ -583,6 +588,204 @@
                 <hr>
 
                 <ol id="posts-list" class="hfeed">
+            
+
+
+
+            <li>
+                <article class="hentry">
+                    <header>
+                        <!-- PREVIOUS NOTE TITLE -->
+                        <h1><a href="https://notes.nicolasdeville.com/home-office/setup" rel="bookmark"
+                            title="Home Office Setup (since June '22)">Home Office Setup (since June '22)</a></h1>
+                        <!-- PREVIOUS NOTE SUMMARY -->
+                        <div class="entry-content">
+                            <p>My over-the-top setup</p>
+                        </div>
+                    </header>
+
+                    <div class="entry-content">
+                        <!-- PREVIOUS NOTE METADATA -->
+<footer class="post-info">
+
+    <p>
+        08 Sep 2022 <span class="separator">|</span> in <a class="link_tag" href="https://notes.nicolasdeville.com/home-office/">home office</a>
+ tags: <a class="link_tag" href="https://notes.nicolasdeville.com/tag/productivity.html">productivity</a>
+
+        <!-- added 4/7 -->
+        <!-- 		<br />
+        <abbr class="modified" title="2022-09-08T21:24:15.707420+02:00">
+                Updated: 08 Sep 2022
+        </abbr>
+ -->
+
+    </p>
+
+    
+
+</footer>                    </div>
+                    
+                </article>
+                <hr/>
+            </li>
+            
+
+
+
+            <li>
+                <article class="hentry">
+                    <header>
+                        <!-- PREVIOUS NOTE TITLE -->
+                        <h1><a href="https://notes.nicolasdeville.com/startups/advisable" rel="bookmark"
+                            title="Advisable">Advisable</a></h1>
+                        <!-- PREVIOUS NOTE SUMMARY -->
+                        <div class="entry-content">
+                            <p>Find out what’s working for leading marketers and connect with them for mentorship &amp; fractional support</p>
+                        </div>
+                    </header>
+
+                    <div class="entry-content">
+                        <!-- PREVIOUS NOTE METADATA -->
+<footer class="post-info">
+
+    <p>
+        08 Sep 2022 <span class="separator">|</span> in <a class="link_tag" href="https://notes.nicolasdeville.com/startups/">startups</a>
+
+        <!-- added 4/7 -->
+        <!-- 		<br />
+        <abbr class="modified" title="2022-09-08T21:14:38.173429+02:00">
+                Updated: 08 Sep 2022
+        </abbr>
+ -->
+
+    </p>
+
+    
+
+</footer>                    </div>
+                    
+                </article>
+                <hr/>
+            </li>
+            
+
+
+
+            <li>
+                <article class="hentry">
+                    <header>
+                        <!-- PREVIOUS NOTE TITLE -->
+                        <h1><a href="https://notes.nicolasdeville.com/leadership/comp-plans" rel="bookmark"
+                            title="Compensation Plans">Compensation Plans</a></h1>
+                        <!-- PREVIOUS NOTE SUMMARY -->
+                        <div class="entry-content">
+                            
+                        </div>
+                    </header>
+
+                    <div class="entry-content">
+                        <!-- PREVIOUS NOTE METADATA -->
+<footer class="post-info">
+
+    <p>
+        08 Sep 2022 <span class="separator">|</span> in <a class="link_tag" href="https://notes.nicolasdeville.com/leadership/">leadership</a>
+ tags: <a class="link_tag" href="https://notes.nicolasdeville.com/tag/startups.html">startups</a>
+<a class="link_tag" href="https://notes.nicolasdeville.com/tag/compensation.html">compensation</a>
+
+        <!-- added 4/7 -->
+        <!-- 		<br />
+        <abbr class="modified" title="2022-09-08T18:34:06.486320+02:00">
+                Updated: 08 Sep 2022
+        </abbr>
+ -->
+
+    </p>
+
+    
+
+</footer>                    </div>
+                    
+                </article>
+                <hr/>
+            </li>
+            
+
+
+
+            <li>
+                <article class="hentry">
+                    <header>
+                        <!-- PREVIOUS NOTE TITLE -->
+                        <h1><a href="https://notes.nicolasdeville.com/python/sending-emails" rel="bookmark"
+                            title="Sending emails with Python">Sending emails with Python</a></h1>
+                        <!-- PREVIOUS NOTE SUMMARY -->
+                        <div class="entry-content">
+                            
+                        </div>
+                    </header>
+
+                    <div class="entry-content">
+                        <!-- PREVIOUS NOTE METADATA -->
+<footer class="post-info">
+
+    <p>
+        08 Sep 2022 <span class="separator">|</span> in <a class="link_tag" href="https://notes.nicolasdeville.com/python/">python</a>
+
+        <!-- added 4/7 -->
+        <!-- 		<br />
+        <abbr class="modified" title="2022-09-08T18:32:43.942298+02:00">
+                Updated: 08 Sep 2022
+        </abbr>
+ -->
+
+    </p>
+
+    
+
+</footer>                    </div>
+                    
+                </article>
+                <hr/>
+            </li>
+            
+
+
+
+            <li>
+                <article class="hentry">
+                    <header>
+                        <!-- PREVIOUS NOTE TITLE -->
+                        <h1><a href="https://notes.nicolasdeville.com/python/create-executable" rel="bookmark"
+                            title="Create executable of a Pyhon application">Create executable of a Pyhon application</a></h1>
+                        <!-- PREVIOUS NOTE SUMMARY -->
+                        <div class="entry-content">
+                            
+                        </div>
+                    </header>
+
+                    <div class="entry-content">
+                        <!-- PREVIOUS NOTE METADATA -->
+<footer class="post-info">
+
+    <p>
+        08 Sep 2022 <span class="separator">|</span> in <a class="link_tag" href="https://notes.nicolasdeville.com/python/">python</a>
+
+        <!-- added 4/7 -->
+        <!-- 		<br />
+        <abbr class="modified" title="2022-09-08T18:16:52.549534+02:00">
+                Updated: 08 Sep 2022
+        </abbr>
+ -->
+
+    </p>
+
+    
+
+</footer>                    </div>
+                    
+                </article>
+                <hr/>
+            </li>
             
 
 
@@ -1851,45 +2054,6 @@
         <!-- added 4/7 -->
         <!-- 		<br />
         <abbr class="modified" title="2022-09-05T15:21:01.390759+02:00">
-                Updated: 05 Sep 2022
-        </abbr>
- -->
-
-    </p>
-
-    
-
-</footer>                    </div>
-                    
-                </article>
-                <hr/>
-            </li>
-            
-
-
-
-            <li>
-                <article class="hentry">
-                    <header>
-                        <!-- PREVIOUS NOTE TITLE -->
-                        <h1><a href="https://notes.nicolasdeville.com/python/sending-emails" rel="bookmark"
-                            title="Sending emails with Python">Sending emails with Python</a></h1>
-                        <!-- PREVIOUS NOTE SUMMARY -->
-                        <div class="entry-content">
-                            
-                        </div>
-                    </header>
-
-                    <div class="entry-content">
-                        <!-- PREVIOUS NOTE METADATA -->
-<footer class="post-info">
-
-    <p>
-        05 Sep 2022 <span class="separator">|</span> in <a class="link_tag" href="https://notes.nicolasdeville.com/python/">python</a>
-
-        <!-- added 4/7 -->
-        <!-- 		<br />
-        <abbr class="modified" title="2022-09-05T09:32:07.581110+02:00">
                 Updated: 05 Sep 2022
         </abbr>
  -->
@@ -3921,48 +4085,6 @@
                 <article class="hentry">
                     <header>
                         <!-- PREVIOUS NOTE TITLE -->
-                        <h1><a href="https://notes.nicolasdeville.com/python/books" rel="bookmark"
-                            title="My Python Books Library">My Python Books Library</a></h1>
-                        <!-- PREVIOUS NOTE SUMMARY -->
-                        <div class="entry-content">
-                            <p>keeping track of Python books read and on my radar</p>
-                        </div>
-                    </header>
-
-                    <div class="entry-content">
-                        <!-- PREVIOUS NOTE METADATA -->
-<footer class="post-info">
-
-    <p>
-        12 Aug 2022 <span class="separator">|</span> in <a class="link_tag" href="https://notes.nicolasdeville.com/python/">python</a>
- tags: <a class="link_tag" href="https://notes.nicolasdeville.com/tag/books.html">books</a>
-
-        <!-- added 4/7 -->
-        <!-- 		<br />
-        <abbr class="modified" title="2022-08-13T17:53:32.588198+02:00">
-                Updated: 13 Aug 2022
-        </abbr>
- -->
-
-    </p>
-
-    Translations:
-        <a href="https://notes.nicolasdeville.com/b2b-sales/books" hreflang="en">en</a>
-
-
-</footer>                    </div>
-                    
-                </article>
-                <hr/>
-            </li>
-            
-
-
-
-            <li>
-                <article class="hentry">
-                    <header>
-                        <!-- PREVIOUS NOTE TITLE -->
                         <h1><a href="https://notes.nicolasdeville.com/b2b-sales/books" rel="bookmark"
                             title="My B2B Books Library">My B2B Books Library</a></h1>
                         <!-- PREVIOUS NOTE SUMMARY -->
@@ -3990,6 +4112,48 @@
 
     Translations:
         <a href="https://notes.nicolasdeville.com/python/books" hreflang="en">en</a>
+
+
+</footer>                    </div>
+                    
+                </article>
+                <hr/>
+            </li>
+            
+
+
+
+            <li>
+                <article class="hentry">
+                    <header>
+                        <!-- PREVIOUS NOTE TITLE -->
+                        <h1><a href="https://notes.nicolasdeville.com/python/books" rel="bookmark"
+                            title="My Python Books Library">My Python Books Library</a></h1>
+                        <!-- PREVIOUS NOTE SUMMARY -->
+                        <div class="entry-content">
+                            <p>keeping track of Python books read and on my radar</p>
+                        </div>
+                    </header>
+
+                    <div class="entry-content">
+                        <!-- PREVIOUS NOTE METADATA -->
+<footer class="post-info">
+
+    <p>
+        12 Aug 2022 <span class="separator">|</span> in <a class="link_tag" href="https://notes.nicolasdeville.com/python/">python</a>
+ tags: <a class="link_tag" href="https://notes.nicolasdeville.com/tag/books.html">books</a>
+
+        <!-- added 4/7 -->
+        <!-- 		<br />
+        <abbr class="modified" title="2022-08-13T17:53:32.588198+02:00">
+                Updated: 13 Aug 2022
+        </abbr>
+ -->
+
+    </p>
+
+    Translations:
+        <a href="https://notes.nicolasdeville.com/b2b-sales/books" hreflang="en">en</a>
 
 
 </footer>                    </div>
@@ -4398,170 +4562,6 @@
         <!-- 		<br />
         <abbr class="modified" title="2022-07-23T19:52:30.749898+02:00">
                 Updated: 23 Jul 2022
-        </abbr>
- -->
-
-    </p>
-
-    
-
-</footer>                    </div>
-                    
-                </article>
-                <hr/>
-            </li>
-            
-
-
-
-            <li>
-                <article class="hentry">
-                    <header>
-                        <!-- PREVIOUS NOTE TITLE -->
-                        <h1><a href="https://notes.nicolasdeville.com/python/library-dateutil" rel="bookmark"
-                            title="Python library: dateutil">Python library: dateutil</a></h1>
-                        <!-- PREVIOUS NOTE SUMMARY -->
-                        <div class="entry-content">
-                            <p>better library for date parsing than datetime's <code>strptime</code></p>
-                        </div>
-                    </header>
-
-                    <div class="entry-content">
-                        <!-- PREVIOUS NOTE METADATA -->
-<footer class="post-info">
-
-    <p>
-        23 Jul 2022 <span class="separator">|</span> in <a class="link_tag" href="https://notes.nicolasdeville.com/python/">python</a>
- tags: <a class="link_tag" href="https://notes.nicolasdeville.com/tag/python.html">python</a>
-<a class="link_tag" href="https://notes.nicolasdeville.com/tag/libraries.html">libraries</a>
-
-        <!-- added 4/7 -->
-        <!-- 		<br />
-        <abbr class="modified" title="2022-07-23T19:51:24.332912+02:00">
-                Updated: 23 Jul 2022
-        </abbr>
- -->
-
-    </p>
-
-    
-
-</footer>                    </div>
-                    
-                </article>
-                <hr/>
-            </li>
-            
-
-
-
-            <li>
-                <article class="hentry">
-                    <header>
-                        <!-- PREVIOUS NOTE TITLE -->
-                        <h1><a href="https://notes.nicolasdeville.com/python/library-slugify" rel="bookmark"
-                            title="Library: slugify">Library: slugify</a></h1>
-                        <!-- PREVIOUS NOTE SUMMARY -->
-                        <div class="entry-content">
-                            
-                        </div>
-                    </header>
-
-                    <div class="entry-content">
-                        <!-- PREVIOUS NOTE METADATA -->
-<footer class="post-info">
-
-    <p>
-        23 Jul 2022 <span class="separator">|</span> in <a class="link_tag" href="https://notes.nicolasdeville.com/python/">python</a>
- tags: <a class="link_tag" href="https://notes.nicolasdeville.com/tag/libraries.html">libraries</a>
-<a class="link_tag" href="https://notes.nicolasdeville.com/tag/python.html">python</a>
-
-        <!-- added 4/7 -->
-        <!-- 		<br />
-        <abbr class="modified" title="2022-07-23T19:46:56.053092+02:00">
-                Updated: 23 Jul 2022
-        </abbr>
- -->
-
-    </p>
-
-    
-
-</footer>                    </div>
-                    
-                </article>
-                <hr/>
-            </li>
-            
-
-
-
-            <li>
-                <article class="hentry">
-                    <header>
-                        <!-- PREVIOUS NOTE TITLE -->
-                        <h1><a href="https://notes.nicolasdeville.com/python/boilerplate" rel="bookmark"
-                            title="My Python scripts boilerplate">My Python scripts boilerplate</a></h1>
-                        <!-- PREVIOUS NOTE SUMMARY -->
-                        <div class="entry-content">
-                            <p>this is the boilerplate I use as a snippet in VS Code when I create a new Python script</p>
-                        </div>
-                    </header>
-
-                    <div class="entry-content">
-                        <!-- PREVIOUS NOTE METADATA -->
-<footer class="post-info">
-
-    <p>
-        21 Jul 2022 <span class="separator">|</span> in <a class="link_tag" href="https://notes.nicolasdeville.com/python/">python</a>
- tags: <a class="link_tag" href="https://notes.nicolasdeville.com/tag/python.html">python</a>
-<a class="link_tag" href="https://notes.nicolasdeville.com/tag/snippets.html">snippets</a>
-
-        <!-- added 4/7 -->
-        <!-- 		<br />
-        <abbr class="modified" title="2022-07-21T09:20:47.433785+02:00">
-                Updated: 21 Jul 2022
-        </abbr>
- -->
-
-    </p>
-
-    
-
-</footer>                    </div>
-                    
-                </article>
-                <hr/>
-            </li>
-            
-
-
-
-            <li>
-                <article class="hentry">
-                    <header>
-                        <!-- PREVIOUS NOTE TITLE -->
-                        <h1><a href="https://notes.nicolasdeville.com/apps/pixelsnap" rel="bookmark"
-                            title="Pixelsnap">Pixelsnap</a></h1>
-                        <!-- PREVIOUS NOTE SUMMARY -->
-                        <div class="entry-content">
-                            <p>to measure on screen and overlay guides</p>
-                        </div>
-                    </header>
-
-                    <div class="entry-content">
-                        <!-- PREVIOUS NOTE METADATA -->
-<footer class="post-info">
-
-    <p>
-        20 Jul 2022 <span class="separator">|</span> in <a class="link_tag" href="https://notes.nicolasdeville.com/apps/">apps</a>
- tags: <a class="link_tag" href="https://notes.nicolasdeville.com/tag/graphic-design.html">graphic design</a>
-<a class="link_tag" href="https://notes.nicolasdeville.com/tag/utility.html">utility</a>
-
-        <!-- added 4/7 -->
-        <!-- 		<br />
-        <abbr class="modified" title="2022-07-24T14:11:51.217916+02:00">
-                Updated: 24 Jul 2022
         </abbr>
  -->
 

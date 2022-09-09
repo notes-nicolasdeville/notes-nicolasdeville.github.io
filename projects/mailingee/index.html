@@ -65,14 +65,14 @@
 <footer class="post-info">
 
     <p>
-        08 Sep 2022 <span class="separator">|</span> in <a class="link_tag" href="https://notes.nicolasdeville.com/projects/">projects</a>
+        09 Sep 2022 <span class="separator">|</span> in <a class="link_tag" href="https://notes.nicolasdeville.com/projects/">projects</a>
  tags: <a class="link_tag" href="https://notes.nicolasdeville.com/tag/python.html">python</a>
 <a class="link_tag" href="https://notes.nicolasdeville.com/tag/api.html">api</a>
 
         <!-- added 4/7 -->
         <!-- 		<br />
-        <abbr class="modified" title="2022-09-08T18:09:40.658983+02:00">
-                Updated: 08 Sep 2022
+        <abbr class="modified" title="2022-09-09T09:17:42.828490+02:00">
+                Updated: 09 Sep 2022
         </abbr>
  -->
 
@@ -91,7 +91,7 @@
 <div class="link_title">Helping US B2B SaaS companies expand in Europe</div>
 <div class="link_url"><a href="https://btobsales.eu/" target="_blank">https://btobsales.eu/</a></div></div>
 
-<p>Knowing now how to write automation scripts in Python, I decided to write my oYY email automation solution.   </p>
+<p>Knowing now how to write automation scripts in Python, I decided to write my own email automation solution.   </p>
 <p>The idea was to have something that would fit my needs in terms of flexibility, including:   </p>
 <ul>
 <li>same basic capabilities as off-the-shelf tools: email sequencing, etc..</li>
@@ -116,33 +116,33 @@
 <p>It includes the following fields:   </p>
 <ul>
 <li><code>email</code></li>
-<li><code>domain</code></li>
-<li><code>li</code></li>
+<li><code>domain</code>: enables to filter by company (TODO: add logic to space out emails from same company)</li>
+<li><code>li</code>: Linkedin search link, with pattern <code>https://www.linkedin.com/search/results/all/?keywords={first_name}%20{company_name}</code></li>
 <li><code>first</code></li>
 <li><code>title</code></li>
-<li><code>track</code></li>
-<li><code>search</code></li>
+<li><code>track</code>: different messaging by track, eg for webinar campaign each recipient assigned to track based on current solution used. Track name inserted in emails as personlisation. </li>
+<li><code>search</code>: search link when company URL not readily available, using pattern <code>https://duckduckgo.com/?q=!ducky+{domain}</code></li>
 <li><code>company</code></li>
-<li><code>url_reg</code></li>
-<li><code>webinar_title</code></li>
-<li><code>tz</code></li>
-<li><code>status</code></li>
-<li><code>notes</code></li>
-<li><code>tweet</code></li>
-<li><code>answer</code></li>
-<li><code>src</code></li>
+<li><code>url_reg</code>: webinar registration link</li>
+<li><code>webinar_title</code>: to be inserted in emails for personalisation.</li>
+<li><code>tz</code>: timezone from the webinar (assuming same as organiser)</li>
+<li><code>status</code>: <code>SEND</code> (ready to send), <code>DISCARD</code>, <code>DNE</code> (Do Not Email), <code>Engaged</code>, <code>Hold</code>, <code>No</code>, <code>Queue</code>, <code>Ready</code></li>
+<li><code>notes</code> </li>
+<li><code>tweet</code>: original tweet where lead/webinar was found</li>
+<li><code>answer</code>: date answer received (average response time can be calculated)</li>
+<li><code>src</code>: source of the email address</li>
 <li><code>webinar_date</code></li>
-<li><code>v</code></li>
-<li><code>s_test_date</code></li>
-<li><code>s_1_date</code></li>
-<li><code>s_2_date</code></li>
-<li><code>s_3_date</code></li>
-<li><code>lang</code></li>
-<li><code>created</code></li>
-<li><code>updated</code></li>
-<li><code>dup</code></li>
-<li><code>radar</code></li>
-<li><code>send_from</code></li>
+<li><code>v</code>: version of the email, eg <code>A</code>, <code>B</code>, etc..</li>
+<li><code>s_test_date</code>: test field</li>
+<li><code>s_1_date</code>: send date of email #1</li>
+<li><code>s_2_date</code>: send date of email #2</li>
+<li><code>s_3_date</code>: send date of email #3, etc..</li>
+<li><code>lang</code>: <code>EN</code>, <code>FR</code>, <code>DE</code></li>
+<li><code>created</code>: record creation date</li>
+<li><code>updated</code>: record last update</li>
+<li><code>dup</code>: duplicate flag</li>
+<li><code>radar</code>: add to Radar</li>
+<li><code>send_from</code>: logic to send from different email accounts</li>
 </ul>
 <h1>EMAIL CONTENT</h1>
 <p>Each email is a text file in a folder for the campaign.  </p>
@@ -152,6 +152,11 @@
 <p>It's therefore very easy to quickly create a new email version, sequence or language, just by creating a new text file with the right name.    </p>
 <p>For a single email campaign:   </p>
 <p><img class="screenshot" src="https://notes.nicolasdeville.com/images/mailingee/eoy-emails.jpg" alt="eoy-emails"/>  </p>
+<h2>example of email cadence</h2>
+<p>Email #1</p>
+<p>Email #2</p>
+<p>Email #3</p>
+<p>Email #4</p>
 <h1>SENDING EMAILS</h1>
 <p><span class="datestamp">06 Sep 2022</span>   </p>
 <p>This is my current script - comments inline.    </p>
