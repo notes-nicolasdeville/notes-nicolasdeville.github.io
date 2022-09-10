@@ -8,14 +8,54 @@ url = "/ABOUT/"
 title = ""
 
 [[input.files]]
-path = "projects/mailingee/index.html"
-url = "/projects/mailingee"
-title = "Mailingee"
+path = "projects/imapee/index.html"
+url = "/projects/imapee"
+title = "Imapee"
+
+[[input.files]]
+path = "python/unicode/index.html"
+url = "/python/unicode"
+title = "Unicode in Python"
+
+[[input.files]]
+path = "python/snippets/index.html"
+url = "/python/snippets"
+title = "Python Snippets"
+
+[[input.files]]
+path = "b2b-sales/outbound/index.html"
+url = "/b2b-sales/outbound"
+title = "Outbound Lead Generation"
+
+[[input.files]]
+path = "learning/git/index.html"
+url = "/learning/git"
+title = "Learning Git"
+
+[[input.files]]
+path = "home-office/herman-miller-embody/index.html"
+url = "/home-office/herman-miller-embody"
+title = "Herman Miller x Logitech Embody Chair"
 
 [[input.files]]
 path = "home-office/setup/index.html"
 url = "/home-office/setup"
-title = "Home Office Setup (since June '22)"
+title = "Home Office Setup"
+
+[[input.files]]
+path = "interests/web3/index.html"
+url = "/interests/web3"
+title = "Web3"
+
+[[input.files]]
+path = "interests/crypto/index.html"
+url = "/interests/crypto"
+title = "Crypto"
+
+[[input.files]]
+path = "projects/mailingee/index.html"
+url = "/projects/mailingee"
+title = "Mailingee"
 
 [[input.files]]
 path = "startups/advisable/index.html"
@@ -53,11 +93,6 @@ url = "/projects/pingee"
 title = "Pingee"
 
 [[input.files]]
-path = "python/snippets/index.html"
-url = "/python/snippets"
-title = "Python Snippets"
-
-[[input.files]]
 path = "python/export-kindle-library/index.html"
 url = "/python/export-kindle-library"
 title = "Exporting my Kindle library data"
@@ -78,11 +113,6 @@ url = "/python/library-pelican"
 title = "Building a static site with Pelican"
 
 [[input.files]]
-path = "learning/git/index.html"
-url = "/learning/git"
-title = "Learning Git"
-
-[[input.files]]
 path = "helpers/github/index.html"
 url = "/helpers/github"
 title = "Github"
@@ -96,11 +126,6 @@ title = "Library: pynput"
 path = "b2b-sales/email-automation/index.html"
 url = "/b2b-sales/email-automation"
 title = "Email Automation for Sales outreaches"
-
-[[input.files]]
-path = "b2b-sales/outbound/index.html"
-url = "/b2b-sales/outbound"
-title = "Outbound Lead Generation"
 
 [[input.files]]
 path = "python/library-termtables/index.html"
@@ -166,16 +191,6 @@ title = "F1"
 path = "interests/watches/index.html"
 url = "/interests/watches"
 title = "Watches"
-
-[[input.files]]
-path = "interests/web3/index.html"
-url = "/interests/web3"
-title = "Web3"
-
-[[input.files]]
-path = "interests/crypto/index.html"
-url = "/interests/crypto"
-title = "Crypto"
 
 [[input.files]]
 path = "learning/touch-typing/index.html"
@@ -336,11 +351,6 @@ title = "Emailee"
 path = "apps/espanso/index.html"
 url = "/apps/espanso"
 title = "Espanso"
-
-[[input.files]]
-path = "projects/imapee/index.html"
-url = "/projects/imapee"
-title = "Imapee"
 
 [[input.files]]
 path = "apps/hazel/index.html"

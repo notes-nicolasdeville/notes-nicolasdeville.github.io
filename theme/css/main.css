@@ -90,9 +90,8 @@ h1 {
 }
 
 h2 {
-    font-size: 1.4em;
+    font-size: 1.3em;
     margin-top: 1.4em;
-    color: #C64350;
 }
 h2:before {
     content: '>> ';
@@ -100,7 +99,7 @@ h2:before {
 }
 
 h3 {
-    font-size: 1.3em;
+    font-size: 1.2em;
     margin-top: 1.3em;
     /* color: #C64350; */
 }
@@ -110,7 +109,7 @@ h3:before {
 }
 
 h4 {
-    font-size: 1.2em;
+    font-size: 1.1em;
     margin-top: 1.2em;
 }
 h4:before {
@@ -119,12 +118,12 @@ h4:before {
 }
 
 h5 {
-    font-size: 1.1em;
+    font-size: 1em;
     margin-top: 1.1em;
 }
 
 h6 {
-    font-size: 1em;
+    font-size: 0.9em;
     margin-top: 1em;
 }
 
@@ -883,10 +882,12 @@ li:first-child .hentry, #content > .hentry {
 .datestamp {
     font-size: 0.8em;
     font-weight: bold;
-    color: #333;
-    background-color: #ddd;
+    /* color: #333; */
+    color: #000;
+    /* background-color: #ddd; */
     padding: 0.3em 0.5em 0.3em 0.5em;
-    border: solid 2px #999;
+    /* border: solid 2px #999; */
+    border: solid 2px #000;
     border-radius: 1em;
     line-height: 3em; /* to avoid overlap over lines */
     margin-right: 0.5em;

@@ -7,7 +7,7 @@
     <meta name="generator" content="Pelican" />
     <title>Imapee</title>
     <link rel="stylesheet" href="https://notes.nicolasdeville.com/theme/css/main.css" />
-        <meta name="description" content="collection of email inbox scripts" />
+        <meta name="description" content="collection of email inbox management scripts in python" />
 
     <!-- for Stork seach engine -->
     <link rel="stylesheet" href="https://files.stork-search.net/basic.css" /> 
@@ -56,7 +56,7 @@
             </h1>
             <p class="header_summary">
                 <main> <!-- for indexing by Stork -->
-                    <p>collection of email inbox scripts</p>
+                    <p>collection of email inbox management scripts in python</p>
                 </main>
             </p>
         </header>
@@ -65,14 +65,14 @@
 <footer class="post-info">
 
     <p>
-        05 Sep 2022 <span class="separator">|</span> in <a class="link_tag" href="https://notes.nicolasdeville.com/projects/">projects</a>
+        10 Sep 2022 <span class="separator">|</span> in <a class="link_tag" href="https://notes.nicolasdeville.com/projects/">projects</a>
  tags: <a class="link_tag" href="https://notes.nicolasdeville.com/tag/python.html">python</a>
 <a class="link_tag" href="https://notes.nicolasdeville.com/tag/emails.html">emails</a>
 
         <!-- added 4/7 -->
         <!-- 		<br />
-        <abbr class="modified" title="2022-09-05T08:54:00.151156+02:00">
-                Updated: 05 Sep 2022
+        <abbr class="modified" title="2022-09-10T15:25:55.147979+02:00">
+                Updated: 10 Sep 2022
         </abbr>
  -->
 
@@ -81,8 +81,23 @@
     
 
 </footer>            <main> <!-- for indexing by Stork -->
-                <p><span class="datestamp">30 Jul 2022</span>        </p>
-<h1>Inbox cleaning script</h1>
+                <p><span class="datestamp">30 Apr 2022</span> starting note.   </p>
+<p>Scripts usable with any email inbox supporting the IMAP protocol (=most).<br>
+IMAP is the standard protocol for managing email maiboxes (with POP).  </p>
+<p>In some cases, IMAP needs to be activated, eg with Gmail.   </p>
+<blockquote>
+<p><span class="datestamp">09 Sep 2022</span><br>
+<strong>For Google/Gmail:</strong>   </p>
+<p>it is required to allow "Less secure apps" for the script to work:  <br>
+<a href="https://myaccount.google.com/lesssecureapps" target="_blank">https://myaccount.google.com/lesssecureapps</a> <br>
+However Google announced...   </p>
+<p>"To help keep your account secure, from May 30, 2022, ​​Google no longer supports the use of third-party apps or devices which ask you to sign in to your Google Account using only your username and password.<br>
+This deadline does not apply to Google Workspace or Google Cloud Identity customers. The enforcement date for these customers will be announced on the Workspace blog at a later date."  </p>
+<p>= need to rework login logic for Google, or use different library for it.   </p>
+</blockquote>
+<p><span class="datestamp">30 Apr 2022</span>     </p>
+<h1>Mass delete emails</h1>
+<p>Logic: delete email if keyword(s) provided are in To, From and/or Subject fields.   </p>
 <div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">datetime</span> <span class="kn">import</span> <span class="n">datetime</span>
 <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Starting at </span><span class="si">{</span><span class="n">datetime</span><span class="o">.</span><span class="n">now</span><span class="p">()</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="s1">&#39;%H:%M:%S&#39;</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 <span class="kn">import</span> <span class="nn">time</span>
@@ -95,17 +110,18 @@
 
 <span class="kn">from</span> <span class="nn">imap_tools</span> <span class="kn">import</span> <span class="n">MailBox</span><span class="p">,</span> <span class="n">AND</span><span class="p">,</span> <span class="n">MailMessageFlags</span>
 <span class="kn">import</span> <span class="nn">re</span>
-<span class="c1"># import validate</span>
 
 <span class="kn">import</span> <span class="nn">pprint</span>
 <span class="n">pp</span> <span class="o">=</span> <span class="n">pprint</span><span class="o">.</span><span class="n">PrettyPrinter</span><span class="p">(</span><span class="n">indent</span><span class="o">=</span><span class="mi">4</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">()</span>
+
 <span class="n">count</span> <span class="o">=</span> <span class="mi">0</span>
 <span class="c1">####################</span>
 
 <span class="n">EMAIL_ACCOUNT</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">getenv</span><span class="p">(</span><span class="s2">&quot;EMAIL_ACCOUNT_ND&quot;</span><span class="p">)</span>
 <span class="n">PASSWORD</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">getenv</span><span class="p">(</span><span class="s2">&quot;PASSWORD_ND&quot;</span><span class="p">)</span>
 <span class="n">EMAIL_SERVER</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">getenv</span><span class="p">(</span><span class="s2">&quot;EMAIL_SERVER_ND&quot;</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n\n</span><span class="s2">---</span><span class="se">\n</span><span class="s2">CHECK CREDENTIALS:</span><span class="se">\n</span><span class="si">{</span><span class="n">EMAIL_ACCOUNT</span><span class="si">=}</span><span class="se">\n</span><span class="si">{</span><span class="n">PASSWORD</span><span class="si">=}</span><span class="se">\n</span><span class="s2">---</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
 
 <span class="n">count_errors</span> <span class="o">=</span> <span class="mi">0</span>
 <span class="n">count_deleted</span> <span class="o">=</span> <span class="mi">0</span>
@@ -165,7 +181,8 @@
                     <span class="n">count_deleted</span> <span class="o">+=</span> <span class="mi">1</span>
 
                     <span class="nb">print</span><span class="p">()</span>
-        <span class="k">except</span><span class="p">:</span>
+        <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;ERROR with </span><span class="si">{</span><span class="n">date</span><span class="si">}</span><span class="s2">-</span><span class="si">{</span><span class="n">msg</span><span class="o">.</span><span class="n">from_</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
             <span class="n">count_errors</span> <span class="o">+=</span> <span class="mi">1</span>
             <span class="k">continue</span>
 
@@ -183,7 +200,8 @@
                 <span class="n">count_deleted</span> <span class="o">+=</span> <span class="mi">1</span>
 
                 <span class="nb">print</span><span class="p">()</span>
-        <span class="k">except</span><span class="p">:</span>
+        <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;ERROR with </span><span class="si">{</span><span class="n">date</span><span class="si">}</span><span class="s2">-</span><span class="si">{</span><span class="n">msg</span><span class="o">.</span><span class="n">from_</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
             <span class="n">count_errors</span> <span class="o">+=</span> <span class="mi">1</span>
             <span class="k">continue</span>
 
@@ -201,22 +219,10 @@
                 <span class="n">count_deleted</span> <span class="o">+=</span> <span class="mi">1</span>
 
                 <span class="nb">print</span><span class="p">()</span>
-        <span class="k">except</span><span class="p">:</span>
+        <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;ERROR with </span><span class="si">{</span><span class="n">date</span><span class="si">}</span><span class="s2">-</span><span class="si">{</span><span class="n">msg</span><span class="o">.</span><span class="n">from_</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
             <span class="n">count_errors</span> <span class="o">+=</span> <span class="mi">1</span>
             <span class="k">continue</span>
-
-<span class="c1">########################################################################################################</span>
-
-<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">()</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;-------------------------------&#39;</span><span class="p">)</span>
-    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Count Total Emails = </span><span class="si">{</span><span class="n">count</span><span class="si">}</span><span class="s2"> emails found&quot;</span><span class="p">)</span>
-    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;count_errors = </span><span class="si">{</span><span class="n">count_errors</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Email DELETED = </span><span class="si">{</span><span class="n">count_deleted</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;-------------------------------&#39;</span><span class="p">)</span>
-    <span class="n">run_time</span> <span class="o">=</span> <span class="nb">round</span><span class="p">((</span><span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span> <span class="o">-</span> <span class="n">start_time</span><span class="p">)</span><span class="o">/</span><span class="mi">60</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
-    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">basename</span><span class="p">(</span><span class="vm">__file__</span><span class="p">)</span><span class="si">}</span><span class="s2"> finished in </span><span class="si">{</span><span class="n">run_time</span><span class="si">}</span><span class="s2"> minutes at </span><span class="si">{</span><span class="n">datetime</span><span class="o">.</span><span class="n">now</span><span class="p">()</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="s1">&#39;%H:%M:%S&#39;</span><span class="p">)</span><span class="si">}</span><span class="s2">.&quot;</span><span class="p">)</span>
-    <span class="nb">print</span><span class="p">()</span>
 </code></pre></div>
 
 <p>Output:</p>
@@ -240,6 +246,9 @@ imapee_mail-nd-com.py finished in 0.9 minutes at 16:06:15.
 <span class="n">EMAIL_ACCOUNT</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">getenv</span><span class="p">(</span><span class="s2">&quot;EMAIL_ACCOUNT&quot;</span><span class="p">)</span>
 <span class="n">PASSWORD</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">getenv</span><span class="p">(</span><span class="s2">&quot;PASSWORD&quot;</span><span class="p">)</span>
 <span class="n">EMAIL_SERVER</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">getenv</span><span class="p">(</span><span class="s2">&quot;EMAIL_SERVER&quot;</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n\n</span><span class="s2">---</span><span class="se">\n</span><span class="s2">CHECK CREDENTIALS:</span><span class="se">\n</span><span class="si">{</span><span class="n">EMAIL_ACCOUNT</span><span class="si">=}</span><span class="se">\n</span><span class="si">{</span><span class="n">PASSWORD</span><span class="si">=}</span><span class="se">\n</span><span class="s2">---</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+
 <span class="n">save_to</span> <span class="o">=</span> <span class="s1">&#39;/path/to/local/folder&#39;</span>
 
 <span class="n">count</span> <span class="o">=</span> <span class="mi">0</span>
@@ -262,10 +271,11 @@ imapee_mail-nd-com.py finished in 0.9 minutes at 16:06:15.
             <span class="k">try</span><span class="p">:</span>
                 <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">save_to</span><span class="si">}</span><span class="s1">/</span><span class="si">{</span><span class="n">date</span><span class="si">}</span><span class="s1">-</span><span class="si">{</span><span class="n">msg</span><span class="o">.</span><span class="n">from_</span><span class="si">}</span><span class="s1">-</span><span class="si">{</span><span class="n">att</span><span class="o">.</span><span class="n">filename</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">,</span> <span class="s1">&#39;wb&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
                     <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">att</span><span class="o">.</span><span class="n">payload</span><span class="p">)</span>
-            <span class="k">except</span><span class="p">:</span>
-                <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;ERROR with </span><span class="si">{</span><span class="n">date</span><span class="si">}</span><span class="s2">-</span><span class="si">{</span><span class="n">msg</span><span class="o">.</span><span class="n">from_</span><span class="si">}</span><span class="s2">-</span><span class="si">{</span><span class="n">att</span><span class="o">.</span><span class="n">filename</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+            <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+                <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;ERROR with </span><span class="si">{</span><span class="n">date</span><span class="si">}</span><span class="s2">-</span><span class="si">{</span><span class="n">msg</span><span class="o">.</span><span class="n">from_</span><span class="si">}</span><span class="s2">-</span><span class="si">{</span><span class="n">att</span><span class="o">.</span><span class="n">filename</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
                 <span class="n">list_errors</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">date</span><span class="si">}</span><span class="s2">-</span><span class="si">{</span><span class="n">msg</span><span class="o">.</span><span class="n">from_</span><span class="si">}</span><span class="s2">-</span><span class="si">{</span><span class="n">att</span><span class="o">.</span><span class="n">filename</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
                 <span class="n">count_errors</span> <span class="o">+=</span> <span class="mi">1</span>
+                <span class="k">continue</span>
 
 <span class="nb">print</span><span class="p">()</span>
 <span class="k">for</span> <span class="n">error</span> <span class="ow">in</span> <span class="n">list_errors</span><span class="p">:</span>

@@ -77,14 +77,14 @@
 <footer class="post-info">
 
     <p>
-        07 Sep 2022 <span class="separator">|</span> in <a class="link_tag" href="https://notes.nicolasdeville.com/python/">python</a>
+        10 Sep 2022 <span class="separator">|</span> in <a class="link_tag" href="https://notes.nicolasdeville.com/python/">python</a>
  tags: <a class="link_tag" href="https://notes.nicolasdeville.com/tag/snippets.html">snippets</a>
 <a class="link_tag" href="https://notes.nicolasdeville.com/tag/scripts.html">scripts</a>
 
         <!-- added 4/7 -->
         <!-- 		<br />
-        <abbr class="modified" title="2022-09-07T20:47:18.653913+02:00">
-                Updated: 07 Sep 2022
+        <abbr class="modified" title="2022-09-10T12:01:10.663441+02:00">
+                Updated: 10 Sep 2022
         </abbr>
  -->
 
@@ -93,7 +93,7 @@
     
 
 </footer><p><span class="datestamp">06 Sep 2022</span>   </p>
-<h3>identify if all caps</h3>
+<h2>identify if all caps</h2>
 <div class="highlight"><pre><span></span><code><span class="k">if</span> <span class="nb">all</span><span class="p">(</span><span class="n">char</span><span class="o">.</span><span class="n">isupper</span><span class="p">()</span> <span class="k">for</span> <span class="n">char</span> <span class="ow">in</span> <span class="n">first</span><span class="p">):</span>
 </code></pre></div>
 
@@ -111,7 +111,7 @@ JAN ----&gt; Jan
 ERIC ----&gt; Eric
 </code></pre></div>
 
-<h3>capitalise strings</h3>
+<h2>capitalise strings</h2>
 <div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">string</span>
 
 <span class="n">first</span> <span class="o">=</span> <span class="s1">&#39;pierre-GARCIA&#39;</span>
@@ -135,7 +135,7 @@ ERIC ----&gt; Eric
 <div class="highlight"><pre><span></span><code>pierre-GARCIA ----&gt; Pierre-Garcia
 </code></pre></div>
 
-<h3>print list with index</h3>
+<h2>print list with index</h2>
 <div class="highlight"><pre><span></span><code><span class="n">highlights</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;x&#39;</span><span class="p">,</span> <span class="s1">&#39;y&#39;</span><span class="p">,</span> <span class="s1">&#39;z&#39;</span><span class="p">]</span>
 
 <span class="k">for</span> <span class="n">index</span><span class="p">,</span> <span class="n">value</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">highlights</span><span class="p">):</span>
@@ -153,12 +153,32 @@ ERIC ----&gt; Eric
     <span class="nb">print</span><span class="p">(</span><span class="n">index</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span>
 </code></pre></div>
 
-<h3>print exception error</h3>
+<h2>print exception error</h2>
 <div class="highlight"><pre><span></span><code><span class="k">try</span><span class="p">:</span>
     <span class="c1"># write code that may throw exception</span>
 <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
     <span class="c1"># the code for handling the exception</span>
     <span class="nb">print</span><span class="p">(</span><span class="n">e</span><span class="p">)</span>
+</code></pre></div>
+
+<p><span class="datestamp">09 Sep 2022</span>   </p>
+<h2>printing to file</h2>
+<h3>easiest method</h3>
+<div class="highlight"><pre><span></span><code><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;filename.txt&#39;</span><span class="p">,</span> <span class="s1">&#39;w&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;This message will be written to a file.&#39;</span><span class="p">,</span> <span class="n">file</span><span class="o">=</span><span class="n">f</span><span class="p">)</span>
+</code></pre></div>
+
+<h3>redirecting a Python's script output in the terminal</h3>
+<p>If script run from Terminal, redirect the output (print) of the script to a file, using a single right angle bracket:  </p>
+<p><code>$ python3 hello.py &gt; output.txt</code>   </p>
+<h3>redirecting the Standard Output Stream</h3>
+<p>to print to file:  </p>
+<div class="highlight"><pre><span></span><code><span class="n">original_stdout</span> <span class="o">=</span> <span class="n">sys</span><span class="o">.</span><span class="n">stdout</span> <span class="c1"># save original stdout</span>
+
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;test.txt&#39;</span><span class="p">,</span> <span class="s1">&#39;w&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+    <span class="n">sys</span><span class="o">.</span><span class="n">stdout</span> <span class="o">=</span> <span class="n">f</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;TEST&quot;</span><span class="p">)</span>
+    <span class="n">sys</span><span class="o">.</span><span class="n">stdout</span> <span class="o">=</span> <span class="n">original_stdout</span> <span class="c1"># reverts to original stdout</span>
 </code></pre></div>
                 </article>
             </aside>
