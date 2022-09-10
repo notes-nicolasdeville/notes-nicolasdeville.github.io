@@ -13,9 +13,129 @@ url = "/projects/imapee"
 title = "Imapee"
 
 [[input.files]]
+path = "b2b-sales/email-validation/index.html"
+url = "/b2b-sales/email-validation"
+title = "Tools for email validation"
+
+[[input.files]]
+path = "apps/vs-code/index.html"
+url = "/apps/vs-code"
+title = "VS Code"
+
+[[input.files]]
+path = "apps/ulysses/index.html"
+url = "/apps/ulysses"
+title = "Ulysses | the ultimate writing and note-taking app"
+
+[[input.files]]
+path = "apps/text-expanders/index.html"
+url = "/apps/text-expanders"
+title = "Text expanders"
+
+[[input.files]]
+path = "apps/snippetslab/index.html"
+url = "/apps/snippetslab"
+title = "SnippetsLab | Snippets manager"
+
+[[input.files]]
+path = "apps/setapp/index.html"
+url = "/apps/setapp"
+title = "Setapp: macOS app subsciption"
+
+[[input.files]]
+path = "apps/screenshotx/index.html"
+url = "/apps/screenshotx"
+title = "ScreenShotX"
+
+[[input.files]]
+path = "apps/screenflow/index.html"
+url = "/apps/screenflow"
+title = "Producing videos with Screenflow"
+
+[[input.files]]
+path = "apps/readwise/index.html"
+url = "/apps/readwise"
+title = "Readwise | helps me retain what I read"
+
+[[input.files]]
+path = "apps/promptsmart/index.html"
+url = "/apps/promptsmart"
+title = "Promptsmart - the teleprompter companion"
+
+[[input.files]]
+path = "apps/pixelsnap/index.html"
+url = "/apps/pixelsnap"
+title = "Pixelsnap"
+
+[[input.files]]
+path = "apps/pathfinder/index.html"
+url = "/apps/pathfinder"
+title = "Pathfinder - Finder alternative"
+
+[[input.files]]
+path = "apps/newsletter-readers/index.html"
+url = "/apps/newsletter-readers"
+title = "Newsletter readers"
+
+[[input.files]]
+path = "apps/moom/index.html"
+url = "/apps/moom"
+title = "Moom | Window management"
+
+[[input.files]]
+path = "apps/gpg/index.html"
+url = "/apps/gpg"
+title = "GPG Suite"
+
+[[input.files]]
+path = "apps/freedom/index.html"
+url = "/apps/freedom"
+title = "Freedom | Block distracting websites and apps"
+
+[[input.files]]
+path = "apps/follow-up-then/index.html"
+url = "/apps/follow-up-then"
+title = "FollowUpThen: Are you struggling to consistently follow-up on (your) emails?"
+
+[[input.files]]
+path = "apps/excel/index.html"
+url = "/apps/excel"
+title = "Excel"
+
+[[input.files]]
+path = "apps/descript/index.html"
+url = "/apps/descript"
+title = "Descript | All-in-one audio/video editing, as easy as a doc."
+
+[[input.files]]
+path = "apps/cloudapp/index.html"
+url = "/apps/cloudapp"
+title = "CloudApp | A visual collaboration solution"
+
+[[input.files]]
+path = "apps/alfred/index.html"
+url = "/apps/alfred"
+title = "Alfred"
+
+[[input.files]]
+path = "apps/grist/index.html"
+url = "/apps/grist"
+title = "Grist | The Evolution of Spreadsheets"
+
+[[input.files]]
+path = "learning/css/index.html"
+url = "/learning/css"
+title = "Learning CSS"
+
+[[input.files]]
 path = "python/unicode/index.html"
 url = "/python/unicode"
 title = "Unicode in Python"
+
+[[input.files]]
+path = "python/library-pelican/index.html"
+url = "/python/library-pelican"
+title = "Building a static site with Pelican"
 
 [[input.files]]
 path = "python/snippets/index.html"
@@ -108,11 +228,6 @@ url = "/python/library-yagmail"
 title = "Library: Yagmail"
 
 [[input.files]]
-path = "python/library-pelican/index.html"
-url = "/python/library-pelican"
-title = "Building a static site with Pelican"
-
-[[input.files]]
 path = "helpers/github/index.html"
 url = "/helpers/github"
 title = "Github"
@@ -138,11 +253,6 @@ url = "/learning/sql"
 title = "Learning SQL"
 
 [[input.files]]
-path = "apps/grist/index.html"
-url = "/apps/grist"
-title = "Grist | The Evolution of Spreadsheets"
-
-[[input.files]]
 path = "interests/airguns/index.html"
 url = "/interests/airguns"
 title = "Airguns"
@@ -151,11 +261,6 @@ title = "Airguns"
 path = "helpers/vodafone-kabel/index.html"
 url = "/helpers/vodafone-kabel"
 title = "Vodafone Kabel"
-
-[[input.files]]
-path = "apps/vs-code/index.html"
-url = "/apps/vs-code"
-title = "VS Code | my IDE of choice"
 
 [[input.files]]
 path = "interests/tactical-pens/index.html"
@@ -201,11 +306,6 @@ title = "Learning Touch Typing"
 path = "learning/markdown/index.html"
 url = "/learning/markdown"
 title = "Learning Markdown"
-
-[[input.files]]
-path = "learning/css/index.html"
-url = "/learning/css"
-title = "Learning CSS"
 
 [[input.files]]
 path = "projects/indexall/index.html"
@@ -368,11 +468,6 @@ url = "/helpers/apis"
 title = "APIs"
 
 [[input.files]]
-path = "apps/pathfinder/index.html"
-url = "/apps/pathfinder"
-title = "Pathfinder - Finder alternative"
-
-[[input.files]]
 path = "helpers/keyboard-shortcuts/index.html"
 url = "/helpers/keyboard-shortcuts"
 title = "My keyboard shortcuts"
@@ -533,34 +628,9 @@ url = "/python/boilerplate"
 title = "My Python scripts boilerplate"
 
 [[input.files]]
-path = "apps/pixelsnap/index.html"
-url = "/apps/pixelsnap"
-title = "Pixelsnap"
-
-[[input.files]]
-path = "apps/text-expanders/index.html"
-url = "/apps/text-expanders"
-title = "Text expanders"
-
-[[input.files]]
-path = "apps/gpg/index.html"
-url = "/apps/gpg"
-title = "GPG Suite"
-
-[[input.files]]
 path = "b2b-sales/producing-videos/index.html"
 url = "/b2b-sales/producing-videos"
 title = "Producing Sales videos"
-
-[[input.files]]
-path = "apps/promptsmart/index.html"
-url = "/apps/promptsmart"
-title = "Promptsmart - the teleprompter companion"
-
-[[input.files]]
-path = "apps/screenflow/index.html"
-url = "/apps/screenflow"
-title = "Producing videos with Screenflow"
 
 [[input.files]]
 path = "home-office/teleprompter/index.html"
@@ -578,16 +648,6 @@ url = "/random/chickens-are-weird"
 title = "Chickens are weird"
 
 [[input.files]]
-path = "apps/moom/index.html"
-url = "/apps/moom"
-title = "Moom | Window management"
-
-[[input.files]]
-path = "apps/screenshotx/index.html"
-url = "/apps/screenshotx"
-title = "ScreenShotX"
-
-[[input.files]]
 path = "home-office/ups/index.html"
 url = "/home-office/ups"
 title = "Uninterrupted Power Supply"
@@ -601,11 +661,6 @@ title = "Visualing the target and achievement"
 path = "python/copy-files/index.html"
 url = "/python/copy-files"
 title = "Mass copy selected files with Python"
-
-[[input.files]]
-path = "apps/newsletter-readers/index.html"
-url = "/apps/newsletter-readers"
-title = "Newsletter readers"
 
 [[input.files]]
 path = "python/broken-links/index.html"
@@ -703,24 +758,9 @@ url = "/random/ev"
 title = "Electric Vehicles"
 
 [[input.files]]
-path = "apps/alfred/index.html"
-url = "/apps/alfred"
-title = "Alfred"
-
-[[input.files]]
 path = "apps/my-stack/index.html"
 url = "/apps/my-stack"
 title = "Apps I use"
-
-[[input.files]]
-path = "apps/readwise/index.html"
-url = "/apps/readwise"
-title = "Readwise | helps me retain what I read"
-
-[[input.files]]
-path = "apps/snippetslab/index.html"
-url = "/apps/snippetslab"
-title = "SnippetsLab | Snippets manager"
 
 [[input.files]]
 path = "helpers/kindle/index.html"
@@ -731,11 +771,6 @@ title = "Kindle"
 path = "b2b-sales/planning-meetings/index.html"
 url = "/b2b-sales/planning-meetings"
 title = "Scheduling Meetings"
-
-[[input.files]]
-path = "apps/setapp/index.html"
-url = "/apps/setapp"
-title = "Setapp: macOS app subsciption"
 
 [[input.files]]
 path = "books/simply-said/index.html"
@@ -1433,11 +1468,6 @@ url = "/home-office/dictation"
 title = "Dictating instead of typing"
 
 [[input.files]]
-path = "apps/excel/index.html"
-url = "/apps/excel"
-title = "Excel"
-
-[[input.files]]
 path = "books/tech-powered-sales/index.html"
 url = "/books/tech-powered-sales"
 title = "Tech-Powered Sales, by Justin Michael & Tony Hughes"
@@ -1456,11 +1486,6 @@ title = "#CareerPlaybook 022: Asking many questions"
 path = "careerplaybook/careerplaybook-021-hiring/index.html"
 url = "/careerplaybook/careerplaybook-021-hiring"
 title = "#CareerPlaybook 021: Hiring for enthusiasm and ability to learn"
-
-[[input.files]]
-path = "apps/descript/index.html"
-url = "/apps/descript"
-title = "Descript | All-in-one audio/video editing, as easy as a doc."
 
 [[input.files]]
 path = "careerplaybook/careerplaybook-020-owning-your-mistakes/index.html"
@@ -1486,16 +1511,6 @@ title = "My guide to start learning programming in Python (for Business People)"
 path = "careerplaybook/careerplaybook-017-everyone-should-learn-programming/index.html"
 url = "/careerplaybook/careerplaybook-017-everyone-should-learn-programming"
 title = "#CareerPlaybook 017: Everyone should learn programming"
-
-[[input.files]]
-path = "apps/freedom/index.html"
-url = "/apps/freedom"
-title = "Freedom | Block distracting websites and apps"
-
-[[input.files]]
-path = "apps/cloudapp/index.html"
-url = "/apps/cloudapp"
-title = "CloudApp | A visual collaboration solution"
 
 [[input.files]]
 path = "careerplaybook/careerplaybook-016-taking-notes/index.html"
@@ -1551,11 +1566,6 @@ title = "#StartupPlaybook 00: My learnings (so far)"
 path = "books/the-lean-startup/index.html"
 url = "/books/the-lean-startup"
 title = "The Lean Startup"
-
-[[input.files]]
-path = "apps/ulysses/index.html"
-url = "/apps/ulysses"
-title = "Ulysses | the ultimate writing and note-taking app"
 
 [[input.files]]
 path = "books/what-every-body-is-saying/index.html"
@@ -1631,11 +1641,6 @@ title = "I am seriously considering being part of the first colons to Mars. You?
 path = "careerplaybook/careerplaybook-005-asking-for-blunt-feedback/index.html"
 url = "/careerplaybook/careerplaybook-005-asking-for-blunt-feedback"
 title = "#CareerPlaybook 005: Asking for blunt feedback (and how to handle it)"
-
-[[input.files]]
-path = "apps/follow-up-then/index.html"
-url = "/apps/follow-up-then"
-title = "FollowUpThen: Are you struggling to consistently follow-up on (your) emails?"
 
 [[input.files]]
 path = "careerplaybook/careerplaybook-004-the-jerry-maguire-play/index.html"

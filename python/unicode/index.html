@@ -69,7 +69,7 @@
 
         <!-- added 4/7 -->
         <!-- 		<br />
-        <abbr class="modified" title="2022-09-10T15:15:10.975036+02:00">
+        <abbr class="modified" title="2022-09-10T15:34:09.694656+02:00">
                 Updated: 10 Sep 2022
         </abbr>
  -->
@@ -87,19 +87,19 @@ Add <code>PYTHONIOENCODING="UTF-8"</code> to PATH, ie add to <code>.env</code> i
 -&gt; Not working</p>
 <p>Tests:  </p>
 <ol>
-<li><code>'Automatyczna odpowiedź'</code> </li>
+<li><code>'Automatyczna odpowiedź'</code>   </li>
 </ol>
-<p>prints: <code>Automatyczna odpowiedź</code> <br>
-output script: <code>ERROR with Automatyczna odpowiedź: 'ascii' codec can't encode character '\u017a' in position 31: ordinal not in range(128)</code>  </p>
+<p>prints: <code>Automatyczna odpowiedź</code>   <br>
+output script: <code>ERROR with Automatyczna odpowiedź: 'ascii' codec can't encode character '\u017a' in position 31: ordinal not in range(128)</code>    </p>
 <ol>
-<li><code>'Automatyczna odpowiedź'.encode("utf-8")</code></li>
+<li><code>'Automatyczna odpowiedź'.encode("utf-8")</code>  </li>
 </ol>
-<p>b'Automatyczna odpowied\xc5\xba'
-ERROR with b'Automatyczna odpowied\xc5\xba': "subject" expected str value, "<class 'int'>" received</p>
+<p>prints: <code>b'Automatyczna odpowied\xc5\xba'</code> 🤔 <br>
+output script: <code>ERROR with b'Automatyczna odpowied\xc5\xba': "subject" expected str value, "&lt;class 'int'&gt;" received</code>  </p>
 <ol>
 <li><code>'Automatyczna odpowiedź'.encode("ascii")</code> </li>
 </ol>
-<p>UnicodeEncodeError: 'ascii' codec can't encode character '\u017a' in position 21: ordinal not in range(128)</p>
+<p>output script: <code>UnicodeEncodeError: 'ascii' codec can't encode character '\u017a' in position 21: ordinal not in range(128)</code>  </p>
 <h1>Resources</h1>
 <p>To watch:  </p>
 <div class="link_border">

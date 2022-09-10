@@ -46,7 +46,7 @@
 
 
 <p class="notes_count">
-    9 notes 
+    21 notes 
     <span style="color:#C74350">|</span> 
     <a href="https://notes.nicolasdeville.com/tags">by tags</a> 
     <span style="color:#C74350">|</span> 
@@ -65,15 +65,808 @@
             <hr/>
 
                 <article class="hentry">
-                    <h1 class="entry-title"><a href="https://notes.nicolasdeville.com/apps/espanso">Espanso</a></h1>
+                    <h1 class="entry-title"><a href="https://notes.nicolasdeville.com/apps/vs-code">VS Code</a></h1>
 
                     <!-- added 4/7 -->
                     <div>
                         <p class="header_summary">
-                            <p>Trying out a new, open-source and powerful text expander</p>
+                            <p>my IDE of choice</p>
                         </p>
                     </div>
 
+<footer class="post-info">
+
+    <p>
+        10 Sep 2022 <span class="separator">|</span> in <a class="link_tag" href="https://notes.nicolasdeville.com/apps/">apps</a>
+ tags: <a class="link_tag" href="https://notes.nicolasdeville.com/tag/macos.html">macOS</a>
+
+        <!-- added 4/7 -->
+        <!-- 		<br />
+        <abbr class="modified" title="2022-09-10T17:22:56.785393+02:00">
+                Updated: 10 Sep 2022
+        </abbr>
+ -->
+
+    </p>
+
+    
+
+</footer><p><span class="datestamp">2020</span> started using.  </p>
+<p><span class="datestamp">30 Jun 2022</span> starting note.       </p>
+<h3>Snippets</h3>
+<p><a href="https://code.visualstudio.com/docs/editor/userdefinedsnippets" target="_blank">https://code.visualstudio.com/docs/editor/userdefinedsnippets</a></p>
+<p><code>Code &gt; Preferences &gt; Configure User Snippets</code> then choose the <code>.json</code> relevant to the language for which those snippets need to be available.  </p>
+<h4>Variables</h4>
+<p>The following variables can be used:  </p>
+<p>TM_SELECTED_TEXT The currently selected text or the empty string<br>
+TM_CURRENT_LINE The contents of the current line<br>
+TM_CURRENT_WORD The contents of the word under cursor or the empty string<br>
+TM_LINE_INDEX The zero-index based line number<br>
+TM_LINE_NUMBER The one-index based line number<br>
+TM_FILENAME The filename of the current document<br>
+TM_FILENAME_BASE The filename of the current document without its extensions<br>
+ex:   </p>
+<div class="highlight"><pre><span></span><code><span class="s2">&quot;&lt;img class=\&quot;$1screenshot\&quot; src=\&quot;{static}../../images/$TM_FILENAME_BASE/$CLIPBOARD.jpg\&quot; alt=\&quot;$CLIPBOARD\&quot;/&gt;  &quot;</span><span class="p">,</span><span class="w"></span>
+</code></pre></div>
+
+<p>outputs:   </p>
+<div class="highlight"><pre><span></span><code>&lt;img class=&quot;screenshot&quot; src=&quot;{static}../../images/vs-code/vs-code-shortcuts.jpg&quot; alt=&quot;vs-code-shortcuts&quot;/&gt;  
+</code></pre></div>
+
+<p>TM_DIRECTORY The directory of the current document<br>
+TM_FILEPATH The full file path of the current document<br>
+RELATIVE_FILEPATH The relative (to the opened workspace or folder) file path of the current document<br>
+CLIPBOARD The contents of your clipboard<br>
+WORKSPACE_NAME The name of the opened workspace or folder<br>
+WORKSPACE_FOLDER The path of the opened workspace or folder<br>
+CURSOR_INDEX The zero-index based cursor number<br>
+CURSOR_NUMBER The one-index based cursor number    </p>
+<p>For inserting the current date and time:  </p>
+<p>CURRENT_YEAR The current year<br>
+CURRENT_YEAR_SHORT The current year's last two digits<br>
+CURRENT_MONTH The month as two digits (example '02')<br>
+CURRENT_MONTH_NAME The full name of the month (example 'July')<br>
+CURRENT_MONTH_NAME_SHORT The short name of the month (example 'Jul')<br>
+CURRENT_DATE The day of the month as two digits (example '08')<br>
+CURRENT_DAY_NAME The name of day (example 'Monday')<br>
+CURRENT_DAY_NAME_SHORT The short name of the day (example 'Mon')<br>
+CURRENT_HOUR The current hour in 24-hour clock format<br>
+CURRENT_MINUTE The current minute as two digits<br>
+CURRENT_SECOND The current second as two digits<br>
+CURRENT_SECONDS_UNIX The number of seconds since the Unix epoch  </p>
+<p>For inserting random values:  </p>
+<p>RANDOM 6 random Base-10 digits<br>
+RANDOM_HEX 6 random Base-16 digits<br>
+UUID A Version 4 UUID  </p>
+<h3>Extensions</h3>
+<p><span class="datestamp">05 Jul 2022</span>   </p>
+<p>Current extensions:   </p>
+<p><img class="illustration" src="https://notes.nicolasdeville.com/images/app_vs-code-extensions-jul22.jpg" alt="app_vs-code-extensions-jul22.jpg"/>  </p>
+<p>Review:   </p>
+<div class="link_border">
+<div class="link_title">VS Code Extensions for HTML</div>
+<div class="link_url"><a href="https://css-tricks.com/vs-code-extensions-for-html/" target="_blank">https://css-tricks.com/vs-code-extensions-for-html/</a></div></div>
+
+<p><span class="datestamp">06 Sep 2022</span>   </p>
+<h1>Keyboard Shortcuts</h1>
+<h2>Default</h2>
+<div class="link_border">
+<div class="link_title">Keyboard Shortcuts for macOS</div>
+<div class="link_url"><a href="https://code.visualstudio.com/shortcuts/keyboard-shortcuts-macos.pdf" target="_blank">https://code.visualstudio.com/shortcuts/keyboard-shortcuts-macos.pdf</a></div></div>
+
+<p><img class="screenshot" src="https://notes.nicolasdeville.com/images/vs-code/vs-code-shortcuts.jpg" alt="vs-code-shortcuts"/>  </p>
+<p>Best way though, instead of searching the web, is to simply open the Keyboard Shorcuts settings (using the shortcut <code>Cmd + K</code> then <code>Cmd + S</code> 😁 ) and search for the desired action.   </p>
+<p><img class="screenshot" src="https://notes.nicolasdeville.com/images/vs-code/keyboard-shortcuts-settings.jpg" alt="keyboard-shortcuts-settings"/>  </p>
+<p>here I was looking for the shortcut to switch editors (ie tabs) with "next editor" and found <code>Cmd + Shift + ]</code> for it in the results list.     </p>
+<h3>Other useful ones</h3>
+<table>
+<thead>
+<tr>
+<th>shortcut</th>
+<th>action</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>Ctrl + W</code></td>
+<td>Open the Switch Windows command</td>
+</tr>
+<tr>
+<td><code>Cmd + Shift + ]</code></td>
+<td>Open (ie switch to) Next Editor</td>
+</tr>
+</tbody>
+</table>
+                </article>
+            </aside>
+
+                <section id="content" class="body">
+
+                <!-- PREVIOUS NOTES -->
+				<p class="notes-section">previous notes</p>
+                <hr>
+
+                <ol id="posts-list" class="hfeed">
+            
+
+
+
+            <li>
+                <article class="hentry">
+                    <header>
+                        <!-- PREVIOUS NOTE TITLE -->
+                        <h1><a href="https://notes.nicolasdeville.com/apps/ulysses" rel="bookmark"
+                            title="Ulysses | the ultimate writing and note-taking app">Ulysses | the ultimate writing and note-taking app</a></h1>
+                        <!-- PREVIOUS NOTE SUMMARY -->
+                        <div class="entry-content">
+                            <p>I have been using Ulysses for more than a year now and couldn't recommend it more. I love it. Here is a complete walk-through.</p>
+                        </div>
+                    </header>
+
+                    <div class="entry-content">
+                        <!-- PREVIOUS NOTE METADATA -->
+<footer class="post-info">
+
+    <p>
+        10 Sep 2022 <span class="separator">|</span> in <a class="link_tag" href="https://notes.nicolasdeville.com/apps/">apps</a>
+ tags: <a class="link_tag" href="https://notes.nicolasdeville.com/tag/productivity.html">productivity</a>
+<a class="link_tag" href="https://notes.nicolasdeville.com/tag/macos.html">macOS</a>
+<a class="link_tag" href="https://notes.nicolasdeville.com/tag/ios.html">iOS</a>
+
+        <!-- added 4/7 -->
+        <!-- 		<br />
+        <abbr class="modified" title="2022-09-10T17:22:06.970556+02:00">
+                Updated: 10 Sep 2022
+        </abbr>
+ -->
+
+    </p>
+
+    
+
+</footer>                    </div>
+                    
+                </article>
+                <hr/>
+            </li>
+            
+
+
+
+            <li>
+                <article class="hentry">
+                    <header>
+                        <!-- PREVIOUS NOTE TITLE -->
+                        <h1><a href="https://notes.nicolasdeville.com/apps/text-expanders" rel="bookmark"
+                            title="Text expanders">Text expanders</a></h1>
+                        <!-- PREVIOUS NOTE SUMMARY -->
+                        <div class="entry-content">
+                            <p>tried a few, still looking for the perfect one</p>
+                        </div>
+                    </header>
+
+                    <div class="entry-content">
+                        <!-- PREVIOUS NOTE METADATA -->
+<footer class="post-info">
+
+    <p>
+        10 Sep 2022 <span class="separator">|</span> in <a class="link_tag" href="https://notes.nicolasdeville.com/apps/">apps</a>
+ tags: <a class="link_tag" href="https://notes.nicolasdeville.com/tag/productivity.html">productivity</a>
+<a class="link_tag" href="https://notes.nicolasdeville.com/tag/macos.html">macOS</a>
+
+        <!-- added 4/7 -->
+        <!-- 		<br />
+        <abbr class="modified" title="2022-09-10T17:21:39.444574+02:00">
+                Updated: 10 Sep 2022
+        </abbr>
+ -->
+
+    </p>
+
+    
+
+</footer>                    </div>
+                    
+                </article>
+                <hr/>
+            </li>
+            
+
+
+
+            <li>
+                <article class="hentry">
+                    <header>
+                        <!-- PREVIOUS NOTE TITLE -->
+                        <h1><a href="https://notes.nicolasdeville.com/apps/snippetslab" rel="bookmark"
+                            title="SnippetsLab | Snippets manager">SnippetsLab | Snippets manager</a></h1>
+                        <!-- PREVIOUS NOTE SUMMARY -->
+                        <div class="entry-content">
+                            <p>how I manage my snippets</p>
+                        </div>
+                    </header>
+
+                    <div class="entry-content">
+                        <!-- PREVIOUS NOTE METADATA -->
+<footer class="post-info">
+
+    <p>
+        10 Sep 2022 <span class="separator">|</span> in <a class="link_tag" href="https://notes.nicolasdeville.com/apps/">apps</a>
+ tags: <a class="link_tag" href="https://notes.nicolasdeville.com/tag/productivity.html">productivity</a>
+<a class="link_tag" href="https://notes.nicolasdeville.com/tag/macos.html">macOS</a>
+
+        <!-- added 4/7 -->
+        <!-- 		<br />
+        <abbr class="modified" title="2022-09-10T17:21:17.248518+02:00">
+                Updated: 10 Sep 2022
+        </abbr>
+ -->
+
+    </p>
+
+    
+
+</footer>                    </div>
+                    
+                </article>
+                <hr/>
+            </li>
+            
+
+
+
+            <li>
+                <article class="hentry">
+                    <header>
+                        <!-- PREVIOUS NOTE TITLE -->
+                        <h1><a href="https://notes.nicolasdeville.com/apps/setapp" rel="bookmark"
+                            title="Setapp: macOS app subsciption">Setapp: macOS app subsciption</a></h1>
+                        <!-- PREVIOUS NOTE SUMMARY -->
+                        <div class="entry-content">
+                            <p>a great deal for Mac power users</p>
+                        </div>
+                    </header>
+
+                    <div class="entry-content">
+                        <!-- PREVIOUS NOTE METADATA -->
+<footer class="post-info">
+
+    <p>
+        10 Sep 2022 <span class="separator">|</span> in <a class="link_tag" href="https://notes.nicolasdeville.com/apps/">apps</a>
+ tags: <a class="link_tag" href="https://notes.nicolasdeville.com/tag/macos.html">macOS</a>
+
+        <!-- added 4/7 -->
+        <!-- 		<br />
+        <abbr class="modified" title="2022-09-10T17:19:06.182267+02:00">
+                Updated: 10 Sep 2022
+        </abbr>
+ -->
+
+    </p>
+
+    
+
+</footer>                    </div>
+                    
+                </article>
+                <hr/>
+            </li>
+            
+
+
+
+            <li>
+                <article class="hentry">
+                    <header>
+                        <!-- PREVIOUS NOTE TITLE -->
+                        <h1><a href="https://notes.nicolasdeville.com/apps/screenshotx" rel="bookmark"
+                            title="ScreenShotX">ScreenShotX</a></h1>
+                        <!-- PREVIOUS NOTE SUMMARY -->
+                        <div class="entry-content">
+                            <p>current screenshot and screen recording solution, after testing a few over the years.</p>
+                        </div>
+                    </header>
+
+                    <div class="entry-content">
+                        <!-- PREVIOUS NOTE METADATA -->
+<footer class="post-info">
+
+    <p>
+        10 Sep 2022 <span class="separator">|</span> in <a class="link_tag" href="https://notes.nicolasdeville.com/apps/">apps</a>
+ tags: <a class="link_tag" href="https://notes.nicolasdeville.com/tag/productivity.html">productivity</a>
+<a class="link_tag" href="https://notes.nicolasdeville.com/tag/macos.html">macOS</a>
+
+        <!-- added 4/7 -->
+        <!-- 		<br />
+        <abbr class="modified" title="2022-09-10T17:18:06.326572+02:00">
+                Updated: 10 Sep 2022
+        </abbr>
+ -->
+
+    </p>
+
+    
+
+</footer>                    </div>
+                    
+                </article>
+                <hr/>
+            </li>
+            
+
+
+
+            <li>
+                <article class="hentry">
+                    <header>
+                        <!-- PREVIOUS NOTE TITLE -->
+                        <h1><a href="https://notes.nicolasdeville.com/apps/screenflow" rel="bookmark"
+                            title="Producing videos with Screenflow">Producing videos with Screenflow</a></h1>
+                        <!-- PREVIOUS NOTE SUMMARY -->
+                        <div class="entry-content">
+                            <p>A great video production software, halfway between too simple and too complex alternatives.</p>
+                        </div>
+                    </header>
+
+                    <div class="entry-content">
+                        <!-- PREVIOUS NOTE METADATA -->
+<footer class="post-info">
+
+    <p>
+        10 Sep 2022 <span class="separator">|</span> in <a class="link_tag" href="https://notes.nicolasdeville.com/apps/">apps</a>
+ tags: <a class="link_tag" href="https://notes.nicolasdeville.com/tag/productivity.html">productivity</a>
+<a class="link_tag" href="https://notes.nicolasdeville.com/tag/macos.html">macOS</a>
+
+        <!-- added 4/7 -->
+        <!-- 		<br />
+        <abbr class="modified" title="2022-09-10T17:16:11.096373+02:00">
+                Updated: 10 Sep 2022
+        </abbr>
+ -->
+
+    </p>
+
+    
+
+</footer>                    </div>
+                    
+                </article>
+                <hr/>
+            </li>
+            
+
+
+
+            <li>
+                <article class="hentry">
+                    <header>
+                        <!-- PREVIOUS NOTE TITLE -->
+                        <h1><a href="https://notes.nicolasdeville.com/apps/promptsmart" rel="bookmark"
+                            title="Promptsmart - the teleprompter companion">Promptsmart - the teleprompter companion</a></h1>
+                        <!-- PREVIOUS NOTE SUMMARY -->
+                        <div class="entry-content">
+                            <p>you need an app when using a teleprompter - this is the one I use</p>
+                        </div>
+                    </header>
+
+                    <div class="entry-content">
+                        <!-- PREVIOUS NOTE METADATA -->
+<footer class="post-info">
+
+    <p>
+        10 Sep 2022 <span class="separator">|</span> in <a class="link_tag" href="https://notes.nicolasdeville.com/apps/">apps</a>
+ tags: <a class="link_tag" href="https://notes.nicolasdeville.com/tag/video.html">video</a>
+<a class="link_tag" href="https://notes.nicolasdeville.com/tag/teleprompter.html">teleprompter</a>
+<a class="link_tag" href="https://notes.nicolasdeville.com/tag/macos.html">macOS</a>
+<a class="link_tag" href="https://notes.nicolasdeville.com/tag/ios.html">iOS</a>
+
+        <!-- added 4/7 -->
+        <!-- 		<br />
+        <abbr class="modified" title="2022-09-10T17:14:05.612839+02:00">
+                Updated: 10 Sep 2022
+        </abbr>
+ -->
+
+    </p>
+
+    
+
+</footer>                    </div>
+                    
+                </article>
+                <hr/>
+            </li>
+            
+
+
+
+            <li>
+                <article class="hentry">
+                    <header>
+                        <!-- PREVIOUS NOTE TITLE -->
+                        <h1><a href="https://notes.nicolasdeville.com/apps/pixelsnap" rel="bookmark"
+                            title="Pixelsnap">Pixelsnap</a></h1>
+                        <!-- PREVIOUS NOTE SUMMARY -->
+                        <div class="entry-content">
+                            <p>to measure on screen and overlay guides</p>
+                        </div>
+                    </header>
+
+                    <div class="entry-content">
+                        <!-- PREVIOUS NOTE METADATA -->
+<footer class="post-info">
+
+    <p>
+        10 Sep 2022 <span class="separator">|</span> in <a class="link_tag" href="https://notes.nicolasdeville.com/apps/">apps</a>
+ tags: <a class="link_tag" href="https://notes.nicolasdeville.com/tag/graphic-design.html">graphic design</a>
+<a class="link_tag" href="https://notes.nicolasdeville.com/tag/utility.html">utility</a>
+<a class="link_tag" href="https://notes.nicolasdeville.com/tag/macos.html">macOS</a>
+
+        <!-- added 4/7 -->
+        <!-- 		<br />
+        <abbr class="modified" title="2022-09-10T17:13:34.178533+02:00">
+                Updated: 10 Sep 2022
+        </abbr>
+ -->
+
+    </p>
+
+    
+
+</footer>                    </div>
+                    
+                </article>
+                <hr/>
+            </li>
+            
+
+
+
+            <li>
+                <article class="hentry">
+                    <header>
+                        <!-- PREVIOUS NOTE TITLE -->
+                        <h1><a href="https://notes.nicolasdeville.com/apps/pathfinder" rel="bookmark"
+                            title="Pathfinder - Finder alternative">Pathfinder - Finder alternative</a></h1>
+                        <!-- PREVIOUS NOTE SUMMARY -->
+                        <div class="entry-content">
+                            <p>Switched years ago</p>
+                        </div>
+                    </header>
+
+                    <div class="entry-content">
+                        <!-- PREVIOUS NOTE METADATA -->
+<footer class="post-info">
+
+    <p>
+        10 Sep 2022 <span class="separator">|</span> in <a class="link_tag" href="https://notes.nicolasdeville.com/apps/">apps</a>
+ tags: <a class="link_tag" href="https://notes.nicolasdeville.com/tag/productivity.html">productivity</a>
+<a class="link_tag" href="https://notes.nicolasdeville.com/tag/macos.html">macOS</a>
+
+        <!-- added 4/7 -->
+        <!-- 		<br />
+        <abbr class="modified" title="2022-09-10T17:13:11.377602+02:00">
+                Updated: 10 Sep 2022
+        </abbr>
+ -->
+
+    </p>
+
+    
+
+</footer>                    </div>
+                    
+                </article>
+                <hr/>
+            </li>
+            
+
+
+
+            <li>
+                <article class="hentry">
+                    <header>
+                        <!-- PREVIOUS NOTE TITLE -->
+                        <h1><a href="https://notes.nicolasdeville.com/apps/moom" rel="bookmark"
+                            title="Moom | Window management">Moom | Window management</a></h1>
+                        <!-- PREVIOUS NOTE SUMMARY -->
+                        <div class="entry-content">
+                            <p>keyboard controlled window management</p>
+                        </div>
+                    </header>
+
+                    <div class="entry-content">
+                        <!-- PREVIOUS NOTE METADATA -->
+<footer class="post-info">
+
+    <p>
+        10 Sep 2022 <span class="separator">|</span> in <a class="link_tag" href="https://notes.nicolasdeville.com/apps/">apps</a>
+ tags: <a class="link_tag" href="https://notes.nicolasdeville.com/tag/shortcuts.html">shortcuts</a>
+<a class="link_tag" href="https://notes.nicolasdeville.com/tag/productivity.html">productivity</a>
+<a class="link_tag" href="https://notes.nicolasdeville.com/tag/macos.html">macOS</a>
+
+        <!-- added 4/7 -->
+        <!-- 		<br />
+        <abbr class="modified" title="2022-09-10T17:11:49.198976+02:00">
+                Updated: 10 Sep 2022
+        </abbr>
+ -->
+
+    </p>
+
+    
+
+</footer>                    </div>
+                    
+                </article>
+                <hr/>
+            </li>
+            
+
+
+
+            <li>
+                <article class="hentry">
+                    <header>
+                        <!-- PREVIOUS NOTE TITLE -->
+                        <h1><a href="https://notes.nicolasdeville.com/apps/gpg" rel="bookmark"
+                            title="GPG Suite">GPG Suite</a></h1>
+                        <!-- PREVIOUS NOTE SUMMARY -->
+                        <div class="entry-content">
+                            <p>how to encrypt messages with GPG...</p>
+                        </div>
+                    </header>
+
+                    <div class="entry-content">
+                        <!-- PREVIOUS NOTE METADATA -->
+<footer class="post-info">
+
+    <p>
+        10 Sep 2022 <span class="separator">|</span> in <a class="link_tag" href="https://notes.nicolasdeville.com/apps/">apps</a>
+ tags: <a class="link_tag" href="https://notes.nicolasdeville.com/tag/encryption.html">encryption</a>
+<a class="link_tag" href="https://notes.nicolasdeville.com/tag/macos.html">macOS</a>
+
+        <!-- added 4/7 -->
+        <!-- 		<br />
+        <abbr class="modified" title="2022-09-10T17:11:16.847632+02:00">
+                Updated: 10 Sep 2022
+        </abbr>
+ -->
+
+    </p>
+
+    
+
+</footer>                    </div>
+                    
+                </article>
+                <hr/>
+            </li>
+            
+
+
+
+            <li>
+                <article class="hentry">
+                    <header>
+                        <!-- PREVIOUS NOTE TITLE -->
+                        <h1><a href="https://notes.nicolasdeville.com/apps/freedom" rel="bookmark"
+                            title="Freedom | Block distracting websites and apps">Freedom | Block distracting websites and apps</a></h1>
+                        <!-- PREVIOUS NOTE SUMMARY -->
+                        <div class="entry-content">
+                            <p>Are you struggling to resist the appeal of social media and news websites when you should be working?</p>
+                        </div>
+                    </header>
+
+                    <div class="entry-content">
+                        <!-- PREVIOUS NOTE METADATA -->
+<footer class="post-info">
+
+    <p>
+        10 Sep 2022 <span class="separator">|</span> in <a class="link_tag" href="https://notes.nicolasdeville.com/apps/">apps</a>
+ tags: <a class="link_tag" href="https://notes.nicolasdeville.com/tag/productivity.html">productivity</a>
+<a class="link_tag" href="https://notes.nicolasdeville.com/tag/macos.html">macOS</a>
+<a class="link_tag" href="https://notes.nicolasdeville.com/tag/ios.html">iOS</a>
+
+        <!-- added 4/7 -->
+        <!-- 		<br />
+        <abbr class="modified" title="2022-09-10T17:10:24.612787+02:00">
+                Updated: 10 Sep 2022
+        </abbr>
+ -->
+
+    </p>
+
+    
+
+</footer>                    </div>
+                    
+                </article>
+                <hr/>
+            </li>
+            
+
+
+
+            <li>
+                <article class="hentry">
+                    <header>
+                        <!-- PREVIOUS NOTE TITLE -->
+                        <h1><a href="https://notes.nicolasdeville.com/apps/excel" rel="bookmark"
+                            title="Excel">Excel</a></h1>
+                        <!-- PREVIOUS NOTE SUMMARY -->
+                        <div class="entry-content">
+                            <p>useful Excel tips</p>
+                        </div>
+                    </header>
+
+                    <div class="entry-content">
+                        <!-- PREVIOUS NOTE METADATA -->
+<footer class="post-info">
+
+    <p>
+        10 Sep 2022 <span class="separator">|</span> in <a class="link_tag" href="https://notes.nicolasdeville.com/apps/">apps</a>
+ tags: <a class="link_tag" href="https://notes.nicolasdeville.com/tag/productivity.html">productivity</a>
+<a class="link_tag" href="https://notes.nicolasdeville.com/tag/excel.html">excel</a>
+<a class="link_tag" href="https://notes.nicolasdeville.com/tag/macos.html">macOS</a>
+
+        <!-- added 4/7 -->
+        <!-- 		<br />
+        <abbr class="modified" title="2022-09-10T17:08:35.403027+02:00">
+                Updated: 10 Sep 2022
+        </abbr>
+ -->
+
+    </p>
+
+    
+
+</footer>                    </div>
+                    
+                </article>
+                <hr/>
+            </li>
+            
+
+
+
+            <li>
+                <article class="hentry">
+                    <header>
+                        <!-- PREVIOUS NOTE TITLE -->
+                        <h1><a href="https://notes.nicolasdeville.com/apps/descript" rel="bookmark"
+                            title="Descript | All-in-one audio/video editing, as easy as a doc.">Descript | All-in-one audio/video editing, as easy as a doc.</a></h1>
+                        <!-- PREVIOUS NOTE SUMMARY -->
+                        <div class="entry-content">
+                            <p>a game changing way to produce videos</p>
+                        </div>
+                    </header>
+
+                    <div class="entry-content">
+                        <!-- PREVIOUS NOTE METADATA -->
+<footer class="post-info">
+
+    <p>
+        10 Sep 2022 <span class="separator">|</span> in <a class="link_tag" href="https://notes.nicolasdeville.com/apps/">apps</a>
+ tags: <a class="link_tag" href="https://notes.nicolasdeville.com/tag/video.html">video</a>
+<a class="link_tag" href="https://notes.nicolasdeville.com/tag/macos.html">macOS</a>
+
+        <!-- added 4/7 -->
+        <!-- 		<br />
+        <abbr class="modified" title="2022-09-10T17:07:59.446859+02:00">
+                Updated: 10 Sep 2022
+        </abbr>
+ -->
+
+    </p>
+
+    
+
+</footer>                    </div>
+                    
+                </article>
+                <hr/>
+            </li>
+            
+
+
+
+            <li>
+                <article class="hentry">
+                    <header>
+                        <!-- PREVIOUS NOTE TITLE -->
+                        <h1><a href="https://notes.nicolasdeville.com/apps/cloudapp" rel="bookmark"
+                            title="CloudApp | A visual collaboration solution">CloudApp | A visual collaboration solution</a></h1>
+                        <!-- PREVIOUS NOTE SUMMARY -->
+                        <div class="entry-content">
+                            <p>"A picture is worth a thousand words" - this applies especially when communicating online. CloudApp is a must-have in my remote working toolkit.</p>
+                        </div>
+                    </header>
+
+                    <div class="entry-content">
+                        <!-- PREVIOUS NOTE METADATA -->
+<footer class="post-info">
+
+    <p>
+        10 Sep 2022 <span class="separator">|</span> in <a class="link_tag" href="https://notes.nicolasdeville.com/apps/">apps</a>
+ tags: <a class="link_tag" href="https://notes.nicolasdeville.com/tag/productivity.html">productivity</a>
+<a class="link_tag" href="https://notes.nicolasdeville.com/tag/macos.html">macOS</a>
+<a class="link_tag" href="https://notes.nicolasdeville.com/tag/saas.html">SaaS</a>
+
+        <!-- added 4/7 -->
+        <!-- 		<br />
+        <abbr class="modified" title="2022-09-10T17:07:32.764096+02:00">
+                Updated: 10 Sep 2022
+        </abbr>
+ -->
+
+    </p>
+
+    
+
+</footer>                    </div>
+                    
+                </article>
+                <hr/>
+            </li>
+            
+
+
+
+            <li>
+                <article class="hentry">
+                    <header>
+                        <!-- PREVIOUS NOTE TITLE -->
+                        <h1><a href="https://notes.nicolasdeville.com/apps/alfred" rel="bookmark"
+                            title="Alfred">Alfred</a></h1>
+                        <!-- PREVIOUS NOTE SUMMARY -->
+                        <div class="entry-content">
+                            <p>my notes on using Alfred</p>
+                        </div>
+                    </header>
+
+                    <div class="entry-content">
+                        <!-- PREVIOUS NOTE METADATA -->
+<footer class="post-info">
+
+    <p>
+        10 Sep 2022 <span class="separator">|</span> in <a class="link_tag" href="https://notes.nicolasdeville.com/apps/">apps</a>
+ tags: <a class="link_tag" href="https://notes.nicolasdeville.com/tag/macos.html">macOS</a>
+
+        <!-- added 4/7 -->
+        <!-- 		<br />
+        <abbr class="modified" title="2022-09-10T17:05:55.464354+02:00">
+                Updated: 10 Sep 2022
+        </abbr>
+ -->
+
+    </p>
+
+    
+
+</footer>                    </div>
+                    
+                </article>
+                <hr/>
+            </li>
+            
+
+
+
+            <li>
+                <article class="hentry">
+                    <header>
+                        <!-- PREVIOUS NOTE TITLE -->
+                        <h1><a href="https://notes.nicolasdeville.com/apps/espanso" rel="bookmark"
+                            title="Espanso">Espanso</a></h1>
+                        <!-- PREVIOUS NOTE SUMMARY -->
+                        <div class="entry-content">
+                            <p>Trying out a new, open-source and powerful text expander</p>
+                        </div>
+                    </header>
+
+                    <div class="entry-content">
+                        <!-- PREVIOUS NOTE METADATA -->
 <footer class="post-info">
 
     <p>
@@ -92,120 +885,11 @@
 
     
 
-</footer><p><span class="datestamp">22 Jul 2022</span>            </p>
-<p>See <a href="../../apps/text-expanders/index.html">Nic Note: Text Expanders</a> for background.  </p>
-<table>
-<thead>
-<tr>
-<th>App resources</th>
-<th></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Website</td>
-<td><a href="https://espanso.org/" target="_blank">https://espanso.org/</a></td>
-</tr>
-<tr>
-<td>Documentation</td>
-<td><a href="https://espanso.org/docs/" target="_blank">https://espanso.org/docs/</a></td>
-</tr>
-<tr>
-<td>Hub (packages)</td>
-<td><a href="https://hub.espanso.org/" target="_blank">https://hub.espanso.org/</a></td>
-</tr>
-<tr>
-<td>Github</td>
-<td><a href="https://github.com/espanso/espanso" target="_blank">https://github.com/espanso/espanso</a></td>
-</tr>
-<tr>
-<td>Community (Reddit)</td>
-<td><a href="https://www.reddit.com/r/espanso/" target="_blank">https://www.reddit.com/r/espanso/</a></td>
-</tr>
-<tr>
-<td>Community (Github) / Feature requests</td>
-<td><a href="https://github.com/espanso/espanso/discussions/categories/feature-requests-and-ideas" target="_blank">https://github.com/espanso/espanso/discussions/categories/feature-requests-and-ideas</a></td>
-</tr>
-</tbody>
-</table>
-<p>Error upon installation - let's see consequences:  </p>
-<p><img class="screenshot" src="https://notes.nicolasdeville.com/images/app_espanso-path-error.jpg" alt="app_espanso-path-error.jpg"/>  </p>
-<p>Configuration:<br>
-(run <code>espanson path</code> in Terminal for the list) <br>
-- Config: <code>/Users/user_folder/Library/Application Support/espanso</code> <br>
-- Packages: <code>/Users/user_folder/Library/Application Support/espanso/match/packages</code><br>
-- Runtime: <code>/Users/user_folder/Library/Caches/espanso</code>  </p>
-<p>5mns in, love it. Managing config and snippets via <code>default.yaml</code> and <code>base.yaml</code> is great.   </p>
-<p>Snippets unfurl in file dialog windows, which was not working with Alfred's snippets feature [<a href="../../apps/alfred/index.html">Nic Note: Alfred</a>].    </p>
-<p>My date snippet for file prefixes (used across most of my files):     </p>
-<div class="highlight"><pre><span></span><code><span class="c1"># Print the current date</span><span class="w"></span>
-<span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">trigger</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;;d&quot;</span><span class="w"></span>
-<span class="nt">replace</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;{{mydate}}&quot;</span><span class="w"></span>
-<span class="nt">vars</span><span class="p">:</span><span class="w"></span>
-<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">mydate</span><span class="w"></span>
-<span class="w">    </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">date</span><span class="w"></span>
-<span class="w">    </span><span class="nt">params</span><span class="p">:</span><span class="w"></span>
-<span class="w">        </span><span class="nt">format</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;%y%m%d</span><span class="nv"> </span><span class="s">&quot;</span><span class="w"></span>
-</code></pre></div>
-
-<p>Note: I find using <code>;</code> as trigger prefix to be more natural than <code>:</code> as it avoids needing to hit the Shift key each time - though this depends on one's keyboard layout.  </p>
-<h1>Highlights</h1>
-<h2>sync snippets across devices</h2>
-<p>using Dropbox 😊 : <a href="https://espanso.org/docs/sync/" target="_blank">https://espanso.org/docs/sync/</a>   </p>
-<p>Make symlink with <code>ln -s "/Users/nic/Dropbox/Apps/espanso" "/Users/nic/Library/Application Support/espanso"</code>   </p>
-<h1>Espanso Hub</h1>
-<p><a href="https://hub.espanso.org/search" target="_blank">https://hub.espanso.org/search</a>   </p>
-<p>a few interesting packages for me:   </p>
-<h2>basic-emojis</h2>
-<p><a href="https://hub.espanso.org/basic-emojis" target="_blank">https://hub.espanso.org/basic-emojis</a>  </p>
-<h2>git</h2>
-<p><a href="https://hub.espanso.org/git" target="_blank">https://hub.espanso.org/git</a>   </p>
-<h2>mac-symbols</h2>
-<p><a href="https://hub.espanso.org/mac-symbols" target="_blank">https://hub.espanso.org/mac-symbols</a>  </p>
-<h2>foreign-thanks</h2>
-<p><a href="https://hub.espanso.org/foreign-thanks" target="_blank">https://hub.espanso.org/foreign-thanks</a>   </p>
-<h2>french-accents</h2>
-<p><a href="https://hub.espanso.org/french-accents" target="_blank">https://hub.espanso.org/french-accents</a>   </p>
-<p>Ze French langouage iz sometimez peinful wiz ol its akzentz!   </p>
-<p>Usual way on macOS is just to hit a key and stay on it until all the character's options appear, then select the number of the desired accented character </p>
-<p><img class="screenshot" src="https://notes.nicolasdeville.com/images/apps_espanso-french-accents.jpg" alt="apps_espanso-french-accents.jpg"/>  </p>
-<p>Let's see if this helps.   </p>
-<p><img class="screenshot" src="https://notes.nicolasdeville.com/images/apps_espanso-french-accents.gif" alt="apps_espanso-french-accents.gif"/>  </p>
-<p>Seems to work well though I had to remove this match which is basically unusable (because replacing to french accent everytime a <code>e</code> precedes a colon):</p>
-<div class="highlight"><pre><span></span><code><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">trigger</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;e:&quot;</span><span class="w"></span>
-<span class="w">    </span><span class="nt">replace</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;ë&quot;</span><span class="w"></span>
-</code></pre></div>
-
-<p>also removed this one, which is messing up words like "goes":   </p>
-<div class="highlight"><pre><span></span><code><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">trigger</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;oe&quot;</span><span class="w"></span>
-<span class="w">    </span><span class="nt">replace</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;œ&quot;</span><span class="w"></span>
-</code></pre></div>
-
-<p>also removed this, because it hijacks words like "movies,":</p>
-<div class="highlight"><pre><span></span><code><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">trigger</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;c,&quot;</span><span class="w"></span>
-<span class="w">    </span><span class="nt">replace</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;ç&quot;</span><span class="w"></span>
-</code></pre></div>
-
-<p>actually, let's change it to add a <code>;</code> prefix to the trigger:   </p>
-<div class="highlight"><pre><span></span><code><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">trigger</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;;c,&quot;</span><span class="w"></span>
-<span class="w">    </span><span class="nt">replace</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;ç&quot;</span><span class="w"></span>
-</code></pre></div>
-
-<p><span class="datestamp">24 Jul 2022</span>   ended up adding the <code>;</code> prefix to all triggers in this <code>package.yaml</code> file as default behaviour was annoying. Let's see if it becomes natural &amp; efficient over time.   </p>
-<h2>markdown-shortcuts</h2>
-<p><a href="https://hub.espanso.org/markdown-shortcuts" target="_blank">https://hub.espanso.org/markdown-shortcuts</a> (note a lot of keystrokes saved though)    </p>
-<h2>espanso-get-ip-pack</h2>
-<p><a href="https://hub.espanso.org/get-ip" target="_blank">https://hub.espanso.org/get-ip</a>   </p>
+</footer>                    </div>
+                    
                 </article>
-            </aside>
-
-                <section id="content" class="body">
-
-                <!-- PREVIOUS NOTES -->
-				<p class="notes-section">previous notes</p>
-                <hr>
-
-                <ol id="posts-list" class="hfeed">
+                <hr/>
+            </li>
             
 
 
@@ -275,214 +959,6 @@
         <!-- 		<br />
         <abbr class="modified" title="2022-09-04T18:05:28.283790+02:00">
                 Updated: 04 Sep 2022
-        </abbr>
- -->
-
-    </p>
-
-    
-
-</footer>                    </div>
-                    
-                </article>
-                <hr/>
-            </li>
-            
-
-
-
-            <li>
-                <article class="hentry">
-                    <header>
-                        <!-- PREVIOUS NOTE TITLE -->
-                        <h1><a href="https://notes.nicolasdeville.com/apps/text-expanders" rel="bookmark"
-                            title="Text expanders">Text expanders</a></h1>
-                        <!-- PREVIOUS NOTE SUMMARY -->
-                        <div class="entry-content">
-                            <p>tried a few, still looking for the perfect one</p>
-                        </div>
-                    </header>
-
-                    <div class="entry-content">
-                        <!-- PREVIOUS NOTE METADATA -->
-<footer class="post-info">
-
-    <p>
-        20 Jul 2022 <span class="separator">|</span> in <a class="link_tag" href="https://notes.nicolasdeville.com/apps/">apps</a>
- tags: <a class="link_tag" href="https://notes.nicolasdeville.com/tag/productivity.html">productivity</a>
-<a class="link_tag" href="https://notes.nicolasdeville.com/tag/macos.html">macOS</a>
-
-        <!-- added 4/7 -->
-        <!-- 		<br />
-        <abbr class="modified" title="2022-07-23T10:11:11.628775+02:00">
-                Updated: 23 Jul 2022
-        </abbr>
- -->
-
-    </p>
-
-    
-
-</footer>                    </div>
-                    
-                </article>
-                <hr/>
-            </li>
-            
-
-
-
-            <li>
-                <article class="hentry">
-                    <header>
-                        <!-- PREVIOUS NOTE TITLE -->
-                        <h1><a href="https://notes.nicolasdeville.com/apps/moom" rel="bookmark"
-                            title="Moom | Window management">Moom | Window management</a></h1>
-                        <!-- PREVIOUS NOTE SUMMARY -->
-                        <div class="entry-content">
-                            <p>keyboard controlled window management</p>
-                        </div>
-                    </header>
-
-                    <div class="entry-content">
-                        <!-- PREVIOUS NOTE METADATA -->
-<footer class="post-info">
-
-    <p>
-        18 Jul 2022 <span class="separator">|</span> in <a class="link_tag" href="https://notes.nicolasdeville.com/apps/">apps</a>
- tags: <a class="link_tag" href="https://notes.nicolasdeville.com/tag/shortcuts.html">shortcuts</a>
-<a class="link_tag" href="https://notes.nicolasdeville.com/tag/productivity.html">productivity</a>
-<a class="link_tag" href="https://notes.nicolasdeville.com/tag/macos.html">macOS</a>
-
-        <!-- added 4/7 -->
-        <!-- 		<br />
-        <abbr class="modified" title="2022-07-19T15:38:48.137290+02:00">
-                Updated: 19 Jul 2022
-        </abbr>
- -->
-
-    </p>
-
-    
-
-</footer>                    </div>
-                    
-                </article>
-                <hr/>
-            </li>
-            
-
-
-
-            <li>
-                <article class="hentry">
-                    <header>
-                        <!-- PREVIOUS NOTE TITLE -->
-                        <h1><a href="https://notes.nicolasdeville.com/apps/excel" rel="bookmark"
-                            title="Excel">Excel</a></h1>
-                        <!-- PREVIOUS NOTE SUMMARY -->
-                        <div class="entry-content">
-                            <p>useful Excel tips</p>
-                        </div>
-                    </header>
-
-                    <div class="entry-content">
-                        <!-- PREVIOUS NOTE METADATA -->
-<footer class="post-info">
-
-    <p>
-        01 Oct 2021 <span class="separator">|</span> in <a class="link_tag" href="https://notes.nicolasdeville.com/apps/">apps</a>
- tags: <a class="link_tag" href="https://notes.nicolasdeville.com/tag/productivity.html">productivity</a>
-<a class="link_tag" href="https://notes.nicolasdeville.com/tag/excel.html">excel</a>
-<a class="link_tag" href="https://notes.nicolasdeville.com/tag/macos.html">macOS</a>
-
-        <!-- added 4/7 -->
-        <!-- 		<br />
-        <abbr class="modified" title="2022-07-22T16:19:20.621509+02:00">
-                Updated: 22 Jul 2022
-        </abbr>
- -->
-
-    </p>
-
-    
-
-</footer>                    </div>
-                    
-                </article>
-                <hr/>
-            </li>
-            
-
-
-
-            <li>
-                <article class="hentry">
-                    <header>
-                        <!-- PREVIOUS NOTE TITLE -->
-                        <h1><a href="https://notes.nicolasdeville.com/apps/descript" rel="bookmark"
-                            title="Descript | All-in-one audio/video editing, as easy as a doc.">Descript | All-in-one audio/video editing, as easy as a doc.</a></h1>
-                        <!-- PREVIOUS NOTE SUMMARY -->
-                        <div class="entry-content">
-                            <p>a game changing way to produce videos</p>
-                        </div>
-                    </header>
-
-                    <div class="entry-content">
-                        <!-- PREVIOUS NOTE METADATA -->
-<footer class="post-info">
-
-    <p>
-        01 Jun 2020 <span class="separator">|</span> in <a class="link_tag" href="https://notes.nicolasdeville.com/apps/">apps</a>
- tags: <a class="link_tag" href="https://notes.nicolasdeville.com/tag/video.html">video</a>
-<a class="link_tag" href="https://notes.nicolasdeville.com/tag/macos.html">macOS</a>
-
-        <!-- added 4/7 -->
-        <!-- 		<br />
-        <abbr class="modified" title="2022-07-19T22:20:40.073754+02:00">
-                Updated: 19 Jul 2022
-        </abbr>
- -->
-
-    </p>
-
-    
-
-</footer>                    </div>
-                    
-                </article>
-                <hr/>
-            </li>
-            
-
-
-
-            <li>
-                <article class="hentry">
-                    <header>
-                        <!-- PREVIOUS NOTE TITLE -->
-                        <h1><a href="https://notes.nicolasdeville.com/apps/cloudapp" rel="bookmark"
-                            title="CloudApp | A visual collaboration solution">CloudApp | A visual collaboration solution</a></h1>
-                        <!-- PREVIOUS NOTE SUMMARY -->
-                        <div class="entry-content">
-                            <p>"A picture is worth a thousand words" - this applies especially when communicating online. CloudApp is a must-have in my remote working toolkit.</p>
-                        </div>
-                    </header>
-
-                    <div class="entry-content">
-                        <!-- PREVIOUS NOTE METADATA -->
-<footer class="post-info">
-
-    <p>
-        18 Mar 2020 <span class="separator">|</span> in <a class="link_tag" href="https://notes.nicolasdeville.com/apps/">apps</a>
- tags: <a class="link_tag" href="https://notes.nicolasdeville.com/tag/productivity.html">productivity</a>
-<a class="link_tag" href="https://notes.nicolasdeville.com/tag/macos.html">macOS</a>
-<a class="link_tag" href="https://notes.nicolasdeville.com/tag/webapp.html">webapp</a>
-
-        <!-- added 4/7 -->
-        <!-- 		<br />
-        <abbr class="modified" title="2022-07-19T15:38:03.282531+02:00">
-                Updated: 19 Jul 2022
         </abbr>
  -->
 

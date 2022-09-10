@@ -46,7 +46,7 @@
 
 
 <p class="notes_count">
-    33 notes 
+    34 notes 
     <span style="color:#C74350">|</span> 
     <a href="https://notes.nicolasdeville.com/tags">by tags</a> 
     <span style="color:#C74350">|</span> 
@@ -77,14 +77,14 @@
 <footer class="post-info">
 
     <p>
-        10 Sep 2022 <span class="separator">|</span> in <a class="link_tag" href="https://notes.nicolasdeville.com/projects/">projects</a>
+        11 Sep 2022 <span class="separator">|</span> in <a class="link_tag" href="https://notes.nicolasdeville.com/projects/">projects</a>
  tags: <a class="link_tag" href="https://notes.nicolasdeville.com/tag/python.html">python</a>
 <a class="link_tag" href="https://notes.nicolasdeville.com/tag/emails.html">emails</a>
 
         <!-- added 4/7 -->
         <!-- 		<br />
-        <abbr class="modified" title="2022-09-10T15:25:55.147979+02:00">
-                Updated: 10 Sep 2022
+        <abbr class="modified" title="2022-09-11T00:02:54.740266+02:00">
+                Updated: 11 Sep 2022
         </abbr>
  -->
 
@@ -100,13 +100,12 @@ IMAP is the standard protocol for managing email maiboxes (with POP).  </p>
 <p><span class="datestamp">09 Sep 2022</span><br>
 <strong>For Google/Gmail:</strong>   </p>
 <p>it is required to allow "Less secure apps" for the script to work:  <br>
-<a href="https://myaccount.google.com/lesssecureapps" target="_blank">https://myaccount.google.com/lesssecureapps</a> <br>
-However Google announced...   </p>
+<a href="https://myaccount.google.com/lesssecureapps" target="_blank">https://myaccount.google.com/lesssecureapps</a>   </p>
+<p>However Google announced...   </p>
 <p>"To help keep your account secure, from May 30, 2022, ​​Google no longer supports the use of third-party apps or devices which ask you to sign in to your Google Account using only your username and password.<br>
 This deadline does not apply to Google Workspace or Google Cloud Identity customers. The enforcement date for these customers will be announced on the Workspace blog at a later date."  </p>
-<p>= need to rework login logic for Google, or use different library for it.   </p>
+<p>= I'm currently using Google Workspace, so all good for now, but need to rework login logic in the future, or use different library for it.   </p>
 </blockquote>
-<p><span class="datestamp">30 Apr 2022</span>     </p>
 <h1>Mass delete emails</h1>
 <p>Logic: delete email if keyword(s) provided are in To, From and/or Subject fields.   </p>
 <div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">datetime</span> <span class="kn">import</span> <span class="n">datetime</span>
@@ -292,6 +291,15 @@ imapee_mail-nd-com.py finished in 0.9 minutes at 16:06:15.
 <span class="k">for</span> <span class="n">error</span> <span class="ow">in</span> <span class="n">list_errors</span><span class="p">:</span>
     <span class="nb">print</span><span class="p">(</span><span class="n">error</span><span class="p">)</span>
 </code></pre></div>
+
+<p><span class="datestamp">10 Sep 2022</span>   </p>
+<h1>Mass "Mark as Read" emails</h1>
+<p>For example after sending an email campaign, need to mass "mark as read" the Out Of Office and other Undeliverables emails, following specific criteria (leavind as unread previous unrelated emails).  </p>
+<p>Native web UI of email providers is usually very limited to filter properly </p>
+<h1>Collect undelivrable emails</h1>
+<p>When running campaigns, a number of emails will come back as undeliverable. No matter how good email cleaning and validation was.  </p>
+<h1>Sweep mailbox for new email addresses not in CRM</h1>
+<p>From all emails, incl. Out Of Office messages, in the From/Cc fields or email body.   </p>
                 </article>
             </aside>
 
@@ -302,6 +310,93 @@ imapee_mail-nd-com.py finished in 0.9 minutes at 16:06:15.
                 <hr>
 
                 <ol id="posts-list" class="hfeed">
+            
+
+
+
+            <li>
+                <article class="hentry">
+                    <header>
+                        <!-- PREVIOUS NOTE TITLE -->
+                        <h1><a href="https://notes.nicolasdeville.com/b2b-sales/email-validation" rel="bookmark"
+                            title="Tools for email validation">Tools for email validation</a></h1>
+                        <!-- PREVIOUS NOTE SUMMARY -->
+                        <div class="entry-content">
+                            <p>for clean and efficient mailing lists..</p>
+                        </div>
+                    </header>
+
+                    <div class="entry-content">
+                        <!-- PREVIOUS NOTE METADATA -->
+<footer class="post-info">
+
+    <p>
+        11 Sep 2022 <span class="separator">|</span> in <a class="link_tag" href="https://notes.nicolasdeville.com/b2b-sales/">b2b sales</a>
+ tags: <a class="link_tag" href="https://notes.nicolasdeville.com/tag/automation.html">automation</a>
+<a class="link_tag" href="https://notes.nicolasdeville.com/tag/emails.html">emails</a>
+<a class="link_tag" href="https://notes.nicolasdeville.com/tag/python.html">python</a>
+<a class="link_tag" href="https://notes.nicolasdeville.com/tag/saas.html">SaaS</a>
+
+        <!-- added 4/7 -->
+        <!-- 		<br />
+        <abbr class="modified" title="2022-09-11T00:00:26.355560+02:00">
+                Updated: 11 Sep 2022
+        </abbr>
+ -->
+
+    </p>
+
+    
+
+</footer>                    </div>
+                    
+                </article>
+                <hr/>
+            </li>
+            
+
+
+
+            <li>
+                <article class="hentry">
+                    <header>
+                        <!-- PREVIOUS NOTE TITLE -->
+                        <h1><a href="https://notes.nicolasdeville.com/apps/grist" rel="bookmark"
+                            title="Grist | The Evolution of Spreadsheets">Grist | The Evolution of Spreadsheets</a></h1>
+                        <!-- PREVIOUS NOTE SUMMARY -->
+                        <div class="entry-content">
+                            <p>an online, powerful, Python-driven alternative to Excel</p>
+                        </div>
+                    </header>
+
+                    <div class="entry-content">
+                        <!-- PREVIOUS NOTE METADATA -->
+<footer class="post-info">
+
+    <p>
+        10 Sep 2022 <span class="separator">|</span> in <a class="link_tag" href="https://notes.nicolasdeville.com/apps/">apps</a>
+ tags: <a class="link_tag" href="https://notes.nicolasdeville.com/tag/productivity.html">productivity</a>
+<a class="link_tag" href="https://notes.nicolasdeville.com/tag/python.html">python</a>
+<a class="link_tag" href="https://notes.nicolasdeville.com/tag/excel.html">excel</a>
+<a class="link_tag" href="https://notes.nicolasdeville.com/tag/saas.html">SaaS</a>
+<a class="link_tag" href="https://notes.nicolasdeville.com/tag/api.html">api</a>
+
+        <!-- added 4/7 -->
+        <!-- 		<br />
+        <abbr class="modified" title="2022-09-10T17:04:03.287580+02:00">
+                Updated: 10 Sep 2022
+        </abbr>
+ -->
+
+    </p>
+
+    
+
+</footer>                    </div>
+                    
+                </article>
+                <hr/>
+            </li>
             
 
 
@@ -495,50 +590,6 @@ imapee_mail-nd-com.py finished in 0.9 minutes at 16:06:15.
         <!-- 		<br />
         <abbr class="modified" title="2022-09-07T11:46:04.841964+02:00">
                 Updated: 07 Sep 2022
-        </abbr>
- -->
-
-    </p>
-
-    
-
-</footer>                    </div>
-                    
-                </article>
-                <hr/>
-            </li>
-            
-
-
-
-            <li>
-                <article class="hentry">
-                    <header>
-                        <!-- PREVIOUS NOTE TITLE -->
-                        <h1><a href="https://notes.nicolasdeville.com/apps/grist" rel="bookmark"
-                            title="Grist | The Evolution of Spreadsheets">Grist | The Evolution of Spreadsheets</a></h1>
-                        <!-- PREVIOUS NOTE SUMMARY -->
-                        <div class="entry-content">
-                            <p>an online, powerful, Python-driven alternative to Excel</p>
-                        </div>
-                    </header>
-
-                    <div class="entry-content">
-                        <!-- PREVIOUS NOTE METADATA -->
-<footer class="post-info">
-
-    <p>
-        06 Sep 2022 <span class="separator">|</span> in <a class="link_tag" href="https://notes.nicolasdeville.com/apps/">apps</a>
- tags: <a class="link_tag" href="https://notes.nicolasdeville.com/tag/productivity.html">productivity</a>
-<a class="link_tag" href="https://notes.nicolasdeville.com/tag/python.html">python</a>
-<a class="link_tag" href="https://notes.nicolasdeville.com/tag/excel.html">excel</a>
-<a class="link_tag" href="https://notes.nicolasdeville.com/tag/webapp.html">webapp</a>
-<a class="link_tag" href="https://notes.nicolasdeville.com/tag/api.html">api</a>
-
-        <!-- added 4/7 -->
-        <!-- 		<br />
-        <abbr class="modified" title="2022-09-06T15:05:18.865405+02:00">
-                Updated: 06 Sep 2022
         </abbr>
  -->
 

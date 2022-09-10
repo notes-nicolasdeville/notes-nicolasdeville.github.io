@@ -685,13 +685,14 @@ li:first-child .hentry, #content > .hentry {
     background-color: black;
     color: white;
     padding-top: 0.3em;
-    padding-right: 0.5em;
+    padding-right: 1em;
     padding-bottom: 0.3em;
-    padding-left: 0.5em;
+    padding-left: 1em;
+    margin-top: 0.3em;
     text-align: center;
     display: inline-block;
     text-decoration: none;
-    border-radius: 3px;
+    border-radius: 1em;
     /* border: 2px solid #000000; */
     /* line-height: 5em; */
 }
@@ -887,8 +888,8 @@ li:first-child .hentry, #content > .hentry {
     /* background-color: #ddd; */
     padding: 0.3em 0.5em 0.3em 0.5em;
     /* border: solid 2px #999; */
-    border: solid 2px #000;
-    border-radius: 1em;
+    border: solid 3px #000;
+    /* border-radius: 1em; */
     line-height: 3em; /* to avoid overlap over lines */
     margin-right: 0.5em;
 }
