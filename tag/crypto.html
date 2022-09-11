@@ -336,5 +336,34 @@ Published: 27 Feb. 2018</p>
     stork.register("sitesearch", "https://notes.nicolasdeville.com/search-index.st")
 </script>
 
+<!-- 220911 adding for copy code block feature -->
+<script type="text/javascript">
+    window.addEventListener("load", function () {
+      /* List all example code blocks */
+        var codes = document.getElementsByClassName("highlight"); 
+        /* For each example code block */
+        for (var i = 0; i < codes.length; i++) {
+            var button = document.createElement("button");
+            button.className = "copy-button copy-button-enabled";
+            button.style.display = "none";
+            button.innerText = "Copy";
+            /* Add onclick handler to copy button */
+            button.addEventListener("click", function() {
+                copyToClipboard(this.parentElement);
+                showCopied(this);
+            });
+            code.appendChild(button);
+            /* show/hide copy buttion when mouse move over/out code block */
+            code.addEventListener("mouseover", function() {
+                button.style.display = "block";
+            });
+            code.addEventListener("mouseout", function() {
+                button.style.display = "none";
+            })
+        }
+    }, false);
+</script>
+
+
 </body>
 </html>

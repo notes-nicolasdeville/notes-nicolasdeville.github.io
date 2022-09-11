@@ -56,6 +56,8 @@
 
 <!-- <dl>
     <dt>11 Sep 2022</dt>
+    <dd><a href="https://notes.nicolasdeville.com/projects/notes">This site</a></dd>
+    <dt>11 Sep 2022</dt>
     <dd><a href="https://notes.nicolasdeville.com/projects/imapee">Imapee</a></dd>
     <dt>11 Sep 2022</dt>
     <dd><a href="https://notes.nicolasdeville.com/learning/javascript">Learning Javascript</a></dd>
@@ -65,8 +67,6 @@
     <dd><a href="https://notes.nicolasdeville.com/python/library-pelican">Building a static site with Pelican</a></dd>
     <dt>11 Sep 2022</dt>
     <dd><a href="https://notes.nicolasdeville.com/books/learn-javascript-quickly">Learn JavaScript Quickly</a></dd>
-    <dt>11 Sep 2022</dt>
-    <dd><a href="https://notes.nicolasdeville.com/projects/notes">This site</a></dd>
     <dt>11 Sep 2022</dt>
     <dd><a href="https://notes.nicolasdeville.com/interests/watches">Watches</a></dd>
     <dt>11 Sep 2022</dt>
@@ -274,6 +274,10 @@
         
         <tr>
             <td style="white-space: nowrap;">11 Sep 2022</td>
+            <td><a href="https://notes.nicolasdeville.com/projects/notes">This site</a></td>
+        </tr>
+        <tr>
+            <td style="white-space: nowrap;">11 Sep 2022</td>
             <td><a href="https://notes.nicolasdeville.com/projects/imapee">Imapee</a></td>
         </tr>
         <tr>
@@ -291,10 +295,6 @@
         <tr>
             <td style="white-space: nowrap;">11 Sep 2022</td>
             <td><a href="https://notes.nicolasdeville.com/books/learn-javascript-quickly">Learn JavaScript Quickly</a></td>
-        </tr>
-        <tr>
-            <td style="white-space: nowrap;">11 Sep 2022</td>
-            <td><a href="https://notes.nicolasdeville.com/projects/notes">This site</a></td>
         </tr>
         <tr>
             <td style="white-space: nowrap;">11 Sep 2022</td>
@@ -740,6 +740,35 @@
 <script>
     stork.register("sitesearch", "https://notes.nicolasdeville.com/search-index.st")
 </script>
+
+<!-- 220911 adding for copy code block feature -->
+<script type="text/javascript">
+    window.addEventListener("load", function () {
+      /* List all example code blocks */
+        var codes = document.getElementsByClassName("highlight"); 
+        /* For each example code block */
+        for (var i = 0; i < codes.length; i++) {
+            var button = document.createElement("button");
+            button.className = "copy-button copy-button-enabled";
+            button.style.display = "none";
+            button.innerText = "Copy";
+            /* Add onclick handler to copy button */
+            button.addEventListener("click", function() {
+                copyToClipboard(this.parentElement);
+                showCopied(this);
+            });
+            code.appendChild(button);
+            /* show/hide copy buttion when mouse move over/out code block */
+            code.addEventListener("mouseover", function() {
+                button.style.display = "block";
+            });
+            code.addEventListener("mouseout", function() {
+                button.style.display = "none";
+            })
+        }
+    }, false);
+</script>
+
 
 </body>
 </html>

@@ -8,6 +8,11 @@ url = "/ABOUT/"
 title = ""
 
 [[input.files]]
+path = "projects/notes/index.html"
+url = "/projects/notes"
+title = "This site"
+
+[[input.files]]
 path = "projects/imapee/index.html"
 url = "/projects/imapee"
 title = "Imapee"
@@ -31,11 +36,6 @@ title = "Building a static site with Pelican"
 path = "books/learn-javascript-quickly/index.html"
 url = "/books/learn-javascript-quickly"
 title = "Learn JavaScript Quickly"
-
-[[input.files]]
-path = "projects/notes/index.html"
-url = "/projects/notes"
-title = "This site"
 
 [[input.files]]
 path = "interests/watches/index.html"
