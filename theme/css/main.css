@@ -68,20 +68,6 @@ img.left, figure.left, div.figure.align-left {
     margin: 0 2em 2em 0;
 }
 
-.notes_count {
-    background: #fff;
-    max-width: 800px;
-    color: #000305;
-    font-size: 90%; /* Base font size: 14px */
-    font-family: 'Lato', Arial, sans-serif;
-    margin-right: 0.5em;
-    margin-top: 0;
-    margin-left: 0;
-    margin-bottom: 0;
-    padding: 0;
-    text-align: right;
-}
-
 /* Headings */
 h1 {
     font-size: 1.5em;
@@ -1050,10 +1036,46 @@ li:first-child .hentry, #content > .hentry {
     margin-left: 1.5em;
 }
 
-.last_updated {
-    font-size: 0.8em;
-    color: #003100;
+
+/* ### Above Navbar */
+
+.above-navbar {
+    width: 100%;
+    border-top-style: solid;
+    border-top-width: 1px;
+    border-top-color: #000;
 }
+
+.last_updated {
+    background: #fff;
+    /* max-width: 800px; */
+    /* width: 100%; */
+    color: #000305;
+    font-size: 90%; /* Base font size: 14px */
+    font-family: 'Lato', Arial, sans-serif;
+    margin-right: 0.5em;
+    margin-top: 0;
+    margin-left: 0;
+    margin-bottom: 0;
+    padding: 0;
+    text-align: left;
+}
+
+.notes_count {
+    background: #fff;
+    max-width: 800px;
+    color: #000305;
+    font-size: 90%; /* Base font size: 14px */
+    font-family: 'Lato', Arial, sans-serif;
+    margin-right: 0.5em;
+    margin-top: 0;
+    margin-left: 0;
+    margin-bottom: 0;
+    padding: 0;
+    text-align: right;
+}
+
+
 
 /* TEST */
 
