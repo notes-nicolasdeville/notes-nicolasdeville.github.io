@@ -13,9 +13,49 @@ url = "/projects/imapee"
 title = "Imapee"
 
 [[input.files]]
+path = "learning/javascript/index.html"
+url = "/learning/javascript"
+title = "Learning Javascript"
+
+[[input.files]]
+path = "learning/python/index.html"
+url = "/learning/python"
+title = "Learning Python"
+
+[[input.files]]
+path = "python/library-pelican/index.html"
+url = "/python/library-pelican"
+title = "Building a static site with Pelican"
+
+[[input.files]]
+path = "books/learn-javascript-quickly/index.html"
+url = "/books/learn-javascript-quickly"
+title = "Learn JavaScript Quickly"
+
+[[input.files]]
+path = "projects/notes/index.html"
+url = "/projects/notes"
+title = "This site"
+
+[[input.files]]
+path = "interests/watches/index.html"
+url = "/interests/watches"
+title = "Watches"
+
+[[input.files]]
+path = "b2b-sales/email-automation/index.html"
+url = "/b2b-sales/email-automation"
+title = "Email Automation for Sales outreaches"
+
+[[input.files]]
 path = "b2b-sales/email-validation/index.html"
 url = "/b2b-sales/email-validation"
 title = "Tools for email validation"
+
+[[input.files]]
+path = "python/script-consolidate-log/index.html"
+url = "/python/script-consolidate-log"
+title = "Python Script: consolidate list of emails from txt log files"
 
 [[input.files]]
 path = "apps/vs-code/index.html"
@@ -133,11 +173,6 @@ url = "/python/unicode"
 title = "Unicode in Python"
 
 [[input.files]]
-path = "python/library-pelican/index.html"
-url = "/python/library-pelican"
-title = "Building a static site with Pelican"
-
-[[input.files]]
 path = "python/snippets/index.html"
 url = "/python/snippets"
 title = "Python Snippets"
@@ -218,11 +253,6 @@ url = "/python/export-kindle-library"
 title = "Exporting my Kindle library data"
 
 [[input.files]]
-path = "learning/python/index.html"
-url = "/learning/python"
-title = "Learning Python"
-
-[[input.files]]
 path = "python/library-yagmail/index.html"
 url = "/python/library-yagmail"
 title = "Library: Yagmail"
@@ -236,11 +266,6 @@ title = "Github"
 path = "python/library-pynput/index.html"
 url = "/python/library-pynput"
 title = "Library: pynput"
-
-[[input.files]]
-path = "b2b-sales/email-automation/index.html"
-url = "/b2b-sales/email-automation"
-title = "Email Automation for Sales outreaches"
 
 [[input.files]]
 path = "python/library-termtables/index.html"
@@ -293,11 +318,6 @@ url = "/interests/f1"
 title = "F1"
 
 [[input.files]]
-path = "interests/watches/index.html"
-url = "/interests/watches"
-title = "Watches"
-
-[[input.files]]
 path = "learning/touch-typing/index.html"
 url = "/learning/touch-typing"
 title = "Learning Touch Typing"
@@ -311,11 +331,6 @@ title = "Learning Markdown"
 path = "projects/indexall/index.html"
 url = "/projects/indexall"
 title = "indeXall | indexing the worlds of passions"
-
-[[input.files]]
-path = "learning/javascript/index.html"
-url = "/learning/javascript"
-title = "Learning Javascript"
 
 [[input.files]]
 path = "home-office/usb-hubs-and-docks/index.html"
@@ -456,11 +471,6 @@ title = "Espanso"
 path = "apps/hazel/index.html"
 url = "/apps/hazel"
 title = "Hazel"
-
-[[input.files]]
-path = "projects/notes/index.html"
-url = "/projects/notes"
-title = "This site"
 
 [[input.files]]
 path = "helpers/apis/index.html"

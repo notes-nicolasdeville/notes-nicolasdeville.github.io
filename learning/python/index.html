@@ -6,7 +6,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="generator" content="Pelican" />
     <title>Learning Python</title>
+
+    <!-- CSS -->
     <link rel="stylesheet" href="https://notes.nicolasdeville.com/theme/css/main.css" />
+
+    <!-- JS -->
+    <script src="https://notes.nicolasdeville.com/theme/js/nic.js"></script>
+
+
+
         <meta name="description" content="a life-changing learning journey" />
 
     <!-- for Stork seach engine -->
@@ -65,13 +73,13 @@
 <footer class="post-info">
 
     <p>
-        07 Sep 2022 <span class="separator">|</span> in <a class="link_tag" href="https://notes.nicolasdeville.com/learning/">learning</a>
+        11 Sep 2022 <span class="separator">|</span> in <a class="link_tag" href="https://notes.nicolasdeville.com/learning/">learning</a>
  tags: <a class="link_tag" href="https://notes.nicolasdeville.com/tag/python.html">python</a>
 
         <!-- added 4/7 -->
         <!-- 		<br />
-        <abbr class="modified" title="2022-09-07T11:46:04.841964+02:00">
-                Updated: 07 Sep 2022
+        <abbr class="modified" title="2022-09-11T20:37:03.010406+02:00">
+                Updated: 11 Sep 2022
         </abbr>
  -->
 
@@ -100,7 +108,7 @@
 <li>Allow Duplicates: can have items with the same value.   </li>
 </ul>
 <h3>snippets</h3>
-<p>List name for examples below: <code>highlights</code>  </p>
+<p>(list name for examples below: <code>highlights</code>)  </p>
 <p>Add at index: <code>highlights.insert(position, element)</code>   </p>
 <p>Fetch last element of list: <code>highlights[-1:][0]</code>  </p>
 <h2>Tuples</h2>
@@ -110,6 +118,34 @@
 <li>Unchangeable: cannot change, add or remove items after the tuple has been created.  </li>
 <li>Allow Duplicates: can have items with the same value.</li>
 </ul>
+<p><span class="datestamp">11 Sep 2022</span>   </p>
+<h2>Sets</h2>
+<p>Sets are lists of unique values. Its primary feature is that you can add as much to it as you want, and if a value is already in it, it will simply be skipped.  </p>
+<p>So to get all the unique values from a list, you can just make it a set, eg <code>unique_values = set(my_list)</code> or in a for loop: <code>for x in y: unique_values.add(x)</code>.<br>
+For example:   </p>
+<div class="highlight"><pre><span></span><code><span class="n">list_emails</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="n">set_emails</span> <span class="o">=</span> <span class="nb">set</span><span class="p">()</span>
+
+<span class="k">for</span> <span class="n">root</span><span class="p">,</span> <span class="n">dirs</span><span class="p">,</span> <span class="n">files</span> <span class="ow">in</span> <span class="n">os</span><span class="o">.</span><span class="n">walk</span><span class="p">(</span><span class="s2">&quot;log&quot;</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">name</span> <span class="ow">in</span> <span class="n">files</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">name</span><span class="o">.</span><span class="n">endswith</span><span class="p">((</span><span class="s2">&quot;.txt&quot;</span><span class="p">)):</span>
+            <span class="n">file_path</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">root</span><span class="si">}</span><span class="s2">/</span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s2">&quot;</span>
+            <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">file_path</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">df</span><span class="p">:</span>
+                <span class="n">lines</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">readlines</span><span class="p">()</span>
+                <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">lines</span><span class="p">:</span>
+                    <span class="n">set_emails</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">line</span><span class="p">)</span> <span class="c1"># this will create a set of unique values</span>
+                    <span class="n">list_emails</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">line</span><span class="p">)</span> <span class="c1"># this will keep all items, ie include duplicates</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">len set_emails: </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">set_emails</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">len list_emails: </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">list_emails</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</code></pre></div>
+
+<p>prints:   </p>
+<div class="highlight"><pre><span></span><code>len set_emails: <span class="m">763</span>
+
+len list_emails: <span class="m">72090</span>
+</code></pre></div>
             </main>
         </div><!-- /.entry-content -->
     </article>

@@ -233,10 +233,22 @@ pre {
     /* font-size: .7rem; */
     margin-top: 0.5em;
     margin-bottom: 0.5em;
+
+    /* 220911 adding for copy code feature: */
+    position: relative;
 }
 /* pre:hover, pre:focus {
     width: min-content; 
 } */
+
+/* 220911 adding for copy code feature: */
+.copy_button {
+        position: absolute;
+        top: 5px;
+        right: 5px;
+
+        /* more stuff */
+}
 
 code {
     background-color: #1d1d1d;

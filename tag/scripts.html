@@ -6,7 +6,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="generator" content="Pelican" />
     <title>Nic's notes - scripts</title>
+
+    <!-- CSS -->
     <link rel="stylesheet" href="https://notes.nicolasdeville.com/theme/css/main.css" />
+
+    <!-- JS -->
+    <script src="https://notes.nicolasdeville.com/theme/js/nic.js"></script>
+
+
+
 
     <!-- for Stork seach engine -->
     <link rel="stylesheet" href="https://files.stork-search.net/basic.css" /> 
@@ -46,7 +54,7 @@
 
 
 <p class="notes_count">
-    13 notes 
+    14 notes 
     <span style="color:#C74350">|</span> 
     <a href="https://notes.nicolasdeville.com/tags">by tags</a> 
     <span style="color:#C74350">|</span> 
@@ -65,15 +73,241 @@
             <hr/>
 
                 <article class="hentry">
-                    <h1 class="entry-title"><a href="https://notes.nicolasdeville.com/python/snippets">Python Snippets</a></h1>
+                    <h1 class="entry-title"><a href="https://notes.nicolasdeville.com/python/script-consolidate-log">Python Script: consolidate list of emails from txt log files</a></h1>
 
                     <!-- added 4/7 -->
                     <div>
                         <p class="header_summary">
-                            <p>a collection of snippets I use</p>
+                            
                         </p>
                     </div>
 
+<footer class="post-info">
+
+    <p>
+        11 Sep 2022 <span class="separator">|</span> in <a class="link_tag" href="https://notes.nicolasdeville.com/python/">python</a>
+ tags: <a class="link_tag" href="https://notes.nicolasdeville.com/tag/scripts.html">scripts</a>
+<a class="link_tag" href="https://notes.nicolasdeville.com/tag/emails.html">emails</a>
+
+        <!-- added 4/7 -->
+        <!-- 		<br />
+        <abbr class="modified" title="2022-09-11T16:39:48.401237+02:00">
+                Updated: 11 Sep 2022
+        </abbr>
+ -->
+
+    </p>
+
+    
+
+</footer><h1>Background</h1>
+<ul>
+<li>ran an email campaign for a client, with 3.2k emails</li>
+<li>received 800+ emails back, including manual answers, Out Of Office &amp; Undeliverable</li>
+</ul>
+<h1>Goal</h1>
+<ul>
+<li>provide to client a list of email addresses to be flagged as "Undeliverable" (ie Do Not Email) in Hubspot</li>
+</ul>
+<h1>Steps</h1>
+<ol>
+<li>run Imapee [<a href="../../projects/imapee/index.html">Nic Note: Imapee</a>] to sweep my email inbox for emails in "Undeliverable" emails. As the Imapee script was run multiple times, emails were log in <code>.txt</code> files in <code>/log</code> folder</li>
+<li>extract all emails logged by Imapee in a list of unique values (= set in Python)</li>
+<li>match emails with list of emails in client's Hubspot (to remove all emails collected that were not originally in the list)</li>
+<li>remove any email that was already flagged as "unsubsribe" in Hubspot (perhaps not necessary - there is some value in knowing an email is undeliverable vs a simple unsubscribe)</li>
+</ol>
+<h1>Script</h1>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">datetime</span> <span class="kn">import</span> <span class="n">datetime</span>
+<span class="kn">import</span> <span class="nn">os</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;----------&quot;</span><span class="p">)</span>
+<span class="n">ts_file</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">datetime</span><span class="o">.</span><span class="n">now</span><span class="p">()</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="s1">&#39;%y%m</span><span class="si">%d</span><span class="s1">-%H%M&#39;</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">ts_time</span><span class="si">}</span><span class="s2"> starting </span><span class="si">{</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">basename</span><span class="p">(</span><span class="vm">__file__</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="kn">import</span> <span class="nn">time</span>
+<span class="n">start_time</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>
+
+<span class="kn">import</span> <span class="nn">pprint</span>
+<span class="n">pp</span> <span class="o">=</span> <span class="n">pprint</span><span class="o">.</span><span class="n">PrettyPrinter</span><span class="p">(</span><span class="n">indent</span><span class="o">=</span><span class="mi">4</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">()</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">basename</span><span class="p">(</span><span class="vm">__file__</span><span class="p">)</span><span class="si">}</span><span class="s2"> boilerplate loaded -----------&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">()</span>
+<span class="c1">####################</span>
+<span class="c1"># 220910 getting final list of all DNEs from xxxxxx campaign from log files</span>
+
+<span class="kn">import</span> <span class="nn">csv</span>
+
+<span class="c1">### set of emails from logs</span>
+
+<span class="n">set_emails_from_log</span> <span class="o">=</span> <span class="nb">set</span><span class="p">()</span>
+
+<span class="n">count_files</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">count_lines</span> <span class="o">=</span> <span class="mi">0</span>
+
+<span class="k">for</span> <span class="n">root</span><span class="p">,</span> <span class="n">dirs</span><span class="p">,</span> <span class="n">files</span> <span class="ow">in</span> <span class="n">os</span><span class="o">.</span><span class="n">walk</span><span class="p">(</span><span class="s2">&quot;log&quot;</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">name</span> <span class="ow">in</span> <span class="n">files</span><span class="p">:</span>
+
+        <span class="k">if</span> <span class="n">name</span><span class="o">.</span><span class="n">endswith</span><span class="p">((</span><span class="s2">&quot;.txt&quot;</span><span class="p">)):</span>
+
+            <span class="n">count_files</span> <span class="o">+=</span> <span class="mi">1</span>
+
+            <span class="n">file_path</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">root</span><span class="si">}</span><span class="s2">/</span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s2">&quot;</span>
+
+            <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">file_path</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">df</span><span class="p">:</span>
+                <span class="n">lines</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">readlines</span><span class="p">()</span>
+                <span class="n">count_lines_in_file</span> <span class="o">=</span> <span class="mi">0</span>
+                <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">lines</span><span class="p">:</span>
+                    <span class="n">count_lines</span> <span class="o">+=</span> <span class="mi">1</span>
+                    <span class="n">count_lines_in_file</span> <span class="o">+=</span> <span class="mi">1</span>
+
+                    <span class="k">if</span> <span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span> <span class="ow">in</span> <span class="n">line</span><span class="p">:</span>
+                        <span class="n">line</span> <span class="o">=</span> <span class="n">line</span><span class="o">.</span><span class="n">rstrip</span><span class="p">()</span>
+
+                    <span class="c1"># print(repr(line))</span>
+
+                    <span class="k">if</span> <span class="s1">&#39;@&#39;</span> <span class="ow">in</span> <span class="n">line</span><span class="p">:</span> <span class="c1"># basic but enough here - just taking care of removing any empty row</span>
+                        <span class="n">set_emails_from_log</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">line</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span><span class="o">.</span><span class="n">strip</span><span class="p">())</span>
+
+                <span class="c1">### DELETE EMPTY FILES / not necessary here, maintenance only</span>
+                <span class="k">if</span> <span class="n">count_lines_in_file</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+                    <span class="n">os</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="n">file_path</span><span class="p">)</span>
+                    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;DELETED </span><span class="si">{</span><span class="n">file_path</span><span class="si">}</span><span class="s2"> with </span><span class="si">{</span><span class="n">count_lines_in_file</span><span class="si">}</span><span class="s2"> lines.&quot;</span><span class="p">)</span>
+
+                <span class="c1">### Check</span>
+                <span class="c1"># print(f&quot;{file_path}:\t{count_lines_in_file} lines.&quot;)</span>
+
+<span class="c1"># print(f&quot;\n\nset_emails_from_log:&quot;)</span>
+<span class="c1"># pp.pprint(set_emails_from_log)</span>
+
+<span class="c1">### Match with existing XX contacts in Hubspot</span>
+
+<span class="n">csv_file</span> <span class="o">=</span> <span class="s2">&quot;data/220911_hubspot-crm-export_my-XX-contacts.csv&quot;</span>
+
+<span class="n">count_row_csv</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">count_unsubscribe</span> <span class="o">=</span> <span class="mi">0</span>
+
+<span class="n">all_hubspot_emails</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="n">all_hubspot_unsubscribe_emails</span> <span class="o">=</span> <span class="p">[]</span>
+
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">csv_file</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">,</span> <span class="n">newline</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s1">&#39;UTF-8&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">h</span><span class="p">:</span>
+    <span class="n">reader</span> <span class="o">=</span> <span class="n">csv</span><span class="o">.</span><span class="n">reader</span><span class="p">(</span><span class="n">h</span><span class="p">,</span> <span class="n">delimiter</span><span class="o">=</span><span class="s2">&quot;,&quot;</span><span class="p">)</span>
+    <span class="nb">next</span><span class="p">(</span><span class="n">reader</span><span class="p">)</span>
+    <span class="n">data</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">reader</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">row</span> <span class="ow">in</span> <span class="n">data</span><span class="p">:</span>
+        <span class="n">count_row_csv</span> <span class="o">+=</span> <span class="mi">1</span>
+
+        <span class="n">email</span> <span class="o">=</span> <span class="n">row</span><span class="p">[</span><span class="mi">4</span><span class="p">]</span>
+        <span class="n">unsubscribe</span> <span class="o">=</span> <span class="n">row</span><span class="p">[</span><span class="mi">5</span><span class="p">]</span>
+
+        <span class="k">if</span> <span class="s1">&#39;@&#39;</span> <span class="ow">in</span> <span class="n">email</span><span class="p">:</span>
+
+            <span class="n">all_hubspot_emails</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">email</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span><span class="o">.</span><span class="n">strip</span><span class="p">())</span>
+
+            <span class="k">if</span> <span class="n">unsubscribe</span> <span class="o">!=</span> <span class="s1">&#39;&#39;</span><span class="p">:</span>
+                <span class="n">count_unsubscribe</span> <span class="o">+=</span> <span class="mi">1</span>
+                <span class="c1"># print(f&quot;{count_row_csv} = {email}: {unsubscribe}&quot;)</span>
+                <span class="n">all_hubspot_unsubscribe_emails</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">email</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span><span class="o">.</span><span class="n">strip</span><span class="p">())</span>
+
+
+
+<span class="n">list_delta</span> <span class="o">=</span> <span class="p">[]</span> <span class="c1"># to collect emails not added to final list / for verification or else. </span>
+
+<span class="n">final_list_of_new_unsubscribe_emails</span> <span class="o">=</span> <span class="p">[]</span>
+
+<span class="k">for</span> <span class="n">email_found</span> <span class="ow">in</span> <span class="n">set_emails_from_log</span><span class="p">:</span>
+    <span class="k">if</span> <span class="n">email_found</span> <span class="ow">in</span> <span class="n">all_hubspot_emails</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">email_found</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">all_hubspot_unsubscribe_emails</span><span class="p">:</span>
+            <span class="n">final_list_of_new_unsubscribe_emails</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">email_found</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">list_delta</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">email_found</span><span class="p">)</span>
+
+<span class="c1"># pp.pprint(final_list_of_new_unsubscribe_emails)</span>
+
+<span class="c1">### write final file to share with client (CSV)</span>
+
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;data/</span><span class="si">{</span><span class="n">ts_file</span><span class="si">}</span><span class="s2">_emails_to_unsubscribe_in_hubspot.csv&quot;</span><span class="p">,</span> <span class="s1">&#39;w&#39;</span><span class="p">,</span> <span class="n">newline</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s1">&#39;utf-8&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">i</span><span class="p">:</span>
+    <span class="n">writer</span> <span class="o">=</span> <span class="n">csv</span><span class="o">.</span><span class="n">writer</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">delimiter</span><span class="o">=</span><span class="s1">&#39;,&#39;</span><span class="p">,</span> <span class="n">quotechar</span><span class="o">=</span><span class="s1">&#39;|&#39;</span><span class="p">,</span> <span class="n">quoting</span><span class="o">=</span><span class="n">csv</span><span class="o">.</span><span class="n">QUOTE_MINIMAL</span><span class="p">,</span> <span class="n">lineterminator</span><span class="o">=</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
+    <span class="n">writer</span><span class="o">.</span><span class="n">writerow</span><span class="p">([</span><span class="s1">&#39;email&#39;</span><span class="p">])</span> <span class="c1"># header row</span>
+    <span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">final_list_of_new_unsubscribe_emails</span><span class="p">:</span>
+        <span class="n">writer</span><span class="o">.</span><span class="n">writerow</span><span class="p">([</span><span class="n">item</span><span class="p">])</span> <span class="c1"># pass list for row, else iterates through string</span>
+
+<span class="c1">########################################################################################################</span>
+
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">()</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;-------------------------------&#39;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">basename</span><span class="p">(</span><span class="vm">__file__</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">()</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">count_files</span><span class="si">=}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">count_lines</span><span class="si">=}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">()</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">set_emails_from_log: </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">set_emails_from_log</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">()</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">all_hubspot_emails: </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">all_hubspot_emails</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;all_hubspot_unsubscribe_emails: </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">all_hubspot_unsubscribe_emails</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">final_list_of_new_unsubscribe_emails: </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">final_list_of_new_unsubscribe_emails</span><span class="p">)</span><span class="si">}</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+
+
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;-------------------------------&#39;</span><span class="p">)</span>
+    <span class="n">run_time</span> <span class="o">=</span> <span class="nb">round</span><span class="p">((</span><span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span> <span class="o">-</span> <span class="n">start_time</span><span class="p">),</span> <span class="mi">1</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">run_time</span> <span class="o">&gt;</span> <span class="mi">60</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">basename</span><span class="p">(</span><span class="vm">__file__</span><span class="p">)</span><span class="si">}</span><span class="s1"> finished in </span><span class="si">{</span><span class="n">run_time</span><span class="o">/</span><span class="mi">60</span><span class="si">}</span><span class="s1"> minutes.&#39;</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">basename</span><span class="p">(</span><span class="vm">__file__</span><span class="p">)</span><span class="si">}</span><span class="s1"> finished in </span><span class="si">{</span><span class="n">run_time</span><span class="si">}</span><span class="s1">s.&#39;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">()</span>
+</code></pre></div>
+
+<p>prints:  </p>
+<div class="highlight"><pre><span></span><code>-------------------------------
+220910_XX_list_dne.py
+
+<span class="nv">count_files</span> <span class="o">=</span> <span class="m">12</span>
+<span class="nv">count_lines</span> <span class="o">=</span> <span class="m">72090</span>
+
+
+set_emails_from_log: <span class="m">762</span>
+
+
+all_hubspot_emails: <span class="m">3577</span>
+all_hubspot_unsubscribe_emails: <span class="m">595</span>
+
+final_list_of_new_unsubscribe_emails: <span class="m">487</span>
+
+-------------------------------
+220910_XX_list_dne.py finished <span class="k">in</span> <span class="m">0</span>.1s.
+</code></pre></div>
+
+<blockquote>
+<p>CSV list of 487 emails to mark as "Do Not Email" in their Hubspot provided to client.   </p>
+</blockquote>
+                </article>
+            </aside>
+
+                <section id="content" class="body">
+
+                <!-- PREVIOUS NOTES -->
+				<p class="notes-section">previous notes</p>
+                <hr>
+
+                <ol id="posts-list" class="hfeed">
+            
+
+
+
+            <li>
+                <article class="hentry">
+                    <header>
+                        <!-- PREVIOUS NOTE TITLE -->
+                        <h1><a href="https://notes.nicolasdeville.com/python/snippets" rel="bookmark"
+                            title="Python Snippets">Python Snippets</a></h1>
+                        <!-- PREVIOUS NOTE SUMMARY -->
+                        <div class="entry-content">
+                            <p>a collection of snippets I use</p>
+                        </div>
+                    </header>
+
+                    <div class="entry-content">
+                        <!-- PREVIOUS NOTE METADATA -->
 <footer class="post-info">
 
     <p>
@@ -92,104 +326,11 @@
 
     
 
-</footer><p><span class="datestamp">06 Sep 2022</span>   </p>
-<h2>identify if all caps</h2>
-<div class="highlight"><pre><span></span><code><span class="k">if</span> <span class="nb">all</span><span class="p">(</span><span class="n">char</span><span class="o">.</span><span class="n">isupper</span><span class="p">()</span> <span class="k">for</span> <span class="n">char</span> <span class="ow">in</span> <span class="n">first</span><span class="p">):</span>
-</code></pre></div>
-
-<p>eg:</p>
-<div class="highlight"><pre><span></span><code><span class="k">if</span> <span class="nb">all</span><span class="p">(</span><span class="n">char</span><span class="o">.</span><span class="n">isupper</span><span class="p">()</span> <span class="k">for</span> <span class="n">char</span> <span class="ow">in</span> <span class="n">first</span><span class="p">):</span>
-
-    <span class="n">new_first</span> <span class="o">=</span> <span class="n">string</span><span class="o">.</span><span class="n">capwords</span><span class="p">(</span><span class="n">first</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
-
-    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">first</span><span class="si">}</span><span class="s2"> ----&gt; </span><span class="si">{</span><span class="n">new_first</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-</code></pre></div>
-
-<p>prints:</p>
-<div class="highlight"><pre><span></span><code>AMELIE ----&gt; Amelie
-JAN ----&gt; Jan
-ERIC ----&gt; Eric
-</code></pre></div>
-
-<h2>capitalise strings</h2>
-<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">string</span>
-
-<span class="n">first</span> <span class="o">=</span> <span class="s1">&#39;pierre-GARCIA&#39;</span>
-
-<span class="k">if</span> <span class="ow">not</span> <span class="n">first</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">isupper</span><span class="p">():</span>
-
-    <span class="n">first</span> <span class="o">=</span> <span class="n">first</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
-
-    <span class="k">if</span> <span class="s1">&#39;-&#39;</span> <span class="ow">in</span> <span class="n">first</span><span class="p">:</span>
-        <span class="n">new_first</span> <span class="o">=</span> <span class="n">string</span><span class="o">.</span><span class="n">capwords</span><span class="p">(</span><span class="n">first</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="s1">&#39;-&#39;</span><span class="p">)</span>
-    <span class="k">else</span><span class="p">:</span>
-        <span class="n">new_first</span> <span class="o">=</span> <span class="n">string</span><span class="o">.</span><span class="n">capwords</span><span class="p">(</span><span class="n">first</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
-
-    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">first</span><span class="si">}</span><span class="s2"> ----&gt; </span><span class="si">{</span><span class="n">new_first</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-
-<span class="c1"># Can be used with separator, ie</span>
-<span class="c1"># formatted = string.capwords(sentence, sep = &#39;g&#39;)</span>
-</code></pre></div>
-
-<p>prints:</p>
-<div class="highlight"><pre><span></span><code>pierre-GARCIA ----&gt; Pierre-Garcia
-</code></pre></div>
-
-<h2>print list with index</h2>
-<div class="highlight"><pre><span></span><code><span class="n">highlights</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;x&#39;</span><span class="p">,</span> <span class="s1">&#39;y&#39;</span><span class="p">,</span> <span class="s1">&#39;z&#39;</span><span class="p">]</span>
-
-<span class="k">for</span> <span class="n">index</span><span class="p">,</span> <span class="n">value</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">highlights</span><span class="p">):</span>
-    <span class="nb">print</span><span class="p">(</span><span class="n">index</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span>
-</code></pre></div>
-
-<p>prints:</p>
-<div class="highlight"><pre><span></span><code><span class="m">0</span> x
-<span class="m">1</span> y
-<span class="m">2</span> z
-</code></pre></div>
-
-<p>for count instead of index:</p>
-<div class="highlight"><pre><span></span><code><span class="k">for</span> <span class="n">index</span><span class="p">,</span> <span class="n">value</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">highlights</span><span class="p">):</span>
-    <span class="nb">print</span><span class="p">(</span><span class="n">index</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span>
-</code></pre></div>
-
-<h2>print exception error</h2>
-<div class="highlight"><pre><span></span><code><span class="k">try</span><span class="p">:</span>
-    <span class="c1"># write code that may throw exception</span>
-<span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
-    <span class="c1"># the code for handling the exception</span>
-    <span class="nb">print</span><span class="p">(</span><span class="n">e</span><span class="p">)</span>
-</code></pre></div>
-
-<p><span class="datestamp">09 Sep 2022</span>   </p>
-<h2>printing to file</h2>
-<h3>easiest method</h3>
-<div class="highlight"><pre><span></span><code><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;filename.txt&#39;</span><span class="p">,</span> <span class="s1">&#39;w&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;This message will be written to a file.&#39;</span><span class="p">,</span> <span class="n">file</span><span class="o">=</span><span class="n">f</span><span class="p">)</span>
-</code></pre></div>
-
-<h3>redirecting a Python's script output in the terminal</h3>
-<p>If script run from Terminal, redirect the output (print) of the script to a file, using a single right angle bracket:  </p>
-<p><code>$ python3 hello.py &gt; output.txt</code>   </p>
-<h3>redirecting the Standard Output Stream</h3>
-<p>to print to file:  </p>
-<div class="highlight"><pre><span></span><code><span class="n">original_stdout</span> <span class="o">=</span> <span class="n">sys</span><span class="o">.</span><span class="n">stdout</span> <span class="c1"># save original stdout</span>
-
-<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;test.txt&#39;</span><span class="p">,</span> <span class="s1">&#39;w&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
-    <span class="n">sys</span><span class="o">.</span><span class="n">stdout</span> <span class="o">=</span> <span class="n">f</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;TEST&quot;</span><span class="p">)</span>
-    <span class="n">sys</span><span class="o">.</span><span class="n">stdout</span> <span class="o">=</span> <span class="n">original_stdout</span> <span class="c1"># reverts to original stdout</span>
-</code></pre></div>
+</footer>                    </div>
+                    
                 </article>
-            </aside>
-
-                <section id="content" class="body">
-
-                <!-- PREVIOUS NOTES -->
-				<p class="notes-section">previous notes</p>
-                <hr>
-
-                <ol id="posts-list" class="hfeed">
+                <hr/>
+            </li>
             
 
 
