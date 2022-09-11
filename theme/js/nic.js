@@ -7,7 +7,7 @@ let blocks = document.querySelectorAll("highlight");
 blocks.forEach((block) => {
   // only add a button if browser supports Clipboard API
     if (navigator.clipboard) {
-    let button = document.createElement("copy_button");
+    let button = document.createElement("button");
     button.innerText = copyButtonLabel;
     button.addEventListener("click", copyCode);
     block.appendChild(button);

@@ -242,12 +242,13 @@ pre {
 } */
 
 /* 220911 adding for copy code feature: */
-.copy_button {
+button {
         position: absolute;
         top: 5px;
         right: 5px;
 
-        /* more stuff */
+        color: #fff;
+        background-color: #da2222;
 }
 
 code {
