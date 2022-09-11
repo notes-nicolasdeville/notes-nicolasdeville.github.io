@@ -8,6 +8,16 @@ url = "/ABOUT/"
 title = ""
 
 [[input.files]]
+path = "learning/css/index.html"
+url = "/learning/css"
+title = "Learning CSS"
+
+[[input.files]]
+path = "learning/html/index.html"
+url = "/learning/html"
+title = "Learning HTML"
+
+[[input.files]]
 path = "projects/imapee/index.html"
 url = "/projects/imapee"
 title = "Imapee"
@@ -161,11 +171,6 @@ title = "Alfred"
 path = "apps/grist/index.html"
 url = "/apps/grist"
 title = "Grist | The Evolution of Spreadsheets"
-
-[[input.files]]
-path = "learning/css/index.html"
-url = "/learning/css"
-title = "Learning CSS"
 
 [[input.files]]
 path = "python/unicode/index.html"

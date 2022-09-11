@@ -1042,41 +1042,26 @@ li:first-child .hentry, #content > .hentry {
 .above-navbar {
     width: 100%;
     border-top-style: solid;
-    border-top-width: 1px;
+    border-top-width: 10px;
     border-top-color: #000;
-    order: 2;
+    /* order: 2; */
 }
 
 .last_updated {
     background: #fff;
-    /* max-width: 800px; */
-    /* width: 100%; */
     float: left;
+    color: #000305;
+    font-size: 90%; /* Base font size: 14px */
+    text-align: left;
     width: 50%;
     margin: auto;
     order: 1;
-    color: #000305;
-    font-size: 90%; /* Base font size: 14px */
-    font-family: 'Lato', Arial, sans-serif;
-    margin-right: 0.5em;
-    margin-top: 0;
-    margin-left: 0;
-    margin-bottom: 0;
-    padding: 0;
-    text-align: left;
 }
 
 .notes_count {
     background: #fff;
-    /* max-width: 800px; */
     color: #000305;
     font-size: 90%; /* Base font size: 14px */
-    font-family: 'Lato', Arial, sans-serif;
-    margin-right: 0.5em;
-    margin-top: 0;
-    margin-left: 0;
-    margin-bottom: 0;
-    padding: 0;
     text-align: right;
     position: relative;
     float: right;
