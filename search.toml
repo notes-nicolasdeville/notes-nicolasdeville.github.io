@@ -8,6 +8,11 @@ url = "/ABOUT/"
 title = ""
 
 [[input.files]]
+path = "interests/web3/index.html"
+url = "/interests/web3"
+title = "Web3"
+
+[[input.files]]
 path = "python/gitignore/index.html"
 url = "/python/gitignore"
 title = "Gitignore"
@@ -206,11 +211,6 @@ title = "Herman Miller x Logitech Embody Chair"
 path = "home-office/setup/index.html"
 url = "/home-office/setup"
 title = "Home Office Setup"
-
-[[input.files]]
-path = "interests/web3/index.html"
-url = "/interests/web3"
-title = "Web3"
 
 [[input.files]]
 path = "interests/crypto/index.html"
@@ -1463,18 +1463,18 @@ url = "/b2b-sales/you-will-be-directed-to-who-you-sound-like"
 title = "You Will Be Directed To Who You Sound Like"
 
 [[input.files]]
-path = "salesleaderplaybook/underpromise-overdeliver/index.html"
-url = "/salesleaderplaybook/underpromise-overdeliver"
+path = "leadership/underpromise-overdeliver/index.html"
+url = "/leadership/underpromise-overdeliver"
 title = "Underpromise, Overdeliver"
 
 [[input.files]]
-path = "salesleaderplaybook/why-having-a-goal-matters/index.html"
-url = "/salesleaderplaybook/why-having-a-goal-matters"
+path = "leadership/why-having-a-goal-matters/index.html"
+url = "/leadership/why-having-a-goal-matters"
 title = "Why having a goal matters"
 
 [[input.files]]
-path = "salesleaderplaybook/2-types-of-successful-saas-sales-people/index.html"
-url = "/salesleaderplaybook/2-types-of-successful-saas-sales-people"
+path = "leadership/2-types-of-successful-saas-sales-people/index.html"
+url = "/leadership/2-types-of-successful-saas-sales-people"
 title = "2 types of successful SaaS Sales people"
 
 [[input.files]]
