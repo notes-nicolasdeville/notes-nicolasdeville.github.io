@@ -10,9 +10,6 @@
     <!-- CSS -->
     <link rel="stylesheet" href="https://notes.nicolasdeville.com/theme/css/main.css" />
 
-    <!-- JS -->
-    <script src="https://notes.nicolasdeville.com/theme/js/nic.js"></script>
-
 
 
 
@@ -35,7 +32,7 @@
             </div>
 
             <div class="above-navbar">
-                <div class="last_updated">12 Sep 2022 | 09:39</div>
+                <div class="last_updated">12 Sep 2022 | 10:16</div>
                 <div>
                     <p class="notes_count">
                         <a href="https://notes.nicolasdeville.com/tags">by tags</a> 
@@ -93,15 +90,221 @@
             <hr/>
 
                 <article class="hentry">
-                    <h1 class="entry-title"><a href="https://notes.nicolasdeville.com/python/unicode">Unicode in Python</a></h1>
+                    <h1 class="entry-title"><a href="https://notes.nicolasdeville.com/python/gitignore">Gitignore</a></h1>
 
                     <!-- added 4/7 -->
                     <div>
                         <p class="header_summary">
-                            <p>always a pain</p>
+                            
                         </p>
                     </div>
 
+<footer class="post-info">
+
+    <p>
+        12 Sep 2022 <span class="separator">|</span> in <a class="link_tag" href="https://notes.nicolasdeville.com/python/">python</a>
+
+        <!-- added 4/7 -->
+        <!-- 		<br />
+        <abbr class="modified" title="2022-09-12T10:13:40.903789+02:00">
+                Updated: 12 Sep 2022
+        </abbr>
+ -->
+
+    </p>
+
+    
+
+</footer><p><span class="datestamp">04 Sep 2022</span>  </p>
+<p>When working with Git, you do not want to sync all files to your Github repo.    </p>
+<p>Adding a file named <code>.gitignore</code> (no name, just starts with dot) at the root of your synced repo enables to discard files matching the patterns listed from being synced to Github.  </p>
+<p>Here is my gitignore file for my Python projects - can't remember where I found the original template so source unknown.    </p>
+<p><span class="datestamp">12 Sep 2022</span>   </p>
+<div class="highlight"><pre><span></span><code><span class="c1"># Nic</span>
+
+<span class="n">data</span><span class="o">/</span>
+<span class="n">log</span><span class="o">/</span>
+<span class="o">.</span><span class="n">DS_Store</span>
+<span class="o">.</span><span class="n">bash_profile</span>
+<span class="o">.</span><span class="n">cache</span><span class="o">/</span>
+<span class="n">__pycache__</span>
+<span class="o">.</span><span class="n">vscode</span><span class="o">/</span>
+<span class="n">_backup</span><span class="o">/</span>
+<span class="o">.</span><span class="n">idea</span><span class="o">/</span>
+<span class="o">.</span><span class="n">ipynb_checkpoints</span><span class="o">/</span>
+<span class="o">*</span><span class="n">_old</span><span class="o">/</span>
+<span class="n">old</span><span class="o">/</span>
+<span class="n">old_</span><span class="o">*/</span>
+<span class="o">.</span><span class="n">eggs</span><span class="o">/</span>
+<span class="n">test</span><span class="o">.</span><span class="n">py</span>
+<span class="n">test</span><span class="o">*.</span><span class="n">py</span>
+<span class="o">.</span><span class="n">ebignore</span>
+<span class="n">credentials</span><span class="o">.</span><span class="n">json</span>
+<span class="n">token</span><span class="o">.</span><span class="n">json</span>
+<span class="n">token</span><span class="o">.</span><span class="n">pickle</span>
+<span class="n">pip</span><span class="o">-</span><span class="n">selfcheck</span><span class="o">.</span><span class="n">json</span>
+<span class="n">pyvenv</span><span class="o">.</span><span class="n">cfg</span>
+<span class="o">*.</span><span class="n">ipynb</span>
+<span class="o">*.</span><span class="n">crdownload</span>
+
+<span class="c1"># Byte-compiled / optimized / DLL files</span>
+<span class="n">__pycache__</span><span class="o">/</span>
+<span class="o">*.</span><span class="n">py</span><span class="p">[</span><span class="n">cod</span><span class="p">]</span>
+<span class="o">*</span><span class="err">$</span><span class="n">py</span><span class="o">.</span><span class="k">class</span>
+
+<span class="err"># </span><span class="nc">C</span> <span class="n">extensions</span>
+<span class="o">*.</span><span class="n">so</span>
+
+<span class="c1"># Distribution / packaging</span>
+<span class="o">.</span><span class="n">Python</span>
+<span class="n">build</span><span class="o">/</span>
+<span class="n">develop</span><span class="o">-</span><span class="n">eggs</span><span class="o">/</span>
+<span class="n">dist</span><span class="o">/</span>
+<span class="n">downloads</span><span class="o">/</span>
+<span class="n">eggs</span><span class="o">/</span>
+<span class="o">.</span><span class="n">eggs</span><span class="o">/</span>
+<span class="n">lib</span><span class="o">/</span>
+<span class="n">lib64</span><span class="o">/</span>
+<span class="n">parts</span><span class="o">/</span>
+<span class="n">sdist</span><span class="o">/</span>
+<span class="n">var</span><span class="o">/</span>
+<span class="n">wheels</span><span class="o">/</span>
+<span class="n">pip</span><span class="o">-</span><span class="n">wheel</span><span class="o">-</span><span class="n">metadata</span><span class="o">/</span>
+<span class="n">share</span><span class="o">/</span><span class="n">python</span><span class="o">-</span><span class="n">wheels</span><span class="o">/</span>
+<span class="o">*.</span><span class="n">egg</span><span class="o">-</span><span class="n">info</span><span class="o">/</span>
+<span class="o">.</span><span class="n">installed</span><span class="o">.</span><span class="n">cfg</span>
+<span class="o">*.</span><span class="n">egg</span>
+<span class="n">MANIFEST</span>
+
+<span class="c1"># PyInstaller</span>
+<span class="c1">#  Usually these files are written by a python script from a template</span>
+<span class="c1">#  before PyInstaller builds the exe, so as to inject date/other infos into it.</span>
+<span class="o">*.</span><span class="n">manifest</span>
+<span class="o">*.</span><span class="n">spec</span>
+
+<span class="c1"># Installer logs</span>
+<span class="n">pip</span><span class="o">-</span><span class="n">log</span><span class="o">.</span><span class="n">txt</span>
+<span class="n">pip</span><span class="o">-</span><span class="n">delete</span><span class="o">-</span><span class="n">this</span><span class="o">-</span><span class="n">directory</span><span class="o">.</span><span class="n">txt</span>
+
+<span class="c1"># Unit test / coverage reports</span>
+<span class="n">htmlcov</span><span class="o">/</span>
+<span class="o">.</span><span class="n">tox</span><span class="o">/</span>
+<span class="o">.</span><span class="n">nox</span><span class="o">/</span>
+<span class="o">.</span><span class="n">coverage</span>
+<span class="o">.</span><span class="n">coverage</span><span class="o">.*</span>
+<span class="o">.</span><span class="n">cache</span>
+<span class="n">nosetests</span><span class="o">.</span><span class="n">xml</span>
+<span class="n">coverage</span><span class="o">.</span><span class="n">xml</span>
+<span class="o">*.</span><span class="n">cover</span>
+<span class="o">*.</span><span class="n">py</span><span class="p">,</span><span class="n">cover</span>
+<span class="o">.</span><span class="n">hypothesis</span><span class="o">/</span>
+<span class="o">.</span><span class="n">pytest_cache</span><span class="o">/</span>
+
+<span class="c1"># Translations</span>
+<span class="o">*.</span><span class="n">mo</span>
+<span class="o">*.</span><span class="n">pot</span>
+
+<span class="c1"># Django stuff:</span>
+<span class="o">*.</span><span class="n">log</span>
+<span class="n">local_settings</span><span class="o">.</span><span class="n">py</span>
+<span class="n">db</span><span class="o">.</span><span class="n">sqlite3</span>
+<span class="n">db</span><span class="o">.</span><span class="n">sqlite3</span><span class="o">-</span><span class="n">journal</span>
+
+<span class="c1"># Flask stuff:</span>
+<span class="n">instance</span><span class="o">/</span>
+<span class="o">.</span><span class="n">webassets</span><span class="o">-</span><span class="n">cache</span>
+
+<span class="c1"># Scrapy stuff:</span>
+<span class="o">.</span><span class="n">scrapy</span>
+
+<span class="c1"># Sphinx documentation</span>
+<span class="n">docs</span><span class="o">/</span><span class="n">_build</span><span class="o">/</span>
+
+<span class="c1"># PyBuilder</span>
+<span class="n">target</span><span class="o">/</span>
+
+<span class="c1"># Jupyter Notebook</span>
+<span class="o">.</span><span class="n">ipynb_checkpoints</span>
+
+<span class="c1"># IPython</span>
+<span class="n">profile_default</span><span class="o">/</span>
+<span class="n">ipython_config</span><span class="o">.</span><span class="n">py</span>
+
+<span class="c1"># pyenv</span>
+<span class="o">.</span><span class="n">python</span><span class="o">-</span><span class="n">version</span>
+
+<span class="c1"># pipenv</span>
+<span class="c1">#   According to pypa/pipenv#598, it is recommended to include Pipfile.lock in version control.</span>
+<span class="c1">#   However, in case of collaboration, if having platform-specific dependencies or dependencies</span>
+<span class="c1">#   having no cross-platform support, pipenv may install dependencies that don&#39;t work, or not</span>
+<span class="c1">#   install all needed dependencies.</span>
+<span class="c1">#Pipfile.lock</span>
+
+<span class="c1"># PEP 582; used by e.g. github.com/David-OConnor/pyflow</span>
+<span class="n">__pypackages__</span><span class="o">/</span>
+
+<span class="c1"># Celery stuff</span>
+<span class="n">celerybeat</span><span class="o">-</span><span class="n">schedule</span>
+<span class="n">celerybeat</span><span class="o">.</span><span class="n">pid</span>
+
+<span class="c1"># SageMath parsed files</span>
+<span class="o">*.</span><span class="n">sage</span><span class="o">.</span><span class="n">py</span>
+
+<span class="c1"># Environments</span>
+<span class="o">.</span><span class="n">env</span>
+<span class="o">.</span><span class="n">venv</span>
+<span class="n">env</span><span class="o">/</span>
+<span class="n">venv</span><span class="o">/</span>
+<span class="n">ENV</span><span class="o">/</span>
+<span class="n">env</span><span class="o">.</span><span class="n">bak</span><span class="o">/</span>
+<span class="n">venv</span><span class="o">.</span><span class="n">bak</span><span class="o">/</span>
+
+<span class="c1"># Spyder project settings</span>
+<span class="o">.</span><span class="n">spyderproject</span>
+<span class="o">.</span><span class="n">spyproject</span>
+
+<span class="c1"># Rope project settings</span>
+<span class="o">.</span><span class="n">ropeproject</span>
+
+<span class="c1"># mkdocs documentation</span>
+<span class="o">/</span><span class="n">site</span>
+
+<span class="c1"># mypy</span>
+<span class="o">.</span><span class="n">mypy_cache</span><span class="o">/</span>
+<span class="o">.</span><span class="n">dmypy</span><span class="o">.</span><span class="n">json</span>
+<span class="n">dmypy</span><span class="o">.</span><span class="n">json</span>
+
+<span class="c1"># Pyre type checker</span>
+<span class="o">.</span><span class="n">pyre</span><span class="o">/</span>
+</code></pre></div>
+                </article>
+            </aside>
+
+                <section id="content" class="body">
+
+                <!-- PREVIOUS NOTES -->
+				<p class="notes-section">previous notes</p>
+                <hr>
+
+                <ol id="posts-list" class="hfeed">
+            
+
+
+
+            <li>
+                <article class="hentry">
+                    <header>
+                        <!-- PREVIOUS NOTE TITLE -->
+                        <h1><a href="https://notes.nicolasdeville.com/python/unicode" rel="bookmark"
+                            title="Unicode in Python">Unicode in Python</a></h1>
+                        <!-- PREVIOUS NOTE SUMMARY -->
+                        <div class="entry-content">
+                            <p>always a pain</p>
+                        </div>
+                    </header>
+
+                    <div class="entry-content">
+                        <!-- PREVIOUS NOTE METADATA -->
 <footer class="post-info">
 
     <p>
@@ -118,61 +321,11 @@
 
     
 
-</footer><p><span class="datestamp">10 Sep 2022</span> starting note.  </p>
-<h1>Toubleshooting</h1>
-<h2>Solve Error: 'ascii' codec can't encode character '\xa0' in position xx</h2>
-<p><span class="datestamp">10 Sep 2022</span>   trying: <br>
-Add <code>PYTHONIOENCODING="UTF-8"</code> to PATH, ie add to <code>.env</code> if runnning dotenv [<a href="../../python/library-dotenv/index.html">Nic Note: Library: dotenv</a>].<br>
--&gt; Not working</p>
-<p>Tests:  </p>
-<ol>
-<li><code>'Automatyczna odpowiedź'</code>   </li>
-</ol>
-<p>prints: <code>Automatyczna odpowiedź</code>   <br>
-output script: <code>ERROR with Automatyczna odpowiedź: 'ascii' codec can't encode character '\u017a' in position 31: ordinal not in range(128)</code>    </p>
-<ol>
-<li><code>'Automatyczna odpowiedź'.encode("utf-8")</code>  </li>
-</ol>
-<p>prints: <code>b'Automatyczna odpowied\xc5\xba'</code> 🤔 <br>
-output script: <code>ERROR with b'Automatyczna odpowied\xc5\xba': "subject" expected str value, "&lt;class 'int'&gt;" received</code>  </p>
-<ol>
-<li><code>'Automatyczna odpowiedź'.encode("ascii")</code> </li>
-</ol>
-<p>output script: <code>UnicodeEncodeError: 'ascii' codec can't encode character '\u017a' in position 21: ordinal not in range(128)</code>  </p>
-<p>Still not working :/</p>
-<h1>Resources</h1>
-<p>To watch:  </p>
-<div class="link_border">
-<div class="link_title">Pragmatic Unicode | Ned Batchelder</div>
-<div class="link_url"><a href="https://nedbatchelder.com/text/unipain.html" target="_blank">https://nedbatchelder.com/text/unipain.html</a></div></div>
-
-<p>To read:  </p>
-<div class="link_border">
-<div class="link_title">Getting unicode right in Python - Nick's Blog</div>
-<div class="link_url"><a href="http://blog.notdot.net/2010/07/Getting-unicode-right-in-Python" target="_blank">http://blog.notdot.net/2010/07/Getting-unicode-right-in-Python</a></div></div>
-
-<p>going deeper:  </p>
-<div class="link_border">
-<div class="link_title">Printing Unicode from Python | Ned Batchelder</div>
-<div class="link_url"><a href="http://nedbatchelder.com/blog/200401/printing_unicode_from_python.html" target="_blank">http://nedbatchelder.com/blog/200401/printing_unicode_from_python.html</a></div></div>
-
-<div class="link_border">
-<div class="link_title">Strings - Dive Into Python 3</div>
-<div class="link_url"><a href="http://www.diveintopython3.net/strings.html#one-ring-to-rule-them-all" target="_blank">http://www.diveintopython3.net/strings.html#one-ring-to-rule-them-all</a></div></div>
-
-<div class="link_border">
-<div class="link_title">All About Python and Unicode | boodebr.org</div>
-<div class="link_url"><a href="http://web.archive.org/web/20120722170929/http://boodebr.org/main/python/all-about-python-and-unicode" target="_blank">http://web.archive.org/web/20120722170929/http://boodebr.org/main/python/all-about-python-and-unicode</a></div></div>
+</footer>                    </div>
+                    
                 </article>
-            </aside>
-
-                <section id="content" class="body">
-
-                <!-- PREVIOUS NOTES -->
-				<p class="notes-section">previous notes</p>
-                <hr>
-
-                <ol id="posts-list" class="hfeed">
+                <hr/>
+            </li>
             
 
 
@@ -1226,45 +1379,6 @@ output script: <code>ERROR with b'Automatyczna odpowied\xc5\xba': "subject" expe
                 <article class="hentry">
                     <header>
                         <!-- PREVIOUS NOTE TITLE -->
-                        <h1><a href="https://notes.nicolasdeville.com/python/gitignore" rel="bookmark"
-                            title="Gitignore">Gitignore</a></h1>
-                        <!-- PREVIOUS NOTE SUMMARY -->
-                        <div class="entry-content">
-                            
-                        </div>
-                    </header>
-
-                    <div class="entry-content">
-                        <!-- PREVIOUS NOTE METADATA -->
-<footer class="post-info">
-
-    <p>
-        04 Sep 2022 <span class="separator">|</span> in <a class="link_tag" href="https://notes.nicolasdeville.com/python/">python</a>
-
-        <!-- added 4/7 -->
-        <!-- 		<br />
-        <abbr class="modified" title="2022-09-04T10:47:02.878937+02:00">
-                Updated: 04 Sep 2022
-        </abbr>
- -->
-
-    </p>
-
-    
-
-</footer>                    </div>
-                    
-                </article>
-                <hr/>
-            </li>
-            
-
-
-
-            <li>
-                <article class="hentry">
-                    <header>
-                        <!-- PREVIOUS NOTE TITLE -->
                         <h1><a href="https://notes.nicolasdeville.com/python/library-beautifulsoup" rel="bookmark"
                             title="Python library: Beautifulsoup">Python library: Beautifulsoup</a></h1>
                         <!-- PREVIOUS NOTE SUMMARY -->
@@ -2116,6 +2230,8 @@ output script: <code>ERROR with b'Automatyczna odpowied\xc5\xba': "subject" expe
         </footer><!-- /#contentinfo -->
 
 
+<!-- JS -->
+
 <!-- for Stork seach engine -->
 <script src="https://files.stork-search.net/releases/v1.2.1/stork.js"></script>
 <script>
@@ -2123,7 +2239,7 @@ output script: <code>ERROR with b'Automatyczna odpowied\xc5\xba': "subject" expe
 </script>
 
 <!-- 220911 adding for copy code block feature -->
-<script type="text/javascript">
+<!-- <script type="text/javascript">
     window.addEventListener("load", function () {
       /* List all example code blocks */
         var codes = document.getElementsByClassName("highlight"); 
@@ -2148,8 +2264,10 @@ output script: <code>ERROR with b'Automatyczna odpowied\xc5\xba': "subject" expe
             })
         }
     }, false);
-</script>
+</script> -->
 
+<!-- my JS script -->
+<script src="https://notes.nicolasdeville.com/theme/js/nic.js"></script>
 
 </body>
 </html>

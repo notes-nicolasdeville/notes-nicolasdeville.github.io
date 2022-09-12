@@ -10,9 +10,6 @@
     <!-- CSS -->
     <link rel="stylesheet" href="https://notes.nicolasdeville.com/theme/css/main.css" />
 
-    <!-- JS -->
-    <script src="https://notes.nicolasdeville.com/theme/js/nic.js"></script>
-
 
 
 
@@ -35,7 +32,7 @@
             </div>
 
             <div class="above-navbar">
-                <div class="last_updated">12 Sep 2022 | 09:39</div>
+                <div class="last_updated">12 Sep 2022 | 10:16</div>
                 <div>
                     <p class="notes_count">
                         <a href="https://notes.nicolasdeville.com/tags">by tags</a> 
@@ -91,12 +88,12 @@
 <footer class="post-info">
 
     <p>
-        04 Sep 2022 <span class="separator">|</span> in <a class="link_tag" href="https://notes.nicolasdeville.com/python/">python</a>
+        12 Sep 2022 <span class="separator">|</span> in <a class="link_tag" href="https://notes.nicolasdeville.com/python/">python</a>
 
         <!-- added 4/7 -->
         <!-- 		<br />
-        <abbr class="modified" title="2022-09-04T10:47:02.878937+02:00">
-                Updated: 04 Sep 2022
+        <abbr class="modified" title="2022-09-12T10:13:40.903789+02:00">
+                Updated: 12 Sep 2022
         </abbr>
  -->
 
@@ -109,13 +106,33 @@
 <p>When working with Git, you do not want to sync all files to your Github repo.    </p>
 <p>Adding a file named <code>.gitignore</code> (no name, just starts with dot) at the root of your synced repo enables to discard files matching the patterns listed from being synced to Github.  </p>
 <p>Here is my gitignore file for my Python projects - can't remember where I found the original template so source unknown.    </p>
+<p><span class="datestamp">12 Sep 2022</span>   </p>
 <div class="highlight"><pre><span></span><code><span class="c1"># Nic</span>
 
+<span class="n">data</span><span class="o">/</span>
+<span class="n">log</span><span class="o">/</span>
 <span class="o">.</span><span class="n">DS_Store</span>
 <span class="o">.</span><span class="n">bash_profile</span>
 <span class="o">.</span><span class="n">cache</span><span class="o">/</span>
 <span class="n">__pycache__</span>
-<span class="o">.</span><span class="n">vscode</span>
+<span class="o">.</span><span class="n">vscode</span><span class="o">/</span>
+<span class="n">_backup</span><span class="o">/</span>
+<span class="o">.</span><span class="n">idea</span><span class="o">/</span>
+<span class="o">.</span><span class="n">ipynb_checkpoints</span><span class="o">/</span>
+<span class="o">*</span><span class="n">_old</span><span class="o">/</span>
+<span class="n">old</span><span class="o">/</span>
+<span class="n">old_</span><span class="o">*/</span>
+<span class="o">.</span><span class="n">eggs</span><span class="o">/</span>
+<span class="n">test</span><span class="o">.</span><span class="n">py</span>
+<span class="n">test</span><span class="o">*.</span><span class="n">py</span>
+<span class="o">.</span><span class="n">ebignore</span>
+<span class="n">credentials</span><span class="o">.</span><span class="n">json</span>
+<span class="n">token</span><span class="o">.</span><span class="n">json</span>
+<span class="n">token</span><span class="o">.</span><span class="n">pickle</span>
+<span class="n">pip</span><span class="o">-</span><span class="n">selfcheck</span><span class="o">.</span><span class="n">json</span>
+<span class="n">pyvenv</span><span class="o">.</span><span class="n">cfg</span>
+<span class="o">*.</span><span class="n">ipynb</span>
+<span class="o">*.</span><span class="n">crdownload</span>
 
 <span class="c1"># Byte-compiled / optimized / DLL files</span>
 <span class="n">__pycache__</span><span class="o">/</span>
@@ -284,6 +301,8 @@
         </footer><!-- /#contentinfo -->
 
 
+<!-- JS -->
+
 <!-- for Stork seach engine -->
 <script src="https://files.stork-search.net/releases/v1.2.1/stork.js"></script>
 <script>
@@ -291,7 +310,7 @@
 </script>
 
 <!-- 220911 adding for copy code block feature -->
-<script type="text/javascript">
+<!-- <script type="text/javascript">
     window.addEventListener("load", function () {
       /* List all example code blocks */
         var codes = document.getElementsByClassName("highlight"); 
@@ -316,8 +335,10 @@
             })
         }
     }, false);
-</script>
+</script> -->
 
+<!-- my JS script -->
+<script src="https://notes.nicolasdeville.com/theme/js/nic.js"></script>
 
 </body>
 </html>

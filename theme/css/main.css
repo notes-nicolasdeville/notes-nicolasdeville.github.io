@@ -61,6 +61,7 @@ img.left, figure.left, div.figure.align-left {
 /* Page header */
 
 .logo-and-search {
+    width: 100%;
     display: flex;
     justify-content: space-between;
 }
