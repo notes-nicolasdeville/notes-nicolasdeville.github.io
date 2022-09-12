@@ -32,7 +32,7 @@
             </div>
 
             <div class="above-navbar">
-                <div class="last_updated">12 Sep 2022 | 11:35</div>
+                <div class="last_updated">12 Sep 2022 | 18:01</div>
                 <div>
                     <p class="notes_count">
                         <a href="https://notes.nicolasdeville.com/tags">by tags</a> 
@@ -107,7 +107,7 @@
 
         <!-- added 4/7 -->
         <!-- 		<br />
-        <abbr class="modified" title="2022-09-12T11:35:16.994987+02:00">
+        <abbr class="modified" title="2022-09-12T15:18:19.655187+02:00">
                 Updated: 12 Sep 2022
         </abbr>
  -->
@@ -325,19 +325,19 @@ imapee_mail-nd-com.py finished in 0.9 minutes at 16:06:15.
 <p>When running campaigns, a number of emails will come back as undeliverable. No matter how good email cleaning and validation was.  </p>
 <p>TODO: document + script</p>
 <p><span class="datestamp">12 Sep 2022</span>   </p>
-<p>here is my script to retrieve all emails returned as undeliverable from my Inbox, and mark all email notifications as read. <br>
-This generates a log file (<code>.txt</code>) for each run with all emails, as backup. Data (ie list of email) can be processed subsequently - eg update the "Do Not Email" flag in a system (Hubspot, Grist, etc..).   </p>
-<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">datetime</span> <span class="kn">import</span> <span class="n">datetime</span>
+<p>Here is my script to retrieve all emails returned as undeliverable from my Inbox, and mark all email notifications as read. <br>
+This generates a log file (<code>.txt</code>) for each run with all emails, as backup. Data (ie list of email) can be processed subsequently - eg update the "Do Not Email" flag in a system (Hubspot, Grist like below, etc..).   </p>
+<div class="highlight"><pre><span></span><code><span class="c1">### my standard boilerplate</span>
+<span class="kn">from</span> <span class="nn">datetime</span> <span class="kn">import</span> <span class="n">datetime</span>
 <span class="n">ts_file</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">datetime</span><span class="o">.</span><span class="n">now</span><span class="p">()</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="s1">&#39;%y%m</span><span class="si">%d</span><span class="s1">-%H%M&#39;</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span>
 <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Starting at </span><span class="si">{</span><span class="n">datetime</span><span class="o">.</span><span class="n">now</span><span class="p">()</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="s1">&#39;%H:%M:%S&#39;</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 <span class="kn">import</span> <span class="nn">time</span>
 <span class="n">start_time</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>
-
 <span class="kn">import</span> <span class="nn">os</span>
 
-<span class="c1">#####</span>
 <span class="kn">import</span> <span class="nn">sys</span>
-<span class="n">sys</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s2">&quot;/Users/xxx/Python/indeXee&quot;</span><span class="p">)</span>
+<span class="n">sys</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s2">&quot;/Users/xxx/Python/indeXee&quot;</span><span class="p">)</span> <span class="c1"># to access my utility scripts `my_utils`</span>
+
 <span class="kn">from</span> <span class="nn">dotenv</span> <span class="kn">import</span> <span class="n">load_dotenv</span>
 <span class="n">load_dotenv</span><span class="p">()</span>
 
@@ -362,7 +362,6 @@ This generates a log file (<code>.txt</code>) for each run with all emails, as b
 <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n\n</span><span class="s2">CHECK CREDENTIALS:</span><span class="se">\n</span><span class="si">{</span><span class="n">EMAIL_ACCOUNT</span><span class="si">=}</span><span class="se">\n</span><span class="si">{</span><span class="n">PASSWORD</span><span class="si">=}</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
 
 <span class="c1">####################</span>
-<span class="c1">### </span>
 
 <span class="n">new_emails_in_csv</span> <span class="o">=</span> <span class="p">[]</span>
 
@@ -559,7 +558,6 @@ This generates a log file (<code>.txt</code>) for each run with all emails, as b
     <span class="nb">print</span><span class="p">()</span>
     <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;-------------------------------&#39;</span><span class="p">)</span>
     <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Count Emails = </span><span class="si">{</span><span class="n">count</span><span class="si">}</span><span class="s2"> emails found&quot;</span><span class="p">)</span>
-    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Count Mark As Read = </span><span class="si">{</span><span class="n">count_mark_as_read</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
     <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Count set_new_emails = </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">set_new_emails</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
     <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Email addresses = </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">set_emails_dne</span><span class="p">)</span><span class="si">}</span><span class="s2"> email addresses to DNE&quot;</span><span class="p">)</span>
 
@@ -753,35 +751,7 @@ This generates a log file (<code>.txt</code>) for each run with all emails, as b
     stork.register("sitesearch", "https://notes.nicolasdeville.com/search-index.st")
 </script>
 
-<!-- 220911 adding for copy code block feature -->
-<!-- <script type="text/javascript">
-    window.addEventListener("load", function () {
-      /* List all example code blocks */
-        var codes = document.getElementsByClassName("highlight"); 
-        /* For each example code block */
-        for (var i = 0; i < codes.length; i++) {
-            var button = document.createElement("button");
-            button.className = "copy-button copy-button-enabled";
-            button.style.display = "none";
-            button.innerText = "Copy";
-            /* Add onclick handler to copy button */
-            button.addEventListener("click", function() {
-                copyToClipboard(this.parentElement);
-                showCopied(this);
-            });
-            code.appendChild(button);
-            /* show/hide copy buttion when mouse move over/out code block */
-            code.addEventListener("mouseover", function() {
-                button.style.display = "block";
-            });
-            code.addEventListener("mouseout", function() {
-                button.style.display = "none";
-            })
-        }
-    }, false);
-</script> -->
-
-<!-- my JS script -->
+<!-- my JS script (with code block copy) -->
 <script src="https://notes.nicolasdeville.com/theme/js/nic.js"></script>
 
 </body>
