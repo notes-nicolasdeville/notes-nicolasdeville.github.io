@@ -8,6 +8,11 @@ url = "/ABOUT/"
 title = ""
 
 [[input.files]]
+path = "projects/imapee/index.html"
+url = "/projects/imapee"
+title = "Imapee"
+
+[[input.files]]
 path = "interests/web3/index.html"
 url = "/interests/web3"
 title = "Web3"
@@ -16,11 +21,6 @@ title = "Web3"
 path = "python/gitignore/index.html"
 url = "/python/gitignore"
 title = "Gitignore"
-
-[[input.files]]
-path = "projects/imapee/index.html"
-url = "/projects/imapee"
-title = "Imapee"
 
 [[input.files]]
 path = "python/unicode/index.html"
@@ -1700,7 +1700,7 @@ title = "Are You Selling Aspirin, a Vaccine or a Vitamin?"
 [[input.files]]
 path = "interests/tesla/index.html"
 url = "/interests/tesla"
-title = "Tesla resources"
+title = "Tesla"
 
 [[input.files]]
 path = "b2b-sales/the-advice-i-always-give-when-mentoring/index.html"
