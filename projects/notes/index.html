@@ -33,7 +33,7 @@
             </div>
 
             <div class="above-navbar">
-                <div class="last_updated">13 Sep 2022 | 07:18</div>
+                <div class="last_updated">13 Sep 2022 | 10:35</div>
                 <div>
                     <p class="notes_count">
                         <a href="https://notes.nicolasdeville.com/tags">by tags</a> 
@@ -92,7 +92,7 @@
 
         <!-- added 4/7 -->
         <!-- 		<br />
-        <abbr class="modified" title="2022-09-13T07:18:26.763539+02:00">
+        <abbr class="modified" title="2022-09-13T10:19:00.018241+02:00">
                 Updated: 13 Sep 2022
         </abbr>
  -->
@@ -157,10 +157,19 @@
 </li>
 </ul>
 <h1>Deploy</h1>
-<p><code>cd</code> to notes folder with HTML output<br>
-<code>git add .</code><br>
-<code>git commit 'm 'daily update'</code><br>
-<code>git push origin main</code>   </p>
+<p><code>cd</code> to notes folder with HTML output  </p>
+<div class="highlight"><pre><span></span><code>git add .
+</code></pre></div>
+
+<p><code>.</code> signifies all files  </p>
+<div class="highlight"><pre><span></span><code>git commit -m <span class="s1">&#39;daily update&#39;</span>
+</code></pre></div>
+
+<p>changing message in quotes as needed</p>
+<div class="highlight"><pre><span></span><code>git push origin main
+</code></pre></div>
+
+<p>assuming <code>origin</code> and <code>main</code> set in Git (eg not <code>master</code>)    </p>
 <p><span class="datestamp">11 Sep 2022</span>   </p>
 <h1>Further building</h1>
 <h2>Copy Code Block</h2>
@@ -168,7 +177,7 @@
 <p>As I've set the search bar to be active upon page load, it's as easy as launching <code>https://notes.nicolasdeville.com</code> (with a shortcut) to be in a position to search what I need.   </p>
 <p>I need now to add the capability to copy code snippets (in <code>&lt;code&gt;</code> and <code>&lt;pre&gt;</code>) to clipboard, like on programming websites.  </p>
 <p>Will need to use Javascript for this.  [<a href="../../learning/javascript/index.html">Nic Note: Learning Javascript</a>]</p>
-<h2>Resources</h2>
+<h3>Solution</h3>
 <p>v1 test:  </p>
 <div class="link_border">
 <div class="link_title">How do I copy to the clipboard in JavaScript? - Stack Overflow</div>
@@ -191,14 +200,14 @@
 
 <p><span class="datestamp">12 Sep 2022</span>   </p>
 <p>this approach works, though the copy icon is outside the <code>&lt;pre&gt;</code> tag:   </p>
-<p><img class="screenshot" src="https://notes.nicolasdeville.com/images/notes/220912_copy-icon-outside .jpg" alt="220912_copy-icon-outside "/>  </p>
+<p><img class="illustration" src="https://notes.nicolasdeville.com/images/notes/220912_copy-icon-outside .jpg" alt="220912_copy-icon-outside "/>  </p>
 <p>The challenge is that my <code>&lt;pre&gt;</code> tag goes not have a tag and I used the class of the enclosing <code>&lt;div&gt;</code>:   </p>
-<p><img class="screenshot" src="https://notes.nicolasdeville.com/images/notes/220912_pre-no-class.jpg" alt="220912_pre-no-class"/>  </p>
+<p><img class="illustration" src="https://notes.nicolasdeville.com/images/notes/220912_pre-no-class.jpg" alt="220912_pre-no-class"/>  </p>
 <p>need to either: <br>
 - figure out how to add a class to <code>&lt;pre&gt;</code>
 - figure out how to target the <code>&lt;pre&gt;</code> tag starting from the parent (cue Javascript learning about tree navigation)
 though it seems the code intends to put the button before:<br>
-<img class="screenshot" src="https://notes.nicolasdeville.com/images/notes/220912_append-before.jpg" alt="220912_append-before"/>  </p>
+<img class="illustration" src="https://notes.nicolasdeville.com/images/notes/220912_append-before.jpg" alt="220912_append-before"/>  </p>
 <p>current code:    </p>
 <div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;highlight&quot;</span><span class="p">&gt;</span>
     <span class="p">&lt;</span><span class="nt">button</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;clipboard-button&quot;</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;button&quot;</span><span class="p">&gt;</span>

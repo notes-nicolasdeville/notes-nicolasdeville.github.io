@@ -8,6 +8,11 @@ url = "/ABOUT/"
 title = ""
 
 [[input.files]]
+path = "projects/imapee/index.html"
+url = "/projects/imapee"
+title = "Imapee"
+
+[[input.files]]
 path = "projects/notes/index.html"
 url = "/projects/notes"
 title = "This site"
@@ -36,11 +41,6 @@ title = "My dad bag"
 path = "python/virtual-environments/index.html"
 url = "/python/virtual-environments"
 title = "Managing Virtual Environments in Python"
-
-[[input.files]]
-path = "projects/imapee/index.html"
-url = "/projects/imapee"
-title = "Imapee"
 
 [[input.files]]
 path = "interests/web3/index.html"

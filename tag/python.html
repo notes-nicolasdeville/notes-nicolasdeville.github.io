@@ -32,7 +32,7 @@
             </div>
 
             <div class="above-navbar">
-                <div class="last_updated">13 Sep 2022 | 07:18</div>
+                <div class="last_updated">13 Sep 2022 | 10:35</div>
                 <div>
                     <p class="notes_count">
                         <a href="https://notes.nicolasdeville.com/tags">by tags</a> 
@@ -89,26 +89,26 @@
             <hr/>
 
                 <article class="hentry">
-                    <h1 class="entry-title"><a href="https://notes.nicolasdeville.com/python/library-beautifulsoup">Python library: Beautifulsoup</a></h1>
+                    <h1 class="entry-title"><a href="https://notes.nicolasdeville.com/projects/imapee">Imapee</a></h1>
 
                     <!-- added 4/7 -->
                     <div>
                         <p class="header_summary">
-                            <p>makes it easy to scrape information from web pages</p>
+                            <p>collection of email inbox management scripts in python</p>
                         </p>
                     </div>
 
 <footer class="post-info">
 
     <p>
-        12 Sep 2022 <span class="separator">|</span> in <a class="link_tag" href="https://notes.nicolasdeville.com/python/">python</a>
+        13 Sep 2022 <span class="separator">|</span> in <a class="link_tag" href="https://notes.nicolasdeville.com/projects/">projects</a>
  tags: <a class="link_tag" href="https://notes.nicolasdeville.com/tag/python.html">python</a>
-<a class="link_tag" href="https://notes.nicolasdeville.com/tag/libraries.html">libraries</a>
+<a class="link_tag" href="https://notes.nicolasdeville.com/tag/emails.html">emails</a>
 
         <!-- added 4/7 -->
         <!-- 		<br />
-        <abbr class="modified" title="2022-09-12T22:28:29.125936+02:00">
-                Updated: 12 Sep 2022
+        <abbr class="modified" title="2022-09-13T10:35:04.924894+02:00">
+                Updated: 13 Sep 2022
         </abbr>
  -->
 
@@ -116,67 +116,605 @@
 
     
 
-</footer><p><span class="datestamp">15 Jul 2022</span> starting note *<em>note date indicates latest update.</em>     </p>
-<table>
-<thead>
-<tr>
-<th>Library resources</th>
-<th></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>PyPI</td>
-<td><a href="https://pypi.org/project/beautifulsoup4/" target="_blank">https://pypi.org/project/beautifulsoup4/</a></td>
-</tr>
-<tr>
-<td>Github</td>
-<td>---</td>
-</tr>
-<tr>
-<td>Documentation</td>
-<td><a href="https://beautiful-soup-4.readthedocs.io/en/latest/" target="_blank">https://beautiful-soup-4.readthedocs.io/en/latest/</a></td>
-</tr>
-</tbody>
-</table>
-<div class="highlight"><pre><span></span><code><span class="n">pip3</span> <span class="n">install</span> <span class="n">beautifulsoup4</span>
+</footer><p><span class="datestamp">30 Apr 2022</span> starting note.   </p>
+<p>Scripts usable with any email inbox supporting the IMAP protocol (=most).<br>
+IMAP is the standard protocol for managing email maiboxes (with POP).  </p>
+<p>In some cases, IMAP needs to be activated, eg with Gmail.   </p>
+<blockquote>
+<p><span class="datestamp">09 Sep 2022</span><br>
+<strong>For Google/Gmail:</strong>   </p>
+<p>it is required to allow "Less secure apps" for the script to work:  <br>
+<a href="https://myaccount.google.com/lesssecureapps" target="_blank">https://myaccount.google.com/lesssecureapps</a>   </p>
+<p>However Google announced...   </p>
+<p>"To help keep your account secure, from May 30, 2022, ​​Google no longer supports the use of third-party apps or devices which ask you to sign in to your Google Account using only your username and password.<br>
+This deadline does not apply to Google Workspace or Google Cloud Identity customers. The enforcement date for these customers will be announced on the Workspace blog at a later date."  </p>
+<p>= I'm currently using Google Workspace, so all good for now, but need to rework login logic in the future, or use different library for it.   </p>
+</blockquote>
+<h1>Mass delete emails</h1>
+<p>Logic: delete email if keyword(s) provided are in To, From and/or Subject fields.   </p>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">datetime</span> <span class="kn">import</span> <span class="n">datetime</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Starting at </span><span class="si">{</span><span class="n">datetime</span><span class="o">.</span><span class="n">now</span><span class="p">()</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="s1">&#39;%H:%M:%S&#39;</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="kn">import</span> <span class="nn">time</span>
+<span class="n">start_time</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>
+
+<span class="kn">import</span> <span class="nn">os</span>
+
+<span class="kn">from</span> <span class="nn">dotenv</span> <span class="kn">import</span> <span class="n">load_dotenv</span>
+<span class="n">load_dotenv</span><span class="p">()</span>
+
+<span class="kn">from</span> <span class="nn">imap_tools</span> <span class="kn">import</span> <span class="n">MailBox</span><span class="p">,</span> <span class="n">AND</span><span class="p">,</span> <span class="n">MailMessageFlags</span>
+<span class="kn">import</span> <span class="nn">re</span>
+
+<span class="kn">import</span> <span class="nn">pprint</span>
+<span class="n">pp</span> <span class="o">=</span> <span class="n">pprint</span><span class="o">.</span><span class="n">PrettyPrinter</span><span class="p">(</span><span class="n">indent</span><span class="o">=</span><span class="mi">4</span><span class="p">)</span>
+
+<span class="n">count</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="c1">####################</span>
+
+<span class="n">EMAIL_ACCOUNT</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">getenv</span><span class="p">(</span><span class="s2">&quot;EMAIL_ACCOUNT_ND&quot;</span><span class="p">)</span>
+<span class="n">PASSWORD</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">getenv</span><span class="p">(</span><span class="s2">&quot;PASSWORD_ND&quot;</span><span class="p">)</span>
+<span class="n">EMAIL_SERVER</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">getenv</span><span class="p">(</span><span class="s2">&quot;EMAIL_SERVER_ND&quot;</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n\n</span><span class="s2">---</span><span class="se">\n</span><span class="s2">CHECK CREDENTIALS:</span><span class="se">\n</span><span class="si">{</span><span class="n">EMAIL_ACCOUNT</span><span class="si">=}</span><span class="se">\n</span><span class="si">{</span><span class="n">PASSWORD</span><span class="si">=}</span><span class="se">\n</span><span class="s2">---</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="n">count_errors</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">count_deleted</span> <span class="o">=</span> <span class="mi">0</span>
+
+<span class="n">delete_if_in_to</span> <span class="o">=</span> <span class="p">(</span>        <span class="c1">#needs to be a tuple</span>
+            <span class="s1">&#39;xxx&#39;</span><span class="p">,</span> 
+            <span class="s1">&#39;yyy&#39;</span><span class="p">,</span> 
+            <span class="s1">&#39;zzz&#39;</span><span class="p">,</span> 
+            <span class="p">)</span> 
+
+<span class="n">delete_if_in_from</span> <span class="o">=</span> <span class="p">(</span>        <span class="c1">#needs to be a tuple</span>
+            <span class="s1">&#39;xxx&#39;</span><span class="p">,</span> 
+            <span class="s1">&#39;yyy&#39;</span><span class="p">,</span> 
+            <span class="s1">&#39;zzz&#39;</span><span class="p">,</span> 
+            <span class="p">)</span> 
+
+<span class="n">delete_if_in_subject</span> <span class="o">=</span> <span class="p">(</span>        <span class="c1">#needs to be a tuple</span>
+            <span class="s1">&#39;xxx&#39;</span><span class="p">,</span> 
+            <span class="s1">&#39;yyy&#39;</span><span class="p">,</span> 
+            <span class="s1">&#39;zzz&#39;</span><span class="p">,</span> 
+            <span class="p">)</span> 
+
+<span class="k">with</span> <span class="n">MailBox</span><span class="p">(</span><span class="n">EMAIL_SERVER</span><span class="p">)</span><span class="o">.</span><span class="n">login</span><span class="p">(</span><span class="n">EMAIL_ACCOUNT</span><span class="p">,</span> <span class="n">PASSWORD</span><span class="p">)</span> <span class="k">as</span> <span class="n">mailbox</span><span class="p">:</span>
+
+    <span class="c1"># for msg in mailbox.fetch(AND(from_=&#39;Mail Delivery&#39;), mark_seen=False): # example with search string</span>
+    <span class="k">for</span> <span class="n">msg</span> <span class="ow">in</span> <span class="n">mailbox</span><span class="o">.</span><span class="n">fetch</span><span class="p">(</span><span class="n">mark_seen</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">reverse</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">bulk</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span> <span class="c1"># get all emails from most recent without changing read status</span>
+
+    <span class="c1">### REFERENCE</span>
+    <span class="c1"># criteria = ‘ALL’, message search criteria, query builder</span>
+    <span class="c1"># charset = ‘US-ASCII’, indicates charset of the strings that appear in the search criteria. See rfc2978</span>
+    <span class="c1"># limit = None, limit on the number of read emails, useful for actions with a large number of messages, like “move”</span>
+    <span class="c1"># miss_no_uid = True, miss emails without uid</span>
+    <span class="c1"># mark_seen = True, mark emails as seen on fetch</span>
+    <span class="c1"># reverse = False, in order from the larger date to the smaller</span>
+    <span class="c1"># headers_only = False, get only email headers (without text, html, attachments)</span>
+    <span class="c1"># bulk = False, False - fetch each message separately per N commands - low memory consumption, slow; True - fetch all messages per 1 command - high memory consumption, fast</span>
+
+        <span class="n">count</span> <span class="o">+=</span> <span class="mi">1</span>
+
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\r</span><span class="s2">&quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">count</span><span class="p">),</span> <span class="n">end</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
+
+
+        <span class="c1">### DELETE</span>
+
+        <span class="c1">## BASED ON TO FIELD (delete_if_in_to)</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">msg</span><span class="o">.</span><span class="n">to</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+                <span class="k">if</span> <span class="nb">any</span><span class="p">(</span><span class="n">ele</span> <span class="ow">in</span> <span class="n">msg</span><span class="o">.</span><span class="n">to</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="k">for</span> <span class="n">ele</span> <span class="ow">in</span> <span class="n">delete_if_in_to</span><span class="p">):</span>
+                    <span class="nb">print</span><span class="p">(</span><span class="n">count</span><span class="p">)</span>
+                    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">msg</span><span class="o">.</span><span class="n">date_str</span><span class="si">=}</span><span class="s2">&quot;</span><span class="p">)</span>
+                    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">msg</span><span class="o">.</span><span class="n">from_</span><span class="si">=}</span><span class="s2">&quot;</span><span class="p">)</span>
+                    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">msg</span><span class="o">.</span><span class="n">to</span><span class="si">=}</span><span class="s2">&quot;</span><span class="p">)</span>
+                    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">msg</span><span class="o">.</span><span class="n">subject</span><span class="si">=}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+                    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;DELETING </span><span class="si">{</span><span class="n">msg</span><span class="o">.</span><span class="n">uid</span><span class="si">=}</span><span class="s2">&quot;</span><span class="p">)</span>
+                    <span class="n">mailbox</span><span class="o">.</span><span class="n">delete</span><span class="p">([</span><span class="n">msg</span><span class="o">.</span><span class="n">uid</span><span class="p">])</span>
+                    <span class="n">count_deleted</span> <span class="o">+=</span> <span class="mi">1</span>
+
+                    <span class="nb">print</span><span class="p">()</span>
+        <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;ERROR with </span><span class="si">{</span><span class="n">date</span><span class="si">}</span><span class="s2">-</span><span class="si">{</span><span class="n">msg</span><span class="o">.</span><span class="n">from_</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+            <span class="n">count_errors</span> <span class="o">+=</span> <span class="mi">1</span>
+            <span class="k">continue</span>
+
+        <span class="c1">## BASED ON FROM FIELD (delete_if_in_from)</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="k">if</span> <span class="nb">any</span><span class="p">(</span><span class="n">ele</span> <span class="ow">in</span> <span class="n">msg</span><span class="o">.</span><span class="n">from_</span> <span class="k">for</span> <span class="n">ele</span> <span class="ow">in</span> <span class="n">delete_if_in_from</span><span class="p">):</span>
+                <span class="nb">print</span><span class="p">(</span><span class="n">count</span><span class="p">)</span>
+                <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">msg</span><span class="o">.</span><span class="n">date_str</span><span class="si">=}</span><span class="s2">&quot;</span><span class="p">)</span>
+                <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">msg</span><span class="o">.</span><span class="n">from_</span><span class="si">=}</span><span class="s2">&quot;</span><span class="p">)</span>
+                <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">msg</span><span class="o">.</span><span class="n">to</span><span class="si">=}</span><span class="s2">&quot;</span><span class="p">)</span>
+                <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">msg</span><span class="o">.</span><span class="n">subject</span><span class="si">=}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+                <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;DELETING </span><span class="si">{</span><span class="n">msg</span><span class="o">.</span><span class="n">uid</span><span class="si">=}</span><span class="s2">&quot;</span><span class="p">)</span>
+                <span class="n">mailbox</span><span class="o">.</span><span class="n">delete</span><span class="p">([</span><span class="n">msg</span><span class="o">.</span><span class="n">uid</span><span class="p">])</span>
+                <span class="n">count_deleted</span> <span class="o">+=</span> <span class="mi">1</span>
+
+                <span class="nb">print</span><span class="p">()</span>
+        <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;ERROR with </span><span class="si">{</span><span class="n">date</span><span class="si">}</span><span class="s2">-</span><span class="si">{</span><span class="n">msg</span><span class="o">.</span><span class="n">from_</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+            <span class="n">count_errors</span> <span class="o">+=</span> <span class="mi">1</span>
+            <span class="k">continue</span>
+
+        <span class="c1">## BASED ON SUBJECT FIELD (delete_if_in_subject)</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="k">if</span> <span class="nb">any</span><span class="p">(</span><span class="n">ele</span> <span class="ow">in</span> <span class="n">msg</span><span class="o">.</span><span class="n">from_</span> <span class="k">for</span> <span class="n">ele</span> <span class="ow">in</span> <span class="n">delete_if_in_subject</span><span class="p">):</span>
+                <span class="nb">print</span><span class="p">(</span><span class="n">count</span><span class="p">)</span>
+                <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">msg</span><span class="o">.</span><span class="n">date_str</span><span class="si">=}</span><span class="s2">&quot;</span><span class="p">)</span>
+                <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">msg</span><span class="o">.</span><span class="n">from_</span><span class="si">=}</span><span class="s2">&quot;</span><span class="p">)</span>
+                <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">msg</span><span class="o">.</span><span class="n">to</span><span class="si">=}</span><span class="s2">&quot;</span><span class="p">)</span>
+                <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">msg</span><span class="o">.</span><span class="n">subject</span><span class="si">=}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+                <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;DELETING </span><span class="si">{</span><span class="n">msg</span><span class="o">.</span><span class="n">uid</span><span class="si">=}</span><span class="s2">&quot;</span><span class="p">)</span>
+                <span class="n">mailbox</span><span class="o">.</span><span class="n">delete</span><span class="p">([</span><span class="n">msg</span><span class="o">.</span><span class="n">uid</span><span class="p">])</span>
+                <span class="n">count_deleted</span> <span class="o">+=</span> <span class="mi">1</span>
+
+                <span class="nb">print</span><span class="p">()</span>
+        <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;ERROR with </span><span class="si">{</span><span class="n">date</span><span class="si">}</span><span class="s2">-</span><span class="si">{</span><span class="n">msg</span><span class="o">.</span><span class="n">from_</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+            <span class="n">count_errors</span> <span class="o">+=</span> <span class="mi">1</span>
+            <span class="k">continue</span>
 </code></pre></div>
 
-<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">bs4</span> <span class="kn">import</span> <span class="n">BeautifulSoup</span>
+<p>Output:</p>
+<div class="highlight"><pre><span></span><code>-------------------------------
+Count Total Emails = 17703 emails found
+count_errors = 0
+Email DELETED = 209
 
-<span class="n">file</span> <span class="o">=</span> <span class="s1">&#39;path/to/folder/file.html&#39;</span>
-
-<span class="n">soup</span> <span class="o">=</span> <span class="n">BeautifulSoup</span><span class="p">(</span><span class="nb">open</span><span class="p">(</span><span class="n">file</span><span class="p">),</span> <span class="s1">&#39;html.parser&#39;</span><span class="p">)</span>
-
-<span class="n">books</span> <span class="o">=</span> <span class="n">soup</span><span class="o">.</span><span class="n">find_all</span><span class="p">(</span><span class="s1">&#39;h3&#39;</span><span class="p">)</span>
-
-<span class="k">for</span> <span class="n">book</span> <span class="ow">in</span> <span class="n">books</span><span class="p">:</span>
-
-    <span class="n">title</span> <span class="o">=</span> <span class="n">book</span><span class="o">.</span><span class="n">text</span>
-    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">title</span><span class="si">=}</span><span class="s2">&quot;</span><span class="p">)</span>
-
-    <span class="n">y</span> <span class="o">=</span> <span class="n">x</span><span class="o">.</span><span class="n">contents</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
-    <span class="k">try</span><span class="p">:</span>
-        <span class="n">link</span> <span class="o">=</span> <span class="n">y</span><span class="p">[</span><span class="s1">&#39;href&#39;</span><span class="p">]</span>
-    <span class="k">except</span><span class="p">:</span>
-        <span class="n">link</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span>
-    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">link</span><span class="si">=}</span><span class="s2">&quot;</span><span class="p">)</span>
-
-    <span class="n">author</span> <span class="o">=</span> <span class="n">x</span><span class="o">.</span><span class="n">next_sibling</span><span class="o">.</span><span class="n">next_sibling</span><span class="o">.</span><span class="n">text</span>
-    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">author</span><span class="si">=}</span><span class="s2">&quot;</span><span class="p">)</span>
+-------------------------------
+imapee_mail-nd-com.py finished in 0.9 minutes at 16:06:15.
 </code></pre></div>
 
-<h3>Target by ID with wildcard</h3>
-<p>useful when IDs or classes have random strings within them, eg:<br>
--<code>&lt;div id="content-author-B00CR42MOY" class="information_row"&gt;C. S. Lewis&lt;/div&gt;</code>
--<code>&lt;div id="content-author-B08CGP9TJ7" class="information_row"&gt;Ernest Cline&lt;/div&gt;</code></p>
-<p>Snippet:</p>
-<div class="highlight"><pre><span></span><code><span class="n">author</span> <span class="o">=</span> <span class="n">x</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s2">&quot;div&quot;</span><span class="p">,</span> <span class="p">{</span><span class="s2">&quot;id&quot;</span> <span class="p">:</span> <span class="k">lambda</span> <span class="n">L</span><span class="p">:</span> <span class="n">L</span> <span class="ow">and</span> <span class="n">L</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s1">&#39;content-author&#39;</span><span class="p">)})</span><span class="o">.</span><span class="n">text</span>
+<h1>Download all attachments from a mailbox</h1>
+<p>Save all attachments from all emails in a mailbox to a local folder with file pattern <code>date-from_email-filename</code>:   </p>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">dotenv</span> <span class="kn">import</span> <span class="n">load_dotenv</span>
+<span class="n">load_dotenv</span><span class="p">()</span>
+
+<span class="kn">from</span> <span class="nn">imap_tools</span> <span class="kn">import</span> <span class="n">MailBox</span><span class="p">,</span> <span class="n">AND</span><span class="p">,</span> <span class="n">MailMessageFlags</span>
+
+
+<span class="n">EMAIL_ACCOUNT</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">getenv</span><span class="p">(</span><span class="s2">&quot;EMAIL_ACCOUNT&quot;</span><span class="p">)</span>
+<span class="n">PASSWORD</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">getenv</span><span class="p">(</span><span class="s2">&quot;PASSWORD&quot;</span><span class="p">)</span>
+<span class="n">EMAIL_SERVER</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">getenv</span><span class="p">(</span><span class="s2">&quot;EMAIL_SERVER&quot;</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n\n</span><span class="s2">---</span><span class="se">\n</span><span class="s2">CHECK CREDENTIALS:</span><span class="se">\n</span><span class="si">{</span><span class="n">EMAIL_ACCOUNT</span><span class="si">=}</span><span class="se">\n</span><span class="si">{</span><span class="n">PASSWORD</span><span class="si">=}</span><span class="se">\n</span><span class="s2">---</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="n">save_to</span> <span class="o">=</span> <span class="s1">&#39;/path/to/local/folder&#39;</span>
+
+<span class="n">count</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">count_errors</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">count_attach</span> <span class="o">=</span> <span class="mi">0</span>
+
+<span class="n">list_errors</span> <span class="o">=</span> <span class="p">[]</span>
+
+<span class="k">with</span> <span class="n">MailBox</span><span class="p">(</span><span class="n">EMAIL_SERVER</span><span class="p">)</span><span class="o">.</span><span class="n">login</span><span class="p">(</span><span class="n">EMAIL_ACCOUNT</span><span class="p">,</span> <span class="n">PASSWORD</span><span class="p">)</span> <span class="k">as</span> <span class="n">mailbox</span><span class="p">:</span>
+
+    <span class="k">for</span> <span class="n">msg</span> <span class="ow">in</span> <span class="n">mailbox</span><span class="o">.</span><span class="n">fetch</span><span class="p">(</span><span class="n">mark_seen</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">reverse</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">bulk</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span> <span class="c1"># get all emails from most recent without changing read status</span>
+
+        <span class="n">count</span> <span class="o">+=</span> <span class="mi">1</span>
+
+        <span class="n">date</span> <span class="o">=</span> <span class="n">msg</span><span class="o">.</span><span class="n">date</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="s1">&#39;%y%m</span><span class="si">%d</span><span class="s1">&#39;</span><span class="p">)</span>
+
+        <span class="k">for</span> <span class="n">att</span> <span class="ow">in</span> <span class="n">msg</span><span class="o">.</span><span class="n">attachments</span><span class="p">:</span>
+            <span class="n">count_attach</span> <span class="o">+=</span> <span class="mi">1</span>
+            <span class="nb">print</span><span class="p">(</span><span class="n">count</span><span class="p">,</span> <span class="n">date</span><span class="p">,</span> <span class="n">att</span><span class="o">.</span><span class="n">filename</span><span class="p">,</span> <span class="n">att</span><span class="o">.</span><span class="n">content_type</span><span class="p">)</span>
+            <span class="k">try</span><span class="p">:</span>
+                <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">save_to</span><span class="si">}</span><span class="s1">/</span><span class="si">{</span><span class="n">date</span><span class="si">}</span><span class="s1">-</span><span class="si">{</span><span class="n">msg</span><span class="o">.</span><span class="n">from_</span><span class="si">}</span><span class="s1">-</span><span class="si">{</span><span class="n">att</span><span class="o">.</span><span class="n">filename</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">,</span> <span class="s1">&#39;wb&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+                    <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">att</span><span class="o">.</span><span class="n">payload</span><span class="p">)</span>
+            <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+                <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;ERROR with </span><span class="si">{</span><span class="n">date</span><span class="si">}</span><span class="s2">-</span><span class="si">{</span><span class="n">msg</span><span class="o">.</span><span class="n">from_</span><span class="si">}</span><span class="s2">-</span><span class="si">{</span><span class="n">att</span><span class="o">.</span><span class="n">filename</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+                <span class="n">list_errors</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">date</span><span class="si">}</span><span class="s2">-</span><span class="si">{</span><span class="n">msg</span><span class="o">.</span><span class="n">from_</span><span class="si">}</span><span class="s2">-</span><span class="si">{</span><span class="n">att</span><span class="o">.</span><span class="n">filename</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+                <span class="n">count_errors</span> <span class="o">+=</span> <span class="mi">1</span>
+                <span class="k">continue</span>
+
+<span class="nb">print</span><span class="p">()</span>
+<span class="k">for</span> <span class="n">error</span> <span class="ow">in</span> <span class="n">list_errors</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">error</span><span class="p">)</span>
 </code></pre></div>
 
-<h3>Find the next element after a tag</h3>
-<div class="highlight"><pre><span></span><code><span class="n">soup</span><span class="o">.</span><span class="n">head</span><span class="o">.</span><span class="n">next_element</span><span class="o">.</span><span class="n">next_element</span>
+<p><span class="datestamp">10 Sep 2022</span>   </p>
+<h1>Mass "Mark as Read" emails / Out Of Office</h1>
+<p>For example after sending an email campaign, need to mass "mark as read" the Out Of Office and other Undeliverables emails, following specific criteria (leaving as unread previous unrelated emails).  </p>
+<p>Native web UI of email providers is usually very limited to filter properly. This script allows to mass Mark As Read based on specific keywords in <code>From</code>, <code>To</code>, <code>Subject</code> or <code>Body</code>.   </p>
+<div class="highlight"><pre><span></span><code><span class="c1"># default boilerplate</span>
+<span class="kn">from</span> <span class="nn">datetime</span> <span class="kn">import</span> <span class="n">datetime</span>
+<span class="n">ts_file</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">datetime</span><span class="o">.</span><span class="n">now</span><span class="p">()</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="s1">&#39;%y%m</span><span class="si">%d</span><span class="s1">-%H%M&#39;</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Starting at </span><span class="si">{</span><span class="n">datetime</span><span class="o">.</span><span class="n">now</span><span class="p">()</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="s1">&#39;%H:%M:%S&#39;</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="kn">import</span> <span class="nn">time</span>
+<span class="n">start_time</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>
+
+<span class="kn">import</span> <span class="nn">os</span>
+
+<span class="kn">import</span> <span class="nn">sys</span>
+<span class="n">sys</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s2">&quot;/Users/xxxx/Python/indeXee&quot;</span><span class="p">)</span> <span class="c1"># adding my_utils script</span>
+<span class="kn">from</span> <span class="nn">dotenv</span> <span class="kn">import</span> <span class="n">load_dotenv</span>
+<span class="n">load_dotenv</span><span class="p">()</span>
+
+<span class="kn">import</span> <span class="nn">my_utils</span>
+<span class="kn">import</span> <span class="nn">grist_XX</span>
+
+<span class="kn">import</span> <span class="nn">csv</span>
+
+<span class="kn">import</span> <span class="nn">pprint</span>
+<span class="n">pp</span> <span class="o">=</span> <span class="n">pprint</span><span class="o">.</span><span class="n">PrettyPrinter</span><span class="p">(</span><span class="n">indent</span><span class="o">=</span><span class="mi">4</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">()</span>
+<span class="n">count</span> <span class="o">=</span> <span class="mi">0</span>
+
+<span class="c1">####################</span>
+<span class="c1"># List of domains to exclude from email address collection</span>
+<span class="n">blacklist_domains</span> <span class="o">=</span> <span class="n">grist_XX</span><span class="o">.</span><span class="n">get_blacklist_domains</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">blacklist_domains</span><span class="p">)</span><span class="si">}</span><span class="s2"> domains blacklisted for XX&quot;</span><span class="p">)</span>
+
+<span class="n">EMAIL_ACCOUNT</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">getenv</span><span class="p">(</span><span class="s2">&quot;EMAIL_ACCOUNT_XX&quot;</span><span class="p">)</span>
+<span class="n">PASSWORD</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">getenv</span><span class="p">(</span><span class="s2">&quot;PASSWORD_XX&quot;</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n\n</span><span class="s2">CHECK CREDENTIALS:</span><span class="se">\n</span><span class="si">{</span><span class="n">EMAIL_ACCOUNT</span><span class="si">=}</span><span class="se">\n</span><span class="si">{</span><span class="n">PASSWORD</span><span class="si">=}</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="c1">####################</span>
+<span class="c1">### </span>
+
+<span class="n">new_emails_in_csv</span> <span class="o">=</span> <span class="p">[]</span>
+
+<span class="kn">from</span> <span class="nn">imap_tools</span> <span class="kn">import</span> <span class="n">MailBox</span><span class="p">,</span> <span class="n">AND</span><span class="p">,</span> <span class="n">MailMessageFlags</span>
+<span class="kn">import</span> <span class="nn">re</span>
+
+<span class="n">run</span> <span class="o">=</span> <span class="s1">&#39;out_of_office&#39;</span> <span class="c1"># out_of_office / clean_mail_delivery / sweep</span>
+
+
+<span class="n">EMAIL_REGEX1</span> <span class="o">=</span> <span class="sa">r</span><span class="s2">&quot;&quot;&quot;(?:[a-z0-9!#$%&amp;&#39;*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&amp;&#39;*+/=?^_`{|}~-]+)*|&quot;(?:[\x01-\x08\x0b\x0c\x0e-\x1f\x21\x23-\x5b\x5d-\x7f]|\\[\x01-\x09\x0b\x0c\x0e-\x7f])*&quot;)@(?:(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?|\[(?:(?:(2(5[0-5]|[0-4][0-9])|1[0-9][0-9]|[1-9]?[0-9]))\.)</span><span class="si">{3}</span><span class="s2">(?:(2(5[0-5]|[0-4][0-9])|1[0-9][0-9]|[1-9]?[0-9])|[a-z0-9-]*[a-z0-9]:(?:[\x01-\x08\x0b\x0c\x0e-\x1f\x21-\x5a\x53-\x7f]|\\[\x01-\x09\x0b\x0c\x0e-\x7f])+)\])&quot;&quot;&quot;</span>
+<span class="c1"># EMAIL_REGEX2 = r&quot;[a-z0-9\.\-+_]+@[a-z0-9\.\-+_]+\.[a-z]+&quot;</span>
+
+<span class="n">set_emails_dne</span> <span class="o">=</span> <span class="nb">set</span><span class="p">()</span> <span class="c1"># Set of dicts: {email: , src:, first: }</span>
+<span class="n">set_new_emails</span> <span class="o">=</span> <span class="nb">set</span><span class="p">()</span>
+
+<span class="c1"># for sweeping emails:</span>
+<span class="n">new_emails_csv</span> <span class="o">=</span> <span class="sa">f</span><span class="s1">&#39;data/</span><span class="si">{</span><span class="n">ts_file</span><span class="si">}</span><span class="s1">-new_emails.csv&#39;</span>
+
+<span class="n">list_remove</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="s1">&#39;?&#39;</span><span class="p">,</span> 
+    <span class="s1">&#39;png&#39;</span><span class="p">,</span> 
+    <span class="s1">&#39;reply&#39;</span><span class="p">,</span> 
+    <span class="s1">&#39;DAEMON&#39;</span><span class="p">,</span> 
+    <span class="s1">&#39;Daemon&#39;</span><span class="p">,</span> 
+    <span class="s1">&#39;jpg@&#39;</span><span class="p">,</span> 
+    <span class="s1">&#39;xml@&#39;</span><span class="p">,</span> 
+    <span class="p">]</span>
+
+<span class="n">count_mark_as_read</span> <span class="o">=</span> <span class="mi">0</span>
+
+<span class="n">original_stdout</span> <span class="o">=</span> <span class="n">sys</span><span class="o">.</span><span class="n">stdout</span>
+
+<span class="k">with</span> <span class="n">MailBox</span><span class="p">(</span><span class="s1">&#39;imap.gmail.com&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">login</span><span class="p">(</span><span class="n">EMAIL_ACCOUNT</span><span class="p">,</span> <span class="n">PASSWORD</span><span class="p">)</span> <span class="k">as</span> <span class="n">mailbox</span><span class="p">:</span>
+
+    <span class="c1"># mailbox.folder.set(&#39;[Gmail]/Spam&#39;)</span>
+
+    <span class="k">if</span> <span class="n">run</span> <span class="o">==</span> <span class="s1">&#39;out_of_office&#39;</span><span class="p">:</span>
+
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Starting out_of_office run...</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+
+        <span class="n">ooo_keywords_subject</span> <span class="o">=</span> <span class="p">[</span>
+            <span class="s1">&#39;Automatic reply&#39;</span><span class="p">,</span>
+            <span class="c1"># &#39;ponse automatique:&#39;, # Réponse automatique:: &#39;ascii&#39; codec can&#39;t encode character &#39;\xe9&#39; in position 11: ordinal not in range(128)</span>
+            <span class="s1">&#39;automatique:&#39;</span><span class="p">,</span> <span class="c1">### workaround for Réponse automatique as seems to work only matching full words?</span>
+            <span class="s1">&#39;Autorespond&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;Automatische Antwort&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;OOO&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;Out-of-Office&#39;</span><span class="p">,</span>
+            <span class="c1"># &#39;Automatyczna odpowied&#39;, # Automatyczna odpowiedź:: &#39;ascii&#39; codec can&#39;t encode character &#39;\u017a&#39; in position 31: ordinal not in range(128)</span>
+            <span class="c1"># &#39;Automatyczna odpowiedź&#39;.encode(&quot;utf-8&quot;),</span>
+            <span class="s1">&#39;Automatyczna odpowiedź&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;Automatyczna&#39;</span><span class="p">,</span>
+            <span class="c1"># &#39;Respuesta autom&#39;, # Respuesta automática: &#39;ascii&#39; codec can&#39;t encode character &#39;\xe1&#39; in position 25: ordinal not in range(128)</span>
+            <span class="s1">&#39;Respuesta&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;Autoresponder&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;Risposta Automatica&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;Automatisk svar&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;Automatisch antwoord&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;AUTO:&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;On Maternity Leave&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;Out of the office&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;Out of office&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;Out Of Office&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;Risposta automatica&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;Pregnancy leave&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;Thank you for your email&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;Autosvar&#39;</span><span class="p">,</span>
+        <span class="p">]</span>
+
+        <span class="k">for</span> <span class="n">keyword</span> <span class="ow">in</span> <span class="n">ooo_keywords_subject</span><span class="p">:</span>
+
+            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;running </span><span class="si">{</span><span class="n">keyword</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+            <span class="k">try</span><span class="p">:</span>
+
+                <span class="k">for</span> <span class="n">msg</span> <span class="ow">in</span> <span class="n">mailbox</span><span class="o">.</span><span class="n">fetch</span><span class="p">(</span><span class="n">AND</span><span class="p">(</span><span class="n">subject</span><span class="o">=</span><span class="n">keyword</span><span class="p">),</span> <span class="n">mark_seen</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
+
+                    <span class="k">try</span><span class="p">:</span> 
+                        <span class="n">count</span> <span class="o">+=</span> <span class="mi">1</span>
+                        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="se">\n</span><span class="si">{</span><span class="n">run</span><span class="si">}</span><span class="s1">---------------</span><span class="si">{</span><span class="n">keyword</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+                        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;run </span><span class="si">{</span><span class="n">keyword</span><span class="si">}</span><span class="s2">: #</span><span class="si">{</span><span class="n">count</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+                        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;msg.uid&#39;</span><span class="p">,</span> <span class="nb">type</span><span class="p">(</span><span class="n">msg</span><span class="o">.</span><span class="n">uid</span><span class="p">),</span> <span class="s1">&#39;------&#39;</span><span class="p">,</span> <span class="n">msg</span><span class="o">.</span><span class="n">uid</span><span class="p">)</span>
+                        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;msg.from_&#39;</span><span class="p">,</span> <span class="nb">type</span><span class="p">(</span><span class="n">msg</span><span class="o">.</span><span class="n">from_</span><span class="p">),</span> <span class="s1">&#39;------&#39;</span><span class="p">,</span> <span class="n">msg</span><span class="o">.</span><span class="n">from_</span><span class="p">)</span>
+                        <span class="c1"># print(&#39;msg.flags&#39;, type(msg.flags), &#39;------&#39;, msg.flags)</span>
+                        <span class="c1"># print(&#39;msg.from_values_name&#39;, type(msg.from_values.name), &#39;------&#39;, msg.from_values.name)</span>
+                        <span class="c1"># print(&#39;msg.from_values_email&#39;, type(msg.from_values.email), &#39;------&#39;, msg.from_values.email)</span>
+                        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;msg.subject&#39;</span><span class="p">,</span> <span class="nb">type</span><span class="p">(</span><span class="n">msg</span><span class="o">.</span><span class="n">subject</span><span class="p">),</span> <span class="s1">&#39;------&#39;</span><span class="p">,</span> <span class="n">msg</span><span class="o">.</span><span class="n">subject</span><span class="p">)</span>
+
+                    <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+                        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;ERROR with message uid </span><span class="si">{</span><span class="n">msg</span><span class="o">.</span><span class="n">uid</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+            <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+                <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;ERROR with </span><span class="si">{</span><span class="n">keyword</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+
+<span class="c1">########################################################################################################</span>
+
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">()</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;-------------------------------&#39;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Count Emails = </span><span class="si">{</span><span class="n">count</span><span class="si">}</span><span class="s2"> emails found&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Count Mark As Read = </span><span class="si">{</span><span class="n">count_mark_as_read</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Count set_new_emails = </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">set_new_emails</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Email addresses = </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">set_emails_dne</span><span class="p">)</span><span class="si">}</span><span class="s2"> email addresses to DNE&quot;</span><span class="p">)</span>
+
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;-------------------------------&#39;</span><span class="p">)</span>
+    <span class="n">run_time</span> <span class="o">=</span> <span class="nb">round</span><span class="p">((</span><span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span> <span class="o">-</span> <span class="n">start_time</span><span class="p">)</span><span class="o">/</span><span class="mi">60</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">basename</span><span class="p">(</span><span class="vm">__file__</span><span class="p">)</span><span class="si">}</span><span class="s1"> finished in </span><span class="si">{</span><span class="n">run_time</span><span class="si">}</span><span class="s1"> minutes.&#39;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">()</span>
 </code></pre></div>
+
+<h1>Collect undeliverable emails and mark as read</h1>
+<p>When running campaigns, a number of emails will come back as undeliverable. No matter how good email cleaning and validation was.  </p>
+<p><span class="datestamp">12 Sep 2022</span>   </p>
+<p>Here is my script to retrieve all emails returned as undeliverable from my Inbox, and mark all email notifications as read. <br>
+This generates a log file (<code>.txt</code>) for each run with all emails, as backup. Data (ie list of email) can be processed subsequently - eg update the "Do Not Email" flag in a system (Hubspot, Grist like below, etc..).   </p>
+<div class="highlight"><pre><span></span><code><span class="c1">### my standard boilerplate</span>
+<span class="kn">from</span> <span class="nn">datetime</span> <span class="kn">import</span> <span class="n">datetime</span>
+<span class="n">ts_file</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">datetime</span><span class="o">.</span><span class="n">now</span><span class="p">()</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="s1">&#39;%y%m</span><span class="si">%d</span><span class="s1">-%H%M&#39;</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Starting at </span><span class="si">{</span><span class="n">datetime</span><span class="o">.</span><span class="n">now</span><span class="p">()</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="s1">&#39;%H:%M:%S&#39;</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="kn">import</span> <span class="nn">time</span>
+<span class="n">start_time</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>
+<span class="kn">import</span> <span class="nn">os</span>
+
+<span class="kn">import</span> <span class="nn">sys</span>
+<span class="n">sys</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s2">&quot;/Users/xxx/Python/indeXee&quot;</span><span class="p">)</span> <span class="c1"># to access my utility scripts `my_utils`</span>
+
+<span class="kn">from</span> <span class="nn">dotenv</span> <span class="kn">import</span> <span class="n">load_dotenv</span>
+<span class="n">load_dotenv</span><span class="p">()</span>
+
+<span class="kn">import</span> <span class="nn">my_utils</span>
+<span class="kn">import</span> <span class="nn">grist_XX</span>
+
+<span class="kn">import</span> <span class="nn">csv</span>
+
+<span class="kn">import</span> <span class="nn">pprint</span>
+<span class="n">pp</span> <span class="o">=</span> <span class="n">pprint</span><span class="o">.</span><span class="n">PrettyPrinter</span><span class="p">(</span><span class="n">indent</span><span class="o">=</span><span class="mi">4</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">()</span>
+<span class="n">count</span> <span class="o">=</span> <span class="mi">0</span>
+
+<span class="c1">####################</span>
+<span class="c1"># List of domains to exclude from email address collection</span>
+<span class="n">blacklist_domains</span> <span class="o">=</span> <span class="n">grist_XX</span><span class="o">.</span><span class="n">get_blacklist_domains</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">blacklist_domains</span><span class="p">)</span><span class="si">}</span><span class="s2"> domains blacklisted for XX&quot;</span><span class="p">)</span>
+
+<span class="n">EMAIL_ACCOUNT</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">getenv</span><span class="p">(</span><span class="s2">&quot;EMAIL_ACCOUNT_XX&quot;</span><span class="p">)</span>
+<span class="n">PASSWORD</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">getenv</span><span class="p">(</span><span class="s2">&quot;PASSWORD_XX&quot;</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n\n</span><span class="s2">CHECK CREDENTIALS:</span><span class="se">\n</span><span class="si">{</span><span class="n">EMAIL_ACCOUNT</span><span class="si">=}</span><span class="se">\n</span><span class="si">{</span><span class="n">PASSWORD</span><span class="si">=}</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="c1">####################</span>
+
+<span class="n">new_emails_in_csv</span> <span class="o">=</span> <span class="p">[]</span>
+
+<span class="kn">from</span> <span class="nn">imap_tools</span> <span class="kn">import</span> <span class="n">MailBox</span><span class="p">,</span> <span class="n">AND</span><span class="p">,</span> <span class="n">MailMessageFlags</span>
+<span class="kn">import</span> <span class="nn">re</span>
+
+<span class="n">run</span> <span class="o">=</span> <span class="s1">&#39;clean_mail_delivery&#39;</span> <span class="c1"># out_of_office / clean_mail_delivery / sweep # used as part of the larger script, to switch function</span>
+
+<span class="n">EMAIL_REGEX1</span> <span class="o">=</span> <span class="sa">r</span><span class="s2">&quot;&quot;&quot;(?:[a-z0-9!#$%&amp;&#39;*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&amp;&#39;*+/=?^_`{|}~-]+)*|&quot;(?:[\x01-\x08\x0b\x0c\x0e-\x1f\x21\x23-\x5b\x5d-\x7f]|\\[\x01-\x09\x0b\x0c\x0e-\x7f])*&quot;)@(?:(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?|\[(?:(?:(2(5[0-5]|[0-4][0-9])|1[0-9][0-9]|[1-9]?[0-9]))\.)</span><span class="si">{3}</span><span class="s2">(?:(2(5[0-5]|[0-4][0-9])|1[0-9][0-9]|[1-9]?[0-9])|[a-z0-9-]*[a-z0-9]:(?:[\x01-\x08\x0b\x0c\x0e-\x1f\x21-\x5a\x53-\x7f]|\\[\x01-\x09\x0b\x0c\x0e-\x7f])+)\])&quot;&quot;&quot;</span>
+<span class="c1"># EMAIL_REGEX2 = r&quot;[a-z0-9\.\-+_]+@[a-z0-9\.\-+_]+\.[a-z]+&quot;</span>
+
+<span class="n">set_emails_dne</span> <span class="o">=</span> <span class="nb">set</span><span class="p">()</span> <span class="c1"># Set of dicts: {email: , src:, first: }</span>
+<span class="n">set_new_emails</span> <span class="o">=</span> <span class="nb">set</span><span class="p">()</span>
+<span class="n">new_emails_csv</span> <span class="o">=</span> <span class="sa">f</span><span class="s1">&#39;data/</span><span class="si">{</span><span class="n">ts_file</span><span class="si">}</span><span class="s1">-new_emails.csv&#39;</span>
+
+<span class="n">list_remove</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;?&#39;</span><span class="p">,</span> <span class="s1">&#39;png&#39;</span><span class="p">,</span> <span class="s1">&#39;reply&#39;</span><span class="p">,</span> <span class="s1">&#39;DAEMON&#39;</span><span class="p">,</span> <span class="s1">&#39;Daemon&#39;</span><span class="p">,</span> <span class="p">]</span>
+
+<span class="n">count_mark_as_read</span> <span class="o">=</span> <span class="mi">0</span>
+
+<span class="n">original_stdout</span> <span class="o">=</span> <span class="n">sys</span><span class="o">.</span><span class="n">stdout</span>
+
+<span class="k">with</span> <span class="n">MailBox</span><span class="p">(</span><span class="s1">&#39;imap.gmail.com&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">login</span><span class="p">(</span><span class="n">EMAIL_ACCOUNT</span><span class="p">,</span> <span class="n">PASSWORD</span><span class="p">)</span> <span class="k">as</span> <span class="n">mailbox</span><span class="p">:</span>
+
+    <span class="c1"># mailbox.folder.set(&#39;[Gmail]/Spam&#39;)</span>
+
+    <span class="k">if</span> <span class="n">run</span> <span class="o">==</span> <span class="s1">&#39;clean_mail_delivery&#39;</span><span class="p">:</span>
+
+        <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;log/</span><span class="si">{</span><span class="n">ts_file</span><span class="si">}</span><span class="s2">_</span><span class="si">{</span><span class="n">run</span><span class="si">}</span><span class="s2">_log.txt&quot;</span><span class="p">,</span> <span class="s1">&#39;w&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+
+            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Starting clean_mail_delivery run...</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+
+            <span class="n">delivery_keywords_from</span> <span class="o">=</span> <span class="p">[</span>
+                <span class="s1">&#39;Microsoft Outlook&#39;</span><span class="p">,</span>
+                <span class="s1">&#39;Postmaster&#39;</span><span class="p">,</span>
+                <span class="s1">&#39;Mail Delivery&#39;</span><span class="p">,</span>
+                <span class="s1">&#39;Microsoft Outlook&#39;</span><span class="p">,</span>
+            <span class="p">]</span>
+
+            <span class="n">delivery_keywords_subject</span> <span class="o">=</span> <span class="p">[</span> 
+                <span class="s1">&#39;Delivery Status Notification&#39;</span><span class="p">,</span>
+                <span class="s1">&#39;Unzustellbar&#39;</span><span class="p">,</span>
+                <span class="s1">&#39;No longer with&#39;</span><span class="p">,</span>
+                <span class="s1">&#39;Mail Delivery&#39;</span><span class="p">,</span>
+                <span class="s1">&#39;Microsoft Outlook&#39;</span><span class="p">,</span>
+                <span class="s1">&#39;Undeliverable&#39;</span><span class="p">,</span>
+                <span class="s1">&#39;Email Delivery Failure&#39;</span><span class="p">,</span>
+            <span class="p">]</span>
+
+            <span class="c1">### keywords in From</span>
+            <span class="k">try</span><span class="p">:</span>
+
+                <span class="k">for</span> <span class="n">keyword</span> <span class="ow">in</span> <span class="n">delivery_keywords_from</span><span class="p">:</span>
+
+                    <span class="k">try</span><span class="p">:</span>
+
+                        <span class="k">for</span> <span class="n">msg</span> <span class="ow">in</span> <span class="n">mailbox</span><span class="o">.</span><span class="n">fetch</span><span class="p">(</span><span class="n">AND</span><span class="p">(</span><span class="n">from_</span><span class="o">=</span><span class="n">keyword</span><span class="p">),</span> <span class="n">mark_seen</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span> 
+
+                            <span class="n">count</span> <span class="o">+=</span> <span class="mi">1</span>
+                            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="se">\n</span><span class="si">{</span><span class="n">run</span><span class="si">}</span><span class="s1">---------------</span><span class="si">{</span><span class="n">keyword</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+                            <span class="nb">print</span><span class="p">(</span><span class="n">count</span><span class="p">)</span>
+                            <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;msg.uid&#39;</span><span class="p">,</span> <span class="nb">type</span><span class="p">(</span><span class="n">msg</span><span class="o">.</span><span class="n">uid</span><span class="p">),</span> <span class="s1">&#39;------&#39;</span><span class="p">,</span> <span class="n">msg</span><span class="o">.</span><span class="n">uid</span><span class="p">)</span>
+                            <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;msg.from_&#39;</span><span class="p">,</span> <span class="nb">type</span>
+                            <span class="p">(</span><span class="n">msg</span><span class="o">.</span><span class="n">from_</span><span class="p">),</span> <span class="s1">&#39;------&#39;</span><span class="p">,</span> <span class="n">msg</span><span class="o">.</span><span class="n">from_</span><span class="p">)</span>
+                            <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;msg.to&#39;</span><span class="p">,</span> <span class="nb">type</span><span class="p">(</span><span class="n">msg</span><span class="o">.</span><span class="n">to</span><span class="p">),</span> <span class="s1">&#39;------&#39;</span><span class="p">,</span> <span class="n">msg</span><span class="o">.</span><span class="n">to</span><span class="p">)</span>
+                            <span class="n">email_clean</span> <span class="o">=</span> <span class="n">msg</span><span class="o">.</span><span class="n">from_values</span><span class="o">.</span><span class="n">email</span>
+                            <span class="n">domain</span> <span class="o">=</span> <span class="n">my_utils</span><span class="o">.</span><span class="n">domain_from_email</span><span class="p">(</span><span class="n">email_clean</span><span class="p">)</span>
+                            <span class="k">if</span> <span class="n">domain</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">blacklist_domains</span><span class="p">:</span>
+                                <span class="k">if</span> <span class="ow">not</span> <span class="nb">any</span><span class="p">(</span><span class="n">element</span> <span class="ow">in</span> <span class="n">email_clean</span> <span class="k">for</span> <span class="n">element</span> <span class="ow">in</span> <span class="n">list_remove</span><span class="p">):</span>
+                                    <span class="n">set_emails_dne</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">email_clean</span><span class="p">)</span>
+                                    <span class="c1">### write to file as backup</span>
+                                    <span class="n">sys</span><span class="o">.</span><span class="n">stdout</span> <span class="o">=</span> <span class="n">f</span>
+                                    <span class="nb">print</span><span class="p">(</span><span class="n">email_clean</span><span class="p">)</span>
+                                    <span class="n">sys</span><span class="o">.</span><span class="n">stdout</span> <span class="o">=</span> <span class="n">original_stdout</span>
+                            <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;msg.subject&#39;</span><span class="p">,</span> <span class="nb">type</span><span class="p">(</span><span class="n">msg</span><span class="o">.</span><span class="n">subject</span><span class="p">),</span> <span class="s1">&#39;------&#39;</span><span class="p">,</span> <span class="n">msg</span><span class="o">.</span><span class="n">subject</span><span class="p">)</span>
+                            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Emails from body:&quot;</span><span class="p">)</span>
+                            <span class="k">for</span> <span class="n">re_match</span> <span class="ow">in</span> <span class="n">re</span><span class="o">.</span><span class="n">finditer</span><span class="p">(</span><span class="n">EMAIL_REGEX1</span><span class="p">,</span> <span class="n">msg</span><span class="o">.</span><span class="n">html</span><span class="o">.</span><span class="n">lower</span><span class="p">()):</span>
+                                <span class="n">new_email</span> <span class="o">=</span> <span class="n">re_match</span><span class="o">.</span><span class="n">group</span><span class="p">()</span>
+                                <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;new_email&#39;</span><span class="p">,</span> <span class="nb">type</span><span class="p">(</span><span class="n">new_email</span><span class="p">),</span> <span class="s1">&#39;------&#39;</span><span class="p">,</span> <span class="n">new_email</span><span class="p">)</span>
+                                <span class="n">domain_new_email</span> <span class="o">=</span> <span class="n">my_utils</span><span class="o">.</span><span class="n">domain_from_email</span><span class="p">(</span><span class="n">new_email</span><span class="p">)</span>
+                                <span class="k">if</span> <span class="n">domain_new_email</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">blacklist_domains</span><span class="p">:</span>
+                                    <span class="k">if</span> <span class="ow">not</span> <span class="nb">any</span><span class="p">(</span><span class="n">element</span> <span class="ow">in</span> <span class="n">new_email</span> <span class="k">for</span> <span class="n">element</span> <span class="ow">in</span> <span class="n">list_remove</span><span class="p">):</span>
+                                    <span class="c1"># if &#39;reply&#39; not in email_clean and &#39;?&#39; not in email_clean:</span>
+                                        <span class="n">set_emails_dne</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">new_email</span><span class="p">)</span>
+                                        <span class="c1">### write to file as backup</span>
+                                        <span class="n">sys</span><span class="o">.</span><span class="n">stdout</span> <span class="o">=</span> <span class="n">f</span>
+                                        <span class="nb">print</span><span class="p">(</span><span class="n">new_email</span><span class="p">)</span>
+                                        <span class="n">sys</span><span class="o">.</span><span class="n">stdout</span> <span class="o">=</span> <span class="n">original_stdout</span>
+
+                            <span class="k">for</span> <span class="n">re_match</span> <span class="ow">in</span> <span class="n">re</span><span class="o">.</span><span class="n">finditer</span><span class="p">(</span><span class="n">EMAIL_REGEX1</span><span class="p">,</span> <span class="n">msg</span><span class="o">.</span><span class="n">text</span><span class="o">.</span><span class="n">lower</span><span class="p">()):</span>
+                                <span class="n">new_email</span> <span class="o">=</span> <span class="n">re_match</span><span class="o">.</span><span class="n">group</span><span class="p">()</span>
+                                <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;new_email&#39;</span><span class="p">,</span> <span class="nb">type</span><span class="p">(</span><span class="n">new_email</span><span class="p">),</span> <span class="s1">&#39;------&#39;</span><span class="p">,</span> <span class="n">new_email</span><span class="p">)</span>
+                                <span class="n">domain_new_email</span> <span class="o">=</span> <span class="n">my_utils</span><span class="o">.</span><span class="n">domain_from_email</span><span class="p">(</span><span class="n">new_email</span><span class="p">)</span>
+                                <span class="k">if</span> <span class="n">domain_new_email</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">blacklist_domains</span><span class="p">:</span>
+                                    <span class="k">if</span> <span class="ow">not</span> <span class="nb">any</span><span class="p">(</span><span class="n">element</span> <span class="ow">in</span> <span class="n">new_email</span> <span class="k">for</span> <span class="n">element</span> <span class="ow">in</span> <span class="n">list_remove</span><span class="p">):</span>
+                                    <span class="c1"># if &#39;reply&#39; not in email_clean and &#39;?&#39; not in email_clean:</span>
+                                        <span class="n">set_emails_dne</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">new_email</span><span class="p">)</span>
+                                        <span class="c1">### write to file as backup</span>
+                                        <span class="n">sys</span><span class="o">.</span><span class="n">stdout</span> <span class="o">=</span> <span class="n">f</span>
+                                        <span class="nb">print</span><span class="p">(</span><span class="n">new_email</span><span class="p">)</span>
+                                        <span class="n">sys</span><span class="o">.</span><span class="n">stdout</span> <span class="o">=</span> <span class="n">original_stdout</span>
+
+                    <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+                        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;--- ERROR with </span><span class="si">{</span><span class="n">msg</span><span class="o">.</span><span class="n">uid</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+                        <span class="k">continue</span>
+            <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+                <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;--- ERROR with </span><span class="si">{</span><span class="n">keyword</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+            <span class="c1">### keywords in Subject line</span>
+            <span class="k">try</span><span class="p">:</span>
+
+                <span class="k">for</span> <span class="n">keyword</span> <span class="ow">in</span> <span class="n">delivery_keywords_subject</span><span class="p">:</span>
+
+                    <span class="k">try</span><span class="p">:</span>
+
+                        <span class="k">for</span> <span class="n">msg</span> <span class="ow">in</span> <span class="n">mailbox</span><span class="o">.</span><span class="n">fetch</span><span class="p">(</span><span class="n">AND</span><span class="p">(</span><span class="n">subject</span><span class="o">=</span><span class="n">keyword</span><span class="p">),</span> <span class="n">mark_seen</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span> 
+
+                            <span class="n">count</span> <span class="o">+=</span> <span class="mi">1</span>
+                            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="se">\n</span><span class="si">{</span><span class="n">run</span><span class="si">}</span><span class="s1">---------------</span><span class="si">{</span><span class="n">keyword</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+                            <span class="nb">print</span><span class="p">(</span><span class="n">count</span><span class="p">)</span>
+                            <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;msg.uid&#39;</span><span class="p">,</span> <span class="nb">type</span><span class="p">(</span><span class="n">msg</span><span class="o">.</span><span class="n">uid</span><span class="p">),</span> <span class="s1">&#39;------&#39;</span><span class="p">,</span> <span class="n">msg</span><span class="o">.</span><span class="n">uid</span><span class="p">)</span>
+                            <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;msg.from_&#39;</span><span class="p">,</span> <span class="nb">type</span>
+                            <span class="p">(</span><span class="n">msg</span><span class="o">.</span><span class="n">from_</span><span class="p">),</span> <span class="s1">&#39;------&#39;</span><span class="p">,</span> <span class="n">msg</span><span class="o">.</span><span class="n">from_</span><span class="p">)</span>
+                            <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;msg.to&#39;</span><span class="p">,</span> <span class="nb">type</span><span class="p">(</span><span class="n">msg</span><span class="o">.</span><span class="n">to</span><span class="p">),</span> <span class="s1">&#39;------&#39;</span><span class="p">,</span> <span class="n">msg</span><span class="o">.</span><span class="n">to</span><span class="p">)</span>
+                            <span class="n">email_clean</span> <span class="o">=</span> <span class="n">msg</span><span class="o">.</span><span class="n">from_values</span><span class="o">.</span><span class="n">email</span>
+                            <span class="n">domain</span> <span class="o">=</span> <span class="n">my_utils</span><span class="o">.</span><span class="n">domain_from_email</span><span class="p">(</span><span class="n">email_clean</span><span class="p">)</span>
+                            <span class="k">if</span> <span class="n">domain</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">blacklist_domains</span><span class="p">:</span>
+                                <span class="k">if</span> <span class="ow">not</span> <span class="nb">any</span><span class="p">(</span><span class="n">element</span> <span class="ow">in</span> <span class="n">email_clean</span> <span class="k">for</span> <span class="n">element</span> <span class="ow">in</span> <span class="n">list_remove</span><span class="p">):</span>
+                                    <span class="n">set_emails_dne</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">email_clean</span><span class="p">)</span>
+                                    <span class="c1">### write to file as backup</span>
+                                    <span class="n">sys</span><span class="o">.</span><span class="n">stdout</span> <span class="o">=</span> <span class="n">f</span>
+                                    <span class="nb">print</span><span class="p">(</span><span class="n">email_clean</span><span class="p">)</span>
+                                    <span class="n">sys</span><span class="o">.</span><span class="n">stdout</span> <span class="o">=</span> <span class="n">original_stdout</span>
+
+                            <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;msg.subject&#39;</span><span class="p">,</span> <span class="nb">type</span><span class="p">(</span><span class="n">msg</span><span class="o">.</span><span class="n">subject</span><span class="p">),</span> <span class="s1">&#39;------&#39;</span><span class="p">,</span> <span class="n">msg</span><span class="o">.</span><span class="n">subject</span><span class="p">)</span>
+                            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Emails from body:&quot;</span><span class="p">)</span>
+                            <span class="k">for</span> <span class="n">re_match</span> <span class="ow">in</span> <span class="n">re</span><span class="o">.</span><span class="n">finditer</span><span class="p">(</span><span class="n">EMAIL_REGEX1</span><span class="p">,</span> <span class="n">msg</span><span class="o">.</span><span class="n">html</span><span class="o">.</span><span class="n">lower</span><span class="p">()):</span>
+                                <span class="n">new_email</span> <span class="o">=</span> <span class="n">re_match</span><span class="o">.</span><span class="n">group</span><span class="p">()</span>
+                                <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;new_email&#39;</span><span class="p">,</span> <span class="nb">type</span><span class="p">(</span><span class="n">new_email</span><span class="p">),</span> <span class="s1">&#39;------&#39;</span><span class="p">,</span> <span class="n">new_email</span><span class="p">)</span>
+                                <span class="n">domain_new_email</span> <span class="o">=</span> <span class="n">my_utils</span><span class="o">.</span><span class="n">domain_from_email</span><span class="p">(</span><span class="n">new_email</span><span class="p">)</span>
+                                <span class="k">if</span> <span class="n">domain_new_email</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">blacklist_domains</span><span class="p">:</span>
+                                    <span class="k">if</span> <span class="ow">not</span> <span class="nb">any</span><span class="p">(</span><span class="n">element</span> <span class="ow">in</span> <span class="n">new_email</span> <span class="k">for</span> <span class="n">element</span> <span class="ow">in</span> <span class="n">list_remove</span><span class="p">):</span>
+                                    <span class="c1"># if &#39;reply&#39; not in email_clean and &#39;?&#39; not in email_clean:</span>
+                                        <span class="n">set_emails_dne</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">new_email</span><span class="p">)</span>
+                                        <span class="c1">### write to file as backup</span>
+                                        <span class="n">sys</span><span class="o">.</span><span class="n">stdout</span> <span class="o">=</span> <span class="n">f</span>
+                                        <span class="nb">print</span><span class="p">(</span><span class="n">new_email</span><span class="p">)</span>
+                                        <span class="n">sys</span><span class="o">.</span><span class="n">stdout</span> <span class="o">=</span> <span class="n">original_stdout</span>
+
+                            <span class="k">for</span> <span class="n">re_match</span> <span class="ow">in</span> <span class="n">re</span><span class="o">.</span><span class="n">finditer</span><span class="p">(</span><span class="n">EMAIL_REGEX1</span><span class="p">,</span> <span class="n">msg</span><span class="o">.</span><span class="n">text</span><span class="o">.</span><span class="n">lower</span><span class="p">()):</span>
+                                <span class="n">new_email</span> <span class="o">=</span> <span class="n">re_match</span><span class="o">.</span><span class="n">group</span><span class="p">()</span>
+                                <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;new_email&#39;</span><span class="p">,</span> <span class="nb">type</span><span class="p">(</span><span class="n">new_email</span><span class="p">),</span> <span class="s1">&#39;------&#39;</span><span class="p">,</span> <span class="n">new_email</span><span class="p">)</span>
+                                <span class="n">domain_new_email</span> <span class="o">=</span> <span class="n">my_utils</span><span class="o">.</span><span class="n">domain_from_email</span><span class="p">(</span><span class="n">new_email</span><span class="p">)</span>
+                                <span class="k">if</span> <span class="n">domain_new_email</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">blacklist_domains</span><span class="p">:</span>
+                                    <span class="k">if</span> <span class="ow">not</span> <span class="nb">any</span><span class="p">(</span><span class="n">element</span> <span class="ow">in</span> <span class="n">new_email</span> <span class="k">for</span> <span class="n">element</span> <span class="ow">in</span> <span class="n">list_remove</span><span class="p">):</span>
+                                    <span class="c1"># if &#39;reply&#39; not in email_clean and &#39;?&#39; not in email_clean:</span>
+                                        <span class="n">set_emails_dne</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">new_email</span><span class="p">)</span>
+                                        <span class="c1">### write to file as backup</span>
+                                        <span class="n">sys</span><span class="o">.</span><span class="n">stdout</span> <span class="o">=</span> <span class="n">f</span>
+                                        <span class="nb">print</span><span class="p">(</span><span class="n">new_email</span><span class="p">)</span>
+                                        <span class="n">sys</span><span class="o">.</span><span class="n">stdout</span> <span class="o">=</span> <span class="n">original_stdout</span>
+                    <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+                        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;--- ERROR with </span><span class="si">{</span><span class="n">msg</span><span class="o">.</span><span class="n">uid</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+                        <span class="k">continue</span>
+            <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+                <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;--- ERROR with </span><span class="si">{</span><span class="n">keyword</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="c1">### Update Grist with DNE</span>
+<span class="n">list_to_update</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">for</span> <span class="n">email</span> <span class="ow">in</span> <span class="n">set_emails_dne</span><span class="p">:</span>
+    <span class="k">if</span> <span class="n">email</span> <span class="ow">in</span> <span class="n">dict_existing_emails</span><span class="p">:</span>
+        <span class="n">list_to_update</span><span class="o">.</span><span class="n">append</span><span class="p">({</span><span class="s1">&#39;id&#39;</span><span class="p">:</span> <span class="n">dict_existing_emails</span><span class="p">[</span><span class="n">email</span><span class="p">],</span> <span class="s1">&#39;dne&#39;</span><span class="p">:</span> <span class="kc">True</span><span class="p">,})</span>
+
+<span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">list_to_update</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+    <span class="n">grist_XX</span><span class="o">.</span><span class="n">Contacts</span><span class="o">.</span><span class="n">update_records</span><span class="p">(</span><span class="s1">&#39;Master&#39;</span><span class="p">,</span> <span class="n">list_to_update</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">list_to_update</span><span class="p">)</span><span class="si">}</span><span class="s2"> updated with DNE in XX Contacts&quot;</span><span class="p">)</span>
+
+<span class="c1">### Print set_emails_dne</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;set_emails_dne:&quot;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">email</span> <span class="ow">in</span> <span class="n">set_emails_dne</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">email</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;set_emails_dne: &#39;</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">set_emails_dne</span><span class="p">))</span>
+
+<span class="c1">### Print set_new_emails</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;set_new_emails:&quot;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">email</span> <span class="ow">in</span> <span class="n">set_new_emails</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">email</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;set_new_emails: &#39;</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">set_new_emails</span><span class="p">))</span>
+
+<span class="c1">########################################################################################################</span>
+
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">()</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;-------------------------------&#39;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Count Emails = </span><span class="si">{</span><span class="n">count</span><span class="si">}</span><span class="s2"> emails found&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Count set_new_emails = </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">set_new_emails</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Email addresses = </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">set_emails_dne</span><span class="p">)</span><span class="si">}</span><span class="s2"> email addresses to DNE&quot;</span><span class="p">)</span>
+
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;-------------------------------&#39;</span><span class="p">)</span>
+    <span class="n">run_time</span> <span class="o">=</span> <span class="nb">round</span><span class="p">((</span><span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span> <span class="o">-</span> <span class="n">start_time</span><span class="p">)</span><span class="o">/</span><span class="mi">60</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">basename</span><span class="p">(</span><span class="vm">__file__</span><span class="p">)</span><span class="si">}</span><span class="s1"> finished in </span><span class="si">{</span><span class="n">run_time</span><span class="si">}</span><span class="s1"> minutes.&#39;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">()</span>
+</code></pre></div>
+
+<h1>Sweep mailbox for new email addresses not in CRM</h1>
+<p>From all emails, incl. Out Of Office messages, in the From/Cc fields or email body.   </p>
+<p>TODO: document + script</p>
                 </article>
             </aside>
 
@@ -195,11 +733,11 @@
                 <article class="hentry">
                     <header>
                         <!-- PREVIOUS NOTE TITLE -->
-                        <h1><a href="https://notes.nicolasdeville.com/projects/imapee" rel="bookmark"
-                            title="Imapee">Imapee</a></h1>
+                        <h1><a href="https://notes.nicolasdeville.com/python/library-beautifulsoup" rel="bookmark"
+                            title="Python library: Beautifulsoup">Python library: Beautifulsoup</a></h1>
                         <!-- PREVIOUS NOTE SUMMARY -->
                         <div class="entry-content">
-                            <p>collection of email inbox management scripts in python</p>
+                            <p>makes it easy to scrape information from web pages</p>
                         </div>
                     </header>
 
@@ -208,13 +746,13 @@
 <footer class="post-info">
 
     <p>
-        12 Sep 2022 <span class="separator">|</span> in <a class="link_tag" href="https://notes.nicolasdeville.com/projects/">projects</a>
+        12 Sep 2022 <span class="separator">|</span> in <a class="link_tag" href="https://notes.nicolasdeville.com/python/">python</a>
  tags: <a class="link_tag" href="https://notes.nicolasdeville.com/tag/python.html">python</a>
-<a class="link_tag" href="https://notes.nicolasdeville.com/tag/emails.html">emails</a>
+<a class="link_tag" href="https://notes.nicolasdeville.com/tag/libraries.html">libraries</a>
 
         <!-- added 4/7 -->
         <!-- 		<br />
-        <abbr class="modified" title="2022-09-12T15:18:19.655187+02:00">
+        <abbr class="modified" title="2022-09-12T22:28:29.125936+02:00">
                 Updated: 12 Sep 2022
         </abbr>
  -->

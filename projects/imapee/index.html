@@ -33,7 +33,7 @@
             </div>
 
             <div class="above-navbar">
-                <div class="last_updated">13 Sep 2022 | 07:18</div>
+                <div class="last_updated">13 Sep 2022 | 10:35</div>
                 <div>
                     <p class="notes_count">
                         <a href="https://notes.nicolasdeville.com/tags">by tags</a> 
@@ -88,14 +88,14 @@
 <footer class="post-info">
 
     <p>
-        12 Sep 2022 <span class="separator">|</span> in <a class="link_tag" href="https://notes.nicolasdeville.com/projects/">projects</a>
+        13 Sep 2022 <span class="separator">|</span> in <a class="link_tag" href="https://notes.nicolasdeville.com/projects/">projects</a>
  tags: <a class="link_tag" href="https://notes.nicolasdeville.com/tag/python.html">python</a>
 <a class="link_tag" href="https://notes.nicolasdeville.com/tag/emails.html">emails</a>
 
         <!-- added 4/7 -->
         <!-- 		<br />
-        <abbr class="modified" title="2022-09-12T15:18:19.655187+02:00">
-                Updated: 12 Sep 2022
+        <abbr class="modified" title="2022-09-13T10:35:04.924894+02:00">
+                Updated: 13 Sep 2022
         </abbr>
  -->
 
@@ -305,13 +305,158 @@ imapee_mail-nd-com.py finished in 0.9 minutes at 16:06:15.
 </code></pre></div>
 
 <p><span class="datestamp">10 Sep 2022</span>   </p>
-<h1>Mass "Mark as Read" emails</h1>
-<p>For example after sending an email campaign, need to mass "mark as read" the Out Of Office and other Undeliverables emails, following specific criteria (leavind as unread previous unrelated emails).  </p>
-<p>TODO: document + script</p>
-<p>Native web UI of email providers is usually very limited to filter properly </p>
+<h1>Mass "Mark as Read" emails / Out Of Office</h1>
+<p>For example after sending an email campaign, need to mass "mark as read" the Out Of Office and other Undeliverables emails, following specific criteria (leaving as unread previous unrelated emails).  </p>
+<p>Native web UI of email providers is usually very limited to filter properly. This script allows to mass Mark As Read based on specific keywords in <code>From</code>, <code>To</code>, <code>Subject</code> or <code>Body</code>.   </p>
+<div class="highlight"><pre><span></span><code><span class="c1"># default boilerplate</span>
+<span class="kn">from</span> <span class="nn">datetime</span> <span class="kn">import</span> <span class="n">datetime</span>
+<span class="n">ts_file</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">datetime</span><span class="o">.</span><span class="n">now</span><span class="p">()</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="s1">&#39;%y%m</span><span class="si">%d</span><span class="s1">-%H%M&#39;</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Starting at </span><span class="si">{</span><span class="n">datetime</span><span class="o">.</span><span class="n">now</span><span class="p">()</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="s1">&#39;%H:%M:%S&#39;</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="kn">import</span> <span class="nn">time</span>
+<span class="n">start_time</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>
+
+<span class="kn">import</span> <span class="nn">os</span>
+
+<span class="kn">import</span> <span class="nn">sys</span>
+<span class="n">sys</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s2">&quot;/Users/xxxx/Python/indeXee&quot;</span><span class="p">)</span> <span class="c1"># adding my_utils script</span>
+<span class="kn">from</span> <span class="nn">dotenv</span> <span class="kn">import</span> <span class="n">load_dotenv</span>
+<span class="n">load_dotenv</span><span class="p">()</span>
+
+<span class="kn">import</span> <span class="nn">my_utils</span>
+<span class="kn">import</span> <span class="nn">grist_XX</span>
+
+<span class="kn">import</span> <span class="nn">csv</span>
+
+<span class="kn">import</span> <span class="nn">pprint</span>
+<span class="n">pp</span> <span class="o">=</span> <span class="n">pprint</span><span class="o">.</span><span class="n">PrettyPrinter</span><span class="p">(</span><span class="n">indent</span><span class="o">=</span><span class="mi">4</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">()</span>
+<span class="n">count</span> <span class="o">=</span> <span class="mi">0</span>
+
+<span class="c1">####################</span>
+<span class="c1"># List of domains to exclude from email address collection</span>
+<span class="n">blacklist_domains</span> <span class="o">=</span> <span class="n">grist_XX</span><span class="o">.</span><span class="n">get_blacklist_domains</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">blacklist_domains</span><span class="p">)</span><span class="si">}</span><span class="s2"> domains blacklisted for XX&quot;</span><span class="p">)</span>
+
+<span class="n">EMAIL_ACCOUNT</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">getenv</span><span class="p">(</span><span class="s2">&quot;EMAIL_ACCOUNT_XX&quot;</span><span class="p">)</span>
+<span class="n">PASSWORD</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">getenv</span><span class="p">(</span><span class="s2">&quot;PASSWORD_XX&quot;</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n\n</span><span class="s2">CHECK CREDENTIALS:</span><span class="se">\n</span><span class="si">{</span><span class="n">EMAIL_ACCOUNT</span><span class="si">=}</span><span class="se">\n</span><span class="si">{</span><span class="n">PASSWORD</span><span class="si">=}</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="c1">####################</span>
+<span class="c1">### </span>
+
+<span class="n">new_emails_in_csv</span> <span class="o">=</span> <span class="p">[]</span>
+
+<span class="kn">from</span> <span class="nn">imap_tools</span> <span class="kn">import</span> <span class="n">MailBox</span><span class="p">,</span> <span class="n">AND</span><span class="p">,</span> <span class="n">MailMessageFlags</span>
+<span class="kn">import</span> <span class="nn">re</span>
+
+<span class="n">run</span> <span class="o">=</span> <span class="s1">&#39;out_of_office&#39;</span> <span class="c1"># out_of_office / clean_mail_delivery / sweep</span>
+
+
+<span class="n">EMAIL_REGEX1</span> <span class="o">=</span> <span class="sa">r</span><span class="s2">&quot;&quot;&quot;(?:[a-z0-9!#$%&amp;&#39;*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&amp;&#39;*+/=?^_`{|}~-]+)*|&quot;(?:[\x01-\x08\x0b\x0c\x0e-\x1f\x21\x23-\x5b\x5d-\x7f]|\\[\x01-\x09\x0b\x0c\x0e-\x7f])*&quot;)@(?:(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?|\[(?:(?:(2(5[0-5]|[0-4][0-9])|1[0-9][0-9]|[1-9]?[0-9]))\.)</span><span class="si">{3}</span><span class="s2">(?:(2(5[0-5]|[0-4][0-9])|1[0-9][0-9]|[1-9]?[0-9])|[a-z0-9-]*[a-z0-9]:(?:[\x01-\x08\x0b\x0c\x0e-\x1f\x21-\x5a\x53-\x7f]|\\[\x01-\x09\x0b\x0c\x0e-\x7f])+)\])&quot;&quot;&quot;</span>
+<span class="c1"># EMAIL_REGEX2 = r&quot;[a-z0-9\.\-+_]+@[a-z0-9\.\-+_]+\.[a-z]+&quot;</span>
+
+<span class="n">set_emails_dne</span> <span class="o">=</span> <span class="nb">set</span><span class="p">()</span> <span class="c1"># Set of dicts: {email: , src:, first: }</span>
+<span class="n">set_new_emails</span> <span class="o">=</span> <span class="nb">set</span><span class="p">()</span>
+
+<span class="c1"># for sweeping emails:</span>
+<span class="n">new_emails_csv</span> <span class="o">=</span> <span class="sa">f</span><span class="s1">&#39;data/</span><span class="si">{</span><span class="n">ts_file</span><span class="si">}</span><span class="s1">-new_emails.csv&#39;</span>
+
+<span class="n">list_remove</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="s1">&#39;?&#39;</span><span class="p">,</span> 
+    <span class="s1">&#39;png&#39;</span><span class="p">,</span> 
+    <span class="s1">&#39;reply&#39;</span><span class="p">,</span> 
+    <span class="s1">&#39;DAEMON&#39;</span><span class="p">,</span> 
+    <span class="s1">&#39;Daemon&#39;</span><span class="p">,</span> 
+    <span class="s1">&#39;jpg@&#39;</span><span class="p">,</span> 
+    <span class="s1">&#39;xml@&#39;</span><span class="p">,</span> 
+    <span class="p">]</span>
+
+<span class="n">count_mark_as_read</span> <span class="o">=</span> <span class="mi">0</span>
+
+<span class="n">original_stdout</span> <span class="o">=</span> <span class="n">sys</span><span class="o">.</span><span class="n">stdout</span>
+
+<span class="k">with</span> <span class="n">MailBox</span><span class="p">(</span><span class="s1">&#39;imap.gmail.com&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">login</span><span class="p">(</span><span class="n">EMAIL_ACCOUNT</span><span class="p">,</span> <span class="n">PASSWORD</span><span class="p">)</span> <span class="k">as</span> <span class="n">mailbox</span><span class="p">:</span>
+
+    <span class="c1"># mailbox.folder.set(&#39;[Gmail]/Spam&#39;)</span>
+
+    <span class="k">if</span> <span class="n">run</span> <span class="o">==</span> <span class="s1">&#39;out_of_office&#39;</span><span class="p">:</span>
+
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Starting out_of_office run...</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+
+        <span class="n">ooo_keywords_subject</span> <span class="o">=</span> <span class="p">[</span>
+            <span class="s1">&#39;Automatic reply&#39;</span><span class="p">,</span>
+            <span class="c1"># &#39;ponse automatique:&#39;, # Réponse automatique:: &#39;ascii&#39; codec can&#39;t encode character &#39;\xe9&#39; in position 11: ordinal not in range(128)</span>
+            <span class="s1">&#39;automatique:&#39;</span><span class="p">,</span> <span class="c1">### workaround for Réponse automatique as seems to work only matching full words?</span>
+            <span class="s1">&#39;Autorespond&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;Automatische Antwort&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;OOO&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;Out-of-Office&#39;</span><span class="p">,</span>
+            <span class="c1"># &#39;Automatyczna odpowied&#39;, # Automatyczna odpowiedź:: &#39;ascii&#39; codec can&#39;t encode character &#39;\u017a&#39; in position 31: ordinal not in range(128)</span>
+            <span class="c1"># &#39;Automatyczna odpowiedź&#39;.encode(&quot;utf-8&quot;),</span>
+            <span class="s1">&#39;Automatyczna odpowiedź&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;Automatyczna&#39;</span><span class="p">,</span>
+            <span class="c1"># &#39;Respuesta autom&#39;, # Respuesta automática: &#39;ascii&#39; codec can&#39;t encode character &#39;\xe1&#39; in position 25: ordinal not in range(128)</span>
+            <span class="s1">&#39;Respuesta&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;Autoresponder&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;Risposta Automatica&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;Automatisk svar&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;Automatisch antwoord&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;AUTO:&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;On Maternity Leave&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;Out of the office&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;Out of office&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;Out Of Office&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;Risposta automatica&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;Pregnancy leave&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;Thank you for your email&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;Autosvar&#39;</span><span class="p">,</span>
+        <span class="p">]</span>
+
+        <span class="k">for</span> <span class="n">keyword</span> <span class="ow">in</span> <span class="n">ooo_keywords_subject</span><span class="p">:</span>
+
+            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;running </span><span class="si">{</span><span class="n">keyword</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+            <span class="k">try</span><span class="p">:</span>
+
+                <span class="k">for</span> <span class="n">msg</span> <span class="ow">in</span> <span class="n">mailbox</span><span class="o">.</span><span class="n">fetch</span><span class="p">(</span><span class="n">AND</span><span class="p">(</span><span class="n">subject</span><span class="o">=</span><span class="n">keyword</span><span class="p">),</span> <span class="n">mark_seen</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
+
+                    <span class="k">try</span><span class="p">:</span> 
+                        <span class="n">count</span> <span class="o">+=</span> <span class="mi">1</span>
+                        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="se">\n</span><span class="si">{</span><span class="n">run</span><span class="si">}</span><span class="s1">---------------</span><span class="si">{</span><span class="n">keyword</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+                        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;run </span><span class="si">{</span><span class="n">keyword</span><span class="si">}</span><span class="s2">: #</span><span class="si">{</span><span class="n">count</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+                        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;msg.uid&#39;</span><span class="p">,</span> <span class="nb">type</span><span class="p">(</span><span class="n">msg</span><span class="o">.</span><span class="n">uid</span><span class="p">),</span> <span class="s1">&#39;------&#39;</span><span class="p">,</span> <span class="n">msg</span><span class="o">.</span><span class="n">uid</span><span class="p">)</span>
+                        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;msg.from_&#39;</span><span class="p">,</span> <span class="nb">type</span><span class="p">(</span><span class="n">msg</span><span class="o">.</span><span class="n">from_</span><span class="p">),</span> <span class="s1">&#39;------&#39;</span><span class="p">,</span> <span class="n">msg</span><span class="o">.</span><span class="n">from_</span><span class="p">)</span>
+                        <span class="c1"># print(&#39;msg.flags&#39;, type(msg.flags), &#39;------&#39;, msg.flags)</span>
+                        <span class="c1"># print(&#39;msg.from_values_name&#39;, type(msg.from_values.name), &#39;------&#39;, msg.from_values.name)</span>
+                        <span class="c1"># print(&#39;msg.from_values_email&#39;, type(msg.from_values.email), &#39;------&#39;, msg.from_values.email)</span>
+                        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;msg.subject&#39;</span><span class="p">,</span> <span class="nb">type</span><span class="p">(</span><span class="n">msg</span><span class="o">.</span><span class="n">subject</span><span class="p">),</span> <span class="s1">&#39;------&#39;</span><span class="p">,</span> <span class="n">msg</span><span class="o">.</span><span class="n">subject</span><span class="p">)</span>
+
+                    <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+                        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;ERROR with message uid </span><span class="si">{</span><span class="n">msg</span><span class="o">.</span><span class="n">uid</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+            <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+                <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;ERROR with </span><span class="si">{</span><span class="n">keyword</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+
+<span class="c1">########################################################################################################</span>
+
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">()</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;-------------------------------&#39;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Count Emails = </span><span class="si">{</span><span class="n">count</span><span class="si">}</span><span class="s2"> emails found&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Count Mark As Read = </span><span class="si">{</span><span class="n">count_mark_as_read</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Count set_new_emails = </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">set_new_emails</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Email addresses = </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">set_emails_dne</span><span class="p">)</span><span class="si">}</span><span class="s2"> email addresses to DNE&quot;</span><span class="p">)</span>
+
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;-------------------------------&#39;</span><span class="p">)</span>
+    <span class="n">run_time</span> <span class="o">=</span> <span class="nb">round</span><span class="p">((</span><span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span> <span class="o">-</span> <span class="n">start_time</span><span class="p">)</span><span class="o">/</span><span class="mi">60</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">basename</span><span class="p">(</span><span class="vm">__file__</span><span class="p">)</span><span class="si">}</span><span class="s1"> finished in </span><span class="si">{</span><span class="n">run_time</span><span class="si">}</span><span class="s1"> minutes.&#39;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">()</span>
+</code></pre></div>
+
 <h1>Collect undeliverable emails and mark as read</h1>
 <p>When running campaigns, a number of emails will come back as undeliverable. No matter how good email cleaning and validation was.  </p>
-<p>TODO: document + script</p>
 <p><span class="datestamp">12 Sep 2022</span>   </p>
 <p>Here is my script to retrieve all emails returned as undeliverable from my Inbox, and mark all email notifications as read. <br>
 This generates a log file (<code>.txt</code>) for each run with all emails, as backup. Data (ie list of email) can be processed subsequently - eg update the "Do Not Email" flag in a system (Hubspot, Grist like below, etc..).   </p>

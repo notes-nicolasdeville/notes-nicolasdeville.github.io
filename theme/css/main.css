@@ -307,54 +307,6 @@ pre {
 } */
 
 /* 220911 adding for copy code feature: */
-/* button {
-        position: absolute;
-        top: 5px;
-        right: 5px;
-
-        color: #fff;
-        background-color: #da2222;
-} */
-
-/* v2/3 */
-/* .copy-button {
-    right: 30px; /*Button shows in the right side of block
-    height: 28px;
-    width: 60px;
-    position: absolute; /*positioned relative to its parent element*/
-    /* border: none;
-    border-radius: 4px;
-    font-family: Arial, sans-serif;
-    font-size: 12px;
-    font-weight: normal;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: 1.33;
-    letter-spacing: normal;
-    text-align: center;
-    color: #ffffff;
-    background-position-x: 8px;
-    background-position-y: 6px;
-    margin-top: -3px;
-    user-select: none;   
-} */
-
-
-/* Color of copy button when enabled (normal status) */
-/* .copy-button-enabled {
-    background-color: #4c825c;
-} */
-/* Color of enabled copy button which mouse hovers over */
-/* .copy-button-enabled:hover {
-    background-color: #3f6b4b;
-} */
-  /* Color of copy button after which is clicked */
-/* .copy-button-copied {
-    background-color: #312d2a;
-    outline: none;
-} */
-
-/* v4 */
 
 .clipboard-button {
     position: absolute;
@@ -365,7 +317,7 @@ pre {
     border-color: #767676;
     background-color: #ededed;
     border: 1px solid;
-    border-radius: 6px;
+    border-radius: 0.5em;
     font-size: 0.8em;
     z-index: 1;
     opacity: 0;
