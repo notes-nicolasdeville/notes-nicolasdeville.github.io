@@ -32,7 +32,7 @@
             </div>
 
             <div class="above-navbar">
-                <div class="last_updated">13 Sep 2022 | 10:35</div>
+                <div class="last_updated">13 Sep 2022 | 10:48</div>
                 <div>
                     <p class="notes_count">
                         <a href="https://notes.nicolasdeville.com/tags">by tags</a> 
@@ -107,7 +107,7 @@
 
         <!-- added 4/7 -->
         <!-- 		<br />
-        <abbr class="modified" title="2022-09-13T10:35:04.924894+02:00">
+        <abbr class="modified" title="2022-09-13T10:47:05.831307+02:00">
                 Updated: 13 Sep 2022
         </abbr>
  -->
@@ -132,23 +132,8 @@ This deadline does not apply to Google Workspace or Google Cloud Identity custom
 </blockquote>
 <h1>Mass delete emails</h1>
 <p>Logic: delete email if keyword(s) provided are in To, From and/or Subject fields.   </p>
-<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">datetime</span> <span class="kn">import</span> <span class="n">datetime</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Starting at </span><span class="si">{</span><span class="n">datetime</span><span class="o">.</span><span class="n">now</span><span class="p">()</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="s1">&#39;%H:%M:%S&#39;</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-<span class="kn">import</span> <span class="nn">time</span>
-<span class="n">start_time</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>
+<div class="highlight"><pre><span></span><code><span class="c1"># default boilerplate removed for brevity, see https://notes.nicolasdeville.com/python/boilerplate/</span>
 
-<span class="kn">import</span> <span class="nn">os</span>
-
-<span class="kn">from</span> <span class="nn">dotenv</span> <span class="kn">import</span> <span class="n">load_dotenv</span>
-<span class="n">load_dotenv</span><span class="p">()</span>
-
-<span class="kn">from</span> <span class="nn">imap_tools</span> <span class="kn">import</span> <span class="n">MailBox</span><span class="p">,</span> <span class="n">AND</span><span class="p">,</span> <span class="n">MailMessageFlags</span>
-<span class="kn">import</span> <span class="nn">re</span>
-
-<span class="kn">import</span> <span class="nn">pprint</span>
-<span class="n">pp</span> <span class="o">=</span> <span class="n">pprint</span><span class="o">.</span><span class="n">PrettyPrinter</span><span class="p">(</span><span class="n">indent</span><span class="o">=</span><span class="mi">4</span><span class="p">)</span>
-
-<span class="n">count</span> <span class="o">=</span> <span class="mi">0</span>
 <span class="c1">####################</span>
 
 <span class="n">EMAIL_ACCOUNT</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">getenv</span><span class="p">(</span><span class="s2">&quot;EMAIL_ACCOUNT_ND&quot;</span><span class="p">)</span>
@@ -320,29 +305,7 @@ imapee_mail-nd-com.py finished in 0.9 minutes at 16:06:15.
 <h1>Mass "Mark as Read" emails / Out Of Office</h1>
 <p>For example after sending an email campaign, need to mass "mark as read" the Out Of Office and other Undeliverables emails, following specific criteria (leaving as unread previous unrelated emails).  </p>
 <p>Native web UI of email providers is usually very limited to filter properly. This script allows to mass Mark As Read based on specific keywords in <code>From</code>, <code>To</code>, <code>Subject</code> or <code>Body</code>.   </p>
-<div class="highlight"><pre><span></span><code><span class="c1"># default boilerplate</span>
-<span class="kn">from</span> <span class="nn">datetime</span> <span class="kn">import</span> <span class="n">datetime</span>
-<span class="n">ts_file</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">datetime</span><span class="o">.</span><span class="n">now</span><span class="p">()</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="s1">&#39;%y%m</span><span class="si">%d</span><span class="s1">-%H%M&#39;</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Starting at </span><span class="si">{</span><span class="n">datetime</span><span class="o">.</span><span class="n">now</span><span class="p">()</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="s1">&#39;%H:%M:%S&#39;</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-<span class="kn">import</span> <span class="nn">time</span>
-<span class="n">start_time</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>
-
-<span class="kn">import</span> <span class="nn">os</span>
-
-<span class="kn">import</span> <span class="nn">sys</span>
-<span class="n">sys</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s2">&quot;/Users/xxxx/Python/indeXee&quot;</span><span class="p">)</span> <span class="c1"># adding my_utils script</span>
-<span class="kn">from</span> <span class="nn">dotenv</span> <span class="kn">import</span> <span class="n">load_dotenv</span>
-<span class="n">load_dotenv</span><span class="p">()</span>
-
-<span class="kn">import</span> <span class="nn">my_utils</span>
-<span class="kn">import</span> <span class="nn">grist_XX</span>
-
-<span class="kn">import</span> <span class="nn">csv</span>
-
-<span class="kn">import</span> <span class="nn">pprint</span>
-<span class="n">pp</span> <span class="o">=</span> <span class="n">pprint</span><span class="o">.</span><span class="n">PrettyPrinter</span><span class="p">(</span><span class="n">indent</span><span class="o">=</span><span class="mi">4</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">()</span>
-<span class="n">count</span> <span class="o">=</span> <span class="mi">0</span>
+<div class="highlight"><pre><span></span><code><span class="c1"># default boilerplate removed for brevity, see https://notes.nicolasdeville.com/python/boilerplate/</span>
 
 <span class="c1">####################</span>
 <span class="c1"># List of domains to exclude from email address collection</span>
@@ -355,7 +318,6 @@ imapee_mail-nd-com.py finished in 0.9 minutes at 16:06:15.
 <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n\n</span><span class="s2">CHECK CREDENTIALS:</span><span class="se">\n</span><span class="si">{</span><span class="n">EMAIL_ACCOUNT</span><span class="si">=}</span><span class="se">\n</span><span class="si">{</span><span class="n">PASSWORD</span><span class="si">=}</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
 
 <span class="c1">####################</span>
-<span class="c1">### </span>
 
 <span class="n">new_emails_in_csv</span> <span class="o">=</span> <span class="p">[]</span>
 
@@ -472,29 +434,7 @@ imapee_mail-nd-com.py finished in 0.9 minutes at 16:06:15.
 <p><span class="datestamp">12 Sep 2022</span>   </p>
 <p>Here is my script to retrieve all emails returned as undeliverable from my Inbox, and mark all email notifications as read. <br>
 This generates a log file (<code>.txt</code>) for each run with all emails, as backup. Data (ie list of email) can be processed subsequently - eg update the "Do Not Email" flag in a system (Hubspot, Grist like below, etc..).   </p>
-<div class="highlight"><pre><span></span><code><span class="c1">### my standard boilerplate</span>
-<span class="kn">from</span> <span class="nn">datetime</span> <span class="kn">import</span> <span class="n">datetime</span>
-<span class="n">ts_file</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">datetime</span><span class="o">.</span><span class="n">now</span><span class="p">()</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="s1">&#39;%y%m</span><span class="si">%d</span><span class="s1">-%H%M&#39;</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Starting at </span><span class="si">{</span><span class="n">datetime</span><span class="o">.</span><span class="n">now</span><span class="p">()</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="s1">&#39;%H:%M:%S&#39;</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-<span class="kn">import</span> <span class="nn">time</span>
-<span class="n">start_time</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>
-<span class="kn">import</span> <span class="nn">os</span>
-
-<span class="kn">import</span> <span class="nn">sys</span>
-<span class="n">sys</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s2">&quot;/Users/xxx/Python/indeXee&quot;</span><span class="p">)</span> <span class="c1"># to access my utility scripts `my_utils`</span>
-
-<span class="kn">from</span> <span class="nn">dotenv</span> <span class="kn">import</span> <span class="n">load_dotenv</span>
-<span class="n">load_dotenv</span><span class="p">()</span>
-
-<span class="kn">import</span> <span class="nn">my_utils</span>
-<span class="kn">import</span> <span class="nn">grist_XX</span>
-
-<span class="kn">import</span> <span class="nn">csv</span>
-
-<span class="kn">import</span> <span class="nn">pprint</span>
-<span class="n">pp</span> <span class="o">=</span> <span class="n">pprint</span><span class="o">.</span><span class="n">PrettyPrinter</span><span class="p">(</span><span class="n">indent</span><span class="o">=</span><span class="mi">4</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">()</span>
-<span class="n">count</span> <span class="o">=</span> <span class="mi">0</span>
+<div class="highlight"><pre><span></span><code><span class="c1"># default boilerplate removed for brevity, see https://notes.nicolasdeville.com/python/boilerplate/</span>
 
 <span class="c1">####################</span>
 <span class="c1"># List of domains to exclude from email address collection</span>
