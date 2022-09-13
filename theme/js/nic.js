@@ -12,7 +12,7 @@ const addCopyButtons = (clipboard) => {
     button.type = "button";
     button.innerHTML = svgCopy;
     button.addEventListener("click", () => {
-        clipboard.writeText(codeBlock.innerText).then(
+        clipboard.writeText(codeBlock.innerText.trim()).then(
         () => {
             button.blur();
             button.innerHTML = svgCheck;
