@@ -13,6 +13,11 @@ url = "/projects/imapee"
 title = "Imapee"
 
 [[input.files]]
+path = "python/boilerplate/index.html"
+url = "/python/boilerplate"
+title = "My Python scripts boilerplate"
+
+[[input.files]]
 path = "projects/notes/index.html"
 url = "/projects/notes"
 title = "This site"
@@ -641,11 +646,6 @@ title = "Python library: dateutil"
 path = "python/library-slugify/index.html"
 url = "/python/library-slugify"
 title = "Library: slugify"
-
-[[input.files]]
-path = "python/boilerplate/index.html"
-url = "/python/boilerplate"
-title = "My Python scripts boilerplate"
 
 [[input.files]]
 path = "b2b-sales/producing-videos/index.html"
