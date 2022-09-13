@@ -8,19 +8,24 @@ url = "/ABOUT/"
 title = ""
 
 [[input.files]]
+path = "python/library-send2trash/index.html"
+url = "/python/library-send2trash"
+title = "Library: Send2Trash"
+
+[[input.files]]
 path = "projects/notes/index.html"
 url = "/projects/notes"
 title = "This site"
 
 [[input.files]]
+path = "python/library-beautifulsoup/index.html"
+url = "/python/library-beautifulsoup"
+title = "Python library: Beautifulsoup"
+
+[[input.files]]
 path = "random/dad-bag/index.html"
 url = "/random/dad-bag"
 title = "My dad bag"
-
-[[input.files]]
-path = "python/library-send2trash/index.html"
-url = "/python/library-send2trash"
-title = "Library: Send2Trash"
 
 [[input.files]]
 path = "python/virtual-environments/index.html"
@@ -568,19 +573,14 @@ url = "/movies/1000"
 title = "My Top 1,000 Movies"
 
 [[input.files]]
-path = "python/library-beautifulsoup/index.html"
-url = "/python/library-beautifulsoup"
-title = "Python library: Beautifulsoup"
+path = "python/books/index.html"
+url = "/python/books"
+title = "My Python Books Library"
 
 [[input.files]]
 path = "b2b-sales/books/index.html"
 url = "/b2b-sales/books"
 title = "My B2B Books Library"
-
-[[input.files]]
-path = "python/books/index.html"
-url = "/python/books"
-title = "My Python Books Library"
 
 [[input.files]]
 path = "books/library/index.html"
@@ -1733,14 +1733,14 @@ url = "/books/library"
 title = "My Books Library"
 
 [[input.files]]
-path = "python/books/index.html"
-url = "/python/books"
-title = "My Python Books Library"
-
-[[input.files]]
 path = "b2b-sales/books/index.html"
 url = "/b2b-sales/books"
 title = "My B2B Books Library"
+
+[[input.files]]
+path = "python/books/index.html"
+url = "/python/books"
+title = "My Python Books Library"
 
 [[input.files]]
 path = "apps/library/index.html"
