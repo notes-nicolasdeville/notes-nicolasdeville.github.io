@@ -32,7 +32,7 @@
             </div>
 
             <div class="above-navbar">
-                <div class="last_updated">15 Sep 2022 | 12:49</div>
+                <div class="last_updated">15 Sep 2022 | 13:11</div>
                 <div>
                     <p class="notes_count">
                         <a href="https://notes.nicolasdeville.com/tags">by tags</a> 
@@ -106,7 +106,7 @@
 
         <!-- added 4/7 -->
         <!-- 		<br />
-        <abbr class="modified" title="2022-09-15T12:45:06.625921+02:00">
+        <abbr class="modified" title="2022-09-15T13:11:17.951993+02:00">
                 Updated: 15 Sep 2022
         </abbr>
  -->
@@ -403,22 +403,7 @@ Learning: escape quotes in article titles, eg <code>I \"like\" spam</code>.  </p
 <li><code>git commit -m 'daily update'</code> (committing with message)</li>
 <li><code>git push origin main</code> (push all static files to Github - publishing is automated by Github)  </li>
 </ol>
-<h2>Plugins to test</h2>
-<h3>more Categories</h3>
-<p>for subcategories and more than 1 category per article   </p>
-<div class="link_border">
-<div class="link_title">GitHub - pelican-plugins/more-categories: Enables nested categories and multiple categories per article</div>
-<div class="link_url"><a href="https://github.com/pelican-plugins/more-categories" target="_blank">https://github.com/pelican-plugins/more-categories</a></div></div>
-
-<h3>sitemap</h3>
-<p>for auto-generation of <code>sitemap.xml</code>  </p>
-<div class="link_border">
-<div class="link_title">GitHub - pelican-plugins/sitemap: Generates a site map for Pelican-powered sites</div>
-<div class="link_title">pelican-plugins/sitemap</div>
-<div class="link_url"><a href="https://github.com/pelican-plugins/sitemap" target="_blank">https://github.com/pelican-plugins/sitemap</a></div></div>
-
-<h3>search</h3>
-<p>(implemented)   </p>
+<h2>Search</h2>
 <p>Stork  </p>
 <div class="link_border">
 <div class="link_title">Stork Search - Impossibly Fast Web Search</div>
@@ -428,11 +413,23 @@ Learning: escape quotes in article titles, eg <code>I \"like\" spam</code>.  </p
 on Github: <a href="https://github.com/jameslittle230/stork" target="_blank">https://github.com/jameslittle230/stork</a>) <br>
 creator's personal website, with nice search input animation: <a href="https://jameslittle.me/" target="_blank">https://jameslittle.me/</a>  </p>
 <p>Plus plug-in: <a href="https://github.com/pelican-plugins/search" target="_blank">https://github.com/pelican-plugins/search</a>  </p>
-<p>Testing notes (16/7/22):<br>
-- install Stork first (<code>brew install stork-search/stork-tap/stork</code>)<br>
-- then install Pelican plugin (<code>pip3 install pelican-search</code>)<br>
-- implement CSS &amp; HTML changes. Test using <code>&lt;body&gt;</code> instead of adding <code>&lt;main&gt;</code> everywhere.<br>
-- generate index file: manually each time or does the plugin take care of that? TO TEST    </p>
+<p><span class="datestamp">16 Jul 2022</span> Testing notes:  </p>
+<ul>
+<li>install Stork first</li>
+</ul>
+<div class="highlight"><pre><span></span><code>brew install stork-search/stork-tap/stork
+</code></pre></div>
+
+<ul>
+<li>then install Pelican plugin</li>
+</ul>
+<div class="highlight"><pre><span></span><code>pip3 install pelican-search
+</code></pre></div>
+
+<ul>
+<li>implement CSS &amp; HTML changes. Test using <code>&lt;body&gt;</code> instead of adding <code>&lt;main&gt;</code> everywhere.  </li>
+<li>generate index file: manually each time or does the plugin take care of that? TO TEST    </li>
+</ul>
 <p>Questions:<br>
 - <code>SEARCH_HTML_SELECTOR = "main"</code>: why not use simply <code>&lt;body&gt;</code>?
     -&gt; Answer: with repeating content in header and footer, using <code>&lt;body&gt;</code> results in showing all pages in search results when using a search variable included in those.  </p>
@@ -453,6 +450,20 @@ The issue was that some of my article titles had quotes that were not escaped.  
 <div class="link_border">
 <div class="link_title">GitHub - rehanhaider/pelican-algolia: Pelican Algolia Search: A Plugin to integrated Algolia Search in Pelican</div>
 <div class="link_url"><a href="https://github.com/rehanhaider/pelican-algolia" target="_blank">https://github.com/rehanhaider/pelican-algolia</a></div></div>
+
+<h2>Plugins to test</h2>
+<h3>more Categories</h3>
+<p>for subcategories and more than 1 category per article   </p>
+<div class="link_border">
+<div class="link_title">GitHub - pelican-plugins/more-categories: Enables nested categories and multiple categories per article</div>
+<div class="link_url"><a href="https://github.com/pelican-plugins/more-categories" target="_blank">https://github.com/pelican-plugins/more-categories</a></div></div>
+
+<h3>sitemap</h3>
+<p>for auto-generation of <code>sitemap.xml</code>  </p>
+<div class="link_border">
+<div class="link_title">GitHub - pelican-plugins/sitemap: Generates a site map for Pelican-powered sites</div>
+<div class="link_title">pelican-plugins/sitemap</div>
+<div class="link_url"><a href="https://github.com/pelican-plugins/sitemap" target="_blank">https://github.com/pelican-plugins/sitemap</a></div></div>
 
 <h3>Staticman | comments for static sites</h3>
 <p>found here:</p>

@@ -8,6 +8,56 @@ url = "/ABOUT/"
 title = ""
 
 [[input.files]]
+path = "python/library-pelican/index.html"
+url = "/python/library-pelican"
+title = "Building a static site with Pelican"
+
+[[input.files]]
+path = "helpers/terminal-issues/index.html"
+url = "/helpers/terminal-issues"
+title = "macOS Terminal issues & troubleshooting"
+
+[[input.files]]
+path = "home-office/deep-work/index.html"
+url = "/home-office/deep-work"
+title = "Resources for Deep Work"
+
+[[input.files]]
+path = "python/pip/index.html"
+url = "/python/pip"
+title = "PIP: Python's Package Manager"
+
+[[input.files]]
+path = "python/paths/index.html"
+url = "/python/paths"
+title = "How to find all paths being searched by Python"
+
+[[input.files]]
+path = "learning/computer-science/index.html"
+url = "/learning/computer-science"
+title = "Learning Computer Science"
+
+[[input.files]]
+path = "projects/notes/index.html"
+url = "/projects/notes"
+title = "This site"
+
+[[input.files]]
+path = "home-office/kvm/index.html"
+url = "/home-office/kvm"
+title = "KVM Switch"
+
+[[input.files]]
+path = "interests/tea/index.html"
+url = "/interests/tea"
+title = "Tea"
+
+[[input.files]]
+path = "projects/libraree/index.html"
+url = "/projects/libraree"
+title = "Libraree"
+
+[[input.files]]
 path = "projects/imapee/index.html"
 url = "/projects/imapee"
 title = "Imapee"
@@ -16,11 +66,6 @@ title = "Imapee"
 path = "python/boilerplate/index.html"
 url = "/python/boilerplate"
 title = "My Python scripts boilerplate"
-
-[[input.files]]
-path = "projects/notes/index.html"
-url = "/projects/notes"
-title = "This site"
 
 [[input.files]]
 path = "books/learn-javascript-quickly/index.html"
@@ -61,11 +106,6 @@ title = "Gitignore"
 path = "python/unicode/index.html"
 url = "/python/unicode"
 title = "Unicode in Python"
-
-[[input.files]]
-path = "python/library-pelican/index.html"
-url = "/python/library-pelican"
-title = "Building a static site with Pelican"
 
 [[input.files]]
 path = "learning/css/index.html"
@@ -423,11 +463,6 @@ url = "/python/my-utils"
 title = "my-utils"
 
 [[input.files]]
-path = "projects/libraree/index.html"
-url = "/projects/libraree"
-title = "Libraree"
-
-[[input.files]]
 path = "python/library-notion-py/index.html"
 url = "/python/library-notion-py"
 title = "Fetching data from Notion API with Python"
@@ -471,11 +506,6 @@ title = "Managing my books library with Python"
 path = "home-office/scanner/index.html"
 url = "/home-office/scanner"
 title = "Fujitsu ScanSnap iX500"
-
-[[input.files]]
-path = "home-office/deep-work/index.html"
-url = "/home-office/deep-work"
-title = "Resources for Deep Work"
 
 [[input.files]]
 path = "projects/1000-movies/index.html"
@@ -553,11 +583,6 @@ url = "/python/fetch-metadata-from-url"
 title = "Fetch website metadata from URL"
 
 [[input.files]]
-path = "helpers/terminal/index.html"
-url = "/helpers/terminal"
-title = "macOS Terminal resources"
-
-[[input.files]]
 path = "helpers/clipper/index.html"
 url = "/helpers/clipper"
 title = "My web clipboard"
@@ -578,14 +603,14 @@ url = "/movies/1000"
 title = "My Top 1,000 Movies"
 
 [[input.files]]
-path = "python/books/index.html"
-url = "/python/books"
-title = "My Python Books Library"
-
-[[input.files]]
 path = "b2b-sales/books/index.html"
 url = "/b2b-sales/books"
 title = "My B2B Books Library"
+
+[[input.files]]
+path = "python/books/index.html"
+url = "/python/books"
+title = "My Python Books Library"
 
 [[input.files]]
 path = "books/library/index.html"
@@ -601,6 +626,11 @@ title = "Fetching data from TMDB API"
 path = "projects/nicai/index.html"
 url = "/projects/nicai"
 title = "nicAI | my personal AI assistant"
+
+[[input.files]]
+path = "helpers/terminal-commands/index.html"
+url = "/helpers/terminal-commands"
+title = "macOS List of Terminal Commands"
 
 [[input.files]]
 path = "python/library-datetime/index.html"
@@ -1733,14 +1763,14 @@ url = "/books/library"
 title = "My Books Library"
 
 [[input.files]]
-path = "b2b-sales/books/index.html"
-url = "/b2b-sales/books"
-title = "My B2B Books Library"
-
-[[input.files]]
 path = "python/books/index.html"
 url = "/python/books"
 title = "My Python Books Library"
+
+[[input.files]]
+path = "b2b-sales/books/index.html"
+url = "/b2b-sales/books"
+title = "My B2B Books Library"
 
 [[input.files]]
 path = "apps/library/index.html"
