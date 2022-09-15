@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="generator" content="Pelican" />
+    <title>PIP: Python's Package Manager</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="https://notes.nicolasdeville.com/theme/css/main.css" />
+
+
+
+        <meta name="description" content="ongoing note" />
+
+    <!-- for Stork seach engine -->
+    <link rel="stylesheet" href="https://files.stork-search.net/basic.css" /> 
+
+</head>
+
+<body id="index" class="body">
+        <header id="banner" class="body">
+
+            <div class="logo-and-search">
+                <a href="https://notes.nicolasdeville.com/"><img class="header_image" src="https://notes.nicolasdeville.com/images/nic_notes_header.svg" alt="Nic's notes" width="266"/></a>
+
+                <!-- for Stork seach engine -->
+                <div class="search-input-block">
+                    <input data-stork="sitesearch" class="search-input" placeholder="Search..." autofocus="autofocus"/>
+                    <div data-stork="sitesearch-output"></div>
+                </div>
+            </div>
+
+            <div class="above-navbar">
+                <div class="last_updated">15 Sep 2022 | 12:49</div>
+                <div>
+                    <p class="notes_count">
+                        <a href="https://notes.nicolasdeville.com/tags">by tags</a> 
+                        <span style="color:#C74350">|</span> 
+                        <a href="https://notes.nicolasdeville.com/2020/">2020</a>
+                        <span style="color:#C74350">|</span>
+                        <a href="https://notes.nicolasdeville.com/2021/">2021</a> 
+                        <span style="color:#C74350">|</span>
+                        <a href="https://notes.nicolasdeville.com/2022/">2022</a> 
+                        <span style="color:#C74350">|</span> 
+                        350 notes
+                    </p>
+                </div>
+            </div>
+
+            <nav><ul>
+                <li><a href="https://notes.nicolasdeville.com/apps/">apps</a></li>
+                <li><a href="https://notes.nicolasdeville.com/b2b-sales/">b2b sales</a></li>
+                <li><a href="https://notes.nicolasdeville.com/books/">books</a></li>
+                <li><a href="https://notes.nicolasdeville.com/careerplaybook/">#careerplaybook</a></li>
+                <li><a href="https://notes.nicolasdeville.com/helpers/">helpers</a></li>
+                <li><a href="https://notes.nicolasdeville.com/home-office/">home office</a></li>
+                <li><a href="https://notes.nicolasdeville.com/interests/">interests</a></li>
+                <li><a href="https://notes.nicolasdeville.com/leadership/">leadership</a></li>
+                <li><a href="https://notes.nicolasdeville.com/learning/">learning</a></li>
+                <li><a href="https://notes.nicolasdeville.com/movies/">movies</a></li>
+                <li><a href="https://notes.nicolasdeville.com/projects/">projects</a></li>
+                <li class="active"><a href="https://notes.nicolasdeville.com/python/">python</a></li>
+                <li><a href="https://notes.nicolasdeville.com/random/">random</a></li>
+                <li><a href="https://notes.nicolasdeville.com/startups/">startups</a></li>
+            </ul></nav>
+        </header>
+
+<section id="content" class="body">
+    <article>
+        <header>
+            <h1 class="entry-title">
+                <main> <!-- for indexing by Stork -->
+                    <a href="https://notes.nicolasdeville.com/python/pip" rel="bookmark"
+                    title="Permalink to PIP: Python's Package Manager">PIP: Python's Package Manager
+                    </a>
+                </main>
+            </h1>
+            <p class="header_summary">
+                <main> <!-- for indexing by Stork -->
+                    <p>ongoing note</p>
+                </main>
+            </p>
+        </header>
+
+        <div class="entry-content">
+<footer class="post-info">
+
+    <p>
+        15 Sep 2022 <span class="separator">|</span> in <a class="link_tag" href="https://notes.nicolasdeville.com/python/">python</a>
+
+        <!-- added 4/7 -->
+        <!-- 		<br />
+        <abbr class="modified" title="2022-09-15T12:11:04.099257+02:00">
+                Updated: 15 Sep 2022
+        </abbr>
+ -->
+
+    </p>
+
+    
+
+</footer>            <main> <!-- for indexing by Stork -->
+                <p><span class="datestamp">15 Sep 2022</span>   </p>
+<h1>install location</h1>
+<p>determine pip's install location:   </p>
+<p><code>where pip</code></p>
+<div class="highlight"><pre><span></span><code><span class="o">(</span>venv<span class="o">)</span> xxx@yyy notes % where pip
+/Users/xxxx/Python/homee/venv/bin/pip
+/Users/xxxx/Library/Python/3.8/bin/pip
+</code></pre></div>
+
+<ul>
+<li>why 2 paths? 🤔  <br>
+and
+<code>which pip</code></li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="o">(</span>venv<span class="o">)</span> nic@NicolasacStudio notes % which pip
+/Users/xxxx/Python/homee/venv/bin/pip
+</code></pre></div>
+
+<h1>get list of all libraries/packages installed</h1>
+<div class="highlight"><pre><span></span><code>pip3 freeze &gt; requirements.txt
+</code></pre></div>
+
+<blockquote>
+<p>good habit to run this regularly to ensure up-to-date package list in case of issue. Experience! 😅</p>
+</blockquote>
+<div class="highlight"><pre><span></span><code><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;requirements.txt&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">myFile</span><span class="p">:</span>
+  <span class="n">pkgs</span> <span class="o">=</span> <span class="n">myFile</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+  <span class="n">pkgs</span> <span class="o">=</span> <span class="n">pkgs</span><span class="o">.</span><span class="n">splitlines</span><span class="p">()</span>
+
+  <span class="k">for</span> <span class="n">pkg</span> <span class="ow">in</span> <span class="n">pkgs</span><span class="p">:</span>
+      <span class="nb">print</span><span class="p">(</span><span class="n">pkg</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;==&#39;</span><span class="p">)[</span><span class="mi">0</span><span class="p">])</span>
+</code></pre></div>
+
+<p>re-install all:  </p>
+<div class="highlight"><pre><span></span><code>pip3 install -r requirements.txt
+</code></pre></div>
+
+<h1>troubleshooting</h1>
+<div class="highlight"><pre><span></span><code>python3 -m ensurepip
+</code></pre></div>
+
+<p>and</p>
+<div class="highlight"><pre><span></span><code>python3 -m pip install --upgrade pip
+</code></pre></div>
+            </main>
+        </div><!-- /.entry-content -->
+    </article>
+</section>
+        <section id="extras" class="body">
+
+        <!-- /.blogroll -->
+                <div class="blogroll">
+                        <h2>links</h2>
+                        <ul>
+                            <li><a href="https://indeXall.io">Side project: indeXall.io</a></li>
+                            <li><a href="https://btobsales.eu">Services: BtoBSales.EU</a></li>
+                        </ul>
+                </div>
+
+        <!-- /.social -->
+                <div class="social">
+                        <h2>social</h2>
+                        <ul>
+
+                            <li><a href="https://www.linkedin.com/in/ndeville/">Linkedin</a></li>
+                            <li><a href="https://www.twitter.com/ndeville">Twitter</a></li>
+                        </ul>
+                </div>
+        </section><!-- /#extras -->
+
+        <footer id="contentinfo" class="body">
+                <address id="about" class="vcard body">
+                Powered by <a href="https://github.com/getpelican/pelican" target="_blank">Pelican</a>, 
+                with <a href="https://stork-search.net/" target="_blank">Stork</a> & <a href="https://github.com/pelican-plugins/search" target="_blank">Pelican Search plugin</a>.
+                <span style="color:#C74350">|</span> <img src="https://notes.nicolasdeville.com/images/python.svg" alt="python_logo" width="16" style="vertical-align: middle;"/> <a href="https://www.python.org/" target="_blank">Python</a> 
+                
+                </address><!-- /#about -->
+
+        </footer><!-- /#contentinfo -->
+
+
+<!-- JS -->
+
+<!-- for Stork seach engine -->
+<script src="https://files.stork-search.net/releases/v1.2.1/stork.js"></script>
+<script>
+    stork.register("sitesearch", "https://notes.nicolasdeville.com/search-index.st")
+</script>
+
+<!-- my JS script (with code block copy) -->
+<script src="https://notes.nicolasdeville.com/theme/js/nic.js"></script>
+
+</body>
+</html>

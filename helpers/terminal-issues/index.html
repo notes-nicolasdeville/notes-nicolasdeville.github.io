@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="generator" content="Pelican" />
+    <title>macOS Terminal issues & troubleshooting</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="https://notes.nicolasdeville.com/theme/css/main.css" />
+
+
+
+        <meta name="description" content="ongoing note" />
+
+    <!-- for Stork seach engine -->
+    <link rel="stylesheet" href="https://files.stork-search.net/basic.css" /> 
+
+</head>
+
+<body id="index" class="body">
+        <header id="banner" class="body">
+
+            <div class="logo-and-search">
+                <a href="https://notes.nicolasdeville.com/"><img class="header_image" src="https://notes.nicolasdeville.com/images/nic_notes_header.svg" alt="Nic's notes" width="266"/></a>
+
+                <!-- for Stork seach engine -->
+                <div class="search-input-block">
+                    <input data-stork="sitesearch" class="search-input" placeholder="Search..." autofocus="autofocus"/>
+                    <div data-stork="sitesearch-output"></div>
+                </div>
+            </div>
+
+            <div class="above-navbar">
+                <div class="last_updated">15 Sep 2022 | 12:49</div>
+                <div>
+                    <p class="notes_count">
+                        <a href="https://notes.nicolasdeville.com/tags">by tags</a> 
+                        <span style="color:#C74350">|</span> 
+                        <a href="https://notes.nicolasdeville.com/2020/">2020</a>
+                        <span style="color:#C74350">|</span>
+                        <a href="https://notes.nicolasdeville.com/2021/">2021</a> 
+                        <span style="color:#C74350">|</span>
+                        <a href="https://notes.nicolasdeville.com/2022/">2022</a> 
+                        <span style="color:#C74350">|</span> 
+                        350 notes
+                    </p>
+                </div>
+            </div>
+
+            <nav><ul>
+                <li><a href="https://notes.nicolasdeville.com/apps/">apps</a></li>
+                <li><a href="https://notes.nicolasdeville.com/b2b-sales/">b2b sales</a></li>
+                <li><a href="https://notes.nicolasdeville.com/books/">books</a></li>
+                <li><a href="https://notes.nicolasdeville.com/careerplaybook/">#careerplaybook</a></li>
+                <li class="active"><a href="https://notes.nicolasdeville.com/helpers/">helpers</a></li>
+                <li><a href="https://notes.nicolasdeville.com/home-office/">home office</a></li>
+                <li><a href="https://notes.nicolasdeville.com/interests/">interests</a></li>
+                <li><a href="https://notes.nicolasdeville.com/leadership/">leadership</a></li>
+                <li><a href="https://notes.nicolasdeville.com/learning/">learning</a></li>
+                <li><a href="https://notes.nicolasdeville.com/movies/">movies</a></li>
+                <li><a href="https://notes.nicolasdeville.com/projects/">projects</a></li>
+                <li><a href="https://notes.nicolasdeville.com/python/">python</a></li>
+                <li><a href="https://notes.nicolasdeville.com/random/">random</a></li>
+                <li><a href="https://notes.nicolasdeville.com/startups/">startups</a></li>
+            </ul></nav>
+        </header>
+
+<section id="content" class="body">
+    <article>
+        <header>
+            <h1 class="entry-title">
+                <main> <!-- for indexing by Stork -->
+                    <a href="https://notes.nicolasdeville.com/helpers/terminal-issues" rel="bookmark"
+                    title="Permalink to macOS Terminal issues & troubleshooting">macOS Terminal issues & troubleshooting
+                    </a>
+                </main>
+            </h1>
+            <p class="header_summary">
+                <main> <!-- for indexing by Stork -->
+                    <p>ongoing note</p>
+                </main>
+            </p>
+        </header>
+
+        <div class="entry-content">
+<footer class="post-info">
+
+    <p>
+        15 Sep 2022 <span class="separator">|</span> in <a class="link_tag" href="https://notes.nicolasdeville.com/helpers/">helpers</a>
+ tags: <a class="link_tag" href="https://notes.nicolasdeville.com/tag/macos.html">macOS</a>
+
+        <!-- added 4/7 -->
+        <!-- 		<br />
+        <abbr class="modified" title="2022-09-15T12:49:12.619258+02:00">
+                Updated: 15 Sep 2022
+        </abbr>
+ -->
+
+    </p>
+
+    
+
+</footer>            <main> <!-- for indexing by Stork -->
+                <p><span class="datestamp">04 Sep 2022</span>   </p>
+<p>Need to figure out the difference betweens <code>.bash_profile</code> &amp; <code>.zprofile</code>, both in user root folder, and their interaction with VS Code terminal.   </p>
+<p><code>.bash_profile</code>:   </p>
+<div class="highlight"><pre><span></span><code><span class="c1"># Setting PATH for Python 3.8</span>
+<span class="nv">PATH</span><span class="o">=</span><span class="s2">&quot;/Library/Python/3.8/bin:</span><span class="si">${</span><span class="nv">PATH</span><span class="si">}</span><span class="s2">&quot;</span>
+<span class="nb">export</span> PATH
+</code></pre></div>
+
+<p><code>.zprofile</code>:   </p>
+<div class="highlight"><pre><span></span><code><span class="nv">PATH</span><span class="o">=</span><span class="s2">&quot;/Library/Python3.9/bin:</span><span class="si">${</span><span class="nv">PATH</span><span class="si">}</span><span class="s2">&quot;</span>
+<span class="nb">export</span> PATH
+
+<span class="nb">eval</span> <span class="s2">&quot;</span><span class="k">$(</span>/opt/homebrew/bin/brew shellenv<span class="k">)</span><span class="s2">&quot;</span>
+</code></pre></div>
+
+<p>How to Add to the Shell Path in macOS Big Sur and Catalina using Terminal <br>
+<a href="https://wpbeaches.com/how-to-add-to-the-shell-path-in-macos-using-terminal/" target="_blank">https://wpbeaches.com/how-to-add-to-the-shell-path-in-macos-using-terminal/</a>   </p>
+<p>Created manually a <code>.zshrc</code> file with:   </p>
+<div class="highlight"><pre><span></span><code><span class="nb">export</span> <span class="nv">PATH</span><span class="o">=</span><span class="nv">$PATH</span>:/Users/nic/Library/Python/3.8/bin
+</code></pre></div>
+
+<p><span class="datestamp">14 Sep 2022</span>   </p>
+<p>started having problems again, whereby all my scripts return <code>ModuleNotFoundError: No module named 'xxxx'</code> with every library that is installed in the project's venv.
+The script runs with venv activated (<code>(venv)...</code>), confirmed with <code>which python</code> which accurately returns the path of Python in venv.   </p>
+<p>When trying to (re)install those libraries, with venv still active, they get installed in root Python with following warning:   </p>
+<div class="highlight"><pre><span></span><code>WARNING: The scripts f2py, f2py3 and f2py3.9 are installed <span class="k">in</span> <span class="s1">&#39;/Users/xxxxxx/Library/Python/3.9/bin&#39;</span> which is not on PATH.
+  Consider adding this directory to PATH or, <span class="k">if</span> you prefer to suppress this warning, use --no-warn-script-location.
+</code></pre></div>
+
+<p>Possibly since update to macOS Monterey 12.6 (which included some Command Line tools for XCode).  </p>
+<div class="highlight"><pre><span></span><code>ls -l /usr/bin/python*
+</code></pre></div>
+
+<p>is supposed to list all python instances on system, and it lists only one for me:   </p>
+<div class="highlight"><pre><span></span><code>-rwxr-xr-x  <span class="m">76</span> root  wheel  <span class="m">167120</span> <span class="m">24</span> Aug <span class="m">10</span>:59 /usr/bin/python3
+</code></pre></div>
+
+<p>actually: this is just a search in <code>usr/bin</code> and other paths are not included.   </p>
+<p><code>.bash_profile</code>, <code>.zprofile</code> &amp; <code>.zshrc</code> are the same as above.  </p>
+<p>🤔</p>
+<p>Check what shell I am using: </p>
+<div class="highlight"><pre><span></span><code><span class="nb">echo</span> <span class="nv">$SHELL</span>
+</code></pre></div>
+
+<p>returns <code>/bin/zsh</code> when run in VS Code. Same from stand-alone terminal window (clue in title bar!). <br>
+So I assume Bash is not used, so everything should run with 3.9 now.   <br>
+My ZSH points to Python 3.9 in <code>.zprofile</code>.    </p>
+<p>trying:</p>
+<div class="highlight"><pre><span></span><code><span class="nb">echo</span> <span class="nv">$PATH</span>
+</code></pre></div>
+
+<p>returns (edited for readability):   </p>
+<div class="highlight"><pre><span></span><code>/opt/homebrew/bin:
+/opt/homebrew/sbin:
+/Library/Python3.9/bin:
+/usr/local/bin:
+/usr/bin:
+/bin:
+/usr/sbin:
+/sbin:
+/usr/local/MacGPG2/bin:
+/Library/Apple/usr/bin:
+/Users/xxxx/Library/Python/3.8/bin
+</code></pre></div>
+
+<p>notes:   </p>
+<ul>
+<li>there is no path <code>/Library/Python3.9/bin</code>  </li>
+<li>the last path (<code>/Users/..</code>) seems to be the one used by VS Code/Terminal.   </li>
+<li>though need to add missing path: <code>/Users/xxxx/Library/Python/3.9/bin</code>   </li>
+</ul>
+<p>one by one:  </p>
+<ul>
+<li><code>/opt/homebrew/bin</code>: no Python binary in folder   </li>
+<li><code>/opt/homebrew/sbin</code>: no Python binary in folder   </li>
+<li><code>/Library/Python3.9/bin</code>: folder <code>Python3.9</code> does not exist</li>
+<li><code>/usr/local/bin</code>: <code>/usr/local/bin/python</code> found +++</li>
+<li><code>/usr/bin</code>: <code>/usr/bin/python3</code> found +++</li>
+<li><code>/bin</code>: no Python binary in folder  </li>
+<li><code>/usr/sbin</code>: no Python binary in folder  </li>
+<li><code>/sbin</code>: no Python binary in folder </li>
+<li><code>/usr/local/MacGPG2/bin</code>: no Python binary in folder </li>
+<li><code>/Library/Apple/usr/bin</code>: no Python binary in folder </li>
+<li><code>/Users/xxxx/Library/Python/3.8/bin</code>: no Python binary in folder 🤔</li>
+<li>not returned with <code>echo $PATH</code>: <code>/Users/xxxx/Library/Python/3.9/bin</code> also no Python binary in folder 🤔</li>
+</ul>
+<p>checking the symlink of a Python binary in one of my project's venv, I see the original to be:<br>
+<code>/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/bin/python3.9</code><br>
+which is not in path list!? 🤔
+Installed with the macOS update today?</p>
+<p>it seems that all the symlinks to Python in the virtual environments of all of my VS Code projects now point to the binary above, and none of the projects work anymore <code>ModuleNotFoundError</code>.   </p>
+<p>Asked for help on Stackoverflow:  <a href="https://stackoverflow.com/questions/73722967/all-python-scripts-stopped-working-path-changed-in-all-projects-after-macos-mon" target="_blank">https://stackoverflow.com/questions/73722967/all-python-scripts-stopped-working-path-changed-in-all-projects-after-macos-mon</a> 🤞🏼    </p>
+<div class="link_border">
+<div class="link_title">terminal - All Python scripts stopped working: path changed in all projects after macOS Monterey 12.6 update - Stack Overflow</div>
+<div class="link_url"><a href="https://stackoverflow.com/questions/73722967/all-python-scripts-stopped-working-path-changed-in-all-projects-after-macos-mon" target="_blank">https://stackoverflow.com/questions/73722967/all-python-scripts-stopped-working-path-changed-in-all-projects-after-macos-mon</a></div></div>
+
+<p><span class="datestamp">15 Sep 2022</span>   </p>
+<p>got pointed to: <a href="https://stackoverflow.com/questions/58562928/how-do-i-update-a-python-virtual-environment-with-venv-to-use-a-newer-version" target="_blank">https://stackoverflow.com/questions/58562928/how-do-i-update-a-python-virtual-environment-with-venv-to-use-a-newer-version</a>   </p>
+<div class="highlight"><pre><span></span><code>xxx@yyy ~ % <span class="nb">cd</span> Python/homee
+xxx@yyy homee % . venv/bin/activate
+<span class="o">(</span>venv<span class="o">)</span> xxx@yyy homee % python -V
+Python <span class="m">3</span>.9.6
+<span class="o">(</span>venv<span class="o">)</span> xxx@yyy homee % which python
+/Users/xxx/Python/homee/venv/bin/python
+<span class="o">(</span>venv<span class="o">)</span> xxx@yyy homee % 
+</code></pre></div>
+
+<p>already on latest Python version. </p>
+<p>run this to see all paths being searched by python:  </p>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">sys</span>
+
+<span class="k">for</span> <span class="n">path</span> <span class="ow">in</span> <span class="n">sys</span><span class="o">.</span><span class="n">path</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">path</span><span class="p">)</span>
+</code></pre></div>
+
+<p>prints:  </p>
+<div class="highlight"><pre><span></span><code>/Users/xxxx/Python/homee
+/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/lib/python39.zip
+/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9
+/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/lib-dynload
+/Users/xxxx/Python/indeXee
+/Users/xxxx/Python/Scrapee
+</code></pre></div>
+
+<p>last 2 are added in-script in boilerplate. <br>
+first path is my project, so venv</p>
+<p>started separate note on Python paths for clarity: [<a href="../../python/paths/index.html">Nic Note: How to find all paths being searched by Python</a>]  </p>
+<p>tried renaming <code>/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/bin</code> to <code>/bin_old</code> <br>
+result:   </p>
+<div class="highlight"><pre><span></span><code><span class="o">(</span>venv<span class="o">)</span> xxx@yyy homee % /Users/xxxx/Python/homee/venv/bin/python /Users/xxxx/Python/homee/test.py
+zsh: no such file or directory: /Users/xxxx/Python/homee/venv/bin/python
+</code></pre></div>
+
+<p>reverted.   </p>
+<div class="highlight"><pre><span></span><code>xxx@yyy % which python 
+/usr/local/bin/python
+xxx@yyy % which python3
+/usr/bin/python3
+</code></pre></div>
+
+<p><code>/usr/local/bin/python</code> = symlink to <code>/usr/bin/python3</code>
+<code>/usr/bin/python3</code> = executable   </p>
+<p>let's reboot and try to change the symlink in one venv to <code>/usr/bin/python3</code> to test.  </p>
+<p>Rebooted and everything seems to work again without changing anything.<br>
+So 🤗 but also 🤯 - still not clear about what did not work &amp; resolution path for next time 😕. <br>
+Anyway, back to work....</p>
+<p>Arrgh.. rejoiced too soon. <br>
+Seems scripts using built-in packages (or packages available at global level?) work, but still <code>ModuleNotFoundError</code> for most.  </p>
+<p>Note: site-packages in venv are installed under <code>/lib/python3.8</code> though symlink to <code>`/Library/Developer/CommandLineTools/...</code> is to Python 3.9. <br>
+This is probably the issue? </p>
+<div class="highlight"><pre><span></span><code>xxx@yyy ~ % which python
+/usr/local/bin/python
+xxx@yyy ~ % where python
+/usr/local/bin/python
+xxx@yyy ~ % python -V
+xcode-select: Failed to locate <span class="s1">&#39;python&#39;</span>, requesting installation of <span class="nb">command</span> line developer tools.
+xxx@yyy ~ % <span class="nb">cd</span> /usr/bin/python
+cd: no such file or directory: /usr/bin/python
+xxx@yyy ~ % <span class="nb">cd</span> usr/bin
+cd: no such file or directory: usr/bin
+xxx@yyy ~ % sudo <span class="nb">cd</span> usr/bin
+Password:
+/usr/bin/cd: line <span class="m">4</span>: cd: usr/bin: No such file or directory
+xxx@yyy ~ % 
+</code></pre></div>
+
+<p>Try symlink update. <br>
+Can't find a quick/clean way.   </p>
+<p>Re-installing venv from scratch results in:  </p>
+<ul>
+<li>symlink still to the <code>/Library/Developer/..</code> executable  </li>
+<li><code>/lib</code> has only <code>python3.9</code> vs old venv had only <code>python3.8</code>  </li>
+</ul>
+<p>Trying to install Python 3.10 (latest stable release) from <a href="https://www.python.org/downloads/release/python-3107/" target="_blank">https://www.python.org/downloads/release/python-3107/</a> <br>
+Adds an app <code>Python 3.10</code> under <code>/Applications</code> <br>
+No change in paths:  </p>
+<div class="highlight"><pre><span></span><code>Paths:
+/Users/xxxx/Python/homee
+/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/lib/python39.zip
+/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9
+/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/lib-dynload
+/Users/xxxx/Python/homee/venv/lib/python3.9/site-packages
+/Users/xxxx/Python/indeXee
+/Users/xxxx/Python/Scrapee
+
+Python lib:
+/Users/xxxx/Python/homee/venv/lib/python3.9/site-packages
+</code></pre></div>
+
+<p>rebooting.  </p>
+<div class="highlight"><pre><span></span><code><span class="o">(</span>venv<span class="o">)</span> xxx@yyy homee % which python
+/Users/xxxx/Python/homee/venv/bin/python
+<span class="o">(</span>venv<span class="o">)</span> xxx@yyy homee % where python
+/Users/xxxx/Python/homee/venv/bin/python
+/usr/local/bin/python
+<span class="o">(</span>venv<span class="o">)</span> xxx@yyy homee % which pip
+/Users/xxxx/Python/homee/venv/bin/pip
+<span class="o">(</span>venv<span class="o">)</span> xxx@yyy homee % which pip3 
+/Users/xxxx/Python/homee/venv/bin/pip3
+<span class="o">(</span>venv<span class="o">)</span> xxx@yyy homee % where pip
+/Users/xxxx/Python/homee/venv/bin/pip
+/Users/xxxx/Library/Python/3.8/bin/pip
+/Users/xxxx/Library/Python/3.8/bin/pip
+<span class="o">(</span>venv<span class="o">)</span> xxx@yyy homee % where pip3
+/Users/xxxx/Python/homee/venv/bin/pip3
+/Library/Frameworks/Python.framework/Versions/3.10/bin/pip3
+/usr/local/bin/pip3
+/usr/bin/pip3
+/Library/Frameworks/Python.framework/Versions/3.10/bin/pip3
+/Users/xxxx/Library/Python/3.8/bin/pip3
+/Users/xxxx/Library/Python/3.8/bin/pip3
+<span class="o">(</span>venv<span class="o">)</span> xxx@yyy homee % 
+</code></pre></div>
+
+<p>notes:  </p>
+<ul>
+<li>why 2x <code>/Users/xxxx/Library/Python/3.8/bin/pip</code> in <code>where pip</code>?  </li>
+<li>new Python install seems to be at <code>/Library/Frameworks/Python.framework/Versions/3.10/bin/pip3</code>  </li>
+</ul>
+<p>test installing new venv now (old venv renamed as <code>venv_220915</code> for archive, not deleted).  </p>
+<div class="highlight"><pre><span></span><code>Paths:
+/Users/xxxx/Python/homee
+/Library/Frameworks/Python.framework/Versions/3.10/lib/python310.zip
+/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10
+/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/lib-dynload
+/Users/xxxx/Python/homee/venv/lib/python3.10/site-packages
+/Users/xxxx/Python/indeXee
+/Users/xxxx/Python/Scrapee
+
+Python lib:
+/Users/xxxx/Python/homee/venv/lib/python3.10/site-packages
+</code></pre></div>
+
+<ul>
+<li><code>/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/bin</code> seems to have disappeared on its own? 🤔  </li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="o">(</span>venv<span class="o">)</span> xxx@yyy homee % where pip
+/Users/xxxx/Python/homee/venv/bin/pip
+/Users/xxxx/Library/Python/3.8/bin/pip
+/Users/xxxx/Library/Python/3.8/bin/pip
+<span class="o">(</span>venv<span class="o">)</span> xxx@yyy homee % where pip3
+/Users/xxxx/Python/homee/venv/bin/pip3
+/Library/Frameworks/Python.framework/Versions/3.10/bin/pip3
+/usr/local/bin/pip3
+/usr/bin/pip3
+/Library/Frameworks/Python.framework/Versions/3.10/bin/pip3
+/Users/xxxx/Library/Python/3.8/bin/pip3
+/Users/xxxx/Library/Python/3.8/bin/pip3
+<span class="o">(</span>venv<span class="o">)</span> xxx@yyy homee % where python
+/Users/xxxx/Python/homee/venv/bin/python
+/usr/local/bin/python
+<span class="o">(</span>venv<span class="o">)</span> xxx@yyy homee % where python3
+/Users/xxxx/Python/homee/venv/bin/python3
+/Library/Frameworks/Python.framework/Versions/3.10/bin/python3
+/usr/local/bin/python3
+/usr/bin/python3
+/Library/Frameworks/Python.framework/Versions/3.10/bin/python3
+</code></pre></div>
+
+<p>Python in new venv now symlinked to <code>/Library/Frameworks/Python.framework/Versions/3.10/bin/python3.10</code> <br>
+and <code>venv/lib</code> has now only <code>/python3.10</code>  </p>
+<p>Let's reinstall everything and use this as default one moving forward. 🤞🏼</p>
+            </main>
+        </div><!-- /.entry-content -->
+    </article>
+</section>
+        <section id="extras" class="body">
+
+        <!-- /.blogroll -->
+                <div class="blogroll">
+                        <h2>links</h2>
+                        <ul>
+                            <li><a href="https://indeXall.io">Side project: indeXall.io</a></li>
+                            <li><a href="https://btobsales.eu">Services: BtoBSales.EU</a></li>
+                        </ul>
+                </div>
+
+        <!-- /.social -->
+                <div class="social">
+                        <h2>social</h2>
+                        <ul>
+
+                            <li><a href="https://www.linkedin.com/in/ndeville/">Linkedin</a></li>
+                            <li><a href="https://www.twitter.com/ndeville">Twitter</a></li>
+                        </ul>
+                </div>
+        </section><!-- /#extras -->
+
+        <footer id="contentinfo" class="body">
+                <address id="about" class="vcard body">
+                Powered by <a href="https://github.com/getpelican/pelican" target="_blank">Pelican</a>, 
+                with <a href="https://stork-search.net/" target="_blank">Stork</a> & <a href="https://github.com/pelican-plugins/search" target="_blank">Pelican Search plugin</a>.
+                <span style="color:#C74350">|</span> <img src="https://notes.nicolasdeville.com/images/python.svg" alt="python_logo" width="16" style="vertical-align: middle;"/> <a href="https://www.python.org/" target="_blank">Python</a> 
+                
+                </address><!-- /#about -->
+
+        </footer><!-- /#contentinfo -->
+
+
+<!-- JS -->
+
+<!-- for Stork seach engine -->
+<script src="https://files.stork-search.net/releases/v1.2.1/stork.js"></script>
+<script>
+    stork.register("sitesearch", "https://notes.nicolasdeville.com/search-index.st")
+</script>
+
+<!-- my JS script (with code block copy) -->
+<script src="https://notes.nicolasdeville.com/theme/js/nic.js"></script>
+
+</body>
+</html>

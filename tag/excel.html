@@ -32,7 +32,7 @@
             </div>
 
             <div class="above-navbar">
-                <div class="last_updated">13 Sep 2022 | 11:17</div>
+                <div class="last_updated">15 Sep 2022 | 12:49</div>
                 <div>
                     <p class="notes_count">
                         <a href="https://notes.nicolasdeville.com/tags">by tags</a> 
@@ -85,7 +85,7 @@
 
             <aside id="featured" class="body">
             <!-- LATEST NOTE -->
-            <p class="notes-section">latest (or last updated) note</p>
+            <p class="notes-section">last (updated) note</p>
             <hr/>
 
                 <article class="hentry">
@@ -125,11 +125,11 @@
 <p><code>=OR(CELL("COL")=COLUMN(),CELL("ROW")=ROW())</code></p>
 <h3>Step 2: VBA</h3>
 <p>under <code>Developer &gt; Visual Basic</code>: double-click sheet and add code.  </p>
-<div class="highlight"><pre><span></span><code><span class="nv">Private</span> <span class="nv">Sub</span> <span class="nv">Worksheet_SelectionChange</span><span class="ss">(</span><span class="nv">ByVal</span> <span class="nv">Target</span> <span class="nv">As</span> <span class="nv">Range</span><span class="ss">)</span>
-<span class="k">If</span> <span class="nv">Application</span>.<span class="nv">CutCopyMode</span> <span class="o">=</span> <span class="nv">False</span> <span class="k">Then</span>
-<span class="nv">Application</span>.<span class="nv">Calculate</span>
-<span class="k">End</span> <span class="k">If</span>
-<span class="k">End</span> <span class="nv">Sub</span>
+<div class="highlight"><pre><span></span><code><span class="nv">Private</span><span class="w"> </span><span class="nv">Sub</span><span class="w"> </span><span class="nv">Worksheet_SelectionChange</span><span class="ss">(</span><span class="nv">ByVal</span><span class="w"> </span><span class="nv">Target</span><span class="w"> </span><span class="nv">As</span><span class="w"> </span><span class="nv">Range</span><span class="ss">)</span><span class="w"></span>
+<span class="k">If</span><span class="w"> </span><span class="nv">Application</span>.<span class="nv">CutCopyMode</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">False</span><span class="w"> </span><span class="k">Then</span><span class="w"></span>
+<span class="nv">Application</span>.<span class="nv">Calculate</span><span class="w"></span>
+<span class="k">End</span><span class="w"> </span><span class="k">If</span><span class="w"></span>
+<span class="k">End</span><span class="w"> </span><span class="nv">Sub</span><span class="w"></span>
 </code></pre></div>
 
 <p>Save as <code>.xlsm</code> file to support the macro  </p>

@@ -33,7 +33,7 @@
             </div>
 
             <div class="above-navbar">
-                <div class="last_updated">13 Sep 2022 | 11:17</div>
+                <div class="last_updated">15 Sep 2022 | 12:49</div>
                 <div>
                     <p class="notes_count">
                         <a href="https://notes.nicolasdeville.com/tags">by tags</a> 
@@ -44,7 +44,7 @@
                         <span style="color:#C74350">|</span>
                         <a href="https://notes.nicolasdeville.com/2022/">2022</a> 
                         <span style="color:#C74350">|</span> 
-                        344 notes
+                        350 notes
                     </p>
                 </div>
             </div>
@@ -88,12 +88,12 @@
 <footer class="post-info">
 
     <p>
-        13 Sep 2022 <span class="separator">|</span> in <a class="link_tag" href="https://notes.nicolasdeville.com/projects/">projects</a>
+        14 Sep 2022 <span class="separator">|</span> in <a class="link_tag" href="https://notes.nicolasdeville.com/projects/">projects</a>
 
         <!-- added 4/7 -->
         <!-- 		<br />
-        <abbr class="modified" title="2022-09-13T10:19:00.018241+02:00">
-                Updated: 13 Sep 2022
+        <abbr class="modified" title="2022-09-14T21:57:25.705256+02:00">
+                Updated: 14 Sep 2022
         </abbr>
  -->
 
@@ -104,7 +104,8 @@
 </footer>            <main> <!-- for indexing by Stork -->
                 <p><span class="datestamp">13 Aug 2022</span> starting note.           </p>
 <p>I started this static site 3 months ago (though I imported older blog posts and notes in it).  </p>
-<p>I will use this note to keep track of further building and maintenance of it. </p>
+<p>Here is the original note: [<a href="../../python/library-pelican/index.html">Nic Note: Library: Pelican</a>]  </p>
+<p>I will use this note to keep track of further building and maintenance of it, outside of Pelican-related things.    </p>
 <h1>Static Site Generators</h1>
 <p>As Python is my main language, I am using the Python static site generator library Pelican:   </p>
 <p>[<a href="../../python/library-pelican/index.html">Nic Note: Library: Pelican</a>]  </p>
@@ -240,16 +241,45 @@ I think it's a CSS issue to position the icon properly.  </p>
 My first Javascript implementation 🤗<br>
 Albeit just a copy/paste, it was really helpful to learn to try and understand the various snippets above.   </p>
 <p><img class="screenshot" src="https://notes.nicolasdeville.com/images/notes/220913_first_implementation.gif" alt="220913_first_implementation"/>  </p>
+<h2>Foating Table Of Contents</h2>
+<p><span class="datestamp">14 Sep 2022</span>   </p>
+<p>next.   </p>
+<p>In left margin, like so:   </p>
+<div class="link_border">
+<div class="link_url"><a href="https://logfetch.com/hugo-add-copy-to-clipboard-button/" target="_blank">https://logfetch.com/hugo-add-copy-to-clipboard-button/</a></div></div>
+
+<p>div of TOC for reference:  </p>
+<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;widget js-toc sticky-top sticky-top-offset&quot;</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">ol</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;toc-list &quot;</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">li</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;toc-list-item is-active-li&quot;</span><span class="p">&gt;&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;#1-install-the-npm-package&quot;</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;toc-link node-name--H2  is-active-link&quot;</span><span class="p">&gt;</span>1. Install the npm package<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>
+            <span class="p">&lt;</span><span class="nt">ol</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;toc-list  is-collapsible&quot;</span><span class="p">&gt;</span>
+                <span class="p">&lt;</span><span class="nt">li</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;toc-list-item&quot;</span><span class="p">&gt;</span>
+                    <span class="p">&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;#install-localtunnel&quot;</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;toc-link node-name--H3 &quot;</span><span class="p">&gt;</span>Install localtunnel<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>
+                <span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+                <span class="p">&lt;</span><span class="nt">li</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;toc-list-item&quot;</span><span class="p">&gt;</span>
+                    <span class="p">&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;#install-ngrok&quot;</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;toc-link node-name--H3 &quot;</span><span class="p">&gt;</span>Install ngrok<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>
+                <span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+            <span class="p">&lt;/</span><span class="nt">ol</span><span class="p">&gt;</span>
+        <span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">li</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;toc-list-item&quot;</span><span class="p">&gt;</span>
+            <span class="p">&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;#2-start-our-development-server-locally&quot;</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;toc-link node-name--H2 &quot;</span><span class="p">&gt;</span>2. Start our development server locally<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>
+        <span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">li</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;toc-list-item&quot;</span><span class="p">&gt;</span>
+            <span class="p">&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;#3-connect-to-tunnel-server&quot;</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;toc-link node-name--H2 &quot;</span><span class="p">&gt;</span>3. Connect to tunnel server<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>
+            <span class="p">&lt;</span><span class="nt">ol</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;toc-list  is-collapsible is-collapsed&quot;</span><span class="p">&gt;</span>
+                <span class="p">&lt;</span><span class="nt">li</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;toc-list-item&quot;</span><span class="p">&gt;&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;#connect-with-localtunnel&quot;</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;toc-link node-name--H3 &quot;</span><span class="p">&gt;</span>Connect with localtunnel<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+                <span class="p">&lt;</span><span class="nt">li</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;toc-list-item&quot;</span><span class="p">&gt;&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;#connect-with-ngrok&quot;</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;toc-link node-name--H3 &quot;</span><span class="p">&gt;</span>Connect with ngrok<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+            <span class="p">&lt;/</span><span class="nt">ol</span><span class="p">&gt;</span>
+        <span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+    <span class="p">&lt;/</span><span class="nt">ol</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+</code></pre></div>
+
 <h2>Inspiration &amp; ideas</h2>
 <h3>dark/day mode</h3>
 <div class="link_border">
 <div class="link_title">Phil Stainer – Curious Developer and creator.</div>
 <div class="link_url"><a href="https://philstainer.io/" target="_blank">https://philstainer.io/</a></div></div>
-
-<h3>left margin table of contents</h3>
-<div class="link_border">
-<div class="link_title">How to Add Copy to Clipboard Buttons to Code Blocks in Hugo - LogFetch</div>
-<div class="link_url"><a href="https://logfetch.com/hugo-add-copy-to-clipboard-button/" target="_blank">https://logfetch.com/hugo-add-copy-to-clipboard-button/</a></div></div>
             </main>
         </div><!-- /.entry-content -->
     </article>

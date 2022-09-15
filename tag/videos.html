@@ -32,7 +32,7 @@
             </div>
 
             <div class="above-navbar">
-                <div class="last_updated">13 Sep 2022 | 11:17</div>
+                <div class="last_updated">15 Sep 2022 | 12:49</div>
                 <div>
                     <p class="notes_count">
                         <a href="https://notes.nicolasdeville.com/tags">by tags</a> 
@@ -85,7 +85,7 @@
 
             <aside id="featured" class="body">
             <!-- LATEST NOTE -->
-            <p class="notes-section">latest (or last updated) note</p>
+            <p class="notes-section">last (updated) note</p>
             <hr/>
 
                 <article class="hentry">
@@ -101,15 +101,15 @@
 <footer class="post-info">
 
     <p>
-        05 Sep 2022 <span class="separator">|</span> in <a class="link_tag" href="https://notes.nicolasdeville.com/projects/">projects</a>
+        13 Sep 2022 <span class="separator">|</span> in <a class="link_tag" href="https://notes.nicolasdeville.com/projects/">projects</a>
  tags: <a class="link_tag" href="https://notes.nicolasdeville.com/tag/python.html">python</a>
 <a class="link_tag" href="https://notes.nicolasdeville.com/tag/music.html">music</a>
 <a class="link_tag" href="https://notes.nicolasdeville.com/tag/videos.html">videos</a>
 
         <!-- added 4/7 -->
         <!-- 		<br />
-        <abbr class="modified" title="2022-09-05T08:54:00.151436+02:00">
-                Updated: 05 Sep 2022
+        <abbr class="modified" title="2022-09-13T11:26:53.337833+02:00">
+                Updated: 13 Sep 2022
         </abbr>
  -->
 
@@ -324,8 +324,14 @@
 </code></pre></div>
 
 <h2>Buld delete unwanted files in folders</h2>
-<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">mutagen.flac</span> <span class="kn">import</span> <span class="n">FLAC</span>
+<p><span class="datestamp">13 Sep 2022</span> updated with <code>Send2Trash</code> instead of <code>os.remove()</code> (safer).   </p>
+<div class="highlight"><pre><span></span><code><span class="c1">####################</span>
+<span class="c1"># Music Library</span>
+
+<span class="kn">from</span> <span class="nn">mutagen.flac</span> <span class="kn">import</span> <span class="n">FLAC</span>
 <span class="kn">from</span> <span class="nn">tinytag</span> <span class="kn">import</span> <span class="n">TinyTag</span>
+
+<span class="kn">from</span> <span class="nn">send2trash</span> <span class="kn">import</span> <span class="n">send2trash</span> <span class="c1"># instead of os.remove(), safer.  </span>
 
 <span class="c1">#####</span>
 
@@ -334,11 +340,11 @@
 <span class="c1">#####</span>
 
 <span class="n">count_file</span> <span class="o">=</span> <span class="mi">0</span>
-<span class="n">count_flac</span> <span class="o">=</span> <span class="mi">0</span>
-<span class="n">count_m4a</span> <span class="o">=</span> <span class="mi">0</span>
-<span class="n">count_name_updated</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="c1"># count_flac = 0</span>
+<span class="c1"># count_m4a = 0</span>
+<span class="c1"># count_name_updated = 0</span>
 <span class="n">count_to_be_deleted</span> <span class="o">=</span> <span class="mi">0</span>
-<span class="n">count_folders_with_files</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="c1"># count_folders_with_files = 0</span>
 
 <span class="n">blacklist</span> <span class="o">=</span> <span class="p">[</span>
     <span class="s1">&#39;recycle&#39;</span><span class="p">,</span>
@@ -377,7 +383,7 @@
 <span class="s1">&#39;.pls&#39;</span><span class="p">,</span>
 <span class="p">)</span> 
 
-<span class="k">for</span> <span class="n">root</span><span class="p">,</span> <span class="n">dirs</span><span class="p">,</span> <span class="n">files</span> <span class="ow">in</span> <span class="n">os</span><span class="o">.</span><span class="n">walk</span><span class="p">(</span><span class="s2">&quot;/path/to/folder/Music&quot;</span><span class="p">):</span>
+<span class="k">for</span> <span class="n">root</span><span class="p">,</span> <span class="n">dirs</span><span class="p">,</span> <span class="n">files</span> <span class="ow">in</span> <span class="n">os</span><span class="o">.</span><span class="n">walk</span><span class="p">(</span><span class="s2">&quot;/Volumes/Mus1c&quot;</span><span class="p">):</span>
 
     <span class="k">if</span> <span class="ow">not</span> <span class="nb">any</span><span class="p">(</span><span class="n">ele</span> <span class="ow">in</span> <span class="n">root</span> <span class="k">for</span> <span class="n">ele</span> <span class="ow">in</span> <span class="n">blacklist</span><span class="p">):</span>
 
@@ -385,14 +391,14 @@
             <span class="n">count_file</span> <span class="o">+=</span> <span class="mi">1</span>
 
             <span class="k">if</span> <span class="nb">any</span><span class="p">(</span><span class="n">ele</span> <span class="ow">in</span> <span class="n">name</span> <span class="k">for</span> <span class="n">ele</span> <span class="ow">in</span> <span class="n">undesired</span><span class="p">)</span> <span class="ow">and</span> <span class="s1">&#39;Doors&#39;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">root</span> <span class="ow">and</span> <span class="s1">&#39;Tesla&#39;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">name</span><span class="p">:</span>
-            <span class="c1"># if name.endswith((&quot;.CUE&quot;)):</span>
-            <span class="c1"># # if name == &#39;DR5.txt&#39;:</span>
+
                 <span class="n">count_to_be_deleted</span> <span class="o">+=</span> <span class="mi">1</span>
-                <span class="c1"># print(&#39;&gt;&gt;&gt; &#39;, count_file, name)</span>
+
                 <span class="n">path</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">root</span><span class="si">}</span><span class="s2">/</span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s2">&quot;</span>
 
                 <span class="k">if</span> <span class="ow">not</span> <span class="n">test</span><span class="p">:</span>
-                    <span class="n">os</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="n">path</span><span class="p">)</span>
+                    <span class="c1"># os.remove(path) # replaced with send2trash</span>
+                    <span class="n">send2trash</span><span class="p">(</span><span class="n">path</span><span class="p">)</span>
                     <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;DELETED path: &#39;</span><span class="p">,</span> <span class="n">path</span><span class="p">)</span>
                 <span class="k">else</span><span class="p">:</span>
                     <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;TO BE DELETED path: &#39;</span><span class="p">,</span> <span class="n">path</span><span class="p">)</span>
