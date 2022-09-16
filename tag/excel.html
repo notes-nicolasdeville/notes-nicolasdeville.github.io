@@ -32,7 +32,7 @@
             </div>
 
             <div class="above-navbar">
-                <div class="last_updated">15 Sep 2022 | 13:14</div>
+                <div class="last_updated">16 Sep 2022 | 09:24</div>
                 <div>
                     <p class="notes_count">
                         <a href="https://notes.nicolasdeville.com/tags">by tags</a> 
@@ -89,27 +89,29 @@
             <hr/>
 
                 <article class="hentry">
-                    <h1 class="entry-title"><a href="https://notes.nicolasdeville.com/apps/excel">Excel</a></h1>
+                    <h1 class="entry-title"><a href="https://notes.nicolasdeville.com/apps/grist">Grist | The Evolution of Spreadsheets</a></h1>
 
                     <!-- added 4/7 -->
                     <div>
                         <p class="header_summary">
-                            <p>useful Excel tips</p>
+                            <p>an online, powerful, Python-driven alternative to Excel</p>
                         </p>
                     </div>
 
 <footer class="post-info">
 
     <p>
-        10 Sep 2022 <span class="separator">|</span> in <a class="link_tag" href="https://notes.nicolasdeville.com/apps/">apps</a>
+        16 Sep 2022 <span class="separator">|</span> in <a class="link_tag" href="https://notes.nicolasdeville.com/apps/">apps</a>
  tags: <a class="link_tag" href="https://notes.nicolasdeville.com/tag/productivity.html">productivity</a>
+<a class="link_tag" href="https://notes.nicolasdeville.com/tag/python.html">python</a>
 <a class="link_tag" href="https://notes.nicolasdeville.com/tag/excel.html">excel</a>
-<a class="link_tag" href="https://notes.nicolasdeville.com/tag/macos.html">macOS</a>
+<a class="link_tag" href="https://notes.nicolasdeville.com/tag/saas.html">SaaS</a>
+<a class="link_tag" href="https://notes.nicolasdeville.com/tag/api.html">api</a>
 
         <!-- added 4/7 -->
         <!-- 		<br />
-        <abbr class="modified" title="2022-09-10T17:08:35.403027+02:00">
-                Updated: 10 Sep 2022
+        <abbr class="modified" title="2022-09-16T09:14:55.633567+02:00">
+                Updated: 16 Sep 2022
         </abbr>
  -->
 
@@ -117,27 +119,196 @@
 
     
 
-</footer><p><span class="datestamp">01 Oct 2022</span> starting note.   </p>
-<h2>Automated row &amp; column highlighting</h2>
-<p>Neat trick when using a large dataset - should be a native Excel feature: "Highlight the Active Row and Column in a Data Range in Excel"  </p>
-<h3>Step 1: Conditional Formatting</h3>
-<p>select data set and create rule using formula:  </p>
-<p><code>=OR(CELL("COL")=COLUMN(),CELL("ROW")=ROW())</code></p>
-<h3>Step 2: VBA</h3>
-<p>under <code>Developer &gt; Visual Basic</code>: double-click sheet and add code.  </p>
-<div class="highlight"><pre><span></span><code><span class="nv">Private</span><span class="w"> </span><span class="nv">Sub</span><span class="w"> </span><span class="nv">Worksheet_SelectionChange</span><span class="ss">(</span><span class="nv">ByVal</span><span class="w"> </span><span class="nv">Target</span><span class="w"> </span><span class="nv">As</span><span class="w"> </span><span class="nv">Range</span><span class="ss">)</span><span class="w"></span>
-<span class="k">If</span><span class="w"> </span><span class="nv">Application</span>.<span class="nv">CutCopyMode</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">False</span><span class="w"> </span><span class="k">Then</span><span class="w"></span>
-<span class="nv">Application</span>.<span class="nv">Calculate</span><span class="w"></span>
-<span class="k">End</span><span class="w"> </span><span class="k">If</span><span class="w"></span>
-<span class="k">End</span><span class="w"> </span><span class="nv">Sub</span><span class="w"></span>
+</footer><p><span class="datestamp">20 Jul 2022</span>        </p>
+<p><img class="header" src="https://notes.nicolasdeville.com/images/apps_grist-homepage.jpg" alt="apps_grist-homepage.jpg"/>  </p>
+<table>
+<thead>
+<tr>
+<th>App resources</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Website</td>
+<td><a href="https://www.getgrist.com/" target="_blank">https://www.getgrist.com/</a></td>
+</tr>
+<tr>
+<td>Community</td>
+<td><a href="https://community.getgrist.com/" target="_blank">https://community.getgrist.com/</a></td>
+</tr>
+<tr>
+<td>API Documentation</td>
+<td><a href="https://support.getgrist.com/api/" target="_blank">https://support.getgrist.com/api/</a></td>
+</tr>
+<tr>
+<td>API reference</td>
+<td><a href="https://py-grist-api.readthedocs.io/en/latest/grist_api.html" target="_blank">https://py-grist-api.readthedocs.io/en/latest/grist_api.html</a></td>
+</tr>
+<tr>
+<td>Github</td>
+<td><a href="https://github.com/gristlabs/py_grist_api" target="_blank">https://github.com/gristlabs/py_grist_api</a></td>
+</tr>
+<tr>
+<td>Formula Cheat Sheet</td>
+<td><a href="https://support.getgrist.com/formula-cheat-sheet/" target="_blank">https://support.getgrist.com/formula-cheat-sheet/</a></td>
+</tr>
+<tr>
+<td>Using References and Lookups in Formulas</td>
+<td><a href="https://support.getgrist.com/references-lookups/" target="_blank">https://support.getgrist.com/references-lookups/</a></td>
+</tr>
+</tbody>
+</table>
+<p>The Community is very helpful, and (wo)manned by the Grist team too, who usually responds quickly :)      </p>
+<p>Started using it in '21, on a paid plan (hosted) since Nov '21. At $8/month I feel it's a steal considering the scope &amp; capabilities. Hope I'll be able to lock this price when their pricing goes up in the future :)      <br>
+Grist is open-source so can be self-hosted to overcome the records limitation due to assigned CPU and memory resources assigned in the hosted model (see <a href="https://community.getgrist.com/t/grist-as-database-backend-headless-cms-alternatives/586/7" target="_blank">https://community.getgrist.com/t/grist-as-database-backend-headless-cms-alternatives/586/7</a>).</p>
+<p>Grist has become my go-to whenever I need to use a spreadsheet, with its Python logic and API empowering me to manipulate data in new ways.  </p>
+<p><img class="illustration" src="https://notes.nicolasdeville.com/images/apps_grist-table.jpg" alt="apps_grist-table.jpg"/>  </p>
+<p>Embedding Grist spreadsheets has now also been released: <a href="https://support.getgrist.com/embedding/" target="_blank">https://support.getgrist.com/embedding/</a>   </p>
+<p>Not sure how large the pool was, but I started well that month 😊      </p>
+<p><img class="screenshot" src="https://notes.nicolasdeville.com/images/apps_grist-new-user-of-the-month.jpg" alt="apps_grist-new-user-of-the-month.jpg"/>  </p>
+<h1>Limitation</h1>
+<p>~100k records <strong>per document</strong>, ie all tables in a spreadsheet.
+Where I expect to possibly have more, I break out tables in their own document, with just 1 <code>Master</code> table in it.      </p>
+<h1>Formulas</h1>
+<h2>Past / Future</h2>
+<div class="highlight"><pre><span></span><code><span class="k">IF</span><span class="ss">(</span><span class="mh">$da</span><span class="nv">te_webinar</span><span class="o">!=</span><span class="w"> </span><span class="nv">None</span>,<span class="k">IF</span><span class="ss">(</span><span class="mh">$da</span><span class="nv">te_webinar</span><span class="o">&lt;</span><span class="nv">NOW</span><span class="ss">()</span>,<span class="s2">&quot;PAST&quot;</span>,<span class="s2">&quot;FUTURE&quot;</span><span class="ss">)</span>,<span class="s2">&quot;&quot;</span><span class="ss">)</span><span class="w"></span>
 </code></pre></div>
 
-<p>Save as <code>.xlsm</code> file to support the macro  </p>
-<p><img class="illustration" src="https://notes.nicolasdeville.com/images/excel-highlight.gif" alt="excel-highlight.gif"/>  </p>
-<h2>Custom cell formats</h2>
-<h3>with text appended</h3>
-<p>eg <code>0 "events"</code></p>
-<p><img class="illustration" src="https://notes.nicolasdeville.com/images/apps_excel-custom-format1.jpg" alt="apps_excel-custom-format1.jpg"/>  </p>
+<h2>identify duplicate values</h2>
+<ul>
+<li>create column <code>dup</code> (or other name)</li>
+<li>under Column Options, choose <code>Set formula</code> and use <code>"DUP" if len(Master.lookupRecords(domain=$domain)) &gt; 1 else ""</code> as formula. In this example, duplication check is done on the <code>domain</code> column - change as needed using the relevant column header (eg <code>email</code>). It can also be anything other than <code>"DUP"</code>. This basically fills the cell with the string <code>"DUP"</code> if there is more than one row with the same <code>domain</code> value.  </li>
+</ul>
+<p>At this stage, you can filter the <code>dup</code> column for rows where <code>DUP</code> comes up - these are the duplicates:   </p>
+<p><img class="screenshot" src="https://notes.nicolasdeville.com/images/grist/dup-filter.jpg" alt="dup-filter"/>  </p>
+<p>To prevent duplicate values being added to the table from that point on, you need to create an access rule under Access Rules, which can be accessed in the bottom left corner of the table, under "Tools"):</p>
+<p><img class="screenshot" src="https://notes.nicolasdeville.com/images/grist/access-rules.jpg" alt="access-rules"/>  </p>
+<p>The formula should be <code>newRec.dup == "DUP"</code> which will be applied when the value of the <code>dup</code> column in a new record (<code>newRec</code>) is equal to <code>"DUP"</code>. <br>
+Permissions can be defined by clicking on each as needed: <br>
+- <code>R</code> for Read
+- <code>U</code> for Update
+- <code>C</code> for Create
+- <code>D</code> for Delete</p>
+<p><img class="screenshot" src="https://notes.nicolasdeville.com/images/grist/dup-access-rule.jpg" alt="dup-access-rule"/>  </p>
+<h1>Keyboard shortcuts</h1>
+<table>
+<thead>
+<tr>
+<th>shortcut</th>
+<th>action</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>Cmd + -</code></td>
+<td>Delete Row</td>
+</tr>
+</tbody>
+</table>
+<h1>API</h1>
+<h2>Getting started</h2>
+<div class="highlight"><pre><span></span><code>pip3 install grist_api
+</code></pre></div>
+
+<p>API key <strong>per document</strong> can be found by clicking on the user icon in the top right corner, then Document Settings:    </p>
+<p><img class="screenshot" src="https://notes.nicolasdeville.com/images/apps_grist-doc-api-key.jpg" alt="apps_grist-doc-api-key.jpg"/>  </p>
+<p>then copy/paste the key from here:    </p>
+<p><img class="screenshot" src="https://notes.nicolasdeville.com/images/apps_grist-doc-settings.jpg" alt="apps_grist-doc-settings.jpg"/>  </p>
+<p>First need to create the Grist objects per document, as follows:  </p>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">grist_api</span> <span class="kn">import</span> <span class="n">GristDocAPI</span>
+
+<span class="kn">from</span> <span class="nn">dotenv</span> <span class="kn">import</span> <span class="n">load_dotenv</span>
+<span class="n">load_dotenv</span><span class="p">()</span>
+
+<span class="n">SERVER</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">getenv</span><span class="p">(</span><span class="s2">&quot;SERVER&quot;</span><span class="p">)</span>
+<span class="n">API_KEY_GRIST</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">getenv</span><span class="p">(</span><span class="s2">&quot;API_KEY&quot;</span><span class="p">)</span>
+
+<span class="n">DOC_ID_BOOKS</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">getenv</span><span class="p">(</span><span class="s2">&quot;DOC_ID_PE_BOOKS&quot;</span><span class="p">)</span>
+<span class="n">Books</span> <span class="o">=</span> <span class="n">GristDocAPI</span><span class="p">(</span><span class="n">DOC_ID_BOOKS</span><span class="p">,</span> <span class="n">server</span><span class="o">=</span><span class="n">SERVER</span><span class="p">,</span> <span class="n">api_key</span><span class="o">=</span><span class="n">API_KEY_GRIST</span><span class="p">)</span>
+
+<span class="n">DOC_ID_MOVIES</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">getenv</span><span class="p">(</span><span class="s2">&quot;DOC_ID_PE_MOVIES&quot;</span><span class="p">)</span>
+<span class="n">Movies</span> <span class="o">=</span> <span class="n">GristDocAPI</span><span class="p">(</span><span class="n">DOC_ID_MOVIES</span><span class="p">,</span> <span class="n">server</span><span class="o">=</span><span class="n">SERVER</span><span class="p">,</span> <span class="n">api_key</span><span class="o">=</span><span class="n">API_KEY_GRIST</span><span class="p">)</span>
+
+<span class="n">DOC_ID_APPS</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">getenv</span><span class="p">(</span><span class="s2">&quot;DOC_ID_PE_APPS&quot;</span><span class="p">)</span>
+<span class="n">Apps</span> <span class="o">=</span> <span class="n">GristDocAPI</span><span class="p">(</span><span class="n">DOC_ID_APPS</span><span class="p">,</span> <span class="n">server</span><span class="o">=</span><span class="n">SERVER</span><span class="p">,</span> <span class="n">api_key</span><span class="o">=</span><span class="n">API_KEY_GRIST</span><span class="p">)</span>
+</code></pre></div>
+
+<p>The above enables me to call the methods listed below, by just referencing the document object <code>Books</code>, <code>Movies</code> or <code>Apps</code> depending on the spreadsheet I want to access.   </p>
+<h2>Create / add records</h2>
+<div class="highlight"><pre><span></span><code><span class="n">grist_XX</span><span class="o">.</span><span class="n">DOC</span><span class="o">.</span><span class="n">add_records</span><span class="p">(</span><span class="s1">&#39;SHEET&#39;</span><span class="p">,</span> <span class="p">[{</span>
+                                    <span class="s1">&#39;field_name_1&#39;</span><span class="p">:</span> <span class="n">python_object_1</span><span class="p">,</span>
+                                    <span class="s1">&#39;field_name_2&#39;</span><span class="p">:</span> <span class="n">python_object_2</span><span class="p">,</span>
+                                    <span class="s1">&#39;field_name_3&#39;</span><span class="p">:</span> <span class="n">python_object_3</span><span class="p">,</span>
+                                    <span class="s1">&#39;field_name_3&#39;</span><span class="p">:</span> <span class="n">python_object_4</span><span class="p">,</span>
+                                    <span class="p">}</span>
+                            <span class="p">])</span>
+</code></pre></div>
+
+<p>where:<br>
+- <code>grist_XX</code> is the Grist object  <br>
+- <code>DOC</code> is the document object<br>
+- <code>SHEET</code> is the sheet name within the document<br>
+- <code>field_name_x</code> is the column name in the sheet</p>
+<h2>Update records</h2>
+<p>Similar structure as above, with the <code>update_records</code> method insted of <code>add_records</code> BUT needs to identify what Grist record (ie row) to update, via its 'id':  </p>
+<div class="highlight"><pre><span></span><code><span class="n">grist_XX</span><span class="o">.</span><span class="n">DOC</span><span class="o">.</span><span class="n">update_records</span><span class="p">(</span><span class="s1">&#39;SHEET&#39;</span><span class="p">,</span> <span class="p">[{</span>
+                                    <span class="s1">&#39;id&#39;</span><span class="p">:</span> <span class="nb">id</span><span class="p">,</span> <span class="c1"># MANDATORY for the update method</span>
+                                    <span class="s1">&#39;field_name_1&#39;</span><span class="p">:</span> <span class="n">python_object_1</span><span class="p">,</span> <span class="c1"># field to update</span>
+                                    <span class="s1">&#39;field_name_2&#39;</span><span class="p">:</span> <span class="n">python_object_2</span><span class="p">,</span> <span class="c1"># field to update</span>
+                                    <span class="s1">&#39;field_name_3&#39;</span><span class="p">:</span> <span class="n">python_object_3</span><span class="p">,</span> <span class="c1"># field to update</span>
+                                    <span class="s1">&#39;field_name_3&#39;</span><span class="p">:</span> <span class="n">python_object_4</span><span class="p">,</span> <span class="c1"># field to update</span>
+                                    <span class="p">}</span>
+                    <span class="p">])</span>
+</code></pre></div>
+
+<h2>Fetch last checked record</h2>
+<div class="highlight"><pre><span></span><code><span class="n">grist_XX</span><span class="o">.</span><span class="n">DOC</span><span class="o">.</span><span class="n">fetch_table</span><span class="p">(</span><span class="s1">&#39;SHEET&#39;</span><span class="p">,</span> <span class="n">filters</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;field_name&quot;</span><span class="p">:</span> <span class="s1">&#39;filter_criteria&#39;</span><span class="p">})[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">last_checked</span>
+</code></pre></div>
+
+<h2>Delete individual record</h2>
+<p><code>delete_records</code> method:    </p>
+<div class="highlight"><pre><span></span><code><span class="n">grist_XX</span><span class="o">.</span><span class="n">DOC</span><span class="o">.</span><span class="n">delete_records</span><span class="p">(</span><span class="s1">&#39;SHEET&#39;</span><span class="p">,</span> <span class="p">[</span>
+                        <span class="nb">id</span><span class="p">,</span>
+                    <span class="p">])</span>
+</code></pre></div>
+
+<h2>Upload images</h2>
+<p><a href="https://community.getgrist.com/t/how-to-upload-images-as-attachment-via-api-with-python/1216/2" target="_blank">https://community.getgrist.com/t/how-to-upload-images-as-attachment-via-api-with-python/1216/2</a>   </p>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">requests</span>
+
+<span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">post</span><span class="p">(</span>
+    <span class="sa">f</span><span class="s2">&quot;https://docs.getgrist.com/api/docs/</span><span class="si">{</span><span class="n">doc_id</span><span class="si">}</span><span class="s2">/attachments&quot;</span><span class="p">,</span>
+    <span class="n">files</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;upload&quot;</span><span class="p">:</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;my_pic.png&quot;</span><span class="p">,</span> <span class="s2">&quot;rb&quot;</span><span class="p">)},</span>
+    <span class="n">headers</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;Authorization&quot;</span><span class="p">:</span> <span class="sa">f</span><span class="s2">&quot;Bearer </span><span class="si">{</span><span class="n">api_key</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">},</span>
+<span class="p">)</span>
+<span class="n">attachment_id</span> <span class="o">=</span> <span class="n">response</span><span class="o">.</span><span class="n">json</span><span class="p">()[</span><span class="mi">0</span><span class="p">]</span>
+<span class="n">cell_value</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;L&quot;</span><span class="p">,</span> <span class="n">attachment_id</span><span class="p">]</span>
+</code></pre></div>
+
+<p>Then use <code>add_records</code> or <code>update_records</code> and pass <code>cell_value</code> as the value of a single cell in an <code>Attachments</code> type column.  </p>
+<p>See the other endpoints in <a href="https://support.getgrist.com/api/#tag/attachments" target="_blank">https://support.getgrist.com/api/#tag/attachments</a> for listing/downloading attachments.  </p>
+<p>If an attachment is not referenced by any cell, it will be deleted automatically after some time. If you need to delete it immediately, there’s an undocumented endpoint: <code>POST /api/docs/{doc_id}/attachments/removeUnused</code>. Use it with caution.   </p>
+<h2>Tricks</h2>
+<h3>hidden value field for reference fields</h3>
+<p>When using a List column, or other data type referencing to a value, instead of fetching that columns' data - which returns a list of reference(s) - you can fetch straight the value itself by identifying the hidden column/field, usually with format <code>gristHelper_Display2</code>.  </p>
+<h3>nested dictionary comprehension to select many fields you want at once</h3>
+<div class="highlight"><pre><span></span><code><span class="n">list_WN001_archive</span> <span class="o">=</span> <span class="p">[</span>
+  <span class="p">{</span>
+    <span class="n">key</span><span class="p">:</span> <span class="n">value</span>
+    <span class="k">for</span> <span class="n">key</span><span class="p">,</span> <span class="n">value</span> <span class="ow">in</span> <span class="n">record</span><span class="o">.</span><span class="n">_asdict</span><span class="p">()</span><span class="o">.</span><span class="n">items</span><span class="p">()</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">key</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s2">&quot;gristHelper&quot;</span><span class="p">)</span>
+  <span class="p">}</span>
+  <span class="k">for</span> <span class="n">record</span> <span class="ow">in</span> <span class="n">grist_WN</span><span class="o">.</span><span class="n">fetch_table</span><span class="p">(</span><span class="s1">&#39;WebReg&#39;</span><span class="p">)</span>
+  <span class="k">if</span> <span class="n">record</span><span class="o">.</span><span class="n">discard</span> <span class="ow">or</span> <span class="n">record</span><span class="o">.</span><span class="n">reg</span> <span class="ow">or</span> <span class="n">record</span><span class="o">.</span><span class="n">over</span>
+<span class="p">]</span>
+</code></pre></div>
+
+<p>see <a href="https://community.getgrist.com/t/api-crud-with-native-grist-object/541" target="_blank">https://community.getgrist.com/t/api-crud-with-native-grist-object/541</a>   </p>
+<h3>using zebra stripes on large tables</h3>
+<p><a href="https://community.getgrist.com/t/highlight-active-row-column-on-selection-change/443" target="_blank">https://community.getgrist.com/t/highlight-active-row-column-on-selection-change/443</a>    </p>
+<h3>downloading document data as a file</h3>
+<p><a href="https://community.getgrist.com/t/api-call-to-download-table-as-csv/431/3" target="_blank">https://community.getgrist.com/t/api-call-to-download-table-as-csv/431/3</a>   </p>
                 </article>
             </aside>
 
@@ -156,11 +327,11 @@
                 <article class="hentry">
                     <header>
                         <!-- PREVIOUS NOTE TITLE -->
-                        <h1><a href="https://notes.nicolasdeville.com/apps/grist" rel="bookmark"
-                            title="Grist | The Evolution of Spreadsheets">Grist | The Evolution of Spreadsheets</a></h1>
+                        <h1><a href="https://notes.nicolasdeville.com/apps/excel" rel="bookmark"
+                            title="Excel">Excel</a></h1>
                         <!-- PREVIOUS NOTE SUMMARY -->
                         <div class="entry-content">
-                            <p>an online, powerful, Python-driven alternative to Excel</p>
+                            <p>useful Excel tips</p>
                         </div>
                     </header>
 
@@ -171,14 +342,12 @@
     <p>
         10 Sep 2022 <span class="separator">|</span> in <a class="link_tag" href="https://notes.nicolasdeville.com/apps/">apps</a>
  tags: <a class="link_tag" href="https://notes.nicolasdeville.com/tag/productivity.html">productivity</a>
-<a class="link_tag" href="https://notes.nicolasdeville.com/tag/python.html">python</a>
 <a class="link_tag" href="https://notes.nicolasdeville.com/tag/excel.html">excel</a>
-<a class="link_tag" href="https://notes.nicolasdeville.com/tag/saas.html">SaaS</a>
-<a class="link_tag" href="https://notes.nicolasdeville.com/tag/api.html">api</a>
+<a class="link_tag" href="https://notes.nicolasdeville.com/tag/macos.html">macOS</a>
 
         <!-- added 4/7 -->
         <!-- 		<br />
-        <abbr class="modified" title="2022-09-10T17:04:03.287580+02:00">
+        <abbr class="modified" title="2022-09-10T17:08:35.403027+02:00">
                 Updated: 10 Sep 2022
         </abbr>
  -->

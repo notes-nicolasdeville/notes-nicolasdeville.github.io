@@ -255,9 +255,13 @@ li {
     margin-top: 0.3em;
     margin-bottom: 0.3em;
     margin-right: 0.3em;
-    /* margin-left: 1.5em; # impacts post-list on homepage */
+    margin-left: 1.5em;
     /* width: 100%; */
 }
+/* to remove the left margin on "previous notes" posts lists */
+#posts-list li {
+    margin-left: 0;
+    }
 
 /* Articles */
 .post-info {
@@ -871,6 +875,15 @@ li:first-child .hentry, #content > .hentry {
     display: block;
 }
 
+.album {
+    box-shadow: 4px 4px 10px #000; /* offset-x | offset-y | blur-radius | color */
+    margin: auto;
+    display: block;
+	max-width: 400px;
+}
+
+
+/* NOTES */
 
 .fitwidth {
     width: 60px;

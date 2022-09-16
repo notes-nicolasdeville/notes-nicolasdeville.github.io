@@ -8,34 +8,44 @@ url = "/ABOUT/"
 title = ""
 
 [[input.files]]
-path = "helpers/terminal-issues/index.html"
-url = "/helpers/terminal-issues"
-title = "macOS Terminal issues & troubleshooting"
-
-[[input.files]]
-path = "python/library-pelican/index.html"
-url = "/python/library-pelican"
-title = "Building a static site with Pelican"
-
-[[input.files]]
 path = "home-office/deep-work/index.html"
 url = "/home-office/deep-work"
 title = "Resources for Deep Work"
 
 [[input.files]]
-path = "python/pip/index.html"
-url = "/python/pip"
-title = "PIP: Python's Package Manager"
+path = "movies/1000/index.html"
+url = "/movies/1000"
+title = "My Top 1,000 Movies"
 
 [[input.files]]
-path = "python/paths/index.html"
-url = "/python/paths"
-title = "How to find all paths being searched by Python"
+path = "apps/grist/index.html"
+url = "/apps/grist"
+title = "Grist | The Evolution of Spreadsheets"
 
 [[input.files]]
-path = "learning/computer-science/index.html"
-url = "/learning/computer-science"
-title = "Learning Computer Science"
+path = "python/function-separator/index.html"
+url = "/python/function-separator"
+title = "A short function to generate print separators"
+
+[[input.files]]
+path = "helpers/terminal-issues/index.html"
+url = "/helpers/terminal-issues"
+title = "macOS Terminal issues & troubleshooting"
+
+[[input.files]]
+path = "home-office/cable-tester/index.html"
+url = "/home-office/cable-tester"
+title = "Ethernet Cable Tester"
+
+[[input.files]]
+path = "python/library-dotenv/index.html"
+url = "/python/library-dotenv"
+title = "How to save confidential data in environment variables with dotenv"
+
+[[input.files]]
+path = "python/library-os/index.html"
+url = "/python/library-os"
+title = "Python Library: os (built-in)"
 
 [[input.files]]
 path = "projects/notes/index.html"
@@ -43,14 +53,44 @@ url = "/projects/notes"
 title = "This site"
 
 [[input.files]]
-path = "home-office/kvm/index.html"
-url = "/home-office/kvm"
-title = "KVM Switch"
+path = "python/metadata-from-url/index.html"
+url = "/python/metadata-from-url"
+title = "How to get a website's metadata with Python"
 
 [[input.files]]
 path = "interests/tea/index.html"
 url = "/interests/tea"
 title = "Tea"
+
+[[input.files]]
+path = "learning/computer-science/index.html"
+url = "/learning/computer-science"
+title = "Learning Computer Science"
+
+[[input.files]]
+path = "python/pip/index.html"
+url = "/python/pip"
+title = "PIP: Python's Package Manager"
+
+[[input.files]]
+path = "python/library-pelican/index.html"
+url = "/python/library-pelican"
+title = "Building a static site with Pelican"
+
+[[input.files]]
+path = "python/paths/index.html"
+url = "/python/paths"
+title = "How to find all paths being searched by Python"
+
+[[input.files]]
+path = "python/solve-certificate-verify-failed/index.html"
+url = "/python/solve-certificate-verify-failed"
+title = "How to solve urlopen error SSL: CERTIFICATE_VERIFY_FAILED"
+
+[[input.files]]
+path = "home-office/kvm/index.html"
+url = "/home-office/kvm"
+title = "KVM Switch"
 
 [[input.files]]
 path = "projects/libraree/index.html"
@@ -248,11 +288,6 @@ url = "/apps/alfred"
 title = "Alfred"
 
 [[input.files]]
-path = "apps/grist/index.html"
-url = "/apps/grist"
-title = "Grist | The Evolution of Spreadsheets"
-
-[[input.files]]
 path = "python/snippets/index.html"
 url = "/python/snippets"
 title = "Python Snippets"
@@ -433,11 +468,6 @@ url = "/python/library-re"
 title = "Library: re (regex)"
 
 [[input.files]]
-path = "python/library-tinytag/index.html"
-url = "/python/library-tinytag"
-title = "Library: tinytag"
-
-[[input.files]]
 path = "python/print/index.html"
 url = "/python/print"
 title = "Print statement tricks"
@@ -466,11 +496,6 @@ title = "my-utils"
 path = "python/library-notion-py/index.html"
 url = "/python/library-notion-py"
 title = "Fetching data from Notion API with Python"
-
-[[input.files]]
-path = "python/library-mutagen/index.html"
-url = "/python/library-mutagen"
-title = "Library: mutagen"
 
 [[input.files]]
 path = "home-office/desk/index.html"
@@ -598,19 +623,14 @@ url = "/apps/radar"
 title = "Apps on my radar"
 
 [[input.files]]
-path = "movies/1000/index.html"
-url = "/movies/1000"
-title = "My Top 1,000 Movies"
+path = "python/books/index.html"
+url = "/python/books"
+title = "My Python Books Library"
 
 [[input.files]]
 path = "b2b-sales/books/index.html"
 url = "/b2b-sales/books"
 title = "My B2B Books Library"
-
-[[input.files]]
-path = "python/books/index.html"
-url = "/python/books"
-title = "My Python Books Library"
 
 [[input.files]]
 path = "books/library/index.html"
@@ -626,6 +646,16 @@ title = "Fetching data from TMDB API"
 path = "projects/nicai/index.html"
 url = "/projects/nicai"
 title = "nicAI | my personal AI assistant"
+
+[[input.files]]
+path = "python/library-mutagen/index.html"
+url = "/python/library-mutagen"
+title = "Library: mutagen"
+
+[[input.files]]
+path = "python/library-tinytag/index.html"
+url = "/python/library-tinytag"
+title = "Library: tinytag"
 
 [[input.files]]
 path = "helpers/terminal-commands/index.html"
@@ -661,11 +691,6 @@ title = "Library: tmdbv3api | fetching movie data"
 path = "python/library-tmdbapis/index.html"
 url = "/python/library-tmdbapis"
 title = "Library: tmdbapis | fetching movie data"
-
-[[input.files]]
-path = "python/library-dotenv/index.html"
-url = "/python/library-dotenv"
-title = "How to save confidential data in environment variables with dotenv"
 
 [[input.files]]
 path = "python/library-dateutil/index.html"
@@ -1763,14 +1788,14 @@ url = "/books/library"
 title = "My Books Library"
 
 [[input.files]]
-path = "python/books/index.html"
-url = "/python/books"
-title = "My Python Books Library"
-
-[[input.files]]
 path = "b2b-sales/books/index.html"
 url = "/b2b-sales/books"
 title = "My B2B Books Library"
+
+[[input.files]]
+path = "python/books/index.html"
+url = "/python/books"
+title = "My Python Books Library"
 
 [[input.files]]
 path = "apps/library/index.html"
