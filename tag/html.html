@@ -32,7 +32,7 @@
             </div>
 
             <div class="above-navbar">
-                <div class="last_updated">16 Sep 2022 | 09:24</div>
+                <div class="last_updated">16 Sep 2022 | 11:34</div>
                 <div>
                     <p class="notes_count">
                         <a href="https://notes.nicolasdeville.com/tags">by tags</a> 
@@ -43,7 +43,7 @@
                         <span style="color:#C74350">|</span>
                         <a href="https://notes.nicolasdeville.com/2022/">2022</a> 
                         <span style="color:#C74350">|</span> 
-                        4 notes
+                        5 notes
                     </p>
                 </div>
             </div>
@@ -70,7 +70,7 @@
 
 <!-- 220911 moved to base.html -->
 <!-- <p class="notes_count">
-    4 notes 
+    5 notes 
     <span style="color:#C74350">|</span> 
     <a href="https://notes.nicolasdeville.com/tags">by tags</a> 
     <span style="color:#C74350">|</span> 
@@ -89,7 +89,7 @@
             <hr/>
 
                 <article class="hentry">
-                    <h1 class="entry-title"><a href="https://notes.nicolasdeville.com/learning/html">Learning HTML</a></h1>
+                    <h1 class="entry-title"><a href="https://notes.nicolasdeville.com/helpers/html-metatags">HTML Meta tags for SEO</a></h1>
 
                     <!-- added 4/7 -->
                     <div>
@@ -98,6 +98,124 @@
                         </p>
                     </div>
 
+<footer class="post-info">
+
+    <p>
+        16 Sep 2022 <span class="separator">|</span> in <a class="link_tag" href="https://notes.nicolasdeville.com/helpers/">helpers</a>
+ tags: <a class="link_tag" href="https://notes.nicolasdeville.com/tag/html.html">html</a>
+<a class="link_tag" href="https://notes.nicolasdeville.com/tag/snippets.html">snippets</a>
+
+        <!-- added 4/7 -->
+        <!-- 		<br />
+        <abbr class="modified" title="2022-09-16T09:50:42.573578+02:00">
+                Updated: 16 Sep 2022
+        </abbr>
+ -->
+
+    </p>
+
+    
+
+</footer><p><span class="datestamp">16 Sep 2022</span>   </p>
+<div class="link_border">
+<div class="link_title">SEO HTML Meta Tag Reference List</div>
+<div class="link_url"><a href="https://fjolt.com/article/meta-tag-ref-html-quick-start" target="_blank">https://fjolt.com/article/meta-tag-ref-html-quick-start</a></div></div>
+
+<div class="highlight"><pre><span></span><code><span class="cp">&lt;!DOCTYPE HTML&gt;</span>
+<span class="p">&lt;</span><span class="nt">html</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">title</span><span class="p">&gt;</span>My Website<span class="p">&lt;/</span><span class="nt">title</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">link</span> <span class="na">rel</span><span class="o">=</span><span class="s">&quot;icon&quot;</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;text/png&quot;</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;https://fjolt.com/favicon.png&quot;</span><span class="p">&gt;</span>
+        <span class="cm">&lt;!-- load if you are using google fonts --&gt;</span>
+        <span class="cm">&lt;!--&lt;link rel=&quot;preconnect&quot; href=&quot;https://fonts.gstatic.com&quot;&gt;--&gt;</span>
+        <span class="p">&lt;</span><span class="nt">meta</span> <span class="na">name</span><span class="o">=</span><span class="s">”description”</span> <span class="na">content</span><span class="o">=</span><span class="s">&quot;Description of my website&quot;</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">meta</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;robots&quot;</span> <span class="na">content</span><span class="o">=</span><span class="s">&quot;index,follow&quot;</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">link</span> <span class="na">rel</span><span class="o">=</span><span class="s">&quot;canonical&quot;</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;URL for this page&quot;</span><span class="p">&gt;</span>
+
+        <span class="p">&lt;</span><span class="nt">meta</span> <span class="na">property</span><span class="o">=</span><span class="s">&quot;og:title&quot;</span> <span class="na">content</span><span class="o">=</span><span class="s">&quot;My Website&quot;</span> <span class="p">/&gt;</span>
+        <span class="p">&lt;</span><span class="nt">meta</span> <span class="na">property</span><span class="o">=</span><span class="s">&quot;og:locale&quot;</span> <span class="na">content</span><span class="o">=</span><span class="s">&quot;en_GB (or other locality code)&quot;</span> <span class="p">/&gt;</span>
+        <span class="p">&lt;</span><span class="nt">meta</span> <span class="na">property</span><span class="o">=</span><span class="s">&quot;og:description&quot;</span> <span class="na">content</span><span class="o">=</span><span class="s">&quot;Description of my website&quot;</span> <span class="p">/&gt;</span>
+        <span class="p">&lt;</span><span class="nt">meta</span> <span class="na">property</span><span class="o">=</span><span class="s">&quot;og:image&quot;</span> <span class="na">content</span><span class="o">=</span><span class="s">&quot;Image URL representing my website&quot;</span> <span class="p">/&gt;</span>
+        <span class="p">&lt;</span><span class="nt">meta</span> <span class="na">property</span><span class="o">=</span><span class="s">&quot;og:image:width&quot;</span> <span class="na">content</span><span class="o">=</span><span class="s">&quot;Image Width&quot;</span> <span class="p">/&gt;</span>
+        <span class="p">&lt;</span><span class="nt">meta</span> <span class="na">property</span><span class="o">=</span><span class="s">&quot;og:image:height&quot;</span> <span class="na">content</span><span class="o">=</span><span class="s">&quot;Image Height&quot;</span> <span class="p">/&gt;</span>
+        <span class="p">&lt;</span><span class="nt">meta</span> <span class="na">property</span><span class="o">=</span><span class="s">&quot;og:image:alt&quot;</span> <span class="na">content</span><span class="o">=</span><span class="s">&quot;Image alternative text, if the image is missing&quot;</span> <span class="p">/&gt;</span>
+        <span class="p">&lt;</span><span class="nt">meta</span> <span class="na">property</span><span class="o">=</span><span class="s">&quot;og:image:type&quot;</span> <span class="na">content</span><span class="o">=</span><span class="s">&quot;image/png (or other i.e. image/jpeg, image/gif)&quot;</span> <span class="p">/&gt;</span>
+        <span class="p">&lt;</span><span class="nt">meta</span> <span class="na">property</span><span class="o">=</span><span class="s">&quot;og:url&quot;</span> <span class="na">content</span><span class="o">=</span><span class="s">&quot;URL for this page&quot;</span> <span class="p">/&gt;</span>
+        <span class="p">&lt;</span><span class="nt">meta</span> <span class="na">property</span><span class="o">=</span><span class="s">&quot;og:site_name&quot;</span> <span class="na">content</span><span class="o">=</span><span class="s">&quot;My Website&quot;</span> <span class="p">/&gt;</span>
+
+        <span class="p">&lt;</span><span class="nt">meta</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;twitter:card&quot;</span> <span class="na">content</span><span class="o">=</span><span class="s">&quot;summary_large_image&quot;</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">meta</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;twitter:site&quot;</span> <span class="na">content</span><span class="o">=</span><span class="s">&quot;https://fjolt.com&quot;</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">meta</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;twitter:title&quot;</span> <span class="na">content</span><span class="o">=</span><span class="s">&quot;SEO HTML Meta Tag Reference List&quot;</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">meta</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;twitter:creator&quot;</span> <span class="na">content</span><span class="o">=</span><span class="s">&quot;&quot;</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">meta</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;twitter:description&quot;</span> <span class="na">content</span><span class="o">=</span><span class="s">&quot;A list of all the useful meta tags, and a quick start HTML template&quot;</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">meta</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;twitter:image&quot;</span> <span class="na">content</span><span class="o">=</span><span class="s">&quot;https://fjolt.com/images/intro-images/meta-tag-ref-html-quick-start.webp&quot;</span><span class="p">&gt;</span>
+
+        <span class="cm">&lt;!-- For mobile devices --&gt;</span>
+        <span class="p">&lt;</span><span class="nt">meta</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;viewport&quot;</span> <span class="na">content</span><span class="o">=</span><span class="s">&quot;initial-scale=1, maximum-scale=1&quot;</span><span class="p">&gt;</span>
+
+        <span class="cm">&lt;!-- Global site tag (gtag.js) - Google Analytics --&gt;</span>
+        <span class="cm">&lt;!-- Use if you are using google analytics, replace [[ID HERE]] in script and code with your ID --&gt;</span>
+        <span class="cm">&lt;!-- </span>
+<span class="cm">        &lt;script async src=&quot;https://www.googletagmanager.com/gtag/js?id=G-[[ID HERE]]&quot;&gt;&lt;/script&gt;</span>
+<span class="cm">        &lt;script&gt;</span>
+<span class="cm">        var host = window.location.hostname;</span>
+<span class="cm">            if(host !== &quot;localhost&quot;) {</span>
+<span class="cm">                window.dataLayer = window.dataLayer || [];</span>
+<span class="cm">                function gtag(){dataLayer.push(arguments);}</span>
+<span class="cm">                gtag(&#39;js&#39;, new Date());</span>
+
+<span class="cm">                gtag(&#39;config&#39;, &#39;[[ID HERE]]&#39;);</span>
+<span class="cm">            }</span>
+<span class="cm">        &lt;/script&gt;--&gt;</span>
+        <span class="cm">&lt;!-- Preload your stylesheets --&gt;</span>
+        <span class="p">&lt;</span><span class="nt">link</span> <span class="na">rel</span><span class="o">=</span><span class="s">&quot;preload&quot;</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;/style.css&quot;</span> <span class="na">as</span><span class="o">=</span><span class="s">&quot;style&quot;</span> <span class="p">/&gt;</span>
+        <span class="cm">&lt;!-- if you want to load some CSS async uncomment this --&gt;</span>
+        <span class="cm">&lt;!--&lt;link rel=&quot;preload&quot; href=&quot;/async.css&quot; as=&quot;style&quot; /&gt;--&gt;</span>
+
+        <span class="cm">&lt;!-- Preload your fonts if necessary --&gt;</span>
+        <span class="p">&lt;</span><span class="nt">link</span> <span class="na">rel</span><span class="o">=</span><span class="s">&quot;preload&quot;</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;/fonts/fontName.ttf&quot;</span> <span class="na">as</span><span class="o">=</span><span class="s">&quot;font&quot;</span> <span class="na">crossorigin</span><span class="o">=</span><span class="s">&quot;anonymous&quot;</span> <span class="p">/&gt;</span>
+        <span class="p">&lt;</span><span class="nt">link</span> <span class="na">rel</span><span class="o">=</span><span class="s">&quot;preload&quot;</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;/fonts/fontName.ttf&quot;</span> <span class="na">as</span><span class="o">=</span><span class="s">&quot;font&quot;</span> <span class="na">crossorigin</span><span class="o">=</span><span class="s">&quot;anonymous&quot;</span> <span class="p">/&gt;</span>
+
+        <span class="cm">&lt;!-- Load your stylesheets --&gt;</span>
+        <span class="p">&lt;</span><span class="nt">link</span> <span class="na">rel</span><span class="o">=</span><span class="s">&quot;stylesheet&quot;</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;/style.css&quot;</span> <span class="p">/&gt;</span>
+        <span class="cm">&lt;!-- if you want to load some CSS async uncomment this --&gt;</span>
+        <span class="cm">&lt;!--link rel=&quot;stylesheet&quot; href=&quot;/async.css&quot; media=&quot;print&quot; onload=&quot;this.media=&#39;all&#39;&quot;&gt;--&gt;</span>
+    <span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>
+        <span class="cm">&lt;!-- Your Website Body --&gt;</span>
+        <span class="cm">&lt;!-- Your Main JS Script --&gt;</span>
+        <span class="p">&lt;</span><span class="nt">script</span> <span class="na">defer</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;local.js&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+    <span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
+</code></pre></div>
+                </article>
+            </aside>
+
+                <section id="content" class="body">
+
+                <!-- PREVIOUS NOTES -->
+				<p class="notes-section">previous notes</p>
+                <hr>
+
+                <ol id="posts-list" class="hfeed">
+            
+
+
+
+            <li>
+                <article class="hentry">
+                    <header>
+                        <!-- PREVIOUS NOTE TITLE -->
+                        <h1><a href="https://notes.nicolasdeville.com/learning/html" rel="bookmark"
+                            title="Learning HTML">Learning HTML</a></h1>
+                        <!-- PREVIOUS NOTE SUMMARY -->
+                        <div class="entry-content">
+                            
+                        </div>
+                    </header>
+
+                    <div class="entry-content">
+                        <!-- PREVIOUS NOTE METADATA -->
 <footer class="post-info">
 
     <p>
@@ -115,17 +233,11 @@
 
     
 
-</footer><p><span class="datestamp">11 Sep 2022</span> starting note.   </p>
+</footer>                    </div>
+                    
                 </article>
-            </aside>
-
-                <section id="content" class="body">
-
-                <!-- PREVIOUS NOTES -->
-				<p class="notes-section">previous notes</p>
-                <hr>
-
-                <ol id="posts-list" class="hfeed">
+                <hr/>
+            </li>
             
 
 

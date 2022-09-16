@@ -32,7 +32,7 @@
             </div>
 
             <div class="above-navbar">
-                <div class="last_updated">16 Sep 2022 | 09:24</div>
+                <div class="last_updated">16 Sep 2022 | 11:34</div>
                 <div>
                     <p class="notes_count">
                         <a href="https://notes.nicolasdeville.com/tags">by tags</a> 
@@ -43,7 +43,7 @@
                         <span style="color:#C74350">|</span>
                         <a href="https://notes.nicolasdeville.com/2022/">2022</a> 
                         <span style="color:#C74350">|</span> 
-                        16 notes
+                        17 notes
                     </p>
                 </div>
             </div>
@@ -70,7 +70,7 @@
 
 <!-- 220911 moved to base.html -->
 <!-- <p class="notes_count">
-    16 notes 
+    17 notes 
     <span style="color:#C74350">|</span> 
     <a href="https://notes.nicolasdeville.com/tags">by tags</a> 
     <span style="color:#C74350">|</span> 
@@ -89,15 +89,133 @@
             <hr/>
 
                 <article class="hentry">
-                    <h1 class="entry-title"><a href="https://notes.nicolasdeville.com/helpers/terminal-issues">macOS Terminal issues & troubleshooting</a></h1>
+                    <h1 class="entry-title"><a href="https://notes.nicolasdeville.com/helpers/html-metatags">HTML Meta tags for SEO</a></h1>
 
                     <!-- added 4/7 -->
                     <div>
                         <p class="header_summary">
-                            <p>ongoing note</p>
+                            
                         </p>
                     </div>
 
+<footer class="post-info">
+
+    <p>
+        16 Sep 2022 <span class="separator">|</span> in <a class="link_tag" href="https://notes.nicolasdeville.com/helpers/">helpers</a>
+ tags: <a class="link_tag" href="https://notes.nicolasdeville.com/tag/html.html">html</a>
+<a class="link_tag" href="https://notes.nicolasdeville.com/tag/snippets.html">snippets</a>
+
+        <!-- added 4/7 -->
+        <!-- 		<br />
+        <abbr class="modified" title="2022-09-16T09:50:42.573578+02:00">
+                Updated: 16 Sep 2022
+        </abbr>
+ -->
+
+    </p>
+
+    
+
+</footer><p><span class="datestamp">16 Sep 2022</span>   </p>
+<div class="link_border">
+<div class="link_title">SEO HTML Meta Tag Reference List</div>
+<div class="link_url"><a href="https://fjolt.com/article/meta-tag-ref-html-quick-start" target="_blank">https://fjolt.com/article/meta-tag-ref-html-quick-start</a></div></div>
+
+<div class="highlight"><pre><span></span><code><span class="cp">&lt;!DOCTYPE HTML&gt;</span>
+<span class="p">&lt;</span><span class="nt">html</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">title</span><span class="p">&gt;</span>My Website<span class="p">&lt;/</span><span class="nt">title</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">link</span> <span class="na">rel</span><span class="o">=</span><span class="s">&quot;icon&quot;</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;text/png&quot;</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;https://fjolt.com/favicon.png&quot;</span><span class="p">&gt;</span>
+        <span class="cm">&lt;!-- load if you are using google fonts --&gt;</span>
+        <span class="cm">&lt;!--&lt;link rel=&quot;preconnect&quot; href=&quot;https://fonts.gstatic.com&quot;&gt;--&gt;</span>
+        <span class="p">&lt;</span><span class="nt">meta</span> <span class="na">name</span><span class="o">=</span><span class="s">”description”</span> <span class="na">content</span><span class="o">=</span><span class="s">&quot;Description of my website&quot;</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">meta</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;robots&quot;</span> <span class="na">content</span><span class="o">=</span><span class="s">&quot;index,follow&quot;</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">link</span> <span class="na">rel</span><span class="o">=</span><span class="s">&quot;canonical&quot;</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;URL for this page&quot;</span><span class="p">&gt;</span>
+
+        <span class="p">&lt;</span><span class="nt">meta</span> <span class="na">property</span><span class="o">=</span><span class="s">&quot;og:title&quot;</span> <span class="na">content</span><span class="o">=</span><span class="s">&quot;My Website&quot;</span> <span class="p">/&gt;</span>
+        <span class="p">&lt;</span><span class="nt">meta</span> <span class="na">property</span><span class="o">=</span><span class="s">&quot;og:locale&quot;</span> <span class="na">content</span><span class="o">=</span><span class="s">&quot;en_GB (or other locality code)&quot;</span> <span class="p">/&gt;</span>
+        <span class="p">&lt;</span><span class="nt">meta</span> <span class="na">property</span><span class="o">=</span><span class="s">&quot;og:description&quot;</span> <span class="na">content</span><span class="o">=</span><span class="s">&quot;Description of my website&quot;</span> <span class="p">/&gt;</span>
+        <span class="p">&lt;</span><span class="nt">meta</span> <span class="na">property</span><span class="o">=</span><span class="s">&quot;og:image&quot;</span> <span class="na">content</span><span class="o">=</span><span class="s">&quot;Image URL representing my website&quot;</span> <span class="p">/&gt;</span>
+        <span class="p">&lt;</span><span class="nt">meta</span> <span class="na">property</span><span class="o">=</span><span class="s">&quot;og:image:width&quot;</span> <span class="na">content</span><span class="o">=</span><span class="s">&quot;Image Width&quot;</span> <span class="p">/&gt;</span>
+        <span class="p">&lt;</span><span class="nt">meta</span> <span class="na">property</span><span class="o">=</span><span class="s">&quot;og:image:height&quot;</span> <span class="na">content</span><span class="o">=</span><span class="s">&quot;Image Height&quot;</span> <span class="p">/&gt;</span>
+        <span class="p">&lt;</span><span class="nt">meta</span> <span class="na">property</span><span class="o">=</span><span class="s">&quot;og:image:alt&quot;</span> <span class="na">content</span><span class="o">=</span><span class="s">&quot;Image alternative text, if the image is missing&quot;</span> <span class="p">/&gt;</span>
+        <span class="p">&lt;</span><span class="nt">meta</span> <span class="na">property</span><span class="o">=</span><span class="s">&quot;og:image:type&quot;</span> <span class="na">content</span><span class="o">=</span><span class="s">&quot;image/png (or other i.e. image/jpeg, image/gif)&quot;</span> <span class="p">/&gt;</span>
+        <span class="p">&lt;</span><span class="nt">meta</span> <span class="na">property</span><span class="o">=</span><span class="s">&quot;og:url&quot;</span> <span class="na">content</span><span class="o">=</span><span class="s">&quot;URL for this page&quot;</span> <span class="p">/&gt;</span>
+        <span class="p">&lt;</span><span class="nt">meta</span> <span class="na">property</span><span class="o">=</span><span class="s">&quot;og:site_name&quot;</span> <span class="na">content</span><span class="o">=</span><span class="s">&quot;My Website&quot;</span> <span class="p">/&gt;</span>
+
+        <span class="p">&lt;</span><span class="nt">meta</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;twitter:card&quot;</span> <span class="na">content</span><span class="o">=</span><span class="s">&quot;summary_large_image&quot;</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">meta</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;twitter:site&quot;</span> <span class="na">content</span><span class="o">=</span><span class="s">&quot;https://fjolt.com&quot;</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">meta</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;twitter:title&quot;</span> <span class="na">content</span><span class="o">=</span><span class="s">&quot;SEO HTML Meta Tag Reference List&quot;</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">meta</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;twitter:creator&quot;</span> <span class="na">content</span><span class="o">=</span><span class="s">&quot;&quot;</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">meta</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;twitter:description&quot;</span> <span class="na">content</span><span class="o">=</span><span class="s">&quot;A list of all the useful meta tags, and a quick start HTML template&quot;</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">meta</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;twitter:image&quot;</span> <span class="na">content</span><span class="o">=</span><span class="s">&quot;https://fjolt.com/images/intro-images/meta-tag-ref-html-quick-start.webp&quot;</span><span class="p">&gt;</span>
+
+        <span class="cm">&lt;!-- For mobile devices --&gt;</span>
+        <span class="p">&lt;</span><span class="nt">meta</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;viewport&quot;</span> <span class="na">content</span><span class="o">=</span><span class="s">&quot;initial-scale=1, maximum-scale=1&quot;</span><span class="p">&gt;</span>
+
+        <span class="cm">&lt;!-- Global site tag (gtag.js) - Google Analytics --&gt;</span>
+        <span class="cm">&lt;!-- Use if you are using google analytics, replace [[ID HERE]] in script and code with your ID --&gt;</span>
+        <span class="cm">&lt;!-- </span>
+<span class="cm">        &lt;script async src=&quot;https://www.googletagmanager.com/gtag/js?id=G-[[ID HERE]]&quot;&gt;&lt;/script&gt;</span>
+<span class="cm">        &lt;script&gt;</span>
+<span class="cm">        var host = window.location.hostname;</span>
+<span class="cm">            if(host !== &quot;localhost&quot;) {</span>
+<span class="cm">                window.dataLayer = window.dataLayer || [];</span>
+<span class="cm">                function gtag(){dataLayer.push(arguments);}</span>
+<span class="cm">                gtag(&#39;js&#39;, new Date());</span>
+
+<span class="cm">                gtag(&#39;config&#39;, &#39;[[ID HERE]]&#39;);</span>
+<span class="cm">            }</span>
+<span class="cm">        &lt;/script&gt;--&gt;</span>
+        <span class="cm">&lt;!-- Preload your stylesheets --&gt;</span>
+        <span class="p">&lt;</span><span class="nt">link</span> <span class="na">rel</span><span class="o">=</span><span class="s">&quot;preload&quot;</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;/style.css&quot;</span> <span class="na">as</span><span class="o">=</span><span class="s">&quot;style&quot;</span> <span class="p">/&gt;</span>
+        <span class="cm">&lt;!-- if you want to load some CSS async uncomment this --&gt;</span>
+        <span class="cm">&lt;!--&lt;link rel=&quot;preload&quot; href=&quot;/async.css&quot; as=&quot;style&quot; /&gt;--&gt;</span>
+
+        <span class="cm">&lt;!-- Preload your fonts if necessary --&gt;</span>
+        <span class="p">&lt;</span><span class="nt">link</span> <span class="na">rel</span><span class="o">=</span><span class="s">&quot;preload&quot;</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;/fonts/fontName.ttf&quot;</span> <span class="na">as</span><span class="o">=</span><span class="s">&quot;font&quot;</span> <span class="na">crossorigin</span><span class="o">=</span><span class="s">&quot;anonymous&quot;</span> <span class="p">/&gt;</span>
+        <span class="p">&lt;</span><span class="nt">link</span> <span class="na">rel</span><span class="o">=</span><span class="s">&quot;preload&quot;</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;/fonts/fontName.ttf&quot;</span> <span class="na">as</span><span class="o">=</span><span class="s">&quot;font&quot;</span> <span class="na">crossorigin</span><span class="o">=</span><span class="s">&quot;anonymous&quot;</span> <span class="p">/&gt;</span>
+
+        <span class="cm">&lt;!-- Load your stylesheets --&gt;</span>
+        <span class="p">&lt;</span><span class="nt">link</span> <span class="na">rel</span><span class="o">=</span><span class="s">&quot;stylesheet&quot;</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;/style.css&quot;</span> <span class="p">/&gt;</span>
+        <span class="cm">&lt;!-- if you want to load some CSS async uncomment this --&gt;</span>
+        <span class="cm">&lt;!--link rel=&quot;stylesheet&quot; href=&quot;/async.css&quot; media=&quot;print&quot; onload=&quot;this.media=&#39;all&#39;&quot;&gt;--&gt;</span>
+    <span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>
+        <span class="cm">&lt;!-- Your Website Body --&gt;</span>
+        <span class="cm">&lt;!-- Your Main JS Script --&gt;</span>
+        <span class="p">&lt;</span><span class="nt">script</span> <span class="na">defer</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;local.js&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+    <span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
+</code></pre></div>
+                </article>
+            </aside>
+
+                <section id="content" class="body">
+
+                <!-- PREVIOUS NOTES -->
+				<p class="notes-section">previous notes</p>
+                <hr>
+
+                <ol id="posts-list" class="hfeed">
+            
+
+
+
+            <li>
+                <article class="hentry">
+                    <header>
+                        <!-- PREVIOUS NOTE TITLE -->
+                        <h1><a href="https://notes.nicolasdeville.com/helpers/terminal-issues" rel="bookmark"
+                            title="macOS Terminal issues & troubleshooting">macOS Terminal issues & troubleshooting</a></h1>
+                        <!-- PREVIOUS NOTE SUMMARY -->
+                        <div class="entry-content">
+                            <p>ongoing note</p>
+                        </div>
+                    </header>
+
+                    <div class="entry-content">
+                        <!-- PREVIOUS NOTE METADATA -->
 <footer class="post-info">
 
     <p>
@@ -115,289 +233,51 @@
 
     
 
-</footer><p><span class="datestamp">04 Sep 2022</span>   </p>
-<p>Need to figure out the difference betweens <code>.bash_profile</code> &amp; <code>.zprofile</code>, both in user root folder, and their interaction with VS Code terminal.   </p>
-<p><code>.bash_profile</code>:   </p>
-<div class="highlight"><pre><span></span><code><span class="c1"># Setting PATH for Python 3.8</span>
-<span class="nv">PATH</span><span class="o">=</span><span class="s2">&quot;/Library/Python/3.8/bin:</span><span class="si">${</span><span class="nv">PATH</span><span class="si">}</span><span class="s2">&quot;</span>
-<span class="nb">export</span> PATH
-</code></pre></div>
-
-<p><code>.zprofile</code>:   </p>
-<div class="highlight"><pre><span></span><code><span class="nv">PATH</span><span class="o">=</span><span class="s2">&quot;/Library/Python3.9/bin:</span><span class="si">${</span><span class="nv">PATH</span><span class="si">}</span><span class="s2">&quot;</span>
-<span class="nb">export</span> PATH
-
-<span class="nb">eval</span> <span class="s2">&quot;</span><span class="k">$(</span>/opt/homebrew/bin/brew shellenv<span class="k">)</span><span class="s2">&quot;</span>
-</code></pre></div>
-
-<p>How to Add to the Shell Path in macOS Big Sur and Catalina using Terminal <br>
-<a href="https://wpbeaches.com/how-to-add-to-the-shell-path-in-macos-using-terminal/" target="_blank">https://wpbeaches.com/how-to-add-to-the-shell-path-in-macos-using-terminal/</a>   </p>
-<p>Created manually a <code>.zshrc</code> file with:   </p>
-<div class="highlight"><pre><span></span><code><span class="nb">export</span> <span class="nv">PATH</span><span class="o">=</span><span class="nv">$PATH</span>:/Users/nic/Library/Python/3.8/bin
-</code></pre></div>
-
-<p><span class="datestamp">14 Sep 2022</span>   </p>
-<p>started having problems again, whereby all my scripts return <code>ModuleNotFoundError: No module named 'xxxx'</code> with every library that is installed in the project's venv.
-The script runs with venv activated (<code>(venv)...</code>), confirmed with <code>which python</code> which accurately returns the path of Python in venv.   </p>
-<p>When trying to (re)install those libraries, with venv still active, they get installed in root Python with following warning:   </p>
-<div class="highlight"><pre><span></span><code>WARNING: The scripts f2py, f2py3 and f2py3.9 are installed <span class="k">in</span> <span class="s1">&#39;/Users/xxxxxx/Library/Python/3.9/bin&#39;</span> which is not on PATH.
-  Consider adding this directory to PATH or, <span class="k">if</span> you prefer to suppress this warning, use --no-warn-script-location.
-</code></pre></div>
-
-<p>Possibly since update to macOS Monterey 12.6 (which included some Command Line tools for XCode).  </p>
-<div class="highlight"><pre><span></span><code>ls -l /usr/bin/python*
-</code></pre></div>
-
-<p>is supposed to list all python instances on system, and it lists only one for me:   </p>
-<div class="highlight"><pre><span></span><code>-rwxr-xr-x  <span class="m">76</span> root  wheel  <span class="m">167120</span> <span class="m">24</span> Aug <span class="m">10</span>:59 /usr/bin/python3
-</code></pre></div>
-
-<p>actually: this is just a search in <code>usr/bin</code> and other paths are not included.   </p>
-<p><code>.bash_profile</code>, <code>.zprofile</code> &amp; <code>.zshrc</code> are the same as above.  </p>
-<p>🤔</p>
-<p>Check what shell I am using: </p>
-<div class="highlight"><pre><span></span><code><span class="nb">echo</span> <span class="nv">$SHELL</span>
-</code></pre></div>
-
-<p>returns <code>/bin/zsh</code> when run in VS Code. Same from stand-alone terminal window (clue in title bar!). <br>
-So I assume Bash is not used, so everything should run with 3.9 now.   <br>
-My ZSH points to Python 3.9 in <code>.zprofile</code>.    </p>
-<p>trying:</p>
-<div class="highlight"><pre><span></span><code><span class="nb">echo</span> <span class="nv">$PATH</span>
-</code></pre></div>
-
-<p>returns (edited for readability):   </p>
-<div class="highlight"><pre><span></span><code>/opt/homebrew/bin:
-/opt/homebrew/sbin:
-/Library/Python3.9/bin:
-/usr/local/bin:
-/usr/bin:
-/bin:
-/usr/sbin:
-/sbin:
-/usr/local/MacGPG2/bin:
-/Library/Apple/usr/bin:
-/Users/xxxx/Library/Python/3.8/bin
-</code></pre></div>
-
-<p>notes:   </p>
-<ul>
-<li>there is no path <code>/Library/Python3.9/bin</code>  </li>
-<li>the last path (<code>/Users/..</code>) seems to be the one used by VS Code/Terminal.   </li>
-<li>though need to add missing path: <code>/Users/xxxx/Library/Python/3.9/bin</code>   </li>
-</ul>
-<p>one by one:  </p>
-<ul>
-<li><code>/opt/homebrew/bin</code>: no Python binary in folder   </li>
-<li><code>/opt/homebrew/sbin</code>: no Python binary in folder   </li>
-<li><code>/Library/Python3.9/bin</code>: folder <code>Python3.9</code> does not exist</li>
-<li><code>/usr/local/bin</code>: <code>/usr/local/bin/python</code> found +++</li>
-<li><code>/usr/bin</code>: <code>/usr/bin/python3</code> found +++</li>
-<li><code>/bin</code>: no Python binary in folder  </li>
-<li><code>/usr/sbin</code>: no Python binary in folder  </li>
-<li><code>/sbin</code>: no Python binary in folder </li>
-<li><code>/usr/local/MacGPG2/bin</code>: no Python binary in folder </li>
-<li><code>/Library/Apple/usr/bin</code>: no Python binary in folder </li>
-<li><code>/Users/xxxx/Library/Python/3.8/bin</code>: no Python binary in folder 🤔</li>
-<li>not returned with <code>echo $PATH</code>: <code>/Users/xxxx/Library/Python/3.9/bin</code> also no Python binary in folder 🤔</li>
-</ul>
-<p>checking the symlink of a Python binary in one of my project's venv, I see the original to be:<br>
-<code>/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/bin/python3.9</code><br>
-which is not in path list!? 🤔
-Installed with the macOS update today?</p>
-<p>it seems that all the symlinks to Python in the virtual environments of all of my VS Code projects now point to the binary above, and none of the projects work anymore <code>ModuleNotFoundError</code>.   </p>
-<p>Asked for help on Stackoverflow:  <a href="https://stackoverflow.com/questions/73722967/all-python-scripts-stopped-working-path-changed-in-all-projects-after-macos-mon" target="_blank">https://stackoverflow.com/questions/73722967/all-python-scripts-stopped-working-path-changed-in-all-projects-after-macos-mon</a> 🤞🏼    </p>
-<div class="link_border">
-<div class="link_title">terminal - All Python scripts stopped working: path changed in all projects after macOS Monterey 12.6 update - Stack Overflow</div>
-<div class="link_url"><a href="https://stackoverflow.com/questions/73722967/all-python-scripts-stopped-working-path-changed-in-all-projects-after-macos-mon" target="_blank">https://stackoverflow.com/questions/73722967/all-python-scripts-stopped-working-path-changed-in-all-projects-after-macos-mon</a></div></div>
-
-<p><span class="datestamp">15 Sep 2022</span>   </p>
-<p>got pointed to: <a href="https://stackoverflow.com/questions/58562928/how-do-i-update-a-python-virtual-environment-with-venv-to-use-a-newer-version" target="_blank">https://stackoverflow.com/questions/58562928/how-do-i-update-a-python-virtual-environment-with-venv-to-use-a-newer-version</a>   </p>
-<div class="highlight"><pre><span></span><code>xxx@yyy ~ % <span class="nb">cd</span> Python/homee
-xxx@yyy homee % . venv/bin/activate
-<span class="o">(</span>venv<span class="o">)</span> xxx@yyy homee % python -V
-Python <span class="m">3</span>.9.6
-<span class="o">(</span>venv<span class="o">)</span> xxx@yyy homee % which python
-/Users/xxx/Python/homee/venv/bin/python
-<span class="o">(</span>venv<span class="o">)</span> xxx@yyy homee % 
-</code></pre></div>
-
-<p>already on latest Python version. </p>
-<p>run this to see all paths being searched by python:  </p>
-<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">sys</span>
-
-<span class="k">for</span> <span class="n">path</span> <span class="ow">in</span> <span class="n">sys</span><span class="o">.</span><span class="n">path</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="n">path</span><span class="p">)</span>
-</code></pre></div>
-
-<p>prints:  </p>
-<div class="highlight"><pre><span></span><code>/Users/xxxx/Python/homee
-/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/lib/python39.zip
-/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9
-/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/lib-dynload
-/Users/xxxx/Python/indeXee
-/Users/xxxx/Python/Scrapee
-</code></pre></div>
-
-<p>last 2 are added in-script in boilerplate. <br>
-first path is my project, so venv</p>
-<p>started separate note on Python paths for clarity: [<a href="../../python/paths/index.html">Nic Note: How to find all paths being searched by Python</a>]  </p>
-<p>tried renaming <code>/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/bin</code> to <code>/bin_old</code> <br>
-result:   </p>
-<div class="highlight"><pre><span></span><code><span class="o">(</span>venv<span class="o">)</span> xxx@yyy homee % /Users/xxxx/Python/homee/venv/bin/python /Users/xxxx/Python/homee/test.py
-zsh: no such file or directory: /Users/xxxx/Python/homee/venv/bin/python
-</code></pre></div>
-
-<p>reverted.   </p>
-<div class="highlight"><pre><span></span><code>xxx@yyy % which python 
-/usr/local/bin/python
-xxx@yyy % which python3
-/usr/bin/python3
-</code></pre></div>
-
-<p><code>/usr/local/bin/python</code> = symlink to <code>/usr/bin/python3</code>
-<code>/usr/bin/python3</code> = executable   </p>
-<p>let's reboot and try to change the symlink in one venv to <code>/usr/bin/python3</code> to test.  </p>
-<p>Rebooted and everything seems to work again without changing anything.<br>
-So 🤗 but also 🤯 - still not clear about what did not work &amp; resolution path for next time 😕. <br>
-Anyway, back to work....</p>
-<p>Arrgh.. rejoiced too soon. <br>
-Seems scripts using built-in packages (or packages available at global level?) work, but still <code>ModuleNotFoundError</code> for most.  </p>
-<p>Note: site-packages in venv are installed under <code>/lib/python3.8</code> though symlink to <code>`/Library/Developer/CommandLineTools/...</code> is to Python 3.9. <br>
-This is probably the issue? </p>
-<div class="highlight"><pre><span></span><code>xxx@yyy ~ % which python
-/usr/local/bin/python
-xxx@yyy ~ % where python
-/usr/local/bin/python
-xxx@yyy ~ % python -V
-xcode-select: Failed to locate <span class="s1">&#39;python&#39;</span>, requesting installation of <span class="nb">command</span> line developer tools.
-xxx@yyy ~ % <span class="nb">cd</span> /usr/bin/python
-cd: no such file or directory: /usr/bin/python
-xxx@yyy ~ % <span class="nb">cd</span> usr/bin
-cd: no such file or directory: usr/bin
-xxx@yyy ~ % sudo <span class="nb">cd</span> usr/bin
-Password:
-/usr/bin/cd: line <span class="m">4</span>: cd: usr/bin: No such file or directory
-xxx@yyy ~ % 
-</code></pre></div>
-
-<p>Try symlink update. <br>
-Can't find a quick/clean way.   </p>
-<p>Re-installing venv from scratch results in:  </p>
-<ul>
-<li>symlink still to the <code>/Library/Developer/..</code> executable  </li>
-<li><code>/lib</code> has only <code>python3.9</code> vs old venv had only <code>python3.8</code>  </li>
-</ul>
-<p>Trying to install Python 3.10 (latest stable release) from <a href="https://www.python.org/downloads/release/python-3107/" target="_blank">https://www.python.org/downloads/release/python-3107/</a> <br>
-Adds an app <code>Python 3.10</code> under <code>/Applications</code> <br>
-No change in paths:  </p>
-<div class="highlight"><pre><span></span><code>Paths:
-/Users/xxxx/Python/homee
-/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/lib/python39.zip
-/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9
-/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/lib-dynload
-/Users/xxxx/Python/homee/venv/lib/python3.9/site-packages
-/Users/xxxx/Python/indeXee
-/Users/xxxx/Python/Scrapee
-
-Python lib:
-/Users/xxxx/Python/homee/venv/lib/python3.9/site-packages
-</code></pre></div>
-
-<p>rebooting.  </p>
-<div class="highlight"><pre><span></span><code><span class="o">(</span>venv<span class="o">)</span> xxx@yyy homee % which python
-/Users/xxxx/Python/homee/venv/bin/python
-<span class="o">(</span>venv<span class="o">)</span> xxx@yyy homee % where python
-/Users/xxxx/Python/homee/venv/bin/python
-/usr/local/bin/python
-<span class="o">(</span>venv<span class="o">)</span> xxx@yyy homee % which pip
-/Users/xxxx/Python/homee/venv/bin/pip
-<span class="o">(</span>venv<span class="o">)</span> xxx@yyy homee % which pip3 
-/Users/xxxx/Python/homee/venv/bin/pip3
-<span class="o">(</span>venv<span class="o">)</span> xxx@yyy homee % where pip
-/Users/xxxx/Python/homee/venv/bin/pip
-/Users/xxxx/Library/Python/3.8/bin/pip
-/Users/xxxx/Library/Python/3.8/bin/pip
-<span class="o">(</span>venv<span class="o">)</span> xxx@yyy homee % where pip3
-/Users/xxxx/Python/homee/venv/bin/pip3
-/Library/Frameworks/Python.framework/Versions/3.10/bin/pip3
-/usr/local/bin/pip3
-/usr/bin/pip3
-/Library/Frameworks/Python.framework/Versions/3.10/bin/pip3
-/Users/xxxx/Library/Python/3.8/bin/pip3
-/Users/xxxx/Library/Python/3.8/bin/pip3
-<span class="o">(</span>venv<span class="o">)</span> xxx@yyy homee % 
-</code></pre></div>
-
-<p>notes:  </p>
-<ul>
-<li>why 2x <code>/Users/xxxx/Library/Python/3.8/bin/pip</code> in <code>where pip</code>?  </li>
-<li>new Python install seems to be at <code>/Library/Frameworks/Python.framework/Versions/3.10/bin/pip3</code>  </li>
-</ul>
-<p>test installing new venv now (old venv renamed as <code>venv_220915</code> for archive, not deleted).  </p>
-<div class="highlight"><pre><span></span><code>Paths:
-/Users/xxxx/Python/homee
-/Library/Frameworks/Python.framework/Versions/3.10/lib/python310.zip
-/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10
-/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/lib-dynload
-/Users/xxxx/Python/homee/venv/lib/python3.10/site-packages
-/Users/xxxx/Python/indeXee
-/Users/xxxx/Python/Scrapee
-
-Python lib:
-/Users/xxxx/Python/homee/venv/lib/python3.10/site-packages
-</code></pre></div>
-
-<ul>
-<li><code>/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/bin</code> seems to have disappeared on its own? 🤔  </li>
-</ul>
-<div class="highlight"><pre><span></span><code><span class="o">(</span>venv<span class="o">)</span> xxx@yyy homee % where pip
-/Users/xxxx/Python/homee/venv/bin/pip
-/Users/xxxx/Library/Python/3.8/bin/pip
-/Users/xxxx/Library/Python/3.8/bin/pip
-<span class="o">(</span>venv<span class="o">)</span> xxx@yyy homee % where pip3
-/Users/xxxx/Python/homee/venv/bin/pip3
-/Library/Frameworks/Python.framework/Versions/3.10/bin/pip3
-/usr/local/bin/pip3
-/usr/bin/pip3
-/Library/Frameworks/Python.framework/Versions/3.10/bin/pip3
-/Users/xxxx/Library/Python/3.8/bin/pip3
-/Users/xxxx/Library/Python/3.8/bin/pip3
-<span class="o">(</span>venv<span class="o">)</span> xxx@yyy homee % where python
-/Users/xxxx/Python/homee/venv/bin/python
-/usr/local/bin/python
-<span class="o">(</span>venv<span class="o">)</span> xxx@yyy homee % where python3
-/Users/xxxx/Python/homee/venv/bin/python3
-/Library/Frameworks/Python.framework/Versions/3.10/bin/python3
-/usr/local/bin/python3
-/usr/bin/python3
-/Library/Frameworks/Python.framework/Versions/3.10/bin/python3
-</code></pre></div>
-
-<p>Python in new venv now symlinked to <code>/Library/Frameworks/Python.framework/Versions/3.10/bin/python3.10</code> <br>
-and <code>venv/lib</code> has now only <code>/python3.10</code>  </p>
-<p>Let's reinstall everything and use this as default one moving forward. 🤞🏼</p>
-<p>For each project:  </p>
-<ul>
-<li>rename current <code>/venv</code> with <code>/venv.yymmdd</code> (archive)  </li>
-<li><code>python3 -m venv venv</code></li>
-<li>close and restart VS Code</li>
-<li>ensure python &amp; pip are correct (<code>where</code>/<code>which</code>)</li>
-<li>install packages with <code>requirements.txt</code> where available, else manually</li>
-<li>once everything is working again and on path, <code>pip3 freeze &gt; requirements.txt</code> to backup</li>
-</ul>
-<p>Certificate issues with some scripts. Solved &amp; details here: 
-[<a href="../../python/solve-certificate-verify-failed/index.html">Nic Note: How to solve urlopen error [SSL: CERTIFICATE_VERIFY_FAILED]</a>]   </p>
+</footer>                    </div>
+                    
                 </article>
-            </aside>
+                <hr/>
+            </li>
+            
 
-                <section id="content" class="body">
 
-                <!-- PREVIOUS NOTES -->
-				<p class="notes-section">previous notes</p>
-                <hr>
 
-                <ol id="posts-list" class="hfeed">
+            <li>
+                <article class="hentry">
+                    <header>
+                        <!-- PREVIOUS NOTE TITLE -->
+                        <h1><a href="https://notes.nicolasdeville.com/helpers/clipper" rel="bookmark"
+                            title="My web clipboard">My web clipboard</a></h1>
+                        <!-- PREVIOUS NOTE SUMMARY -->
+                        <div class="entry-content">
+                            <p>links I bookmarked for reference or later review</p>
+                        </div>
+                    </header>
+
+                    <div class="entry-content">
+                        <!-- PREVIOUS NOTE METADATA -->
+<footer class="post-info">
+
+    <p>
+        15 Sep 2022 <span class="separator">|</span> in <a class="link_tag" href="https://notes.nicolasdeville.com/helpers/">helpers</a>
+ tags: <a class="link_tag" href="https://notes.nicolasdeville.com/tag/clipper.html">clipper</a>
+
+        <!-- added 4/7 -->
+        <!-- 		<br />
+        <abbr class="modified" title="2022-09-16T09:40:08.373664+02:00">
+                Updated: 16 Sep 2022
+        </abbr>
+ -->
+
+    </p>
+
+    
+
+</footer>                    </div>
+                    
+                </article>
+                <hr/>
+            </li>
             
 
 
@@ -589,46 +469,6 @@ and <code>venv/lib</code> has now only <code>/python3.10</code>  </p>
         <!-- 		<br />
         <abbr class="modified" title="2022-09-05T08:54:00.151029+02:00">
                 Updated: 05 Sep 2022
-        </abbr>
- -->
-
-    </p>
-
-    
-
-</footer>                    </div>
-                    
-                </article>
-                <hr/>
-            </li>
-            
-
-
-
-            <li>
-                <article class="hentry">
-                    <header>
-                        <!-- PREVIOUS NOTE TITLE -->
-                        <h1><a href="https://notes.nicolasdeville.com/helpers/clipper" rel="bookmark"
-                            title="My web clipboard">My web clipboard</a></h1>
-                        <!-- PREVIOUS NOTE SUMMARY -->
-                        <div class="entry-content">
-                            <p>links I bookmarked for reference or later review</p>
-                        </div>
-                    </header>
-
-                    <div class="entry-content">
-                        <!-- PREVIOUS NOTE METADATA -->
-<footer class="post-info">
-
-    <p>
-        18 Aug 2022 <span class="separator">|</span> in <a class="link_tag" href="https://notes.nicolasdeville.com/helpers/">helpers</a>
- tags: <a class="link_tag" href="https://notes.nicolasdeville.com/tag/clipper.html">clipper</a>
-
-        <!-- added 4/7 -->
-        <!-- 		<br />
-        <abbr class="modified" title="2022-08-19T09:24:05.317719+02:00">
-                Updated: 19 Aug 2022
         </abbr>
  -->
 

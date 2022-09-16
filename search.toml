@@ -8,9 +8,29 @@ url = "/ABOUT/"
 title = ""
 
 [[input.files]]
+path = "projects/notes/index.html"
+url = "/projects/notes"
+title = "This site"
+
+[[input.files]]
+path = "python/library-pelican/index.html"
+url = "/python/library-pelican"
+title = "Building a static site with Pelican"
+
+[[input.files]]
 path = "home-office/deep-work/index.html"
 url = "/home-office/deep-work"
 title = "Resources for Deep Work"
+
+[[input.files]]
+path = "helpers/html-metatags/index.html"
+url = "/helpers/html-metatags"
+title = "HTML Meta tags for SEO"
+
+[[input.files]]
+path = "python/library-os/index.html"
+url = "/python/library-os"
+title = "Python Library: os (built-in)"
 
 [[input.files]]
 path = "movies/1000/index.html"
@@ -43,16 +63,6 @@ url = "/python/library-dotenv"
 title = "How to save confidential data in environment variables with dotenv"
 
 [[input.files]]
-path = "python/library-os/index.html"
-url = "/python/library-os"
-title = "Python Library: os (built-in)"
-
-[[input.files]]
-path = "projects/notes/index.html"
-url = "/projects/notes"
-title = "This site"
-
-[[input.files]]
 path = "python/metadata-from-url/index.html"
 url = "/python/metadata-from-url"
 title = "How to get a website's metadata with Python"
@@ -73,14 +83,14 @@ url = "/python/pip"
 title = "PIP: Python's Package Manager"
 
 [[input.files]]
-path = "python/library-pelican/index.html"
-url = "/python/library-pelican"
-title = "Building a static site with Pelican"
-
-[[input.files]]
 path = "python/paths/index.html"
 url = "/python/paths"
 title = "How to find all paths being searched by Python"
+
+[[input.files]]
+path = "helpers/clipper/index.html"
+url = "/helpers/clipper"
+title = "My web clipboard"
 
 [[input.files]]
 path = "python/solve-certificate-verify-failed/index.html"
@@ -608,11 +618,6 @@ url = "/python/fetch-metadata-from-url"
 title = "Fetch website metadata from URL"
 
 [[input.files]]
-path = "helpers/clipper/index.html"
-url = "/helpers/clipper"
-title = "My web clipboard"
-
-[[input.files]]
 path = "apps/library/index.html"
 url = "/apps/library"
 title = "My Apps Library"
@@ -623,14 +628,14 @@ url = "/apps/radar"
 title = "Apps on my radar"
 
 [[input.files]]
-path = "python/books/index.html"
-url = "/python/books"
-title = "My Python Books Library"
-
-[[input.files]]
 path = "b2b-sales/books/index.html"
 url = "/b2b-sales/books"
 title = "My B2B Books Library"
+
+[[input.files]]
+path = "python/books/index.html"
+url = "/python/books"
+title = "My Python Books Library"
 
 [[input.files]]
 path = "books/library/index.html"
@@ -1788,14 +1793,14 @@ url = "/books/library"
 title = "My Books Library"
 
 [[input.files]]
-path = "b2b-sales/books/index.html"
-url = "/b2b-sales/books"
-title = "My B2B Books Library"
-
-[[input.files]]
 path = "python/books/index.html"
 url = "/python/books"
 title = "My Python Books Library"
+
+[[input.files]]
+path = "b2b-sales/books/index.html"
+url = "/b2b-sales/books"
+title = "My B2B Books Library"
 
 [[input.files]]
 path = "apps/library/index.html"

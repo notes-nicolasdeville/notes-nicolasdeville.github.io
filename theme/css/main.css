@@ -994,9 +994,12 @@ li:first-child .hentry, #content > .hentry {
 .link_title {
     font-weight: bold;
     margin-left: 0.8em;
+    font-size: 1.1em;
+    font-family: 'Lato Black';
 }
 
 .link_tagline {
+    font-size: 0.9em;
     margin-left: 0.8em;
 }
 

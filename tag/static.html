@@ -32,7 +32,7 @@
             </div>
 
             <div class="above-navbar">
-                <div class="last_updated">16 Sep 2022 | 09:24</div>
+                <div class="last_updated">16 Sep 2022 | 11:34</div>
                 <div>
                     <p class="notes_count">
                         <a href="https://notes.nicolasdeville.com/tags">by tags</a> 
@@ -101,13 +101,13 @@
 <footer class="post-info">
 
     <p>
-        15 Sep 2022 <span class="separator">|</span> in <a class="link_tag" href="https://notes.nicolasdeville.com/python/">python</a>
+        16 Sep 2022 <span class="separator">|</span> in <a class="link_tag" href="https://notes.nicolasdeville.com/python/">python</a>
  tags: <a class="link_tag" href="https://notes.nicolasdeville.com/tag/static.html">static</a>
 
         <!-- added 4/7 -->
         <!-- 		<br />
-        <abbr class="modified" title="2022-09-15T13:11:17.951993+02:00">
-                Updated: 15 Sep 2022
+        <abbr class="modified" title="2022-09-16T11:32:17.790378+02:00">
+                Updated: 16 Sep 2022
         </abbr>
  -->
 
@@ -451,7 +451,32 @@ The issue was that some of my article titles had quotes that were not escaped.  
 <div class="link_title">GitHub - rehanhaider/pelican-algolia: Pelican Algolia Search: A Plugin to integrated Algolia Search in Pelican</div>
 <div class="link_url"><a href="https://github.com/rehanhaider/pelican-algolia" target="_blank">https://github.com/rehanhaider/pelican-algolia</a></div></div>
 
+<h3>Add Build Timestamp ("Last Updated") to Pelican Site Automatically</h3>
+<p><span class="datestamp">12 Sep 2022</span> implemented.  </p>
+<div class="link_border">
+<div class="link_title">[Pelican] Add Build Timestamp to Pelican Site Automatically</div>
+<div class="link_url"><a href="https://siongui.github.io/2020/11/30/auto-add-build-timestamp-to-pelican-website/" target="_blank">https://siongui.github.io/2020/11/30/auto-add-build-timestamp-to-pelican-website/</a></div></div>
+
 <h2>Plugins to test</h2>
+<h3>SEO</h3>
+<p><span class="datestamp">16 Sep 2022</span> testing.  </p>
+<div class="link_border">
+<div class="link_title">GitHub - pelican-plugins/seo: Pelican plugin to improve search engine optimization (SEO)</div>
+<div class="link_url"><a href="https://github.com/pelican-plugins/seo" target="_blank">https://github.com/pelican-plugins/seo</a></div></div>
+
+<p>increased build time to 5.72-10.49 seconds from 3+ seconds!     </p>
+<p>added to <code>pelicancond.py</code>:  </p>
+<div class="highlight"><pre><span></span><code><span class="c1"># pelican-seo</span>
+<span class="n">SEO_REPORT</span> <span class="o">=</span> <span class="kc">True</span>  
+<span class="n">SEO_ENHANCER</span> <span class="o">=</span> <span class="kc">True</span>  
+<span class="n">SEO_ENHANCER_OPEN_GRAPH</span> <span class="o">=</span> <span class="kc">True</span> 
+<span class="n">SEO_ENHANCER_TWITTER_CARDS</span> <span class="o">=</span> <span class="kc">True</span> 
+<span class="n">LOGO</span> <span class="o">=</span> <span class="s2">&quot;https://notes.nicolasdeville.com/images/edelweiss_black_logo.svg&quot;</span>
+</code></pre></div>
+
+<p>Did not manage to make it work - only the SEO Analysis worked but not SEO Enhancer. <br>
+Uninstalled.<br>
+Will implement SEO best practices manually - more in the SEO section of [<a href="../../projects/notes/index.html">Nic Note: This Site</a>]   </p>
 <h3>more Categories</h3>
 <p>for subcategories and more than 1 category per article   </p>
 <div class="link_border">
@@ -491,11 +516,10 @@ The issue was that some of my article titles had quotes that were not escaped.  
 <div class="link_title">Github - getpelican/pelican-plugins</div>
 <div class="link_url"><a href="https://github.com/getpelican/pelican-plugins/tree/master/summary" target="_blank">https://github.com/getpelican/pelican-plugins/tree/master/summary</a></div></div>
 
-<h3>Add Build Timestamp ("Last Updated") to Pelican Site Automatically</h3>
-<p><span class="datestamp">12 Sep 2022</span> implemented.  </p>
+<h3>image-process</h3>
 <div class="link_border">
-<div class="link_title">[Pelican] Add Build Timestamp to Pelican Site Automatically</div>
-<div class="link_url"><a href="https://siongui.github.io/2020/11/30/auto-add-build-timestamp-to-pelican-website/" target="_blank">https://siongui.github.io/2020/11/30/auto-add-build-timestamp-to-pelican-website/</a></div></div>
+<div class="link_title">GitHub - pelican-plugins/image-process: Pelican plugin that automates image processing</div>
+<div class="link_url"><a href="https://github.com/pelican-plugins/image-process" target="_blank">https://github.com/pelican-plugins/image-process</a></div></div>
 
 <h2>additional resources</h2>
 <h3>markdown syntax</h3>
