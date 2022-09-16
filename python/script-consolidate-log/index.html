@@ -32,7 +32,7 @@
             </div>
 
             <div class="above-navbar">
-                <div class="last_updated">16 Sep 2022 | 11:34</div>
+                <div class="last_updated">16 Sep 2022 | 14:39</div>
                 <div>
                     <p class="notes_count">
                         <a href="https://notes.nicolasdeville.com/tags">by tags</a> 
@@ -103,23 +103,23 @@
     
 
 </footer>            <main> <!-- for indexing by Stork -->
-                <h1>Background</h1>
+                <h1 id="background">Background</h1>
 <ul>
 <li>ran an email campaign for a client, with 3.2k emails</li>
 <li>received 800+ emails back, including manual answers, Out Of Office &amp; Undeliverable</li>
 </ul>
-<h1>Goal</h1>
+<h1 id="goal">Goal</h1>
 <ul>
 <li>provide to client a list of email addresses to be flagged as "Undeliverable" (ie Do Not Email) in Hubspot</li>
 </ul>
-<h1>Steps</h1>
+<h1 id="steps">Steps</h1>
 <ol>
 <li>run Imapee [<a href="../../projects/imapee/index.html">Nic Note: Imapee</a>] to sweep my email inbox for emails in "Undeliverable" emails. As the Imapee script was run multiple times, emails were log in <code>.txt</code> files in <code>/log</code> folder</li>
 <li>extract all emails logged by Imapee in a list of unique values (= set in Python)</li>
 <li>match emails with list of emails in client's Hubspot (to remove all emails collected that were not originally in the list)</li>
 <li>remove any email that was already flagged as "unsubsribe" in Hubspot (perhaps not necessary - there is some value in knowing an email is undeliverable vs a simple unsubscribe)</li>
 </ol>
-<h1>Script</h1>
+<h1 id="script">Script</h1>
 <div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">datetime</span> <span class="kn">import</span> <span class="n">datetime</span>
 <span class="kn">import</span> <span class="nn">os</span>
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;----------&quot;</span><span class="p">)</span>

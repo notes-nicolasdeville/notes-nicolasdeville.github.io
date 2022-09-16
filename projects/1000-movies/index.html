@@ -33,7 +33,7 @@
             </div>
 
             <div class="above-navbar">
-                <div class="last_updated">16 Sep 2022 | 11:34</div>
+                <div class="last_updated">16 Sep 2022 | 14:39</div>
                 <div>
                     <p class="notes_count">
                         <a href="https://notes.nicolasdeville.com/tags">by tags</a> 
@@ -122,7 +122,7 @@
 <li>generate Markdown files for this site [<a href="../../python/library-pelican/index.html">Nic Note: Pelican</a>]</li>
 </ul>
 <p><span class="datestamp">24 Jul 2022</span>   </p>
-<h2>Download private list from TMDB, add to Grist for management and prepare for upload to this site</h2>
+<h2 id="download-private-list-from-tmdb-add-to-grist-for-management-and-prepare-for-upload-to-this-site">Download private list from TMDB, add to Grist for management and prepare for upload to this site</h2>
 <p>TMDB list up and running with ~500 movies to start with:    </p>
 <p><img class="screenshot" src="https://notes.nicolasdeville.com/images/projects_1000-movies_tmdb-view1.jpg" alt="projects_1000-movies_tmdb-view1.jpg"/>  </p>
 <p>Working code, including adding to Grist for management (single source of truth):    </p>
@@ -280,7 +280,7 @@ Running the script from now on (runs in 5s-ish) will add to Grist only the new a
 <li>Add new movies to TMDB &amp; refine workflow as needed.  </li>
 <li>Write code to generate movie library list for this site.   </li>
 </ul>
-<h2>add new movies</h2>
+<h2 id="add-new-movies">add new movies</h2>
 <p>First hurdle: no way to see on TMDB's Top Rated page which movies are already in my list. Impossibly painful to continue adding movies like that :(    </p>
 <p>Streamline the process by fetching movies from TMDB's Top Rated list (<a href="https://www.themoviedb.org/movie/top-rated" target="_blank">https://www.themoviedb.org/movie/top-rated</a>) and filtering out:   </p>
 <ul>
@@ -416,12 +416,12 @@ Running the script from now on (runs in 5s-ish) will add to Grist only the new a
 <p>Result:   </p>
 <p>8,118 movies added.   </p>
 <p>Script failed though on page 501/507. Missing a <code>try/except</code> statement. Seems to be API limitation at 10k records? (500 * 20).</p>
-<h2>add movies from top rated list on Grist to my TMDB list</h2>
+<h2 id="add-movies-from-top-rated-list-on-grist-to-my-tmdb-list">add movies from top rated list on Grist to my TMDB list</h2>
 <p><span class="datestamp">25 Jul 2022</span>   </p>
 <p>struggling to authenticate to add/delete movies from my TMDB list.</p>
 <p>Asked for help: <a href="https://www.themoviedb.org/talk/62de52250d9f5a0067b7fb72" target="_blank">https://www.themoviedb.org/talk/62de52250d9f5a0067b7fb72</a>   </p>
 <p>Get back to it later...   </p>
-<h2>adding missing director for each movie in Grist (data point not available from top_rated or list)</h2>
+<h2 id="adding-missing-director-for-each-movie-in-grist-data-point-not-available-from-top_rated-or-list">adding missing director for each movie in Grist (data point not available from top_rated or list)</h2>
 <p>Working code, adding to Grist directly [<a href="../../apps/grist/index.html">Nic Note: Grist</a>]:  </p>
 <div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">dotenv</span> <span class="kn">import</span> <span class="n">load_dotenv</span>
 <span class="n">load_dotenv</span><span class="p">()</span>
@@ -471,7 +471,7 @@ Running the script from now on (runs in 5s-ish) will add to Grist only the new a
         <span class="p">])</span>
 </code></pre></div>
 
-<h2>code to generate movie library list for this site</h2>
+<h2 id="code-to-generate-movie-library-list-for-this-site">code to generate movie library list for this site</h2>
 <p>Working script:   </p>
 <div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">dotenv</span> <span class="kn">import</span> <span class="n">load_dotenv</span>
 <span class="n">load_dotenv</span><span class="p">()</span>
@@ -541,7 +541,7 @@ poster | title | director | year | tagline | rating |
 
 <p>Converted to HTML with Pelican [<a href="../../python/library-pelican/index.html">Nic Note: Pelican | Static Site Generator</a>]:    </p>
 <p><a href="../../movies/1000/index.html">Nic Note: My Top 1,000 Movies</a> 😁     </p>
-<h2>add movies from top rated list on Grist to my TMDB list</h2>
+<h2 id="add-movies-from-top-rated-list-on-grist-to-my-tmdb-list_1">add movies from top rated list on Grist to my TMDB list</h2>
 <p><span class="datestamp">27 Jul 2022</span>   </p>
 <p>Unable to solve authentication issue (see above).  </p>
 <p>Workaround: add movies from Grist "Top Rated" to Grist "Master" directly - no need to update TMDB list thinking about it.   </p>

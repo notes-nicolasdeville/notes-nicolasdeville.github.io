@@ -33,7 +33,7 @@
             </div>
 
             <div class="above-navbar">
-                <div class="last_updated">16 Sep 2022 | 11:34</div>
+                <div class="last_updated">16 Sep 2022 | 14:39</div>
                 <div>
                     <p class="notes_count">
                         <a href="https://notes.nicolasdeville.com/tags">by tags</a> 
@@ -128,8 +128,8 @@
 </tbody>
 </table>
 <p><code>pip3 install pynput</code>  </p>
-<h1>Snippets</h1>
-<h2>keyboard automation</h2>
+<h1 id="snippets">Snippets</h1>
+<h2 id="keyboard-automation">keyboard automation</h2>
 <div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">pynput.keyboard</span> <span class="kn">import</span> <span class="n">Key</span><span class="p">,</span> <span class="n">Controller</span>
 
 <span class="n">keyb</span> <span class="o">=</span> <span class="n">Controller</span><span class="p">()</span>
@@ -139,7 +139,7 @@
     <span class="n">keyb</span><span class="o">.</span><span class="n">release</span><span class="p">(</span><span class="s1">&#39;f&#39;</span><span class="p">)</span>
 </code></pre></div>
 
-<h2>see which key is being pressed</h2>
+<h2 id="see-which-key-is-being-pressed">see which key is being pressed</h2>
 <div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">pynput.keyboard</span> <span class="kn">import</span> <span class="n">Key</span><span class="p">,</span> <span class="n">Listener</span>
 
 <span class="k">def</span> <span class="nf">show</span><span class="p">(</span><span class="n">key</span><span class="p">):</span>

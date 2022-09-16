@@ -33,7 +33,7 @@
             </div>
 
             <div class="above-navbar">
-                <div class="last_updated">16 Sep 2022 | 11:34</div>
+                <div class="last_updated">16 Sep 2022 | 14:39</div>
                 <div>
                     <p class="notes_count">
                         <a href="https://notes.nicolasdeville.com/tags">by tags</a> 
@@ -105,7 +105,7 @@
 
 </footer>            <main> <!-- for indexing by Stork -->
                 <p><span class="datestamp">06 Sep 2022</span>   </p>
-<h2>identify if all caps</h2>
+<h2 id="identify-if-all-caps">identify if all caps</h2>
 <div class="highlight"><pre><span></span><code><span class="k">if</span> <span class="nb">all</span><span class="p">(</span><span class="n">char</span><span class="o">.</span><span class="n">isupper</span><span class="p">()</span> <span class="k">for</span> <span class="n">char</span> <span class="ow">in</span> <span class="n">first</span><span class="p">):</span>
 </code></pre></div>
 
@@ -123,7 +123,7 @@ JAN ----&gt; Jan
 ERIC ----&gt; Eric
 </code></pre></div>
 
-<h2>capitalise strings</h2>
+<h2 id="capitalise-strings">capitalise strings</h2>
 <div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">string</span>
 
 <span class="n">first</span> <span class="o">=</span> <span class="s1">&#39;pierre-GARCIA&#39;</span>
@@ -147,7 +147,7 @@ ERIC ----&gt; Eric
 <div class="highlight"><pre><span></span><code>pierre-GARCIA ----&gt; Pierre-Garcia
 </code></pre></div>
 
-<h2>print list with index</h2>
+<h2 id="print-list-with-index">print list with index</h2>
 <div class="highlight"><pre><span></span><code><span class="n">highlights</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;x&#39;</span><span class="p">,</span> <span class="s1">&#39;y&#39;</span><span class="p">,</span> <span class="s1">&#39;z&#39;</span><span class="p">]</span>
 
 <span class="k">for</span> <span class="n">index</span><span class="p">,</span> <span class="n">value</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">highlights</span><span class="p">):</span>
@@ -165,7 +165,7 @@ ERIC ----&gt; Eric
     <span class="nb">print</span><span class="p">(</span><span class="n">index</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span>
 </code></pre></div>
 
-<h2>print exception error</h2>
+<h2 id="print-exception-error">print exception error</h2>
 <div class="highlight"><pre><span></span><code><span class="k">try</span><span class="p">:</span>
     <span class="c1"># write code that may throw exception</span>
 <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
@@ -174,16 +174,16 @@ ERIC ----&gt; Eric
 </code></pre></div>
 
 <p><span class="datestamp">09 Sep 2022</span>   </p>
-<h2>printing to file</h2>
-<h3>easiest method</h3>
+<h2 id="printing-to-file">printing to file</h2>
+<h3 id="easiest-method">easiest method</h3>
 <div class="highlight"><pre><span></span><code><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;filename.txt&#39;</span><span class="p">,</span> <span class="s1">&#39;w&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
     <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;This message will be written to a file.&#39;</span><span class="p">,</span> <span class="n">file</span><span class="o">=</span><span class="n">f</span><span class="p">)</span>
 </code></pre></div>
 
-<h3>redirecting a Python's script output in the terminal</h3>
+<h3 id="redirecting-a-pythons-script-output-in-the-terminal">redirecting a Python's script output in the terminal</h3>
 <p>If script run from Terminal, redirect the output (print) of the script to a file, using a single right angle bracket:  </p>
 <p><code>$ python3 hello.py &gt; output.txt</code>   </p>
-<h3>redirecting the Standard Output Stream</h3>
+<h3 id="redirecting-the-standard-output-stream">redirecting the Standard Output Stream</h3>
 <p>to print to file:  </p>
 <div class="highlight"><pre><span></span><code><span class="n">original_stdout</span> <span class="o">=</span> <span class="n">sys</span><span class="o">.</span><span class="n">stdout</span> <span class="c1"># save original stdout</span>
 

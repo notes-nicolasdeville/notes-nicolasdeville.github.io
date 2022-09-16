@@ -32,7 +32,7 @@
             </div>
 
             <div class="above-navbar">
-                <div class="last_updated">16 Sep 2022 | 11:34</div>
+                <div class="last_updated">16 Sep 2022 | 14:39</div>
                 <div>
                     <p class="notes_count">
                         <a href="https://notes.nicolasdeville.com/tags">by tags</a> 
@@ -118,13 +118,13 @@
     
 
 </footer><p><span class="datestamp">26 Jul 2022</span>        </p>
-<h1>Music</h1>
+<h1 id="music">Music</h1>
 <p>Using the following libraries:   </p>
 <ul>
 <li><code>tinytag</code> [<a href="../../python/library-tinytag/index.html">Nic Note: Library: tinytag</a>]  </li>
 <li><code>mutagen</code> [<a href="../../python/library-mutagen/index.html">Nic Note: Library: mutagen</a>]      </li>
 </ul>
-<h2>Count</h2>
+<h2 id="count">Count</h2>
 <div class="highlight"><pre><span></span><code><span class="n">count_file</span> <span class="o">=</span> <span class="mi">0</span>
 <span class="n">count_flac</span> <span class="o">=</span> <span class="mi">0</span>
 <span class="n">count_m4a</span> <span class="o">=</span> <span class="mi">0</span>
@@ -179,7 +179,7 @@
 <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">count_file</span><span class="si">=}</span><span class="s2">&quot;</span><span class="p">)</span>
 </code></pre></div>
 
-<h2>Bulk rename based on tags</h2>
+<h2 id="bulk-rename-based-on-tags">Bulk rename based on tags</h2>
 <div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">mutagen.flac</span> <span class="kn">import</span> <span class="n">FLAC</span>
 <span class="kn">from</span> <span class="nn">tinytag</span> <span class="kn">import</span> <span class="n">TinyTag</span>
 
@@ -323,7 +323,7 @@
     <span class="nb">print</span><span class="p">()</span>
 </code></pre></div>
 
-<h2>Buld delete unwanted files in folders</h2>
+<h2 id="buld-delete-unwanted-files-in-folders">Buld delete unwanted files in folders</h2>
 <p><span class="datestamp">13 Sep 2022</span> updated with <code>Send2Trash</code> instead of <code>os.remove()</code> (safer).   </p>
 <div class="highlight"><pre><span></span><code><span class="c1">####################</span>
 <span class="c1"># Music Library</span>

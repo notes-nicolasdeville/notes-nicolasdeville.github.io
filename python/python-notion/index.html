@@ -33,7 +33,7 @@
             </div>
 
             <div class="above-navbar">
-                <div class="last_updated">16 Sep 2022 | 11:34</div>
+                <div class="last_updated">16 Sep 2022 | 14:39</div>
                 <div>
                     <p class="notes_count">
                         <a href="https://notes.nicolasdeville.com/tags">by tags</a> 
@@ -106,25 +106,25 @@
 </footer>            <main> <!-- for indexing by Stork -->
                 <p><span class="datestamp">07 Jul 2022</span>   </p>
 <p>Needed a way to fetch data from Notion to generate Markdown files dynamically for this static site.</p>
-<h2>Reference</h2>
+<h2 id="reference">Reference</h2>
 <div class="link_border">
 <div class="link_title">Learn how to make your first API requests using the Notion API</div>
 <div class="link_url"><a href="https://developers.notion.com/docs/getting-started" target="_blank">https://developers.notion.com/docs/getting-started</a></div></div>
 
 <p>Source database:  </p>
 <p><img class="illustration" src="https://notes.nicolasdeville.com/images/notion-clipper.jpg" alt="notion-clipper.jpg"/>  </p>
-<h2>Generate access</h2>
-<h3>Secret / token</h3>
+<h2 id="generate-access">Generate access</h2>
+<h3 id="secret-token">Secret / token</h3>
 <ul>
 <li>Generate secret/token at https://www.notion.so/my-integrations  </li>
 <li>Ensure all access is granted, <code>Read content</code>, <code>Update content</code> and <code>Insert content</code>. Initial tests with just giving Read rights did not work for some reason.  </li>
 <li>Set as <code>Internal integration</code></li>
 <li>Internal Integration Token will be like <code>secret_XXXXXXXXXXXXXXXX</code>: use as <code>token</code> below</li>
 </ul>
-<h3>Database ID</h3>
+<h3 id="database-id">Database ID</h3>
 <p>This can be found in the URL of the database page to fetch:</p>
 <p><code>https://www.notion.so/myworkspacename/THIS_IS_THE_DATABASE_ID?v=XXXXXXXXXXXXXXXXXXXXXXXXXXXX</code></p>
-<h2>Script</h2>
+<h2 id="script">Script</h2>
 <div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">json</span>
 <span class="kn">import</span> <span class="nn">requests</span>
 <span class="kn">import</span> <span class="nn">pprint</span>
@@ -236,7 +236,7 @@
         <span class="s1">&#39;url&#39;</span><span class="p">:</span> <span class="s1">&#39;https://www.notion.so/Fig-Your-terminal-reimagined-1cd9xxxxxxx431199ae46a78af43ebc&#39;</span><span class="p">},</span>
 </code></pre></div>
 
-<h2>What tripped me up</h2>
+<h2 id="what-tripped-me-up">What tripped me up</h2>
 <ul>
 <li>tried first the <code>notion</code> package on PPI (<code>pip3 install notion</code>) and another approach using the token to be found in the browser's cookie (ie without integration/token) - both to no avail.  </li>
 <li>unable to make script work when only <code>Read content</code> only activated in integration on Notion.  </li>

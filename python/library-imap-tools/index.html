@@ -33,7 +33,7 @@
             </div>
 
             <div class="above-navbar">
-                <div class="last_updated">16 Sep 2022 | 11:34</div>
+                <div class="last_updated">16 Sep 2022 | 14:39</div>
                 <div>
                     <p class="notes_count">
                         <a href="https://notes.nicolasdeville.com/tags">by tags</a> 
@@ -127,7 +127,7 @@
 </tbody>
 </table>
 <p><code>pip3 install imap-tools</code>   </p>
-<h3>bulk function</h3>
+<h3 id="bulk-function">bulk function</h3>
 <p>use as follows:   </p>
 <p><code>bulk=False</code>, eg:  </p>
 <div class="highlight"><pre><span></span><code><span class="k">with</span> <span class="n">MailBox</span><span class="p">(</span><span class="n">EMAIL_SERVER</span><span class="p">)</span><span class="o">.</span><span class="n">login</span><span class="p">(</span><span class="n">EMAIL_ACCOUNT</span><span class="p">,</span> <span class="n">PASSWORD</span><span class="p">)</span> <span class="k">as</span> <span class="n">mailbox</span><span class="p">:</span>
@@ -154,7 +154,7 @@ test.py finished in 0.7 minutes at 14:42:23.
 </code></pre></div>
 
 <p>so 20x faster in that case.   </p>
-<h3>Mailbox actions</h3>
+<h3 id="mailbox-actions">Mailbox actions</h3>
 <div class="highlight"><pre><span></span><code><span class="k">with</span> <span class="n">MailBox</span><span class="p">(</span><span class="s1">&#39;imap.mail.com&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">login</span><span class="p">(</span><span class="s1">&#39;test@mail.com&#39;</span><span class="p">,</span> <span class="s1">&#39;pwd&#39;</span><span class="p">,</span> <span class="n">initial_folder</span><span class="o">=</span><span class="s1">&#39;INBOX&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">mailbox</span><span class="p">:</span>
 
     <span class="c1"># COPY messages with uid in 23,27 from current folder to folder1</span>

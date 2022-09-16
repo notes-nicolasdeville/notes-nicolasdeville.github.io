@@ -33,7 +33,7 @@
             </div>
 
             <div class="above-navbar">
-                <div class="last_updated">16 Sep 2022 | 11:34</div>
+                <div class="last_updated">16 Sep 2022 | 14:39</div>
                 <div>
                     <p class="notes_count">
                         <a href="https://notes.nicolasdeville.com/tags">by tags</a> 
@@ -149,8 +149,8 @@
 </tr>
 </tbody>
 </table>
-<h1>Snippets</h1>
-<h2>SELECT</h2>
+<h1 id="snippets">Snippets</h1>
+<h2 id="select">SELECT</h2>
 <div class="highlight"><pre><span></span><code><span class="c1">####################</span>
 <span class="c1"># Connect to database</span>
 <span class="kn">import</span> <span class="nn">sqlite3</span>
@@ -186,7 +186,7 @@
 <span class="n">db</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
 </code></pre></div>
 
-<h3>SELECT with variable string</h3>
+<h3 id="select-with-variable-string">SELECT with variable string</h3>
 <div class="highlight"><pre><span></span><code><span class="n">c</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="s2">&quot;&quot;&quot;</span>
 <span class="s2">            SELECT rowid, domain, url</span>
 <span class="s2">            FROM twitter_webinars</span>
@@ -207,7 +207,7 @@
 <span class="n">potential_first</span> <span class="o">=</span> <span class="p">[</span><span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">c</span><span class="o">.</span><span class="n">fetchall</span><span class="p">()]</span>
 </code></pre></div>
 
-<h2>initial test</h2>
+<h2 id="initial-test">initial test</h2>
 <div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">sqlite3</span>
 <span class="c1"># Connect to database</span>
 <span class="n">conn</span> <span class="o">=</span> <span class="n">sqlite3</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="s1">&#39;/path/to/local/database.db&#39;</span><span class="p">)</span>
@@ -227,7 +227,7 @@
 <span class="n">conn</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
 </code></pre></div>
 
-<h2>SQL headers</h2>
+<h2 id="sql-headers">SQL headers</h2>
 <div class="highlight"><pre><span></span><code><span class="n">conn</span> <span class="o">=</span> <span class="n">sqlite3</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="s1">&#39;/path/to/local/database.db&#39;</span><span class="p">)</span>
 <span class="c1"># Create a cursor</span>
 <span class="n">c</span> <span class="o">=</span> <span class="n">conn</span><span class="o">.</span><span class="n">cursor</span><span class="p">()</span>
@@ -238,7 +238,7 @@
     <span class="n">headers</span> <span class="o">=</span> <span class="p">[</span><span class="n">i</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">c</span><span class="o">.</span><span class="n">description</span><span class="p">]</span>
 </code></pre></div>
 
-<h2>SQL results as namedtuples</h2>
+<h2 id="sql-results-as-namedtuples">SQL results as namedtuples</h2>
 <p>mimics Grist objects [<a href="../../apps/grist/index.html">Nic Note: Grist</a>]   </p>
 <div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">namedtuple_factory</span><span class="p">(</span><span class="n">cursor</span><span class="p">,</span> <span class="n">row</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;Returns sqlite rows as named tuples.&quot;&quot;&quot;</span>
@@ -249,7 +249,7 @@
 <span class="n">conn</span><span class="o">.</span><span class="n">row_factory</span> <span class="o">=</span> <span class="n">namedtuple_factory</span>
 </code></pre></div>
 
-<h2>import CSV to SQLite</h2>
+<h2 id="import-csv-to-sqlite">import CSV to SQLite</h2>
 <div class="highlight"><pre><span></span><code><span class="c1"># EASIEST</span>
 
 <span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
@@ -344,7 +344,7 @@
 <span class="n">sqliteConnection</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
 </code></pre></div>
 
-<h2>test in-memory (faster)</h2>
+<h2 id="test-in-memory-faster">test in-memory (faster)</h2>
 <div class="highlight"><pre><span></span><code><span class="n">test</span> <span class="o">=</span> <span class="kc">True</span>
 
 <span class="k">if</span> <span class="n">test</span><span class="p">:</span>

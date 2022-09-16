@@ -33,7 +33,7 @@
             </div>
 
             <div class="above-navbar">
-                <div class="last_updated">16 Sep 2022 | 11:34</div>
+                <div class="last_updated">16 Sep 2022 | 14:39</div>
                 <div>
                     <p class="notes_count">
                         <a href="https://notes.nicolasdeville.com/tags">by tags</a> 
@@ -128,7 +128,7 @@
 </table>
 <p>One of the first libraries I started to use extensively, back in 2017.  </p>
 <p><code>pip3 install openpyxl</code></p>
-<h1>my Excel boilerplate</h1>
+<h1 id="my-excel-boilerplate">my Excel boilerplate</h1>
 <div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">datetime</span> <span class="kn">import</span> <span class="n">datetime</span>
 <span class="kn">import</span> <span class="nn">os</span>
 <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">datetime</span><span class="o">.</span><span class="n">now</span><span class="p">()</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="s1">&#39;%H:%M:%S&#39;</span><span class="p">)</span><span class="si">}</span><span class="s2"> starting </span><span class="si">{</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">basename</span><span class="p">(</span><span class="vm">__file__</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
@@ -190,8 +190,8 @@
     <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">basename</span><span class="p">(</span><span class="vm">__file__</span><span class="p">)</span><span class="si">}</span><span class="s1"> finished in </span><span class="si">{</span><span class="n">run_time</span><span class="si">}</span><span class="s1"> minutes.&#39;</span><span class="p">)</span>
 </code></pre></div>
 
-<h1>Snippets</h1>
-<h2>open Workbook</h2>
+<h1 id="snippets">Snippets</h1>
+<h2 id="open-workbook">open Workbook</h2>
 <div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">openpyxl</span> <span class="kn">import</span> <span class="n">load_workbook</span>
 
 <span class="n">wb</span> <span class="o">=</span> <span class="n">load_workbook</span><span class="p">(</span><span class="n">moneeFile</span><span class="p">)</span>
@@ -207,7 +207,7 @@
         <span class="n">airportICAO</span> <span class="o">=</span> <span class="n">row</span><span class="p">[</span><span class="mi">7</span><span class="p">]</span><span class="o">.</span><span class="n">value</span>
 </code></pre></div>
 
-<h2>create Workbook</h2>
+<h2 id="create-workbook">create Workbook</h2>
 <div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">openpyxl</span> <span class="kn">import</span> <span class="n">Workbook</span>
 
 <span class="n">wb</span> <span class="o">=</span> <span class="n">Workbook</span><span class="p">()</span>
@@ -216,7 +216,7 @@
 <span class="n">wb</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="n">file_save</span><span class="p">)</span>
 </code></pre></div>
 
-<h2>converting between column letters and numbers</h2>
+<h2 id="converting-between-column-letters-and-numbers">converting between column letters and numbers</h2>
 <div class="highlight"><pre><span></span><code><span class="n">openpyxl</span><span class="o">.</span><span class="n">cell</span><span class="o">.</span><span class="n">column_index_from_string</span><span class="p">()</span>
 <span class="n">openpyxl</span><span class="o">.</span><span class="n">cell</span><span class="o">.</span><span class="n">get_column_letter</span><span class="p">()</span>
 
@@ -249,7 +249,7 @@
     <span class="k">return</span> <span class="n">col</span>
 </code></pre></div>
 
-<h2>auto-size columns</h2>
+<h2 id="auto-size-columns">auto-size columns</h2>
 <div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">openpyxl.utils</span> <span class="kn">import</span> <span class="n">get_column_letter</span>
 
 <span class="k">for</span> <span class="n">col</span> <span class="ow">in</span> <span class="n">ws</span><span class="o">.</span><span class="n">columns</span><span class="p">:</span>
@@ -268,11 +268,11 @@
         <span class="n">ws</span><span class="o">.</span><span class="n">column_dimensions</span><span class="p">[</span><span class="n">column</span><span class="p">]</span><span class="o">.</span><span class="n">width</span> <span class="o">=</span> <span class="n">adjusted_width</span>
 </code></pre></div>
 
-<h2>get column letter</h2>
+<h2 id="get-column-letter">get column letter</h2>
 <div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">openpyxl.cell</span> <span class="kn">import</span> <span class="n">get_column_letter</span>
 </code></pre></div>
 
-<h2>select a column by its name</h2>
+<h2 id="select-a-column-by-its-name">select a column by its name</h2>
 <div class="highlight"><pre><span></span><code><span class="c1"># You can do this by first building a dictionary where the keys are the column names and the values are the column number. Then, use the dictionary to translate from the name to the number.</span>
 
 <span class="kn">import</span> <span class="nn">openpyxl</span>
@@ -293,7 +293,7 @@
     <span class="nb">print</span><span class="p">(</span><span class="n">row_cells</span><span class="p">[</span><span class="n">ColNames</span><span class="p">[</span><span class="s1">&#39;Dogs&#39;</span><span class="p">]]</span><span class="o">.</span><span class="n">value</span><span class="p">)</span>
 </code></pre></div>
 
-<h2>formatting</h2>
+<h2 id="formatting">formatting</h2>
 <div class="highlight"><pre><span></span><code><span class="n">expensesSheet</span><span class="o">.</span><span class="n">column_dimensions</span><span class="p">[</span><span class="s1">&#39;A&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">width</span> <span class="o">=</span> <span class="mi">12</span>
 <span class="n">expensesSheet</span><span class="o">.</span><span class="n">column_dimensions</span><span class="p">[</span><span class="s1">&#39;B&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">width</span> <span class="o">=</span> <span class="mi">9</span>
 <span class="n">expensesSheet</span><span class="o">.</span><span class="n">column_dimensions</span><span class="p">[</span><span class="s1">&#39;C&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">width</span> <span class="o">=</span> <span class="mi">11</span>
@@ -342,7 +342,7 @@
 <span class="n">cell</span><span class="o">.</span><span class="n">fill</span> <span class="o">=</span> <span class="n">PatternFill</span><span class="p">(</span><span class="n">start_color</span><span class="o">=</span><span class="n">colour</span><span class="p">,</span> <span class="n">end_color</span><span class="o">=</span><span class="n">colour</span><span class="p">,</span> <span class="n">fill_type</span><span class="o">=</span><span class="s1">&#39;solid&#39;</span><span class="p">)</span>
 </code></pre></div>
 
-<h2>delete rows</h2>
+<h2 id="delete-rows">delete rows</h2>
 <div class="highlight"><pre><span></span><code><span class="n">ws</span><span class="o">.</span><span class="n">delete_rows</span><span class="p">(</span><span class="n">index</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
 
 <span class="sd">&quot;&quot;&quot;</span>
@@ -350,7 +350,7 @@
 <span class="sd">&quot;&quot;&quot;</span>
 </code></pre></div>
 
-<h2>insert today's date</h2>
+<h2 id="insert-todays-date">insert today's date</h2>
 <div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">datetime</span> <span class="kn">import</span> <span class="n">date</span>
 
 <span class="n">date</span> <span class="o">=</span> <span class="n">date</span><span class="o">.</span><span class="n">today</span><span class="p">()</span>
@@ -358,11 +358,11 @@
 <span class="n">ws</span><span class="o">.</span><span class="n">cell</span><span class="p">(</span><span class="n">row</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">row</span><span class="p">,</span> <span class="mi">18</span><span class="p">,</span> <span class="n">date</span><span class="p">)</span>
 </code></pre></div>
 
-<h2>add filter</h2>
+<h2 id="add-filter">add filter</h2>
 <div class="highlight"><pre><span></span><code><span class="n">ws</span><span class="o">.</span><span class="n">auto_filter</span><span class="o">.</span><span class="n">ref</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;A1:</span><span class="si">{</span><span class="n">get_column_letter</span><span class="p">(</span><span class="n">ws</span><span class="o">.</span><span class="n">max_column</span><span class="p">)</span><span class="si">}{</span><span class="n">ws</span><span class="o">.</span><span class="n">max_row</span><span class="si">}</span><span class="s2">&quot;</span>
 </code></pre></div>
 
-<h2>write dict to xlsx</h2>
+<h2 id="write-dict-to-xlsx">write dict to xlsx</h2>
 <div class="highlight"><pre><span></span><code><span class="k">for</span> <span class="n">y</span><span class="p">,</span> <span class="n">z</span> <span class="ow">in</span> <span class="n">CFA_dict</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
     <span class="n">uID</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">match</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;^(.*)-(.*)-(.*)&#39;</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
     <span class="n">operator</span> <span class="o">=</span> <span class="n">uID</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
@@ -372,7 +372,7 @@
     <span class="n">ws</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">row</span><span class="p">)</span>
 </code></pre></div>
 
-<h2>skip 1st row in a for loop</h2>
+<h2 id="skip-1st-row-in-a-for-loop">skip 1st row in a for loop</h2>
 <div class="highlight"><pre><span></span><code><span class="c1"># Either</span>
 
 <span class="k">for</span> <span class="n">row</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="n">wsFlighteeHN</span><span class="o">.</span><span class="n">max_row</span> <span class="o">+</span> <span class="mi">1</span><span class="p">):</span>
@@ -389,7 +389,7 @@
 <span class="c1"># row is now a tuple of cell objects for which we can extract the first one</span>
 </code></pre></div>
 
-<h2>cell object attributes</h2>
+<h2 id="cell-object-attributes">cell object attributes</h2>
 <p>source: <a href="https://openpyxl.readthedocs.io/en/latest/api/openpyxl.cell.cell.html" target="_blank">https://openpyxl.readthedocs.io/en/latest/api/openpyxl.cell.cell.html</a>     </p>
 <div class="highlight"><pre><span></span><code><span class="n">cell</span><span class="o">.</span><span class="n">col_idx</span> <span class="c1"># 1-based</span>
 

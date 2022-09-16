@@ -33,7 +33,7 @@
             </div>
 
             <div class="above-navbar">
-                <div class="last_updated">16 Sep 2022 | 11:34</div>
+                <div class="last_updated">16 Sep 2022 | 14:39</div>
                 <div>
                     <p class="notes_count">
                         <a href="https://notes.nicolasdeville.com/tags">by tags</a> 
@@ -103,7 +103,7 @@
 
 </footer>            <main> <!-- for indexing by Stork -->
                 <p><span class="datestamp">30 Jul 2022</span>        </p>
-<h1>Option 1</h1>
+<h1 id="option-1">Option 1</h1>
 <div class="highlight"><pre><span></span><code>python3 -m venv venv
 </code></pre></div>
 
@@ -116,26 +116,26 @@
 </code></pre></div>
 
 <p>(same command - <code>.</code> is a shortcut for <code>source</code>)   </p>
-<h1>Option 2 - with library</h1>
+<h1 id="option-2-with-library">Option 2 - with library</h1>
 <p><code>pip3 install virtualenv</code>  </p>
 <p>then   </p>
 <p><code>virtualenv .venv</code>   </p>
-<h1>Load automatically in VS Code</h1>
+<h1 id="load-automatically-in-vs-code">Load automatically in VS Code</h1>
 <p>in <code>.vscode &gt; settings.json</code> add:   </p>
 <div class="highlight"><pre><span></span><code><span class="nt">&quot;python.terminal.activateEnvironment&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w"></span>
 </code></pre></div>
 
-<h1>Delete venv</h1>
+<h1 id="delete-venv">Delete venv</h1>
 <div class="highlight"><pre><span></span><code><span class="sb">`</span>rm -rf venv<span class="sb">`</span>   
 </code></pre></div>
 
-<h1>Troubleshooting</h1>
+<h1 id="troubleshooting">Troubleshooting</h1>
 <p>The <code>venv/bin/activate</code> file can be opened to check the Python path. This is what matters:    </p>
 <div class="highlight"><pre><span></span><code><span class="n">VIRTUAL_ENV</span><span class="o">=</span><span class="s2">&quot;/Users/path/to/project/folder/venv&quot;</span>
 <span class="n">export</span> <span class="n">VIRTUAL_ENV</span>
 </code></pre></div>
 
-<h2>script using Python global instead of venv</h2>
+<h2 id="script-using-python-global-instead-of-venv">script using Python global instead of venv</h2>
 <p>Ran into the issue where the script was using the global Python instead of the venv's.   </p>
 <p>After activating my venv, the <code>which</code> command showed that the path is correct, double-confirmed by checking the file path in the <code>venv/bin/activate</code> file.</p>
 <p>However, when running the script, it uses the global python install:</p>
@@ -148,7 +148,7 @@
 </code></pre></div>
 
 <p>It appeared that the file <code>pyvenv.cfg</code> was messing things up - not sure how that file was generated/included. Renaming it (or deleting it) solved the issue.    </p>
-<h2>have you tried turning it off and on again?</h2>
+<h2 id="have-you-tried-turning-it-off-and-on-again">have you tried turning it off and on again?</h2>
 <p><span class="datestamp">15 Aug 2022</span>   </p>
 <p>same problem as above resurfaced with another project and <code>pyvenv.cfg</code> didn't help.  </p>
 <p>Deleting venv with <code>rm -rf venv</code> and reinstalling solved the issue.  </p>

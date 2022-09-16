@@ -33,7 +33,7 @@
             </div>
 
             <div class="above-navbar">
-                <div class="last_updated">16 Sep 2022 | 11:34</div>
+                <div class="last_updated">16 Sep 2022 | 14:39</div>
                 <div>
                     <p class="notes_count">
                         <a href="https://notes.nicolasdeville.com/tags">by tags</a> 
@@ -136,7 +136,7 @@
 <p>Using this library to fetch data from TMDB:<br>
 <a href="https://www.themoviedb.org/" target="_blank">https://www.themoviedb.org/</a><br>
 The Movie Database (TMDB) is a popular, user editable database for movies and TV shows.  </p>
-<h1>Movie endpoint</h1>
+<h1 id="movie-endpoint">Movie endpoint</h1>
 <p>Search by Movie ID: </p>
 <p>AVAILABLE FIELDS:<br>
 adult<br>
@@ -171,7 +171,7 @@ casts<br>
 translations<br>
 keywords<br>
 release_dates  </p>
-<h2>Generic Search example</h2>
+<h2 id="generic-search-example">Generic Search example</h2>
 <p><code>.search</code> using movie title.  </p>
 <div class="highlight"><pre><span></span><code><span class="n">movie</span> <span class="o">=</span> <span class="n">Movie</span><span class="p">()</span>
 <span class="n">search</span> <span class="o">=</span> <span class="n">movie</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="s1">&#39;Interstellar&#39;</span><span class="p">)</span> <span class="c1"># list of dict</span>
@@ -203,7 +203,7 @@ release_dates  </p>
 {&#39;adult&#39;: False, &#39;backdrop_path&#39;: &#39;/ynF37QsffZ1b3Xm2ktpb79ioP6R.jpg&#39;, &#39;genre_ids&#39;: [99], &#39;id&#39;: 436305, &#39;original_language&#39;: &#39;en&#39;, &#39;original_title&#39;: &#39;The Farthest&#39;, &#39;overview&#39;: &quot;The captivating tales of the people and events behind one of humanity&#39;s greatest achievements in exploration: NASA&#39;s Voyager mission.&quot;, &#39;popularity&#39;: 3.57, &#39;poster_path&#39;: &#39;/jHbSJo4FoKvqaGn3b7q49bcSYVZ.jpg&#39;, &#39;release_date&#39;: &#39;2018-03-15&#39;, &#39;title&#39;: &#39;The Farthest&#39;, &#39;video&#39;: False, &#39;vote_average&#39;: 7.8, &#39;vote_count&#39;: 41}
 </code></pre></div>
 
-<h1>Person endpoint</h1>
+<h1 id="person-endpoint">Person endpoint</h1>
 <p><code>.details</code> using Person ID  </p>
 <p>AVAILABLE FIELDS:<br>
 adult<br>
@@ -260,7 +260,7 @@ All movies where that person is listed as CREW:
 {&#39;adult&#39;: False, &#39;backdrop_path&#39;: &#39;/c7k9ZZb1MoFzJeyjphKRMLHOgqU.jpg&#39;, &#39;genre_ids&#39;: [28, 53], &#39;id&#39;: 1991, &#39;original_language&#39;: &#39;en&#39;, &#39;original_title&#39;: &#39;Death Proof&#39;, &#39;overview&#39;: &quot;Austin&#39;s hottest DJ, Jungle Julia, sets out into the night to unwind with her two friends Shanna and Arlene. Covertly tracking their moves is Stuntman Mike, a scarred rebel leering from behind the wheel of his muscle car, revving just feet away.&quot;, &#39;popularity&#39;: 19.585, &#39;poster_path&#39;: &#39;/vtu6H4NWnQVqEp3aanUq3hNeeot.jpg&#39;, &#39;release_date&#39;: &#39;2007-05-22&#39;, &#39;title&#39;: &#39;Death Proof&#39;, &#39;video&#39;: False, &#39;vote_average&#39;: 6.817, &#39;vote_count&#39;: 4159, &#39;credit_id&#39;: &#39;52fe4329c3a36847f803f099&#39;, &#39;department&#39;: &#39;Camera&#39;, &#39;job&#39;: &#39;Director of Photography&#39;}
 </code></pre></div>
 
-<h1>My functions</h1>
+<h1 id="my-functions">My functions</h1>
 <p>For finding the director(s) based on Movie ID:</p>
 <div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">director_by_movie_id</span><span class="p">(</span><span class="n">movie_id</span><span class="p">):</span> <span class="c1"># returns list of strings</span>
     <span class="n">list_directors</span> <span class="o">=</span> <span class="p">[]</span>
@@ -301,7 +301,7 @@ All movies where that person is listed as CREW:
     <span class="k">return</span> <span class="n">list_movies_ids_from_director</span>
 </code></pre></div>
 
-<h1>Getting list of top rated movies</h1>
+<h1 id="getting-list-of-top-rated-movies">Getting list of top rated movies</h1>
 <p>This works, but returns only 20 movies:   </p>
 <div class="highlight"><pre><span></span><code><span class="n">movie</span> <span class="o">=</span> <span class="n">Movie</span><span class="p">()</span>
 <span class="n">popular</span> <span class="o">=</span> <span class="n">movie</span><span class="o">.</span><span class="n">top_rated</span><span class="p">()</span>

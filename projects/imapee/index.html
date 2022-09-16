@@ -33,7 +33,7 @@
             </div>
 
             <div class="above-navbar">
-                <div class="last_updated">16 Sep 2022 | 11:34</div>
+                <div class="last_updated">16 Sep 2022 | 14:39</div>
                 <div>
                     <p class="notes_count">
                         <a href="https://notes.nicolasdeville.com/tags">by tags</a> 
@@ -118,7 +118,7 @@ IMAP is the standard protocol for managing email maiboxes (with POP).  </p>
 This deadline does not apply to Google Workspace or Google Cloud Identity customers. The enforcement date for these customers will be announced on the Workspace blog at a later date."  </p>
 <p>= I'm currently using Google Workspace, so all good for now, but need to rework login logic in the future, or use different library for it.   </p>
 </blockquote>
-<h1>Mass delete emails</h1>
+<h1 id="mass-delete-emails">Mass delete emails</h1>
 <p>Logic: delete email if keyword(s) provided are in <code>To</code>, <code>From</code> and/or <code>Subject</code> fields.   </p>
 <div class="highlight"><pre><span></span><code><span class="c1"># default boilerplate removed for brevity, see https://notes.nicolasdeville.com/python/boilerplate/</span>
 
@@ -242,7 +242,7 @@ Email DELETED = 209
 imapee_mail-nd-com.py finished in 0.9 minutes at 16:06:15.
 </code></pre></div>
 
-<h1>Download all attachments from a mailbox</h1>
+<h1 id="download-all-attachments-from-a-mailbox">Download all attachments from a mailbox</h1>
 <p>Save all attachments from all emails in a mailbox to a local folder with file pattern <code>date-from_email-filename</code>:   </p>
 <div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">dotenv</span> <span class="kn">import</span> <span class="n">load_dotenv</span>
 <span class="n">load_dotenv</span><span class="p">()</span>
@@ -290,7 +290,7 @@ imapee_mail-nd-com.py finished in 0.9 minutes at 16:06:15.
 </code></pre></div>
 
 <p><span class="datestamp">10 Sep 2022</span>   </p>
-<h1>Mass "Mark as Read" emails / Out Of Office</h1>
+<h1 id="mass-mark-as-read-emails-out-of-office">Mass "Mark as Read" emails / Out Of Office</h1>
 <p>For example after sending an email campaign, need to mass "mark as read" the Out Of Office and other Undeliverables emails, following specific criteria (leaving as unread previous unrelated emails).  </p>
 <p>Native web UI of email providers is usually very limited to filter properly. This script allows to mass Mark As Read based on specific keywords in <code>From</code>, <code>To</code>, <code>Subject</code> or <code>Body</code>.   </p>
 <div class="highlight"><pre><span></span><code><span class="c1"># default boilerplate removed for brevity, see https://notes.nicolasdeville.com/python/boilerplate/</span>
@@ -392,7 +392,7 @@ imapee_mail-nd-com.py finished in 0.9 minutes at 16:06:15.
 <span class="c1"># default boilerplate removed for brevity, see https://notes.nicolasdeville.com/python/boilerplate/</span>
 </code></pre></div>
 
-<h1>Collect undeliverable emails and mark as read</h1>
+<h1 id="collect-undeliverable-emails-and-mark-as-read">Collect undeliverable emails and mark as read</h1>
 <p>When running campaigns, a number of emails will come back as undeliverable. No matter how good email cleaning and validation was.  </p>
 <p><span class="datestamp">12 Sep 2022</span>   </p>
 <p>Here is my script to retrieve all emails returned as undeliverable from my Inbox, and mark all email notifications as read. <br>
@@ -602,7 +602,7 @@ This generates a log file (<code>.txt</code>) for each run with all emails, as b
 <span class="c1"># default boilerplate removed for brevity, see https://notes.nicolasdeville.com/python/boilerplate/</span>
 </code></pre></div>
 
-<h1>Sweep mailbox for new email addresses not in CRM</h1>
+<h1 id="sweep-mailbox-for-new-email-addresses-not-in-crm">Sweep mailbox for new email addresses not in CRM</h1>
 <p><span class="datestamp">13 Sep 2022</span>   </p>
 <p>From all emails, incl. Out Of Office messages, in the From/Cc fields or email body.   </p>
 <p>Good way to fish out contacts not in database/CRM.   </p>

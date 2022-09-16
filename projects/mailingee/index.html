@@ -33,7 +33,7 @@
             </div>
 
             <div class="above-navbar">
-                <div class="last_updated">16 Sep 2022 | 11:34</div>
+                <div class="last_updated">16 Sep 2022 | 14:39</div>
                 <div>
                     <p class="notes_count">
                         <a href="https://notes.nicolasdeville.com/tags">by tags</a> 
@@ -124,16 +124,16 @@
 <li><strong>snippets insertion</strong>: customise emails very flexibly with any contact-level information</li>
 <li><strong>integration</strong>: working as part of my stack and other automations, eg Twittee (lead generation using the Twitter API) [<a href="../../projects/twittee/index.html">Nic Note: Twittee</a>]  </li>
 </ul>
-<h1>Overall structure</h1>
+<h1 id="overall-structure">Overall structure</h1>
 <p>3 components to the system:   </p>
 <ul>
 <li><strong>data management</strong>: spreadsheet-like "source of truth" of recipients and sequences, using Grist [<a href="../../apps/grist/index.html">Nic Note: Grist</a>]   </li>
 <li><strong>email content</strong>: text files   </li>
 <li><strong>sending emails</strong>: python script   </li>
 </ul>
-<h1>DATA MANAGEMENT</h1>
+<h1 id="data-management">DATA MANAGEMENT</h1>
 <p>I turned to my online spreadsheet solution of choice (Grist: [<a href="../../apps/grist/index.html">Nic Note: Grist</a>]) to manage the list of contacts and sequences. </p>
-<h2>Example</h2>
+<h2 id="example">Example</h2>
 <p>Here is an overview of a campaign in Grist:   </p>
 <p><img class="screenshot" src="https://notes.nicolasdeville.com/images/mailingee/campaign-overview.jpg" alt="campaign-overview"/>  </p>
 <p>This particular campaign was based on reaching out to webinar organisers, based on webinar data I gathered from Twitter (see [<a href="../../projects/twittee/index.html">Nic Note: Twittee</a>])</p>
@@ -169,7 +169,7 @@
 <li><code>radar</code>: add to Radar</li>
 <li><code>send_from</code>: logic to send from different email accounts</li>
 </ul>
-<h1>EMAIL CONTENT</h1>
+<h1 id="email-content">EMAIL CONTENT</h1>
 <p>Each email is a text file in a folder for the campaign.  </p>
 <p>The filename of the text file follows this pattern, enabling support for tracks, language, versions and sequences:  </p>
 <p><code>TRACK_LANGUAGE_VERSION_SEQUENCE_SUBJECT LINE.txt</code>   </p>
@@ -177,7 +177,7 @@
 <p>It's therefore very easy to quickly create a new email version, sequence or language, just by creating a new text file with the right name.    </p>
 <p>For a single email campaign:   </p>
 <p><img class="screenshot" src="https://notes.nicolasdeville.com/images/mailingee/eoy-emails.jpg" alt="eoy-emails"/>  </p>
-<h2>example of email cadence</h2>
+<h2 id="example-of-email-cadence">example of email cadence</h2>
 <p><strong>Email #1</strong></p>
 <div class="highlight"><pre><span></span><code>Filename: GoToWebinar_E_A_1_GoToWebinar contract.txt
 
@@ -273,16 +273,16 @@ Nic
 I have seen good success with the above campaign, as it was personalised with the solution they used, their own webinar title, and targeting the webinar organiser(s) directly.   </p>
 <p>Typical other cadences or tests might include dropping other clients in same industry, success metrics, etc...  </p>
 <p>See [<a href="../../b2b-sales/outbound/index.html">Nic Note: Outbound Lead Generation</a>] for more.    </p>
-<h1>SENDING EMAILS</h1>
-<h2>Sending methods</h2>
+<h1 id="sending-emails">SENDING EMAILS</h1>
+<h2 id="sending-methods">Sending methods</h2>
 <p>Script allows for 3 ways to send emails:   </p>
-<h3>send manually</h3>
+<h3 id="send-manually">send manually</h3>
 <p><code>MAN</code>: email gets generated ready to send. Provides ability to personalise even more before hitting send.  </p>
 <p>Here is an example, with the added feature of launching both the recipient's Linkedin profile (this campaign had that info) and the company's website alongside generating the ready-to-send email. This makes hyper-personalisation of each email very efficient.   </p>
 <div style="padding:56.25% 0 0 0;position:relative;"><iframe src="https://player.vimeo.com/video/625818783?h=6becddb53f&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen style="position:absolute;top:0;left:0;width:100%;height:100%;" title="211007 Emailing Automation"></iframe></div>
 <script src="https://player.vimeo.com/api/player.js"></script>
 
-<h3>send automatically using keyboard automation</h3>
+<h3 id="send-automatically-using-keyboard-automation">send automatically using keyboard automation</h3>
 <p><code>AUTO_KB</code>: email gets generated on desktop and sent, using keyboard shortcuts automation.   </p>
 <p>This is my preferred method.
 Why? <br>
@@ -291,18 +291,18 @@ Plus this allows for inclusion of email signature without having to fiddle with 
 <div style="padding:56.25% 0 0 0;position:relative;"><iframe src="https://player.vimeo.com/video/648014418?h=c43d168231&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen style="position:absolute;top:0;left:0;width:100%;height:100%;" title="211120 Mailingee"></iframe></div>
 <script src="https://player.vimeo.com/api/player.js"></script>
 
-<h3>send automatically via SMTP</h3>
+<h3 id="send-automatically-via-smtp">send automatically via SMTP</h3>
 <p><code>AUTO_SMTP</code>: fully "behind-the-scenes"   </p>
 <p>The most "elegant" way to run it (vs the "hacky" approach above), used by all the emailing platforms. <br>
 Though generating emails that "look" as if they were sent manually from a metadata perspective (headers, etc..) is painful. <br>
 Sending is easy - circumventing complex spam filtering looking at email metadata is trickier.   </p>
-<h3>test</h3>
+<h3 id="test">test</h3>
 <p>+ <code>TEST</code> which prints what would be sent, without sending the email / or send to Mailtrap:   </p>
 <div class="link_border">
 <div class="link_title">Email Sandbox Service</div>
 <div class="link_url"><a href="https://mailtrap.io/" target="_blank">https://mailtrap.io/</a></div></div>
 
-<h2>Script</h2>
+<h2 id="script">Script</h2>
 <p><span class="datestamp">06 Sep 2022</span>   </p>
 <p>This is my current script - this one without opening Linkedin &amp; Company Website (TODO: add example). </p>
 <p>Comment inline.   </p>
@@ -703,7 +703,7 @@ Sending is easy - circumventing complex spam filtering looking at email metadata
     <span class="nb">print</span><span class="p">()</span>
 </code></pre></div>
 
-<h1>about tracking</h1>
+<h1 id="about-tracking">about tracking</h1>
 <p>this script/solution does not cater for tracking emails - though it could, leveraging services like this one:    </p>
 <div class="link_border">
 <div class="link_title">Email tracking made easy - PastePixel</div>

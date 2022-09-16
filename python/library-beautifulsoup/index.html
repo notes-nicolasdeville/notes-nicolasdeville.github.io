@@ -33,7 +33,7 @@
             </div>
 
             <div class="above-navbar">
-                <div class="last_updated">16 Sep 2022 | 11:34</div>
+                <div class="last_updated">16 Sep 2022 | 14:39</div>
                 <div>
                     <p class="notes_count">
                         <a href="https://notes.nicolasdeville.com/tags">by tags</a> 
@@ -154,7 +154,7 @@
     <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">author</span><span class="si">=}</span><span class="s2">&quot;</span><span class="p">)</span>
 </code></pre></div>
 
-<h3>Target by ID with wildcard</h3>
+<h3 id="target-by-id-with-wildcard">Target by ID with wildcard</h3>
 <p>useful when IDs or classes have random strings within them, eg:<br>
 -<code>&lt;div id="content-author-B00CR42MOY" class="information_row"&gt;C. S. Lewis&lt;/div&gt;</code>
 -<code>&lt;div id="content-author-B08CGP9TJ7" class="information_row"&gt;Ernest Cline&lt;/div&gt;</code></p>
@@ -162,7 +162,7 @@
 <div class="highlight"><pre><span></span><code><span class="n">author</span> <span class="o">=</span> <span class="n">x</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s2">&quot;div&quot;</span><span class="p">,</span> <span class="p">{</span><span class="s2">&quot;id&quot;</span> <span class="p">:</span> <span class="k">lambda</span> <span class="n">L</span><span class="p">:</span> <span class="n">L</span> <span class="ow">and</span> <span class="n">L</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s1">&#39;content-author&#39;</span><span class="p">)})</span><span class="o">.</span><span class="n">text</span>
 </code></pre></div>
 
-<h3>Find the next element after a tag</h3>
+<h3 id="find-the-next-element-after-a-tag">Find the next element after a tag</h3>
 <div class="highlight"><pre><span></span><code><span class="n">soup</span><span class="o">.</span><span class="n">head</span><span class="o">.</span><span class="n">next_element</span><span class="o">.</span><span class="n">next_element</span>
 </code></pre></div>
             </main>

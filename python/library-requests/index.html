@@ -33,7 +33,7 @@
             </div>
 
             <div class="above-navbar">
-                <div class="last_updated">16 Sep 2022 | 11:34</div>
+                <div class="last_updated">16 Sep 2022 | 14:39</div>
                 <div>
                     <p class="notes_count">
                         <a href="https://notes.nicolasdeville.com/tags">by tags</a> 
@@ -134,14 +134,14 @@
 <div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">requests</span>
 </code></pre></div>
 
-<h2>POST</h2>
+<h2 id="post">POST</h2>
 <div class="highlight"><pre><span></span><code><span class="n">url</span> <span class="o">=</span> <span class="s1">&#39;https://www.w3schools.com/python/demopage.php&#39;</span>
 <span class="n">myobj</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;somekey&#39;</span><span class="p">:</span> <span class="s1">&#39;somevalue&#39;</span><span class="p">}</span>
 
 <span class="n">x</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">post</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">json</span> <span class="o">=</span> <span class="n">myobj</span><span class="p">)</span>
 </code></pre></div>
 
-<h3>Sending requests with JSON data and headers</h3>
+<h3 id="sending-requests-with-json-data-and-headers">Sending requests with JSON data and headers</h3>
 <div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">requests</span>
 <span class="kn">import</span> <span class="nn">json</span>
 
@@ -161,7 +161,7 @@
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;JSON Response &quot;</span><span class="p">,</span> <span class="n">response</span><span class="o">.</span><span class="n">json</span><span class="p">())</span>
 </code></pre></div>
 
-<h4>Example with Grist</h4>
+<h4 id="example-with-grist">Example with Grist</h4>
 <div class="highlight"><pre><span></span><code><span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">post</span><span class="p">(</span>
     <span class="sa">f</span><span class="s2">&quot;https://docs.getgrist.com/api/docs/</span><span class="si">{</span><span class="n">doc_id</span><span class="si">}</span><span class="s2">/attachments&quot;</span><span class="p">,</span>
     <span class="n">files</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;upload&quot;</span><span class="p">:</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;my_pic.png&quot;</span><span class="p">,</span> <span class="s2">&quot;rb&quot;</span><span class="p">)},</span>

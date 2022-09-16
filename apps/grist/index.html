@@ -33,7 +33,7 @@
             </div>
 
             <div class="above-navbar">
-                <div class="last_updated">16 Sep 2022 | 11:34</div>
+                <div class="last_updated">16 Sep 2022 | 14:39</div>
                 <div>
                     <p class="notes_count">
                         <a href="https://notes.nicolasdeville.com/tags">by tags</a> 
@@ -155,15 +155,15 @@ Grist is open-source so can be self-hosted to overcome the records limitation du
 <p>Embedding Grist spreadsheets has now also been released: <a href="https://support.getgrist.com/embedding/" target="_blank">https://support.getgrist.com/embedding/</a>   </p>
 <p>Not sure how large the pool was, but I started well that month 😊      </p>
 <p><img class="screenshot" src="https://notes.nicolasdeville.com/images/apps_grist-new-user-of-the-month.jpg" alt="apps_grist-new-user-of-the-month.jpg"/>  </p>
-<h1>Limitation</h1>
+<h1 id="limitation">Limitation</h1>
 <p>~100k records <strong>per document</strong>, ie all tables in a spreadsheet.
 Where I expect to possibly have more, I break out tables in their own document, with just 1 <code>Master</code> table in it.      </p>
-<h1>Formulas</h1>
-<h2>Past / Future</h2>
+<h1 id="formulas">Formulas</h1>
+<h2 id="past-future">Past / Future</h2>
 <div class="highlight"><pre><span></span><code><span class="k">IF</span><span class="ss">(</span><span class="mh">$da</span><span class="nv">te_webinar</span><span class="o">!=</span><span class="w"> </span><span class="nv">None</span>,<span class="k">IF</span><span class="ss">(</span><span class="mh">$da</span><span class="nv">te_webinar</span><span class="o">&lt;</span><span class="nv">NOW</span><span class="ss">()</span>,<span class="s2">&quot;PAST&quot;</span>,<span class="s2">&quot;FUTURE&quot;</span><span class="ss">)</span>,<span class="s2">&quot;&quot;</span><span class="ss">)</span><span class="w"></span>
 </code></pre></div>
 
-<h2>identify duplicate values</h2>
+<h2 id="identify-duplicate-values">identify duplicate values</h2>
 <ul>
 <li>create column <code>dup</code> (or other name)</li>
 <li>under Column Options, choose <code>Set formula</code> and use <code>"DUP" if len(Master.lookupRecords(domain=$domain)) &gt; 1 else ""</code> as formula. In this example, duplication check is done on the <code>domain</code> column - change as needed using the relevant column header (eg <code>email</code>). It can also be anything other than <code>"DUP"</code>. This basically fills the cell with the string <code>"DUP"</code> if there is more than one row with the same <code>domain</code> value.  </li>
@@ -179,7 +179,7 @@ Permissions can be defined by clicking on each as needed: <br>
 - <code>C</code> for Create
 - <code>D</code> for Delete</p>
 <p><img class="screenshot" src="https://notes.nicolasdeville.com/images/grist/dup-access-rule.jpg" alt="dup-access-rule"/>  </p>
-<h1>Keyboard shortcuts</h1>
+<h1 id="keyboard-shortcuts">Keyboard shortcuts</h1>
 <table>
 <thead>
 <tr>
@@ -194,8 +194,8 @@ Permissions can be defined by clicking on each as needed: <br>
 </tr>
 </tbody>
 </table>
-<h1>API</h1>
-<h2>Getting started</h2>
+<h1 id="api">API</h1>
+<h2 id="getting-started">Getting started</h2>
 <div class="highlight"><pre><span></span><code>pip3 install grist_api
 </code></pre></div>
 
@@ -223,7 +223,7 @@ Permissions can be defined by clicking on each as needed: <br>
 </code></pre></div>
 
 <p>The above enables me to call the methods listed below, by just referencing the document object <code>Books</code>, <code>Movies</code> or <code>Apps</code> depending on the spreadsheet I want to access.   </p>
-<h2>Create / add records</h2>
+<h2 id="create-add-records">Create / add records</h2>
 <div class="highlight"><pre><span></span><code><span class="n">grist_XX</span><span class="o">.</span><span class="n">DOC</span><span class="o">.</span><span class="n">add_records</span><span class="p">(</span><span class="s1">&#39;SHEET&#39;</span><span class="p">,</span> <span class="p">[{</span>
                                     <span class="s1">&#39;field_name_1&#39;</span><span class="p">:</span> <span class="n">python_object_1</span><span class="p">,</span>
                                     <span class="s1">&#39;field_name_2&#39;</span><span class="p">:</span> <span class="n">python_object_2</span><span class="p">,</span>
@@ -238,7 +238,7 @@ Permissions can be defined by clicking on each as needed: <br>
 - <code>DOC</code> is the document object<br>
 - <code>SHEET</code> is the sheet name within the document<br>
 - <code>field_name_x</code> is the column name in the sheet</p>
-<h2>Update records</h2>
+<h2 id="update-records">Update records</h2>
 <p>Similar structure as above, with the <code>update_records</code> method insted of <code>add_records</code> BUT needs to identify what Grist record (ie row) to update, via its 'id':  </p>
 <div class="highlight"><pre><span></span><code><span class="n">grist_XX</span><span class="o">.</span><span class="n">DOC</span><span class="o">.</span><span class="n">update_records</span><span class="p">(</span><span class="s1">&#39;SHEET&#39;</span><span class="p">,</span> <span class="p">[{</span>
                                     <span class="s1">&#39;id&#39;</span><span class="p">:</span> <span class="nb">id</span><span class="p">,</span> <span class="c1"># MANDATORY for the update method</span>
@@ -250,18 +250,18 @@ Permissions can be defined by clicking on each as needed: <br>
                     <span class="p">])</span>
 </code></pre></div>
 
-<h2>Fetch last checked record</h2>
+<h2 id="fetch-last-checked-record">Fetch last checked record</h2>
 <div class="highlight"><pre><span></span><code><span class="n">grist_XX</span><span class="o">.</span><span class="n">DOC</span><span class="o">.</span><span class="n">fetch_table</span><span class="p">(</span><span class="s1">&#39;SHEET&#39;</span><span class="p">,</span> <span class="n">filters</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;field_name&quot;</span><span class="p">:</span> <span class="s1">&#39;filter_criteria&#39;</span><span class="p">})[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">last_checked</span>
 </code></pre></div>
 
-<h2>Delete individual record</h2>
+<h2 id="delete-individual-record">Delete individual record</h2>
 <p><code>delete_records</code> method:    </p>
 <div class="highlight"><pre><span></span><code><span class="n">grist_XX</span><span class="o">.</span><span class="n">DOC</span><span class="o">.</span><span class="n">delete_records</span><span class="p">(</span><span class="s1">&#39;SHEET&#39;</span><span class="p">,</span> <span class="p">[</span>
                         <span class="nb">id</span><span class="p">,</span>
                     <span class="p">])</span>
 </code></pre></div>
 
-<h2>Upload images</h2>
+<h2 id="upload-images">Upload images</h2>
 <p><a href="https://community.getgrist.com/t/how-to-upload-images-as-attachment-via-api-with-python/1216/2" target="_blank">https://community.getgrist.com/t/how-to-upload-images-as-attachment-via-api-with-python/1216/2</a>   </p>
 <div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">requests</span>
 
@@ -277,10 +277,10 @@ Permissions can be defined by clicking on each as needed: <br>
 <p>Then use <code>add_records</code> or <code>update_records</code> and pass <code>cell_value</code> as the value of a single cell in an <code>Attachments</code> type column.  </p>
 <p>See the other endpoints in <a href="https://support.getgrist.com/api/#tag/attachments" target="_blank">https://support.getgrist.com/api/#tag/attachments</a> for listing/downloading attachments.  </p>
 <p>If an attachment is not referenced by any cell, it will be deleted automatically after some time. If you need to delete it immediately, there’s an undocumented endpoint: <code>POST /api/docs/{doc_id}/attachments/removeUnused</code>. Use it with caution.   </p>
-<h2>Tricks</h2>
-<h3>hidden value field for reference fields</h3>
+<h2 id="tricks">Tricks</h2>
+<h3 id="hidden-value-field-for-reference-fields">hidden value field for reference fields</h3>
 <p>When using a List column, or other data type referencing to a value, instead of fetching that columns' data - which returns a list of reference(s) - you can fetch straight the value itself by identifying the hidden column/field, usually with format <code>gristHelper_Display2</code>.  </p>
-<h3>nested dictionary comprehension to select many fields you want at once</h3>
+<h3 id="nested-dictionary-comprehension-to-select-many-fields-you-want-at-once">nested dictionary comprehension to select many fields you want at once</h3>
 <div class="highlight"><pre><span></span><code><span class="n">list_WN001_archive</span> <span class="o">=</span> <span class="p">[</span>
   <span class="p">{</span>
     <span class="n">key</span><span class="p">:</span> <span class="n">value</span>
@@ -293,9 +293,9 @@ Permissions can be defined by clicking on each as needed: <br>
 </code></pre></div>
 
 <p>see <a href="https://community.getgrist.com/t/api-crud-with-native-grist-object/541" target="_blank">https://community.getgrist.com/t/api-crud-with-native-grist-object/541</a>   </p>
-<h3>using zebra stripes on large tables</h3>
+<h3 id="using-zebra-stripes-on-large-tables">using zebra stripes on large tables</h3>
 <p><a href="https://community.getgrist.com/t/highlight-active-row-column-on-selection-change/443" target="_blank">https://community.getgrist.com/t/highlight-active-row-column-on-selection-change/443</a>    </p>
-<h3>downloading document data as a file</h3>
+<h3 id="downloading-document-data-as-a-file">downloading document data as a file</h3>
 <p><a href="https://community.getgrist.com/t/api-call-to-download-table-as-csv/431/3" target="_blank">https://community.getgrist.com/t/api-call-to-download-table-as-csv/431/3</a>   </p>
             </main>
         </div><!-- /.entry-content -->
