@@ -1,5 +1,7 @@
 @import url("pygment.css");
-@import url('https://fonts.googleapis.com/css?family=Lato');
+/* @import url('https://fonts.googleapis.com/css?family=Lato'); */
+/* @import url('https://fonts.googleapis.com/css2?family=Lato:wght@900&display=swap'); */
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400;700;900&display=swap');
 
 /* Global variables */
 :root {
@@ -36,7 +38,7 @@ body {
     background: #fff;
     color: #000305;
     font-size: 90%; /* Base font size: 14px */
-    font-family: 'Lato', Arial, sans-serif;
+    font-family: 'Lato', sans-serif;
     line-height: 1.429;
     margin: 0;
     /* margin-right: 0.5em; */
@@ -87,7 +89,7 @@ img.left, figure.left, div.figure.align-left {
 
 .search-input {
     width: 200px;
-    font-family: 'Lato', Arial, sans-serif;
+    font-family: 'Lato', sans-serif;
 }
 
 .header_table {
@@ -1063,7 +1065,8 @@ li:first-child .hentry, #content > .hentry {
     font-weight: bold;
     margin-left: 0.8em;
     font-size: 1.1em;
-    font-family: 'Lato Black';
+    /* Lato Black = weight 900 */
+    font-weight: 900; 
 }
 
 .link_tagline {

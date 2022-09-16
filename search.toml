@@ -8,6 +8,11 @@ url = "/ABOUT/"
 title = ""
 
 [[input.files]]
+path = "learning/css/index.html"
+url = "/learning/css"
+title = "Learning CSS"
+
+[[input.files]]
 path = "home-office/f1-models/index.html"
 url = "/home-office/f1-models"
 title = "F1 Model Cars"
@@ -16,11 +21,6 @@ title = "F1 Model Cars"
 path = "projects/notes/index.html"
 url = "/projects/notes"
 title = "This site"
-
-[[input.files]]
-path = "learning/css/index.html"
-url = "/learning/css"
-title = "Learning CSS"
 
 [[input.files]]
 path = "python/library-pelican/index.html"
