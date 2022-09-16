@@ -714,8 +714,8 @@ li:first-child .hentry, #content > .hentry {
 }
 
 .entry-content {
-    margin-left: 1em;
-    margin-right: 0.5em;
+    margin-left: 0.1rem;
+    margin-right: 0.5rem;
 }
 
 .hentry .post-info * {
@@ -1005,7 +1005,7 @@ li:first-child .hentry, #content > .hentry {
     margin-right: 0.5em;
 }
 .datestamp-starting:after {
-    content: ' starting note';
+    content: ' > starting note';
     /* color: #C64350; */
 }
 
@@ -1104,11 +1104,16 @@ li:first-child .hentry, #content > .hentry {
 }
 
 .toc ul {
-	/* list-style: outside disc; */
-    /* list-style: square inside url(https://notes.nicolasdeville.com/images/edelweiss_black.svg); */
-    list-style-image: url(https://notes.nicolasdeville.com/images/edelweiss_red.svg);
-    /* margin: 0em 0 0 1.5em; */
-    width: 100%;
+    list-style: none; /* Remove default bullets */
+}
+.toc ul li::before {
+    /* content: "\2022";  Add content: \2022 is the CSS Code/unicode for a bullet */
+    content: "> ";
+    color: #C64350; /* Change the color */
+    font-weight: bold; /* If you want it to be bold */
+    display: inline-block; /* Needed to add space between the bullet and the text */
+    width: 1em; /* Also needed for space (tweak if needed) */
+    margin-left: -1em; /* Also needed for space (tweak if needed) */
 }
 
 .toc li {
