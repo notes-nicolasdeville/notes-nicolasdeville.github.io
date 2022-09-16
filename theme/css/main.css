@@ -305,10 +305,35 @@ pre {
 
     /* 220911 adding for copy code feature: */
     position: relative;
+
+    /* 220916 adding for mobile responsiveness */
+    width: 100%;
+    font-size: 1rem;
 }
 /* pre:hover, pre:focus {
     width: min-content; 
 } */
+
+code {
+    background-color: #1d1d1d;
+    /* width: 100%; */
+    font-family: SFMono-Regular, Consolas, Liberation Mono, Menlo, monospace, Courier;
+    /* line-height: 1.2rem; */
+    overflow-wrap: normal;
+    display: inline-block;
+    /* border: solid 2px #5882FA; */
+    /* color: #C74350; */
+    color: #9CDAFC;
+    /* border: solid 1px #fff; */
+    border-radius: 0.3em;
+    padding: 2px 5px 2px 5px; /* needed for code inline */
+    margin: 0px 3px 0px 3px;
+    /* white-space: nowrap; puts all on one line */
+
+    /* 220916 adding for mobile responsiveness */
+    width: 100%;
+    font-size: 0.8rem;
+}
 
 /* 220911 adding for copy code feature: */
 
@@ -348,24 +373,6 @@ pre {
         opacity: 1;
         transition: 0.2s;
     }  
-
-code {
-    background-color: #1d1d1d;
-    /* width: 100%; */
-    font-family: SFMono-Regular, Consolas, Liberation Mono, Menlo, monospace, Courier;
-    font-size: .8em;
-    /* line-height: 1.2rem; */
-    overflow-wrap: normal;
-    display: inline-block;
-    /* border: solid 2px #5882FA; */
-    /* color: #C74350; */
-    color: #9CDAFC;
-    /* border: solid 1px #fff; */
-    border-radius: 0.3em;
-    padding: 2px 5px 2px 5px; /* needed for code inline */
-    margin: 0px 3px 0px 3px;
-    /* white-space: nowrap; puts all on one line */
-}
 
 blockquote {
 
@@ -983,6 +990,11 @@ li:first-child .hentry, #content > .hentry {
     margin-right: 0.5em;
 }
 
+.datestamp-starting:after {
+    content: ' starting note';
+    /* color: #C64350; */
+}
+
 /* MY LINKS / BOOKMARKS */
 
 .link_border {
@@ -1051,9 +1063,18 @@ li:first-child .hentry, #content > .hentry {
     margin-left: 1.5em;
 }
 
+.toc {
+	border-left: 4px solid #333;
+    margin-bottom: 1em;
+	color: #333;
+	font-size: 0.8em;
+}
 
-
-
+.toctitle {
+	color: #333;
+    font-weight: bold;
+	font-size: 1em;
+}
 
 
 /* TEST */

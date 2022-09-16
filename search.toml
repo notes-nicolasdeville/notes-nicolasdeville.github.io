@@ -8,6 +8,11 @@ url = "/ABOUT/"
 title = ""
 
 [[input.files]]
+path = "learning/css/index.html"
+url = "/learning/css"
+title = "Learning CSS"
+
+[[input.files]]
 path = "projects/notes/index.html"
 url = "/projects/notes"
 title = "This site"
@@ -156,11 +161,6 @@ title = "Gitignore"
 path = "python/unicode/index.html"
 url = "/python/unicode"
 title = "Unicode in Python"
-
-[[input.files]]
-path = "learning/css/index.html"
-url = "/learning/css"
-title = "Learning CSS"
 
 [[input.files]]
 path = "learning/html/index.html"
