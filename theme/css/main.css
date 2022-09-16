@@ -1009,6 +1009,25 @@ li:first-child .hentry, #content > .hentry {
     /* color: #C64350; */
 }
 
+.datestamp-update {
+    font-size: 0.8em;
+    font-weight: bold;
+    /* color: #333; */
+    color: #000;
+    /* background-color: #ddd; */
+    padding: 0.3em 0.5em 0.3em 0.5em;
+    /* border: solid 2px #999; */
+    border: solid 3px #000;
+    /* border-radius: 1em; */
+    line-height: 3em; /* to avoid overlap over lines */
+    margin-right: 0.5em;
+}
+.datestamp-update:after {
+    content: ' > update';
+    /* color: #C64350; */
+}
+
+
 /* MY LINKS / BOOKMARKS */
 
 .link_border {
