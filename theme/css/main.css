@@ -1,6 +1,12 @@
 @import url("pygment.css");
 @import url('https://fonts.googleapis.com/css?family=Lato');
 
+/* Global variables */
+:root {
+    --nic_red: #C64350;
+}
+
+
 /* Global reset / clean slate */
 html, body, div, h1, h2, h3, h4, h5, h6, ul, ol, li, p, blockquote, pre, form, fieldset, table, th, td {
     margin: 0;
@@ -97,7 +103,7 @@ img.left, figure.left, div.figure.align-left {
 }
 /* .header_summary:before {
     content: ':::';
-    color: #C64350;
+    color: var(--nic_red);
 } */
 
 /* ### Above Navbar */
@@ -151,7 +157,7 @@ nav ul,li {
 h1 {
     font-size: 1.5em;
     margin-top: 1em;
-    color: #C64350;
+    color: var(--nic_red);
 }
 
 h2 {
@@ -160,17 +166,17 @@ h2 {
 }
 h2:before {
     content: '>> ';
-    color: #C64350;
+    color: var(--nic_red);
 }
 
 h3 {
     font-size: 1.2em;
     margin-top: 1.3em;
-    /* color: #C64350; */
+    /* color: var(--nic_red); */
 }
 h3:before {
     content: '>>> ';
-    color: #C64350;
+    color: var(--nic_red);
 }
 
 h4 {
@@ -179,7 +185,7 @@ h4 {
 }
 h4:before {
     content: '>>>> ';
-    color: #C64350;
+    color: var(--nic_red);
 }
 
 h5 {
@@ -388,7 +394,7 @@ blockquote {
     /* line-height: 1.2; */
     /* color: #000; */
 
-    border-left: 8px solid #C64350;
+    border-left: 8px solid var(--nic_red);
     margin-top: 1em;
     margin-bottom: 1em;
 
@@ -401,15 +407,15 @@ blockquote {
 
     border-top-style: solid;
     border-top-width: 1px;
-    border-top-color: #C64350;
+    border-top-color: var(--nic_red);
 
     border-right-style: solid;
     border-right-width: 1px;
-    border-right-color: #C64350;
+    border-right-color: var(--nic_red);
 
     border-bottom-style: solid;
     border-bottom-width: 1px;
-    border-bottom-color: #C64350;
+    border-bottom-color: var(--nic_red);
 
     /* border-left-style: solid;
     border-left-width: 15px;
@@ -656,7 +662,7 @@ table {
     max-width: 165px;
 }
 #about .primary strong {
-    color: #C64350;
+    color: var(--nic_red);
     display: block;
     font-size: 1.286em;
 }
@@ -760,7 +766,7 @@ li:first-child .hentry, #content > .hentry {
 	}
 
 	#about-author strong {
-		color: #C64350;
+		color: var(--nic_red);
 		clear: both;
 		display: block;
 		font-size: 1.429em;
@@ -904,7 +910,7 @@ li:first-child .hentry, #content > .hentry {
 }
 
 .separator {
-    color: #C64350;
+    color: var(--nic_red);
     font-size: 1.2em;
 }
 
@@ -1006,7 +1012,7 @@ li:first-child .hentry, #content > .hentry {
 }
 .datestamp-starting:after {
     content: ' > starting note';
-    /* color: #C64350; */
+    /* color: var(--nic_red); */
 }
 
 .datestamp-update {
@@ -1024,7 +1030,7 @@ li:first-child .hentry, #content > .hentry {
 }
 .datestamp-update:after {
     content: ' > update';
-    /* color: #C64350; */
+    /* color: var(--nic_red); */
 }
 
 
@@ -1073,7 +1079,7 @@ li:first-child .hentry, #content > .hentry {
 /* BOOKS QUOTES */
 
 .book_quote {
-    border-left: 8px solid #C64350;
+    border-left: 8px solid var(--nic_red);
     margin-top: 0.5em;
     margin-bottom: 0.5em;
     padding-top: 0.5em;
@@ -1128,7 +1134,7 @@ li:first-child .hentry, #content > .hentry {
 .toc ul li::before {
     /* content: "\2022";  Add content: \2022 is the CSS Code/unicode for a bullet */
     content: "> ";
-    color: #C64350; /* Change the color */
+    color: var(--nic_red); /* Change the color */
     font-weight: bold; /* If you want it to be bold */
     display: inline-block; /* Needed to add space between the bullet and the text */
     width: 1em; /* Also needed for space (tweak if needed) */
