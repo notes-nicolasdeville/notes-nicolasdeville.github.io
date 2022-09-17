@@ -8,6 +8,21 @@ url = "/ABOUT/"
 title = ""
 
 [[input.files]]
+path = "helpers/keyboard-shortcuts/index.html"
+url = "/helpers/keyboard-shortcuts"
+title = "My keyboard shortcuts"
+
+[[input.files]]
+path = "learning/computer-science/index.html"
+url = "/learning/computer-science"
+title = "Learning Computer Science"
+
+[[input.files]]
+path = "b2b-sales/email-automation/index.html"
+url = "/b2b-sales/email-automation"
+title = "Email Automation for Sales outreaches"
+
+[[input.files]]
 path = "learning/css/index.html"
 url = "/learning/css"
 title = "Learning CSS"
@@ -81,11 +96,6 @@ title = "How to get a website's metadata with Python"
 path = "interests/tea/index.html"
 url = "/interests/tea"
 title = "Tea"
-
-[[input.files]]
-path = "learning/computer-science/index.html"
-url = "/learning/computer-science"
-title = "Learning Computer Science"
 
 [[input.files]]
 path = "python/pip/index.html"
@@ -186,11 +196,6 @@ title = "Learning Python"
 path = "interests/watches/index.html"
 url = "/interests/watches"
 title = "Watches"
-
-[[input.files]]
-path = "b2b-sales/email-automation/index.html"
-url = "/b2b-sales/email-automation"
-title = "Email Automation for Sales outreaches"
 
 [[input.files]]
 path = "b2b-sales/email-validation/index.html"
@@ -573,11 +578,6 @@ url = "/helpers/apis"
 title = "APIs"
 
 [[input.files]]
-path = "helpers/keyboard-shortcuts/index.html"
-url = "/helpers/keyboard-shortcuts"
-title = "My keyboard shortcuts"
-
-[[input.files]]
 path = "helpers/iframe/index.html"
 url = "/helpers/iframe"
 title = "iFrame"
@@ -633,14 +633,14 @@ url = "/apps/radar"
 title = "Apps on my radar"
 
 [[input.files]]
-path = "python/books/index.html"
-url = "/python/books"
-title = "My Python Books Library"
-
-[[input.files]]
 path = "b2b-sales/books/index.html"
 url = "/b2b-sales/books"
 title = "My B2B Books Library"
+
+[[input.files]]
+path = "python/books/index.html"
+url = "/python/books"
+title = "My Python Books Library"
 
 [[input.files]]
 path = "books/library/index.html"
@@ -1798,14 +1798,14 @@ url = "/books/library"
 title = "My Books Library"
 
 [[input.files]]
-path = "b2b-sales/books/index.html"
-url = "/b2b-sales/books"
-title = "My B2B Books Library"
-
-[[input.files]]
 path = "python/books/index.html"
 url = "/python/books"
 title = "My Python Books Library"
+
+[[input.files]]
+path = "b2b-sales/books/index.html"
+url = "/b2b-sales/books"
+title = "My B2B Books Library"
 
 [[input.files]]
 path = "apps/library/index.html"
