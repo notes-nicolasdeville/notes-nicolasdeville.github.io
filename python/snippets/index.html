@@ -12,7 +12,7 @@
 
 
 
-        <meta name="description" content="a collection of snippets I use" />
+        <meta name="description" content="a collection of useful snippets" />
 
     <!-- for Stork seach engine -->
     <link rel="stylesheet" href="https://files.stork-search.net/basic.css" /> 
@@ -33,7 +33,7 @@
             </div>
 
             <div class="above-navbar">
-                <div class="last_updated">17 Sep 2022 | 09:23</div>
+                <div class="last_updated">17 Sep 2022 | 11:54</div>
                 <div>
                     <p class="notes_count">
                         <a href="https://notes.nicolasdeville.com/tags">by tags</a> 
@@ -44,7 +44,7 @@
                         <span style="color:#C74350">|</span>
                         <a href="https://notes.nicolasdeville.com/2022/">2022</a> 
                         <span style="color:#C74350">|</span> 
-                        357 notes
+                        362 notes
                     </p>
                 </div>
             </div>
@@ -79,7 +79,7 @@
             </h1>
             <p class="header_summary">
                 <main> <!-- for indexing by Stork -->
-                    <p>a collection of snippets I use</p>
+                    <p>a collection of useful snippets</p>
                 </main>
             </p>
         </header>
@@ -88,14 +88,14 @@
 <footer class="post-info">
 
     <p>
-        10 Sep 2022 <span class="separator">|</span> in <a class="link_tag" href="https://notes.nicolasdeville.com/python/">python</a>
+        17 Sep 2022 <span class="separator">|</span> in <a class="link_tag" href="https://notes.nicolasdeville.com/python/">python</a>
  tags: <a class="link_tag" href="https://notes.nicolasdeville.com/tag/snippets.html">snippets</a>
 <a class="link_tag" href="https://notes.nicolasdeville.com/tag/scripts.html">scripts</a>
 
         <!-- added 4/7 -->
         <!-- 		<br />
-        <abbr class="modified" title="2022-09-10T12:01:10.663441+02:00">
-                Updated: 10 Sep 2022
+        <abbr class="modified" title="2022-09-17T10:42:40.725988+02:00">
+                Updated: 17 Sep 2022
         </abbr>
  -->
 
@@ -104,7 +104,21 @@
     
 
 </footer>            <main> <!-- for indexing by Stork -->
-                <p><span class="datestamp">06 Sep 2022</span>   </p>
+                <div class="toc"><span class="toctitle">Table of Contents</span><ul>
+<li><a href="#identify-if-all-caps">identify if all caps</a></li>
+<li><a href="#capitalise-strings">capitalise strings</a></li>
+<li><a href="#print-list-with-index">print list with index</a></li>
+<li><a href="#print-exception-error">print exception error</a></li>
+<li><a href="#printing-to-file">printing to file</a><ul>
+<li><a href="#easiest-method">easiest method</a></li>
+<li><a href="#redirecting-a-pythons-script-output-in-the-terminal">redirecting a Python's script output in the terminal</a></li>
+<li><a href="#redirecting-the-standard-output-stream">redirecting the Standard Output Stream</a></li>
+</ul>
+</li>
+<li><a href="#csv-to-database-with-pandas">CSV to database with Pandas</a></li>
+</ul>
+</div>
+<p><span class="datestamp">06 Sep 2022</span>   </p>
 <h2 id="identify-if-all-caps">identify if all caps</h2>
 <div class="highlight"><pre><span></span><code><span class="k">if</span> <span class="nb">all</span><span class="p">(</span><span class="n">char</span><span class="o">.</span><span class="n">isupper</span><span class="p">()</span> <span class="k">for</span> <span class="n">char</span> <span class="ow">in</span> <span class="n">first</span><span class="p">):</span>
 </code></pre></div>
@@ -192,6 +206,10 @@ ERIC ----&gt; Eric
     <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;TEST&quot;</span><span class="p">)</span>
     <span class="n">sys</span><span class="o">.</span><span class="n">stdout</span> <span class="o">=</span> <span class="n">original_stdout</span> <span class="c1"># reverts to original stdout</span>
 </code></pre></div>
+
+<h2 id="csv-to-database-with-pandas">CSV to database with Pandas</h2>
+<blockquote class="twitter-tweet"><p lang="en" dir="ltr">Did you know you can save a <a href="https://twitter.com/hashtag/pandas?src=hash&amp;ref_src=twsrc%5Etfw">#pandas</a> 🐼 DataFrame into a database?<br><br>All you need is a valid database connection and then you can use the `to_sql()` method.<br><br>Here&#39;s an example using <a href="https://twitter.com/hashtag/SQLite?src=hash&amp;ref_src=twsrc%5Etfw">#SQLite</a> and <a href="https://twitter.com/hashtag/Python?src=hash&amp;ref_src=twsrc%5Etfw">#Python</a> 🐍🔥 <a href="https://t.co/S8vmFTyNKh">pic.twitter.com/S8vmFTyNKh</a></p>&mdash; Mike Driscoll (@driscollis) <a href="https://twitter.com/driscollis/status/1564251562473553922?ref_src=twsrc%5Etfw">August 29, 2022</a></blockquote>
+<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
             </main>
         </div><!-- /.entry-content -->
     </article>

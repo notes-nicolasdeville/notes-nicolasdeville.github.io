@@ -8,9 +8,49 @@ url = "/ABOUT/"
 title = ""
 
 [[input.files]]
+path = "random/quotes/index.html"
+url = "/random/quotes"
+title = "My favourite quotes"
+
+[[input.files]]
+path = "learning/speed-reading/index.html"
+url = "/learning/speed-reading"
+title = "Learning Speed Reading"
+
+[[input.files]]
 path = "helpers/keyboard-shortcuts/index.html"
 url = "/helpers/keyboard-shortcuts"
 title = "My keyboard shortcuts"
+
+[[input.files]]
+path = "interests/diabolo/index.html"
+url = "/interests/diabolo"
+title = "Diabolo"
+
+[[input.files]]
+path = "interests/traditional-archery/index.html"
+url = "/interests/traditional-archery"
+title = "Traditional Archery"
+
+[[input.files]]
+path = "python/snippets/index.html"
+url = "/python/snippets"
+title = "Python Snippets"
+
+[[input.files]]
+path = "home-office/unifi/index.html"
+url = "/home-office/unifi"
+title = "Unifi Network"
+
+[[input.files]]
+path = "home-office/load-balancing/index.html"
+url = "/home-office/load-balancing"
+title = "Load Balancing my internet connection"
+
+[[input.files]]
+path = "projects/clipee/index.html"
+url = "/projects/clipee"
+title = "Clipee"
 
 [[input.files]]
 path = "learning/computer-science/index.html"
@@ -308,11 +348,6 @@ url = "/apps/alfred"
 title = "Alfred"
 
 [[input.files]]
-path = "python/snippets/index.html"
-url = "/python/snippets"
-title = "Python Snippets"
-
-[[input.files]]
 path = "b2b-sales/outbound/index.html"
 url = "/b2b-sales/outbound"
 title = "Outbound Lead Generation"
@@ -421,11 +456,6 @@ title = "Vodafone Kabel"
 path = "interests/tactical-pens/index.html"
 url = "/interests/tactical-pens"
 title = "Tactical Pens"
-
-[[input.files]]
-path = "interests/traditional-archery/index.html"
-url = "/interests/traditional-archery"
-title = "Traditional Archery"
 
 [[input.files]]
 path = "interests/mechanical-keyboards/index.html"
@@ -581,11 +611,6 @@ title = "APIs"
 path = "helpers/iframe/index.html"
 url = "/helpers/iframe"
 title = "iFrame"
-
-[[input.files]]
-path = "interests/diabolo/index.html"
-url = "/interests/diabolo"
-title = "Diabolo"
 
 [[input.files]]
 path = "interests/the-doors/index.html"
