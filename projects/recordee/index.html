@@ -33,7 +33,7 @@
             </div>
 
             <div class="above-navbar">
-                <div class="last_updated">18 Sep 2022 | 19:39</div>
+                <div class="last_updated">18 Sep 2022 | 21:57</div>
                 <div>
                     <p class="notes_count">
                         <a href="https://notes.nicolasdeville.com/tags">by tags</a> 
@@ -44,7 +44,7 @@
                         <span style="color:#C74350">|</span>
                         <a href="https://notes.nicolasdeville.com/2022/">2022</a> 
                         <span style="color:#C74350">|</span> 
-                        368 notes
+                        369 notes
                     </p>
                 </div>
             </div>
@@ -94,7 +94,7 @@
 
         <!-- added 4/7 -->
         <!-- 		<br />
-        <abbr class="modified" title="2022-09-18T19:39:02.875224+02:00">
+        <abbr class="modified" title="2022-09-18T21:51:30.037219+02:00">
                 Updated: 18 Sep 2022
         </abbr>
  -->
@@ -110,7 +110,8 @@
 <p>I love the simplicity and efficiency of Just Press Record, so it still requires me some tedious tasks when back at my computer to extract the transcript for each recording individually.   </p>
 <p>Goal here will be a Python script to:   </p>
 <ul>
-<li>fetch <code>.m4a</code> recording from local iCloud folder (<code>/iCloud Drive/Just Press Record/</code> with one subfolder by day)</li>
+<li>fetch <code>.m4a</code> recording from local iCloud folder ([<a href="../../helpers/icloud-drive/index.html">Nic Note: iCloud Drive</a>]) with one subfolder by day)</li>
+<li>convert <code>.m4a</code> to <code>.wav</code> which seems to be the primary format accepted by speech_recognition  </li>
 <li>transcribe (speech to text)</li>
 <li>generate markdown note in a Drafts folder in my notes folder</li>
 </ul>
@@ -163,6 +164,8 @@
 </code></pre></div>
 
 <p>from: <a href="https://hackernoon.com/how-to-convert-speech-to-text-in-python-q0263tzp" target="_blank">https://hackernoon.com/how-to-convert-speech-to-text-in-python-q0263tzp</a>   </p>
+<p>Getting <code>pydub.exceptions.CouldntDecodeError: Decoding failed. ffmpeg returned error code: 1</code>.<br>
+Need to use <code>AudioSegment.from_file(filename, "m4a")</code>?  </p>
 <div class="highlight"><pre><span></span><code><span class="c1"># importing libraries </span>
 <span class="kn">import</span> <span class="nn">speech_recognition</span> <span class="k">as</span> <span class="nn">sr</span> 
 <span class="kn">import</span> <span class="nn">os</span> 
@@ -221,6 +224,7 @@
 <h2 id="python-script-to-convert-m4a-files-to-wav-files">Python script to convert m4a files to wav files</h2>
 <script src="https://gist.github.com/arjunsharma97/0ecac61da2937ec52baf61af1aa1b759.js"></script>
 
+<p><span class="datestamp">18 Sep 2022</span> Let's try to focus first on conversion to <code>.wav</code> and then tackle speech-recognition.  </p>
 <h1 id="resources">Resources</h1>
 <div class="link_border">
 <div class="link_title">Transcribe Audio | Python Tutorial</div>

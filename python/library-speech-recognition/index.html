@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="generator" content="Pelican" />
+    <title>Library: speech_recognition</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="https://notes.nicolasdeville.com/theme/css/main.css" />
+
+
+
+
+    <!-- for Stork seach engine -->
+    <link rel="stylesheet" href="https://files.stork-search.net/basic.css" /> 
+
+</head>
+
+<body id="index" class="body">
+        <header id="banner" class="body">
+
+            <div class="logo-and-search">
+                <a href="https://notes.nicolasdeville.com/"><img class="header_image" src="https://notes.nicolasdeville.com/images/nic_notes_header.svg" alt="Nic's notes" width="266"/></a>
+
+                <!-- for Stork seach engine -->
+                <div class="search-input-block">
+                    <input data-stork="sitesearch" class="search-input" placeholder="Search..." autofocus="autofocus"/>
+                    <div data-stork="sitesearch-output"></div>
+                </div>
+            </div>
+
+            <div class="above-navbar">
+                <div class="last_updated">18 Sep 2022 | 21:57</div>
+                <div>
+                    <p class="notes_count">
+                        <a href="https://notes.nicolasdeville.com/tags">by tags</a> 
+                        <span style="color:#C74350">|</span> 
+                        <a href="https://notes.nicolasdeville.com/2020/">2020</a>
+                        <span style="color:#C74350">|</span>
+                        <a href="https://notes.nicolasdeville.com/2021/">2021</a> 
+                        <span style="color:#C74350">|</span>
+                        <a href="https://notes.nicolasdeville.com/2022/">2022</a> 
+                        <span style="color:#C74350">|</span> 
+                        369 notes
+                    </p>
+                </div>
+            </div>
+
+            <nav><ul>
+                <li><a href="https://notes.nicolasdeville.com/apps/">apps</a></li>
+                <li><a href="https://notes.nicolasdeville.com/b2b-sales/">b2b sales</a></li>
+                <li><a href="https://notes.nicolasdeville.com/books/">books</a></li>
+                <li><a href="https://notes.nicolasdeville.com/careerplaybook/">#careerplaybook</a></li>
+                <li><a href="https://notes.nicolasdeville.com/helpers/">helpers</a></li>
+                <li><a href="https://notes.nicolasdeville.com/home-office/">home office</a></li>
+                <li><a href="https://notes.nicolasdeville.com/interests/">interests</a></li>
+                <li><a href="https://notes.nicolasdeville.com/leadership/">leadership</a></li>
+                <li><a href="https://notes.nicolasdeville.com/learning/">learning</a></li>
+                <li><a href="https://notes.nicolasdeville.com/movies/">movies</a></li>
+                <li><a href="https://notes.nicolasdeville.com/projects/">projects</a></li>
+                <li class="active"><a href="https://notes.nicolasdeville.com/python/">python</a></li>
+                <li><a href="https://notes.nicolasdeville.com/random/">random</a></li>
+                <li><a href="https://notes.nicolasdeville.com/startups/">startups</a></li>
+            </ul></nav>
+        </header>
+
+<section id="content" class="body">
+    <article>
+        <header>
+            <h1 class="entry-title">
+                <main> <!-- for indexing by Stork -->
+                    <a href="https://notes.nicolasdeville.com/python/library-speech-recognition" rel="bookmark"
+                    title="Permalink to Library: speech_recognition">Library: speech_recognition
+                    </a>
+                </main>
+            </h1>
+            <p class="header_summary">
+                <main> <!-- for indexing by Stork -->
+                    
+                </main>
+            </p>
+        </header>
+
+        <div class="entry-content">
+<footer class="post-info">
+
+    <p>
+        18 Sep 2022 <span class="separator">|</span> in <a class="link_tag" href="https://notes.nicolasdeville.com/python/">python</a>
+
+        <!-- added 4/7 -->
+        <!-- 		<br />
+        <abbr class="modified" title="2022-09-18T21:32:28.952286+02:00">
+                Updated: 18 Sep 2022
+        </abbr>
+ -->
+
+    </p>
+
+    
+
+</footer>            <main> <!-- for indexing by Stork -->
+                <p><span class="datestamp">18 Sep 2022</span>   </p>
+<table>
+<thead>
+<tr>
+<th>Library resources</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>PyPI</td>
+<td><a href="https://pypi.org/project/SpeechRecognition/" target="_blank">https://pypi.org/project/SpeechRecognition/</a></td>
+</tr>
+<tr>
+<td>Github</td>
+<td><a href="https://github.com/Uberi/speech_recognition" target="_blank">https://github.com/Uberi/speech_recognition</a></td>
+</tr>
+<tr>
+<td>Documentation</td>
+<td>---</td>
+</tr>
+</tbody>
+</table>
+<div class="highlight"><pre><span></span><code>pip3 install SpeechRecognition
+</code></pre></div>
+
+<h1 id="example">Example</h1>
+<div class="highlight"><pre><span></span><code><span class="ch">#!/usr/bin/env python3</span>
+
+<span class="kn">import</span> <span class="nn">speech_recognition</span> <span class="k">as</span> <span class="nn">sr</span>
+
+<span class="c1"># obtain path to &quot;english.wav&quot; in the same folder as this script</span>
+<span class="kn">from</span> <span class="nn">os</span> <span class="kn">import</span> <span class="n">path</span>
+<span class="n">AUDIO_FILE</span> <span class="o">=</span> <span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">path</span><span class="o">.</span><span class="n">dirname</span><span class="p">(</span><span class="n">path</span><span class="o">.</span><span class="n">realpath</span><span class="p">(</span><span class="vm">__file__</span><span class="p">)),</span> <span class="s2">&quot;english.wav&quot;</span><span class="p">)</span>
+<span class="c1"># AUDIO_FILE = path.join(path.dirname(path.realpath(__file__)), &quot;french.aiff&quot;)</span>
+<span class="c1"># AUDIO_FILE = path.join(path.dirname(path.realpath(__file__)), &quot;chinese.flac&quot;)</span>
+
+<span class="c1"># use the audio file as the audio source</span>
+<span class="n">r</span> <span class="o">=</span> <span class="n">sr</span><span class="o">.</span><span class="n">Recognizer</span><span class="p">()</span>
+<span class="k">with</span> <span class="n">sr</span><span class="o">.</span><span class="n">AudioFile</span><span class="p">(</span><span class="n">AUDIO_FILE</span><span class="p">)</span> <span class="k">as</span> <span class="n">source</span><span class="p">:</span>
+    <span class="n">audio</span> <span class="o">=</span> <span class="n">r</span><span class="o">.</span><span class="n">record</span><span class="p">(</span><span class="n">source</span><span class="p">)</span>  <span class="c1"># read the entire audio file</span>
+
+<span class="c1"># recognize speech using Sphinx</span>
+<span class="k">try</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Sphinx thinks you said &quot;</span> <span class="o">+</span> <span class="n">r</span><span class="o">.</span><span class="n">recognize_sphinx</span><span class="p">(</span><span class="n">audio</span><span class="p">))</span>
+<span class="k">except</span> <span class="n">sr</span><span class="o">.</span><span class="n">UnknownValueError</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Sphinx could not understand audio&quot;</span><span class="p">)</span>
+<span class="k">except</span> <span class="n">sr</span><span class="o">.</span><span class="n">RequestError</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Sphinx error; </span><span class="si">{0}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">e</span><span class="p">))</span>
+
+<span class="c1"># recognize speech using Google Speech Recognition</span>
+<span class="k">try</span><span class="p">:</span>
+    <span class="c1"># for testing purposes, we&#39;re just using the default API key</span>
+    <span class="c1"># to use another API key, use `r.recognize_google(audio, key=&quot;GOOGLE_SPEECH_RECOGNITION_API_KEY&quot;)`</span>
+    <span class="c1"># instead of `r.recognize_google(audio)`</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Google Speech Recognition thinks you said &quot;</span> <span class="o">+</span> <span class="n">r</span><span class="o">.</span><span class="n">recognize_google</span><span class="p">(</span><span class="n">audio</span><span class="p">))</span>
+<span class="k">except</span> <span class="n">sr</span><span class="o">.</span><span class="n">UnknownValueError</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Google Speech Recognition could not understand audio&quot;</span><span class="p">)</span>
+<span class="k">except</span> <span class="n">sr</span><span class="o">.</span><span class="n">RequestError</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Could not request results from Google Speech Recognition service; </span><span class="si">{0}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">e</span><span class="p">))</span>
+
+<span class="c1"># recognize speech using Google Cloud Speech</span>
+<span class="n">GOOGLE_CLOUD_SPEECH_CREDENTIALS</span> <span class="o">=</span> <span class="sa">r</span><span class="s2">&quot;&quot;&quot;INSERT THE CONTENTS OF THE GOOGLE CLOUD SPEECH JSON CREDENTIALS FILE HERE&quot;&quot;&quot;</span>
+<span class="k">try</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Google Cloud Speech thinks you said &quot;</span> <span class="o">+</span> <span class="n">r</span><span class="o">.</span><span class="n">recognize_google_cloud</span><span class="p">(</span><span class="n">audio</span><span class="p">,</span> <span class="n">credentials_json</span><span class="o">=</span><span class="n">GOOGLE_CLOUD_SPEECH_CREDENTIALS</span><span class="p">))</span>
+<span class="k">except</span> <span class="n">sr</span><span class="o">.</span><span class="n">UnknownValueError</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Google Cloud Speech could not understand audio&quot;</span><span class="p">)</span>
+<span class="k">except</span> <span class="n">sr</span><span class="o">.</span><span class="n">RequestError</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Could not request results from Google Cloud Speech service; </span><span class="si">{0}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">e</span><span class="p">))</span>
+
+<span class="c1"># recognize speech using Wit.ai</span>
+<span class="n">WIT_AI_KEY</span> <span class="o">=</span> <span class="s2">&quot;INSERT WIT.AI API KEY HERE&quot;</span>  <span class="c1"># Wit.ai keys are 32-character uppercase alphanumeric strings</span>
+<span class="k">try</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Wit.ai thinks you said &quot;</span> <span class="o">+</span> <span class="n">r</span><span class="o">.</span><span class="n">recognize_wit</span><span class="p">(</span><span class="n">audio</span><span class="p">,</span> <span class="n">key</span><span class="o">=</span><span class="n">WIT_AI_KEY</span><span class="p">))</span>
+<span class="k">except</span> <span class="n">sr</span><span class="o">.</span><span class="n">UnknownValueError</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Wit.ai could not understand audio&quot;</span><span class="p">)</span>
+<span class="k">except</span> <span class="n">sr</span><span class="o">.</span><span class="n">RequestError</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Could not request results from Wit.ai service; </span><span class="si">{0}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">e</span><span class="p">))</span>
+
+<span class="c1"># recognize speech using Microsoft Azure Speech</span>
+<span class="n">AZURE_SPEECH_KEY</span> <span class="o">=</span> <span class="s2">&quot;INSERT AZURE SPEECH API KEY HERE&quot;</span>  <span class="c1"># Microsoft Speech API keys 32-character lowercase hexadecimal strings</span>
+<span class="k">try</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Microsoft Azure Speech thinks you said &quot;</span> <span class="o">+</span> <span class="n">r</span><span class="o">.</span><span class="n">recognize_azure</span><span class="p">(</span><span class="n">audio</span><span class="p">,</span> <span class="n">key</span><span class="o">=</span><span class="n">AZURE_SPEECH_KEY</span><span class="p">))</span>
+<span class="k">except</span> <span class="n">sr</span><span class="o">.</span><span class="n">UnknownValueError</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Microsoft Azure Speech could not understand audio&quot;</span><span class="p">)</span>
+<span class="k">except</span> <span class="n">sr</span><span class="o">.</span><span class="n">RequestError</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Could not request results from Microsoft Azure Speech service; </span><span class="si">{0}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">e</span><span class="p">))</span>
+
+<span class="c1"># recognize speech using Microsoft Bing Voice Recognition</span>
+<span class="n">BING_KEY</span> <span class="o">=</span> <span class="s2">&quot;INSERT BING API KEY HERE&quot;</span>  <span class="c1"># Microsoft Bing Voice Recognition API keys 32-character lowercase hexadecimal strings</span>
+<span class="k">try</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Microsoft Bing Voice Recognition thinks you said &quot;</span> <span class="o">+</span> <span class="n">r</span><span class="o">.</span><span class="n">recognize_bing</span><span class="p">(</span><span class="n">audio</span><span class="p">,</span> <span class="n">key</span><span class="o">=</span><span class="n">BING_KEY</span><span class="p">))</span>
+<span class="k">except</span> <span class="n">sr</span><span class="o">.</span><span class="n">UnknownValueError</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Microsoft Bing Voice Recognition could not understand audio&quot;</span><span class="p">)</span>
+<span class="k">except</span> <span class="n">sr</span><span class="o">.</span><span class="n">RequestError</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Could not request results from Microsoft Bing Voice Recognition service; </span><span class="si">{0}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">e</span><span class="p">))</span>
+
+<span class="c1"># recognize speech using Houndify</span>
+<span class="n">HOUNDIFY_CLIENT_ID</span> <span class="o">=</span> <span class="s2">&quot;INSERT HOUNDIFY CLIENT ID HERE&quot;</span>  <span class="c1"># Houndify client IDs are Base64-encoded strings</span>
+<span class="n">HOUNDIFY_CLIENT_KEY</span> <span class="o">=</span> <span class="s2">&quot;INSERT HOUNDIFY CLIENT KEY HERE&quot;</span>  <span class="c1"># Houndify client keys are Base64-encoded strings</span>
+<span class="k">try</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Houndify thinks you said &quot;</span> <span class="o">+</span> <span class="n">r</span><span class="o">.</span><span class="n">recognize_houndify</span><span class="p">(</span><span class="n">audio</span><span class="p">,</span> <span class="n">client_id</span><span class="o">=</span><span class="n">HOUNDIFY_CLIENT_ID</span><span class="p">,</span> <span class="n">client_key</span><span class="o">=</span><span class="n">HOUNDIFY_CLIENT_KEY</span><span class="p">))</span>
+<span class="k">except</span> <span class="n">sr</span><span class="o">.</span><span class="n">UnknownValueError</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Houndify could not understand audio&quot;</span><span class="p">)</span>
+<span class="k">except</span> <span class="n">sr</span><span class="o">.</span><span class="n">RequestError</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Could not request results from Houndify service; </span><span class="si">{0}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">e</span><span class="p">))</span>
+
+<span class="c1"># recognize speech using IBM Speech to Text</span>
+<span class="n">IBM_USERNAME</span> <span class="o">=</span> <span class="s2">&quot;INSERT IBM SPEECH TO TEXT USERNAME HERE&quot;</span>  <span class="c1"># IBM Speech to Text usernames are strings of the form XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX</span>
+<span class="n">IBM_PASSWORD</span> <span class="o">=</span> <span class="s2">&quot;INSERT IBM SPEECH TO TEXT PASSWORD HERE&quot;</span>  <span class="c1"># IBM Speech to Text passwords are mixed-case alphanumeric strings</span>
+<span class="k">try</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;IBM Speech to Text thinks you said &quot;</span> <span class="o">+</span> <span class="n">r</span><span class="o">.</span><span class="n">recognize_ibm</span><span class="p">(</span><span class="n">audio</span><span class="p">,</span> <span class="n">username</span><span class="o">=</span><span class="n">IBM_USERNAME</span><span class="p">,</span> <span class="n">password</span><span class="o">=</span><span class="n">IBM_PASSWORD</span><span class="p">))</span>
+<span class="k">except</span> <span class="n">sr</span><span class="o">.</span><span class="n">UnknownValueError</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;IBM Speech to Text could not understand audio&quot;</span><span class="p">)</span>
+<span class="k">except</span> <span class="n">sr</span><span class="o">.</span><span class="n">RequestError</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Could not request results from IBM Speech to Text service; </span><span class="si">{0}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">e</span><span class="p">))</span>
+</code></pre></div>
+
+<p>from <a href="https://github.com/Uberi/speech_recognition/blob/master/examples/audio_transcribe.py" target="_blank">https://github.com/Uberi/speech_recognition/blob/master/examples/audio_transcribe.py</a>    </p>
+<h1 id="speech-recognition-services">Speech recognition services</h1>
+<h2 id="google-speech-recognition">Google Speech Recognition</h2>
+<h2 id="google-cloud-speech">Google Cloud Speech</h2>
+<h2 id="witai">Wit.ai</h2>
+<div class="link_border">
+<div class="link_title">Wit.ai</div>
+<div class="link_url"><a href="https://wit.ai/" target="_blank">https://wit.ai/</a></div></div>
+
+<p>Facebook (Meta) product - staying away.   </p>
+<h2 id="microsoft-azure-speech">Microsoft Azure Speech</h2>
+<h2 id="microsoft-bing-voice-recognition">Microsoft Bing Voice Recognition</h2>
+<h2 id="houndify">Houndify</h2>
+<div class="link_border">
+<div class="link_title">The Houndify Voice AI platform</div>
+<div class="link_url"><a href="https://www.soundhound.com/" target="_blank">https://www.soundhound.com/</a></div></div>
+
+<p>Try free, but can't find pricing.   </p>
+<h2 id="ibm-speech-to-text">IBM Speech to Text</h2>
+<div class="link_border">
+<div class="link_title">Speech to Text - IBM Watson  | IBM</div>
+<div class="link_url"><a href="https://www.ibm.com/cloud/watson-speech-to-text" target="_blank">https://www.ibm.com/cloud/watson-speech-to-text</a></div></div>
+
+<p>Pricing: <br>
+<img class="screenshot" src="https://notes.nicolasdeville.com/images/library-speech-recognition/watson-speed-to-text-pricing.jpg" alt="watson-speed-to-text-pricing.jpg"/>  </p>
+            </main>
+        </div><!-- /.entry-content -->
+    </article>
+</section>
+        <section id="extras" class="body">
+
+        <!-- /.blogroll -->
+                <div class="blogroll">
+                        <h2>links</h2>
+                        <ul>
+                            <li><a href="https://indeXall.io">Side project: indeXall.io</a></li>
+                            <li><a href="https://btobsales.eu">Services: BtoBSales.EU</a></li>
+                        </ul>
+                </div>
+
+        <!-- /.social -->
+                <div class="social">
+                        <h2>social</h2>
+                        <ul>
+
+                            <li><a href="https://www.linkedin.com/in/ndeville/">Linkedin</a></li>
+                            <li><a href="https://www.twitter.com/ndeville">Twitter</a></li>
+                        </ul>
+                </div>
+        </section><!-- /#extras -->
+
+        <footer id="contentinfo" class="body">
+                <address id="about" class="vcard body">
+                Powered by <a href="https://github.com/getpelican/pelican" target="_blank">Pelican</a>, 
+                with <a href="https://stork-search.net/" target="_blank">Stork</a> & <a href="https://github.com/pelican-plugins/search" target="_blank">Pelican Search plugin</a>.
+                <span style="color:#C74350">|</span> <img src="https://notes.nicolasdeville.com/images/python.svg" alt="python_logo" width="16" style="vertical-align: middle;"/> <a href="https://www.python.org/" target="_blank">Python</a> 
+                
+                </address><!-- /#about -->
+
+        </footer><!-- /#contentinfo -->
+
+
+<!-- JS -->
+
+<!-- for Stork seach engine -->
+<script src="https://files.stork-search.net/releases/v1.2.1/stork.js"></script>
+<script>
+    stork.register("sitesearch", "https://notes.nicolasdeville.com/search-index.st")
+</script>
+
+<!-- my JS script (with code block copy) -->
+<script src="https://notes.nicolasdeville.com/theme/js/nic.js"></script>
+
+</body>
+</html>

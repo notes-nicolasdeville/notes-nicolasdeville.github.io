@@ -8,19 +8,29 @@ url = "/ABOUT/"
 title = ""
 
 [[input.files]]
+path = "projects/notes/index.html"
+url = "/projects/notes"
+title = "This site"
+
+[[input.files]]
 path = "projects/recordee/index.html"
 url = "/projects/recordee"
 title = "Recordee"
 
 [[input.files]]
-path = "python/library-pydub/index.html"
-url = "/python/library-pydub"
-title = "Library: pydub"
+path = "python/library-speech-recognition/index.html"
+url = "/python/library-speech-recognition"
+title = "Library: speech_recognition"
 
 [[input.files]]
 path = "helpers/ffprobe/index.html"
 url = "/helpers/ffprobe"
-title = "Installing ffmpeg and ffprobe on macOS manually"
+title = "ffmpeg and ffprobe"
+
+[[input.files]]
+path = "python/library-pydub/index.html"
+url = "/python/library-pydub"
+title = "Library: pydub"
 
 [[input.files]]
 path = "helpers/icloud-drive/index.html"
@@ -106,11 +116,6 @@ title = "Learning CSS"
 path = "home-office/f1-models/index.html"
 url = "/home-office/f1-models"
 title = "F1 Model Cars"
-
-[[input.files]]
-path = "projects/notes/index.html"
-url = "/projects/notes"
-title = "This site"
 
 [[input.files]]
 path = "python/library-pelican/index.html"
@@ -688,14 +693,14 @@ url = "/apps/radar"
 title = "Apps on my radar"
 
 [[input.files]]
-path = "b2b-sales/books/index.html"
-url = "/b2b-sales/books"
-title = "My B2B Books Library"
-
-[[input.files]]
 path = "python/books/index.html"
 url = "/python/books"
 title = "My Python Books Library"
+
+[[input.files]]
+path = "b2b-sales/books/index.html"
+url = "/b2b-sales/books"
+title = "My B2B Books Library"
 
 [[input.files]]
 path = "books/library/index.html"
@@ -1853,14 +1858,14 @@ url = "/books/library"
 title = "My Books Library"
 
 [[input.files]]
-path = "python/books/index.html"
-url = "/python/books"
-title = "My Python Books Library"
-
-[[input.files]]
 path = "b2b-sales/books/index.html"
 url = "/b2b-sales/books"
 title = "My B2B Books Library"
+
+[[input.files]]
+path = "python/books/index.html"
+url = "/python/books"
+title = "My Python Books Library"
 
 [[input.files]]
 path = "apps/library/index.html"

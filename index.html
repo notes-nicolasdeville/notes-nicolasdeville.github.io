@@ -32,7 +32,7 @@
             </div>
 
             <div class="above-navbar">
-                <div class="last_updated">18 Sep 2022 | 19:39</div>
+                <div class="last_updated">18 Sep 2022 | 21:57</div>
                 <div>
                     <p class="notes_count">
                         <a href="https://notes.nicolasdeville.com/tags">by tags</a> 
@@ -43,7 +43,7 @@
                         <span style="color:#C74350">|</span>
                         <a href="https://notes.nicolasdeville.com/2022/">2022</a> 
                         <span style="color:#C74350">|</span> 
-                        368 notes
+                        369 notes
                     </p>
                 </div>
             </div>
@@ -70,7 +70,7 @@
 
 <!-- 220911 moved to base.html -->
 <!-- <p class="notes_count">
-    368 notes 
+    369 notes 
     <span style="color:#C74350">|</span> 
     <a href="https://notes.nicolasdeville.com/tags">by tags</a> 
     <span style="color:#C74350">|</span> 
@@ -89,12 +89,12 @@
             <hr/>
 
                 <article class="hentry">
-                    <h1 class="entry-title"><a href="https://notes.nicolasdeville.com/projects/recordee">Recordee</a></h1>
+                    <h1 class="entry-title"><a href="https://notes.nicolasdeville.com/projects/notes">This site</a></h1>
 
                     <!-- added 4/7 -->
                     <div>
                         <p class="header_summary">
-                            <p>End-to-end automated workflow from voice recording to markdown note.</p>
+                            <p>keeping notes about building this site</p>
                         </p>
                     </div>
 
@@ -102,12 +102,10 @@
 
     <p>
         18 Sep 2022 <span class="separator">|</span> in <a class="link_tag" href="https://notes.nicolasdeville.com/projects/">projects</a>
- tags: <a class="link_tag" href="https://notes.nicolasdeville.com/tag/python.html">python</a>
-<a class="link_tag" href="https://notes.nicolasdeville.com/tag/automation.html">automation</a>
 
         <!-- added 4/7 -->
         <!-- 		<br />
-        <abbr class="modified" title="2022-09-18T19:39:02.875224+02:00">
+        <abbr class="modified" title="2022-09-18T21:57:54.375163+02:00">
                 Updated: 18 Sep 2022
         </abbr>
  -->
@@ -116,147 +114,279 @@
 
     
 
-</footer><p><span class="datestamp">17 Sep 2022</span>   </p>
-<p>I've been using Just Press Record [<a href="../../apps/just-press-record/index.html">Nic Note: Just Press Record</a>] for the last 2+ years for on-the-go, in-my-bath or at-my-desk long voice recordings.  </p>
-<p>A lot of these recordings are intended to be actioned, or serve as basis for an email, a blog or a note.  </p>
-<p>I love the simplicity and efficiency of Just Press Record, so it still requires me some tedious tasks when back at my computer to extract the transcript for each recording individually.   </p>
-<p>Goal here will be a Python script to:   </p>
-<ul>
-<li>fetch <code>.m4a</code> recording from local iCloud folder (<code>/iCloud Drive/Just Press Record/</code> with one subfolder by day)</li>
-<li>transcribe (speech to text)</li>
-<li>generate markdown note in a Drafts folder in my notes folder</li>
+</footer><div class="toc"><span class="toctitle">Table of Contents</span><ul>
+<li><a href="#static-site-generators">Static Site Generators</a><ul>
+<li><a href="#javascript-nodejs">Javascript (Node.js)</a></li>
+<li><a href="#go">Go</a></li>
 </ul>
-<h1 id="snippets">Snippets</h1>
-<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">pydub</span> <span class="kn">import</span> <span class="n">AudioSegment</span>
-<span class="n">audio</span> <span class="o">=</span> <span class="n">AudioSegment</span><span class="o">.</span><span class="n">from_file</span><span class="p">(</span><span class="s1">&#39;file.m4a&#39;</span><span class="p">)</span>
+</li>
+<li><a href="#script-generated-notes">Script-generated notes</a></li>
+<li><a href="#deploy">Deploy</a></li>
+<li><a href="#further-building">Further building</a><ul>
+<li><a href="#copy-code-block">Copy Code Block</a></li>
+<li><a href="#foating-table-of-contents">Foating Table Of Contents</a></li>
+<li><a href="#next-steps">Next Steps</a><ul>
+<li><a href="#use-favicons-in-external-links">use favicons in external links</a></li>
+<li><a href="#seo">SEO</a></li>
+<li><a href="#css-update-styling-for-search-results">CSS update / styling for search results</a></li>
+<li><a href="#image-processing">Image processing</a></li>
+<li><a href="#image-enlarging">Image enlarging</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#inspiration-ideas">Inspiration / Ideas</a><ul>
+<li><a href="#darkday-mode">dark/day mode</a></li>
+<li><a href="#design">design</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<p><span class="datestamp-starting">13 Aug 2022</span>           </p>
+<p>I started this static site 3 months ago (though I imported older blog posts and notes in it).  </p>
+<p>Here is the original note: [<a href="../../python/library-pelican/index.html">Nic Note: Library: Pelican</a>]  </p>
+<p>I will use this note to keep track of further building and maintenance of it, outside of Pelican-related things.    </p>
+<h1 id="static-site-generators">Static Site Generators</h1>
+<p>As Python is my main language, I am using the Python static site generator library Pelican:   </p>
+<p>[<a href="../../python/library-pelican/index.html">Nic Note: Library: Pelican</a>]  </p>
+<p>Pelican has 11k stars on Github, and 1.8k forks:      </p>
+<div class="link_border">
+<div class="link_title">GitHub - getpelican/pelican: Static site generator that supports Markdown and reST syntax. Powered by Python.</div>
+<div class="link_url"><a href="https://github.com/getpelican/pelican" target="_blank">https://github.com/getpelican/pelican</a></div></div>
+
+<p>There are others available in different programming languages though:</p>
+<h2 id="javascript-nodejs">Javascript (Node.js)</h2>
+<div class="link_border">
+<div class="link_title">Eleventy</div>
+<div class="link_tagline">a simpler static site generator</div>
+<div class="link_url"><a href="https://www.11ty.dev/" target="_blank">https://www.11ty.dev/</a></div></div>
+
+<h2 id="go">Go</h2>
+<p>Hugo has 61k stars on Github and 7k forks!</p>
+<div class="link_border">
+<div class="link_title">Hugo</div>
+<div class="link_tagline">The world’s fastest framework for building websites</div>
+<div class="link_url"><a href="https://gohugo.io/" target="_blank">https://gohugo.io/</a></div></div>
+
+<p>Github: <a href="https://github.com/gohugoio/hugo" target="_blank">https://github.com/gohugoio/hugo</a>     </p>
+<h1 id="script-generated-notes">Script-generated notes</h1>
+<p>Some of the notes on this site are generated via Python scripts - basically all the "lists" notes:   </p>
+<ul>
+<li>
+<p>Movies library:  </p>
+<ul>
+<li>Project: </li>
+<li>List: [<a href="../../movies/1000/index.html">Nic Note: My Top 1,000 Movies</a>]</li>
+</ul>
+</li>
+<li>
+<p>Music library:   </p>
+<ul>
+<li>Project: </li>
+<li>List: </li>
+</ul>
+</li>
+<li>
+<p>Apps library:  </p>
+<ul>
+<li>Project: </li>
+<li>List: [<a href="../../apps/library/index.html">Nic Note: My Apps Library</a>]</li>
+</ul>
+</li>
+<li>
+<p>Clipper:  </p>
+<ul>
+<li>Project: </li>
+<li>List: [<a href="../../helpers/clipper/index.html">Nic Note: My web clipboard</a>]</li>
+</ul>
+</li>
+</ul>
+<h1 id="deploy">Deploy</h1>
+<p><code>cd</code> to notes folder with HTML output  </p>
+<div class="highlight"><pre><span></span><code>git add .
 </code></pre></div>
 
-<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">speech_recognition</span> <span class="k">as</span> <span class="nn">sr</span>
-
-<span class="n">r</span> <span class="o">=</span> <span class="n">sr</span><span class="o">.</span><span class="n">Recognizer</span><span class="p">()</span>
-<span class="k">with</span> <span class="n">sr</span><span class="o">.</span><span class="n">AudioFile</span><span class="p">(</span><span class="s1">&#39;sampleMp3.WAV&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">source</span><span class="p">:</span>
-    <span class="n">audio</span> <span class="o">=</span> <span class="n">r</span><span class="o">.</span><span class="n">record</span><span class="p">(</span><span class="n">source</span><span class="p">,</span> <span class="n">duration</span><span class="o">=</span><span class="mi">60</span><span class="p">)</span> 
-
-<span class="n">command</span> <span class="o">=</span> <span class="n">r</span><span class="o">.</span><span class="n">recognize_google</span><span class="p">(</span><span class="n">audio</span><span class="p">)</span>
-
-<span class="n">text_file</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;Output.txt&quot;</span><span class="p">,</span> <span class="s2">&quot;w&quot;</span><span class="p">)</span>
-<span class="n">text_file</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">command</span><span class="p">)</span>
-<span class="n">text_file</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+<p><code>.</code> signifies all files  </p>
+<div class="highlight"><pre><span></span><code>git commit -m <span class="s1">&#39;daily update&#39;</span>
 </code></pre></div>
 
-<h2 id="long-sample-audio">Long Sample Audio</h2>
-<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">os</span> 
-<span class="kn">from</span> <span class="nn">pydub</span> <span class="kn">import</span> <span class="n">AudioSegment</span>
-<span class="kn">import</span> <span class="nn">speech_recognition</span> <span class="k">as</span> <span class="nn">sr</span>
-<span class="kn">from</span> <span class="nn">pydub.silence</span> <span class="kn">import</span> <span class="n">split_on_silence</span>
-
-<span class="n">recognizer</span> <span class="o">=</span> <span class="n">sr</span><span class="o">.</span><span class="n">Recognizer</span><span class="p">()</span>
-
-<span class="k">def</span> <span class="nf">load_chunks</span><span class="p">(</span><span class="n">filename</span><span class="p">):</span>
-    <span class="n">long_audio</span> <span class="o">=</span> <span class="n">AudioSegment</span><span class="o">.</span><span class="n">from_mp3</span><span class="p">(</span><span class="n">filename</span><span class="p">)</span>
-    <span class="n">audio_chunks</span> <span class="o">=</span> <span class="n">split_on_silence</span><span class="p">(</span>
-        <span class="n">long_audio</span><span class="p">,</span> <span class="n">min_silence_len</span><span class="o">=</span><span class="mi">1800</span><span class="p">,</span>
-        <span class="n">silence_thresh</span><span class="o">=-</span><span class="mi">17</span>
-    <span class="p">)</span>
-    <span class="k">return</span> <span class="n">audio_chunks</span>
-
-<span class="k">for</span> <span class="n">audio_chunk</span> <span class="ow">in</span> <span class="n">load_chunks</span><span class="p">(</span><span class="s1">&#39;./sample_audio/long_audio.mp3&#39;</span><span class="p">):</span>
-    <span class="n">audio_chunk</span><span class="o">.</span><span class="n">export</span><span class="p">(</span><span class="s2">&quot;temp&quot;</span><span class="p">,</span> <span class="nb">format</span><span class="o">=</span><span class="s2">&quot;wav&quot;</span><span class="p">)</span>
-    <span class="k">with</span> <span class="n">sr</span><span class="o">.</span><span class="n">AudioFile</span><span class="p">(</span><span class="s2">&quot;temp&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">source</span><span class="p">:</span>
-        <span class="n">audio</span> <span class="o">=</span> <span class="n">recognizer</span><span class="o">.</span><span class="n">listen</span><span class="p">(</span><span class="n">source</span><span class="p">)</span>
-        <span class="k">try</span><span class="p">:</span>
-            <span class="n">text</span> <span class="o">=</span> <span class="n">recognizer</span><span class="o">.</span><span class="n">recognize_google</span><span class="p">(</span><span class="n">audio</span><span class="p">)</span>
-            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Chunk : </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">text</span><span class="p">))</span>
-        <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">ex</span><span class="p">:</span>
-            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Error occured&quot;</span><span class="p">)</span>
-            <span class="nb">print</span><span class="p">(</span><span class="n">ex</span><span class="p">)</span>
-
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;++++++&quot;</span><span class="p">)</span>
+<p>changing message in quotes as needed</p>
+<div class="highlight"><pre><span></span><code>git push origin main
 </code></pre></div>
 
-<p>from: <a href="https://hackernoon.com/how-to-convert-speech-to-text-in-python-q0263tzp" target="_blank">https://hackernoon.com/how-to-convert-speech-to-text-in-python-q0263tzp</a>   </p>
-<div class="highlight"><pre><span></span><code><span class="c1"># importing libraries </span>
-<span class="kn">import</span> <span class="nn">speech_recognition</span> <span class="k">as</span> <span class="nn">sr</span> 
-<span class="kn">import</span> <span class="nn">os</span> 
-<span class="kn">from</span> <span class="nn">pydub</span> <span class="kn">import</span> <span class="n">AudioSegment</span>
-<span class="kn">from</span> <span class="nn">pydub.silence</span> <span class="kn">import</span> <span class="n">split_on_silence</span>
+<p>assuming <code>origin</code> and <code>main</code> set in Git (eg not <code>master</code>)    </p>
+<p><span class="datestamp">11 Sep 2022</span>   </p>
+<h1 id="further-building">Further building</h1>
+<h2 id="copy-code-block">Copy Code Block</h2>
+<p>Using my own site to surface code snippets or scripts during my programming time has become a habit.   </p>
+<p>As I've set the search bar to be active upon page load, it's as easy as launching <code>https://notes.nicolasdeville.com</code> (with a shortcut) to be in a position to search what I need.   </p>
+<p>I need now to add the capability to copy code snippets (in <code>&lt;code&gt;</code> and <code>&lt;pre&gt;</code>) to clipboard, like on programming websites.  </p>
+<p>Will need to use Javascript for this.  [<a href="../../learning/javascript/index.html">Nic Note: Learning Javascript</a>]    </p>
+<p>v1 test:  </p>
+<div class="link_border">
+<div class="link_title">How do I copy to the clipboard in JavaScript? - Stack Overflow</div>
+<div class="link_url"><a href="https://stackoverflow.com/questions/400212/how-do-i-copy-to-the-clipboard-in-javascript" target="_blank">https://stackoverflow.com/questions/400212/how-do-i-copy-to-the-clipboard-in-javascript</a></div></div>
 
-<span class="c1"># create a speech recognition object</span>
-<span class="n">r</span> <span class="o">=</span> <span class="n">sr</span><span class="o">.</span><span class="n">Recognizer</span><span class="p">()</span>
+<p>v2: trying this:  </p>
+<div class="link_border">
+<div class="link_title">Add a 'copy code to clipboard' button to your blog's code blocks</div>
+<div class="link_url"><a href="https://www.roboleary.net/2022/01/13/copy-code-to-clipboard-blog.html" target="_blank">https://www.roboleary.net/2022/01/13/copy-code-to-clipboard-blog.html</a></div></div>
 
-<span class="c1"># a function that splits the audio file into chunks</span>
-<span class="c1"># and applies speech recognition</span>
-<span class="k">def</span> <span class="nf">get_large_audio_transcription</span><span class="p">(</span><span class="n">path</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">    Splitting the large audio file into chunks</span>
-<span class="sd">    and apply speech recognition on each of these chunks</span>
-<span class="sd">    &quot;&quot;&quot;</span>
-    <span class="c1"># open the audio file using pydub</span>
-    <span class="n">sound</span> <span class="o">=</span> <span class="n">AudioSegment</span><span class="o">.</span><span class="n">from_wav</span><span class="p">(</span><span class="n">path</span><span class="p">)</span>  
-    <span class="c1"># split audio sound where silence is 700 miliseconds or more and get chunks</span>
-    <span class="n">chunks</span> <span class="o">=</span> <span class="n">split_on_silence</span><span class="p">(</span><span class="n">sound</span><span class="p">,</span>
-        <span class="c1"># experiment with this value for your target audio file</span>
-        <span class="n">min_silence_len</span> <span class="o">=</span> <span class="mi">500</span><span class="p">,</span>
-        <span class="c1"># adjust this per requirement</span>
-        <span class="n">silence_thresh</span> <span class="o">=</span> <span class="n">sound</span><span class="o">.</span><span class="n">dBFS</span><span class="o">-</span><span class="mi">14</span><span class="p">,</span>
-        <span class="c1"># keep the silence for 1 second, adjustable as well</span>
-        <span class="n">keep_silence</span><span class="o">=</span><span class="mi">500</span><span class="p">,</span>
-    <span class="p">)</span>
-    <span class="n">folder_name</span> <span class="o">=</span> <span class="s2">&quot;audio-chunks&quot;</span>
-    <span class="c1"># create a directory to store the audio chunks</span>
-    <span class="k">if</span> <span class="ow">not</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">isdir</span><span class="p">(</span><span class="n">folder_name</span><span class="p">):</span>
-        <span class="n">os</span><span class="o">.</span><span class="n">mkdir</span><span class="p">(</span><span class="n">folder_name</span><span class="p">)</span>
-    <span class="n">whole_text</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span>
-    <span class="c1"># process each chunk </span>
-    <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">audio_chunk</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">chunks</span><span class="p">,</span> <span class="n">start</span><span class="o">=</span><span class="mi">1</span><span class="p">):</span>
-        <span class="c1"># export audio chunk and save it in</span>
-        <span class="c1"># the `folder_name` directory.</span>
-        <span class="n">chunk_filename</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">folder_name</span><span class="p">,</span> <span class="sa">f</span><span class="s2">&quot;chunk</span><span class="si">{</span><span class="n">i</span><span class="si">}</span><span class="s2">.wav&quot;</span><span class="p">)</span>
-        <span class="n">audio_chunk</span><span class="o">.</span><span class="n">export</span><span class="p">(</span><span class="n">chunk_filename</span><span class="p">,</span> <span class="nb">format</span><span class="o">=</span><span class="s2">&quot;wav&quot;</span><span class="p">)</span>
-        <span class="c1"># recognize the chunk</span>
-        <span class="k">with</span> <span class="n">sr</span><span class="o">.</span><span class="n">AudioFile</span><span class="p">(</span><span class="n">chunk_filename</span><span class="p">)</span> <span class="k">as</span> <span class="n">source</span><span class="p">:</span>
-            <span class="n">audio_listened</span> <span class="o">=</span> <span class="n">r</span><span class="o">.</span><span class="n">record</span><span class="p">(</span><span class="n">source</span><span class="p">)</span>
-            <span class="c1"># try converting it to text</span>
-            <span class="k">try</span><span class="p">:</span>
-                <span class="n">text</span> <span class="o">=</span> <span class="n">r</span><span class="o">.</span><span class="n">recognize_google</span><span class="p">(</span><span class="n">audio_listened</span><span class="p">)</span>
-            <span class="k">except</span> <span class="n">sr</span><span class="o">.</span><span class="n">UnknownValueError</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
-                <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Error:&quot;</span><span class="p">,</span> <span class="nb">str</span><span class="p">(</span><span class="n">e</span><span class="p">))</span>
-            <span class="k">else</span><span class="p">:</span>
-                <span class="n">text</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">text</span><span class="o">.</span><span class="n">capitalize</span><span class="p">()</span><span class="si">}</span><span class="s2">. &quot;</span>
-                <span class="nb">print</span><span class="p">(</span><span class="n">chunk_filename</span><span class="p">,</span> <span class="s2">&quot;:&quot;</span><span class="p">,</span> <span class="n">text</span><span class="p">)</span>
-                <span class="n">whole_text</span> <span class="o">+=</span> <span class="n">text</span>
-    <span class="c1"># return the text for all chunks detected</span>
-    <span class="k">return</span> <span class="n">whole_text</span>
+<p>v3 trying this:  </p>
+<div class="link_border">
+<div class="link_title">Javascript/CSS: Add Copy-to-Clipboard Button in HTML Code Example</div>
+<div class="link_url"><a href="https://www.dbaplus.ca/2021/11/javascriptcss-add-copy-to-clipboard.html" target="_blank">https://www.dbaplus.ca/2021/11/javascriptcss-add-copy-to-clipboard.html</a></div></div>
+
+<p>v4, looks like the best, trying now:  </p>
+<div class="link_border">
+<div class="link_title">How to Add Copy to Clipboard Buttons to Code Blocks in Hugo - LogFetch</div>
+<div class="link_url"><a href="https://logfetch.com/hugo-add-copy-to-clipboard-button/" target="_blank">https://logfetch.com/hugo-add-copy-to-clipboard-button/</a></div></div>
+
+<p><span class="datestamp">12 Sep 2022</span>   </p>
+<p>this approach works, though the copy icon is outside the <code>&lt;pre&gt;</code> tag:   </p>
+<p><img class="illustration" src="https://notes.nicolasdeville.com/images/notes/220912_copy-icon-outside .jpg" alt="220912_copy-icon-outside "/>  </p>
+<p>The challenge is that my <code>&lt;pre&gt;</code> tag goes not have a tag and I used the class of the enclosing <code>&lt;div&gt;</code>:   </p>
+<p><img class="illustration" src="https://notes.nicolasdeville.com/images/notes/220912_pre-no-class.jpg" alt="220912_pre-no-class"/>  </p>
+<p>need to either: <br>
+- figure out how to add a class to <code>&lt;pre&gt;</code>
+- figure out how to target the <code>&lt;pre&gt;</code> tag starting from the parent (cue Javascript learning about tree navigation)
+though it seems the code intends to put the button before:<br>
+<img class="illustration" src="https://notes.nicolasdeville.com/images/notes/220912_append-before.jpg" alt="220912_append-before"/>  </p>
+<p>current code:    </p>
+<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;highlight&quot;</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">button</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;clipboard-button&quot;</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;button&quot;</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">svg</span> <span class="na">aria-hidden</span><span class="o">=</span><span class="s">&quot;true&quot;</span> <span class="na">height</span><span class="o">=</span><span class="s">&quot;16&quot;</span> <span class="na">viewBox</span><span class="o">=</span><span class="s">&quot;0 0 16 16&quot;</span> <span class="na">version</span><span class="o">=</span><span class="s">&quot;1.1&quot;</span> <span class="na">width</span><span class="o">=</span><span class="s">&quot;16&quot;</span> <span class="na">data-view-component</span><span class="o">=</span><span class="s">&quot;true&quot;</span><span class="p">&gt;&lt;</span><span class="nt">path</span> <span class="na">fill-rule</span><span class="o">=</span><span class="s">&quot;evenodd&quot;</span> <span class="na">d</span><span class="o">=</span><span class="s">&quot;M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">path</span><span class="p">&gt;&lt;</span><span class="nt">path</span> <span class="na">fill-rule</span><span class="o">=</span><span class="s">&quot;evenodd&quot;</span> <span class="na">d</span><span class="o">=</span><span class="s">&quot;M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">path</span><span class="p">&gt;&lt;/</span><span class="nt">svg</span><span class="p">&gt;</span>
+    <span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">pre</span><span class="p">&gt;</span>
+<span class="hll">        <span class="p">&lt;</span><span class="nt">span</span><span class="p">&gt;&lt;/</span><span class="nt">span</span><span class="p">&gt;</span>
+</span>        <span class="p">&lt;</span><span class="nt">code</span><span class="p">&gt;</span>[code to be copied]<span class="p">&lt;/</span><span class="nt">code</span><span class="p">&gt;</span>
+    <span class="p">&lt;/</span><span class="nt">pre</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
 </code></pre></div>
 
-<p>from : <a href="https://www.thepythoncode.com/article/using-speech-recognition-to-convert-speech-to-text-python" target="_blank">https://www.thepythoncode.com/article/using-speech-recognition-to-convert-speech-to-text-python</a> </p>
-<h2 id="python-script-to-convert-m4a-files-to-wav-files">Python script to convert m4a files to wav files</h2>
-<script src="https://gist.github.com/arjunsharma97/0ecac61da2937ec52baf61af1aa1b759.js"></script>
+<blockquote>
+<p>why is there an empty <code>&lt;span&gt;</code>? Can I use it to insert code language? Need to look into Pelican &amp; Pygment docs. </p>
+</blockquote>
+<p>comparing to original (<a href="https://logfetch.com/hugo-add-copy-to-clipboard-button/" target="_blank">https://logfetch.com/hugo-add-copy-to-clipboard-button/</a>):     </p>
+<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;highlight&quot;</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">button</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;copy-code-button&quot;</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;button&quot;</span><span class="p">&gt;</span>
+<span class="hll">        <span class="p">&lt;</span><span class="nt">svg</span> <span class="na">aria-hidden</span><span class="o">=</span><span class="s">&quot;true&quot;</span> <span class="na">height</span><span class="o">=</span><span class="s">&quot;16&quot;</span> <span class="na">viewBox</span><span class="o">=</span><span class="s">&quot;0 0 16 16&quot;</span> <span class="na">version</span><span class="o">=</span><span class="s">&quot;1.1&quot;</span> <span class="na">width</span><span class="o">=</span><span class="s">&quot;16&quot;</span> <span class="na">data-view-component</span><span class="o">=</span><span class="s">&quot;true&quot;</span><span class="p">&gt;&lt;</span><span class="nt">path</span> <span class="na">fill-rule</span><span class="o">=</span><span class="s">&quot;evenodd&quot;</span> <span class="na">d</span><span class="o">=</span><span class="s">&quot;M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">path</span><span class="p">&gt;&lt;</span><span class="nt">path</span> <span class="na">fill-rule</span><span class="o">=</span><span class="s">&quot;evenodd&quot;</span> <span class="na">d</span><span class="o">=</span><span class="s">&quot;M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">path</span><span class="p">&gt;&lt;/</span><span class="nt">svg</span><span class="p">&gt;</span>
+</span><span class="hll">    <span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
+</span>    <span class="p">&lt;</span><span class="nt">pre</span> <span class="na">tabindex</span><span class="o">=</span><span class="s">&quot;0&quot;</span> <span class="na">style</span><span class="o">=</span><span class="s">&quot;-moz-tab-size:4;-o-tab-size:4;tab-size:4&quot;</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot; language-js&quot;</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">code</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot; language-js&quot;</span> <span class="na">data-lang</span><span class="o">=</span><span class="s">&quot;js&quot;</span><span class="p">&gt;</span>[code to be copied]<span class="p">&lt;/</span><span class="nt">code</span><span class="p">&gt;</span>
+    <span class="p">&lt;/</span><span class="nt">pre</span><span class="p">&gt;&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+</code></pre></div>
 
-<h1 id="resources">Resources</h1>
+<p>same except extra <code>&lt;span&gt;</code> for me and class for <code>&lt;pre&gt;</code> in original code.<br>
+I think it's a CSS issue to position the icon properly.  </p>
+<p><span class="datestamp">13 Sep 2022</span>   </p>
+<p>implemented and working! 😁<br>
+My first Javascript implementation 🤗<br>
+Albeit just a copy/paste, it was really helpful to learn to try and understand the various snippets above.   </p>
+<p><img class="screenshot" src="https://notes.nicolasdeville.com/images/notes/220913_first_implementation.gif" alt="220913_first_implementation"/>  </p>
+<h2 id="foating-table-of-contents">Foating Table Of Contents</h2>
+<p><span class="datestamp">14 Sep 2022</span>   </p>
+<p>next.   </p>
+<p>In left margin, like so:   </p>
 <div class="link_border">
-<div class="link_title">Transcribe Audio | Python Tutorial</div>
-<div class="link_url"><a href="https://pythonbasics.org/transcribe-audio/" target="_blank">https://pythonbasics.org/transcribe-audio/</a></div></div>
+<div class="link_url"><a href="https://logfetch.com/hugo-add-copy-to-clipboard-button/" target="_blank">https://logfetch.com/hugo-add-copy-to-clipboard-button/</a></div></div>
+
+<p>div of TOC for reference:  </p>
+<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;widget js-toc sticky-top sticky-top-offset&quot;</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">ol</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;toc-list &quot;</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">li</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;toc-list-item is-active-li&quot;</span><span class="p">&gt;&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;#1-install-the-npm-package&quot;</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;toc-link node-name--H2  is-active-link&quot;</span><span class="p">&gt;</span>1. Install the npm package<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>
+            <span class="p">&lt;</span><span class="nt">ol</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;toc-list  is-collapsible&quot;</span><span class="p">&gt;</span>
+                <span class="p">&lt;</span><span class="nt">li</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;toc-list-item&quot;</span><span class="p">&gt;</span>
+                    <span class="p">&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;#install-localtunnel&quot;</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;toc-link node-name--H3 &quot;</span><span class="p">&gt;</span>Install localtunnel<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>
+                <span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+                <span class="p">&lt;</span><span class="nt">li</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;toc-list-item&quot;</span><span class="p">&gt;</span>
+                    <span class="p">&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;#install-ngrok&quot;</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;toc-link node-name--H3 &quot;</span><span class="p">&gt;</span>Install ngrok<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>
+                <span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+            <span class="p">&lt;/</span><span class="nt">ol</span><span class="p">&gt;</span>
+        <span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">li</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;toc-list-item&quot;</span><span class="p">&gt;</span>
+            <span class="p">&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;#2-start-our-development-server-locally&quot;</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;toc-link node-name--H2 &quot;</span><span class="p">&gt;</span>2. Start our development server locally<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>
+        <span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">li</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;toc-list-item&quot;</span><span class="p">&gt;</span>
+            <span class="p">&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;#3-connect-to-tunnel-server&quot;</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;toc-link node-name--H2 &quot;</span><span class="p">&gt;</span>3. Connect to tunnel server<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>
+            <span class="p">&lt;</span><span class="nt">ol</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;toc-list  is-collapsible is-collapsed&quot;</span><span class="p">&gt;</span>
+                <span class="p">&lt;</span><span class="nt">li</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;toc-list-item&quot;</span><span class="p">&gt;&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;#connect-with-localtunnel&quot;</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;toc-link node-name--H3 &quot;</span><span class="p">&gt;</span>Connect with localtunnel<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+                <span class="p">&lt;</span><span class="nt">li</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;toc-list-item&quot;</span><span class="p">&gt;&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;#connect-with-ngrok&quot;</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;toc-link node-name--H3 &quot;</span><span class="p">&gt;</span>Connect with ngrok<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+            <span class="p">&lt;/</span><span class="nt">ol</span><span class="p">&gt;</span>
+        <span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+    <span class="p">&lt;/</span><span class="nt">ol</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+</code></pre></div>
 
 <div class="link_border">
-<div class="link_title">How to Transcribe Speech Recordings into Text with Python - Full Stack Python</div>
-<div class="link_url"><a href="https://www.fullstackpython.com/blog/transcribe-recordings-speech-text-assemblyai.html" target="_blank">https://www.fullstackpython.com/blog/transcribe-recordings-speech-text-assemblyai.html</a></div></div>
-<ul>
-<li>requires an AssemblyAI account.  </li>
-</ul>
+<div class="link_title"> Add a Table of Contents using Markdown in Pelican </div>
+<div class="link_url"><a href="https://cloudbytes.dev/snippets/add-a-table-of-contents-using-markdown-in-pelican" target="_blank">https://cloudbytes.dev/snippets/add-a-table-of-contents-using-markdown-in-pelican</a></div></div>
+
+<p><span class="datestamp">16 Sep 2022</span> implemented for now:   </p>
+<p><img class="screenshot" src="https://notes.nicolasdeville.com/images/notes/220916_original-toc.jpg" alt="220916_original-toc"/>  </p>
+<h2 id="next-steps">Next Steps</h2>
+<h3 id="use-favicons-in-external-links">use favicons in external links</h3>
+<p>to be added in CSS as an additional div/class in <code>class="link_border"</code>, next to <code>link_title</code>/<code>link_url</code>.  </p>
+<p>Automate fetching of favicons with Google Favicon Snatcher:  </p>
+<div class="highlight"><pre><span></span><code>https://www.google.com/s2/favicons?domain=THE_DOMAIN_NAME_HERE
+</code></pre></div>
+
+<p>eg.   </p>
+<div class="highlight"><pre><span></span><code>https://www.google.com/s2/favicons?domain=stackoverflow.com
+</code></pre></div>
+
+<h3 id="seo">SEO</h3>
+<p>currently site is not optimised for SEO, nore simple metadata fetching.  </p>
+<p><span class="datestamp">15 Sep 2022</span>   </p>
+<div class="highlight"><pre><span></span><code><span class="cp">&lt;!DOCTYPE html&gt;</span>
+<span class="p">&lt;</span><span class="nt">html</span> <span class="na">lang</span><span class="o">=</span><span class="s">&quot;en&quot;</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
+
+    <span class="p">&lt;</span><span class="nt">meta</span> <span class="na">charset</span><span class="o">=</span><span class="s">&quot;utf-8&quot;</span> <span class="p">/&gt;</span>
+    <span class="p">&lt;</span><span class="nt">meta</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;viewport&quot;</span> <span class="na">content</span><span class="o">=</span><span class="s">&quot;width=device-width, initial-scale=1.0&quot;</span> <span class="p">/&gt;</span>
+    <span class="p">&lt;</span><span class="nt">meta</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;generator&quot;</span> <span class="na">content</span><span class="o">=</span><span class="s">&quot;Pelican&quot;</span> <span class="p">/&gt;</span>
+    <span class="p">&lt;</span><span class="nt">title</span><span class="p">&gt;</span>macOS Terminal issues <span class="err">&amp;</span> troubleshooting<span class="p">&lt;/</span><span class="nt">title</span><span class="p">&gt;</span>
+
+    <span class="cm">&lt;!-- CSS --&gt;</span>
+    <span class="p">&lt;</span><span class="nt">link</span> <span class="na">rel</span><span class="o">=</span><span class="s">&quot;stylesheet&quot;</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;https://notes.nicolasdeville.com/theme/css/main.css&quot;</span> <span class="p">/&gt;</span>
+
+        <span class="p">&lt;</span><span class="nt">meta</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;description&quot;</span> <span class="na">content</span><span class="o">=</span><span class="s">&quot;ongoing note&quot;</span> <span class="p">/&gt;</span>
+
+    <span class="cm">&lt;!-- for Stork seach engine --&gt;</span>
+    <span class="p">&lt;</span><span class="nt">link</span> <span class="na">rel</span><span class="o">=</span><span class="s">&quot;stylesheet&quot;</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;https://files.stork-search.net/basic.css&quot;</span> <span class="p">/&gt;</span> 
+
+<span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span>
+</code></pre></div>
+
+<p><span class="datestamp">16 Sep 2022</span>   </p>
+<p>Tried the <code>pelican-seo</code> plugin without success (see [<a href="../../python/library-pelican/index.html">Nic Note: Library: Pelican</a>]).  </p>
+<p>Next step is to implement manually, following the links below + notes in [<a href="../../helpers/html-metatags/index.html">Nic Note: HTML Meta tags for SEO</a>]   </p>
 <div class="link_border">
-<div class="link_title">How can I transcribe a speech file with the Bing Speech API in Python? - Stack Overflow</div>
-<div class="link_url"><a href="https://stackoverflow.com/questions/47344310/how-can-i-transcribe-a-speech-file-with-the-bing-speech-api-in-python" target="_blank">https://stackoverflow.com/questions/47344310/how-can-i-transcribe-a-speech-file-with-the-bing-speech-api-in-python</a></div></div>
-<ul>
-<li>The files need to be stored on Azure Blob Storage first    </li>
-<li>need to build a websocket for it as it the other alternative within bing for large audio files    </li>
-</ul>
+<div class="link_title">Pelican Static sites - SEO Optimization</div>
+<div class="link_url"><a href=" https://blog.kmonsoor.com/pelican-how-to-make-seo-friendly/" target="_blank"> https://blog.kmonsoor.com/pelican-how-to-make-seo-friendly/</a></div></div>
+
 <div class="link_border">
-<div class="link_title">How to Convert Speech to Text in Python</div>
-<div class="link_url"><a href="https://hackernoon.com/how-to-convert-speech-to-text-in-python-q0263tzp" target="_blank">https://hackernoon.com/how-to-convert-speech-to-text-in-python-q0263tzp</a></div></div>
-<ul>
-<li>SpeechRecognition library allows you to perform speech recognition with support for several engines and APIs, online and offline.    </li>
-</ul>
+<div class="link_title">PageSpeed Insights | Google</div>
+<div class="link_tagline">Make your web pages fast on all devices</div>
+<div class="link_url"><a href="https://developers.google.com/speed/pagespeed/insights/" target="_blank">https://developers.google.com/speed/pagespeed/insights/</a></div></div>
+
+<p><img class="screenshot" src="https://notes.nicolasdeville.com/images/notes/220916_pagespeed-insights.jpg" alt="220916_pagespeed-insights.jpg"/>  </p>
+<h3 id="css-update-styling-for-search-results">CSS update / styling for search results</h3>
+<p><code>&lt;link rel="stylesheet" href="https://files.stork-search.net/basic.css" /&gt;</code>   </p>
+<h3 id="image-processing">Image processing</h3>
+<p>to compress/resize images automatically for faster rendering.   </p>
+<h3 id="image-enlarging">Image enlarging</h3>
+<p>ability to click on images and open them in full/native resolution.  </p>
+<h1 id="inspiration-ideas">Inspiration / Ideas</h1>
+<h3 id="darkday-mode">dark/day mode</h3>
+<div class="link_border">
+<div class="link_title">Phil Stainer – Curious Developer and creator.</div>
+<div class="link_url"><a href="https://philstainer.io/" target="_blank">https://philstainer.io/</a></div></div>
+
+<h3 id="design">design</h3>
+<div class="link_border">
+<div class="link_title">Fjolt</div>
+<div class="link_url"><a href="https://fjolt.com/" target="_blank">https://fjolt.com/</a></div></div>
                 </article>
             </aside>
 
@@ -267,6 +397,125 @@
                 <hr>
 
                 <ol id="posts-list" class="hfeed">
+            
+
+
+
+            <li>
+                <article class="hentry">
+                    <header>
+                        <!-- PREVIOUS NOTE TITLE -->
+                        <h1><a href="https://notes.nicolasdeville.com/projects/recordee" rel="bookmark"
+                            title="Recordee">Recordee</a></h1>
+                        <!-- PREVIOUS NOTE SUMMARY -->
+                        <div class="entry-content">
+                            <p>End-to-end automated workflow from voice recording to markdown note.</p>
+                        </div>
+                    </header>
+
+                    <div class="entry-content">
+                        <!-- PREVIOUS NOTE METADATA -->
+<footer class="post-info">
+
+    <p>
+        18 Sep 2022 <span class="separator">|</span> in <a class="link_tag" href="https://notes.nicolasdeville.com/projects/">projects</a>
+ tags: <a class="link_tag" href="https://notes.nicolasdeville.com/tag/python.html">python</a>
+<a class="link_tag" href="https://notes.nicolasdeville.com/tag/automation.html">automation</a>
+
+        <!-- added 4/7 -->
+        <!-- 		<br />
+        <abbr class="modified" title="2022-09-18T21:51:30.037219+02:00">
+                Updated: 18 Sep 2022
+        </abbr>
+ -->
+
+    </p>
+
+    
+
+</footer>                    </div>
+                    
+                </article>
+                <hr/>
+            </li>
+            
+
+
+
+            <li>
+                <article class="hentry">
+                    <header>
+                        <!-- PREVIOUS NOTE TITLE -->
+                        <h1><a href="https://notes.nicolasdeville.com/python/library-speech-recognition" rel="bookmark"
+                            title="Library: speech_recognition">Library: speech_recognition</a></h1>
+                        <!-- PREVIOUS NOTE SUMMARY -->
+                        <div class="entry-content">
+                            
+                        </div>
+                    </header>
+
+                    <div class="entry-content">
+                        <!-- PREVIOUS NOTE METADATA -->
+<footer class="post-info">
+
+    <p>
+        18 Sep 2022 <span class="separator">|</span> in <a class="link_tag" href="https://notes.nicolasdeville.com/python/">python</a>
+
+        <!-- added 4/7 -->
+        <!-- 		<br />
+        <abbr class="modified" title="2022-09-18T21:32:28.952286+02:00">
+                Updated: 18 Sep 2022
+        </abbr>
+ -->
+
+    </p>
+
+    
+
+</footer>                    </div>
+                    
+                </article>
+                <hr/>
+            </li>
+            
+
+
+
+            <li>
+                <article class="hentry">
+                    <header>
+                        <!-- PREVIOUS NOTE TITLE -->
+                        <h1><a href="https://notes.nicolasdeville.com/helpers/ffprobe" rel="bookmark"
+                            title="ffmpeg and ffprobe">ffmpeg and ffprobe</a></h1>
+                        <!-- PREVIOUS NOTE SUMMARY -->
+                        <div class="entry-content">
+                            
+                        </div>
+                    </header>
+
+                    <div class="entry-content">
+                        <!-- PREVIOUS NOTE METADATA -->
+<footer class="post-info">
+
+    <p>
+        18 Sep 2022 <span class="separator">|</span> in <a class="link_tag" href="https://notes.nicolasdeville.com/helpers/">helpers</a>
+
+        <!-- added 4/7 -->
+        <!-- 		<br />
+        <abbr class="modified" title="2022-09-18T21:04:15.831338+02:00">
+                Updated: 18 Sep 2022
+        </abbr>
+ -->
+
+    </p>
+
+    
+
+</footer>                    </div>
+                    
+                </article>
+                <hr/>
+            </li>
             
 
 
@@ -295,45 +544,6 @@
         <!-- added 4/7 -->
         <!-- 		<br />
         <abbr class="modified" title="2022-09-18T19:27:18.444461+02:00">
-                Updated: 18 Sep 2022
-        </abbr>
- -->
-
-    </p>
-
-    
-
-</footer>                    </div>
-                    
-                </article>
-                <hr/>
-            </li>
-            
-
-
-
-            <li>
-                <article class="hentry">
-                    <header>
-                        <!-- PREVIOUS NOTE TITLE -->
-                        <h1><a href="https://notes.nicolasdeville.com/helpers/ffprobe" rel="bookmark"
-                            title="Installing ffmpeg and ffprobe on macOS manually">Installing ffmpeg and ffprobe on macOS manually</a></h1>
-                        <!-- PREVIOUS NOTE SUMMARY -->
-                        <div class="entry-content">
-                            
-                        </div>
-                    </header>
-
-                    <div class="entry-content">
-                        <!-- PREVIOUS NOTE METADATA -->
-<footer class="post-info">
-
-    <p>
-        18 Sep 2022 <span class="separator">|</span> in <a class="link_tag" href="https://notes.nicolasdeville.com/helpers/">helpers</a>
-
-        <!-- added 4/7 -->
-        <!-- 		<br />
-        <abbr class="modified" title="2022-09-18T19:24:35.545507+02:00">
                 Updated: 18 Sep 2022
         </abbr>
  -->
@@ -1010,45 +1220,6 @@
         <!-- added 4/7 -->
         <!-- 		<br />
         <abbr class="modified" title="2022-09-16T21:20:09.683622+02:00">
-                Updated: 16 Sep 2022
-        </abbr>
- -->
-
-    </p>
-
-    
-
-</footer>                    </div>
-                    
-                </article>
-                <hr/>
-            </li>
-            
-
-
-
-            <li>
-                <article class="hentry">
-                    <header>
-                        <!-- PREVIOUS NOTE TITLE -->
-                        <h1><a href="https://notes.nicolasdeville.com/projects/notes" rel="bookmark"
-                            title="This site">This site</a></h1>
-                        <!-- PREVIOUS NOTE SUMMARY -->
-                        <div class="entry-content">
-                            <p>keeping notes about building this site</p>
-                        </div>
-                    </header>
-
-                    <div class="entry-content">
-                        <!-- PREVIOUS NOTE METADATA -->
-<footer class="post-info">
-
-    <p>
-        16 Sep 2022 <span class="separator">|</span> in <a class="link_tag" href="https://notes.nicolasdeville.com/projects/">projects</a>
-
-        <!-- added 4/7 -->
-        <!-- 		<br />
-        <abbr class="modified" title="2022-09-16T18:04:09.471162+02:00">
                 Updated: 16 Sep 2022
         </abbr>
  -->
@@ -4202,45 +4373,6 @@
         <!-- added 4/7 -->
         <!-- 		<br />
         <abbr class="modified" title="2022-09-05T18:17:24.916218+02:00">
-                Updated: 05 Sep 2022
-        </abbr>
- -->
-
-    </p>
-
-    
-
-</footer>                    </div>
-                    
-                </article>
-                <hr/>
-            </li>
-            
-
-
-
-            <li>
-                <article class="hentry">
-                    <header>
-                        <!-- PREVIOUS NOTE TITLE -->
-                        <h1><a href="https://notes.nicolasdeville.com/learning/touch-typing" rel="bookmark"
-                            title="Learning Touch Typing">Learning Touch Typing</a></h1>
-                        <!-- PREVIOUS NOTE SUMMARY -->
-                        <div class="entry-content">
-                            
-                        </div>
-                    </header>
-
-                    <div class="entry-content">
-                        <!-- PREVIOUS NOTE METADATA -->
-<footer class="post-info">
-
-    <p>
-        05 Sep 2022 <span class="separator">|</span> in <a class="link_tag" href="https://notes.nicolasdeville.com/learning/">learning</a>
-
-        <!-- added 4/7 -->
-        <!-- 		<br />
-        <abbr class="modified" title="2022-09-05T16:11:20.951104+02:00">
                 Updated: 05 Sep 2022
         </abbr>
  -->
