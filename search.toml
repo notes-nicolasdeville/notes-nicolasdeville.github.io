@@ -13,9 +13,39 @@ url = "/projects/recordee"
 title = "Recordee"
 
 [[input.files]]
+path = "python/library-pydub/index.html"
+url = "/python/library-pydub"
+title = "Library: pydub"
+
+[[input.files]]
+path = "helpers/ffprobe/index.html"
+url = "/helpers/ffprobe"
+title = "Installing ffmpeg and ffprobe on macOS manually"
+
+[[input.files]]
+path = "helpers/icloud-drive/index.html"
+url = "/helpers/icloud-drive"
+title = "iCloud Drive"
+
+[[input.files]]
+path = "python/snippets/index.html"
+url = "/python/snippets"
+title = "Python Snippets"
+
+[[input.files]]
+path = "home-office/contour-shuttleprov2/index.html"
+url = "/home-office/contour-shuttleprov2"
+title = "Contour ShuttlePRO v2"
+
+[[input.files]]
 path = "apps/just-press-record/index.html"
 url = "/apps/just-press-record"
 title = "Just Press Record"
+
+[[input.files]]
+path = "interests/tea/index.html"
+url = "/interests/tea"
+title = "Tea"
 
 [[input.files]]
 path = "random/quotes/index.html"
@@ -41,11 +71,6 @@ title = "Diabolo"
 path = "interests/traditional-archery/index.html"
 url = "/interests/traditional-archery"
 title = "Traditional Archery"
-
-[[input.files]]
-path = "python/snippets/index.html"
-url = "/python/snippets"
-title = "Python Snippets"
 
 [[input.files]]
 path = "home-office/unifi/index.html"
@@ -141,11 +166,6 @@ title = "How to save confidential data in environment variables with dotenv"
 path = "python/metadata-from-url/index.html"
 url = "/python/metadata-from-url"
 title = "How to get a website's metadata with Python"
-
-[[input.files]]
-path = "interests/tea/index.html"
-url = "/interests/tea"
-title = "Tea"
 
 [[input.files]]
 path = "python/pip/index.html"
@@ -668,14 +688,14 @@ url = "/apps/radar"
 title = "Apps on my radar"
 
 [[input.files]]
-path = "python/books/index.html"
-url = "/python/books"
-title = "My Python Books Library"
-
-[[input.files]]
 path = "b2b-sales/books/index.html"
 url = "/b2b-sales/books"
 title = "My B2B Books Library"
+
+[[input.files]]
+path = "python/books/index.html"
+url = "/python/books"
+title = "My Python Books Library"
 
 [[input.files]]
 path = "books/library/index.html"
@@ -1833,14 +1853,14 @@ url = "/books/library"
 title = "My Books Library"
 
 [[input.files]]
-path = "b2b-sales/books/index.html"
-url = "/b2b-sales/books"
-title = "My B2B Books Library"
-
-[[input.files]]
 path = "python/books/index.html"
 url = "/python/books"
 title = "My Python Books Library"
+
+[[input.files]]
+path = "b2b-sales/books/index.html"
+url = "/b2b-sales/books"
+title = "My B2B Books Library"
 
 [[input.files]]
 path = "apps/library/index.html"
