@@ -8,14 +8,29 @@ url = "/ABOUT/"
 title = ""
 
 [[input.files]]
-path = "projects/notes/index.html"
-url = "/projects/notes"
-title = "This site"
-
-[[input.files]]
 path = "projects/recordee/index.html"
 url = "/projects/recordee"
 title = "Recordee"
+
+[[input.files]]
+path = "random/quotes/index.html"
+url = "/random/quotes"
+title = "My favourite quotes"
+
+[[input.files]]
+path = "interests/applescript/index.html"
+url = "/interests/applescript"
+title = "AppleScript"
+
+[[input.files]]
+path = "helpers/macos-copy-filename/index.html"
+url = "/helpers/macos-copy-filename"
+title = "Copy file name to clipboard upon saving file in macOS"
+
+[[input.files]]
+path = "projects/notes/index.html"
+url = "/projects/notes"
+title = "This site"
 
 [[input.files]]
 path = "python/library-speech-recognition/index.html"
@@ -56,11 +71,6 @@ title = "Just Press Record"
 path = "interests/tea/index.html"
 url = "/interests/tea"
 title = "Tea"
-
-[[input.files]]
-path = "random/quotes/index.html"
-url = "/random/quotes"
-title = "My favourite quotes"
 
 [[input.files]]
 path = "learning/speed-reading/index.html"

@@ -33,7 +33,7 @@
             </div>
 
             <div class="above-navbar">
-                <div class="last_updated">18 Sep 2022 | 21:57</div>
+                <div class="last_updated">18 Sep 2022 | 23:45</div>
                 <div>
                     <p class="notes_count">
                         <a href="https://notes.nicolasdeville.com/tags">by tags</a> 
@@ -44,7 +44,7 @@
                         <span style="color:#C74350">|</span>
                         <a href="https://notes.nicolasdeville.com/2022/">2022</a> 
                         <span style="color:#C74350">|</span> 
-                        369 notes
+                        371 notes
                     </p>
                 </div>
             </div>
@@ -92,7 +92,7 @@
 
         <!-- added 4/7 -->
         <!-- 		<br />
-        <abbr class="modified" title="2022-09-18T21:57:54.375163+02:00">
+        <abbr class="modified" title="2022-09-18T22:34:48.491167+02:00">
                 Updated: 18 Sep 2022
         </abbr>
  -->
@@ -136,11 +136,16 @@
 <p>I will use this note to keep track of further building and maintenance of it, outside of Pelican-related things.    </p>
 <h1 id="static-site-generators">Static Site Generators</h1>
 <p>As Python is my main language, I am using the Python static site generator library Pelican:   </p>
-<p>[<a href="../../python/library-pelican/index.html">Nic Note: Library: Pelican</a>]  </p>
+<p>➡️ [<a href="../../python/library-pelican/index.html">Nic Note: Library: Pelican</a>]  </p>
 <p>Pelican has 11k stars on Github, and 1.8k forks:      </p>
 <div class="link_border">
-<div class="link_title">GitHub - getpelican/pelican: Static site generator that supports Markdown and reST syntax. Powered by Python.</div>
-<div class="link_url"><a href="https://github.com/getpelican/pelican" target="_blank">https://github.com/getpelican/pelican</a></div></div>
+<div class="link_favicon">adfadfasdadfadfadfadsf</div>
+<div class="link_content">
+<div class="link_title">GitHub - getpelican/pelican: Static site generator that supports Markdown and reST syntax.</div>
+<div class="link_tagline">Powered by Python.</div>
+<div class="link_url"><a href="https://github.com/getpelican/pelican" target="_blank">https://github.com/getpelican/pelican</a></div>
+</div>
+</div>
 
 <p>There are others available in different programming languages though:</p>
 <h2 id="javascript-nodejs">Javascript (Node.js)</h2>
@@ -306,11 +311,12 @@ Albeit just a copy/paste, it was really helpful to learn to try and understand t
 <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
 </code></pre></div>
 
+<p><span class="datestamp">16 Sep 2022</span> implemented for now:   </p>
 <div class="link_border">
 <div class="link_title"> Add a Table of Contents using Markdown in Pelican </div>
 <div class="link_url"><a href="https://cloudbytes.dev/snippets/add-a-table-of-contents-using-markdown-in-pelican" target="_blank">https://cloudbytes.dev/snippets/add-a-table-of-contents-using-markdown-in-pelican</a></div></div>
 
-<p><span class="datestamp">16 Sep 2022</span> implemented for now:   </p>
+<p>initial output:   </p>
 <p><img class="screenshot" src="https://notes.nicolasdeville.com/images/notes/220916_original-toc.jpg" alt="220916_original-toc"/>  </p>
 <h2 id="next-steps">Next Steps</h2>
 <h3 id="use-favicons-in-external-links">use favicons in external links</h3>
@@ -323,6 +329,89 @@ Albeit just a copy/paste, it was really helpful to learn to try and understand t
 <div class="highlight"><pre><span></span><code>https://www.google.com/s2/favicons?domain=stackoverflow.com
 </code></pre></div>
 
+<p><span class="datestamp">18 Sep 2022</span> testing:  </p>
+<div class="highlight"><pre><span></span><code><span class="p">.</span><span class="nc">link_border</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="k">margin-top</span><span class="p">:</span><span class="w"> </span><span class="mf">0.5</span><span class="kt">em</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="k">margin-bottom</span><span class="p">:</span><span class="w"> </span><span class="mf">0.5</span><span class="kt">em</span><span class="p">;</span><span class="w"></span>
+
+<span class="w">    </span><span class="c">/*Borders*/</span><span class="w"></span>
+
+<span class="w">    </span><span class="k">border-left</span><span class="p">:</span><span class="w"> </span><span class="mi">8</span><span class="kt">px</span><span class="w"> </span><span class="kc">solid</span><span class="w"> </span><span class="kc">black</span><span class="p">;</span><span class="w"></span>
+
+<span class="w">    </span><span class="k">border-top-style</span><span class="p">:</span><span class="w"> </span><span class="kc">solid</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="k">border-top-width</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="kt">px</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="k">border-top-color</span><span class="p">:</span><span class="w"> </span><span class="mh">#000</span><span class="p">;</span><span class="w"></span>
+
+<span class="w">    </span><span class="k">border-right-style</span><span class="p">:</span><span class="w"> </span><span class="kc">solid</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="k">border-right-width</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="kt">px</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="k">border-right-color</span><span class="p">:</span><span class="w"> </span><span class="mh">#000</span><span class="p">;</span><span class="w"></span>
+
+<span class="w">    </span><span class="k">border-bottom-style</span><span class="p">:</span><span class="w"> </span><span class="kc">solid</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="k">border-bottom-width</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="kt">px</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="k">border-bottom-color</span><span class="p">:</span><span class="w"> </span><span class="mh">#000</span><span class="p">;</span><span class="w"></span>
+
+<span class="w">    </span><span class="k">padding</span><span class="p">:</span><span class="w"> </span><span class="mf">0.5</span><span class="kt">rem</span><span class="p">;</span><span class="w"></span>
+
+<span class="w">    </span><span class="k">height</span><span class="p">:</span><span class="w"> </span><span class="mi">100</span><span class="kt">%</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="k">display</span><span class="p">:</span><span class="w"> </span><span class="kc">flex</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="k">flex-direction</span><span class="p">:</span><span class="w"> </span><span class="kc">column</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="k">order</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="k">width</span><span class="p">:</span><span class="w"> </span><span class="mi">100</span><span class="kt">%</span><span class="p">;</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+
+<span class="w">    </span><span class="p">.</span><span class="nc">link_favicon</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="k">position</span><span class="p">:</span><span class="w"> </span><span class="kc">relative</span><span class="p">;</span><span class="w"></span>
+<span class="w">        </span><span class="k">float</span><span class="p">:</span><span class="w"> </span><span class="kc">left</span><span class="p">;</span><span class="w"></span>
+<span class="w">        </span><span class="k">width</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="kt">%</span><span class="p">;</span><span class="w"></span>
+<span class="w">        </span><span class="k">margin</span><span class="p">:</span><span class="w"> </span><span class="kc">auto</span><span class="p">;</span><span class="w"></span>
+<span class="w">        </span><span class="k">order</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w"></span>
+
+<span class="w">        </span><span class="k">background-image</span><span class="p">:</span><span class="w"> </span><span class="nb">url</span><span class="p">(</span><span class="s1">&#39;https://notes.nicolasdeville.com/images/favicons/stackoverflow.png&#39;</span><span class="p">);</span><span class="w"></span>
+<span class="w">        </span><span class="k">background-repeat</span><span class="p">:</span><span class="w"> </span><span class="kc">no-repeat</span><span class="p">;</span><span class="w"></span>
+<span class="w">        </span><span class="k">background-position</span><span class="p">:</span><span class="w"> </span><span class="kc">left</span><span class="w"> </span><span class="kc">top</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+
+<span class="w">    </span><span class="p">.</span><span class="nc">link_content</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="k">position</span><span class="p">:</span><span class="w"> </span><span class="kc">relative</span><span class="p">;</span><span class="w"></span>
+<span class="w">        </span><span class="k">float</span><span class="p">:</span><span class="w"> </span><span class="kc">right</span><span class="p">;</span><span class="w"></span>
+<span class="w">        </span><span class="k">width</span><span class="p">:</span><span class="w"> </span><span class="mi">90</span><span class="kt">%</span><span class="p">;</span><span class="w"></span>
+<span class="w">        </span><span class="k">margin</span><span class="p">:</span><span class="w"> </span><span class="kc">auto</span><span class="p">;</span><span class="w"></span>
+<span class="w">        </span><span class="k">order</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+
+<span class="w">        </span><span class="p">.</span><span class="nc">link_title</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">            </span><span class="k">font-weight</span><span class="p">:</span><span class="w"> </span><span class="kc">bold</span><span class="p">;</span><span class="w"></span>
+<span class="w">            </span><span class="k">margin-left</span><span class="p">:</span><span class="w"> </span><span class="mf">0.8</span><span class="kt">em</span><span class="p">;</span><span class="w"></span>
+<span class="w">            </span><span class="k">font-size</span><span class="p">:</span><span class="w"> </span><span class="mf">1.1</span><span class="kt">em</span><span class="p">;</span><span class="w"></span>
+<span class="w">            </span><span class="c">/* Lato Black = weight 900 */</span><span class="w"></span>
+<span class="w">            </span><span class="k">font-weight</span><span class="p">:</span><span class="w"> </span><span class="mi">900</span><span class="p">;</span><span class="w"> </span>
+<span class="w">        </span><span class="p">}</span><span class="w"></span>
+
+<span class="w">        </span><span class="p">.</span><span class="nc">link_tagline</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">            </span><span class="k">font-size</span><span class="p">:</span><span class="w"> </span><span class="mf">0.9</span><span class="kt">em</span><span class="p">;</span><span class="w"></span>
+<span class="w">            </span><span class="k">margin-left</span><span class="p">:</span><span class="w"> </span><span class="mf">0.8</span><span class="kt">em</span><span class="p">;</span><span class="w"></span>
+<span class="w">            </span><span class="k">font-weight</span><span class="p">:</span><span class="w"> </span><span class="mi">700</span><span class="p">;</span><span class="w"></span>
+<span class="w">        </span><span class="p">}</span><span class="w"></span>
+
+<span class="w">        </span><span class="p">.</span><span class="nc">link_url</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">            </span><span class="k">font-size</span><span class="p">:</span><span class="w"> </span><span class="mf">0.8</span><span class="kt">em</span><span class="p">;</span><span class="w"></span>
+<span class="w">            </span><span class="k">margin-left</span><span class="p">:</span><span class="w"> </span><span class="mf">0.8</span><span class="kt">em</span><span class="p">;</span><span class="w"></span>
+<span class="w">        </span><span class="p">}</span><span class="w"></span>
+</code></pre></div>
+
+<p>with html:  </p>
+<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;link_border&quot;</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;link_favicon&quot;</span><span class="p">&gt;</span>adfadfasdadfadfadfadsf<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;link_content&quot;</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;link_title&quot;</span><span class="p">&gt;</span>GitHub - getpelican/pelican: Static site generator that supports Markdown and reST syntax.<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;link_tagline&quot;</span><span class="p">&gt;</span>Powered by Python.<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;link_url&quot;</span><span class="p">&gt;&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;https://github.com/getpelican/pelican&quot;</span> <span class="na">target</span><span class="o">=</span><span class="s">&quot;_blank&quot;</span><span class="p">&gt;</span>https://github.com/getpelican/pelican<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+</code></pre></div>
+
+<p>outputs: <br>
+<img class="screenshot" src="https://notes.nicolasdeville.com/images/notes/favicon-test-1.jpg" alt="favicon-test-1.jpg"/>  </p>
 <h3 id="seo">SEO</h3>
 <p>currently site is not optimised for SEO, nore simple metadata fetching.  </p>
 <p><span class="datestamp">15 Sep 2022</span>   </p>
