@@ -8,9 +8,29 @@ url = "/ABOUT/"
 title = ""
 
 [[input.files]]
+path = "helpers/logos/index.html"
+url = "/helpers/logos"
+title = "How to get company logos from websites"
+
+[[input.files]]
 path = "projects/notes/index.html"
 url = "/projects/notes"
 title = "This site"
+
+[[input.files]]
+path = "apps/best-lists/index.html"
+url = "/apps/best-lists"
+title = "Lists of 'Best apps for macOS'"
+
+[[input.files]]
+path = "helpers/ffmpeg-ffprobe/index.html"
+url = "/helpers/ffmpeg-ffprobe"
+title = "ffmpeg and ffprobe"
+
+[[input.files]]
+path = "apps/espanso/index.html"
+url = "/apps/espanso"
+title = "Espanso"
 
 [[input.files]]
 path = "projects/recordee/index.html"
@@ -36,11 +56,6 @@ title = "Copy file name to clipboard upon saving file in macOS"
 path = "python/library-speech-recognition/index.html"
 url = "/python/library-speech-recognition"
 title = "Library: speech_recognition"
-
-[[input.files]]
-path = "helpers/ffprobe/index.html"
-url = "/helpers/ffprobe"
-title = "ffmpeg and ffprobe"
 
 [[input.files]]
 path = "python/library-pydub/index.html"
@@ -636,11 +651,6 @@ title = "Project: Top 1000 movies"
 path = "projects/emailee/index.html"
 url = "/projects/emailee"
 title = "Emailee"
-
-[[input.files]]
-path = "apps/espanso/index.html"
-url = "/apps/espanso"
-title = "Espanso"
 
 [[input.files]]
 path = "apps/hazel/index.html"

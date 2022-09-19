@@ -7,6 +7,8 @@
     <meta name="generator" content="Pelican" />
     <title>Nic's notes - helpers</title>
 
+    <meta property="og:logo" content="https://notes.nicolasdeville.com/logo.svg">
+
     <!-- CSS -->
     <link rel="stylesheet" href="https://notes.nicolasdeville.com/theme/css/main.css" />
 
@@ -32,7 +34,7 @@
             </div>
 
             <div class="above-navbar">
-                <div class="last_updated">19 Sep 2022 | 00:13</div>
+                <div class="last_updated">19 Sep 2022 | 09:34</div>
                 <div>
                     <p class="notes_count">
                         <a href="https://notes.nicolasdeville.com/tags">by tags</a> 
@@ -43,7 +45,7 @@
                         <span style="color:#C74350">|</span>
                         <a href="https://notes.nicolasdeville.com/2022/">2022</a> 
                         <span style="color:#C74350">|</span> 
-                        20 notes
+                        21 notes
                     </p>
                 </div>
             </div>
@@ -70,7 +72,7 @@
 
 <!-- 220911 moved to base.html -->
 <!-- <p class="notes_count">
-    20 notes 
+    21 notes 
     <span style="color:#C74350">|</span> 
     <a href="https://notes.nicolasdeville.com/tags">by tags</a> 
     <span style="color:#C74350">|</span> 
@@ -89,7 +91,7 @@
             <hr/>
 
                 <article class="hentry">
-                    <h1 class="entry-title"><a href="https://notes.nicolasdeville.com/helpers/macos-copy-filename">Copy file name to clipboard upon saving file in macOS</a></h1>
+                    <h1 class="entry-title"><a href="https://notes.nicolasdeville.com/helpers/logos">How to get company logos from websites</a></h1>
 
                     <!-- added 4/7 -->
                     <div>
@@ -101,14 +103,13 @@
 <footer class="post-info">
 
     <p>
-        18 Sep 2022 <span class="separator">|</span> in <a class="link_tag" href="https://notes.nicolasdeville.com/helpers/">helpers</a>
- tags: <a class="link_tag" href="https://notes.nicolasdeville.com/tag/macos.html">macOS</a>
-<a class="link_tag" href="https://notes.nicolasdeville.com/tag/automation.html">automation</a>
+        19 Sep 2022 <span class="separator">|</span> in <a class="link_tag" href="https://notes.nicolasdeville.com/helpers/">helpers</a>
+ tags: <a class="link_tag" href="https://notes.nicolasdeville.com/tag/apis.html">apis</a>
 
         <!-- added 4/7 -->
         <!-- 		<br />
-        <abbr class="modified" title="2022-09-18T23:29:15.312039+02:00">
-                Updated: 18 Sep 2022
+        <abbr class="modified" title="2022-09-19T09:34:38.181014+02:00">
+                Updated: 19 Sep 2022
         </abbr>
  -->
 
@@ -116,54 +117,39 @@
 
     
 
-</footer><p><span class="datestamp">18 Sep 2022</span>   </p>
-<p>Use case: inserting filename of an image just saved in a note, avoiding selections, copy and paste.   </p>
-<p>Hazel does not copy to clipboard.  </p>
-<p>DefaultFolderX might have a workaround in v6, though not available yet on Setapp. And the workaround will also require an AppleScript.  </p>
-<p>Exploring Automator for this.   </p>
-<p>Useful ressource:  </p>
+</footer><p><span class="datestamp">19 Sep 2022</span>   </p>
+<p>Using Clearbit's free API:  </p>
 <div class="link_border">
-<div class="link_title">automation - Automator: Get filename - Ask Different</div>
-<div class="link_url"><a href="https://apple.stackexchange.com/questions/195927/automator-get-filename" target="_blank">https://apple.stackexchange.com/questions/195927/automator-get-filename</a></div></div>
+<div class="link_favicon"><img class="link_logo" src="https://logo.clearbit.com/clearbit.com?size=35"/></div>
+<div class="link_content">
+<div class="link_title">Find & Embed Company Logos for Free | Clearbit</div>
+<div class="link_tagline">Logo API Tool</div>
+<div class="link_url"><a href="https://clearbit.com/logo" target="_blank">https://clearbit.com/logo</a></div>
+</div>
+</div>
 
-<p>Working on a single test folder 😁   </p>
-<p>Setup:   </p>
-<p><img class="screenshot" src="https://notes.nicolasdeville.com/images/macos-copy-filename/automator-setup.jpg" alt="automator-setup"/>  </p>
-<div class="highlight"><pre><span></span><code><span class="k">on</span> <span class="nb">run</span> <span class="p">{</span><span class="nv">input</span><span class="p">,</span> <span class="nv">parameters</span><span class="p">}</span>
-
-    <span class="k">tell</span> <span class="nb">application</span> <span class="s2">&quot;Finder&quot;</span>
-        <span class="k">set</span> <span class="nv">filename</span> <span class="k">to</span> <span class="na">name</span> <span class="k">of</span> <span class="nv">file</span> <span class="nv">input</span>
-
-    <span class="k">end</span> <span class="k">tell</span>
-<span class="k">end</span> <span class="nb">run</span>
+<h1 id="examples">Examples</h1>
+<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">img</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;https://logo.clearbit.com/website_url&quot;</span> <span class="p">/&gt;</span>
 </code></pre></div>
 
-<p>with this, every file added to the given folder has its name (+ extension) copied to clipboard, ready to get pasted anywhere.    </p>
-<blockquote>
-<p>to copy full file path instead, just remove the AppleScript and keep only the "Copy to Clipboard" function. It copies the entire file, but reverts to file path when copied in a text editor.  </p>
-</blockquote>
-<p>Next: test on applying it to all subfolders of a given root folder.  </p>
-<div class="link_border">
-<div class="link_title">applescript - Any way to trigger Folder Action when adding file to any subfolder? - Ask Different</div>
-<div class="link_url"><a href="https://apple.stackexchange.com/questions/54898/any-way-to-trigger-folder-action-when-adding-file-to-any-subfolder" target="_blank">https://apple.stackexchange.com/questions/54898/any-way-to-trigger-folder-action-when-adding-file-to-any-subfolder</a></div></div>
-
-<p>Seems not possible with Automator alone, but perhaps combined with Hazel.  </p>
-<p>Need to make it work with an AppleScript alone, then trigger the script with Hazel.  </p>
-<p><code>set the clipboard to filename</code> is command to copy to clipboard from within AppleScript :)  </p>
-<p>Works:    </p>
-<div class="highlight"><pre><span></span><code><span class="k">on</span> <span class="nb">run</span> <span class="p">{</span><span class="nv">input</span><span class="p">,</span> <span class="nv">parameters</span><span class="p">}</span>
-
-    <span class="k">tell</span> <span class="nb">application</span> <span class="s2">&quot;Finder&quot;</span>
-        <span class="k">set</span> <span class="nv">filename</span> <span class="k">to</span> <span class="na">name</span> <span class="k">of</span> <span class="nv">file</span> <span class="nv">input</span>
-    <span class="k">end</span> <span class="k">tell</span>
-
-    <span class="nb">set the clipboard to</span> <span class="na">name</span>
-<span class="k">end</span> <span class="nb">run</span>
+<p>eg.   </p>
+<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">img</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;https://logo.clearbit.com/spotify.com?size=80&quot;</span> <span class="p">/&gt;</span>
 </code></pre></div>
 
-<p>Not working:   </p>
-<p><img class="screenshot" src="https://notes.nicolasdeville.com/images/macos-copy-filename/hazel-applescript-1.jpg" alt="hazel-applescript-1.jpg"/>  </p>
-<p>TODO: need to figure out how to trigger it from Hazel - configure input/parameters.   </p>
+<p><img src="https://logo.clearbit.com/spotify.com?size=80" /></p>
+<p>Size can be defined as parameter, eg width = 300:  </p>
+<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">img</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;https://logo.clearbit.com/spotify.com?size=300&quot;</span> <span class="p">/&gt;</span>
+</code></pre></div>
+
+<p><img src="https://logo.clearbit.com/spotify.com?size=300" /></p>
+<p>Grayscale mode also available:  </p>
+<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">img</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;https://logo.clearbit.com/spotify.com?grayscale=true&quot;</span> <span class="p">/&gt;</span>
+</code></pre></div>
+
+<p><img src="https://logo.clearbit.com/spotify.com?grayscale=true" /></p>
+<p>Use is free, with attribution:  </p>
+<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;https://clearbit.com&quot;</span><span class="p">&gt;</span>Logos provided by Clearbit<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>
+</code></pre></div>
                 </article>
             </aside>
 
@@ -182,7 +168,7 @@
                 <article class="hentry">
                     <header>
                         <!-- PREVIOUS NOTE TITLE -->
-                        <h1><a href="https://notes.nicolasdeville.com/helpers/ffprobe" rel="bookmark"
+                        <h1><a href="https://notes.nicolasdeville.com/helpers/ffmpeg-ffprobe" rel="bookmark"
                             title="ffmpeg and ffprobe">ffmpeg and ffprobe</a></h1>
                         <!-- PREVIOUS NOTE SUMMARY -->
                         <div class="entry-content">
@@ -195,11 +181,52 @@
 <footer class="post-info">
 
     <p>
-        18 Sep 2022 <span class="separator">|</span> in <a class="link_tag" href="https://notes.nicolasdeville.com/helpers/">helpers</a>
+        19 Sep 2022 <span class="separator">|</span> in <a class="link_tag" href="https://notes.nicolasdeville.com/helpers/">helpers</a>
 
         <!-- added 4/7 -->
         <!-- 		<br />
-        <abbr class="modified" title="2022-09-18T21:04:15.831338+02:00">
+        <abbr class="modified" title="2022-09-19T09:07:18.772118+02:00">
+                Updated: 19 Sep 2022
+        </abbr>
+ -->
+
+    </p>
+
+    
+
+</footer>                    </div>
+                    
+                </article>
+                <hr/>
+            </li>
+            
+
+
+
+            <li>
+                <article class="hentry">
+                    <header>
+                        <!-- PREVIOUS NOTE TITLE -->
+                        <h1><a href="https://notes.nicolasdeville.com/helpers/macos-copy-filename" rel="bookmark"
+                            title="Copy file name to clipboard upon saving file in macOS">Copy file name to clipboard upon saving file in macOS</a></h1>
+                        <!-- PREVIOUS NOTE SUMMARY -->
+                        <div class="entry-content">
+                            
+                        </div>
+                    </header>
+
+                    <div class="entry-content">
+                        <!-- PREVIOUS NOTE METADATA -->
+<footer class="post-info">
+
+    <p>
+        18 Sep 2022 <span class="separator">|</span> in <a class="link_tag" href="https://notes.nicolasdeville.com/helpers/">helpers</a>
+ tags: <a class="link_tag" href="https://notes.nicolasdeville.com/tag/macos.html">macOS</a>
+<a class="link_tag" href="https://notes.nicolasdeville.com/tag/automation.html">automation</a>
+
+        <!-- added 4/7 -->
+        <!-- 		<br />
+        <abbr class="modified" title="2022-09-18T23:29:15.312039+02:00">
                 Updated: 18 Sep 2022
         </abbr>
  -->
