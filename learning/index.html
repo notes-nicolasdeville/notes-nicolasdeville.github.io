@@ -34,7 +34,7 @@
             </div>
 
             <div class="above-navbar">
-                <div class="last_updated">19 Sep 2022 | 13:38</div>
+                <div class="last_updated">19 Sep 2022 | 15:55</div>
                 <div>
                     <p class="notes_count">
                         <a href="https://notes.nicolasdeville.com/tags">by tags</a> 
@@ -91,7 +91,7 @@
             <hr/>
 
                 <article class="hentry">
-                    <h1 class="entry-title"><a href="https://notes.nicolasdeville.com/learning/touch-typing">Learning Touch Typing</a></h1>
+                    <h1 class="entry-title"><a href="https://notes.nicolasdeville.com/learning/css">Learning CSS</a></h1>
 
                     <!-- added 4/7 -->
                     <div>
@@ -100,6 +100,237 @@
                         </p>
                     </div>
 
+<footer class="post-info">
+
+    <p>
+        19 Sep 2022 <span class="separator">|</span> in <a class="link_tag" href="https://notes.nicolasdeville.com/learning/">learning</a>
+ tags: <a class="link_tag" href="https://notes.nicolasdeville.com/tag/css.html">css</a>
+
+        <!-- added 4/7 -->
+        <!-- 		<br />
+        <abbr class="modified" title="2022-09-19T15:48:24.754989+02:00">
+                Updated: 19 Sep 2022
+        </abbr>
+ -->
+
+    </p>
+
+    
+
+</footer><div class="toc"><span class="toctitle">Table of Contents</span><ul>
+<li><a href="#learning-journey">Learning journey</a></li>
+<li><a href="#snippets">Snippets</a><ul>
+<li><a href="#ensures-padding-and-borders-are-included-in-widthheights-definitions">ensures padding and borders are included in width/heights definitions</a></li>
+<li><a href="#global-reset-clean-slate">global reset / clean slate</a></li>
+<li><a href="#center-an-image">center an image</a></li>
+<li><a href="#target-first-column-of-tables">Target first column of tables</a></li>
+<li><a href="#target-last-row-of-table">target last row of table</a></li>
+<li><a href="#custom-properties-css-variables">Custom properties (--*): CSS variables</a></li>
+<li><a href="#bulletproof-font-face-syntax">Bulletproof @font-face Syntax</a></li>
+<li><a href="#considerations-for-styling-the-pre-tag">Considerations for styling the pre tag</a></li>
+<li><a href="#create-a-simple-responsive-html-table-using-pure-css">Create A Simple Responsive HTML Table Using Pure CSS</a></li>
+</ul>
+</li>
+<li><a href="#divs">Divs</a></li>
+<li><a href="#learning-resources">Learning resources</a><ul>
+<li><a href="#a-basic-walkthrough-of-the-css-box-model">A Basic Walkthrough of the CSS Box Model</a></li>
+<li><a href="#a-complete-guide-to-flexbox">A Complete Guide to Flexbox</a></li>
+<li><a href="#em-vs-rem">em vs rem</a></li>
+<li><a href="#manage-multiple-fonts-in-same-family">manage multiple fonts in same family</a></li>
+</ul>
+</li>
+<li><a href="#change-colour-of-selection-highlights">change colour of selection highlights</a><ul>
+<li><a href="#resources">Resources</a></li>
+</ul>
+</li>
+<li><a href="#quotes">Quotes</a></li>
+</ul>
+</div>
+<p><span class="datestamp-starting">13 Jul 2022</span>   </p>
+<h1 id="learning-journey">Learning journey</h1>
+<p><span class="datestamp-update">10 Sep 2022</span> <br>
+Took me a while to figure out, and tried a couple solutions (eg Whisk on macOS) before, but it seems it's easiest to develop/test straight in Chrome.<br>
+The CSS of the (live) HTML page can be found under <code>Inspect</code> &gt; <code>Sources</code> &gt; select the relevant <code>.css</code> file. <br>
+Changes are reflected in real-time, so no caching and/or publish time issues like with other approaches.  </p>
+<p><img class="screenshot" src="https://notes.nicolasdeville.com/images/css/developing-and-testing-in-chrome.jpg" alt="developing-and-testing-in-chrome"/>  </p>
+<h1 id="snippets">Snippets</h1>
+<h3 id="ensures-padding-and-borders-are-included-in-widthheights-definitions">ensures padding and borders are included in width/heights definitions</h3>
+<p>to be included in all CSS files</p>
+<div class="highlight"><pre><span></span><code><span class="o">*,</span><span class="w"></span>
+<span class="p">::</span><span class="nd">after</span><span class="o">,</span><span class="w"></span>
+<span class="p">::</span><span class="nd">before</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="k">box-sizing</span><span class="p">:</span><span class="w"> </span><span class="kc">border-box</span><span class="p">;</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</code></pre></div>
+
+<h3 id="global-reset-clean-slate">global reset / clean slate</h3>
+<div class="highlight"><pre><span></span><code><span class="nt">html</span><span class="o">,</span><span class="w"> </span><span class="nt">body</span><span class="o">,</span><span class="w"> </span><span class="nt">div</span><span class="o">,</span><span class="w"> </span><span class="nt">h1</span><span class="o">,</span><span class="w"> </span><span class="nt">h2</span><span class="o">,</span><span class="w"> </span><span class="nt">h3</span><span class="o">,</span><span class="w"> </span><span class="nt">h4</span><span class="o">,</span><span class="w"> </span><span class="nt">h5</span><span class="o">,</span><span class="w"> </span><span class="nt">h6</span><span class="o">,</span><span class="w"> </span><span class="nt">ul</span><span class="o">,</span><span class="w"> </span><span class="nt">ol</span><span class="o">,</span><span class="w"> </span><span class="nt">li</span><span class="o">,</span><span class="w"> </span><span class="nt">p</span><span class="o">,</span><span class="w"> </span><span class="nt">blockquote</span><span class="o">,</span><span class="w"> </span><span class="nt">pre</span><span class="o">,</span><span class="w"> </span><span class="nt">form</span><span class="o">,</span><span class="w"> </span><span class="nt">fieldset</span><span class="o">,</span><span class="w"> </span><span class="nt">table</span><span class="o">,</span><span class="w"> </span><span class="nt">th</span><span class="o">,</span><span class="w"> </span><span class="nt">td</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="k">margin</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="k">padding</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</code></pre></div>
+
+<h3 id="center-an-image">center an image</h3>
+<p>Needs all 3 properties:  </p>
+<div class="highlight"><pre><span></span><code><span class="p">.</span><span class="nc">book</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="k">width</span><span class="p">:</span><span class="w"> </span><span class="mi">60</span><span class="kt">%</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="k">margin</span><span class="p">:</span><span class="w"> </span><span class="kc">auto</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="k">display</span><span class="p">:</span><span class="w"> </span><span class="kc">block</span><span class="p">;</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</code></pre></div>
+
+<h3 id="target-first-column-of-tables">Target first column of tables</h3>
+<p>eg to avoid whitespace wrapping</p>
+<div class="highlight"><pre><span></span><code><span class="nt">tbody</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="nt">tr</span><span class="p">:</span><span class="nd">first-child</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="nt">td</span><span class="p">:</span><span class="nd">first-child</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="k">white-space</span><span class="p">:</span><span class="w"> </span><span class="kc">nowrap</span><span class="p">;</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</code></pre></div>
+
+<h3 id="target-last-row-of-table">target last row of table</h3>
+<p>eg to have a border bottom at end of table</p>
+<div class="highlight"><pre><span></span><code><span class="nt">tr</span><span class="p">:</span><span class="nd">last-child</span><span class="p">{</span><span class="w"> </span><span class="c">/*this will select last tr*/</span><span class="w"></span>
+<span class="w">      </span><span class="k">border</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="kt">px</span><span class="w"> </span><span class="kc">solid</span><span class="w"> </span><span class="kc">black</span><span class="p">;</span><span class="w"></span>
+<span class="w">      </span><span class="k">background-color</span><span class="p">:</span><span class="w"> </span><span class="kc">yellow</span><span class="p">;</span><span class="w"></span>
+<span class="w">      </span><span class="p">}</span><span class="w"></span>
+</code></pre></div>
+
+<h3 id="custom-properties-css-variables">Custom properties (--*): CSS variables</h3>
+<p>Property names that are prefixed with <code>--</code>, like <code>--example-name</code>, represent custom properties that contain a value that can be used in other declarations using the <code>var()</code> function.</p>
+<p>Syntax</p>
+<div class="highlight"><pre><span></span><code><span class="nt">--somekeyword</span><span class="o">:</span><span class="w"> </span><span class="nt">left</span><span class="o">;</span><span class="w"></span>
+<span class="nt">--somecolor</span><span class="o">:</span><span class="w"> </span><span class="p">#</span><span class="nn">0000ff</span><span class="o">;</span><span class="w"></span>
+<span class="nt">--somecomplexvalue</span><span class="o">:</span><span class="w"> </span><span class="nt">3px</span><span class="w"> </span><span class="nt">6px</span><span class="w"> </span><span class="nt">rgb</span><span class="o">(</span><span class="nt">20</span><span class="o">,</span><span class="w"> </span><span class="nt">32</span><span class="o">,</span><span class="w"> </span><span class="nt">54</span><span class="o">);</span><span class="w"></span>
+</code></pre></div>
+
+<h3 id="bulletproof-font-face-syntax">Bulletproof @font-face Syntax</h3>
+<p><a href="https://www.paulirish.com/2009/bulletproof-font-face-implementation-syntax/" target="_blank">https://www.paulirish.com/2009/bulletproof-font-face-implementation-syntax/</a></p>
+<h3 id="considerations-for-styling-the-pre-tag">Considerations for styling the <code>pre</code> tag</h3>
+<p><a href="https://css-tricks.com/considerations-styling-pre-tag/" target="_blank">https://css-tricks.com/considerations-styling-pre-tag/</a></p>
+<h3 id="create-a-simple-responsive-html-table-using-pure-css">Create A Simple Responsive HTML Table Using Pure CSS</h3>
+<p>with collapsed rows<br>
+<a href="https://www.exeideas.com/2020/10/simple-responsive-html-table.html" target="_blank">https://www.exeideas.com/2020/10/simple-responsive-html-table.html</a></p>
+<h1 id="divs">Divs</h1>
+<p>How to divide a div in 2 halves:   </p>
+<div class="link_border"><div class="link_logo_box"><img class="link_logo" src="https://logo.clearbit.com/stackoverflow.com?size=35" alt="logo"/></div><div class="link_content">
+<div class="link_title">html - Two divs of 50% - Stack Overflow</div>
+<div class="link_tagline">stackoverflow.com</div>
+<div class="link_url"><a href="https://stackoverflow.com/questions/38823909/two-divs-of-50" target="_blank">https://stackoverflow.com/questions/38823909/two-divs-of-50</a></div></div></div>
+
+<div class="highlight"><pre><span></span><code><span class="p">#</span><span class="nn">yellow</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="k">height</span><span class="p">:</span><span class="w"> </span><span class="mi">100</span><span class="kt">%</span><span class="p">;</span><span class="w"></span>
+<span class="w">        </span><span class="k">display</span><span class="p">:</span><span class="w"> </span><span class="kc">flex</span><span class="p">;</span><span class="w"></span>
+<span class="w">        </span><span class="k">flex-direction</span><span class="p">:</span><span class="w"> </span><span class="kc">column</span><span class="p">;</span><span class="w"></span>
+<span class="w">        </span><span class="k">background-color</span><span class="p">:</span><span class="w"> </span><span class="nb">rgb</span><span class="p">(</span><span class="mi">214</span><span class="p">,</span><span class="w"> </span><span class="mi">196</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">);</span><span class="w"></span>
+<span class="w">        </span><span class="k">order</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">;</span><span class="w"></span>
+<span class="w">        </span><span class="k">width</span><span class="p">:</span><span class="w"> </span><span class="mi">100</span><span class="kt">%</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+
+<span class="w">    </span><span class="p">#</span><span class="nn">yellowL</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="k">position</span><span class="p">:</span><span class="w"> </span><span class="kc">relative</span><span class="p">;</span><span class="w"></span>
+<span class="w">        </span><span class="k">float</span><span class="p">:</span><span class="w"> </span><span class="kc">left</span><span class="p">;</span><span class="w"></span>
+<span class="w">        </span><span class="k">width</span><span class="p">:</span><span class="w"> </span><span class="mi">50</span><span class="kt">%</span><span class="p">;</span><span class="w"></span>
+<span class="w">        </span><span class="k">margin</span><span class="p">:</span><span class="w"> </span><span class="kc">auto</span><span class="p">;</span><span class="w"></span>
+<span class="w">        </span><span class="k">order</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+
+<span class="w">    </span><span class="p">#</span><span class="nn">yellowR</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="k">position</span><span class="p">:</span><span class="w"> </span><span class="kc">relative</span><span class="p">;</span><span class="w"></span>
+<span class="w">        </span><span class="k">float</span><span class="p">:</span><span class="w"> </span><span class="kc">right</span><span class="p">;</span><span class="w"></span>
+<span class="w">        </span><span class="k">width</span><span class="p">:</span><span class="w"> </span><span class="mi">50</span><span class="kt">%</span><span class="p">;</span><span class="w"></span>
+<span class="w">        </span><span class="k">margin</span><span class="p">:</span><span class="w"> </span><span class="kc">auto</span><span class="p">;</span><span class="w"></span>
+<span class="w">        </span><span class="k">order</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+</code></pre></div>
+
+<h1 id="learning-resources">Learning resources</h1>
+<h3 id="a-basic-walkthrough-of-the-css-box-model">A Basic Walkthrough of the CSS Box Model</h3>
+<p><a href="https://blog.hubspot.com/website/css-box-model" target="_blank">https://blog.hubspot.com/website/css-box-model</a></p>
+<h3 id="a-complete-guide-to-flexbox">A Complete Guide to Flexbox</h3>
+<p><a href="https://css-tricks.com/snippets/css/a-guide-to-flexbox/" target="_blank">https://css-tricks.com/snippets/css/a-guide-to-flexbox/</a>  </p>
+<p>Example - centering:   </p>
+<div class="highlight"><pre><span></span><code><span class="p">.</span><span class="nc">parent</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">  </span><span class="k">display</span><span class="p">:</span><span class="w"> </span><span class="kc">flex</span><span class="p">;</span><span class="w"></span>
+<span class="w">  </span><span class="k">height</span><span class="p">:</span><span class="w"> </span><span class="mi">300</span><span class="kt">px</span><span class="p">;</span><span class="w"> </span><span class="c">/* Or whatever */</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+
+<span class="p">.</span><span class="nc">child</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">  </span><span class="k">width</span><span class="p">:</span><span class="w"> </span><span class="mi">100</span><span class="kt">px</span><span class="p">;</span><span class="w">  </span><span class="c">/* Or whatever */</span><span class="w"></span>
+<span class="w">  </span><span class="k">height</span><span class="p">:</span><span class="w"> </span><span class="mi">100</span><span class="kt">px</span><span class="p">;</span><span class="w"> </span><span class="c">/* Or whatever */</span><span class="w"></span>
+<span class="w">  </span><span class="k">margin</span><span class="p">:</span><span class="w"> </span><span class="kc">auto</span><span class="p">;</span><span class="w">  </span><span class="c">/* Magic! */</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</code></pre></div>
+
+<p><span class="datestamp">11 Sep 2022</span>   </p>
+<h2 id="em-vs-rem">em vs rem</h2>
+<div class="link_border"><div class="link_logo_box"><img class="link_logo" src="https://logo.clearbit.com/digitalocean.com?size=35" alt="logo"/></div><div class="link_content">
+<div class="link_title">rem vs em Units in CSS</div>
+<div class="link_tagline">digitalocean.com</div>
+<div class="link_url"><a href="https://www.digitalocean.com/community/tutorials/css-rem-vs-em-units" target="_blank">https://www.digitalocean.com/community/tutorials/css-rem-vs-em-units</a></div></div></div>
+
+<p><code>em</code> compounds with each child, taking its parent element as reference. <br>
+<code>rem</code> is always relative to default font-size (set in CSS or browser default of <code>16px</code>)   </p>
+<h2 id="manage-multiple-fonts-in-same-family">manage multiple fonts in same family</h2>
+<p>Choose your font on Google Fonts:</p>
+<div class="link_border"><div class="link_logo_box"><img class="link_logo" src="https://logo.clearbit.com/google.com?size=35" alt="logo"/></div><div class="link_content">
+<div class="link_title">Google Fonts</div>
+<div class="link_tagline">google.com</div>
+<div class="link_url"><a href="https://fonts.google.com" target="_blank">https://fonts.google.com</a></div></div></div>
+
+<p>Select which weights you need and you can copy/paste the import code on the right:   </p>
+<p><img class="screenshot" src="https://notes.nicolasdeville.com/images/css/google-fonts.jpg" alt="google-fonts"/>  </p>
+<p>At the top of the CSS file, import family:   </p>
+<div class="highlight"><pre><span></span><code><span class="p">@</span><span class="k">import</span><span class="w"> </span><span class="nt">url</span><span class="o">(</span><span class="s1">&#39;https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400;700;900&amp;display=swap&#39;</span><span class="o">)</span><span class="p">;</span><span class="w"></span>
+</code></pre></div>
+
+<p>and use them in CSS as:   </p>
+<div class="highlight"><pre><span></span><code><span class="nt">font-weight</span><span class="o">:</span><span class="w"> </span><span class="nt">900</span><span class="o">;</span><span class="w"></span>
+</code></pre></div>
+
+<h1 id="change-colour-of-selection-highlights">change colour of selection highlights</h1>
+<div class="highlight"><pre><span></span><code><span class="p">::</span><span class="nd">selection</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">  </span><span class="k">background</span><span class="p">:</span><span class="w"> </span><span class="mh">#da2222</span><span class="p">;</span><span class="w"></span>
+<span class="w">  </span><span class="k">text-shadow</span><span class="p">:</span><span class="w"> </span><span class="kc">none</span><span class="p">;</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</code></pre></div>
+
+<h3 id="resources">Resources</h3>
+<div class="link_border"><div class="link_logo_box"><img class="link_logo" src="https://logo.clearbit.com/google.com?size=35" alt="logo"/></div><div class="link_content">
+<div class="link_title">CSS API update  |  Google Fonts  |  Google Developers</div>
+<div class="link_tagline">google.com</div>
+<div class="link_url"><a href="https://developers.google.com/fonts/docs/css2" target="_blank">https://developers.google.com/fonts/docs/css2</a></div></div></div>
+
+<h1 id="quotes">Quotes</h1>
+<p>"The aim of web design is not to use all available screen space. It is legibility. Text is most legible with no more than 70 characters per line."<br>
+- Paul Graham<br>
+(note: 120 characters here!)</p>
+                </article>
+            </aside>
+
+                <section id="content" class="body">
+
+                <!-- PREVIOUS NOTES -->
+				<p class="notes-section">previous notes</p>
+                <hr>
+
+                <ol id="posts-list" class="hfeed">
+            
+
+
+
+            <li>
+                <article class="hentry">
+                    <header>
+                        <!-- PREVIOUS NOTE TITLE -->
+                        <h1><a href="https://notes.nicolasdeville.com/learning/touch-typing" rel="bookmark"
+                            title="Learning Touch Typing">Learning Touch Typing</a></h1>
+                        <!-- PREVIOUS NOTE SUMMARY -->
+                        <div class="entry-content">
+                            
+                        </div>
+                    </header>
+
+                    <div class="entry-content">
+                        <!-- PREVIOUS NOTE METADATA -->
 <footer class="post-info">
 
     <p>
@@ -116,35 +347,11 @@
 
     
 
-</footer><p><span class="datestamp">05 May 2020</span>   </p>
-<h1 id="why">Why</h1>
-<h1 id="learning">Learning</h1>
-<div class="link_border"><div class="link_logo_box"><img class="link_logo" src="https://logo.clearbit.com/typing.com?size=35" alt="logo"/></div><div class="link_content">
-<div class="link_title">Typing.com - one-stop shop for students to learn to type</div>
-<div class="link_tagline">typing.com</div>
-<div class="link_url"><a href="https://www.typing.com" target="_blank">https://www.typing.com</a></div></div></div>
-
-<h1 id="practice">Practice</h1>
-<div class="link_border"><div class="link_logo_box"><img class="link_logo" src="https://logo.clearbit.com/monkeytype.com?size=35" alt="logo"/></div><div class="link_content">
-<div class="link_title">Monkeytype - minimalistic typing test</div>
-<div class="link_tagline">monkeytype.com</div>
-<div class="link_url"><a href="https://monkeytype.com" target="_blank">https://monkeytype.com</a></div></div></div>
-
-<h1 id="play-compete">Play / Compete</h1>
-<div class="link_border"><div class="link_logo_box"><img class="link_logo" src="https://logo.clearbit.com/typeracer.com?size=35" alt="logo"/></div><div class="link_content">
-<div class="link_title">TypeRacer - free massively multiplayer online competitive typing game</div>
-<div class="link_tagline">typeracer.com</div>
-<div class="link_url"><a href="https://play.typeracer.com" target="_blank">https://play.typeracer.com</a></div></div></div>
+</footer>                    </div>
+                    
                 </article>
-            </aside>
-
-                <section id="content" class="body">
-
-                <!-- PREVIOUS NOTES -->
-				<p class="notes-section">previous notes</p>
-                <hr>
-
-                <ol id="posts-list" class="hfeed">
+                <hr/>
+            </li>
             
 
 
@@ -251,46 +458,6 @@
         <!-- added 4/7 -->
         <!-- 		<br />
         <abbr class="modified" title="2022-09-19T12:51:48.741177+02:00">
-                Updated: 19 Sep 2022
-        </abbr>
- -->
-
-    </p>
-
-    
-
-</footer>                    </div>
-                    
-                </article>
-                <hr/>
-            </li>
-            
-
-
-
-            <li>
-                <article class="hentry">
-                    <header>
-                        <!-- PREVIOUS NOTE TITLE -->
-                        <h1><a href="https://notes.nicolasdeville.com/learning/css" rel="bookmark"
-                            title="Learning CSS">Learning CSS</a></h1>
-                        <!-- PREVIOUS NOTE SUMMARY -->
-                        <div class="entry-content">
-                            
-                        </div>
-                    </header>
-
-                    <div class="entry-content">
-                        <!-- PREVIOUS NOTE METADATA -->
-<footer class="post-info">
-
-    <p>
-        19 Sep 2022 <span class="separator">|</span> in <a class="link_tag" href="https://notes.nicolasdeville.com/learning/">learning</a>
- tags: <a class="link_tag" href="https://notes.nicolasdeville.com/tag/css.html">css</a>
-
-        <!-- added 4/7 -->
-        <!-- 		<br />
-        <abbr class="modified" title="2022-09-19T12:50:10.236224+02:00">
                 Updated: 19 Sep 2022
         </abbr>
  -->
@@ -576,7 +743,7 @@
                 Powered by <a href="https://github.com/getpelican/pelican" target="_blank">Pelican</a>, 
                 with <a href="https://stork-search.net/" target="_blank">Stork</a> & <a href="https://github.com/pelican-plugins/search" target="_blank">Pelican Search plugin</a>.
                 <span style="color:#C74350">|</span> <img src="https://notes.nicolasdeville.com/images/python.svg" alt="python_logo" width="16" style="vertical-align: middle;"/> <a href="https://www.python.org/" target="_blank">Python</a> 
-                
+                <a href="https://clearbit.com" target="_blank">Logos provided by Clearbit</a>
                 </address><!-- /#about -->
 
         </footer><!-- /#contentinfo -->

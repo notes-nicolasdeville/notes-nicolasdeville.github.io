@@ -14,7 +14,7 @@
 
 
 
-        <meta name="description" content="Internet & Network monitoring tool (script)" />
+        <meta name="description" content="[work in progress] Internet & Network monitoring tool (script)" />
 
     <!-- for Stork seach engine -->
     <link rel="stylesheet" href="https://files.stork-search.net/basic.css" /> 
@@ -35,7 +35,7 @@
             </div>
 
             <div class="above-navbar">
-                <div class="last_updated">19 Sep 2022 | 13:38</div>
+                <div class="last_updated">19 Sep 2022 | 15:55</div>
                 <div>
                     <p class="notes_count">
                         <a href="https://notes.nicolasdeville.com/tags">by tags</a> 
@@ -81,7 +81,7 @@
             </h1>
             <p class="header_summary">
                 <main> <!-- for indexing by Stork -->
-                    <p>Internet &amp; Network monitoring tool (script)</p>
+                    <p>[work in progress] Internet &amp; Network monitoring tool (script)</p>
                 </main>
             </p>
         </header>
@@ -90,14 +90,14 @@
 <footer class="post-info">
 
     <p>
-        08 Sep 2022 <span class="separator">|</span> in <a class="link_tag" href="https://notes.nicolasdeville.com/projects/">projects</a>
+        19 Sep 2022 <span class="separator">|</span> in <a class="link_tag" href="https://notes.nicolasdeville.com/projects/">projects</a>
  tags: <a class="link_tag" href="https://notes.nicolasdeville.com/tag/python.html">python</a>
 <a class="link_tag" href="https://notes.nicolasdeville.com/tag/internet.html">internet</a>
 
         <!-- added 4/7 -->
         <!-- 		<br />
-        <abbr class="modified" title="2022-09-08T10:20:46.931240+02:00">
-                Updated: 08 Sep 2022
+        <abbr class="modified" title="2022-09-19T15:52:45.152469+02:00">
+                Updated: 19 Sep 2022
         </abbr>
  -->
 
@@ -111,26 +111,33 @@
 <p>My setup:s
 Cable modem &gt; Unifi Router USG &gt; Unifi Switch US-8 &gt; Ethernet connection to macOS Monterey    </p>
 <h2 id="good-resources">Good Resources</h2>
-<div class="link_border">
-<div class="link_title">Python Script to Monitor Network Connection </div>
-<div class="link_url"><a href="https://linuxhint.com/python-script-monitor-network-connection/" target="_blank">https://linuxhint.com/python-script-monitor-network-connection/</a></div></div>
+<div class="link_border"><div class="link_logo_box"><img class="link_logo" src="https://logo.clearbit.com/linuxhint.com?size=35" alt="logo"/></div><div class="link_content">
+<div class="link_title">Python Script to Monitor Network Connection</div>
+<div class="link_tagline">linuxhint.com</div>
+<div class="link_url"><a href="https://linuxhint.com/python-script-monitor-network-connection" target="_blank">https://linuxhint.com/python-script-monitor-network-connection</a></div></div></div>
 
-<div class="link_border">
+<div class="link_border"><div class="link_logo_box"><img class="link_logo" src="https://logo.clearbit.com/geeksforgeeks.org?size=35" alt="logo"/></div><div class="link_content">
 <div class="link_title">Python Script to Monitor Network Connection and saving into Log File - GeeksforGeeks</div>
-<div class="link_url"><a href="https://www.geeksforgeeks.org/python-script-to-monitor-network-connection-and-saving-into-log-file/" target="_blank">https://www.geeksforgeeks.org/python-script-to-monitor-network-connection-and-saving-into-log-file/</a></div></div>
+<div class="link_tagline">geeksforgeeks.org</div>
+<div class="link_url"><a href="https://www.geeksforgeeks.org/python-script-to-monitor-network-connection-and-saving-into-log-file" target="_blank">https://www.geeksforgeeks.org/python-script-to-monitor-network-connection-and-saving-into-log-file</a></div></div></div>
 
-<div class="link_border">
+<div class="link_border"><div class="link_logo_box"><img class="link_logo" src="https://logo.clearbit.com/stackoverflow.com?size=35" alt="logo"/></div><div class="link_content">
 <div class="link_title">Pinging servers in Python - Stack Overflow</div>
-<div class="link_url"><a href="https://stackoverflow.com/questions/2953462/pinging-servers-in-python" target="_blank">https://stackoverflow.com/questions/2953462/pinging-servers-in-python</a></div></div>
+<div class="link_tagline">stackoverflow.com</div>
+<div class="link_url"><a href="https://stackoverflow.com/questions/2953462/pinging-servers-in-python" target="_blank">https://stackoverflow.com/questions/2953462/pinging-servers-in-python</a></div></div></div>
 
 <h2 id="traceroute">Traceroute</h2>
 <p><span class="datestamp">06 Sep 2022</span>   </p>
 <p>Ideally, I would want the script to figure out the IP addresses of the devices to ping on the internal network. <code>Traceroute</code> seems to be the way to go.   </p>
-<div class="link_border">
+<div class="link_border"><div class="link_logo_box"><img class="link_logo" src="https://logo.clearbit.com/fortinet.com?size=35" alt="logo"/></div><div class="link_content">
 <div class="link_title">What is Traceroute: What Does it Do & How Does It Work?</div>
-<div class="link_url"><a href="https://www.fortinet.com/resources/cyberglossary/traceroutes" target="_blank">https://www.fortinet.com/resources/cyberglossary/traceroutes</a></div></div>
+<div class="link_tagline">fortinet.com</div>
+<div class="link_url"><a href="https://www.fortinet.com/resources/cyberglossary/traceroutes" target="_blank">https://www.fortinet.com/resources/cyberglossary/traceroutes</a></div></div></div>
 
-<p>Terminal command: <code>traceroute hostname</code>   </p>
+<p>Terminal command:  </p>
+<div class="highlight"><pre><span></span><code>traceroute hostname
+</code></pre></div>
+
 <p>Traceroute read:</p>
 <table>
 <thead>
@@ -160,38 +167,51 @@ Cable modem &gt; Unifi Router USG &gt; Unifi Switch US-8 &gt; Ethernet connectio
 <p>“If there is an issue, you can use Simple Network Management Protocol (SNMP) to diagnose the problem.” </p>
 <h2 id="resources-references">Resources / References</h2>
 <h3 id="monitor-downloadupload-speeds">Monitor download/upload speeds</h3>
-<div class="link_border">
-<div class="link_title">Monitor your internet with python</div>
-<div class="link_url"><a href="https://pythonprogramming.org/monitor-your-internet-with-python/" target="_blank">https://pythonprogramming.org/monitor-your-internet-with-python/</a></div></div>
+<div class="link_border"><div class="link_logo_box"><img class="link_logo" src="https://logo.clearbit.com/pythonprogramming.org?size=35" alt="logo"/></div><div class="link_content">
+<div class="link_title">>Monitor your internet with python</div>
+<div class="link_tagline">pythonprogramming.org</div>
+<div class="link_url"><a href="https://pythonprogramming.org/monitor-your-internet-with-python" target="_blank">https://pythonprogramming.org/monitor-your-internet-with-python</a></div></div></div>
 
-<div class="link_border">
+<div class="link_border"><div class="link_logo_box"><img class="link_logo" src="https://logo.clearbit.com/pythonprogramming.org?size=35" alt="logo"/></div><div class="link_content">
 <div class="link_title">Tweeting about your low internet speed and tagging your ISP</div>
-<div class="link_url"><a href="https://pythonprogramming.org/sending-tweet-when-your-internet-speed-goes-down/" target="_blank">https://pythonprogramming.org/sending-tweet-when-your-internet-speed-goes-down/</a></div></div>
+<div class="link_tagline">pythonprogramming.org</div>
+<div class="link_url"><a href="https://pythonprogramming.org/sending-tweet-when-your-internet-speed-goes-down" target="_blank">https://pythonprogramming.org/sending-tweet-when-your-internet-speed-goes-down</a></div></div></div>
 
 <p>I care less about speed than just availability. <br>
 Not a good fit.   </p>
 <h3 id="simplemonitor">Simplemonitor</h3>
-<div class="link_border">
+<div class="link_border"><div class="link_logo_box"><img class="link_logo" src="https://logo.clearbit.com/github.io?size=35" alt="logo"/></div><div class="link_content">
 <div class="link_title">SimpleMonitor</div>
-<div class="link_title">A Python-based network and host monitor </div>
-<div class="link_url"><a href="https://jamesoff.github.io/simplemonitor/" target="_blank">https://jamesoff.github.io/simplemonitor/</a></div></div>
+<div class="link_tagline">A Python-based network and host monitor</div>
+<div class="link_url"><a href="https://jamesoff.github.io/simplemonitor" target="_blank">https://jamesoff.github.io/simplemonitor</a></div></div></div>
 
-<p>updated doc: <a href="https://simplemonitor.readthedocs.io/en/latest/" target="_blank">https://simplemonitor.readthedocs.io/en/latest/</a>   </p>
-<p>Github: <a href="https://github.com/jamesoff/simplemonitor/blob/develop/docs/index.rst"    target="_blank">https://github.com/jamesoff/simplemonitor/blob/develop/docs/index.rst</a>   </p>
+<p>updated doc:   </p>
+<div class="link_border"><div class="link_logo_box"><img class="link_logo" src="https://logo.clearbit.com/readthedocs.io?size=35" alt="logo"/></div><div class="link_content">
+<div class="link_title">Welcome to SimpleMonitor documentation</div>
+<div class="link_tagline">readthedocs.io</div>
+<div class="link_url"><a href="https://simplemonitor.readthedocs.io/en/latest" target="_blank">https://simplemonitor.readthedocs.io/en/latest</a></div></div></div>
+
+<div class="link_border"><div class="link_logo_box"><img class="link_logo" src="https://logo.clearbit.com/github.com?size=35" alt="logo"/></div><div class="link_content">
+<div class="link_title">simplemonitor/index.rst at develop · jamesoff/simplemonitor · GitHub</div>
+<div class="link_tagline">github.com</div>
+<div class="link_url"><a href="https://github.com/jamesoff/simplemonitor/blob/develop/docs/index.rst" target="_blank">https://github.com/jamesoff/simplemonitor/blob/develop/docs/index.rst</a></div></div></div>
+
 <p>Probably too complex for my needs. 
 Not a good fit.  </p>
 <h3 id="smokeping">Smokeping</h3>
-<div class="link_border">
-<div class="link_title">SmokePing Documentation</div>
-<div class="link_url"><a href="https://oss.oetiker.ch/smokeping/doc/index.en.html" target="_blank">https://oss.oetiker.ch/smokeping/doc/index.en.html</a></div></div>
+<div class="link_border"><div class="link_logo_box"><img class="link_logo" src="https://logo.clearbit.com/oetiker.ch?size=35" alt="logo"/></div><div class="link_content">
+<div class="link_title">SmokePing - SmokePing Documentation</div>
+<div class="link_tagline">oetiker.ch</div>
+<div class="link_url"><a href="https://oss.oetiker.ch/smokeping/doc/index.en.html" target="_blank">https://oss.oetiker.ch/smokeping/doc/index.en.html</a></div></div></div>
 
 <p>For reference only. Too complex for my needs. <br>
 Not a good fit.   </p>
 <p><span class="datestamp">04 Sep 2022</span>   </p>
 <p>Starting code, open-sourcing repo here:      </p>
-<div class="link_border">
+<div class="link_border"><div class="link_logo_box"><img class="link_logo" src="https://logo.clearbit.com/github.com?size=35" alt="logo"/></div><div class="link_content">
 <div class="link_title">GitHub - ndeville/pingee: Internet Connection Monitoring Script</div>
-<div class="link_url"><a href="https://github.com/ndeville/pingee" target="_blank">https://github.com/ndeville/pingee</a></div></div>
+<div class="link_tagline">github.com</div>
+<div class="link_url"><a href="https://github.com/ndeville/pingee" target="_blank">https://github.com/ndeville/pingee</a></div></div></div>
 
 <p>Logic:   </p>
 <div class="highlight"><pre><span></span><code>- identify network path automatically for devices to ping or hardcode internal IPs?
@@ -359,7 +379,7 @@ external_ping=0
                 Powered by <a href="https://github.com/getpelican/pelican" target="_blank">Pelican</a>, 
                 with <a href="https://stork-search.net/" target="_blank">Stork</a> & <a href="https://github.com/pelican-plugins/search" target="_blank">Pelican Search plugin</a>.
                 <span style="color:#C74350">|</span> <img src="https://notes.nicolasdeville.com/images/python.svg" alt="python_logo" width="16" style="vertical-align: middle;"/> <a href="https://www.python.org/" target="_blank">Python</a> 
-                
+                <a href="https://clearbit.com" target="_blank">Logos provided by Clearbit</a>
                 </address><!-- /#about -->
 
         </footer><!-- /#contentinfo -->

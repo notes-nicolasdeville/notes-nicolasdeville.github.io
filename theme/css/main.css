@@ -8,6 +8,10 @@
     --nic_red: #C64350;
 }
 
+::selection {
+    background: var(--nic_red);
+    text-shadow: none;
+}
 
 /* Global reset / clean slate */
 html, body, div, h1, h2, h3, h4, h5, h6, ul, ol, li, p, blockquote, pre, form, fieldset, table, th, td {

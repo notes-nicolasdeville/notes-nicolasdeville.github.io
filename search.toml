@@ -8,6 +8,61 @@ url = "/ABOUT/"
 title = ""
 
 [[input.files]]
+path = "projects/recordee/index.html"
+url = "/projects/recordee"
+title = "Recordee"
+
+[[input.files]]
+path = "projects/pingee/index.html"
+url = "/projects/pingee"
+title = "Pingee"
+
+[[input.files]]
+path = "learning/css/index.html"
+url = "/learning/css"
+title = "Learning CSS"
+
+[[input.files]]
+path = "startups/advisable/index.html"
+url = "/startups/advisable"
+title = "Advisable"
+
+[[input.files]]
+path = "python/unicode/index.html"
+url = "/python/unicode"
+title = "Unicode in Python"
+
+[[input.files]]
+path = "python/sending-emails/index.html"
+url = "/python/sending-emails"
+title = "Sending emails with Python"
+
+[[input.files]]
+path = "python/python-notion/index.html"
+url = "/python/python-notion"
+title = "Fetch Notion database data with Python"
+
+[[input.files]]
+path = "python/library-pelican/index.html"
+url = "/python/library-pelican"
+title = "Building a static site with Pelican"
+
+[[input.files]]
+path = "python/export-kindle-library/index.html"
+url = "/python/export-kindle-library"
+title = "Exporting my Kindle library data"
+
+[[input.files]]
+path = "python/create-executable/index.html"
+url = "/python/create-executable"
+title = "Create executable of a Pyhon application"
+
+[[input.files]]
+path = "projects/twittee/index.html"
+url = "/projects/twittee"
+title = "Twittee"
+
+[[input.files]]
 path = "python/library-speech-recognition/index.html"
 url = "/python/library-speech-recognition"
 title = "Library: speech_recognition"
@@ -48,11 +103,6 @@ url = "/learning/git"
 title = "Learning Git"
 
 [[input.files]]
-path = "learning/css/index.html"
-url = "/learning/css"
-title = "Learning CSS"
-
-[[input.files]]
 path = "learning/computer-science/index.html"
 url = "/learning/computer-science"
 title = "Learning Computer Science"
@@ -91,11 +141,6 @@ title = "Tactical Pens"
 path = "interests/mechanical-keyboards/index.html"
 url = "/interests/mechanical-keyboards"
 title = "Mechanical Keyboards"
-
-[[input.files]]
-path = "projects/recordee/index.html"
-url = "/projects/recordee"
-title = "Recordee"
 
 [[input.files]]
 path = "interests/flat-caps/index.html"
@@ -268,11 +313,6 @@ url = "/home-office/f1-models"
 title = "F1 Model Cars"
 
 [[input.files]]
-path = "python/library-pelican/index.html"
-url = "/python/library-pelican"
-title = "Building a static site with Pelican"
-
-[[input.files]]
 path = "python/library-os/index.html"
 url = "/python/library-os"
 title = "Python Library: os (built-in)"
@@ -371,11 +411,6 @@ title = "Managing Virtual Environments in Python"
 path = "python/gitignore/index.html"
 url = "/python/gitignore"
 title = "Gitignore"
-
-[[input.files]]
-path = "python/unicode/index.html"
-url = "/python/unicode"
-title = "Unicode in Python"
 
 [[input.files]]
 path = "learning/html/index.html"
@@ -503,39 +538,9 @@ url = "/home-office/setup"
 title = "Home Office Setup"
 
 [[input.files]]
-path = "startups/advisable/index.html"
-url = "/startups/advisable"
-title = "Advisable"
-
-[[input.files]]
-path = "python/sending-emails/index.html"
-url = "/python/sending-emails"
-title = "Sending emails with Python"
-
-[[input.files]]
-path = "python/create-executable/index.html"
-url = "/python/create-executable"
-title = "Create executable of a Pyhon application"
-
-[[input.files]]
 path = "interests/apple/index.html"
 url = "/interests/apple"
 title = "Apple"
-
-[[input.files]]
-path = "projects/twittee/index.html"
-url = "/projects/twittee"
-title = "Twittee"
-
-[[input.files]]
-path = "projects/pingee/index.html"
-url = "/projects/pingee"
-title = "Pingee"
-
-[[input.files]]
-path = "python/export-kindle-library/index.html"
-url = "/python/export-kindle-library"
-title = "Exporting my Kindle library data"
 
 [[input.files]]
 path = "python/library-yagmail/index.html"
@@ -566,11 +571,6 @@ title = "Vodafone Kabel"
 path = "learning/markdown/index.html"
 url = "/learning/markdown"
 title = "Learning Markdown"
-
-[[input.files]]
-path = "python/python-notion/index.html"
-url = "/python/python-notion"
-title = "Fetch Notion database data with Python"
 
 [[input.files]]
 path = "python/library-imap-tools/index.html"
