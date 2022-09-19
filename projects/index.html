@@ -34,7 +34,7 @@
             </div>
 
             <div class="above-navbar">
-                <div class="last_updated">19 Sep 2022 | 15:55</div>
+                <div class="last_updated">19 Sep 2022 | 18:20</div>
                 <div>
                     <p class="notes_count">
                         <a href="https://notes.nicolasdeville.com/tags">by tags</a> 
@@ -91,12 +91,12 @@
             <hr/>
 
                 <article class="hentry">
-                    <h1 class="entry-title"><a href="https://notes.nicolasdeville.com/projects/recordee">Recordee</a></h1>
+                    <h1 class="entry-title"><a href="https://notes.nicolasdeville.com/projects/pingee">Pingee</a></h1>
 
                     <!-- added 4/7 -->
                     <div>
                         <p class="header_summary">
-                            <p>End-to-end automated workflow from voice recording to markdown note.</p>
+                            <p>[work in progress] Internet &amp; Network monitoring tool (script)</p>
                         </p>
                     </div>
 
@@ -105,11 +105,11 @@
     <p>
         19 Sep 2022 <span class="separator">|</span> in <a class="link_tag" href="https://notes.nicolasdeville.com/projects/">projects</a>
  tags: <a class="link_tag" href="https://notes.nicolasdeville.com/tag/python.html">python</a>
-<a class="link_tag" href="https://notes.nicolasdeville.com/tag/automation.html">automation</a>
+<a class="link_tag" href="https://notes.nicolasdeville.com/tag/internet.html">internet</a>
 
         <!-- added 4/7 -->
         <!-- 		<br />
-        <abbr class="modified" title="2022-09-19T15:53:22.031480+02:00">
+        <abbr class="modified" title="2022-09-19T16:20:14.846278+02:00">
                 Updated: 19 Sep 2022
         </abbr>
  -->
@@ -118,158 +118,247 @@
 
     
 
-</footer><p><span class="datestamp">17 Sep 2022</span>   </p>
-<p>I've been using Just Press Record [<a href="../../apps/just-press-record/index.html">Nic Note: Just Press Record</a>] for the last 2+ years for on-the-go, in-my-bath or at-my-desk long voice recordings.  </p>
-<p>A lot of these recordings are intended to be actioned, or serve as basis for an email, a blog or a note.  </p>
-<p>I love the simplicity and efficiency of Just Press Record, so it still requires me some tedious tasks when back at my computer to extract the transcript for each recording individually.   </p>
-<p>Goal here will be a Python script to:   </p>
-<ul>
-<li>fetch <code>.m4a</code> recording from local iCloud folder ([<a href="../../helpers/icloud-drive/index.html">Nic Note: iCloud Drive</a>]) with one subfolder by day)</li>
-<li>convert <code>.m4a</code> to <code>.wav</code> which seems to be the primary format accepted by speech_recognition  </li>
-<li>transcribe (speech to text)</li>
-<li>generate markdown note in a Drafts folder in my notes folder</li>
-</ul>
-<h1 id="snippets">Snippets</h1>
-<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">pydub</span> <span class="kn">import</span> <span class="n">AudioSegment</span>
-<span class="n">audio</span> <span class="o">=</span> <span class="n">AudioSegment</span><span class="o">.</span><span class="n">from_file</span><span class="p">(</span><span class="s1">&#39;file.m4a&#39;</span><span class="p">)</span>
-</code></pre></div>
+</footer><p><span class="datestamp">19 Aug 2022</span></p>
+<p>Goal: 24/7 monitoring of network &amp; internet connection to identify source and log dropouts for reporting to ISP.   </p>
+<p>My setup:s
+Cable modem &gt; Unifi Router USG &gt; Unifi Switch US-8 &gt; Ethernet connection to macOS Monterey    </p>
+<h2 id="good-resources">Good Resources</h2>
+<div class="link_border"><div class="link_logo_box"><img class="link_logo" src="https://logo.clearbit.com/linuxhint.com?size=35" alt="logo"/></div><div class="link_content">
+<div class="link_title">Python Script to Monitor Network Connection</div>
+<div class="link_tagline">linuxhint.com</div>
+<div class="link_url"><a href="https://linuxhint.com/python-script-monitor-network-connection" target="_blank">https://linuxhint.com/python-script-monitor-network-connection</a></div></div></div>
 
-<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">speech_recognition</span> <span class="k">as</span> <span class="nn">sr</span>
+<div class="link_border"><div class="link_logo_box"><img class="link_logo" src="https://logo.clearbit.com/geeksforgeeks.org?size=35" alt="logo"/></div><div class="link_content">
+<div class="link_title">Python Script to Monitor Network Connection and saving into Log File - GeeksforGeeks</div>
+<div class="link_tagline">geeksforgeeks.org</div>
+<div class="link_url"><a href="https://www.geeksforgeeks.org/python-script-to-monitor-network-connection-and-saving-into-log-file" target="_blank">https://www.geeksforgeeks.org/python-script-to-monitor-network-connection-and-saving-into-log-file</a></div></div></div>
 
-<span class="n">r</span> <span class="o">=</span> <span class="n">sr</span><span class="o">.</span><span class="n">Recognizer</span><span class="p">()</span>
-<span class="k">with</span> <span class="n">sr</span><span class="o">.</span><span class="n">AudioFile</span><span class="p">(</span><span class="s1">&#39;sampleMp3.WAV&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">source</span><span class="p">:</span>
-    <span class="n">audio</span> <span class="o">=</span> <span class="n">r</span><span class="o">.</span><span class="n">record</span><span class="p">(</span><span class="n">source</span><span class="p">,</span> <span class="n">duration</span><span class="o">=</span><span class="mi">60</span><span class="p">)</span> 
-
-<span class="n">command</span> <span class="o">=</span> <span class="n">r</span><span class="o">.</span><span class="n">recognize_google</span><span class="p">(</span><span class="n">audio</span><span class="p">)</span>
-
-<span class="n">text_file</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;Output.txt&quot;</span><span class="p">,</span> <span class="s2">&quot;w&quot;</span><span class="p">)</span>
-<span class="n">text_file</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">command</span><span class="p">)</span>
-<span class="n">text_file</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
-</code></pre></div>
-
-<h2 id="long-sample-audio">Long Sample Audio</h2>
-<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">os</span> 
-<span class="kn">from</span> <span class="nn">pydub</span> <span class="kn">import</span> <span class="n">AudioSegment</span>
-<span class="kn">import</span> <span class="nn">speech_recognition</span> <span class="k">as</span> <span class="nn">sr</span>
-<span class="kn">from</span> <span class="nn">pydub.silence</span> <span class="kn">import</span> <span class="n">split_on_silence</span>
-
-<span class="n">recognizer</span> <span class="o">=</span> <span class="n">sr</span><span class="o">.</span><span class="n">Recognizer</span><span class="p">()</span>
-
-<span class="k">def</span> <span class="nf">load_chunks</span><span class="p">(</span><span class="n">filename</span><span class="p">):</span>
-    <span class="n">long_audio</span> <span class="o">=</span> <span class="n">AudioSegment</span><span class="o">.</span><span class="n">from_mp3</span><span class="p">(</span><span class="n">filename</span><span class="p">)</span>
-    <span class="n">audio_chunks</span> <span class="o">=</span> <span class="n">split_on_silence</span><span class="p">(</span>
-        <span class="n">long_audio</span><span class="p">,</span> <span class="n">min_silence_len</span><span class="o">=</span><span class="mi">1800</span><span class="p">,</span>
-        <span class="n">silence_thresh</span><span class="o">=-</span><span class="mi">17</span>
-    <span class="p">)</span>
-    <span class="k">return</span> <span class="n">audio_chunks</span>
-
-<span class="k">for</span> <span class="n">audio_chunk</span> <span class="ow">in</span> <span class="n">load_chunks</span><span class="p">(</span><span class="s1">&#39;./sample_audio/long_audio.mp3&#39;</span><span class="p">):</span>
-    <span class="n">audio_chunk</span><span class="o">.</span><span class="n">export</span><span class="p">(</span><span class="s2">&quot;temp&quot;</span><span class="p">,</span> <span class="nb">format</span><span class="o">=</span><span class="s2">&quot;wav&quot;</span><span class="p">)</span>
-    <span class="k">with</span> <span class="n">sr</span><span class="o">.</span><span class="n">AudioFile</span><span class="p">(</span><span class="s2">&quot;temp&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">source</span><span class="p">:</span>
-        <span class="n">audio</span> <span class="o">=</span> <span class="n">recognizer</span><span class="o">.</span><span class="n">listen</span><span class="p">(</span><span class="n">source</span><span class="p">)</span>
-        <span class="k">try</span><span class="p">:</span>
-            <span class="n">text</span> <span class="o">=</span> <span class="n">recognizer</span><span class="o">.</span><span class="n">recognize_google</span><span class="p">(</span><span class="n">audio</span><span class="p">)</span>
-            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Chunk : </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">text</span><span class="p">))</span>
-        <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">ex</span><span class="p">:</span>
-            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Error occured&quot;</span><span class="p">)</span>
-            <span class="nb">print</span><span class="p">(</span><span class="n">ex</span><span class="p">)</span>
-
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;++++++&quot;</span><span class="p">)</span>
-</code></pre></div>
-
-<p>from: <a href="https://hackernoon.com/how-to-convert-speech-to-text-in-python-q0263tzp" target="_blank">https://hackernoon.com/how-to-convert-speech-to-text-in-python-q0263tzp</a>   </p>
-<p>Getting <code>pydub.exceptions.CouldntDecodeError: Decoding failed. ffmpeg returned error code: 1</code>.<br>
-Need to use <code>AudioSegment.from_file(filename, "m4a")</code>?  </p>
-<div class="highlight"><pre><span></span><code><span class="c1"># importing libraries </span>
-<span class="kn">import</span> <span class="nn">speech_recognition</span> <span class="k">as</span> <span class="nn">sr</span> 
-<span class="kn">import</span> <span class="nn">os</span> 
-<span class="kn">from</span> <span class="nn">pydub</span> <span class="kn">import</span> <span class="n">AudioSegment</span>
-<span class="kn">from</span> <span class="nn">pydub.silence</span> <span class="kn">import</span> <span class="n">split_on_silence</span>
-
-<span class="c1"># create a speech recognition object</span>
-<span class="n">r</span> <span class="o">=</span> <span class="n">sr</span><span class="o">.</span><span class="n">Recognizer</span><span class="p">()</span>
-
-<span class="c1"># a function that splits the audio file into chunks</span>
-<span class="c1"># and applies speech recognition</span>
-<span class="k">def</span> <span class="nf">get_large_audio_transcription</span><span class="p">(</span><span class="n">path</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">    Splitting the large audio file into chunks</span>
-<span class="sd">    and apply speech recognition on each of these chunks</span>
-<span class="sd">    &quot;&quot;&quot;</span>
-    <span class="c1"># open the audio file using pydub</span>
-    <span class="n">sound</span> <span class="o">=</span> <span class="n">AudioSegment</span><span class="o">.</span><span class="n">from_wav</span><span class="p">(</span><span class="n">path</span><span class="p">)</span>  
-    <span class="c1"># split audio sound where silence is 700 miliseconds or more and get chunks</span>
-    <span class="n">chunks</span> <span class="o">=</span> <span class="n">split_on_silence</span><span class="p">(</span><span class="n">sound</span><span class="p">,</span>
-        <span class="c1"># experiment with this value for your target audio file</span>
-        <span class="n">min_silence_len</span> <span class="o">=</span> <span class="mi">500</span><span class="p">,</span>
-        <span class="c1"># adjust this per requirement</span>
-        <span class="n">silence_thresh</span> <span class="o">=</span> <span class="n">sound</span><span class="o">.</span><span class="n">dBFS</span><span class="o">-</span><span class="mi">14</span><span class="p">,</span>
-        <span class="c1"># keep the silence for 1 second, adjustable as well</span>
-        <span class="n">keep_silence</span><span class="o">=</span><span class="mi">500</span><span class="p">,</span>
-    <span class="p">)</span>
-    <span class="n">folder_name</span> <span class="o">=</span> <span class="s2">&quot;audio-chunks&quot;</span>
-    <span class="c1"># create a directory to store the audio chunks</span>
-    <span class="k">if</span> <span class="ow">not</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">isdir</span><span class="p">(</span><span class="n">folder_name</span><span class="p">):</span>
-        <span class="n">os</span><span class="o">.</span><span class="n">mkdir</span><span class="p">(</span><span class="n">folder_name</span><span class="p">)</span>
-    <span class="n">whole_text</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span>
-    <span class="c1"># process each chunk </span>
-    <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">audio_chunk</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">chunks</span><span class="p">,</span> <span class="n">start</span><span class="o">=</span><span class="mi">1</span><span class="p">):</span>
-        <span class="c1"># export audio chunk and save it in</span>
-        <span class="c1"># the `folder_name` directory.</span>
-        <span class="n">chunk_filename</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">folder_name</span><span class="p">,</span> <span class="sa">f</span><span class="s2">&quot;chunk</span><span class="si">{</span><span class="n">i</span><span class="si">}</span><span class="s2">.wav&quot;</span><span class="p">)</span>
-        <span class="n">audio_chunk</span><span class="o">.</span><span class="n">export</span><span class="p">(</span><span class="n">chunk_filename</span><span class="p">,</span> <span class="nb">format</span><span class="o">=</span><span class="s2">&quot;wav&quot;</span><span class="p">)</span>
-        <span class="c1"># recognize the chunk</span>
-        <span class="k">with</span> <span class="n">sr</span><span class="o">.</span><span class="n">AudioFile</span><span class="p">(</span><span class="n">chunk_filename</span><span class="p">)</span> <span class="k">as</span> <span class="n">source</span><span class="p">:</span>
-            <span class="n">audio_listened</span> <span class="o">=</span> <span class="n">r</span><span class="o">.</span><span class="n">record</span><span class="p">(</span><span class="n">source</span><span class="p">)</span>
-            <span class="c1"># try converting it to text</span>
-            <span class="k">try</span><span class="p">:</span>
-                <span class="n">text</span> <span class="o">=</span> <span class="n">r</span><span class="o">.</span><span class="n">recognize_google</span><span class="p">(</span><span class="n">audio_listened</span><span class="p">)</span>
-            <span class="k">except</span> <span class="n">sr</span><span class="o">.</span><span class="n">UnknownValueError</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
-                <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Error:&quot;</span><span class="p">,</span> <span class="nb">str</span><span class="p">(</span><span class="n">e</span><span class="p">))</span>
-            <span class="k">else</span><span class="p">:</span>
-                <span class="n">text</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">text</span><span class="o">.</span><span class="n">capitalize</span><span class="p">()</span><span class="si">}</span><span class="s2">. &quot;</span>
-                <span class="nb">print</span><span class="p">(</span><span class="n">chunk_filename</span><span class="p">,</span> <span class="s2">&quot;:&quot;</span><span class="p">,</span> <span class="n">text</span><span class="p">)</span>
-                <span class="n">whole_text</span> <span class="o">+=</span> <span class="n">text</span>
-    <span class="c1"># return the text for all chunks detected</span>
-    <span class="k">return</span> <span class="n">whole_text</span>
-</code></pre></div>
-
-<p>from : <a href="https://www.thepythoncode.com/article/using-speech-recognition-to-convert-speech-to-text-python" target="_blank">https://www.thepythoncode.com/article/using-speech-recognition-to-convert-speech-to-text-python</a> </p>
-<h2 id="python-script-to-convert-m4a-files-to-wav-files">Python script to convert m4a files to wav files</h2>
-<script src="https://gist.github.com/arjunsharma97/0ecac61da2937ec52baf61af1aa1b759.js"></script>
-
-<p><span class="datestamp">18 Sep 2022</span> Let's try to focus first on conversion to <code>.wav</code> and then tackle speech-recognition.  </p>
-<h1 id="resources">Resources</h1>
-<div class="link_border"><div class="link_logo_box"><img class="link_logo" src="https://logo.clearbit.com/pythonbasics.org?size=35" alt="logo"/></div><div class="link_content">
-<div class="link_title">Transcribe Audio | Python Tutorial</div>
-<div class="link_tagline">pythonbasics.org</div>
-<div class="link_url"><a href="https://pythonbasics.org/transcribe-audio" target="_blank">https://pythonbasics.org/transcribe-audio</a></div></div></div>
-
-<div class="link_border"><div class="link_logo_box"><img class="link_logo" src="https://logo.clearbit.com/fullstackpython.com?size=35" alt="logo"/></div><div class="link_content">
-<div class="link_title">How to Transcribe Speech Recordings into Text with Python - Full Stack Python</div>
-<div class="link_tagline">fullstackpython.com</div>
-<div class="link_url"><a href="https://www.fullstackpython.com/blog/transcribe-recordings-speech-text-assemblyai.html" target="_blank">https://www.fullstackpython.com/blog/transcribe-recordings-speech-text-assemblyai.html</a></div></div></div>
-
-<ul>
-<li>requires an AssemblyAI account.  </li>
-</ul>
 <div class="link_border"><div class="link_logo_box"><img class="link_logo" src="https://logo.clearbit.com/stackoverflow.com?size=35" alt="logo"/></div><div class="link_content">
-<div class="link_title">How can I transcribe a speech file with the Bing Speech API in Python? - Stack Overflow</div>
+<div class="link_title">Pinging servers in Python - Stack Overflow</div>
 <div class="link_tagline">stackoverflow.com</div>
-<div class="link_url"><a href="https://stackoverflow.com/questions/47344310/how-can-i-transcribe-a-speech-file-with-the-bing-speech-api-in-python" target="_blank">https://stackoverflow.com/questions/47344310/how-can-i-transcribe-a-speech-file-with-the-bing-speech-api-in-python</a></div></div></div>
+<div class="link_url"><a href="https://stackoverflow.com/questions/2953462/pinging-servers-in-python" target="_blank">https://stackoverflow.com/questions/2953462/pinging-servers-in-python</a></div></div></div>
 
-<ul>
-<li>The files need to be stored on Azure Blob Storage first    </li>
-<li>need to build a websocket for it as it the other alternative within bing for large audio files    </li>
-</ul>
-<div class="link_border"><div class="link_logo_box"><img class="link_logo" src="https://logo.clearbit.com/hackernoon.com?size=35" alt="logo"/></div><div class="link_content">
-<div class="link_title">How to Convert Speech to Text in Python</div>
-<div class="link_tagline">hackernoon.com</div>
-<div class="link_url"><a href="https://hackernoon.com/how-to-convert-speech-to-text-in-python-q0263tzp" target="_blank">https://hackernoon.com/how-to-convert-speech-to-text-in-python-q0263tzp</a></div></div></div>
+<h2 id="resources-references">Resources / References</h2>
+<h3 id="monitor-downloadupload-speeds">Monitor download/upload speeds</h3>
+<div class="link_border"><div class="link_logo_box"><img class="link_logo" src="https://logo.clearbit.com/pythonprogramming.org?size=35" alt="logo"/></div><div class="link_content">
+<div class="link_title">>Monitor your internet with python</div>
+<div class="link_tagline">pythonprogramming.org</div>
+<div class="link_url"><a href="https://pythonprogramming.org/monitor-your-internet-with-python" target="_blank">https://pythonprogramming.org/monitor-your-internet-with-python</a></div></div></div>
 
-<ul>
-<li>SpeechRecognition library allows you to perform speech recognition with support for several engines and APIs, online and offline.  </li>
-</ul>
+<div class="link_border"><div class="link_logo_box"><img class="link_logo" src="https://logo.clearbit.com/pythonprogramming.org?size=35" alt="logo"/></div><div class="link_content">
+<div class="link_title">Tweeting about your low internet speed and tagging your ISP</div>
+<div class="link_tagline">pythonprogramming.org</div>
+<div class="link_url"><a href="https://pythonprogramming.org/sending-tweet-when-your-internet-speed-goes-down" target="_blank">https://pythonprogramming.org/sending-tweet-when-your-internet-speed-goes-down</a></div></div></div>
+
+<p>I care less about speed than just availability. <br>
+Not a good fit.   </p>
+<h3 id="simplemonitor">Simplemonitor</h3>
+<div class="link_border"><div class="link_logo_box"><img class="link_logo" src="https://logo.clearbit.com/github.io?size=35" alt="logo"/></div><div class="link_content">
+<div class="link_title">SimpleMonitor</div>
+<div class="link_tagline">A Python-based network and host monitor</div>
+<div class="link_url"><a href="https://jamesoff.github.io/simplemonitor" target="_blank">https://jamesoff.github.io/simplemonitor</a></div></div></div>
+
+<p>updated doc:   </p>
+<div class="link_border"><div class="link_logo_box"><img class="link_logo" src="https://logo.clearbit.com/readthedocs.io?size=35" alt="logo"/></div><div class="link_content">
+<div class="link_title">Welcome to SimpleMonitor documentation</div>
+<div class="link_tagline">readthedocs.io</div>
+<div class="link_url"><a href="https://simplemonitor.readthedocs.io/en/latest" target="_blank">https://simplemonitor.readthedocs.io/en/latest</a></div></div></div>
+
+<div class="link_border"><div class="link_logo_box"><img class="link_logo" src="https://logo.clearbit.com/github.com?size=35" alt="logo"/></div><div class="link_content">
+<div class="link_title">simplemonitor/index.rst at develop · jamesoff/simplemonitor · GitHub</div>
+<div class="link_tagline">github.com</div>
+<div class="link_url"><a href="https://github.com/jamesoff/simplemonitor/blob/develop/docs/index.rst" target="_blank">https://github.com/jamesoff/simplemonitor/blob/develop/docs/index.rst</a></div></div></div>
+
+<p>Probably too complex for my needs. 
+Not a good fit.  </p>
+<h3 id="smokeping">Smokeping</h3>
+<div class="link_border"><div class="link_logo_box"><img class="link_logo" src="https://logo.clearbit.com/oetiker.ch?size=35" alt="logo"/></div><div class="link_content">
+<div class="link_title">SmokePing - SmokePing Documentation</div>
+<div class="link_tagline">oetiker.ch</div>
+<div class="link_url"><a href="https://oss.oetiker.ch/smokeping/doc/index.en.html" target="_blank">https://oss.oetiker.ch/smokeping/doc/index.en.html</a></div></div></div>
+
+<p>For reference only. Too complex for my needs. <br>
+Not a good fit.   </p>
+<p><span class="datestamp">04 Sep 2022</span>   </p>
+<p>Starting code, open-sourcing repo here:      </p>
+<div class="link_border"><div class="link_logo_box"><img class="link_logo" src="https://logo.clearbit.com/github.com?size=35" alt="logo"/></div><div class="link_content">
+<div class="link_title">GitHub - ndeville/pingee: Internet Connection Monitoring Script</div>
+<div class="link_tagline">github.com</div>
+<div class="link_url"><a href="https://github.com/ndeville/pingee" target="_blank">https://github.com/ndeville/pingee</a></div></div></div>
+
+<p>Logic:   </p>
+<div class="highlight"><pre><span></span><code>- identify network path automatically for devices to ping or hardcode internal IPs?
+- ping switch (1s)   
+- ping router (1s)   
+- ping remote server #1 from random list   
+if success:   
+    repeat loop   
+if #1 fails, ping remote server # 2   
+    if #2 fails, ping remote server # 3    
+        If #3 fails, log &amp; notify as internet dropout     
+</code></pre></div>
+
+<p>Assuming 3s loop (by default or with added delay), ie one ping per second.    </p>
+<p>List of IPs to ping randomly:  </p>
+<div class="highlight"><pre><span></span><code><span class="p">[</span>
+<span class="s1">&#39;208.67.222.222&#39;</span><span class="p">,</span> <span class="c1"># OpenDNS</span>
+<span class="s1">&#39;208.67.220.220&#39;</span><span class="p">,</span> <span class="c1"># OpenDNS  </span>
+<span class="s1">&#39;1.1.1.1&#39;</span><span class="p">,</span> <span class="c1"># Cloudflare</span>
+<span class="s1">&#39;1.0.0.1&#39;</span><span class="p">,</span> <span class="c1"># Cloudflare</span>
+<span class="s1">&#39;8.8.8.8&#39;</span><span class="p">,</span> <span class="c1"># Google DNS</span>
+<span class="s1">&#39;8.8.4.4&#39;</span><span class="p">,</span> <span class="c1"># Google DNS</span>
+<span class="p">]</span>
+</code></pre></div>
+
+<p>My questions:  <br>
+- is that the right way to build the script? <br>
+- is the ping cadence too much, ie: <br>
+- will I run the risk to get blacklisted by remote server(s)? <br>
+- will it impact internal network?   </p>
+<h1 id="tests">Tests</h1>
+<p><span class="datestamp">06 Sep 2022</span>   </p>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">subprocess</span>
+
+<span class="c1"># Internal ping</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;INTERNAL PING:</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="n">router</span> <span class="o">=</span> <span class="s1">&#39;192.168.1.1&#39;</span>
+
+<span class="n">router_command</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;ping&#39;</span><span class="p">,</span> <span class="s1">&#39;-c&#39;</span><span class="p">,</span> <span class="s1">&#39;1&#39;</span><span class="p">,</span> <span class="n">router</span><span class="p">]</span>
+
+<span class="n">router_ping</span> <span class="o">=</span> <span class="n">subprocess</span><span class="o">.</span><span class="n">call</span><span class="p">(</span><span class="n">router_command</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n</span><span class="si">{</span><span class="n">router_ping</span><span class="si">=}</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="c1"># External ping</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;EXTERNAL PING:</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="n">hostnames</span> <span class="o">=</span> <span class="p">[</span>
+<span class="s1">&#39;208.67.222.222&#39;</span><span class="p">,</span> <span class="c1"># OpenDNS</span>
+<span class="s1">&#39;208.67.220.220&#39;</span><span class="p">,</span> <span class="c1"># OpenDNS  </span>
+<span class="s1">&#39;1.1.1.1&#39;</span><span class="p">,</span> <span class="c1"># Cloudflare</span>
+<span class="s1">&#39;1.0.0.1&#39;</span><span class="p">,</span> <span class="c1"># Cloudflare</span>
+<span class="s1">&#39;8.8.8.8&#39;</span><span class="p">,</span> <span class="c1"># Google DNS</span>
+<span class="s1">&#39;8.8.4.4&#39;</span><span class="p">,</span> <span class="c1"># Google DNS</span>
+<span class="p">]</span>
+
+<span class="k">for</span> <span class="n">hostname</span> <span class="ow">in</span> <span class="n">hostnames</span><span class="p">:</span>
+
+    <span class="n">hostname_command</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;ping&#39;</span><span class="p">,</span> <span class="s1">&#39;-c&#39;</span><span class="p">,</span> <span class="s1">&#39;1&#39;</span><span class="p">,</span> <span class="n">hostname</span><span class="p">]</span>
+
+    <span class="n">external_ping</span> <span class="o">=</span> <span class="n">subprocess</span><span class="o">.</span><span class="n">call</span><span class="p">(</span><span class="n">hostname_command</span><span class="p">)</span>
+
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n</span><span class="si">{</span><span class="n">external_ping</span><span class="si">=}</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+</code></pre></div>
+
+<p>outputs:    </p>
+<div class="highlight"><pre><span></span><code>INTERNAL PING:
+
+PING 192.168.1.1 (192.168.1.1): 56 data bytes
+64 bytes from 192.168.1.1: icmp_seq=0 ttl=64 time=2.220 ms
+
+--- 192.168.1.1 ping statistics ---
+1 packets transmitted, 1 packets received, 0.0% packet loss
+round-trip min/avg/max/stddev = 2.220/2.220/2.220/0.000 ms
+
+router_ping=0
+
+EXTERNAL PING:
+
+PING 208.67.222.222 (208.67.222.222): 56 data bytes
+64 bytes from 208.67.222.222: icmp_seq=0 ttl=55 time=21.802 ms
+
+--- 208.67.222.222 ping statistics ---
+1 packets transmitted, 1 packets received, 0.0% packet loss
+round-trip min/avg/max/stddev = 21.802/21.802/21.802/0.000 ms
+
+external_ping=0
+
+PING 208.67.220.220 (208.67.220.220): 56 data bytes
+64 bytes from 208.67.220.220: icmp_seq=0 ttl=55 time=22.655 ms
+
+--- 208.67.220.220 ping statistics ---
+1 packets transmitted, 1 packets received, 0.0% packet loss
+round-trip min/avg/max/stddev = 22.655/22.655/22.655/0.000 ms
+
+external_ping=0
+
+PING 1.1.1.1 (1.1.1.1): 56 data bytes
+64 bytes from 1.1.1.1: icmp_seq=0 ttl=56 time=20.793 ms
+
+--- 1.1.1.1 ping statistics ---
+1 packets transmitted, 1 packets received, 0.0% packet loss
+round-trip min/avg/max/stddev = 20.793/20.793/20.793/0.000 ms
+
+external_ping=0
+
+PING 1.0.0.1 (1.0.0.1): 56 data bytes
+64 bytes from 1.0.0.1: icmp_seq=0 ttl=56 time=22.733 ms
+
+--- 1.0.0.1 ping statistics ---
+1 packets transmitted, 1 packets received, 0.0% packet loss
+round-trip min/avg/max/stddev = 22.733/22.733/22.733/0.000 ms
+
+external_ping=0
+
+PING 8.8.8.8 (8.8.8.8): 56 data bytes
+64 bytes from 8.8.8.8: icmp_seq=0 ttl=115 time=14.300 ms
+
+--- 8.8.8.8 ping statistics ---
+1 packets transmitted, 1 packets received, 0.0% packet loss
+round-trip min/avg/max/stddev = 14.300/14.300/14.300/0.000 ms
+
+external_ping=0
+
+PING 8.8.4.4 (8.8.4.4): 56 data bytes
+64 bytes from 8.8.4.4: icmp_seq=0 ttl=116 time=12.229 ms
+
+--- 8.8.4.4 ping statistics ---
+1 packets transmitted, 1 packets received, 0.0% packet loss
+round-trip min/avg/max/stddev = 12.229/12.229/12.229/0.000 ms
+
+external_ping=0
+</code></pre></div>
+
+<p>Need to find a way to avoid terminal printing when all OK. Lookup other method. </p>
+<h2 id="traceroute">Traceroute</h2>
+<p><span class="datestamp">06 Sep 2022</span> ideally, I would want the script to figure out the IP addresses of the devices to ping on the internal network. <code>Traceroute</code> seems to be the way to go.   </p>
+<div class="link_border"><div class="link_logo_box"><img class="link_logo" src="https://logo.clearbit.com/fortinet.com?size=35" alt="logo"/></div><div class="link_content">
+<div class="link_title">What is Traceroute: What Does it Do & How Does It Work?</div>
+<div class="link_tagline">fortinet.com</div>
+<div class="link_url"><a href="https://www.fortinet.com/resources/cyberglossary/traceroutes" target="_blank">https://www.fortinet.com/resources/cyberglossary/traceroutes</a></div></div></div>
+
+<p>Terminal command:  </p>
+<div class="highlight"><pre><span></span><code>traceroute hostname
+</code></pre></div>
+
+<p>Traceroute read:</p>
+<table>
+<thead>
+<tr>
+<th>hop number</th>
+<th>device name</th>
+<th>device IP</th>
+<th>hop time (back and forth)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>router</td>
+<td>(192.168.0.1)</td>
+<td>0.841 ms  0.662 ms  0.639 ms</td>
+</tr>
+<tr>
+<td>2</td>
+<td>xxxxxxxx.xxxxx.xxxxxx.com</td>
+<td>(xx.xx.xx.xx)</td>
+<td>14.854 ms  13.750 ms  13.516 ms</td>
+</tr>
+</tbody>
+</table>
+<p>Asterisk in front of device name: indicates that the router it reached was configured to deprioritize or automatically reject ICMP packets, which is done because ICMP is not categorized as essential traffic by many routers.  </p>
+<p>“If there is an issue, you can use Simple Network Management Protocol (SNMP) to diagnose the problem.” </p>
                 </article>
             </aside>
 
@@ -288,11 +377,11 @@ Need to use <code>AudioSegment.from_file(filename, "m4a")</code>?  </p>
                 <article class="hentry">
                     <header>
                         <!-- PREVIOUS NOTE TITLE -->
-                        <h1><a href="https://notes.nicolasdeville.com/projects/pingee" rel="bookmark"
-                            title="Pingee">Pingee</a></h1>
+                        <h1><a href="https://notes.nicolasdeville.com/projects/recordee" rel="bookmark"
+                            title="Recordee">Recordee</a></h1>
                         <!-- PREVIOUS NOTE SUMMARY -->
                         <div class="entry-content">
-                            <p>[work in progress] Internet &amp; Network monitoring tool (script)</p>
+                            <p>End-to-end automated workflow from voice recording to markdown note.</p>
                         </div>
                     </header>
 
@@ -303,11 +392,11 @@ Need to use <code>AudioSegment.from_file(filename, "m4a")</code>?  </p>
     <p>
         19 Sep 2022 <span class="separator">|</span> in <a class="link_tag" href="https://notes.nicolasdeville.com/projects/">projects</a>
  tags: <a class="link_tag" href="https://notes.nicolasdeville.com/tag/python.html">python</a>
-<a class="link_tag" href="https://notes.nicolasdeville.com/tag/internet.html">internet</a>
+<a class="link_tag" href="https://notes.nicolasdeville.com/tag/automation.html">automation</a>
 
         <!-- added 4/7 -->
         <!-- 		<br />
-        <abbr class="modified" title="2022-09-19T15:52:45.152469+02:00">
+        <abbr class="modified" title="2022-09-19T15:53:22.031480+02:00">
                 Updated: 19 Sep 2022
         </abbr>
  -->
@@ -803,7 +892,7 @@ Need to use <code>AudioSegment.from_file(filename, "m4a")</code>?  </p>
                 Powered by <a href="https://github.com/getpelican/pelican" target="_blank">Pelican</a>, 
                 with <a href="https://stork-search.net/" target="_blank">Stork</a> & <a href="https://github.com/pelican-plugins/search" target="_blank">Pelican Search plugin</a>.
                 <span style="color:#C74350">|</span> <img src="https://notes.nicolasdeville.com/images/python.svg" alt="python_logo" width="16" style="vertical-align: middle;"/> <a href="https://www.python.org/" target="_blank">Python</a> 
-                <a href="https://clearbit.com" target="_blank">Logos provided by Clearbit</a>
+                <br><a href="https://clearbit.com" target="_blank">Logos provided by Clearbit</a>
                 </address><!-- /#about -->
 
         </footer><!-- /#contentinfo -->

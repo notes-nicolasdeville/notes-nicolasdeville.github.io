@@ -8,14 +8,24 @@ url = "/ABOUT/"
 title = ""
 
 [[input.files]]
-path = "projects/recordee/index.html"
-url = "/projects/recordee"
-title = "Recordee"
+path = "apps/alfred/index.html"
+url = "/apps/alfred"
+title = "Alfred"
+
+[[input.files]]
+path = "helpers/keyboard-shortcuts/index.html"
+url = "/helpers/keyboard-shortcuts"
+title = "My keyboard shortcuts"
 
 [[input.files]]
 path = "projects/pingee/index.html"
 url = "/projects/pingee"
 title = "Pingee"
+
+[[input.files]]
+path = "projects/recordee/index.html"
+url = "/projects/recordee"
+title = "Recordee"
 
 [[input.files]]
 path = "learning/css/index.html"
@@ -201,11 +211,6 @@ title = "macOS Terminal issues & troubleshooting"
 path = "helpers/macos-copy-filename/index.html"
 url = "/helpers/macos-copy-filename"
 title = "Copy file name to clipboard upon saving file in macOS"
-
-[[input.files]]
-path = "helpers/keyboard-shortcuts/index.html"
-url = "/helpers/keyboard-shortcuts"
-title = "My keyboard shortcuts"
 
 [[input.files]]
 path = "helpers/html-metatags/index.html"
@@ -516,11 +521,6 @@ title = "Descript | All-in-one audio/video editing, as easy as a doc."
 path = "apps/cloudapp/index.html"
 url = "/apps/cloudapp"
 title = "CloudApp | A visual collaboration solution"
-
-[[input.files]]
-path = "apps/alfred/index.html"
-url = "/apps/alfred"
-title = "Alfred"
 
 [[input.files]]
 path = "b2b-sales/outbound/index.html"
