@@ -8,6 +8,206 @@ url = "/ABOUT/"
 title = ""
 
 [[input.files]]
+path = "python/library-speech-recognition/index.html"
+url = "/python/library-speech-recognition"
+title = "Library: speech_recognition"
+
+[[input.files]]
+path = "projects/notes/index.html"
+url = "/projects/notes"
+title = "This site"
+
+[[input.files]]
+path = "projects/mailingee/index.html"
+url = "/projects/mailingee"
+title = "Mailingee"
+
+[[input.files]]
+path = "projects/indexall/index.html"
+url = "/projects/indexall"
+title = "indeXall | indexing the worlds of passions"
+
+[[input.files]]
+path = "learning/touch-typing/index.html"
+url = "/learning/touch-typing"
+title = "Learning Touch Typing"
+
+[[input.files]]
+path = "learning/speed-reading/index.html"
+url = "/learning/speed-reading"
+title = "Learning Speed Reading"
+
+[[input.files]]
+path = "learning/javascript/index.html"
+url = "/learning/javascript"
+title = "Learning Javascript"
+
+[[input.files]]
+path = "learning/git/index.html"
+url = "/learning/git"
+title = "Learning Git"
+
+[[input.files]]
+path = "learning/css/index.html"
+url = "/learning/css"
+title = "Learning CSS"
+
+[[input.files]]
+path = "learning/computer-science/index.html"
+url = "/learning/computer-science"
+title = "Learning Computer Science"
+
+[[input.files]]
+path = "leadership/comp-plans/index.html"
+url = "/leadership/comp-plans"
+title = "Compensation Plans"
+
+[[input.files]]
+path = "interests/web3/index.html"
+url = "/interests/web3"
+title = "Web3"
+
+[[input.files]]
+path = "interests/watches/index.html"
+url = "/interests/watches"
+title = "Watches"
+
+[[input.files]]
+path = "interests/traditional-archery/index.html"
+url = "/interests/traditional-archery"
+title = "Traditional Archery"
+
+[[input.files]]
+path = "interests/tea/index.html"
+url = "/interests/tea"
+title = "Tea"
+
+[[input.files]]
+path = "interests/tactical-pens/index.html"
+url = "/interests/tactical-pens"
+title = "Tactical Pens"
+
+[[input.files]]
+path = "interests/mechanical-keyboards/index.html"
+url = "/interests/mechanical-keyboards"
+title = "Mechanical Keyboards"
+
+[[input.files]]
+path = "projects/recordee/index.html"
+url = "/projects/recordee"
+title = "Recordee"
+
+[[input.files]]
+path = "interests/flat-caps/index.html"
+url = "/interests/flat-caps"
+title = "Flat Caps"
+
+[[input.files]]
+path = "interests/f1/index.html"
+url = "/interests/f1"
+title = "F1"
+
+[[input.files]]
+path = "interests/crypto/index.html"
+url = "/interests/crypto"
+title = "Crypto"
+
+[[input.files]]
+path = "interests/applescript/index.html"
+url = "/interests/applescript"
+title = "AppleScript"
+
+[[input.files]]
+path = "interests/airguns/index.html"
+url = "/interests/airguns"
+title = "Airguns"
+
+[[input.files]]
+path = "home-office/usb-hubs-and-docks/index.html"
+url = "/home-office/usb-hubs-and-docks"
+title = "USB Hubs & Docks"
+
+[[input.files]]
+path = "home-office/unifi/index.html"
+url = "/home-office/unifi"
+title = "Unifi Network"
+
+[[input.files]]
+path = "home-office/load-balancing/index.html"
+url = "/home-office/load-balancing"
+title = "Load Balancing my internet connection"
+
+[[input.files]]
+path = "home-office/deep-work/index.html"
+url = "/home-office/deep-work"
+title = "Resources for Deep Work"
+
+[[input.files]]
+path = "home-office/cable-tester/index.html"
+url = "/home-office/cable-tester"
+title = "Ethernet Cable Tester"
+
+[[input.files]]
+path = "helpers/terminal-issues/index.html"
+url = "/helpers/terminal-issues"
+title = "macOS Terminal issues & troubleshooting"
+
+[[input.files]]
+path = "helpers/macos-copy-filename/index.html"
+url = "/helpers/macos-copy-filename"
+title = "Copy file name to clipboard upon saving file in macOS"
+
+[[input.files]]
+path = "helpers/keyboard-shortcuts/index.html"
+url = "/helpers/keyboard-shortcuts"
+title = "My keyboard shortcuts"
+
+[[input.files]]
+path = "helpers/html-metatags/index.html"
+url = "/helpers/html-metatags"
+title = "HTML Meta tags for SEO"
+
+[[input.files]]
+path = "helpers/github/index.html"
+url = "/helpers/github"
+title = "Github"
+
+[[input.files]]
+path = "helpers/ffmpeg-ffprobe/index.html"
+url = "/helpers/ffmpeg-ffprobe"
+title = "ffmpeg and ffprobe"
+
+[[input.files]]
+path = "b2b-sales/email-automation/index.html"
+url = "/b2b-sales/email-automation"
+title = "Email Automation for Sales outreaches"
+
+[[input.files]]
+path = "apps/vs-code/index.html"
+url = "/apps/vs-code"
+title = "VS Code"
+
+[[input.files]]
+path = "apps/screenflow/index.html"
+url = "/apps/screenflow"
+title = "Producing videos with Screenflow"
+
+[[input.files]]
+path = "apps/just-press-record/index.html"
+url = "/apps/just-press-record"
+title = "Just Press Record"
+
+[[input.files]]
+path = "python/print/index.html"
+url = "/python/print"
+title = "Print statement tricks"
+
+[[input.files]]
+path = "python/snippet-print-line/index.html"
+url = "/python/snippet-print-line"
+title = "Print current line number with Python"
+
+[[input.files]]
 path = "helpers/logos/index.html"
 url = "/helpers/logos"
 title = "How to get company logos from websites"
@@ -18,19 +218,9 @@ url = "/apps/best-lists"
 title = "Lists of 'Best apps for macOS'"
 
 [[input.files]]
-path = "projects/notes/index.html"
-url = "/projects/notes"
-title = "This site"
-
-[[input.files]]
 path = "python/snippet-download-files/index.html"
 url = "/python/snippet-download-files"
 title = "Python snippet: download files"
-
-[[input.files]]
-path = "helpers/ffmpeg-ffprobe/index.html"
-url = "/helpers/ffmpeg-ffprobe"
-title = "ffmpeg and ffprobe"
 
 [[input.files]]
 path = "apps/espanso/index.html"
@@ -38,29 +228,9 @@ url = "/apps/espanso"
 title = "Espanso"
 
 [[input.files]]
-path = "projects/recordee/index.html"
-url = "/projects/recordee"
-title = "Recordee"
-
-[[input.files]]
 path = "random/quotes/index.html"
 url = "/random/quotes"
 title = "My favourite quotes"
-
-[[input.files]]
-path = "interests/applescript/index.html"
-url = "/interests/applescript"
-title = "AppleScript"
-
-[[input.files]]
-path = "helpers/macos-copy-filename/index.html"
-url = "/helpers/macos-copy-filename"
-title = "Copy file name to clipboard upon saving file in macOS"
-
-[[input.files]]
-path = "python/library-speech-recognition/index.html"
-url = "/python/library-speech-recognition"
-title = "Library: speech_recognition"
 
 [[input.files]]
 path = "python/library-pydub/index.html"
@@ -83,64 +253,14 @@ url = "/home-office/contour-shuttleprov2"
 title = "Contour ShuttlePRO v2"
 
 [[input.files]]
-path = "apps/just-press-record/index.html"
-url = "/apps/just-press-record"
-title = "Just Press Record"
-
-[[input.files]]
-path = "interests/tea/index.html"
-url = "/interests/tea"
-title = "Tea"
-
-[[input.files]]
-path = "learning/speed-reading/index.html"
-url = "/learning/speed-reading"
-title = "Learning Speed Reading"
-
-[[input.files]]
-path = "helpers/keyboard-shortcuts/index.html"
-url = "/helpers/keyboard-shortcuts"
-title = "My keyboard shortcuts"
-
-[[input.files]]
 path = "interests/diabolo/index.html"
 url = "/interests/diabolo"
 title = "Diabolo"
 
 [[input.files]]
-path = "interests/traditional-archery/index.html"
-url = "/interests/traditional-archery"
-title = "Traditional Archery"
-
-[[input.files]]
-path = "home-office/unifi/index.html"
-url = "/home-office/unifi"
-title = "Unifi Network"
-
-[[input.files]]
-path = "home-office/load-balancing/index.html"
-url = "/home-office/load-balancing"
-title = "Load Balancing my internet connection"
-
-[[input.files]]
 path = "projects/clipee/index.html"
 url = "/projects/clipee"
 title = "Clipee"
-
-[[input.files]]
-path = "learning/computer-science/index.html"
-url = "/learning/computer-science"
-title = "Learning Computer Science"
-
-[[input.files]]
-path = "b2b-sales/email-automation/index.html"
-url = "/b2b-sales/email-automation"
-title = "Email Automation for Sales outreaches"
-
-[[input.files]]
-path = "learning/css/index.html"
-url = "/learning/css"
-title = "Learning CSS"
 
 [[input.files]]
 path = "home-office/f1-models/index.html"
@@ -151,16 +271,6 @@ title = "F1 Model Cars"
 path = "python/library-pelican/index.html"
 url = "/python/library-pelican"
 title = "Building a static site with Pelican"
-
-[[input.files]]
-path = "home-office/deep-work/index.html"
-url = "/home-office/deep-work"
-title = "Resources for Deep Work"
-
-[[input.files]]
-path = "helpers/html-metatags/index.html"
-url = "/helpers/html-metatags"
-title = "HTML Meta tags for SEO"
 
 [[input.files]]
 path = "python/library-os/index.html"
@@ -181,16 +291,6 @@ title = "Grist | The Evolution of Spreadsheets"
 path = "python/function-separator/index.html"
 url = "/python/function-separator"
 title = "A short function to generate print separators"
-
-[[input.files]]
-path = "helpers/terminal-issues/index.html"
-url = "/helpers/terminal-issues"
-title = "macOS Terminal issues & troubleshooting"
-
-[[input.files]]
-path = "home-office/cable-tester/index.html"
-url = "/home-office/cable-tester"
-title = "Ethernet Cable Tester"
 
 [[input.files]]
 path = "python/library-dotenv/index.html"
@@ -268,11 +368,6 @@ url = "/python/virtual-environments"
 title = "Managing Virtual Environments in Python"
 
 [[input.files]]
-path = "interests/web3/index.html"
-url = "/interests/web3"
-title = "Web3"
-
-[[input.files]]
 path = "python/gitignore/index.html"
 url = "/python/gitignore"
 title = "Gitignore"
@@ -288,19 +383,9 @@ url = "/learning/html"
 title = "Learning HTML"
 
 [[input.files]]
-path = "learning/javascript/index.html"
-url = "/learning/javascript"
-title = "Learning Javascript"
-
-[[input.files]]
 path = "learning/python/index.html"
 url = "/learning/python"
 title = "Learning Python"
-
-[[input.files]]
-path = "interests/watches/index.html"
-url = "/interests/watches"
-title = "Watches"
 
 [[input.files]]
 path = "b2b-sales/email-validation/index.html"
@@ -311,11 +396,6 @@ title = "Tools for email validation"
 path = "python/script-consolidate-log/index.html"
 url = "/python/script-consolidate-log"
 title = "Python Script: consolidate list of emails from txt log files"
-
-[[input.files]]
-path = "apps/vs-code/index.html"
-url = "/apps/vs-code"
-title = "VS Code"
 
 [[input.files]]
 path = "apps/ulysses/index.html"
@@ -341,11 +421,6 @@ title = "Setapp: macOS app subsciption"
 path = "apps/screenshotx/index.html"
 url = "/apps/screenshotx"
 title = "ScreenShotX"
-
-[[input.files]]
-path = "apps/screenflow/index.html"
-url = "/apps/screenflow"
-title = "Producing videos with Screenflow"
 
 [[input.files]]
 path = "apps/readwise/index.html"
@@ -418,11 +493,6 @@ url = "/b2b-sales/outbound"
 title = "Outbound Lead Generation"
 
 [[input.files]]
-path = "learning/git/index.html"
-url = "/learning/git"
-title = "Learning Git"
-
-[[input.files]]
 path = "home-office/herman-miller-embody/index.html"
 url = "/home-office/herman-miller-embody"
 title = "Herman Miller x Logitech Embody Chair"
@@ -433,24 +503,9 @@ url = "/home-office/setup"
 title = "Home Office Setup"
 
 [[input.files]]
-path = "interests/crypto/index.html"
-url = "/interests/crypto"
-title = "Crypto"
-
-[[input.files]]
-path = "projects/mailingee/index.html"
-url = "/projects/mailingee"
-title = "Mailingee"
-
-[[input.files]]
 path = "startups/advisable/index.html"
 url = "/startups/advisable"
 title = "Advisable"
-
-[[input.files]]
-path = "leadership/comp-plans/index.html"
-url = "/leadership/comp-plans"
-title = "Compensation Plans"
 
 [[input.files]]
 path = "python/sending-emails/index.html"
@@ -488,11 +543,6 @@ url = "/python/library-yagmail"
 title = "Library: Yagmail"
 
 [[input.files]]
-path = "helpers/github/index.html"
-url = "/helpers/github"
-title = "Github"
-
-[[input.files]]
 path = "python/library-pynput/index.html"
 url = "/python/library-pynput"
 title = "Library: pynput"
@@ -508,54 +558,14 @@ url = "/learning/sql"
 title = "Learning SQL"
 
 [[input.files]]
-path = "interests/airguns/index.html"
-url = "/interests/airguns"
-title = "Airguns"
-
-[[input.files]]
 path = "helpers/vodafone-kabel/index.html"
 url = "/helpers/vodafone-kabel"
 title = "Vodafone Kabel"
 
 [[input.files]]
-path = "interests/tactical-pens/index.html"
-url = "/interests/tactical-pens"
-title = "Tactical Pens"
-
-[[input.files]]
-path = "interests/mechanical-keyboards/index.html"
-url = "/interests/mechanical-keyboards"
-title = "Mechanical Keyboards"
-
-[[input.files]]
-path = "interests/flat-caps/index.html"
-url = "/interests/flat-caps"
-title = "Flat Caps"
-
-[[input.files]]
-path = "interests/f1/index.html"
-url = "/interests/f1"
-title = "F1"
-
-[[input.files]]
-path = "learning/touch-typing/index.html"
-url = "/learning/touch-typing"
-title = "Learning Touch Typing"
-
-[[input.files]]
 path = "learning/markdown/index.html"
 url = "/learning/markdown"
 title = "Learning Markdown"
-
-[[input.files]]
-path = "projects/indexall/index.html"
-url = "/projects/indexall"
-title = "indeXall | indexing the worlds of passions"
-
-[[input.files]]
-path = "home-office/usb-hubs-and-docks/index.html"
-url = "/home-office/usb-hubs-and-docks"
-title = "USB Hubs & Docks"
 
 [[input.files]]
 path = "python/python-notion/index.html"
@@ -581,11 +591,6 @@ title = "Streamdeck for business users"
 path = "python/library-re/index.html"
 url = "/python/library-re"
 title = "Library: re (regex)"
-
-[[input.files]]
-path = "python/print/index.html"
-url = "/python/print"
-title = "Print statement tricks"
 
 [[input.files]]
 path = "python/library-openpyxl/index.html"
@@ -718,14 +723,14 @@ url = "/apps/radar"
 title = "Apps on my radar"
 
 [[input.files]]
-path = "b2b-sales/books/index.html"
-url = "/b2b-sales/books"
-title = "My B2B Books Library"
-
-[[input.files]]
 path = "python/books/index.html"
 url = "/python/books"
 title = "My Python Books Library"
+
+[[input.files]]
+path = "b2b-sales/books/index.html"
+url = "/b2b-sales/books"
+title = "My B2B Books Library"
 
 [[input.files]]
 path = "books/library/index.html"
@@ -1883,14 +1888,14 @@ url = "/books/library"
 title = "My Books Library"
 
 [[input.files]]
-path = "python/books/index.html"
-url = "/python/books"
-title = "My Python Books Library"
-
-[[input.files]]
 path = "b2b-sales/books/index.html"
 url = "/b2b-sales/books"
 title = "My B2B Books Library"
+
+[[input.files]]
+path = "python/books/index.html"
+url = "/python/books"
+title = "My Python Books Library"
 
 [[input.files]]
 path = "apps/library/index.html"

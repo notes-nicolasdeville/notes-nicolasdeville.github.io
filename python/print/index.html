@@ -34,7 +34,7 @@
             </div>
 
             <div class="above-navbar">
-                <div class="last_updated">19 Sep 2022 | 10:21</div>
+                <div class="last_updated">19 Sep 2022 | 13:38</div>
                 <div>
                     <p class="notes_count">
                         <a href="https://notes.nicolasdeville.com/tags">by tags</a> 
@@ -45,7 +45,7 @@
                         <span style="color:#C74350">|</span>
                         <a href="https://notes.nicolasdeville.com/2022/">2022</a> 
                         <span style="color:#C74350">|</span> 
-                        374 notes
+                        375 notes
                     </p>
                 </div>
             </div>
@@ -89,12 +89,13 @@
 <footer class="post-info">
 
     <p>
-        05 Sep 2022 <span class="separator">|</span> in <a class="link_tag" href="https://notes.nicolasdeville.com/python/">python</a>
+        19 Sep 2022 <span class="separator">|</span> in <a class="link_tag" href="https://notes.nicolasdeville.com/python/">python</a>
+ tags: <a class="link_tag" href="https://notes.nicolasdeville.com/tag/snippets.html">snippets</a>
 
         <!-- added 4/7 -->
         <!-- 		<br />
-        <abbr class="modified" title="2022-09-05T08:54:00.182521+02:00">
-                Updated: 05 Sep 2022
+        <abbr class="modified" title="2022-09-19T10:46:56.037345+02:00">
+                Updated: 19 Sep 2022
         </abbr>
  -->
 
@@ -123,6 +124,16 @@
 <div class="highlight"><pre><span></span><code><span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="o">...</span><span class="p">:</span>
     <span class="n">count</span> <span class="o">+=</span> <span class="mi">1</span>
     <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\r</span><span class="s2">&quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">count</span><span class="p">),</span> <span class="n">end</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
+</code></pre></div>
+
+<h1 id="print-current-line-number-with-python">print current line number with Python</h1>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">inspect</span> <span class="kn">import</span> <span class="n">currentframe</span>
+
+<span class="k">def</span> <span class="nf">get_linenumber</span><span class="p">():</span>
+    <span class="n">cf</span> <span class="o">=</span> <span class="n">currentframe</span><span class="p">()</span>
+    <span class="k">return</span> <span class="n">cf</span><span class="o">.</span><span class="n">f_back</span><span class="o">.</span><span class="n">f_lineno</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;This is line number </span><span class="si">{</span><span class="n">get_linenumber</span><span class="p">()</span><span class="si">}</span><span class="s2">)</span>
 </code></pre></div>
             </main>
         </div><!-- /.entry-content -->
