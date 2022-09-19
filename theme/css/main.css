@@ -1067,13 +1067,12 @@ li:first-child .hentry, #content > .hentry {
     .link_logo_box {
         position: relative;
         float: left;
-        width: 10%;
+        width: 5%;
         margin: auto;
         order: 1;
     }
 
     .link_logo {
-        width: 100%;
         margin: auto;
         display: block;
     }
@@ -1081,7 +1080,7 @@ li:first-child .hentry, #content > .hentry {
     .link_content {
         position: relative;
         float: right;
-        width: 90%;
+        width: 95%;
         margin: auto;
         order: 2;
     }
