@@ -231,10 +231,11 @@ a:link, a:visited {
 	padding: 0 1px;
 	text-decoration: underline;
 }
-a:link:before {
+/* 220920 removing as gets applied to ALL link. Need to find a way to target internal links only. */
+/* a:link:before {
     content: '>> ';
     color: var(--nic_red);
-}
+} */
 
 a:hover, a:active {
 	/* background-color: #C74350; */
