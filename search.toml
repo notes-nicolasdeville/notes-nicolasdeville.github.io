@@ -13,14 +13,24 @@ url = "/home-office/deep-work"
 title = "Resources for Deep Work"
 
 [[input.files]]
-path = "helpers/keyboard-shortcuts/index.html"
-url = "/helpers/keyboard-shortcuts"
-title = "My keyboard shortcuts"
+path = "projects/notes/index.html"
+url = "/projects/notes"
+title = "This site"
 
 [[input.files]]
 path = "learning/html/index.html"
 url = "/learning/html"
 title = "Learning HTML"
+
+[[input.files]]
+path = "helpers/keyboard-shortcuts/index.html"
+url = "/helpers/keyboard-shortcuts"
+title = "My keyboard shortcuts"
+
+[[input.files]]
+path = "learning/css/index.html"
+url = "/learning/css"
+title = "Learning CSS"
 
 [[input.files]]
 path = "helpers/search-engines/index.html"
@@ -68,11 +78,6 @@ url = "/projects/recordee"
 title = "Recordee"
 
 [[input.files]]
-path = "learning/css/index.html"
-url = "/learning/css"
-title = "Learning CSS"
-
-[[input.files]]
 path = "startups/advisable/index.html"
 url = "/startups/advisable"
 title = "Advisable"
@@ -116,11 +121,6 @@ title = "Twittee"
 path = "python/library-speech-recognition/index.html"
 url = "/python/library-speech-recognition"
 title = "Library: speech_recognition"
-
-[[input.files]]
-path = "projects/notes/index.html"
-url = "/projects/notes"
-title = "This site"
 
 [[input.files]]
 path = "projects/mailingee/index.html"

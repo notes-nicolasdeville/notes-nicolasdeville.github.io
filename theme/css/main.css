@@ -11,6 +11,7 @@
 ::selection {
     background: var(--nic_red);
     text-shadow: none;
+    color: #fff;
 }
 
 /* Global reset / clean slate */
