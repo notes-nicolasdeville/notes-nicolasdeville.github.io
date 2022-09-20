@@ -34,7 +34,7 @@
             </div>
 
             <div class="above-navbar">
-                <div class="last_updated">19 Sep 2022 | 18:20</div>
+                <div class="last_updated">20 Sep 2022 | 08:32</div>
                 <div>
                     <p class="notes_count">
                         <a href="https://notes.nicolasdeville.com/tags">by tags</a> 
@@ -45,7 +45,7 @@
                         <span style="color:#C74350">|</span>
                         <a href="https://notes.nicolasdeville.com/2022/">2022</a> 
                         <span style="color:#C74350">|</span> 
-                        2 notes
+                        3 notes
                     </p>
                 </div>
             </div>
@@ -72,7 +72,7 @@
 
 <!-- 220911 moved to base.html -->
 <!-- <p class="notes_count">
-    2 notes 
+    3 notes 
     <span style="color:#C74350">|</span> 
     <a href="https://notes.nicolasdeville.com/tags">by tags</a> 
     <span style="color:#C74350">|</span> 
@@ -91,15 +91,124 @@
             <hr/>
 
                 <article class="hentry">
-                    <h1 class="entry-title"><a href="https://notes.nicolasdeville.com/helpers/logos">How to get company logos from websites</a></h1>
+                    <h1 class="entry-title"><a href="https://notes.nicolasdeville.com/helpers/api-tinify">API: Tinify (TinyPNG)</a></h1>
 
                     <!-- added 4/7 -->
                     <div>
                         <p class="header_summary">
-                            
+                            <p>Optimise your images to be more lightweight with TinyPNG.</p>
                         </p>
                     </div>
 
+<footer class="post-info">
+
+    <p>
+        19 Sep 2022 <span class="separator">|</span> in <a class="link_tag" href="https://notes.nicolasdeville.com/helpers/">helpers</a>
+ tags: <a class="link_tag" href="https://notes.nicolasdeville.com/tag/apis.html">apis</a>
+<a class="link_tag" href="https://notes.nicolasdeville.com/tag/automation.html">automation</a>
+<a class="link_tag" href="https://notes.nicolasdeville.com/tag/python.html">python</a>
+
+        <!-- added 4/7 -->
+        <!-- 		<br />
+        <abbr class="modified" title="2022-09-19T22:46:30.860718+02:00">
+                Updated: 19 Sep 2022
+        </abbr>
+ -->
+
+    </p>
+
+    
+
+</footer><p><span class="datestamp">19 Sep 2022</span>   </p>
+<div class="link_border"><div class="link_logo_box"><img class="link_logo" src="https://logo.clearbit.com/tinypng.com?size=35" alt="logo"/></div><div class="link_content">
+<div class="link_title">TinyPNG – Compress WebP, PNG and JPEG images intelligently</div>
+<div class="link_tagline">Smart WebP, PNG and JPEG compression</div>
+<div class="link_url"><a href="https://tinypng.com/" target="_blank">https://tinypng.com/</a></div></div></div>
+
+<p>Works with Alfred [<a href="../../apps/alfred/index.html">Nic Note: Alfred</a>]   </p>
+<h1 id="api-key">API key</h1>
+<div class="link_border"><div class="link_logo_box"><img class="link_logo" src="https://logo.clearbit.com/tinypng.com?size=35" alt="logo"/></div><div class="link_content">
+<div class="link_title">TinyPNG – Developer API</div>
+<div class="link_tagline">tinypng.com</div>
+<div class="link_url"><a href="https://tinypng.com/developers" target="_blank">https://tinypng.com/developers</a></div></div></div>
+
+<p><img class="screenshot" src="https://notes.nicolasdeville.com/images/alfred/tiny-png-pricing.jpg" alt="tiny-png-pricing.jpg"/>  </p>
+<p>No password required for signup! API key obtained in &lt;1mns! 😁  </p>
+<h1 id="api-dashboard">API Dashboard</h1>
+<div class="link_border"><div class="link_logo_box"><img class="link_logo" src="https://logo.clearbit.com/tinify.com?size=35" alt="logo"/></div><div class="link_content">
+<div class="link_title">API Dashboard</div>
+<div class="link_tagline">tinify.com</div>
+<div class="link_url"><a href="https://tinify.com/dashboard/api" target="_blank">https://tinify.com/dashboard/api</a></div></div></div>
+
+<h1 id="api-documentation">API Documentation</h1>
+<div class="link_border"><div class="link_logo_box"><img class="link_logo" src="https://logo.clearbit.com/tinypng.com?size=35" alt="logo"/></div><div class="link_content">
+<div class="link_title">TinyPNG – API Reference - Python</div>
+<div class="link_tagline">tinypng.com</div>
+<div class="link_url"><a href="https://tinypng.com/developers/reference/python" target="_blank">https://tinypng.com/developers/reference/python</a></div></div></div>
+
+<div class="highlight"><pre><span></span><code>pip3 install --upgrade tinify
+</code></pre></div>
+
+<h2 id="authentication">Authentication</h2>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">tinify</span>
+<span class="n">tinify</span><span class="o">.</span><span class="n">key</span> <span class="o">=</span> <span class="s2">&quot;YOUR_API_KEY&quot;</span>
+</code></pre></div>
+
+<h2 id="compressing">Compressing</h2>
+<p>locally:   </p>
+<div class="highlight"><pre><span></span><code><span class="n">source</span> <span class="o">=</span> <span class="n">tinify</span><span class="o">.</span><span class="n">from_file</span><span class="p">(</span><span class="s2">&quot;unoptimized.webp&quot;</span><span class="p">)</span>
+<span class="n">source</span><span class="o">.</span><span class="n">to_file</span><span class="p">(</span><span class="s2">&quot;optimized.webp&quot;</span><span class="p">)</span>
+</code></pre></div>
+
+<p>url:  </p>
+<div class="highlight"><pre><span></span><code><span class="n">source</span> <span class="o">=</span> <span class="n">tinify</span><span class="o">.</span><span class="n">from_url</span><span class="p">(</span><span class="s2">&quot;https://tinypng.com/images/panda-happy.png&quot;</span><span class="p">)</span>
+<span class="n">source</span><span class="o">.</span><span class="n">to_file</span><span class="p">(</span><span class="s2">&quot;optimized.png&quot;</span><span class="p">)</span>
+</code></pre></div>
+
+<h2 id="resizing">Resizing</h2>
+<blockquote>
+<p>Resizing counts as one additional compression. For example, if you upload a single image and retrieve the optimized version plus 2 resized versions this will count as 3 compressions in total.</p>
+</blockquote>
+<div class="highlight"><pre><span></span><code><span class="n">source</span> <span class="o">=</span> <span class="n">tinify</span><span class="o">.</span><span class="n">from_file</span><span class="p">(</span><span class="s2">&quot;large.jpg&quot;</span><span class="p">)</span>
+<span class="n">resized</span> <span class="o">=</span> <span class="n">source</span><span class="o">.</span><span class="n">resize</span><span class="p">(</span>
+    <span class="n">method</span><span class="o">=</span><span class="s2">&quot;fit&quot;</span><span class="p">,</span>
+    <span class="n">width</span><span class="o">=</span><span class="mi">150</span><span class="p">,</span>
+    <span class="n">height</span><span class="o">=</span><span class="mi">100</span>
+<span class="p">)</span>
+<span class="n">resized</span><span class="o">.</span><span class="n">to_file</span><span class="p">(</span><span class="s2">&quot;thumbnail.jpg&quot;</span><span class="p">)</span>
+</code></pre></div>
+
+<h2 id="compression-count">Compression count</h2>
+<div class="highlight"><pre><span></span><code><span class="n">compressions_this_month</span> <span class="o">=</span> <span class="n">tinify</span><span class="o">.</span><span class="n">compression_count</span>
+</code></pre></div>
+                </article>
+            </aside>
+
+                <section id="content" class="body">
+
+                <!-- PREVIOUS NOTES -->
+				<p class="notes-section">previous notes</p>
+                <hr>
+
+                <ol id="posts-list" class="hfeed">
+            
+
+
+
+            <li>
+                <article class="hentry">
+                    <header>
+                        <!-- PREVIOUS NOTE TITLE -->
+                        <h1><a href="https://notes.nicolasdeville.com/helpers/logos" rel="bookmark"
+                            title="How to get company logos from websites">How to get company logos from websites</a></h1>
+                        <!-- PREVIOUS NOTE SUMMARY -->
+                        <div class="entry-content">
+                            
+                        </div>
+                    </header>
+
+                    <div class="entry-content">
+                        <!-- PREVIOUS NOTE METADATA -->
 <footer class="post-info">
 
     <p>
@@ -117,51 +226,11 @@
 
     
 
-</footer><p><span class="datestamp">19 Sep 2022</span>   </p>
-<p>Using Clearbit's free API:  </p>
-<div class="link_border"><div class="link_logo_box"><img class="link_logo" src="https://logo.clearbit.com/clearbit.com?size=35"/></div><div class="link_content">
-<div class="link_title">Find & Embed Company Logos for Free | Clearbit</div>
-<div class="link_tagline">Logo API Tool</div>
-<div class="link_url"><a href="https://clearbit.com/logo" target="_blank">https://clearbit.com/logo</a></div></div></div>
-
-<h1 id="examples">Examples</h1>
-<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">img</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;https://logo.clearbit.com/website_url&quot;</span> <span class="p">/&gt;</span>
-</code></pre></div>
-
-<p>eg.   </p>
-<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">img</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;https://logo.clearbit.com/spotify.com?size=80&quot;</span> <span class="p">/&gt;</span>
-</code></pre></div>
-
-<p><img src="https://logo.clearbit.com/spotify.com?size=80" /></p>
-<p>Size can be defined as parameter, eg width = 300:  </p>
-<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">img</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;https://logo.clearbit.com/spotify.com?size=300&quot;</span> <span class="p">/&gt;</span>
-</code></pre></div>
-
-<p><img src="https://logo.clearbit.com/spotify.com?size=300" /></p>
-<p>Grayscale mode also available:  </p>
-<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">img</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;https://logo.clearbit.com/spotify.com?grayscale=true&quot;</span> <span class="p">/&gt;</span>
-</code></pre></div>
-
-<p><img src="https://logo.clearbit.com/spotify.com?grayscale=true" /></p>
-<p>Test if unavailable:  </p>
-<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">img</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;https://logo.clearbit.com/oijdsfeoirasifrsers.com&quot;</span> <span class="p">/&gt;</span>
-</code></pre></div>
-
-<p><img src="https://logo.clearbit.com/oijdsfeoirasifrsers.com" /></p>
-<p>Need to be replaced by a placeholder image if not found. </p>
-<p>Use is free, with attribution:  </p>
-<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;https://clearbit.com&quot;</span><span class="p">&gt;</span>Logos provided by Clearbit<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>
-</code></pre></div>
+</footer>                    </div>
+                    
                 </article>
-            </aside>
-
-                <section id="content" class="body">
-
-                <!-- PREVIOUS NOTES -->
-				<p class="notes-section">previous notes</p>
-                <hr>
-
-                <ol id="posts-list" class="hfeed">
+                <hr/>
+            </li>
             
 
 
@@ -231,10 +300,12 @@
 
         <footer id="contentinfo" class="body">
                 <address id="about" class="vcard body">
+                <a href="https://clearbit.com" target="_blank">Logos provided by Clearbit</a>
+                <br>
                 Powered by <a href="https://github.com/getpelican/pelican" target="_blank">Pelican</a>, 
                 with <a href="https://stork-search.net/" target="_blank">Stork</a> & <a href="https://github.com/pelican-plugins/search" target="_blank">Pelican Search plugin</a>.
                 <span style="color:#C74350">|</span> <img src="https://notes.nicolasdeville.com/images/python.svg" alt="python_logo" width="16" style="vertical-align: middle;"/> <a href="https://www.python.org/" target="_blank">Python</a> 
-                <br><a href="https://clearbit.com" target="_blank">Logos provided by Clearbit</a>
+                
                 </address><!-- /#about -->
 
         </footer><!-- /#contentinfo -->

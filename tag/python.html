@@ -34,7 +34,7 @@
             </div>
 
             <div class="above-navbar">
-                <div class="last_updated">19 Sep 2022 | 18:20</div>
+                <div class="last_updated">20 Sep 2022 | 08:32</div>
                 <div>
                     <p class="notes_count">
                         <a href="https://notes.nicolasdeville.com/tags">by tags</a> 
@@ -45,7 +45,7 @@
                         <span style="color:#C74350">|</span>
                         <a href="https://notes.nicolasdeville.com/2022/">2022</a> 
                         <span style="color:#C74350">|</span> 
-                        38 notes
+                        39 notes
                     </p>
                 </div>
             </div>
@@ -72,7 +72,7 @@
 
 <!-- 220911 moved to base.html -->
 <!-- <p class="notes_count">
-    38 notes 
+    39 notes 
     <span style="color:#C74350">|</span> 
     <a href="https://notes.nicolasdeville.com/tags">by tags</a> 
     <span style="color:#C74350">|</span> 
@@ -91,15 +91,124 @@
             <hr/>
 
                 <article class="hentry">
-                    <h1 class="entry-title"><a href="https://notes.nicolasdeville.com/projects/pingee">Pingee</a></h1>
+                    <h1 class="entry-title"><a href="https://notes.nicolasdeville.com/helpers/api-tinify">API: Tinify (TinyPNG)</a></h1>
 
                     <!-- added 4/7 -->
                     <div>
                         <p class="header_summary">
-                            <p>[work in progress] Internet &amp; Network monitoring tool (script)</p>
+                            <p>Optimise your images to be more lightweight with TinyPNG.</p>
                         </p>
                     </div>
 
+<footer class="post-info">
+
+    <p>
+        19 Sep 2022 <span class="separator">|</span> in <a class="link_tag" href="https://notes.nicolasdeville.com/helpers/">helpers</a>
+ tags: <a class="link_tag" href="https://notes.nicolasdeville.com/tag/apis.html">apis</a>
+<a class="link_tag" href="https://notes.nicolasdeville.com/tag/automation.html">automation</a>
+<a class="link_tag" href="https://notes.nicolasdeville.com/tag/python.html">python</a>
+
+        <!-- added 4/7 -->
+        <!-- 		<br />
+        <abbr class="modified" title="2022-09-19T22:46:30.860718+02:00">
+                Updated: 19 Sep 2022
+        </abbr>
+ -->
+
+    </p>
+
+    
+
+</footer><p><span class="datestamp">19 Sep 2022</span>   </p>
+<div class="link_border"><div class="link_logo_box"><img class="link_logo" src="https://logo.clearbit.com/tinypng.com?size=35" alt="logo"/></div><div class="link_content">
+<div class="link_title">TinyPNG – Compress WebP, PNG and JPEG images intelligently</div>
+<div class="link_tagline">Smart WebP, PNG and JPEG compression</div>
+<div class="link_url"><a href="https://tinypng.com/" target="_blank">https://tinypng.com/</a></div></div></div>
+
+<p>Works with Alfred [<a href="../../apps/alfred/index.html">Nic Note: Alfred</a>]   </p>
+<h1 id="api-key">API key</h1>
+<div class="link_border"><div class="link_logo_box"><img class="link_logo" src="https://logo.clearbit.com/tinypng.com?size=35" alt="logo"/></div><div class="link_content">
+<div class="link_title">TinyPNG – Developer API</div>
+<div class="link_tagline">tinypng.com</div>
+<div class="link_url"><a href="https://tinypng.com/developers" target="_blank">https://tinypng.com/developers</a></div></div></div>
+
+<p><img class="screenshot" src="https://notes.nicolasdeville.com/images/alfred/tiny-png-pricing.jpg" alt="tiny-png-pricing.jpg"/>  </p>
+<p>No password required for signup! API key obtained in &lt;1mns! 😁  </p>
+<h1 id="api-dashboard">API Dashboard</h1>
+<div class="link_border"><div class="link_logo_box"><img class="link_logo" src="https://logo.clearbit.com/tinify.com?size=35" alt="logo"/></div><div class="link_content">
+<div class="link_title">API Dashboard</div>
+<div class="link_tagline">tinify.com</div>
+<div class="link_url"><a href="https://tinify.com/dashboard/api" target="_blank">https://tinify.com/dashboard/api</a></div></div></div>
+
+<h1 id="api-documentation">API Documentation</h1>
+<div class="link_border"><div class="link_logo_box"><img class="link_logo" src="https://logo.clearbit.com/tinypng.com?size=35" alt="logo"/></div><div class="link_content">
+<div class="link_title">TinyPNG – API Reference - Python</div>
+<div class="link_tagline">tinypng.com</div>
+<div class="link_url"><a href="https://tinypng.com/developers/reference/python" target="_blank">https://tinypng.com/developers/reference/python</a></div></div></div>
+
+<div class="highlight"><pre><span></span><code>pip3 install --upgrade tinify
+</code></pre></div>
+
+<h2 id="authentication">Authentication</h2>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">tinify</span>
+<span class="n">tinify</span><span class="o">.</span><span class="n">key</span> <span class="o">=</span> <span class="s2">&quot;YOUR_API_KEY&quot;</span>
+</code></pre></div>
+
+<h2 id="compressing">Compressing</h2>
+<p>locally:   </p>
+<div class="highlight"><pre><span></span><code><span class="n">source</span> <span class="o">=</span> <span class="n">tinify</span><span class="o">.</span><span class="n">from_file</span><span class="p">(</span><span class="s2">&quot;unoptimized.webp&quot;</span><span class="p">)</span>
+<span class="n">source</span><span class="o">.</span><span class="n">to_file</span><span class="p">(</span><span class="s2">&quot;optimized.webp&quot;</span><span class="p">)</span>
+</code></pre></div>
+
+<p>url:  </p>
+<div class="highlight"><pre><span></span><code><span class="n">source</span> <span class="o">=</span> <span class="n">tinify</span><span class="o">.</span><span class="n">from_url</span><span class="p">(</span><span class="s2">&quot;https://tinypng.com/images/panda-happy.png&quot;</span><span class="p">)</span>
+<span class="n">source</span><span class="o">.</span><span class="n">to_file</span><span class="p">(</span><span class="s2">&quot;optimized.png&quot;</span><span class="p">)</span>
+</code></pre></div>
+
+<h2 id="resizing">Resizing</h2>
+<blockquote>
+<p>Resizing counts as one additional compression. For example, if you upload a single image and retrieve the optimized version plus 2 resized versions this will count as 3 compressions in total.</p>
+</blockquote>
+<div class="highlight"><pre><span></span><code><span class="n">source</span> <span class="o">=</span> <span class="n">tinify</span><span class="o">.</span><span class="n">from_file</span><span class="p">(</span><span class="s2">&quot;large.jpg&quot;</span><span class="p">)</span>
+<span class="n">resized</span> <span class="o">=</span> <span class="n">source</span><span class="o">.</span><span class="n">resize</span><span class="p">(</span>
+    <span class="n">method</span><span class="o">=</span><span class="s2">&quot;fit&quot;</span><span class="p">,</span>
+    <span class="n">width</span><span class="o">=</span><span class="mi">150</span><span class="p">,</span>
+    <span class="n">height</span><span class="o">=</span><span class="mi">100</span>
+<span class="p">)</span>
+<span class="n">resized</span><span class="o">.</span><span class="n">to_file</span><span class="p">(</span><span class="s2">&quot;thumbnail.jpg&quot;</span><span class="p">)</span>
+</code></pre></div>
+
+<h2 id="compression-count">Compression count</h2>
+<div class="highlight"><pre><span></span><code><span class="n">compressions_this_month</span> <span class="o">=</span> <span class="n">tinify</span><span class="o">.</span><span class="n">compression_count</span>
+</code></pre></div>
+                </article>
+            </aside>
+
+                <section id="content" class="body">
+
+                <!-- PREVIOUS NOTES -->
+				<p class="notes-section">previous notes</p>
+                <hr>
+
+                <ol id="posts-list" class="hfeed">
+            
+
+
+
+            <li>
+                <article class="hentry">
+                    <header>
+                        <!-- PREVIOUS NOTE TITLE -->
+                        <h1><a href="https://notes.nicolasdeville.com/projects/pingee" rel="bookmark"
+                            title="Pingee">Pingee</a></h1>
+                        <!-- PREVIOUS NOTE SUMMARY -->
+                        <div class="entry-content">
+                            <p>[work in progress] Internet &amp; Network monitoring tool (script)</p>
+                        </div>
+                    </header>
+
+                    <div class="entry-content">
+                        <!-- PREVIOUS NOTE METADATA -->
 <footer class="post-info">
 
     <p>
@@ -118,257 +227,11 @@
 
     
 
-</footer><p><span class="datestamp">19 Aug 2022</span></p>
-<p>Goal: 24/7 monitoring of network &amp; internet connection to identify source and log dropouts for reporting to ISP.   </p>
-<p>My setup:s
-Cable modem &gt; Unifi Router USG &gt; Unifi Switch US-8 &gt; Ethernet connection to macOS Monterey    </p>
-<h2 id="good-resources">Good Resources</h2>
-<div class="link_border"><div class="link_logo_box"><img class="link_logo" src="https://logo.clearbit.com/linuxhint.com?size=35" alt="logo"/></div><div class="link_content">
-<div class="link_title">Python Script to Monitor Network Connection</div>
-<div class="link_tagline">linuxhint.com</div>
-<div class="link_url"><a href="https://linuxhint.com/python-script-monitor-network-connection" target="_blank">https://linuxhint.com/python-script-monitor-network-connection</a></div></div></div>
-
-<div class="link_border"><div class="link_logo_box"><img class="link_logo" src="https://logo.clearbit.com/geeksforgeeks.org?size=35" alt="logo"/></div><div class="link_content">
-<div class="link_title">Python Script to Monitor Network Connection and saving into Log File - GeeksforGeeks</div>
-<div class="link_tagline">geeksforgeeks.org</div>
-<div class="link_url"><a href="https://www.geeksforgeeks.org/python-script-to-monitor-network-connection-and-saving-into-log-file" target="_blank">https://www.geeksforgeeks.org/python-script-to-monitor-network-connection-and-saving-into-log-file</a></div></div></div>
-
-<div class="link_border"><div class="link_logo_box"><img class="link_logo" src="https://logo.clearbit.com/stackoverflow.com?size=35" alt="logo"/></div><div class="link_content">
-<div class="link_title">Pinging servers in Python - Stack Overflow</div>
-<div class="link_tagline">stackoverflow.com</div>
-<div class="link_url"><a href="https://stackoverflow.com/questions/2953462/pinging-servers-in-python" target="_blank">https://stackoverflow.com/questions/2953462/pinging-servers-in-python</a></div></div></div>
-
-<h2 id="resources-references">Resources / References</h2>
-<h3 id="monitor-downloadupload-speeds">Monitor download/upload speeds</h3>
-<div class="link_border"><div class="link_logo_box"><img class="link_logo" src="https://logo.clearbit.com/pythonprogramming.org?size=35" alt="logo"/></div><div class="link_content">
-<div class="link_title">>Monitor your internet with python</div>
-<div class="link_tagline">pythonprogramming.org</div>
-<div class="link_url"><a href="https://pythonprogramming.org/monitor-your-internet-with-python" target="_blank">https://pythonprogramming.org/monitor-your-internet-with-python</a></div></div></div>
-
-<div class="link_border"><div class="link_logo_box"><img class="link_logo" src="https://logo.clearbit.com/pythonprogramming.org?size=35" alt="logo"/></div><div class="link_content">
-<div class="link_title">Tweeting about your low internet speed and tagging your ISP</div>
-<div class="link_tagline">pythonprogramming.org</div>
-<div class="link_url"><a href="https://pythonprogramming.org/sending-tweet-when-your-internet-speed-goes-down" target="_blank">https://pythonprogramming.org/sending-tweet-when-your-internet-speed-goes-down</a></div></div></div>
-
-<p>I care less about speed than just availability. <br>
-Not a good fit.   </p>
-<h3 id="simplemonitor">Simplemonitor</h3>
-<div class="link_border"><div class="link_logo_box"><img class="link_logo" src="https://logo.clearbit.com/github.io?size=35" alt="logo"/></div><div class="link_content">
-<div class="link_title">SimpleMonitor</div>
-<div class="link_tagline">A Python-based network and host monitor</div>
-<div class="link_url"><a href="https://jamesoff.github.io/simplemonitor" target="_blank">https://jamesoff.github.io/simplemonitor</a></div></div></div>
-
-<p>updated doc:   </p>
-<div class="link_border"><div class="link_logo_box"><img class="link_logo" src="https://logo.clearbit.com/readthedocs.io?size=35" alt="logo"/></div><div class="link_content">
-<div class="link_title">Welcome to SimpleMonitor documentation</div>
-<div class="link_tagline">readthedocs.io</div>
-<div class="link_url"><a href="https://simplemonitor.readthedocs.io/en/latest" target="_blank">https://simplemonitor.readthedocs.io/en/latest</a></div></div></div>
-
-<div class="link_border"><div class="link_logo_box"><img class="link_logo" src="https://logo.clearbit.com/github.com?size=35" alt="logo"/></div><div class="link_content">
-<div class="link_title">simplemonitor/index.rst at develop · jamesoff/simplemonitor · GitHub</div>
-<div class="link_tagline">github.com</div>
-<div class="link_url"><a href="https://github.com/jamesoff/simplemonitor/blob/develop/docs/index.rst" target="_blank">https://github.com/jamesoff/simplemonitor/blob/develop/docs/index.rst</a></div></div></div>
-
-<p>Probably too complex for my needs. 
-Not a good fit.  </p>
-<h3 id="smokeping">Smokeping</h3>
-<div class="link_border"><div class="link_logo_box"><img class="link_logo" src="https://logo.clearbit.com/oetiker.ch?size=35" alt="logo"/></div><div class="link_content">
-<div class="link_title">SmokePing - SmokePing Documentation</div>
-<div class="link_tagline">oetiker.ch</div>
-<div class="link_url"><a href="https://oss.oetiker.ch/smokeping/doc/index.en.html" target="_blank">https://oss.oetiker.ch/smokeping/doc/index.en.html</a></div></div></div>
-
-<p>For reference only. Too complex for my needs. <br>
-Not a good fit.   </p>
-<p><span class="datestamp">04 Sep 2022</span>   </p>
-<p>Starting code, open-sourcing repo here:      </p>
-<div class="link_border"><div class="link_logo_box"><img class="link_logo" src="https://logo.clearbit.com/github.com?size=35" alt="logo"/></div><div class="link_content">
-<div class="link_title">GitHub - ndeville/pingee: Internet Connection Monitoring Script</div>
-<div class="link_tagline">github.com</div>
-<div class="link_url"><a href="https://github.com/ndeville/pingee" target="_blank">https://github.com/ndeville/pingee</a></div></div></div>
-
-<p>Logic:   </p>
-<div class="highlight"><pre><span></span><code>- identify network path automatically for devices to ping or hardcode internal IPs?
-- ping switch (1s)   
-- ping router (1s)   
-- ping remote server #1 from random list   
-if success:   
-    repeat loop   
-if #1 fails, ping remote server # 2   
-    if #2 fails, ping remote server # 3    
-        If #3 fails, log &amp; notify as internet dropout     
-</code></pre></div>
-
-<p>Assuming 3s loop (by default or with added delay), ie one ping per second.    </p>
-<p>List of IPs to ping randomly:  </p>
-<div class="highlight"><pre><span></span><code><span class="p">[</span>
-<span class="s1">&#39;208.67.222.222&#39;</span><span class="p">,</span> <span class="c1"># OpenDNS</span>
-<span class="s1">&#39;208.67.220.220&#39;</span><span class="p">,</span> <span class="c1"># OpenDNS  </span>
-<span class="s1">&#39;1.1.1.1&#39;</span><span class="p">,</span> <span class="c1"># Cloudflare</span>
-<span class="s1">&#39;1.0.0.1&#39;</span><span class="p">,</span> <span class="c1"># Cloudflare</span>
-<span class="s1">&#39;8.8.8.8&#39;</span><span class="p">,</span> <span class="c1"># Google DNS</span>
-<span class="s1">&#39;8.8.4.4&#39;</span><span class="p">,</span> <span class="c1"># Google DNS</span>
-<span class="p">]</span>
-</code></pre></div>
-
-<p>My questions:  <br>
-- is that the right way to build the script? <br>
-- is the ping cadence too much, ie: <br>
-- will I run the risk to get blacklisted by remote server(s)? <br>
-- will it impact internal network?   </p>
-<h1 id="tests">Tests</h1>
-<p><span class="datestamp">06 Sep 2022</span>   </p>
-<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">subprocess</span>
-
-<span class="c1"># Internal ping</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;INTERNAL PING:</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
-
-<span class="n">router</span> <span class="o">=</span> <span class="s1">&#39;192.168.1.1&#39;</span>
-
-<span class="n">router_command</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;ping&#39;</span><span class="p">,</span> <span class="s1">&#39;-c&#39;</span><span class="p">,</span> <span class="s1">&#39;1&#39;</span><span class="p">,</span> <span class="n">router</span><span class="p">]</span>
-
-<span class="n">router_ping</span> <span class="o">=</span> <span class="n">subprocess</span><span class="o">.</span><span class="n">call</span><span class="p">(</span><span class="n">router_command</span><span class="p">)</span>
-
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n</span><span class="si">{</span><span class="n">router_ping</span><span class="si">=}</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
-
-<span class="c1"># External ping</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;EXTERNAL PING:</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
-
-<span class="n">hostnames</span> <span class="o">=</span> <span class="p">[</span>
-<span class="s1">&#39;208.67.222.222&#39;</span><span class="p">,</span> <span class="c1"># OpenDNS</span>
-<span class="s1">&#39;208.67.220.220&#39;</span><span class="p">,</span> <span class="c1"># OpenDNS  </span>
-<span class="s1">&#39;1.1.1.1&#39;</span><span class="p">,</span> <span class="c1"># Cloudflare</span>
-<span class="s1">&#39;1.0.0.1&#39;</span><span class="p">,</span> <span class="c1"># Cloudflare</span>
-<span class="s1">&#39;8.8.8.8&#39;</span><span class="p">,</span> <span class="c1"># Google DNS</span>
-<span class="s1">&#39;8.8.4.4&#39;</span><span class="p">,</span> <span class="c1"># Google DNS</span>
-<span class="p">]</span>
-
-<span class="k">for</span> <span class="n">hostname</span> <span class="ow">in</span> <span class="n">hostnames</span><span class="p">:</span>
-
-    <span class="n">hostname_command</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;ping&#39;</span><span class="p">,</span> <span class="s1">&#39;-c&#39;</span><span class="p">,</span> <span class="s1">&#39;1&#39;</span><span class="p">,</span> <span class="n">hostname</span><span class="p">]</span>
-
-    <span class="n">external_ping</span> <span class="o">=</span> <span class="n">subprocess</span><span class="o">.</span><span class="n">call</span><span class="p">(</span><span class="n">hostname_command</span><span class="p">)</span>
-
-    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n</span><span class="si">{</span><span class="n">external_ping</span><span class="si">=}</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
-</code></pre></div>
-
-<p>outputs:    </p>
-<div class="highlight"><pre><span></span><code>INTERNAL PING:
-
-PING 192.168.1.1 (192.168.1.1): 56 data bytes
-64 bytes from 192.168.1.1: icmp_seq=0 ttl=64 time=2.220 ms
-
---- 192.168.1.1 ping statistics ---
-1 packets transmitted, 1 packets received, 0.0% packet loss
-round-trip min/avg/max/stddev = 2.220/2.220/2.220/0.000 ms
-
-router_ping=0
-
-EXTERNAL PING:
-
-PING 208.67.222.222 (208.67.222.222): 56 data bytes
-64 bytes from 208.67.222.222: icmp_seq=0 ttl=55 time=21.802 ms
-
---- 208.67.222.222 ping statistics ---
-1 packets transmitted, 1 packets received, 0.0% packet loss
-round-trip min/avg/max/stddev = 21.802/21.802/21.802/0.000 ms
-
-external_ping=0
-
-PING 208.67.220.220 (208.67.220.220): 56 data bytes
-64 bytes from 208.67.220.220: icmp_seq=0 ttl=55 time=22.655 ms
-
---- 208.67.220.220 ping statistics ---
-1 packets transmitted, 1 packets received, 0.0% packet loss
-round-trip min/avg/max/stddev = 22.655/22.655/22.655/0.000 ms
-
-external_ping=0
-
-PING 1.1.1.1 (1.1.1.1): 56 data bytes
-64 bytes from 1.1.1.1: icmp_seq=0 ttl=56 time=20.793 ms
-
---- 1.1.1.1 ping statistics ---
-1 packets transmitted, 1 packets received, 0.0% packet loss
-round-trip min/avg/max/stddev = 20.793/20.793/20.793/0.000 ms
-
-external_ping=0
-
-PING 1.0.0.1 (1.0.0.1): 56 data bytes
-64 bytes from 1.0.0.1: icmp_seq=0 ttl=56 time=22.733 ms
-
---- 1.0.0.1 ping statistics ---
-1 packets transmitted, 1 packets received, 0.0% packet loss
-round-trip min/avg/max/stddev = 22.733/22.733/22.733/0.000 ms
-
-external_ping=0
-
-PING 8.8.8.8 (8.8.8.8): 56 data bytes
-64 bytes from 8.8.8.8: icmp_seq=0 ttl=115 time=14.300 ms
-
---- 8.8.8.8 ping statistics ---
-1 packets transmitted, 1 packets received, 0.0% packet loss
-round-trip min/avg/max/stddev = 14.300/14.300/14.300/0.000 ms
-
-external_ping=0
-
-PING 8.8.4.4 (8.8.4.4): 56 data bytes
-64 bytes from 8.8.4.4: icmp_seq=0 ttl=116 time=12.229 ms
-
---- 8.8.4.4 ping statistics ---
-1 packets transmitted, 1 packets received, 0.0% packet loss
-round-trip min/avg/max/stddev = 12.229/12.229/12.229/0.000 ms
-
-external_ping=0
-</code></pre></div>
-
-<p>Need to find a way to avoid terminal printing when all OK. Lookup other method. </p>
-<h2 id="traceroute">Traceroute</h2>
-<p><span class="datestamp">06 Sep 2022</span> ideally, I would want the script to figure out the IP addresses of the devices to ping on the internal network. <code>Traceroute</code> seems to be the way to go.   </p>
-<div class="link_border"><div class="link_logo_box"><img class="link_logo" src="https://logo.clearbit.com/fortinet.com?size=35" alt="logo"/></div><div class="link_content">
-<div class="link_title">What is Traceroute: What Does it Do & How Does It Work?</div>
-<div class="link_tagline">fortinet.com</div>
-<div class="link_url"><a href="https://www.fortinet.com/resources/cyberglossary/traceroutes" target="_blank">https://www.fortinet.com/resources/cyberglossary/traceroutes</a></div></div></div>
-
-<p>Terminal command:  </p>
-<div class="highlight"><pre><span></span><code>traceroute hostname
-</code></pre></div>
-
-<p>Traceroute read:</p>
-<table>
-<thead>
-<tr>
-<th>hop number</th>
-<th>device name</th>
-<th>device IP</th>
-<th>hop time (back and forth)</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>1</td>
-<td>router</td>
-<td>(192.168.0.1)</td>
-<td>0.841 ms  0.662 ms  0.639 ms</td>
-</tr>
-<tr>
-<td>2</td>
-<td>xxxxxxxx.xxxxx.xxxxxx.com</td>
-<td>(xx.xx.xx.xx)</td>
-<td>14.854 ms  13.750 ms  13.516 ms</td>
-</tr>
-</tbody>
-</table>
-<p>Asterisk in front of device name: indicates that the router it reached was configured to deprioritize or automatically reject ICMP packets, which is done because ICMP is not categorized as essential traffic by many routers.  </p>
-<p>“If there is an issue, you can use Simple Network Management Protocol (SNMP) to diagnose the problem.” </p>
+</footer>                    </div>
+                    
                 </article>
-            </aside>
-
-                <section id="content" class="body">
-
-                <!-- PREVIOUS NOTES -->
-				<p class="notes-section">previous notes</p>
-                <hr>
-
-                <ol id="posts-list" class="hfeed">
+                <hr/>
+            </li>
             
 
 
@@ -1927,10 +1790,12 @@ external_ping=0
 
         <footer id="contentinfo" class="body">
                 <address id="about" class="vcard body">
+                <a href="https://clearbit.com" target="_blank">Logos provided by Clearbit</a>
+                <br>
                 Powered by <a href="https://github.com/getpelican/pelican" target="_blank">Pelican</a>, 
                 with <a href="https://stork-search.net/" target="_blank">Stork</a> & <a href="https://github.com/pelican-plugins/search" target="_blank">Pelican Search plugin</a>.
                 <span style="color:#C74350">|</span> <img src="https://notes.nicolasdeville.com/images/python.svg" alt="python_logo" width="16" style="vertical-align: middle;"/> <a href="https://www.python.org/" target="_blank">Python</a> 
-                <br><a href="https://clearbit.com" target="_blank">Logos provided by Clearbit</a>
+                
                 </address><!-- /#about -->
 
         </footer><!-- /#contentinfo -->
