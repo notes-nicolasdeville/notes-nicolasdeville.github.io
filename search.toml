@@ -13,6 +13,11 @@ url = "/home-office/deep-work"
 title = "Resources for Deep Work"
 
 [[input.files]]
+path = "helpers/keyboard-shortcuts/index.html"
+url = "/helpers/keyboard-shortcuts"
+title = "My keyboard shortcuts"
+
+[[input.files]]
 path = "learning/html/index.html"
 url = "/learning/html"
 title = "Learning HTML"
@@ -36,11 +41,6 @@ title = "Learning AI"
 path = "learning/computer-science/index.html"
 url = "/learning/computer-science"
 title = "Learning Computer Science"
-
-[[input.files]]
-path = "helpers/keyboard-shortcuts/index.html"
-url = "/helpers/keyboard-shortcuts"
-title = "My keyboard shortcuts"
 
 [[input.files]]
 path = "helpers/ionos/index.html"
