@@ -6,8 +6,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="generator" content="Pelican" />
     <title>Learning Git</title>
-    <link rel="icon" type="image/x-icon" href="https://notes.nicolasdeville.com/favicon.ico">
+    
+    <!-- Logo -->
     <meta property="og:logo" content="https://notes.nicolasdeville.com/logo.svg">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="https://notes.nicolasdeville.com/favicon.ico">
+    <link rel="mask-icon" href="https://notes.nicolasdeville.com/favicon.svg" color="#FFFFFF">
+    <link rel="alternate icon" class="js-site-favicon" type="image/png" href="https://notes.nicolasdeville.com/favicon.png">
+    <link rel="icon" class="js-site-favicon" type="image/svg+xml" href="https://notes.nicolasdeville.com/favicon.svg">
+    <link rel="fluid-icon" href="https://notes.nicolasdeville.com/favicon.png" title="Nic's notes">
     
     <!-- CSS -->
     <link rel="stylesheet" href="https://notes.nicolasdeville.com/theme/css/main.css" />
@@ -34,7 +42,7 @@
             </div>
 
             <div class="above-navbar">
-                <div class="last_updated">20 Sep 2022 | 21:46</div>
+                <div class="last_updated">20 Sep 2022 | 23:07</div>
                 <div>
                     <p class="notes_count">
                         <a href="https://notes.nicolasdeville.com/tags">by tags</a> 
@@ -45,7 +53,7 @@
                         <span style="color:#C74350">|</span>
                         <a href="https://notes.nicolasdeville.com/2022/">2022</a> 
                         <span style="color:#C74350">|</span> 
-                        380 notes
+                        381 notes
                     </p>
                 </div>
             </div>
@@ -89,12 +97,12 @@
 <footer class="post-info">
 
     <p>
-        19 Sep 2022 <span class="separator">|</span> in <a class="link_tag" href="https://notes.nicolasdeville.com/learning/">learning</a>
+        20 Sep 2022 <span class="separator">|</span> in <a class="link_tag" href="https://notes.nicolasdeville.com/learning/">learning</a>
 
         <!-- added 4/7 -->
         <!-- 		<br />
-        <abbr class="modified" title="2022-09-19T12:51:48.741177+02:00">
-                Updated: 19 Sep 2022
+        <abbr class="modified" title="2022-09-20T22:36:03.005726+02:00">
+                Updated: 20 Sep 2022
         </abbr>
  -->
 
@@ -113,6 +121,70 @@
 
 <h3 id="my-book-highlights">my book highlights</h3>
 <p>[<a href="../../books/pro-git/index.html">Nic Note: Book: Pro Git</a>]</p>
+<h1 id="snippets">Snippets</h1>
+<h2 id="remove-files-that-are-listed-in-the-gitignore-but-still-on-the-repository">remove files that are listed in the .gitignore but still on the repository</h2>
+<div class="highlight"><pre><span></span><code>git rm -r --cached .
+git add .
+git commit -m <span class="s2">&quot;Drop files from .gitignore&quot;</span>
+
+<span class="c1"># You basically remove and re-add all files, but git add will ignore the ones in .gitignore</span>
+</code></pre></div>
+
+<h2 id="commit">Commit</h2>
+<div class="highlight"><pre><span></span><code>git init
+
+git add .
+git commit -m <span class="s2">&quot;my first commit&quot;</span>
+
+<span class="c1"># 1st time</span>
+git remote add origin &lt;remote repository URL&gt;
+git remote add origin https://github.com/ndeville/indeXee.git
+
+git push origin main
+
+OR 
+
+git push origin HEAD:master
+</code></pre></div>
+
+<h3 id="if-error-src-refspec-master-does-not-match-any">if ""error: src refspec master does not match any"</h3>
+<div class="highlight"><pre><span></span><code>git init
+git add .
+git commit -m <span class="s1">&#39;message&#39;</span>
+git push -u origin master    
+</code></pre></div>
+
+<p>after this, if you still having that error, follow these steps again:    </p>
+<div class="highlight"><pre><span></span><code>git add .
+git commit -m <span class="s1">&#39;message&#39;</span>
+git push -u origin master 
+
+git push origin HEAD:main
+</code></pre></div>
+
+<h2 id="get-repo-updates">get repo updates</h2>
+<div class="highlight"><pre><span></span><code>git pull origin main
+</code></pre></div>
+
+<h2 id="rename-local-branch">rename Local Branch</h2>
+<div class="highlight"><pre><span></span><code>git branch -m new-branch-name
+</code></pre></div>
+
+<p>eg.   </p>
+<div class="highlight"><pre><span></span><code>git branch -m main
+</code></pre></div>
+
+<h2 id="delete-local-branch">delete local branch</h2>
+<div class="highlight"><pre><span></span><code>git branch -d  local_branch_name
+</code></pre></div>
+
+<h2 id="list-all-branches">list all branches</h2>
+<div class="highlight"><pre><span></span><code>git branch -a
+</code></pre></div>
+
+<h2 id="completely-uninitialize-ie-remove-delete-git-from-your-project">completely uninitialize (ie remove, delete) Git from your Project</h2>
+<div class="highlight"><pre><span></span><code>rm -rf .git
+</code></pre></div>
             </main>
         </div><!-- /.entry-content -->
     </article>
