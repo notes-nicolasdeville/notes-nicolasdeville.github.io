@@ -8,6 +8,11 @@ url = "/ABOUT/"
 title = ""
 
 [[input.files]]
+path = "apps/alfred/index.html"
+url = "/apps/alfred"
+title = "Alfred"
+
+[[input.files]]
 path = "home-office/deep-work/index.html"
 url = "/home-office/deep-work"
 title = "Resources for Deep Work"
@@ -56,11 +61,6 @@ title = "Learning Computer Science"
 path = "helpers/ionos/index.html"
 url = "/helpers/ionos"
 title = "Ionos"
-
-[[input.files]]
-path = "apps/alfred/index.html"
-url = "/apps/alfred"
-title = "Alfred"
 
 [[input.files]]
 path = "helpers/api-tinify/index.html"
