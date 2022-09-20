@@ -13,6 +13,41 @@ url = "/home-office/deep-work"
 title = "Resources for Deep Work"
 
 [[input.files]]
+path = "learning/html/index.html"
+url = "/learning/html"
+title = "Learning HTML"
+
+[[input.files]]
+path = "helpers/search-engines/index.html"
+url = "/helpers/search-engines"
+title = "How to reference a site in search engines"
+
+[[input.files]]
+path = "apps/things/index.html"
+url = "/apps/things"
+title = "App: Things"
+
+[[input.files]]
+path = "learning/ai/index.html"
+url = "/learning/ai"
+title = "Learning AI"
+
+[[input.files]]
+path = "learning/computer-science/index.html"
+url = "/learning/computer-science"
+title = "Learning Computer Science"
+
+[[input.files]]
+path = "helpers/keyboard-shortcuts/index.html"
+url = "/helpers/keyboard-shortcuts"
+title = "My keyboard shortcuts"
+
+[[input.files]]
+path = "helpers/ionos/index.html"
+url = "/helpers/ionos"
+title = "Ionos"
+
+[[input.files]]
 path = "apps/alfred/index.html"
 url = "/apps/alfred"
 title = "Alfred"
@@ -21,11 +56,6 @@ title = "Alfred"
 path = "helpers/api-tinify/index.html"
 url = "/helpers/api-tinify"
 title = "API: Tinify (TinyPNG)"
-
-[[input.files]]
-path = "helpers/keyboard-shortcuts/index.html"
-url = "/helpers/keyboard-shortcuts"
-title = "My keyboard shortcuts"
 
 [[input.files]]
 path = "projects/pingee/index.html"
@@ -121,11 +151,6 @@ title = "Learning Javascript"
 path = "learning/git/index.html"
 url = "/learning/git"
 title = "Learning Git"
-
-[[input.files]]
-path = "learning/computer-science/index.html"
-url = "/learning/computer-science"
-title = "Learning Computer Science"
 
 [[input.files]]
 path = "leadership/comp-plans/index.html"
@@ -421,11 +446,6 @@ title = "Managing Virtual Environments in Python"
 path = "python/gitignore/index.html"
 url = "/python/gitignore"
 title = "Gitignore"
-
-[[input.files]]
-path = "learning/html/index.html"
-url = "/learning/html"
-title = "Learning HTML"
 
 [[input.files]]
 path = "learning/python/index.html"
@@ -748,11 +768,6 @@ url = "/python/tmdb-api"
 title = "Fetching data from TMDB API"
 
 [[input.files]]
-path = "projects/nicai/index.html"
-url = "/projects/nicai"
-title = "nicAI | my personal AI assistant"
-
-[[input.files]]
 path = "python/library-mutagen/index.html"
 url = "/python/library-mutagen"
 title = "Library: mutagen"
@@ -916,11 +931,6 @@ title = "Google Chrome extensions for Sales"
 path = "random/netflix/index.html"
 url = "/random/netflix"
 title = "How to see and download Netflix viewing history"
-
-[[input.files]]
-path = "helpers/search-engines/index.html"
-url = "/helpers/search-engines"
-title = "How to reference a site in search engines"
 
 [[input.files]]
 path = "python/text-to-html/index.html"
@@ -1863,6 +1873,11 @@ url = "/b2b-sales/are-you-selling-aspirin-a-vaccine-or-a-vitamin"
 title = "Are You Selling Aspirin, a Vaccine or a Vitamin?"
 
 [[input.files]]
+path = "books/deep-work/index.html"
+url = "/books/deep-work"
+title = "Deep Work, by Cal Newport"
+
+[[input.files]]
 path = "interests/tesla/index.html"
 url = "/interests/tesla"
 title = "Tesla"
@@ -1888,6 +1903,21 @@ url = "/leadership/podcast-on-leadership"
 title = "Podcast guest: On Leadership"
 
 [[input.files]]
+path = "projects/nicai/index.html"
+url = "/projects/nicai"
+title = "nicAI | my personal AI assistant"
+
+[[input.files]]
+path = "books/deep-work/index.html"
+url = "/books/deep-work"
+title = "Deep Work, by Cal Newport"
+
+[[input.files]]
+path = "random/ai/index.html"
+url = "/random/ai"
+title = "AI"
+
+[[input.files]]
 path = "books/library/index.html"
 url = "/books/library"
 title = "My Books Library"
@@ -1906,3 +1936,13 @@ title = "My B2B Books Library"
 path = "apps/library/index.html"
 url = "/apps/library"
 title = "My Apps Library"
+
+[[input.files]]
+path = "learning/ai/index.html"
+url = "/learning/ai"
+title = "Learning AI"
+
+[[input.files]]
+path = "home-office/deep-work/index.html"
+url = "/home-office/deep-work"
+title = "Resources for Deep Work"
