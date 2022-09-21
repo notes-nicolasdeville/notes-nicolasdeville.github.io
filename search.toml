@@ -8,6 +8,26 @@ url = "/ABOUT/"
 title = ""
 
 [[input.files]]
+path = "projects/notes/index.html"
+url = "/projects/notes"
+title = "This site"
+
+[[input.files]]
+path = "home-office/unifi/index.html"
+url = "/home-office/unifi"
+title = "Unifi Network"
+
+[[input.files]]
+path = "learning/udemy/index.html"
+url = "/learning/udemy"
+title = "My courses on Udemy"
+
+[[input.files]]
+path = "apps/spark/index.html"
+url = "/apps/spark"
+title = "Spark"
+
+[[input.files]]
 path = "apps/alfred/index.html"
 url = "/apps/alfred"
 title = "Alfred"
@@ -31,11 +51,6 @@ title = "Learning Git"
 path = "home-office/deep-work/index.html"
 url = "/home-office/deep-work"
 title = "Resources for Deep Work"
-
-[[input.files]]
-path = "projects/notes/index.html"
-url = "/projects/notes"
-title = "This site"
 
 [[input.files]]
 path = "learning/html/index.html"
@@ -221,11 +236,6 @@ title = "Airguns"
 path = "home-office/usb-hubs-and-docks/index.html"
 url = "/home-office/usb-hubs-and-docks"
 title = "USB Hubs & Docks"
-
-[[input.files]]
-path = "home-office/unifi/index.html"
-url = "/home-office/unifi"
-title = "Unifi Network"
 
 [[input.files]]
 path = "home-office/load-balancing/index.html"
