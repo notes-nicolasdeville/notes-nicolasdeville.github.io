@@ -8,6 +8,11 @@ url = "/ABOUT/"
 title = ""
 
 [[input.files]]
+path = "apps/alfred/index.html"
+url = "/apps/alfred"
+title = "Alfred"
+
+[[input.files]]
 path = "projects/notes/index.html"
 url = "/projects/notes"
 title = "This site"
@@ -26,11 +31,6 @@ title = "My courses on Udemy"
 path = "apps/spark/index.html"
 url = "/apps/spark"
 title = "Spark"
-
-[[input.files]]
-path = "apps/alfred/index.html"
-url = "/apps/alfred"
-title = "Alfred"
 
 [[input.files]]
 path = "helpers/keyboard-shortcuts/index.html"
