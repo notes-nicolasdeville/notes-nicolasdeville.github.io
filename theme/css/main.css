@@ -6,6 +6,7 @@
 /* Global variables */
 :root {
     --nic_red: #C64350;
+    --nic_main: #000305;
 }
 
 ::selection {
@@ -41,7 +42,7 @@ body {
     display: flex;
     flex-flow: row wrap;
     background: #fff;
-    color: #000305;
+    color: var(--nic_main);
     font-size: 90%; /* Base font size: 14px */
     font-family: 'Lato', sans-serif;
     line-height: 1.429;
@@ -126,7 +127,7 @@ img.left, figure.left, div.figure.align-left {
 .last_updated {
     background: #fff;
     float: left;
-    color: #000305;
+    color: var(--nic_main);
     font-size: 90%; /* Base font size: 14px */
     text-align: left;
     width: 50%;
@@ -136,7 +137,7 @@ img.left, figure.left, div.figure.align-left {
 
 .notes_count {
     background: #fff;
-    color: #000305;
+    color: var(--nic_main);
     font-size: 90%; /* Base font size: 14px */
     text-align: right;
     position: relative;
@@ -164,7 +165,7 @@ nav ul,li {
 h1 {
     font-size: 1.5em;
     margin-top: 1em;
-    color: var(--nic_red);
+    color: var(--nic_main);
     border-bottom: solid .2em var(--nic_red);
     padding-bottom: 2px;
 }
@@ -508,7 +509,7 @@ table {
 	}
 
 	#banner h1 a:link, #banner h1 a:visited {
-		color: #000305;
+		color: var(--nic_main);
 		display: block;
 		font-weight: bold;
 		margin: 0 0 0 .2em;
@@ -527,7 +528,7 @@ table {
 
 	/* Main Nav */
 	#banner nav {
-		background: #000305;
+		background: var(--nic_main);
 		font-size: 1.1em;
 		overflow: auto;
 		line-height: 30px;

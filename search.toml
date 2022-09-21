@@ -8,6 +8,76 @@ url = "/ABOUT/"
 title = ""
 
 [[input.files]]
+path = "home-office/shopping/index.html"
+url = "/home-office/shopping"
+title = "Shopping ideas for home office"
+
+[[input.files]]
+path = "b2b-sales/email-automation/index.html"
+url = "/b2b-sales/email-automation"
+title = "Email Automation for Sales outreaches"
+
+[[input.files]]
+path = "interests/web3/index.html"
+url = "/interests/web3"
+title = "Web3"
+
+[[input.files]]
+path = "interests/ai/index.html"
+url = "/interests/ai"
+title = "AI"
+
+[[input.files]]
+path = "projects/imagee/index.html"
+url = "/projects/imagee"
+title = "Imagee"
+
+[[input.files]]
+path = "interests/tea/index.html"
+url = "/interests/tea"
+title = "Tea"
+
+[[input.files]]
+path = "interests/programming/index.html"
+url = "/interests/programming"
+title = "Programming"
+
+[[input.files]]
+path = "learning/ai/index.html"
+url = "/learning/ai"
+title = "Learning AI"
+
+[[input.files]]
+path = "interests/metaverse/index.html"
+url = "/interests/metaverse"
+title = "The Metaverse"
+
+[[input.files]]
+path = "b2b-sales/email-tools/index.html"
+url = "/b2b-sales/email-tools"
+title = "Tools for email finding & validation"
+
+[[input.files]]
+path = "home-office/deep-work/index.html"
+url = "/home-office/deep-work"
+title = "Resources for Deep Work"
+
+[[input.files]]
+path = "python/export-kindle-library/index.html"
+url = "/python/export-kindle-library"
+title = "Exporting my Kindle library data"
+
+[[input.files]]
+path = "learning/html/index.html"
+url = "/learning/html"
+title = "Learning HTML"
+
+[[input.files]]
+path = "helpers/keyboard-shortcuts/index.html"
+url = "/helpers/keyboard-shortcuts"
+title = "My keyboard shortcuts"
+
+[[input.files]]
 path = "apps/alfred/index.html"
 url = "/apps/alfred"
 title = "Alfred"
@@ -33,9 +103,29 @@ url = "/apps/spark"
 title = "Spark"
 
 [[input.files]]
-path = "helpers/keyboard-shortcuts/index.html"
-url = "/helpers/keyboard-shortcuts"
-title = "My keyboard shortcuts"
+path = "apps/calendar-tools/index.html"
+url = "/apps/calendar-tools"
+title = "Calendar Tools"
+
+[[input.files]]
+path = "apps/fantastical/index.html"
+url = "/apps/fantastical"
+title = "Fantastical"
+
+[[input.files]]
+path = "learning/italian/index.html"
+url = "/learning/italian"
+title = "Learning Italian"
+
+[[input.files]]
+path = "b2b-sales/meeting-tools/index.html"
+url = "/b2b-sales/meeting-tools"
+title = "Meeting tools for Sales"
+
+[[input.files]]
+path = "b2b-sales/video-tools/index.html"
+url = "/b2b-sales/video-tools"
+title = "Video Tools for Sales"
 
 [[input.files]]
 path = "apps/tidal/index.html"
@@ -46,16 +136,6 @@ title = "Tidal"
 path = "learning/git/index.html"
 url = "/learning/git"
 title = "Learning Git"
-
-[[input.files]]
-path = "home-office/deep-work/index.html"
-url = "/home-office/deep-work"
-title = "Resources for Deep Work"
-
-[[input.files]]
-path = "learning/html/index.html"
-url = "/learning/html"
-title = "Learning HTML"
 
 [[input.files]]
 path = "learning/css/index.html"
@@ -71,11 +151,6 @@ title = "How to reference a site in search engines"
 path = "apps/things/index.html"
 url = "/apps/things"
 title = "App: Things"
-
-[[input.files]]
-path = "learning/ai/index.html"
-url = "/learning/ai"
-title = "Learning AI"
 
 [[input.files]]
 path = "learning/computer-science/index.html"
@@ -128,11 +203,6 @@ url = "/python/library-pelican"
 title = "Building a static site with Pelican"
 
 [[input.files]]
-path = "python/export-kindle-library/index.html"
-url = "/python/export-kindle-library"
-title = "Exporting my Kindle library data"
-
-[[input.files]]
 path = "python/create-executable/index.html"
 url = "/python/create-executable"
 title = "Create executable of a Pyhon application"
@@ -178,11 +248,6 @@ url = "/leadership/comp-plans"
 title = "Compensation Plans"
 
 [[input.files]]
-path = "interests/web3/index.html"
-url = "/interests/web3"
-title = "Web3"
-
-[[input.files]]
 path = "interests/watches/index.html"
 url = "/interests/watches"
 title = "Watches"
@@ -191,11 +256,6 @@ title = "Watches"
 path = "interests/traditional-archery/index.html"
 url = "/interests/traditional-archery"
 title = "Traditional Archery"
-
-[[input.files]]
-path = "interests/tea/index.html"
-url = "/interests/tea"
-title = "Tea"
 
 [[input.files]]
 path = "interests/tactical-pens/index.html"
@@ -271,11 +331,6 @@ title = "Github"
 path = "helpers/ffmpeg-ffprobe/index.html"
 url = "/helpers/ffmpeg-ffprobe"
 title = "ffmpeg and ffprobe"
-
-[[input.files]]
-path = "b2b-sales/email-automation/index.html"
-url = "/b2b-sales/email-automation"
-title = "Email Automation for Sales outreaches"
 
 [[input.files]]
 path = "apps/vs-code/index.html"
@@ -466,11 +521,6 @@ title = "Gitignore"
 path = "learning/python/index.html"
 url = "/learning/python"
 title = "Learning Python"
-
-[[input.files]]
-path = "b2b-sales/email-validation/index.html"
-url = "/b2b-sales/email-validation"
-title = "Tools for email validation"
 
 [[input.files]]
 path = "python/script-consolidate-log/index.html"
@@ -763,14 +813,14 @@ url = "/apps/radar"
 title = "Apps on my radar"
 
 [[input.files]]
-path = "b2b-sales/books/index.html"
-url = "/b2b-sales/books"
-title = "My B2B Books Library"
-
-[[input.files]]
 path = "python/books/index.html"
 url = "/python/books"
 title = "My Python Books Library"
+
+[[input.files]]
+path = "b2b-sales/books/index.html"
+url = "/b2b-sales/books"
+title = "My B2B Books Library"
 
 [[input.files]]
 path = "books/library/index.html"
@@ -973,8 +1023,8 @@ url = "/helpers/kindle"
 title = "Kindle"
 
 [[input.files]]
-path = "b2b-sales/planning-meetings/index.html"
-url = "/b2b-sales/planning-meetings"
+path = "b2b-sales/scheduling-meetings/index.html"
+url = "/b2b-sales/scheduling-meetings"
 title = "Scheduling Meetings"
 
 [[input.files]]
@@ -1923,9 +1973,9 @@ url = "/projects/nicai"
 title = "nicAI | my personal AI assistant"
 
 [[input.files]]
-path = "books/deep-work/index.html"
-url = "/books/deep-work"
-title = "Deep Work, by Cal Newport"
+path = "learning/ai/index.html"
+url = "/learning/ai"
+title = "Learning AI"
 
 [[input.files]]
 path = "random/ai/index.html"
@@ -1933,19 +1983,34 @@ url = "/random/ai"
 title = "AI"
 
 [[input.files]]
+path = "interests/ai/index.html"
+url = "/interests/ai"
+title = "AI"
+
+[[input.files]]
+path = "random/ai/index.html"
+url = "/random/ai"
+title = "AI"
+
+[[input.files]]
+path = "books/deep-work/index.html"
+url = "/books/deep-work"
+title = "Deep Work, by Cal Newport"
+
+[[input.files]]
 path = "books/library/index.html"
 url = "/books/library"
 title = "My Books Library"
 
 [[input.files]]
-path = "python/books/index.html"
-url = "/python/books"
-title = "My Python Books Library"
-
-[[input.files]]
 path = "b2b-sales/books/index.html"
 url = "/b2b-sales/books"
 title = "My B2B Books Library"
+
+[[input.files]]
+path = "python/books/index.html"
+url = "/python/books"
+title = "My Python Books Library"
 
 [[input.files]]
 path = "apps/library/index.html"
@@ -1956,6 +2021,11 @@ title = "My Apps Library"
 path = "learning/ai/index.html"
 url = "/learning/ai"
 title = "Learning AI"
+
+[[input.files]]
+path = "interests/ai/index.html"
+url = "/interests/ai"
+title = "AI"
 
 [[input.files]]
 path = "home-office/deep-work/index.html"
