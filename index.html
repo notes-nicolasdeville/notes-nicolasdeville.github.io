@@ -42,7 +42,7 @@
             </div>
 
             <div class="above-navbar">
-                <div class="last_updated">22 Sep 2022 | 10:00</div>
+                <div class="last_updated">22 Sep 2022 | 21:34</div>
                 <div>
                     <p class="notes_count">
                         <a href="https://notes.nicolasdeville.com/tags">by tags</a> 
@@ -53,7 +53,7 @@
                         <span style="color:#C74350">|</span>
                         <a href="https://notes.nicolasdeville.com/2022/">2022</a> 
                         <span style="color:#C74350">|</span> 
-                        399 notes
+                        402 notes
                     </p>
                 </div>
             </div>
@@ -80,7 +80,7 @@
 
 <!-- 220911 moved to base.html -->
 <!-- <p class="notes_count">
-    399 notes 
+    402 notes 
     <span style="color:#C74350">|</span> 
     <a href="https://notes.nicolasdeville.com/tags">by tags</a> 
     <span style="color:#C74350">|</span> 
@@ -99,15 +99,727 @@
             <hr/>
 
                 <article class="hentry">
-                    <h1 class="entry-title"><a href="https://notes.nicolasdeville.com/apps/audirvana">Audirvana</a></h1>
+                    <h1 class="entry-title"><a href="https://notes.nicolasdeville.com/projects/apps-library">Project: Apps Library</a></h1>
 
                     <!-- added 4/7 -->
                     <div>
                         <p class="header_summary">
-                            <p>High Resolution digital audio player</p>
+                            <p>Process to maintain my apps library</p>
                         </p>
                     </div>
 
+<footer class="post-info">
+
+    <p>
+        22 Sep 2022 <span class="separator">|</span> in <a class="link_tag" href="https://notes.nicolasdeville.com/projects/">projects</a>
+
+        <!-- added 4/7 -->
+        <!-- 		<br />
+        <abbr class="modified" title="2022-09-22T21:31:15.164069+02:00">
+                Updated: 22 Sep 2022
+        </abbr>
+ -->
+
+    </p>
+
+    
+
+</footer><p><span class="datestamp">07 Sep 2022</span>   </p>
+<h1 id="creating-a-list-of-all-apps-installed-on-my-2-macs">Creating a list of all apps installed on my 2 Macs</h1>
+<p>Fetching all apps on my systems with Python, and listing them in Grist [<a href="../../apps/grist/index.html">Nic Note: Grist</a>]  </p>
+<p>Plus copy each app's icon in its original format.   </p>
+<div class="highlight"><pre><span></span><code><span class="c1">####################</span>
+<span class="c1"># Import Apps to Grist</span>
+
+<span class="kn">import</span> <span class="nn">grist_PE</span>
+<span class="kn">from</span> <span class="nn">slugify</span> <span class="kn">import</span> <span class="n">slugify</span>
+
+<span class="kn">import</span> <span class="nn">glob</span>
+<span class="kn">import</span> <span class="nn">os</span>
+<span class="kn">import</span> <span class="nn">shutil</span>
+
+<span class="n">list_locations</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="s1">&#39;/Applications/*.app&#39;</span><span class="p">,</span> <span class="c1"># fetches all apps in my Applications folder</span>
+    <span class="s1">&#39;/Applications/Setapp/*.app&#39;</span><span class="p">,</span> <span class="c1"># fetches all apps in my Setapp subscription</span>
+    <span class="s1">&#39;/Applications/Adobe Acrobat DC/*.app&#39;</span><span class="p">,</span> <span class="c1"># fetching Adobe apps within their folder</span>
+    <span class="s1">&#39;/Applications/Adobe Illustrator 2022/*.app&#39;</span><span class="p">,</span> <span class="c1"># fetching Adobe apps within their folder</span>
+    <span class="s1">&#39;/Applications/Adobe Photoshop 2022/*.app&#39;</span><span class="p">,</span> <span class="c1"># fetching Adobe apps within their folder</span>
+    <span class="s1">&#39;/Volumes/Macintosh HD-1/Applications/*.app&#39;</span><span class="p">,</span> <span class="c1"># fetching all apps from the Applications folder on my 2nd Mac on network</span>
+<span class="p">]</span>
+
+<span class="n">list_errors</span> <span class="o">=</span> <span class="p">[]</span>
+
+<span class="n">count_file</span> <span class="o">=</span> <span class="mi">0</span>
+
+<span class="k">for</span> <span class="n">location</span> <span class="ow">in</span> <span class="n">list_locations</span><span class="p">:</span>
+
+    <span class="n">parts</span> <span class="o">=</span> <span class="n">location</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;*&#39;</span><span class="p">)</span>
+    <span class="n">prefix</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">parts</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+
+    <span class="n">list_of_files</span> <span class="o">=</span> <span class="n">glob</span><span class="o">.</span><span class="n">glob</span><span class="p">(</span><span class="n">location</span><span class="p">)</span>
+
+    <span class="nb">print</span><span class="p">()</span>
+    <span class="k">for</span> <span class="n">file</span> <span class="ow">in</span> <span class="n">list_of_files</span><span class="p">:</span>
+        <span class="n">count</span> <span class="o">+=</span> <span class="mi">1</span>
+
+        <span class="n">app</span> <span class="o">=</span> <span class="n">file</span><span class="p">[</span><span class="n">prefix</span><span class="p">:</span><span class="o">-</span><span class="mi">4</span><span class="p">]</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">app</span><span class="p">)</span>
+        <span class="n">slug</span> <span class="o">=</span> <span class="n">slugify</span><span class="p">(</span><span class="n">app</span><span class="p">)</span>
+
+        <span class="k">for</span> <span class="n">root</span><span class="p">,</span> <span class="n">dirs</span><span class="p">,</span> <span class="n">files</span> <span class="ow">in</span> <span class="n">os</span><span class="o">.</span><span class="n">walk</span><span class="p">(</span><span class="n">file</span><span class="p">):</span>
+            <span class="k">for</span> <span class="n">name</span> <span class="ow">in</span> <span class="n">files</span><span class="p">:</span>
+                <span class="c1"># copying app&#39;s logos to a central folder</span>
+                <span class="k">if</span> <span class="n">name</span><span class="o">.</span><span class="n">endswith</span><span class="p">((</span><span class="s2">&quot;.icns&quot;</span><span class="p">)):</span>
+                    <span class="n">count_file</span> <span class="o">+=</span> <span class="mi">1</span>
+
+                    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">root</span><span class="si">}</span><span class="s2">/</span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+                    <span class="k">try</span><span class="p">:</span>
+                        <span class="n">shutil</span><span class="o">.</span><span class="n">copy2</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">root</span><span class="si">}</span><span class="s1">/</span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">,</span> <span class="sa">f</span><span class="s2">&quot;/path/to/folder/</span><span class="si">{</span><span class="n">slug</span><span class="si">}</span><span class="s2">_</span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s2">.icns&quot;</span><span class="p">)</span>
+                    <span class="k">except</span><span class="p">:</span>
+                        <span class="n">list_errors</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
+                        <span class="k">continue</span>
+
+        <span class="nb">print</span><span class="p">()</span>
+
+        <span class="c1"># adding to Grist</span>
+        <span class="n">grist_PE</span><span class="o">.</span><span class="n">Apps</span><span class="o">.</span><span class="n">add_records</span><span class="p">(</span><span class="s1">&#39;Master&#39;</span><span class="p">,</span> <span class="p">[</span>
+                                        <span class="p">{</span>   
+                                            <span class="s1">&#39;name&#39;</span><span class="p">:</span> <span class="n">app</span><span class="p">,</span>
+                                            <span class="s1">&#39;type&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;L&#39;</span><span class="p">,</span> <span class="s1">&#39;macOS&#39;</span><span class="p">],</span>
+                                            <span class="s1">&#39;status&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;L&#39;</span><span class="p">,</span> <span class="s1">&#39;using&#39;</span><span class="p">],</span>
+                                            <span class="s1">&#39;slug&#39;</span><span class="p">:</span> <span class="n">slug</span><span class="p">,</span>
+                                            <span class="p">}</span>
+                                    <span class="p">])</span>
+
+
+<span class="k">for</span> <span class="n">error</span> <span class="ow">in</span> <span class="n">list_errors</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">error</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Total of </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">list_errors</span><span class="p">)</span><span class="si">}</span><span class="s2"> errors&quot;</span><span class="p">)</span>
+</code></pre></div>
+
+<h1 id="convert-apps-logos-to-usable-format">Convert apps' logos to usable format</h1>
+<div class="highlight"><pre><span></span><code><span class="c1">####################</span>
+<span class="c1"># Convert .icns files to .png </span>
+
+<span class="n">count_deleted</span> <span class="o">=</span> <span class="mi">0</span>
+
+<span class="kn">import</span> <span class="nn">icnsutil</span>
+
+<span class="k">for</span> <span class="n">root</span><span class="p">,</span> <span class="n">dirs</span><span class="p">,</span> <span class="n">files</span> <span class="ow">in</span> <span class="n">os</span><span class="o">.</span><span class="n">walk</span><span class="p">(</span><span class="s2">&quot;/path/to/folder/with/icns&quot;</span><span class="p">):</span> <span class="c1"># path to folder with .icns files</span>
+    <span class="k">for</span> <span class="n">name</span> <span class="ow">in</span> <span class="n">files</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">name</span><span class="o">.</span><span class="n">endswith</span><span class="p">((</span><span class="s2">&quot;.icns&quot;</span><span class="p">)):</span>
+            <span class="n">count</span> <span class="o">+=</span> <span class="mi">1</span>
+            <span class="n">file_path</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">root</span><span class="si">}</span><span class="s2">/</span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s2">&quot;</span>
+            <span class="nb">print</span><span class="p">(</span><span class="n">file_path</span><span class="p">)</span>
+            <span class="n">slug</span> <span class="o">=</span> <span class="n">name</span><span class="p">[:</span><span class="o">-</span><span class="mi">5</span><span class="p">]</span>
+            <span class="nb">print</span><span class="p">(</span><span class="n">slug</span><span class="p">)</span>
+
+            <span class="n">img</span> <span class="o">=</span> <span class="n">icnsutil</span><span class="o">.</span><span class="n">IcnsFile</span><span class="p">(</span><span class="n">file_path</span><span class="p">)</span>
+            <span class="n">output_path</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;/path/to/output/folder/</span><span class="si">{</span><span class="n">slug</span><span class="si">}</span><span class="s2">&quot;</span>
+            <span class="n">os</span><span class="o">.</span><span class="n">makedirs</span><span class="p">(</span><span class="n">output_path</span><span class="p">)</span>
+            <span class="n">img</span><span class="o">.</span><span class="n">export</span><span class="p">(</span><span class="n">output_path</span><span class="p">,</span> <span class="n">allowed_ext</span><span class="o">=</span><span class="s1">&#39;png&#39;</span><span class="p">,</span> <span class="n">convert_png</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+
+<span class="c1">## Cleaning</span>
+
+<span class="c1">### move to apps folder</span>
+
+<span class="kn">import</span> <span class="nn">shutil</span>
+
+<span class="n">path</span> <span class="o">=</span> <span class="s2">&quot;/path/to/folder/png/&quot;</span>
+<span class="k">for</span> <span class="n">root</span><span class="p">,</span> <span class="n">dirs</span><span class="p">,</span> <span class="n">files</span> <span class="ow">in</span> <span class="n">os</span><span class="o">.</span><span class="n">walk</span><span class="p">(</span><span class="n">path</span><span class="p">):</span>
+    <span class="n">prefix</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">path</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">name</span> <span class="ow">in</span> <span class="n">files</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">name</span><span class="o">.</span><span class="n">endswith</span><span class="p">((</span><span class="s2">&quot;.png&quot;</span><span class="p">)):</span>
+            <span class="n">count</span> <span class="o">+=</span> <span class="mi">1</span>
+            <span class="n">file_path</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">root</span><span class="si">}</span><span class="s2">/</span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s2">&quot;</span>
+            <span class="nb">print</span><span class="p">(</span><span class="n">file_path</span><span class="p">)</span>
+            <span class="n">file_name</span> <span class="o">=</span> <span class="n">name</span>
+            <span class="nb">print</span><span class="p">(</span><span class="n">file_name</span><span class="p">)</span>
+            <span class="n">slug</span> <span class="o">=</span> <span class="n">root</span><span class="p">[</span><span class="n">prefix</span><span class="p">:]</span>
+            <span class="nb">print</span><span class="p">(</span><span class="n">slug</span><span class="p">)</span>
+
+            <span class="n">shutil</span><span class="o">.</span><span class="n">copy2</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">root</span><span class="si">}</span><span class="s1">/</span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">,</span> <span class="sa">f</span><span class="s1">&#39;/path/to/folder/content/images/apps/</span><span class="si">{</span><span class="n">slug</span><span class="si">}</span><span class="s1">_</span><span class="si">{</span><span class="n">file_name</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+
+<span class="c1">### remove undesirables</span>
+
+<span class="n">blacklist</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="s1">&#39;@2x&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;_16x&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;_32x&#39;</span><span class="p">,</span>
+<span class="p">]</span>
+
+<span class="n">path</span> <span class="o">=</span> <span class="s2">&quot;/path/to/folder/content/images/apps/&quot;</span>
+<span class="k">for</span> <span class="n">black</span> <span class="ow">in</span> <span class="n">blacklist</span><span class="p">:</span>
+    <span class="k">for</span> <span class="n">root</span><span class="p">,</span> <span class="n">dirs</span><span class="p">,</span> <span class="n">files</span> <span class="ow">in</span> <span class="n">os</span><span class="o">.</span><span class="n">walk</span><span class="p">(</span><span class="n">path</span><span class="p">):</span>
+        <span class="n">prefix</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">path</span><span class="p">)</span>
+        <span class="k">for</span> <span class="n">name</span> <span class="ow">in</span> <span class="n">files</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">name</span><span class="o">.</span><span class="n">endswith</span><span class="p">((</span><span class="s2">&quot;.png&quot;</span><span class="p">)):</span>
+                <span class="n">count</span> <span class="o">+=</span> <span class="mi">1</span>
+                <span class="n">file_path</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">root</span><span class="si">}</span><span class="s2">/</span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s2">&quot;</span>
+
+                <span class="k">if</span> <span class="n">black</span> <span class="ow">in</span> <span class="n">name</span><span class="p">:</span>
+                    <span class="n">os</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="n">file_path</span><span class="p">)</span>
+                    <span class="n">count_deleted</span> <span class="o">+=</span> <span class="mi">1</span>
+</code></pre></div>
+
+<h1 id="import-apps-list-from-grist-to-pelican-markdown-files-notes">Import Apps list from Grist to Pelican Markdown files (notes)</h1>
+<p><span class="datestamp">22 Sep 2022</span> </p>
+<div class="highlight"><pre><span></span><code><span class="c1">####################</span>
+<span class="c1"># Import Apps list from Grist to Pelican markdown files</span>
+
+<span class="kn">from</span> <span class="nn">datetime</span> <span class="kn">import</span> <span class="n">date</span>
+<span class="kn">from</span> <span class="nn">datetime</span> <span class="kn">import</span> <span class="n">timedelta</span>
+<span class="kn">from</span> <span class="nn">operator</span> <span class="kn">import</span> <span class="n">attrgetter</span>
+<span class="kn">from</span> <span class="nn">slugify</span> <span class="kn">import</span> <span class="n">slugify</span>
+
+<span class="c1">## Define Published Date as yesterday so library updates do not show up as Featured article</span>
+<span class="n">today</span> <span class="o">=</span> <span class="n">date</span><span class="o">.</span><span class="n">today</span><span class="p">()</span>
+<span class="n">yesterday</span> <span class="o">=</span> <span class="n">today</span> <span class="o">-</span> <span class="n">timedelta</span><span class="p">(</span><span class="n">days</span> <span class="o">=</span> <span class="mi">1</span><span class="p">)</span>
+<span class="n">publish_date</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">yesterday</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="s1">&#39;%Y-%m-</span><span class="si">%d</span><span class="s1">&#39;</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span>
+
+<span class="c1"># Identify if cover image is available</span>
+<span class="n">list_existing_images</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">for</span> <span class="n">root</span><span class="p">,</span> <span class="n">dirs</span><span class="p">,</span> <span class="n">files</span> <span class="ow">in</span> <span class="n">os</span><span class="o">.</span><span class="n">walk</span><span class="p">(</span><span class="s2">&quot;/path/to/folder/content/images/apps&quot;</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">name</span> <span class="ow">in</span> <span class="n">files</span><span class="p">:</span>
+        <span class="n">list_existing_images</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
+
+<span class="c1">### books/library </span>
+
+<span class="n">apps_data</span> <span class="o">=</span> <span class="n">grist_PE</span><span class="o">.</span><span class="n">Apps</span><span class="o">.</span><span class="n">fetch_table</span><span class="p">(</span><span class="s1">&#39;Master&#39;</span><span class="p">)</span> <span class="c1"># list of namedtuples</span>
+<span class="n">total</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">apps_data</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">total</span><span class="si">}</span><span class="s2"> Apps in Grist</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="n">today</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">now</span><span class="p">()</span>
+<span class="n">date_today</span> <span class="o">=</span> <span class="n">today</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="s1">&#39;%Y-%m-</span><span class="si">%d</span><span class="s1">&#39;</span><span class="p">)</span>
+
+<span class="n">apps_sorted_by_title</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">apps_data</span><span class="p">,</span> <span class="n">key</span><span class="o">=</span><span class="n">attrgetter</span><span class="p">(</span><span class="s1">&#39;slug&#39;</span><span class="p">))</span>
+
+<span class="c1"># APPS NOTES</span>
+
+<span class="kn">import</span> <span class="nn">glob</span>
+
+<span class="n">notes_path</span> <span class="o">=</span> <span class="s1">&#39;/path/to/folder/content/articles/apps/*.md&#39;</span>
+<span class="n">list_of_apps_notes</span> <span class="o">=</span> <span class="p">[</span><span class="n">x</span><span class="p">[</span><span class="nb">len</span><span class="p">(</span><span class="n">notes_path</span><span class="p">)</span><span class="o">-</span><span class="mi">4</span><span class="p">:</span><span class="o">-</span><span class="mi">3</span><span class="p">]</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">glob</span><span class="o">.</span><span class="n">glob</span><span class="p">(</span><span class="n">notes_path</span><span class="p">)]</span>
+
+<span class="c1"># USING</span>
+
+<span class="n">count_using</span> <span class="o">=</span> <span class="mi">0</span>
+
+<span class="n">output_using</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span>
+
+<span class="k">for</span> <span class="n">b</span> <span class="ow">in</span> <span class="n">apps_sorted_by_title</span><span class="p">:</span>
+
+    <span class="n">count_row</span> <span class="o">+=</span> <span class="mi">1</span>
+
+    <span class="k">if</span> <span class="n">b</span><span class="o">.</span><span class="n">status</span> <span class="o">!=</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="k">if</span> <span class="s1">&#39;using&#39;</span> <span class="ow">in</span> <span class="n">b</span><span class="o">.</span><span class="n">status</span><span class="p">:</span>
+
+            <span class="n">count_using</span> <span class="o">+=</span> <span class="mi">1</span>
+
+            <span class="n">title</span> <span class="o">=</span> <span class="n">b</span><span class="o">.</span><span class="n">name</span>
+            <span class="n">slug</span> <span class="o">=</span> <span class="n">b</span><span class="o">.</span><span class="n">slug</span>
+
+            <span class="n">summary</span> <span class="o">=</span> <span class="n">b</span><span class="o">.</span><span class="n">summary</span>
+            <span class="k">if</span> <span class="n">b</span><span class="o">.</span><span class="n">rating</span> <span class="o">!=</span> <span class="kc">None</span><span class="p">:</span>
+                <span class="n">rating</span> <span class="o">=</span> <span class="s2">&quot;⭐️&quot;</span> <span class="o">*</span> <span class="n">b</span><span class="o">.</span><span class="n">rating</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">rating</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span>
+            <span class="n">link</span> <span class="o">=</span> <span class="n">b</span><span class="o">.</span><span class="n">link</span>
+
+            <span class="n">types</span> <span class="o">=</span> <span class="n">b</span><span class="o">.</span><span class="n">type</span>
+            <span class="nb">type</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span>
+            <span class="k">if</span> <span class="n">types</span> <span class="o">!=</span> <span class="kc">None</span><span class="p">:</span>
+                <span class="k">for</span> <span class="n">typ</span> <span class="ow">in</span> <span class="n">types</span><span class="p">:</span>
+                    <span class="k">if</span> <span class="n">typ</span> <span class="o">!=</span> <span class="s1">&#39;L&#39;</span><span class="p">:</span>
+                        <span class="k">if</span> <span class="nb">type</span> <span class="o">!=</span> <span class="s1">&#39;&#39;</span><span class="p">:</span>
+                            <span class="nb">type</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="nb">type</span><span class="si">}</span><span class="s2">  &lt;span class=</span><span class="se">\&quot;</span><span class="s2">tag</span><span class="se">\&quot;</span><span class="s2">&gt;</span><span class="si">{</span><span class="n">typ</span><span class="si">}</span><span class="s2">&lt;/span&gt;&quot;</span>
+                        <span class="k">else</span><span class="p">:</span>
+                            <span class="nb">type</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;&lt;span class=</span><span class="se">\&quot;</span><span class="s2">tag</span><span class="se">\&quot;</span><span class="s2">&gt;</span><span class="si">{</span><span class="n">typ</span><span class="si">}</span><span class="s2">&lt;/span&gt;&quot;</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="nb">type</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span>
+
+            <span class="n">categories</span> <span class="o">=</span> <span class="n">b</span><span class="o">.</span><span class="n">category</span>
+            <span class="n">category</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span>
+            <span class="k">if</span> <span class="n">categories</span> <span class="o">!=</span> <span class="kc">None</span><span class="p">:</span>
+                <span class="k">for</span> <span class="n">cat</span> <span class="ow">in</span> <span class="n">categories</span><span class="p">:</span>
+                    <span class="k">if</span> <span class="n">cat</span> <span class="o">!=</span> <span class="s1">&#39;L&#39;</span><span class="p">:</span>
+                        <span class="k">if</span> <span class="n">category</span> <span class="o">!=</span> <span class="s1">&#39;&#39;</span><span class="p">:</span>
+                            <span class="n">category</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">category</span><span class="si">}</span><span class="s2">  &lt;span class=</span><span class="se">\&quot;</span><span class="s2">tag</span><span class="se">\&quot;</span><span class="s2">&gt;</span><span class="si">{</span><span class="n">cat</span><span class="si">}</span><span class="s2">&lt;/span&gt;&quot;</span>
+                        <span class="k">else</span><span class="p">:</span>
+                            <span class="n">category</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;&lt;span class=</span><span class="se">\&quot;</span><span class="s2">tag</span><span class="se">\&quot;</span><span class="s2">&gt;</span><span class="si">{</span><span class="n">cat</span><span class="si">}</span><span class="s2">&lt;/span&gt;&quot;</span>
+
+            <span class="n">tags_raw</span> <span class="o">=</span> <span class="n">b</span><span class="o">.</span><span class="n">tags</span>
+            <span class="n">tags</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span>
+            <span class="k">if</span> <span class="n">tags_raw</span> <span class="o">!=</span> <span class="kc">None</span><span class="p">:</span>
+                <span class="k">for</span> <span class="n">tag</span> <span class="ow">in</span> <span class="n">tags_raw</span><span class="p">:</span>
+                    <span class="k">if</span> <span class="n">tag</span> <span class="o">!=</span> <span class="s1">&#39;L&#39;</span><span class="p">:</span>
+                        <span class="k">if</span> <span class="n">tags</span> <span class="o">!=</span> <span class="s1">&#39;&#39;</span><span class="p">:</span>
+                            <span class="n">tags</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">tags</span><span class="si">}</span><span class="s2">  &lt;span class=</span><span class="se">\&quot;</span><span class="s2">tag</span><span class="se">\&quot;</span><span class="s2">&gt;</span><span class="si">{</span><span class="n">tag</span><span class="si">}</span><span class="s2">&lt;/span&gt;&quot;</span>
+                        <span class="k">else</span><span class="p">:</span>
+                            <span class="n">tags</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;&lt;span class=</span><span class="se">\&quot;</span><span class="s2">tag</span><span class="se">\&quot;</span><span class="s2">&gt;</span><span class="si">{</span><span class="n">tag</span><span class="si">}</span><span class="s2">&lt;/span&gt;&quot;</span>
+
+            <span class="k">if</span> <span class="n">slug</span> <span class="ow">in</span> <span class="n">list_of_apps_notes</span><span class="p">:</span>
+                <span class="n">note</span> <span class="o">=</span> <span class="sa">f</span><span class="s1">&#39;[[note](../../apps/</span><span class="si">{</span><span class="n">slug</span><span class="si">}</span><span class="s1">/index.html)]&#39;</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">note</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span>
+
+            <span class="n">icon</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;&lt;img class=</span><span class="se">\&quot;</span><span class="s2">app_icon</span><span class="se">\&quot;</span><span class="s2"> src=</span><span class="se">\&quot;</span><span class="s2">https://notes.nicolasdeville.com/images/apps/</span><span class="si">{</span><span class="n">slug</span><span class="si">}</span><span class="s2">_128x128.png</span><span class="se">\&quot;</span><span class="s2"> alt=</span><span class="se">\&quot;</span><span class="si">{</span><span class="n">slug</span><span class="si">}</span><span class="se">\&quot;</span><span class="s2">/&gt;&quot;</span>
+
+            <span class="k">if</span> <span class="n">link</span> <span class="o">!=</span> <span class="s1">&#39;&#39;</span><span class="p">:</span>
+                <span class="n">output_using</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">output_using</span><span class="si">}</span><span class="se">\n</span><span class="s2"> </span><span class="si">{</span><span class="n">icon</span><span class="si">}</span><span class="s2"> | &lt;a href=</span><span class="se">\&quot;</span><span class="si">{</span><span class="n">link</span><span class="si">}</span><span class="se">\&quot;</span><span class="s2"> target=</span><span class="se">\&quot;</span><span class="s2">_blank</span><span class="se">\&quot;</span><span class="s2">&gt;</span><span class="si">{</span><span class="n">title</span><span class="si">}</span><span class="s2">&lt;/a&gt; | </span><span class="si">{</span><span class="n">note</span><span class="si">}</span><span class="s2"> | </span><span class="si">{</span><span class="nb">type</span><span class="si">}</span><span class="s2"> | </span><span class="si">{</span><span class="n">category</span><span class="si">}</span><span class="s2"> | </span><span class="si">{</span><span class="n">tags</span><span class="si">}</span><span class="s2"> | </span><span class="si">{</span><span class="n">summary</span><span class="si">}</span><span class="s2"> | </span><span class="si">{</span><span class="n">rating</span><span class="si">}</span><span class="s2"> | &quot;</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">output_using</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">output_using</span><span class="si">}</span><span class="se">\n</span><span class="s2"> </span><span class="si">{</span><span class="n">icon</span><span class="si">}</span><span class="s2"> | </span><span class="si">{</span><span class="n">title</span><span class="si">}</span><span class="s2"> | </span><span class="si">{</span><span class="n">note</span><span class="si">}</span><span class="s2"> | </span><span class="si">{</span><span class="nb">type</span><span class="si">}</span><span class="s2"> | </span><span class="si">{</span><span class="n">category</span><span class="si">}</span><span class="s2"> | </span><span class="si">{</span><span class="n">tags</span><span class="si">}</span><span class="s2"> | </span><span class="si">{</span><span class="n">summary</span><span class="si">}</span><span class="s2"> | </span><span class="si">{</span><span class="n">rating</span><span class="si">}</span><span class="s2"> | &quot;</span>
+
+<span class="c1"># Adding the header at the end to ensure proper books count</span>
+<span class="n">header</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;Title: My Apps Library</span><span class="se">\n</span><span class="s2">Date: </span><span class="si">{</span><span class="n">publish_date</span><span class="si">}</span><span class="se">\n</span><span class="s2">Tags: apps</span><span class="se">\n</span><span class="s2">Summary: keeping track of apps I currently use, have used and on my radar</span><span class="se">\n\n</span><span class="si">{</span><span class="n">total</span><span class="si">}</span><span class="s2"> apps total&quot;</span>
+
+<span class="n">header_using</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n\n</span><span class="s2"># Using: </span><span class="si">{</span><span class="n">count_using</span><span class="si">}</span><span class="s2"> apps  </span><span class="se">\n\n</span><span class="s2">app | name/website | note | type | category | tags | summary | rating |</span><span class="se">\n</span><span class="s2">---|---|---|---|---|---|---|---|&quot;</span>
+
+
+<span class="c1"># ## USED</span>
+
+<span class="n">count_used</span> <span class="o">=</span> <span class="mi">0</span>
+
+<span class="n">output_used</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span>
+
+<span class="k">for</span> <span class="n">b</span> <span class="ow">in</span> <span class="n">apps_sorted_by_title</span><span class="p">:</span>
+
+    <span class="k">if</span> <span class="n">b</span><span class="o">.</span><span class="n">status</span> <span class="o">!=</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="k">if</span> <span class="s1">&#39;used&#39;</span> <span class="ow">in</span> <span class="n">b</span><span class="o">.</span><span class="n">status</span><span class="p">:</span>
+
+            <span class="n">count_used</span> <span class="o">+=</span> <span class="mi">1</span>
+
+            <span class="n">title</span> <span class="o">=</span> <span class="n">b</span><span class="o">.</span><span class="n">name</span>
+            <span class="n">slug</span> <span class="o">=</span> <span class="n">b</span><span class="o">.</span><span class="n">slug</span>
+
+            <span class="n">summary</span> <span class="o">=</span> <span class="n">b</span><span class="o">.</span><span class="n">summary</span>
+            <span class="k">if</span> <span class="n">b</span><span class="o">.</span><span class="n">rating</span> <span class="o">!=</span> <span class="kc">None</span><span class="p">:</span>
+                <span class="n">rating</span> <span class="o">=</span> <span class="s2">&quot;⭐️&quot;</span> <span class="o">*</span> <span class="n">b</span><span class="o">.</span><span class="n">rating</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">rating</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span>
+            <span class="n">link</span> <span class="o">=</span> <span class="n">b</span><span class="o">.</span><span class="n">link</span>
+
+            <span class="n">types</span> <span class="o">=</span> <span class="n">b</span><span class="o">.</span><span class="n">type</span>
+            <span class="nb">type</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span>
+            <span class="k">if</span> <span class="n">types</span> <span class="o">!=</span> <span class="kc">None</span><span class="p">:</span>
+                <span class="k">for</span> <span class="n">typ</span> <span class="ow">in</span> <span class="n">types</span><span class="p">:</span>
+                    <span class="k">if</span> <span class="n">typ</span> <span class="o">!=</span> <span class="s1">&#39;L&#39;</span><span class="p">:</span>
+                        <span class="k">if</span> <span class="nb">type</span> <span class="o">!=</span> <span class="s1">&#39;&#39;</span><span class="p">:</span>
+                            <span class="nb">type</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="nb">type</span><span class="si">}</span><span class="s2">  &lt;span class=</span><span class="se">\&quot;</span><span class="s2">tag</span><span class="se">\&quot;</span><span class="s2">&gt;</span><span class="si">{</span><span class="n">typ</span><span class="si">}</span><span class="s2">&lt;/span&gt;&quot;</span>
+                        <span class="k">else</span><span class="p">:</span>
+                            <span class="nb">type</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;&lt;span class=</span><span class="se">\&quot;</span><span class="s2">tag</span><span class="se">\&quot;</span><span class="s2">&gt;</span><span class="si">{</span><span class="n">typ</span><span class="si">}</span><span class="s2">&lt;/span&gt;&quot;</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="nb">type</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span>
+
+            <span class="n">categories</span> <span class="o">=</span> <span class="n">b</span><span class="o">.</span><span class="n">category</span>
+            <span class="n">category</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span>
+            <span class="k">if</span> <span class="n">categories</span> <span class="o">!=</span> <span class="kc">None</span><span class="p">:</span>
+                <span class="k">for</span> <span class="n">cat</span> <span class="ow">in</span> <span class="n">categories</span><span class="p">:</span>
+                    <span class="k">if</span> <span class="n">cat</span> <span class="o">!=</span> <span class="s1">&#39;L&#39;</span><span class="p">:</span>
+                        <span class="k">if</span> <span class="n">category</span> <span class="o">!=</span> <span class="s1">&#39;&#39;</span><span class="p">:</span>
+                            <span class="n">category</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">category</span><span class="si">}</span><span class="s2">  &lt;span class=</span><span class="se">\&quot;</span><span class="s2">tag</span><span class="se">\&quot;</span><span class="s2">&gt;</span><span class="si">{</span><span class="n">cat</span><span class="si">}</span><span class="s2">&lt;/span&gt;&quot;</span>
+                        <span class="k">else</span><span class="p">:</span>
+                            <span class="n">category</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;&lt;span class=</span><span class="se">\&quot;</span><span class="s2">tag</span><span class="se">\&quot;</span><span class="s2">&gt;</span><span class="si">{</span><span class="n">cat</span><span class="si">}</span><span class="s2">&lt;/span&gt;&quot;</span>
+
+            <span class="n">tags_raw</span> <span class="o">=</span> <span class="n">b</span><span class="o">.</span><span class="n">tags</span>
+            <span class="n">tags</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span>
+            <span class="k">if</span> <span class="n">tags_raw</span> <span class="o">!=</span> <span class="kc">None</span><span class="p">:</span>
+                <span class="k">for</span> <span class="n">tag</span> <span class="ow">in</span> <span class="n">tags_raw</span><span class="p">:</span>
+                    <span class="k">if</span> <span class="n">tag</span> <span class="o">!=</span> <span class="s1">&#39;L&#39;</span><span class="p">:</span>
+                        <span class="k">if</span> <span class="n">tags</span> <span class="o">!=</span> <span class="s1">&#39;&#39;</span><span class="p">:</span>
+                            <span class="n">tags</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">tags</span><span class="si">}</span><span class="s2">  &lt;span class=</span><span class="se">\&quot;</span><span class="s2">tag</span><span class="se">\&quot;</span><span class="s2">&gt;</span><span class="si">{</span><span class="n">tag</span><span class="si">}</span><span class="s2">&lt;/span&gt;&quot;</span>
+                        <span class="k">else</span><span class="p">:</span>
+                            <span class="n">tags</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;&lt;span class=</span><span class="se">\&quot;</span><span class="s2">tag</span><span class="se">\&quot;</span><span class="s2">&gt;</span><span class="si">{</span><span class="n">tag</span><span class="si">}</span><span class="s2">&lt;/span&gt;&quot;</span>
+
+            <span class="k">if</span> <span class="n">slug</span> <span class="ow">in</span> <span class="n">list_of_apps_notes</span><span class="p">:</span>
+                <span class="n">note</span> <span class="o">=</span> <span class="sa">f</span><span class="s1">&#39;[[note](../../apps/</span><span class="si">{</span><span class="n">slug</span><span class="si">}</span><span class="s1">/index.html)]&#39;</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">note</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span>
+
+            <span class="n">icon</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;&lt;img class=</span><span class="se">\&quot;</span><span class="s2">app_icon</span><span class="se">\&quot;</span><span class="s2"> src=</span><span class="se">\&quot;</span><span class="s2">https://notes.nicolasdeville.com/images/apps/</span><span class="si">{</span><span class="n">slug</span><span class="si">}</span><span class="s2">_128x128.png</span><span class="se">\&quot;</span><span class="s2"> alt=</span><span class="se">\&quot;</span><span class="si">{</span><span class="n">slug</span><span class="si">}</span><span class="se">\&quot;</span><span class="s2">/&gt;&quot;</span>
+
+            <span class="k">if</span> <span class="n">link</span> <span class="o">!=</span> <span class="s1">&#39;&#39;</span><span class="p">:</span>
+                <span class="n">output_used</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">output_used</span><span class="si">}</span><span class="se">\n</span><span class="s2"> </span><span class="si">{</span><span class="n">icon</span><span class="si">}</span><span class="s2"> | &lt;a href=</span><span class="se">\&quot;</span><span class="si">{</span><span class="n">link</span><span class="si">}</span><span class="se">\&quot;</span><span class="s2"> target=</span><span class="se">\&quot;</span><span class="s2">_blank</span><span class="se">\&quot;</span><span class="s2">&gt;</span><span class="si">{</span><span class="n">title</span><span class="si">}</span><span class="s2">&lt;/a&gt; | </span><span class="si">{</span><span class="n">note</span><span class="si">}</span><span class="s2"> | </span><span class="si">{</span><span class="nb">type</span><span class="si">}</span><span class="s2"> | </span><span class="si">{</span><span class="n">category</span><span class="si">}</span><span class="s2"> | </span><span class="si">{</span><span class="n">tags</span><span class="si">}</span><span class="s2"> | </span><span class="si">{</span><span class="n">summary</span><span class="si">}</span><span class="s2"> | </span><span class="si">{</span><span class="n">rating</span><span class="si">}</span><span class="s2"> | &quot;</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">output_used</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">output_used</span><span class="si">}</span><span class="se">\n</span><span class="s2"> </span><span class="si">{</span><span class="n">icon</span><span class="si">}</span><span class="s2"> | </span><span class="si">{</span><span class="n">title</span><span class="si">}</span><span class="s2"> | </span><span class="si">{</span><span class="n">note</span><span class="si">}</span><span class="s2"> | </span><span class="si">{</span><span class="nb">type</span><span class="si">}</span><span class="s2"> | </span><span class="si">{</span><span class="n">category</span><span class="si">}</span><span class="s2"> | </span><span class="si">{</span><span class="n">tags</span><span class="si">}</span><span class="s2"> | </span><span class="si">{</span><span class="n">summary</span><span class="si">}</span><span class="s2"> | </span><span class="si">{</span><span class="n">rating</span><span class="si">}</span><span class="s2"> | &quot;</span>
+
+<span class="n">header_used</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n\n</span><span class="s2"># Used: </span><span class="si">{</span><span class="n">count_used</span><span class="si">}</span><span class="s2"> apps  </span><span class="se">\n\n</span><span class="s2">app | name/website | note | type | category | tags | summary | rating |</span><span class="se">\n</span><span class="s2">---|---|---|---|---|---|---|---|&quot;</span>
+
+
+<span class="c1"># ## RADAR</span>
+
+<span class="n">count_radar</span> <span class="o">=</span> <span class="mi">0</span>
+
+<span class="n">output_radar</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span>
+
+<span class="k">for</span> <span class="n">b</span> <span class="ow">in</span> <span class="n">apps_sorted_by_title</span><span class="p">:</span>
+
+    <span class="k">if</span> <span class="n">b</span><span class="o">.</span><span class="n">status</span> <span class="o">!=</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="k">if</span> <span class="s1">&#39;radar&#39;</span> <span class="ow">in</span> <span class="n">b</span><span class="o">.</span><span class="n">status</span><span class="p">:</span>
+
+            <span class="n">count_radar</span> <span class="o">+=</span> <span class="mi">1</span>
+
+            <span class="n">title</span> <span class="o">=</span> <span class="n">b</span><span class="o">.</span><span class="n">name</span>
+            <span class="n">slug</span> <span class="o">=</span> <span class="n">b</span><span class="o">.</span><span class="n">slug</span>
+
+            <span class="n">summary</span> <span class="o">=</span> <span class="n">b</span><span class="o">.</span><span class="n">summary</span>
+
+            <span class="n">link</span> <span class="o">=</span> <span class="n">b</span><span class="o">.</span><span class="n">link</span>
+
+            <span class="n">types</span> <span class="o">=</span> <span class="n">b</span><span class="o">.</span><span class="n">type</span>
+            <span class="nb">type</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span>
+            <span class="k">if</span> <span class="n">types</span> <span class="o">!=</span> <span class="kc">None</span><span class="p">:</span>
+                <span class="k">for</span> <span class="n">typ</span> <span class="ow">in</span> <span class="n">types</span><span class="p">:</span>
+                    <span class="k">if</span> <span class="n">typ</span> <span class="o">!=</span> <span class="s1">&#39;L&#39;</span><span class="p">:</span>
+                        <span class="k">if</span> <span class="nb">type</span> <span class="o">!=</span> <span class="s1">&#39;&#39;</span><span class="p">:</span>
+                            <span class="nb">type</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="nb">type</span><span class="si">}</span><span class="s2">  &lt;span class=</span><span class="se">\&quot;</span><span class="s2">tag</span><span class="se">\&quot;</span><span class="s2">&gt;</span><span class="si">{</span><span class="n">typ</span><span class="si">}</span><span class="s2">&lt;/span&gt;&quot;</span>
+                        <span class="k">else</span><span class="p">:</span>
+                            <span class="nb">type</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;&lt;span class=</span><span class="se">\&quot;</span><span class="s2">tag</span><span class="se">\&quot;</span><span class="s2">&gt;</span><span class="si">{</span><span class="n">typ</span><span class="si">}</span><span class="s2">&lt;/span&gt;&quot;</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="nb">type</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span>
+
+            <span class="n">categories</span> <span class="o">=</span> <span class="n">b</span><span class="o">.</span><span class="n">category</span>
+            <span class="n">category</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span>
+            <span class="k">if</span> <span class="n">categories</span> <span class="o">!=</span> <span class="kc">None</span><span class="p">:</span>
+                <span class="k">for</span> <span class="n">cat</span> <span class="ow">in</span> <span class="n">categories</span><span class="p">:</span>
+                    <span class="k">if</span> <span class="n">cat</span> <span class="o">!=</span> <span class="s1">&#39;L&#39;</span><span class="p">:</span>
+                        <span class="k">if</span> <span class="n">category</span> <span class="o">!=</span> <span class="s1">&#39;&#39;</span><span class="p">:</span>
+                            <span class="n">category</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">category</span><span class="si">}</span><span class="s2">  &lt;span class=</span><span class="se">\&quot;</span><span class="s2">tag</span><span class="se">\&quot;</span><span class="s2">&gt;</span><span class="si">{</span><span class="n">cat</span><span class="si">}</span><span class="s2">&lt;/span&gt;&quot;</span>
+                        <span class="k">else</span><span class="p">:</span>
+                            <span class="n">category</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;&lt;span class=</span><span class="se">\&quot;</span><span class="s2">tag</span><span class="se">\&quot;</span><span class="s2">&gt;</span><span class="si">{</span><span class="n">cat</span><span class="si">}</span><span class="s2">&lt;/span&gt;&quot;</span>
+
+            <span class="n">tags_raw</span> <span class="o">=</span> <span class="n">b</span><span class="o">.</span><span class="n">tags</span>
+            <span class="n">tags</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span>
+            <span class="k">if</span> <span class="n">tags_raw</span> <span class="o">!=</span> <span class="kc">None</span><span class="p">:</span>
+                <span class="k">for</span> <span class="n">tag</span> <span class="ow">in</span> <span class="n">tags_raw</span><span class="p">:</span>
+                    <span class="k">if</span> <span class="n">tag</span> <span class="o">!=</span> <span class="s1">&#39;L&#39;</span><span class="p">:</span>
+                        <span class="k">if</span> <span class="n">tags</span> <span class="o">!=</span> <span class="s1">&#39;&#39;</span><span class="p">:</span>
+                            <span class="n">tags</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">tags</span><span class="si">}</span><span class="s2">  &lt;span class=</span><span class="se">\&quot;</span><span class="s2">tag</span><span class="se">\&quot;</span><span class="s2">&gt;</span><span class="si">{</span><span class="n">tag</span><span class="si">}</span><span class="s2">&lt;/span&gt;&quot;</span>
+                        <span class="k">else</span><span class="p">:</span>
+                            <span class="n">tags</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;&lt;span class=</span><span class="se">\&quot;</span><span class="s2">tag</span><span class="se">\&quot;</span><span class="s2">&gt;</span><span class="si">{</span><span class="n">tag</span><span class="si">}</span><span class="s2">&lt;/span&gt;&quot;</span>
+
+            <span class="k">if</span> <span class="n">slug</span> <span class="ow">in</span> <span class="n">list_of_apps_notes</span><span class="p">:</span>
+                <span class="n">note</span> <span class="o">=</span> <span class="sa">f</span><span class="s1">&#39;[[note](../../apps/</span><span class="si">{</span><span class="n">slug</span><span class="si">}</span><span class="s1">/index.html)]&#39;</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">note</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span>
+
+            <span class="n">icon</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;&lt;img class=</span><span class="se">\&quot;</span><span class="s2">app_icon</span><span class="se">\&quot;</span><span class="s2"> src=</span><span class="se">\&quot;</span><span class="s2">https://notes.nicolasdeville.com/images/apps/</span><span class="si">{</span><span class="n">slug</span><span class="si">}</span><span class="s2">_128x128.png</span><span class="se">\&quot;</span><span class="s2"> alt=</span><span class="se">\&quot;</span><span class="si">{</span><span class="n">slug</span><span class="si">}</span><span class="se">\&quot;</span><span class="s2">/&gt;&quot;</span>
+
+            <span class="k">if</span> <span class="n">link</span> <span class="o">!=</span> <span class="s1">&#39;&#39;</span><span class="p">:</span>
+                <span class="n">output_radar</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">output_radar</span><span class="si">}</span><span class="se">\n</span><span class="s2"> &lt;a href=</span><span class="se">\&quot;</span><span class="si">{</span><span class="n">link</span><span class="si">}</span><span class="se">\&quot;</span><span class="s2"> target=</span><span class="se">\&quot;</span><span class="s2">_blank</span><span class="se">\&quot;</span><span class="s2">&gt;</span><span class="si">{</span><span class="n">title</span><span class="si">}</span><span class="s2">&lt;/a&gt; | </span><span class="si">{</span><span class="n">note</span><span class="si">}</span><span class="s2"> | </span><span class="si">{</span><span class="nb">type</span><span class="si">}</span><span class="s2"> | </span><span class="si">{</span><span class="n">category</span><span class="si">}</span><span class="s2"> | </span><span class="si">{</span><span class="n">tags</span><span class="si">}</span><span class="s2"> | </span><span class="si">{</span><span class="n">summary</span><span class="si">}</span><span class="s2"> |  &quot;</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">output_radar</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">output_radar</span><span class="si">}</span><span class="se">\n</span><span class="s2"> </span><span class="si">{</span><span class="n">title</span><span class="si">}</span><span class="s2"> | </span><span class="si">{</span><span class="n">note</span><span class="si">}</span><span class="s2"> | </span><span class="si">{</span><span class="nb">type</span><span class="si">}</span><span class="s2"> | </span><span class="si">{</span><span class="n">category</span><span class="si">}</span><span class="s2"> | </span><span class="si">{</span><span class="n">tags</span><span class="si">}</span><span class="s2"> | </span><span class="si">{</span><span class="n">summary</span><span class="si">}</span><span class="s2"> |  &quot;</span>
+
+<span class="n">header_radar_table</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n\n</span><span class="s2"># Radar: </span><span class="si">{</span><span class="n">count_radar</span><span class="si">}</span><span class="s2"> apps  </span><span class="se">\n\n</span><span class="s2">name/website | note | type | category | tags | summary | </span><span class="se">\n</span><span class="s2">---|---|---|---|---|---|&quot;</span>
+
+<span class="n">output</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">header</span><span class="si">}{</span><span class="n">header_using</span><span class="si">}{</span><span class="n">output_using</span><span class="si">}{</span><span class="n">header_used</span><span class="si">}{</span><span class="n">output_used</span><span class="si">}{</span><span class="n">header_radar_table</span><span class="si">}{</span><span class="n">output_radar</span><span class="si">}</span><span class="se">\n\n</span><span class="s2">&quot;</span>
+
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;notes/content/articles/apps/library.md&quot;</span><span class="p">,</span> <span class="s1">&#39;w&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">file</span><span class="p">:</span>
+    <span class="n">file</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">output</span><span class="p">)</span>
+
+
+<span class="c1">### apps/radar</span>
+
+<span class="c1"># Adding the header at the end to ensure proper books count</span>
+<span class="n">header_radar</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;Title: Apps on my radar</span><span class="se">\n</span><span class="s2">Date: </span><span class="si">{</span><span class="n">publish_date</span><span class="si">}</span><span class="se">\n</span><span class="s2">Tags: apps</span><span class="se">\n</span><span class="s2">Summary: keeping track of apps I might want to look into...</span><span class="se">\n\n</span><span class="si">{</span><span class="n">count_radar</span><span class="si">}</span><span class="s2"> apps on radar&quot;</span>
+
+<span class="n">output_radar</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">header_radar</span><span class="si">}{</span><span class="n">header_radar_table</span><span class="si">}{</span><span class="n">output_radar</span><span class="si">}</span><span class="se">\n\n</span><span class="s2">&quot;</span>
+
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;notes/content/articles/apps/radar.md&quot;</span><span class="p">,</span> <span class="s1">&#39;w&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">file</span><span class="p">:</span>
+    <span class="n">file</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">output_radar</span><span class="p">)</span>
+
+
+<span class="c1">### TODO</span>
+
+<span class="c1"># ### b2b-sales/apps</span>
+
+
+<span class="c1"># with open(f&quot;notes/content/articles/b2b sales/apps.md&quot;, &#39;w&#39;) as file:</span>
+<span class="c1">#     file.write(output_b2b)</span>
+
+
+<span class="c1">########################################################################################################</span>
+</code></pre></div>
+
+<h1 id="next">Next</h1>
+<h2 id="generate-note-for-b2b-sales-apps-only">generate note for B2B Sales apps only</h2>
+<p>as <code>b2b-sales/apps</code>.   </p>
+                </article>
+            </aside>
+
+                <section id="content" class="body">
+
+                <!-- PREVIOUS NOTES -->
+				<p class="notes-section">previous notes</p>
+                <hr>
+
+                <ol id="posts-list" class="hfeed">
+            
+
+
+
+            <li>
+                <article class="hentry">
+                    <header>
+                        <!-- PREVIOUS NOTE TITLE -->
+                        <h1><a href="https://notes.nicolasdeville.com/home-office/shopping" rel="bookmark"
+                            title="Shopping ideas for home office">Shopping ideas for home office</a></h1>
+                        <!-- PREVIOUS NOTE SUMMARY -->
+                        <div class="entry-content">
+                            
+                        </div>
+                    </header>
+
+                    <div class="entry-content">
+                        <!-- PREVIOUS NOTE METADATA -->
+<footer class="post-info">
+
+    <p>
+        22 Sep 2022 <span class="separator">|</span> in <a class="link_tag" href="https://notes.nicolasdeville.com/home-office/">home office</a>
+
+        <!-- added 4/7 -->
+        <!-- 		<br />
+        <abbr class="modified" title="2022-09-22T21:30:02.162664+02:00">
+                Updated: 22 Sep 2022
+        </abbr>
+ -->
+
+    </p>
+
+    
+
+</footer>                    </div>
+                    
+                </article>
+                <hr/>
+            </li>
+            
+
+
+
+            <li>
+                <article class="hentry">
+                    <header>
+                        <!-- PREVIOUS NOTE TITLE -->
+                        <h1><a href="https://notes.nicolasdeville.com/projects/notes" rel="bookmark"
+                            title="This site">This site</a></h1>
+                        <!-- PREVIOUS NOTE SUMMARY -->
+                        <div class="entry-content">
+                            <p>keeping notes about building this site</p>
+                        </div>
+                    </header>
+
+                    <div class="entry-content">
+                        <!-- PREVIOUS NOTE METADATA -->
+<footer class="post-info">
+
+    <p>
+        22 Sep 2022 <span class="separator">|</span> in <a class="link_tag" href="https://notes.nicolasdeville.com/projects/">projects</a>
+
+        <!-- added 4/7 -->
+        <!-- 		<br />
+        <abbr class="modified" title="2022-09-22T21:28:26.526084+02:00">
+                Updated: 22 Sep 2022
+        </abbr>
+ -->
+
+    </p>
+
+    
+
+</footer>                    </div>
+                    
+                </article>
+                <hr/>
+            </li>
+            
+
+
+
+            <li>
+                <article class="hentry">
+                    <header>
+                        <!-- PREVIOUS NOTE TITLE -->
+                        <h1><a href="https://notes.nicolasdeville.com/projects/imagee" rel="bookmark"
+                            title="Imagee">Imagee</a></h1>
+                        <!-- PREVIOUS NOTE SUMMARY -->
+                        <div class="entry-content">
+                            <p>collection of scripts for image processing</p>
+                        </div>
+                    </header>
+
+                    <div class="entry-content">
+                        <!-- PREVIOUS NOTE METADATA -->
+<footer class="post-info">
+
+    <p>
+        22 Sep 2022 <span class="separator">|</span> in <a class="link_tag" href="https://notes.nicolasdeville.com/projects/">projects</a>
+ tags: <a class="link_tag" href="https://notes.nicolasdeville.com/tag/python.html">python</a>
+<a class="link_tag" href="https://notes.nicolasdeville.com/tag/automation.html">automation</a>
+
+        <!-- added 4/7 -->
+        <!-- 		<br />
+        <abbr class="modified" title="2022-09-22T20:43:15.519957+02:00">
+                Updated: 22 Sep 2022
+        </abbr>
+ -->
+
+    </p>
+
+    
+
+</footer>                    </div>
+                    
+                </article>
+                <hr/>
+            </li>
+            
+
+
+
+            <li>
+                <article class="hentry">
+                    <header>
+                        <!-- PREVIOUS NOTE TITLE -->
+                        <h1><a href="https://notes.nicolasdeville.com/projects/emailee" rel="bookmark"
+                            title="Emailee">Emailee</a></h1>
+                        <!-- PREVIOUS NOTE SUMMARY -->
+                        <div class="entry-content">
+                            <p>toolbox of scripts for emails</p>
+                        </div>
+                    </header>
+
+                    <div class="entry-content">
+                        <!-- PREVIOUS NOTE METADATA -->
+<footer class="post-info">
+
+    <p>
+        22 Sep 2022 <span class="separator">|</span> in <a class="link_tag" href="https://notes.nicolasdeville.com/projects/">projects</a>
+ tags: <a class="link_tag" href="https://notes.nicolasdeville.com/tag/python.html">python</a>
+<a class="link_tag" href="https://notes.nicolasdeville.com/tag/api.html">api</a>
+
+        <!-- added 4/7 -->
+        <!-- 		<br />
+        <abbr class="modified" title="2022-09-22T20:43:03.369211+02:00">
+                Updated: 22 Sep 2022
+        </abbr>
+ -->
+
+    </p>
+
+    
+
+</footer>                    </div>
+                    
+                </article>
+                <hr/>
+            </li>
+            
+
+
+
+            <li>
+                <article class="hentry">
+                    <header>
+                        <!-- PREVIOUS NOTE TITLE -->
+                        <h1><a href="https://notes.nicolasdeville.com/apps/grist" rel="bookmark"
+                            title="Grist | The Evolution of Spreadsheets">Grist | The Evolution of Spreadsheets</a></h1>
+                        <!-- PREVIOUS NOTE SUMMARY -->
+                        <div class="entry-content">
+                            <p>an online, powerful, Python-driven alternative to Excel</p>
+                        </div>
+                    </header>
+
+                    <div class="entry-content">
+                        <!-- PREVIOUS NOTE METADATA -->
+<footer class="post-info">
+
+    <p>
+        22 Sep 2022 <span class="separator">|</span> in <a class="link_tag" href="https://notes.nicolasdeville.com/apps/">apps</a>
+ tags: <a class="link_tag" href="https://notes.nicolasdeville.com/tag/productivity.html">productivity</a>
+<a class="link_tag" href="https://notes.nicolasdeville.com/tag/python.html">python</a>
+<a class="link_tag" href="https://notes.nicolasdeville.com/tag/excel.html">excel</a>
+<a class="link_tag" href="https://notes.nicolasdeville.com/tag/saas.html">SaaS</a>
+<a class="link_tag" href="https://notes.nicolasdeville.com/tag/api.html">api</a>
+
+        <!-- added 4/7 -->
+        <!-- 		<br />
+        <abbr class="modified" title="2022-09-22T19:59:25.497471+02:00">
+                Updated: 22 Sep 2022
+        </abbr>
+ -->
+
+    </p>
+
+    
+
+</footer>                    </div>
+                    
+                </article>
+                <hr/>
+            </li>
+            
+
+
+
+            <li>
+                <article class="hentry">
+                    <header>
+                        <!-- PREVIOUS NOTE TITLE -->
+                        <h1><a href="https://notes.nicolasdeville.com/helpers/keyboard-shortcuts" rel="bookmark"
+                            title="My keyboard shortcuts">My keyboard shortcuts</a></h1>
+                        <!-- PREVIOUS NOTE SUMMARY -->
+                        <div class="entry-content">
+                            <p>for reference</p>
+                        </div>
+                    </header>
+
+                    <div class="entry-content">
+                        <!-- PREVIOUS NOTE METADATA -->
+<footer class="post-info">
+
+    <p>
+        22 Sep 2022 <span class="separator">|</span> in <a class="link_tag" href="https://notes.nicolasdeville.com/helpers/">helpers</a>
+ tags: <a class="link_tag" href="https://notes.nicolasdeville.com/tag/keyboard.html">keyboard</a>
+<a class="link_tag" href="https://notes.nicolasdeville.com/tag/shortcuts.html">shortcuts</a>
+
+        <!-- added 4/7 -->
+        <!-- 		<br />
+        <abbr class="modified" title="2022-09-22T13:36:46.882201+02:00">
+                Updated: 22 Sep 2022
+        </abbr>
+ -->
+
+    </p>
+
+    
+
+</footer>                    </div>
+                    
+                </article>
+                <hr/>
+            </li>
+            
+
+
+
+            <li>
+                <article class="hentry">
+                    <header>
+                        <!-- PREVIOUS NOTE TITLE -->
+                        <h1><a href="https://notes.nicolasdeville.com/apps/audirvana" rel="bookmark"
+                            title="Audirvana">Audirvana</a></h1>
+                        <!-- PREVIOUS NOTE SUMMARY -->
+                        <div class="entry-content">
+                            <p>High Resolution digital audio player</p>
+                        </div>
+                    </header>
+
+                    <div class="entry-content">
+                        <!-- PREVIOUS NOTE METADATA -->
 <footer class="post-info">
 
     <p>
@@ -124,28 +836,11 @@
 
     
 
-</footer><p><span class="datestamp">Jul 2021</span> started using.    </p>
-<div class="link_border"><div class="link_logo_box"><img class="link_logo" src="https://logo.clearbit.com/audirvana.com?size=35" alt="logo"/></div><div class="link_content">
-<div class="link_title">audirvana.com</div>
-<div class="link_tagline">audirvana.com</div>
-<div class="link_url"><a href="https://audirvana.com/" target="_blank">https://audirvana.com/</a></div></div></div>
-
-<p><span class="datestamp">22 Sep 2022</span>   </p>
-<h2 id="playlists">Playlists</h2>
-<div class="link_border"><div class="link_logo_box"><img class="link_logo" src="https://logo.clearbit.com/audirvana.com?size=35" alt="logo"/></div><div class="link_content">
-<div class="link_title">audirvana.com</div>
-<div class="link_tagline">audirvana.com</div>
-<div class="link_url"><a href="https://community.audirvana.com/t/studio-how-to-create-a-playlist/31066/7" target="_blank">https://community.audirvana.com/t/studio-how-to-create-a-playlist/31066/7</a></div></div></div>
+</footer>                    </div>
+                    
                 </article>
-            </aside>
-
-                <section id="content" class="body">
-
-                <!-- PREVIOUS NOTES -->
-				<p class="notes-section">previous notes</p>
-                <hr>
-
-                <ol id="posts-list" class="hfeed">
+                <hr/>
+            </li>
             
 
 
@@ -171,7 +866,7 @@
 
         <!-- added 4/7 -->
         <!-- 		<br />
-        <abbr class="modified" title="2022-09-22T10:00:14.634601+02:00">
+        <abbr class="modified" title="2022-09-22T10:24:48.998730+02:00">
                 Updated: 22 Sep 2022
         </abbr>
  -->
@@ -179,6 +874,47 @@
     </p>
 
     
+
+</footer>                    </div>
+                    
+                </article>
+                <hr/>
+            </li>
+            
+
+
+
+            <li>
+                <article class="hentry">
+                    <header>
+                        <!-- PREVIOUS NOTE TITLE -->
+                        <h1><a href="https://notes.nicolasdeville.com/projects/clipper" rel="bookmark"
+                            title="Clipper">Clipper</a></h1>
+                        <!-- PREVIOUS NOTE SUMMARY -->
+                        <div class="entry-content">
+                            <p>Building my web clipboard process for effectiveness &amp; structure</p>
+                        </div>
+                    </header>
+
+                    <div class="entry-content">
+                        <!-- PREVIOUS NOTE METADATA -->
+<footer class="post-info">
+
+    <p>
+        22 Sep 2022 <span class="separator">|</span> in <a class="link_tag" href="https://notes.nicolasdeville.com/projects/">projects</a>
+
+        <!-- added 4/7 -->
+        <!-- 		<br />
+        <abbr class="modified" title="2022-09-22T21:07:34.204987+02:00">
+                Updated: 22 Sep 2022
+        </abbr>
+ -->
+
+    </p>
+
+    Translations:
+        <a href="https://notes.nicolasdeville.com/helpers/clipper" hreflang="en">en</a>
+
 
 </footer>                    </div>
                     
@@ -211,6 +947,45 @@
         <!-- added 4/7 -->
         <!-- 		<br />
         <abbr class="modified" title="2022-09-22T09:08:11.886972+02:00">
+                Updated: 22 Sep 2022
+        </abbr>
+ -->
+
+    </p>
+
+    
+
+</footer>                    </div>
+                    
+                </article>
+                <hr/>
+            </li>
+            
+
+
+
+            <li>
+                <article class="hentry">
+                    <header>
+                        <!-- PREVIOUS NOTE TITLE -->
+                        <h1><a href="https://notes.nicolasdeville.com/home-office/ipad" rel="bookmark"
+                            title="iPad">iPad</a></h1>
+                        <!-- PREVIOUS NOTE SUMMARY -->
+                        <div class="entry-content">
+                            
+                        </div>
+                    </header>
+
+                    <div class="entry-content">
+                        <!-- PREVIOUS NOTE METADATA -->
+<footer class="post-info">
+
+    <p>
+        22 Sep 2022 <span class="separator">|</span> in <a class="link_tag" href="https://notes.nicolasdeville.com/home-office/">home office</a>
+
+        <!-- added 4/7 -->
+        <!-- 		<br />
+        <abbr class="modified" title="2022-09-22T16:49:11.667030+02:00">
                 Updated: 22 Sep 2022
         </abbr>
  -->
@@ -290,47 +1065,8 @@
 
         <!-- added 4/7 -->
         <!-- 		<br />
-        <abbr class="modified" title="2022-09-22T09:42:01.255171+02:00">
+        <abbr class="modified" title="2022-09-22T20:42:56.752492+02:00">
                 Updated: 22 Sep 2022
-        </abbr>
- -->
-
-    </p>
-
-    
-
-</footer>                    </div>
-                    
-                </article>
-                <hr/>
-            </li>
-            
-
-
-
-            <li>
-                <article class="hentry">
-                    <header>
-                        <!-- PREVIOUS NOTE TITLE -->
-                        <h1><a href="https://notes.nicolasdeville.com/home-office/shopping" rel="bookmark"
-                            title="Shopping ideas for home office">Shopping ideas for home office</a></h1>
-                        <!-- PREVIOUS NOTE SUMMARY -->
-                        <div class="entry-content">
-                            
-                        </div>
-                    </header>
-
-                    <div class="entry-content">
-                        <!-- PREVIOUS NOTE METADATA -->
-<footer class="post-info">
-
-    <p>
-        21 Sep 2022 <span class="separator">|</span> in <a class="link_tag" href="https://notes.nicolasdeville.com/home-office/">home office</a>
-
-        <!-- added 4/7 -->
-        <!-- 		<br />
-        <abbr class="modified" title="2022-09-21T22:05:24.791754+02:00">
-                Updated: 21 Sep 2022
         </abbr>
  -->
 
@@ -369,47 +1105,6 @@
         <!-- added 4/7 -->
         <!-- 		<br />
         <abbr class="modified" title="2022-09-21T22:01:06.786948+02:00">
-                Updated: 21 Sep 2022
-        </abbr>
- -->
-
-    </p>
-
-    
-
-</footer>                    </div>
-                    
-                </article>
-                <hr/>
-            </li>
-            
-
-
-
-            <li>
-                <article class="hentry">
-                    <header>
-                        <!-- PREVIOUS NOTE TITLE -->
-                        <h1><a href="https://notes.nicolasdeville.com/projects/emailee" rel="bookmark"
-                            title="Emailee">Emailee</a></h1>
-                        <!-- PREVIOUS NOTE SUMMARY -->
-                        <div class="entry-content">
-                            <p>toolbox of scripts for emails</p>
-                        </div>
-                    </header>
-
-                    <div class="entry-content">
-                        <!-- PREVIOUS NOTE METADATA -->
-<footer class="post-info">
-
-    <p>
-        21 Sep 2022 <span class="separator">|</span> in <a class="link_tag" href="https://notes.nicolasdeville.com/projects/">projects</a>
- tags: <a class="link_tag" href="https://notes.nicolasdeville.com/tag/python.html">python</a>
-<a class="link_tag" href="https://notes.nicolasdeville.com/tag/api.html">api</a>
-
-        <!-- added 4/7 -->
-        <!-- 		<br />
-        <abbr class="modified" title="2022-09-21T21:52:23.405883+02:00">
                 Updated: 21 Sep 2022
         </abbr>
  -->
@@ -542,47 +1237,6 @@
         <a href="https://notes.nicolasdeville.com/learning/ai" hreflang="en">en</a>
         <a href="https://notes.nicolasdeville.com/random/ai" hreflang="en">en</a>
 
-
-</footer>                    </div>
-                    
-                </article>
-                <hr/>
-            </li>
-            
-
-
-
-            <li>
-                <article class="hentry">
-                    <header>
-                        <!-- PREVIOUS NOTE TITLE -->
-                        <h1><a href="https://notes.nicolasdeville.com/projects/imagee" rel="bookmark"
-                            title="Imagee">Imagee</a></h1>
-                        <!-- PREVIOUS NOTE SUMMARY -->
-                        <div class="entry-content">
-                            <p>collection of scripts for image processing</p>
-                        </div>
-                    </header>
-
-                    <div class="entry-content">
-                        <!-- PREVIOUS NOTE METADATA -->
-<footer class="post-info">
-
-    <p>
-        21 Sep 2022 <span class="separator">|</span> in <a class="link_tag" href="https://notes.nicolasdeville.com/projects/">projects</a>
- tags: <a class="link_tag" href="https://notes.nicolasdeville.com/tag/python.html">python</a>
-<a class="link_tag" href="https://notes.nicolasdeville.com/tag/automation.html">automation</a>
-
-        <!-- added 4/7 -->
-        <!-- 		<br />
-        <abbr class="modified" title="2022-09-21T20:55:19.827461+02:00">
-                Updated: 21 Sep 2022
-        </abbr>
- -->
-
-    </p>
-
-    
 
 </footer>                    </div>
                     
@@ -927,47 +1581,6 @@
                 <article class="hentry">
                     <header>
                         <!-- PREVIOUS NOTE TITLE -->
-                        <h1><a href="https://notes.nicolasdeville.com/helpers/keyboard-shortcuts" rel="bookmark"
-                            title="My keyboard shortcuts">My keyboard shortcuts</a></h1>
-                        <!-- PREVIOUS NOTE SUMMARY -->
-                        <div class="entry-content">
-                            <p>for reference</p>
-                        </div>
-                    </header>
-
-                    <div class="entry-content">
-                        <!-- PREVIOUS NOTE METADATA -->
-<footer class="post-info">
-
-    <p>
-        21 Sep 2022 <span class="separator">|</span> in <a class="link_tag" href="https://notes.nicolasdeville.com/helpers/">helpers</a>
- tags: <a class="link_tag" href="https://notes.nicolasdeville.com/tag/keyboard.html">keyboard</a>
-<a class="link_tag" href="https://notes.nicolasdeville.com/tag/shortcuts.html">shortcuts</a>
-
-        <!-- added 4/7 -->
-        <!-- 		<br />
-        <abbr class="modified" title="2022-09-21T17:45:42.442245+02:00">
-                Updated: 21 Sep 2022
-        </abbr>
- -->
-
-    </p>
-
-    
-
-</footer>                    </div>
-                    
-                </article>
-                <hr/>
-            </li>
-            
-
-
-
-            <li>
-                <article class="hentry">
-                    <header>
-                        <!-- PREVIOUS NOTE TITLE -->
                         <h1><a href="https://notes.nicolasdeville.com/apps/alfred" rel="bookmark"
                             title="Alfred">Alfred</a></h1>
                         <!-- PREVIOUS NOTE SUMMARY -->
@@ -988,45 +1601,6 @@
         <!-- added 4/7 -->
         <!-- 		<br />
         <abbr class="modified" title="2022-09-21T15:43:49.970914+02:00">
-                Updated: 21 Sep 2022
-        </abbr>
- -->
-
-    </p>
-
-    
-
-</footer>                    </div>
-                    
-                </article>
-                <hr/>
-            </li>
-            
-
-
-
-            <li>
-                <article class="hentry">
-                    <header>
-                        <!-- PREVIOUS NOTE TITLE -->
-                        <h1><a href="https://notes.nicolasdeville.com/projects/notes" rel="bookmark"
-                            title="This site">This site</a></h1>
-                        <!-- PREVIOUS NOTE SUMMARY -->
-                        <div class="entry-content">
-                            <p>keeping notes about building this site</p>
-                        </div>
-                    </header>
-
-                    <div class="entry-content">
-                        <!-- PREVIOUS NOTE METADATA -->
-<footer class="post-info">
-
-    <p>
-        21 Sep 2022 <span class="separator">|</span> in <a class="link_tag" href="https://notes.nicolasdeville.com/projects/">projects</a>
-
-        <!-- added 4/7 -->
-        <!-- 		<br />
-        <abbr class="modified" title="2022-09-21T12:17:16.956016+02:00">
                 Updated: 21 Sep 2022
         </abbr>
  -->
@@ -3720,50 +4294,6 @@
                 <article class="hentry">
                     <header>
                         <!-- PREVIOUS NOTE TITLE -->
-                        <h1><a href="https://notes.nicolasdeville.com/apps/grist" rel="bookmark"
-                            title="Grist | The Evolution of Spreadsheets">Grist | The Evolution of Spreadsheets</a></h1>
-                        <!-- PREVIOUS NOTE SUMMARY -->
-                        <div class="entry-content">
-                            <p>an online, powerful, Python-driven alternative to Excel</p>
-                        </div>
-                    </header>
-
-                    <div class="entry-content">
-                        <!-- PREVIOUS NOTE METADATA -->
-<footer class="post-info">
-
-    <p>
-        16 Sep 2022 <span class="separator">|</span> in <a class="link_tag" href="https://notes.nicolasdeville.com/apps/">apps</a>
- tags: <a class="link_tag" href="https://notes.nicolasdeville.com/tag/productivity.html">productivity</a>
-<a class="link_tag" href="https://notes.nicolasdeville.com/tag/python.html">python</a>
-<a class="link_tag" href="https://notes.nicolasdeville.com/tag/excel.html">excel</a>
-<a class="link_tag" href="https://notes.nicolasdeville.com/tag/saas.html">SaaS</a>
-<a class="link_tag" href="https://notes.nicolasdeville.com/tag/api.html">api</a>
-
-        <!-- added 4/7 -->
-        <!-- 		<br />
-        <abbr class="modified" title="2022-09-16T09:14:55.633567+02:00">
-                Updated: 16 Sep 2022
-        </abbr>
- -->
-
-    </p>
-
-    
-
-</footer>                    </div>
-                    
-                </article>
-                <hr/>
-            </li>
-            
-
-
-
-            <li>
-                <article class="hentry">
-                    <header>
-                        <!-- PREVIOUS NOTE TITLE -->
                         <h1><a href="https://notes.nicolasdeville.com/python/function-separator" rel="bookmark"
                             title="A short function to generate print separators">A short function to generate print separators</a></h1>
                         <!-- PREVIOUS NOTE SUMMARY -->
@@ -3992,128 +4522,9 @@
 
     </p>
 
-    
+    Translations:
+        <a href="https://notes.nicolasdeville.com/projects/clipper" hreflang="en">en</a>
 
-</footer>                    </div>
-                    
-                </article>
-                <hr/>
-            </li>
-            
-
-
-
-            <li>
-                <article class="hentry">
-                    <header>
-                        <!-- PREVIOUS NOTE TITLE -->
-                        <h1><a href="https://notes.nicolasdeville.com/python/solve-certificate-verify-failed" rel="bookmark"
-                            title="How to solve urlopen error SSL: CERTIFICATE_VERIFY_FAILED">How to solve urlopen error SSL: CERTIFICATE_VERIFY_FAILED</a></h1>
-                        <!-- PREVIOUS NOTE SUMMARY -->
-                        <div class="entry-content">
-                            
-                        </div>
-                    </header>
-
-                    <div class="entry-content">
-                        <!-- PREVIOUS NOTE METADATA -->
-<footer class="post-info">
-
-    <p>
-        15 Sep 2022 <span class="separator">|</span> in <a class="link_tag" href="https://notes.nicolasdeville.com/python/">python</a>
- tags: <a class="link_tag" href="https://notes.nicolasdeville.com/tag/troubleshooting.html">troubleshooting</a>
-
-        <!-- added 4/7 -->
-        <!-- 		<br />
-        <abbr class="modified" title="2022-09-16T09:11:39.131006+02:00">
-                Updated: 16 Sep 2022
-        </abbr>
- -->
-
-    </p>
-
-    
-
-</footer>                    </div>
-                    
-                </article>
-                <hr/>
-            </li>
-            
-
-
-
-            <li>
-                <article class="hentry">
-                    <header>
-                        <!-- PREVIOUS NOTE TITLE -->
-                        <h1><a href="https://notes.nicolasdeville.com/home-office/kvm" rel="bookmark"
-                            title="KVM Switch">KVM Switch</a></h1>
-                        <!-- PREVIOUS NOTE SUMMARY -->
-                        <div class="entry-content">
-                            <p>to operate 2 computers with 1 keyboard/mouse</p>
-                        </div>
-                    </header>
-
-                    <div class="entry-content">
-                        <!-- PREVIOUS NOTE METADATA -->
-<footer class="post-info">
-
-    <p>
-        14 Sep 2022 <span class="separator">|</span> in <a class="link_tag" href="https://notes.nicolasdeville.com/home-office/">home office</a>
-
-        <!-- added 4/7 -->
-        <!-- 		<br />
-        <abbr class="modified" title="2022-09-14T09:10:04.333166+02:00">
-                Updated: 14 Sep 2022
-        </abbr>
- -->
-
-    </p>
-
-    
-
-</footer>                    </div>
-                    
-                </article>
-                <hr/>
-            </li>
-            
-
-
-
-            <li>
-                <article class="hentry">
-                    <header>
-                        <!-- PREVIOUS NOTE TITLE -->
-                        <h1><a href="https://notes.nicolasdeville.com/projects/libraree" rel="bookmark"
-                            title="Libraree">Libraree</a></h1>
-                        <!-- PREVIOUS NOTE SUMMARY -->
-                        <div class="entry-content">
-                            <p>toolbox of Python scripts for music/video/photo library management</p>
-                        </div>
-                    </header>
-
-                    <div class="entry-content">
-                        <!-- PREVIOUS NOTE METADATA -->
-<footer class="post-info">
-
-    <p>
-        13 Sep 2022 <span class="separator">|</span> in <a class="link_tag" href="https://notes.nicolasdeville.com/projects/">projects</a>
- tags: <a class="link_tag" href="https://notes.nicolasdeville.com/tag/python.html">python</a>
-<a class="link_tag" href="https://notes.nicolasdeville.com/tag/music.html">music</a>
-<a class="link_tag" href="https://notes.nicolasdeville.com/tag/videos.html">videos</a>
-
-        <!-- added 4/7 -->
-        <!-- 		<br />
-        <abbr class="modified" title="2022-09-13T11:26:53.337833+02:00">
-                Updated: 13 Sep 2022
-        </abbr>
- -->
-
-    </p>
-
-    
 
 </footer>                    </div>
                     
@@ -4123,9 +4534,9 @@
             
                 </ol><!-- /#posts-list -->
 <p class="paginator">
-    Page 1 / 4
+    Page 1 / 5
         <a href="https://notes.nicolasdeville.com/index2.html">&raquo;</a>
-        <a href="https://notes.nicolasdeville.com/index4.html">&#8649;</a>
+        <a href="https://notes.nicolasdeville.com/index5.html">&#8649;</a>
 </p>
                 </section><!-- /#content -->
 
@@ -4153,12 +4564,13 @@
 
         <footer id="contentinfo" class="body">
                 <address id="about" class="vcard body">
-                <a href="https://clearbit.com" target="_blank">Logos provided by Clearbit</a>
-                <br>
                 Powered by <a href="https://github.com/getpelican/pelican" target="_blank">Pelican</a>, 
                 with <a href="https://stork-search.net/" target="_blank">Stork</a> & <a href="https://github.com/pelican-plugins/search" target="_blank">Pelican Search plugin</a>.
-                <span style="color:#C74350">|</span> <img src="https://notes.nicolasdeville.com/images/python.svg" alt="python_logo" width="16" style="vertical-align: middle;"/> <a href="https://www.python.org/" target="_blank">Python</a> 
-                
+                <br>
+                <a href="https://clearbit.com" target="_blank">Logos provided by Clearbit</a>
+                <br>
+                <!-- <span style="color:#C74350">|</span> <img src="https://notes.nicolasdeville.com/images/python.svg" alt="python_logo" width="16" style="vertical-align: middle;"/> <a href="https://www.python.org/" target="_blank">Python</a>  -->
+                <img src="https://notes.nicolasdeville.com/images/python.svg" alt="python_logo" width="16" style="vertical-align: middle;"/> <a href="https://www.python.org/" target="_blank">Python</a> 
                 </address><!-- /#about -->
 
         </footer><!-- /#contentinfo -->

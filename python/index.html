@@ -42,7 +42,7 @@
             </div>
 
             <div class="above-navbar">
-                <div class="last_updated">22 Sep 2022 | 10:00</div>
+                <div class="last_updated">22 Sep 2022 | 21:34</div>
                 <div>
                     <p class="notes_count">
                         <a href="https://notes.nicolasdeville.com/tags">by tags</a> 
@@ -115,7 +115,7 @@
 
         <!-- added 4/7 -->
         <!-- 		<br />
-        <abbr class="modified" title="2022-09-22T10:00:14.634601+02:00">
+        <abbr class="modified" title="2022-09-22T10:24:48.998730+02:00">
                 Updated: 22 Sep 2022
         </abbr>
  -->
@@ -174,48 +174,51 @@
         <span class="k">if</span> <span class="n">v</span> <span class="o">==</span> <span class="n">value</span><span class="p">:</span>
             <span class="k">return</span> <span class="n">k</span>
 
-<span class="k">def</span> <span class="nf">encrypt_with_offset</span><span class="p">(</span><span class="nb">input</span><span class="p">,</span><span class="n">offset</span><span class="o">=</span><span class="mi">2</span><span class="p">):</span>
+<span class="k">def</span> <span class="nf">encrypt_with_offset</span><span class="p">(</span><span class="nb">input</span><span class="p">,</span><span class="n">offset</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span> <span class="n">test</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+    <span class="k">global</span> <span class="n">index</span>
     <span class="nb">input</span> <span class="o">=</span> <span class="nb">input</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
     <span class="k">if</span> <span class="n">test</span><span class="p">:</span>
         <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">encrypt_with_offset </span><span class="si">{</span><span class="nb">input</span><span class="si">=}</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
     <span class="n">output</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span>
     <span class="k">for</span> <span class="n">letter</span> <span class="ow">in</span> <span class="nb">input</span><span class="p">:</span>
-        <span class="k">if</span> <span class="n">letter</span> <span class="o">==</span> <span class="s1">&#39; &#39;</span><span class="p">:</span>
-            <span class="n">output</span> <span class="o">=</span> <span class="n">output</span> <span class="o">+</span> <span class="s1">&#39; &#39;</span>
-            <span class="k">continue</span>
-        <span class="n">letter_index</span> <span class="o">=</span> <span class="n">index</span><span class="p">[</span><span class="n">letter</span><span class="p">]</span>
-        <span class="k">if</span> <span class="n">test</span><span class="p">:</span>
-            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">letter_index</span><span class="si">=}</span><span class="s2">&quot;</span><span class="p">)</span>
-        <span class="k">if</span> <span class="p">(</span><span class="n">letter_index</span> <span class="o">+</span> <span class="n">offset</span><span class="p">)</span> <span class="o">&gt;</span> <span class="nb">len</span><span class="p">(</span><span class="n">index</span><span class="p">):</span>
-            <span class="n">letter_index</span> <span class="o">=</span> <span class="n">letter_index</span> <span class="o">-</span> <span class="mi">26</span>
-        <span class="n">encrypted_letter</span> <span class="o">=</span> <span class="n">find_key</span><span class="p">(</span><span class="n">index</span><span class="p">,</span> <span class="n">letter_index</span> <span class="o">+</span> <span class="n">offset</span><span class="p">)</span>
-        <span class="k">if</span> <span class="n">test</span><span class="p">:</span>
-            <span class="nb">print</span><span class="p">(</span><span class="n">letter</span><span class="p">,</span> <span class="n">encrypted_letter</span><span class="p">)</span>
-        <span class="n">output</span> <span class="o">=</span> <span class="n">output</span> <span class="o">+</span> <span class="n">encrypted_letter</span>
+        <span class="k">if</span> <span class="n">letter</span><span class="o">.</span><span class="n">isalpha</span><span class="p">():</span> <span class="c1"># check if character is alphabet, else return raw character</span>
+            <span class="n">letter_index</span> <span class="o">=</span> <span class="n">index</span><span class="p">[</span><span class="n">letter</span><span class="p">]</span>
+            <span class="k">if</span> <span class="n">test</span><span class="p">:</span>
+                <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">letter_index</span><span class="si">=}</span><span class="s2">&quot;</span><span class="p">)</span>
+            <span class="k">if</span> <span class="p">(</span><span class="n">letter_index</span> <span class="o">+</span> <span class="n">offset</span><span class="p">)</span> <span class="o">&gt;</span> <span class="nb">len</span><span class="p">(</span><span class="n">index</span><span class="p">):</span>
+                <span class="n">letter_index</span> <span class="o">=</span> <span class="n">letter_index</span> <span class="o">-</span> <span class="mi">26</span>
+            <span class="n">encrypted_letter</span> <span class="o">=</span> <span class="n">find_key</span><span class="p">(</span><span class="n">index</span><span class="p">,</span> <span class="n">letter_index</span> <span class="o">+</span> <span class="n">offset</span><span class="p">)</span>
+            <span class="k">if</span> <span class="n">test</span><span class="p">:</span>
+                <span class="nb">print</span><span class="p">(</span><span class="n">letter</span><span class="p">,</span> <span class="n">encrypted_letter</span><span class="p">)</span>
+            <span class="n">output</span> <span class="o">=</span> <span class="n">output</span> <span class="o">+</span> <span class="n">encrypted_letter</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">output</span> <span class="o">=</span> <span class="n">output</span> <span class="o">+</span> <span class="n">letter</span>
+
     <span class="k">if</span> <span class="n">test</span><span class="p">:</span>
-        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n</span><span class="si">{</span><span class="n">output</span><span class="si">=}</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n</span><span class="si">{</span><span class="n">output</span><span class="si">=}</span><span class="se">\n</span><span class="s2">-----------</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
     <span class="k">return</span> <span class="n">output</span>
 
-<span class="k">def</span> <span class="nf">decrypt_with_offset</span><span class="p">(</span><span class="nb">input</span><span class="p">,</span><span class="n">offset</span><span class="o">=</span><span class="mi">2</span><span class="p">):</span>
+<span class="k">def</span> <span class="nf">decrypt_with_offset</span><span class="p">(</span><span class="nb">input</span><span class="p">,</span><span class="n">offset</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span> <span class="n">test</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+    <span class="k">global</span> <span class="n">index</span>
     <span class="nb">input</span> <span class="o">=</span> <span class="nb">input</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
     <span class="k">if</span> <span class="n">test</span><span class="p">:</span> 
         <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">decrypt_with_offset </span><span class="si">{</span><span class="nb">input</span><span class="si">=}</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
     <span class="n">output</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span>
     <span class="k">for</span> <span class="n">letter</span> <span class="ow">in</span> <span class="nb">input</span><span class="p">:</span>
-        <span class="k">if</span> <span class="n">letter</span> <span class="o">==</span> <span class="s1">&#39; &#39;</span><span class="p">:</span>
-            <span class="n">output</span> <span class="o">=</span> <span class="n">output</span> <span class="o">+</span> <span class="s1">&#39; &#39;</span>
-            <span class="k">continue</span>
-        <span class="n">letter_index</span> <span class="o">=</span> <span class="n">index</span><span class="p">[</span><span class="n">letter</span><span class="p">]</span>
-        <span class="k">if</span> <span class="n">test</span><span class="p">:</span>
-            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">letter_index</span><span class="si">=}</span><span class="s2">&quot;</span><span class="p">)</span>
-        <span class="k">if</span> <span class="p">(</span><span class="n">letter_index</span> <span class="o">-</span> <span class="n">offset</span><span class="p">)</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">:</span>
-            <span class="n">letter_index</span> <span class="o">=</span> <span class="n">letter_index</span> <span class="o">+</span> <span class="mi">26</span>
-        <span class="n">encrypted_letter</span> <span class="o">=</span> <span class="n">find_key</span><span class="p">(</span><span class="n">index</span><span class="p">,</span> <span class="n">letter_index</span> <span class="o">-</span> <span class="n">offset</span><span class="p">)</span>
-        <span class="k">if</span> <span class="n">test</span><span class="p">:</span>
-            <span class="nb">print</span><span class="p">(</span><span class="n">letter</span><span class="p">,</span> <span class="n">encrypted_letter</span><span class="p">)</span>
-        <span class="n">output</span> <span class="o">=</span> <span class="n">output</span> <span class="o">+</span> <span class="n">encrypted_letter</span>
+        <span class="k">if</span> <span class="n">letter</span><span class="o">.</span><span class="n">isalpha</span><span class="p">():</span> <span class="c1"># check if character is alphabet, else return raw character</span>
+            <span class="n">letter_index</span> <span class="o">=</span> <span class="n">index</span><span class="p">[</span><span class="n">letter</span><span class="p">]</span>
+            <span class="k">if</span> <span class="n">test</span><span class="p">:</span>
+                <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">letter_index</span><span class="si">=}</span><span class="s2">&quot;</span><span class="p">)</span>
+            <span class="k">if</span> <span class="p">(</span><span class="n">letter_index</span> <span class="o">-</span> <span class="n">offset</span><span class="p">)</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">:</span>
+                <span class="n">letter_index</span> <span class="o">=</span> <span class="n">letter_index</span> <span class="o">+</span> <span class="mi">26</span>
+            <span class="n">encrypted_letter</span> <span class="o">=</span> <span class="n">find_key</span><span class="p">(</span><span class="n">index</span><span class="p">,</span> <span class="n">letter_index</span> <span class="o">-</span> <span class="n">offset</span><span class="p">)</span>
+            <span class="k">if</span> <span class="n">test</span><span class="p">:</span>
+                <span class="nb">print</span><span class="p">(</span><span class="n">letter</span><span class="p">,</span> <span class="n">encrypted_letter</span><span class="p">)</span>
+            <span class="n">output</span> <span class="o">=</span> <span class="n">output</span> <span class="o">+</span> <span class="n">encrypted_letter</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">output</span> <span class="o">=</span> <span class="n">output</span> <span class="o">+</span> <span class="n">letter</span>
     <span class="k">if</span> <span class="n">test</span><span class="p">:</span>
-        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n</span><span class="si">{</span><span class="n">output</span><span class="si">=}</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n</span><span class="si">{</span><span class="n">output</span><span class="si">=}</span><span class="se">\n</span><span class="s2">-----------</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
     <span class="k">return</span> <span class="n">output</span>
 
 <span class="n">encrypt_output</span> <span class="o">=</span> <span class="n">encrypt_with_offset</span><span class="p">(</span><span class="n">input_raw</span><span class="p">,</span> <span class="n">offset</span><span class="p">)</span>
@@ -230,6 +233,12 @@
 
 Decrypt with offset 2: &#39;uvtkpi vq gpetarv&#39;      output: &#39;string to encrypt&#39;
 </code></pre></div>
+
+<p>Good enough for my current needs.  </p>
+<p>improvements:   </p>
+<ul>
+<li>add number and special characters to index and logic to scramble further.</li>
+</ul>
                 </article>
             </aside>
 
@@ -345,7 +354,7 @@ Decrypt with offset 2: &#39;uvtkpi vq gpetarv&#39;      output: &#39;string to e
 
         <!-- added 4/7 -->
         <!-- 		<br />
-        <abbr class="modified" title="2022-09-22T09:42:01.255171+02:00">
+        <abbr class="modified" title="2022-09-22T20:42:56.752492+02:00">
                 Updated: 22 Sep 2022
         </abbr>
  -->
@@ -2776,12 +2785,13 @@ Decrypt with offset 2: &#39;uvtkpi vq gpetarv&#39;      output: &#39;string to e
 
         <footer id="contentinfo" class="body">
                 <address id="about" class="vcard body">
-                <a href="https://clearbit.com" target="_blank">Logos provided by Clearbit</a>
-                <br>
                 Powered by <a href="https://github.com/getpelican/pelican" target="_blank">Pelican</a>, 
                 with <a href="https://stork-search.net/" target="_blank">Stork</a> & <a href="https://github.com/pelican-plugins/search" target="_blank">Pelican Search plugin</a>.
-                <span style="color:#C74350">|</span> <img src="https://notes.nicolasdeville.com/images/python.svg" alt="python_logo" width="16" style="vertical-align: middle;"/> <a href="https://www.python.org/" target="_blank">Python</a> 
-                
+                <br>
+                <a href="https://clearbit.com" target="_blank">Logos provided by Clearbit</a>
+                <br>
+                <!-- <span style="color:#C74350">|</span> <img src="https://notes.nicolasdeville.com/images/python.svg" alt="python_logo" width="16" style="vertical-align: middle;"/> <a href="https://www.python.org/" target="_blank">Python</a>  -->
+                <img src="https://notes.nicolasdeville.com/images/python.svg" alt="python_logo" width="16" style="vertical-align: middle;"/> <a href="https://www.python.org/" target="_blank">Python</a> 
                 </address><!-- /#about -->
 
         </footer><!-- /#contentinfo -->

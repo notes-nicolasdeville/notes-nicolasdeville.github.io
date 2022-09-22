@@ -8,6 +8,41 @@ url = "/ABOUT/"
 title = ""
 
 [[input.files]]
+path = "projects/apps-library/index.html"
+url = "/projects/apps-library"
+title = "Project: Apps Library"
+
+[[input.files]]
+path = "home-office/shopping/index.html"
+url = "/home-office/shopping"
+title = "Shopping ideas for home office"
+
+[[input.files]]
+path = "projects/notes/index.html"
+url = "/projects/notes"
+title = "This site"
+
+[[input.files]]
+path = "projects/imagee/index.html"
+url = "/projects/imagee"
+title = "Imagee"
+
+[[input.files]]
+path = "projects/emailee/index.html"
+url = "/projects/emailee"
+title = "Emailee"
+
+[[input.files]]
+path = "apps/grist/index.html"
+url = "/apps/grist"
+title = "Grist | The Evolution of Spreadsheets"
+
+[[input.files]]
+path = "helpers/keyboard-shortcuts/index.html"
+url = "/helpers/keyboard-shortcuts"
+title = "My keyboard shortcuts"
+
+[[input.files]]
 path = "apps/audirvana/index.html"
 url = "/apps/audirvana"
 title = "Audirvana"
@@ -18,9 +53,19 @@ url = "/python/basic-string-encryption"
 title = "Basic string encryption with Python"
 
 [[input.files]]
+path = "projects/clipper/index.html"
+url = "/projects/clipper"
+title = "Clipper"
+
+[[input.files]]
 path = "python/import-txt-to-grist/index.html"
 url = "/python/import-txt-to-grist"
 title = "Import text file to Grist"
+
+[[input.files]]
+path = "home-office/ipad/index.html"
+url = "/home-office/ipad"
+title = "iPad"
 
 [[input.files]]
 path = "python/snippet-open-text-file/index.html"
@@ -33,19 +78,9 @@ url = "/python/string"
 title = "String snippets"
 
 [[input.files]]
-path = "home-office/shopping/index.html"
-url = "/home-office/shopping"
-title = "Shopping ideas for home office"
-
-[[input.files]]
 path = "learning/new-words/index.html"
 url = "/learning/new-words"
 title = "Learning new words"
-
-[[input.files]]
-path = "projects/emailee/index.html"
-url = "/projects/emailee"
-title = "Emailee"
 
 [[input.files]]
 path = "b2b-sales/email-automation/index.html"
@@ -61,11 +96,6 @@ title = "Web3"
 path = "interests/ai/index.html"
 url = "/interests/ai"
 title = "AI"
-
-[[input.files]]
-path = "projects/imagee/index.html"
-url = "/projects/imagee"
-title = "Imagee"
 
 [[input.files]]
 path = "interests/tea/index.html"
@@ -108,19 +138,9 @@ url = "/learning/html"
 title = "Learning HTML"
 
 [[input.files]]
-path = "helpers/keyboard-shortcuts/index.html"
-url = "/helpers/keyboard-shortcuts"
-title = "My keyboard shortcuts"
-
-[[input.files]]
 path = "apps/alfred/index.html"
 url = "/apps/alfred"
 title = "Alfred"
-
-[[input.files]]
-path = "projects/notes/index.html"
-url = "/projects/notes"
-title = "This site"
 
 [[input.files]]
 path = "home-office/unifi/index.html"
@@ -458,11 +478,6 @@ url = "/movies/1000"
 title = "My Top 1,000 Movies"
 
 [[input.files]]
-path = "apps/grist/index.html"
-url = "/apps/grist"
-title = "Grist | The Evolution of Spreadsheets"
-
-[[input.files]]
 path = "python/function-separator/index.html"
 url = "/python/function-separator"
 title = "A short function to generate print separators"
@@ -763,8 +778,8 @@ url = "/leadership/resources"
 title = "Resources about Sales Leadership"
 
 [[input.files]]
-path = "projects/books_library/index.html"
-url = "/projects/books_library"
+path = "projects/books-library/index.html"
+url = "/projects/books-library"
 title = "Managing my books library with Python"
 
 [[input.files]]
@@ -2003,6 +2018,11 @@ url = "/projects/nicai"
 title = "nicAI | my personal AI assistant"
 
 [[input.files]]
+path = "helpers/clipper/index.html"
+url = "/helpers/clipper"
+title = "My web clipboard"
+
+[[input.files]]
 path = "learning/ai/index.html"
 url = "/learning/ai"
 title = "Learning AI"
@@ -2028,6 +2048,11 @@ url = "/books/deep-work"
 title = "Deep Work, by Cal Newport"
 
 [[input.files]]
+path = "projects/clipper/index.html"
+url = "/projects/clipper"
+title = "Clipper"
+
+[[input.files]]
 path = "books/library/index.html"
 url = "/books/library"
 title = "My Books Library"
@@ -2048,14 +2073,14 @@ url = "/apps/library"
 title = "My Apps Library"
 
 [[input.files]]
-path = "learning/ai/index.html"
-url = "/learning/ai"
-title = "Learning AI"
-
-[[input.files]]
 path = "interests/ai/index.html"
 url = "/interests/ai"
 title = "AI"
+
+[[input.files]]
+path = "learning/ai/index.html"
+url = "/learning/ai"
+title = "Learning AI"
 
 [[input.files]]
 path = "home-office/deep-work/index.html"

@@ -43,7 +43,7 @@
             </div>
 
             <div class="above-navbar">
-                <div class="last_updated">22 Sep 2022 | 10:00</div>
+                <div class="last_updated">22 Sep 2022 | 21:34</div>
                 <div>
                     <p class="notes_count">
                         <a href="https://notes.nicolasdeville.com/tags">by tags</a> 
@@ -54,7 +54,7 @@
                         <span style="color:#C74350">|</span>
                         <a href="https://notes.nicolasdeville.com/2022/">2022</a> 
                         <span style="color:#C74350">|</span> 
-                        399 notes
+                        402 notes
                     </p>
                 </div>
             </div>
@@ -98,7 +98,7 @@
 <footer class="post-info">
 
     <p>
-        16 Sep 2022 <span class="separator">|</span> in <a class="link_tag" href="https://notes.nicolasdeville.com/apps/">apps</a>
+        22 Sep 2022 <span class="separator">|</span> in <a class="link_tag" href="https://notes.nicolasdeville.com/apps/">apps</a>
  tags: <a class="link_tag" href="https://notes.nicolasdeville.com/tag/productivity.html">productivity</a>
 <a class="link_tag" href="https://notes.nicolasdeville.com/tag/python.html">python</a>
 <a class="link_tag" href="https://notes.nicolasdeville.com/tag/excel.html">excel</a>
@@ -107,8 +107,8 @@
 
         <!-- added 4/7 -->
         <!-- 		<br />
-        <abbr class="modified" title="2022-09-16T09:14:55.633567+02:00">
-                Updated: 16 Sep 2022
+        <abbr class="modified" title="2022-09-22T19:59:25.497471+02:00">
+                Updated: 22 Sep 2022
         </abbr>
  -->
 
@@ -117,7 +117,35 @@
     
 
 </footer>            <main> <!-- for indexing by Stork -->
-                <p><span class="datestamp">20 Jul 2022</span>        </p>
+                <div class="toc"><span class="toctitle">Table of Contents</span><ul>
+<li><a href="#limitation">Limitation</a></li>
+<li><a href="#formulas">Formulas</a><ul>
+<li><a href="#created-field">Created field</a></li>
+<li><a href="#updated-field">Updated field</a></li>
+<li><a href="#past-future">Past / Future</a></li>
+<li><a href="#identify-duplicate-values">identify duplicate values</a></li>
+</ul>
+</li>
+<li><a href="#keyboard-shortcuts">Keyboard shortcuts</a></li>
+<li><a href="#api">API</a><ul>
+<li><a href="#getting-started">Getting started</a></li>
+<li><a href="#create-add-records">Create / add records</a></li>
+<li><a href="#update-records">Update records</a></li>
+<li><a href="#fetch-last-checked-record">Fetch last checked record</a></li>
+<li><a href="#delete-individual-record">Delete individual record</a></li>
+<li><a href="#upload-images">Upload images</a></li>
+<li><a href="#tricks">Tricks</a><ul>
+<li><a href="#hidden-value-field-for-reference-fields">hidden value field for reference fields</a></li>
+<li><a href="#nested-dictionary-comprehension-to-select-many-fields-you-want-at-once">nested dictionary comprehension to select many fields you want at once</a></li>
+<li><a href="#using-zebra-stripes-on-large-tables">using zebra stripes on large tables</a></li>
+<li><a href="#downloading-document-data-as-a-file">downloading document data as a file</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<p><span class="datestamp">20 Jul 2022</span>        </p>
 <p><img class="header" src="https://notes.nicolasdeville.com/images/apps_grist-homepage.jpg" alt="apps_grist-homepage.jpg"/>  </p>
 <table>
 <thead>
@@ -169,6 +197,10 @@ Grist is open-source so can be self-hosted to overcome the records limitation du
 <p>~100k records <strong>per document</strong>, ie all tables in a spreadsheet.
 Where I expect to possibly have more, I break out tables in their own document, with just 1 <code>Master</code> table in it.      </p>
 <h1 id="formulas">Formulas</h1>
+<h2 id="created-field">Created field</h2>
+<p><img class="screenshot" src="https://notes.nicolasdeville.com/images/grist/grist-created.jpg" alt="grist/grist-created.jpg"/>  </p>
+<h2 id="updated-field">Updated field</h2>
+<p><img class="screenshot" src="https://notes.nicolasdeville.com/images/grist/grist-created.jpg" alt="grist/grist-created.jpg"/>  </p>
 <h2 id="past-future">Past / Future</h2>
 <div class="highlight"><pre><span></span><code><span class="k">IF</span><span class="ss">(</span><span class="mh">$da</span><span class="nv">te_webinar</span><span class="o">!=</span><span class="w"> </span><span class="nv">None</span>,<span class="k">IF</span><span class="ss">(</span><span class="mh">$da</span><span class="nv">te_webinar</span><span class="o">&lt;</span><span class="nv">NOW</span><span class="ss">()</span>,<span class="s2">&quot;PAST&quot;</span>,<span class="s2">&quot;FUTURE&quot;</span><span class="ss">)</span>,<span class="s2">&quot;&quot;</span><span class="ss">)</span><span class="w"></span>
 </code></pre></div>
@@ -335,12 +367,13 @@ Permissions can be defined by clicking on each as needed: <br>
 
         <footer id="contentinfo" class="body">
                 <address id="about" class="vcard body">
-                <a href="https://clearbit.com" target="_blank">Logos provided by Clearbit</a>
-                <br>
                 Powered by <a href="https://github.com/getpelican/pelican" target="_blank">Pelican</a>, 
                 with <a href="https://stork-search.net/" target="_blank">Stork</a> & <a href="https://github.com/pelican-plugins/search" target="_blank">Pelican Search plugin</a>.
-                <span style="color:#C74350">|</span> <img src="https://notes.nicolasdeville.com/images/python.svg" alt="python_logo" width="16" style="vertical-align: middle;"/> <a href="https://www.python.org/" target="_blank">Python</a> 
-                
+                <br>
+                <a href="https://clearbit.com" target="_blank">Logos provided by Clearbit</a>
+                <br>
+                <!-- <span style="color:#C74350">|</span> <img src="https://notes.nicolasdeville.com/images/python.svg" alt="python_logo" width="16" style="vertical-align: middle;"/> <a href="https://www.python.org/" target="_blank">Python</a>  -->
+                <img src="https://notes.nicolasdeville.com/images/python.svg" alt="python_logo" width="16" style="vertical-align: middle;"/> <a href="https://www.python.org/" target="_blank">Python</a> 
                 </address><!-- /#about -->
 
         </footer><!-- /#contentinfo -->
