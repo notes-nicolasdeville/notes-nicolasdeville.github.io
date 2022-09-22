@@ -1076,7 +1076,7 @@ li:first-child .hentry, #content > .hentry {
     height: 100%;
     display: flex;
     order: 2;
-    width: 100%;
+    max-width: 100%;
 }
 
     .link_logo_box {

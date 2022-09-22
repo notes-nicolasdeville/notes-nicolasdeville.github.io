@@ -8,9 +8,44 @@ url = "/ABOUT/"
 title = ""
 
 [[input.files]]
+path = "apps/audirvana/index.html"
+url = "/apps/audirvana"
+title = "Audirvana"
+
+[[input.files]]
+path = "python/basic-string-encryption/index.html"
+url = "/python/basic-string-encryption"
+title = "Basic string encryption with Python"
+
+[[input.files]]
+path = "python/import-txt-to-grist/index.html"
+url = "/python/import-txt-to-grist"
+title = "Import text file to Grist"
+
+[[input.files]]
+path = "python/snippet-open-text-file/index.html"
+url = "/python/snippet-open-text-file"
+title = "Open text files with Python"
+
+[[input.files]]
+path = "python/string/index.html"
+url = "/python/string"
+title = "String snippets"
+
+[[input.files]]
 path = "home-office/shopping/index.html"
 url = "/home-office/shopping"
 title = "Shopping ideas for home office"
+
+[[input.files]]
+path = "learning/new-words/index.html"
+url = "/learning/new-words"
+title = "Learning new words"
+
+[[input.files]]
+path = "projects/emailee/index.html"
+url = "/projects/emailee"
+title = "Emailee"
 
 [[input.files]]
 path = "b2b-sales/email-automation/index.html"
@@ -351,11 +386,6 @@ title = "Just Press Record"
 path = "python/print/index.html"
 url = "/python/print"
 title = "Print statement tricks"
-
-[[input.files]]
-path = "python/snippet-print-line/index.html"
-url = "/python/snippet-print-line"
-title = "Print current line number with Python"
 
 [[input.files]]
 path = "helpers/logos/index.html"
@@ -748,11 +778,6 @@ url = "/projects/1000-movies"
 title = "Project: Top 1000 movies"
 
 [[input.files]]
-path = "projects/emailee/index.html"
-url = "/projects/emailee"
-title = "Emailee"
-
-[[input.files]]
 path = "apps/hazel/index.html"
 url = "/apps/hazel"
 title = "Hazel"
@@ -813,14 +838,14 @@ url = "/apps/radar"
 title = "Apps on my radar"
 
 [[input.files]]
-path = "python/books/index.html"
-url = "/python/books"
-title = "My Python Books Library"
-
-[[input.files]]
 path = "b2b-sales/books/index.html"
 url = "/b2b-sales/books"
 title = "My B2B Books Library"
+
+[[input.files]]
+path = "python/books/index.html"
+url = "/python/books"
+title = "My Python Books Library"
 
 [[input.files]]
 path = "books/library/index.html"
@@ -1968,6 +1993,11 @@ url = "/leadership/podcast-on-leadership"
 title = "Podcast guest: On Leadership"
 
 [[input.files]]
+path = "python/snippet-print-line/index.html"
+url = "/python/snippet-print-line"
+title = "Print current line number with Python"
+
+[[input.files]]
 path = "projects/nicai/index.html"
 url = "/projects/nicai"
 title = "nicAI | my personal AI assistant"
@@ -2003,14 +2033,14 @@ url = "/books/library"
 title = "My Books Library"
 
 [[input.files]]
-path = "b2b-sales/books/index.html"
-url = "/b2b-sales/books"
-title = "My B2B Books Library"
-
-[[input.files]]
 path = "python/books/index.html"
 url = "/python/books"
 title = "My Python Books Library"
+
+[[input.files]]
+path = "b2b-sales/books/index.html"
+url = "/b2b-sales/books"
+title = "My B2B Books Library"
 
 [[input.files]]
 path = "apps/library/index.html"
