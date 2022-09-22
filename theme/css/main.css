@@ -166,6 +166,12 @@ h1 {
     font-size: 1.5em;
     margin-top: 1em;
     color: var(--nic_main);
+}
+/* only H1s not in title, ie with IDs */
+h1[id] { 
+    font-size: 1.5em;
+    margin-top: 1em;
+    color: var(--nic_main);
     border-bottom: solid .2em var(--nic_red);
     padding-bottom: 2px;
 }

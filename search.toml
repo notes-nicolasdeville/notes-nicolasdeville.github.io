@@ -13,6 +13,11 @@ url = "/projects/apps-library"
 title = "Project: Apps Library"
 
 [[input.files]]
+path = "leadership/comp-plans/index.html"
+url = "/leadership/comp-plans"
+title = "Compensation Plans"
+
+[[input.files]]
 path = "home-office/shopping/index.html"
 url = "/home-office/shopping"
 title = "Shopping ideas for home office"
@@ -296,11 +301,6 @@ title = "Learning Speed Reading"
 path = "learning/javascript/index.html"
 url = "/learning/javascript"
 title = "Learning Javascript"
-
-[[input.files]]
-path = "leadership/comp-plans/index.html"
-url = "/leadership/comp-plans"
-title = "Compensation Plans"
 
 [[input.files]]
 path = "interests/watches/index.html"
@@ -2073,14 +2073,14 @@ url = "/apps/library"
 title = "My Apps Library"
 
 [[input.files]]
-path = "interests/ai/index.html"
-url = "/interests/ai"
-title = "AI"
-
-[[input.files]]
 path = "learning/ai/index.html"
 url = "/learning/ai"
 title = "Learning AI"
+
+[[input.files]]
+path = "interests/ai/index.html"
+url = "/interests/ai"
+title = "AI"
 
 [[input.files]]
 path = "home-office/deep-work/index.html"
