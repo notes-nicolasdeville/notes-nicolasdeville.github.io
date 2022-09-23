@@ -42,7 +42,7 @@
             </div>
 
             <div class="above-navbar">
-                <div class="last_updated">23 Sep 2022 | 17:21</div>
+                <div class="last_updated">23 Sep 2022 | 23:27</div>
                 <div>
                     <p class="notes_count">
                         <a href="https://notes.nicolasdeville.com/tags">by tags</a> 
@@ -59,6 +59,7 @@
             </div>
 
             <nav><ul>
+                <li><a href="https://notes.nicolasdeville.com/ai/">ai</a></li>
                 <li><a href="https://notes.nicolasdeville.com/apps/">apps</a></li>
                 <li><a href="https://notes.nicolasdeville.com/b2b-sales/">b2b sales</a></li>
                 <li><a href="https://notes.nicolasdeville.com/books/">books</a></li>
@@ -99,15 +100,214 @@
             <hr/>
 
                 <article class="hentry">
-                    <h1 class="entry-title"><a href="https://notes.nicolasdeville.com/projects/imagee">Imagee</a></h1>
+                    <h1 class="entry-title"><a href="https://notes.nicolasdeville.com/projects/recordee">Recordee</a></h1>
 
                     <!-- added 4/7 -->
                     <div>
                         <p class="header_summary">
-                            <p>collection of scripts for image processing</p>
+                            <p>End-to-end automated workflow from voice recording to markdown note.</p>
                         </p>
                     </div>
 
+<footer class="post-info">
+
+    <p>
+        23 Sep 2022 <span class="separator">|</span> in <a class="link_tag" href="https://notes.nicolasdeville.com/projects/">projects</a>
+ tags: <a class="link_tag" href="https://notes.nicolasdeville.com/tag/python.html">python</a>
+<a class="link_tag" href="https://notes.nicolasdeville.com/tag/automation.html">automation</a>
+
+        <!-- added 4/7 -->
+        <!-- 		<br />
+        <abbr class="modified" title="2022-09-23T21:59:33.979167+02:00">
+                Updated: 23 Sep 2022
+        </abbr>
+ -->
+
+    </p>
+
+    
+
+</footer><p><span class="datestamp">17 Sep 2022</span>   </p>
+<p>I've been using Just Press Record [<a href="../../apps/just-press-record/index.html">Nic Note: Just Press Record</a>] for the last 2+ years for on-the-go, in-my-bath or at-my-desk long voice recordings.  </p>
+<p>A lot of these recordings are intended to be actioned, or serve as basis for an email, a blog or a note.  </p>
+<p>I love the simplicity and efficiency of Just Press Record, so it still requires me some tedious tasks when back at my computer to extract the transcript for each recording individually.   </p>
+<p>Goal here will be a Python script to:   </p>
+<ul>
+<li>fetch <code>.m4a</code> recording from local iCloud folder ([<a href="../../helpers/icloud-drive/index.html">Nic Note: iCloud Drive</a>]) with one subfolder by day)</li>
+<li>convert <code>.m4a</code> to <code>.wav</code> which seems to be the primary format accepted by speech_recognition  </li>
+<li>transcribe (speech to text)</li>
+<li>generate markdown note in a Drafts folder in my notes folder</li>
+</ul>
+<p><span class="datestamp">23 Sep 2022</span> exploring OpenAI's new speech recognition AI "Whisper" for this: [<a href="../../ai/whisper/index.html">Nic Note: Whisper</a>]    </p>
+<h1 id="snippets">Snippets</h1>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">pydub</span> <span class="kn">import</span> <span class="n">AudioSegment</span>
+<span class="n">audio</span> <span class="o">=</span> <span class="n">AudioSegment</span><span class="o">.</span><span class="n">from_file</span><span class="p">(</span><span class="s1">&#39;file.m4a&#39;</span><span class="p">)</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">speech_recognition</span> <span class="k">as</span> <span class="nn">sr</span>
+
+<span class="n">r</span> <span class="o">=</span> <span class="n">sr</span><span class="o">.</span><span class="n">Recognizer</span><span class="p">()</span>
+<span class="k">with</span> <span class="n">sr</span><span class="o">.</span><span class="n">AudioFile</span><span class="p">(</span><span class="s1">&#39;sampleMp3.WAV&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">source</span><span class="p">:</span>
+    <span class="n">audio</span> <span class="o">=</span> <span class="n">r</span><span class="o">.</span><span class="n">record</span><span class="p">(</span><span class="n">source</span><span class="p">,</span> <span class="n">duration</span><span class="o">=</span><span class="mi">60</span><span class="p">)</span> 
+
+<span class="n">command</span> <span class="o">=</span> <span class="n">r</span><span class="o">.</span><span class="n">recognize_google</span><span class="p">(</span><span class="n">audio</span><span class="p">)</span>
+
+<span class="n">text_file</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;Output.txt&quot;</span><span class="p">,</span> <span class="s2">&quot;w&quot;</span><span class="p">)</span>
+<span class="n">text_file</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">command</span><span class="p">)</span>
+<span class="n">text_file</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+</code></pre></div>
+
+<h2 id="long-sample-audio">Long Sample Audio</h2>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">os</span> 
+<span class="kn">from</span> <span class="nn">pydub</span> <span class="kn">import</span> <span class="n">AudioSegment</span>
+<span class="kn">import</span> <span class="nn">speech_recognition</span> <span class="k">as</span> <span class="nn">sr</span>
+<span class="kn">from</span> <span class="nn">pydub.silence</span> <span class="kn">import</span> <span class="n">split_on_silence</span>
+
+<span class="n">recognizer</span> <span class="o">=</span> <span class="n">sr</span><span class="o">.</span><span class="n">Recognizer</span><span class="p">()</span>
+
+<span class="k">def</span> <span class="nf">load_chunks</span><span class="p">(</span><span class="n">filename</span><span class="p">):</span>
+    <span class="n">long_audio</span> <span class="o">=</span> <span class="n">AudioSegment</span><span class="o">.</span><span class="n">from_mp3</span><span class="p">(</span><span class="n">filename</span><span class="p">)</span>
+    <span class="n">audio_chunks</span> <span class="o">=</span> <span class="n">split_on_silence</span><span class="p">(</span>
+        <span class="n">long_audio</span><span class="p">,</span> <span class="n">min_silence_len</span><span class="o">=</span><span class="mi">1800</span><span class="p">,</span>
+        <span class="n">silence_thresh</span><span class="o">=-</span><span class="mi">17</span>
+    <span class="p">)</span>
+    <span class="k">return</span> <span class="n">audio_chunks</span>
+
+<span class="k">for</span> <span class="n">audio_chunk</span> <span class="ow">in</span> <span class="n">load_chunks</span><span class="p">(</span><span class="s1">&#39;./sample_audio/long_audio.mp3&#39;</span><span class="p">):</span>
+    <span class="n">audio_chunk</span><span class="o">.</span><span class="n">export</span><span class="p">(</span><span class="s2">&quot;temp&quot;</span><span class="p">,</span> <span class="nb">format</span><span class="o">=</span><span class="s2">&quot;wav&quot;</span><span class="p">)</span>
+    <span class="k">with</span> <span class="n">sr</span><span class="o">.</span><span class="n">AudioFile</span><span class="p">(</span><span class="s2">&quot;temp&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">source</span><span class="p">:</span>
+        <span class="n">audio</span> <span class="o">=</span> <span class="n">recognizer</span><span class="o">.</span><span class="n">listen</span><span class="p">(</span><span class="n">source</span><span class="p">)</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="n">text</span> <span class="o">=</span> <span class="n">recognizer</span><span class="o">.</span><span class="n">recognize_google</span><span class="p">(</span><span class="n">audio</span><span class="p">)</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Chunk : </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">text</span><span class="p">))</span>
+        <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">ex</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Error occured&quot;</span><span class="p">)</span>
+            <span class="nb">print</span><span class="p">(</span><span class="n">ex</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;++++++&quot;</span><span class="p">)</span>
+</code></pre></div>
+
+<p>from: <a href="https://hackernoon.com/how-to-convert-speech-to-text-in-python-q0263tzp" target="_blank">https://hackernoon.com/how-to-convert-speech-to-text-in-python-q0263tzp</a>   </p>
+<p>Getting <code>pydub.exceptions.CouldntDecodeError: Decoding failed. ffmpeg returned error code: 1</code>.<br>
+Need to use <code>AudioSegment.from_file(filename, "m4a")</code>?  </p>
+<div class="highlight"><pre><span></span><code><span class="c1"># importing libraries </span>
+<span class="kn">import</span> <span class="nn">speech_recognition</span> <span class="k">as</span> <span class="nn">sr</span> 
+<span class="kn">import</span> <span class="nn">os</span> 
+<span class="kn">from</span> <span class="nn">pydub</span> <span class="kn">import</span> <span class="n">AudioSegment</span>
+<span class="kn">from</span> <span class="nn">pydub.silence</span> <span class="kn">import</span> <span class="n">split_on_silence</span>
+
+<span class="c1"># create a speech recognition object</span>
+<span class="n">r</span> <span class="o">=</span> <span class="n">sr</span><span class="o">.</span><span class="n">Recognizer</span><span class="p">()</span>
+
+<span class="c1"># a function that splits the audio file into chunks</span>
+<span class="c1"># and applies speech recognition</span>
+<span class="k">def</span> <span class="nf">get_large_audio_transcription</span><span class="p">(</span><span class="n">path</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Splitting the large audio file into chunks</span>
+<span class="sd">    and apply speech recognition on each of these chunks</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="c1"># open the audio file using pydub</span>
+    <span class="n">sound</span> <span class="o">=</span> <span class="n">AudioSegment</span><span class="o">.</span><span class="n">from_wav</span><span class="p">(</span><span class="n">path</span><span class="p">)</span>  
+    <span class="c1"># split audio sound where silence is 700 miliseconds or more and get chunks</span>
+    <span class="n">chunks</span> <span class="o">=</span> <span class="n">split_on_silence</span><span class="p">(</span><span class="n">sound</span><span class="p">,</span>
+        <span class="c1"># experiment with this value for your target audio file</span>
+        <span class="n">min_silence_len</span> <span class="o">=</span> <span class="mi">500</span><span class="p">,</span>
+        <span class="c1"># adjust this per requirement</span>
+        <span class="n">silence_thresh</span> <span class="o">=</span> <span class="n">sound</span><span class="o">.</span><span class="n">dBFS</span><span class="o">-</span><span class="mi">14</span><span class="p">,</span>
+        <span class="c1"># keep the silence for 1 second, adjustable as well</span>
+        <span class="n">keep_silence</span><span class="o">=</span><span class="mi">500</span><span class="p">,</span>
+    <span class="p">)</span>
+    <span class="n">folder_name</span> <span class="o">=</span> <span class="s2">&quot;audio-chunks&quot;</span>
+    <span class="c1"># create a directory to store the audio chunks</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">isdir</span><span class="p">(</span><span class="n">folder_name</span><span class="p">):</span>
+        <span class="n">os</span><span class="o">.</span><span class="n">mkdir</span><span class="p">(</span><span class="n">folder_name</span><span class="p">)</span>
+    <span class="n">whole_text</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span>
+    <span class="c1"># process each chunk </span>
+    <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">audio_chunk</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">chunks</span><span class="p">,</span> <span class="n">start</span><span class="o">=</span><span class="mi">1</span><span class="p">):</span>
+        <span class="c1"># export audio chunk and save it in</span>
+        <span class="c1"># the `folder_name` directory.</span>
+        <span class="n">chunk_filename</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">folder_name</span><span class="p">,</span> <span class="sa">f</span><span class="s2">&quot;chunk</span><span class="si">{</span><span class="n">i</span><span class="si">}</span><span class="s2">.wav&quot;</span><span class="p">)</span>
+        <span class="n">audio_chunk</span><span class="o">.</span><span class="n">export</span><span class="p">(</span><span class="n">chunk_filename</span><span class="p">,</span> <span class="nb">format</span><span class="o">=</span><span class="s2">&quot;wav&quot;</span><span class="p">)</span>
+        <span class="c1"># recognize the chunk</span>
+        <span class="k">with</span> <span class="n">sr</span><span class="o">.</span><span class="n">AudioFile</span><span class="p">(</span><span class="n">chunk_filename</span><span class="p">)</span> <span class="k">as</span> <span class="n">source</span><span class="p">:</span>
+            <span class="n">audio_listened</span> <span class="o">=</span> <span class="n">r</span><span class="o">.</span><span class="n">record</span><span class="p">(</span><span class="n">source</span><span class="p">)</span>
+            <span class="c1"># try converting it to text</span>
+            <span class="k">try</span><span class="p">:</span>
+                <span class="n">text</span> <span class="o">=</span> <span class="n">r</span><span class="o">.</span><span class="n">recognize_google</span><span class="p">(</span><span class="n">audio_listened</span><span class="p">)</span>
+            <span class="k">except</span> <span class="n">sr</span><span class="o">.</span><span class="n">UnknownValueError</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+                <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Error:&quot;</span><span class="p">,</span> <span class="nb">str</span><span class="p">(</span><span class="n">e</span><span class="p">))</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">text</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">text</span><span class="o">.</span><span class="n">capitalize</span><span class="p">()</span><span class="si">}</span><span class="s2">. &quot;</span>
+                <span class="nb">print</span><span class="p">(</span><span class="n">chunk_filename</span><span class="p">,</span> <span class="s2">&quot;:&quot;</span><span class="p">,</span> <span class="n">text</span><span class="p">)</span>
+                <span class="n">whole_text</span> <span class="o">+=</span> <span class="n">text</span>
+    <span class="c1"># return the text for all chunks detected</span>
+    <span class="k">return</span> <span class="n">whole_text</span>
+</code></pre></div>
+
+<p>from : <a href="https://www.thepythoncode.com/article/using-speech-recognition-to-convert-speech-to-text-python" target="_blank">https://www.thepythoncode.com/article/using-speech-recognition-to-convert-speech-to-text-python</a> </p>
+<h2 id="python-script-to-convert-m4a-files-to-wav-files">Python script to convert m4a files to wav files</h2>
+<script src="https://gist.github.com/arjunsharma97/0ecac61da2937ec52baf61af1aa1b759.js"></script>
+
+<p><span class="datestamp">18 Sep 2022</span> Let's try to focus first on conversion to <code>.wav</code> and then tackle speech-recognition.  </p>
+<h1 id="resources">Resources</h1>
+<div class="link_border"><div class="link_logo_box"><img class="link_logo" src="https://logo.clearbit.com/pythonbasics.org?size=35" alt="logo"/></div><div class="link_content">
+<div class="link_title">Transcribe Audio | Python Tutorial</div>
+<div class="link_tagline">pythonbasics.org</div>
+<div class="link_url"><a href="https://pythonbasics.org/transcribe-audio" target="_blank">https://pythonbasics.org/transcribe-audio</a></div></div></div>
+
+<div class="link_border"><div class="link_logo_box"><img class="link_logo" src="https://logo.clearbit.com/fullstackpython.com?size=35" alt="logo"/></div><div class="link_content">
+<div class="link_title">How to Transcribe Speech Recordings into Text with Python - Full Stack Python</div>
+<div class="link_tagline">fullstackpython.com</div>
+<div class="link_url"><a href="https://www.fullstackpython.com/blog/transcribe-recordings-speech-text-assemblyai.html" target="_blank">https://www.fullstackpython.com/blog/transcribe-recordings-speech-text-assemblyai.html</a></div></div></div>
+
+<ul>
+<li>requires an AssemblyAI account.  </li>
+</ul>
+<div class="link_border"><div class="link_logo_box"><img class="link_logo" src="https://logo.clearbit.com/stackoverflow.com?size=35" alt="logo"/></div><div class="link_content">
+<div class="link_title">How can I transcribe a speech file with the Bing Speech API in Python? - Stack Overflow</div>
+<div class="link_tagline">stackoverflow.com</div>
+<div class="link_url"><a href="https://stackoverflow.com/questions/47344310/how-can-i-transcribe-a-speech-file-with-the-bing-speech-api-in-python" target="_blank">https://stackoverflow.com/questions/47344310/how-can-i-transcribe-a-speech-file-with-the-bing-speech-api-in-python</a></div></div></div>
+
+<ul>
+<li>The files need to be stored on Azure Blob Storage first    </li>
+<li>need to build a websocket for it as it the other alternative within bing for large audio files    </li>
+</ul>
+<div class="link_border"><div class="link_logo_box"><img class="link_logo" src="https://logo.clearbit.com/hackernoon.com?size=35" alt="logo"/></div><div class="link_content">
+<div class="link_title">How to Convert Speech to Text in Python</div>
+<div class="link_tagline">hackernoon.com</div>
+<div class="link_url"><a href="https://hackernoon.com/how-to-convert-speech-to-text-in-python-q0263tzp" target="_blank">https://hackernoon.com/how-to-convert-speech-to-text-in-python-q0263tzp</a></div></div></div>
+
+<ul>
+<li>SpeechRecognition library allows you to perform speech recognition with support for several engines and APIs, online and offline.  </li>
+</ul>
+                </article>
+            </aside>
+
+                <section id="content" class="body">
+
+                <!-- PREVIOUS NOTES -->
+				<p class="notes-section">previous notes</p>
+                <hr>
+
+                <ol id="posts-list" class="hfeed">
+            
+
+
+
+            <li>
+                <article class="hentry">
+                    <header>
+                        <!-- PREVIOUS NOTE TITLE -->
+                        <h1><a href="https://notes.nicolasdeville.com/projects/imagee" rel="bookmark"
+                            title="Imagee">Imagee</a></h1>
+                        <!-- PREVIOUS NOTE SUMMARY -->
+                        <div class="entry-content">
+                            <p>collection of scripts for image processing</p>
+                        </div>
+                    </header>
+
+                    <div class="entry-content">
+                        <!-- PREVIOUS NOTE METADATA -->
 <footer class="post-info">
 
     <p>
@@ -126,19 +326,11 @@
 
     
 
-</footer><p><span class="datestamp">21 Sep 2022</span>   </p>
-<p>Need to test TinyPNG's API:   </p>
-<p>[<a href="../../helpers/api-tinify/index.html">Nic Note: Tinify API</a>]</p>
+</footer>                    </div>
+                    
                 </article>
-            </aside>
-
-                <section id="content" class="body">
-
-                <!-- PREVIOUS NOTES -->
-				<p class="notes-section">previous notes</p>
-                <hr>
-
-                <ol id="posts-list" class="hfeed">
+                <hr/>
+            </li>
             
 
 
@@ -303,8 +495,8 @@
     </p>
 
     Translations:
-        <a href="https://notes.nicolasdeville.com/interests/ai" hreflang="en">en</a>
         <a href="https://notes.nicolasdeville.com/random/ai" hreflang="en">en</a>
+        <a href="https://notes.nicolasdeville.com/interests/ai" hreflang="en">en</a>
 
 
 </footer>                    </div>
@@ -509,47 +701,6 @@
         <!-- added 4/7 -->
         <!-- 		<br />
         <abbr class="modified" title="2022-09-19T16:20:14.846278+02:00">
-                Updated: 19 Sep 2022
-        </abbr>
- -->
-
-    </p>
-
-    
-
-</footer>                    </div>
-                    
-                </article>
-                <hr/>
-            </li>
-            
-
-
-
-            <li>
-                <article class="hentry">
-                    <header>
-                        <!-- PREVIOUS NOTE TITLE -->
-                        <h1><a href="https://notes.nicolasdeville.com/projects/recordee" rel="bookmark"
-                            title="Recordee">Recordee</a></h1>
-                        <!-- PREVIOUS NOTE SUMMARY -->
-                        <div class="entry-content">
-                            <p>End-to-end automated workflow from voice recording to markdown note.</p>
-                        </div>
-                    </header>
-
-                    <div class="entry-content">
-                        <!-- PREVIOUS NOTE METADATA -->
-<footer class="post-info">
-
-    <p>
-        19 Sep 2022 <span class="separator">|</span> in <a class="link_tag" href="https://notes.nicolasdeville.com/projects/">projects</a>
- tags: <a class="link_tag" href="https://notes.nicolasdeville.com/tag/python.html">python</a>
-<a class="link_tag" href="https://notes.nicolasdeville.com/tag/automation.html">automation</a>
-
-        <!-- added 4/7 -->
-        <!-- 		<br />
-        <abbr class="modified" title="2022-09-19T15:53:22.031480+02:00">
                 Updated: 19 Sep 2022
         </abbr>
  -->

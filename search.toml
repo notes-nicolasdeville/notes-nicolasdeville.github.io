@@ -8,6 +8,56 @@ url = "/ABOUT/"
 title = ""
 
 [[input.files]]
+path = "ai/art/index.html"
+url = "/ai/art"
+title = "AI-generated art"
+
+[[input.files]]
+path = "ai/services/index.html"
+url = "/ai/services"
+title = "Exciting AI services"
+
+[[input.files]]
+path = "ai/questions/index.html"
+url = "/ai/questions"
+title = "AI questions"
+
+[[input.files]]
+path = "ai/whisper/index.html"
+url = "/ai/whisper"
+title = "Whisper"
+
+[[input.files]]
+path = "ai/dall-e/index.html"
+url = "/ai/dall-e"
+title = "Dall-E"
+
+[[input.files]]
+path = "home-office/streamdeck/index.html"
+url = "/home-office/streamdeck"
+title = "Streamdeck for business users"
+
+[[input.files]]
+path = "projects/recordee/index.html"
+url = "/projects/recordee"
+title = "Recordee"
+
+[[input.files]]
+path = "home-office/monitors/index.html"
+url = "/home-office/monitors"
+title = "Monitors"
+
+[[input.files]]
+path = "home-office/desk/index.html"
+url = "/home-office/desk"
+title = "Standing desk: Leetdesk"
+
+[[input.files]]
+path = "helpers/keyboard-shortcuts/index.html"
+url = "/helpers/keyboard-shortcuts"
+title = "My keyboard shortcuts"
+
+[[input.files]]
 path = "python/library-pelican/index.html"
 url = "/python/library-pelican"
 title = "Building a static site with Pelican"
@@ -21,11 +71,6 @@ title = "Fig"
 path = "apps/alfred/index.html"
 url = "/apps/alfred"
 title = "Alfred"
-
-[[input.files]]
-path = "helpers/keyboard-shortcuts/index.html"
-url = "/helpers/keyboard-shortcuts"
-title = "My keyboard shortcuts"
 
 [[input.files]]
 path = "home-office/shopping/index.html"
@@ -241,11 +286,6 @@ title = "API: Tinify (TinyPNG)"
 path = "projects/pingee/index.html"
 url = "/projects/pingee"
 title = "Pingee"
-
-[[input.files]]
-path = "projects/recordee/index.html"
-url = "/projects/recordee"
-title = "Recordee"
 
 [[input.files]]
 path = "startups/advisable/index.html"
@@ -723,11 +763,6 @@ url = "/python/namedtuples"
 title = "namedtuples"
 
 [[input.files]]
-path = "home-office/streamdeck/index.html"
-url = "/home-office/streamdeck"
-title = "Streamdeck for business users"
-
-[[input.files]]
 path = "python/library-re/index.html"
 url = "/python/library-re"
 title = "Library: re (regex)"
@@ -756,11 +791,6 @@ title = "my-utils"
 path = "python/library-notion-py/index.html"
 url = "/python/library-notion-py"
 title = "Fetching data from Notion API with Python"
-
-[[input.files]]
-path = "home-office/desk/index.html"
-url = "/home-office/desk"
-title = "Standing desk: Leetdesk"
 
 [[input.files]]
 path = "learning/basketball/index.html"
@@ -2028,6 +2058,11 @@ url = "/helpers/clipper"
 title = "My web clipboard"
 
 [[input.files]]
+path = "random/ai/index.html"
+url = "/random/ai"
+title = "AI"
+
+[[input.files]]
 path = "learning/ai/index.html"
 url = "/learning/ai"
 title = "Learning AI"
@@ -2040,11 +2075,6 @@ title = "AI"
 [[input.files]]
 path = "interests/ai/index.html"
 url = "/interests/ai"
-title = "AI"
-
-[[input.files]]
-path = "random/ai/index.html"
-url = "/random/ai"
 title = "AI"
 
 [[input.files]]
@@ -2078,14 +2108,14 @@ url = "/apps/library"
 title = "My Apps Library"
 
 [[input.files]]
-path = "interests/ai/index.html"
-url = "/interests/ai"
-title = "AI"
-
-[[input.files]]
 path = "learning/ai/index.html"
 url = "/learning/ai"
 title = "Learning AI"
+
+[[input.files]]
+path = "interests/ai/index.html"
+url = "/interests/ai"
+title = "AI"
 
 [[input.files]]
 path = "home-office/deep-work/index.html"
