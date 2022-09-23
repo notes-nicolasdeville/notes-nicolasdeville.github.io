@@ -43,7 +43,7 @@
             </div>
 
             <div class="above-navbar">
-                <div class="last_updated">23 Sep 2022 | 08:59</div>
+                <div class="last_updated">23 Sep 2022 | 17:21</div>
                 <div>
                     <p class="notes_count">
                         <a href="https://notes.nicolasdeville.com/tags">by tags</a> 
@@ -54,7 +54,7 @@
                         <span style="color:#C74350">|</span>
                         <a href="https://notes.nicolasdeville.com/2022/">2022</a> 
                         <span style="color:#C74350">|</span> 
-                        402 notes
+                        403 notes
                     </p>
                 </div>
             </div>
@@ -98,13 +98,13 @@
 <footer class="post-info">
 
     <p>
-        19 Sep 2022 <span class="separator">|</span> in <a class="link_tag" href="https://notes.nicolasdeville.com/python/">python</a>
+        23 Sep 2022 <span class="separator">|</span> in <a class="link_tag" href="https://notes.nicolasdeville.com/python/">python</a>
  tags: <a class="link_tag" href="https://notes.nicolasdeville.com/tag/static.html">static</a>
 
         <!-- added 4/7 -->
         <!-- 		<br />
-        <abbr class="modified" title="2022-09-19T15:39:58.102925+02:00">
-                Updated: 19 Sep 2022
+        <abbr class="modified" title="2022-09-23T17:21:56.152372+02:00">
+                Updated: 23 Sep 2022
         </abbr>
  -->
 
@@ -116,7 +116,10 @@
                 <div class="toc"><span class="toctitle">Table of Contents</span><ul>
 <li><a href="#install">Install</a></li>
 <li><a href="#to-render">To render</a><ul>
-<li><a href="#run-once">run once</a></li>
+<li><a href="#run-once">run once</a><ul>
+<li><a href="#warnings">warnings</a></li>
+</ul>
+</li>
 <li><a href="#keeping-it-running-in-the-background-ongoing">keeping it running in the background, ongoing</a></li>
 <li><a href="#what-tripped-me-up">What tripped me up</a><ul>
 <li><a href="#paths">paths</a></li>
@@ -211,6 +214,46 @@ pages and <span class="m">0</span> draft pages <span class="k">in</span> <span c
 <li><code>cd</code> to <code>notes</code> folder (your name may vary)</li>
 <li><code>pelican</code>  </li>
 </ol>
+<h4 id="warnings">warnings</h4>
+<p><span class="datestamp">23 Sep 2022</span> now with 400+ notes, and a URL structure with redundant article slugs, eg:   </p>
+<ul>
+<li><code>books/library</code>  </li>
+<li><code>apps/library</code>  </li>
+</ul>
+<p>or   </p>
+<ul>
+<li><code>books/deep-work</code>  </li>
+<li><code>home-office/deep-work</code>   </li>
+</ul>
+<p>I have many warnings printed while publishing, which is annoying:  </p>
+<p><img class="screenshot" src="https://notes.nicolasdeville.com/images/library-pelican/library-pelican-warnings-1.jpg" alt="library-pelican/library-pelican-warnings-1.jpg"/>  </p>
+<p>Trying this :  <a href="https://docs.getpelican.com/en/latest/settings.html?highlight=warnings#logging" target="_blank">https://docs.getpelican.com/en/latest/settings.html?highlight=warnings#logging</a>.  </p>
+<p>with example:   </p>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">logging</span>
+<span class="n">LOG_FILTER</span> <span class="o">=</span> <span class="p">[(</span><span class="n">logging</span><span class="o">.</span><span class="n">WARN</span><span class="p">,</span> <span class="s1">&#39;TAG_SAVE_AS is set to False&#39;</span><span class="p">)]</span>
+</code></pre></div>
+
+<p>Source code where the warning is initiated:   </p>
+<div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">get_original_items</span><span class="p">(</span><span class="n">items</span><span class="p">,</span> <span class="n">with_str</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">_warn_source_paths</span><span class="p">(</span><span class="n">msg</span><span class="p">,</span> <span class="n">items</span><span class="p">,</span> <span class="o">*</span><span class="n">extra</span><span class="p">):</span>
+        <span class="n">args</span> <span class="o">=</span> <span class="p">[</span><span class="nb">len</span><span class="p">(</span><span class="n">items</span><span class="p">)]</span>
+        <span class="n">args</span><span class="o">.</span><span class="n">extend</span><span class="p">(</span><span class="n">extra</span><span class="p">)</span>
+        <span class="n">args</span><span class="o">.</span><span class="n">extend</span><span class="p">(</span><span class="n">x</span><span class="o">.</span><span class="n">source_path</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">items</span><span class="p">)</span>
+        <span class="n">logger</span><span class="o">.</span><span class="n">warning</span><span class="p">(</span><span class="s1">&#39;</span><span class="si">{}</span><span class="s1">: </span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">msg</span><span class="p">,</span> <span class="s1">&#39;</span><span class="se">\n</span><span class="si">%s</span><span class="s1">&#39;</span> <span class="o">*</span> <span class="nb">len</span><span class="p">(</span><span class="n">items</span><span class="p">)),</span> <span class="o">*</span><span class="n">args</span><span class="p">)</span>
+
+    <span class="c1"># warn if several items have the same lang</span>
+    <span class="k">for</span> <span class="n">lang</span><span class="p">,</span> <span class="n">lang_items</span> <span class="ow">in</span> <span class="n">groupby</span><span class="p">(</span><span class="n">items</span><span class="p">,</span> <span class="n">attrgetter</span><span class="p">(</span><span class="s1">&#39;lang&#39;</span><span class="p">)):</span>
+        <span class="n">lang_items</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">lang_items</span><span class="p">)</span>
+        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">lang_items</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">:</span>
+            <span class="n">_warn_source_paths</span><span class="p">(</span><span class="s1">&#39;There are </span><span class="si">%s</span><span class="s1"> items &quot;</span><span class="si">%s</span><span class="s1">&quot; with lang </span><span class="si">%s</span><span class="s1">&#39;</span><span class="p">,</span>
+                               <span class="n">lang_items</span><span class="p">,</span> <span class="n">with_str</span><span class="p">,</span> <span class="n">lang</span><span class="p">)</span>
+</code></pre></div>
+
+<p>from: <a href="https://github.com/getpelican/pelican/blob/d5d792060cd5e4c3ff6da82359589b990fa83f27/pelican/utils.py" target="_blank">https://github.com/getpelican/pelican/blob/d5d792060cd5e4c3ff6da82359589b990fa83f27/pelican/utils.py</a>.  </p>
+<p>Not working:  </p>
+<div class="highlight"><pre><span></span><code><span class="n">LOG_FILTER</span> <span class="o">=</span> <span class="p">[(</span><span class="n">logging</span><span class="o">.</span><span class="n">WARN</span><span class="p">,</span> <span class="s1">&#39;There are </span><span class="si">%s</span><span class="s1"> items &quot;</span><span class="si">%s</span><span class="s1">&quot; with lang </span><span class="si">%s</span><span class="s1">&#39;</span><span class="p">)]</span>
+</code></pre></div>
+
 <h3 id="keeping-it-running-in-the-background-ongoing">keeping it running in the background, ongoing</h3>
 <p>best for development:</p>
 <p><code>pelican -r</code> (for reload) instead of just <code>pelican</code></p>

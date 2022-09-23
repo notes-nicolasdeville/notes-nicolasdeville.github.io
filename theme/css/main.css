@@ -5,11 +5,20 @@
 
 /* Global variables */
 :root {
-    --nic_red: #C64350;
+    /* --nic_red: #C64350; */
     --nic_main: #000305;
+    --nic_red: #d9534f;
+    --nic_blue: #0275d8;
+    --nic_green: #5cb85c;
+    --nic_yellow: #f0ad4e;
 }
 
 ::selection {
+    background: var(--nic_red);
+    text-shadow: none;
+    color: #fff;
+}
+::-moz-selection { /* Gecko Browsers */
     background: var(--nic_red);
     text-shadow: none;
     color: #fff;

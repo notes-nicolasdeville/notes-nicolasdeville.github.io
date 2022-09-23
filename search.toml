@@ -8,6 +8,21 @@ url = "/ABOUT/"
 title = ""
 
 [[input.files]]
+path = "python/library-pelican/index.html"
+url = "/python/library-pelican"
+title = "Building a static site with Pelican"
+
+[[input.files]]
+path = "apps/fig/index.html"
+url = "/apps/fig"
+title = "Fig"
+
+[[input.files]]
+path = "apps/alfred/index.html"
+url = "/apps/alfred"
+title = "Alfred"
+
+[[input.files]]
 path = "helpers/keyboard-shortcuts/index.html"
 url = "/helpers/keyboard-shortcuts"
 title = "My keyboard shortcuts"
@@ -143,11 +158,6 @@ url = "/learning/html"
 title = "Learning HTML"
 
 [[input.files]]
-path = "apps/alfred/index.html"
-url = "/apps/alfred"
-title = "Alfred"
-
-[[input.files]]
 path = "home-office/unifi/index.html"
 url = "/home-office/unifi"
 title = "Unifi Network"
@@ -256,11 +266,6 @@ title = "Sending emails with Python"
 path = "python/python-notion/index.html"
 url = "/python/python-notion"
 title = "Fetch Notion database data with Python"
-
-[[input.files]]
-path = "python/library-pelican/index.html"
-url = "/python/library-pelican"
-title = "Building a static site with Pelican"
 
 [[input.files]]
 path = "python/create-executable/index.html"
@@ -2073,14 +2078,14 @@ url = "/apps/library"
 title = "My Apps Library"
 
 [[input.files]]
-path = "learning/ai/index.html"
-url = "/learning/ai"
-title = "Learning AI"
-
-[[input.files]]
 path = "interests/ai/index.html"
 url = "/interests/ai"
 title = "AI"
+
+[[input.files]]
+path = "learning/ai/index.html"
+url = "/learning/ai"
+title = "Learning AI"
 
 [[input.files]]
 path = "home-office/deep-work/index.html"
