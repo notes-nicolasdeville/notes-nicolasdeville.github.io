@@ -8,9 +8,24 @@ url = "/ABOUT/"
 title = ""
 
 [[input.files]]
+path = "interests/elon/index.html"
+url = "/interests/elon"
+title = "Elon Musk"
+
+[[input.files]]
+path = "interests/starlink/index.html"
+url = "/interests/starlink"
+title = "Starlink"
+
+[[input.files]]
 path = "ai/art/index.html"
 url = "/ai/art"
 title = "AI-generated art"
+
+[[input.files]]
+path = "ai/whisper/index.html"
+url = "/ai/whisper"
+title = "Whisper"
 
 [[input.files]]
 path = "ai/services/index.html"
@@ -21,11 +36,6 @@ title = "Exciting AI services"
 path = "ai/questions/index.html"
 url = "/ai/questions"
 title = "AI questions"
-
-[[input.files]]
-path = "ai/whisper/index.html"
-url = "/ai/whisper"
-title = "Whisper"
 
 [[input.files]]
 path = "ai/dall-e/index.html"
@@ -776,11 +786,6 @@ title = "Library: openpyxl"
 path = "python/library-defaultdict/index.html"
 url = "/python/library-defaultdict"
 title = "Library: defaultdict"
-
-[[input.files]]
-path = "interests/elon/index.html"
-url = "/interests/elon"
-title = "Elon Musk"
 
 [[input.files]]
 path = "python/my-utils/index.html"
@@ -2108,14 +2113,14 @@ url = "/apps/library"
 title = "My Apps Library"
 
 [[input.files]]
-path = "learning/ai/index.html"
-url = "/learning/ai"
-title = "Learning AI"
-
-[[input.files]]
 path = "interests/ai/index.html"
 url = "/interests/ai"
 title = "AI"
+
+[[input.files]]
+path = "learning/ai/index.html"
+url = "/learning/ai"
+title = "Learning AI"
 
 [[input.files]]
 path = "home-office/deep-work/index.html"
