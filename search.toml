@@ -8,6 +8,16 @@ url = "/ABOUT/"
 title = ""
 
 [[input.files]]
+path = "helpers/keyboard-shortcuts/index.html"
+url = "/helpers/keyboard-shortcuts"
+title = "My keyboard shortcuts"
+
+[[input.files]]
+path = "home-office/shopping/index.html"
+url = "/home-office/shopping"
+title = "Shopping ideas for home office"
+
+[[input.files]]
 path = "projects/apps-library/index.html"
 url = "/projects/apps-library"
 title = "Project: Apps Library"
@@ -16,11 +26,6 @@ title = "Project: Apps Library"
 path = "leadership/comp-plans/index.html"
 url = "/leadership/comp-plans"
 title = "Compensation Plans"
-
-[[input.files]]
-path = "home-office/shopping/index.html"
-url = "/home-office/shopping"
-title = "Shopping ideas for home office"
 
 [[input.files]]
 path = "projects/notes/index.html"
@@ -41,11 +46,6 @@ title = "Emailee"
 path = "apps/grist/index.html"
 url = "/apps/grist"
 title = "Grist | The Evolution of Spreadsheets"
-
-[[input.files]]
-path = "helpers/keyboard-shortcuts/index.html"
-url = "/helpers/keyboard-shortcuts"
-title = "My keyboard shortcuts"
 
 [[input.files]]
 path = "apps/audirvana/index.html"
