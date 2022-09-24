@@ -42,7 +42,7 @@
             </div>
 
             <div class="above-navbar">
-                <div class="last_updated">24 Sep 2022 | 08:57</div>
+                <div class="last_updated">24 Sep 2022 | 11:17</div>
                 <div>
                     <p class="notes_count">
                         <a href="https://notes.nicolasdeville.com/tags">by tags</a> 
@@ -100,26 +100,25 @@
             <hr/>
 
                 <article class="hentry">
-                    <h1 class="entry-title"><a href="https://notes.nicolasdeville.com/python/library-pydub">Library: pydub</a></h1>
+                    <h1 class="entry-title"><a href="https://notes.nicolasdeville.com/python/library-defaultdict">Python Library: defaultdict</a></h1>
 
                     <!-- added 4/7 -->
                     <div>
                         <p class="header_summary">
-                            <p>Manipulate audio with an simple and easy high level interface.</p>
+                            <p>standard Python libraries useful when creating dicts</p>
                         </p>
                     </div>
 
 <footer class="post-info">
 
     <p>
-        18 Sep 2022 <span class="separator">|</span> in <a class="link_tag" href="https://notes.nicolasdeville.com/python/">python</a>
+        24 Sep 2022 <span class="separator">|</span> in <a class="link_tag" href="https://notes.nicolasdeville.com/python/">python</a>
  tags: <a class="link_tag" href="https://notes.nicolasdeville.com/tag/libraries.html">libraries</a>
-<a class="link_tag" href="https://notes.nicolasdeville.com/tag/snippets.html">snippets</a>
 
         <!-- added 4/7 -->
         <!-- 		<br />
-        <abbr class="modified" title="2022-09-18T19:27:18.444461+02:00">
-                Updated: 18 Sep 2022
+        <abbr class="modified" title="2022-09-24T10:28:36.714863+02:00">
+                Updated: 24 Sep 2022
         </abbr>
  -->
 
@@ -127,95 +126,58 @@
 
     
 
-</footer><p><span class="datestamp">18 Sep 2022</span>   </p>
-<table>
-<thead>
-<tr>
-<th>Library resources</th>
-<th></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>PyPI</td>
-<td><a href="https://pypi.org/project/pydub/" target="_blank">https://pypi.org/project/pydub/</a></td>
-</tr>
-<tr>
-<td>Homepage</td>
-<td><a href="http://pydub.com/" target="_blank">http://pydub.com/</a></td>
-</tr>
-<tr>
-<td>Github</td>
-<td><a href="https://github.com/jiaaro/pydub/" target="_blank">https://github.com/jiaaro/pydub/</a></td>
-</tr>
-<tr>
-<td>Documentation</td>
-<td>---</td>
-</tr>
-</tbody>
-</table>
-<div class="highlight"><pre><span></span><code>pip3 install pydub
+</footer><p><span class="datestamp">12 Aug 2022</span>        </p>
+<h1 id="resources">Resources</h1>
+<p><a href="https://realpython.com/python-defaultdict/" target="_blank">https://realpython.com/python-defaultdict/</a>  </p>
+<h2 id="grouping-items">Grouping items</h2>
+<div class="highlight"><pre><span></span><code><span class="n">dep</span> <span class="o">=</span> <span class="p">[(</span><span class="s1">&#39;Sales&#39;</span><span class="p">,</span> <span class="s1">&#39;John Doe&#39;</span><span class="p">),</span>
+       <span class="p">(</span><span class="s1">&#39;Sales&#39;</span><span class="p">,</span> <span class="s1">&#39;Martin Smith&#39;</span><span class="p">),</span>
+       <span class="p">(</span><span class="s1">&#39;Accounting&#39;</span><span class="p">,</span> <span class="s1">&#39;Jane Doe&#39;</span><span class="p">),</span>
+       <span class="p">(</span><span class="s1">&#39;Marketing&#39;</span><span class="p">,</span> <span class="s1">&#39;Elizabeth Smith&#39;</span><span class="p">),</span>
+       <span class="p">(</span><span class="s1">&#39;Marketing&#39;</span><span class="p">,</span> <span class="s1">&#39;Adam Doe&#39;</span><span class="p">)]</span>
+<span class="n">Now</span><span class="p">,</span> <span class="n">you</span> <span class="n">need</span> <span class="n">to</span> <span class="n">create</span> <span class="n">a</span> <span class="n">dictionary</span> <span class="n">that</span> <span class="n">groups</span> <span class="n">the</span> <span class="n">employees</span> <span class="n">by</span> <span class="n">department</span><span class="o">.</span> <span class="n">To</span> <span class="n">do</span> <span class="n">this</span><span class="p">,</span> <span class="n">you</span> <span class="n">can</span> <span class="n">use</span> <span class="n">a</span> <span class="n">defaultdict</span> <span class="k">as</span> <span class="n">follows</span><span class="p">:</span>
+
+<span class="kn">from</span> <span class="nn">collections</span> <span class="kn">import</span> <span class="n">defaultdict</span>
+
+<span class="n">dep_dd</span> <span class="o">=</span> <span class="n">defaultdict</span><span class="p">(</span><span class="nb">list</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">department</span><span class="p">,</span> <span class="n">employee</span> <span class="ow">in</span> <span class="n">dep</span><span class="p">:</span>
+    <span class="n">dep_dd</span><span class="p">[</span><span class="n">department</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">employee</span><span class="p">)</span>
 </code></pre></div>
 
-<h1 id="snippets">Snippets</h1>
-<h2 id="open-a-wav-file">open a WAV file</h2>
-<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">pydub</span> <span class="kn">import</span> <span class="n">AudioSegment</span>
+<h2 id="grouping-unique-items">Grouping UNIQUE items</h2>
+<div class="highlight"><pre><span></span><code><span class="n">dep</span> <span class="o">=</span> <span class="p">[(</span><span class="s1">&#39;Sales&#39;</span><span class="p">,</span> <span class="s1">&#39;John Doe&#39;</span><span class="p">),</span>
+       <span class="p">(</span><span class="s1">&#39;Sales&#39;</span><span class="p">,</span> <span class="s1">&#39;Martin Smith&#39;</span><span class="p">),</span>
+       <span class="p">(</span><span class="s1">&#39;Accounting&#39;</span><span class="p">,</span> <span class="s1">&#39;Jane Doe&#39;</span><span class="p">),</span>
+       <span class="p">(</span><span class="s1">&#39;Marketing&#39;</span><span class="p">,</span> <span class="s1">&#39;Elizabeth Smith&#39;</span><span class="p">),</span>
+       <span class="p">(</span><span class="s1">&#39;Marketing&#39;</span><span class="p">,</span> <span class="s1">&#39;Elizabeth Smith&#39;</span><span class="p">),</span>
+       <span class="p">(</span><span class="s1">&#39;Marketing&#39;</span><span class="p">,</span> <span class="s1">&#39;Adam Doe&#39;</span><span class="p">),</span>
+       <span class="p">(</span><span class="s1">&#39;Marketing&#39;</span><span class="p">,</span> <span class="s1">&#39;Adam Doe&#39;</span><span class="p">),</span>
+       <span class="p">(</span><span class="s1">&#39;Marketing&#39;</span><span class="p">,</span> <span class="s1">&#39;Adam Doe&#39;</span><span class="p">)]</span>
 
-<span class="n">song</span> <span class="o">=</span> <span class="n">AudioSegment</span><span class="o">.</span><span class="n">from_wav</span><span class="p">(</span><span class="s2">&quot;never_gonna_give_you_up.wav&quot;</span><span class="p">)</span>
+<span class="n">dep_dd</span> <span class="o">=</span> <span class="n">defaultdict</span><span class="p">(</span><span class="nb">set</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">department</span><span class="p">,</span> <span class="n">employee</span> <span class="ow">in</span> <span class="n">dep</span><span class="p">:</span>
+    <span class="n">dep_dd</span><span class="p">[</span><span class="n">department</span><span class="p">]</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">employee</span><span class="p">)</span>
 </code></pre></div>
 
-<p>...or an mp3   </p>
-<div class="highlight"><pre><span></span><code><span class="n">song</span> <span class="o">=</span> <span class="n">AudioSegment</span><span class="o">.</span><span class="n">from_mp3</span><span class="p">(</span><span class="s2">&quot;never_gonna_give_you_up.mp3&quot;</span><span class="p">)</span>
-</code></pre></div>
+<h2 id="counting-items">Counting items</h2>
+<div class="highlight"><pre><span></span><code><span class="n">incomes</span> <span class="o">=</span> <span class="p">[(</span><span class="s1">&#39;Books&#39;</span><span class="p">,</span> <span class="mf">1250.00</span><span class="p">),</span>
+           <span class="p">(</span><span class="s1">&#39;Books&#39;</span><span class="p">,</span> <span class="mf">1300.00</span><span class="p">),</span>
+           <span class="p">(</span><span class="s1">&#39;Books&#39;</span><span class="p">,</span> <span class="mf">1420.00</span><span class="p">),</span>
+           <span class="p">(</span><span class="s1">&#39;Tutorials&#39;</span><span class="p">,</span> <span class="mf">560.00</span><span class="p">),</span>
+           <span class="p">(</span><span class="s1">&#39;Tutorials&#39;</span><span class="p">,</span> <span class="mf">630.00</span><span class="p">),</span>
+           <span class="p">(</span><span class="s1">&#39;Tutorials&#39;</span><span class="p">,</span> <span class="mf">750.00</span><span class="p">),</span>
+           <span class="p">(</span><span class="s1">&#39;Courses&#39;</span><span class="p">,</span> <span class="mf">2500.00</span><span class="p">),</span>
+           <span class="p">(</span><span class="s1">&#39;Courses&#39;</span><span class="p">,</span> <span class="mf">2430.00</span><span class="p">),</span>
+           <span class="p">(</span><span class="s1">&#39;Courses&#39;</span><span class="p">,</span> <span class="mf">2750.00</span><span class="p">),]</span>
 
-<p>... or an ogg, or flv, or anything else ffmpeg supports</p>
-<div class="highlight"><pre><span></span><code><span class="n">ogg_version</span> <span class="o">=</span> <span class="n">AudioSegment</span><span class="o">.</span><span class="n">from_ogg</span><span class="p">(</span><span class="s2">&quot;never_gonna_give_you_up.ogg&quot;</span><span class="p">)</span>
-<span class="n">flv_version</span> <span class="o">=</span> <span class="n">AudioSegment</span><span class="o">.</span><span class="n">from_flv</span><span class="p">(</span><span class="s2">&quot;never_gonna_give_you_up.flv&quot;</span><span class="p">)</span>
-<span class="n">mp4_version</span> <span class="o">=</span> <span class="n">AudioSegment</span><span class="o">.</span><span class="n">from_file</span><span class="p">(</span><span class="s2">&quot;never_gonna_give_you_up.mp4&quot;</span><span class="p">,</span> <span class="s2">&quot;mp4&quot;</span><span class="p">)</span>
-<span class="n">wma_version</span> <span class="o">=</span> <span class="n">AudioSegment</span><span class="o">.</span><span class="n">from_file</span><span class="p">(</span><span class="s2">&quot;never_gonna_give_you_up.wma&quot;</span><span class="p">,</span> <span class="s2">&quot;wma&quot;</span><span class="p">)</span>
-<span class="n">aac_version</span> <span class="o">=</span> <span class="n">AudioSegment</span><span class="o">.</span><span class="n">from_file</span><span class="p">(</span><span class="s2">&quot;never_gonna_give_you_up.aiff&quot;</span><span class="p">,</span> <span class="s2">&quot;aac&quot;</span><span class="p">)</span>
-</code></pre></div>
+<span class="kn">from</span> <span class="nn">collections</span> <span class="kn">import</span> <span class="n">defaultdict</span>
 
-<h2 id="slice-audio">Slice audio</h2>
-<h1 id="pydub-does-things-in-miliseconds">pydub does things in miliseconds</h1>
-<div class="highlight"><pre><span></span><code><span class="n">ten_seconds</span> <span class="o">=</span> <span class="mi">10</span> <span class="o">*</span> <span class="mi">1000</span>
+<span class="n">dd</span> <span class="o">=</span> <span class="n">defaultdict</span><span class="p">(</span><span class="nb">float</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">product</span><span class="p">,</span> <span class="n">income</span> <span class="ow">in</span> <span class="n">incomes</span><span class="p">:</span>
+    <span class="n">dd</span><span class="p">[</span><span class="n">product</span><span class="p">]</span> <span class="o">+=</span> <span class="n">income</span>
 
-<span class="n">first_10_seconds</span> <span class="o">=</span> <span class="n">song</span><span class="p">[:</span><span class="mi">10000</span><span class="p">]</span>
-
-<span class="n">last_5_seconds</span> <span class="o">=</span> <span class="n">song</span><span class="p">[</span><span class="o">-</span><span class="mi">5000</span><span class="p">:]</span>
-</code></pre></div>
-
-<h2 id="pydub-does-things-in-miliseconds_1">pydub does things in miliseconds</h2>
-<div class="highlight"><pre><span></span><code><span class="n">ten_seconds</span> <span class="o">=</span> <span class="mi">10</span> <span class="o">*</span> <span class="mi">1000</span>
-
-<span class="n">first_10_seconds</span> <span class="o">=</span> <span class="n">song</span><span class="p">[:</span><span class="mi">10000</span><span class="p">]</span>
-
-<span class="n">last_5_seconds</span> <span class="o">=</span> <span class="n">song</span><span class="p">[</span><span class="o">-</span><span class="mi">5000</span><span class="p">:]</span>
-</code></pre></div>
-
-<p>Need to install ffprobe for <code>.m4a</code> conversion. <br>
-➡️ [<a href="../../helpers/ffprobe/index.html">Nic Note: Installing ffmpeg and ffprobe on macOS manually</a>]   </p>
-<h2 id="convert-all-mp4-and-flv-files-in-a-folder-to-mp3">convert all mp4 and flv files in a folder to mp3</h2>
-<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">os</span>
-<span class="kn">import</span> <span class="nn">glob</span>
-<span class="kn">from</span> <span class="nn">pydub</span> <span class="kn">import</span> <span class="n">AudioSegment</span>
-
-<span class="n">video_dir</span> <span class="o">=</span> <span class="s1">&#39;/home/johndoe/downloaded_videos/&#39;</span>  <span class="c1"># Path where the videos are located</span>
-<span class="n">extension_list</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;*.mp4&#39;</span><span class="p">,</span> <span class="s1">&#39;*.flv&#39;</span><span class="p">)</span>
-
-<span class="n">os</span><span class="o">.</span><span class="n">chdir</span><span class="p">(</span><span class="n">video_dir</span><span class="p">)</span>
-<span class="k">for</span> <span class="n">extension</span> <span class="ow">in</span> <span class="n">extension_list</span><span class="p">:</span>
-    <span class="k">for</span> <span class="n">video</span> <span class="ow">in</span> <span class="n">glob</span><span class="o">.</span><span class="n">glob</span><span class="p">(</span><span class="n">extension</span><span class="p">):</span>
-        <span class="n">mp3_filename</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">splitext</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">basename</span><span class="p">(</span><span class="n">video</span><span class="p">))[</span><span class="mi">0</span><span class="p">]</span> <span class="o">+</span> <span class="s1">&#39;.mp3&#39;</span>
-        <span class="n">AudioSegment</span><span class="o">.</span><span class="n">from_file</span><span class="p">(</span><span class="n">video</span><span class="p">)</span><span class="o">.</span><span class="n">export</span><span class="p">(</span><span class="n">mp3_filename</span><span class="p">,</span> <span class="nb">format</span><span class="o">=</span><span class="s1">&#39;mp3&#39;</span><span class="p">)</span>
-</code></pre></div>
-
-<h2 id="how-to-convert-m4a-to-wav-using-pydub">How to convert m4a to wav using pydub</h2>
-<div class="highlight"><pre><span></span><code><span class="n">m4a_file</span> <span class="o">=</span> <span class="s1">&#39;20211210_151013.m4a&#39;</span>
-<span class="n">wav_filename</span> <span class="o">=</span> <span class="sa">r</span><span class="s2">&quot;F:\20211210_151013.wav&quot;</span>
-<span class="kn">from</span> <span class="nn">pydub</span> <span class="kn">import</span> <span class="n">AudioSegment</span>
-<span class="n">track</span> <span class="o">=</span> <span class="n">AudioSegment</span><span class="o">.</span><span class="n">from_file</span><span class="p">(</span><span class="n">m4a_file</span><span class="p">,</span>  <span class="nb">format</span><span class="o">=</span> <span class="s1">&#39;m4a&#39;</span><span class="p">)</span>
-<span class="n">file_handle</span> <span class="o">=</span> <span class="n">track</span><span class="o">.</span><span class="n">export</span><span class="p">(</span><span class="n">wav_filename</span><span class="p">,</span> <span class="nb">format</span><span class="o">=</span><span class="s1">&#39;wav&#39;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">product</span><span class="p">,</span> <span class="n">income</span> <span class="ow">in</span> <span class="n">dd</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Total income for </span><span class="si">{</span><span class="n">product</span><span class="si">}</span><span class="s1">: $</span><span class="si">{</span><span class="n">income</span><span class="si">:</span><span class="s1">,.2f</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
 </code></pre></div>
                 </article>
             </aside>
@@ -227,6 +189,537 @@
                 <hr>
 
                 <ol id="posts-list" class="hfeed">
+            
+
+
+
+            <li>
+                <article class="hentry">
+                    <header>
+                        <!-- PREVIOUS NOTE TITLE -->
+                        <h1><a href="https://notes.nicolasdeville.com/python/library-requests" rel="bookmark"
+                            title="Python Library: requests">Python Library: requests</a></h1>
+                        <!-- PREVIOUS NOTE SUMMARY -->
+                        <div class="entry-content">
+                            <p>Python HTTP for Humans. Requests is a simple, yet elegant HTTP library.</p>
+                        </div>
+                    </header>
+
+                    <div class="entry-content">
+                        <!-- PREVIOUS NOTE METADATA -->
+<footer class="post-info">
+
+    <p>
+        24 Sep 2022 <span class="separator">|</span> in <a class="link_tag" href="https://notes.nicolasdeville.com/python/">python</a>
+ tags: <a class="link_tag" href="https://notes.nicolasdeville.com/tag/libraries.html">libraries</a>
+
+        <!-- added 4/7 -->
+        <!-- 		<br />
+        <abbr class="modified" title="2022-09-24T10:28:36.714833+02:00">
+                Updated: 24 Sep 2022
+        </abbr>
+ -->
+
+    </p>
+
+    
+
+</footer>                    </div>
+                    
+                </article>
+                <hr/>
+            </li>
+            
+
+
+
+            <li>
+                <article class="hentry">
+                    <header>
+                        <!-- PREVIOUS NOTE TITLE -->
+                        <h1><a href="https://notes.nicolasdeville.com/python/library-pydub" rel="bookmark"
+                            title="Python Library: pydub">Python Library: pydub</a></h1>
+                        <!-- PREVIOUS NOTE SUMMARY -->
+                        <div class="entry-content">
+                            <p>Manipulate audio with an simple and easy high level interface.</p>
+                        </div>
+                    </header>
+
+                    <div class="entry-content">
+                        <!-- PREVIOUS NOTE METADATA -->
+<footer class="post-info">
+
+    <p>
+        24 Sep 2022 <span class="separator">|</span> in <a class="link_tag" href="https://notes.nicolasdeville.com/python/">python</a>
+ tags: <a class="link_tag" href="https://notes.nicolasdeville.com/tag/libraries.html">libraries</a>
+<a class="link_tag" href="https://notes.nicolasdeville.com/tag/snippets.html">snippets</a>
+
+        <!-- added 4/7 -->
+        <!-- 		<br />
+        <abbr class="modified" title="2022-09-24T10:28:36.714773+02:00">
+                Updated: 24 Sep 2022
+        </abbr>
+ -->
+
+    </p>
+
+    
+
+</footer>                    </div>
+                    
+                </article>
+                <hr/>
+            </li>
+            
+
+
+
+            <li>
+                <article class="hentry">
+                    <header>
+                        <!-- PREVIOUS NOTE TITLE -->
+                        <h1><a href="https://notes.nicolasdeville.com/python/library-re" rel="bookmark"
+                            title="Python Library: re (regex)">Python Library: re (regex)</a></h1>
+                        <!-- PREVIOUS NOTE SUMMARY -->
+                        <div class="entry-content">
+                            
+                        </div>
+                    </header>
+
+                    <div class="entry-content">
+                        <!-- PREVIOUS NOTE METADATA -->
+<footer class="post-info">
+
+    <p>
+        24 Sep 2022 <span class="separator">|</span> in <a class="link_tag" href="https://notes.nicolasdeville.com/python/">python</a>
+ tags: <a class="link_tag" href="https://notes.nicolasdeville.com/tag/libraries.html">libraries</a>
+
+        <!-- added 4/7 -->
+        <!-- 		<br />
+        <abbr class="modified" title="2022-09-24T10:28:36.714748+02:00">
+                Updated: 24 Sep 2022
+        </abbr>
+ -->
+
+    </p>
+
+    
+
+</footer>                    </div>
+                    
+                </article>
+                <hr/>
+            </li>
+            
+
+
+
+            <li>
+                <article class="hentry">
+                    <header>
+                        <!-- PREVIOUS NOTE TITLE -->
+                        <h1><a href="https://notes.nicolasdeville.com/python/library-send2trash" rel="bookmark"
+                            title="Python Library: Send2Trash">Python Library: Send2Trash</a></h1>
+                        <!-- PREVIOUS NOTE SUMMARY -->
+                        <div class="entry-content">
+                            <p>small package that sends files to the Trash (or Recycle Bin) natively and on all platforms</p>
+                        </div>
+                    </header>
+
+                    <div class="entry-content">
+                        <!-- PREVIOUS NOTE METADATA -->
+<footer class="post-info">
+
+    <p>
+        24 Sep 2022 <span class="separator">|</span> in <a class="link_tag" href="https://notes.nicolasdeville.com/python/">python</a>
+ tags: <a class="link_tag" href="https://notes.nicolasdeville.com/tag/libraries.html">libraries</a>
+
+        <!-- added 4/7 -->
+        <!-- 		<br />
+        <abbr class="modified" title="2022-09-24T10:28:36.714730+02:00">
+                Updated: 24 Sep 2022
+        </abbr>
+ -->
+
+    </p>
+
+    
+
+</footer>                    </div>
+                    
+                </article>
+                <hr/>
+            </li>
+            
+
+
+
+            <li>
+                <article class="hentry">
+                    <header>
+                        <!-- PREVIOUS NOTE TITLE -->
+                        <h1><a href="https://notes.nicolasdeville.com/python/library-slugify" rel="bookmark"
+                            title="Python Library: slugify">Python Library: slugify</a></h1>
+                        <!-- PREVIOUS NOTE SUMMARY -->
+                        <div class="entry-content">
+                            
+                        </div>
+                    </header>
+
+                    <div class="entry-content">
+                        <!-- PREVIOUS NOTE METADATA -->
+<footer class="post-info">
+
+    <p>
+        24 Sep 2022 <span class="separator">|</span> in <a class="link_tag" href="https://notes.nicolasdeville.com/python/">python</a>
+ tags: <a class="link_tag" href="https://notes.nicolasdeville.com/tag/libraries.html">libraries</a>
+<a class="link_tag" href="https://notes.nicolasdeville.com/tag/python.html">python</a>
+
+        <!-- added 4/7 -->
+        <!-- 		<br />
+        <abbr class="modified" title="2022-09-24T10:28:36.714710+02:00">
+                Updated: 24 Sep 2022
+        </abbr>
+ -->
+
+    </p>
+
+    
+
+</footer>                    </div>
+                    
+                </article>
+                <hr/>
+            </li>
+            
+
+
+
+            <li>
+                <article class="hentry">
+                    <header>
+                        <!-- PREVIOUS NOTE TITLE -->
+                        <h1><a href="https://notes.nicolasdeville.com/python/library-tmdbapis" rel="bookmark"
+                            title="Python Library: tmdbapis | fetching movie data">Python Library: tmdbapis | fetching movie data</a></h1>
+                        <!-- PREVIOUS NOTE SUMMARY -->
+                        <div class="entry-content">
+                            <p>Python wrapper for the TMDB API - themoviedb.org - with support for API v4</p>
+                        </div>
+                    </header>
+
+                    <div class="entry-content">
+                        <!-- PREVIOUS NOTE METADATA -->
+<footer class="post-info">
+
+    <p>
+        24 Sep 2022 <span class="separator">|</span> in <a class="link_tag" href="https://notes.nicolasdeville.com/python/">python</a>
+ tags: <a class="link_tag" href="https://notes.nicolasdeville.com/tag/python.html">python</a>
+<a class="link_tag" href="https://notes.nicolasdeville.com/tag/libraries.html">libraries</a>
+<a class="link_tag" href="https://notes.nicolasdeville.com/tag/scripts.html">scripts</a>
+<a class="link_tag" href="https://notes.nicolasdeville.com/tag/api.html">api</a>
+
+        <!-- added 4/7 -->
+        <!-- 		<br />
+        <abbr class="modified" title="2022-09-24T10:28:36.714656+02:00">
+                Updated: 24 Sep 2022
+        </abbr>
+ -->
+
+    </p>
+
+    
+
+</footer>                    </div>
+                    
+                </article>
+                <hr/>
+            </li>
+            
+
+
+
+            <li>
+                <article class="hentry">
+                    <header>
+                        <!-- PREVIOUS NOTE TITLE -->
+                        <h1><a href="https://notes.nicolasdeville.com/python/library-openpyxl" rel="bookmark"
+                            title="Python Library: openpyxl">Python Library: openpyxl</a></h1>
+                        <!-- PREVIOUS NOTE SUMMARY -->
+                        <div class="entry-content">
+                            <p>A Python library to read/write Excel 2010 xlsx/xlsm files</p>
+                        </div>
+                    </header>
+
+                    <div class="entry-content">
+                        <!-- PREVIOUS NOTE METADATA -->
+<footer class="post-info">
+
+    <p>
+        24 Sep 2022 <span class="separator">|</span> in <a class="link_tag" href="https://notes.nicolasdeville.com/python/">python</a>
+ tags: <a class="link_tag" href="https://notes.nicolasdeville.com/tag/libraries.html">libraries</a>
+
+        <!-- added 4/7 -->
+        <!-- 		<br />
+        <abbr class="modified" title="2022-09-24T10:28:36.714627+02:00">
+                Updated: 24 Sep 2022
+        </abbr>
+ -->
+
+    </p>
+
+    
+
+</footer>                    </div>
+                    
+                </article>
+                <hr/>
+            </li>
+            
+
+
+
+            <li>
+                <article class="hentry">
+                    <header>
+                        <!-- PREVIOUS NOTE TITLE -->
+                        <h1><a href="https://notes.nicolasdeville.com/python/library-imap-tools" rel="bookmark"
+                            title="Python Library: imap-tools">Python Library: imap-tools</a></h1>
+                        <!-- PREVIOUS NOTE SUMMARY -->
+                        <div class="entry-content">
+                            <p>High level lib for work with email by IMAP</p>
+                        </div>
+                    </header>
+
+                    <div class="entry-content">
+                        <!-- PREVIOUS NOTE METADATA -->
+<footer class="post-info">
+
+    <p>
+        24 Sep 2022 <span class="separator">|</span> in <a class="link_tag" href="https://notes.nicolasdeville.com/python/">python</a>
+ tags: <a class="link_tag" href="https://notes.nicolasdeville.com/tag/libraries.html">libraries</a>
+
+        <!-- added 4/7 -->
+        <!-- 		<br />
+        <abbr class="modified" title="2022-09-24T10:28:36.714602+02:00">
+                Updated: 24 Sep 2022
+        </abbr>
+ -->
+
+    </p>
+
+    
+
+</footer>                    </div>
+                    
+                </article>
+                <hr/>
+            </li>
+            
+
+
+
+            <li>
+                <article class="hentry">
+                    <header>
+                        <!-- PREVIOUS NOTE TITLE -->
+                        <h1><a href="https://notes.nicolasdeville.com/python/library-tmdbv3api" rel="bookmark"
+                            title="Python Library: tmdbv3api | fetching movie data">Python Library: tmdbv3api | fetching movie data</a></h1>
+                        <!-- PREVIOUS NOTE SUMMARY -->
+                        <div class="entry-content">
+                            <p>Python wrapper for the TMDB API - themoviedb.org</p>
+                        </div>
+                    </header>
+
+                    <div class="entry-content">
+                        <!-- PREVIOUS NOTE METADATA -->
+<footer class="post-info">
+
+    <p>
+        24 Sep 2022 <span class="separator">|</span> in <a class="link_tag" href="https://notes.nicolasdeville.com/python/">python</a>
+ tags: <a class="link_tag" href="https://notes.nicolasdeville.com/tag/python.html">python</a>
+<a class="link_tag" href="https://notes.nicolasdeville.com/tag/libraries.html">libraries</a>
+<a class="link_tag" href="https://notes.nicolasdeville.com/tag/scripts.html">scripts</a>
+<a class="link_tag" href="https://notes.nicolasdeville.com/tag/api.html">api</a>
+
+        <!-- added 4/7 -->
+        <!-- 		<br />
+        <abbr class="modified" title="2022-09-24T10:28:36.714575+02:00">
+                Updated: 24 Sep 2022
+        </abbr>
+ -->
+
+    </p>
+
+    
+
+</footer>                    </div>
+                    
+                </article>
+                <hr/>
+            </li>
+            
+
+
+
+            <li>
+                <article class="hentry">
+                    <header>
+                        <!-- PREVIOUS NOTE TITLE -->
+                        <h1><a href="https://notes.nicolasdeville.com/python/library-termtables" rel="bookmark"
+                            title="Python Library: termtables | Pretty tables in terminal">Python Library: termtables | Pretty tables in terminal</a></h1>
+                        <!-- PREVIOUS NOTE SUMMARY -->
+                        <div class="entry-content">
+                            
+                        </div>
+                    </header>
+
+                    <div class="entry-content">
+                        <!-- PREVIOUS NOTE METADATA -->
+<footer class="post-info">
+
+    <p>
+        24 Sep 2022 <span class="separator">|</span> in <a class="link_tag" href="https://notes.nicolasdeville.com/python/">python</a>
+ tags: <a class="link_tag" href="https://notes.nicolasdeville.com/tag/snippets.html">snippets</a>
+<a class="link_tag" href="https://notes.nicolasdeville.com/tag/libraries.html">libraries</a>
+
+        <!-- added 4/7 -->
+        <!-- 		<br />
+        <abbr class="modified" title="2022-09-24T10:28:36.714525+02:00">
+                Updated: 24 Sep 2022
+        </abbr>
+ -->
+
+    </p>
+
+    
+
+</footer>                    </div>
+                    
+                </article>
+                <hr/>
+            </li>
+            
+
+
+
+            <li>
+                <article class="hentry">
+                    <header>
+                        <!-- PREVIOUS NOTE TITLE -->
+                        <h1><a href="https://notes.nicolasdeville.com/python/library-sqlite3" rel="bookmark"
+                            title="Python Library: sqlite3">Python Library: sqlite3</a></h1>
+                        <!-- PREVIOUS NOTE SUMMARY -->
+                        <div class="entry-content">
+                            <p>built-in library for managing SQLite database</p>
+                        </div>
+                    </header>
+
+                    <div class="entry-content">
+                        <!-- PREVIOUS NOTE METADATA -->
+<footer class="post-info">
+
+    <p>
+        24 Sep 2022 <span class="separator">|</span> in <a class="link_tag" href="https://notes.nicolasdeville.com/python/">python</a>
+ tags: <a class="link_tag" href="https://notes.nicolasdeville.com/tag/libraries.html">libraries</a>
+
+        <!-- added 4/7 -->
+        <!-- 		<br />
+        <abbr class="modified" title="2022-09-24T10:28:36.714408+02:00">
+                Updated: 24 Sep 2022
+        </abbr>
+ -->
+
+    </p>
+
+    
+
+</footer>                    </div>
+                    
+                </article>
+                <hr/>
+            </li>
+            
+
+
+
+            <li>
+                <article class="hentry">
+                    <header>
+                        <!-- PREVIOUS NOTE TITLE -->
+                        <h1><a href="https://notes.nicolasdeville.com/python/library-yagmail" rel="bookmark"
+                            title="Python Library: Yagmail">Python Library: Yagmail</a></h1>
+                        <!-- PREVIOUS NOTE SUMMARY -->
+                        <div class="entry-content">
+                            <p>GMAIL/SMTP client that aims to make it as simple as possible to send emails.</p>
+                        </div>
+                    </header>
+
+                    <div class="entry-content">
+                        <!-- PREVIOUS NOTE METADATA -->
+<footer class="post-info">
+
+    <p>
+        24 Sep 2022 <span class="separator">|</span> in <a class="link_tag" href="https://notes.nicolasdeville.com/python/">python</a>
+ tags: <a class="link_tag" href="https://notes.nicolasdeville.com/tag/libraries.html">libraries</a>
+<a class="link_tag" href="https://notes.nicolasdeville.com/tag/automation.html">automation</a>
+
+        <!-- added 4/7 -->
+        <!-- 		<br />
+        <abbr class="modified" title="2022-09-24T10:28:36.692299+02:00">
+                Updated: 24 Sep 2022
+        </abbr>
+ -->
+
+    </p>
+
+    
+
+</footer>                    </div>
+                    
+                </article>
+                <hr/>
+            </li>
+            
+
+
+
+            <li>
+                <article class="hentry">
+                    <header>
+                        <!-- PREVIOUS NOTE TITLE -->
+                        <h1><a href="https://notes.nicolasdeville.com/python/library-pynput" rel="bookmark"
+                            title="Python Library: pynput">Python Library: pynput</a></h1>
+                        <!-- PREVIOUS NOTE SUMMARY -->
+                        <div class="entry-content">
+                            <p>control mouse and keyboard with Python</p>
+                        </div>
+                    </header>
+
+                    <div class="entry-content">
+                        <!-- PREVIOUS NOTE METADATA -->
+<footer class="post-info">
+
+    <p>
+        24 Sep 2022 <span class="separator">|</span> in <a class="link_tag" href="https://notes.nicolasdeville.com/python/">python</a>
+ tags: <a class="link_tag" href="https://notes.nicolasdeville.com/tag/libraries.html">libraries</a>
+<a class="link_tag" href="https://notes.nicolasdeville.com/tag/automation.html">automation</a>
+
+        <!-- added 4/7 -->
+        <!-- 		<br />
+        <abbr class="modified" title="2022-09-24T10:28:36.690334+02:00">
+                Updated: 24 Sep 2022
+        </abbr>
+ -->
+
+    </p>
+
+    
+
+</footer>                    </div>
+                    
+                </article>
+                <hr/>
+            </li>
             
 
 
@@ -276,46 +769,6 @@
                 <article class="hentry">
                     <header>
                         <!-- PREVIOUS NOTE TITLE -->
-                        <h1><a href="https://notes.nicolasdeville.com/python/library-send2trash" rel="bookmark"
-                            title="Library: Send2Trash">Library: Send2Trash</a></h1>
-                        <!-- PREVIOUS NOTE SUMMARY -->
-                        <div class="entry-content">
-                            <p>small package that sends files to the Trash (or Recycle Bin) natively and on all platforms</p>
-                        </div>
-                    </header>
-
-                    <div class="entry-content">
-                        <!-- PREVIOUS NOTE METADATA -->
-<footer class="post-info">
-
-    <p>
-        13 Sep 2022 <span class="separator">|</span> in <a class="link_tag" href="https://notes.nicolasdeville.com/python/">python</a>
- tags: <a class="link_tag" href="https://notes.nicolasdeville.com/tag/libraries.html">libraries</a>
-
-        <!-- added 4/7 -->
-        <!-- 		<br />
-        <abbr class="modified" title="2022-09-13T05:54:29.265757+02:00">
-                Updated: 13 Sep 2022
-        </abbr>
- -->
-
-    </p>
-
-    
-
-</footer>                    </div>
-                    
-                </article>
-                <hr/>
-            </li>
-            
-
-
-
-            <li>
-                <article class="hentry">
-                    <header>
-                        <!-- PREVIOUS NOTE TITLE -->
                         <h1><a href="https://notes.nicolasdeville.com/python/library-beautifulsoup" rel="bookmark"
                             title="Python library: Beautifulsoup">Python library: Beautifulsoup</a></h1>
                         <!-- PREVIOUS NOTE SUMMARY -->
@@ -337,329 +790,6 @@
         <!-- 		<br />
         <abbr class="modified" title="2022-09-12T22:28:29.125936+02:00">
                 Updated: 12 Sep 2022
-        </abbr>
- -->
-
-    </p>
-
-    
-
-</footer>                    </div>
-                    
-                </article>
-                <hr/>
-            </li>
-            
-
-
-
-            <li>
-                <article class="hentry">
-                    <header>
-                        <!-- PREVIOUS NOTE TITLE -->
-                        <h1><a href="https://notes.nicolasdeville.com/python/library-yagmail" rel="bookmark"
-                            title="Library: Yagmail">Library: Yagmail</a></h1>
-                        <!-- PREVIOUS NOTE SUMMARY -->
-                        <div class="entry-content">
-                            <p>GMAIL/SMTP client that aims to make it as simple as possible to send emails.</p>
-                        </div>
-                    </header>
-
-                    <div class="entry-content">
-                        <!-- PREVIOUS NOTE METADATA -->
-<footer class="post-info">
-
-    <p>
-        07 Sep 2022 <span class="separator">|</span> in <a class="link_tag" href="https://notes.nicolasdeville.com/python/">python</a>
- tags: <a class="link_tag" href="https://notes.nicolasdeville.com/tag/libraries.html">libraries</a>
-<a class="link_tag" href="https://notes.nicolasdeville.com/tag/automation.html">automation</a>
-
-        <!-- added 4/7 -->
-        <!-- 		<br />
-        <abbr class="modified" title="2022-09-07T09:32:30.331873+02:00">
-                Updated: 07 Sep 2022
-        </abbr>
- -->
-
-    </p>
-
-    
-
-</footer>                    </div>
-                    
-                </article>
-                <hr/>
-            </li>
-            
-
-
-
-            <li>
-                <article class="hentry">
-                    <header>
-                        <!-- PREVIOUS NOTE TITLE -->
-                        <h1><a href="https://notes.nicolasdeville.com/python/library-pynput" rel="bookmark"
-                            title="Library: pynput">Library: pynput</a></h1>
-                        <!-- PREVIOUS NOTE SUMMARY -->
-                        <div class="entry-content">
-                            <p>control mouse and keyboard with Python</p>
-                        </div>
-                    </header>
-
-                    <div class="entry-content">
-                        <!-- PREVIOUS NOTE METADATA -->
-<footer class="post-info">
-
-    <p>
-        06 Sep 2022 <span class="separator">|</span> in <a class="link_tag" href="https://notes.nicolasdeville.com/python/">python</a>
- tags: <a class="link_tag" href="https://notes.nicolasdeville.com/tag/libraries.html">libraries</a>
-<a class="link_tag" href="https://notes.nicolasdeville.com/tag/automation.html">automation</a>
-
-        <!-- added 4/7 -->
-        <!-- 		<br />
-        <abbr class="modified" title="2022-09-06T20:09:14.643553+02:00">
-                Updated: 06 Sep 2022
-        </abbr>
- -->
-
-    </p>
-
-    
-
-</footer>                    </div>
-                    
-                </article>
-                <hr/>
-            </li>
-            
-
-
-
-            <li>
-                <article class="hentry">
-                    <header>
-                        <!-- PREVIOUS NOTE TITLE -->
-                        <h1><a href="https://notes.nicolasdeville.com/python/library-termtables" rel="bookmark"
-                            title="Library: termtables | Pretty tables in terminal">Library: termtables | Pretty tables in terminal</a></h1>
-                        <!-- PREVIOUS NOTE SUMMARY -->
-                        <div class="entry-content">
-                            
-                        </div>
-                    </header>
-
-                    <div class="entry-content">
-                        <!-- PREVIOUS NOTE METADATA -->
-<footer class="post-info">
-
-    <p>
-        06 Sep 2022 <span class="separator">|</span> in <a class="link_tag" href="https://notes.nicolasdeville.com/python/">python</a>
- tags: <a class="link_tag" href="https://notes.nicolasdeville.com/tag/snippets.html">snippets</a>
-<a class="link_tag" href="https://notes.nicolasdeville.com/tag/libraries.html">libraries</a>
-
-        <!-- added 4/7 -->
-        <!-- 		<br />
-        <abbr class="modified" title="2022-09-06T15:41:54.967306+02:00">
-                Updated: 06 Sep 2022
-        </abbr>
- -->
-
-    </p>
-
-    
-
-</footer>                    </div>
-                    
-                </article>
-                <hr/>
-            </li>
-            
-
-
-
-            <li>
-                <article class="hentry">
-                    <header>
-                        <!-- PREVIOUS NOTE TITLE -->
-                        <h1><a href="https://notes.nicolasdeville.com/python/library-imap-tools" rel="bookmark"
-                            title="Library: imap-tools">Library: imap-tools</a></h1>
-                        <!-- PREVIOUS NOTE SUMMARY -->
-                        <div class="entry-content">
-                            <p>High level lib for work with email by IMAP</p>
-                        </div>
-                    </header>
-
-                    <div class="entry-content">
-                        <!-- PREVIOUS NOTE METADATA -->
-<footer class="post-info">
-
-    <p>
-        05 Sep 2022 <span class="separator">|</span> in <a class="link_tag" href="https://notes.nicolasdeville.com/python/">python</a>
- tags: <a class="link_tag" href="https://notes.nicolasdeville.com/tag/libraries.html">libraries</a>
-
-        <!-- added 4/7 -->
-        <!-- 		<br />
-        <abbr class="modified" title="2022-09-05T08:54:00.510040+02:00">
-                Updated: 05 Sep 2022
-        </abbr>
- -->
-
-    </p>
-
-    
-
-</footer>                    </div>
-                    
-                </article>
-                <hr/>
-            </li>
-            
-
-
-
-            <li>
-                <article class="hentry">
-                    <header>
-                        <!-- PREVIOUS NOTE TITLE -->
-                        <h1><a href="https://notes.nicolasdeville.com/python/library-re" rel="bookmark"
-                            title="Library: re (regex)">Library: re (regex)</a></h1>
-                        <!-- PREVIOUS NOTE SUMMARY -->
-                        <div class="entry-content">
-                            
-                        </div>
-                    </header>
-
-                    <div class="entry-content">
-                        <!-- PREVIOUS NOTE METADATA -->
-<footer class="post-info">
-
-    <p>
-        05 Sep 2022 <span class="separator">|</span> in <a class="link_tag" href="https://notes.nicolasdeville.com/python/">python</a>
- tags: <a class="link_tag" href="https://notes.nicolasdeville.com/tag/libraries.html">libraries</a>
-
-        <!-- added 4/7 -->
-        <!-- 		<br />
-        <abbr class="modified" title="2022-09-05T08:54:00.182635+02:00">
-                Updated: 05 Sep 2022
-        </abbr>
- -->
-
-    </p>
-
-    
-
-</footer>                    </div>
-                    
-                </article>
-                <hr/>
-            </li>
-            
-
-
-
-            <li>
-                <article class="hentry">
-                    <header>
-                        <!-- PREVIOUS NOTE TITLE -->
-                        <h1><a href="https://notes.nicolasdeville.com/python/library-openpyxl" rel="bookmark"
-                            title="Library: openpyxl">Library: openpyxl</a></h1>
-                        <!-- PREVIOUS NOTE SUMMARY -->
-                        <div class="entry-content">
-                            <p>A Python library to read/write Excel 2010 xlsx/xlsm files</p>
-                        </div>
-                    </header>
-
-                    <div class="entry-content">
-                        <!-- PREVIOUS NOTE METADATA -->
-<footer class="post-info">
-
-    <p>
-        05 Sep 2022 <span class="separator">|</span> in <a class="link_tag" href="https://notes.nicolasdeville.com/python/">python</a>
- tags: <a class="link_tag" href="https://notes.nicolasdeville.com/tag/libraries.html">libraries</a>
-
-        <!-- added 4/7 -->
-        <!-- 		<br />
-        <abbr class="modified" title="2022-09-05T08:54:00.182340+02:00">
-                Updated: 05 Sep 2022
-        </abbr>
- -->
-
-    </p>
-
-    
-
-</footer>                    </div>
-                    
-                </article>
-                <hr/>
-            </li>
-            
-
-
-
-            <li>
-                <article class="hentry">
-                    <header>
-                        <!-- PREVIOUS NOTE TITLE -->
-                        <h1><a href="https://notes.nicolasdeville.com/python/library-defaultdict" rel="bookmark"
-                            title="Library: defaultdict">Library: defaultdict</a></h1>
-                        <!-- PREVIOUS NOTE SUMMARY -->
-                        <div class="entry-content">
-                            <p>standard Python libraries useful when creating dicts</p>
-                        </div>
-                    </header>
-
-                    <div class="entry-content">
-                        <!-- PREVIOUS NOTE METADATA -->
-<footer class="post-info">
-
-    <p>
-        05 Sep 2022 <span class="separator">|</span> in <a class="link_tag" href="https://notes.nicolasdeville.com/python/">python</a>
- tags: <a class="link_tag" href="https://notes.nicolasdeville.com/tag/libraries.html">libraries</a>
-
-        <!-- added 4/7 -->
-        <!-- 		<br />
-        <abbr class="modified" title="2022-09-05T08:54:00.158588+02:00">
-                Updated: 05 Sep 2022
-        </abbr>
- -->
-
-    </p>
-
-    
-
-</footer>                    </div>
-                    
-                </article>
-                <hr/>
-            </li>
-            
-
-
-
-            <li>
-                <article class="hentry">
-                    <header>
-                        <!-- PREVIOUS NOTE TITLE -->
-                        <h1><a href="https://notes.nicolasdeville.com/python/library-sqlite3" rel="bookmark"
-                            title="Library: sqlite3">Library: sqlite3</a></h1>
-                        <!-- PREVIOUS NOTE SUMMARY -->
-                        <div class="entry-content">
-                            <p>built-in library for managing SQLite database</p>
-                        </div>
-                    </header>
-
-                    <div class="entry-content">
-                        <!-- PREVIOUS NOTE METADATA -->
-<footer class="post-info">
-
-    <p>
-        05 Sep 2022 <span class="separator">|</span> in <a class="link_tag" href="https://notes.nicolasdeville.com/python/">python</a>
- tags: <a class="link_tag" href="https://notes.nicolasdeville.com/tag/libraries.html">libraries</a>
-
-        <!-- added 4/7 -->
-        <!-- 		<br />
-        <abbr class="modified" title="2022-09-05T08:54:00.151343+02:00">
-                Updated: 05 Sep 2022
         </abbr>
  -->
 
@@ -722,7 +852,7 @@
                     <header>
                         <!-- PREVIOUS NOTE TITLE -->
                         <h1><a href="https://notes.nicolasdeville.com/python/library-mutagen" rel="bookmark"
-                            title="Library: mutagen">Library: mutagen</a></h1>
+                            title="Python Library: mutagen">Python Library: mutagen</a></h1>
                         <!-- PREVIOUS NOTE SUMMARY -->
                         <div class="entry-content">
                             <p>read and write audio tags for many formats</p>
@@ -739,8 +869,8 @@
 
         <!-- added 4/7 -->
         <!-- 		<br />
-        <abbr class="modified" title="2022-09-15T18:05:17.557480+02:00">
-                Updated: 15 Sep 2022
+        <abbr class="modified" title="2022-09-24T10:28:36.714435+02:00">
+                Updated: 24 Sep 2022
         </abbr>
  -->
 
@@ -762,7 +892,7 @@
                     <header>
                         <!-- PREVIOUS NOTE TITLE -->
                         <h1><a href="https://notes.nicolasdeville.com/python/library-tinytag" rel="bookmark"
-                            title="Library: tinytag">Library: tinytag</a></h1>
+                            title="Python Library: tinytag">Python Library: tinytag</a></h1>
                         <!-- PREVIOUS NOTE SUMMARY -->
                         <div class="entry-content">
                             <p>Read music meta data and length of MP3, OGG, OPUS, MP4, M4A, FLAC, WMA and Wave files</p>
@@ -779,8 +909,8 @@
 
         <!-- added 4/7 -->
         <!-- 		<br />
-        <abbr class="modified" title="2022-09-15T18:06:23.894878+02:00">
-                Updated: 15 Sep 2022
+        <abbr class="modified" title="2022-09-24T10:28:36.714673+02:00">
+                Updated: 24 Sep 2022
         </abbr>
  -->
 
@@ -842,132 +972,6 @@
                 <article class="hentry">
                     <header>
                         <!-- PREVIOUS NOTE TITLE -->
-                        <h1><a href="https://notes.nicolasdeville.com/python/library-requests" rel="bookmark"
-                            title="Library: requests">Library: requests</a></h1>
-                        <!-- PREVIOUS NOTE SUMMARY -->
-                        <div class="entry-content">
-                            <p>Python HTTP for Humans. Requests is a simple, yet elegant HTTP library.</p>
-                        </div>
-                    </header>
-
-                    <div class="entry-content">
-                        <!-- PREVIOUS NOTE METADATA -->
-<footer class="post-info">
-
-    <p>
-        25 Jul 2022 <span class="separator">|</span> in <a class="link_tag" href="https://notes.nicolasdeville.com/python/">python</a>
- tags: <a class="link_tag" href="https://notes.nicolasdeville.com/tag/libraries.html">libraries</a>
-
-        <!-- added 4/7 -->
-        <!-- 		<br />
-        <abbr class="modified" title="2022-07-25T10:08:57.095687+02:00">
-                Updated: 25 Jul 2022
-        </abbr>
- -->
-
-    </p>
-
-    
-
-</footer>                    </div>
-                    
-                </article>
-                <hr/>
-            </li>
-            
-
-
-
-            <li>
-                <article class="hentry">
-                    <header>
-                        <!-- PREVIOUS NOTE TITLE -->
-                        <h1><a href="https://notes.nicolasdeville.com/python/library-tmdbv3api" rel="bookmark"
-                            title="Library: tmdbv3api | fetching movie data">Library: tmdbv3api | fetching movie data</a></h1>
-                        <!-- PREVIOUS NOTE SUMMARY -->
-                        <div class="entry-content">
-                            <p>Python wrapper for the TMDB API - themoviedb.org</p>
-                        </div>
-                    </header>
-
-                    <div class="entry-content">
-                        <!-- PREVIOUS NOTE METADATA -->
-<footer class="post-info">
-
-    <p>
-        23 Jul 2022 <span class="separator">|</span> in <a class="link_tag" href="https://notes.nicolasdeville.com/python/">python</a>
- tags: <a class="link_tag" href="https://notes.nicolasdeville.com/tag/python.html">python</a>
-<a class="link_tag" href="https://notes.nicolasdeville.com/tag/libraries.html">libraries</a>
-<a class="link_tag" href="https://notes.nicolasdeville.com/tag/scripts.html">scripts</a>
-<a class="link_tag" href="https://notes.nicolasdeville.com/tag/api.html">api</a>
-
-        <!-- added 4/7 -->
-        <!-- 		<br />
-        <abbr class="modified" title="2022-07-23T19:59:09.816989+02:00">
-                Updated: 23 Jul 2022
-        </abbr>
- -->
-
-    </p>
-
-    
-
-</footer>                    </div>
-                    
-                </article>
-                <hr/>
-            </li>
-            
-
-
-
-            <li>
-                <article class="hentry">
-                    <header>
-                        <!-- PREVIOUS NOTE TITLE -->
-                        <h1><a href="https://notes.nicolasdeville.com/python/library-tmdbapis" rel="bookmark"
-                            title="Library: tmdbapis | fetching movie data">Library: tmdbapis | fetching movie data</a></h1>
-                        <!-- PREVIOUS NOTE SUMMARY -->
-                        <div class="entry-content">
-                            <p>Python wrapper for the TMDB API - themoviedb.org - with support for API v4</p>
-                        </div>
-                    </header>
-
-                    <div class="entry-content">
-                        <!-- PREVIOUS NOTE METADATA -->
-<footer class="post-info">
-
-    <p>
-        23 Jul 2022 <span class="separator">|</span> in <a class="link_tag" href="https://notes.nicolasdeville.com/python/">python</a>
- tags: <a class="link_tag" href="https://notes.nicolasdeville.com/tag/python.html">python</a>
-<a class="link_tag" href="https://notes.nicolasdeville.com/tag/libraries.html">libraries</a>
-<a class="link_tag" href="https://notes.nicolasdeville.com/tag/scripts.html">scripts</a>
-<a class="link_tag" href="https://notes.nicolasdeville.com/tag/api.html">api</a>
-
-        <!-- added 4/7 -->
-        <!-- 		<br />
-        <abbr class="modified" title="2022-07-23T19:57:52.373199+02:00">
-                Updated: 23 Jul 2022
-        </abbr>
- -->
-
-    </p>
-
-    
-
-</footer>                    </div>
-                    
-                </article>
-                <hr/>
-            </li>
-            
-
-
-
-            <li>
-                <article class="hentry">
-                    <header>
-                        <!-- PREVIOUS NOTE TITLE -->
                         <h1><a href="https://notes.nicolasdeville.com/python/library-dateutil" rel="bookmark"
                             title="Python library: dateutil">Python library: dateutil</a></h1>
                         <!-- PREVIOUS NOTE SUMMARY -->
@@ -988,47 +992,6 @@
         <!-- added 4/7 -->
         <!-- 		<br />
         <abbr class="modified" title="2022-07-23T19:51:24.332912+02:00">
-                Updated: 23 Jul 2022
-        </abbr>
- -->
-
-    </p>
-
-    
-
-</footer>                    </div>
-                    
-                </article>
-                <hr/>
-            </li>
-            
-
-
-
-            <li>
-                <article class="hentry">
-                    <header>
-                        <!-- PREVIOUS NOTE TITLE -->
-                        <h1><a href="https://notes.nicolasdeville.com/python/library-slugify" rel="bookmark"
-                            title="Library: slugify">Library: slugify</a></h1>
-                        <!-- PREVIOUS NOTE SUMMARY -->
-                        <div class="entry-content">
-                            
-                        </div>
-                    </header>
-
-                    <div class="entry-content">
-                        <!-- PREVIOUS NOTE METADATA -->
-<footer class="post-info">
-
-    <p>
-        23 Jul 2022 <span class="separator">|</span> in <a class="link_tag" href="https://notes.nicolasdeville.com/python/">python</a>
- tags: <a class="link_tag" href="https://notes.nicolasdeville.com/tag/libraries.html">libraries</a>
-<a class="link_tag" href="https://notes.nicolasdeville.com/tag/python.html">python</a>
-
-        <!-- added 4/7 -->
-        <!-- 		<br />
-        <abbr class="modified" title="2022-07-23T19:46:56.053092+02:00">
                 Updated: 23 Jul 2022
         </abbr>
  -->

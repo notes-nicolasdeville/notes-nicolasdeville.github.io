@@ -42,7 +42,7 @@
             </div>
 
             <div class="above-navbar">
-                <div class="last_updated">24 Sep 2022 | 08:57</div>
+                <div class="last_updated">24 Sep 2022 | 11:17</div>
                 <div>
                     <p class="notes_count">
                         <a href="https://notes.nicolasdeville.com/tags">by tags</a> 
@@ -112,14 +112,14 @@
 <footer class="post-info">
 
     <p>
-        23 Sep 2022 <span class="separator">|</span> in <a class="link_tag" href="https://notes.nicolasdeville.com/projects/">projects</a>
+        24 Sep 2022 <span class="separator">|</span> in <a class="link_tag" href="https://notes.nicolasdeville.com/projects/">projects</a>
  tags: <a class="link_tag" href="https://notes.nicolasdeville.com/tag/python.html">python</a>
 <a class="link_tag" href="https://notes.nicolasdeville.com/tag/automation.html">automation</a>
 
         <!-- added 4/7 -->
         <!-- 		<br />
-        <abbr class="modified" title="2022-09-23T21:59:33.979167+02:00">
-                Updated: 23 Sep 2022
+        <abbr class="modified" title="2022-09-24T11:17:19.959660+02:00">
+                Updated: 24 Sep 2022
         </abbr>
  -->
 
@@ -127,19 +127,36 @@
 
     
 
-</footer><p><span class="datestamp">17 Sep 2022</span>   </p>
+</footer><div class="toc"><span class="toctitle">Table of Contents</span><ul>
+<li><a href="#first-approach-discarded-see-next-section-for-final-approach">First approach (discarded - see next section for final approach)</a><ul>
+<li><a href="#long-sample-audio">Long Sample Audio</a></li>
+<li><a href="#python-script-to-convert-m4a-files-to-wav-files">Python script to convert m4a files to wav files</a></li>
+<li><a href="#resources">Resources</a></li>
+</ul>
+</li>
+<li><a href="#final-approach-whisper">Final approach (Whisper)</a><ul>
+<li><a href="#transcribe">Transcribe</a></li>
+<li><a href="#clean-transcript">Clean Transcript</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<p><span class="datestamp">17 Sep 2022</span>   </p>
 <p>I've been using Just Press Record [<a href="../../apps/just-press-record/index.html">Nic Note: Just Press Record</a>] for the last 2+ years for on-the-go, in-my-bath or at-my-desk long voice recordings.  </p>
 <p>A lot of these recordings are intended to be actioned, or serve as basis for an email, a blog or a note.  </p>
 <p>I love the simplicity and efficiency of Just Press Record, so it still requires me some tedious tasks when back at my computer to extract the transcript for each recording individually.   </p>
-<p>Goal here will be a Python script to:   </p>
+<blockquote>
+<p><strong>Ultimate goal</strong> <br>
+one tap recording from watch or phone resulting in draft note ready to be used</p>
+</blockquote>
+<h1 id="first-approach-discarded-see-next-section-for-final-approach">First approach (discarded - see next section for final approach)</h1>
+<p>Python script to:   </p>
 <ul>
 <li>fetch <code>.m4a</code> recording from local iCloud folder ([<a href="../../helpers/icloud-drive/index.html">Nic Note: iCloud Drive</a>]) with one subfolder by day)</li>
 <li>convert <code>.m4a</code> to <code>.wav</code> which seems to be the primary format accepted by speech_recognition  </li>
 <li>transcribe (speech to text)</li>
 <li>generate markdown note in a Drafts folder in my notes folder</li>
 </ul>
-<p><span class="datestamp">23 Sep 2022</span> exploring OpenAI's new speech recognition AI "Whisper" for this: [<a href="../../ai/whisper/index.html">Nic Note: Whisper</a>]    </p>
-<h1 id="snippets">Snippets</h1>
 <div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">pydub</span> <span class="kn">import</span> <span class="n">AudioSegment</span>
 <span class="n">audio</span> <span class="o">=</span> <span class="n">AudioSegment</span><span class="o">.</span><span class="n">from_file</span><span class="p">(</span><span class="s1">&#39;file.m4a&#39;</span><span class="p">)</span>
 </code></pre></div>
@@ -246,10 +263,10 @@ Need to use <code>AudioSegment.from_file(filename, "m4a")</code>?  </p>
 
 <p>from : <a href="https://www.thepythoncode.com/article/using-speech-recognition-to-convert-speech-to-text-python" target="_blank">https://www.thepythoncode.com/article/using-speech-recognition-to-convert-speech-to-text-python</a> </p>
 <h2 id="python-script-to-convert-m4a-files-to-wav-files">Python script to convert m4a files to wav files</h2>
+<p><span class="datestamp">18 Sep 2022</span> Let's try to focus first on conversion to <code>.wav</code> and then tackle speech-recognition.  </p>
 <script src="https://gist.github.com/arjunsharma97/0ecac61da2937ec52baf61af1aa1b759.js"></script>
 
-<p><span class="datestamp">18 Sep 2022</span> Let's try to focus first on conversion to <code>.wav</code> and then tackle speech-recognition.  </p>
-<h1 id="resources">Resources</h1>
+<h2 id="resources">Resources</h2>
 <div class="link_border"><div class="link_logo_box"><img class="link_logo" src="https://logo.clearbit.com/pythonbasics.org?size=35" alt="logo"/></div><div class="link_content">
 <div class="link_title">Transcribe Audio | Python Tutorial</div>
 <div class="link_tagline">pythonbasics.org</div>
@@ -280,6 +297,112 @@ Need to use <code>AudioSegment.from_file(filename, "m4a")</code>?  </p>
 <ul>
 <li>SpeechRecognition library allows you to perform speech recognition with support for several engines and APIs, online and offline.  </li>
 </ul>
+<h1 id="final-approach-whisper">Final approach (Whisper)</h1>
+<p><span class="datestamp">23 Sep 2022</span> exploring OpenAI's new speech recognition AI "Whisper" for this: [<a href="../../ai/whisper/index.html">Nic Note: Whisper</a>]   </p>
+<p>Worked in minutes! Using this.   </p>
+<p>Python script to:   </p>
+<ul>
+<li>fetch <code>.m4a</code> recordings from local iCloud folder ([<a href="../../helpers/icloud-drive/index.html">Nic Note: iCloud Drive</a>]) with one subfolder by day)</li>
+<li>identify audio recordings not yet processed</li>
+<li>transcribe those with Whisper [<a href="../../ai/whisper/index.html">Nic Note: Whisper</a>]</li>
+<li>log raw transcript</li>
+<li>generate markdown note in a Drafts folder in my notes folder</li>
+</ul>
+<p>Could be run manually + daily cron job.    </p>
+<p>Need to:  </p>
+<ul>
+<li>create a <code>replacements.txt</code> file to list all replacements in one easy place to update</li>
+<li>logic to handle replacements based on it</li>
+<li>logic to identify files already processed</li>
+</ul>
+<h2 id="transcribe">Transcribe</h2>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">whisper</span>
+<span class="n">model</span> <span class="o">=</span> <span class="n">whisper</span><span class="o">.</span><span class="n">load_model</span><span class="p">(</span><span class="s2">&quot;base&quot;</span><span class="p">)</span>
+<span class="n">result</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">transcribe</span><span class="p">(</span><span class="s1">&#39;test/1.m4a&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="se">\n</span><span class="si">{</span><span class="n">result</span><span class="p">[</span><span class="s2">&quot;text&quot;</span><span class="p">]</span><span class="si">}</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
+</code></pre></div>
+
+<h2 id="clean-transcript">Clean Transcript</h2>
+<div class="highlight"><pre><span></span><code><span class="n">v</span> <span class="o">=</span> <span class="kc">False</span> <span class="c1"># verbose</span>
+
+<span class="k">def</span> <span class="nf">clean_transcript</span><span class="p">(</span><span class="n">transcript</span><span class="p">):</span>
+
+    <span class="c1">### Create dict of replacements</span>
+    <span class="k">if</span> <span class="n">v</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Creating dict of replacements:</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="n">replacements_file</span> <span class="o">=</span> <span class="s1">&#39;replacements.txt&#39;</span>
+    <span class="n">replacements</span> <span class="o">=</span> <span class="p">{}</span>
+    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">replacements_file</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">df</span><span class="p">:</span>
+        <span class="n">lines</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">readlines</span><span class="p">()</span>
+        <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">lines</span><span class="p">:</span>
+            <span class="k">if</span> <span class="ow">not</span> <span class="n">line</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s1">&#39;#&#39;</span><span class="p">):</span> <span class="c1"># remove comments</span>
+                <span class="c1"># print(&quot;line: &quot;, repr(line))</span>
+                <span class="n">line_parts</span> <span class="o">=</span> <span class="n">line</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;|&#39;</span><span class="p">)</span>
+                <span class="k">if</span> <span class="n">v</span><span class="p">:</span>
+                    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;line </span><span class="si">{</span><span class="n">get_linenumber</span><span class="p">()</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="n">line_parts</span><span class="si">=}</span><span class="s2">&quot;</span><span class="p">)</span>
+                <span class="n">replacements</span><span class="p">[</span><span class="n">line_parts</span><span class="p">[</span><span class="mi">0</span><span class="p">]]</span> <span class="o">=</span> <span class="n">line_parts</span><span class="p">[</span><span class="mi">1</span><span class="p">][:</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="c1"># remove trailing \n</span>
+
+    <span class="c1">### Remove punctuation</span>
+    <span class="k">if</span> <span class="s1">&#39;,&#39;</span> <span class="ow">in</span> <span class="n">transcript</span><span class="p">:</span>
+        <span class="n">transcript</span> <span class="o">=</span> <span class="n">transcript</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;,&#39;</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">)</span>
+    <span class="k">if</span> <span class="s1">&#39;.&#39;</span> <span class="ow">in</span> <span class="n">transcript</span><span class="p">:</span>
+        <span class="n">transcript</span> <span class="o">=</span> <span class="n">transcript</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;.&#39;</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="n">v</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Processing list of replacements:</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">k</span><span class="p">,</span><span class="n">value</span> <span class="ow">in</span> <span class="n">replacements</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+        <span class="k">if</span> <span class="n">v</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;line </span><span class="si">{</span><span class="n">get_linenumber</span><span class="p">()</span><span class="si">}</span><span class="s2">: replacing </span><span class="si">{</span><span class="nb">repr</span><span class="p">(</span><span class="n">k</span><span class="p">)</span><span class="si">}</span><span class="s2"> with </span><span class="si">{</span><span class="nb">repr</span><span class="p">(</span><span class="n">v</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">k</span> <span class="ow">in</span> <span class="n">transcript</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">value</span> <span class="o">==</span> <span class="s1">&#39;</span><span class="se">\\</span><span class="s1">n&#39;</span><span class="p">:</span>
+                <span class="n">transcript</span> <span class="o">=</span> <span class="n">transcript</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="n">k</span><span class="p">,</span> <span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">transcript</span> <span class="o">=</span> <span class="n">transcript</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="n">k</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">v</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Processing by line:</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="n">parts</span> <span class="o">=</span> <span class="n">transcript</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
+    <span class="n">output</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">part</span> <span class="ow">in</span> <span class="n">parts</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">v</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;line </span><span class="si">{</span><span class="n">get_linenumber</span><span class="p">()</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="n">part</span><span class="si">=}</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="n">part</span> <span class="o">=</span> <span class="n">my_utils</span><span class="o">.</span><span class="n">clean_beginning_string</span><span class="p">(</span><span class="n">part</span><span class="p">,</span> <span class="n">v</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+
+        <span class="n">part</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">part</span><span class="si">}</span><span class="s2">  &quot;</span> <span class="c1"># add 2 trailing spaces for Markdown linebreaks</span>
+        <span class="n">output</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">part</span><span class="p">)</span>
+
+    <span class="n">final_output</span> <span class="o">=</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">output</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">final_output</span>
+</code></pre></div>
+
+<p>with <code>replacements.txt</code> as:  </p>
+<div class="highlight"><pre><span></span><code>Nick, note|Nic Note
+Nicknote|Nic Note
+Nick note|Nic Note
+You line|\n
+new line|\n
+you line|\n
+Dash|-
+dash|-
+full stop|.
+Full stop|.
+four step|.
+full step|.
+Full-step|.
+full-step|.
+come up|,
+Call in|:
+commons|comments
+ c | see 
+We were|Reword
+Salves|Sales
+Node|Note
+ .|.
+ ,|,
+ ?|?
+question mark|?
+# always leave an empty line at the end
+</code></pre></div>
                 </article>
             </aside>
 
@@ -290,6 +413,88 @@ Need to use <code>AudioSegment.from_file(filename, "m4a")</code>?  </p>
                 <hr>
 
                 <ol id="posts-list" class="hfeed">
+            
+
+
+
+            <li>
+                <article class="hentry">
+                    <header>
+                        <!-- PREVIOUS NOTE TITLE -->
+                        <h1><a href="https://notes.nicolasdeville.com/python/library-yagmail" rel="bookmark"
+                            title="Python Library: Yagmail">Python Library: Yagmail</a></h1>
+                        <!-- PREVIOUS NOTE SUMMARY -->
+                        <div class="entry-content">
+                            <p>GMAIL/SMTP client that aims to make it as simple as possible to send emails.</p>
+                        </div>
+                    </header>
+
+                    <div class="entry-content">
+                        <!-- PREVIOUS NOTE METADATA -->
+<footer class="post-info">
+
+    <p>
+        24 Sep 2022 <span class="separator">|</span> in <a class="link_tag" href="https://notes.nicolasdeville.com/python/">python</a>
+ tags: <a class="link_tag" href="https://notes.nicolasdeville.com/tag/libraries.html">libraries</a>
+<a class="link_tag" href="https://notes.nicolasdeville.com/tag/automation.html">automation</a>
+
+        <!-- added 4/7 -->
+        <!-- 		<br />
+        <abbr class="modified" title="2022-09-24T10:28:36.692299+02:00">
+                Updated: 24 Sep 2022
+        </abbr>
+ -->
+
+    </p>
+
+    
+
+</footer>                    </div>
+                    
+                </article>
+                <hr/>
+            </li>
+            
+
+
+
+            <li>
+                <article class="hentry">
+                    <header>
+                        <!-- PREVIOUS NOTE TITLE -->
+                        <h1><a href="https://notes.nicolasdeville.com/python/library-pynput" rel="bookmark"
+                            title="Python Library: pynput">Python Library: pynput</a></h1>
+                        <!-- PREVIOUS NOTE SUMMARY -->
+                        <div class="entry-content">
+                            <p>control mouse and keyboard with Python</p>
+                        </div>
+                    </header>
+
+                    <div class="entry-content">
+                        <!-- PREVIOUS NOTE METADATA -->
+<footer class="post-info">
+
+    <p>
+        24 Sep 2022 <span class="separator">|</span> in <a class="link_tag" href="https://notes.nicolasdeville.com/python/">python</a>
+ tags: <a class="link_tag" href="https://notes.nicolasdeville.com/tag/libraries.html">libraries</a>
+<a class="link_tag" href="https://notes.nicolasdeville.com/tag/automation.html">automation</a>
+
+        <!-- added 4/7 -->
+        <!-- 		<br />
+        <abbr class="modified" title="2022-09-24T10:28:36.690334+02:00">
+                Updated: 24 Sep 2022
+        </abbr>
+ -->
+
+    </p>
+
+    
+
+</footer>                    </div>
+                    
+                </article>
+                <hr/>
+            </li>
             
 
 
@@ -652,88 +857,6 @@ Need to use <code>AudioSegment.from_file(filename, "m4a")</code>?  </p>
         <!-- 		<br />
         <abbr class="modified" title="2022-09-19T11:52:40.808000+02:00">
                 Updated: 19 Sep 2022
-        </abbr>
- -->
-
-    </p>
-
-    
-
-</footer>                    </div>
-                    
-                </article>
-                <hr/>
-            </li>
-            
-
-
-
-            <li>
-                <article class="hentry">
-                    <header>
-                        <!-- PREVIOUS NOTE TITLE -->
-                        <h1><a href="https://notes.nicolasdeville.com/python/library-yagmail" rel="bookmark"
-                            title="Library: Yagmail">Library: Yagmail</a></h1>
-                        <!-- PREVIOUS NOTE SUMMARY -->
-                        <div class="entry-content">
-                            <p>GMAIL/SMTP client that aims to make it as simple as possible to send emails.</p>
-                        </div>
-                    </header>
-
-                    <div class="entry-content">
-                        <!-- PREVIOUS NOTE METADATA -->
-<footer class="post-info">
-
-    <p>
-        07 Sep 2022 <span class="separator">|</span> in <a class="link_tag" href="https://notes.nicolasdeville.com/python/">python</a>
- tags: <a class="link_tag" href="https://notes.nicolasdeville.com/tag/libraries.html">libraries</a>
-<a class="link_tag" href="https://notes.nicolasdeville.com/tag/automation.html">automation</a>
-
-        <!-- added 4/7 -->
-        <!-- 		<br />
-        <abbr class="modified" title="2022-09-07T09:32:30.331873+02:00">
-                Updated: 07 Sep 2022
-        </abbr>
- -->
-
-    </p>
-
-    
-
-</footer>                    </div>
-                    
-                </article>
-                <hr/>
-            </li>
-            
-
-
-
-            <li>
-                <article class="hentry">
-                    <header>
-                        <!-- PREVIOUS NOTE TITLE -->
-                        <h1><a href="https://notes.nicolasdeville.com/python/library-pynput" rel="bookmark"
-                            title="Library: pynput">Library: pynput</a></h1>
-                        <!-- PREVIOUS NOTE SUMMARY -->
-                        <div class="entry-content">
-                            <p>control mouse and keyboard with Python</p>
-                        </div>
-                    </header>
-
-                    <div class="entry-content">
-                        <!-- PREVIOUS NOTE METADATA -->
-<footer class="post-info">
-
-    <p>
-        06 Sep 2022 <span class="separator">|</span> in <a class="link_tag" href="https://notes.nicolasdeville.com/python/">python</a>
- tags: <a class="link_tag" href="https://notes.nicolasdeville.com/tag/libraries.html">libraries</a>
-<a class="link_tag" href="https://notes.nicolasdeville.com/tag/automation.html">automation</a>
-
-        <!-- added 4/7 -->
-        <!-- 		<br />
-        <abbr class="modified" title="2022-09-06T20:09:14.643553+02:00">
-                Updated: 06 Sep 2022
         </abbr>
  -->
 

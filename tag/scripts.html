@@ -42,7 +42,7 @@
             </div>
 
             <div class="above-navbar">
-                <div class="last_updated">24 Sep 2022 | 08:57</div>
+                <div class="last_updated">24 Sep 2022 | 11:17</div>
                 <div>
                     <p class="notes_count">
                         <a href="https://notes.nicolasdeville.com/tags">by tags</a> 
@@ -100,15 +100,187 @@
             <hr/>
 
                 <article class="hentry">
-                    <h1 class="entry-title"><a href="https://notes.nicolasdeville.com/python/export-kindle-library">Exporting my Kindle library data</a></h1>
+                    <h1 class="entry-title"><a href="https://notes.nicolasdeville.com/python/library-tmdbapis">Python Library: tmdbapis | fetching movie data</a></h1>
 
                     <!-- added 4/7 -->
                     <div>
                         <p class="header_summary">
-                            <p>basic script to export base data from HTML files</p>
+                            <p>Python wrapper for the TMDB API - themoviedb.org - with support for API v4</p>
                         </p>
                     </div>
 
+<footer class="post-info">
+
+    <p>
+        24 Sep 2022 <span class="separator">|</span> in <a class="link_tag" href="https://notes.nicolasdeville.com/python/">python</a>
+ tags: <a class="link_tag" href="https://notes.nicolasdeville.com/tag/python.html">python</a>
+<a class="link_tag" href="https://notes.nicolasdeville.com/tag/libraries.html">libraries</a>
+<a class="link_tag" href="https://notes.nicolasdeville.com/tag/scripts.html">scripts</a>
+<a class="link_tag" href="https://notes.nicolasdeville.com/tag/api.html">api</a>
+
+        <!-- added 4/7 -->
+        <!-- 		<br />
+        <abbr class="modified" title="2022-09-24T10:28:36.714656+02:00">
+                Updated: 24 Sep 2022
+        </abbr>
+ -->
+
+    </p>
+
+    
+
+</footer><p><span class="datestamp">20 Jul 2022</span> starting note *<em>note date indicates latest update.</em>   </p>
+<table>
+<thead>
+<tr>
+<th>Library resources</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>PyPI</td>
+<td><a href="https://pypi.org/project/tmdbapis/" target="_blank">https://pypi.org/project/tmdbapis/</a></td>
+</tr>
+<tr>
+<td>Github</td>
+<td><a href="https://github.com/meisnate12/tmdbapis" target="_blank">https://github.com/meisnate12/tmdbapis</a></td>
+</tr>
+<tr>
+<td>Documentation</td>
+<td><a href="https://tmdbapis.metamanager.wiki/en/latest/index.html" target="_blank">https://tmdbapis.metamanager.wiki/en/latest/index.html</a></td>
+</tr>
+<tr>
+<td>Has been updated 4 days ago, so valid library.</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>Continuing from <a href="../../python/library-tmdbv3api/index.html">Nic Note: Library: tmdbv3api | fetching movie data</a> as I need API v4 support to get large lists.   </p>
+<p>Install with:   </p>
+<p><code>pip3 install tmdbapis</code></p>
+<p>Successful 2-step authentication with:   </p>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">tmdbapis</span> <span class="kn">import</span> <span class="n">TMDbAPIs</span>
+
+<span class="n">tmdb_api_key</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">getenv</span><span class="p">(</span><span class="s2">&quot;TMDB_API_KEY&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">tmdb_api_key</span><span class="si">=}</span><span class="s2">&quot;</span><span class="p">)</span> <span class="c1"># print to check that proper key is passed in the payload later</span>
+<span class="n">tmdb_v4_token</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">getenv</span><span class="p">(</span><span class="s2">&quot;TMDB_V4_TOKEN&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">tmdb_v4_token</span><span class="si">=}</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="n">tmdb</span> <span class="o">=</span> <span class="n">TMDbAPIs</span><span class="p">(</span><span class="n">tmdb_api_key</span><span class="p">,</span> <span class="n">v4_access_token</span><span class="o">=</span><span class="n">tmdb_v4_token</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">tmdb</span><span class="o">.</span><span class="n">v4_authenticate</span><span class="p">())</span>
+<span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Navigate to the URL and then hit enter when Authenticated&quot;</span><span class="p">)</span>
+<span class="n">tmdb</span><span class="o">.</span><span class="n">v4_approved</span><span class="p">()</span>
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;tmdb_access_token.txt&quot;</span><span class="p">,</span> <span class="s2">&quot;w&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">text_file</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">tmdb</span><span class="o">.</span><span class="n">v4_access_token</span><span class="p">,</span> <span class="n">file</span><span class="o">=</span><span class="n">text_file</span><span class="p">)</span>
+</code></pre></div>
+
+<p>To load the authenticated token saved in a <code>.txt</code> file (note to self: rework logic to save in <code>.env</code>?):   </p>
+<p>CAREFUL: remove <code>\n</code> at end of line in <code>tmdb_access_token.txt</code> if error. Not sure how to avoid this at write stage.   </p>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">tmdbapis</span> <span class="kn">import</span> <span class="n">TMDbAPIs</span>
+
+<span class="n">tmdb_api_key</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">getenv</span><span class="p">(</span><span class="s2">&quot;TMDB_API_KEY&quot;</span><span class="p">)</span>
+
+<span class="n">v4_access_token</span> <span class="o">=</span> <span class="kc">None</span>
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;tmdb_access_token.txt&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">text_file</span><span class="p">:</span>
+    <span class="n">v4_access_token</span> <span class="o">=</span> <span class="n">text_file</span><span class="o">.</span><span class="n">readline</span><span class="p">()</span>
+
+<span class="n">tmdb</span> <span class="o">=</span> <span class="n">TMDbAPIs</span><span class="p">(</span><span class="n">tmdb_api_key</span><span class="p">,</span> <span class="n">v4_access_token</span><span class="o">=</span><span class="n">v4_access_token</span><span class="p">)</span>
+</code></pre></div>
+
+<h1 id="fetching-my-lists">Fetching my lists</h1>
+<p>Works with following code, but still only returns 20:   </p>
+<div class="highlight"><pre><span></span><code><span class="c1"># my_top_1000_list_id = int(my_list_id)</span>
+<span class="n">my_1000</span> <span class="o">=</span> <span class="n">tmdb</span><span class="o">.</span><span class="n">list</span><span class="p">(</span><span class="n">my_top_1000_list_id</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">m</span> <span class="ow">in</span> <span class="n">my_1000</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">m</span><span class="o">.</span><span class="n">id</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">m</span><span class="o">.</span><span class="n">title</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;https://image.tmdb.org/t/p/original/</span><span class="si">{</span><span class="n">m</span><span class="o">.</span><span class="n">poster_path</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">()</span> 
+</code></pre></div>
+
+<p>Pagination:   </p>
+<div class="highlight"><pre><span></span><code><span class="n">my_1000</span> <span class="o">=</span> <span class="n">tmdb</span><span class="o">.</span><span class="n">list</span><span class="p">(</span><span class="n">my_top_1000_list_id</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">my_1000</span><span class="o">.</span><span class="n">page</span><span class="si">=}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">my_1000</span><span class="o">.</span><span class="n">total_pages</span><span class="si">=}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">my_1000</span><span class="o">.</span><span class="n">total_results</span><span class="si">=}</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+</code></pre></div>
+
+<p>Can't figure out how to get data from page 2 onwards though.  </p>
+<p>Call me weak, but after losing 2 hours of my life trying to make pagination work with both <code>tmdbapis</code> and <code>tmdbv3api</code>, I reverted back to just using Python's <code>requests</code> and it worked in 5mns!    </p>
+<p>See <a href="../../python/fetching-data-from-tmdb/index.html">Nic Note: Fetching data from TMDB</a></p>
+                </article>
+            </aside>
+
+                <section id="content" class="body">
+
+                <!-- PREVIOUS NOTES -->
+				<p class="notes-section">previous notes</p>
+                <hr>
+
+                <ol id="posts-list" class="hfeed">
+            
+
+
+
+            <li>
+                <article class="hentry">
+                    <header>
+                        <!-- PREVIOUS NOTE TITLE -->
+                        <h1><a href="https://notes.nicolasdeville.com/python/library-tmdbv3api" rel="bookmark"
+                            title="Python Library: tmdbv3api | fetching movie data">Python Library: tmdbv3api | fetching movie data</a></h1>
+                        <!-- PREVIOUS NOTE SUMMARY -->
+                        <div class="entry-content">
+                            <p>Python wrapper for the TMDB API - themoviedb.org</p>
+                        </div>
+                    </header>
+
+                    <div class="entry-content">
+                        <!-- PREVIOUS NOTE METADATA -->
+<footer class="post-info">
+
+    <p>
+        24 Sep 2022 <span class="separator">|</span> in <a class="link_tag" href="https://notes.nicolasdeville.com/python/">python</a>
+ tags: <a class="link_tag" href="https://notes.nicolasdeville.com/tag/python.html">python</a>
+<a class="link_tag" href="https://notes.nicolasdeville.com/tag/libraries.html">libraries</a>
+<a class="link_tag" href="https://notes.nicolasdeville.com/tag/scripts.html">scripts</a>
+<a class="link_tag" href="https://notes.nicolasdeville.com/tag/api.html">api</a>
+
+        <!-- added 4/7 -->
+        <!-- 		<br />
+        <abbr class="modified" title="2022-09-24T10:28:36.714575+02:00">
+                Updated: 24 Sep 2022
+        </abbr>
+ -->
+
+    </p>
+
+    
+
+</footer>                    </div>
+                    
+                </article>
+                <hr/>
+            </li>
+            
+
+
+
+            <li>
+                <article class="hentry">
+                    <header>
+                        <!-- PREVIOUS NOTE TITLE -->
+                        <h1><a href="https://notes.nicolasdeville.com/python/export-kindle-library" rel="bookmark"
+                            title="Exporting my Kindle library data">Exporting my Kindle library data</a></h1>
+                        <!-- PREVIOUS NOTE SUMMARY -->
+                        <div class="entry-content">
+                            <p>basic script to export base data from HTML files</p>
+                        </div>
+                    </header>
+
+                    <div class="entry-content">
+                        <!-- PREVIOUS NOTE METADATA -->
 <footer class="post-info">
 
     <p>
@@ -127,262 +299,11 @@
 
     
 
-</footer><p><span class="datestamp">06 Sep 2022</span> UPDATE   </p>
-<p>Well, it appears there is a much easier solution 😅    </p>
-<ol>
-<li>
-<p>Plug your Kindle into your computer.</p>
-</li>
-<li>
-<p>Navigate through the files on the Kindle and look for the file called <code>My Clippings.txt</code></p>
-</li>
-</ol>
-<p>.. and that's it. All the highlights are in this (heavy) text file!   </p>
-<p>At least it was a fun challenge and learning experience below! 😁</p>
-<p><span class="datestamp">07 Sep 2022</span>   </p>
-<p>Limitation is that the <code>My Clippings.txt</code> obviously only retains highlights made locally on that particular Kindle device.<br>
-So the below method from July is still relevant if highlights were made on an old Kindle, or from different Kindle devices (or apps).  </p>
-<p>The <code>.txt</code> file looks like that:  </p>
-<div class="highlight"><pre><span></span><code>==========
-Tech-Powered Sales (Michael, Justin)
-- Your Highlight on page 239 | location 4471-4492 | Added on Sunday, 19 December 2021 13:24:06
-
-==========
-Tech-Powered Sales (Michael, Justin)
-- Your Highlight on page 240 | location 4492-4496 | Added on Sunday, 19 December 2021 13:24:22
-
-==========
-MEDDICC: Using the Powerful MEDDIC, MEDDICC, and MEDDPICC Enterprise Sales Framework to Close High-Value Deals and Maximize Business Growth (Whyte, Andy)
-- Your Highlight on page 11 | location 61-63 | Added on Sunday, 19 December 2021 13:31:38
-
-During this class, we conducted an exercise (that I still do today with various sales teams) called: Why Do We Win? Why Do We Lose? Why Do Deals Slip?
-==========
-MEDDICC: Using the Powerful MEDDIC, MEDDICC, and MEDDPICC Enterprise Sales Framework to Close High-Value Deals and Maximize Business Growth (Whyte, Andy)
-- Your Highlight on page 25 | location 257-260 | Added on Friday, 24 December 2021 11:09:58
-</code></pre></div>
-
-<p>Here is the script to generate Markdown from the <code>.txt</code> file. <br>
-The "tricky" bit was to figure out the logic to put data together across a varying number of text rows. <br>
-The <code>loop_counter</code> implemented below solved this.  </p>
-<div class="highlight"><pre><span></span><code><span class="c1"># default boilerplate here. See python/boilerplate.</span>
-<span class="c1">####################</span>
-<span class="c1"># 220907 Generate highlights markdown from Kindle&#39;s My Clippings.txt</span>
-
-<span class="n">test</span> <span class="o">=</span> <span class="kc">False</span>
-
-<span class="kn">from</span> <span class="nn">collections</span> <span class="kn">import</span> <span class="n">defaultdict</span>
-
-<span class="n">select_title</span> <span class="o">=</span> <span class="s1">&#39;Learn JavaScript Quickly&#39;</span>
-
-<span class="n">count_highlight</span> <span class="o">=</span> <span class="mi">0</span>
-<span class="n">loop_counter</span> <span class="o">=</span> <span class="mi">0</span>
-<span class="n">loop_index</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span>
-
-<span class="n">highlights</span> <span class="o">=</span> <span class="p">[]</span>
-
-<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;kindle/My Clippings.txt&quot;</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">df</span><span class="p">:</span>
-    <span class="n">lines</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">readlines</span><span class="p">()</span>
-    <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">lines</span><span class="p">:</span>
-        <span class="n">count</span> <span class="o">+=</span> <span class="mi">1</span>
-        <span class="n">line</span> <span class="o">=</span> <span class="n">line</span><span class="p">[:</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="c1"># remove EOL \n</span>
-
-        <span class="k">if</span> <span class="s1">&#39;</span><span class="se">\ufeff</span><span class="s1">&#39;</span> <span class="ow">in</span> <span class="n">line</span><span class="p">:</span>
-            <span class="n">line</span> <span class="o">=</span> <span class="n">line</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\ufeff</span><span class="s1">&#39;</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">)</span>
-
-        <span class="c1">### Check</span>
-        <span class="c1"># if line not in skip:</span>
-        <span class="c1"># if count &lt; 100:</span>
-        <span class="c1">#     print(count, repr(line))</span>
-
-        <span class="c1">### Highlight loop</span>
-
-        <span class="k">if</span> <span class="n">count</span> <span class="o">&gt;</span> <span class="mi">4</span><span class="p">:</span> <span class="c1"># skip first lines</span>
-
-            <span class="n">loop_counter</span> <span class="o">+=</span> <span class="mi">1</span>
-
-            <span class="k">if</span> <span class="s2">&quot;====&quot;</span> <span class="ow">in</span> <span class="n">line</span><span class="p">:</span>
-                <span class="n">count_highlight</span> <span class="o">+=</span> <span class="mi">1</span>
-                <span class="n">loop_counter</span> <span class="o">=</span> <span class="mi">1</span> <span class="c1"># reset loop counter for each highlight block to identify rows</span>
-                <span class="n">loop_index</span> <span class="o">+=</span> <span class="mi">1</span> <span class="c1"># new loop index for each highlight block</span>
-
-            <span class="k">if</span> <span class="n">loop_counter</span> <span class="o">==</span> <span class="mi">2</span><span class="p">:</span>
-                <span class="n">title</span> <span class="o">=</span> <span class="n">line</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">)</span>
-                <span class="k">if</span> <span class="n">test</span><span class="p">:</span>
-                    <span class="nb">print</span><span class="p">(</span><span class="n">count</span><span class="p">,</span> <span class="n">loop_index</span><span class="p">,</span> <span class="nb">repr</span><span class="p">(</span><span class="n">title</span><span class="p">))</span>
-                <span class="n">highlights</span><span class="o">.</span><span class="n">append</span><span class="p">([</span><span class="n">title</span><span class="p">])</span>
-
-            <span class="k">if</span> <span class="n">loop_counter</span> <span class="o">==</span> <span class="mi">3</span><span class="p">:</span>
-                <span class="n">location</span> <span class="o">=</span> <span class="n">line</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">)</span>
-                <span class="n">location</span> <span class="o">=</span> <span class="n">location</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;- Your Highlight on &#39;</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">)</span>
-                <span class="n">location</span> <span class="o">=</span> <span class="n">location</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;- Your Highlight at &#39;</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">)</span>
-                <span class="n">location</span> <span class="o">=</span> <span class="n">location</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;- Your Note on &#39;</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">)</span>
-                <span class="n">parts</span> <span class="o">=</span> <span class="n">location</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39; | &#39;</span><span class="p">)</span>
-                <span class="n">location</span> <span class="o">=</span> <span class="n">parts</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
-                <span class="k">if</span> <span class="n">test</span><span class="p">:</span>
-                    <span class="nb">print</span><span class="p">(</span><span class="n">count</span><span class="p">,</span> <span class="n">loop_index</span><span class="p">,</span> <span class="nb">repr</span><span class="p">(</span><span class="n">location</span><span class="p">))</span>
-                <span class="n">highlights</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="n">loop_index</span><span class="p">,</span> <span class="n">highlights</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">:][</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">location</span><span class="p">))</span>
-
-            <span class="k">if</span> <span class="n">loop_counter</span> <span class="o">==</span> <span class="mi">5</span><span class="p">:</span>
-                <span class="n">highlight</span> <span class="o">=</span> <span class="n">line</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">)</span>
-                <span class="k">if</span> <span class="n">test</span><span class="p">:</span>
-                    <span class="nb">print</span><span class="p">(</span><span class="n">count</span><span class="p">,</span> <span class="n">loop_index</span><span class="p">,</span> <span class="nb">repr</span><span class="p">(</span><span class="n">highlight</span><span class="p">))</span>
-                <span class="n">highlights</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="n">loop_index</span><span class="p">,</span> <span class="n">highlights</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">:][</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">highlight</span><span class="p">))</span>
-
-<span class="n">highlights</span> <span class="o">=</span> <span class="p">[</span><span class="n">x</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">highlights</span> <span class="k">if</span> <span class="n">x</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">]</span>
-
-<span class="nb">print</span><span class="p">()</span>
-<span class="k">if</span> <span class="n">test</span><span class="p">:</span>
-    <span class="n">pp</span><span class="o">.</span><span class="n">pprint</span><span class="p">(</span><span class="n">highlights</span><span class="p">)</span>
-
-<span class="c1">### Convert highlights to list of tuples</span>
-<span class="n">highlights</span> <span class="o">=</span> <span class="p">[</span><span class="nb">tuple</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">highlights</span><span class="p">]</span>
-
-<span class="c1"># for x in highlights:</span>
-<span class="c1">#     print(type(x))</span>
-
-<span class="k">if</span> <span class="n">test</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">highlights:</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
-    <span class="k">for</span> <span class="n">index</span><span class="p">,</span> <span class="n">value</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">highlights</span><span class="p">):</span>
-        <span class="nb">print</span><span class="p">(</span><span class="n">index</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span>
-
-<span class="n">highlights_dict</span> <span class="o">=</span> <span class="n">defaultdict</span><span class="p">(</span><span class="nb">list</span><span class="p">)</span>
-
-<span class="k">if</span> <span class="n">test</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n\n</span><span class="s2">Building highlights dict:</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
-<span class="k">for</span> <span class="n">title</span><span class="p">,</span> <span class="n">location</span><span class="p">,</span> <span class="n">highlight</span> <span class="ow">in</span> <span class="n">highlights</span><span class="p">:</span>
-    <span class="k">if</span> <span class="n">test</span><span class="p">:</span>
-        <span class="k">if</span> <span class="n">select_title</span> <span class="ow">in</span> <span class="n">title</span><span class="p">:</span>
-            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;building highlights_dict with: </span><span class="si">{</span><span class="n">title</span><span class="si">=}</span><span class="s2">&quot;</span><span class="p">,</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">location</span><span class="si">=}</span><span class="s2">&quot;</span><span class="p">,</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">highlight</span><span class="si">=}</span><span class="s2">&quot;</span><span class="p">)</span>
-    <span class="n">highlights_dict</span><span class="p">[</span><span class="n">title</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="n">location</span><span class="p">,</span> <span class="n">highlight</span><span class="p">))</span>
-
-
-<span class="c1"># highlights_dict = dict of list with tuples</span>
-
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n\n</span><span class="s2">ALL BOOK TITLES WITH HIGHLIGHTS:</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
-<span class="k">for</span> <span class="n">index</span><span class="p">,</span> <span class="n">book_title</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">highlights_dict</span><span class="p">):</span>
-    <span class="nb">print</span><span class="p">(</span><span class="n">index</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="n">book_title</span><span class="p">)</span>
-
-<span class="n">count_max_print</span> <span class="o">=</span> <span class="mi">0</span>
-<span class="n">max_print</span> <span class="o">=</span> <span class="mi">100</span>
-
-<span class="k">for</span> <span class="n">title</span><span class="p">,</span><span class="n">list_highlights</span> <span class="ow">in</span> <span class="n">highlights_dict</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
-
-    <span class="k">if</span> <span class="n">select_title</span> <span class="ow">in</span> <span class="n">title</span><span class="p">:</span>
-
-        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n\n</span><span class="s2">BOOK: </span><span class="si">{</span><span class="n">title</span><span class="si">}</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
-
-        <span class="k">for</span> <span class="n">highlight</span> <span class="ow">in</span> <span class="n">list_highlights</span><span class="p">:</span>
-
-            <span class="c1"># count_max_print += 1</span>
-            <span class="c1"># if count_max_print &gt; max_print:</span>
-
-            <span class="c1"># Inserting values in my custom HTML block for book quotes</span>
-            <span class="n">html</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;&lt;div class=</span><span class="se">\&quot;</span><span class="s2">book_quote</span><span class="se">\&quot;</span><span class="s2">&gt;</span><span class="se">\n</span><span class="s2">&lt;div class=</span><span class="se">\&quot;</span><span class="s2">book_quote_highlight</span><span class="se">\&quot;</span><span class="s2">&gt;</span><span class="si">{</span><span class="n">highlight</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="si">}</span><span class="s2">&lt;/div&gt;</span><span class="se">\n</span><span class="s2">&lt;div class=</span><span class="se">\&quot;</span><span class="s2">book_quote_location</span><span class="se">\&quot;</span><span class="s2">&gt;</span><span class="si">{</span><span class="n">highlight</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="si">}</span><span class="s2">&lt;/div&gt;&lt;/div&gt;</span><span class="se">\n</span><span class="s2">&quot;</span>
-            <span class="nb">print</span><span class="p">(</span><span class="n">html</span><span class="p">)</span>
-
-
-<span class="c1">########################################################################################################</span>
-<span class="c1"># default boilerplate here. See python/boilerplate.</span>
-</code></pre></div>
-
-<p><span class="datestamp">15 Jul 2022</span>   </p>
-<p>I'm trying to consolidate a list of all the books I have read. This includes my Kindle library, which has been the primary consumption method over the last 10 years.  </p>
-<p>It does not seem that there is an easy way to get one's Kindle data from Amazon (is that not a breach of some kind? At the very least it's bad software practice these days).   </p>
-<p>So I went ahead with the only way I know: scraping data with Python.   </p>
-<p>Ideally, one would query the pages directly on the server (calls with <code>requests</code> library) but as they sit behind a login, it was too tiresome to figure out the authentication (always a pain).  </p>
-<p>So:</p>
-<ol>
-<li>Login to your Amazon account, and go to <code>Manage Your Content and Devices</code> - resulting in this URL for me, not sure if universal/consistent:   </li>
-</ol>
-<div class="link_border"><div class="link_logo_box"><img class="link_logo" src="https://logo.clearbit.com/amazon.co.uk?size=35" alt="logo"/></div><div class="link_content">
-<div class="link_title">Amazon Sign In | Manage Your Content and Devices</div>
-<div class="link_tagline">amazon.co.uk</div>
-<div class="link_url"><a href="https://www.amazon.co.uk/hz/mycd/digital-console/contentlist/booksAll/dateDsc" target="_blank">https://www.amazon.co.uk/hz/mycd/digital-console/contentlist/booksAll/dateDsc</a></div></div></div>
-
-<ol>
-<li>Save each page listing your books in a folder, as <code>Webpage, Complete</code> (though <code>Webpage, HTML Only</code> should do the trick too).  </li>
-</ol>
-<p>Analysing the HTML code of one, we can identify the needed tags we need to target:   </p>
-<p><img class="illustration" src="https://notes.nicolasdeville.com/images/python_kindle-library.jpg" alt="python_kindle-library.jpg"/>  </p>
-<ol>
-<li>This is the basic script used to scrape the relevant data from each page:  </li>
-</ol>
-<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">bs4</span> <span class="kn">import</span> <span class="n">BeautifulSoup</span>
-<span class="kn">import</span> <span class="nn">re</span>
-<span class="kn">from</span> <span class="nn">slugify</span> <span class="kn">import</span> <span class="n">slugify</span> <span class="c1"># to slugify book titles (also used as ID for gross deduplication)</span>
-
-<span class="n">file</span> <span class="o">=</span> <span class="s1">&#39;/path/to/folder/Kindle/Amazon.co.uk_ Manage Your Content and Devices.html&#39;</span>
-
-<span class="n">soup</span> <span class="o">=</span> <span class="n">BeautifulSoup</span><span class="p">(</span><span class="nb">open</span><span class="p">(</span><span class="n">file</span><span class="p">),</span> <span class="s1">&#39;html.parser&#39;</span><span class="p">)</span>
-
-<span class="n">books</span> <span class="o">=</span> <span class="n">soup</span><span class="o">.</span><span class="n">find_all</span><span class="p">(</span><span class="n">class_</span><span class="o">=</span><span class="s1">&#39;ListItem-module_row__3orql&#39;</span><span class="p">)</span>
-
-<span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">books</span><span class="p">:</span>
-    <span class="c1"># this piece is what took me the most time to figure out, helping target CSS IDs STARTING WITH a specific string as each has a custom ID appended with a random string: {&quot;id&quot; : lambda L: L and L.startswith(&#39;content-title&#39;)})</span>
-    <span class="n">title_block</span> <span class="o">=</span> <span class="n">x</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s2">&quot;div&quot;</span><span class="p">,</span> <span class="p">{</span><span class="s2">&quot;id&quot;</span> <span class="p">:</span> <span class="k">lambda</span> <span class="n">L</span><span class="p">:</span> <span class="n">L</span> <span class="ow">and</span> <span class="n">L</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s1">&#39;content-title&#39;</span><span class="p">)})</span><span class="o">.</span><span class="n">text</span>
-    <span class="k">if</span> <span class="s1">&#39;:&#39;</span> <span class="ow">in</span> <span class="n">title_block</span><span class="p">:</span> <span class="c1"># to separate title and tagline, where tagline is in the title, eg &#39;title: tagline&#39;</span>
-        <span class="n">title</span> <span class="o">=</span> <span class="n">title_block</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;:&#39;</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
-        <span class="n">tagline</span> <span class="o">=</span> <span class="n">title_block</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;:&#39;</span><span class="p">)[</span><span class="mi">1</span><span class="p">]</span>
-    <span class="k">else</span><span class="p">:</span>
-        <span class="n">title</span> <span class="o">=</span> <span class="n">title_block</span>
-        <span class="n">tagline</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span>
-    <span class="n">slug</span> <span class="o">=</span> <span class="n">slugify</span><span class="p">(</span><span class="n">title</span><span class="p">)</span> <span class="c1"># slugify the title. Used for deduplication, cover image naming, file naming and slug definition</span>
-    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">title</span><span class="si">=}</span><span class="s2">&quot;</span><span class="p">)</span>
-    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">slug</span><span class="si">=}</span><span class="s2">&quot;</span><span class="p">)</span>
-    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">tagline</span><span class="si">=}</span><span class="s2">&quot;</span><span class="p">)</span>
-
-    <span class="c1"># same lambda logic to target the other tag based on CSS id starting with</span>
-    <span class="n">author</span> <span class="o">=</span> <span class="n">x</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s2">&quot;div&quot;</span><span class="p">,</span> <span class="p">{</span><span class="s2">&quot;id&quot;</span> <span class="p">:</span> <span class="k">lambda</span> <span class="n">L</span><span class="p">:</span> <span class="n">L</span> <span class="ow">and</span> <span class="n">L</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s1">&#39;content-author&#39;</span><span class="p">)})</span><span class="o">.</span><span class="n">text</span>
-    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">author</span><span class="si">=}</span><span class="s2">&quot;</span><span class="p">)</span>
-
-    <span class="n">date</span> <span class="o">=</span> <span class="n">x</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s2">&quot;div&quot;</span><span class="p">,</span> <span class="p">{</span><span class="s2">&quot;id&quot;</span> <span class="p">:</span> <span class="k">lambda</span> <span class="n">L</span><span class="p">:</span> <span class="n">L</span> <span class="ow">and</span> <span class="n">L</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s1">&#39;content-acquired-date&#39;</span><span class="p">)})</span><span class="o">.</span><span class="n">text</span>
-    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">date</span><span class="si">=}</span><span class="s2">&quot;</span><span class="p">)</span>
-
-    <span class="nb">print</span><span class="p">()</span>
-</code></pre></div>
-
-<p>To run the script on all files in the folder where the HTML files have been downloaded, I just add:</p>
-<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">os</span>
-
-<span class="k">for</span> <span class="n">root</span><span class="p">,</span> <span class="n">dirs</span><span class="p">,</span> <span class="n">files</span> <span class="ow">in</span> <span class="n">os</span><span class="o">.</span><span class="n">walk</span><span class="p">(</span><span class="s2">&quot;/path/to/folder/with/HTML/files&quot;</span><span class="p">):</span>
-    <span class="k">for</span> <span class="n">name</span> <span class="ow">in</span> <span class="n">files</span><span class="p">:</span>
-        <span class="k">if</span> <span class="n">name</span><span class="o">.</span><span class="n">endswith</span><span class="p">((</span><span class="s2">&quot;.html&quot;</span><span class="p">)):</span>
-</code></pre></div>
-
-<p>Instead of just printing, you can export the data to the target of your choice.  </p>
-<p>Grist in my case:    </p>
-<div class="link_border"><div class="link_logo_box"><img class="link_logo" src="https://logo.clearbit.com/getgrist.com?size=35" alt="logo"/></div><div class="link_content">
-<div class="link_title">Grist</div>
-<div class="link_tagline">The Evolution of Spreadsheets</div>
-<div class="link_url"><a href="https://www.getgrist.com" target="_blank">https://www.getgrist.com</a></div></div></div>
-
-<p>with this addition to the code:  </p>
-<div class="highlight"><pre><span></span><code>                <span class="k">if</span> <span class="n">slug</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">books_slugs</span><span class="p">:</span>
-
-                    <span class="n">count_added</span> <span class="o">+=</span> <span class="mi">1</span>
-
-                    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">count_added</span><span class="si">}</span><span class="s2"> ADDED in Grist: </span><span class="si">{</span><span class="n">title</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-
-                    <span class="n">grist_PE</span><span class="o">.</span><span class="n">Books</span><span class="o">.</span><span class="n">add_records</span><span class="p">(</span><span class="s1">&#39;Master&#39;</span><span class="p">,</span> <span class="p">[</span>
-                                                    <span class="p">{</span>   <span class="s1">&#39;Title&#39;</span><span class="p">:</span> <span class="n">title</span><span class="p">,</span>
-                                                        <span class="s1">&#39;Author&#39;</span><span class="p">:</span> <span class="n">author</span><span class="p">,</span>
-                                                        <span class="s1">&#39;Slug&#39;</span><span class="p">:</span> <span class="n">slug</span><span class="p">,</span>
-                                                        <span class="s1">&#39;Tagline&#39;</span><span class="p">:</span> <span class="n">tagline</span><span class="p">,</span>
-                                                        <span class="s1">&#39;Bought&#39;</span><span class="p">:</span> <span class="n">date</span><span class="p">,</span>
-                                                        <span class="s1">&#39;Cover&#39;</span><span class="p">:</span> <span class="sa">f</span><span class="s2">&quot;book_</span><span class="si">{</span><span class="n">slug</span><span class="si">}</span><span class="s2">.jpg&quot;</span><span class="p">,</span>
-                                                        <span class="p">}</span>
-                                                <span class="p">])</span>
-</code></pre></div>
+</footer>                    </div>
+                    
                 </article>
-            </aside>
-
-                <section id="content" class="body">
-
-                <!-- PREVIOUS NOTES -->
-				<p class="notes-section">previous notes</p>
-                <hr>
-
-                <ol id="posts-list" class="hfeed">
+                <hr/>
+            </li>
             
 
 
@@ -620,92 +541,6 @@ The <code>loop_counter</code> implemented below solved this.  </p>
         <!-- 		<br />
         <abbr class="modified" title="2022-07-30T10:21:48.162287+02:00">
                 Updated: 30 Jul 2022
-        </abbr>
- -->
-
-    </p>
-
-    
-
-</footer>                    </div>
-                    
-                </article>
-                <hr/>
-            </li>
-            
-
-
-
-            <li>
-                <article class="hentry">
-                    <header>
-                        <!-- PREVIOUS NOTE TITLE -->
-                        <h1><a href="https://notes.nicolasdeville.com/python/library-tmdbv3api" rel="bookmark"
-                            title="Library: tmdbv3api | fetching movie data">Library: tmdbv3api | fetching movie data</a></h1>
-                        <!-- PREVIOUS NOTE SUMMARY -->
-                        <div class="entry-content">
-                            <p>Python wrapper for the TMDB API - themoviedb.org</p>
-                        </div>
-                    </header>
-
-                    <div class="entry-content">
-                        <!-- PREVIOUS NOTE METADATA -->
-<footer class="post-info">
-
-    <p>
-        23 Jul 2022 <span class="separator">|</span> in <a class="link_tag" href="https://notes.nicolasdeville.com/python/">python</a>
- tags: <a class="link_tag" href="https://notes.nicolasdeville.com/tag/python.html">python</a>
-<a class="link_tag" href="https://notes.nicolasdeville.com/tag/libraries.html">libraries</a>
-<a class="link_tag" href="https://notes.nicolasdeville.com/tag/scripts.html">scripts</a>
-<a class="link_tag" href="https://notes.nicolasdeville.com/tag/api.html">api</a>
-
-        <!-- added 4/7 -->
-        <!-- 		<br />
-        <abbr class="modified" title="2022-07-23T19:59:09.816989+02:00">
-                Updated: 23 Jul 2022
-        </abbr>
- -->
-
-    </p>
-
-    
-
-</footer>                    </div>
-                    
-                </article>
-                <hr/>
-            </li>
-            
-
-
-
-            <li>
-                <article class="hentry">
-                    <header>
-                        <!-- PREVIOUS NOTE TITLE -->
-                        <h1><a href="https://notes.nicolasdeville.com/python/library-tmdbapis" rel="bookmark"
-                            title="Library: tmdbapis | fetching movie data">Library: tmdbapis | fetching movie data</a></h1>
-                        <!-- PREVIOUS NOTE SUMMARY -->
-                        <div class="entry-content">
-                            <p>Python wrapper for the TMDB API - themoviedb.org - with support for API v4</p>
-                        </div>
-                    </header>
-
-                    <div class="entry-content">
-                        <!-- PREVIOUS NOTE METADATA -->
-<footer class="post-info">
-
-    <p>
-        23 Jul 2022 <span class="separator">|</span> in <a class="link_tag" href="https://notes.nicolasdeville.com/python/">python</a>
- tags: <a class="link_tag" href="https://notes.nicolasdeville.com/tag/python.html">python</a>
-<a class="link_tag" href="https://notes.nicolasdeville.com/tag/libraries.html">libraries</a>
-<a class="link_tag" href="https://notes.nicolasdeville.com/tag/scripts.html">scripts</a>
-<a class="link_tag" href="https://notes.nicolasdeville.com/tag/api.html">api</a>
-
-        <!-- added 4/7 -->
-        <!-- 		<br />
-        <abbr class="modified" title="2022-07-23T19:57:52.373199+02:00">
-                Updated: 23 Jul 2022
         </abbr>
  -->
 
