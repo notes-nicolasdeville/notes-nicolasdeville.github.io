@@ -42,7 +42,7 @@
             </div>
 
             <div class="above-navbar">
-                <div class="last_updated">24 Sep 2022 | 11:17</div>
+                <div class="last_updated">24 Sep 2022 | 12:09</div>
                 <div>
                     <p class="notes_count">
                         <a href="https://notes.nicolasdeville.com/tags">by tags</a> 
@@ -118,7 +118,7 @@
 
         <!-- added 4/7 -->
         <!-- 		<br />
-        <abbr class="modified" title="2022-09-24T11:17:19.959660+02:00">
+        <abbr class="modified" title="2022-09-24T12:09:11.926544+02:00">
                 Updated: 24 Sep 2022
         </abbr>
  -->
@@ -137,6 +137,7 @@
 <li><a href="#final-approach-whisper">Final approach (Whisper)</a><ul>
 <li><a href="#transcribe">Transcribe</a></li>
 <li><a href="#clean-transcript">Clean Transcript</a></li>
+<li><a href="#fetch-recordings">Fetch Recordings</a></li>
 </ul>
 </li>
 </ul>
@@ -403,6 +404,30 @@ Node|Note
 question mark|?
 # always leave an empty line at the end
 </code></pre></div>
+
+<h2 id="fetch-recordings">Fetch Recordings</h2>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">os</span><span class="o">,</span> <span class="nn">os.path</span>
+<span class="n">count_recordings</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="k">for</span> <span class="n">root</span><span class="p">,</span> <span class="n">dirs</span><span class="p">,</span> <span class="n">files</span> <span class="ow">in</span> <span class="n">os</span><span class="o">.</span><span class="n">walk</span><span class="p">(</span><span class="s2">&quot;/Users/xxxx/Library/Mobile Documents/iCloud~com~openplanetsoftware~just-press-record/Documents&quot;</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">os</span><span class="o">.</span><span class="n">listdir</span><span class="p">(</span><span class="n">root</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">x</span><span class="o">.</span><span class="n">endswith</span><span class="p">(</span><span class="s2">&quot;.icloud&quot;</span><span class="p">):</span>
+            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">x</span><span class="si">=}</span><span class="s2">&quot;</span><span class="p">)</span>
+            <span class="k">if</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">isfile</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+                <span class="n">count_recordings</span> <span class="o">+=</span> <span class="mi">1</span>
+</code></pre></div>
+
+<p>gets <code>.m4a.icloud</code> files, not considered as files by Python 🤔   </p>
+<div class="highlight"><pre><span></span><code>x=&#39;.01-27-21.m4a.icloud&#39;
+x=&#39;.20-58-36.m4a.icloud&#39;
+x=&#39;.13-51-05.m4a.icloud&#39;
+
+-------------------------------
+main.py
+
+count_recordings=0
+</code></pre></div>
+
+<p>seem to be hidden files as starting with <code>.</code>     </p>
                 </article>
             </aside>
 
@@ -440,7 +465,46 @@ question mark|?
 
         <!-- added 4/7 -->
         <!-- 		<br />
-        <abbr class="modified" title="2022-09-24T10:32:59.612158+02:00">
+        <abbr class="modified" title="2022-09-24T12:09:08.175303+02:00">
+                Updated: 24 Sep 2022
+        </abbr>
+ -->
+
+    </p>
+
+    
+
+</footer>                    </div>
+                    
+                </article>
+                <hr/>
+            </li>
+            
+
+
+
+            <li>
+                <article class="hentry">
+                    <header>
+                        <!-- PREVIOUS NOTE TITLE -->
+                        <h1><a href="https://notes.nicolasdeville.com/home-office/shopping" rel="bookmark"
+                            title="Shopping ideas for home office">Shopping ideas for home office</a></h1>
+                        <!-- PREVIOUS NOTE SUMMARY -->
+                        <div class="entry-content">
+                            
+                        </div>
+                    </header>
+
+                    <div class="entry-content">
+                        <!-- PREVIOUS NOTE METADATA -->
+<footer class="post-info">
+
+    <p>
+        24 Sep 2022 <span class="separator">|</span> in <a class="link_tag" href="https://notes.nicolasdeville.com/home-office/">home office</a>
+
+        <!-- added 4/7 -->
+        <!-- 		<br />
+        <abbr class="modified" title="2022-09-24T12:09:00.140097+02:00">
                 Updated: 24 Sep 2022
         </abbr>
  -->
@@ -1706,45 +1770,6 @@ question mark|?
                 <article class="hentry">
                     <header>
                         <!-- PREVIOUS NOTE TITLE -->
-                        <h1><a href="https://notes.nicolasdeville.com/home-office/shopping" rel="bookmark"
-                            title="Shopping ideas for home office">Shopping ideas for home office</a></h1>
-                        <!-- PREVIOUS NOTE SUMMARY -->
-                        <div class="entry-content">
-                            
-                        </div>
-                    </header>
-
-                    <div class="entry-content">
-                        <!-- PREVIOUS NOTE METADATA -->
-<footer class="post-info">
-
-    <p>
-        23 Sep 2022 <span class="separator">|</span> in <a class="link_tag" href="https://notes.nicolasdeville.com/home-office/">home office</a>
-
-        <!-- added 4/7 -->
-        <!-- 		<br />
-        <abbr class="modified" title="2022-09-23T08:14:59.631832+02:00">
-                Updated: 23 Sep 2022
-        </abbr>
- -->
-
-    </p>
-
-    
-
-</footer>                    </div>
-                    
-                </article>
-                <hr/>
-            </li>
-            
-
-
-
-            <li>
-                <article class="hentry">
-                    <header>
-                        <!-- PREVIOUS NOTE TITLE -->
                         <h1><a href="https://notes.nicolasdeville.com/projects/apps-library" rel="bookmark"
                             title="Project: Apps Library">Project: Apps Library</a></h1>
                         <!-- PREVIOUS NOTE SUMMARY -->
@@ -2374,8 +2399,8 @@ question mark|?
     </p>
 
     Translations:
-        <a href="https://notes.nicolasdeville.com/learning/ai" hreflang="en">en</a>
         <a href="https://notes.nicolasdeville.com/random/ai" hreflang="en">en</a>
+        <a href="https://notes.nicolasdeville.com/learning/ai" hreflang="en">en</a>
 
 
 </footer>                    </div>
@@ -2498,8 +2523,8 @@ question mark|?
     </p>
 
     Translations:
-        <a href="https://notes.nicolasdeville.com/interests/ai" hreflang="en">en</a>
         <a href="https://notes.nicolasdeville.com/random/ai" hreflang="en">en</a>
+        <a href="https://notes.nicolasdeville.com/interests/ai" hreflang="en">en</a>
 
 
 </footer>                    </div>
