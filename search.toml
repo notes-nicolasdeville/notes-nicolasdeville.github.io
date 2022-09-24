@@ -8,6 +8,11 @@ url = "/ABOUT/"
 title = ""
 
 [[input.files]]
+path = "ai/whisper/index.html"
+url = "/ai/whisper"
+title = "Whisper"
+
+[[input.files]]
 path = "interests/elon/index.html"
 url = "/interests/elon"
 title = "Elon Musk"
@@ -21,11 +26,6 @@ title = "Starlink"
 path = "ai/art/index.html"
 url = "/ai/art"
 title = "AI-generated art"
-
-[[input.files]]
-path = "ai/whisper/index.html"
-url = "/ai/whisper"
-title = "Whisper"
 
 [[input.files]]
 path = "ai/services/index.html"
@@ -2063,11 +2063,6 @@ url = "/helpers/clipper"
 title = "My web clipboard"
 
 [[input.files]]
-path = "random/ai/index.html"
-url = "/random/ai"
-title = "AI"
-
-[[input.files]]
 path = "learning/ai/index.html"
 url = "/learning/ai"
 title = "Learning AI"
@@ -2080,6 +2075,11 @@ title = "AI"
 [[input.files]]
 path = "interests/ai/index.html"
 url = "/interests/ai"
+title = "AI"
+
+[[input.files]]
+path = "random/ai/index.html"
+url = "/random/ai"
 title = "AI"
 
 [[input.files]]
