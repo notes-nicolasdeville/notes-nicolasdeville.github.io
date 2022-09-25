@@ -8,6 +8,26 @@ url = "/ABOUT/"
 title = ""
 
 [[input.files]]
+path = "python/library-beautifulsoup/index.html"
+url = "/python/library-beautifulsoup"
+title = "Python Library: Beautifulsoup"
+
+[[input.files]]
+path = "python/library-dateutil/index.html"
+url = "/python/library-dateutil"
+title = "Python Library: dateutil"
+
+[[input.files]]
+path = "python/library-datetime/index.html"
+url = "/python/library-datetime"
+title = "Python Library: datetime"
+
+[[input.files]]
+path = "projects/recordee/index.html"
+url = "/projects/recordee"
+title = "Recordee"
+
+[[input.files]]
 path = "ai/whisper/index.html"
 url = "/ai/whisper"
 title = "Whisper"
@@ -16,11 +36,6 @@ title = "Whisper"
 path = "helpers/terminal/index.html"
 url = "/helpers/terminal"
 title = "macOS Terminal"
-
-[[input.files]]
-path = "projects/recordee/index.html"
-url = "/projects/recordee"
-title = "Recordee"
 
 [[input.files]]
 path = "python/library-re/index.html"
@@ -33,24 +48,9 @@ url = "/python/library-tmdbv3api"
 title = "Python Library: tmdbv3api | fetching movie data"
 
 [[input.files]]
-path = "python/library-datetime/index.html"
-url = "/python/library-datetime"
-title = "Python library: datetime"
-
-[[input.files]]
 path = "python/library-tmdbapis/index.html"
 url = "/python/library-tmdbapis"
 title = "Python Library: tmdbapis | fetching movie data"
-
-[[input.files]]
-path = "python/library-dateutil/index.html"
-url = "/python/library-dateutil"
-title = "Python library: dateutil"
-
-[[input.files]]
-path = "python/library-beautifulsoup/index.html"
-url = "/python/library-beautifulsoup"
-title = "Python library: Beautifulsoup"
 
 [[input.files]]
 path = "python/libraries/index.html"
@@ -953,14 +953,14 @@ url = "/apps/radar"
 title = "Apps on my radar"
 
 [[input.files]]
-path = "python/books/index.html"
-url = "/python/books"
-title = "My Python Books Library"
-
-[[input.files]]
 path = "b2b-sales/books/index.html"
 url = "/b2b-sales/books"
 title = "My B2B Books Library"
+
+[[input.files]]
+path = "python/books/index.html"
+url = "/python/books"
+title = "My Python Books Library"
 
 [[input.files]]
 path = "books/library/index.html"
@@ -2093,6 +2093,11 @@ url = "/helpers/clipper"
 title = "My web clipboard"
 
 [[input.files]]
+path = "random/ai/index.html"
+url = "/random/ai"
+title = "AI"
+
+[[input.files]]
 path = "learning/ai/index.html"
 url = "/learning/ai"
 title = "Learning AI"
@@ -2105,11 +2110,6 @@ title = "AI"
 [[input.files]]
 path = "interests/ai/index.html"
 url = "/interests/ai"
-title = "AI"
-
-[[input.files]]
-path = "random/ai/index.html"
-url = "/random/ai"
 title = "AI"
 
 [[input.files]]
@@ -2128,14 +2128,14 @@ url = "/books/library"
 title = "My Books Library"
 
 [[input.files]]
-path = "b2b-sales/books/index.html"
-url = "/b2b-sales/books"
-title = "My B2B Books Library"
-
-[[input.files]]
 path = "python/books/index.html"
 url = "/python/books"
 title = "My Python Books Library"
+
+[[input.files]]
+path = "b2b-sales/books/index.html"
+url = "/b2b-sales/books"
+title = "My B2B Books Library"
 
 [[input.files]]
 path = "apps/library/index.html"

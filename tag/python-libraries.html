@@ -24,8 +24,8 @@
 
 
     <!-- for Stork seach engine -->
-    <!-- <link rel="stylesheet" href="https://files.stork-search.net/basic.css" /> # 220924 -->
-    <link rel="stylesheet" href="https://files.stork-search.net/releases/v1.5.0/edible.css" />
+    <link rel="stylesheet" href="https://files.stork-search.net/basic.css" /> 
+    <!-- <link rel="stylesheet" href="https://files.stork-search.net/releases/v1.5.0/edible.css" /> # tried 220924-->
 
 </head>
 
@@ -43,7 +43,7 @@
             </div>
 
             <div class="above-navbar">
-                <div class="last_updated">25 Sep 2022 | 10:45</div>
+                <div class="last_updated">25 Sep 2022 | 11:02</div>
                 <div>
                     <p class="notes_count">
                         <a href="https://notes.nicolasdeville.com/tags">by tags</a> 
@@ -101,15 +101,201 @@
             <hr/>
 
                 <article class="hentry">
-                    <h1 class="entry-title"><a href="https://notes.nicolasdeville.com/python/library-re">Python Library: re (regex)</a></h1>
+                    <h1 class="entry-title"><a href="https://notes.nicolasdeville.com/python/library-beautifulsoup">Python Library: Beautifulsoup</a></h1>
 
                     <!-- added 4/7 -->
                     <div>
                         <p class="header_summary">
-                            
+                            <p>makes it easy to scrape information from web pages</p>
                         </p>
                     </div>
 
+<footer class="post-info">
+
+    <p>
+        25 Sep 2022 <span class="separator">|</span> in <a class="link_tag" href="https://notes.nicolasdeville.com/python/">python</a>
+ tags: <a class="link_tag" href="https://notes.nicolasdeville.com/tag/python-libraries.html">python libraries</a>
+
+        <!-- added 4/7 -->
+        <!-- 		<br />
+        <abbr class="modified" title="2022-09-25T10:59:31.903532+02:00">
+                Updated: 25 Sep 2022
+        </abbr>
+ -->
+
+    </p>
+
+    
+
+</footer><p><span class="datestamp">15 Jul 2022</span> starting note *<em>note date indicates latest update.</em>     </p>
+<table>
+<thead>
+<tr>
+<th>Library resources</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>PyPI</td>
+<td><a href="https://pypi.org/project/beautifulsoup4/" target="_blank">https://pypi.org/project/beautifulsoup4/</a></td>
+</tr>
+<tr>
+<td>Github</td>
+<td>---</td>
+</tr>
+<tr>
+<td>Documentation</td>
+<td><a href="https://beautiful-soup-4.readthedocs.io/en/latest/" target="_blank">https://beautiful-soup-4.readthedocs.io/en/latest/</a></td>
+</tr>
+</tbody>
+</table>
+<div class="highlight"><pre><span></span><code><span class="n">pip3</span> <span class="n">install</span> <span class="n">beautifulsoup4</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">bs4</span> <span class="kn">import</span> <span class="n">BeautifulSoup</span>
+
+<span class="n">file</span> <span class="o">=</span> <span class="s1">&#39;path/to/folder/file.html&#39;</span>
+
+<span class="n">soup</span> <span class="o">=</span> <span class="n">BeautifulSoup</span><span class="p">(</span><span class="nb">open</span><span class="p">(</span><span class="n">file</span><span class="p">),</span> <span class="s1">&#39;html.parser&#39;</span><span class="p">)</span>
+
+<span class="n">books</span> <span class="o">=</span> <span class="n">soup</span><span class="o">.</span><span class="n">find_all</span><span class="p">(</span><span class="s1">&#39;h3&#39;</span><span class="p">)</span>
+
+<span class="k">for</span> <span class="n">book</span> <span class="ow">in</span> <span class="n">books</span><span class="p">:</span>
+
+    <span class="n">title</span> <span class="o">=</span> <span class="n">book</span><span class="o">.</span><span class="n">text</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">title</span><span class="si">=}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+    <span class="n">y</span> <span class="o">=</span> <span class="n">x</span><span class="o">.</span><span class="n">contents</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="n">link</span> <span class="o">=</span> <span class="n">y</span><span class="p">[</span><span class="s1">&#39;href&#39;</span><span class="p">]</span>
+    <span class="k">except</span><span class="p">:</span>
+        <span class="n">link</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">link</span><span class="si">=}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+    <span class="n">author</span> <span class="o">=</span> <span class="n">x</span><span class="o">.</span><span class="n">next_sibling</span><span class="o">.</span><span class="n">next_sibling</span><span class="o">.</span><span class="n">text</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">author</span><span class="si">=}</span><span class="s2">&quot;</span><span class="p">)</span>
+</code></pre></div>
+
+<h3 id="target-by-id-with-wildcard">Target by ID with wildcard</h3>
+<p>useful when IDs or classes have random strings within them, eg:<br>
+-<code>&lt;div id="content-author-B00CR42MOY" class="information_row"&gt;C. S. Lewis&lt;/div&gt;</code>
+-<code>&lt;div id="content-author-B08CGP9TJ7" class="information_row"&gt;Ernest Cline&lt;/div&gt;</code></p>
+<p>Snippet:</p>
+<div class="highlight"><pre><span></span><code><span class="n">author</span> <span class="o">=</span> <span class="n">x</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s2">&quot;div&quot;</span><span class="p">,</span> <span class="p">{</span><span class="s2">&quot;id&quot;</span> <span class="p">:</span> <span class="k">lambda</span> <span class="n">L</span><span class="p">:</span> <span class="n">L</span> <span class="ow">and</span> <span class="n">L</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s1">&#39;content-author&#39;</span><span class="p">)})</span><span class="o">.</span><span class="n">text</span>
+</code></pre></div>
+
+<h3 id="find-the-next-element-after-a-tag">Find the next element after a tag</h3>
+<div class="highlight"><pre><span></span><code><span class="n">soup</span><span class="o">.</span><span class="n">head</span><span class="o">.</span><span class="n">next_element</span><span class="o">.</span><span class="n">next_element</span>
+</code></pre></div>
+                </article>
+            </aside>
+
+                <section id="content" class="body">
+
+                <!-- PREVIOUS NOTES -->
+				<p class="notes-section">previous notes</p>
+                <hr>
+
+                <ol id="posts-list" class="hfeed">
+            
+
+
+
+            <li>
+                <article class="hentry">
+                    <header>
+                        <!-- PREVIOUS NOTE TITLE -->
+                        <h1><a href="https://notes.nicolasdeville.com/python/library-dateutil" rel="bookmark"
+                            title="Python Library: dateutil">Python Library: dateutil</a></h1>
+                        <!-- PREVIOUS NOTE SUMMARY -->
+                        <div class="entry-content">
+                            <p>better library for date parsing than datetime's <code>strptime</code></p>
+                        </div>
+                    </header>
+
+                    <div class="entry-content">
+                        <!-- PREVIOUS NOTE METADATA -->
+<footer class="post-info">
+
+    <p>
+        25 Sep 2022 <span class="separator">|</span> in <a class="link_tag" href="https://notes.nicolasdeville.com/python/">python</a>
+ tags: <a class="link_tag" href="https://notes.nicolasdeville.com/tag/python-libraries.html">python libraries</a>
+
+        <!-- added 4/7 -->
+        <!-- 		<br />
+        <abbr class="modified" title="2022-09-25T10:59:31.903510+02:00">
+                Updated: 25 Sep 2022
+        </abbr>
+ -->
+
+    </p>
+
+    
+
+</footer>                    </div>
+                    
+                </article>
+                <hr/>
+            </li>
+            
+
+
+
+            <li>
+                <article class="hentry">
+                    <header>
+                        <!-- PREVIOUS NOTE TITLE -->
+                        <h1><a href="https://notes.nicolasdeville.com/python/library-datetime" rel="bookmark"
+                            title="Python Library: datetime">Python Library: datetime</a></h1>
+                        <!-- PREVIOUS NOTE SUMMARY -->
+                        <div class="entry-content">
+                            <p>The datetime module supplies classes for manipulating dates and times.</p>
+                        </div>
+                    </header>
+
+                    <div class="entry-content">
+                        <!-- PREVIOUS NOTE METADATA -->
+<footer class="post-info">
+
+    <p>
+        25 Sep 2022 <span class="separator">|</span> in <a class="link_tag" href="https://notes.nicolasdeville.com/python/">python</a>
+ tags: <a class="link_tag" href="https://notes.nicolasdeville.com/tag/python-libraries.html">python libraries</a>
+
+        <!-- added 4/7 -->
+        <!-- 		<br />
+        <abbr class="modified" title="2022-09-25T10:59:31.903458+02:00">
+                Updated: 25 Sep 2022
+        </abbr>
+ -->
+
+    </p>
+
+    
+
+</footer>                    </div>
+                    
+                </article>
+                <hr/>
+            </li>
+            
+
+
+
+            <li>
+                <article class="hentry">
+                    <header>
+                        <!-- PREVIOUS NOTE TITLE -->
+                        <h1><a href="https://notes.nicolasdeville.com/python/library-re" rel="bookmark"
+                            title="Python Library: re (regex)">Python Library: re (regex)</a></h1>
+                        <!-- PREVIOUS NOTE SUMMARY -->
+                        <div class="entry-content">
+                            
+                        </div>
+                    </header>
+
+                    <div class="entry-content">
+                        <!-- PREVIOUS NOTE METADATA -->
 <footer class="post-info">
 
     <p>
@@ -127,145 +313,11 @@
 
     
 
-</footer><p><span class="datestamp">26 Jul 2022</span>        </p>
-<p>New app:  <br>
-"English to RegEx with Natural Language Processing" <br>
-"Regex is difficult to write and comprehend to the average human reader because of its complex patterns. This website uses GPT-3 to translate back and forth between English and RegEx" <br>
-<a href="https://www.autoregex.xyz/" target="_blank">https://www.autoregex.xyz/</a></p>
-<p><img class="screenshot" src="https://notes.nicolasdeville.com/images/apps_autoregex.jpg" alt="apps_autoregex.jpg"/>  </p>
-<h1 id="script-examples">Script examples</h1>
-<h2 id="spilt-on-first-uppercase-letter-in-string">spilt on first uppercase letter in string</h2>
-<p>Given the following, I want to split each string on first uppercase letter to separate command and description (separated by a variable amount of spaces, no tab):   </p>
-<div class="highlight"><pre><span></span><code>&#39;afconvert Audio File Convert&#39;
-&#39;afinfo    Audio File Info&#39;
-&#39;afplay    Audio File Play&#39;
-&#39;airport   Manage Apple AirPort&#39;
-&#39;alias     Create an alias •&#39;
-&#39;alloc     List used and free memory&#39;
-&#39;apropos   Search the whatis database for strings&#39;
-&#39;asr       Apple Software Restore&#39;
-&#39;atsutil   Font registration system utility&#39;
-</code></pre></div>
-
-<p>working code:    </p>
-<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">re</span>
-
-<span class="k">for</span> <span class="n">row</span> <span class="ow">in</span> <span class="n">ws</span><span class="p">:</span>
-    <span class="n">count_row</span> <span class="o">+=</span> <span class="mi">1</span>
-    <span class="n">first</span> <span class="o">=</span> <span class="n">row</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">value</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
-    <span class="n">command</span> <span class="o">=</span> <span class="p">[</span><span class="n">s</span> <span class="k">for</span> <span class="n">s</span> <span class="ow">in</span> <span class="n">re</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;([A-Z][^A-Z]*)&quot;</span><span class="p">,</span> <span class="n">first</span><span class="p">)</span> <span class="k">if</span> <span class="n">s</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
-    <span class="n">description</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">findall</span><span class="p">(</span><span class="s1">&#39;[A-Z][^A-Z]*&#39;</span><span class="p">,</span> <span class="n">first</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
-    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">command</span><span class="si">=}</span><span class="s2">&quot;</span><span class="p">)</span>
-    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">description</span><span class="si">=}</span><span class="s2">&quot;</span><span class="p">)</span>
-    <span class="nb">print</span><span class="p">()</span>
-</code></pre></div>
-
-<h2 id="regex-email-addresses">regex email addresses</h2>
-<div class="highlight"><pre><span></span><code><span class="n">x</span><span class="o">=</span><span class="n">re</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="s1">&#39;(\w+[.|\w])*@(\w+[.])*\w+&#39;</span><span class="p">,</span><span class="n">email4</span><span class="p">)</span>
-<span class="n">x</span><span class="o">.</span><span class="n">group</span><span class="p">()</span>
-
-<span class="c1"># EXAMPLE:</span>
-
-<span class="n">x</span> <span class="o">=</span> <span class="s1">&#39;(\w+[.|\w])*@(\w+[.])*\w+&#39;</span>
-
-<span class="n">listEmails</span> <span class="o">=</span> <span class="nb">list</span><span class="p">()</span>
-
-<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;/path/to/folder/recipients.txt&#39;</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
-    <span class="n">f</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
-    <span class="n">string</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">f</span><span class="p">)</span>
-    <span class="n">array</span> <span class="o">=</span> <span class="n">string</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;,&quot;</span><span class="p">)</span>
-    <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">array</span><span class="p">:</span>
-        <span class="n">x</span> <span class="o">=</span> <span class="n">x</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;&lt;&#39;</span><span class="p">,</span> <span class="mi">1</span><span class="p">)[</span><span class="mi">1</span><span class="p">]</span>
-        <span class="n">x</span> <span class="o">=</span> <span class="n">x</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;&gt;&#39;</span><span class="p">,</span> <span class="mi">1</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
-        <span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
-        <span class="n">listEmails</span><span class="o">.</span><span class="n">append</span><span class="p">([</span><span class="n">x</span><span class="p">])</span>
-
-<span class="nb">print</span><span class="p">(</span><span class="nb">list</span><span class="p">)</span>
-</code></pre></div>
-
-<h2 id="remove-invisible-characters">remove invisible characters</h2>
-<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">re</span>
-
-<span class="c1">##GETS RID OF SPACES    </span>
-
-<span class="c1"># string contains the \u2003 character</span>
-<span class="n">string</span> <span class="o">=</span> <span class="sa">u</span><span class="s1">&#39;This is a   test string ’&#39;</span>
-<span class="c1"># this regex will replace all special characters with a space</span>
-<span class="n">re</span><span class="o">.</span><span class="n">sub</span><span class="p">(</span><span class="s1">&#39;\W+&#39;</span><span class="p">,</span><span class="s1">&#39; &#39;</span><span class="p">,</span><span class="n">string</span><span class="p">)</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
-
-<span class="c1">#PRESERVES SPACES:</span>
-<span class="n">re</span><span class="o">.</span><span class="n">sub</span><span class="p">(</span><span class="s1">&#39;[^!-~ ]+&#39;</span><span class="p">,</span><span class="s1">&#39; &#39;</span><span class="p">,</span><span class="n">country</span><span class="p">)</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
-</code></pre></div>
-
-<h2 id="capitalise-sentence">capitalise sentence</h2>
-<p><span class="datestamp">25 Sep 2022</span> </p>
-<div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">capitalise_sentence</span><span class="p">(</span><span class="n">og_string</span><span class="p">,</span> <span class="n">v</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
-    <span class="k">if</span> <span class="n">v</span><span class="p">:</span>
-        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;---start verbose capitalise_sentence (deactivate with v=False)&quot;</span><span class="p">)</span>
-        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n</span><span class="si">{</span><span class="n">og_string</span><span class="si">=}</span><span class="s2">&quot;</span><span class="p">)</span>
-    <span class="c1"># lowercase everything</span>
-    <span class="n">lower_s</span> <span class="o">=</span> <span class="n">og_string</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span>
-    <span class="k">if</span> <span class="n">v</span><span class="p">:</span>
-        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n</span><span class="si">{</span><span class="n">lower_s</span><span class="si">=}</span><span class="s2">&quot;</span><span class="p">)</span>
-    <span class="c1"># start of string &amp; acronyms</span>
-    <span class="n">final</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">sub</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;(\A\w)|&quot;</span><span class="o">+</span>                  <span class="c1"># start of string</span>
-            <span class="s2">&quot;(?&lt;!\.\w)([\.?!] )\w|&quot;</span><span class="o">+</span>    <span class="c1"># after a ?/!/. and a space, </span>
-                                        <span class="c1"># but not after an acronym</span>
-            <span class="s2">&quot;\w(?:\.\w)|&quot;</span><span class="o">+</span>              <span class="c1"># start/middle of acronym</span>
-            <span class="s2">&quot;(?&lt;=\w\.)\w&quot;</span><span class="p">,</span>              <span class="c1"># end of acronym</span>
-            <span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="o">.</span><span class="n">group</span><span class="p">()</span><span class="o">.</span><span class="n">upper</span><span class="p">(),</span> 
-            <span class="n">lower_s</span><span class="p">)</span>
-    <span class="k">if</span> <span class="n">v</span><span class="p">:</span>
-        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">start_string </span><span class="si">{</span><span class="n">final</span><span class="si">=}</span><span class="s2">&quot;</span><span class="p">)</span>
-    <span class="c1"># I exception</span>
-    <span class="k">if</span> <span class="s1">&#39; i &#39;</span> <span class="ow">in</span> <span class="n">final</span><span class="p">:</span>
-        <span class="n">final</span> <span class="o">=</span> <span class="n">final</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39; i &#39;</span><span class="p">,</span> <span class="s1">&#39; I &#39;</span><span class="p">)</span>
-        <span class="k">if</span> <span class="n">v</span><span class="p">:</span>
-            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&#39; i &#39; </span><span class="si">{</span><span class="n">final</span><span class="si">=}</span><span class="s2">&quot;</span><span class="p">)</span>
-    <span class="k">if</span> <span class="s2">&quot; i&#39;m &quot;</span> <span class="ow">in</span> <span class="n">final</span><span class="p">:</span>
-        <span class="n">final</span> <span class="o">=</span> <span class="n">final</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot; i&#39;m &quot;</span><span class="p">,</span> <span class="s2">&quot; I&#39;m &quot;</span><span class="p">)</span>
-        <span class="k">if</span> <span class="n">v</span><span class="p">:</span>
-            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&#39; i&#39;m &#39; </span><span class="si">{</span><span class="n">final</span><span class="si">=}</span><span class="s2">&quot;</span><span class="p">)</span>
-    <span class="k">if</span> <span class="n">v</span><span class="p">:</span>
-        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">returned repr(final)=</span><span class="si">{</span><span class="nb">repr</span><span class="p">(</span><span class="n">final</span><span class="p">)</span><span class="si">}</span><span class="se">\n\n</span><span class="s2">---end verbose capitalise_sentence</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
-    <span class="k">return</span> <span class="n">final</span>
-
-<span class="n">s</span> <span class="o">=</span> <span class="s2">&quot;hey. how are you? i&#39;m A.F.K. At the Moment but i don&#39;t Mind!  &quot;</span>
-
-<span class="n">test</span> <span class="o">=</span> <span class="n">capitalise_sentence</span><span class="p">(</span><span class="n">s</span><span class="p">,</span> <span class="n">v</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-
-<span class="nb">print</span><span class="p">(</span><span class="n">test</span><span class="p">)</span>
-</code></pre></div>
-
-<p>outputs:</p>
-<div class="highlight"><pre><span></span><code>---start verbose capitalise_sentence (deactivate with v=False)
-
-og_string=&quot;hey. how are you? i&#39;m A.F.K. At the Moment but i don&#39;t Mind!  &quot;
-
-lower_s=&quot;hey. how are you? i&#39;m a.f.k. at the moment but i don&#39;t mind!  &quot;
-
-start_string final=&quot;Hey. How are you? I&#39;m A.F.K. at the moment but i don&#39;t mind!  &quot;
-
-&#39; i &#39; final=&quot;Hey. How are you? I&#39;m A.F.K. at the moment but I don&#39;t mind!  &quot;
-
-returned repr(final)=&quot;Hey. How are you? I&#39;m A.F.K. at the moment but I don&#39;t mind!  &quot;
-
----end verbose capitalise_sentence
-
-Hey. How are you? I&#39;m A.F.K. at the moment but I don&#39;t mind!  
-</code></pre></div>
-
-<p>inspired by &amp; tweaked from <a href="https://stackoverflow.com/questions/19785458/capitalization-of-sentences-in-python" target="_blank">https://stackoverflow.com/questions/19785458/capitalization-of-sentences-in-python</a>   </p>
+</footer>                    </div>
+                    
                 </article>
-            </aside>
-
-                <section id="content" class="body">
-
-                <!-- PREVIOUS NOTES -->
-				<p class="notes-section">previous notes</p>
-                <hr>
-
-                <ol id="posts-list" class="hfeed">
+                <hr/>
+            </li>
             
 
 
@@ -316,46 +368,6 @@ Hey. How are you? I&#39;m A.F.K. at the moment but I don&#39;t mind!
                 <article class="hentry">
                     <header>
                         <!-- PREVIOUS NOTE TITLE -->
-                        <h1><a href="https://notes.nicolasdeville.com/python/library-datetime" rel="bookmark"
-                            title="Python library: datetime">Python library: datetime</a></h1>
-                        <!-- PREVIOUS NOTE SUMMARY -->
-                        <div class="entry-content">
-                            <p>The datetime module supplies classes for manipulating dates and times.</p>
-                        </div>
-                    </header>
-
-                    <div class="entry-content">
-                        <!-- PREVIOUS NOTE METADATA -->
-<footer class="post-info">
-
-    <p>
-        25 Sep 2022 <span class="separator">|</span> in <a class="link_tag" href="https://notes.nicolasdeville.com/python/">python</a>
- tags: <a class="link_tag" href="https://notes.nicolasdeville.com/tag/python-libraries.html">python libraries</a>
-
-        <!-- added 4/7 -->
-        <!-- 		<br />
-        <abbr class="modified" title="2022-09-25T08:27:48.090773+02:00">
-                Updated: 25 Sep 2022
-        </abbr>
- -->
-
-    </p>
-
-    
-
-</footer>                    </div>
-                    
-                </article>
-                <hr/>
-            </li>
-            
-
-
-
-            <li>
-                <article class="hentry">
-                    <header>
-                        <!-- PREVIOUS NOTE TITLE -->
                         <h1><a href="https://notes.nicolasdeville.com/python/library-tmdbapis" rel="bookmark"
                             title="Python Library: tmdbapis | fetching movie data">Python Library: tmdbapis | fetching movie data</a></h1>
                         <!-- PREVIOUS NOTE SUMMARY -->
@@ -377,86 +389,6 @@ Hey. How are you? I&#39;m A.F.K. at the moment but I don&#39;t mind!
         <!-- added 4/7 -->
         <!-- 		<br />
         <abbr class="modified" title="2022-09-25T08:27:48.089667+02:00">
-                Updated: 25 Sep 2022
-        </abbr>
- -->
-
-    </p>
-
-    
-
-</footer>                    </div>
-                    
-                </article>
-                <hr/>
-            </li>
-            
-
-
-
-            <li>
-                <article class="hentry">
-                    <header>
-                        <!-- PREVIOUS NOTE TITLE -->
-                        <h1><a href="https://notes.nicolasdeville.com/python/library-dateutil" rel="bookmark"
-                            title="Python library: dateutil">Python library: dateutil</a></h1>
-                        <!-- PREVIOUS NOTE SUMMARY -->
-                        <div class="entry-content">
-                            <p>better library for date parsing than datetime's <code>strptime</code></p>
-                        </div>
-                    </header>
-
-                    <div class="entry-content">
-                        <!-- PREVIOUS NOTE METADATA -->
-<footer class="post-info">
-
-    <p>
-        25 Sep 2022 <span class="separator">|</span> in <a class="link_tag" href="https://notes.nicolasdeville.com/python/">python</a>
- tags: <a class="link_tag" href="https://notes.nicolasdeville.com/tag/python-libraries.html">python libraries</a>
-
-        <!-- added 4/7 -->
-        <!-- 		<br />
-        <abbr class="modified" title="2022-09-25T08:27:25.820981+02:00">
-                Updated: 25 Sep 2022
-        </abbr>
- -->
-
-    </p>
-
-    
-
-</footer>                    </div>
-                    
-                </article>
-                <hr/>
-            </li>
-            
-
-
-
-            <li>
-                <article class="hentry">
-                    <header>
-                        <!-- PREVIOUS NOTE TITLE -->
-                        <h1><a href="https://notes.nicolasdeville.com/python/library-beautifulsoup" rel="bookmark"
-                            title="Python library: Beautifulsoup">Python library: Beautifulsoup</a></h1>
-                        <!-- PREVIOUS NOTE SUMMARY -->
-                        <div class="entry-content">
-                            <p>makes it easy to scrape information from web pages</p>
-                        </div>
-                    </header>
-
-                    <div class="entry-content">
-                        <!-- PREVIOUS NOTE METADATA -->
-<footer class="post-info">
-
-    <p>
-        25 Sep 2022 <span class="separator">|</span> in <a class="link_tag" href="https://notes.nicolasdeville.com/python/">python</a>
- tags: <a class="link_tag" href="https://notes.nicolasdeville.com/tag/python-libraries.html">python libraries</a>
-
-        <!-- added 4/7 -->
-        <!-- 		<br />
-        <abbr class="modified" title="2022-09-25T08:27:14.980631+02:00">
                 Updated: 25 Sep 2022
         </abbr>
  -->
