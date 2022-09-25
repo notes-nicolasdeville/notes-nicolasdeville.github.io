@@ -25,7 +25,8 @@
         <meta name="description" content="OpenAI's neural net for speech recognition" />
 
     <!-- for Stork seach engine -->
-    <link rel="stylesheet" href="https://files.stork-search.net/basic.css" /> 
+    <!-- <link rel="stylesheet" href="https://files.stork-search.net/basic.css" /> # 220924 -->
+    <link rel="stylesheet" href="https://files.stork-search.net/releases/v1.5.0/edible.css" />
 
 </head>
 
@@ -37,13 +38,13 @@
 
                 <!-- for Stork seach engine -->
                 <div class="search-input-block">
-                    <input data-stork="sitesearch" class="search-input" placeholder="Search..." autofocus="autofocus"/>
+                    <input data-stork="sitesearch" class="search-input" placeholder="Search notes..." autofocus="autofocus"/>
                     <div data-stork="sitesearch-output"></div>
                 </div>
             </div>
 
             <div class="above-navbar">
-                <div class="last_updated">24 Sep 2022 | 12:09</div>
+                <div class="last_updated">25 Sep 2022 | 10:45</div>
                 <div>
                     <p class="notes_count">
                         <a href="https://notes.nicolasdeville.com/tags">by tags</a> 
@@ -54,7 +55,7 @@
                         <span style="color:#C74350">|</span>
                         <a href="https://notes.nicolasdeville.com/2022/">2022</a> 
                         <span style="color:#C74350">|</span> 
-                        412 notes
+                        416 notes
                     </p>
                 </div>
             </div>
@@ -99,14 +100,14 @@
 <footer class="post-info">
 
     <p>
-        24 Sep 2022 <span class="separator">|</span> in <a class="link_tag" href="https://notes.nicolasdeville.com/ai/">ai</a>
+        25 Sep 2022 <span class="separator">|</span> in <a class="link_tag" href="https://notes.nicolasdeville.com/ai/">ai</a>
  tags: <a class="link_tag" href="https://notes.nicolasdeville.com/tag/python.html">python</a>
 <a class="link_tag" href="https://notes.nicolasdeville.com/tag/speech-recognition.html">speech recognition</a>
 
         <!-- added 4/7 -->
         <!-- 		<br />
-        <abbr class="modified" title="2022-09-24T12:09:08.175303+02:00">
-                Updated: 24 Sep 2022
+        <abbr class="modified" title="2022-09-25T10:45:38.715806+02:00">
+                Updated: 25 Sep 2022
         </abbr>
  -->
 
@@ -143,15 +144,17 @@
 <div class="link_tagline">ycombinator.com</div>
 <div class="link_url"><a href="https://news.ycombinator.com/item?id=32927360" target="_blank">https://news.ycombinator.com/item?id=32927360</a></div></div></div>
 
-<h1 id="setup">Setup</h1>
+<h1 id="getting-started">Getting Started</h1>
 <div class="link_border"><div class="link_logo_box"><img class="link_logo" src="https://logo.clearbit.com/github.com?size=35" alt="logo"/></div><div class="link_content">
 <div class="link_title">GitHub - openai/whisper</div>
 <div class="link_tagline">github.com</div>
 <div class="link_url"><a href="https://github.com/openai/whisper" target="_blank">https://github.com/openai/whisper</a></div></div></div>
 
+<h2 id="install">install</h2>
 <div class="highlight"><pre><span></span><code>pip3 install git+https://github.com/openai/whisper.git 
 </code></pre></div>
 
+<h2 id="usage">usage</h2>
 <p>Working 1st try:  <br>
 - in less than 3mns <br>
 - with a <code>.m4a</code> file (requiring no conversion to <code>.wav</code>)  <br>
@@ -167,6 +170,77 @@
 <p>What is missing for voice transcripts, is voice commands recognition, eg "comma", "new line", "full stop", etc..  </p>
 <p>I can add those in my script though.  </p>
 <p>[<a href="../../projects/recordee/index.html">Nic Note: Recordee</a>]  </p>
+<p><span class="datestamp">25 Sep 2022</span> </p>
+<p>It also detects language automatically, and pretty accurately so far!   </p>
+<h3 id="response-structure">response structure</h3>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>   <span class="s1">&#39;language&#39;</span><span class="p">:</span> <span class="s1">&#39;en&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;segments&#39;</span><span class="p">:</span> <span class="p">[</span>   <span class="p">{</span>   <span class="s1">&#39;avg_logprob&#39;</span><span class="p">:</span> <span class="nb">float</span><span class="p">,</span>
+                        <span class="s1">&#39;compression_ratio&#39;</span><span class="p">:</span> <span class="nb">float</span><span class="p">,</span>
+                        <span class="s1">&#39;end&#39;</span><span class="p">:</span> <span class="nb">float</span><span class="p">,</span>
+                        <span class="s1">&#39;id&#39;</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span>
+                        <span class="s1">&#39;no_speech_prob&#39;</span><span class="p">:</span> <span class="nb">float</span><span class="p">,</span>
+                        <span class="s1">&#39;seek&#39;</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span>
+                        <span class="s1">&#39;start&#39;</span><span class="p">:</span> <span class="nb">float</span><span class="p">,</span>
+                        <span class="s1">&#39;temperature&#39;</span><span class="p">:</span> <span class="nb">float</span><span class="p">,</span>
+                        <span class="s1">&#39;text&#39;</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
+                        <span class="s1">&#39;tokens&#39;</span><span class="p">:</span> <span class="p">[</span>   <span class="nb">int</span><span class="p">,</span>
+                                      <span class="nb">int</span><span class="p">,</span>
+                                      <span class="nb">int</span><span class="p">,</span>
+                                      <span class="o">...</span><span class="p">,</span>
+                                      <span class="p">]}],</span>
+    <span class="s1">&#39;text&#39;</span><span class="p">:</span> <span class="nb">str</span> <span class="c1"># returned transcript</span>
+<span class="p">}</span>
+</code></pre></div>
+
+<p>example:    </p>
+<div class="highlight"><pre><span></span><code><span class="n">file</span> <span class="o">=</span> <span class="s1">&#39;test/test_from_watch.m4a&#39;</span>
+
+<span class="kn">import</span> <span class="nn">whisper</span>
+
+<span class="n">model</span> <span class="o">=</span> <span class="n">whisper</span><span class="o">.</span><span class="n">load_model</span><span class="p">(</span><span class="s2">&quot;base&quot;</span><span class="p">)</span>
+<span class="n">result</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">transcribe</span><span class="p">(</span><span class="n">file</span><span class="p">)</span>
+
+<span class="n">pp</span><span class="o">.</span><span class="n">pprint</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
+</code></pre></div>
+
+<p>outputs:  </p>
+<div class="highlight"><pre><span></span><code>UserWarning: FP16 is not supported on CPU; using FP32 instead
+  warnings.warn(&quot;FP16 is not supported on CPU; using FP32 instead&quot;)
+Detected language: english
+{   &#39;language&#39;: &#39;en&#39;,
+    &#39;segments&#39;: [   {   &#39;avg_logprob&#39;: -0.4222838251214278,
+                        &#39;compression_ratio&#39;: 0.9866666666666667,
+                        &#39;end&#39;: 11.200000000000001,
+                        &#39;id&#39;: 0,
+                        &#39;no_speech_prob&#39;: 0.11099651455879211,
+                        &#39;seek&#39;: 0,
+                        &#39;start&#39;: 0.0,
+                        &#39;temperature&#39;: 0.0,
+                        &#39;text&#39;: &#39; This is a test of a transcript in English &#39;
+                                &#39;recorded from my watch fullstop.&#39;,
+                        &#39;tokens&#39;: [   50364,
+                                      639,
+                                      307,
+                                      257,
+                                      1500,
+                                      295,
+                                      257,
+                                      24444,
+                                      294,
+                                      3669,
+                                      8287,
+                                      490,
+                                      452,
+                                      1159,
+                                      1577,
+                                      13559,
+                                      13,
+                                      50924]}],
+    &#39;text&#39;: &#39; This is a test of a transcript in English recorded from my watch &#39;
+            &#39;fullstop.&#39;}
+</code></pre></div>
+
+<p>Note: need to figure out what the <code>UserWarning</code> is about 🤔     </p>
             </main>
         </div><!-- /.entry-content -->
     </article>
@@ -209,14 +283,15 @@
 
 <!-- JS -->
 
+<!-- my JS script (with code block copy) -->
+<script src="https://notes.nicolasdeville.com/theme/js/nic.js"></script>
+
 <!-- for Stork seach engine -->
-<script src="https://files.stork-search.net/releases/v1.2.1/stork.js"></script>
+<!-- <script src="https://files.stork-search.net/releases/v1.2.1/stork.js"></script> #updated 220924 -->
+<script src="https://files.stork-search.net/stork.js"></script>
 <script>
     stork.register("sitesearch", "https://notes.nicolasdeville.com/search-index.st")
 </script>
-
-<!-- my JS script (with code block copy) -->
-<script src="https://notes.nicolasdeville.com/theme/js/nic.js"></script>
 
 </body>
 </html>

@@ -24,7 +24,8 @@
 
 
     <!-- for Stork seach engine -->
-    <link rel="stylesheet" href="https://files.stork-search.net/basic.css" /> 
+    <!-- <link rel="stylesheet" href="https://files.stork-search.net/basic.css" /> # 220924 -->
+    <link rel="stylesheet" href="https://files.stork-search.net/releases/v1.5.0/edible.css" />
 
 </head>
 
@@ -36,13 +37,13 @@
 
                 <!-- for Stork seach engine -->
                 <div class="search-input-block">
-                    <input data-stork="sitesearch" class="search-input" placeholder="Search..." autofocus="autofocus"/>
+                    <input data-stork="sitesearch" class="search-input" placeholder="Search notes..." autofocus="autofocus"/>
                     <div data-stork="sitesearch-output"></div>
                 </div>
             </div>
 
             <div class="above-navbar">
-                <div class="last_updated">24 Sep 2022 | 12:09</div>
+                <div class="last_updated">25 Sep 2022 | 10:45</div>
                 <div>
                     <p class="notes_count">
                         <a href="https://notes.nicolasdeville.com/tags">by tags</a> 
@@ -53,7 +54,7 @@
                         <span style="color:#C74350">|</span>
                         <a href="https://notes.nicolasdeville.com/2022/">2022</a> 
                         <span style="color:#C74350">|</span> 
-                        412 notes
+                        416 notes
                     </p>
                 </div>
             </div>
@@ -98,13 +99,13 @@
 <footer class="post-info">
 
     <p>
-        24 Sep 2022 <span class="separator">|</span> in <a class="link_tag" href="https://notes.nicolasdeville.com/python/">python</a>
- tags: <a class="link_tag" href="https://notes.nicolasdeville.com/tag/libraries.html">libraries</a>
+        25 Sep 2022 <span class="separator">|</span> in <a class="link_tag" href="https://notes.nicolasdeville.com/python/">python</a>
+ tags: <a class="link_tag" href="https://notes.nicolasdeville.com/tag/python-libraries.html">python libraries</a>
 
         <!-- added 4/7 -->
         <!-- 		<br />
-        <abbr class="modified" title="2022-09-24T10:28:36.714748+02:00">
-                Updated: 24 Sep 2022
+        <abbr class="modified" title="2022-09-25T09:01:23.707103+02:00">
+                Updated: 25 Sep 2022
         </abbr>
  -->
 
@@ -182,6 +183,66 @@
 <span class="c1">#PRESERVES SPACES:</span>
 <span class="n">re</span><span class="o">.</span><span class="n">sub</span><span class="p">(</span><span class="s1">&#39;[^!-~ ]+&#39;</span><span class="p">,</span><span class="s1">&#39; &#39;</span><span class="p">,</span><span class="n">country</span><span class="p">)</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
 </code></pre></div>
+
+<h2 id="capitalise-sentence">capitalise sentence</h2>
+<p><span class="datestamp">25 Sep 2022</span> </p>
+<div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">capitalise_sentence</span><span class="p">(</span><span class="n">og_string</span><span class="p">,</span> <span class="n">v</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">v</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;---start verbose capitalise_sentence (deactivate with v=False)&quot;</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n</span><span class="si">{</span><span class="n">og_string</span><span class="si">=}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="c1"># lowercase everything</span>
+    <span class="n">lower_s</span> <span class="o">=</span> <span class="n">og_string</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span>
+    <span class="k">if</span> <span class="n">v</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n</span><span class="si">{</span><span class="n">lower_s</span><span class="si">=}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="c1"># start of string &amp; acronyms</span>
+    <span class="n">final</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">sub</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;(\A\w)|&quot;</span><span class="o">+</span>                  <span class="c1"># start of string</span>
+            <span class="s2">&quot;(?&lt;!\.\w)([\.?!] )\w|&quot;</span><span class="o">+</span>    <span class="c1"># after a ?/!/. and a space, </span>
+                                        <span class="c1"># but not after an acronym</span>
+            <span class="s2">&quot;\w(?:\.\w)|&quot;</span><span class="o">+</span>              <span class="c1"># start/middle of acronym</span>
+            <span class="s2">&quot;(?&lt;=\w\.)\w&quot;</span><span class="p">,</span>              <span class="c1"># end of acronym</span>
+            <span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="o">.</span><span class="n">group</span><span class="p">()</span><span class="o">.</span><span class="n">upper</span><span class="p">(),</span> 
+            <span class="n">lower_s</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">v</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">start_string </span><span class="si">{</span><span class="n">final</span><span class="si">=}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="c1"># I exception</span>
+    <span class="k">if</span> <span class="s1">&#39; i &#39;</span> <span class="ow">in</span> <span class="n">final</span><span class="p">:</span>
+        <span class="n">final</span> <span class="o">=</span> <span class="n">final</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39; i &#39;</span><span class="p">,</span> <span class="s1">&#39; I &#39;</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">v</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&#39; i &#39; </span><span class="si">{</span><span class="n">final</span><span class="si">=}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="k">if</span> <span class="s2">&quot; i&#39;m &quot;</span> <span class="ow">in</span> <span class="n">final</span><span class="p">:</span>
+        <span class="n">final</span> <span class="o">=</span> <span class="n">final</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot; i&#39;m &quot;</span><span class="p">,</span> <span class="s2">&quot; I&#39;m &quot;</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">v</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&#39; i&#39;m &#39; </span><span class="si">{</span><span class="n">final</span><span class="si">=}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">v</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">returned repr(final)=</span><span class="si">{</span><span class="nb">repr</span><span class="p">(</span><span class="n">final</span><span class="p">)</span><span class="si">}</span><span class="se">\n\n</span><span class="s2">---end verbose capitalise_sentence</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">final</span>
+
+<span class="n">s</span> <span class="o">=</span> <span class="s2">&quot;hey. how are you? i&#39;m A.F.K. At the Moment but i don&#39;t Mind!  &quot;</span>
+
+<span class="n">test</span> <span class="o">=</span> <span class="n">capitalise_sentence</span><span class="p">(</span><span class="n">s</span><span class="p">,</span> <span class="n">v</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">test</span><span class="p">)</span>
+</code></pre></div>
+
+<p>outputs:</p>
+<div class="highlight"><pre><span></span><code>---start verbose capitalise_sentence (deactivate with v=False)
+
+og_string=&quot;hey. how are you? i&#39;m A.F.K. At the Moment but i don&#39;t Mind!  &quot;
+
+lower_s=&quot;hey. how are you? i&#39;m a.f.k. at the moment but i don&#39;t mind!  &quot;
+
+start_string final=&quot;Hey. How are you? I&#39;m A.F.K. at the moment but i don&#39;t mind!  &quot;
+
+&#39; i &#39; final=&quot;Hey. How are you? I&#39;m A.F.K. at the moment but I don&#39;t mind!  &quot;
+
+returned repr(final)=&quot;Hey. How are you? I&#39;m A.F.K. at the moment but I don&#39;t mind!  &quot;
+
+---end verbose capitalise_sentence
+
+Hey. How are you? I&#39;m A.F.K. at the moment but I don&#39;t mind!  
+</code></pre></div>
+
+<p>inspired by &amp; tweaked from <a href="https://stackoverflow.com/questions/19785458/capitalization-of-sentences-in-python" target="_blank">https://stackoverflow.com/questions/19785458/capitalization-of-sentences-in-python</a>   </p>
             </main>
         </div><!-- /.entry-content -->
     </article>
@@ -224,14 +285,15 @@
 
 <!-- JS -->
 
+<!-- my JS script (with code block copy) -->
+<script src="https://notes.nicolasdeville.com/theme/js/nic.js"></script>
+
 <!-- for Stork seach engine -->
-<script src="https://files.stork-search.net/releases/v1.2.1/stork.js"></script>
+<!-- <script src="https://files.stork-search.net/releases/v1.2.1/stork.js"></script> #updated 220924 -->
+<script src="https://files.stork-search.net/stork.js"></script>
 <script>
     stork.register("sitesearch", "https://notes.nicolasdeville.com/search-index.st")
 </script>
-
-<!-- my JS script (with code block copy) -->
-<script src="https://notes.nicolasdeville.com/theme/js/nic.js"></script>
 
 </body>
 </html>

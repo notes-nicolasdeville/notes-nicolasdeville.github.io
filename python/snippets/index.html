@@ -25,7 +25,8 @@
         <meta name="description" content="a collection of useful snippets" />
 
     <!-- for Stork seach engine -->
-    <link rel="stylesheet" href="https://files.stork-search.net/basic.css" /> 
+    <!-- <link rel="stylesheet" href="https://files.stork-search.net/basic.css" /> # 220924 -->
+    <link rel="stylesheet" href="https://files.stork-search.net/releases/v1.5.0/edible.css" />
 
 </head>
 
@@ -37,13 +38,13 @@
 
                 <!-- for Stork seach engine -->
                 <div class="search-input-block">
-                    <input data-stork="sitesearch" class="search-input" placeholder="Search..." autofocus="autofocus"/>
+                    <input data-stork="sitesearch" class="search-input" placeholder="Search notes..." autofocus="autofocus"/>
                     <div data-stork="sitesearch-output"></div>
                 </div>
             </div>
 
             <div class="above-navbar">
-                <div class="last_updated">24 Sep 2022 | 12:09</div>
+                <div class="last_updated">25 Sep 2022 | 10:45</div>
                 <div>
                     <p class="notes_count">
                         <a href="https://notes.nicolasdeville.com/tags">by tags</a> 
@@ -54,7 +55,7 @@
                         <span style="color:#C74350">|</span>
                         <a href="https://notes.nicolasdeville.com/2022/">2022</a> 
                         <span style="color:#C74350">|</span> 
-                        412 notes
+                        416 notes
                     </p>
                 </div>
             </div>
@@ -99,14 +100,14 @@
 <footer class="post-info">
 
     <p>
-        18 Sep 2022 <span class="separator">|</span> in <a class="link_tag" href="https://notes.nicolasdeville.com/python/">python</a>
+        24 Sep 2022 <span class="separator">|</span> in <a class="link_tag" href="https://notes.nicolasdeville.com/python/">python</a>
  tags: <a class="link_tag" href="https://notes.nicolasdeville.com/tag/snippets.html">snippets</a>
 <a class="link_tag" href="https://notes.nicolasdeville.com/tag/scripts.html">scripts</a>
 
         <!-- added 4/7 -->
         <!-- 		<br />
-        <abbr class="modified" title="2022-09-18T07:53:56.462946+02:00">
-                Updated: 18 Sep 2022
+        <abbr class="modified" title="2022-09-24T17:36:14.081022+02:00">
+                Updated: 24 Sep 2022
         </abbr>
  -->
 
@@ -207,6 +208,11 @@ ERIC ----&gt; Eric
     <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;This message will be written to a file.&#39;</span><span class="p">,</span> <span class="n">file</span><span class="o">=</span><span class="n">f</span><span class="p">)</span>
 </code></pre></div>
 
+<p>or to append continuously replace <code>w</code> with <code>a</code>:       </p>
+<div class="highlight"><pre><span></span><code><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;filename.txt&#39;</span><span class="p">,</span> <span class="s1">&#39;a&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;This message will be written to a file.&#39;</span><span class="p">,</span> <span class="n">file</span><span class="o">=</span><span class="n">f</span><span class="p">)</span>
+</code></pre></div>
+
 <h3 id="redirecting-a-pythons-script-output-in-the-terminal">redirecting a Python's script output in the terminal</h3>
 <p>If script run from Terminal, redirect the output (print) of the script to a file, using a single right angle bracket:  </p>
 <p><code>$ python3 hello.py &gt; output.txt</code>   </p>
@@ -265,14 +271,15 @@ ERIC ----&gt; Eric
 
 <!-- JS -->
 
+<!-- my JS script (with code block copy) -->
+<script src="https://notes.nicolasdeville.com/theme/js/nic.js"></script>
+
 <!-- for Stork seach engine -->
-<script src="https://files.stork-search.net/releases/v1.2.1/stork.js"></script>
+<!-- <script src="https://files.stork-search.net/releases/v1.2.1/stork.js"></script> #updated 220924 -->
+<script src="https://files.stork-search.net/stork.js"></script>
 <script>
     stork.register("sitesearch", "https://notes.nicolasdeville.com/search-index.st")
 </script>
-
-<!-- my JS script (with code block copy) -->
-<script src="https://notes.nicolasdeville.com/theme/js/nic.js"></script>
 
 </body>
 </html>

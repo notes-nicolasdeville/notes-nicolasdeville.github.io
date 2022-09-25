@@ -8,34 +8,19 @@ url = "/ABOUT/"
 title = ""
 
 [[input.files]]
-path = "projects/recordee/index.html"
-url = "/projects/recordee"
-title = "Recordee"
-
-[[input.files]]
 path = "ai/whisper/index.html"
 url = "/ai/whisper"
 title = "Whisper"
 
 [[input.files]]
-path = "home-office/shopping/index.html"
-url = "/home-office/shopping"
-title = "Shopping ideas for home office"
+path = "helpers/terminal/index.html"
+url = "/helpers/terminal"
+title = "macOS Terminal"
 
 [[input.files]]
-path = "python/library-defaultdict/index.html"
-url = "/python/library-defaultdict"
-title = "Python Library: defaultdict"
-
-[[input.files]]
-path = "python/library-requests/index.html"
-url = "/python/library-requests"
-title = "Python Library: requests"
-
-[[input.files]]
-path = "python/library-pydub/index.html"
-url = "/python/library-pydub"
-title = "Python Library: pydub"
+path = "projects/recordee/index.html"
+url = "/projects/recordee"
+title = "Recordee"
 
 [[input.files]]
 path = "python/library-re/index.html"
@@ -43,19 +28,14 @@ url = "/python/library-re"
 title = "Python Library: re (regex)"
 
 [[input.files]]
-path = "python/library-send2trash/index.html"
-url = "/python/library-send2trash"
-title = "Python Library: Send2Trash"
+path = "python/library-tmdbv3api/index.html"
+url = "/python/library-tmdbv3api"
+title = "Python Library: tmdbv3api | fetching movie data"
 
 [[input.files]]
-path = "python/library-slugify/index.html"
-url = "/python/library-slugify"
-title = "Python Library: slugify"
-
-[[input.files]]
-path = "python/library-speech-recognition/index.html"
-url = "/python/library-speech-recognition"
-title = "Python Library: speech_recognition"
+path = "python/library-datetime/index.html"
+url = "/python/library-datetime"
+title = "Python library: datetime"
 
 [[input.files]]
 path = "python/library-tmdbapis/index.html"
@@ -63,9 +43,39 @@ url = "/python/library-tmdbapis"
 title = "Python Library: tmdbapis | fetching movie data"
 
 [[input.files]]
-path = "python/library-openpyxl/index.html"
-url = "/python/library-openpyxl"
-title = "Python Library: openpyxl"
+path = "python/library-dateutil/index.html"
+url = "/python/library-dateutil"
+title = "Python library: dateutil"
+
+[[input.files]]
+path = "python/library-beautifulsoup/index.html"
+url = "/python/library-beautifulsoup"
+title = "Python library: Beautifulsoup"
+
+[[input.files]]
+path = "python/libraries/index.html"
+url = "/python/libraries"
+title = "Libraries for Python"
+
+[[input.files]]
+path = "python/library-pydub/index.html"
+url = "/python/library-pydub"
+title = "Python Library: pydub"
+
+[[input.files]]
+path = "python/library-requests/index.html"
+url = "/python/library-requests"
+title = "Python Library: requests"
+
+[[input.files]]
+path = "python/library-pynput/index.html"
+url = "/python/library-pynput"
+title = "Python Library: pynput"
+
+[[input.files]]
+path = "python/library-send2trash/index.html"
+url = "/python/library-send2trash"
+title = "Python Library: Send2Trash"
 
 [[input.files]]
 path = "python/library-imap-tools/index.html"
@@ -73,19 +83,9 @@ url = "/python/library-imap-tools"
 title = "Python Library: imap-tools"
 
 [[input.files]]
-path = "python/library-tmdbv3api/index.html"
-url = "/python/library-tmdbv3api"
-title = "Python Library: tmdbv3api | fetching movie data"
-
-[[input.files]]
-path = "python/library-termtables/index.html"
-url = "/python/library-termtables"
-title = "Python Library: termtables | Pretty tables in terminal"
-
-[[input.files]]
-path = "python/library-sqlite3/index.html"
-url = "/python/library-sqlite3"
-title = "Python Library: sqlite3"
+path = "python/library-openpyxl/index.html"
+url = "/python/library-openpyxl"
+title = "Python Library: openpyxl"
 
 [[input.files]]
 path = "python/library-yagmail/index.html"
@@ -93,9 +93,69 @@ url = "/python/library-yagmail"
 title = "Python Library: Yagmail"
 
 [[input.files]]
-path = "python/library-pynput/index.html"
-url = "/python/library-pynput"
-title = "Python Library: pynput"
+path = "python/library-slugify/index.html"
+url = "/python/library-slugify"
+title = "Python Library: slugify"
+
+[[input.files]]
+path = "python/library-defaultdict/index.html"
+url = "/python/library-defaultdict"
+title = "Python Library: defaultdict"
+
+[[input.files]]
+path = "python/library-sqlite3/index.html"
+url = "/python/library-sqlite3"
+title = "Python Library: sqlite3"
+
+[[input.files]]
+path = "python/library-nltk/index.html"
+url = "/python/library-nltk"
+title = "Python Library: nltk"
+
+[[input.files]]
+path = "python/library-os/index.html"
+url = "/python/library-os"
+title = "Python Library: os (built-in)"
+
+[[input.files]]
+path = "python/library-dotenv/index.html"
+url = "/python/library-dotenv"
+title = "How to save confidential data in environment variables with dotenv"
+
+[[input.files]]
+path = "python/snippets/index.html"
+url = "/python/snippets"
+title = "Python Snippets"
+
+[[input.files]]
+path = "python/text-files/index.html"
+url = "/python/text-files"
+title = "Managing text files with Python"
+
+[[input.files]]
+path = "python/library-pelican/index.html"
+url = "/python/library-pelican"
+title = "Building a static site with Pelican"
+
+[[input.files]]
+path = "helpers/icloud-download/index.html"
+url = "/helpers/icloud-download"
+title = "Download all iCloud photos to a local directory"
+
+[[input.files]]
+path = "home-office/shopping/index.html"
+url = "/home-office/shopping"
+title = "Shopping ideas for home office"
+
+[[input.files]]
+path = "python/library-speech-recognition/index.html"
+url = "/python/library-speech-recognition"
+title = "Python Library: speech_recognition"
+
+[[input.files]]
+path = "python/library-termtables/index.html"
+url = "/python/library-termtables"
+title = "Python Library: termtables | Pretty tables in terminal"
 
 [[input.files]]
 path = "python/library-tldextract/index.html"
@@ -161,11 +221,6 @@ title = "Standing desk: Leetdesk"
 path = "helpers/keyboard-shortcuts/index.html"
 url = "/helpers/keyboard-shortcuts"
 title = "My keyboard shortcuts"
-
-[[input.files]]
-path = "python/library-pelican/index.html"
-url = "/python/library-pelican"
-title = "Building a static site with Pelican"
 
 [[input.files]]
 path = "apps/fig/index.html"
@@ -573,11 +628,6 @@ url = "/helpers/icloud-drive"
 title = "iCloud Drive"
 
 [[input.files]]
-path = "python/snippets/index.html"
-url = "/python/snippets"
-title = "Python Snippets"
-
-[[input.files]]
 path = "home-office/contour-shuttleprov2/index.html"
 url = "/home-office/contour-shuttleprov2"
 title = "Contour ShuttlePRO v2"
@@ -598,11 +648,6 @@ url = "/home-office/f1-models"
 title = "F1 Model Cars"
 
 [[input.files]]
-path = "python/library-os/index.html"
-url = "/python/library-os"
-title = "Python Library: os (built-in)"
-
-[[input.files]]
 path = "movies/1000/index.html"
 url = "/movies/1000"
 title = "My Top 1,000 Movies"
@@ -611,11 +656,6 @@ title = "My Top 1,000 Movies"
 path = "python/function-separator/index.html"
 url = "/python/function-separator"
 title = "A short function to generate print separators"
-
-[[input.files]]
-path = "python/library-dotenv/index.html"
-url = "/python/library-dotenv"
-title = "How to save confidential data in environment variables with dotenv"
 
 [[input.files]]
 path = "python/metadata-from-url/index.html"
@@ -666,11 +706,6 @@ title = "My Python scripts boilerplate"
 path = "books/learn-javascript-quickly/index.html"
 url = "/books/learn-javascript-quickly"
 title = "Book: Learn JavaScript Quickly"
-
-[[input.files]]
-path = "python/library-beautifulsoup/index.html"
-url = "/python/library-beautifulsoup"
-title = "Python library: Beautifulsoup"
 
 [[input.files]]
 path = "random/dad-bag/index.html"
@@ -838,11 +873,6 @@ url = "/learning/basketball"
 title = "Learning Basketball"
 
 [[input.files]]
-path = "python/libraries/index.html"
-url = "/python/libraries"
-title = "Libraries for Python"
-
-[[input.files]]
 path = "leadership/resources/index.html"
 url = "/leadership/resources"
 title = "Resources about Sales Leadership"
@@ -923,14 +953,14 @@ url = "/apps/radar"
 title = "Apps on my radar"
 
 [[input.files]]
-path = "b2b-sales/books/index.html"
-url = "/b2b-sales/books"
-title = "My B2B Books Library"
-
-[[input.files]]
 path = "python/books/index.html"
 url = "/python/books"
 title = "My Python Books Library"
+
+[[input.files]]
+path = "b2b-sales/books/index.html"
+url = "/b2b-sales/books"
+title = "My B2B Books Library"
 
 [[input.files]]
 path = "books/library/index.html"
@@ -958,11 +988,6 @@ url = "/helpers/terminal-commands"
 title = "macOS List of Terminal Commands"
 
 [[input.files]]
-path = "python/library-datetime/index.html"
-url = "/python/library-datetime"
-title = "Python library: datetime"
-
-[[input.files]]
 path = "random/20-scariest-theories/index.html"
 url = "/random/20-scariest-theories"
 title = "20 Scariest Theories Known to Man"
@@ -971,11 +996,6 @@ title = "20 Scariest Theories Known to Man"
 path = "python/save-images/index.html"
 url = "/python/save-images"
 title = "Save images with Python"
-
-[[input.files]]
-path = "python/library-dateutil/index.html"
-url = "/python/library-dateutil"
-title = "Python library: dateutil"
 
 [[input.files]]
 path = "b2b-sales/producing-videos/index.html"
@@ -2073,11 +2093,6 @@ url = "/helpers/clipper"
 title = "My web clipboard"
 
 [[input.files]]
-path = "random/ai/index.html"
-url = "/random/ai"
-title = "AI"
-
-[[input.files]]
 path = "learning/ai/index.html"
 url = "/learning/ai"
 title = "Learning AI"
@@ -2090,6 +2105,11 @@ title = "AI"
 [[input.files]]
 path = "interests/ai/index.html"
 url = "/interests/ai"
+title = "AI"
+
+[[input.files]]
+path = "random/ai/index.html"
+url = "/random/ai"
 title = "AI"
 
 [[input.files]]
@@ -2108,14 +2128,14 @@ url = "/books/library"
 title = "My Books Library"
 
 [[input.files]]
-path = "python/books/index.html"
-url = "/python/books"
-title = "My Python Books Library"
-
-[[input.files]]
 path = "b2b-sales/books/index.html"
 url = "/b2b-sales/books"
 title = "My B2B Books Library"
+
+[[input.files]]
+path = "python/books/index.html"
+url = "/python/books"
+title = "My Python Books Library"
 
 [[input.files]]
 path = "apps/library/index.html"
@@ -2123,14 +2143,14 @@ url = "/apps/library"
 title = "My Apps Library"
 
 [[input.files]]
-path = "learning/ai/index.html"
-url = "/learning/ai"
-title = "Learning AI"
-
-[[input.files]]
 path = "interests/ai/index.html"
 url = "/interests/ai"
 title = "AI"
+
+[[input.files]]
+path = "learning/ai/index.html"
+url = "/learning/ai"
+title = "Learning AI"
 
 [[input.files]]
 path = "home-office/deep-work/index.html"
