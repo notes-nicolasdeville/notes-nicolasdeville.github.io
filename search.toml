@@ -8,6 +8,46 @@ url = "/ABOUT/"
 title = ""
 
 [[input.files]]
+path = "why/index.html"
+url = "/why/"
+title = "Why this site?"
+
+[[input.files]]
+path = "helpers/keyboard-shortcuts/index.html"
+url = "/helpers/keyboard-shortcuts"
+title = "My keyboard shortcuts"
+
+[[input.files]]
+path = "projects/notes/index.html"
+url = "/projects/notes"
+title = "This site"
+
+[[input.files]]
+path = "python/library-pelican/index.html"
+url = "/python/library-pelican"
+title = "Building a static site with Pelican"
+
+[[input.files]]
+path = "random/thoughts/index.html"
+url = "/random/thoughts"
+title = "Random Thoughts"
+
+[[input.files]]
+path = "b2b-sales/cold-emails/index.html"
+url = "/b2b-sales/cold-emails"
+title = "Cold Emails"
+
+[[input.files]]
+path = "b2b-sales/email-automation/index.html"
+url = "/b2b-sales/email-automation"
+title = "Email Automation for Sales outreaches"
+
+[[input.files]]
+path = "projects/recordee/index.html"
+url = "/projects/recordee"
+title = "Recordee"
+
+[[input.files]]
 path = "python/library-beautifulsoup/index.html"
 url = "/python/library-beautifulsoup"
 title = "Python Library: Beautifulsoup"
@@ -21,11 +61,6 @@ title = "Python Library: dateutil"
 path = "python/library-datetime/index.html"
 url = "/python/library-datetime"
 title = "Python Library: datetime"
-
-[[input.files]]
-path = "projects/recordee/index.html"
-url = "/projects/recordee"
-title = "Recordee"
 
 [[input.files]]
 path = "ai/whisper/index.html"
@@ -123,6 +158,11 @@ url = "/python/library-dotenv"
 title = "How to save confidential data in environment variables with dotenv"
 
 [[input.files]]
+path = "learning/map-coordinates/index.html"
+url = "/learning/map-coordinates"
+title = "Learning Map Coordinates"
+
+[[input.files]]
 path = "python/snippets/index.html"
 url = "/python/snippets"
 title = "Python Snippets"
@@ -131,11 +171,6 @@ title = "Python Snippets"
 path = "python/text-files/index.html"
 url = "/python/text-files"
 title = "Managing text files with Python"
-
-[[input.files]]
-path = "python/library-pelican/index.html"
-url = "/python/library-pelican"
-title = "Building a static site with Pelican"
 
 [[input.files]]
 path = "helpers/icloud-download/index.html"
@@ -218,11 +253,6 @@ url = "/home-office/desk"
 title = "Standing desk: Leetdesk"
 
 [[input.files]]
-path = "helpers/keyboard-shortcuts/index.html"
-url = "/helpers/keyboard-shortcuts"
-title = "My keyboard shortcuts"
-
-[[input.files]]
 path = "apps/fig/index.html"
 url = "/apps/fig"
 title = "Fig"
@@ -241,11 +271,6 @@ title = "Project: Apps Library"
 path = "leadership/comp-plans/index.html"
 url = "/leadership/comp-plans"
 title = "Compensation Plans"
-
-[[input.files]]
-path = "projects/notes/index.html"
-url = "/projects/notes"
-title = "This site"
 
 [[input.files]]
 path = "projects/imagee/index.html"
@@ -296,11 +321,6 @@ title = "Open text files with Python"
 path = "learning/new-words/index.html"
 url = "/learning/new-words"
 title = "Learning new words"
-
-[[input.files]]
-path = "b2b-sales/email-automation/index.html"
-url = "/b2b-sales/email-automation"
-title = "Email Automation for Sales outreaches"
 
 [[input.files]]
 path = "interests/web3/index.html"
@@ -943,6 +963,11 @@ url = "/python/fetch-metadata-from-url"
 title = "Fetch website metadata from URL"
 
 [[input.files]]
+path = "careerplaybook/023-leaving-on-a-high/index.html"
+url = "/careerplaybook/023-leaving-on-a-high"
+title = "#CareerPlaybook 023: Leaving On A High"
+
+[[input.files]]
 path = "apps/library/index.html"
 url = "/apps/library"
 title = "My Apps Library"
@@ -953,14 +978,14 @@ url = "/apps/radar"
 title = "Apps on my radar"
 
 [[input.files]]
-path = "b2b-sales/books/index.html"
-url = "/b2b-sales/books"
-title = "My B2B Books Library"
-
-[[input.files]]
 path = "python/books/index.html"
 url = "/python/books"
 title = "My Python Books Library"
+
+[[input.files]]
+path = "b2b-sales/books/index.html"
+url = "/b2b-sales/books"
+title = "My B2B Books Library"
 
 [[input.files]]
 path = "books/library/index.html"
@@ -2093,11 +2118,6 @@ url = "/helpers/clipper"
 title = "My web clipboard"
 
 [[input.files]]
-path = "random/ai/index.html"
-url = "/random/ai"
-title = "AI"
-
-[[input.files]]
 path = "learning/ai/index.html"
 url = "/learning/ai"
 title = "Learning AI"
@@ -2110,6 +2130,11 @@ title = "AI"
 [[input.files]]
 path = "interests/ai/index.html"
 url = "/interests/ai"
+title = "AI"
+
+[[input.files]]
+path = "random/ai/index.html"
+url = "/random/ai"
 title = "AI"
 
 [[input.files]]
@@ -2128,14 +2153,14 @@ url = "/books/library"
 title = "My Books Library"
 
 [[input.files]]
-path = "python/books/index.html"
-url = "/python/books"
-title = "My Python Books Library"
-
-[[input.files]]
 path = "b2b-sales/books/index.html"
 url = "/b2b-sales/books"
 title = "My B2B Books Library"
+
+[[input.files]]
+path = "python/books/index.html"
+url = "/python/books"
+title = "My Python Books Library"
 
 [[input.files]]
 path = "apps/library/index.html"
