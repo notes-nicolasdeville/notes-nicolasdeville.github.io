@@ -13,14 +13,19 @@ url = "/why/"
 title = "Why this site?"
 
 [[input.files]]
-path = "python/shell-scripts/index.html"
-url = "/python/shell-scripts"
-title = "How to run Python scripts with shell scripts"
-
-[[input.files]]
 path = "projects/transcribee/index.html"
 url = "/projects/transcribee"
 title = "Transcribee"
+
+[[input.files]]
+path = "apps/hazel/index.html"
+url = "/apps/hazel"
+title = "Hazel"
+
+[[input.files]]
+path = "python/shell-scripts/index.html"
+url = "/python/shell-scripts"
+title = "How to run Python scripts with shell scripts"
 
 [[input.files]]
 path = "apps/just-press-record/index.html"
@@ -928,11 +933,6 @@ url = "/projects/1000-movies"
 title = "Project: Top 1000 movies"
 
 [[input.files]]
-path = "apps/hazel/index.html"
-url = "/apps/hazel"
-title = "Hazel"
-
-[[input.files]]
 path = "helpers/apis/index.html"
 url = "/helpers/apis"
 title = "APIs"
@@ -993,14 +993,14 @@ url = "/apps/radar"
 title = "Apps on my radar"
 
 [[input.files]]
-path = "python/books/index.html"
-url = "/python/books"
-title = "My Python Books Library"
-
-[[input.files]]
 path = "b2b-sales/books/index.html"
 url = "/b2b-sales/books"
 title = "My B2B Books Library"
+
+[[input.files]]
+path = "python/books/index.html"
+url = "/python/books"
+title = "My Python Books Library"
 
 [[input.files]]
 path = "books/library/index.html"
@@ -2143,13 +2143,13 @@ url = "/random/ai"
 title = "AI"
 
 [[input.files]]
-path = "interests/ai/index.html"
-url = "/interests/ai"
+path = "random/ai/index.html"
+url = "/random/ai"
 title = "AI"
 
 [[input.files]]
-path = "random/ai/index.html"
-url = "/random/ai"
+path = "interests/ai/index.html"
+url = "/interests/ai"
 title = "AI"
 
 [[input.files]]
@@ -2168,14 +2168,14 @@ url = "/books/library"
 title = "My Books Library"
 
 [[input.files]]
-path = "b2b-sales/books/index.html"
-url = "/b2b-sales/books"
-title = "My B2B Books Library"
-
-[[input.files]]
 path = "python/books/index.html"
 url = "/python/books"
 title = "My Python Books Library"
+
+[[input.files]]
+path = "b2b-sales/books/index.html"
+url = "/b2b-sales/books"
+title = "My B2B Books Library"
 
 [[input.files]]
 path = "apps/library/index.html"
@@ -2183,14 +2183,14 @@ url = "/apps/library"
 title = "My Apps Library"
 
 [[input.files]]
-path = "interests/ai/index.html"
-url = "/interests/ai"
-title = "AI"
-
-[[input.files]]
 path = "learning/ai/index.html"
 url = "/learning/ai"
 title = "Learning AI"
+
+[[input.files]]
+path = "interests/ai/index.html"
+url = "/interests/ai"
+title = "AI"
 
 [[input.files]]
 path = "home-office/deep-work/index.html"
