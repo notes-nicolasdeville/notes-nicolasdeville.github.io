@@ -2183,14 +2183,14 @@ url = "/apps/library"
 title = "My Apps Library"
 
 [[input.files]]
-path = "learning/ai/index.html"
-url = "/learning/ai"
-title = "Learning AI"
-
-[[input.files]]
 path = "interests/ai/index.html"
 url = "/interests/ai"
 title = "AI"
+
+[[input.files]]
+path = "learning/ai/index.html"
+url = "/learning/ai"
+title = "Learning AI"
 
 [[input.files]]
 path = "home-office/deep-work/index.html"
