@@ -43,7 +43,7 @@
             </div>
 
             <div class="above-navbar">
-                <div class="last_updated">26 Sep 2022 | 09:37</div>
+                <div class="last_updated">26 Sep 2022 | 12:08</div>
                 <div>
                     <p class="notes_count">
                         <a href="https://notes.nicolasdeville.com/tags">by tags</a> 
@@ -101,26 +101,26 @@
             <hr/>
 
                 <article class="hentry">
-                    <h1 class="entry-title"><a href="https://notes.nicolasdeville.com/projects/recordee">Recordee</a></h1>
+                    <h1 class="entry-title"><a href="https://notes.nicolasdeville.com/projects/transcribee">Transcribee</a></h1>
 
                     <!-- added 4/7 -->
                     <div>
                         <p class="header_summary">
-                            <p>End-to-end automated workflow from voice recording to markdown note.</p>
+                            <p>End-to-end automated workflow from recordings to markdown note.</p>
                         </p>
                     </div>
 
 <footer class="post-info">
 
     <p>
-        25 Sep 2022 <span class="separator">|</span> in <a class="link_tag" href="https://notes.nicolasdeville.com/projects/">projects</a>
+        26 Sep 2022 <span class="separator">|</span> in <a class="link_tag" href="https://notes.nicolasdeville.com/projects/">projects</a>
  tags: <a class="link_tag" href="https://notes.nicolasdeville.com/tag/python.html">python</a>
 <a class="link_tag" href="https://notes.nicolasdeville.com/tag/automation.html">automation</a>
 
         <!-- added 4/7 -->
         <!-- 		<br />
-        <abbr class="modified" title="2022-09-25T16:43:31.218497+02:00">
-                Updated: 25 Sep 2022
+        <abbr class="modified" title="2022-09-26T10:08:18.391761+02:00">
+                Updated: 26 Sep 2022
         </abbr>
  -->
 
@@ -151,6 +151,7 @@
 <p><strong>Ultimate goal</strong> <br>
 workflow as simple as one tap recording from phone or watch and transcript is in my notes draft folder when I get back at my desk.</p>
 </blockquote>
+<p>Some of the script logic can also be used for transcribing meeting recordings.   </p>
 <h1 id="first-approach-discarded-see-next-section-for-final-approach">First approach (discarded - see next section for final approach)</h1>
 <p>Python script to:   </p>
 <ul>
@@ -479,7 +480,7 @@ Files are located at <code>~/Library/Application Support/com.apple.voicememos/Re
     <span class="n">final</span> <span class="o">=</span> <span class="n">transcript</span><span class="p">(</span><span class="n">text</span><span class="o">=</span><span class="n">text</span><span class="p">,</span> <span class="n">language</span><span class="o">=</span><span class="n">language</span><span class="p">)</span>
 
     <span class="c1"># Archive raw</span>
-    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;/Users/</span><span class="si">{</span><span class="n">USER</span><span class="si">}</span><span class="s2">/Python/recordee/raw/</span><span class="si">{</span><span class="n">uid</span><span class="si">}</span><span class="s2">.txt&quot;</span><span class="p">,</span> <span class="s1">&#39;w&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">file</span><span class="p">:</span>
+    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;/Users/</span><span class="si">{</span><span class="n">USER</span><span class="si">}</span><span class="s2">/Python/transcribee/raw/</span><span class="si">{</span><span class="n">uid</span><span class="si">}</span><span class="s2">.txt&quot;</span><span class="p">,</span> <span class="s1">&#39;w&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">file</span><span class="p">:</span>
         <span class="n">file</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">final</span><span class="o">.</span><span class="n">language</span><span class="si">}</span><span class="se">\n</span><span class="si">{</span><span class="n">final</span><span class="o">.</span><span class="n">text</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 
     <span class="k">if</span> <span class="n">v</span><span class="p">:</span>
@@ -621,7 +622,7 @@ Files are located at <code>~/Library/Application Support/com.apple.voicememos/Re
     <span class="k">if</span> <span class="n">v</span><span class="p">:</span>
         <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Transcript cleaned:</span><span class="se">\n</span><span class="si">{</span><span class="n">final_output</span><span class="si">}</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
 
-    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;/Users/</span><span class="si">{</span><span class="n">USER</span><span class="si">}</span><span class="s2">/Python/recordee/processed/</span><span class="si">{</span><span class="n">uid</span><span class="si">}</span><span class="s2">.txt&quot;</span><span class="p">,</span> <span class="s1">&#39;w&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">file</span><span class="p">:</span>
+    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;/Users/</span><span class="si">{</span><span class="n">USER</span><span class="si">}</span><span class="s2">/Python/transcribee/processed/</span><span class="si">{</span><span class="n">uid</span><span class="si">}</span><span class="s2">.txt&quot;</span><span class="p">,</span> <span class="s1">&#39;w&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">file</span><span class="p">:</span>
         <span class="n">file</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">final_output</span><span class="p">)</span>
 
     <span class="k">return</span> <span class="n">final_output</span>
@@ -722,7 +723,7 @@ Files are located at <code>~/Library/Application Support/com.apple.voicememos/Re
                 <span class="k">elif</span> <span class="n">count_processed</span> <span class="o">&lt;</span> <span class="n">count_to_do</span><span class="p">:</span>    
 
                     <span class="c1">#### Defne copy_to_path for audio file but copy later (only once file processed)</span>
-                    <span class="n">copy_to_path</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;/Users/</span><span class="si">{</span><span class="n">USER</span><span class="si">}</span><span class="s2">/Python/recordee/files/</span><span class="si">{</span><span class="n">uid</span><span class="si">}</span><span class="s2">.m4a&quot;</span>
+                    <span class="n">copy_to_path</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;/Users/</span><span class="si">{</span><span class="n">USER</span><span class="si">}</span><span class="s2">/Python/transcribee/files/</span><span class="si">{</span><span class="n">uid</span><span class="si">}</span><span class="s2">.m4a&quot;</span>
 
                     <span class="c1"># try:</span>
                     <span class="n">transcribe_object</span> <span class="o">=</span> <span class="n">transcribe</span><span class="p">(</span><span class="n">full_path</span><span class="p">,</span> <span class="n">uid</span><span class="p">)</span> <span class="c1"># returns namedtuple with `text` and `language`</span>
@@ -767,13 +768,15 @@ Files are located at <code>~/Library/Application Support/com.apple.voicememos/Re
 <p>Next: </p>
 <ul>
 <li>figure out how to trigger python script from hazel.</li>
-<li>Rename recordee to transcriptee?</li>
-<li>Test recording with meeting recordings. expand to different project?</li>
+<li>Rename transcribee to transcriptee?</li>
+<li>Test recording with meeting recordings (tweak the export <code>.srt</code> functions to add timings)</li>
 </ul>
 <p>Question:</p>
 <ul>
 <li>can I feedback errors to Whisper for the AI to learn? 🤔    </li>
 </ul>
+<hr>
+<p>search code: recordee</p>
                 </article>
             </aside>
 
