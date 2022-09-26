@@ -13,14 +13,14 @@ url = "/why/"
 title = "Why this site?"
 
 [[input.files]]
-path = "python/shell-scripts/index.html"
-url = "/python/shell-scripts"
-title = "How to run Python scripts with shell scripts"
-
-[[input.files]]
 path = "projects/transcribee/index.html"
 url = "/projects/transcribee"
 title = "Transcribee"
+
+[[input.files]]
+path = "python/shell-scripts/index.html"
+url = "/python/shell-scripts"
+title = "How to run Python scripts with shell scripts"
 
 [[input.files]]
 path = "apps/hazel/index.html"
