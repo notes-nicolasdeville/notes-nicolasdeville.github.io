@@ -2133,11 +2133,6 @@ url = "/helpers/clipper"
 title = "My web clipboard"
 
 [[input.files]]
-path = "random/ai/index.html"
-url = "/random/ai"
-title = "AI"
-
-[[input.files]]
 path = "learning/ai/index.html"
 url = "/learning/ai"
 title = "Learning AI"
@@ -2150,6 +2145,11 @@ title = "AI"
 [[input.files]]
 path = "interests/ai/index.html"
 url = "/interests/ai"
+title = "AI"
+
+[[input.files]]
+path = "random/ai/index.html"
+url = "/random/ai"
 title = "AI"
 
 [[input.files]]
