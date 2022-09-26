@@ -13,6 +13,16 @@ url = "/why/"
 title = "Why this site?"
 
 [[input.files]]
+path = "movies/1000/index.html"
+url = "/movies/1000"
+title = "My Top 1,000 Movies"
+
+[[input.files]]
+path = "apps/alfred/index.html"
+url = "/apps/alfred"
+title = "Alfred"
+
+[[input.files]]
 path = "projects/transcribee/index.html"
 url = "/projects/transcribee"
 title = "Transcribee"
@@ -208,6 +218,21 @@ url = "/python/library-dotenv"
 title = "How to save confidential data in environment variables with dotenv"
 
 [[input.files]]
+path = "python/books/index.html"
+url = "/python/books"
+title = "My Python Books Library"
+
+[[input.files]]
+path = "b2b-sales/books/index.html"
+url = "/b2b-sales/books"
+title = "My B2B Books Library"
+
+[[input.files]]
+path = "books/library/index.html"
+url = "/books/library"
+title = "My Books Library"
+
+[[input.files]]
 path = "learning/map-coordinates/index.html"
 url = "/learning/map-coordinates"
 title = "Learning Map Coordinates"
@@ -301,11 +326,6 @@ title = "Standing desk: Leetdesk"
 path = "apps/fig/index.html"
 url = "/apps/fig"
 title = "Fig"
-
-[[input.files]]
-path = "apps/alfred/index.html"
-url = "/apps/alfred"
-title = "Alfred"
 
 [[input.files]]
 path = "projects/apps-library/index.html"
@@ -693,11 +713,6 @@ url = "/home-office/f1-models"
 title = "F1 Model Cars"
 
 [[input.files]]
-path = "movies/1000/index.html"
-url = "/movies/1000"
-title = "My Top 1,000 Movies"
-
-[[input.files]]
 path = "python/function-separator/index.html"
 url = "/python/function-separator"
 title = "A short function to generate print separators"
@@ -991,21 +1006,6 @@ title = "My Apps Library"
 path = "apps/radar/index.html"
 url = "/apps/radar"
 title = "Apps on my radar"
-
-[[input.files]]
-path = "python/books/index.html"
-url = "/python/books"
-title = "My Python Books Library"
-
-[[input.files]]
-path = "b2b-sales/books/index.html"
-url = "/b2b-sales/books"
-title = "My B2B Books Library"
-
-[[input.files]]
-path = "books/library/index.html"
-url = "/books/library"
-title = "My Books Library"
 
 [[input.files]]
 path = "python/tmdb-api/index.html"
@@ -2128,9 +2128,29 @@ url = "/projects/nicai"
 title = "nicAI | my personal AI assistant"
 
 [[input.files]]
+path = "b2b-sales/books/index.html"
+url = "/b2b-sales/books"
+title = "My B2B Books Library"
+
+[[input.files]]
+path = "python/books/index.html"
+url = "/python/books"
+title = "My Python Books Library"
+
+[[input.files]]
+path = "apps/library/index.html"
+url = "/apps/library"
+title = "My Apps Library"
+
+[[input.files]]
 path = "helpers/clipper/index.html"
 url = "/helpers/clipper"
 title = "My web clipboard"
+
+[[input.files]]
+path = "random/ai/index.html"
+url = "/random/ai"
+title = "AI"
 
 [[input.files]]
 path = "learning/ai/index.html"
@@ -2145,11 +2165,6 @@ title = "AI"
 [[input.files]]
 path = "interests/ai/index.html"
 url = "/interests/ai"
-title = "AI"
-
-[[input.files]]
-path = "random/ai/index.html"
-url = "/random/ai"
 title = "AI"
 
 [[input.files]]
@@ -2168,29 +2183,14 @@ url = "/books/library"
 title = "My Books Library"
 
 [[input.files]]
-path = "b2b-sales/books/index.html"
-url = "/b2b-sales/books"
-title = "My B2B Books Library"
-
-[[input.files]]
-path = "python/books/index.html"
-url = "/python/books"
-title = "My Python Books Library"
-
-[[input.files]]
-path = "apps/library/index.html"
-url = "/apps/library"
-title = "My Apps Library"
+path = "learning/ai/index.html"
+url = "/learning/ai"
+title = "Learning AI"
 
 [[input.files]]
 path = "interests/ai/index.html"
 url = "/interests/ai"
 title = "AI"
-
-[[input.files]]
-path = "learning/ai/index.html"
-url = "/learning/ai"
-title = "Learning AI"
 
 [[input.files]]
 path = "home-office/deep-work/index.html"
