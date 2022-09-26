@@ -993,14 +993,14 @@ url = "/apps/radar"
 title = "Apps on my radar"
 
 [[input.files]]
-path = "b2b-sales/books/index.html"
-url = "/b2b-sales/books"
-title = "My B2B Books Library"
-
-[[input.files]]
 path = "python/books/index.html"
 url = "/python/books"
 title = "My Python Books Library"
+
+[[input.files]]
+path = "b2b-sales/books/index.html"
+url = "/b2b-sales/books"
+title = "My B2B Books Library"
 
 [[input.files]]
 path = "books/library/index.html"
@@ -2143,13 +2143,13 @@ url = "/learning/ai"
 title = "Learning AI"
 
 [[input.files]]
-path = "interests/ai/index.html"
-url = "/interests/ai"
+path = "random/ai/index.html"
+url = "/random/ai"
 title = "AI"
 
 [[input.files]]
-path = "random/ai/index.html"
-url = "/random/ai"
+path = "interests/ai/index.html"
+url = "/interests/ai"
 title = "AI"
 
 [[input.files]]
@@ -2168,14 +2168,14 @@ url = "/books/library"
 title = "My Books Library"
 
 [[input.files]]
-path = "python/books/index.html"
-url = "/python/books"
-title = "My Python Books Library"
-
-[[input.files]]
 path = "b2b-sales/books/index.html"
 url = "/b2b-sales/books"
 title = "My B2B Books Library"
+
+[[input.files]]
+path = "python/books/index.html"
+url = "/python/books"
+title = "My Python Books Library"
 
 [[input.files]]
 path = "apps/library/index.html"
@@ -2183,14 +2183,14 @@ url = "/apps/library"
 title = "My Apps Library"
 
 [[input.files]]
-path = "interests/ai/index.html"
-url = "/interests/ai"
-title = "AI"
-
-[[input.files]]
 path = "learning/ai/index.html"
 url = "/learning/ai"
 title = "Learning AI"
+
+[[input.files]]
+path = "interests/ai/index.html"
+url = "/interests/ai"
+title = "AI"
 
 [[input.files]]
 path = "home-office/deep-work/index.html"
