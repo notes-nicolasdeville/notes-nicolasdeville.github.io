@@ -13,9 +13,14 @@ url = "/why/"
 title = "Why this site?"
 
 [[input.files]]
-path = "projects/recordee/index.html"
-url = "/projects/recordee"
-title = "Recordee"
+path = "home-office/kinesis/index.html"
+url = "/home-office/kinesis"
+title = "Kinesis Advantage 2 keyboard"
+
+[[input.files]]
+path = "helpers/vodafone-kabel/index.html"
+url = "/helpers/vodafone-kabel"
+title = "Vodafone Kabel"
 
 [[input.files]]
 path = "projects/notes/index.html"
@@ -23,14 +28,24 @@ url = "/projects/notes"
 title = "This site"
 
 [[input.files]]
-path = "helpers/keyboard-shortcuts/index.html"
-url = "/helpers/keyboard-shortcuts"
-title = "My keyboard shortcuts"
+path = "random/quotes/index.html"
+url = "/random/quotes"
+title = "My favourite quotes"
 
 [[input.files]]
 path = "python/library-pelican/index.html"
 url = "/python/library-pelican"
 title = "Building a static site with Pelican"
+
+[[input.files]]
+path = "projects/recordee/index.html"
+url = "/projects/recordee"
+title = "Recordee"
+
+[[input.files]]
+path = "helpers/keyboard-shortcuts/index.html"
+url = "/helpers/keyboard-shortcuts"
+title = "My keyboard shortcuts"
 
 [[input.files]]
 path = "random/thoughts/index.html"
@@ -638,11 +653,6 @@ url = "/apps/espanso"
 title = "Espanso"
 
 [[input.files]]
-path = "random/quotes/index.html"
-url = "/random/quotes"
-title = "My favourite quotes"
-
-[[input.files]]
 path = "helpers/icloud-drive/index.html"
 url = "/helpers/icloud-drive"
 title = "iCloud Drive"
@@ -861,11 +871,6 @@ title = "Apple"
 path = "learning/sql/index.html"
 url = "/learning/sql"
 title = "Learning SQL"
-
-[[input.files]]
-path = "helpers/vodafone-kabel/index.html"
-url = "/helpers/vodafone-kabel"
-title = "Vodafone Kabel"
 
 [[input.files]]
 path = "learning/markdown/index.html"
@@ -2118,14 +2123,14 @@ url = "/helpers/clipper"
 title = "My web clipboard"
 
 [[input.files]]
-path = "learning/ai/index.html"
-url = "/learning/ai"
-title = "Learning AI"
-
-[[input.files]]
 path = "random/ai/index.html"
 url = "/random/ai"
 title = "AI"
+
+[[input.files]]
+path = "learning/ai/index.html"
+url = "/learning/ai"
+title = "Learning AI"
 
 [[input.files]]
 path = "random/ai/index.html"
@@ -2168,14 +2173,14 @@ url = "/apps/library"
 title = "My Apps Library"
 
 [[input.files]]
-path = "learning/ai/index.html"
-url = "/learning/ai"
-title = "Learning AI"
-
-[[input.files]]
 path = "interests/ai/index.html"
 url = "/interests/ai"
 title = "AI"
+
+[[input.files]]
+path = "learning/ai/index.html"
+url = "/learning/ai"
+title = "Learning AI"
 
 [[input.files]]
 path = "home-office/deep-work/index.html"
