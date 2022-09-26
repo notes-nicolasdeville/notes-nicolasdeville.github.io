@@ -43,7 +43,7 @@
             </div>
 
             <div class="above-navbar">
-                <div class="last_updated">26 Sep 2022 | 15:05</div>
+                <div class="last_updated">26 Sep 2022 | 15:16</div>
                 <div>
                     <p class="notes_count">
                         <a href="https://notes.nicolasdeville.com/tags">by tags</a> 
@@ -101,15 +101,97 @@
             <hr/>
 
                 <article class="hentry">
-                    <h1 class="entry-title"><a href="https://notes.nicolasdeville.com/projects/transcribee">Transcribee</a></h1>
+                    <h1 class="entry-title"><a href="https://notes.nicolasdeville.com/python/shell-scripts">How to run Python scripts with shell scripts</a></h1>
 
                     <!-- added 4/7 -->
                     <div>
                         <p class="header_summary">
-                            <p>End-to-end automated workflow from recordings to markdown note.</p>
+                            
                         </p>
                     </div>
 
+<footer class="post-info">
+
+    <p>
+        26 Sep 2022 <span class="separator">|</span> in <a class="link_tag" href="https://notes.nicolasdeville.com/python/">python</a>
+ tags: <a class="link_tag" href="https://notes.nicolasdeville.com/tag/scripts.html">scripts</a>
+
+        <!-- added 4/7 -->
+        <!-- 		<br />
+        <abbr class="modified" title="2022-09-26T15:09:26.413033+02:00">
+                Updated: 26 Sep 2022
+        </abbr>
+ -->
+
+    </p>
+
+    
+
+</footer><p><span class="datestamp">26 Sep 2022</span>   </p>
+<p>In order to run my Python scripts from other places than VS Code (eg Streamdeck action, Hazel, Alfred, etc..) I cannot run the scripts as single lines command (eg <code>python3 &lt;url&gt;</code>) because they require their own virtual environments to be activated [<a href="../../python/virtual-environments/index.html">Nic Note: Virtual Environments</a>]</p>
+<p>So there is a missing link, which I think shell scripts are for.  </p>
+<div class="link_border"><div class="link_logo_box"><img class="link_logo" src="https://logo.clearbit.com/hexnode.com?size=35" alt="logo"/></div><div class="link_content">
+<div class="link_title">The ultimate guide to Mac shell scripting</div>
+<div class="link_tagline">hexnode.com</div>
+<div class="link_url"><a href="https://www.hexnode.com/blogs/the-ultimate-guide-to-mac-shell-scripting/" target="_blank">https://www.hexnode.com/blogs/the-ultimate-guide-to-mac-shell-scripting/</a></div></div></div>
+
+<blockquote>
+<p>Shell scripts are text files or small computer programs that consist of a collection of UNIX commands. You use a shell script to execute commands that you would normally type on the command line. However, rather than inputting them one by one into a Mac’s terminal, you can use shell scripts to execute the said group of commands with just one single action.</p>
+</blockquote>
+<p>For my needs:</p>
+<h2 id="create-file">create file</h2>
+<p>create a file in Atom, starting with <code>#! /bin/zsh</code> (<code>Zsh</code> being the shell in macOS Monterey, differs by system/preference), with <code>.sh</code> (shell) extension.  </p>
+<p>Each line is a terminal command line, like I would enter manually, eg:   </p>
+<div class="highlight"><pre><span></span><code><span class="ch">#! /bin/zsh</span>
+
+<span class="nb">source</span> /Users/xxx/Python/transcribee/venv/bin/activate
+
+python3 /Users/xxx/Python/transcribee/test.py
+</code></pre></div>
+
+<h2 id="run-script">run script</h2>
+<p>Single terminal command:   </p>
+<div class="highlight"><pre><span></span><code>zsh &lt;path_to_sh_file&gt;
+</code></pre></div>
+
+<h2 id="use-variable">use variable</h2>
+<p>define as <code>VAR=</code> and call with <code>$VAR</code>.  </p>
+<p>ex.:   </p>
+<div class="highlight"><pre><span></span><code><span class="nv">CURRENTDATETIME</span><span class="o">=</span><span class="sb">`</span>date +<span class="s2">&quot;%Y-%m-%d %T&quot;</span><span class="sb">`</span>
+</code></pre></div>
+
+<p>used as: <br>
+`` zsh
+$CURRENTDATETIME
+```</p>
+                </article>
+            </aside>
+
+                <section id="content" class="body">
+
+                <!-- PREVIOUS NOTES -->
+				<p class="notes-section">previous notes</p>
+                <hr>
+
+                <ol id="posts-list" class="hfeed">
+            
+
+
+
+            <li>
+                <article class="hentry">
+                    <header>
+                        <!-- PREVIOUS NOTE TITLE -->
+                        <h1><a href="https://notes.nicolasdeville.com/projects/transcribee" rel="bookmark"
+                            title="Transcribee">Transcribee</a></h1>
+                        <!-- PREVIOUS NOTE SUMMARY -->
+                        <div class="entry-content">
+                            <p>End-to-end automated workflow from recordings to markdown note.</p>
+                        </div>
+                    </header>
+
+                    <div class="entry-content">
+                        <!-- PREVIOUS NOTE METADATA -->
 <footer class="post-info">
 
     <p>
@@ -128,681 +210,11 @@
 
     
 
-</footer><div class="toc"><span class="toctitle">Table of Contents</span><ul>
-<li><a href="#first-approach-discarded-see-next-section-for-final-approach">First approach (discarded - see next section for final approach)</a><ul>
-<li><a href="#long-sample-audio">Long Sample Audio</a></li>
-<li><a href="#python-script-to-convert-m4a-files-to-wav-files">Python script to convert m4a files to wav files</a></li>
-<li><a href="#resources">Resources</a></li>
-</ul>
-</li>
-<li><a href="#final-approach-whisper">Final approach (Whisper)</a><ul>
-<li><a href="#transcribe">Transcribe</a></li>
-<li><a href="#clean-transcript">Clean Transcript</a></li>
-<li><a href="#fetch-recordings">Fetch Recordings</a></li>
-<li><a href="#running-automatically-with-hazel">running automatically with Hazel</a></li>
-</ul>
-</li>
-</ul>
-</div>
-<p><span class="datestamp">17 Sep 2022</span>   </p>
-<p>I've been using Just Press Record [<a href="../../apps/just-press-record/index.html">Nic Note: Just Press Record</a>] for the last 2+ years for on-the-go, in-my-bath or at-my-desk long voice recordings.  </p>
-<p>A lot of these recordings are intended to be actioned, or serve as basis for an email, a blog or a note.  </p>
-<p>I love the simplicity and efficiency of Just Press Record, so it still requires me some tedious tasks when back at my computer to extract the transcript for each recording individually.   </p>
-<blockquote>
-<p><strong>Ultimate goal</strong> <br>
-workflow as simple as one tap recording from phone or watch and transcript is in my notes draft folder when I get back at my desk.</p>
-</blockquote>
-<p>Some of the script logic can also be used for transcribing meeting recordings.   </p>
-<h1 id="first-approach-discarded-see-next-section-for-final-approach">First approach (discarded - see next section for final approach)</h1>
-<p>Python script to:   </p>
-<ul>
-<li>fetch <code>.m4a</code> recording from local iCloud folder ([<a href="../../helpers/icloud-drive/index.html">Nic Note: iCloud Drive</a>]) with one subfolder by day)</li>
-<li>convert <code>.m4a</code> to <code>.wav</code> which seems to be the primary format accepted by speech_recognition  </li>
-<li>transcribe (speech to text)</li>
-<li>generate markdown note in a Drafts folder in my notes folder</li>
-</ul>
-<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">pydub</span> <span class="kn">import</span> <span class="n">AudioSegment</span>
-<span class="n">audio</span> <span class="o">=</span> <span class="n">AudioSegment</span><span class="o">.</span><span class="n">from_file</span><span class="p">(</span><span class="s1">&#39;file.m4a&#39;</span><span class="p">)</span>
-</code></pre></div>
-
-<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">speech_recognition</span> <span class="k">as</span> <span class="nn">sr</span>
-
-<span class="n">r</span> <span class="o">=</span> <span class="n">sr</span><span class="o">.</span><span class="n">Recognizer</span><span class="p">()</span>
-<span class="k">with</span> <span class="n">sr</span><span class="o">.</span><span class="n">AudioFile</span><span class="p">(</span><span class="s1">&#39;sampleMp3.WAV&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">source</span><span class="p">:</span>
-    <span class="n">audio</span> <span class="o">=</span> <span class="n">r</span><span class="o">.</span><span class="n">record</span><span class="p">(</span><span class="n">source</span><span class="p">,</span> <span class="n">duration</span><span class="o">=</span><span class="mi">60</span><span class="p">)</span> 
-
-<span class="n">command</span> <span class="o">=</span> <span class="n">r</span><span class="o">.</span><span class="n">recognize_google</span><span class="p">(</span><span class="n">audio</span><span class="p">)</span>
-
-<span class="n">text_file</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;Output.txt&quot;</span><span class="p">,</span> <span class="s2">&quot;w&quot;</span><span class="p">)</span>
-<span class="n">text_file</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">command</span><span class="p">)</span>
-<span class="n">text_file</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
-</code></pre></div>
-
-<h2 id="long-sample-audio">Long Sample Audio</h2>
-<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">os</span> 
-<span class="kn">from</span> <span class="nn">pydub</span> <span class="kn">import</span> <span class="n">AudioSegment</span>
-<span class="kn">import</span> <span class="nn">speech_recognition</span> <span class="k">as</span> <span class="nn">sr</span>
-<span class="kn">from</span> <span class="nn">pydub.silence</span> <span class="kn">import</span> <span class="n">split_on_silence</span>
-
-<span class="n">recognizer</span> <span class="o">=</span> <span class="n">sr</span><span class="o">.</span><span class="n">Recognizer</span><span class="p">()</span>
-
-<span class="k">def</span> <span class="nf">load_chunks</span><span class="p">(</span><span class="n">filename</span><span class="p">):</span>
-    <span class="n">long_audio</span> <span class="o">=</span> <span class="n">AudioSegment</span><span class="o">.</span><span class="n">from_mp3</span><span class="p">(</span><span class="n">filename</span><span class="p">)</span>
-    <span class="n">audio_chunks</span> <span class="o">=</span> <span class="n">split_on_silence</span><span class="p">(</span>
-        <span class="n">long_audio</span><span class="p">,</span> <span class="n">min_silence_len</span><span class="o">=</span><span class="mi">1800</span><span class="p">,</span>
-        <span class="n">silence_thresh</span><span class="o">=-</span><span class="mi">17</span>
-    <span class="p">)</span>
-    <span class="k">return</span> <span class="n">audio_chunks</span>
-
-<span class="k">for</span> <span class="n">audio_chunk</span> <span class="ow">in</span> <span class="n">load_chunks</span><span class="p">(</span><span class="s1">&#39;./sample_audio/long_audio.mp3&#39;</span><span class="p">):</span>
-    <span class="n">audio_chunk</span><span class="o">.</span><span class="n">export</span><span class="p">(</span><span class="s2">&quot;temp&quot;</span><span class="p">,</span> <span class="nb">format</span><span class="o">=</span><span class="s2">&quot;wav&quot;</span><span class="p">)</span>
-    <span class="k">with</span> <span class="n">sr</span><span class="o">.</span><span class="n">AudioFile</span><span class="p">(</span><span class="s2">&quot;temp&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">source</span><span class="p">:</span>
-        <span class="n">audio</span> <span class="o">=</span> <span class="n">recognizer</span><span class="o">.</span><span class="n">listen</span><span class="p">(</span><span class="n">source</span><span class="p">)</span>
-        <span class="k">try</span><span class="p">:</span>
-            <span class="n">text</span> <span class="o">=</span> <span class="n">recognizer</span><span class="o">.</span><span class="n">recognize_google</span><span class="p">(</span><span class="n">audio</span><span class="p">)</span>
-            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Chunk : </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">text</span><span class="p">))</span>
-        <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">ex</span><span class="p">:</span>
-            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Error occured&quot;</span><span class="p">)</span>
-            <span class="nb">print</span><span class="p">(</span><span class="n">ex</span><span class="p">)</span>
-
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;++++++&quot;</span><span class="p">)</span>
-</code></pre></div>
-
-<p>from: <a href="https://hackernoon.com/how-to-convert-speech-to-text-in-python-q0263tzp" target="_blank">https://hackernoon.com/how-to-convert-speech-to-text-in-python-q0263tzp</a>   </p>
-<p>Getting <code>pydub.exceptions.CouldntDecodeError: Decoding failed. ffmpeg returned error code: 1</code>.<br>
-Need to use <code>AudioSegment.from_file(filename, "m4a")</code>?  </p>
-<div class="highlight"><pre><span></span><code><span class="c1"># importing libraries </span>
-<span class="kn">import</span> <span class="nn">speech_recognition</span> <span class="k">as</span> <span class="nn">sr</span> 
-<span class="kn">import</span> <span class="nn">os</span> 
-<span class="kn">from</span> <span class="nn">pydub</span> <span class="kn">import</span> <span class="n">AudioSegment</span>
-<span class="kn">from</span> <span class="nn">pydub.silence</span> <span class="kn">import</span> <span class="n">split_on_silence</span>
-
-<span class="c1"># create a speech recognition object</span>
-<span class="n">r</span> <span class="o">=</span> <span class="n">sr</span><span class="o">.</span><span class="n">Recognizer</span><span class="p">()</span>
-
-<span class="c1"># a function that splits the audio file into chunks</span>
-<span class="c1"># and applies speech recognition</span>
-<span class="k">def</span> <span class="nf">get_large_audio_transcription</span><span class="p">(</span><span class="n">path</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">    Splitting the large audio file into chunks</span>
-<span class="sd">    and apply speech recognition on each of these chunks</span>
-<span class="sd">    &quot;&quot;&quot;</span>
-    <span class="c1"># open the audio file using pydub</span>
-    <span class="n">sound</span> <span class="o">=</span> <span class="n">AudioSegment</span><span class="o">.</span><span class="n">from_wav</span><span class="p">(</span><span class="n">path</span><span class="p">)</span>  
-    <span class="c1"># split audio sound where silence is 700 miliseconds or more and get chunks</span>
-    <span class="n">chunks</span> <span class="o">=</span> <span class="n">split_on_silence</span><span class="p">(</span><span class="n">sound</span><span class="p">,</span>
-        <span class="c1"># experiment with this value for your target audio file</span>
-        <span class="n">min_silence_len</span> <span class="o">=</span> <span class="mi">500</span><span class="p">,</span>
-        <span class="c1"># adjust this per requirement</span>
-        <span class="n">silence_thresh</span> <span class="o">=</span> <span class="n">sound</span><span class="o">.</span><span class="n">dBFS</span><span class="o">-</span><span class="mi">14</span><span class="p">,</span>
-        <span class="c1"># keep the silence for 1 second, adjustable as well</span>
-        <span class="n">keep_silence</span><span class="o">=</span><span class="mi">500</span><span class="p">,</span>
-    <span class="p">)</span>
-    <span class="n">folder_name</span> <span class="o">=</span> <span class="s2">&quot;audio-chunks&quot;</span>
-    <span class="c1"># create a directory to store the audio chunks</span>
-    <span class="k">if</span> <span class="ow">not</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">isdir</span><span class="p">(</span><span class="n">folder_name</span><span class="p">):</span>
-        <span class="n">os</span><span class="o">.</span><span class="n">mkdir</span><span class="p">(</span><span class="n">folder_name</span><span class="p">)</span>
-    <span class="n">whole_text</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span>
-    <span class="c1"># process each chunk </span>
-    <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">audio_chunk</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">chunks</span><span class="p">,</span> <span class="n">start</span><span class="o">=</span><span class="mi">1</span><span class="p">):</span>
-        <span class="c1"># export audio chunk and save it in</span>
-        <span class="c1"># the `folder_name` directory.</span>
-        <span class="n">chunk_filename</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">folder_name</span><span class="p">,</span> <span class="sa">f</span><span class="s2">&quot;chunk</span><span class="si">{</span><span class="n">i</span><span class="si">}</span><span class="s2">.wav&quot;</span><span class="p">)</span>
-        <span class="n">audio_chunk</span><span class="o">.</span><span class="n">export</span><span class="p">(</span><span class="n">chunk_filename</span><span class="p">,</span> <span class="nb">format</span><span class="o">=</span><span class="s2">&quot;wav&quot;</span><span class="p">)</span>
-        <span class="c1"># recognize the chunk</span>
-        <span class="k">with</span> <span class="n">sr</span><span class="o">.</span><span class="n">AudioFile</span><span class="p">(</span><span class="n">chunk_filename</span><span class="p">)</span> <span class="k">as</span> <span class="n">source</span><span class="p">:</span>
-            <span class="n">audio_listened</span> <span class="o">=</span> <span class="n">r</span><span class="o">.</span><span class="n">record</span><span class="p">(</span><span class="n">source</span><span class="p">)</span>
-            <span class="c1"># try converting it to text</span>
-            <span class="k">try</span><span class="p">:</span>
-                <span class="n">text</span> <span class="o">=</span> <span class="n">r</span><span class="o">.</span><span class="n">recognize_google</span><span class="p">(</span><span class="n">audio_listened</span><span class="p">)</span>
-            <span class="k">except</span> <span class="n">sr</span><span class="o">.</span><span class="n">UnknownValueError</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
-                <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Error:&quot;</span><span class="p">,</span> <span class="nb">str</span><span class="p">(</span><span class="n">e</span><span class="p">))</span>
-            <span class="k">else</span><span class="p">:</span>
-                <span class="n">text</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">text</span><span class="o">.</span><span class="n">capitalize</span><span class="p">()</span><span class="si">}</span><span class="s2">. &quot;</span>
-                <span class="nb">print</span><span class="p">(</span><span class="n">chunk_filename</span><span class="p">,</span> <span class="s2">&quot;:&quot;</span><span class="p">,</span> <span class="n">text</span><span class="p">)</span>
-                <span class="n">whole_text</span> <span class="o">+=</span> <span class="n">text</span>
-    <span class="c1"># return the text for all chunks detected</span>
-    <span class="k">return</span> <span class="n">whole_text</span>
-</code></pre></div>
-
-<p>from : <a href="https://www.thepythoncode.com/article/using-speech-recognition-to-convert-speech-to-text-python" target="_blank">https://www.thepythoncode.com/article/using-speech-recognition-to-convert-speech-to-text-python</a> </p>
-<h2 id="python-script-to-convert-m4a-files-to-wav-files">Python script to convert m4a files to wav files</h2>
-<p><span class="datestamp">18 Sep 2022</span> Let's try to focus first on conversion to <code>.wav</code> and then tackle speech-recognition.  </p>
-<script src="https://gist.github.com/arjunsharma97/0ecac61da2937ec52baf61af1aa1b759.js"></script>
-
-<h2 id="resources">Resources</h2>
-<div class="link_border"><div class="link_logo_box"><img class="link_logo" src="https://logo.clearbit.com/pythonbasics.org?size=35" alt="logo"/></div><div class="link_content">
-<div class="link_title">Transcribe Audio | Python Tutorial</div>
-<div class="link_tagline">pythonbasics.org</div>
-<div class="link_url"><a href="https://pythonbasics.org/transcribe-audio" target="_blank">https://pythonbasics.org/transcribe-audio</a></div></div></div>
-
-<div class="link_border"><div class="link_logo_box"><img class="link_logo" src="https://logo.clearbit.com/fullstackpython.com?size=35" alt="logo"/></div><div class="link_content">
-<div class="link_title">How to Transcribe Speech Recordings into Text with Python - Full Stack Python</div>
-<div class="link_tagline">fullstackpython.com</div>
-<div class="link_url"><a href="https://www.fullstackpython.com/blog/transcribe-recordings-speech-text-assemblyai.html" target="_blank">https://www.fullstackpython.com/blog/transcribe-recordings-speech-text-assemblyai.html</a></div></div></div>
-
-<ul>
-<li>requires an AssemblyAI account.  </li>
-</ul>
-<div class="link_border"><div class="link_logo_box"><img class="link_logo" src="https://logo.clearbit.com/stackoverflow.com?size=35" alt="logo"/></div><div class="link_content">
-<div class="link_title">How can I transcribe a speech file with the Bing Speech API in Python? - Stack Overflow</div>
-<div class="link_tagline">stackoverflow.com</div>
-<div class="link_url"><a href="https://stackoverflow.com/questions/47344310/how-can-i-transcribe-a-speech-file-with-the-bing-speech-api-in-python" target="_blank">https://stackoverflow.com/questions/47344310/how-can-i-transcribe-a-speech-file-with-the-bing-speech-api-in-python</a></div></div></div>
-
-<ul>
-<li>The files need to be stored on Azure Blob Storage first    </li>
-<li>need to build a websocket for it as it the other alternative within bing for large audio files    </li>
-</ul>
-<div class="link_border"><div class="link_logo_box"><img class="link_logo" src="https://logo.clearbit.com/hackernoon.com?size=35" alt="logo"/></div><div class="link_content">
-<div class="link_title">How to Convert Speech to Text in Python</div>
-<div class="link_tagline">hackernoon.com</div>
-<div class="link_url"><a href="https://hackernoon.com/how-to-convert-speech-to-text-in-python-q0263tzp" target="_blank">https://hackernoon.com/how-to-convert-speech-to-text-in-python-q0263tzp</a></div></div></div>
-
-<ul>
-<li>SpeechRecognition library allows you to perform speech recognition with support for several engines and APIs, online and offline.  </li>
-</ul>
-<h1 id="final-approach-whisper">Final approach (Whisper)</h1>
-<p><span class="datestamp">23 Sep 2022</span> exploring OpenAI's new speech recognition AI "Whisper" for this: [<a href="../../ai/whisper/index.html">Nic Note: Whisper</a>]   </p>
-<p>Worked in minutes! Using this.   </p>
-<p>Python script to:   </p>
-<ul>
-<li>fetch <code>.m4a</code> recordings from local iCloud folder ([<a href="../../helpers/icloud-drive/index.html">Nic Note: iCloud Drive</a>]) with one subfolder by day)</li>
-<li>identify audio recordings not yet processed</li>
-<li>transcribe those with Whisper [<a href="../../ai/whisper/index.html">Nic Note: Whisper</a>]</li>
-<li>log raw transcript</li>
-<li>generate markdown note in a Drafts folder in my notes folder</li>
-</ul>
-<p>Could be run manually + daily cron job.    </p>
-<p>Need to:  </p>
-<ul>
-<li>create a <code>replacements.txt</code> file to list all replacements in one easy place to update</li>
-<li>logic to handle replacements based on it</li>
-<li>logic to identify files already processed</li>
-</ul>
-<h2 id="transcribe">Transcribe</h2>
-<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">whisper</span>
-<span class="n">model</span> <span class="o">=</span> <span class="n">whisper</span><span class="o">.</span><span class="n">load_model</span><span class="p">(</span><span class="s2">&quot;base&quot;</span><span class="p">)</span>
-<span class="n">result</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">transcribe</span><span class="p">(</span><span class="s1">&#39;test/1.m4a&#39;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="se">\n</span><span class="si">{</span><span class="n">result</span><span class="p">[</span><span class="s2">&quot;text&quot;</span><span class="p">]</span><span class="si">}</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
-</code></pre></div>
-
-<h2 id="clean-transcript">Clean Transcript</h2>
-<div class="highlight"><pre><span></span><code><span class="n">v</span> <span class="o">=</span> <span class="kc">False</span> <span class="c1"># verbose</span>
-
-<span class="k">def</span> <span class="nf">clean_transcript</span><span class="p">(</span><span class="n">transcript</span><span class="p">):</span>
-
-    <span class="c1">### Create dict of replacements</span>
-    <span class="k">if</span> <span class="n">v</span><span class="p">:</span>
-        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Creating dict of replacements:</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
-    <span class="n">replacements_file</span> <span class="o">=</span> <span class="s1">&#39;replacements.txt&#39;</span>
-    <span class="n">replacements</span> <span class="o">=</span> <span class="p">{}</span>
-    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">replacements_file</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">df</span><span class="p">:</span>
-        <span class="n">lines</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">readlines</span><span class="p">()</span>
-        <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">lines</span><span class="p">:</span>
-            <span class="k">if</span> <span class="ow">not</span> <span class="n">line</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s1">&#39;#&#39;</span><span class="p">):</span> <span class="c1"># remove comments</span>
-                <span class="c1"># print(&quot;line: &quot;, repr(line))</span>
-                <span class="n">line_parts</span> <span class="o">=</span> <span class="n">line</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;|&#39;</span><span class="p">)</span>
-                <span class="k">if</span> <span class="n">v</span><span class="p">:</span>
-                    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;line </span><span class="si">{</span><span class="n">get_linenumber</span><span class="p">()</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="n">line_parts</span><span class="si">=}</span><span class="s2">&quot;</span><span class="p">)</span>
-                <span class="n">replacements</span><span class="p">[</span><span class="n">line_parts</span><span class="p">[</span><span class="mi">0</span><span class="p">]]</span> <span class="o">=</span> <span class="n">line_parts</span><span class="p">[</span><span class="mi">1</span><span class="p">][:</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="c1"># remove trailing \n</span>
-
-    <span class="c1">### Remove punctuation</span>
-    <span class="k">if</span> <span class="s1">&#39;,&#39;</span> <span class="ow">in</span> <span class="n">transcript</span><span class="p">:</span>
-        <span class="n">transcript</span> <span class="o">=</span> <span class="n">transcript</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;,&#39;</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">)</span>
-    <span class="k">if</span> <span class="s1">&#39;.&#39;</span> <span class="ow">in</span> <span class="n">transcript</span><span class="p">:</span>
-        <span class="n">transcript</span> <span class="o">=</span> <span class="n">transcript</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;.&#39;</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">)</span>
-
-    <span class="k">if</span> <span class="n">v</span><span class="p">:</span>
-        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Processing list of replacements:</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
-    <span class="k">for</span> <span class="n">k</span><span class="p">,</span><span class="n">value</span> <span class="ow">in</span> <span class="n">replacements</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
-        <span class="k">if</span> <span class="n">v</span><span class="p">:</span>
-            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;line </span><span class="si">{</span><span class="n">get_linenumber</span><span class="p">()</span><span class="si">}</span><span class="s2">: replacing </span><span class="si">{</span><span class="nb">repr</span><span class="p">(</span><span class="n">k</span><span class="p">)</span><span class="si">}</span><span class="s2"> with </span><span class="si">{</span><span class="nb">repr</span><span class="p">(</span><span class="n">v</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-        <span class="k">if</span> <span class="n">k</span> <span class="ow">in</span> <span class="n">transcript</span><span class="p">:</span>
-            <span class="k">if</span> <span class="n">value</span> <span class="o">==</span> <span class="s1">&#39;</span><span class="se">\\</span><span class="s1">n&#39;</span><span class="p">:</span>
-                <span class="n">transcript</span> <span class="o">=</span> <span class="n">transcript</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="n">k</span><span class="p">,</span> <span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
-            <span class="k">else</span><span class="p">:</span>
-                <span class="n">transcript</span> <span class="o">=</span> <span class="n">transcript</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="n">k</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span>
-    <span class="k">if</span> <span class="n">v</span><span class="p">:</span>
-        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Processing by line:</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
-    <span class="n">parts</span> <span class="o">=</span> <span class="n">transcript</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
-    <span class="n">output</span> <span class="o">=</span> <span class="p">[]</span>
-    <span class="k">for</span> <span class="n">part</span> <span class="ow">in</span> <span class="n">parts</span><span class="p">:</span>
-        <span class="k">if</span> <span class="n">v</span><span class="p">:</span>
-            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;line </span><span class="si">{</span><span class="n">get_linenumber</span><span class="p">()</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="n">part</span><span class="si">=}</span><span class="s2">&quot;</span><span class="p">)</span>
-        <span class="n">part</span> <span class="o">=</span> <span class="n">my_utils</span><span class="o">.</span><span class="n">clean_beginning_string</span><span class="p">(</span><span class="n">part</span><span class="p">,</span> <span class="n">v</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
-
-        <span class="n">part</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">part</span><span class="si">}</span><span class="s2">  &quot;</span> <span class="c1"># add 2 trailing spaces for Markdown linebreaks</span>
-        <span class="n">output</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">part</span><span class="p">)</span>
-
-    <span class="n">final_output</span> <span class="o">=</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">output</span><span class="p">)</span>
-
-    <span class="k">return</span> <span class="n">final_output</span>
-</code></pre></div>
-
-<p>with <code>replacements.txt</code> as:  </p>
-<div class="highlight"><pre><span></span><code>Nick, note|Nic Note
-Nicknote|Nic Note
-Nick note|Nic Note
-You line|\n
-new line|\n
-you line|\n
-Dash|-
-dash|-
-full stop|.
-Full stop|.
-four step|.
-full step|.
-Full-step|.
-full-step|.
-come up|,
-Call in|:
-commons|comments
- c | see 
-We were|Reword
-Salves|Sales
-Node|Note
- .|.
- ,|,
- ?|?
-question mark|?
-# always leave an empty line at the end
-</code></pre></div>
-
-<h2 id="fetch-recordings">Fetch Recordings</h2>
-<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">os</span><span class="o">,</span> <span class="nn">os.path</span>
-<span class="n">count_recordings</span> <span class="o">=</span> <span class="mi">0</span>
-<span class="k">for</span> <span class="n">root</span><span class="p">,</span> <span class="n">dirs</span><span class="p">,</span> <span class="n">files</span> <span class="ow">in</span> <span class="n">os</span><span class="o">.</span><span class="n">walk</span><span class="p">(</span><span class="s2">&quot;/Users/xxxx/Library/Mobile Documents/iCloud~com~openplanetsoftware~just-press-record/Documents&quot;</span><span class="p">):</span>
-    <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">os</span><span class="o">.</span><span class="n">listdir</span><span class="p">(</span><span class="n">root</span><span class="p">):</span>
-        <span class="k">if</span> <span class="n">x</span><span class="o">.</span><span class="n">endswith</span><span class="p">(</span><span class="s2">&quot;.icloud&quot;</span><span class="p">):</span>
-            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">x</span><span class="si">=}</span><span class="s2">&quot;</span><span class="p">)</span>
-            <span class="k">if</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">isfile</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
-                <span class="n">count_recordings</span> <span class="o">+=</span> <span class="mi">1</span>
-</code></pre></div>
-
-<p>gets <code>.m4a.icloud</code> files, not considered as files by Python 🤔   </p>
-<div class="highlight"><pre><span></span><code>x=&#39;.01-27-21.m4a.icloud&#39;
-x=&#39;.20-58-36.m4a.icloud&#39;
-x=&#39;.13-51-05.m4a.icloud&#39;
-
--------------------------------
-main.py
-
-count_recordings=0
-</code></pre></div>
-
-<p>seem to be hidden files as starting with <code>.</code>     </p>
-<div class="link_border"><div class="link_logo_box"><img class="link_logo" src="https://logo.clearbit.com/osxdaily.com?size=35" alt="logo"/></div><div class="link_content">
-<div class="link_title">How to Download iCloud Photos via the Command Line</div>
-<div class="link_tagline">osxdaily.com</div>
-<div class="link_url"><a href="https://osxdaily.com/2022/08/02/how-download-icloud-photos-command-line-icloudpd/" target="_blank">https://osxdaily.com/2022/08/02/how-download-icloud-photos-command-line-icloudpd/</a></div></div></div>
-
-<p>Stuck at <code>.icloud</code> issue.   </p>
-<p>Look for alternative recording method?    </p>
-<p>Trying with Apple's native Voice Memos.<br>
-Files are located at <code>~/Library/Application Support/com.apple.voicememos/Recordings</code>.    </p>
-<p>New flow to test: <br>
-- use Voice Memos for inputs (Watch, iPhone or Mac)
-- use Hazel to trigger script upon new <code>.m4a</code> added to folder above
-- script transcribes to Markdown note, logs the file as processed, and keeps both raw and cleaned transcripts for troubleshooting/archive</p>
-<p><span class="datestamp">25 Sep 2022</span> </p>
-<p>Working script:  </p>
-<div class="highlight"><pre><span></span><code><span class="c1">#### PARAMETERS TO ENTER</span>
-<span class="n">run</span> <span class="o">=</span> <span class="s1">&#39;Apple&#39;</span> <span class="c1"># Apple or JustPressRecord</span>
-<span class="n">count_to_do</span> <span class="o">=</span> <span class="mi">20</span>
-<span class="n">v</span> <span class="o">=</span> <span class="kc">True</span> <span class="c1"># verbose flag</span>
-<span class="c1">####</span>
-
-<span class="kn">import</span> <span class="nn">whisper</span>
-<span class="kn">import</span> <span class="nn">re</span>
-<span class="kn">import</span> <span class="nn">shutil</span>
-<span class="kn">from</span> <span class="nn">collections</span> <span class="kn">import</span> <span class="n">namedtuple</span> <span class="c1"># to return transcript result as namedtuple</span>
-<span class="c1"># import os, os.path</span>
-
-<span class="n">line_count_to_do</span> <span class="o">=</span> <span class="n">get_linenumber</span><span class="p">()</span> <span class="o">-</span> <span class="mi">6</span> <span class="c1"># for referencing count_to_do line number in warning messages</span>
-
-<span class="n">count_processed</span> <span class="o">=</span> <span class="mi">0</span>
-<span class="n">count_already_transcribed</span> <span class="o">=</span> <span class="mi">0</span>
-
-<span class="k">def</span> <span class="nf">separator</span><span class="p">(</span><span class="n">count</span><span class="o">=</span><span class="mi">50</span><span class="p">,</span> <span class="n">lines</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">symbol</span><span class="o">=</span><span class="s1">&#39;=&#39;</span><span class="p">):</span>
-    <span class="n">separator</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">symbol</span> <span class="o">*</span> <span class="n">count</span><span class="si">}</span><span class="s2">&quot;</span> <span class="o">+</span> <span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span>
-    <span class="n">separator</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n</span><span class="si">{</span><span class="n">separator</span> <span class="o">*</span> <span class="n">lines</span><span class="si">}</span><span class="s2">&quot;</span>
-    <span class="nb">print</span><span class="p">(</span><span class="n">separator</span><span class="p">)</span>
-
-<span class="k">def</span> <span class="nf">transcribe</span><span class="p">(</span><span class="n">file_path</span><span class="p">,</span> <span class="n">uid</span><span class="p">):</span>
-    <span class="k">global</span> <span class="n">v</span>
-
-    <span class="n">model</span> <span class="o">=</span> <span class="n">whisper</span><span class="o">.</span><span class="n">load_model</span><span class="p">(</span><span class="s2">&quot;base&quot;</span><span class="p">)</span>
-    <span class="n">response</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">transcribe</span><span class="p">(</span><span class="n">file_path</span><span class="p">)</span>
-    <span class="n">text</span> <span class="o">=</span> <span class="n">response</span><span class="p">[</span><span class="s2">&quot;text&quot;</span><span class="p">]</span>
-    <span class="n">language</span> <span class="o">=</span> <span class="n">response</span><span class="p">[</span><span class="s2">&quot;language&quot;</span><span class="p">]</span>
-
-    <span class="n">transcript</span> <span class="o">=</span> <span class="n">namedtuple</span><span class="p">(</span><span class="s1">&#39;Transcript&#39;</span><span class="p">,</span> <span class="p">[</span><span class="s1">&#39;text&#39;</span><span class="p">,</span> <span class="s1">&#39;language&#39;</span><span class="p">])</span>
-
-    <span class="n">final</span> <span class="o">=</span> <span class="n">transcript</span><span class="p">(</span><span class="n">text</span><span class="o">=</span><span class="n">text</span><span class="p">,</span> <span class="n">language</span><span class="o">=</span><span class="n">language</span><span class="p">)</span>
-
-    <span class="c1"># Archive raw</span>
-    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;/Users/</span><span class="si">{</span><span class="n">USER</span><span class="si">}</span><span class="s2">/Python/transcribee/raw/</span><span class="si">{</span><span class="n">uid</span><span class="si">}</span><span class="s2">.txt&quot;</span><span class="p">,</span> <span class="s1">&#39;w&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">file</span><span class="p">:</span>
-        <span class="n">file</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">final</span><span class="o">.</span><span class="n">language</span><span class="si">}</span><span class="se">\n</span><span class="si">{</span><span class="n">final</span><span class="o">.</span><span class="n">text</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-
-    <span class="k">if</span> <span class="n">v</span><span class="p">:</span>
-        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">#</span><span class="si">{</span><span class="n">get_linenumber</span><span class="p">()</span><span class="si">}</span><span class="s1"> transcript[&quot;text&quot;] = </span><span class="si">{</span><span class="n">transcript</span><span class="o">.</span><span class="n">text</span><span class="si">}</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
-
-    <span class="k">return</span> <span class="n">final</span> <span class="c1"># namedtuple `transcript``: (transcript.text, transcript.language)</span>
-
-<span class="k">def</span> <span class="nf">capitalise_sentence</span><span class="p">(</span><span class="n">og_string</span><span class="p">,</span> <span class="n">v</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
-    <span class="k">if</span> <span class="n">v</span><span class="p">:</span>
-        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">---start verbose capitalise_sentence (deactivate with v=False)&quot;</span><span class="p">)</span>
-        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n</span><span class="si">{</span><span class="n">og_string</span><span class="si">=}</span><span class="s2">&quot;</span><span class="p">)</span>
-    <span class="c1"># lowercase everything</span>
-    <span class="n">lower_s</span> <span class="o">=</span> <span class="n">og_string</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span>
-    <span class="k">if</span> <span class="n">v</span><span class="p">:</span>
-        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n</span><span class="si">{</span><span class="n">lower_s</span><span class="si">=}</span><span class="s2">&quot;</span><span class="p">)</span>
-    <span class="c1"># start of string &amp; acronyms</span>
-    <span class="n">final</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">sub</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;(\A\w)|&quot;</span><span class="o">+</span>                  <span class="c1"># start of string</span>
-            <span class="s2">&quot;(?&lt;!\.\w)([\.?!] )\w|&quot;</span><span class="o">+</span>    <span class="c1"># after a ?/!/. and a space, </span>
-                                        <span class="c1"># but not after an acronym</span>
-            <span class="s2">&quot;\w(?:\.\w)|&quot;</span><span class="o">+</span>              <span class="c1"># start/middle of acronym</span>
-            <span class="s2">&quot;(?&lt;=\w\.)\w&quot;</span><span class="p">,</span>              <span class="c1"># end of acronym</span>
-            <span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="o">.</span><span class="n">group</span><span class="p">()</span><span class="o">.</span><span class="n">upper</span><span class="p">(),</span> 
-            <span class="n">lower_s</span><span class="p">)</span>
-    <span class="k">if</span> <span class="n">v</span><span class="p">:</span>
-        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">start_string </span><span class="si">{</span><span class="n">final</span><span class="si">=}</span><span class="s2">&quot;</span><span class="p">)</span>
-    <span class="c1"># I exception</span>
-    <span class="k">if</span> <span class="s1">&#39; i &#39;</span> <span class="ow">in</span> <span class="n">final</span><span class="p">:</span>
-        <span class="n">final</span> <span class="o">=</span> <span class="n">final</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39; i &#39;</span><span class="p">,</span> <span class="s1">&#39; I &#39;</span><span class="p">)</span>
-        <span class="k">if</span> <span class="n">v</span><span class="p">:</span>
-            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&#39; i &#39; </span><span class="si">{</span><span class="n">final</span><span class="si">=}</span><span class="s2">&quot;</span><span class="p">)</span>
-    <span class="k">if</span> <span class="s2">&quot; i&#39;m &quot;</span> <span class="ow">in</span> <span class="n">final</span><span class="p">:</span>
-        <span class="n">final</span> <span class="o">=</span> <span class="n">final</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot; i&#39;m &quot;</span><span class="p">,</span> <span class="s2">&quot; I&#39;m &quot;</span><span class="p">)</span>
-        <span class="k">if</span> <span class="n">v</span><span class="p">:</span>
-            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&#39; i&#39;m &#39; </span><span class="si">{</span><span class="n">final</span><span class="si">=}</span><span class="s2">&quot;</span><span class="p">)</span>
-    <span class="k">if</span> <span class="n">v</span><span class="p">:</span>
-        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">returned repr(final)=</span><span class="si">{</span><span class="nb">repr</span><span class="p">(</span><span class="n">final</span><span class="p">)</span><span class="si">}</span><span class="se">\n\n</span><span class="s2">---end verbose capitalise_sentence</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
-    <span class="k">return</span> <span class="n">final</span>
-
-<span class="k">def</span> <span class="nf">clean_beginning_string</span><span class="p">(</span><span class="n">string_input</span><span class="p">,</span> <span class="n">v</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
-    <span class="k">if</span> <span class="n">string_input</span> <span class="ow">not</span> <span class="ow">in</span> <span class="p">[</span><span class="kc">None</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="s1">&#39; &#39;</span><span class="p">,</span> <span class="s1">&#39;-&#39;</span><span class="p">,</span> <span class="s1">&#39; - &#39;</span><span class="p">]:</span>
-        <span class="k">if</span> <span class="n">v</span><span class="p">:</span>
-            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">---</span><span class="se">\n</span><span class="s2">clean_beginning_string processing </span><span class="si">{</span><span class="nb">repr</span><span class="p">(</span><span class="n">string_input</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-        <span class="n">valid</span> <span class="o">=</span> <span class="kc">False</span>
-        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">21</span><span class="p">):</span> <span class="c1"># run enough time</span>
-            <span class="k">if</span> <span class="n">valid</span> <span class="o">==</span> <span class="kc">False</span><span class="p">:</span> <span class="c1"># run as long as 1st character is not alphabetical</span>
-                <span class="n">first_letter</span> <span class="o">=</span> <span class="n">string_input</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
-                <span class="k">if</span> <span class="ow">not</span> <span class="n">first_letter</span><span class="o">.</span><span class="n">isalpha</span><span class="p">():</span>
-                    <span class="n">string_input</span> <span class="o">=</span> <span class="n">string_input</span><span class="p">[</span><span class="mi">1</span><span class="p">:]</span>
-                    <span class="k">if</span> <span class="n">v</span><span class="p">:</span>
-                        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">string_input</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-
-                <span class="k">else</span><span class="p">:</span>
-                    <span class="n">valid</span> <span class="o">=</span> <span class="kc">True</span>
-            <span class="k">else</span><span class="p">:</span>
-                <span class="k">break</span> <span class="c1"># break loop once 1st character is alphabetical</span>
-        <span class="c1"># Capitalise</span>
-        <span class="k">if</span> <span class="ow">not</span> <span class="n">string_input</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">isupper</span><span class="p">():</span>
-            <span class="n">string_output</span> <span class="o">=</span> <span class="n">string_input</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="n">string_input</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">string_input</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">upper</span><span class="p">(),</span> <span class="mi">1</span><span class="p">)</span> <span class="c1"># replace only first occurence of character with capital</span>
-        <span class="k">else</span><span class="p">:</span>
-            <span class="n">string_output</span> <span class="o">=</span> <span class="n">string_input</span>
-    <span class="k">else</span><span class="p">:</span>
-        <span class="n">string_output</span> <span class="o">=</span> <span class="n">string_input</span>
-    <span class="k">if</span> <span class="n">v</span><span class="p">:</span>
-        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">string_output</span><span class="si">=}</span><span class="s2">&quot;</span><span class="p">)</span>
-    <span class="k">return</span> <span class="n">string_output</span>
-
-<span class="k">def</span> <span class="nf">clean_transcript</span><span class="p">(</span><span class="n">transcript</span><span class="p">):</span>
-    <span class="k">global</span> <span class="n">v</span>
-
-    <span class="k">if</span> <span class="n">v</span><span class="p">:</span>
-        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">#</span><span class="si">{</span><span class="n">get_linenumber</span><span class="p">()</span><span class="si">}</span><span class="s2"> Transcript to clean:</span><span class="se">\n</span><span class="si">{</span><span class="nb">repr</span><span class="p">(</span><span class="n">transcript</span><span class="p">)</span><span class="si">}</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
-
-    <span class="c1">### Create dict of replacements</span>
-    <span class="k">if</span> <span class="n">v</span><span class="p">:</span>
-        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">#</span><span class="si">{</span><span class="n">get_linenumber</span><span class="p">()</span><span class="si">}</span><span class="s2"> Creating dict of replacements:</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
-    <span class="n">replacements_file</span> <span class="o">=</span> <span class="s1">&#39;replacements.txt&#39;</span>
-    <span class="n">replacements</span> <span class="o">=</span> <span class="p">{}</span>
-    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">replacements_file</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">df</span><span class="p">:</span>
-        <span class="n">lines</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">readlines</span><span class="p">()</span>
-        <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">lines</span><span class="p">:</span>
-            <span class="k">if</span> <span class="ow">not</span> <span class="n">line</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s1">&#39;#&#39;</span><span class="p">):</span> <span class="c1"># remove comments</span>
-                <span class="c1"># print(&quot;line: &quot;, repr(line))</span>
-                <span class="n">line_parts</span> <span class="o">=</span> <span class="n">line</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;|&#39;</span><span class="p">)</span>
-                <span class="k">if</span> <span class="n">v</span><span class="p">:</span>
-                    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;#</span><span class="si">{</span><span class="n">get_linenumber</span><span class="p">()</span><span class="si">}</span><span class="s2"> </span><span class="si">{</span><span class="n">line_parts</span><span class="si">=}</span><span class="s2">&quot;</span><span class="p">)</span>
-                <span class="n">replacements</span><span class="p">[</span><span class="n">line_parts</span><span class="p">[</span><span class="mi">0</span><span class="p">]]</span> <span class="o">=</span> <span class="n">line_parts</span><span class="p">[</span><span class="mi">1</span><span class="p">][:</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="c1"># remove trailing \n</span>
-
-    <span class="c1">### Lowercase transcript / helps with replacement logic + clean basis for proper capitalisation</span>
-    <span class="n">transcript</span> <span class="o">=</span> <span class="n">transcript</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span>
-
-    <span class="c1">### Remove punctuation</span>
-    <span class="k">if</span> <span class="s1">&#39;,&#39;</span> <span class="ow">in</span> <span class="n">transcript</span><span class="p">:</span>
-        <span class="n">transcript</span> <span class="o">=</span> <span class="n">transcript</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;,&#39;</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">)</span>
-    <span class="k">if</span> <span class="s1">&#39;.&#39;</span> <span class="ow">in</span> <span class="n">transcript</span><span class="p">:</span>
-        <span class="n">transcript</span> <span class="o">=</span> <span class="n">transcript</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;.&#39;</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">)</span>
-
-    <span class="c1"># Replacements</span>
-    <span class="k">if</span> <span class="n">v</span><span class="p">:</span>
-        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">#</span><span class="si">{</span><span class="n">get_linenumber</span><span class="p">()</span><span class="si">}</span><span class="s2"> Processing list of replacements:</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
-    <span class="k">for</span> <span class="n">k</span><span class="p">,</span><span class="n">value</span> <span class="ow">in</span> <span class="n">replacements</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
-        <span class="k">if</span> <span class="n">v</span><span class="p">:</span>
-            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;#</span><span class="si">{</span><span class="n">get_linenumber</span><span class="p">()</span><span class="si">}</span><span class="s2"> replacing </span><span class="si">{</span><span class="nb">repr</span><span class="p">(</span><span class="n">k</span><span class="p">)</span><span class="si">}</span><span class="s2"> with </span><span class="si">{</span><span class="nb">repr</span><span class="p">(</span><span class="n">value</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-        <span class="k">if</span> <span class="n">k</span> <span class="ow">in</span> <span class="n">transcript</span><span class="p">:</span>
-            <span class="k">if</span> <span class="n">value</span> <span class="o">==</span> <span class="s1">&#39;</span><span class="se">\\</span><span class="s1">n&#39;</span><span class="p">:</span>
-                <span class="n">transcript</span> <span class="o">=</span> <span class="n">transcript</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="n">k</span><span class="p">,</span> <span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
-            <span class="k">else</span><span class="p">:</span>
-                <span class="n">transcript</span> <span class="o">=</span> <span class="n">transcript</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="n">k</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span>
-    <span class="k">if</span> <span class="n">v</span><span class="p">:</span>
-        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">#</span><span class="si">{</span><span class="n">get_linenumber</span><span class="p">()</span><span class="si">}</span><span class="s2"> Processing by lines:</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
-    <span class="k">if</span> <span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span> <span class="ow">in</span> <span class="n">transcript</span><span class="p">:</span>
-        <span class="n">parts</span> <span class="o">=</span> <span class="n">transcript</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
-        <span class="n">output</span> <span class="o">=</span> <span class="p">[]</span>
-        <span class="k">for</span> <span class="n">part</span> <span class="ow">in</span> <span class="n">parts</span><span class="p">:</span>
-            <span class="k">if</span> <span class="n">v</span><span class="p">:</span>
-                <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;#</span><span class="si">{</span><span class="n">get_linenumber</span><span class="p">()</span><span class="si">}</span><span class="s2"> </span><span class="si">{</span><span class="n">part</span><span class="si">=}</span><span class="s2">&quot;</span><span class="p">)</span>
-            <span class="n">part</span> <span class="o">=</span> <span class="n">clean_beginning_string</span><span class="p">(</span><span class="n">part</span><span class="p">,</span> <span class="n">v</span><span class="o">=</span><span class="n">v</span><span class="p">)</span>
-            <span class="n">part</span> <span class="o">=</span> <span class="n">capitalise_sentence</span><span class="p">(</span><span class="n">part</span><span class="p">,</span> <span class="n">v</span><span class="o">=</span><span class="n">v</span><span class="p">)</span>
-            <span class="n">part</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">part</span><span class="si">}</span><span class="s2">  &quot;</span> <span class="c1"># add 2 trailing spaces for Markdown linebreaks</span>
-            <span class="n">output</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">part</span><span class="p">)</span>
-
-        <span class="n">final_output</span> <span class="o">=</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">output</span><span class="p">)</span>
-    <span class="k">else</span><span class="p">:</span>
-        <span class="n">final_output</span> <span class="o">=</span> <span class="n">clean_beginning_string</span><span class="p">(</span><span class="n">transcript</span><span class="p">,</span> <span class="n">v</span><span class="o">=</span><span class="n">v</span><span class="p">)</span>
-
-    <span class="c1"># Final cleaning</span>
-    <span class="k">if</span> <span class="s1">&#39; / &#39;</span> <span class="ow">in</span> <span class="n">final_output</span><span class="p">:</span>
-        <span class="n">final_output</span> <span class="o">=</span> <span class="n">final_output</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39; / &#39;</span><span class="p">,</span> <span class="s1">&#39;/&#39;</span><span class="p">)</span>
-    <span class="k">if</span> <span class="s1">&#39; .&#39;</span> <span class="ow">in</span> <span class="n">final_output</span><span class="p">:</span>
-        <span class="n">final_output</span> <span class="o">=</span> <span class="n">final_output</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39; .&#39;</span><span class="p">,</span> <span class="s1">&#39;.&#39;</span><span class="p">)</span>
-    <span class="k">if</span> <span class="s1">&#39; ,&#39;</span> <span class="ow">in</span> <span class="n">final_output</span><span class="p">:</span>
-        <span class="n">final_output</span> <span class="o">=</span> <span class="n">final_output</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39; ,&#39;</span><span class="p">,</span> <span class="s1">&#39;,&#39;</span><span class="p">)</span>
-    <span class="k">if</span> <span class="s1">&#39; ?&#39;</span> <span class="ow">in</span> <span class="n">final_output</span><span class="p">:</span>
-        <span class="n">final_output</span> <span class="o">=</span> <span class="n">final_output</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39; ?&#39;</span><span class="p">,</span> <span class="s1">&#39;?&#39;</span><span class="p">)</span>
-    <span class="k">if</span> <span class="s1">&#39;??&#39;</span> <span class="ow">in</span> <span class="n">final_output</span><span class="p">:</span>
-        <span class="n">final_output</span> <span class="o">=</span> <span class="n">final_output</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;??&#39;</span><span class="p">,</span> <span class="s1">&#39;?&#39;</span><span class="p">)</span>
-    <span class="k">if</span> <span class="s1">&#39; :&#39;</span> <span class="ow">in</span> <span class="n">final_output</span><span class="p">:</span>
-        <span class="n">final_output</span> <span class="o">=</span> <span class="n">final_output</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39; :&#39;</span><span class="p">,</span> <span class="s1">&#39;:&#39;</span><span class="p">)</span>
-
-    <span class="k">if</span> <span class="n">v</span><span class="p">:</span>
-        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Transcript cleaned:</span><span class="se">\n</span><span class="si">{</span><span class="n">final_output</span><span class="si">}</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
-
-    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;/Users/</span><span class="si">{</span><span class="n">USER</span><span class="si">}</span><span class="s2">/Python/transcribee/processed/</span><span class="si">{</span><span class="n">uid</span><span class="si">}</span><span class="s2">.txt&quot;</span><span class="p">,</span> <span class="s1">&#39;w&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">file</span><span class="p">:</span>
-        <span class="n">file</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">final_output</span><span class="p">)</span>
-
-    <span class="k">return</span> <span class="n">final_output</span>
-
-<span class="k">def</span> <span class="nf">add_to_voice_memos_txt</span><span class="p">(</span><span class="n">memo_transcript</span><span class="p">,</span> <span class="n">uid</span><span class="p">,</span> <span class="n">full_path</span><span class="p">,</span> <span class="n">transcribe_language</span><span class="p">):</span>
-    <span class="k">global</span> <span class="n">v</span>
-
-    <span class="n">publish_date</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">uid</span><span class="p">[:</span><span class="mi">4</span><span class="p">]</span><span class="si">}</span><span class="s2">-</span><span class="si">{</span><span class="n">uid</span><span class="p">[</span><span class="mi">4</span><span class="p">:</span><span class="mi">6</span><span class="p">]</span><span class="si">}</span><span class="s2">-</span><span class="si">{</span><span class="n">uid</span><span class="p">[</span><span class="mi">6</span><span class="p">:</span><span class="mi">8</span><span class="p">]</span><span class="si">}</span><span class="s2">&quot;</span>
-
-    <span class="n">output</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n</span><span class="si">{</span><span class="n">full_path</span><span class="si">}</span><span class="se">\n</span><span class="si">{</span><span class="n">publish_date</span><span class="si">}</span><span class="s2"> | </span><span class="si">{</span><span class="n">transcribe_language</span><span class="si">}</span><span class="se">\n</span><span class="s2">---</span><span class="se">\n</span><span class="si">{</span><span class="n">memo_transcript</span><span class="si">}</span><span class="se">\n\n</span><span class="s2">&quot;</span>
-
-    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;/Users/</span><span class="si">{</span><span class="n">USER</span><span class="si">}</span><span class="s1">/Python/homee/voice-memos.txt&#39;</span><span class="p">,</span> <span class="s1">&#39;a&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
-        <span class="nb">print</span><span class="p">(</span><span class="n">output</span><span class="p">,</span> <span class="n">file</span><span class="o">=</span><span class="n">f</span><span class="p">)</span>
-
-<span class="k">def</span> <span class="nf">define_uid</span><span class="p">(</span><span class="n">run</span><span class="p">,</span> <span class="n">folder_path</span><span class="p">,</span> <span class="n">filename</span><span class="p">):</span>
-    <span class="k">if</span> <span class="n">run</span> <span class="o">==</span> <span class="s2">&quot;JustPressRecord&quot;</span><span class="p">:</span>
-        <span class="n">parent_folder</span> <span class="o">=</span> <span class="n">root</span><span class="p">[</span><span class="nb">len</span><span class="p">(</span><span class="n">folder_path</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span><span class="p">:]</span>
-        <span class="k">if</span> <span class="n">v</span><span class="p">:</span>
-            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">parent_folder</span><span class="si">=}</span><span class="s2">&quot;</span><span class="p">)</span>
-        <span class="k">if</span> <span class="s1">&#39;icloud&#39;</span> <span class="ow">in</span> <span class="n">filename</span><span class="p">:</span>
-            <span class="n">filename_root</span> <span class="o">=</span> <span class="n">filename</span><span class="p">[</span><span class="mi">1</span><span class="p">:]</span> <span class="c1"># remove leading dot</span>
-        <span class="k">else</span><span class="p">:</span>
-            <span class="n">filename_root</span> <span class="o">=</span> <span class="n">filename</span><span class="p">[:</span><span class="o">-</span><span class="mi">4</span><span class="p">]</span>
-        <span class="n">uid</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">parent_folder</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;-&#39;</span><span class="p">,</span><span class="s1">&#39;&#39;</span><span class="p">)</span><span class="si">}</span><span class="s2">-</span><span class="si">{</span><span class="n">filename_root</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;-&#39;</span><span class="p">,</span><span class="s1">&#39;&#39;</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span>
-        <span class="k">if</span> <span class="n">v</span><span class="p">:</span>
-            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">uid</span><span class="si">=}</span><span class="s2">&quot;</span><span class="p">)</span>
-
-    <span class="k">if</span> <span class="n">run</span> <span class="o">==</span> <span class="s2">&quot;Apple&quot;</span><span class="p">:</span>
-        <span class="n">filename_root</span> <span class="o">=</span> <span class="n">filename</span><span class="p">[:</span><span class="o">-</span><span class="mi">13</span><span class="p">]</span>
-        <span class="k">if</span> <span class="n">v</span><span class="p">:</span>
-            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">filename_root</span><span class="si">=}</span><span class="s2">&quot;</span><span class="p">)</span>
-        <span class="n">uid</span> <span class="o">=</span> <span class="n">filename_root</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39; &#39;</span><span class="p">,</span><span class="s1">&#39;-&#39;</span><span class="p">)</span>
-        <span class="k">if</span> <span class="n">v</span><span class="p">:</span>
-            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">uid</span><span class="si">=}</span><span class="s2">&quot;</span><span class="p">)</span>
-    <span class="k">return</span> <span class="n">uid</span>
-
-<span class="c1">### FETCH RECORDINGS</span>
-
-<span class="n">count_recordings</span> <span class="o">=</span> <span class="mi">0</span>
-
-<span class="c1">### List already transcribed files</span>
-<span class="n">already_transcribed</span> <span class="o">=</span> <span class="p">[]</span>
-<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;log.txt&#39;</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">df</span><span class="p">:</span>
-    <span class="n">lines</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">readlines</span><span class="p">()</span>
-    <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">lines</span><span class="p">:</span>
-        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">line</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">10</span><span class="p">:</span> <span class="c1"># lines with ERRORs</span>
-            <span class="n">already_transcribed</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">line</span><span class="p">[:</span><span class="mi">15</span><span class="p">])</span> <span class="c1"># keep only the UID</span>
-        <span class="k">else</span><span class="p">:</span>
-            <span class="n">already_transcribed</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">line</span><span class="p">[:</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span> <span class="c1"># -1 to remove trailing new line</span>
-<span class="k">if</span> <span class="n">v</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Already transcribed UIDs:&quot;</span><span class="p">)</span>
-    <span class="n">pp</span><span class="o">.</span><span class="n">pprint</span><span class="p">(</span><span class="n">already_transcribed</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">()</span>
-
-<span class="k">if</span> <span class="n">run</span> <span class="o">==</span> <span class="s1">&#39;JustPressRecord&#39;</span><span class="p">:</span>
-    <span class="n">folder_path</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;/Users/</span><span class="si">{</span><span class="n">USER</span><span class="si">}</span><span class="s2">/Library/Mobile Documents/iCloud~com~openplanetsoftware~just-press-record/Documents&quot;</span> <span class="c1"># returns partly `.icloud` files</span>
-<span class="k">if</span> <span class="n">run</span> <span class="o">==</span> <span class="s1">&#39;Apple&#39;</span><span class="p">:</span>
-    <span class="n">folder_path</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;/Users/</span><span class="si">{</span><span class="n">USER</span><span class="si">}</span><span class="s2">/Library/Application Support/com.apple.voicememos/Recordings&quot;</span>
-
-<span class="k">for</span> <span class="n">root</span><span class="p">,</span> <span class="n">dirs</span><span class="p">,</span> <span class="n">files</span> <span class="ow">in</span> <span class="n">os</span><span class="o">.</span><span class="n">walk</span><span class="p">(</span><span class="n">folder_path</span><span class="p">):</span>
-    <span class="k">for</span> <span class="n">filename</span> <span class="ow">in</span> <span class="n">os</span><span class="o">.</span><span class="n">listdir</span><span class="p">(</span><span class="n">root</span><span class="p">):</span>
-        <span class="k">if</span> <span class="n">filename</span><span class="o">.</span><span class="n">endswith</span><span class="p">(</span><span class="s2">&quot;.icloud&quot;</span><span class="p">):</span>
-            <span class="n">count_recordings</span> <span class="o">+=</span> <span class="mi">1</span>
-            <span class="n">separator</span><span class="p">()</span> <span class="c1"># prints separator lines for clarity</span>
-            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;recording #</span><span class="si">{</span><span class="n">count_recordings</span><span class="si">}</span><span class="s2"> iCloud file: </span><span class="si">{</span><span class="n">filename</span><span class="si">}</span><span class="s2"> from </span><span class="si">{</span><span class="n">run</span><span class="si">}</span><span class="s2"> / SKIPPING</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
-
-            <span class="n">uid</span> <span class="o">=</span> <span class="n">define_uid</span><span class="p">(</span><span class="n">run</span><span class="p">,</span> <span class="n">folder_path</span><span class="p">,</span> <span class="n">filename</span><span class="p">)</span>
-
-            <span class="c1">### Log</span>
-            <span class="k">if</span> <span class="n">uid</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">already_transcribed</span><span class="p">:</span>
-                <span class="k">if</span> <span class="n">v</span><span class="p">:</span>
-                    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Adding </span><span class="si">{</span><span class="n">uid</span><span class="si">}</span><span class="s2"> as iCloud to log.&quot;</span><span class="p">)</span>
-                <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;log.txt&#39;</span><span class="p">,</span> <span class="s1">&#39;a&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
-                    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">uid</span><span class="si">}</span><span class="s2"> ICLOUD FILE&quot;</span><span class="p">,</span> <span class="n">file</span><span class="o">=</span><span class="n">f</span><span class="p">)</span>
-
-            <span class="k">break</span>
-
-        <span class="k">if</span> <span class="n">filename</span><span class="o">.</span><span class="n">endswith</span><span class="p">(</span><span class="s2">&quot;.m4a&quot;</span><span class="p">):</span>
-            <span class="n">count_recordings</span> <span class="o">+=</span> <span class="mi">1</span>
-            <span class="n">separator</span><span class="p">()</span> <span class="c1"># prints separator lines for clarity</span>
-            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;recording #</span><span class="si">{</span><span class="n">count_recordings</span><span class="si">}</span><span class="s2"> Processing </span><span class="si">{</span><span class="n">filename</span><span class="si">}</span><span class="s2"> from </span><span class="si">{</span><span class="n">run</span><span class="si">}</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
-            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">filename</span><span class="si">=}</span><span class="s2">&quot;</span><span class="p">)</span>
-
-            <span class="c1">### Full Path</span>
-            <span class="n">full_path</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">root</span><span class="p">,</span> <span class="n">filename</span><span class="p">)</span>
-            <span class="k">if</span> <span class="n">v</span><span class="p">:</span>
-                <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">full_path</span><span class="si">=}</span><span class="s2">&quot;</span><span class="p">)</span>     
-
-            <span class="n">uid</span> <span class="o">=</span> <span class="n">define_uid</span><span class="p">(</span><span class="n">run</span><span class="p">,</span> <span class="n">folder_path</span><span class="p">,</span> <span class="n">filename</span><span class="p">)</span>  
-
-            <span class="c1">### Process if not done already</span>
-
-            <span class="k">if</span> <span class="n">uid</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">already_transcribed</span><span class="p">:</span>
-
-                <span class="k">if</span> <span class="n">count_to_do</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
-                    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">#</span><span class="si">{</span><span class="n">get_linenumber</span><span class="p">()</span><span class="si">}</span><span class="s2"> NO count_to_do in line </span><span class="si">{</span><span class="n">line_count_to_do</span><span class="si">}</span><span class="s2"> / TESTING&quot;</span><span class="p">)</span>
-
-                <span class="k">elif</span> <span class="n">count_processed</span> <span class="o">&lt;</span> <span class="n">count_to_do</span><span class="p">:</span>    
-
-                    <span class="c1">#### Defne copy_to_path for audio file but copy later (only once file processed)</span>
-                    <span class="n">copy_to_path</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;/Users/</span><span class="si">{</span><span class="n">USER</span><span class="si">}</span><span class="s2">/Python/transcribee/files/</span><span class="si">{</span><span class="n">uid</span><span class="si">}</span><span class="s2">.m4a&quot;</span>
-
-                    <span class="c1"># try:</span>
-                    <span class="n">transcribe_object</span> <span class="o">=</span> <span class="n">transcribe</span><span class="p">(</span><span class="n">full_path</span><span class="p">,</span> <span class="n">uid</span><span class="p">)</span> <span class="c1"># returns namedtuple with `text` and `language`</span>
-                    <span class="k">if</span> <span class="n">v</span><span class="p">:</span>
-                        <span class="sa">f</span><span class="s2">&quot;#</span><span class="si">{</span><span class="n">get_linenumber</span><span class="p">()</span><span class="si">}</span><span class="s2"> </span><span class="si">{</span><span class="n">transcribe_object</span><span class="si">=}</span><span class="s2">&quot;</span>
-                    <span class="n">raw_transcribe</span> <span class="o">=</span> <span class="n">transcribe_object</span><span class="o">.</span><span class="n">text</span>
-                    <span class="k">if</span> <span class="n">v</span><span class="p">:</span>
-                        <span class="sa">f</span><span class="s2">&quot;#</span><span class="si">{</span><span class="n">get_linenumber</span><span class="p">()</span><span class="si">}</span><span class="s2"> </span><span class="si">{</span><span class="n">raw_transcribe</span><span class="si">=}</span><span class="s2">&quot;</span>
-                    <span class="n">transcribe_language</span> <span class="o">=</span> <span class="n">transcribe_object</span><span class="o">.</span><span class="n">language</span>
-                    <span class="k">if</span> <span class="n">v</span><span class="p">:</span>
-                        <span class="sa">f</span><span class="s2">&quot;#</span><span class="si">{</span><span class="n">get_linenumber</span><span class="p">()</span><span class="si">}</span><span class="s2"> </span><span class="si">{</span><span class="n">transcribe_language</span><span class="si">=}</span><span class="s2">&quot;</span>
-                    <span class="n">transcript</span> <span class="o">=</span> <span class="n">clean_transcript</span><span class="p">(</span><span class="n">raw_transcribe</span><span class="p">)</span>
-                    <span class="k">if</span> <span class="n">v</span><span class="p">:</span>
-                        <span class="sa">f</span><span class="s2">&quot;#</span><span class="si">{</span><span class="n">get_linenumber</span><span class="p">()</span><span class="si">}</span><span class="s2"> </span><span class="si">{</span><span class="n">transcript</span><span class="si">=}</span><span class="s2">&quot;</span>
-                    <span class="n">add_to_voice_memos_txt</span><span class="p">(</span><span class="n">transcript</span><span class="p">,</span> <span class="n">uid</span><span class="p">,</span> <span class="n">copy_to_path</span><span class="p">,</span> <span class="n">transcribe_language</span><span class="p">)</span>
-
-                        <span class="c1">### Log if successful</span>
-                    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Adding </span><span class="si">{</span><span class="n">uid</span><span class="si">}</span><span class="s2"> to log.&quot;</span><span class="p">)</span>
-                    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;log.txt&#39;</span><span class="p">,</span> <span class="s1">&#39;a&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
-                        <span class="nb">print</span><span class="p">(</span><span class="n">uid</span><span class="p">,</span> <span class="n">file</span><span class="o">=</span><span class="n">f</span><span class="p">)</span>
-                    <span class="c1"># except Exception as e:</span>
-                    <span class="c1">#     print(f&quot;\n\nERROR {e} with {run} ID {uid}.&quot;)</span>
-                        <span class="c1"># with open(&#39;log.txt&#39;, &#39;a&#39;) as f:</span>
-                        <span class="c1">#     print(f&quot;{uid} ERROR {run}&quot;, file=f)</span>
-
-                    <span class="c1">### Copy file to project folder /files now that everything is done</span>
-
-                    <span class="k">if</span> <span class="n">v</span><span class="p">:</span>
-                        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">COPYING FILE:&quot;</span><span class="p">)</span>
-                        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;from </span><span class="si">{</span><span class="n">full_path</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-                        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;to </span><span class="si">{</span><span class="n">copy_to_path</span><span class="si">}</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
-                    <span class="n">shutil</span><span class="o">.</span><span class="n">copy2</span><span class="p">(</span><span class="n">full_path</span><span class="p">,</span> <span class="n">copy_to_path</span><span class="p">)</span> 
-
-                    <span class="n">count_processed</span> <span class="o">+=</span> <span class="mi">1</span>
-                    <span class="n">already_transcribed</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">uid</span><span class="p">)</span>
-
-            <span class="k">else</span><span class="p">:</span>
-                <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n</span><span class="si">{</span><span class="n">uid</span><span class="si">}</span><span class="s2"> already transcribed.&quot;</span><span class="p">)</span>
-                <span class="n">count_already_transcribed</span> <span class="o">+=</span> <span class="mi">1</span>
-</code></pre></div>
-
-<p>Next: </p>
-<ul>
-<li>figure out how to trigger python script from hazel.</li>
-<li>Rename transcribee to transcriptee?</li>
-<li>Test recording with meeting recordings (tweak the export <code>.srt</code> functions to add timings)</li>
-</ul>
-<p>Question:</p>
-<ul>
-<li>can I feedback errors to Whisper for the AI to learn? 🤔    </li>
-</ul>
-<p><span class="datestamp">26 Sep 2022</span> </p>
-<p>Updated script, now as main function <code>transcribe</code> with parameters:   </p>
-<ul>
-<li><code>all</code> runs all voice memos in selected folder and appends transcript to central text file (<code>voice-memos.txt</code>)</li>
-<li><code>&lt;file_path&gt;</code> transcribes only given file and creates a <code>.txt</code> file with same name in same folder</li>
-</ul>
-<h2 id="running-automatically-with-hazel">running automatically with Hazel</h2>
-<p>Working setup:  </p>
-<p><img class="screenshot" src="https://notes.nicolasdeville.com/images/transcribee/transcribee-hazel-test-working.jpg" alt="transcribee/transcribee-hazel-test-working.jpg"/>  </p>
-<p>Implemented now:</p>
-<ul>
-<li>fully automated transcription of voice memos: takes 30s from end recording to transcript appearing in txt file</li>
-<li>dedicated <code>transcribe</code> folder: any file dropped in it gets transcribed with a <code>.txt</code> file of the same name in same folder. </li>
-</ul>
-<p>TODO: Alfred action on files</p>
-<hr>
-<p>search code: recordee</p>
+</footer>                    </div>
+                    
                 </article>
-            </aside>
-
-                <section id="content" class="body">
-
-                <!-- PREVIOUS NOTES -->
-				<p class="notes-section">previous notes</p>
-                <hr>
-
-                <ol id="posts-list" class="hfeed">
+                <hr/>
+            </li>
             
 
 
@@ -831,46 +243,6 @@ Files are located at <code>~/Library/Application Support/com.apple.voicememos/Re
         <!-- added 4/7 -->
         <!-- 		<br />
         <abbr class="modified" title="2022-09-26T13:01:36.314204+02:00">
-                Updated: 26 Sep 2022
-        </abbr>
- -->
-
-    </p>
-
-    
-
-</footer>                    </div>
-                    
-                </article>
-                <hr/>
-            </li>
-            
-
-
-
-            <li>
-                <article class="hentry">
-                    <header>
-                        <!-- PREVIOUS NOTE TITLE -->
-                        <h1><a href="https://notes.nicolasdeville.com/python/shell-scripts" rel="bookmark"
-                            title="How to run Python scripts with shell scripts">How to run Python scripts with shell scripts</a></h1>
-                        <!-- PREVIOUS NOTE SUMMARY -->
-                        <div class="entry-content">
-                            
-                        </div>
-                    </header>
-
-                    <div class="entry-content">
-                        <!-- PREVIOUS NOTE METADATA -->
-<footer class="post-info">
-
-    <p>
-        26 Sep 2022 <span class="separator">|</span> in <a class="link_tag" href="https://notes.nicolasdeville.com/python/">python</a>
- tags: <a class="link_tag" href="https://notes.nicolasdeville.com/tag/scripts.html">scripts</a>
-
-        <!-- added 4/7 -->
-        <!-- 		<br />
-        <abbr class="modified" title="2022-09-26T11:54:54.868121+02:00">
                 Updated: 26 Sep 2022
         </abbr>
  -->
