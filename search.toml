@@ -13,6 +13,51 @@ url = "/why/"
 title = "Why this site?"
 
 [[input.files]]
+path = "helpers/applescript/index.html"
+url = "/helpers/applescript"
+title = "AppleScript"
+
+[[input.files]]
+path = "ai/services/index.html"
+url = "/ai/services"
+title = "Exciting AI services"
+
+[[input.files]]
+path = "projects/notes/index.html"
+url = "/projects/notes"
+title = "This site"
+
+[[input.files]]
+path = "ai/art/index.html"
+url = "/ai/art"
+title = "AI-generated art"
+
+[[input.files]]
+path = "apps/proton-vpn/index.html"
+url = "/apps/proton-vpn"
+title = "Proton VPN"
+
+[[input.files]]
+path = "home-office/deep-work/index.html"
+url = "/home-office/deep-work"
+title = "Resources for Deep Work"
+
+[[input.files]]
+path = "apps/atom/index.html"
+url = "/apps/atom"
+title = "Atom"
+
+[[input.files]]
+path = "helpers/get-current-url/index.html"
+url = "/helpers/get-current-url"
+title = "Get current URL from browser in macOS"
+
+[[input.files]]
+path = "ai/whisper/index.html"
+url = "/ai/whisper"
+title = "Whisper"
+
+[[input.files]]
 path = "apps/alfred/index.html"
 url = "/apps/alfred"
 title = "Alfred"
@@ -48,11 +93,6 @@ url = "/python/snippet-clean-beginning-strings"
 title = "Python snippet: Clean beginning of strings"
 
 [[input.files]]
-path = "ai/whisper/index.html"
-url = "/ai/whisper"
-title = "Whisper"
-
-[[input.files]]
 path = "interests/traditional-archery/index.html"
 url = "/interests/traditional-archery"
 title = "Traditional Archery"
@@ -73,14 +113,14 @@ url = "/python/snippet-parent-folder-name"
 title = "Get parent folder name with Python"
 
 [[input.files]]
+path = "python/snippet-pass-arguments/index.html"
+url = "/python/snippet-pass-arguments"
+title = "How to pass variables to a Python scripts with argument"
+
+[[input.files]]
 path = "helpers/vodafone-kabel/index.html"
 url = "/helpers/vodafone-kabel"
 title = "Vodafone Kabel"
-
-[[input.files]]
-path = "projects/notes/index.html"
-url = "/projects/notes"
-title = "This site"
 
 [[input.files]]
 path = "random/quotes/index.html"
@@ -218,14 +258,14 @@ url = "/python/library-dotenv"
 title = "How to save confidential data in environment variables with dotenv"
 
 [[input.files]]
-path = "python/books/index.html"
-url = "/python/books"
-title = "My Python Books Library"
-
-[[input.files]]
 path = "b2b-sales/books/index.html"
 url = "/b2b-sales/books"
 title = "My B2B Books Library"
+
+[[input.files]]
+path = "python/books/index.html"
+url = "/python/books"
+title = "My Python Books Library"
 
 [[input.files]]
 path = "books/library/index.html"
@@ -296,16 +336,6 @@ title = "Elon Musk"
 path = "interests/starlink/index.html"
 url = "/interests/starlink"
 title = "Starlink"
-
-[[input.files]]
-path = "ai/art/index.html"
-url = "/ai/art"
-title = "AI-generated art"
-
-[[input.files]]
-path = "ai/services/index.html"
-url = "/ai/services"
-title = "Exciting AI services"
 
 [[input.files]]
 path = "ai/questions/index.html"
@@ -431,11 +461,6 @@ title = "The Metaverse"
 path = "b2b-sales/email-tools/index.html"
 url = "/b2b-sales/email-tools"
 title = "Tools for email finding & validation"
-
-[[input.files]]
-path = "home-office/deep-work/index.html"
-url = "/home-office/deep-work"
-title = "Resources for Deep Work"
 
 [[input.files]]
 path = "python/export-kindle-library/index.html"
@@ -616,11 +641,6 @@ title = "F1"
 path = "interests/crypto/index.html"
 url = "/interests/crypto"
 title = "Crypto"
-
-[[input.files]]
-path = "interests/applescript/index.html"
-url = "/interests/applescript"
-title = "AppleScript"
 
 [[input.files]]
 path = "interests/airguns/index.html"
@@ -2128,14 +2148,19 @@ url = "/projects/nicai"
 title = "nicAI | my personal AI assistant"
 
 [[input.files]]
-path = "b2b-sales/books/index.html"
-url = "/b2b-sales/books"
-title = "My B2B Books Library"
+path = "books/deep-work/index.html"
+url = "/books/deep-work"
+title = "Deep Work, by Cal Newport"
 
 [[input.files]]
 path = "python/books/index.html"
 url = "/python/books"
 title = "My Python Books Library"
+
+[[input.files]]
+path = "b2b-sales/books/index.html"
+url = "/b2b-sales/books"
+title = "My B2B Books Library"
 
 [[input.files]]
 path = "apps/library/index.html"
@@ -2171,11 +2196,6 @@ title = "AI"
 path = "random/ai/index.html"
 url = "/random/ai"
 title = "AI"
-
-[[input.files]]
-path = "books/deep-work/index.html"
-url = "/books/deep-work"
-title = "Deep Work, by Cal Newport"
 
 [[input.files]]
 path = "projects/clipper/index.html"

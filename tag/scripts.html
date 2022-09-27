@@ -43,7 +43,7 @@
             </div>
 
             <div class="above-navbar">
-                <div class="last_updated">26 Sep 2022 | 17:29</div>
+                <div class="last_updated">27 Sep 2022 | 11:40</div>
                 <div>
                     <p class="notes_count">
                         <a href="https://notes.nicolasdeville.com/tags">by tags</a> 
@@ -54,7 +54,7 @@
                         <span style="color:#C74350">|</span>
                         <a href="https://notes.nicolasdeville.com/2022/">2022</a> 
                         <span style="color:#C74350">|</span> 
-                        16 notes
+                        17 notes
                     </p>
                 </div>
             </div>
@@ -82,7 +82,7 @@
 
 <!-- 220911 moved to base.html -->
 <!-- <p class="notes_count">
-    16 notes 
+    17 notes 
     <span style="color:#C74350">|</span> 
     <a href="https://notes.nicolasdeville.com/tags">by tags</a> 
     <span style="color:#C74350">|</span> 
@@ -101,7 +101,7 @@
             <hr/>
 
                 <article class="hentry">
-                    <h1 class="entry-title"><a href="https://notes.nicolasdeville.com/python/shell-scripts">How to run Python scripts with shell scripts</a></h1>
+                    <h1 class="entry-title"><a href="https://notes.nicolasdeville.com/helpers/applescript">AppleScript</a></h1>
 
                     <!-- added 4/7 -->
                     <div>
@@ -110,6 +110,151 @@
                         </p>
                     </div>
 
+<footer class="post-info">
+
+    <p>
+        27 Sep 2022 <span class="separator">|</span> in <a class="link_tag" href="https://notes.nicolasdeville.com/helpers/">helpers</a>
+ tags: <a class="link_tag" href="https://notes.nicolasdeville.com/tag/macos.html">macOS</a>
+<a class="link_tag" href="https://notes.nicolasdeville.com/tag/automation.html">automation</a>
+<a class="link_tag" href="https://notes.nicolasdeville.com/tag/scripts.html">scripts</a>
+
+        <!-- added 4/7 -->
+        <!-- 		<br />
+        <abbr class="modified" title="2022-09-27T11:40:04.830618+02:00">
+                Updated: 27 Sep 2022
+        </abbr>
+ -->
+
+    </p>
+
+    
+
+</footer><p><span class="datestamp">18 Sep 2022</span>   </p>
+<p>Need to learn it at some point - can be very helpful for many desktop automations where Python might not be ideal/best suited.    </p>
+<p>Use Script Editor.app to create scripts.   </p>
+<p>First working script/snippet, based on copy/paste and basic tweaking:   </p>
+<div class="highlight"><pre><span></span><code><span class="k">on</span> <span class="nb">run</span> <span class="p">{</span><span class="nv">input</span><span class="p">,</span> <span class="nv">parameters</span><span class="p">}</span>
+
+    <span class="k">tell</span> <span class="nb">application</span> <span class="s2">&quot;Finder&quot;</span>
+        <span class="k">set</span> <span class="nv">filename</span> <span class="k">to</span> <span class="na">name</span> <span class="k">of</span> <span class="nv">file</span> <span class="nv">input</span>
+    <span class="k">end</span> <span class="k">tell</span>
+
+    <span class="nb">set the clipboard to</span> <span class="nv">filename</span>
+<span class="k">end</span> <span class="nb">run</span>
+</code></pre></div>
+
+<p>➡️ [<a href="../../helpers/macos-copy-filename/index.html">Nic Note: Copy file name to clipboard upon saving file in macOS</a>]  </p>
+<p><span class="datestamp">27 Sep 2022</span> </p>
+<h2 id="open-a-file-in-a-specific-application">open a file in a specific application</h2>
+<div class="highlight"><pre><span></span><code><span class="k">tell</span> <span class="nb">application</span> <span class="s2">&quot;Atom&quot;</span> <span class="k">to</span> <span class="nb">open</span> <span class="nv">POSIX</span> <span class="nv">file</span> <span class="s2">&quot;/path/to/file/test.txt&quot;</span>
+</code></pre></div>
+
+<h2 id="how-to-run-applescript-from-command-line">how to run applescript from command line</h2>
+<div class="highlight"><pre><span></span><code>osascript /path/to/file/my_script.scpt
+</code></pre></div>
+
+<div class="link_border"><div class="link_logo_box"><img class="link_logo" src="https://logo.clearbit.com/stackexchange.com?size=35" alt="logo"/></div><div class="link_content">
+<div class="link_title">macos - How to use AppleScript to create a new Rich Text Format file from clipboard text? - Ask Different</div>
+<div class="link_tagline">stackexchange.com</div>
+<div class="link_url"><a href="https://apple.stackexchange.com/questions/251466/how-to-use-applescript-to-create-a-new-rich-text-format-file-from-clipboard-text" target="_blank">https://apple.stackexchange.com/questions/251466/how-to-use-applescript-to-create-a-new-rich-text-format-file-from-clipboard-text</a></div></div></div>
+
+<h2 id="date-formatting">date formatting</h2>
+<div class="highlight"><pre><span></span><code><span class="k">set</span> <span class="nv">date_now</span> <span class="k">to</span> <span class="p">((</span><span class="nb">current date</span><span class="p">)</span> <span class="k">as </span><span class="nc">string</span><span class="p">)</span>
+</code></pre></div>
+
+<p>outputs:   </p>
+<div class="highlight"><pre><span></span><code>&quot;Tuesday, 27 September 2022 at 10:57:26&quot;
+</code></pre></div>
+
+<h2 id="string-concatenation">string concatenation</h2>
+<div class="highlight"><pre><span></span><code><span class="k">set</span> <span class="nv">a</span> <span class="k">to</span> <span class="s2">&quot;This &quot;</span>
+<span class="k">set</span> <span class="nv">b</span> <span class="k">to</span> <span class="s2">&quot;seems to &quot;</span>
+<span class="k">set</span> <span class="nv">c</span> <span class="k">to</span> <span class="s2">&quot;work.&quot;</span>
+<span class="k">set</span> <span class="nv">myVar</span> <span class="k">to</span> <span class="nv">a</span> <span class="o">&amp;</span> <span class="nv">b</span> <span class="o">&amp;</span> <span class="nv">c</span>
+</code></pre></div>
+
+<p>outputs:   </p>
+<div class="highlight"><pre><span></span><code>&quot;This seems to work.&quot;
+</code></pre></div>
+
+<h2 id="timestamp">timestamp</h2>
+<div class="highlight"><pre><span></span><code><span class="k">set</span> <span class="nv">timestamp</span> <span class="k">to</span> <span class="p">(</span><span class="nb">do shell script</span> <span class="s2">&quot;date &#39;+%y%m%d-%H%M&#39;&quot;</span><span class="p">)</span>
+</code></pre></div>
+
+<h1 id="script-write-clipboard-content-to-txt-file-and-open-in-atom">Script: write clipboard content to txt file and open in Atom</h1>
+<p>working:  </p>
+<div class="highlight"><pre><span></span><code><span class="nb">do shell script</span> <span class="s2">&quot;pbpaste &gt; /Users/xxx/my_folder/220927-1121.txt&quot;</span>
+
+<span class="k">tell</span> <span class="nb">application</span> <span class="s2">&quot;Atom&quot;</span> <span class="k">to</span> <span class="nb">open</span> <span class="nv">POSIX</span> <span class="nv">file</span> <span class="s2">&quot;/Users/xxx/my_folder/220927-1121.txt&quot;</span>
+</code></pre></div>
+
+<p>need to figure out how to do string injection or variable insertion of output path.   </p>
+<p>working path construction:  </p>
+<div class="highlight"><pre><span></span><code><span class="k">set</span> <span class="nv">root_path</span> <span class="k">to</span> <span class="s2">&quot;/Users/xxx/my/path/&quot;</span>
+
+<span class="k">set</span> <span class="nv">timestamp</span> <span class="k">to</span> <span class="p">(</span><span class="nb">do shell script</span> <span class="s2">&quot;date &#39;+%y%m%d-%H%M&#39;&quot;</span><span class="p">)</span>
+
+<span class="k">set</span> <span class="nv">file_extension</span> <span class="k">to</span> <span class="s2">&quot;.txt&quot;</span>
+
+<span class="k">set</span> <span class="nv">file_path</span> <span class="k">to</span> <span class="nv">root_path</span> <span class="o">&amp;</span> <span class="nv">timestamp</span> <span class="o">&amp;</span> <span class="nv">file_extension</span>
+</code></pre></div>
+
+<p>outputs:</p>
+<div class="highlight"><pre><span></span><code>&quot;/Users/xxx/my/path/220927-1128.txt&quot;
+</code></pre></div>
+
+<p>working script 😁</p>
+<div class="highlight"><pre><span></span><code><span class="k">set</span> <span class="nv">command</span> <span class="k">to</span> <span class="s2">&quot;pbpaste &gt; &quot;</span>
+
+<span class="k">set</span> <span class="nv">root_path</span> <span class="k">to</span> <span class="s2">&quot;/Users/xxxx/my/folder/&quot;</span>
+
+<span class="k">set</span> <span class="nv">timestamp</span> <span class="k">to</span> <span class="p">(</span><span class="nb">do shell script</span> <span class="s2">&quot;date &#39;+%y%m%d-%H%M&#39;&quot;</span><span class="p">)</span>
+
+<span class="k">set</span> <span class="nv">file_extension</span> <span class="k">to</span> <span class="s2">&quot;.txt&quot;</span>
+
+<span class="k">set</span> <span class="nv">file_path</span> <span class="k">to</span> <span class="nv">root_path</span> <span class="o">&amp;</span> <span class="nv">timestamp</span> <span class="o">&amp;</span> <span class="nv">file_extension</span>
+
+<span class="k">set</span> <span class="nv">full_command</span> <span class="k">to</span> <span class="nv">command</span> <span class="o">&amp;</span> <span class="nv">root_path</span> <span class="o">&amp;</span> <span class="nv">timestamp</span> <span class="o">&amp;</span> <span class="nv">file_extension</span>
+
+<span class="nb">do shell script</span> <span class="nv">full_command</span>
+
+<span class="k">tell</span> <span class="nb">application</span> <span class="s2">&quot;Atom&quot;</span> <span class="k">to</span> <span class="nb">open</span> <span class="nv">POSIX</span> <span class="nv">file</span> <span class="nv">file_path</span>
+</code></pre></div>
+
+<p>Key it seems is that variables come out enclosed with quotes which were redundant with the quotes required for the shell script instructions, so including the command itself in the string was the solution. </p>
+<h1 id="resources">Resources</h1>
+<div class="link_border"><div class="link_logo_box"><img class="link_logo" src="https://logo.clearbit.com/apple.com?size=35" alt="logo"/></div><div class="link_content">
+<div class="link_title">Introduction to AppleScript Language Guide</div>
+<div class="link_tagline">apple.com</div>
+<div class="link_url"><a href="https://developer.apple.com/library/archive/documentation/AppleScript/Conceptual/AppleScriptLangGuide/introduction/ASLR_intro.html" target="_blank">https://developer.apple.com/library/archive/documentation/AppleScript/Conceptual/AppleScriptLangGuide/introduction/ASLR_intro.html</a></div></div></div>
+                </article>
+            </aside>
+
+                <section id="content" class="body">
+
+                <!-- PREVIOUS NOTES -->
+				<p class="notes-section">previous notes</p>
+                <hr>
+
+                <ol id="posts-list" class="hfeed">
+            
+
+
+
+            <li>
+                <article class="hentry">
+                    <header>
+                        <!-- PREVIOUS NOTE TITLE -->
+                        <h1><a href="https://notes.nicolasdeville.com/python/shell-scripts" rel="bookmark"
+                            title="How to run Python scripts with shell scripts">How to run Python scripts with shell scripts</a></h1>
+                        <!-- PREVIOUS NOTE SUMMARY -->
+                        <div class="entry-content">
+                            
+                        </div>
+                    </header>
+
+                    <div class="entry-content">
+                        <!-- PREVIOUS NOTE METADATA -->
 <footer class="post-info">
 
     <p>
@@ -127,70 +272,11 @@
 
     
 
-</footer><p><span class="datestamp">26 Sep 2022</span>   </p>
-<p>In order to run my Python scripts from other places than VS Code (eg Streamdeck action, Hazel, Alfred, etc..) I cannot run the scripts as single lines command (eg <code>python3 &lt;url&gt;</code>) because they require their own virtual environments to be activated [<a href="../../python/virtual-environments/index.html">Nic Note: Virtual Environments</a>]</p>
-<p>So there is a missing link, which I think shell scripts are for.  </p>
-<div class="link_border"><div class="link_logo_box"><img class="link_logo" src="https://logo.clearbit.com/hexnode.com?size=35" alt="logo"/></div><div class="link_content">
-<div class="link_title">The ultimate guide to Mac shell scripting</div>
-<div class="link_tagline">hexnode.com</div>
-<div class="link_url"><a href="https://www.hexnode.com/blogs/the-ultimate-guide-to-mac-shell-scripting/" target="_blank">https://www.hexnode.com/blogs/the-ultimate-guide-to-mac-shell-scripting/</a></div></div></div>
-
-<blockquote>
-<p>Shell scripts are text files or small computer programs that consist of a collection of UNIX commands. You use a shell script to execute commands that you would normally type on the command line. However, rather than inputting them one by one into a Mac’s terminal, you can use shell scripts to execute the said group of commands with just one single action.</p>
-</blockquote>
-<p>For my needs:</p>
-<h2 id="create-file">create file</h2>
-<p>create a file in Atom, starting with <code>#! /bin/zsh</code> (<code>Zsh</code> being the shell in macOS Monterey, differs by system/preference), with <code>.sh</code> (shell) extension.  </p>
-<p>Each line is a terminal command line, like I would enter manually, eg:   </p>
-<div class="highlight"><pre><span></span><code><span class="ch">#! /bin/zsh</span>
-
-<span class="nb">source</span> /Users/xxx/Python/transcribee/venv/bin/activate
-
-python3 /Users/xxx/Python/transcribee/test.py
-</code></pre></div>
-
-<h2 id="run-script">run script</h2>
-<p>Single terminal command:   </p>
-<div class="highlight"><pre><span></span><code>zsh &lt;path_to_sh_file&gt;
-</code></pre></div>
-
-<h2 id="use-variable">use variable</h2>
-<p>define as <code>VAR=</code> and call with <code>$VAR</code>.  </p>
-<p>ex.:   </p>
-<div class="highlight"><pre><span></span><code><span class="nv">CURRENTDATETIME</span><span class="o">=</span><span class="sb">`</span>date +<span class="s2">&quot;%Y-%m-%d %T&quot;</span><span class="sb">`</span>
-</code></pre></div>
-
-<p>used as:   </p>
-<div class="highlight"><pre><span></span><code><span class="nv">$CURRENTDATETIME</span>
-</code></pre></div>
-
-<h2 id="insert-breakline">insert breakline</h2>
-<p><code>echo -e "Hellow\\nWorld"</code>  </p>
-<p>The option <code>-e</code> causes the newline character to be interpreted.</p>
-<h2 id="open-url">open URL</h2>
-<p><code>open</code> opens files and URLs in the default or specified application.   </p>
-<div class="highlight"><pre><span></span><code>open https://stackoverflow.com
-</code></pre></div>
-
-<p>or with Safari:  </p>
-<div class="highlight"><pre><span></span><code>open -a Safari https://stackoverflow.com
-</code></pre></div>
-
-<p>for Chrome:   </p>
-<div class="highlight"><pre><span></span><code>open -a /Applications/Google<span class="se">\ </span>Chrome.app https://stackoverflow.com
-</code></pre></div>
-
-<p>note the backslash <code>\</code> to escape white spaces in paths.  </p>
+</footer>                    </div>
+                    
                 </article>
-            </aside>
-
-                <section id="content" class="body">
-
-                <!-- PREVIOUS NOTES -->
-				<p class="notes-section">previous notes</p>
-                <hr>
-
-                <ol id="posts-list" class="hfeed">
+                <hr/>
+            </li>
             
 
 
