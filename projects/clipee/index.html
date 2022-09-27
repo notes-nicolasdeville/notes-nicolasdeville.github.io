@@ -44,7 +44,7 @@
             </div>
 
             <div class="above-navbar">
-                <div class="last_updated">27 Sep 2022 | 22:44</div>
+                <div class="last_updated">28 Sep 2022 | 00:11</div>
                 <div>
                     <p class="notes_count">
                         <a href="https://notes.nicolasdeville.com/tags">by tags</a> 
@@ -100,13 +100,13 @@
 <footer class="post-info">
 
     <p>
-        27 Sep 2022 <span class="separator">|</span> in <a class="link_tag" href="https://notes.nicolasdeville.com/projects/">projects</a>
+        28 Sep 2022 <span class="separator">|</span> in <a class="link_tag" href="https://notes.nicolasdeville.com/projects/">projects</a>
  tags: <a class="link_tag" href="https://notes.nicolasdeville.com/tag/python.html">python</a>
 
         <!-- added 4/7 -->
         <!-- 		<br />
-        <abbr class="modified" title="2022-09-27T22:44:11.259863+02:00">
-                Updated: 27 Sep 2022
+        <abbr class="modified" title="2022-09-28T00:11:08.535759+02:00">
+                Updated: 28 Sep 2022
         </abbr>
  -->
 
@@ -125,6 +125,7 @@
 <li><a href="#clipee-tweet">Clipee Tweet</a><ul>
 <li><a href="#resources">resources</a></li>
 <li><a href="#implementation">implementation</a></li>
+<li><a href="#clipee-grist">Clipee Grist</a></li>
 </ul>
 </li>
 </ul>
@@ -438,6 +439,58 @@ Had to re-generate the keys, with a user having read/write permissions.  </p>
 </code></pre></div>
 
 <p>next: add logic to include images.    </p>
+<p>Working script 😁   </p>
+<div class="highlight"><pre><span></span><code><span class="c1"># credentials</span>
+<span class="n">api_key</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">getenv</span><span class="p">(</span><span class="s2">&quot;API_KEY&quot;</span><span class="p">)</span>
+<span class="n">api_secret</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">getenv</span><span class="p">(</span><span class="s2">&quot;API_SECRET&quot;</span><span class="p">)</span>
+<span class="n">access_token</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">getenv</span><span class="p">(</span><span class="s2">&quot;ACCESS_TOKEN&quot;</span><span class="p">)</span>
+<span class="n">access_token_secret</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">getenv</span><span class="p">(</span><span class="s2">&quot;ACCESS_TOKEN_SECRET&quot;</span><span class="p">)</span>
+
+<span class="c1"># authentication of consumer key and secret</span>
+<span class="n">auth</span> <span class="o">=</span> <span class="n">tweepy</span><span class="o">.</span><span class="n">OAuthHandler</span><span class="p">(</span><span class="n">api_key</span><span class="p">,</span> <span class="n">api_secret</span><span class="p">)</span>
+<span class="c1"># authentication of access token and secret</span>
+<span class="n">auth</span><span class="o">.</span><span class="n">set_access_token</span><span class="p">(</span><span class="n">access_token</span><span class="p">,</span> <span class="n">access_token_secret</span><span class="p">)</span>
+<span class="n">api</span> <span class="o">=</span> <span class="n">tweepy</span><span class="o">.</span><span class="n">API</span><span class="p">(</span><span class="n">auth</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">tweet</span><span class="p">(</span><span class="n">text</span><span class="p">,</span> <span class="n">v</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+
+    <span class="n">multimedia</span> <span class="o">=</span> <span class="kc">False</span>
+
+    <span class="n">parts</span> <span class="o">=</span> <span class="n">text</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">part</span> <span class="ow">in</span> <span class="n">parts</span><span class="p">:</span>
+        <span class="n">part</span> <span class="o">=</span> <span class="n">part</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
+        <span class="nb">print</span><span class="p">()</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">part</span><span class="si">=}</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">part</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s1">&#39;/Users&#39;</span><span class="p">)</span> <span class="ow">and</span> <span class="n">part</span><span class="o">.</span><span class="n">endswith</span><span class="p">(</span><span class="s1">&#39;jpg&#39;</span><span class="p">):</span>
+            <span class="n">multimedia</span> <span class="o">=</span> <span class="kc">True</span>
+            <span class="n">image_path</span> <span class="o">=</span> <span class="n">part</span>
+            <span class="n">text</span> <span class="o">=</span> <span class="n">text</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="n">image_path</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">)</span> <span class="c1"># remove the path URL from the tweet text</span>
+            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n</span><span class="si">{</span><span class="n">image_path</span><span class="si">=}</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="n">multimedia</span><span class="p">:</span>
+        <span class="n">approval</span> <span class="o">=</span> <span class="n">simpledialog</span><span class="o">.</span><span class="n">askstring</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Sure?&quot;</span><span class="p">,</span><span class="sa">f</span><span class="s2">&quot;Ready to send WITH IMAGE attached:</span><span class="se">\n\n</span><span class="si">{</span><span class="n">text</span><span class="si">}</span><span class="se">\n\n</span><span class="s2">Really?</span><span class="se">\n</span><span class="s2">(y to confirm)&quot;</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">approval</span> <span class="o">=</span> <span class="n">simpledialog</span><span class="o">.</span><span class="n">askstring</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Sure?&quot;</span><span class="p">,</span><span class="sa">f</span><span class="s2">&quot;Ready to send:</span><span class="se">\n\n</span><span class="si">{</span><span class="n">text</span><span class="si">}</span><span class="se">\n\n</span><span class="s2">Really?</span><span class="se">\n</span><span class="s2">(y to confirm)&quot;</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="n">approval</span> <span class="o">==</span> <span class="s1">&#39;y&#39;</span><span class="p">:</span>
+
+        <span class="k">if</span> <span class="n">multimedia</span><span class="p">:</span>
+            <span class="n">api</span><span class="o">.</span><span class="n">update_status_with_media</span><span class="p">(</span><span class="n">text</span><span class="p">,</span> <span class="n">image_path</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">api</span><span class="o">.</span><span class="n">update_status</span><span class="p">(</span><span class="n">status</span><span class="o">=</span><span class="n">text</span><span class="p">)</span>
+
+        <span class="n">webbrowser</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;chrome&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">open_new_tab</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;https://twitter.com/ndeville&#39;</span><span class="p">)</span>
+
+<span class="n">text</span> <span class="o">=</span> <span class="n">clipboard_get</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Processing:</span><span class="se">\n</span><span class="si">{</span><span class="nb">repr</span><span class="p">(</span><span class="n">text</span><span class="p">)</span><span class="si">}</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="n">tweet</span><span class="p">(</span><span class="n">text</span><span class="p">)</span>
+</code></pre></div>
+
+<p>next: Clipee Grist</p>
+<h3 id="clipee-grist">Clipee Grist</h3>
+<p>Pain point: I come across a lot of apps (SaaS mostly) that I want to add to my list (library) to keep them on my radar. This list lives in Grist [<a href="../../apps/Grist/index.html">Nic Note: Grist</a>].   </p>
+<p>Goal: add enriched record to Grist from a URL copied (ie in clipboard).   </p>
             </main>
         </div><!-- /.entry-content -->
     </article>
