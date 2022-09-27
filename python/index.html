@@ -43,7 +43,7 @@
             </div>
 
             <div class="above-navbar">
-                <div class="last_updated">27 Sep 2022 | 16:23</div>
+                <div class="last_updated">27 Sep 2022 | 17:15</div>
                 <div>
                     <p class="notes_count">
                         <a href="https://notes.nicolasdeville.com/tags">by tags</a> 
@@ -54,7 +54,7 @@
                         <span style="color:#C74350">|</span>
                         <a href="https://notes.nicolasdeville.com/2022/">2022</a> 
                         <span style="color:#C74350">|</span> 
-                        70 notes
+                        71 notes
                     </p>
                 </div>
             </div>
@@ -82,7 +82,7 @@
 
 <!-- 220911 moved to base.html -->
 <!-- <p class="notes_count">
-    70 notes 
+    71 notes 
     <span style="color:#C74350">|</span> 
     <a href="https://notes.nicolasdeville.com/tags">by tags</a> 
     <span style="color:#C74350">|</span> 
@@ -101,15 +101,92 @@
             <hr/>
 
                 <article class="hentry">
-                    <h1 class="entry-title"><a href="https://notes.nicolasdeville.com/python/shell-scripts">How to run Python scripts with shell scripts</a></h1>
+                    <h1 class="entry-title"><a href="https://notes.nicolasdeville.com/python/library-geopy">Python Library: geopy</a></h1>
 
                     <!-- added 4/7 -->
                     <div>
                         <p class="header_summary">
-                            
+                            <p>locate the coordinates of addresses.</p>
                         </p>
                     </div>
 
+<footer class="post-info">
+
+    <p>
+        27 Sep 2022 <span class="separator">|</span> in <a class="link_tag" href="https://notes.nicolasdeville.com/python/">python</a>
+ tags: <a class="link_tag" href="https://notes.nicolasdeville.com/tag/python-libraries.html">python libraries</a>
+
+        <!-- added 4/7 -->
+        <!-- 		<br />
+        <abbr class="modified" title="2022-09-27T17:13:03.513817+02:00">
+                Updated: 27 Sep 2022
+        </abbr>
+ -->
+
+    </p>
+
+    
+
+</footer><div class="toc"><span class="toctitle">Table of Contents</span><ul>
+<li><a href="#getting-started">Getting started</a></li>
+</ul>
+</div>
+<table>
+<thead>
+<tr>
+<th>Library resources</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>PyPI</td>
+<td><a href="https://pypi.org/project/geopy/" target="_blank">https://pypi.org/project/geopy/</a></td>
+</tr>
+<tr>
+<td>Github</td>
+<td><a href="https://github.com/geopy/geopy" target="_blank">https://github.com/geopy/geopy</a></td>
+</tr>
+<tr>
+<td>Documentation</td>
+<td><a href="https://github.com/geopy/geopy" target="_blank">https://github.com/geopy/geopy</a></td>
+</tr>
+</tbody>
+</table>
+<p><span class="datestamp">27 Sep 2022</span>   </p>
+<h1 id="getting-started">Getting started</h1>
+<div class="highlight"><pre><span></span><code>pip3 install geopy
+</code></pre></div>
+
+<p>Used in Twittee [<a href="../../projects/twittee/index.html">Nic Note: Twittee</a>]   </p>
+                </article>
+            </aside>
+
+                <section id="content" class="body">
+
+                <!-- PREVIOUS NOTES -->
+				<p class="notes-section">previous notes</p>
+                <hr>
+
+                <ol id="posts-list" class="hfeed">
+            
+
+
+
+            <li>
+                <article class="hentry">
+                    <header>
+                        <!-- PREVIOUS NOTE TITLE -->
+                        <h1><a href="https://notes.nicolasdeville.com/python/shell-scripts" rel="bookmark"
+                            title="How to run Python scripts with shell scripts">How to run Python scripts with shell scripts</a></h1>
+                        <!-- PREVIOUS NOTE SUMMARY -->
+                        <div class="entry-content">
+                            
+                        </div>
+                    </header>
+
+                    <div class="entry-content">
+                        <!-- PREVIOUS NOTE METADATA -->
 <footer class="post-info">
 
     <p>
@@ -127,70 +204,11 @@
 
     
 
-</footer><p><span class="datestamp">26 Sep 2022</span>   </p>
-<p>In order to run my Python scripts from other places than VS Code (eg Streamdeck action, Hazel, Alfred, etc..) I cannot run the scripts as single lines command (eg <code>python3 &lt;url&gt;</code>) because they require their own virtual environments to be activated [<a href="../../python/virtual-environments/index.html">Nic Note: Virtual Environments</a>]</p>
-<p>So there is a missing link, which I think shell scripts are for.  </p>
-<div class="link_border"><div class="link_logo_box"><img class="link_logo" src="https://logo.clearbit.com/hexnode.com?size=35" alt="logo"/></div><div class="link_content">
-<div class="link_title">The ultimate guide to Mac shell scripting</div>
-<div class="link_tagline">hexnode.com</div>
-<div class="link_url"><a href="https://www.hexnode.com/blogs/the-ultimate-guide-to-mac-shell-scripting/" target="_blank">https://www.hexnode.com/blogs/the-ultimate-guide-to-mac-shell-scripting/</a></div></div></div>
-
-<blockquote>
-<p>Shell scripts are text files or small computer programs that consist of a collection of UNIX commands. You use a shell script to execute commands that you would normally type on the command line. However, rather than inputting them one by one into a Mac’s terminal, you can use shell scripts to execute the said group of commands with just one single action.</p>
-</blockquote>
-<p>For my needs:</p>
-<h2 id="create-file">create file</h2>
-<p>create a file in Atom, starting with <code>#! /bin/zsh</code> (<code>Zsh</code> being the shell in macOS Monterey, differs by system/preference), with <code>.sh</code> (shell) extension.  </p>
-<p>Each line is a terminal command line, like I would enter manually, eg:   </p>
-<div class="highlight"><pre><span></span><code><span class="ch">#! /bin/zsh</span>
-
-<span class="nb">source</span> /Users/xxx/Python/transcribee/venv/bin/activate
-
-python3 /Users/xxx/Python/transcribee/test.py
-</code></pre></div>
-
-<h2 id="run-script">run script</h2>
-<p>Single terminal command:   </p>
-<div class="highlight"><pre><span></span><code>zsh &lt;path_to_sh_file&gt;
-</code></pre></div>
-
-<h2 id="use-variable">use variable</h2>
-<p>define as <code>VAR=</code> and call with <code>$VAR</code>.  </p>
-<p>ex.:   </p>
-<div class="highlight"><pre><span></span><code><span class="nv">CURRENTDATETIME</span><span class="o">=</span><span class="sb">`</span>date +<span class="s2">&quot;%Y-%m-%d %T&quot;</span><span class="sb">`</span>
-</code></pre></div>
-
-<p>used as:   </p>
-<div class="highlight"><pre><span></span><code><span class="nv">$CURRENTDATETIME</span>
-</code></pre></div>
-
-<h2 id="insert-breakline">insert breakline</h2>
-<p><code>echo -e "Hellow\\nWorld"</code>  </p>
-<p>The option <code>-e</code> causes the newline character to be interpreted.</p>
-<h2 id="open-url">open URL</h2>
-<p><code>open</code> opens files and URLs in the default or specified application.   </p>
-<div class="highlight"><pre><span></span><code>open https://stackoverflow.com
-</code></pre></div>
-
-<p>or with Safari:  </p>
-<div class="highlight"><pre><span></span><code>open -a Safari https://stackoverflow.com
-</code></pre></div>
-
-<p>for Chrome:   </p>
-<div class="highlight"><pre><span></span><code>open -a /Applications/Google<span class="se">\ </span>Chrome.app https://stackoverflow.com
-</code></pre></div>
-
-<p>note the backslash <code>\</code> to escape white spaces in paths.  </p>
+</footer>                    </div>
+                    
                 </article>
-            </aside>
-
-                <section id="content" class="body">
-
-                <!-- PREVIOUS NOTES -->
-				<p class="notes-section">previous notes</p>
-                <hr>
-
-                <ol id="posts-list" class="hfeed">
+                <hr/>
+            </li>
             
 
 
