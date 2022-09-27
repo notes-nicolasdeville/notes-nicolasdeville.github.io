@@ -44,7 +44,7 @@
             </div>
 
             <div class="above-navbar">
-                <div class="last_updated">27 Sep 2022 | 18:19</div>
+                <div class="last_updated">27 Sep 2022 | 22:28</div>
                 <div>
                     <p class="notes_count">
                         <a href="https://notes.nicolasdeville.com/tags">by tags</a> 
@@ -105,7 +105,7 @@
 
         <!-- added 4/7 -->
         <!-- 		<br />
-        <abbr class="modified" title="2022-09-27T18:19:21.700720+02:00">
+        <abbr class="modified" title="2022-09-27T22:28:06.383163+02:00">
                 Updated: 27 Sep 2022
         </abbr>
  -->
@@ -117,11 +117,16 @@
 </footer>            <main> <!-- for indexing by Stork -->
                 <div class="toc"><span class="toctitle">Table of Contents</span><ul>
 <li><a href="#workflow">Workflow</a></li>
-<li><a href="#current-script">Current script</a></li>
-<li><a href="#updated">Updated</a></li>
+<li><a href="#initial-script">Initial script</a></li>
+<li><a href="#clipee-family">Clipee family</a><ul>
+<li><a href="#clipee-clean">Clipee Clean</a></li>
+<li><a href="#clipee-note">Clipee Note</a></li>
+<li><a href="#clipee-atom">Clipee Atom</a></li>
 <li><a href="#clipee-tweet">Clipee Tweet</a><ul>
-<li><a href="#resources">Resources</a></li>
+<li><a href="#resources">resources</a></li>
 <li><a href="#implementation">implementation</a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -138,7 +143,7 @@
 <p>Script prints to a Terminal window, and copies output back to clipboard, ready to be pasted anywhere.   </p>
 <p>TODO: 
 - explore AppleScript with keyboard shortcut assignment</p>
-<h1 id="current-script">Current script</h1>
+<h1 id="initial-script">Initial script</h1>
 <div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">pandas.io.clipboard</span> <span class="kn">import</span> <span class="n">clipboard_get</span>
 <span class="kn">import</span> <span class="nn">re</span>
 <span class="kn">import</span> <span class="nn">subprocess</span>
@@ -322,10 +327,46 @@
     <span class="n">clipee_processing</span><span class="p">(</span><span class="n">new_url</span><span class="p">)</span>
 </code></pre></div>
 
-<h1 id="updated">Updated</h1>
-<p><span class="datestamp">25 Sep 2022</span> </p>
-<p>Broke out the script in 2</p>
-<h1 id="clipee-tweet">Clipee Tweet</h1>
+<h1 id="clipee-family">Clipee family</h1>
+<p>Rather than continue implementing logic or switches for the script to identify what to do with clipboard content, I broke out the script:  </p>
+<ul>
+<li><strong>Clipee Clean</strong>: most of the generic clipboard content cleaning of the initial script.
+and new additions:   </li>
+<li><strong>Clipee Note</strong>: generate rich HTML snippet from URL.</li>
+<li><strong>Clipee Atom</strong>: paste clipboard content to new named file in Atom.  </li>
+<li><strong>Clipee Tweet</strong>: send a tweet from content of clipboard.</li>
+</ul>
+<h2 id="clipee-clean">Clipee Clean</h2>
+<p>Pared down version of the initial script above. No change to it, but simplified script will allow for more flexibility in cleaning tasks.  </p>
+<h2 id="clipee-note">Clipee Note</h2>
+<p>Generate HTML snippet with site icon and header/tagline from a URL in clipboard.   </p>
+<p>Implemented a couple weeks ago and using several times a day since.    </p>
+<p>Code:   </p>
+<script src="https://gist.github.com/ndeville/52505fe6ec734ff4a6f448af59a81083.js"></script>
+
+<h2 id="clipee-atom">Clipee Atom</h2>
+<p>For the last couple years, I have relied daily on a shortcut on my Streamdeck that was pasting the content of my clipboard to Atom (my text editor [<a href="../../apps/atom/index.html">Nic Note: Atom</a>]).   </p>
+<p>While I have a clipboard manager, this serves the purpose of keeping the pasted content on a separate screen in front of me, explore content within the simplicity of a text editor, etc. </p>
+<p>Challenges were: </p>
+<ul>
+<li>extra gesture to reach out to the Streamdeck to hit the right key (I know!!)</li>
+<li>couple seconds of processing (managed via keyboard shortcut automation, eg <code>Cmd N</code>, <code>Cmd V</code>) to get result</li>
+<li>untitled file means prompt for name when closing or losing data if crash. </li>
+</ul>
+<p>As Clipee is designed to enable clipboard actions, I thought about improving on this automation.  </p>
+<p>Result now:</p>
+<ul>
+<li>Alfred keyword <code>pa</code> (<strong>P</strong>aste to <strong>A</strong>tom) is all I need to do. </li>
+<li>AppleScript triggered creates a new <code>.txt</code> file with timestamp as name in a central folder, and opens it in Atom. </li>
+</ul>
+<p>It's near instantaneous 😁 and all my "pasteboard" is archived, searchable and safe.     </p>
+<p>See implementation and code in:  </p>
+<div class="link_border"><div class="link_logo_box"><img class="link_logo" src="https://logo.clearbit.com/nicolasdeville.com?size=35" alt="logo"/></div><div class="link_content">
+<div class="link_title">Alfred: Custom Workflow "Paste Clipboard to Atom"</div>
+<div class="link_tagline">nicolasdeville.com</div>
+<div class="link_url"><a href="https://notes.nicolasdeville.com/apps/alfred/#paste-clipboard-to-atom" target="_blank">https://notes.nicolasdeville.com/apps/alfred/#paste-clipboard-to-atom</a></div></div></div>
+
+<h2 id="clipee-tweet">Clipee Tweet</h2>
 <p><span class="datestamp">27 Sep 2022</span> </p>
 <p>See origination: [<a href="../../helpers/twitter-cli/index.html">Nic Note: How to tweet via CLI</a>]   </p>
 <p>Goal: make it as seamless as possible in my workflow to tweet.   </p>
@@ -334,7 +375,7 @@
 <li>Alfred workflow with keyword <code>ct</code> (Clipee Tweet) tweets content of clipboard</li>
 </ul>
 <p>Danger to tweet something wrong 😅😂 but oopening tweet after posting for double-check, and deleting tweet if mistake, should be a fine workaround.  </p>
-<h2 id="resources">Resources</h2>
+<h3 id="resources">resources</h3>
 <div class="link_border"><div class="link_logo_box"><img class="link_logo" src="https://logo.clearbit.com/opengenus.org?size=35" alt="logo"/></div><div class="link_content">
 <div class="link_title">Post a tweet using Twitter API</div>
 <div class="link_tagline">opengenus.org</div>
@@ -345,7 +386,7 @@
 <div class="link_tagline">geeksforgeeks.org</div>
 <div class="link_url"><a href="https://www.geeksforgeeks.org/tweet-using-python/" target="_blank">https://www.geeksforgeeks.org/tweet-using-python/</a></div></div></div>
 
-<h2 id="implementation">implementation</h2>
+<h3 id="implementation">implementation</h3>
 <p>Done in 30mns and working 😁  </p>
 <p>"Trickiest" bit was the flurry of authentication strings (API KEY, API SECRET, ACCESS_TOKEN &amp; ACCESS_TOKEN_SECRET), and their permissions.  <br>
 First try returned an Unauthorized response. <br>
@@ -377,8 +418,6 @@ Had to re-generate the keys, with a user having read/write permissions.  </p>
 <span class="c1"># authentication of access token and secret</span>
 <span class="n">auth</span><span class="o">.</span><span class="n">set_access_token</span><span class="p">(</span><span class="n">access_token</span><span class="p">,</span> <span class="n">access_token_secret</span><span class="p">)</span>
 <span class="n">api</span> <span class="o">=</span> <span class="n">tweepy</span><span class="o">.</span><span class="n">API</span><span class="p">(</span><span class="n">auth</span><span class="p">)</span>
-
-
 
 <span class="k">def</span> <span class="nf">tweet</span><span class="p">(</span><span class="n">text</span><span class="p">,</span> <span class="n">v</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
 

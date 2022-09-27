@@ -18,6 +18,11 @@ url = "/projects/clipee"
 title = "Clipee"
 
 [[input.files]]
+path = "projects/notes/index.html"
+url = "/projects/notes"
+title = "This site"
+
+[[input.files]]
 path = "python/library-tweepy/index.html"
 url = "/python/library-tweepy"
 title = "Python Library: tweepy"
@@ -51,11 +56,6 @@ title = "AppleScript"
 path = "ai/services/index.html"
 url = "/ai/services"
 title = "Exciting AI services"
-
-[[input.files]]
-path = "projects/notes/index.html"
-url = "/projects/notes"
-title = "This site"
 
 [[input.files]]
 path = "ai/art/index.html"
@@ -2203,13 +2203,13 @@ url = "/learning/ai"
 title = "Learning AI"
 
 [[input.files]]
-path = "interests/ai/index.html"
-url = "/interests/ai"
+path = "random/ai/index.html"
+url = "/random/ai"
 title = "AI"
 
 [[input.files]]
-path = "random/ai/index.html"
-url = "/random/ai"
+path = "interests/ai/index.html"
+url = "/interests/ai"
 title = "AI"
 
 [[input.files]]
@@ -2218,14 +2218,14 @@ url = "/projects/clipper"
 title = "Clipper"
 
 [[input.files]]
-path = "interests/ai/index.html"
-url = "/interests/ai"
-title = "AI"
-
-[[input.files]]
 path = "learning/ai/index.html"
 url = "/learning/ai"
 title = "Learning AI"
+
+[[input.files]]
+path = "interests/ai/index.html"
+url = "/interests/ai"
+title = "AI"
 
 [[input.files]]
 path = "home-office/deep-work/index.html"
