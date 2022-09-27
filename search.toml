@@ -13,6 +13,16 @@ url = "/why/"
 title = "Why this site?"
 
 [[input.files]]
+path = "projects/clipee/index.html"
+url = "/projects/clipee"
+title = "Clipee"
+
+[[input.files]]
+path = "python/library-tweepy/index.html"
+url = "/python/library-tweepy"
+title = "Python Library: tweepy"
+
+[[input.files]]
 path = "projects/twittee/index.html"
 url = "/projects/twittee"
 title = "Twittee"
@@ -21,11 +31,6 @@ title = "Twittee"
 path = "python/library-geopy/index.html"
 url = "/python/library-geopy"
 title = "Python Library: geopy"
-
-[[input.files]]
-path = "projects/clipee/index.html"
-url = "/projects/clipee"
-title = "Clipee"
 
 [[input.files]]
 path = "helpers/twitter-cli/index.html"
@@ -278,24 +283,24 @@ url = "/python/library-dotenv"
 title = "How to save confidential data in environment variables with dotenv"
 
 [[input.files]]
-path = "python/books/index.html"
-url = "/python/books"
-title = "My Python Books Library"
-
-[[input.files]]
 path = "b2b-sales/books/index.html"
 url = "/b2b-sales/books"
 title = "My B2B Books Library"
 
 [[input.files]]
-path = "apps/library/index.html"
-url = "/apps/library"
-title = "My Apps Library"
+path = "python/books/index.html"
+url = "/python/books"
+title = "My Python Books Library"
 
 [[input.files]]
 path = "books/library/index.html"
 url = "/books/library"
 title = "My Books Library"
+
+[[input.files]]
+path = "apps/library/index.html"
+url = "/apps/library"
+title = "My Apps Library"
 
 [[input.files]]
 path = "learning/map-coordinates/index.html"
@@ -2163,19 +2168,14 @@ url = "/books/deep-work"
 title = "Deep Work, by Cal Newport"
 
 [[input.files]]
-path = "b2b-sales/books/index.html"
-url = "/b2b-sales/books"
-title = "My B2B Books Library"
-
-[[input.files]]
 path = "python/books/index.html"
 url = "/python/books"
 title = "My Python Books Library"
 
 [[input.files]]
-path = "books/library/index.html"
-url = "/books/library"
-title = "My Books Library"
+path = "b2b-sales/books/index.html"
+url = "/b2b-sales/books"
+title = "My B2B Books Library"
 
 [[input.files]]
 path = "apps/library/index.html"
@@ -2183,19 +2183,24 @@ url = "/apps/library"
 title = "My Apps Library"
 
 [[input.files]]
+path = "books/library/index.html"
+url = "/books/library"
+title = "My Books Library"
+
+[[input.files]]
 path = "helpers/clipper/index.html"
 url = "/helpers/clipper"
 title = "My web clipboard"
 
 [[input.files]]
-path = "learning/ai/index.html"
-url = "/learning/ai"
-title = "Learning AI"
-
-[[input.files]]
 path = "random/ai/index.html"
 url = "/random/ai"
 title = "AI"
+
+[[input.files]]
+path = "learning/ai/index.html"
+url = "/learning/ai"
+title = "Learning AI"
 
 [[input.files]]
 path = "interests/ai/index.html"
@@ -2213,14 +2218,14 @@ url = "/projects/clipper"
 title = "Clipper"
 
 [[input.files]]
-path = "learning/ai/index.html"
-url = "/learning/ai"
-title = "Learning AI"
-
-[[input.files]]
 path = "interests/ai/index.html"
 url = "/interests/ai"
 title = "AI"
+
+[[input.files]]
+path = "learning/ai/index.html"
+url = "/learning/ai"
+title = "Learning AI"
 
 [[input.files]]
 path = "home-office/deep-work/index.html"
