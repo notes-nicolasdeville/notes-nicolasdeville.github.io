@@ -44,7 +44,7 @@
             </div>
 
             <div class="above-navbar">
-                <div class="last_updated">27 Sep 2022 | 22:31</div>
+                <div class="last_updated">27 Sep 2022 | 22:44</div>
                 <div>
                     <p class="notes_count">
                         <a href="https://notes.nicolasdeville.com/tags">by tags</a> 
@@ -104,7 +104,7 @@
 
         <!-- added 4/7 -->
         <!-- 		<br />
-        <abbr class="modified" title="2022-09-27T21:58:36.253359+02:00">
+        <abbr class="modified" title="2022-09-27T22:40:53.215626+02:00">
                 Updated: 27 Sep 2022
         </abbr>
  -->
@@ -146,7 +146,7 @@
 </ul>
 </li>
 <li><a href="#deploy">Deploy</a><ul>
-<li><a href="#todo-deploy-via-python-script">TODO deploy via Python script.</a></li>
+<li><a href="#deploy-via-python-script">deploy via Python script.</a></li>
 </ul>
 </li>
 <li><a href="#further-building">Further building</a><ul>
@@ -154,6 +154,7 @@
 <li><a href="#use-favicons-in-external-links">use favicons in external links</a></li>
 <li><a href="#foating-table-of-contents">Foating Table Of Contents</a></li>
 <li><a href="#next-steps">Next Steps</a><ul>
+<li><a href="#solve-the-publish-warnings">solve the publish warnings</a></li>
 <li><a href="#header-formatting">header formatting</a></li>
 <li><a href="#pinned-posts">pinned posts</a></li>
 <li><a href="#collapsed-code-blocks">collapsed code blocks</a></li>
@@ -269,7 +270,7 @@ etc..  </p>
 
 <p>assuming <code>origin</code> and <code>main</code> set in Git (eg not <code>master</code>)    </p>
 <p><span class="datestamp">22 Sep 2022</span> next step:</p>
-<h2 id="todo-deploy-via-python-script">TODO deploy via Python script.</h2>
+<h2 id="deploy-via-python-script">deploy via Python script.</h2>
 <p>Steps to include are:  </p>
 <ul>
 <li>generate Clipper notes [<a href="../../projects/clipper/index.html">Nic Note: Project Clipper</a>]   </li>
@@ -279,6 +280,10 @@ etc..  </p>
 <li>publish with Pelican [<a href="../../projects/notes/index.html">Nic Note: This Site</a>] &amp; [<a href="../../python/library-pelican/index.html">Nic Note: Python Library: Pelican</a>]</li>
 <li>push with Git[<a href="../../projects/notes/index.html">Nic Note: This Site</a>] &amp; [<a href="../../helpers/github/index.html">Nic Note: Github</a>]</li>
 </ul>
+<p><span class="datestamp">27 Sep 2022</span> </p>
+<p>Implemented yesterday via shell script [<a href="../../helpers/shell-scripts/index.html">Nic Note: Shell scripts</a>]</p>
+<p>Script gets triggered by Alfred keyword <code>nnlo</code> (Nic's Notes Local) to only generate the site locally, or <code>nnli</code> (Nic's Notes Live) which also pushes to Github Pages.   </p>
+<p>6 different scripts triggered by 5 keystrokes in &lt;2s! 😍🤓</p>
 <p><span class="datestamp">11 Sep 2022</span>   </p>
 <h1 id="further-building">Further building</h1>
 <h2 id="copy-code-block">Copy Code Block</h2>
@@ -636,8 +641,11 @@ Alternative would be to use website's favicons eg with <code>https://clearbit.co
 
 <p>initial output:   </p>
 <p><img class="screenshot" src="https://notes.nicolasdeville.com/images/notes/220916_original-toc.jpg" alt="220916_original-toc"/>  </p>
+<p>TODO figure out if possible to make it a floating TOC instead of just a static one.   </p>
 <h2 id="next-steps">Next Steps</h2>
 <p>Keeping track of my improvement ideas to tackle in the future....</p>
+<h3 id="solve-the-publish-warnings">solve the publish warnings</h3>
+<p>Still stuck</p>
 <h3 id="header-formatting">header formatting</h3>
 <p>Replace red pipes <code>|</code> with black pipes in h2.<br>
 Javascript?  </p>

@@ -18,6 +18,11 @@ url = "/projects/clipee"
 title = "Clipee"
 
 [[input.files]]
+path = "python/library-pelican/index.html"
+url = "/python/library-pelican"
+title = "Building a static site with Pelican"
+
+[[input.files]]
 path = "projects/notes/index.html"
 url = "/projects/notes"
 title = "This site"
@@ -151,11 +156,6 @@ title = "Vodafone Kabel"
 path = "random/quotes/index.html"
 url = "/random/quotes"
 title = "My favourite quotes"
-
-[[input.files]]
-path = "python/library-pelican/index.html"
-url = "/python/library-pelican"
-title = "Building a static site with Pelican"
 
 [[input.files]]
 path = "helpers/keyboard-shortcuts/index.html"
@@ -2203,13 +2203,13 @@ url = "/learning/ai"
 title = "Learning AI"
 
 [[input.files]]
-path = "random/ai/index.html"
-url = "/random/ai"
+path = "interests/ai/index.html"
+url = "/interests/ai"
 title = "AI"
 
 [[input.files]]
-path = "interests/ai/index.html"
-url = "/interests/ai"
+path = "random/ai/index.html"
+url = "/random/ai"
 title = "AI"
 
 [[input.files]]
@@ -2218,14 +2218,14 @@ url = "/projects/clipper"
 title = "Clipper"
 
 [[input.files]]
-path = "learning/ai/index.html"
-url = "/learning/ai"
-title = "Learning AI"
-
-[[input.files]]
 path = "interests/ai/index.html"
 url = "/interests/ai"
 title = "AI"
+
+[[input.files]]
+path = "learning/ai/index.html"
+url = "/learning/ai"
+title = "Learning AI"
 
 [[input.files]]
 path = "home-office/deep-work/index.html"
