@@ -44,7 +44,7 @@
             </div>
 
             <div class="above-navbar">
-                <div class="last_updated">28 Sep 2022 | 00:11</div>
+                <div class="last_updated">28 Sep 2022 | 17:02</div>
                 <div>
                     <p class="notes_count">
                         <a href="https://notes.nicolasdeville.com/tags">by tags</a> 
@@ -55,7 +55,7 @@
                         <span style="color:#C74350">|</span>
                         <a href="https://notes.nicolasdeville.com/2022/">2022</a> 
                         <span style="color:#C74350">|</span> 
-                        430 notes
+                        435 notes
                     </p>
                 </div>
             </div>
@@ -100,13 +100,13 @@
 <footer class="post-info">
 
     <p>
-        27 Sep 2022 <span class="separator">|</span> in <a class="link_tag" href="https://notes.nicolasdeville.com/python/">python</a>
+        28 Sep 2022 <span class="separator">|</span> in <a class="link_tag" href="https://notes.nicolasdeville.com/python/">python</a>
  tags: <a class="link_tag" href="https://notes.nicolasdeville.com/tag/static.html">static</a>
 
         <!-- added 4/7 -->
         <!-- 		<br />
-        <abbr class="modified" title="2022-09-27T22:43:42.297730+02:00">
-                Updated: 27 Sep 2022
+        <abbr class="modified" title="2022-09-28T17:00:29.904940+02:00">
+                Updated: 28 Sep 2022
         </abbr>
  -->
 
@@ -392,13 +392,13 @@ Learning: escape quotes in article titles, eg <code>I \"like\" spam</code>.  </p
 <div class="link_url"><a href="https://stackoverflow.com/questions/41112939/how-to-count-authors-in-pelican-blogs" target="_blank">https://stackoverflow.com/questions/41112939/how-to-count-authors-in-pelican-blogs</a></div></div></div>
 
 <h2 id="my-config-file">My Config file</h2>
-<p><span class="datestamp">26 Jul 2022</span>   current status:    </p>
+<p><span class="datestamp">28 Sep 2022</span>   updated version:    </p>
 <div class="highlight"><pre><span></span><code><span class="n">AUTHOR</span> <span class="o">=</span> <span class="s1">&#39;Nic&#39;</span>
 <span class="n">SITENAME</span> <span class="o">=</span> <span class="s2">&quot;Nic&#39;s notes&quot;</span>
 <span class="n">SITEURL</span> <span class="o">=</span> <span class="s1">&#39;https://notes.nicolasdeville.com&#39;</span>
 
 <span class="n">PATH</span> <span class="o">=</span> <span class="s1">&#39;content&#39;</span>
-<span class="n">OUTPUT_PATH</span> <span class="o">=</span> <span class="s1">&#39;/path/to/output/folder/outside/of/pelican/project/&#39;</span>
+<span class="n">OUTPUT_PATH</span> <span class="o">=</span> <span class="s1">&#39;/path/to/my/output/folder/&#39;</span>
 
 <span class="n">DISPLAY_PAGES_ON_MENU</span> <span class="o">=</span> <span class="kc">False</span>
 
@@ -420,8 +420,6 @@ Learning: escape quotes in article titles, eg <code>I \"like\" spam</code>.  </p
 
 <span class="n">PAGE_PATHS</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;pages&#39;</span><span class="p">]</span>
 
-<span class="n">TIMEZONE</span> <span class="o">=</span> <span class="s1">&#39;Europe/Rome&#39;</span>
-
 <span class="n">DEFAULT_DATE</span> <span class="o">=</span> <span class="s1">&#39;fs&#39;</span>
 <span class="n">DEFAULT_DATE_FORMAT</span> <span class="o">=</span> <span class="s1">&#39;</span><span class="si">%d</span><span class="s1"> %b %Y&#39;</span>
 
@@ -436,10 +434,23 @@ Learning: escape quotes in article titles, eg <code>I \"like\" spam</code>.  </p
 <span class="n">EXTRA_PATH_METADATA</span> <span class="o">=</span> <span class="p">{</span>
     <span class="s1">&#39;extra/CNAME&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;path&#39;</span><span class="p">:</span> <span class="s1">&#39;CNAME&#39;</span><span class="p">},</span>
     <span class="s1">&#39;extra/gitignore&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;path&#39;</span><span class="p">:</span> <span class="s1">&#39;.gitignore&#39;</span><span class="p">},</span>
-    <span class="s1">&#39;extra/sitemap.xml&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;path&#39;</span><span class="p">:</span> <span class="s1">&#39;sitemap.xml&#39;</span><span class="p">},</span> <span class="c1"># generated manually for now / see helpers section</span>
+    <span class="s1">&#39;extra/sitemap.xml&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;path&#39;</span><span class="p">:</span> <span class="s1">&#39;sitemap.xml&#39;</span><span class="p">},</span>
     <span class="s1">&#39;extra/robots.txt&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;path&#39;</span><span class="p">:</span> <span class="s1">&#39;robots.txt&#39;</span><span class="p">},</span>
-    <span class="s1">&#39;extra/googlexxxxxxxxxxxxxxxx.html&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;path&#39;</span><span class="p">:</span> <span class="s1">&#39;googlexxxxxxxxxxxxxxxx.html&#39;</span><span class="p">},</span> <span class="c1"># Google Search ID</span>
-    <span class="s1">&#39;extra/BingSiteAuth.xml&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;path&#39;</span><span class="p">:</span> <span class="s1">&#39;BingSiteAuth.xml&#39;</span><span class="p">},</span> <span class="c1"># Bing Search ID</span>
+    <span class="s1">&#39;extra/googlexxxxxxxxxx.html&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;path&#39;</span><span class="p">:</span> <span class="s1">&#39;googlexxxxxxxxxx.html&#39;</span><span class="p">},</span>
+    <span class="s1">&#39;extra/BingSiteAuth.xml&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;path&#39;</span><span class="p">:</span> <span class="s1">&#39;BingSiteAuth.xml&#39;</span><span class="p">},</span>
+    <span class="c1"># added 220916</span>
+    <span class="s1">&#39;extra/android-chrome-192x192.png&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;path&#39;</span><span class="p">:</span> <span class="s1">&#39;android-chrome-192x192.png&#39;</span><span class="p">},</span>
+    <span class="s1">&#39;extra/android-chrome-512x512.png&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;path&#39;</span><span class="p">:</span> <span class="s1">&#39;android-chrome-512x512.png&#39;</span><span class="p">},</span>
+    <span class="s1">&#39;extra/apple-touch-icon.png&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;path&#39;</span><span class="p">:</span> <span class="s1">&#39;apple-touch-icon.png&#39;</span><span class="p">},</span>
+    <span class="s1">&#39;extra/favicon-16x16.png&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;path&#39;</span><span class="p">:</span> <span class="s1">&#39;favicon-16x16.png&#39;</span><span class="p">},</span>
+    <span class="s1">&#39;extra/favicon-32x32.png&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;path&#39;</span><span class="p">:</span> <span class="s1">&#39;favicon-32x32.png&#39;</span><span class="p">},</span>
+    <span class="s1">&#39;extra/favicon.ico&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;path&#39;</span><span class="p">:</span> <span class="s1">&#39;favicon.ico&#39;</span><span class="p">},</span>
+    <span class="s1">&#39;extra/favicon.png&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;path&#39;</span><span class="p">:</span> <span class="s1">&#39;favicon.png&#39;</span><span class="p">},</span>
+    <span class="s1">&#39;extra/favicon.svg&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;path&#39;</span><span class="p">:</span> <span class="s1">&#39;favicon.svg&#39;</span><span class="p">},</span>
+    <span class="s1">&#39;extra/site.webmanifest&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;path&#39;</span><span class="p">:</span> <span class="s1">&#39;site.webmanifest&#39;</span><span class="p">},</span>
+    <span class="c1"># added 220919</span>
+    <span class="s1">&#39;extra/logo.png&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;path&#39;</span><span class="p">:</span> <span class="s1">&#39;logo.png&#39;</span><span class="p">},</span>
+    <span class="s1">&#39;extra/logo.svg&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;path&#39;</span><span class="p">:</span> <span class="s1">&#39;logo.svg&#39;</span><span class="p">},</span>
     <span class="p">}</span>
 
 <span class="n">DEFAULT_LANG</span> <span class="o">=</span> <span class="s1">&#39;en&#39;</span>
@@ -473,7 +484,8 @@ Learning: escape quotes in article titles, eg <code>I \"like\" spam</code>.  </p
 
 <span class="n">DEFAULT_PAGINATION</span> <span class="o">=</span> <span class="mi">100</span>
 
-<span class="n">THEME</span> <span class="o">=</span> <span class="s1">&#39;/path/to/Pelican/project/folder/notes/theme&#39;</span>
+<span class="c1"># THEME = &#39;/Users/nic/Python/sandbox/home.nicolasdeville.com/pelican-themes/simple-bootstrap&#39;</span>
+<span class="n">THEME</span> <span class="o">=</span> <span class="s1">&#39;/Users/nic/Python/homee/notes/theme&#39;</span>
 
 <span class="n">OUTPUT_RETENTION</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;.gitignore&quot;</span><span class="p">]</span> <span class="c1"># probably of no use if not in `content` folder?</span>
 
@@ -484,6 +496,49 @@ Learning: escape quotes in article titles, eg <code>I \"like\" spam</code>.  </p
 <span class="c1"># }</span>
 
 <span class="n">SEARCH_HTML_SELECTOR</span> <span class="o">=</span> <span class="s2">&quot;main&quot;</span> <span class="c1"># for the pelican plugin &quot;search&quot; using Stork. Using the default &lt;main&gt; tag means repeating sections can be carved out of search index.</span>
+
+<span class="c1">### 220911 Adding Last Update timestamp on publish</span>
+<span class="kn">from</span> <span class="nn">datetime</span> <span class="kn">import</span> <span class="n">datetime</span>
+<span class="kn">import</span> <span class="nn">pytz</span>
+
+<span class="c1"># modify TIMEZONE to your timezone</span>
+<span class="n">TIMEZONE</span> <span class="o">=</span> <span class="s1">&#39;Europe/Berlin&#39;</span>
+<span class="c1"># Publish Timestamp</span>
+<span class="n">build_timestamp</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">now</span><span class="p">(</span><span class="n">pytz</span><span class="o">.</span><span class="n">timezone</span><span class="p">(</span><span class="n">TIMEZONE</span><span class="p">))</span>
+<span class="n">BUILD_TIME</span> <span class="o">=</span> <span class="n">build_timestamp</span>
+<span class="c1"># printing timestamp when publishing, to include in Git message and double-checking deployment</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n\n</span><span class="s2">Build Time:</span><span class="se">\n\n</span><span class="s2">===  </span><span class="si">{</span><span class="n">build_timestamp</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="s1">&#39;%H:%M&#39;</span><span class="p">)</span><span class="si">}</span><span class="s2">  ===</span><span class="se">\n\n</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="c1"># pelican-seo</span>
+<span class="c1"># not working</span>
+<span class="n">SEO_REPORT</span> <span class="o">=</span> <span class="kc">True</span>  
+<span class="n">SEO_ENHANCER</span> <span class="o">=</span> <span class="kc">True</span>  
+<span class="n">SEO_ENHANCER_OPEN_GRAPH</span> <span class="o">=</span> <span class="kc">True</span> 
+<span class="n">SEO_ENHANCER_TWITTER_CARDS</span> <span class="o">=</span> <span class="kc">True</span> 
+<span class="n">LOGO</span> <span class="o">=</span> <span class="s2">&quot;https://notes.nicolasdeville.com/images/edelweiss_black_logo.svg&quot;</span>
+
+<span class="c1"># Table Of Contents</span>
+<span class="n">MARKDOWN</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s2">&quot;extension_configs&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="c1"># Needed for code syntax highlighting</span>
+        <span class="s2">&quot;markdown.extensions.codehilite&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;css_class&quot;</span><span class="p">:</span> <span class="s2">&quot;highlight&quot;</span><span class="p">},</span>
+        <span class="s2">&quot;markdown.extensions.extra&quot;</span><span class="p">:</span> <span class="p">{},</span>
+        <span class="s2">&quot;markdown.extensions.meta&quot;</span><span class="p">:</span> <span class="p">{},</span>
+        <span class="c1"># This is for enabling the TOC generation</span>
+        <span class="s2">&quot;markdown.extensions.toc&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;title&quot;</span><span class="p">:</span> <span class="s2">&quot;Table of Contents&quot;</span><span class="p">},</span>
+    <span class="p">},</span>
+    <span class="s2">&quot;output_format&quot;</span><span class="p">:</span> <span class="s2">&quot;html5&quot;</span><span class="p">,</span>
+<span class="p">}</span>
+
+<span class="c1"># 220923 suppressing warning messages for not translated messages</span>
+<span class="c1"># not working</span>
+<span class="kn">import</span> <span class="nn">logging</span>
+<span class="n">LOG_FILTER</span> <span class="o">=</span> <span class="p">[(</span><span class="n">logging</span><span class="o">.</span><span class="n">WARN</span><span class="p">,</span> <span class="s1">&#39;There are </span><span class="si">%s</span><span class="s1"> items &quot;</span><span class="si">%s</span><span class="s1">&quot; with lang </span><span class="si">%s</span><span class="s1">&#39;</span><span class="p">)]</span>
+
+<span class="c1"># code blocks with line numbers</span>
+<span class="n">PYGMENTS_RST_OPTIONS</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s1">&#39;linenos&#39;</span><span class="p">:</span> <span class="s1">&#39;table&#39;</span>
+    <span class="p">}</span>
 
 <span class="c1"># Uncomment following line if you want document-relative URLs when developing</span>
 <span class="c1"># RELATIVE_URLS = True</span>

@@ -18,9 +18,39 @@ url = "/projects/clipee"
 title = "Clipee"
 
 [[input.files]]
+path = "projects/twittee/index.html"
+url = "/projects/twittee"
+title = "Twittee"
+
+[[input.files]]
 path = "python/library-pelican/index.html"
 url = "/python/library-pelican"
 title = "Building a static site with Pelican"
+
+[[input.files]]
+path = "python/library-pymsgbox/index.html"
+url = "/python/library-pymsgbox"
+title = "Python Library: PyMsgBox"
+
+[[input.files]]
+path = "python/ui/index.html"
+url = "/python/ui"
+title = "How to create user interfaces with Python"
+
+[[input.files]]
+path = "python/library-tkinter/index.html"
+url = "/python/library-tkinter"
+title = "Python Library: tkinter"
+
+[[input.files]]
+path = "apps/adobe-illustrator/index.html"
+url = "/apps/adobe-illustrator"
+title = "Adobe Illustrator"
+
+[[input.files]]
+path = "b2b-sales/cyberleads/index.html"
+url = "/b2b-sales/cyberleads"
+title = "Cyberleads"
 
 [[input.files]]
 path = "projects/notes/index.html"
@@ -31,11 +61,6 @@ title = "This site"
 path = "python/library-tweepy/index.html"
 url = "/python/library-tweepy"
 title = "Python Library: tweepy"
-
-[[input.files]]
-path = "projects/twittee/index.html"
-url = "/projects/twittee"
-title = "Twittee"
 
 [[input.files]]
 path = "python/library-geopy/index.html"
@@ -2203,13 +2228,13 @@ url = "/learning/ai"
 title = "Learning AI"
 
 [[input.files]]
-path = "random/ai/index.html"
-url = "/random/ai"
+path = "interests/ai/index.html"
+url = "/interests/ai"
 title = "AI"
 
 [[input.files]]
-path = "interests/ai/index.html"
-url = "/interests/ai"
+path = "random/ai/index.html"
+url = "/random/ai"
 title = "AI"
 
 [[input.files]]
@@ -2218,14 +2243,14 @@ url = "/projects/clipper"
 title = "Clipper"
 
 [[input.files]]
-path = "learning/ai/index.html"
-url = "/learning/ai"
-title = "Learning AI"
-
-[[input.files]]
 path = "interests/ai/index.html"
 url = "/interests/ai"
 title = "AI"
+
+[[input.files]]
+path = "learning/ai/index.html"
+url = "/learning/ai"
+title = "Learning AI"
 
 [[input.files]]
 path = "home-office/deep-work/index.html"
