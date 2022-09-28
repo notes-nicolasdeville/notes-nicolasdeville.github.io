@@ -13,9 +13,24 @@ url = "/why/"
 title = "Why this site?"
 
 [[input.files]]
+path = "home-office/airpods-max/index.html"
+url = "/home-office/airpods-max"
+title = "Airpods Max"
+
+[[input.files]]
 path = "projects/clipee/index.html"
 url = "/projects/clipee"
 title = "Clipee"
+
+[[input.files]]
+path = "python/python-notion/index.html"
+url = "/python/python-notion"
+title = "Fetch Notion database data with Python"
+
+[[input.files]]
+path = "random/automation-roi/index.html"
+url = "/random/automation-roi"
+title = "Automation ROI"
 
 [[input.files]]
 path = "projects/twittee/index.html"
@@ -103,14 +118,49 @@ url = "/home-office/deep-work"
 title = "Resources for Deep Work"
 
 [[input.files]]
+path = "movies/1000/index.html"
+url = "/movies/1000"
+title = "My Top 1,000 Movies"
+
+[[input.files]]
 path = "apps/atom/index.html"
 url = "/apps/atom"
 title = "Atom"
 
 [[input.files]]
+path = "b2b-sales/books/index.html"
+url = "/b2b-sales/books"
+title = "My B2B Books Library"
+
+[[input.files]]
+path = "python/books/index.html"
+url = "/python/books"
+title = "My Python Books Library"
+
+[[input.files]]
+path = "helpers/clipper/index.html"
+url = "/helpers/clipper"
+title = "My web clipboard"
+
+[[input.files]]
 path = "helpers/get-current-url/index.html"
 url = "/helpers/get-current-url"
 title = "Get current URL from browser in macOS"
+
+[[input.files]]
+path = "books/library/index.html"
+url = "/books/library"
+title = "My Books Library"
+
+[[input.files]]
+path = "apps/library/index.html"
+url = "/apps/library"
+title = "My Apps Library"
+
+[[input.files]]
+path = "apps/radar/index.html"
+url = "/apps/radar"
+title = "Apps on my radar"
 
 [[input.files]]
 path = "ai/whisper/index.html"
@@ -156,11 +206,6 @@ title = "Traditional Archery"
 path = "home-office/kinesis/index.html"
 url = "/home-office/kinesis"
 title = "Kinesis Advantage 2 keyboard"
-
-[[input.files]]
-path = "movies/1000/index.html"
-url = "/movies/1000"
-title = "My Top 1,000 Movies"
 
 [[input.files]]
 path = "python/snippet-parent-folder-name/index.html"
@@ -308,34 +353,9 @@ url = "/python/library-dotenv"
 title = "How to save confidential data in environment variables with dotenv"
 
 [[input.files]]
-path = "b2b-sales/books/index.html"
-url = "/b2b-sales/books"
-title = "My B2B Books Library"
-
-[[input.files]]
-path = "python/books/index.html"
-url = "/python/books"
-title = "My Python Books Library"
-
-[[input.files]]
-path = "books/library/index.html"
-url = "/books/library"
-title = "My Books Library"
-
-[[input.files]]
-path = "apps/library/index.html"
-url = "/apps/library"
-title = "My Apps Library"
-
-[[input.files]]
 path = "learning/map-coordinates/index.html"
 url = "/learning/map-coordinates"
 title = "Learning Map Coordinates"
-
-[[input.files]]
-path = "apps/radar/index.html"
-url = "/apps/radar"
-title = "Apps on my radar"
 
 [[input.files]]
 path = "python/snippets/index.html"
@@ -623,11 +643,6 @@ url = "/python/sending-emails"
 title = "Sending emails with Python"
 
 [[input.files]]
-path = "python/python-notion/index.html"
-url = "/python/python-notion"
-title = "Fetch Notion database data with Python"
-
-[[input.files]]
 path = "python/create-executable/index.html"
 url = "/python/create-executable"
 title = "Create executable of a Pyhon application"
@@ -801,11 +816,6 @@ title = "PIP: Python's Package Manager"
 path = "python/paths/index.html"
 url = "/python/paths"
 title = "How to find all paths being searched by Python"
-
-[[input.files]]
-path = "helpers/clipper/index.html"
-url = "/helpers/clipper"
-title = "My web clipboard"
 
 [[input.files]]
 path = "python/solve-certificate-verify-failed/index.html"
@@ -2203,6 +2213,11 @@ url = "/b2b-sales/books"
 title = "My B2B Books Library"
 
 [[input.files]]
+path = "projects/clipper/index.html"
+url = "/projects/clipper"
+title = "Clipper"
+
+[[input.files]]
 path = "apps/library/index.html"
 url = "/apps/library"
 title = "My Apps Library"
@@ -2228,19 +2243,14 @@ url = "/random/ai"
 title = "AI"
 
 [[input.files]]
-path = "interests/ai/index.html"
-url = "/interests/ai"
-title = "AI"
-
-[[input.files]]
 path = "random/ai/index.html"
 url = "/random/ai"
 title = "AI"
 
 [[input.files]]
-path = "projects/clipper/index.html"
-url = "/projects/clipper"
-title = "Clipper"
+path = "interests/ai/index.html"
+url = "/interests/ai"
+title = "AI"
 
 [[input.files]]
 path = "learning/ai/index.html"

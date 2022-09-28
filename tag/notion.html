@@ -43,7 +43,7 @@
             </div>
 
             <div class="above-navbar">
-                <div class="last_updated">28 Sep 2022 | 17:46</div>
+                <div class="last_updated">28 Sep 2022 | 21:54</div>
                 <div>
                     <p class="notes_count">
                         <a href="https://notes.nicolasdeville.com/tags">by tags</a> 
@@ -113,14 +113,14 @@
 <footer class="post-info">
 
     <p>
-        19 Sep 2022 <span class="separator">|</span> in <a class="link_tag" href="https://notes.nicolasdeville.com/python/">python</a>
+        28 Sep 2022 <span class="separator">|</span> in <a class="link_tag" href="https://notes.nicolasdeville.com/python/">python</a>
  tags: <a class="link_tag" href="https://notes.nicolasdeville.com/tag/scripts.html">scripts</a>
 <a class="link_tag" href="https://notes.nicolasdeville.com/tag/notion.html">notion</a>
 
         <!-- added 4/7 -->
         <!-- 		<br />
-        <abbr class="modified" title="2022-09-19T15:40:23.020530+02:00">
-                Updated: 19 Sep 2022
+        <abbr class="modified" title="2022-09-28T21:09:27.286098+02:00">
+                Updated: 28 Sep 2022
         </abbr>
  -->
 
@@ -149,6 +149,16 @@
 <h3 id="database-id">Database ID</h3>
 <p>This can be found in the URL of the database page to fetch:</p>
 <p><code>https://www.notion.so/myworkspacename/THIS_IS_THE_DATABASE_ID?v=XXXXXXXXXXXXXXXXXXXXXXXXXXXX</code></p>
+<p><span class="datestamp">28 Sep 2022</span> </p>
+<p>The database needs to be shared with the integration: <a href="https://developers.notion.com/docs/getting-started#step-2-share-a-database-with-your-integration" target="_blank">https://developers.notion.com/docs/getting-started#step-2-share-a-database-with-your-integration</a>  </p>
+<p><img class="screenshot" src="https://notes.nicolasdeville.com/images/python-notion/notion-integration-share.jpg" alt="python-notion/notion-integration-share.jpg"/><br>
+here <code>Clipper Import</code> is the name of the integration I setup for this. </p>
+<p>Note: if when selecting <code>Add Connections</code> your newly created integration does not show up:  </p>
+<ul>
+<li>try from the web interface rather than the desktop app</li>
+<li>refresh your browser</li>
+<li>if still nothing, add a dummy record or do anything for the document to show <code>Edited just now</code> in the top right corner. Your integration should appear then.   </li>
+</ul>
 <h2 id="script">Script</h2>
 <div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">json</span>
 <span class="kn">import</span> <span class="nn">requests</span>
