@@ -13,6 +13,11 @@ url = "/why/"
 title = "Why this site?"
 
 [[input.files]]
+path = "python/boilerplate/index.html"
+url = "/python/boilerplate"
+title = "My Python scripts boilerplate"
+
+[[input.files]]
 path = "apps/alfred/index.html"
 url = "/apps/alfred"
 title = "Alfred"
@@ -83,14 +88,14 @@ url = "/movies/1000"
 title = "My Top 1,000 Movies"
 
 [[input.files]]
-path = "b2b-sales/books/index.html"
-url = "/b2b-sales/books"
-title = "My B2B Books Library"
-
-[[input.files]]
 path = "python/books/index.html"
 url = "/python/books"
 title = "My Python Books Library"
+
+[[input.files]]
+path = "b2b-sales/books/index.html"
+url = "/b2b-sales/books"
+title = "My B2B Books Library"
 
 [[input.files]]
 path = "helpers/clipper/index.html"
@@ -836,11 +841,6 @@ title = "Libraree"
 path = "projects/imapee/index.html"
 url = "/projects/imapee"
 title = "Imapee"
-
-[[input.files]]
-path = "python/boilerplate/index.html"
-url = "/python/boilerplate"
-title = "My Python scripts boilerplate"
 
 [[input.files]]
 path = "books/learn-javascript-quickly/index.html"
@@ -2198,14 +2198,14 @@ url = "/projects/nicai"
 title = "nicAI | my personal AI assistant"
 
 [[input.files]]
-path = "python/books/index.html"
-url = "/python/books"
-title = "My Python Books Library"
-
-[[input.files]]
 path = "b2b-sales/books/index.html"
 url = "/b2b-sales/books"
 title = "My B2B Books Library"
+
+[[input.files]]
+path = "python/books/index.html"
+url = "/python/books"
+title = "My Python Books Library"
 
 [[input.files]]
 path = "projects/clipper/index.html"
@@ -2243,13 +2243,13 @@ url = "/random/ai"
 title = "AI"
 
 [[input.files]]
-path = "interests/ai/index.html"
-url = "/interests/ai"
+path = "random/ai/index.html"
+url = "/random/ai"
 title = "AI"
 
 [[input.files]]
-path = "random/ai/index.html"
-url = "/random/ai"
+path = "interests/ai/index.html"
+url = "/interests/ai"
 title = "AI"
 
 [[input.files]]
