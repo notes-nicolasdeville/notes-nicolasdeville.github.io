@@ -13,19 +13,29 @@ url = "/why/"
 title = "Why this site?"
 
 [[input.files]]
-path = "projects/metaurl/index.html"
-url = "/projects/metaurl"
+path = "projects/meta-url/index.html"
+url = "/projects/meta-url"
 title = "Python Project: metaURL"
 
 [[input.files]]
-path = "python/library-urllib/index.html"
-url = "/python/library-urllib"
-title = "Python Library: urllib"
+path = "python/library-selenium/index.html"
+url = "/python/library-selenium"
+title = "Python Library: Selenium"
+
+[[input.files]]
+path = "python/open-source/index.html"
+url = "/python/open-source"
+title = "About open-source projects"
 
 [[input.files]]
 path = "ai/whisper/index.html"
 url = "/ai/whisper"
 title = "Whisper"
+
+[[input.files]]
+path = "python/library-urllib/index.html"
+url = "/python/library-urllib"
+title = "Python Library: urllib"
 
 [[input.files]]
 path = "projects/transcribee/index.html"
@@ -133,14 +143,14 @@ url = "/b2b-sales/cyberleads"
 title = "Cyberleads"
 
 [[input.files]]
-path = "apps/library/index.html"
-url = "/apps/library"
-title = "My Apps Library"
-
-[[input.files]]
 path = "books/library/index.html"
 url = "/books/library"
 title = "My Books Library"
+
+[[input.files]]
+path = "apps/library/index.html"
+url = "/apps/library"
+title = "My Apps Library"
 
 [[input.files]]
 path = "apps/radar/index.html"
@@ -2223,14 +2233,14 @@ url = "/projects/clipper"
 title = "Clipper"
 
 [[input.files]]
-path = "books/library/index.html"
-url = "/books/library"
-title = "My Books Library"
-
-[[input.files]]
 path = "apps/library/index.html"
 url = "/apps/library"
 title = "My Apps Library"
+
+[[input.files]]
+path = "books/library/index.html"
+url = "/books/library"
+title = "My Books Library"
 
 [[input.files]]
 path = "books/deep-work/index.html"
@@ -2253,11 +2263,6 @@ url = "/random/ai"
 title = "AI"
 
 [[input.files]]
-path = "interests/ai/index.html"
-url = "/interests/ai"
-title = "AI"
-
-[[input.files]]
 path = "random/ai/index.html"
 url = "/random/ai"
 title = "AI"
@@ -2271,6 +2276,11 @@ title = "AI"
 path = "learning/ai/index.html"
 url = "/learning/ai"
 title = "Learning AI"
+
+[[input.files]]
+path = "interests/ai/index.html"
+url = "/interests/ai"
+title = "AI"
 
 [[input.files]]
 path = "home-office/deep-work/index.html"
