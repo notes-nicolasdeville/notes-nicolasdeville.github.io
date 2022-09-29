@@ -143,14 +143,14 @@ url = "/b2b-sales/cyberleads"
 title = "Cyberleads"
 
 [[input.files]]
-path = "books/library/index.html"
-url = "/books/library"
-title = "My Books Library"
-
-[[input.files]]
 path = "apps/library/index.html"
 url = "/apps/library"
 title = "My Apps Library"
+
+[[input.files]]
+path = "books/library/index.html"
+url = "/books/library"
+title = "My Books Library"
 
 [[input.files]]
 path = "apps/radar/index.html"
@@ -2233,14 +2233,14 @@ url = "/projects/clipper"
 title = "Clipper"
 
 [[input.files]]
-path = "apps/library/index.html"
-url = "/apps/library"
-title = "My Apps Library"
-
-[[input.files]]
 path = "books/library/index.html"
 url = "/books/library"
 title = "My Books Library"
+
+[[input.files]]
+path = "apps/library/index.html"
+url = "/apps/library"
+title = "My Apps Library"
 
 [[input.files]]
 path = "books/deep-work/index.html"
@@ -2263,13 +2263,13 @@ url = "/random/ai"
 title = "AI"
 
 [[input.files]]
-path = "random/ai/index.html"
-url = "/random/ai"
+path = "interests/ai/index.html"
+url = "/interests/ai"
 title = "AI"
 
 [[input.files]]
-path = "interests/ai/index.html"
-url = "/interests/ai"
+path = "random/ai/index.html"
+url = "/random/ai"
 title = "AI"
 
 [[input.files]]
