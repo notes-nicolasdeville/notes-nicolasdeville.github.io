@@ -43,7 +43,7 @@
             </div>
 
             <div class="above-navbar">
-                <div class="last_updated">29 Sep 2022 | 08:19</div>
+                <div class="last_updated">29 Sep 2022 | 08:50</div>
                 <div>
                     <p class="notes_count">
                         <a href="https://notes.nicolasdeville.com/tags">by tags</a> 
@@ -101,27 +101,26 @@
             <hr/>
 
                 <article class="hentry">
-                    <h1 class="entry-title"><a href="https://notes.nicolasdeville.com/projects/twittee">Twittee</a></h1>
+                    <h1 class="entry-title"><a href="https://notes.nicolasdeville.com/apps/alfred">Alfred</a></h1>
 
                     <!-- added 4/7 -->
                     <div>
                         <p class="header_summary">
-                            <p>[operational] Lead generation using Twitter</p>
+                            <p>my notes on using Alfred</p>
                         </p>
                     </div>
 
 <footer class="post-info">
 
     <p>
-        28 Sep 2022 <span class="separator">|</span> in <a class="link_tag" href="https://notes.nicolasdeville.com/projects/">projects</a>
- tags: <a class="link_tag" href="https://notes.nicolasdeville.com/tag/python.html">python</a>
+        29 Sep 2022 <span class="separator">|</span> in <a class="link_tag" href="https://notes.nicolasdeville.com/apps/">apps</a>
+ tags: <a class="link_tag" href="https://notes.nicolasdeville.com/tag/macos.html">macOS</a>
 <a class="link_tag" href="https://notes.nicolasdeville.com/tag/automation.html">automation</a>
-<a class="link_tag" href="https://notes.nicolasdeville.com/tag/lead-generation.html">lead generation</a>
 
         <!-- added 4/7 -->
         <!-- 		<br />
-        <abbr class="modified" title="2022-09-28T17:00:47.036624+02:00">
-                Updated: 28 Sep 2022
+        <abbr class="modified" title="2022-09-29T08:49:37.336621+02:00">
+                Updated: 29 Sep 2022
         </abbr>
  -->
 
@@ -130,535 +129,248 @@
     
 
 </footer><div class="toc"><span class="toctitle">Table of Contents</span><ul>
-<li><a href="#context">Context</a></li>
-<li><a href="#stack">Stack</a></li>
-<li><a href="#script">Script</a><ul>
-<li><a href="#generic-search">Generic search</a></li>
+<li><a href="#universal-actions">Universal Actions</a></li>
+<li><a href="#sync">Sync</a><ul>
+<li><a href="#migrating-to-alfred-5">Migrating to Alfred 5</a></li>
 </ul>
 </li>
-<li><a href="#twitter-api">Twitter API</a></li>
-<li><a href="#clipee-tweet">Clipee Tweet</a></li>
+<li><a href="#workflows">Workflows</a><ul>
+<li><a href="#learning">Learning</a></li>
+<li><a href="#using">Using</a><ul>
+<li><a href="#get-latest-file-from-trickster">Get latest file from Trickster</a></li>
+<li><a href="#dash">Dash</a></li>
+<li><a href="#music">Music</a></li>
+<li><a href="#google-suggest">Google Suggest</a></li>
+<li><a href="#stack-overflow">Stack Overflow</a></li>
+<li><a href="#github">GitHub</a></li>
+<li><a href="#tinypng">TinyPNG</a></li>
+<li><a href="#advanced-maps">Advanced Maps</a><ul>
+<li><a href="#show-directions-from-home-to-address">Show directions from Home to address</a></li>
+</ul>
+</li>
+<li><a href="#timezones">Timezones</a></li>
+<li><a href="#convert">Convert</a></li>
+</ul>
+</li>
+<li><a href="#custom-workflows">Custom Workflows</a><ul>
+<li><a href="#copy-file-name-and-parent-folder-for-notes">Copy File Name and parent folder for notes</a></li>
+<li><a href="#paste-clipboard-to-atom">Paste clipboard to Atom</a></li>
+<li><a href="#url-actions">URL Actions</a></li>
+<li><a href="#copy-url">Copy URL</a></li>
+<li><a href="#my-ip">My IP</a></li>
+</ul>
+</li>
+<li><a href="#others">Others</a><ul>
+<li><a href="#spotify-mini-player">Spotify Mini Player</a></li>
+<li><a href="#omnifocus">OmniFocus</a></li>
+<li><a href="#shortcuts">Shortcuts</a></li>
+<li><a href="#launch-a-url-in-3-browsers">Launch a URL in 3 browsers</a></li>
+<li><a href="#reddit">Reddit</a></li>
+<li><a href="#google-drive">Google Drive</a></li>
+<li><a href="#amazon-suggest">Amazon Suggest</a></li>
+<li><a href="#movie-tv-show-search">Movie &amp; TV Show Search</a></li>
+<li><a href="#power-thesaurus">Power Thesaurus</a></li>
+<li><a href="#smart-folders">Smart Folders</a></li>
+</ul>
+</li>
+</ul>
+</li>
 </ul>
 </div>
-<p><span class="datestamp">08 Sep 2022</span>   </p>
-<p>Build started end '21, as part of a client engagement.   </p>
-<div class="link_border"><div class="link_logo_box"><img class="link_logo" src="https://logo.clearbit.com/btobsales.eu?size=35" alt="logo"/></div><div class="link_content">
-<div class="link_title">BtoBSales.EU</div>
-<div class="link_tagline">Helping US B2B SaaS companies expand in Europe</div>
-<div class="link_url"><a href="https://btobsales.eu" target="_blank">https://btobsales.eu</a></div></div></div>
-
-<p>TODO: document.  </p>
-<h1 id="context">Context</h1>
-<h1 id="stack">Stack</h1>
-<ul>
-<li>Twitter API</li>
-<li>Grist</li>
-</ul>
-<h1 id="script">Script</h1>
-<p>Functions:   </p>
-<ul>
-<li><code>search_specific_handle</code></li>
-<li><code>search_handle_recent</code></li>
-<li><code>generic_search</code></li>
-<li><code>check_loc</code></li>
-<li><code>check_handle</code> </li>
-</ul>
-<h2 id="generic-search">Generic search</h2>
-<p>Performs a search based on keyword.   </p>
-<div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">generic_search</span><span class="p">(</span><span class="n">daylimit</span><span class="o">=</span><span class="mi">7</span><span class="p">,</span><span class="n">keywords</span><span class="o">=</span><span class="p">[],</span><span class="n">blacklist</span><span class="o">=</span><span class="p">[],</span><span class="n">whitelist</span><span class="o">=</span><span class="p">[],</span><span class="n">limit</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span><span class="n">continue_from_cache</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
-    <span class="c1">#Just in case anything bad happens :D</span>
-    <span class="n">DEBUG_MODE</span> <span class="o">=</span> <span class="kc">False</span>
-
-    <span class="c1">#Final return of generic_search</span>
-    <span class="n">final_data</span> <span class="o">=</span> <span class="p">[]</span>
-
-
-    <span class="c1"># If you already have the response and want to continue from where you&#39;ve left off</span>
-    <span class="c1">#Loads already processed tweets that might have been lost because of some error</span>
-    <span class="k">if</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="s1">&#39;twittee_processed.json&#39;</span><span class="p">):</span>
-        <span class="k">if</span> <span class="n">continue_from_cache</span><span class="p">:</span>
-            <span class="n">final_data</span><span class="o">.</span><span class="n">extend</span><span class="p">(</span><span class="n">json</span><span class="o">.</span><span class="n">loads</span><span class="p">(</span><span class="s1">&#39;[&#39;</span><span class="o">+</span><span class="nb">open</span><span class="p">(</span><span class="s1">&#39;twittee_processed.json&#39;</span><span class="p">,</span><span class="s1">&#39;r&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">read</span><span class="p">()</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;}{&#39;</span><span class="p">,</span><span class="s1">&#39;},{&#39;</span><span class="p">)</span><span class="o">+</span><span class="s1">&#39;]&#39;</span><span class="p">))</span>
-            <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Successfully restored </span><span class="si">{}</span><span class="s1"> tweets from cache!&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">final_data</span><span class="p">)))</span>
-            <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
-        <span class="k">else</span><span class="p">:</span>
-            <span class="n">answer</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Noticed the file &#39;twittee_processed.json&#39; Would you like to continue_from_cache instead? (Y/N)</span><span class="se">\n</span><span class="s2"> Old cache file(s) will be deleted if you type &#39;N&#39;&quot;</span><span class="p">)</span>
-            <span class="k">if</span> <span class="n">answer</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s1">&#39;y&#39;</span><span class="p">)</span> <span class="ow">or</span> <span class="n">answer</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s1">&#39;Y&#39;</span><span class="p">):</span>
-                <span class="k">return</span> <span class="n">generic_search</span><span class="p">(</span><span class="n">daylimit</span><span class="p">,</span><span class="n">keywords</span><span class="p">,</span><span class="n">blacklist</span><span class="p">,</span><span class="n">whitelist</span><span class="p">,</span><span class="n">limit</span><span class="p">,</span><span class="n">continue_from_cache</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-            <span class="k">elif</span> <span class="n">answer</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s1">&#39;n&#39;</span><span class="p">)</span> <span class="ow">or</span> <span class="n">answer</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s1">&#39;N&#39;</span><span class="p">):</span>
-                <span class="k">if</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="s1">&#39;twittee_cached.json&#39;</span><span class="p">):</span> <span class="n">os</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="s1">&#39;twittee_cached.json&#39;</span><span class="p">)</span>
-                <span class="k">if</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="s1">&#39;twittee_processed.json&#39;</span><span class="p">):</span> <span class="n">os</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="s1">&#39;twittee_processed.json&#39;</span><span class="p">)</span>
-                <span class="k">if</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="s1">&#39;processed_cache_file.txt&#39;</span><span class="p">):</span> <span class="n">os</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="s1">&#39;processed_cache_file.txt&#39;</span><span class="p">)</span>
-    <span class="k">else</span><span class="p">:</span>
-
-        <span class="k">if</span> <span class="n">continue_from_cache</span><span class="p">:</span>
-            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Parameter continue_from_cache = True but couldn&#39;t find file &#39;twittee_processed.json&#39; please check &quot;</span><span class="p">)</span>
-            <span class="k">return</span>
-
-
-    <span class="c1"># If continue_from_cache = False, run generic_search normally</span>
-    <span class="k">if</span> <span class="ow">not</span> <span class="n">continue_from_cache</span><span class="p">:</span>
-
-        <span class="c1">#Keyword list error</span>
-        <span class="k">if</span> <span class="nb">type</span><span class="p">(</span><span class="n">keywords</span><span class="p">)</span> <span class="o">!=</span> <span class="nb">list</span><span class="p">:</span>
-            <span class="k">return</span> <span class="s2">&quot;Function&#39;s keyword argument must be a list.&quot;</span>
-
-        <span class="k">if</span> <span class="n">limit</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">:</span>
-            <span class="n">limit</span> <span class="o">-=</span> <span class="mi">100</span>
-
-        <span class="n">returned</span> <span class="o">=</span> <span class="mi">0</span>
-        <span class="c1"># Endpoint to use</span>
-        <span class="n">search_url</span> <span class="o">=</span> <span class="s2">&quot;https://api.twitter.com/2/tweets/search/recent&quot;</span> 
-
-
-
-        <span class="c1"># Header to send bearer token to twitter API</span>
-        <span class="n">headers</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;Authorization&quot;</span><span class="p">:</span> <span class="s2">&quot;Bearer </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">bearer_token</span><span class="p">)}</span>
-
-
-        <span class="c1"># Create a string keyword query with the provided *args to function.</span>
-        <span class="n">query</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span>
-
-        <span class="c1"># Cool keyword function?</span>
-        <span class="n">add_after</span> <span class="o">=</span> <span class="p">[]</span>
-        <span class="k">for</span> <span class="n">keyword</span> <span class="ow">in</span> <span class="n">keywords</span><span class="p">:</span>
-            <span class="k">if</span> <span class="s1">&#39; &#39;</span> <span class="ow">in</span> <span class="n">keyword</span><span class="p">:</span>
-                <span class="n">add_after</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">keyword</span><span class="p">)</span>
-            <span class="k">else</span><span class="p">:</span>
-                <span class="n">last_keywords</span> <span class="o">=</span> <span class="p">[]</span>
-                <span class="n">last_keywords</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">keyword</span><span class="o">.</span><span class="n">capitalize</span><span class="p">())</span>
-                <span class="n">last_keywords</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">keyword</span><span class="p">)</span>
-                <span class="n">last_keywords</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">keyword</span><span class="o">.</span><span class="n">lower</span><span class="p">())</span>
-                <span class="n">temp_keys</span> <span class="o">=</span> <span class="p">[]</span>
-                <span class="k">for</span> <span class="n">kw</span> <span class="ow">in</span> <span class="n">last_keywords</span><span class="p">:</span>
-                    <span class="k">if</span> <span class="n">kw</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">temp_keys</span><span class="p">:</span>
-                        <span class="n">temp_keys</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">kw</span><span class="p">)</span>
-
-                <span class="n">keywords</span> <span class="o">=</span> <span class="n">temp_keys</span>
-
-                <span class="k">for</span> <span class="n">keyword</span> <span class="ow">in</span> <span class="n">keywords</span><span class="p">:</span>
-                    <span class="k">if</span> <span class="n">keyword</span> <span class="o">==</span> <span class="n">keywords</span><span class="p">[</span><span class="mi">0</span><span class="p">]:</span> <span class="n">query</span> <span class="o">+=</span> <span class="s1">&#39;(&#39;</span>
-                    <span class="k">if</span> <span class="n">keyword</span> <span class="o">!=</span> <span class="n">keywords</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]:</span>
-                        <span class="n">query</span> <span class="o">+=</span> <span class="n">keyword</span><span class="o">+</span><span class="s2">&quot; OR &quot;</span>
-                    <span class="k">else</span><span class="p">:</span>
-                        <span class="n">query</span> <span class="o">+=</span> <span class="n">keyword</span><span class="o">+</span><span class="s1">&#39;) &#39;</span>
-        <span class="n">query</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
-        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">add_after</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
-            <span class="k">for</span> <span class="n">kw</span> <span class="ow">in</span> <span class="n">add_after</span><span class="p">:</span>
-                <span class="n">query</span> <span class="o">+=</span> <span class="s1">&#39;&quot;&#39;</span><span class="o">+</span><span class="n">kw</span><span class="o">+</span><span class="s1">&#39;&quot; &#39;</span>
-
-
-        <span class="n">query</span> <span class="o">=</span> <span class="n">query</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
-        <span class="c1"># --------------------------------------------------------------------</span>
-
-
-        <span class="c1"># Crate a date/time object that is acceptable by twitter API to use start_time</span>
-        <span class="n">now</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">datetime</span><span class="o">.</span><span class="n">now</span><span class="p">()</span>
-        <span class="n">d</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">timedelta</span><span class="p">(</span><span class="n">days</span> <span class="o">=</span> <span class="n">daylimit</span><span class="p">)</span>
-        <span class="n">a</span> <span class="o">=</span> <span class="n">now</span> <span class="o">-</span> <span class="n">d</span>
-        <span class="n">a</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">a</span><span class="p">)</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot; &quot;</span><span class="p">,</span><span class="s2">&quot;T&quot;</span><span class="p">)</span>
-        <span class="n">match</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">findall</span><span class="p">(</span><span class="n">pattern</span><span class="o">=</span><span class="s2">&quot;\.\d+&quot;</span><span class="p">,</span><span class="n">string</span><span class="o">=</span><span class="n">a</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
-        <span class="n">a</span> <span class="o">=</span> <span class="n">a</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="n">match</span><span class="p">,</span><span class="s2">&quot;&quot;</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&quot;Z&quot;</span>
-        <span class="c1"># --------------------------------------------------------------------------- #</span>
-
-
-        <span class="c1"># Query for the twitter API request</span>
-        <span class="n">query_params</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;query&#39;</span><span class="p">:</span> <span class="s1">&#39;</span><span class="si">{}</span><span class="s1"> has:links -is:retweet&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">query</span><span class="p">),</span>
-                        <span class="s1">&#39;max_results&#39;</span><span class="p">:</span> <span class="s1">&#39;</span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="mi">100</span><span class="p">),</span>
-                        <span class="s1">&#39;expansions&#39;</span><span class="p">:</span> <span class="s1">&#39;author_id&#39;</span><span class="p">,</span>
-                        <span class="s1">&#39;tweet.fields&#39;</span><span class="p">:</span> <span class="s1">&#39;text,entities,created_at,id,lang&#39;</span><span class="p">,</span>
-                        <span class="s1">&#39;user.fields&#39;</span><span class="p">:</span> <span class="s1">&#39;id,name,username,url,entities&#39;</span><span class="p">,</span>
-                        <span class="s1">&#39;start_time&#39;</span><span class="p">:</span> <span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">a</span><span class="si">}</span><span class="s1">&#39;</span>
-                        <span class="p">}</span>
-        <span class="c1"># ---------------------------------</span>
-
-        <span class="k">if</span> <span class="n">DEBUG_MODE</span><span class="p">:</span>
-            <span class="nb">print</span><span class="p">(</span><span class="n">query_params</span><span class="p">)</span>
-            <span class="nb">input</span><span class="p">()</span>
-
-
-        <span class="c1"># Send the request using search_url, parameters and headers set above.</span>
-        <span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">request</span><span class="p">(</span><span class="s2">&quot;GET&quot;</span><span class="p">,</span> <span class="n">search_url</span><span class="p">,</span><span class="n">params</span><span class="o">=</span><span class="n">query_params</span><span class="p">,</span> <span class="n">headers</span> <span class="o">=</span> <span class="n">headers</span><span class="p">)</span>
-
-        <span class="n">endpoint_response</span> <span class="o">=</span> <span class="n">response</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
-        <span class="c1"># --------------------------------------------------------------------</span>
-        <span class="k">if</span> <span class="n">DEBUG_MODE</span><span class="p">:</span>
-            <span class="n">pprint</span><span class="p">(</span><span class="n">endpoint_response</span><span class="p">)</span>
-            <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;yaman.txt&#39;</span><span class="p">,</span><span class="s1">&#39;w&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">fh</span><span class="p">:</span>
-                <span class="n">json</span><span class="o">.</span><span class="n">dump</span><span class="p">(</span><span class="n">endpoint_response</span><span class="p">,</span><span class="n">fh</span><span class="p">)</span>
-            <span class="nb">input</span><span class="p">()</span>
-
-        <span class="c1">#Error if connection could not be established with the endpoint.</span>
-        <span class="k">if</span> <span class="n">response</span><span class="o">.</span><span class="n">status_code</span> <span class="o">!=</span> <span class="mi">200</span><span class="p">:</span>
-            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n\n</span><span class="s2">Connection to endpoint was NOT sucessfull..</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
-            <span class="k">raise</span> <span class="ne">Exception</span><span class="p">(</span><span class="n">response</span><span class="o">.</span><span class="n">status_code</span><span class="p">,</span> <span class="n">response</span><span class="o">.</span><span class="n">text</span><span class="p">)</span>
-        <span class="c1"># --------------------------------------------------------------</span>
-
-
-
-
-        <span class="c1"># This will be the final list of tweet datas</span>
-        <span class="n">tweet_data</span> <span class="o">=</span> <span class="p">[]</span>
-        <span class="c1"># *-*-*-*-*-*-*-*-*-*-*-*-*-*-*-**-*-**-*-*-</span>
-
-
-
-        <span class="c1"># Check the length of the response tweets</span>
-        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">endpoint_response</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
-
-            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;No data found with given keywords...&quot;</span><span class="p">)</span>
-            <span class="k">return</span> <span class="kc">None</span>
-
-        <span class="c1"># Proceed if not 0 :)</span>
-        <span class="k">else</span><span class="p">:</span>
-
-
-            <span class="k">if</span> <span class="s1">&#39;meta&#39;</span> <span class="ow">in</span> <span class="n">endpoint_response</span><span class="p">:</span>
-                <span class="k">if</span> <span class="n">DEBUG_MODE</span><span class="p">:</span>
-                    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">Found META!</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
-                <span class="k">if</span> <span class="s1">&#39;next_token&#39;</span> <span class="ow">in</span> <span class="n">endpoint_response</span><span class="p">[</span><span class="s1">&#39;meta&#39;</span><span class="p">]:</span>
-                    <span class="k">if</span> <span class="n">DEBUG_MODE</span><span class="p">:</span>
-                        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">Found next_token!</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
-                    <span class="n">next_token</span> <span class="o">=</span> <span class="n">endpoint_response</span><span class="p">[</span><span class="s1">&#39;meta&#39;</span><span class="p">][</span><span class="s1">&#39;next_token&#39;</span><span class="p">]</span>
-                    <span class="n">token_found</span> <span class="o">=</span> <span class="kc">True</span>
-                <span class="k">else</span><span class="p">:</span>
-                    <span class="n">token_found</span> <span class="o">=</span> <span class="kc">False</span>
-            <span class="k">else</span><span class="p">:</span>
-                <span class="n">token_found</span> <span class="o">=</span> <span class="kc">False</span>
-
-            <span class="k">if</span> <span class="n">DEBUG_MODE</span><span class="p">:</span>
-                <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Endpoint data length: &#39;</span><span class="p">,</span><span class="nb">len</span><span class="p">(</span><span class="n">endpoint_response</span><span class="p">[</span><span class="s1">&#39;data&#39;</span><span class="p">]))</span>
-
-            <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="nb">len</span><span class="p">(</span><span class="n">endpoint_response</span><span class="p">[</span><span class="s1">&#39;data&#39;</span><span class="p">])):</span>
-
-                <span class="c1"># Gather all info in this dictionary</span>
-                <span class="n">data_of_tweet</span> <span class="o">=</span> <span class="p">{}</span>
-
-
-
-                <span class="c1"># Get text, entities, created_at, urls and author_id for data_of_tweet from endpoint_response</span>
-                <span class="n">data_of_tweet</span><span class="p">[</span><span class="s2">&quot;created_at&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="n">endpoint_response</span><span class="p">[</span><span class="s2">&quot;data&quot;</span><span class="p">][</span><span class="n">i</span><span class="p">][</span><span class="s2">&quot;created_at&quot;</span><span class="p">])</span>
-                <span class="n">data_of_tweet</span><span class="p">[</span><span class="s2">&quot;text&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">endpoint_response</span><span class="p">[</span><span class="s2">&quot;data&quot;</span><span class="p">][</span><span class="n">i</span><span class="p">][</span><span class="s2">&quot;text&quot;</span><span class="p">]</span>
-                <span class="n">data_of_tweet</span><span class="p">[</span><span class="s2">&quot;entities&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="p">{}</span>
-                <span class="n">data_of_tweet</span><span class="p">[</span><span class="s2">&quot;entities&quot;</span><span class="p">][</span><span class="s2">&quot;urls&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="p">[]</span>
-                <span class="n">data_of_tweet</span><span class="p">[</span><span class="s2">&quot;author_id&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">endpoint_response</span><span class="p">[</span><span class="s2">&quot;data&quot;</span><span class="p">][</span><span class="n">i</span><span class="p">][</span><span class="s2">&quot;author_id&quot;</span><span class="p">]</span>
-                <span class="c1"># ---------------------------------------------------------------------------</span>
-
-
-                <span class="c1"># Filter url&#39;s based on list_blacklist and hardcode-remove some urls</span>
-                <span class="k">for</span> <span class="n">url</span> <span class="ow">in</span> <span class="n">endpoint_response</span><span class="p">[</span><span class="s2">&quot;data&quot;</span><span class="p">][</span><span class="n">i</span><span class="p">][</span><span class="s2">&quot;entities&quot;</span><span class="p">][</span><span class="s2">&quot;urls&quot;</span><span class="p">]:</span>
-
-                    <span class="k">if</span> <span class="ow">not</span> <span class="n">url</span><span class="p">[</span><span class="s2">&quot;expanded_url&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s2">&quot;https://twitter.com&quot;</span><span class="p">)</span> <span class="ow">and</span> <span class="s1">&#39;facebook.com&#39;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">url</span> <span class="ow">and</span> <span class="s1">&#39;linkedin.com&#39;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">url</span><span class="p">:</span>
-                        <span class="n">domain</span> <span class="o">=</span> <span class="n">url</span><span class="p">[</span><span class="s2">&quot;expanded_url&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;//&quot;</span><span class="p">)[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;/&quot;</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
-                        <span class="k">if</span> <span class="n">domain</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">list_blacklist</span><span class="p">:</span>
-                            <span class="n">data_of_tweet</span><span class="p">[</span><span class="s2">&quot;entities&quot;</span><span class="p">][</span><span class="s2">&quot;urls&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">url</span><span class="p">[</span><span class="s2">&quot;expanded_url&quot;</span><span class="p">])</span>
-                <span class="c1"># ------------------------------------------------------------------</span>
-
-
-                <span class="n">users</span> <span class="o">=</span> <span class="n">endpoint_response</span><span class="p">[</span><span class="s2">&quot;includes&quot;</span><span class="p">][</span><span class="s2">&quot;users&quot;</span><span class="p">]</span>
-
-                <span class="c1">#Match user in users with the author of the tweet to gather author info</span>
-
-                <span class="k">for</span> <span class="n">user</span> <span class="ow">in</span> <span class="n">users</span><span class="p">:</span>
-
-
-                    <span class="k">if</span> <span class="n">data_of_tweet</span><span class="p">[</span><span class="s2">&quot;author_id&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="n">user</span><span class="p">[</span><span class="s2">&quot;id&quot;</span><span class="p">]:</span>
-
-                        <span class="c1">#Try to gather author_website_url of the author, if not available, append []</span>
-                        <span class="k">try</span><span class="p">:</span>
-                            <span class="n">data_of_tweet</span><span class="p">[</span><span class="s1">&#39;author_website_url&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">user</span><span class="p">[</span><span class="s1">&#39;entities&#39;</span><span class="p">][</span><span class="s1">&#39;url&#39;</span><span class="p">][</span><span class="s1">&#39;urls&#39;</span><span class="p">][</span><span class="mi">0</span><span class="p">][</span><span class="s1">&#39;expanded_url&#39;</span><span class="p">]</span>
-
-                        <span class="k">except</span><span class="p">:</span>
-                            <span class="n">data_of_tweet</span><span class="p">[</span><span class="s1">&#39;author_website_url&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span>
-
-
-                        <span class="c1"># ---------------------------------------------------------------------------</span>
-
-                        <span class="c1"># Set name, username, user_url from endpoint_response to data_of_tweet</span>
-                        <span class="n">data_of_tweet</span><span class="p">[</span><span class="s2">&quot;name&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">user</span><span class="p">[</span><span class="s2">&quot;name&quot;</span><span class="p">]</span>
-                        <span class="n">data_of_tweet</span><span class="p">[</span><span class="s2">&quot;username&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">user</span><span class="p">[</span><span class="s2">&quot;username&quot;</span><span class="p">]</span>
-                        <span class="n">data_of_tweet</span><span class="p">[</span><span class="s2">&quot;user_url&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;https://twitter.com/&quot;</span> <span class="o">+</span> <span class="n">user</span><span class="p">[</span><span class="s2">&quot;username&quot;</span><span class="p">]</span>
-
-                <span class="c1"># --------------------------------------------------------------------------</span>
-
-                <span class="c1"># Set tweet_id and tweet_url</span>
-                <span class="n">data_of_tweet</span><span class="p">[</span><span class="s2">&quot;tweet_id&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">endpoint_response</span><span class="p">[</span><span class="s2">&quot;data&quot;</span><span class="p">][</span><span class="n">i</span><span class="p">][</span><span class="s2">&quot;id&quot;</span><span class="p">]</span>
-                <span class="n">data_of_tweet</span><span class="p">[</span><span class="s2">&quot;tweet_url&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;https://twitter.com/&quot;</span><span class="o">+</span><span class="n">data_of_tweet</span><span class="p">[</span><span class="s2">&quot;username&quot;</span><span class="p">]</span><span class="o">+</span><span class="s2">&quot;/status/&quot;</span><span class="o">+</span><span class="n">data_of_tweet</span><span class="p">[</span><span class="s2">&quot;tweet_id&quot;</span><span class="p">]</span>
-                <span class="c1"># ---------------------------------------------------------------------------------------------------------------</span>
-
-                <span class="c1"># Getting the tweet language from endpoint_response</span>
-                <span class="n">data_of_tweet</span><span class="p">[</span><span class="s2">&quot;lang&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">endpoint_response</span><span class="p">[</span><span class="s2">&quot;data&quot;</span><span class="p">][</span><span class="n">i</span><span class="p">][</span><span class="s2">&quot;lang&quot;</span><span class="p">]</span>
-                <span class="c1"># ---------------------------------------------------------</span>
-
-                <span class="c1">#Only append this tweet to tweet_data if it has any url.</span>
-                <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">data_of_tweet</span><span class="p">[</span><span class="s2">&quot;entities&quot;</span><span class="p">][</span><span class="s2">&quot;urls&quot;</span><span class="p">])</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
-                    <span class="n">tweet_data</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">data_of_tweet</span><span class="p">)</span>
-                    <span class="n">returned</span> <span class="o">+=</span> <span class="mi">1</span>
-                <span class="c1"># ------------------------------------------------------</span>
-
-
-
-
-        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Got </span><span class="si">{}</span><span class="s1"> tweet from first request&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">returned</span><span class="p">))</span>
-
-        <span class="c1">#Check if more pages are available</span>
-        <span class="k">while</span> <span class="n">token_found</span><span class="p">:</span>
-            <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mf">2.2</span><span class="p">)</span>
-            <span class="k">if</span> <span class="n">limit</span> <span class="o">!=</span> <span class="o">-</span><span class="mi">100</span><span class="p">:</span>
-                <span class="k">if</span> <span class="n">returned</span> <span class="o">&gt;=</span> <span class="n">limit</span><span class="p">:</span>
-                        <span class="n">token_found</span> <span class="o">=</span> <span class="kc">False</span>
-                        <span class="k">break</span>
-
-            <span class="n">found_this_step</span> <span class="o">=</span> <span class="mi">0</span>
-
-            <span class="c1"># Query for the twitter API request</span>
-            <span class="n">query_params</span> <span class="o">=</span> <span class="p">{</span>
-                        <span class="s1">&#39;query&#39;</span><span class="p">:</span> <span class="s1">&#39;</span><span class="si">{}</span><span class="s1"> has:links -is:retweet&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">query</span><span class="p">),</span>
-                        <span class="s1">&#39;max_results&#39;</span><span class="p">:</span> <span class="s1">&#39;</span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="mi">100</span><span class="p">),</span>
-                        <span class="s1">&#39;expansions&#39;</span><span class="p">:</span> <span class="s1">&#39;author_id&#39;</span><span class="p">,</span>
-                        <span class="s1">&#39;tweet.fields&#39;</span><span class="p">:</span> <span class="s1">&#39;text,entities,created_at,id,lang&#39;</span><span class="p">,</span>
-                        <span class="s1">&#39;user.fields&#39;</span><span class="p">:</span> <span class="s1">&#39;id,name,username,url,entities&#39;</span><span class="p">,</span>
-                        <span class="s1">&#39;start_time&#39;</span><span class="p">:</span> <span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">a</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">,</span>
-                        <span class="s1">&#39;next_token&#39;</span><span class="p">:</span> <span class="n">next_token</span>
-                        <span class="p">}</span>
-            <span class="c1"># ---------------------------------</span>
-
-
-            <span class="c1"># Send the request using search_url, parameters and headers set above.</span>
-            <span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">request</span><span class="p">(</span><span class="s2">&quot;GET&quot;</span><span class="p">,</span> <span class="n">search_url</span><span class="p">,</span><span class="n">params</span><span class="o">=</span><span class="n">query_params</span><span class="p">,</span> <span class="n">headers</span> <span class="o">=</span> <span class="n">headers</span><span class="p">)</span>
-
-            <span class="n">endpoint_response</span> <span class="o">=</span> <span class="n">response</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
-            <span class="c1"># --------------------------------------------------------------------</span>
-
-
-            <span class="c1">#Error if connection could not be established with the endpoint.</span>
-            <span class="k">if</span> <span class="n">response</span><span class="o">.</span><span class="n">status_code</span> <span class="o">!=</span> <span class="mi">200</span><span class="p">:</span>
-                <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n\n</span><span class="s2">Connection to endpoint was NOT sucessfull..</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
-                <span class="k">raise</span> <span class="ne">Exception</span><span class="p">(</span><span class="n">response</span><span class="o">.</span><span class="n">status_code</span><span class="p">,</span> <span class="n">response</span><span class="o">.</span><span class="n">text</span><span class="p">)</span>
-            <span class="c1"># --------------------------------------------------------------</span>
-
-
-
-
-
-            <span class="c1"># Proceed if not 0 :)</span>
-
-
-
-            <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span>
-            <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="nb">len</span><span class="p">(</span><span class="n">endpoint_response</span><span class="p">[</span><span class="s1">&#39;data&#39;</span><span class="p">])):</span>
-
-                    <span class="n">data_of_tweet</span> <span class="o">=</span> <span class="p">{}</span>
-
-                    <span class="c1"># Get text, entities, created_at, urls and author_id for data_of_tweet from endpoint_response</span>
-                    <span class="n">data_of_tweet</span><span class="p">[</span><span class="s2">&quot;created_at&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="n">endpoint_response</span><span class="p">[</span><span class="s2">&quot;data&quot;</span><span class="p">][</span><span class="n">i</span><span class="p">][</span><span class="s2">&quot;created_at&quot;</span><span class="p">])</span>
-                    <span class="n">data_of_tweet</span><span class="p">[</span><span class="s2">&quot;text&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">endpoint_response</span><span class="p">[</span><span class="s2">&quot;data&quot;</span><span class="p">][</span><span class="n">i</span><span class="p">][</span><span class="s2">&quot;text&quot;</span><span class="p">]</span>
-                    <span class="n">data_of_tweet</span><span class="p">[</span><span class="s2">&quot;entities&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="p">{}</span>
-                    <span class="n">data_of_tweet</span><span class="p">[</span><span class="s2">&quot;entities&quot;</span><span class="p">][</span><span class="s2">&quot;urls&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="p">[]</span>
-                    <span class="n">data_of_tweet</span><span class="p">[</span><span class="s2">&quot;author_id&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">endpoint_response</span><span class="p">[</span><span class="s2">&quot;data&quot;</span><span class="p">][</span><span class="n">i</span><span class="p">][</span><span class="s2">&quot;author_id&quot;</span><span class="p">]</span>
-                    <span class="c1"># ---------------------------------------------------------------------------</span>
-
-
-
-                    <span class="c1"># Filter url&#39;s based on list_blacklist and hardcode-remove some urls</span>
-                    <span class="k">for</span> <span class="n">url</span> <span class="ow">in</span> <span class="n">endpoint_response</span><span class="p">[</span><span class="s2">&quot;data&quot;</span><span class="p">][</span><span class="n">i</span><span class="p">][</span><span class="s2">&quot;entities&quot;</span><span class="p">][</span><span class="s2">&quot;urls&quot;</span><span class="p">]:</span>
-
-                        <span class="k">if</span> <span class="ow">not</span> <span class="n">url</span><span class="p">[</span><span class="s2">&quot;expanded_url&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s2">&quot;https://twitter.com&quot;</span><span class="p">)</span> <span class="ow">and</span> <span class="n">url</span> <span class="o">!=</span> <span class="s1">&#39;facebook.com&#39;</span> <span class="ow">and</span> <span class="n">url</span> <span class="o">!=</span> <span class="s1">&#39;linkedin.com&#39;</span><span class="p">:</span>
-                            <span class="n">domain</span> <span class="o">=</span> <span class="n">url</span><span class="p">[</span><span class="s2">&quot;expanded_url&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;//&quot;</span><span class="p">)[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;/&quot;</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
-                            <span class="k">if</span> <span class="n">domain</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">list_blacklist</span><span class="p">:</span>
-                                <span class="n">data_of_tweet</span><span class="p">[</span><span class="s2">&quot;entities&quot;</span><span class="p">][</span><span class="s2">&quot;urls&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">url</span><span class="p">[</span><span class="s2">&quot;expanded_url&quot;</span><span class="p">])</span>
-                    <span class="c1"># ------------------------------------------------------------------</span>
-
-
-
-
-                    <span class="n">users</span> <span class="o">=</span> <span class="n">endpoint_response</span><span class="p">[</span><span class="s2">&quot;includes&quot;</span><span class="p">][</span><span class="s2">&quot;users&quot;</span><span class="p">]</span>
-
-                    <span class="c1">#Match user in users with the author of the tweet to gather author info</span>
-
-                    <span class="k">for</span> <span class="n">user</span> <span class="ow">in</span> <span class="n">users</span><span class="p">:</span>
-
-
-                        <span class="k">if</span> <span class="n">data_of_tweet</span><span class="p">[</span><span class="s2">&quot;author_id&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="n">user</span><span class="p">[</span><span class="s2">&quot;id&quot;</span><span class="p">]:</span>
-
-                            <span class="c1">#Try to gather author_website_url of the author, if not available, append []</span>
-                            <span class="k">try</span><span class="p">:</span>
-                                <span class="n">data_of_tweet</span><span class="p">[</span><span class="s1">&#39;author_website_url&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">user</span><span class="p">[</span><span class="s1">&#39;entities&#39;</span><span class="p">][</span><span class="s1">&#39;url&#39;</span><span class="p">][</span><span class="s1">&#39;urls&#39;</span><span class="p">][</span><span class="mi">0</span><span class="p">][</span><span class="s1">&#39;expanded_url&#39;</span><span class="p">]</span>
-
-                            <span class="k">except</span><span class="p">:</span>
-                                <span class="n">data_of_tweet</span><span class="p">[</span><span class="s1">&#39;author_website_url&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span>
-
-
-                            <span class="c1"># ---------------------------------------------------------------------------</span>
-
-                            <span class="c1"># Set name, username, user_url from endpoint_response to data_of_tweet</span>
-                            <span class="n">data_of_tweet</span><span class="p">[</span><span class="s2">&quot;name&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">user</span><span class="p">[</span><span class="s2">&quot;name&quot;</span><span class="p">]</span>
-                            <span class="n">data_of_tweet</span><span class="p">[</span><span class="s2">&quot;username&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">user</span><span class="p">[</span><span class="s2">&quot;username&quot;</span><span class="p">]</span>
-                            <span class="n">data_of_tweet</span><span class="p">[</span><span class="s2">&quot;user_url&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;https://twitter.com/&quot;</span> <span class="o">+</span> <span class="n">user</span><span class="p">[</span><span class="s2">&quot;username&quot;</span><span class="p">]</span>
-
-                    <span class="c1"># --------------------------------------------------------------------------</span>
-
-                    <span class="c1"># Set tweet_id and tweet_url</span>
-                    <span class="n">data_of_tweet</span><span class="p">[</span><span class="s2">&quot;tweet_id&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">endpoint_response</span><span class="p">[</span><span class="s2">&quot;data&quot;</span><span class="p">][</span><span class="n">i</span><span class="p">][</span><span class="s2">&quot;id&quot;</span><span class="p">]</span>
-                    <span class="n">data_of_tweet</span><span class="p">[</span><span class="s2">&quot;tweet_url&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;https://twitter.com/&quot;</span><span class="o">+</span><span class="n">data_of_tweet</span><span class="p">[</span><span class="s2">&quot;username&quot;</span><span class="p">]</span><span class="o">+</span><span class="s2">&quot;/status/&quot;</span><span class="o">+</span><span class="n">data_of_tweet</span><span class="p">[</span><span class="s2">&quot;tweet_id&quot;</span><span class="p">]</span>
-                    <span class="c1"># ---------------------------------------------------------------------------------------------------------------</span>
-
-                    <span class="c1"># Getting the tweet language from endpoint_response</span>
-                    <span class="n">data_of_tweet</span><span class="p">[</span><span class="s2">&quot;lang&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">endpoint_response</span><span class="p">[</span><span class="s2">&quot;data&quot;</span><span class="p">][</span><span class="n">i</span><span class="p">][</span><span class="s2">&quot;lang&quot;</span><span class="p">]</span>
-                    <span class="c1"># ---------------------------------------------------------</span>
-
-                    <span class="c1">#Only append this tweet to tweet_data if it has any url.</span>
-                    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">data_of_tweet</span><span class="p">[</span><span class="s2">&quot;entities&quot;</span><span class="p">][</span><span class="s2">&quot;urls&quot;</span><span class="p">])</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
-                        <span class="n">tweet_data</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">data_of_tweet</span><span class="p">)</span>
-                        <span class="n">found_this_step</span> <span class="o">+=</span> <span class="mi">1</span>
-                    <span class="c1"># ------------------------------------------------------</span>
-
-            <span class="k">if</span> <span class="s1">&#39;meta&#39;</span> <span class="ow">in</span> <span class="n">endpoint_response</span><span class="p">:</span>
-                            <span class="k">if</span> <span class="n">DEBUG_MODE</span><span class="p">:</span>
-                                <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">Found META!</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
-                            <span class="k">if</span> <span class="s1">&#39;next_token&#39;</span> <span class="ow">in</span> <span class="n">endpoint_response</span><span class="p">[</span><span class="s1">&#39;meta&#39;</span><span class="p">]:</span>
-                                <span class="k">if</span> <span class="n">DEBUG_MODE</span><span class="p">:</span>
-                                    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">Found next_token!</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
-                                <span class="n">next_token</span> <span class="o">=</span> <span class="n">endpoint_response</span><span class="p">[</span><span class="s1">&#39;meta&#39;</span><span class="p">][</span><span class="s1">&#39;next_token&#39;</span><span class="p">]</span>
-                                <span class="n">token_found</span> <span class="o">=</span> <span class="kc">True</span>
-                            <span class="k">else</span><span class="p">:</span>
-                                <span class="n">token_found</span><span class="o">=</span> <span class="kc">False</span>
-            <span class="k">else</span><span class="p">:</span>
-                        <span class="n">token_found</span> <span class="o">=</span> <span class="kc">False</span>
-
-            <span class="n">returned</span> <span class="o">+=</span> <span class="n">found_this_step</span>
-            <span class="k">if</span> <span class="n">DEBUG_MODE</span><span class="p">:</span>
-                <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Processing -&gt;&#39;</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s1">&#39; &#39;</span><span class="p">)</span>
-                <span class="nb">print</span><span class="p">(</span><span class="n">next_token</span><span class="p">,</span><span class="s1">&#39; New tweet data length :: &#39;</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">tweet_data</span><span class="p">))</span>
-            <span class="k">else</span><span class="p">:</span>
-                <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Current data length : &#39;</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">tweet_data</span><span class="p">))</span>
-
-        <span class="c1">#Save the response just in case you want to continue from where you&#39;ve left off</span>
-        <span class="n">cached_file</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;twittee_cached.json&#39;</span><span class="p">,</span><span class="s1">&#39;w&#39;</span><span class="p">)</span>
-        <span class="n">json</span><span class="o">.</span><span class="n">dump</span><span class="p">(</span><span class="n">tweet_data</span><span class="p">,</span><span class="n">cached_file</span><span class="p">)</span>
-        <span class="n">cached_file</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
-
-    <span class="c1"># Shortened_url to actual_url transformer:</span>
-
-    <span class="c1">#First, restore the already processed tweets</span>
-    <span class="k">if</span> <span class="n">continue_from_cache</span><span class="p">:</span>
-        <span class="k">try</span><span class="p">:</span>
-            <span class="n">cached_file</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;twittee_cached.json&#39;</span><span class="p">,</span><span class="s1">&#39;r&#39;</span><span class="p">)</span>
-            <span class="n">tweet_data</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">cached_file</span><span class="p">)</span>
-            <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Successfully returned response of length: </span><span class="si">{}</span><span class="s1"> from cache.&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">tweet_data</span><span class="p">)))</span>
-            <span class="n">cached_file</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
-        <span class="k">except</span><span class="p">:</span>
-            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Couldn&#39;t load twittee_cached.json, make sure file exists or continue_from_cache == False &quot;</span><span class="p">)</span>
-            <span class="k">return</span>
-        <span class="n">processed_cache_file</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;processed_cache_file.txt&#39;</span><span class="p">,</span><span class="s1">&#39;r&#39;</span><span class="p">)</span>
-        <span class="n">already_processed_temp</span> <span class="o">=</span> <span class="n">processed_cache_file</span><span class="o">.</span><span class="n">readlines</span><span class="p">()</span>
-        <span class="n">already_processed</span> <span class="o">=</span> <span class="p">[</span><span class="nb">id</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span> <span class="k">for</span> <span class="nb">id</span> <span class="ow">in</span> <span class="n">already_processed_temp</span><span class="p">]</span>
-        <span class="n">processed_cache_file</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
-
-
-    <span class="c1">#Continue processing tweet data list normally</span>
-    <span class="n">index</span> <span class="o">=</span> <span class="mi">1</span>
-    <span class="n">num_of_tw</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">tweet_data</span><span class="p">)</span>
-    <span class="k">for</span> <span class="n">tweet</span> <span class="ow">in</span> <span class="n">tweet_data</span><span class="p">[:]:</span>
-                <span class="c1"># But skip if tweet is already processed</span>
-                <span class="k">if</span> <span class="n">continue_from_cache</span><span class="p">:</span>
-                    <span class="k">if</span> <span class="n">tweet</span><span class="p">[</span><span class="s1">&#39;tweet_id&#39;</span><span class="p">]</span> <span class="ow">in</span> <span class="n">already_processed</span><span class="p">:</span>
-                        <span class="n">num_of_tw</span> <span class="o">-=</span> <span class="mi">1</span>
-                        <span class="k">continue</span>
-
-                <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Tweet: </span><span class="si">{</span><span class="n">index</span><span class="si">}</span><span class="s2">/</span><span class="si">{</span><span class="n">num_of_tw</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-                <span class="n">index2</span> <span class="o">=</span> <span class="mi">0</span>
-                <span class="k">for</span> <span class="n">url</span> <span class="ow">in</span> <span class="n">tweet</span><span class="p">[</span><span class="s2">&quot;entities&quot;</span><span class="p">][</span><span class="s2">&quot;urls&quot;</span><span class="p">][:]:</span>
-                        <span class="n">index2</span> <span class="o">+=</span> <span class="mi">1</span>
-                        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Url #</span><span class="si">{</span><span class="n">index2</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">,</span><span class="n">end</span><span class="o">=</span><span class="s2">&quot; &quot;</span><span class="p">)</span>
-                        <span class="c1"># final_urls list of the specific tweet</span>
-                        <span class="n">final_urls</span> <span class="o">=</span> <span class="p">[]</span>
-
-
-                        <span class="c1"># Try to convert shortened_url to actual_url</span>
-                        <span class="k">try</span><span class="p">:</span>
-
-                            <span class="n">shortened_url</span> <span class="o">=</span> <span class="n">url</span>
-                            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Gathering actual url from shortened url...&quot;</span><span class="p">)</span>
-                            <span class="n">req</span> <span class="o">=</span> <span class="n">http</span><span class="o">.</span><span class="n">request</span><span class="p">(</span><span class="s1">&#39;GET&#39;</span><span class="p">,</span> <span class="n">url</span><span class="p">,</span> <span class="n">fields</span><span class="o">=</span><span class="n">payload</span><span class="p">)</span>
-
-                            <span class="n">actual_url</span> <span class="o">=</span> <span class="n">req</span><span class="o">.</span><span class="n">geturl</span><span class="p">()</span>
-                            <span class="c1">#r = requests.get(shortened_url, timeout=15, headers={&quot;User-Agent&quot;:&quot;Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/96.0.4664.45 Safari/537.36&quot;})</span>
-                            <span class="c1">#actual_url = r.url</span>
-
-                            <span class="nb">print</span><span class="p">(</span><span class="n">shortened_url</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">25</span><span class="p">]</span><span class="o">+</span><span class="s2">&quot;...&quot;</span><span class="p">,</span><span class="s2">&quot; &gt;&gt;&gt; &quot;</span> <span class="p">,</span><span class="n">actual_url</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">25</span><span class="p">]</span><span class="o">+</span><span class="s2">&quot;...&quot;</span><span class="p">,</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
-
-                            <span class="n">final_urls</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">actual_url</span><span class="p">)</span>
-                            <span class="k">if</span> <span class="n">DEBUG_MODE</span><span class="p">:</span>
-                                <span class="k">if</span> <span class="s1">&#39;zoom&#39;</span> <span class="ow">in</span> <span class="n">actual_url</span><span class="p">:</span>
-                                    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;yaman.txt&#39;</span><span class="p">,</span><span class="s1">&#39;a&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">df</span><span class="p">:</span> <span class="n">df</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">actual_url</span><span class="o">+</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
-                        <span class="c1">#-------------------------------------------</span>
-
-                        <span class="c1"># If cant convert, append the normal url </span>
-                        <span class="k">except</span><span class="p">:</span>
-
-                            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Couldn&#39;t convert:&quot;</span><span class="p">,</span> <span class="n">url</span><span class="p">,</span> <span class="s2">&quot; skipping..</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
-                            <span class="n">final_urls</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
-
-                        <span class="c1"># ---------------------------------------</span>
-
-                <span class="c1"># Blacklist and whitelist implementation</span>
-                <span class="k">for</span> <span class="n">link</span> <span class="ow">in</span> <span class="n">final_urls</span><span class="p">[:]:</span>
-
-                    <span class="n">skip_url_w</span> <span class="o">=</span> <span class="kc">False</span>
-                    <span class="n">skip_url_b</span> <span class="o">=</span> <span class="kc">False</span>
-
-                    <span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">blacklist</span><span class="p">:</span>
-                        <span class="k">if</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">url</span><span class="p">:</span>
-                            <span class="n">skip_url_b</span> <span class="o">=</span> <span class="kc">True</span>
-                            <span class="k">break</span>
-
-                    <span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">whitelist</span><span class="p">:</span>
-                        <span class="k">if</span> <span class="n">item</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">url</span><span class="p">:</span>
-                            <span class="n">skip_url_w</span> <span class="o">=</span> <span class="kc">True</span>
-                            <span class="k">break</span>
-
-                    <span class="k">if</span> <span class="n">skip_url_b</span> <span class="ow">or</span> <span class="n">skip_url_w</span><span class="p">:</span>
-                        <span class="n">final_urls</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="n">link</span><span class="p">)</span>
-                <span class="c1"># -------------------------------------- #</span>
-
-
-                <span class="n">tweet</span><span class="p">[</span><span class="s2">&quot;entities&quot;</span><span class="p">][</span><span class="s2">&quot;urls&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">final_urls</span>
-                <span class="n">index</span> <span class="o">+=</span> <span class="mi">1</span>
-
-                <span class="k">for</span> <span class="n">url</span> <span class="ow">in</span> <span class="n">tweet</span><span class="p">[</span><span class="s2">&quot;entities&quot;</span><span class="p">][</span><span class="s2">&quot;urls&quot;</span><span class="p">][:]:</span>
-                        <span class="k">if</span> <span class="s2">&quot;youtube.com&quot;</span> <span class="ow">in</span> <span class="n">url</span><span class="p">:</span>
-                            <span class="n">tweet</span><span class="p">[</span><span class="s2">&quot;entities&quot;</span><span class="p">][</span><span class="s2">&quot;urls&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
-
-                <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">tweet</span><span class="p">[</span><span class="s2">&quot;entities&quot;</span><span class="p">][</span><span class="s2">&quot;urls&quot;</span><span class="p">])</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">:</span>
-                    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Writing tweet to cache...&#39;</span><span class="p">)</span>
-                    <span class="n">write_data_file</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;twittee_processed.json&#39;</span><span class="p">,</span><span class="s1">&#39;a&#39;</span><span class="p">)</span>
-                    <span class="n">json</span><span class="o">.</span><span class="n">dump</span><span class="p">(</span><span class="n">tweet</span><span class="p">,</span><span class="n">write_data_file</span><span class="p">)</span>
-                    <span class="n">final_data</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">tweet</span><span class="p">)</span>
-                <span class="n">processed_cache_file</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;processed_cache_file.txt&#39;</span><span class="p">,</span><span class="s1">&#39;a&#39;</span><span class="p">)</span>
-                <span class="n">processed_cache_file</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">tweet</span><span class="p">[</span><span class="s1">&#39;tweet_id&#39;</span><span class="p">]</span><span class="o">+</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
-                <span class="n">processed_cache_file</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
-
-
-                <span class="c1"># Final lookthrough of tweets before returning the final_data</span>
-
-
-    <span class="k">return</span> <span class="n">final_data</span>
-        <span class="c1"># End of generic_search()</span>
+<p><span class="datestamp">2020</span> started using.   </p>
+<p><span class="datestamp">03 Jul 2022</span> starting note.    </p>
+<p>I'm using Alfred 25-100 times/day based on in-app report.   </p>
+<div class="link_border"><div class="link_logo_box"><img class="link_logo" src="https://logo.clearbit.com/alfredapp.com?size=35" alt="logo"/></div><div class="link_content">
+<div class="link_title">Alfred - Productivity App for macOS</div>
+<div class="link_tagline">Alfred 5 for Mac</div>
+<div class="link_url"><a href="https://www.alfredapp.com/" target="_blank">https://www.alfredapp.com/</a></div></div></div>
+
+<p>Forum:   </p>
+<div class="link_border"><div class="link_logo_box"><img class="link_logo" src="https://logo.clearbit.com/alfredforum.com?size=35" alt="logo"/></div><div class="link_content">
+<div class="link_title">Forums - Alfred App Community Forum</div>
+<div class="link_tagline">alfredforum.com</div>
+<div class="link_url"><a href="https://www.alfredforum.com/" target="_blank">https://www.alfredforum.com/</a></div></div></div>
+
+<h1 id="universal-actions">Universal Actions</h1>
+<div class="link_border"><div class="link_logo_box"><img class="link_logo" src="https://logo.clearbit.com/alfredapp.com?size=35" alt="logo"/></div><div class="link_content">
+<div class="link_title">Universal Actions - Alfred Help and Support</div>
+<div class="link_tagline">alfredapp.com</div>
+<div class="link_url"><a href="https://www.alfredapp.com/help/features/universal-actions/" target="_blank">https://www.alfredapp.com/help/features/universal-actions/</a></div></div></div>
+
+<h1 id="sync">Sync</h1>
+<p>alfLocal data: <code>~/Library/Application Support/Alfred</code>    </p>
+<p>Alfred settings can be backed up to Dropbox, enabling syncing across Macs with Alfred installed.   </p>
+<p><code>Dropbox/Alfred.alfredpreferences</code>   </p>
+<p>Location of the file can be set under Alfred Preferences <code>Advanced</code> &gt; <code>Syncing</code> &gt; <code>Set preferences folder</code>.    </p>
+<div class="link_border"><div class="link_logo_box"><img class="link_logo" src="https://logo.clearbit.com/alfredapp.com?size=35" alt="logo"/></div><div class="link_content">
+<div class="link_title">Sync your Alfred settings between Macs - Alfred Help and Support</div>
+<div class="link_tagline">alfredapp.com</div>
+<div class="link_url"><a href="https://www.alfredapp.com/help/advanced/sync/" target="_blank">https://www.alfredapp.com/help/advanced/sync/</a></div></div></div>
+
+<h2 id="migrating-to-alfred-5">Migrating to Alfred 5</h2>
+<p><span class="datestamp">20 Sep 2022</span> </p>
+<p>Before migrating, v4 settings for reference:  </p>
+<p><img class="screenshot" src="https://notes.nicolasdeville.com/images/alfred/v4-settings-1.jpg" alt="v4-settings-1.jpg"/>  </p>
+<p><img class="screenshot" src="https://notes.nicolasdeville.com/images/alfred/v4-settings-2.jpg" alt="v4-settings-2.jpg"/>  </p>
+<p><img class="screenshot" src="https://notes.nicolasdeville.com/images/alfred/v4-settings-3-workflows.jpg" alt="v4-settings-3-workflows.jpg"/>  </p>
+<p><img class="screenshot" src="https://notes.nicolasdeville.com/images/alfred/v4-settings-4.jpg" alt="v4-settings-4.jpg"/>  </p>
+<h1 id="workflows">Workflows</h1>
+<div class="link_border"><div class="link_logo_box"><img class="link_logo" src="https://logo.clearbit.com/alfredapp.com?size=35" alt="logo"/></div><div class="link_content">
+<div class="link_title">Alfred Workflows - Extend Alfred and Boost Your Productivity</div>
+<div class="link_tagline">alfredapp.com</div>
+<div class="link_url"><a href="https://www.alfredapp.com/workflows/" target="_blank">https://www.alfredapp.com/workflows/</a></div></div></div>
+
+<h2 id="learning">Learning</h2>
+<div class="link_border"><div class="link_logo_box"><img class="link_logo" src="https://logo.clearbit.com/alfredapp.com?size=35" alt="logo"/></div><div class="link_content">
+<div class="link_title">Using Variables in Workflows - Alfred Help and Support</div>
+<div class="link_tagline">alfredapp.com</div>
+<div class="link_url"><a href="https://www.alfredapp.com/help/workflows/advanced/variables/" target="_blank">https://www.alfredapp.com/help/workflows/advanced/variables/</a></div></div></div>
+
+<h2 id="using">Using</h2>
+<h3 id="get-latest-file-from-trickster">Get latest file from Trickster</h3>
+<p>Configured to list latest items from Trickster with:  </p>
+<p>Global key: <code>Alt L</code>  </p>
+<p>or from Alfred with keyword: <code>tt</code>  </p>
+<h3 id="dash">Dash</h3>
+<p>Add blisteringly fast search of the Dash documentation / API browser app, with in-line results and responsive integration.  </p>
+<h3 id="music">Music</h3>
+<p>Find and launch music in Apple Music - by artist, album, playlist, etc..</p>
+<p><img class="screenshot" src="https://notes.nicolasdeville.com/images/alfred/music-player-1.jpg" alt="alfred/music-player-1.jpg"/>  </p>
+<p><img class="screenshot" src="https://notes.nicolasdeville.com/images/alfred/alfred-music-2.jpg" alt="alfred/alfred-music-2.jpg"/>  </p>
+<h3 id="google-suggest">Google Suggest</h3>
+<p>An example included in Alfred: Search Google from Alfred's search box and see results in-line.</p>
+<h3 id="stack-overflow">Stack Overflow</h3>
+<p>Search for answers to your programming questions on Stack Overflow.</p>
+<p>Download here:  </p>
+<div class="link_border"><div class="link_logo_box"><img class="link_logo" src="https://logo.clearbit.com/github.com?size=35" alt="logo"/></div><div class="link_content">
+<div class="link_title">Releases · deanishe/alfred-stackexchange · GitHub</div>
+<div class="link_tagline">Releases: deanishe/alfred-stackexchange</div>
+<div class="link_url"><a href="https://github.com/deanishe/alfred-stackexchange/releases" target="_blank">https://github.com/deanishe/alfred-stackexchange/releases</a></div></div></div>
+
+<p>Use <code>.so</code> to search StackOverflow from Alfred.   </p>
+<h3 id="github">GitHub</h3>
+<p>Quickly pick which GitHub repository you want to open and launch it from Alfred.</p>
+<h3 id="tinypng">TinyPNG</h3>
+<p>Optimise your images to be more lightweight with TinyPNG.  </p>
+<div class="link_border"><div class="link_logo_box"><img class="link_logo" src="https://logo.clearbit.com/github.com?size=35" alt="logo"/></div><div class="link_content">
+<div class="link_title">GitHub - alfredapp/tinypng-workflow: Compress images via TinyPNG</div>
+<div class="link_tagline">github.com</div>
+<div class="link_url"><a href="https://github.com/alfredapp/tinypng-workflow" target="_blank">https://github.com/alfredapp/tinypng-workflow</a></div></div></div>
+
+<p><span class="datestamp">19 Sep 2022</span> </p>
+<p>Requires API key:   </p>
+<div class="link_border"><div class="link_logo_box"><img class="link_logo" src="https://logo.clearbit.com/tinypng.com?size=35" alt="logo"/></div><div class="link_content">
+<div class="link_title">TinyPNG – Developer API</div>
+<div class="link_tagline">tinypng.com</div>
+<div class="link_url"><a href="https://tinypng.com/developers" target="_blank">https://tinypng.com/developers</a></div></div></div>
+
+<p><img class="screenshot" src="https://notes.nicolasdeville.com/images/alfred/tiny-png-pricing.jpg" alt="tiny-png-pricing.jpg"/>  </p>
+<p>No password required for signup! API key obtained in &lt;1mns! 😁  </p>
+<p>Only works with Alfred 5 though 😕   </p>
+<p><img class="screenshot" src="https://notes.nicolasdeville.com/images/alfred/tinypng-alfred5.jpg" alt="tinypng-alfred5.jpg"/>  </p>
+<h3 id="advanced-maps">Advanced Maps</h3>
+<p>Advanced Google and Apple Maps search, including the ability to configure a Home and Work location, to see Google traffic reports before travelling.</p>
+<div class="link_border"><div class="link_logo_box"><img class="link_logo" src="https://logo.clearbit.com/github.com?size=35" alt="logo"/></div><div class="link_content">
+<div class="link_title">GitHub - stuartcryan/advanced-google-maps-alfred-workflow: Advanced Google Maps and Apple Maps Workflow for Alfred</div>
+<div class="link_tagline">github.com</div>
+<div class="link_url"><a href="https://github.com/stuartcryan/advanced-google-maps-alfred-workflow" target="_blank">https://github.com/stuartcryan/advanced-google-maps-alfred-workflow</a></div></div></div>
+
+<p>good overview:  </p>
+<div class="link_border"><div class="link_logo_box"><img class="link_logo" src="https://logo.clearbit.com/guillaumeb.com?size=35" alt="logo"/></div><div class="link_content">
+<div class="link_title">How I master Google Maps with this Alfred workflow | Guillaume Belfiore</div>
+<div class="link_tagline">guillaumeb.com</div>
+<div class="link_url"><a href="https://guillaumeb.com/journal/mac-alfred-google-maps.html" target="_blank">https://guillaumeb.com/journal/mac-alfred-google-maps.html</a></div></div></div>
+
+<h4 id="show-directions-from-home-to-address">Show directions from Home to address</h4>
+<div class="highlight"><pre><span></span><code>dirfh your-query
 </code></pre></div>
 
-<h1 id="twitter-api">Twitter API</h1>
-<div class="link_border"><div class="link_logo_box"><img class="link_logo" src="https://logo.clearbit.com/twitter.com?size=35" alt="logo"/></div><div class="link_content">
-<div class="link_title">Developer Portal - Dashboard</div>
-<div class="link_tagline">twitter.com</div>
-<div class="link_url"><a href="https://developer.twitter.com/en/portal/dashboard" target="_blank">https://developer.twitter.com/en/portal/dashboard</a></div></div></div>
+<h3 id="timezones">Timezones</h3>
+<p>A customised world clock — shows a list of user-configured cities with the current local times.</p>
+<h3 id="convert">Convert</h3>
+<p>Convert between different units of quantities, distances, time and more. No internet connection required.  </p>
+<p>The Convert workflow has stopped working since last macOS updates which have removed support for Python 2 (ie <code>usr/bin/python</code>).   <br>
+Original workflow creator has not updated the pachage.   </p>
+<p>Using this updated fork instead now:   </p>
+<div class="link_border"><div class="link_logo_box"><img class="link_logo" src="https://logo.clearbit.com/github.com?size=35" alt="logo"/></div><div class="link_content">
+<div class="link_title">GitHub - giovannicoppola/alfred-convert: Convert between different units in Alfred</div>
+<div class="link_tagline">github.com</div>
+<div class="link_url"><a href="https://github.com/giovannicoppola/alfred-convert" target="_blank">https://github.com/giovannicoppola/alfred-convert</a></div></div></div>
 
-<div class="link_border"><div class="link_logo_box"><img class="link_logo" src="https://logo.clearbit.com/twitter.com?size=35" alt="logo"/></div><div class="link_content">
-<div class="link_title">Documentation Home | Docs | Twitter Developer Platform  </div>
-<div class="link_tagline">twitter.com</div>
-<div class="link_url"><a href="https://developer.twitter.com/en/docs" target="_blank">https://developer.twitter.com/en/docs</a></div></div></div>
+<h2 id="custom-workflows">Custom Workflows</h2>
+<h3 id="copy-file-name-and-parent-folder-for-notes">Copy File Name and parent folder for notes</h3>
+<p>When I save an image to insert in a note like here, I combine the Trickster workflow above, with this custom workflow to copy to clipboard the file name with its parent folder (note name).<br>
+Combined with a VS Code snippet/shortcut that inserts the content of the clipboard as part of it, I have a very streamlined/quick process to add images to this site.   </p>
+<p><img class="screenshot" src="https://notes.nicolasdeville.com/images/alfred/220921-copy-filepath-workflow1.jpg" alt="alfred/220921-copy-filepath-workflow1.jpg"/>  </p>
+<p><img class="screenshot" src="https://notes.nicolasdeville.com/images/alfred/220921-copy-filepath-workflow2.jpg" alt="alfred/220921-copy-filepath-workflow2.jpg"/>  </p>
+<h3 id="paste-clipboard-to-atom">Paste clipboard to Atom</h3>
+<p><code>pa</code> (Paste to Atom) triggers creation of a <code>.txt</code> file with timestamp in a central folder (for backup and avoiding all the annoying "Save as" file dialogs) and opens in Atom.  </p>
+<p>Implemented with AppleScript, as much easier to handle opening files with specific applications versus using Python.   </p>
+<p>Workflow is better and much quicker than my previous one using only Streamdeck. </p>
+<p><img class="screenshot" src="https://notes.nicolasdeville.com/images/alfred/alfred-workflow-paste-atom-1.jpg" alt="alfred/alfred-workflow-paste-atom-1.jpg"/>  </p>
+<div class="highlight"><pre><span></span><code><span class="k">set</span> <span class="nv">command</span> <span class="k">to</span> <span class="s2">&quot;pbpaste &gt; &quot;</span>
 
-<h1 id="clipee-tweet">Clipee Tweet</h1>
-<p>Some of the logic used for this initial project is being reused for Clipee Tweet [<a href="../../projects/clipee/index.html">Nic Note: Clipee</a>] - tweet from clipboard.   </p>
+<span class="k">set</span> <span class="nv">root_path</span> <span class="k">to</span> <span class="s2">&quot;/Users/xxxx/path/to/folder/&quot;</span>
+
+<span class="k">set</span> <span class="nv">timestamp</span> <span class="k">to</span> <span class="p">(</span><span class="nb">do shell script</span> <span class="s2">&quot;date &#39;+%y%m%d-%H%M&#39;%S&quot;</span><span class="p">)</span>
+
+<span class="k">set</span> <span class="nv">file_extension</span> <span class="k">to</span> <span class="s2">&quot;.txt&quot;</span>
+
+<span class="k">set</span> <span class="nv">file_path</span> <span class="k">to</span> <span class="nv">root_path</span> <span class="o">&amp;</span> <span class="nv">timestamp</span> <span class="o">&amp;</span> <span class="nv">file_extension</span>
+
+<span class="k">set</span> <span class="nv">full_command</span> <span class="k">to</span> <span class="nv">command</span> <span class="o">&amp;</span> <span class="nv">root_path</span> <span class="o">&amp;</span> <span class="nv">timestamp</span> <span class="o">&amp;</span> <span class="nv">file_extension</span>
+
+<span class="nb">do shell script</span> <span class="nv">full_command</span>
+
+<span class="k">tell</span> <span class="nb">application</span> <span class="s2">&quot;Atom&quot;</span> <span class="k">to</span> <span class="nb">open</span> <span class="nv">POSIX</span> <span class="nv">file</span> <span class="nv">file_path</span>
+</code></pre></div>
+
+<p>Important to remove all Escaping parameters for the script to work:   </p>
+<p><img class="screenshot" src="https://notes.nicolasdeville.com/images/alfred/alfred-workflow-paste-atom-2.jpg" alt="alfred/alfred-workflow-paste-atom-2.jpg"/>  </p>
+<h3 id="url-actions">URL Actions</h3>
+<div class="link_border"><div class="link_logo_box"><img class="link_logo" src="https://logo.clearbit.com/alfredforum.com?size=35" alt="logo"/></div><div class="link_content">
+<div class="link_title">URL Actions -- Getting the URL and title of browser's current tab - Share your Workflows - Alfred App Community Forum</div>
+<div class="link_tagline">alfredforum.com</div>
+<div class="link_url"><a href="https://www.alfredforum.com/topic/14191-url-actions-getting-the-url-and-title-of-browsers-current-tab/" target="_blank">https://www.alfredforum.com/topic/14191-url-actions-getting-the-url-and-title-of-browsers-current-tab/</a></div></div></div>
+
+<p>Not working.   </p>
+<h3 id="copy-url">Copy URL</h3>
+<p><span class="datestamp">23 Sep 2022</span>   </p>
+<div class="link_border"><div class="link_logo_box"><img class="link_logo" src="https://logo.clearbit.com/github.com?size=35" alt="logo"/></div><div class="link_content">
+<div class="link_title">GitHub - fallroot/copy-url-for-alfred: You can copy browser's URL and title with various formats like markdown, anchor tag and your own.</div>
+<div class="link_tagline">github.com</div>
+<div class="link_url"><a href="https://github.com/fallroot/copy-url-for-alfred" target="_blank">https://github.com/fallroot/copy-url-for-alfred</a></div></div></div>
+
+<p><img class="screenshot" src="https://notes.nicolasdeville.com/images/alfred/alfred-ip-address.jpg" alt="alfred/alfred-ip-address.jpg"/>  </p>
+<p>not working?  </p>
+<h3 id="my-ip">My IP</h3>
+<div class="link_border"><div class="link_logo_box"><img class="link_logo" src="https://logo.clearbit.com/github.com?size=35" alt="logo"/></div><div class="link_content">
+<div class="link_title">GitHub - alexchantastic/alfred-ip-address-workflow: Alfred 5 workflow for getting your local and external IP addresses.</div>
+<div class="link_tagline">github.com</div>
+<div class="link_url"><a href="https://github.com/alexchantastic/alfred-ip-address-workflow" target="_blank">https://github.com/alexchantastic/alfred-ip-address-workflow</a></div></div></div>
+
+<p><img class="screenshot" src="https://notes.nicolasdeville.com/images/alfred/alfred-ip-address.jpg" alt="alfred/alfred-ip-address.jpg"/>  </p>
+<h2 id="others">Others</h2>
+<h3 id="spotify-mini-player">Spotify Mini Player</h3>
+<p>The Mini Player gives you control over the Spotify app on your Mac. Find albums, search for artists &amp; play songs to groove to. </p>
+<h3 id="omnifocus">OmniFocus</h3>
+<p>Search for your projects, folders and tasks in OmniFocus 3.  </p>
+<h3 id="shortcuts">Shortcuts</h3>
+<p>Run installed Shortcuts in macOS 12 Monterey.</p>
+<h3 id="launch-a-url-in-3-browsers">Launch a URL in 3 browsers</h3>
+<p>Launch a URL in three browsers (Safari, Chrome and Firefox) to speed up website testing.  </p>
+<h3 id="reddit">Reddit</h3>
+<p>Browse and search Reddit directories (subreddits), and search hot results within a subreddit.</p>
+<h3 id="google-drive">Google Drive</h3>
+<p>List File Stream contents from Google Drive.</p>
+<h3 id="amazon-suggest">Amazon Suggest</h3>
+<p>An example included in Alfred: Search Amazon from Alfred's search box and see results in-line.</p>
+<h3 id="movie-tv-show-search">Movie &amp; TV Show Search</h3>
+<p>Search for a movie or TV show, and get a few ratings.</p>
+<h3 id="power-thesaurus">Power Thesaurus</h3>
+<p>Search in-line for synonyms and antonyms on Power Thesaurus.</p>
+<h3 id="smart-folders">Smart Folders</h3>
+<p>View and explore your Smart Folders.</p>
                 </article>
             </aside>
 
@@ -677,11 +389,11 @@
                 <article class="hentry">
                     <header>
                         <!-- PREVIOUS NOTE TITLE -->
-                        <h1><a href="https://notes.nicolasdeville.com/apps/alfred" rel="bookmark"
-                            title="Alfred">Alfred</a></h1>
+                        <h1><a href="https://notes.nicolasdeville.com/projects/twittee" rel="bookmark"
+                            title="Twittee">Twittee</a></h1>
                         <!-- PREVIOUS NOTE SUMMARY -->
                         <div class="entry-content">
-                            <p>my notes on using Alfred</p>
+                            <p>[operational] Lead generation using Twitter</p>
                         </div>
                     </header>
 
@@ -690,14 +402,15 @@
 <footer class="post-info">
 
     <p>
-        27 Sep 2022 <span class="separator">|</span> in <a class="link_tag" href="https://notes.nicolasdeville.com/apps/">apps</a>
- tags: <a class="link_tag" href="https://notes.nicolasdeville.com/tag/macos.html">macOS</a>
+        28 Sep 2022 <span class="separator">|</span> in <a class="link_tag" href="https://notes.nicolasdeville.com/projects/">projects</a>
+ tags: <a class="link_tag" href="https://notes.nicolasdeville.com/tag/python.html">python</a>
 <a class="link_tag" href="https://notes.nicolasdeville.com/tag/automation.html">automation</a>
+<a class="link_tag" href="https://notes.nicolasdeville.com/tag/lead-generation.html">lead generation</a>
 
         <!-- added 4/7 -->
         <!-- 		<br />
-        <abbr class="modified" title="2022-09-27T13:25:18.973954+02:00">
-                Updated: 27 Sep 2022
+        <abbr class="modified" title="2022-09-28T17:00:47.036624+02:00">
+                Updated: 28 Sep 2022
         </abbr>
  -->
 
