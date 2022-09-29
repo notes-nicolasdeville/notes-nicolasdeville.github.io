@@ -43,7 +43,7 @@
             </div>
 
             <div class="above-navbar">
-                <div class="last_updated">29 Sep 2022 | 18:21</div>
+                <div class="last_updated">29 Sep 2022 | 21:07</div>
                 <div>
                     <p class="notes_count">
                         <a href="https://notes.nicolasdeville.com/tags">by tags</a> 
@@ -117,7 +117,7 @@
 
         <!-- added 4/7 -->
         <!-- 		<br />
-        <abbr class="modified" title="2022-09-29T18:20:57.957050+02:00">
+        <abbr class="modified" title="2022-09-29T21:07:13.711506+02:00">
                 Updated: 29 Sep 2022
         </abbr>
  -->
@@ -178,6 +178,19 @@
 <li>country(ies)</li>
 <li>logo</li>
 </ul>
+<p>Use should be as follow:</p>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">meta</span><span class="o">-</span><span class="n">url</span>
+
+<span class="n">url</span> <span class="o">=</span> <span class="s1">&#39;https://...&#39;</span>
+
+<span class="n">x</span> <span class="o">=</span> <span class="n">meta</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="o">.</span><span class="n">title</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="o">.</span><span class="n">slug</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="o">.</span><span class="n">twitter</span><span class="p">)</span>
+<span class="n">etc</span><span class="o">...</span>
+</code></pre></div>
+
 <h1 id="components">Components</h1>
 <p>Tests with:</p>
 <div class="highlight"><pre><span></span><code><span class="n">test_url</span> <span class="o">=</span> <span class="s1">&#39;https://www.amazon.co.uk/Great-Dune-Trilogy-Children-GOLLANCZ-ebook/dp/B07G17V69X/ref=sr_1_1?crid=3BQYT3B98L09M&amp;keywords=dune+kindle&amp;qid=1664442334&amp;qu=eyJxc2MiOiIyLjI0IiwicXNhIjoiMS44OSIsInFzcCI6IjEuODkifQ%3D%3D&amp;sprefix=dune+kindle%2Caps%2C91&amp;sr=8-1&#39;</span>
