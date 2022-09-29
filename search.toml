@@ -13,6 +13,16 @@ url = "/why/"
 title = "Why this site?"
 
 [[input.files]]
+path = "projects/meta-url/index.html"
+url = "/projects/meta-url"
+title = "Python Project: metaURL"
+
+[[input.files]]
+path = "python/namedtuples/index.html"
+url = "/python/namedtuples"
+title = "namedtuples"
+
+[[input.files]]
 path = "projects/scrapee/index.html"
 url = "/projects/scrapee"
 title = "Scrapee"
@@ -21,11 +31,6 @@ title = "Scrapee"
 path = "projects/recruiters-directory/index.html"
 url = "/projects/recruiters-directory"
 title = "Building a directory of EU recruiters"
-
-[[input.files]]
-path = "projects/meta-url/index.html"
-url = "/projects/meta-url"
-title = "Python Project: metaURL"
 
 [[input.files]]
 path = "python/library-selenium/index.html"
@@ -133,14 +138,14 @@ url = "/movies/1000"
 title = "My Top 1,000 Movies"
 
 [[input.files]]
-path = "b2b-sales/books/index.html"
-url = "/b2b-sales/books"
-title = "My B2B Books Library"
-
-[[input.files]]
 path = "python/books/index.html"
 url = "/python/books"
 title = "My Python Books Library"
+
+[[input.files]]
+path = "b2b-sales/books/index.html"
+url = "/b2b-sales/books"
+title = "My B2B Books Library"
 
 [[input.files]]
 path = "helpers/clipper/index.html"
@@ -1016,11 +1021,6 @@ title = "Learning SQL"
 path = "learning/markdown/index.html"
 url = "/learning/markdown"
 title = "Learning Markdown"
-
-[[input.files]]
-path = "python/namedtuples/index.html"
-url = "/python/namedtuples"
-title = "namedtuples"
 
 [[input.files]]
 path = "python/my-utils/index.html"
@@ -2228,14 +2228,14 @@ url = "/projects/nicai"
 title = "nicAI | my personal AI assistant"
 
 [[input.files]]
-path = "python/books/index.html"
-url = "/python/books"
-title = "My Python Books Library"
-
-[[input.files]]
 path = "b2b-sales/books/index.html"
 url = "/b2b-sales/books"
 title = "My B2B Books Library"
+
+[[input.files]]
+path = "python/books/index.html"
+url = "/python/books"
+title = "My Python Books Library"
 
 [[input.files]]
 path = "projects/clipper/index.html"
@@ -2263,6 +2263,21 @@ url = "/helpers/clipper"
 title = "My web clipboard"
 
 [[input.files]]
+path = "learning/ai/index.html"
+url = "/learning/ai"
+title = "Learning AI"
+
+[[input.files]]
+path = "random/ai/index.html"
+url = "/random/ai"
+title = "AI"
+
+[[input.files]]
+path = "interests/ai/index.html"
+url = "/interests/ai"
+title = "AI"
+
+[[input.files]]
 path = "random/ai/index.html"
 url = "/random/ai"
 title = "AI"
@@ -2276,21 +2291,6 @@ title = "Learning AI"
 path = "interests/ai/index.html"
 url = "/interests/ai"
 title = "AI"
-
-[[input.files]]
-path = "random/ai/index.html"
-url = "/random/ai"
-title = "AI"
-
-[[input.files]]
-path = "interests/ai/index.html"
-url = "/interests/ai"
-title = "AI"
-
-[[input.files]]
-path = "learning/ai/index.html"
-url = "/learning/ai"
-title = "Learning AI"
 
 [[input.files]]
 path = "home-office/deep-work/index.html"

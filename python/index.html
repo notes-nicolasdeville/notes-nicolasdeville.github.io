@@ -43,7 +43,7 @@
             </div>
 
             <div class="above-navbar">
-                <div class="last_updated">29 Sep 2022 | 15:49</div>
+                <div class="last_updated">29 Sep 2022 | 18:21</div>
                 <div>
                     <p class="notes_count">
                         <a href="https://notes.nicolasdeville.com/tags">by tags</a> 
@@ -101,15 +101,94 @@
             <hr/>
 
                 <article class="hentry">
-                    <h1 class="entry-title"><a href="https://notes.nicolasdeville.com/python/library-selenium">Python Library: Selenium</a></h1>
+                    <h1 class="entry-title"><a href="https://notes.nicolasdeville.com/python/namedtuples">namedtuples</a></h1>
 
                     <!-- added 4/7 -->
                     <div>
                         <p class="header_summary">
-                            <p>browser automation</p>
+                            <p>they should be used more</p>
                         </p>
                     </div>
 
+<footer class="post-info">
+
+    <p>
+        29 Sep 2022 <span class="separator">|</span> in <a class="link_tag" href="https://notes.nicolasdeville.com/python/">python</a>
+ tags: <a class="link_tag" href="https://notes.nicolasdeville.com/tag/built-in.html">built-in</a>
+
+        <!-- added 4/7 -->
+        <!-- 		<br />
+        <abbr class="modified" title="2022-09-29T18:07:38.481841+02:00">
+                Updated: 29 Sep 2022
+        </abbr>
+ -->
+
+    </p>
+
+    
+
+</footer><p>Easy-to-create, lightweight object types.<br>
+They allow to fetch an element of the tuple by name, eg <code>person.last_name</code> if <code>last_name</code> would be an element of that namedtuple. <br>
+Namedtuples are backwards compatible with normal tuples - so can be called as <code>person[0]</code>.  </p>
+<h1 id="usage">Usage</h1>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">collections</span> <span class="kn">import</span> <span class="n">namedtuple</span>
+
+<span class="c1"># Define namedtupe format and names</span>
+<span class="n">person</span> <span class="o">=</span> <span class="n">namedtuple</span><span class="p">(</span><span class="s1">&#39;Person&#39;</span><span class="p">,</span> <span class="p">[</span><span class="s1">&#39;first&#39;</span><span class="p">,</span> <span class="s1">&#39;last&#39;</span><span class="p">])</span>
+
+<span class="c1"># Create a namedtuple</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">person</span><span class="p">(</span><span class="n">first</span><span class="o">=</span><span class="s1">&#39;Paul&#39;</span><span class="p">,</span> <span class="n">last</span><span class="o">=</span><span class="s1">&#39;Atreides&#39;</span><span class="p">)</span>
+
+<span class="c1"># Call elements of the namedtuple with .</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="o">.</span><span class="n">last</span><span class="p">)</span>
+</code></pre></div>
+
+<p>outputs:</p>
+<div class="highlight"><pre><span></span><code><span class="s1">&#39;Atreides&#39;</span>
+</code></pre></div>
+
+<p>or return as dict with <code>x._asdict()</code>:</p>
+<div class="highlight"><pre><span></span><code><span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="o">.</span><span class="n">_asdict</span><span class="p">())</span>
+</code></pre></div>
+
+<p>outputs:</p>
+<div class="highlight"><pre><span></span><code><span class="o">{</span><span class="s1">&#39;first&#39;</span>: <span class="s1">&#39;Paul&#39;</span>, <span class="s1">&#39;last&#39;</span>: <span class="s1">&#39;Atreides&#39;</span><span class="o">}</span>
+</code></pre></div>
+
+<h1 id="snippets">Snippets</h1>
+<h2 id="sort-list-of-namedtuples-by-key">Sort list of namedtuples by key</h2>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">operator</span> <span class="kn">import</span> <span class="n">attrgetter</span>
+
+<span class="nb">sorted</span><span class="p">(</span><span class="n">list_object</span><span class="p">,</span> <span class="n">key</span><span class="o">=</span><span class="n">attrgetter</span><span class="p">(</span><span class="s1">&#39;release_date&#39;</span><span class="p">))</span>
+</code></pre></div>
+                </article>
+            </aside>
+
+                <section id="content" class="body">
+
+                <!-- PREVIOUS NOTES -->
+				<p class="notes-section">previous notes</p>
+                <hr>
+
+                <ol id="posts-list" class="hfeed">
+            
+
+
+
+            <li>
+                <article class="hentry">
+                    <header>
+                        <!-- PREVIOUS NOTE TITLE -->
+                        <h1><a href="https://notes.nicolasdeville.com/python/library-selenium" rel="bookmark"
+                            title="Python Library: Selenium">Python Library: Selenium</a></h1>
+                        <!-- PREVIOUS NOTE SUMMARY -->
+                        <div class="entry-content">
+                            <p>browser automation</p>
+                        </div>
+                    </header>
+
+                    <div class="entry-content">
+                        <!-- PREVIOUS NOTE METADATA -->
 <footer class="post-info">
 
     <p>
@@ -126,79 +205,11 @@
 
     
 
-</footer><div class="toc"><span class="toctitle">Table of Contents</span><ul>
-<li><a href="#getting-started">Getting Started</a><ul>
-<li><a href="#drivers">Drivers</a></li>
-</ul>
-</li>
-<li><a href="#my-highlights">my highlights</a></li>
-</ul>
-</div>
-<table>
-<thead>
-<tr>
-<th>Library resources</th>
-<th></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>PyPI</td>
-<td>---</td>
-</tr>
-<tr>
-<td>Github</td>
-<td>---</td>
-</tr>
-<tr>
-<td>Documentation</td>
-<td><a href="https://selenium-python.readthedocs.io/" target="_blank">https://selenium-python.readthedocs.io/</a></td>
-</tr>
-</tbody>
-</table>
-<h1 id="getting-started">Getting Started</h1>
-<div class="highlight"><pre><span></span><code>pip3 install selenium
-</code></pre></div>
-
-<h2 id="drivers">Drivers</h2>
-<p>Selenium requires the use of a driver for each kind of browser intended to be used. Note that the driver version to download depends on the browser version currently installed on your machine.   </p>
-<table>
-<thead>
-<tr>
-<th>Browser</th>
-<th></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Chrome</td>
-<td><a href="https://sites.google.com/chromium.org/driver/" target="_blank">https://sites.google.com/chromium.org/driver/</a></td>
-</tr>
-<tr>
-<td>Edge</td>
-<td><a href="https://developer.microsoft.com/en-us/microsoft-edge/tools/webdriver/" target="_blank">https://developer.microsoft.com/en-us/microsoft-edge/tools/webdriver/</a></td>
-</tr>
-<tr>
-<td>Firefox</td>
-<td><a href="https://github.com/mozilla/geckodriver/releases" target="_blank">https://github.com/mozilla/geckodriver/releases</a></td>
-</tr>
-<tr>
-<td>Safari</td>
-<td><a href="https://webkit.org/blog/6900/webdriver-support-in-safari-10" target="_blank">https://webkit.org/blog/6900/webdriver-support-in-safari-10</a></td>
-</tr>
-</tbody>
-</table>
-<h1 id="my-highlights">my highlights</h1>
+</footer>                    </div>
+                    
                 </article>
-            </aside>
-
-                <section id="content" class="body">
-
-                <!-- PREVIOUS NOTES -->
-				<p class="notes-section">previous notes</p>
-                <hr>
-
-                <ol id="posts-list" class="hfeed">
+                <hr/>
+            </li>
             
 
 
@@ -2516,46 +2527,6 @@
         <!-- 		<br />
         <abbr class="modified" title="2022-09-21T17:55:42.697967+02:00">
                 Updated: 21 Sep 2022
-        </abbr>
- -->
-
-    </p>
-
-    
-
-</footer>                    </div>
-                    
-                </article>
-                <hr/>
-            </li>
-            
-
-
-
-            <li>
-                <article class="hentry">
-                    <header>
-                        <!-- PREVIOUS NOTE TITLE -->
-                        <h1><a href="https://notes.nicolasdeville.com/python/namedtuples" rel="bookmark"
-                            title="namedtuples">namedtuples</a></h1>
-                        <!-- PREVIOUS NOTE SUMMARY -->
-                        <div class="entry-content">
-                            <p>they should be used more</p>
-                        </div>
-                    </header>
-
-                    <div class="entry-content">
-                        <!-- PREVIOUS NOTE METADATA -->
-<footer class="post-info">
-
-    <p>
-        05 Sep 2022 <span class="separator">|</span> in <a class="link_tag" href="https://notes.nicolasdeville.com/python/">python</a>
- tags: <a class="link_tag" href="https://notes.nicolasdeville.com/tag/built-in.html">built-in</a>
-
-        <!-- added 4/7 -->
-        <!-- 		<br />
-        <abbr class="modified" title="2022-09-05T08:54:00.182722+02:00">
-                Updated: 05 Sep 2022
         </abbr>
  -->
 

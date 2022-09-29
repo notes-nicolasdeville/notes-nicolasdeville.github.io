@@ -44,7 +44,7 @@
             </div>
 
             <div class="above-navbar">
-                <div class="last_updated">29 Sep 2022 | 15:49</div>
+                <div class="last_updated">29 Sep 2022 | 18:21</div>
                 <div>
                     <p class="notes_count">
                         <a href="https://notes.nicolasdeville.com/tags">by tags</a> 
@@ -100,13 +100,13 @@
 <footer class="post-info">
 
     <p>
-        05 Sep 2022 <span class="separator">|</span> in <a class="link_tag" href="https://notes.nicolasdeville.com/python/">python</a>
+        29 Sep 2022 <span class="separator">|</span> in <a class="link_tag" href="https://notes.nicolasdeville.com/python/">python</a>
  tags: <a class="link_tag" href="https://notes.nicolasdeville.com/tag/built-in.html">built-in</a>
 
         <!-- added 4/7 -->
         <!-- 		<br />
-        <abbr class="modified" title="2022-09-05T08:54:00.182722+02:00">
-                Updated: 05 Sep 2022
+        <abbr class="modified" title="2022-09-29T18:07:38.481841+02:00">
+                Updated: 29 Sep 2022
         </abbr>
  -->
 
@@ -115,8 +115,36 @@
     
 
 </footer>            <main> <!-- for indexing by Stork -->
-                <p><span class="datestamp">25 Jul 2022</span>        </p>
-<h3 id="sort-list-of-namedtuples-by-key">Sort list of namedtuples by key</h3>
+                <p>Easy-to-create, lightweight object types.<br>
+They allow to fetch an element of the tuple by name, eg <code>person.last_name</code> if <code>last_name</code> would be an element of that namedtuple. <br>
+Namedtuples are backwards compatible with normal tuples - so can be called as <code>person[0]</code>.  </p>
+<h1 id="usage">Usage</h1>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">collections</span> <span class="kn">import</span> <span class="n">namedtuple</span>
+
+<span class="c1"># Define namedtupe format and names</span>
+<span class="n">person</span> <span class="o">=</span> <span class="n">namedtuple</span><span class="p">(</span><span class="s1">&#39;Person&#39;</span><span class="p">,</span> <span class="p">[</span><span class="s1">&#39;first&#39;</span><span class="p">,</span> <span class="s1">&#39;last&#39;</span><span class="p">])</span>
+
+<span class="c1"># Create a namedtuple</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">person</span><span class="p">(</span><span class="n">first</span><span class="o">=</span><span class="s1">&#39;Paul&#39;</span><span class="p">,</span> <span class="n">last</span><span class="o">=</span><span class="s1">&#39;Atreides&#39;</span><span class="p">)</span>
+
+<span class="c1"># Call elements of the namedtuple with .</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="o">.</span><span class="n">last</span><span class="p">)</span>
+</code></pre></div>
+
+<p>outputs:</p>
+<div class="highlight"><pre><span></span><code><span class="s1">&#39;Atreides&#39;</span>
+</code></pre></div>
+
+<p>or return as dict with <code>x._asdict()</code>:</p>
+<div class="highlight"><pre><span></span><code><span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="o">.</span><span class="n">_asdict</span><span class="p">())</span>
+</code></pre></div>
+
+<p>outputs:</p>
+<div class="highlight"><pre><span></span><code><span class="o">{</span><span class="s1">&#39;first&#39;</span>: <span class="s1">&#39;Paul&#39;</span>, <span class="s1">&#39;last&#39;</span>: <span class="s1">&#39;Atreides&#39;</span><span class="o">}</span>
+</code></pre></div>
+
+<h1 id="snippets">Snippets</h1>
+<h2 id="sort-list-of-namedtuples-by-key">Sort list of namedtuples by key</h2>
 <div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">operator</span> <span class="kn">import</span> <span class="n">attrgetter</span>
 
 <span class="nb">sorted</span><span class="p">(</span><span class="n">list_object</span><span class="p">,</span> <span class="n">key</span><span class="o">=</span><span class="n">attrgetter</span><span class="p">(</span><span class="s1">&#39;release_date&#39;</span><span class="p">))</span>
