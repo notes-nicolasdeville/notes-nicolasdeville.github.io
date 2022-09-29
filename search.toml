@@ -13,9 +13,9 @@ url = "/why/"
 title = "Why this site?"
 
 [[input.files]]
-path = "python/function-meta-url/index.html"
-url = "/python/function-meta-url"
-title = "Python Function: meta_url"
+path = "projects/metaurl/index.html"
+url = "/projects/metaurl"
+title = "Python Project: metaURL"
 
 [[input.files]]
 path = "python/library-urllib/index.html"
@@ -2243,11 +2243,6 @@ url = "/helpers/clipper"
 title = "My web clipboard"
 
 [[input.files]]
-path = "random/ai/index.html"
-url = "/random/ai"
-title = "AI"
-
-[[input.files]]
 path = "learning/ai/index.html"
 url = "/learning/ai"
 title = "Learning AI"
@@ -2260,6 +2255,11 @@ title = "AI"
 [[input.files]]
 path = "interests/ai/index.html"
 url = "/interests/ai"
+title = "AI"
+
+[[input.files]]
+path = "random/ai/index.html"
+url = "/random/ai"
 title = "AI"
 
 [[input.files]]
