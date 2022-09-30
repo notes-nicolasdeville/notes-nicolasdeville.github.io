@@ -43,7 +43,7 @@
             </div>
 
             <div class="above-navbar">
-                <div class="last_updated">30 Sep 2022 | 13:09</div>
+                <div class="last_updated">30 Sep 2022 | 15:38</div>
                 <div>
                     <p class="notes_count">
                         <a href="https://notes.nicolasdeville.com/tags">by tags</a> 
@@ -101,7 +101,7 @@
             <hr/>
 
                 <article class="hentry">
-                    <h1 class="entry-title"><a href="https://notes.nicolasdeville.com/projects/meta-url">Python Project: metaURL</a></h1>
+                    <h1 class="entry-title"><a href="https://notes.nicolasdeville.com/projects/meta-url">Python Open-Source Project: metaURL</a></h1>
 
                     <!-- added 4/7 -->
                     <div>
@@ -117,7 +117,7 @@
 
         <!-- added 4/7 -->
         <!-- 		<br />
-        <abbr class="modified" title="2022-09-30T13:09:52.850209+02:00">
+        <abbr class="modified" title="2022-09-30T15:38:30.843668+02:00">
                 Updated: 30 Sep 2022
         </abbr>
  -->
@@ -164,9 +164,10 @@
 <h1 id="background">Background</h1>
 <p>I deal a lot with URLs in my Python scripts, and it's always painful to piece together several functions I have accumulated over time to get what I need from a URL.   </p>
 <h1 id="goal">Goal</h1>
+<p>Fetch as much data as possible from a single URL input. </p>
 <p>Aim here is to write an overarching function that does it all and that I can call easily from any script.  </p>
 <h1 id="logic">Logic</h1>
-<p>Input: URL   </p>
+<p>Input: <code>URL</code>   </p>
 <p>Output: return namedtuple with</p>
 <ul>
 <li>clean URL with path</li>
@@ -179,7 +180,12 @@
 <li>summary</li>
 <li>tags</li>
 <li>emails</li>
-<li>socials</li>
+<li>email pattern</li>
+<li>facebook</li>
+<li>twitter</li>
+<li>linkedin</li>
+<li>youtube</li>
+<li>tiktok</li>
 <li>country(ies)</li>
 <li>logo</li>
 </ul>
@@ -383,6 +389,7 @@ test.countries<span class="o">=[]</span>
 test.logo<span class="o">=</span><span class="s1">&#39;&#39;</span>
 </code></pre></div>
 
+<p>Thinking about breaking it down so that each part of the output is a separate script within the package 🤔   </p>
 <h1 id="future">Future</h1>
 <p>Though I don't have the skills for it, this could evolve as free open-source and paid-for API. </p>
 <h2 id="open-source">open-source</h2>
