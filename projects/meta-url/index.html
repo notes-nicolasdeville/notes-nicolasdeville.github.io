@@ -44,7 +44,7 @@
             </div>
 
             <div class="above-navbar">
-                <div class="last_updated">30 Sep 2022 | 12:36</div>
+                <div class="last_updated">30 Sep 2022 | 13:09</div>
                 <div>
                     <p class="notes_count">
                         <a href="https://notes.nicolasdeville.com/tags">by tags</a> 
@@ -104,7 +104,7 @@
 
         <!-- added 4/7 -->
         <!-- 		<br />
-        <abbr class="modified" title="2022-09-30T12:36:00.152524+02:00">
+        <abbr class="modified" title="2022-09-30T13:09:52.850209+02:00">
                 Updated: 30 Sep 2022
         </abbr>
  -->
@@ -141,6 +141,11 @@
 </li>
 <li><a href="#output">Output</a></li>
 <li><a href="#work-in-progress">Work in progress</a></li>
+<li><a href="#future">Future</a><ul>
+<li><a href="#open-source">open-source</a></li>
+<li><a href="#api">API</a></li>
+</ul>
+</li>
 </ul>
 </div>
 <p><span class="datestamp">29 Sep 2022</span>   </p>
@@ -167,7 +172,7 @@
 <li>logo</li>
 </ul>
 <p>Use should be as follow:</p>
-<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">meta</span><span class="o">-</span><span class="n">url</span>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">meta_url</span>
 
 <span class="n">url</span> <span class="o">=</span> <span class="s1">&#39;https://...&#39;</span>
 
@@ -317,7 +322,7 @@ Fallback: use title / header.   </p>
 <div class="link_border"><div class="link_logo_box"><img class="link_logo" src="https://logo.clearbit.com/github.com?size=35" alt="logo"/></div><div class="link_content">
 <div class="link_title">GitHub - ndeville/meta-url: Function to generate metadata from URL</div>
 <div class="link_tagline">github.com</div>
-<div class="link_url"><a href="https://github.com/ndeville/meta-url" target="_blank">https://github.com/ndeville/meta-url</a></div></div></div>
+<div class="link_url"><a href="https://github.com/ndeville/meta_url" target="_blank">https://github.com/ndeville/meta_url</a></div></div></div>
 
 <p><span class="datestamp">30 Sep 2022</span> works currently as follows:   </p>
 <div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">meta_url</span> <span class="kn">import</span> <span class="n">meta</span>
@@ -365,6 +370,22 @@ test.tiktok<span class="o">=[]</span>
 test.countries<span class="o">=[]</span>
 test.logo<span class="o">=</span><span class="s1">&#39;&#39;</span>
 </code></pre></div>
+
+<h1 id="future">Future</h1>
+<p>Though I don't have the skills for it, this could evolve as free open-source and paid-for API. </p>
+<h2 id="open-source">open-source</h2>
+<ul>
+<li><strong>free</strong></li>
+<li>runs <strong>locally</strong>, ie requires driver download and scrapes from one's IP</li>
+<li><strong>limited</strong> to publicly available data, eg domain's website</li>
+</ul>
+<h2 id="api">API</h2>
+<ul>
+<li><strong>paid-for</strong>, as much to build + commercial licenses needed for databases access</li>
+<li>runs in the <strong>cloud</strong>, ie no driver install nore scraping jobs from one's IP</li>
+<li><strong>expand data</strong> &amp; <strong>increase data quality</strong> with use of commercial databases</li>
+</ul>
+<p>This would be acting as channel partner for existing paid-for API providers with company or website data.</p>
             </main>
         </div><!-- /.entry-content -->
     </article>
