@@ -44,7 +44,7 @@
             </div>
 
             <div class="above-navbar">
-                <div class="last_updated">29 Sep 2022 | 21:10</div>
+                <div class="last_updated">30 Sep 2022 | 09:10</div>
                 <div>
                     <p class="notes_count">
                         <a href="https://notes.nicolasdeville.com/tags">by tags</a> 
@@ -100,13 +100,13 @@
 <footer class="post-info">
 
     <p>
-        28 Sep 2022 <span class="separator">|</span> in <a class="link_tag" href="https://notes.nicolasdeville.com/python/">python</a>
+        30 Sep 2022 <span class="separator">|</span> in <a class="link_tag" href="https://notes.nicolasdeville.com/python/">python</a>
  tags: <a class="link_tag" href="https://notes.nicolasdeville.com/tag/static.html">static</a>
 
         <!-- added 4/7 -->
         <!-- 		<br />
-        <abbr class="modified" title="2022-09-28T17:00:29.904940+02:00">
-                Updated: 28 Sep 2022
+        <abbr class="modified" title="2022-09-30T09:04:09.489419+02:00">
+                Updated: 30 Sep 2022
         </abbr>
  -->
 
@@ -119,7 +119,10 @@
 <li><a href="#install">Install</a></li>
 <li><a href="#to-render">To render</a><ul>
 <li><a href="#run-once">run once</a><ul>
-<li><a href="#warnings">warnings</a></li>
+<li><a href="#warnings">warnings</a><ul>
+<li><a href="#avaris-help">avaris help</a></li>
+</ul>
+</li>
 </ul>
 </li>
 <li><a href="#keeping-it-running-in-the-background-ongoing">keeping it running in the background, ongoing</a></li>
@@ -257,7 +260,98 @@ pages and <span class="m">0</span> draft pages <span class="k">in</span> <span c
 <div class="highlight"><pre><span></span><code><span class="n">LOG_FILTER</span> <span class="o">=</span> <span class="p">[(</span><span class="n">logging</span><span class="o">.</span><span class="n">WARN</span><span class="p">,</span> <span class="s1">&#39;There are </span><span class="si">%s</span><span class="s1"> items &quot;</span><span class="si">%s</span><span class="s1">&quot; with lang </span><span class="si">%s</span><span class="s1">&#39;</span><span class="p">)]</span>
 </code></pre></div>
 
-<p>TODO figure out how to make it work!   </p>
+<h5 id="avaris-help">avaris help</h5>
+<p><span class="datestamp">30 Sep 2022</span> trying approach from <a href="https://github.com/getpelican/pelican/discussions/3046" target="_blank">https://github.com/getpelican/pelican/discussions/3046</a>   </p>
+<p>Baseline: 10 warnings as:</p>
+<div class="highlight"><pre><span></span><code><span class="o">[</span><span class="m">08</span>:44:52<span class="o">]</span> WARNING  There are <span class="m">3</span> items <span class="s2">&quot;with slug &quot;</span>ai<span class="s2">&quot;&quot;</span> with lang en:                   log.py:91
+                    /Users/xxx/content/articles/interests/ai.md                                                          
+                    /Users/xxx/content/articles/learning/ai.md                                                           
+                    /Users/xxx/content/articles/random/ai.md                                                             
+           WARNING  There are <span class="m">3</span> original <span class="o">(</span>not translated<span class="o">)</span> items with slug <span class="s2">&quot;ai&quot;</span>:        log.py:91
+                    /Users/xxx/content/articles/interests/ai.md                                                          
+                    /Users/xxx/content/articles/learning/ai.md                                                           
+                    /Users/xxx/content/articles/random/ai.md                                                             
+           WARNING  There are <span class="m">2</span> items <span class="s2">&quot;with slug &quot;</span>books<span class="s2">&quot;&quot;</span> with lang en:                log.py:91
+                    /Users/xxx/content/articles/b2b sales/books.md                                                       
+                    /Users/xxx/content/articles/python/books.md                                                          
+           WARNING  There are <span class="m">2</span> original <span class="o">(</span>not translated<span class="o">)</span> items with slug <span class="s2">&quot;books&quot;</span>:     log.py:91
+                    /Users/xxx/content/articles/b2b sales/books.md                                                       
+                    /Users/xxx/content/articles/python/books.md                                                          
+           WARNING  There are <span class="m">2</span> items <span class="s2">&quot;with slug &quot;</span>clipper<span class="s2">&quot;&quot;</span> with lang en:              log.py:91
+                    /Users/xxx/content/articles/helpers/clipper.md                                                       
+                    /Users/xxx/content/articles/projects/clipper.md                                                      
+           WARNING  There are <span class="m">2</span> original <span class="o">(</span>not translated<span class="o">)</span> items with slug <span class="s2">&quot;clipper&quot;</span>:   log.py:91
+                    /Users/xxx/content/articles/helpers/clipper.md                                                       
+                    /Users/xxx/content/articles/projects/clipper.md                                                      
+           WARNING  There are <span class="m">2</span> items <span class="s2">&quot;with slug &quot;</span>deep-work<span class="s2">&quot;&quot;</span> with lang en:            log.py:91
+                    /Users/xxx/content/articles/books/deep-work.md                                                       
+                    /Users/xxx/content/articles/home office/deep-work.md                                                 
+           WARNING  There are <span class="m">2</span> original <span class="o">(</span>not translated<span class="o">)</span> items with slug <span class="s2">&quot;deep-work&quot;</span>: log.py:91
+                    /Users/xxx/content/articles/books/deep-work.md                                                       
+                    /Users/xxx/content/articles/home office/deep-work.md                                                 
+           WARNING  There are <span class="m">2</span> items <span class="s2">&quot;with slug &quot;</span>library<span class="s2">&quot;&quot;</span> with lang en:              log.py:91
+                    /Users/xxx/content/articles/apps/library.md                                                          
+                    /Users/xxx/content/articles/books/library.md                                                         
+           WARNING  There are <span class="m">2</span> original <span class="o">(</span>not translated<span class="o">)</span> items with slug <span class="s2">&quot;library&quot;</span>:   log.py:91
+                    /Users/xxx/content/articles/apps/library.md                                                          
+                    /Users/xxx/content/articles/books/library.md    
+</code></pre></div>
+
+<p>Suggested approach:  </p>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">logging</span>
+
+<span class="n">LOG_FILTER</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="p">(</span><span class="n">logging</span><span class="o">.</span><span class="n">WARN</span><span class="p">,</span> <span class="s1">&#39;There are </span><span class="si">%s</span><span class="s1"> items &quot;</span><span class="si">%s</span><span class="s1">&quot; with lang </span><span class="si">%s</span><span class="s1">: </span><span class="se">\n</span><span class="si">%s</span><span class="se">\n</span><span class="si">%s</span><span class="s1">&#39;</span><span class="p">),</span>  <span class="c1"># 2 item warning</span>
+    <span class="p">(</span><span class="n">logging</span><span class="o">.</span><span class="n">WARN</span><span class="p">,</span> <span class="s1">&#39;There are </span><span class="si">%s</span><span class="s1"> items &quot;</span><span class="si">%s</span><span class="s1">&quot; with lang </span><span class="si">%s</span><span class="s1">: </span><span class="se">\n</span><span class="si">%s</span><span class="se">\n</span><span class="si">%s</span><span class="se">\n</span><span class="si">%s</span><span class="s1">&#39;</span><span class="p">),</span>  <span class="c1"># 3 item warning</span>
+    <span class="p">(</span><span class="n">logging</span><span class="o">.</span><span class="n">WARN</span><span class="p">,</span> <span class="s1">&#39;There are </span><span class="si">%s</span><span class="s1"> items &quot;</span><span class="si">%s</span><span class="s1">&quot; with lang </span><span class="si">%s</span><span class="s1">: </span><span class="se">\n</span><span class="si">%s</span><span class="se">\n</span><span class="si">%s</span><span class="se">\n</span><span class="si">%s</span><span class="se">\n</span><span class="si">%s</span><span class="s1">&#39;</span><span class="p">),</span>  <span class="c1"># 4 item warning</span>
+    <span class="c1"># ... so on. depending on your site and the kind of warnings you get</span>
+<span class="p">]</span>
+</code></pre></div>
+
+<p>down to 5 warnings:  </p>
+<div class="highlight"><pre><span></span><code><span class="o">[</span><span class="m">08</span>:51:40<span class="o">]</span> WARNING  There are <span class="m">3</span> original <span class="o">(</span>not translated<span class="o">)</span> items with slug <span class="s2">&quot;ai&quot;</span>:        log.py:91
+                    /Users/xxxx/content/articles/interests/ai.md                                                                  
+                    /Users/xxxx/content/articles/random/ai.md                                                                     
+                    /Users/xxxx/content/articles/learning/ai.md                                                                   
+           WARNING  There are <span class="m">2</span> original <span class="o">(</span>not translated<span class="o">)</span> items with slug <span class="s2">&quot;books&quot;</span>:     log.py:91
+                    /Users/xxxx/content/articles/python/books.md                                                                  
+                    /Users/xxxx/content/articles/b2b sales/books.md                                                               
+           WARNING  There are <span class="m">2</span> original <span class="o">(</span>not translated<span class="o">)</span> items with slug <span class="s2">&quot;clipper&quot;</span>:   log.py:91
+                    /Users/xxxx/content/articles/projects/clipper.md                                                              
+                    /Users/xxxx/content/articles/helpers/clipper.md                                                               
+           WARNING  There are <span class="m">2</span> original <span class="o">(</span>not translated<span class="o">)</span> items with slug <span class="s2">&quot;deep-work&quot;</span>: log.py:91
+                    /Users/xxxx/content/articles/books/deep-work.md                                                               
+                    /Users/xxxx/content/articles/home office/deep-work.md                                                         
+           WARNING  There are <span class="m">2</span> original <span class="o">(</span>not translated<span class="o">)</span> items with slug <span class="s2">&quot;library&quot;</span>:   log.py:91
+                    /Users/xxxx/content/articles/books/library.md                                                                 
+                    /Users/xxxx/content/articles/apps/library.md
+</code></pre></div>
+
+<p>tweaking with:  </p>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">logging</span>
+
+<span class="n">LOG_FILTER</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="p">(</span><span class="n">logging</span><span class="o">.</span><span class="n">WARN</span><span class="p">,</span> <span class="s1">&#39;There are </span><span class="si">%s</span><span class="s1"> items &quot;</span><span class="si">%s</span><span class="s1">&quot; with lang </span><span class="si">%s</span><span class="s1">: </span><span class="se">\n</span><span class="si">%s</span><span class="se">\n</span><span class="si">%s</span><span class="s1">&#39;</span><span class="p">),</span>  <span class="c1"># 2 item warning</span>
+    <span class="p">(</span><span class="n">logging</span><span class="o">.</span><span class="n">WARN</span><span class="p">,</span> <span class="s1">&#39;There are </span><span class="si">%s</span><span class="s1"> original (not translated) items with slug </span><span class="si">%s</span><span class="s1">: </span><span class="se">\n</span><span class="si">%s</span><span class="se">\n</span><span class="si">%s</span><span class="s1">&#39;</span><span class="p">),</span>  <span class="c1"># 2 item warning</span>
+    <span class="p">(</span><span class="n">logging</span><span class="o">.</span><span class="n">WARN</span><span class="p">,</span> <span class="s1">&#39;There are </span><span class="si">%s</span><span class="s1"> items &quot;</span><span class="si">%s</span><span class="s1">&quot; with lang </span><span class="si">%s</span><span class="s1">: </span><span class="se">\n</span><span class="si">%s</span><span class="se">\n</span><span class="si">%s</span><span class="se">\n</span><span class="si">%s</span><span class="s1">&#39;</span><span class="p">),</span>  <span class="c1"># 3 item warning</span>
+    <span class="p">(</span><span class="n">logging</span><span class="o">.</span><span class="n">WARN</span><span class="p">,</span> <span class="s1">&#39;There are </span><span class="si">%s</span><span class="s1"> original (not translated) items with slug </span><span class="si">%s</span><span class="s1">: </span><span class="se">\n</span><span class="si">%s</span><span class="se">\n</span><span class="si">%s</span><span class="se">\n</span><span class="si">%s</span><span class="s1">&#39;</span><span class="p">),</span>  <span class="c1"># 3 item warning</span>
+    <span class="p">(</span><span class="n">logging</span><span class="o">.</span><span class="n">WARN</span><span class="p">,</span> <span class="s1">&#39;There are </span><span class="si">%s</span><span class="s1"> items &quot;</span><span class="si">%s</span><span class="s1">&quot; with lang </span><span class="si">%s</span><span class="s1">: </span><span class="se">\n</span><span class="si">%s</span><span class="se">\n</span><span class="si">%s</span><span class="se">\n</span><span class="si">%s</span><span class="se">\n</span><span class="si">%s</span><span class="s1">&#39;</span><span class="p">),</span>  <span class="c1"># 4 item warning</span>
+<span class="p">]</span>
+</code></pre></div>
+
+<p>still 5 warnings 😕<br>
+tweaking again with:  </p>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">logging</span>
+
+<span class="n">LOG_FILTER</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="p">(</span><span class="n">logging</span><span class="o">.</span><span class="n">WARN</span><span class="p">,</span> <span class="s1">&#39;There are </span><span class="si">%s</span><span class="s1"> items &quot;</span><span class="si">%s</span><span class="s1">&quot; with lang </span><span class="si">%s</span><span class="s1">: </span><span class="se">\n</span><span class="si">%s</span><span class="se">\n</span><span class="si">%s</span><span class="s1">&#39;</span><span class="p">),</span>  <span class="c1"># 2 item warning</span>
+    <span class="p">(</span><span class="n">logging</span><span class="o">.</span><span class="n">WARN</span><span class="p">,</span> <span class="s1">&#39;There are </span><span class="si">%s</span><span class="s1"> original (not translated) items with slug &quot;</span><span class="si">%s</span><span class="s1">&quot;: </span><span class="se">\n</span><span class="si">%s</span><span class="se">\n</span><span class="si">%s</span><span class="s1">&#39;</span><span class="p">),</span>  <span class="c1"># 2 item warning</span>
+    <span class="p">(</span><span class="n">logging</span><span class="o">.</span><span class="n">WARN</span><span class="p">,</span> <span class="s1">&#39;There are </span><span class="si">%s</span><span class="s1"> items &quot;</span><span class="si">%s</span><span class="s1">&quot; with lang </span><span class="si">%s</span><span class="s1">: </span><span class="se">\n</span><span class="si">%s</span><span class="se">\n</span><span class="si">%s</span><span class="se">\n</span><span class="si">%s</span><span class="s1">&#39;</span><span class="p">),</span>  <span class="c1"># 3 item warning</span>
+    <span class="p">(</span><span class="n">logging</span><span class="o">.</span><span class="n">WARN</span><span class="p">,</span> <span class="s1">&#39;There are </span><span class="si">%s</span><span class="s1"> original (not translated) items with slug &quot;</span><span class="si">%s</span><span class="s1">&quot;: </span><span class="se">\n</span><span class="si">%s</span><span class="se">\n</span><span class="si">%s</span><span class="se">\n</span><span class="si">%s</span><span class="s1">&#39;</span><span class="p">),</span>  <span class="c1"># 3 item warning</span>
+    <span class="p">(</span><span class="n">logging</span><span class="o">.</span><span class="n">WARN</span><span class="p">,</span> <span class="s1">&#39;There are </span><span class="si">%s</span><span class="s1"> items &quot;</span><span class="si">%s</span><span class="s1">&quot; with lang </span><span class="si">%s</span><span class="s1">: </span><span class="se">\n</span><span class="si">%s</span><span class="se">\n</span><span class="si">%s</span><span class="se">\n</span><span class="si">%s</span><span class="se">\n</span><span class="si">%s</span><span class="s1">&#39;</span><span class="p">),</span>  <span class="c1"># 4 item warning</span>
+<span class="p">]</span>
+</code></pre></div>
+
 <h3 id="keeping-it-running-in-the-background-ongoing">keeping it running in the background, ongoing</h3>
 <p>best for development:</p>
 <p><code>pelican -r</code> (for reload) instead of just <code>pelican</code></p>
@@ -269,6 +363,24 @@ pages and <span class="m">0</span> draft pages <span class="k">in</span> <span c
 
 <h3 id="make-vs-pelican">make vs pelican</h3>
 <p>using <code>make html</code> does not seem to take the <code>OUTPUT_PATH = '</code> config in <code>pelicanconf.py</code> into consideration. Use the <code>pelican</code> command instead (no need to pass content source, settings file, or output dir each time, just running <code>pelican</code> in the project folder)  </p>
+<p>Need to explore further. For reference:  </p>
+<div class="highlight"><pre><span></span><code>Makefile for a pelican Web site                                           
+
+Usage:                                                                    
+   make html                           (re)generate the web site          
+   make clean                          remove the generated files         
+   make regenerate                     regenerate files upon modification 
+   make publish                        generate using production settings 
+   make serve [PORT=8000]              serve site at http://localhost:8000
+   make serve-global [SERVER=0.0.0.0]  serve (as root) to &quot;0.0.0.0&quot;:80    
+   make devserver [PORT=8000]          serve and regenerate together      
+   make devserver-global               regenerate and serve on 0.0.0.0    
+   make github                         upload the web site via gh-pages   
+
+Set the DEBUG variable to 1 to enable debugging, e.g. make DEBUG=1 html   
+Set the RELATIVE variable to 1 to enable relative urls 
+</code></pre></div>
+
 <h3 id="slug">slug</h3>
 <p>the article slug can be defined in <code>peliconconf.py</code> to automatically use the <code>Title:</code> metadata (with <code>FILENAME_METADATA = '(?P&lt;title&gt;.*)'</code>), and can be overriden on an article basis by adding the <code>Slug:</code> metadata.<br>
 So: </p>

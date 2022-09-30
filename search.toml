@@ -13,6 +13,16 @@ url = "/why/"
 title = "Why this site?"
 
 [[input.files]]
+path = "python/library-pelican/index.html"
+url = "/python/library-pelican"
+title = "Building a static site with Pelican"
+
+[[input.files]]
+path = "home-office/deep-work/index.html"
+url = "/home-office/deep-work"
+title = "Resources for Deep Work"
+
+[[input.files]]
 path = "projects/meta-url/index.html"
 url = "/projects/meta-url"
 title = "Python Project: metaURL"
@@ -113,11 +123,6 @@ url = "/projects/twittee"
 title = "Twittee"
 
 [[input.files]]
-path = "python/library-pelican/index.html"
-url = "/python/library-pelican"
-title = "Building a static site with Pelican"
-
-[[input.files]]
 path = "python/library-pymsgbox/index.html"
 url = "/python/library-pymsgbox"
 title = "Python Library: PyMsgBox"
@@ -143,14 +148,14 @@ url = "/movies/1000"
 title = "My Top 1,000 Movies"
 
 [[input.files]]
-path = "python/books/index.html"
-url = "/python/books"
-title = "My Python Books Library"
-
-[[input.files]]
 path = "b2b-sales/books/index.html"
 url = "/b2b-sales/books"
 title = "My B2B Books Library"
+
+[[input.files]]
+path = "python/books/index.html"
+url = "/python/books"
+title = "My Python Books Library"
 
 [[input.files]]
 path = "helpers/clipper/index.html"
@@ -163,14 +168,14 @@ url = "/b2b-sales/cyberleads"
 title = "Cyberleads"
 
 [[input.files]]
-path = "books/library/index.html"
-url = "/books/library"
-title = "My Books Library"
-
-[[input.files]]
 path = "apps/library/index.html"
 url = "/apps/library"
 title = "My Apps Library"
+
+[[input.files]]
+path = "books/library/index.html"
+url = "/books/library"
+title = "My Books Library"
 
 [[input.files]]
 path = "apps/radar/index.html"
@@ -216,11 +221,6 @@ title = "AI-generated art"
 path = "apps/proton-vpn/index.html"
 url = "/apps/proton-vpn"
 title = "Proton VPN"
-
-[[input.files]]
-path = "home-office/deep-work/index.html"
-url = "/home-office/deep-work"
-title = "Resources for Deep Work"
 
 [[input.files]]
 path = "apps/atom/index.html"
@@ -2233,9 +2233,9 @@ url = "/projects/nicai"
 title = "nicAI | my personal AI assistant"
 
 [[input.files]]
-path = "b2b-sales/books/index.html"
-url = "/b2b-sales/books"
-title = "My B2B Books Library"
+path = "books/deep-work/index.html"
+url = "/books/deep-work"
+title = "Deep Work, by Cal Newport"
 
 [[input.files]]
 path = "python/books/index.html"
@@ -2243,14 +2243,14 @@ url = "/python/books"
 title = "My Python Books Library"
 
 [[input.files]]
+path = "b2b-sales/books/index.html"
+url = "/b2b-sales/books"
+title = "My B2B Books Library"
+
+[[input.files]]
 path = "projects/clipper/index.html"
 url = "/projects/clipper"
 title = "Clipper"
-
-[[input.files]]
-path = "apps/library/index.html"
-url = "/apps/library"
-title = "My Apps Library"
 
 [[input.files]]
 path = "books/library/index.html"
@@ -2258,14 +2258,19 @@ url = "/books/library"
 title = "My Books Library"
 
 [[input.files]]
-path = "books/deep-work/index.html"
-url = "/books/deep-work"
-title = "Deep Work, by Cal Newport"
+path = "apps/library/index.html"
+url = "/apps/library"
+title = "My Apps Library"
 
 [[input.files]]
 path = "helpers/clipper/index.html"
 url = "/helpers/clipper"
 title = "My web clipboard"
+
+[[input.files]]
+path = "random/ai/index.html"
+url = "/random/ai"
+title = "AI"
 
 [[input.files]]
 path = "learning/ai/index.html"
@@ -2280,11 +2285,6 @@ title = "AI"
 [[input.files]]
 path = "interests/ai/index.html"
 url = "/interests/ai"
-title = "AI"
-
-[[input.files]]
-path = "random/ai/index.html"
-url = "/random/ai"
 title = "AI"
 
 [[input.files]]
