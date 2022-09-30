@@ -13,9 +13,29 @@ url = "/why/"
 title = "Why this site?"
 
 [[input.files]]
+path = "apps/hubspot/index.html"
+url = "/apps/hubspot"
+title = "Hubspot"
+
+[[input.files]]
+path = "home-office/streamdeck/index.html"
+url = "/home-office/streamdeck"
+title = "Streamdeck for business users"
+
+[[input.files]]
 path = "projects/meta-url/index.html"
 url = "/projects/meta-url"
 title = "Python Open-Source Project: metaURL"
+
+[[input.files]]
+path = "startups/ideas/index.html"
+url = "/startups/ideas"
+title = "Startup Ideas"
+
+[[input.files]]
+path = "python/library-tweepy/index.html"
+url = "/python/library-tweepy"
+title = "Python Library: tweepy"
 
 [[input.files]]
 path = "python/script-get-urls-from-html/index.html"
@@ -56,6 +76,41 @@ title = "Building a static site with Pelican"
 path = "home-office/deep-work/index.html"
 url = "/home-office/deep-work"
 title = "Resources for Deep Work"
+
+[[input.files]]
+path = "movies/1000/index.html"
+url = "/movies/1000"
+title = "My Top 1,000 Movies"
+
+[[input.files]]
+path = "python/books/index.html"
+url = "/python/books"
+title = "My Python Books Library"
+
+[[input.files]]
+path = "b2b-sales/books/index.html"
+url = "/b2b-sales/books"
+title = "My B2B Books Library"
+
+[[input.files]]
+path = "helpers/clipper/index.html"
+url = "/helpers/clipper"
+title = "My web clipboard"
+
+[[input.files]]
+path = "apps/library/index.html"
+url = "/apps/library"
+title = "My Apps Library"
+
+[[input.files]]
+path = "books/library/index.html"
+url = "/books/library"
+title = "My Books Library"
+
+[[input.files]]
+path = "apps/radar/index.html"
+url = "/apps/radar"
+title = "Apps on my radar"
 
 [[input.files]]
 path = "random/vim/index.html"
@@ -128,41 +183,6 @@ url = "/home-office/kinesis"
 title = "Kinesis Advantage 2 keyboard"
 
 [[input.files]]
-path = "movies/1000/index.html"
-url = "/movies/1000"
-title = "My Top 1,000 Movies"
-
-[[input.files]]
-path = "python/books/index.html"
-url = "/python/books"
-title = "My Python Books Library"
-
-[[input.files]]
-path = "b2b-sales/books/index.html"
-url = "/b2b-sales/books"
-title = "My B2B Books Library"
-
-[[input.files]]
-path = "helpers/clipper/index.html"
-url = "/helpers/clipper"
-title = "My web clipboard"
-
-[[input.files]]
-path = "books/library/index.html"
-url = "/books/library"
-title = "My Books Library"
-
-[[input.files]]
-path = "apps/library/index.html"
-url = "/apps/library"
-title = "My Apps Library"
-
-[[input.files]]
-path = "apps/radar/index.html"
-url = "/apps/radar"
-title = "Apps on my radar"
-
-[[input.files]]
 path = "home-office/airpods-max/index.html"
 url = "/home-office/airpods-max"
 title = "Airpods Max"
@@ -206,11 +226,6 @@ title = "Cyberleads"
 path = "projects/notes/index.html"
 url = "/projects/notes"
 title = "This site"
-
-[[input.files]]
-path = "python/library-tweepy/index.html"
-url = "/python/library-tweepy"
-title = "Python Library: tweepy"
 
 [[input.files]]
 path = "python/library-geopy/index.html"
@@ -476,11 +491,6 @@ title = "AI questions"
 path = "ai/dall-e/index.html"
 url = "/ai/dall-e"
 title = "Dall-E"
-
-[[input.files]]
-path = "home-office/streamdeck/index.html"
-url = "/home-office/streamdeck"
-title = "Streamdeck for business users"
 
 [[input.files]]
 path = "home-office/monitors/index.html"
@@ -2268,14 +2278,14 @@ url = "/projects/clipper"
 title = "Clipper"
 
 [[input.files]]
-path = "apps/library/index.html"
-url = "/apps/library"
-title = "My Apps Library"
-
-[[input.files]]
 path = "books/library/index.html"
 url = "/books/library"
 title = "My Books Library"
+
+[[input.files]]
+path = "apps/library/index.html"
+url = "/apps/library"
+title = "My Apps Library"
 
 [[input.files]]
 path = "helpers/clipper/index.html"
@@ -2283,14 +2293,14 @@ url = "/helpers/clipper"
 title = "My web clipboard"
 
 [[input.files]]
-path = "learning/ai/index.html"
-url = "/learning/ai"
-title = "Learning AI"
-
-[[input.files]]
 path = "random/ai/index.html"
 url = "/random/ai"
 title = "AI"
+
+[[input.files]]
+path = "learning/ai/index.html"
+url = "/learning/ai"
+title = "Learning AI"
 
 [[input.files]]
 path = "random/ai/index.html"

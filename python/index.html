@@ -43,7 +43,7 @@
             </div>
 
             <div class="above-navbar">
-                <div class="last_updated">30 Sep 2022 | 15:38</div>
+                <div class="last_updated">01 Oct 2022 | 00:56</div>
                 <div>
                     <p class="notes_count">
                         <a href="https://notes.nicolasdeville.com/tags">by tags</a> 
@@ -101,15 +101,130 @@
             <hr/>
 
                 <article class="hentry">
-                    <h1 class="entry-title"><a href="https://notes.nicolasdeville.com/python/script-get-urls-from-html">Get all links in a HTML page</a></h1>
+                    <h1 class="entry-title"><a href="https://notes.nicolasdeville.com/python/library-tweepy">Python Library: tweepy</a></h1>
 
                     <!-- added 4/7 -->
                     <div>
                         <p class="header_summary">
-                            
+                            <p>Twitter for Python</p>
                         </p>
                     </div>
 
+<footer class="post-info">
+
+    <p>
+        30 Sep 2022 <span class="separator">|</span> in <a class="link_tag" href="https://notes.nicolasdeville.com/python/">python</a>
+ tags: <a class="link_tag" href="https://notes.nicolasdeville.com/tag/python-libraries.html">python libraries</a>
+<a class="link_tag" href="https://notes.nicolasdeville.com/tag/twitter.html">twitter</a>
+
+        <!-- added 4/7 -->
+        <!-- 		<br />
+        <abbr class="modified" title="2022-09-30T15:52:34.968056+02:00">
+                Updated: 30 Sep 2022
+        </abbr>
+ -->
+
+    </p>
+
+    
+
+</footer><div class="toc"><span class="toctitle">Table of Contents</span><ul>
+<li><a href="#getting-started">Getting Started</a></li>
+<li><a href="#usage">Usage</a><ul>
+<li><a href="#how-to-attach-link-to-tweet-with-tweepy">How to attach link to tweet with tweepy</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<p><span class="datestamp">27 Sep 2022</span>   </p>
+<table>
+<thead>
+<tr>
+<th>Library resources</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>PyPI</td>
+<td><a href="https://pypi.org/project/tweepy/" target="_blank">https://pypi.org/project/tweepy/</a></td>
+</tr>
+<tr>
+<td>Github</td>
+<td><a href="https://github.com/tweepy/tweepy" target="_blank">https://github.com/tweepy/tweepy</a></td>
+</tr>
+<tr>
+<td>Homepage</td>
+<td><a href="https://www.tweepy.org/" target="_blank">https://www.tweepy.org/</a></td>
+</tr>
+<tr>
+<td>Documentation</td>
+<td><a href="https://docs.tweepy.org/en/stable/" target="_blank">https://docs.tweepy.org/en/stable/</a></td>
+</tr>
+</tbody>
+</table>
+<h1 id="getting-started">Getting Started</h1>
+<div class="highlight"><pre><span></span><code>pip3 install tweepy
+</code></pre></div>
+
+<h1 id="usage">Usage</h1>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">tweepy</span>
+
+<span class="c1"># credentials</span>
+<span class="n">api_key</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">getenv</span><span class="p">(</span><span class="s2">&quot;TWITTER_API_KEY&quot;</span><span class="p">)</span>
+<span class="n">api_secret</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">getenv</span><span class="p">(</span><span class="s2">&quot;TWITTER_API_SECRET&quot;</span><span class="p">)</span>
+<span class="n">access_token</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">getenv</span><span class="p">(</span><span class="s2">&quot;TWITTER_ACCESS_TOKEN&quot;</span><span class="p">)</span>
+<span class="n">access_token_secret</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">getenv</span><span class="p">(</span><span class="s2">&quot;TWITTER_ACCESS_TOKEN_SECRET&quot;</span><span class="p">)</span>
+
+<span class="c1"># authentication of consumer key and secret</span>
+<span class="n">auth</span> <span class="o">=</span> <span class="n">tweepy</span><span class="o">.</span><span class="n">OAuthHandler</span><span class="p">(</span><span class="n">api_key</span><span class="p">,</span> <span class="n">api_secret</span><span class="p">)</span>
+<span class="c1"># authentication of access token and secret</span>
+<span class="n">auth</span><span class="o">.</span><span class="n">set_access_token</span><span class="p">(</span><span class="n">access_token</span><span class="p">,</span> <span class="n">access_token_secret</span><span class="p">)</span>
+<span class="n">api</span> <span class="o">=</span> <span class="n">tweepy</span><span class="o">.</span><span class="n">API</span><span class="p">(</span><span class="n">auth</span><span class="p">)</span>
+
+<span class="n">text</span> <span class="o">=</span> <span class="s1">&#39;xxx</span>
+
+<span class="n">api</span><span class="o">.</span><span class="n">update_status</span><span class="p">(</span><span class="n">status</span><span class="o">=</span><span class="n">text</span><span class="p">)</span>
+</code></pre></div>
+
+<p>or sending with an image:</p>
+<div class="highlight"><pre><span></span><code><span class="n">api</span> <span class="o">=</span> <span class="n">tweepy</span><span class="o">.</span><span class="n">API</span><span class="p">(</span><span class="n">auth</span><span class="p">)</span>
+
+<span class="n">text</span> <span class="o">=</span> <span class="s1">&#39;xxx</span>
+<span class="n">image_path</span> <span class="o">=</span> <span class="s1">&#39;path/to/image.jpg&#39;</span>
+
+<span class="n">api</span><span class="o">.</span><span class="n">update_status_with_media</span><span class="p">(</span><span class="n">text</span><span class="p">,</span> <span class="n">image_path</span><span class="p">)</span>
+</code></pre></div>
+
+<h2 id="how-to-attach-link-to-tweet-with-tweepy">How to attach link to tweet with tweepy</h2>
+                </article>
+            </aside>
+
+                <section id="content" class="body">
+
+                <!-- PREVIOUS NOTES -->
+				<p class="notes-section">previous notes</p>
+                <hr>
+
+                <ol id="posts-list" class="hfeed">
+            
+
+
+
+            <li>
+                <article class="hentry">
+                    <header>
+                        <!-- PREVIOUS NOTE TITLE -->
+                        <h1><a href="https://notes.nicolasdeville.com/python/script-get-urls-from-html" rel="bookmark"
+                            title="Get all links in a HTML page">Get all links in a HTML page</a></h1>
+                        <!-- PREVIOUS NOTE SUMMARY -->
+                        <div class="entry-content">
+                            
+                        </div>
+                    </header>
+
+                    <div class="entry-content">
+                        <!-- PREVIOUS NOTE METADATA -->
 <footer class="post-info">
 
     <p>
@@ -126,78 +241,11 @@
 
     
 
-</footer><div class="toc"><span class="toctitle">Table of Contents</span><ul>
-<li><a href="#with-a-local-html-file">with a local HTML file</a></li>
-</ul>
-</div>
-<p><span class="datestamp">30 Sep 2022</span>   </p>
-<h1 id="with-a-local-html-file">with a local HTML file</h1>
-<p>For webpages returning an error when requesting programmatically, download first the page from browser as <code>Web Page,Complete</code> then:  </p>
-<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">bs4</span> <span class="kn">import</span> <span class="n">BeautifulSoup</span>
-<span class="kn">from</span> <span class="nn">urllib.request</span> <span class="kn">import</span> <span class="n">Request</span><span class="p">,</span> <span class="n">urlopen</span>
-<span class="kn">import</span> <span class="nn">re</span>
-
-<span class="c1">### Global Variables</span>
-
-<span class="n">file</span> <span class="o">=</span> <span class="s1">&#39;/path/to/file/page-saved.html&#39;</span>
-
-<span class="n">v</span> <span class="o">=</span> <span class="kc">True</span> <span class="c1"># verbose</span>
-
-<span class="c1"># parsers to use are either html.parser or lxml (which requires install pip install lxml)</span>
-<span class="c1"># soup = BeautifulSoup(open(file), &#39;html.parser&#39;)</span>
-<span class="n">soup</span> <span class="o">=</span> <span class="n">BeautifulSoup</span><span class="p">(</span><span class="nb">open</span><span class="p">(</span><span class="n">file</span><span class="p">),</span> <span class="s1">&#39;lxml&#39;</span><span class="p">)</span>
-
-<span class="n">links</span> <span class="o">=</span> <span class="p">[]</span>
-
-<span class="c1"># adjust blacklist as needed - keywords to filter URLs out</span>
-<span class="n">blacklist</span> <span class="o">=</span> <span class="p">[</span>
-    <span class="s1">&#39;domain.com&#39;</span><span class="p">,</span> <span class="c1"># add the domain of the website to remove all internal links</span>
-    <span class="s1">&#39;javascript&#39;</span><span class="p">,</span>
-    <span class="s1">&#39;twitter&#39;</span><span class="p">,</span>
-    <span class="s1">&#39;facebook&#39;</span><span class="p">,</span>
-    <span class="s1">&#39;youtube&#39;</span><span class="p">,</span>
-    <span class="s1">&#39;linkedin&#39;</span><span class="p">,</span>
-    <span class="s1">&#39;tiktok&#39;</span><span class="p">,</span>
-<span class="p">]</span>
-
-<span class="c1"># href=True limits to &#39;a&#39; tags with href in them</span>
-<span class="n">all_href_tags</span> <span class="o">=</span> <span class="n">soup</span><span class="o">.</span><span class="n">find_all</span><span class="p">(</span><span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="n">href</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-
-<span class="k">if</span> <span class="n">v</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="n">all_href_tags</span><span class="p">)</span> <span class="c1"># for verification</span>
-    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">len all_href_tags: </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">all_href_tags</span><span class="p">)</span><span class="si">}</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
-
-<span class="k">for</span> <span class="n">tag</span> <span class="ow">in</span> <span class="n">all_href_tags</span><span class="p">:</span>
-    <span class="k">if</span> <span class="n">v</span><span class="p">:</span>
-        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;--- </span><span class="si">{</span><span class="nb">type</span><span class="p">(</span><span class="n">tag</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;--- </span><span class="si">{</span><span class="n">tag</span><span class="si">=}</span><span class="s2">&quot;</span><span class="p">)</span>
-        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;--- </span><span class="si">{</span><span class="n">tag</span><span class="o">.</span><span class="n">attrs</span><span class="si">=}</span><span class="s2">&quot;</span><span class="p">)</span>
-    <span class="c1"># if tag.attrs[&#39;href&#39;]:</span>
-    <span class="n">link</span> <span class="o">=</span> <span class="n">tag</span><span class="o">.</span><span class="n">attrs</span><span class="p">[</span><span class="s1">&#39;href&#39;</span><span class="p">]</span>
-    <span class="k">if</span> <span class="n">v</span><span class="p">:</span>
-        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">link</span><span class="si">=}</span><span class="s2">&quot;</span><span class="p">)</span>
-    <span class="k">if</span> <span class="ow">not</span> <span class="nb">any</span><span class="p">(</span><span class="n">ele</span> <span class="ow">in</span> <span class="n">link</span> <span class="k">for</span> <span class="n">ele</span> <span class="ow">in</span> <span class="n">blacklist</span><span class="p">):</span>
-        <span class="k">if</span> <span class="n">link</span><span class="o">.</span><span class="n">endswith</span><span class="p">(</span><span class="s1">&#39;/&#39;</span><span class="p">):</span>
-            <span class="n">link</span> <span class="o">=</span> <span class="n">link</span><span class="p">[:</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
-        <span class="n">links</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">link</span><span class="p">)</span>
-    <span class="k">if</span> <span class="n">v</span><span class="p">:</span>
-        <span class="nb">print</span><span class="p">()</span>
-
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">links:</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
-<span class="k">for</span> <span class="n">link</span> <span class="ow">in</span> <span class="n">links</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">link</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n</span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">links</span><span class="p">)</span><span class="si">}</span><span class="s2"> links found.</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
-</code></pre></div>
+</footer>                    </div>
+                    
                 </article>
-            </aside>
-
-                <section id="content" class="body">
-
-                <!-- PREVIOUS NOTES -->
-				<p class="notes-section">previous notes</p>
-                <hr>
-
-                <ol id="posts-list" class="hfeed">
+                <hr/>
+            </li>
             
 
 
@@ -391,6 +439,48 @@
     </p>
 
     
+
+</footer>                    </div>
+                    
+                </article>
+                <hr/>
+            </li>
+            
+
+
+
+            <li>
+                <article class="hentry">
+                    <header>
+                        <!-- PREVIOUS NOTE TITLE -->
+                        <h1><a href="https://notes.nicolasdeville.com/python/books" rel="bookmark"
+                            title="My Python Books Library">My Python Books Library</a></h1>
+                        <!-- PREVIOUS NOTE SUMMARY -->
+                        <div class="entry-content">
+                            <p>keeping track of Python books read and on my radar</p>
+                        </div>
+                    </header>
+
+                    <div class="entry-content">
+                        <!-- PREVIOUS NOTE METADATA -->
+<footer class="post-info">
+
+    <p>
+        30 Sep 2022 <span class="separator">|</span> in <a class="link_tag" href="https://notes.nicolasdeville.com/python/">python</a>
+ tags: <a class="link_tag" href="https://notes.nicolasdeville.com/tag/books.html">books</a>
+
+        <!-- added 4/7 -->
+        <!-- 		<br />
+        <abbr class="modified" title="2022-10-01T00:56:40.303444+02:00">
+                Updated: 01 Oct 2022
+        </abbr>
+ -->
+
+    </p>
+
+    Translations:
+        <a href="https://notes.nicolasdeville.com/b2b-sales/books" hreflang="en">en</a>
+
 
 </footer>                    </div>
                     
@@ -603,48 +693,6 @@
                 <article class="hentry">
                     <header>
                         <!-- PREVIOUS NOTE TITLE -->
-                        <h1><a href="https://notes.nicolasdeville.com/python/books" rel="bookmark"
-                            title="My Python Books Library">My Python Books Library</a></h1>
-                        <!-- PREVIOUS NOTE SUMMARY -->
-                        <div class="entry-content">
-                            <p>keeping track of Python books read and on my radar</p>
-                        </div>
-                    </header>
-
-                    <div class="entry-content">
-                        <!-- PREVIOUS NOTE METADATA -->
-<footer class="post-info">
-
-    <p>
-        29 Sep 2022 <span class="separator">|</span> in <a class="link_tag" href="https://notes.nicolasdeville.com/python/">python</a>
- tags: <a class="link_tag" href="https://notes.nicolasdeville.com/tag/books.html">books</a>
-
-        <!-- added 4/7 -->
-        <!-- 		<br />
-        <abbr class="modified" title="2022-09-30T12:36:17.195397+02:00">
-                Updated: 30 Sep 2022
-        </abbr>
- -->
-
-    </p>
-
-    Translations:
-        <a href="https://notes.nicolasdeville.com/b2b-sales/books" hreflang="en">en</a>
-
-
-</footer>                    </div>
-                    
-                </article>
-                <hr/>
-            </li>
-            
-
-
-
-            <li>
-                <article class="hentry">
-                    <header>
-                        <!-- PREVIOUS NOTE TITLE -->
                         <h1><a href="https://notes.nicolasdeville.com/python/library-pymsgbox" rel="bookmark"
                             title="Python Library: PyMsgBox">Python Library: PyMsgBox</a></h1>
                         <!-- PREVIOUS NOTE SUMMARY -->
@@ -745,47 +793,6 @@
         <!-- 		<br />
         <abbr class="modified" title="2022-09-28T09:22:13.852002+02:00">
                 Updated: 28 Sep 2022
-        </abbr>
- -->
-
-    </p>
-
-    
-
-</footer>                    </div>
-                    
-                </article>
-                <hr/>
-            </li>
-            
-
-
-
-            <li>
-                <article class="hentry">
-                    <header>
-                        <!-- PREVIOUS NOTE TITLE -->
-                        <h1><a href="https://notes.nicolasdeville.com/python/library-tweepy" rel="bookmark"
-                            title="Python Library: tweepy">Python Library: tweepy</a></h1>
-                        <!-- PREVIOUS NOTE SUMMARY -->
-                        <div class="entry-content">
-                            <p>Twitter for Python</p>
-                        </div>
-                    </header>
-
-                    <div class="entry-content">
-                        <!-- PREVIOUS NOTE METADATA -->
-<footer class="post-info">
-
-    <p>
-        27 Sep 2022 <span class="separator">|</span> in <a class="link_tag" href="https://notes.nicolasdeville.com/python/">python</a>
- tags: <a class="link_tag" href="https://notes.nicolasdeville.com/tag/python-libraries.html">python libraries</a>
-<a class="link_tag" href="https://notes.nicolasdeville.com/tag/twitter.html">twitter</a>
-
-        <!-- added 4/7 -->
-        <!-- 		<br />
-        <abbr class="modified" title="2022-09-27T17:36:31.716180+02:00">
-                Updated: 27 Sep 2022
         </abbr>
  -->
 

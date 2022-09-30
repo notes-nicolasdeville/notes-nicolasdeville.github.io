@@ -43,7 +43,7 @@
             </div>
 
             <div class="above-navbar">
-                <div class="last_updated">30 Sep 2022 | 15:38</div>
+                <div class="last_updated">01 Oct 2022 | 00:56</div>
                 <div>
                     <p class="notes_count">
                         <a href="https://notes.nicolasdeville.com/tags">by tags</a> 
@@ -113,14 +113,14 @@
 <footer class="post-info">
 
     <p>
-        27 Sep 2022 <span class="separator">|</span> in <a class="link_tag" href="https://notes.nicolasdeville.com/python/">python</a>
+        30 Sep 2022 <span class="separator">|</span> in <a class="link_tag" href="https://notes.nicolasdeville.com/python/">python</a>
  tags: <a class="link_tag" href="https://notes.nicolasdeville.com/tag/python-libraries.html">python libraries</a>
 <a class="link_tag" href="https://notes.nicolasdeville.com/tag/twitter.html">twitter</a>
 
         <!-- added 4/7 -->
         <!-- 		<br />
-        <abbr class="modified" title="2022-09-27T17:36:31.716180+02:00">
-                Updated: 27 Sep 2022
+        <abbr class="modified" title="2022-09-30T15:52:34.968056+02:00">
+                Updated: 30 Sep 2022
         </abbr>
  -->
 
@@ -130,6 +130,10 @@
 
 </footer><div class="toc"><span class="toctitle">Table of Contents</span><ul>
 <li><a href="#getting-started">Getting Started</a></li>
+<li><a href="#usage">Usage</a><ul>
+<li><a href="#how-to-attach-link-to-tweet-with-tweepy">How to attach link to tweet with tweepy</a></li>
+</ul>
+</li>
 </ul>
 </div>
 <p><span class="datestamp">27 Sep 2022</span>   </p>
@@ -162,6 +166,37 @@
 <h1 id="getting-started">Getting Started</h1>
 <div class="highlight"><pre><span></span><code>pip3 install tweepy
 </code></pre></div>
+
+<h1 id="usage">Usage</h1>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">tweepy</span>
+
+<span class="c1"># credentials</span>
+<span class="n">api_key</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">getenv</span><span class="p">(</span><span class="s2">&quot;TWITTER_API_KEY&quot;</span><span class="p">)</span>
+<span class="n">api_secret</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">getenv</span><span class="p">(</span><span class="s2">&quot;TWITTER_API_SECRET&quot;</span><span class="p">)</span>
+<span class="n">access_token</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">getenv</span><span class="p">(</span><span class="s2">&quot;TWITTER_ACCESS_TOKEN&quot;</span><span class="p">)</span>
+<span class="n">access_token_secret</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">getenv</span><span class="p">(</span><span class="s2">&quot;TWITTER_ACCESS_TOKEN_SECRET&quot;</span><span class="p">)</span>
+
+<span class="c1"># authentication of consumer key and secret</span>
+<span class="n">auth</span> <span class="o">=</span> <span class="n">tweepy</span><span class="o">.</span><span class="n">OAuthHandler</span><span class="p">(</span><span class="n">api_key</span><span class="p">,</span> <span class="n">api_secret</span><span class="p">)</span>
+<span class="c1"># authentication of access token and secret</span>
+<span class="n">auth</span><span class="o">.</span><span class="n">set_access_token</span><span class="p">(</span><span class="n">access_token</span><span class="p">,</span> <span class="n">access_token_secret</span><span class="p">)</span>
+<span class="n">api</span> <span class="o">=</span> <span class="n">tweepy</span><span class="o">.</span><span class="n">API</span><span class="p">(</span><span class="n">auth</span><span class="p">)</span>
+
+<span class="n">text</span> <span class="o">=</span> <span class="s1">&#39;xxx</span>
+
+<span class="n">api</span><span class="o">.</span><span class="n">update_status</span><span class="p">(</span><span class="n">status</span><span class="o">=</span><span class="n">text</span><span class="p">)</span>
+</code></pre></div>
+
+<p>or sending with an image:</p>
+<div class="highlight"><pre><span></span><code><span class="n">api</span> <span class="o">=</span> <span class="n">tweepy</span><span class="o">.</span><span class="n">API</span><span class="p">(</span><span class="n">auth</span><span class="p">)</span>
+
+<span class="n">text</span> <span class="o">=</span> <span class="s1">&#39;xxx</span>
+<span class="n">image_path</span> <span class="o">=</span> <span class="s1">&#39;path/to/image.jpg&#39;</span>
+
+<span class="n">api</span><span class="o">.</span><span class="n">update_status_with_media</span><span class="p">(</span><span class="n">text</span><span class="p">,</span> <span class="n">image_path</span><span class="p">)</span>
+</code></pre></div>
+
+<h2 id="how-to-attach-link-to-tweet-with-tweepy">How to attach link to tweet with tweepy</h2>
                 </article>
             </aside>
 
