@@ -43,7 +43,7 @@
             </div>
 
             <div class="above-navbar">
-                <div class="last_updated">30 Sep 2022 | 09:13</div>
+                <div class="last_updated">30 Sep 2022 | 12:36</div>
                 <div>
                     <p class="notes_count">
                         <a href="https://notes.nicolasdeville.com/tags">by tags</a> 
@@ -113,14 +113,14 @@
 <footer class="post-info">
 
     <p>
-        28 Sep 2022 <span class="separator">|</span> in <a class="link_tag" href="https://notes.nicolasdeville.com/python/">python</a>
+        30 Sep 2022 <span class="separator">|</span> in <a class="link_tag" href="https://notes.nicolasdeville.com/python/">python</a>
  tags: <a class="link_tag" href="https://notes.nicolasdeville.com/tag/scripts.html">scripts</a>
 <a class="link_tag" href="https://notes.nicolasdeville.com/tag/notion.html">notion</a>
 
         <!-- added 4/7 -->
         <!-- 		<br />
-        <abbr class="modified" title="2022-09-28T21:09:27.286098+02:00">
-                Updated: 28 Sep 2022
+        <abbr class="modified" title="2022-09-30T11:57:28.291481+02:00">
+                Updated: 30 Sep 2022
         </abbr>
  -->
 
@@ -271,11 +271,23 @@ here <code>Clipper Import</code> is the name of the integration I setup for this
         <span class="s1">&#39;url&#39;</span><span class="p">:</span> <span class="s1">&#39;https://www.notion.so/Fig-Your-terminal-reimagined-1cd9xxxxxxx431199ae46a78af43ebc&#39;</span><span class="p">},</span>
 </code></pre></div>
 
+<h2 id="deleting-records-blocks">Deleting records (blocks)</h2>
+<div class="highlight"><pre><span></span><code><span class="c1"># Delete from Notion</span>
+<span class="n">record_id</span> <span class="o">=</span> <span class="n">record</span><span class="p">[</span><span class="s1">&#39;id&#39;</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">DELETING </span><span class="si">{</span><span class="n">record_id</span><span class="si">}</span><span class="s2"> from Notion...&quot;</span><span class="p">)</span>
+
+<span class="n">url_delete</span> <span class="o">=</span> <span class="sa">f</span><span class="s1">&#39;https://api.notion.com/v1/blocks/</span><span class="si">{</span><span class="n">record_id</span><span class="si">}</span><span class="s1">&#39;</span>
+<span class="n">request_delete</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">delete</span><span class="p">(</span><span class="n">url_delete</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="p">{</span>
+    <span class="s2">&quot;Authorization&quot;</span><span class="p">:</span> <span class="sa">f</span><span class="s2">&quot;Bearer </span><span class="si">{</span><span class="n">token</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;Notion-Version&quot;</span><span class="p">:</span> <span class="s2">&quot;2021-08-16&quot;</span>
+    <span class="p">})</span>
+</code></pre></div>
+
 <h2 id="what-tripped-me-up">What tripped me up</h2>
 <ul>
 <li>tried first the <code>notion</code> package on PPI (<code>pip3 install notion</code>) and another approach using the token to be found in the browser's cookie (ie without integration/token) - both to no avail.  </li>
 <li>unable to make script work when only <code>Read content</code> only activated in integration on Notion.  </li>
-<li>field <code>Name</code> is prefixed with <code>\ufeff</code> for some reason.  </li>
+<li>field <code>Name</code> is prefixed with <code>\ufeff</code> for some reason. <span class="datestamp">30 Sep 2022</span> seems to have been fixed?   </li>
 </ul>
                 </article>
             </aside>

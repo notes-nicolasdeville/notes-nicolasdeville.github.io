@@ -43,7 +43,7 @@
             </div>
 
             <div class="above-navbar">
-                <div class="last_updated">30 Sep 2022 | 09:13</div>
+                <div class="last_updated">30 Sep 2022 | 12:36</div>
                 <div>
                     <p class="notes_count">
                         <a href="https://notes.nicolasdeville.com/tags">by tags</a> 
@@ -113,12 +113,12 @@
 <footer class="post-info">
 
     <p>
-        29 Sep 2022 <span class="separator">|</span> in <a class="link_tag" href="https://notes.nicolasdeville.com/projects/">projects</a>
+        30 Sep 2022 <span class="separator">|</span> in <a class="link_tag" href="https://notes.nicolasdeville.com/projects/">projects</a>
 
         <!-- added 4/7 -->
         <!-- 		<br />
-        <abbr class="modified" title="2022-09-29T21:07:13.711506+02:00">
-                Updated: 29 Sep 2022
+        <abbr class="modified" title="2022-09-30T12:36:00.152524+02:00">
+                Updated: 30 Sep 2022
         </abbr>
  -->
 
@@ -152,7 +152,7 @@
 </ul>
 </li>
 <li><a href="#output">Output</a></li>
-<li><a href="#final-script">Final Script</a></li>
+<li><a href="#work-in-progress">Work in progress</a></li>
 </ul>
 </div>
 <p><span class="datestamp">29 Sep 2022</span>   </p>
@@ -324,13 +324,59 @@ Fallback: use title / header.   </p>
 <h1 id="output">Output</h1>
 <p>namedtuple object   </p>
 <p>+ structured log of the object (JSON)?</p>
-<h1 id="final-script">Final Script</h1>
-<p>Well.. work in progress at the moment! <span class="datestamp">29 Sep 2022</span> </p>
+<h1 id="work-in-progress">Work in progress</h1>
 <p>Open-source at: </p>
 <div class="link_border"><div class="link_logo_box"><img class="link_logo" src="https://logo.clearbit.com/github.com?size=35" alt="logo"/></div><div class="link_content">
 <div class="link_title">GitHub - ndeville/meta-url: Function to generate metadata from URL</div>
 <div class="link_tagline">github.com</div>
 <div class="link_url"><a href="https://github.com/ndeville/meta-url" target="_blank">https://github.com/ndeville/meta-url</a></div></div></div>
+
+<p><span class="datestamp">30 Sep 2022</span> works currently as follows:   </p>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">meta_url</span> <span class="kn">import</span> <span class="n">meta</span>
+
+<span class="n">test</span> <span class="o">=</span> <span class="n">meta</span><span class="p">(</span><span class="s1">&#39;https://notes.nicolasdeville.com&#39;</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">()</span>
+<span class="n">pp</span><span class="o">.</span><span class="n">pprint</span><span class="p">(</span><span class="n">test</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">()</span> 
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">test</span><span class="o">.</span><span class="n">clean_url</span><span class="si">=}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">test</span><span class="o">.</span><span class="n">root_website_url</span><span class="si">=}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">test</span><span class="o">.</span><span class="n">domain</span><span class="si">=}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">test</span><span class="o">.</span><span class="n">slug</span><span class="si">=}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">test</span><span class="o">.</span><span class="n">header</span><span class="si">=}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">test</span><span class="o">.</span><span class="n">title</span><span class="si">=}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">test</span><span class="o">.</span><span class="n">name</span><span class="si">=}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">test</span><span class="o">.</span><span class="n">description</span><span class="si">=}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">test</span><span class="o">.</span><span class="n">tags</span><span class="si">=}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">test</span><span class="o">.</span><span class="n">emails</span><span class="si">=}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">test</span><span class="o">.</span><span class="n">twitter</span><span class="si">=}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">test</span><span class="o">.</span><span class="n">facebook</span><span class="si">=}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">test</span><span class="o">.</span><span class="n">youtube</span><span class="si">=}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">test</span><span class="o">.</span><span class="n">tiktok</span><span class="si">=}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">test</span><span class="o">.</span><span class="n">countries</span><span class="si">=}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">test</span><span class="o">.</span><span class="n">logo</span><span class="si">=}</span><span class="s2">&quot;</span><span class="p">)</span>
+</code></pre></div>
+
+<p>outputs: </p>
+<div class="highlight"><pre><span></span><code>metaURL<span class="o">(</span><span class="nv">clean_url</span><span class="o">=</span><span class="s1">&#39;https://notes.nicolasdeville.com&#39;</span>, <span class="nv">root_website_url</span><span class="o">=</span><span class="s1">&#39;https//notes.nicolasdeville.com&#39;</span>, <span class="nv">domain</span><span class="o">=</span><span class="s1">&#39;nicolasdeville.com&#39;</span>, <span class="nv">slug</span><span class="o">=</span><span class="s1">&#39;nicolasdeville&#39;</span>, <span class="nv">header</span><span class="o">=</span><span class="s1">&#39;Building a static site with Pelican&#39;</span>, <span class="nv">title</span><span class="o">=</span><span class="s1">&#39;&#39;</span>, <span class="nv">name</span><span class="o">=</span><span class="s1">&#39;&#39;</span>, <span class="nv">description</span><span class="o">=</span><span class="s1">&#39;&#39;</span>, <span class="nv">tags</span><span class="o">=</span><span class="s1">&#39;&#39;</span>, <span class="nv">emails</span><span class="o">=[]</span>, <span class="nv">twitter</span><span class="o">=[</span><span class="s1">&#39;https://www.twitter.com/ndeville&#39;</span><span class="o">]</span>, <span class="nv">facebook</span><span class="o">=[]</span>, <span class="nv">youtube</span><span class="o">=[]</span>, <span class="nv">tiktok</span><span class="o">=[]</span>, <span class="nv">countries</span><span class="o">=[]</span>, <span class="nv">logo</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="o">)</span>
+
+test.clean_url<span class="o">=</span><span class="s1">&#39;https://notes.nicolasdeville.com&#39;</span>
+test.root_website_url<span class="o">=</span><span class="s1">&#39;https//notes.nicolasdeville.com&#39;</span>
+test.domain<span class="o">=</span><span class="s1">&#39;nicolasdeville.com&#39;</span>
+test.slug<span class="o">=</span><span class="s1">&#39;nicolasdeville&#39;</span>
+test.header<span class="o">=</span><span class="s1">&#39;Building a static site with Pelican&#39;</span>
+test.title<span class="o">=</span><span class="s1">&#39;&#39;</span>
+test.name<span class="o">=</span><span class="s1">&#39;&#39;</span>
+test.description<span class="o">=</span><span class="s1">&#39;&#39;</span>
+test.tags<span class="o">=</span><span class="s1">&#39;&#39;</span>
+test.emails<span class="o">=[]</span>
+test.twitter<span class="o">=[</span><span class="s1">&#39;https://www.twitter.com/ndeville&#39;</span><span class="o">]</span>
+test.facebook<span class="o">=[]</span>
+test.youtube<span class="o">=[]</span>
+test.tiktok<span class="o">=[]</span>
+test.countries<span class="o">=[]</span>
+test.logo<span class="o">=</span><span class="s1">&#39;&#39;</span>
+</code></pre></div>
                 </article>
             </aside>
 
@@ -341,6 +387,45 @@ Fallback: use title / header.   </p>
                 <hr>
 
                 <ol id="posts-list" class="hfeed">
+            
+
+
+
+            <li>
+                <article class="hentry">
+                    <header>
+                        <!-- PREVIOUS NOTE TITLE -->
+                        <h1><a href="https://notes.nicolasdeville.com/projects/recruiters-directory" rel="bookmark"
+                            title="Building a directory of EU recruiters">Building a directory of EU recruiters</a></h1>
+                        <!-- PREVIOUS NOTE SUMMARY -->
+                        <div class="entry-content">
+                            
+                        </div>
+                    </header>
+
+                    <div class="entry-content">
+                        <!-- PREVIOUS NOTE METADATA -->
+<footer class="post-info">
+
+    <p>
+        30 Sep 2022 <span class="separator">|</span> in <a class="link_tag" href="https://notes.nicolasdeville.com/projects/">projects</a>
+
+        <!-- added 4/7 -->
+        <!-- 		<br />
+        <abbr class="modified" title="2022-09-30T11:15:12.061695+02:00">
+                Updated: 30 Sep 2022
+        </abbr>
+ -->
+
+    </p>
+
+    
+
+</footer>                    </div>
+                    
+                </article>
+                <hr/>
+            </li>
             
 
 
@@ -367,45 +452,6 @@ Fallback: use title / header.   </p>
         <!-- added 4/7 -->
         <!-- 		<br />
         <abbr class="modified" title="2022-09-29T15:49:37.415441+02:00">
-                Updated: 29 Sep 2022
-        </abbr>
- -->
-
-    </p>
-
-    
-
-</footer>                    </div>
-                    
-                </article>
-                <hr/>
-            </li>
-            
-
-
-
-            <li>
-                <article class="hentry">
-                    <header>
-                        <!-- PREVIOUS NOTE TITLE -->
-                        <h1><a href="https://notes.nicolasdeville.com/projects/recruiters-directory" rel="bookmark"
-                            title="Building a directory of EU recruiters">Building a directory of EU recruiters</a></h1>
-                        <!-- PREVIOUS NOTE SUMMARY -->
-                        <div class="entry-content">
-                            
-                        </div>
-                    </header>
-
-                    <div class="entry-content">
-                        <!-- PREVIOUS NOTE METADATA -->
-<footer class="post-info">
-
-    <p>
-        29 Sep 2022 <span class="separator">|</span> in <a class="link_tag" href="https://notes.nicolasdeville.com/projects/">projects</a>
-
-        <!-- added 4/7 -->
-        <!-- 		<br />
-        <abbr class="modified" title="2022-09-29T15:10:06.382923+02:00">
                 Updated: 29 Sep 2022
         </abbr>
  -->
