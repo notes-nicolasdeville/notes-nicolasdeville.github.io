@@ -18,6 +18,11 @@ url = "/apps/hubspot"
 title = "Hubspot"
 
 [[input.files]]
+path = "projects/clipee/index.html"
+url = "/projects/clipee"
+title = "Clipee"
+
+[[input.files]]
 path = "tesla/ai-day-2022/index.html"
 url = "/tesla/ai-day-2022"
 title = "Tesla AI Day 2022"
@@ -108,14 +113,14 @@ url = "/helpers/clipper"
 title = "My web clipboard"
 
 [[input.files]]
-path = "books/library/index.html"
-url = "/books/library"
-title = "My Books Library"
-
-[[input.files]]
 path = "apps/library/index.html"
 url = "/apps/library"
 title = "My Apps Library"
+
+[[input.files]]
+path = "books/library/index.html"
+url = "/books/library"
+title = "My Books Library"
 
 [[input.files]]
 path = "apps/radar/index.html"
@@ -166,11 +171,6 @@ title = "Transcribee"
 path = "random/thoughts/index.html"
 url = "/random/thoughts"
 title = "Random Thoughts"
-
-[[input.files]]
-path = "projects/clipee/index.html"
-url = "/projects/clipee"
-title = "Clipee"
 
 [[input.files]]
 path = "python/boilerplate/index.html"
@@ -2288,14 +2288,14 @@ url = "/projects/clipper"
 title = "Clipper"
 
 [[input.files]]
-path = "apps/library/index.html"
-url = "/apps/library"
-title = "My Apps Library"
-
-[[input.files]]
 path = "books/library/index.html"
 url = "/books/library"
 title = "My Books Library"
+
+[[input.files]]
+path = "apps/library/index.html"
+url = "/apps/library"
+title = "My Apps Library"
 
 [[input.files]]
 path = "helpers/clipper/index.html"
@@ -2303,14 +2303,14 @@ url = "/helpers/clipper"
 title = "My web clipboard"
 
 [[input.files]]
-path = "random/ai/index.html"
-url = "/random/ai"
-title = "AI"
-
-[[input.files]]
 path = "learning/ai/index.html"
 url = "/learning/ai"
 title = "Learning AI"
+
+[[input.files]]
+path = "random/ai/index.html"
+url = "/random/ai"
+title = "AI"
 
 [[input.files]]
 path = "interests/ai/index.html"

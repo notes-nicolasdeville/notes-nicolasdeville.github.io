@@ -44,7 +44,7 @@
             </div>
 
             <div class="above-navbar">
-                <div class="last_updated">02 Oct 2022 | 08:00</div>
+                <div class="last_updated">02 Oct 2022 | 08:08</div>
                 <div>
                     <p class="notes_count">
                         <a href="https://notes.nicolasdeville.com/tags">by tags</a> 
@@ -101,13 +101,13 @@
 <footer class="post-info">
 
     <p>
-        29 Sep 2022 <span class="separator">|</span> in <a class="link_tag" href="https://notes.nicolasdeville.com/projects/">projects</a>
+        02 Oct 2022 <span class="separator">|</span> in <a class="link_tag" href="https://notes.nicolasdeville.com/projects/">projects</a>
  tags: <a class="link_tag" href="https://notes.nicolasdeville.com/tag/python.html">python</a>
 
         <!-- added 4/7 -->
         <!-- 		<br />
-        <abbr class="modified" title="2022-09-29T09:24:31.435611+02:00">
-                Updated: 29 Sep 2022
+        <abbr class="modified" title="2022-10-02T08:05:58.693885+02:00">
+                Updated: 02 Oct 2022
         </abbr>
  -->
 
@@ -129,6 +129,7 @@
 </ul>
 </li>
 <li><a href="#clipee-grist">Clipee Grist</a></li>
+<li><a href="#clipee-csv">Clipee CSV</a></li>
 </ul>
 </li>
 </ul>
@@ -717,6 +718,76 @@ Had to re-generate the keys, with a user having read/write permissions.  </p>
 </code></pre></div>
 
 <p>Re-using now that script logic for additional list, eg List of Recruiters (<code>Clipee Grist Recruiters</code> / Alfred shortcut <code>cgr</code>) for <a href="https://btobsales.eu/" target="_blank">https://btobsales.eu/</a>.   </p>
+<h2 id="clipee-csv">Clipee CSV</h2>
+<p>generate Python code of CSV headers given a path to <code>.csv</code> file.   </p>
+<div class="highlight"><pre><span></span><code><span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">CLIPEE CSV</span>
+<span class="sd">CSV HEADERS TO PYTHON</span>
+<span class="sd">Input: path to .csv file</span>
+<span class="sd">Output: python row code for headers</span>
+<span class="sd">&#39;&#39;&#39;</span>
+
+<span class="kn">from</span> <span class="nn">pandas.io.clipboard</span> <span class="kn">import</span> <span class="n">clipboard_get</span>
+<span class="kn">import</span> <span class="nn">subprocess</span>
+
+<span class="kn">import</span> <span class="nn">time</span>
+<span class="n">start_time</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>
+
+<span class="kn">import</span> <span class="nn">csv</span>
+<span class="kn">import</span> <span class="nn">pymsgbox</span>
+<span class="kn">import</span> <span class="nn">os</span>
+
+<span class="n">pymsgbox</span><span class="o">.</span><span class="n">alert</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Starting </span><span class="si">{</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">basename</span><span class="p">(</span><span class="vm">__file__</span><span class="p">)</span><span class="si">}</span><span class="s2">...&quot;</span><span class="p">)</span>
+
+<span class="n">count_col_csv</span> <span class="o">=</span> <span class="mi">0</span>
+
+<span class="k">def</span> <span class="nf">write_to_clipboard</span><span class="p">(</span><span class="n">output</span><span class="p">):</span>
+    <span class="n">process</span> <span class="o">=</span> <span class="n">subprocess</span><span class="o">.</span><span class="n">Popen</span><span class="p">(</span>
+        <span class="s1">&#39;pbcopy&#39;</span><span class="p">,</span> <span class="n">env</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;LANG&#39;</span><span class="p">:</span> <span class="s1">&#39;en_US.UTF-8&#39;</span><span class="p">},</span> <span class="n">stdin</span><span class="o">=</span><span class="n">subprocess</span><span class="o">.</span><span class="n">PIPE</span><span class="p">)</span>
+    <span class="n">process</span><span class="o">.</span><span class="n">communicate</span><span class="p">(</span><span class="n">output</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span><span class="s1">&#39;utf-8&#39;</span><span class="p">))</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">OUTPUT COPIED TO CLIPBOARD</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">process_csv</span><span class="p">(</span><span class="n">text</span><span class="p">,</span> <span class="n">v</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+    <span class="k">global</span> <span class="n">count_col_csv</span>
+
+    <span class="n">headers</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span>
+
+    <span class="k">try</span><span class="p">:</span>
+
+        <span class="n">path_to_csv</span> <span class="o">=</span> <span class="n">text</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
+        <span class="k">if</span> <span class="n">path_to_csv</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s1">&#39;/Users&#39;</span><span class="p">):</span>
+
+            <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">path_to_csv</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">,</span> <span class="n">newline</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s1">&#39;UTF-8&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">h</span><span class="p">:</span>
+                <span class="n">reader</span> <span class="o">=</span> <span class="n">csv</span><span class="o">.</span><span class="n">reader</span><span class="p">(</span><span class="n">h</span><span class="p">,</span> <span class="n">delimiter</span><span class="o">=</span><span class="s2">&quot;,&quot;</span><span class="p">)</span>
+                <span class="n">header_row</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">reader</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+
+                <span class="n">count_for</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span>
+
+                <span class="k">for</span> <span class="n">title</span> <span class="ow">in</span> <span class="n">header_row</span><span class="p">:</span>
+                    <span class="n">count_col_csv</span> <span class="o">+=</span> <span class="mi">1</span>
+                    <span class="n">count_for</span> <span class="o">+=</span> <span class="mi">1</span>
+                    <span class="n">title</span> <span class="o">=</span> <span class="n">title</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span>
+                    <span class="k">if</span> <span class="s1">&#39; &#39;</span> <span class="ow">in</span> <span class="n">title</span><span class="p">:</span>
+                        <span class="n">title</span> <span class="o">=</span> <span class="n">title</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39; &#39;</span><span class="p">,</span> <span class="s1">&#39;_&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span>
+                    <span class="k">if</span> <span class="s1">&#39;/&#39;</span> <span class="ow">in</span> <span class="n">title</span><span class="p">:</span>
+                        <span class="n">title</span> <span class="o">=</span> <span class="n">title</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;/&#39;</span><span class="p">,</span> <span class="s1">&#39;_&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span>
+                    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">title</span><span class="si">}</span><span class="s2"> = row[</span><span class="si">{</span><span class="n">count_for</span><span class="si">}</span><span class="s2">]</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+
+                    <span class="n">headers</span> <span class="o">=</span> <span class="n">headers</span> <span class="o">+</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">title</span><span class="si">}</span><span class="s2"> = row[</span><span class="si">{</span><span class="n">count_for</span><span class="si">}</span><span class="s2">]</span><span class="se">\n</span><span class="s2">&quot;</span>
+
+        <span class="n">write_to_clipboard</span><span class="p">(</span><span class="n">headers</span><span class="p">)</span>
+
+        <span class="n">pymsgbox</span><span class="o">.</span><span class="n">alert</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;SUCCESS</span><span class="se">\n</span><span class="s2">Copied to clipboard: </span><span class="si">{</span><span class="n">headers</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+    <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+        <span class="n">pymsgbox</span><span class="o">.</span><span class="n">alert</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;ERROR: </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="n">text</span> <span class="o">=</span> <span class="n">clipboard_get</span><span class="p">()</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Processing: </span><span class="si">{</span><span class="nb">repr</span><span class="p">(</span><span class="n">text</span><span class="p">)</span><span class="si">}</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="n">process_csv</span><span class="p">(</span><span class="n">text</span><span class="p">)</span>
+</code></pre></div>
             </main>
         </div><!-- /.entry-content -->
     </article>
