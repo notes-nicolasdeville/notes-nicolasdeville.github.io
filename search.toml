@@ -13,6 +13,26 @@ url = "/why/"
 title = "Why this site?"
 
 [[input.files]]
+path = "projects/script-screenshot-app/index.html"
+url = "/projects/script-screenshot-app"
+title = "Script: screenshot video app, save file & generate HTML code"
+
+[[input.files]]
+path = "home-office/contour-shuttle/index.html"
+url = "/home-office/contour-shuttle"
+title = "Contour ShuttlePRO v2"
+
+[[input.files]]
+path = "helpers/applescript/index.html"
+url = "/helpers/applescript"
+title = "AppleScript"
+
+[[input.files]]
+path = "interests/mechanical-keyboards/index.html"
+url = "/interests/mechanical-keyboards"
+title = "Mechanical Keyboards"
+
+[[input.files]]
 path = "projects/meta-url/index.html"
 url = "/projects/meta-url"
 title = "Python Open-Source Project: metaURL"
@@ -33,9 +53,24 @@ url = "/startups/idea-mass-cv-drop"
 title = "Mass CV Drop"
 
 [[input.files]]
+path = "apps/iina/index.html"
+url = "/apps/iina"
+title = "IINA"
+
+[[input.files]]
+path = "helpers/javascript-for-automation/index.html"
+url = "/helpers/javascript-for-automation"
+title = "Javascript for automation"
+
+[[input.files]]
 path = "leadership/seasoned-vp-stretch-vp./index.html"
 url = "/leadership/seasoned-vp-stretch-vp."
 title = "Seasoned VP vs Stretch VP"
+
+[[input.files]]
+path = "interests/traditional-shaving/index.html"
+url = "/interests/traditional-shaving"
+title = "Traditional Shaving"
 
 [[input.files]]
 path = "tesla/ai-day-2022/index.html"
@@ -48,14 +83,14 @@ url = "/helpers/extract-audio-from-video"
 title = "How to extract audio from video on macOS"
 
 [[input.files]]
+path = "startups/idea-impromptu-conference-calls/index.html"
+url = "/startups/idea-impromptu-conference-calls"
+title = "Impromptu conference calls"
+
+[[input.files]]
 path = "home-office/streamdeck/index.html"
 url = "/home-office/streamdeck"
 title = "Streamdeck for business users"
-
-[[input.files]]
-path = "startups/ideas/index.html"
-url = "/startups/ideas"
-title = "Startup Ideas"
 
 [[input.files]]
 path = "python/library-tweepy/index.html"
@@ -256,11 +291,6 @@ title = "Python Library: geopy"
 path = "helpers/twitter-cli/index.html"
 url = "/helpers/twitter-cli"
 title = "How to use Twitter via CLI (Command Line Interface) on macOS"
-
-[[input.files]]
-path = "helpers/applescript/index.html"
-url = "/helpers/applescript"
-title = "AppleScript"
 
 [[input.files]]
 path = "ai/services/index.html"
@@ -773,11 +803,6 @@ url = "/interests/tactical-pens"
 title = "Tactical Pens"
 
 [[input.files]]
-path = "interests/mechanical-keyboards/index.html"
-url = "/interests/mechanical-keyboards"
-title = "Mechanical Keyboards"
-
-[[input.files]]
 path = "interests/flat-caps/index.html"
 url = "/interests/flat-caps"
 title = "Flat Caps"
@@ -871,11 +896,6 @@ title = "Python snippet: download files"
 path = "apps/espanso/index.html"
 url = "/apps/espanso"
 title = "Espanso"
-
-[[input.files]]
-path = "home-office/contour-shuttleprov2/index.html"
-url = "/home-office/contour-shuttleprov2"
-title = "Contour ShuttlePRO v2"
 
 [[input.files]]
 path = "interests/diabolo/index.html"
@@ -2313,6 +2333,11 @@ url = "/helpers/clipper"
 title = "My web clipboard"
 
 [[input.files]]
+path = "random/ai/index.html"
+url = "/random/ai"
+title = "AI"
+
+[[input.files]]
 path = "learning/ai/index.html"
 url = "/learning/ai"
 title = "Learning AI"
@@ -2325,11 +2350,6 @@ title = "AI"
 [[input.files]]
 path = "interests/ai/index.html"
 url = "/interests/ai"
-title = "AI"
-
-[[input.files]]
-path = "random/ai/index.html"
-url = "/random/ai"
 title = "AI"
 
 [[input.files]]

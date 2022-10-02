@@ -43,7 +43,7 @@
             </div>
 
             <div class="above-navbar">
-                <div class="last_updated">02 Oct 2022 | 09:37</div>
+                <div class="last_updated">02 Oct 2022 | 23:31</div>
                 <div>
                     <p class="notes_count">
                         <a href="https://notes.nicolasdeville.com/tags">by tags</a> 
@@ -54,7 +54,7 @@
                         <span style="color:#C74350">|</span>
                         <a href="https://notes.nicolasdeville.com/2022/">2022</a> 
                         <span style="color:#C74350">|</span> 
-                        453 notes
+                        457 notes
                     </p>
                 </div>
             </div>
@@ -83,7 +83,7 @@
 
 <!-- 220911 moved to base.html -->
 <!-- <p class="notes_count">
-    453 notes 
+    457 notes 
     <span style="color:#C74350">|</span> 
     <a href="https://notes.nicolasdeville.com/tags">by tags</a> 
     <span style="color:#C74350">|</span> 
@@ -102,15 +102,379 @@
             <hr/>
 
                 <article class="hentry">
-                    <h1 class="entry-title"><a href="https://notes.nicolasdeville.com/projects/meta-url">Python Open-Source Project: metaURL</a></h1>
+                    <h1 class="entry-title"><a href="https://notes.nicolasdeville.com/projects/script-screenshot-app">Script: screenshot video app, save file & generate HTML code</a></h1>
 
                     <!-- added 4/7 -->
                     <div>
                         <p class="header_summary">
-                            <p>generates metadata for a given URL</p>
+                            
                         </p>
                     </div>
 
+<footer class="post-info">
+
+    <p>
+        02 Oct 2022 <span class="separator">|</span> in <a class="link_tag" href="https://notes.nicolasdeville.com/projects/">projects</a>
+ tags: <a class="link_tag" href="https://notes.nicolasdeville.com/tag/automation.html">automation</a>
+<a class="link_tag" href="https://notes.nicolasdeville.com/tag/applescript.html">applescript</a>
+<a class="link_tag" href="https://notes.nicolasdeville.com/tag/shell.html">shell</a>
+<a class="link_tag" href="https://notes.nicolasdeville.com/tag/macos.html">macOS</a>
+
+        <!-- added 4/7 -->
+        <!-- 		<br />
+        <abbr class="modified" title="2022-10-02T23:31:02.439662+02:00">
+                Updated: 02 Oct 2022
+        </abbr>
+ -->
+
+    </p>
+
+    
+
+</footer><div class="toc"><span class="toctitle">Table of Contents</span><ul>
+<li><a href="#objective">Objective</a></li>
+<li><a href="#gathering-infos">Gathering infos</a><ul>
+<li><a href="#work-in-progress">Work in progress</a><ul>
+<li><a href="#1st-working-script">1st working script</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<p><span class="datestamp">02 Oct 2022</span>   </p>
+<p>When I review videos and want to take notes about it with illustrations - be it Youtube videos I downloaded or business meeting recordings - it's painful to have to use several keyboard shortcuts and mouse actions to get to the point where I can just copy in my note the relevant image (ie HTML code pointing to the path of the saved image). </p>
+<p>A script to do this end-to-end would be a time-saver and improve my workflows so as to use illustrations more.   </p>
+<p>Need to figure out how to do it - AppleScript seems more appropriate than Python for this, considering the need to target a specific app to be screeshot. </p>
+<h1 id="objective">Objective</h1>
+<p>App I want to focus on is my media player of choice: IINA [<a href="../../apps/iina/index.html">Nic Note: IINA</a>]    </p>
+<p>Single command to trigger: keyboard shortcut and/or Streamdeck key [<a href="../../home-office/streamdeck/index.html">Nic Note: Streamdeck</a>] and /or Contour Shuttle key -ideal [<a href="../../home-office/contour-shuttle/index.html">Nic Note: Contour Shuttle</a>]  </p>
+<p>Automates:<br>
+- puts IINA at the foreground
+- capture screenshot of app only
+- saved to a dedicated folder</p>
+<p>Output: <br>
+- saved image file with video title and timestamp. <br>
+- HTML code in clipboard, ready to be pasted, with path to image and CSS styling (see [<a href="../../projects/clipee/#clipee-note">Nic Note: Clipee #Clipee Note</a>])  </p>
+<p>Could be a multi-tool solution, ie shell script + AppleScript + Hazel [<a href="../../apps/hazel/index.html">Nic Note: Hazel</a>].    </p>
+<h1 id="gathering-infos">Gathering infos</h1>
+<div class="link_border"><div class="link_logo_box"><img class="link_logo" src="https://logo.clearbit.com/engadget.com?size=35" alt="logo"/></div><div class="link_content">
+<div class="link_title">AppleScript: Taking screenshots | Engadget</div>
+<div class="link_tagline">engadget.com</div>
+<div class="link_url"><a href="https://www.engadget.com/2008-07-07-applescript-taking-screenshots.html" target="_blank">https://www.engadget.com/2008-07-07-applescript-taking-screenshots.html</a></div></div></div>
+
+<div class="highlight"><pre><span></span><code><span class="k">property</span> <span class="nv">N</span> <span class="p">:</span> <span class="mi">0</span>
+<span class="k">set</span> <span class="nv">N</span> <span class="k">to</span> <span class="nv">N</span> <span class="o">+</span> <span class="mi">1</span>
+<span class="k">set</span> <span class="nv">picPath</span> <span class="k">to</span> <span class="p">((</span><span class="nv">POSIX</span> <span class="na">path</span> <span class="k">of</span> <span class="p">(</span><span class="nb">path to</span> <span class="nv">desktop</span><span class="p">))</span> <span class="o">&amp;</span> <span class="s2">&quot;Picture_&quot;</span> <span class="o">&amp;</span> <span class="nv">N</span> <span class="o">&amp;</span> <span class="s2">&quot;.png&quot;</span><span class="p">)</span> <span class="k">as </span><span class="nc">string</span>
+<span class="nb">do shell script</span> <span class="s2">&quot;screencapture -tjpg &quot;</span> <span class="o">&amp;</span> <span class="nb">quoted form</span> <span class="k">of</span> <span class="nv">picPath</span>
+</code></pre></div>
+
+<div class="link_border"><div class="link_logo_box"><img class="link_logo" src="https://logo.clearbit.com/apple.com?size=35" alt="logo"/></div><div class="link_content">
+<div class="link_title">AppleScript to take screenshot of a specific area and save to desktop | Apple Community</div>
+<div class="link_tagline">discussions.apple.com</div>
+<div class="link_url"><a href="https://discussions.apple.com/thread/5641587" target="_blank">https://discussions.apple.com/thread/5641587</a></div></div></div>
+
+<div class="highlight"><pre><span></span><code><span class="k">set</span> <span class="p">{</span><span class="nv">l</span><span class="p">,</span> <span class="nv">t</span><span class="p">,</span> <span class="nv">r</span><span class="p">,</span> <span class="nv">b</span><span class="p">}</span> <span class="k">to</span> <span class="p">{</span><span class="mi">911</span><span class="p">,</span> <span class="mi">173</span><span class="p">,</span> <span class="mi">1738</span><span class="p">,</span> <span class="mi">794</span><span class="p">}</span>
+<span class="k">set</span> <span class="p">{</span><span class="nv">x</span><span class="p">,</span> <span class="nv">y</span><span class="p">,</span> <span class="nv">w</span><span class="p">,</span> <span class="nv">h</span><span class="p">}</span> <span class="k">to</span> <span class="p">{</span><span class="nv">l</span><span class="p">,</span> <span class="nv">t</span><span class="p">,</span> <span class="nv">r</span> <span class="o">-</span> <span class="nv">l</span><span class="p">,</span> <span class="nv">b</span> <span class="o">-</span> <span class="nv">t</span><span class="p">}</span>
+<span class="nv">screencapture</span><span class="p">(</span><span class="nv">x</span><span class="p">,</span> <span class="nv">y</span><span class="p">,</span> <span class="nv">w</span><span class="p">,</span> <span class="nv">h</span><span class="p">)</span>
+
+<span class="k">on</span> <span class="nv">screencapture</span><span class="p">(</span><span class="nv">x</span><span class="p">,</span> <span class="nv">y</span><span class="p">,</span> <span class="nv">w</span><span class="p">,</span> <span class="nv">h</span><span class="p">)</span>
+    <span class="cm">(*</span>
+<span class="cm">        number x, y, w, h: rectangle parameters</span>
+<span class="cm">            (x, y) = x, y-coordinates of origin point</span>
+<span class="cm">            (w, h) = width and height of rectangle</span>
+
+<span class="cm">        * screen shot is saved as ~/Desktop/yyyy-mm-dd hh.mm.ss.png</span>
+<span class="cm">    *)</span>
+    <span class="k">set</span> <span class="nv">args</span> <span class="k">to</span> <span class="s2">&quot;&quot;</span>
+    <span class="k">repeat</span> <span class="nv">with</span> <span class="nv">a</span> <span class="k">in</span> <span class="p">{</span><span class="nv">x</span><span class="p">,</span> <span class="nv">y</span><span class="p">,</span> <span class="nv">w</span><span class="p">,</span> <span class="nv">h</span><span class="p">}</span>
+        <span class="k">set</span> <span class="nv">args</span> <span class="k">to</span> <span class="nv">args</span> <span class="o">&amp;</span> <span class="no">space</span> <span class="o">&amp;</span> <span class="p">(</span><span class="s2">&quot;&quot;</span> <span class="o">&amp;</span> <span class="nv">a</span><span class="p">)</span>&#39;s <span class="nb">quoted form</span>
+    <span class="k">end</span> <span class="k">repeat</span>
+    <span class="k">considering </span><span class="nb">numeric strings</span>
+        <span class="k">if</span> <span class="p">(</span><span class="nb">system info</span><span class="p">)</span>&#39;s <span class="nv">system</span> <span class="no">version</span> <span class="o">&lt;</span> <span class="s2">&quot;10.9&quot;</span> <span class="k">then</span>
+            <span class="k">set</span> <span class="nv">ruby</span> <span class="k">to</span> <span class="s2">&quot;/usr/bin/ruby&quot;</span>
+        <span class="k">else</span>
+            <span class="k">set</span> <span class="nv">ruby</span> <span class="k">to</span> <span class="s2">&quot;/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/bin/ruby&quot;</span>
+        <span class="k">end</span> <span class="k">if</span>
+    <span class="k">end</span> <span class="k">considering</span>
+    <span class="nb">do shell script</span> <span class="nv">ruby</span> <span class="o">&amp;</span> <span class="s2">&quot; &lt;&lt;&#39;EOF&#39; - &quot;</span> <span class="o">&amp;</span> <span class="nv">args</span> <span class="o">&amp;</span> <span class="s2">&quot;</span>
+<span class="s2">require &#39;osx/cocoa&#39;</span>
+<span class="s2">include OSX</span>
+<span class="s2">raise ArgumentError, \&quot;Usage: #{File.basename($0)} x, y, w, h\&quot; unless ARGV.length == 4</span>
+<span class="s2">x, y, w, h = ARGV.map {|a| a.to_f}</span>
+<span class="s2">outfile = File.expand_path(%x[date +&#39;%F %H.%M.%S.png&#39;].chomp, &#39;~/Desktop&#39;)</span>
+<span class="s2">img = CGDisplayCreateImageForRect(CGMainDisplayID(), CGRectMake(x, y, w, h))</span>
+<span class="s2">brep = NSBitmapImageRep.alloc.initWithCGImage(img)</span>
+<span class="s2">data = brep.objc_send(</span>
+<span class="s2">    :representationUsingType, NSPNGFileType,</span>
+<span class="s2">    :properties, {})</span>
+<span class="s2">data.objc_send(</span>
+<span class="s2">    :writeToFile, outfile,</span>
+<span class="s2">    :atomically, false)</span>
+<span class="s2">EOF&quot;</span>
+<span class="k">end</span> <span class="nv">screencapture</span>
+</code></pre></div>
+
+<p>The command to size a window in AppleScript is:  </p>
+<div class="highlight"><pre><span></span><code><span class="k">tell</span> <span class="nb">application</span> <span class="s2">&quot;Finder&quot;</span> <span class="k">to</span> <span class="k">set</span> <span class="nb">the</span> <span class="na">bounds</span> <span class="k">of</span> <span class="nb">the</span> <span class="nb">front</span> <span class="na">window</span> <span class="k">to</span> <span class="p">{</span><span class="mi">25</span><span class="p">,</span> <span class="mi">50</span><span class="p">,</span> <span class="mi">1025</span><span class="p">,</span> <span class="mi">650</span><span class="p">}</span>
+</code></pre></div>
+
+<p>active application:   </p>
+<div class="highlight"><pre><span></span><code><span class="nb">activate</span> <span class="nb">application</span> <span class="s2">&quot;Safari&quot;</span>
+</code></pre></div>
+
+<h2 id="work-in-progress">Work in progress</h2>
+<h3 id="1st-working-script">1st working script</h3>
+<p>working: </p>
+<ul>
+<li>put IINA at foreground</li>
+<li>screenshot</li>
+<li>saves file</li>
+</ul>
+<p><img class="screenshot" src="https://notes.nicolasdeville.com/images/script-screenshot-app/Picture_1.png" alt="script-screenshot-app/Picture_1.png"/>  </p>
+<p>to figure out:</p>
+<ol>
+<li>capture app only, not full screen ➤ shell script syntax</li>
+<li>capture video file name ➤ AppleScript</li>
+<li>capture timestamp ➤ possible? 🤔  </li>
+<li>generate HTML code ➤ I know how to do it with Python, not sure how to connect both or if I have to redo logic in AppleScript? 🤔</li>
+</ol>
+<p>For 1) looking at command line tools that would help, eg.:  </p>
+<ul>
+<li>gnome-screenshot</li>
+<li>scrot</li>
+<li>ImageMagick</li>
+</ul>
+<div class="link_border"><div class="link_logo_box"><img class="link_logo" src="https://logo.clearbit.com/tecmint.com?size=35" alt="logo"/></div><div class="link_content">
+<div class="link_title">Scrot: A Command Line Tool to Take Desktop/Server Screenshots Automatically in Linux</div>
+<div class="link_tagline">tecmint.com</div>
+<div class="link_url"><a href="https://www.tecmint.com/take-screenshots-in-linux-using-scrot/" target="_blank">https://www.tecmint.com/take-screenshots-in-linux-using-scrot/</a></div></div></div>
+
+<p>doesn't seem to be available for macOS</p>
+<div class="link_border"><div class="link_logo_box"><img class="link_logo" src="https://logo.clearbit.com/osxdaily.com?size=35" alt="logo"/></div><div class="link_content">
+<div class="link_title">   Take Screen Shots from the Terminal in Mac OS X   </div>
+<div class="link_tagline">osxdaily.com</div>
+<div class="link_url"><a href="https://osxdaily.com/2011/08/11/take-screen-shots-terminal-mac-os-x/" target="_blank">https://osxdaily.com/2011/08/11/take-screen-shots-terminal-mac-os-x/</a></div></div></div>
+
+<p>To silently take a screen shot just use the -x flag:</p>
+<div class="highlight"><pre><span></span><code>screencapture -x quiet.jpg
+</code></pre></div>
+
+<p>Learning of the day: make use more often of the <code>-h</code> (help) switch when a shell command is known. <code>screencapture -h</code> gives:   </p>
+<div class="highlight"><pre><span></span><code>xxx@xxxx ~ % screencapture -h
+screencapture: illegal option -- h
+usage: screencapture <span class="o">[</span>-icMPmwsWxSCUtoa<span class="o">]</span> <span class="o">[</span>files<span class="o">]</span>
+  -c         force screen capture to go to the clipboard
+  -b         capture Touch Bar - non-interactive modes only
+  -C         capture the cursor as well as the screen. only <span class="k">in</span> non-interactive modes
+  -d         display errors to the user graphically
+  -i         capture screen interactively, by selection or window
+               control key - causes screen shot to go to clipboard
+               space key   - toggle between mouse selection and
+                             window selection modes
+               escape key  - cancels interactive screen shot
+  -m         only capture the main monitor, undefined <span class="k">if</span> -i is <span class="nb">set</span>
+  -D&lt;display&gt; screen capture or record from the display specified. -D <span class="m">1</span> is main display, -D <span class="m">2</span> secondary, etc.
+  -o         <span class="k">in</span> window capture mode, <span class="k">do</span> not capture the shadow of the window
+  -p         screen capture will use the default settings <span class="k">for</span> capture. The files argument will be ignored
+  -M         screen capture output will go to a new Mail message
+  -P         screen capture output will open <span class="k">in</span> Preview or QuickTime Player <span class="k">if</span> video
+  -I         screen capture output will open <span class="k">in</span> Messages
+  -B&lt;bundleid&gt; screen capture output will open <span class="k">in</span> app with bundleid
+  -s         only allow mouse selection mode
+  -S         <span class="k">in</span> window capture mode, capture the screen not the window
+  -J&lt;style&gt;  sets the starting of interfactive capture
+               selection       - captures screen <span class="k">in</span> selection mode
+               window          - captures screen <span class="k">in</span> window mode
+               video           - records screen <span class="k">in</span> selection mode
+  -t&lt;format&gt; image format to create, default is png <span class="o">(</span>other options include pdf, jpg, tiff and other formats<span class="o">)</span>
+  -T&lt;seconds&gt; take the picture after a delay of &lt;seconds&gt;, default is <span class="m">5</span>
+  -w         only allow window selection mode
+  -W         start interaction <span class="k">in</span> window selection mode
+  -x         <span class="k">do</span> not play sounds
+  -a         <span class="k">do</span> not include windows attached to selected windows
+  -r         <span class="k">do</span> not add dpi meta data to image
+  -l&lt;windowid&gt; capture this windowsid
+  -R&lt;x,y,w,h&gt; capture screen rect
+  -v        capture video recording of the screen
+  -V&lt;seconds&gt; limits video capture to specified seconds
+  -g        captures audio during a video recording using default input.
+  -G&lt;id&gt;    captures audio during a video recording using audio id specified.
+  -k        show clicks <span class="k">in</span> video recording mode
+  -U        Show interactive toolbar <span class="k">in</span> interactive mode
+  -u        present UI after screencapture is complete. files passed to <span class="nb">command</span> line will be ignored
+  files   where to save the screen capture, <span class="m">1</span> file per screen
+</code></pre></div>
+
+<p>so need:   </p>
+<div class="highlight"><pre><span></span><code>screencapture -w -d -i -o -x -tjpg
+</code></pre></div>
+
+<p><code>-i</code> is interactive so mouse click required to select windown 😕   </p>
+<p>or trying   </p>
+<div class="highlight"><pre><span></span><code>screencapture -wdioxtjpg
+</code></pre></div>
+
+<p>Working solution seems to be using Shortcuts 🤯   </p>
+<div class="link_border"><div class="link_logo_box"><img class="link_logo" src="https://logo.clearbit.com/stackexchange.com?size=35" alt="logo"/></div><div class="link_content">
+<div class="link_title">macos - How do I find the windowid to pass to screencapture -l? - Ask Different</div>
+<div class="link_tagline">stackexchange.com</div>
+<div class="link_url"><a href="https://apple.stackexchange.com/questions/56561/how-do-i-find-the-windowid-to-pass-to-screencapture-l" target="_blank">https://apple.stackexchange.com/questions/56561/how-do-i-find-the-windowid-to-pass-to-screencapture-l</a></div></div></div>
+
+<p>need to figure out if I can get timestamp and video name.   </p>
+<p>To run: <code>shortcuts run "Screenshot IINA"</code>  </p>
+<p>Works even when window is not at the foreground 😁   </p>
+<p>Took a different turn, but now have it so that a key on my Contour Shuttle [<a href="../../home-office/contour-shuttle/index.html">Nic Note: Contour Shuttle</a>] takes the screenshot and adds to a folder with video name.  </p>
+<p>Need to figure out how to rename files with no spaces and generate HTML. Probably triggering a Python script with Hazel - will be the quickest.    </p>
+<p>Enough for today though 😁   </p>
+                </article>
+            </aside>
+
+                <section id="content" class="body">
+
+                <!-- PREVIOUS NOTES -->
+				<p class="notes-section">previous notes</p>
+                <hr>
+
+                <ol id="posts-list" class="hfeed">
+            
+
+
+
+            <li>
+                <article class="hentry">
+                    <header>
+                        <!-- PREVIOUS NOTE TITLE -->
+                        <h1><a href="https://notes.nicolasdeville.com/home-office/contour-shuttle" rel="bookmark"
+                            title="Contour ShuttlePRO v2">Contour ShuttlePRO v2</a></h1>
+                        <!-- PREVIOUS NOTE SUMMARY -->
+                        <div class="entry-content">
+                            
+                        </div>
+                    </header>
+
+                    <div class="entry-content">
+                        <!-- PREVIOUS NOTE METADATA -->
+<footer class="post-info">
+
+    <p>
+        02 Oct 2022 <span class="separator">|</span> in <a class="link_tag" href="https://notes.nicolasdeville.com/home-office/">home office</a>
+
+        <!-- added 4/7 -->
+        <!-- 		<br />
+        <abbr class="modified" title="2022-10-02T23:22:08.714019+02:00">
+                Updated: 02 Oct 2022
+        </abbr>
+ -->
+
+    </p>
+
+    
+
+</footer>                    </div>
+                    
+                </article>
+                <hr/>
+            </li>
+            
+
+
+
+            <li>
+                <article class="hentry">
+                    <header>
+                        <!-- PREVIOUS NOTE TITLE -->
+                        <h1><a href="https://notes.nicolasdeville.com/helpers/applescript" rel="bookmark"
+                            title="AppleScript">AppleScript</a></h1>
+                        <!-- PREVIOUS NOTE SUMMARY -->
+                        <div class="entry-content">
+                            
+                        </div>
+                    </header>
+
+                    <div class="entry-content">
+                        <!-- PREVIOUS NOTE METADATA -->
+<footer class="post-info">
+
+    <p>
+        02 Oct 2022 <span class="separator">|</span> in <a class="link_tag" href="https://notes.nicolasdeville.com/helpers/">helpers</a>
+ tags: <a class="link_tag" href="https://notes.nicolasdeville.com/tag/macos.html">macOS</a>
+<a class="link_tag" href="https://notes.nicolasdeville.com/tag/automation.html">automation</a>
+<a class="link_tag" href="https://notes.nicolasdeville.com/tag/scripts.html">scripts</a>
+
+        <!-- added 4/7 -->
+        <!-- 		<br />
+        <abbr class="modified" title="2022-10-02T22:24:33.075842+02:00">
+                Updated: 02 Oct 2022
+        </abbr>
+ -->
+
+    </p>
+
+    
+
+</footer>                    </div>
+                    
+                </article>
+                <hr/>
+            </li>
+            
+
+
+
+            <li>
+                <article class="hentry">
+                    <header>
+                        <!-- PREVIOUS NOTE TITLE -->
+                        <h1><a href="https://notes.nicolasdeville.com/interests/mechanical-keyboards" rel="bookmark"
+                            title="Mechanical Keyboards">Mechanical Keyboards</a></h1>
+                        <!-- PREVIOUS NOTE SUMMARY -->
+                        <div class="entry-content">
+                            
+                        </div>
+                    </header>
+
+                    <div class="entry-content">
+                        <!-- PREVIOUS NOTE METADATA -->
+<footer class="post-info">
+
+    <p>
+        02 Oct 2022 <span class="separator">|</span> in <a class="link_tag" href="https://notes.nicolasdeville.com/interests/">interests</a>
+
+        <!-- added 4/7 -->
+        <!-- 		<br />
+        <abbr class="modified" title="2022-10-02T16:56:44.943648+02:00">
+                Updated: 02 Oct 2022
+        </abbr>
+ -->
+
+    </p>
+
+    
+
+</footer>                    </div>
+                    
+                </article>
+                <hr/>
+            </li>
+            
+
+
+
+            <li>
+                <article class="hentry">
+                    <header>
+                        <!-- PREVIOUS NOTE TITLE -->
+                        <h1><a href="https://notes.nicolasdeville.com/projects/meta-url" rel="bookmark"
+                            title="Python Open-Source Project: metaURL">Python Open-Source Project: metaURL</a></h1>
+                        <!-- PREVIOUS NOTE SUMMARY -->
+                        <div class="entry-content">
+                            <p>generates metadata for a given URL</p>
+                        </div>
+                    </header>
+
+                    <div class="entry-content">
+                        <!-- PREVIOUS NOTE METADATA -->
 <footer class="post-info">
 
     <p>
@@ -127,308 +491,11 @@
 
     
 
-</footer><p>Open-source (work in progress) at: </p>
-<div class="link_border"><div class="link_logo_box"><img class="link_logo" src="https://logo.clearbit.com/github.com?size=35" alt="logo"/></div><div class="link_content">
-<div class="link_title">GitHub - ndeville/meta-url: Function to generate metadata from URL</div>
-<div class="link_tagline">github.com</div>
-<div class="link_url"><a href="https://github.com/ndeville/meta_url" target="_blank">https://github.com/ndeville/meta_url</a></div></div></div>
-
-<div class="toc"><span class="toctitle">Table of Contents</span><ul>
-<li><a href="#background">Background</a></li>
-<li><a href="#goal">Goal</a></li>
-<li><a href="#logic">Logic</a></li>
-<li><a href="#components">Components</a><ul>
-<li><a href="#imports">imports</a></li>
-<li><a href="#clean-url-with-path">clean URL with path</a></li>
-<li><a href="#root-website-ie-without-path">root website (ie without path)</a></li>
-<li><a href="#domain">domain</a></li>
-<li><a href="#slug">slug</a></li>
-<li><a href="#metadata">metadata</a><ul>
-<li><a href="#with-request">with request</a></li>
-<li><a href="#with-selenium">with selenium</a></li>
-</ul>
-</li>
-<li><a href="#title">title</a></li>
-<li><a href="#name">name</a></li>
-<li><a href="#summary">summary</a></li>
-<li><a href="#tags">tags</a></li>
-<li><a href="#emails">emails</a></li>
-<li><a href="#countries">countries</a></li>
-<li><a href="#socials">socials</a></li>
-<li><a href="#logo">logo</a></li>
-</ul>
-</li>
-<li><a href="#output">Output</a></li>
-<li><a href="#to-explore">To explore</a></li>
-<li><a href="#work-in-progress">Work in progress</a></li>
-<li><a href="#future">Future</a><ul>
-<li><a href="#open-source">open-source</a></li>
-<li><a href="#api">API</a><ul>
-<li><a href="#data-sources-for-paid-for-api">data sources for paid-for API</a></li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-</div>
-<p><span class="datestamp">29 Sep 2022</span>   </p>
-<h1 id="background">Background</h1>
-<p>I deal a lot with URLs in my Python scripts, and it's always painful to piece together several functions I have accumulated over time to get what I need from a URL.   </p>
-<h1 id="goal">Goal</h1>
-<p>Fetch as much data as possible from a single URL input. </p>
-<p>Aim here is to write an overarching function that does it all and that I can call easily from any script.  </p>
-<h1 id="logic">Logic</h1>
-<p>Input: <code>URL</code>   </p>
-<p>Output: return namedtuple with</p>
-<ul>
-<li>clean URL with path</li>
-<li>root website (ie without path)</li>
-<li>domain</li>
-<li>slug</li>
-<li>header</li>
-<li>title</li>
-<li>name</li>
-<li>summary</li>
-<li>tags</li>
-<li>emails</li>
-<li>email patterns</li>
-<li>phone</li>
-<li>facebook</li>
-<li>twitter</li>
-<li>linkedin</li>
-<li>youtube</li>
-<li>tiktok</li>
-<li>country(ies)</li>
-<li>logo</li>
-</ul>
-<p>Use should be as follow:</p>
-<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">meta_url</span>
-
-<span class="n">url</span> <span class="o">=</span> <span class="s1">&#39;https://...&#39;</span>
-
-<span class="n">x</span> <span class="o">=</span> <span class="n">meta</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
-
-<span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="o">.</span><span class="n">title</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="o">.</span><span class="n">slug</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="o">.</span><span class="n">twitter</span><span class="p">)</span>
-<span class="n">etc</span><span class="o">...</span>
-</code></pre></div>
-
-<h1 id="components">Components</h1>
-<p>Tests with:</p>
-<div class="highlight"><pre><span></span><code><span class="n">test_url</span> <span class="o">=</span> <span class="s1">&#39;https://www.amazon.co.uk/Great-Dune-Trilogy-Children-GOLLANCZ-ebook/dp/B07G17V69X/ref=sr_1_1?crid=3BQYT3B98L09M&amp;keywords=dune+kindle&amp;qid=1664442334&amp;qu=eyJxc2MiOiIyLjI0IiwicXNhIjoiMS44OSIsInFzcCI6IjEuODkifQ%3D%3D&amp;sprefix=dune+kindle%2Caps%2C91&amp;sr=8-1&#39;</span>
-</code></pre></div>
-
-<h2 id="imports">imports</h2>
-<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">urllib</span> <span class="kn">import</span> <span class="n">request</span>
-<span class="kn">from</span> <span class="nn">urllib.parse</span> <span class="kn">import</span> <span class="n">urlparse</span>
-<span class="kn">import</span> <span class="nn">tldextract</span>
-<span class="kn">from</span> <span class="nn">bs4</span> <span class="kn">import</span> <span class="n">BeautifulSoup</span>
-<span class="kn">from</span> <span class="nn">selenium.webdriver</span> <span class="kn">import</span> <span class="n">Chrome</span><span class="p">,</span> <span class="n">ChromeOptions</span>
-<span class="kn">from</span> <span class="nn">selenium</span> <span class="kn">import</span> <span class="n">webdriver</span>
-<span class="kn">from</span> <span class="nn">selenium.webdriver.chrome.service</span> <span class="kn">import</span> <span class="n">Service</span>
-</code></pre></div>
-
-<h2 id="clean-url-with-path">clean URL with path</h2>
-<div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">clean_url</span><span class="p">(</span><span class="n">url</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
-    <span class="kn">from</span> <span class="nn">urllib.parse</span> <span class="kn">import</span> <span class="n">urlparse</span>
-    <span class="n">purl</span> <span class="o">=</span> <span class="n">urlparse</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
-    <span class="n">scheme</span> <span class="o">=</span> <span class="n">purl</span><span class="o">.</span><span class="n">scheme</span> <span class="o">+</span> <span class="s1">&#39;://&#39;</span> <span class="k">if</span> <span class="n">purl</span><span class="o">.</span><span class="n">scheme</span> <span class="k">else</span> <span class="s1">&#39;&#39;</span>
-    <span class="k">return</span> <span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">scheme</span><span class="si">}{</span><span class="n">purl</span><span class="o">.</span><span class="n">netloc</span><span class="si">}{</span><span class="n">purl</span><span class="o">.</span><span class="n">path</span><span class="si">}</span><span class="s1">&#39;</span>
-</code></pre></div>
-
-<p>outputs:   </p>
-<div class="highlight"><pre><span></span><code><span class="s1">&#39;https://www.amazon.co.uk/Great-Dune-Trilogy-Children-GOLLANCZ-ebook/dp/B07G17V69X/ref=sr_1_1&#39;</span>
-</code></pre></div>
-
-<h2 id="root-website-ie-without-path">root website (ie without path)</h2>
-<div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">root_url</span><span class="p">(</span><span class="n">url</span><span class="p">):</span>
-    <span class="n">o</span> <span class="o">=</span> <span class="n">urlparse</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
-    <span class="n">root_website</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">o</span><span class="o">.</span><span class="n">scheme</span><span class="si">}</span><span class="s2">//</span><span class="si">{</span><span class="n">o</span><span class="o">.</span><span class="n">hostname</span><span class="si">}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span>
-    <span class="k">return</span> <span class="n">root_website</span>
-</code></pre></div>
-
-<p>outputs:</p>
-<div class="highlight"><pre><span></span><code><span class="s1">&#39;https//www.amazon.co.uk&#39;</span>
-</code></pre></div>
-
-<h2 id="domain">domain</h2>
-<div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">domain_from_url</span><span class="p">(</span><span class="n">url</span><span class="p">):</span>
-    <span class="n">o</span> <span class="o">=</span> <span class="n">tldextract</span><span class="o">.</span><span class="n">extract</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
-    <span class="n">domain</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">o</span><span class="o">.</span><span class="n">domain</span><span class="si">}</span><span class="s2">.</span><span class="si">{</span><span class="n">o</span><span class="o">.</span><span class="n">suffix</span><span class="si">}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span>
-    <span class="k">if</span> <span class="s1">&#39;www.&#39;</span> <span class="ow">in</span> <span class="n">domain</span><span class="p">:</span>
-        <span class="n">domain</span> <span class="o">=</span> <span class="n">domain</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;www.&#39;</span><span class="p">,</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
-    <span class="k">return</span> <span class="n">domain</span>
-</code></pre></div>
-
-<p>outputs:</p>
-<div class="highlight"><pre><span></span><code><span class="s1">&#39;amazon.co.uk&#39;</span>
-</code></pre></div>
-
-<h2 id="slug">slug</h2>
-<div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">slug_from_url</span><span class="p">(</span><span class="n">url</span><span class="p">):</span>
-    <span class="n">o</span> <span class="o">=</span> <span class="n">tldextract</span><span class="o">.</span><span class="n">extract</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
-    <span class="n">domain_name</span> <span class="o">=</span> <span class="n">o</span><span class="o">.</span><span class="n">domain</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span>
-    <span class="k">if</span> <span class="s1">&#39;www.&#39;</span> <span class="ow">in</span> <span class="n">domain_name</span><span class="p">:</span>
-        <span class="n">domain_name</span> <span class="o">=</span> <span class="n">domain_name</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;www.&#39;</span><span class="p">,</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
-    <span class="k">return</span> <span class="n">domain_name</span>
-</code></pre></div>
-
-<p>outputs:</p>
-<div class="highlight"><pre><span></span><code><span class="s1">&#39;amazon&#39;</span>
-</code></pre></div>
-
-<h2 id="metadata">metadata</h2>
-<p>2 approaches here:</p>
-<ul>
-<li>with Selenium (which requires a browser driver)</li>
-<li>with simple request</li>
-</ul>
-<p>need to test results for both approaches - perfect solution might be using both, starting with one and falling back on the other.   </p>
-<h3 id="with-request">with request</h3>
-<h3 id="with-selenium">with selenium</h3>
-<p>See [<a href="../../python/fetch-metadata-from-url/index.html">Nic Note: Fetch website metadata from URL</a>]   </p>
-<div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">metadata_from_url_selenium</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">v</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
-    <span class="k">if</span> <span class="n">v</span><span class="p">:</span>
-        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">#</span><span class="si">{</span><span class="n">get_linenumber</span><span class="p">()</span><span class="si">}</span><span class="s2"> starting metadata_from_url_selenium with </span><span class="si">{</span><span class="n">url</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-
-    <span class="n">chrome_options</span> <span class="o">=</span> <span class="n">ChromeOptions</span><span class="p">()</span>
-    <span class="n">chrome_options</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s1">&#39;--headless&#39;</span><span class="p">)</span>
-
-    <span class="n">s</span> <span class="o">=</span> <span class="n">Service</span><span class="p">(</span><span class="n">driverpath</span><span class="p">)</span>
-    <span class="n">web</span> <span class="o">=</span> <span class="n">Chrome</span><span class="p">(</span><span class="n">service</span><span class="o">=</span><span class="n">s</span><span class="p">,</span><span class="n">options</span><span class="o">=</span><span class="n">chrome_options</span><span class="p">)</span>
-    <span class="n">web</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
-    <span class="n">xml</span> <span class="o">=</span> <span class="n">web</span><span class="o">.</span><span class="n">page_source</span>
-    <span class="k">if</span> <span class="n">test</span><span class="p">:</span>
-        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">#</span><span class="si">{</span><span class="n">get_linenumber</span><span class="p">()</span><span class="si">}</span><span class="s2"> </span><span class="si">{</span><span class="n">xml</span><span class="si">=}</span><span class="s2">&quot;</span><span class="p">)</span>
-    <span class="n">web</span><span class="o">.</span><span class="n">quit</span><span class="p">()</span>
-    <span class="n">soup</span> <span class="o">=</span> <span class="n">BeautifulSoup</span><span class="p">(</span><span class="n">xml</span><span class="p">,</span> <span class="n">features</span><span class="o">=</span><span class="s1">&#39;html.parser&#39;</span><span class="p">)</span>
-    <span class="k">if</span> <span class="n">test</span><span class="p">:</span>
-        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">#</span><span class="si">{</span><span class="n">get_linenumber</span><span class="p">()</span><span class="si">}</span><span class="s2"> </span><span class="si">{</span><span class="n">soup</span><span class="si">=}</span><span class="s2">&quot;</span><span class="p">)</span>
-    <span class="n">metas</span> <span class="o">=</span> <span class="p">[</span><span class="n">x</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">soup</span><span class="o">.</span><span class="n">find_all</span><span class="p">(</span><span class="s1">&#39;meta&#39;</span><span class="p">)</span> <span class="k">if</span> <span class="n">x</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;property&#39;</span><span class="p">)]</span>
-    <span class="k">if</span> <span class="n">v</span><span class="p">:</span>
-        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">#</span><span class="si">{</span><span class="n">get_linenumber</span><span class="p">()</span><span class="si">}</span><span class="s2"> metas:</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
-        <span class="n">pp</span><span class="o">.</span><span class="n">pprint</span><span class="p">(</span><span class="n">metas</span><span class="p">)</span>
-
-    <span class="k">return</span> <span class="p">[{</span><span class="n">x</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;property&#39;</span><span class="p">):</span> <span class="n">x</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;content&#39;</span><span class="p">)}</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">metas</span><span class="p">]</span> <span class="c1"># list of dicts</span>
-</code></pre></div>
-
-<p>outputs eg:   </p>
-<div class="highlight"><pre><span></span><code><span class="o">[</span>   <span class="o">{</span><span class="s1">&#39;og:site_name&#39;</span>: <span class="s1">&#39;xxx&#39;</span><span class="o">}</span>,
-    <span class="o">{</span>   <span class="s1">&#39;og:title&#39;</span>: <span class="s1">&#39;xxx&#39;</span><span class="o">}</span>,
-    <span class="o">{</span>   <span class="s1">&#39;og:description&#39;</span>: <span class="s1">&#39;xxx&#39;</span><span class="o">}</span>,
-    <span class="o">{</span>   <span class="s1">&#39;og:image&#39;</span>: <span class="s1">&#39;https://xxx&#39;</span><span class="o">}</span>,
-    <span class="o">{</span><span class="s1">&#39;og:url&#39;</span>: <span class="s1">&#39;https://xxx&#39;</span><span class="o">}</span>,
-    <span class="o">{</span><span class="s1">&#39;og:locale&#39;</span>: <span class="s1">&#39;en_US&#39;</span><span class="o">}</span>,
-    <span class="o">{</span><span class="s1">&#39;og:type&#39;</span>: <span class="s1">&#39;website&#39;</span><span class="o">}</span>,
-    <span class="o">{</span><span class="s1">&#39;og:url&#39;</span>: <span class="s1">&#39;https://xxx&#39;</span><span class="o">}</span>,
-    <span class="o">{</span><span class="s1">&#39;og:site_name&#39;</span>: <span class="s1">&#39;xxx&#39;</span><span class="o">}</span>
-    <span class="o">]</span>
-</code></pre></div>
-
-<p>Note: output depends on meta-tag available on website. Need to implement try/except when using.   </p>
-<h2 id="title">title</h2>
-<h2 id="name">name</h2>
-<h2 id="summary">summary</h2>
-<p>Find AI solution? <br>
-Fallback: use title / header.   </p>
-<h2 id="tags">tags</h2>
-<p>Find AI solution?   </p>
-<h2 id="emails">emails</h2>
-<h2 id="countries">countries</h2>
-<h2 id="socials">socials</h2>
-<h2 id="logo">logo</h2>
-<p>Using Clearbit API:   </p>
-<div class="link_border"><div class="link_logo_box"><img class="link_logo" src="https://logo.clearbit.com/clearbit.com?size=35" alt="logo"/></div><div class="link_content">
-<div class="link_title">Logo API Tool | Find & Embed Company Logos for Free | Clearbit</div>
-<div class="link_tagline">Find Company Logos</div>
-<div class="link_url"><a href="https://clearbit.com/logo" target="_blank">https://clearbit.com/logo</a></div></div></div>
-
-<h1 id="output">Output</h1>
-<p>namedtuple object   </p>
-<p>+ structured log of the object (JSON)?</p>
-<h1 id="to-explore">To explore</h1>
-<div class="link_border"><div class="link_logo_box"><img class="link_logo" src="https://logo.clearbit.com/rapidapi.com?size=35" alt="logo"/></div><div class="link_content">
-<div class="link_title">Data APIs</div>
-<div class="link_tagline">rapidapi.com</div>
-<div class="link_url"><a href="https://rapidapi.com/category/Data" target="_blank">https://rapidapi.com/category/Data</a></div></div></div>
-
-<h1 id="work-in-progress">Work in progress</h1>
-<p><span class="datestamp">30 Sep 2022</span> works currently as follows:   </p>
-<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">meta_url</span> <span class="kn">import</span> <span class="n">meta</span>
-
-<span class="n">test</span> <span class="o">=</span> <span class="n">meta</span><span class="p">(</span><span class="s1">&#39;https://notes.nicolasdeville.com&#39;</span><span class="p">)</span>
-
-<span class="nb">print</span><span class="p">()</span>
-<span class="n">pp</span><span class="o">.</span><span class="n">pprint</span><span class="p">(</span><span class="n">test</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">()</span> 
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">test</span><span class="o">.</span><span class="n">clean_url</span><span class="si">=}</span><span class="s2">&quot;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">test</span><span class="o">.</span><span class="n">root_website_url</span><span class="si">=}</span><span class="s2">&quot;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">test</span><span class="o">.</span><span class="n">domain</span><span class="si">=}</span><span class="s2">&quot;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">test</span><span class="o">.</span><span class="n">slug</span><span class="si">=}</span><span class="s2">&quot;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">test</span><span class="o">.</span><span class="n">header</span><span class="si">=}</span><span class="s2">&quot;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">test</span><span class="o">.</span><span class="n">title</span><span class="si">=}</span><span class="s2">&quot;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">test</span><span class="o">.</span><span class="n">name</span><span class="si">=}</span><span class="s2">&quot;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">test</span><span class="o">.</span><span class="n">description</span><span class="si">=}</span><span class="s2">&quot;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">test</span><span class="o">.</span><span class="n">tags</span><span class="si">=}</span><span class="s2">&quot;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">test</span><span class="o">.</span><span class="n">emails</span><span class="si">=}</span><span class="s2">&quot;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">test</span><span class="o">.</span><span class="n">twitter</span><span class="si">=}</span><span class="s2">&quot;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">test</span><span class="o">.</span><span class="n">facebook</span><span class="si">=}</span><span class="s2">&quot;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">test</span><span class="o">.</span><span class="n">youtube</span><span class="si">=}</span><span class="s2">&quot;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">test</span><span class="o">.</span><span class="n">tiktok</span><span class="si">=}</span><span class="s2">&quot;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">test</span><span class="o">.</span><span class="n">countries</span><span class="si">=}</span><span class="s2">&quot;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">test</span><span class="o">.</span><span class="n">logo</span><span class="si">=}</span><span class="s2">&quot;</span><span class="p">)</span>
-</code></pre></div>
-
-<p>outputs: </p>
-<div class="highlight"><pre><span></span><code>metaURL<span class="o">(</span><span class="nv">clean_url</span><span class="o">=</span><span class="s1">&#39;https://notes.nicolasdeville.com&#39;</span>, <span class="nv">root_website_url</span><span class="o">=</span><span class="s1">&#39;https//notes.nicolasdeville.com&#39;</span>, <span class="nv">domain</span><span class="o">=</span><span class="s1">&#39;nicolasdeville.com&#39;</span>, <span class="nv">slug</span><span class="o">=</span><span class="s1">&#39;nicolasdeville&#39;</span>, <span class="nv">header</span><span class="o">=</span><span class="s1">&#39;Building a static site with Pelican&#39;</span>, <span class="nv">title</span><span class="o">=</span><span class="s1">&#39;&#39;</span>, <span class="nv">name</span><span class="o">=</span><span class="s1">&#39;&#39;</span>, <span class="nv">description</span><span class="o">=</span><span class="s1">&#39;&#39;</span>, <span class="nv">tags</span><span class="o">=</span><span class="s1">&#39;&#39;</span>, <span class="nv">emails</span><span class="o">=[]</span>, <span class="nv">twitter</span><span class="o">=[</span><span class="s1">&#39;https://www.twitter.com/ndeville&#39;</span><span class="o">]</span>, <span class="nv">facebook</span><span class="o">=[]</span>, <span class="nv">youtube</span><span class="o">=[]</span>, <span class="nv">tiktok</span><span class="o">=[]</span>, <span class="nv">countries</span><span class="o">=[]</span>, <span class="nv">logo</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="o">)</span>
-
-test.clean_url<span class="o">=</span><span class="s1">&#39;https://notes.nicolasdeville.com&#39;</span>
-test.root_website_url<span class="o">=</span><span class="s1">&#39;https//notes.nicolasdeville.com&#39;</span>
-test.domain<span class="o">=</span><span class="s1">&#39;nicolasdeville.com&#39;</span>
-test.slug<span class="o">=</span><span class="s1">&#39;nicolasdeville&#39;</span>
-test.header<span class="o">=</span><span class="s1">&#39;Building a static site with Pelican&#39;</span>
-test.title<span class="o">=</span><span class="s1">&#39;&#39;</span>
-test.name<span class="o">=</span><span class="s1">&#39;&#39;</span>
-test.description<span class="o">=</span><span class="s1">&#39;&#39;</span>
-test.tags<span class="o">=</span><span class="s1">&#39;&#39;</span>
-test.emails<span class="o">=[]</span>
-test.twitter<span class="o">=[</span><span class="s1">&#39;https://www.twitter.com/ndeville&#39;</span><span class="o">]</span>
-test.facebook<span class="o">=[]</span>
-test.youtube<span class="o">=[]</span>
-test.tiktok<span class="o">=[]</span>
-test.countries<span class="o">=[]</span>
-test.logo<span class="o">=</span><span class="s1">&#39;&#39;</span>
-</code></pre></div>
-
-<p>Thinking about breaking it down so that each part of the output is a separate script within the package 🤔   </p>
-<h1 id="future">Future</h1>
-<p>Though I don't have the skills for it, this could evolve as free open-source and paid-for API. </p>
-<h2 id="open-source">open-source</h2>
-<ul>
-<li><strong>free</strong></li>
-<li>runs <strong>locally</strong>, ie requires driver download and scrapes from one's IP</li>
-<li><strong>limited</strong> to publicly available data, eg domain's website</li>
-</ul>
-<h2 id="api">API</h2>
-<ul>
-<li><strong>paid-for</strong>, as much to build + commercial licenses needed for databases access</li>
-<li>runs in the <strong>cloud</strong>, ie no driver install nore scraping jobs from one's IP</li>
-<li><strong>expand data</strong> &amp; <strong>increase data quality</strong> with use of commercial databases</li>
-</ul>
-<p>This would be acting as channel partner for existing paid-for API providers with company or website data.   </p>
-<h3 id="data-sources-for-paid-for-api">data sources for paid-for API</h3>
-<p>TBC</p>
+</footer>                    </div>
+                    
                 </article>
-            </aside>
-
-                <section id="content" class="body">
-
-                <!-- PREVIOUS NOTES -->
-				<p class="notes-section">previous notes</p>
-                <hr>
-
-                <ol id="posts-list" class="hfeed">
+                <hr/>
+            </li>
             
 
 
@@ -555,6 +622,86 @@ test.logo<span class="o">=</span><span class="s1">&#39;&#39;</span>
                 <article class="hentry">
                     <header>
                         <!-- PREVIOUS NOTE TITLE -->
+                        <h1><a href="https://notes.nicolasdeville.com/apps/iina" rel="bookmark"
+                            title="IINA">IINA</a></h1>
+                        <!-- PREVIOUS NOTE SUMMARY -->
+                        <div class="entry-content">
+                            <p>my media player of choice</p>
+                        </div>
+                    </header>
+
+                    <div class="entry-content">
+                        <!-- PREVIOUS NOTE METADATA -->
+<footer class="post-info">
+
+    <p>
+        02 Oct 2022 <span class="separator">|</span> in <a class="link_tag" href="https://notes.nicolasdeville.com/apps/">apps</a>
+
+        <!-- added 4/7 -->
+        <!-- 		<br />
+        <abbr class="modified" title="2022-10-02T16:53:31.968503+02:00">
+                Updated: 02 Oct 2022
+        </abbr>
+ -->
+
+    </p>
+
+    
+
+</footer>                    </div>
+                    
+                </article>
+                <hr/>
+            </li>
+            
+
+
+
+            <li>
+                <article class="hentry">
+                    <header>
+                        <!-- PREVIOUS NOTE TITLE -->
+                        <h1><a href="https://notes.nicolasdeville.com/helpers/javascript-for-automation" rel="bookmark"
+                            title="Javascript for automation">Javascript for automation</a></h1>
+                        <!-- PREVIOUS NOTE SUMMARY -->
+                        <div class="entry-content">
+                            
+                        </div>
+                    </header>
+
+                    <div class="entry-content">
+                        <!-- PREVIOUS NOTE METADATA -->
+<footer class="post-info">
+
+    <p>
+        02 Oct 2022 <span class="separator">|</span> in <a class="link_tag" href="https://notes.nicolasdeville.com/helpers/">helpers</a>
+ tags: <a class="link_tag" href="https://notes.nicolasdeville.com/tag/automation.html">automation</a>
+<a class="link_tag" href="https://notes.nicolasdeville.com/tag/macos.html">macOS</a>
+
+        <!-- added 4/7 -->
+        <!-- 		<br />
+        <abbr class="modified" title="2022-10-02T21:26:02.928709+02:00">
+                Updated: 02 Oct 2022
+        </abbr>
+ -->
+
+    </p>
+
+    
+
+</footer>                    </div>
+                    
+                </article>
+                <hr/>
+            </li>
+            
+
+
+
+            <li>
+                <article class="hentry">
+                    <header>
+                        <!-- PREVIOUS NOTE TITLE -->
                         <h1><a href="https://notes.nicolasdeville.com/leadership/seasoned-vp-stretch-vp." rel="bookmark"
                             title="Seasoned VP vs Stretch VP">Seasoned VP vs Stretch VP</a></h1>
                         <!-- PREVIOUS NOTE SUMMARY -->
@@ -594,6 +741,45 @@ test.logo<span class="o">=</span><span class="s1">&#39;&#39;</span>
                 <article class="hentry">
                     <header>
                         <!-- PREVIOUS NOTE TITLE -->
+                        <h1><a href="https://notes.nicolasdeville.com/interests/traditional-shaving" rel="bookmark"
+                            title="Traditional Shaving">Traditional Shaving</a></h1>
+                        <!-- PREVIOUS NOTE SUMMARY -->
+                        <div class="entry-content">
+                            
+                        </div>
+                    </header>
+
+                    <div class="entry-content">
+                        <!-- PREVIOUS NOTE METADATA -->
+<footer class="post-info">
+
+    <p>
+        02 Oct 2022 <span class="separator">|</span> in <a class="link_tag" href="https://notes.nicolasdeville.com/interests/">interests</a>
+
+        <!-- added 4/7 -->
+        <!-- 		<br />
+        <abbr class="modified" title="2022-10-02T17:01:13.032524+02:00">
+                Updated: 02 Oct 2022
+        </abbr>
+ -->
+
+    </p>
+
+    
+
+</footer>                    </div>
+                    
+                </article>
+                <hr/>
+            </li>
+            
+
+
+
+            <li>
+                <article class="hentry">
+                    <header>
+                        <!-- PREVIOUS NOTE TITLE -->
                         <h1><a href="https://notes.nicolasdeville.com/tesla/ai-day-2022" rel="bookmark"
                             title="Tesla AI Day 2022">Tesla AI Day 2022</a></h1>
                         <!-- PREVIOUS NOTE SUMMARY -->
@@ -612,8 +798,8 @@ test.logo<span class="o">=</span><span class="s1">&#39;&#39;</span>
 
         <!-- added 4/7 -->
         <!-- 		<br />
-        <abbr class="modified" title="2022-10-01T11:08:36.337304+02:00">
-                Updated: 01 Oct 2022
+        <abbr class="modified" title="2022-10-02T22:49:49.189912+02:00">
+                Updated: 02 Oct 2022
         </abbr>
  -->
 
@@ -651,8 +837,47 @@ test.logo<span class="o">=</span><span class="s1">&#39;&#39;</span>
 
         <!-- added 4/7 -->
         <!-- 		<br />
-        <abbr class="modified" title="2022-10-01T10:08:37.196217+02:00">
-                Updated: 01 Oct 2022
+        <abbr class="modified" title="2022-10-02T21:17:35.787525+02:00">
+                Updated: 02 Oct 2022
+        </abbr>
+ -->
+
+    </p>
+
+    
+
+</footer>                    </div>
+                    
+                </article>
+                <hr/>
+            </li>
+            
+
+
+
+            <li>
+                <article class="hentry">
+                    <header>
+                        <!-- PREVIOUS NOTE TITLE -->
+                        <h1><a href="https://notes.nicolasdeville.com/startups/idea-impromptu-conference-calls" rel="bookmark"
+                            title="Impromptu conference calls">Impromptu conference calls</a></h1>
+                        <!-- PREVIOUS NOTE SUMMARY -->
+                        <div class="entry-content">
+                            
+                        </div>
+                    </header>
+
+                    <div class="entry-content">
+                        <!-- PREVIOUS NOTE METADATA -->
+<footer class="post-info">
+
+    <p>
+        01 Oct 2022 <span class="separator">|</span> in <a class="link_tag" href="https://notes.nicolasdeville.com/startups/">startups</a>
+
+        <!-- added 4/7 -->
+        <!-- 		<br />
+        <abbr class="modified" title="2022-10-02T16:48:45.007145+02:00">
+                Updated: 02 Oct 2022
         </abbr>
  -->
 
@@ -692,45 +917,6 @@ test.logo<span class="o">=</span><span class="s1">&#39;&#39;</span>
         <!-- added 4/7 -->
         <!-- 		<br />
         <abbr class="modified" title="2022-09-30T22:08:45.228579+02:00">
-                Updated: 30 Sep 2022
-        </abbr>
- -->
-
-    </p>
-
-    
-
-</footer>                    </div>
-                    
-                </article>
-                <hr/>
-            </li>
-            
-
-
-
-            <li>
-                <article class="hentry">
-                    <header>
-                        <!-- PREVIOUS NOTE TITLE -->
-                        <h1><a href="https://notes.nicolasdeville.com/startups/ideas" rel="bookmark"
-                            title="Startup Ideas">Startup Ideas</a></h1>
-                        <!-- PREVIOUS NOTE SUMMARY -->
-                        <div class="entry-content">
-                            
-                        </div>
-                    </header>
-
-                    <div class="entry-content">
-                        <!-- PREVIOUS NOTE METADATA -->
-<footer class="post-info">
-
-    <p>
-        30 Sep 2022 <span class="separator">|</span> in <a class="link_tag" href="https://notes.nicolasdeville.com/startups/">startups</a>
-
-        <!-- added 4/7 -->
-        <!-- 		<br />
-        <abbr class="modified" title="2022-09-30T16:22:21.700630+02:00">
                 Updated: 30 Sep 2022
         </abbr>
  -->
@@ -2340,48 +2526,6 @@ test.logo<span class="o">=</span><span class="s1">&#39;&#39;</span>
         <!-- added 4/7 -->
         <!-- 		<br />
         <abbr class="modified" title="2022-09-27T16:15:56.892376+02:00">
-                Updated: 27 Sep 2022
-        </abbr>
- -->
-
-    </p>
-
-    
-
-</footer>                    </div>
-                    
-                </article>
-                <hr/>
-            </li>
-            
-
-
-
-            <li>
-                <article class="hentry">
-                    <header>
-                        <!-- PREVIOUS NOTE TITLE -->
-                        <h1><a href="https://notes.nicolasdeville.com/helpers/applescript" rel="bookmark"
-                            title="AppleScript">AppleScript</a></h1>
-                        <!-- PREVIOUS NOTE SUMMARY -->
-                        <div class="entry-content">
-                            
-                        </div>
-                    </header>
-
-                    <div class="entry-content">
-                        <!-- PREVIOUS NOTE METADATA -->
-<footer class="post-info">
-
-    <p>
-        27 Sep 2022 <span class="separator">|</span> in <a class="link_tag" href="https://notes.nicolasdeville.com/helpers/">helpers</a>
- tags: <a class="link_tag" href="https://notes.nicolasdeville.com/tag/macos.html">macOS</a>
-<a class="link_tag" href="https://notes.nicolasdeville.com/tag/automation.html">automation</a>
-<a class="link_tag" href="https://notes.nicolasdeville.com/tag/scripts.html">scripts</a>
-
-        <!-- added 4/7 -->
-        <!-- 		<br />
-        <abbr class="modified" title="2022-09-27T11:40:04.830618+02:00">
                 Updated: 27 Sep 2022
         </abbr>
  -->
@@ -4144,242 +4288,6 @@ test.logo<span class="o">=</span><span class="s1">&#39;&#39;</span>
         <!-- 		<br />
         <abbr class="modified" title="2022-09-24T10:28:36.714525+02:00">
                 Updated: 24 Sep 2022
-        </abbr>
- -->
-
-    </p>
-
-    
-
-</footer>                    </div>
-                    
-                </article>
-                <hr/>
-            </li>
-            
-
-
-
-            <li>
-                <article class="hentry">
-                    <header>
-                        <!-- PREVIOUS NOTE TITLE -->
-                        <h1><a href="https://notes.nicolasdeville.com/python/library-tldextract" rel="bookmark"
-                            title="Python Library: tldextract">Python Library: tldextract</a></h1>
-                        <!-- PREVIOUS NOTE SUMMARY -->
-                        <div class="entry-content">
-                            
-                        </div>
-                    </header>
-
-                    <div class="entry-content">
-                        <!-- PREVIOUS NOTE METADATA -->
-<footer class="post-info">
-
-    <p>
-        24 Sep 2022 <span class="separator">|</span> in <a class="link_tag" href="https://notes.nicolasdeville.com/python/">python</a>
-
-        <!-- added 4/7 -->
-        <!-- 		<br />
-        <abbr class="modified" title="2022-09-24T10:28:36.689318+02:00">
-                Updated: 24 Sep 2022
-        </abbr>
- -->
-
-    </p>
-
-    
-
-</footer>                    </div>
-                    
-                </article>
-                <hr/>
-            </li>
-            
-
-
-
-            <li>
-                <article class="hentry">
-                    <header>
-                        <!-- PREVIOUS NOTE TITLE -->
-                        <h1><a href="https://notes.nicolasdeville.com/python/string" rel="bookmark"
-                            title="String snippets">String snippets</a></h1>
-                        <!-- PREVIOUS NOTE SUMMARY -->
-                        <div class="entry-content">
-                            
-                        </div>
-                    </header>
-
-                    <div class="entry-content">
-                        <!-- PREVIOUS NOTE METADATA -->
-<footer class="post-info">
-
-    <p>
-        24 Sep 2022 <span class="separator">|</span> in <a class="link_tag" href="https://notes.nicolasdeville.com/python/">python</a>
- tags: <a class="link_tag" href="https://notes.nicolasdeville.com/tag/snippets.html">snippets</a>
-
-        <!-- added 4/7 -->
-        <!-- 		<br />
-        <abbr class="modified" title="2022-09-24T09:00:03.148921+02:00">
-                Updated: 24 Sep 2022
-        </abbr>
- -->
-
-    </p>
-
-    
-
-</footer>                    </div>
-                    
-                </article>
-                <hr/>
-            </li>
-            
-
-
-
-            <li>
-                <article class="hentry">
-                    <header>
-                        <!-- PREVIOUS NOTE TITLE -->
-                        <h1><a href="https://notes.nicolasdeville.com/interests/elon" rel="bookmark"
-                            title="Elon Musk">Elon Musk</a></h1>
-                        <!-- PREVIOUS NOTE SUMMARY -->
-                        <div class="entry-content">
-                            
-                        </div>
-                    </header>
-
-                    <div class="entry-content">
-                        <!-- PREVIOUS NOTE METADATA -->
-<footer class="post-info">
-
-    <p>
-        24 Sep 2022 <span class="separator">|</span> in <a class="link_tag" href="https://notes.nicolasdeville.com/interests/">interests</a>
- tags: <a class="link_tag" href="https://notes.nicolasdeville.com/tag/elon.html">elon</a>
-
-        <!-- added 4/7 -->
-        <!-- 		<br />
-        <abbr class="modified" title="2022-09-24T08:57:49.608606+02:00">
-                Updated: 24 Sep 2022
-        </abbr>
- -->
-
-    </p>
-
-    
-
-</footer>                    </div>
-                    
-                </article>
-                <hr/>
-            </li>
-            
-
-
-
-            <li>
-                <article class="hentry">
-                    <header>
-                        <!-- PREVIOUS NOTE TITLE -->
-                        <h1><a href="https://notes.nicolasdeville.com/interests/starlink" rel="bookmark"
-                            title="Starlink">Starlink</a></h1>
-                        <!-- PREVIOUS NOTE SUMMARY -->
-                        <div class="entry-content">
-                            
-                        </div>
-                    </header>
-
-                    <div class="entry-content">
-                        <!-- PREVIOUS NOTE METADATA -->
-<footer class="post-info">
-
-    <p>
-        23 Sep 2022 <span class="separator">|</span> in <a class="link_tag" href="https://notes.nicolasdeville.com/interests/">interests</a>
-
-        <!-- added 4/7 -->
-        <!-- 		<br />
-        <abbr class="modified" title="2022-09-23T23:51:29.224142+02:00">
-                Updated: 23 Sep 2022
-        </abbr>
- -->
-
-    </p>
-
-    
-
-</footer>                    </div>
-                    
-                </article>
-                <hr/>
-            </li>
-            
-
-
-
-            <li>
-                <article class="hentry">
-                    <header>
-                        <!-- PREVIOUS NOTE TITLE -->
-                        <h1><a href="https://notes.nicolasdeville.com/ai/questions" rel="bookmark"
-                            title="AI questions">AI questions</a></h1>
-                        <!-- PREVIOUS NOTE SUMMARY -->
-                        <div class="entry-content">
-                            
-                        </div>
-                    </header>
-
-                    <div class="entry-content">
-                        <!-- PREVIOUS NOTE METADATA -->
-<footer class="post-info">
-
-    <p>
-        23 Sep 2022 <span class="separator">|</span> in <a class="link_tag" href="https://notes.nicolasdeville.com/ai/">ai</a>
-
-        <!-- added 4/7 -->
-        <!-- 		<br />
-        <abbr class="modified" title="2022-09-23T23:11:56.058504+02:00">
-                Updated: 23 Sep 2022
-        </abbr>
- -->
-
-    </p>
-
-    
-
-</footer>                    </div>
-                    
-                </article>
-                <hr/>
-            </li>
-            
-
-
-
-            <li>
-                <article class="hentry">
-                    <header>
-                        <!-- PREVIOUS NOTE TITLE -->
-                        <h1><a href="https://notes.nicolasdeville.com/ai/dall-e" rel="bookmark"
-                            title="Dall-E">Dall-E</a></h1>
-                        <!-- PREVIOUS NOTE SUMMARY -->
-                        <div class="entry-content">
-                            <p>AI system that can create realistic images and art from a description in natural language.</p>
-                        </div>
-                    </header>
-
-                    <div class="entry-content">
-                        <!-- PREVIOUS NOTE METADATA -->
-<footer class="post-info">
-
-    <p>
-        23 Sep 2022 <span class="separator">|</span> in <a class="link_tag" href="https://notes.nicolasdeville.com/ai/">ai</a>
-
-        <!-- added 4/7 -->
-        <!-- 		<br />
-        <abbr class="modified" title="2022-09-23T22:40:47.652810+02:00">
-                Updated: 23 Sep 2022
         </abbr>
  -->
 
