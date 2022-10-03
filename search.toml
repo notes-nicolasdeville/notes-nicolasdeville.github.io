@@ -18,6 +18,11 @@ url = "/tesla/ai-day-2022"
 title = "Tesla AI Day 2022"
 
 [[input.files]]
+path = "interests/crypto/index.html"
+url = "/interests/crypto"
+title = "Crypto"
+
+[[input.files]]
 path = "apps/hazel/index.html"
 url = "/apps/hazel"
 title = "Hazel"
@@ -811,11 +816,6 @@ title = "Flat Caps"
 path = "interests/f1/index.html"
 url = "/interests/f1"
 title = "F1"
-
-[[input.files]]
-path = "interests/crypto/index.html"
-url = "/interests/crypto"
-title = "Crypto"
 
 [[input.files]]
 path = "interests/airguns/index.html"
@@ -2333,11 +2333,6 @@ url = "/helpers/clipper"
 title = "My web clipboard"
 
 [[input.files]]
-path = "random/ai/index.html"
-url = "/random/ai"
-title = "AI"
-
-[[input.files]]
 path = "learning/ai/index.html"
 url = "/learning/ai"
 title = "Learning AI"
@@ -2353,14 +2348,19 @@ url = "/interests/ai"
 title = "AI"
 
 [[input.files]]
-path = "learning/ai/index.html"
-url = "/learning/ai"
-title = "Learning AI"
+path = "random/ai/index.html"
+url = "/random/ai"
+title = "AI"
 
 [[input.files]]
 path = "interests/ai/index.html"
 url = "/interests/ai"
 title = "AI"
+
+[[input.files]]
+path = "learning/ai/index.html"
+url = "/learning/ai"
+title = "Learning AI"
 
 [[input.files]]
 path = "home-office/deep-work/index.html"
