@@ -13,14 +13,19 @@ url = "/why/"
 title = "Why this site?"
 
 [[input.files]]
-path = "projects/script-screenshot-app/index.html"
-url = "/projects/script-screenshot-app"
-title = "Script: screenshot video app, save file & generate HTML code"
+path = "tesla/ai-day-2022/index.html"
+url = "/tesla/ai-day-2022"
+title = "Tesla AI Day 2022"
 
 [[input.files]]
 path = "apps/hazel/index.html"
 url = "/apps/hazel"
 title = "Hazel"
+
+[[input.files]]
+path = "projects/script-screenshot-app/index.html"
+url = "/projects/script-screenshot-app"
+title = "Script: screenshot video app, save file & generate HTML code"
 
 [[input.files]]
 path = "ai/whisper/index.html"
@@ -81,11 +86,6 @@ title = "Seasoned VP vs Stretch VP"
 path = "interests/traditional-shaving/index.html"
 url = "/interests/traditional-shaving"
 title = "Traditional Shaving"
-
-[[input.files]]
-path = "tesla/ai-day-2022/index.html"
-url = "/tesla/ai-day-2022"
-title = "Tesla AI Day 2022"
 
 [[input.files]]
 path = "helpers/extract-audio-from-video/index.html"
@@ -168,14 +168,14 @@ url = "/helpers/clipper"
 title = "My web clipboard"
 
 [[input.files]]
-path = "apps/library/index.html"
-url = "/apps/library"
-title = "My Apps Library"
-
-[[input.files]]
 path = "books/library/index.html"
 url = "/books/library"
 title = "My Books Library"
+
+[[input.files]]
+path = "apps/library/index.html"
+url = "/apps/library"
+title = "My Apps Library"
 
 [[input.files]]
 path = "apps/radar/index.html"
@@ -2318,14 +2318,14 @@ url = "/projects/clipper"
 title = "Clipper"
 
 [[input.files]]
-path = "books/library/index.html"
-url = "/books/library"
-title = "My Books Library"
-
-[[input.files]]
 path = "apps/library/index.html"
 url = "/apps/library"
 title = "My Apps Library"
+
+[[input.files]]
+path = "books/library/index.html"
+url = "/books/library"
+title = "My Books Library"
 
 [[input.files]]
 path = "helpers/clipper/index.html"
@@ -2343,11 +2343,6 @@ url = "/learning/ai"
 title = "Learning AI"
 
 [[input.files]]
-path = "interests/ai/index.html"
-url = "/interests/ai"
-title = "AI"
-
-[[input.files]]
 path = "random/ai/index.html"
 url = "/random/ai"
 title = "AI"
@@ -2361,6 +2356,11 @@ title = "AI"
 path = "learning/ai/index.html"
 url = "/learning/ai"
 title = "Learning AI"
+
+[[input.files]]
+path = "interests/ai/index.html"
+url = "/interests/ai"
+title = "AI"
 
 [[input.files]]
 path = "home-office/deep-work/index.html"
