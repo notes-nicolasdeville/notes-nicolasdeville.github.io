@@ -44,7 +44,7 @@
             </div>
 
             <div class="above-navbar">
-                <div class="last_updated">02 Oct 2022 | 23:31</div>
+                <div class="last_updated">03 Oct 2022 | 13:00</div>
                 <div>
                     <p class="notes_count">
                         <a href="https://notes.nicolasdeville.com/tags">by tags</a> 
@@ -101,14 +101,14 @@
 <footer class="post-info">
 
     <p>
-        29 Sep 2022 <span class="separator">|</span> in <a class="link_tag" href="https://notes.nicolasdeville.com/ai/">ai</a>
+        03 Oct 2022 <span class="separator">|</span> in <a class="link_tag" href="https://notes.nicolasdeville.com/ai/">ai</a>
  tags: <a class="link_tag" href="https://notes.nicolasdeville.com/tag/python.html">python</a>
 <a class="link_tag" href="https://notes.nicolasdeville.com/tag/speech-recognition.html">speech recognition</a>
 
         <!-- added 4/7 -->
         <!-- 		<br />
-        <abbr class="modified" title="2022-09-29T12:23:02.116015+02:00">
-                Updated: 29 Sep 2022
+        <abbr class="modified" title="2022-10-03T11:08:18.858158+02:00">
+                Updated: 03 Oct 2022
         </abbr>
  -->
 
@@ -128,7 +128,10 @@
 </li>
 </ul>
 </li>
-<li><a href="#testing-models">Testing models</a></li>
+<li><a href="#testing-models">Testing models</a><ul>
+<li><a href="#testing-long-file">testing long file</a></li>
+</ul>
+</li>
 </ul>
 </div>
 <p><span class="datestamp">23 Sep 2022</span>   </p>
@@ -292,6 +295,22 @@ Need to update</p>
 <div class="link_title">Using English Models = "ValueError: This model doesn't have language tokens so it can't perform lang id" · Discussion #17 · openai/whisper · GitHub</div>
 <div class="link_tagline">Using English Models = "ValueError: This model doesn't have language tokens so it can't perform lang id"              #17</div>
 <div class="link_url"><a href="https://github.com/openai/whisper/discussions/17" target="_blank">https://github.com/openai/whisper/discussions/17</a></div></div></div>
+
+<h3 id="testing-long-file">testing long file</h3>
+<p><span class="datestamp">01 Oct 2022</span>  </p>
+<p>With Tesla's AI Day online since today, I wanted to get a transcript of it. <br>
+Video file downloaded from Youtube is 14Gb. <br>
+Extracted audio-only [<a href="../../helpers/extract-audio-from-video/index.html">Nic Note: Extract audio from video</a>] resulting in a 197Mb <code>.m4a</code> file.   </p>
+<p>Good news:   </p>
+<p>Whisper transcribed it in 133 minutes with settings as:      </p>
+<div class="highlight"><pre><span></span><code><span class="n">model</span> <span class="o">=</span> <span class="n">whisper</span><span class="o">.</span><span class="n">load_model</span><span class="p">(</span><span class="s2">&quot;medium&quot;</span><span class="p">)</span>
+<span class="n">response</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">transcribe</span><span class="p">(</span><span class="n">file_path</span><span class="p">,</span><span class="n">language</span><span class="o">=</span><span class="s1">&#39;english&#39;</span><span class="p">)</span> 
+</code></pre></div>
+
+<p>Bad news:  </p>
+<p>152,288 characters on 7 lines! <br>
+Hope to see improvements re layout and speaker recognition in future updates.   </p>
+<p>Will check tomorrow for accuracy &amp; SRT implemenentation.   </p>
             </main>
         </div><!-- /.entry-content -->
     </article>

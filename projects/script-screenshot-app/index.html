@@ -43,7 +43,7 @@
             </div>
 
             <div class="above-navbar">
-                <div class="last_updated">02 Oct 2022 | 23:31</div>
+                <div class="last_updated">03 Oct 2022 | 13:00</div>
                 <div>
                     <p class="notes_count">
                         <a href="https://notes.nicolasdeville.com/tags">by tags</a> 
@@ -100,7 +100,7 @@
 <footer class="post-info">
 
     <p>
-        02 Oct 2022 <span class="separator">|</span> in <a class="link_tag" href="https://notes.nicolasdeville.com/projects/">projects</a>
+        03 Oct 2022 <span class="separator">|</span> in <a class="link_tag" href="https://notes.nicolasdeville.com/projects/">projects</a>
  tags: <a class="link_tag" href="https://notes.nicolasdeville.com/tag/automation.html">automation</a>
 <a class="link_tag" href="https://notes.nicolasdeville.com/tag/applescript.html">applescript</a>
 <a class="link_tag" href="https://notes.nicolasdeville.com/tag/shell.html">shell</a>
@@ -108,8 +108,8 @@
 
         <!-- added 4/7 -->
         <!-- 		<br />
-        <abbr class="modified" title="2022-10-02T23:31:02.439662+02:00">
-                Updated: 02 Oct 2022
+        <abbr class="modified" title="2022-10-03T13:00:13.254467+02:00">
+                Updated: 03 Oct 2022
         </abbr>
  -->
 
@@ -127,6 +127,7 @@
 </li>
 </ul>
 </li>
+<li><a href="#final-solution">Final solution</a></li>
 </ul>
 </div>
 <p><span class="datestamp">02 Oct 2022</span>   </p>
@@ -314,6 +315,24 @@ usage: screencapture <span class="o">[</span>-icMPmwsWxSCUtoa<span class="o">]</
 <p>Took a different turn, but now have it so that a key on my Contour Shuttle [<a href="../../home-office/contour-shuttle/index.html">Nic Note: Contour Shuttle</a>] takes the screenshot and adds to a folder with video name.  </p>
 <p>Need to figure out how to rename files with no spaces and generate HTML. Probably triggering a Python script with Hazel - will be the quickest.    </p>
 <p>Enough for today though 😁   </p>
+<h1 id="final-solution">Final solution</h1>
+<p><span class="datestamp">03 Oct 2022</span> </p>
+<p>macOS Shortcuts
++ Hazel
++ Python</p>
+<p>Workflow:  </p>
+<p>when I plan to take screenshots of a video, only manual step is to go in Hazel (<code>Cmd Space</code> then <code>haz</code>) and change the output folder as needed:   </p>
+<p><img class="screenshot" src="https://notes.nicolasdeville.com/images/script-screenshot-app/221003-1252_hazel_process_iina.jpg" alt="script-screenshot-app/221003-1252_hazel_process_iina.jpg"/>  </p>
+<p>then:   </p>
+<p>if I am actively in IINA, I have a key on my Contour Shuttle to take the screenshot:  </p>
+<p><img class="screenshot" src="https://notes.nicolasdeville.com/images/script-screenshot-app/contour-iina.jpg" alt="script-screenshot-app/contour-iina.jpg"/>  </p>
+<p>if I'm outside of IINA - even if it is hidden behind another app! - I use a key on my Streamdeck to take the screenshot:    </p>
+<p><img class="screenshot" src="https://notes.nicolasdeville.com/images/script-screenshot-app/streamdeck-iina.jpg" alt="script-screenshot-app/streamdeck-iina.jpg"/>  </p>
+<p>4s later, I have the HTML snippet in my clipboard, ready to be pasted in my note, like so:   </p>
+<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">img</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;screenshot&quot;</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;https://notes.nicolasdeville.com/images/221003-125026-tesla-ai-day-2022.png&quot;</span> <span class="na">alt</span><span class="o">=</span><span class="s">&quot;221003-125026-tesla-ai-day-2022&quot;</span><span class="p">/&gt;</span>
+</code></pre></div>
+
+<p>I'm happy with this new workflow 😁 </p>
             </main>
         </div><!-- /.entry-content -->
     </article>
