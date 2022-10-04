@@ -13,6 +13,21 @@ url = "/why/"
 title = "Why this site?"
 
 [[input.files]]
+path = "home-office/kinesis/index.html"
+url = "/home-office/kinesis"
+title = "Kinesis Advantage keyboard"
+
+[[input.files]]
+path = "learning/touch-typing/index.html"
+url = "/learning/touch-typing"
+title = "Learning Touch Typing"
+
+[[input.files]]
+path = "projects/script-screenshot-app/index.html"
+url = "/projects/script-screenshot-app"
+title = "Script: screenshot video app, save file & generate HTML code"
+
+[[input.files]]
 path = "tesla/ai-day-2022/index.html"
 url = "/tesla/ai-day-2022"
 title = "Tesla AI Day 2022"
@@ -26,11 +41,6 @@ title = "Whisper"
 path = "home-office/deep-work/index.html"
 url = "/home-office/deep-work"
 title = "Resources for Deep Work"
-
-[[input.files]]
-path = "projects/script-screenshot-app/index.html"
-url = "/projects/script-screenshot-app"
-title = "Script: screenshot video app, save file & generate HTML code"
 
 [[input.files]]
 path = "interests/crypto/index.html"
@@ -241,11 +251,6 @@ title = "Alfred"
 path = "helpers/keyboard-shortcuts/index.html"
 url = "/helpers/keyboard-shortcuts"
 title = "My keyboard shortcuts"
-
-[[input.files]]
-path = "home-office/kinesis/index.html"
-url = "/home-office/kinesis"
-title = "Kinesis Advantage 2 keyboard"
 
 [[input.files]]
 path = "home-office/airpods-max/index.html"
@@ -781,11 +786,6 @@ title = "Mailingee"
 path = "projects/indexall/index.html"
 url = "/projects/indexall"
 title = "indeXall | indexing the worlds of passions"
-
-[[input.files]]
-path = "learning/touch-typing/index.html"
-url = "/learning/touch-typing"
-title = "Learning Touch Typing"
 
 [[input.files]]
 path = "learning/speed-reading/index.html"
@@ -2333,21 +2333,6 @@ url = "/helpers/clipper"
 title = "My web clipboard"
 
 [[input.files]]
-path = "learning/ai/index.html"
-url = "/learning/ai"
-title = "Learning AI"
-
-[[input.files]]
-path = "random/ai/index.html"
-url = "/random/ai"
-title = "AI"
-
-[[input.files]]
-path = "interests/ai/index.html"
-url = "/interests/ai"
-title = "AI"
-
-[[input.files]]
 path = "random/ai/index.html"
 url = "/random/ai"
 title = "AI"
@@ -2361,6 +2346,21 @@ title = "Learning AI"
 path = "interests/ai/index.html"
 url = "/interests/ai"
 title = "AI"
+
+[[input.files]]
+path = "random/ai/index.html"
+url = "/random/ai"
+title = "AI"
+
+[[input.files]]
+path = "interests/ai/index.html"
+url = "/interests/ai"
+title = "AI"
+
+[[input.files]]
+path = "learning/ai/index.html"
+url = "/learning/ai"
+title = "Learning AI"
 
 [[input.files]]
 path = "home-office/deep-work/index.html"
