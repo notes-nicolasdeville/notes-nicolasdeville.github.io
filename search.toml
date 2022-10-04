@@ -13,6 +13,16 @@ url = "/why/"
 title = "Why this site?"
 
 [[input.files]]
+path = "interests/mechanical-keyboards/index.html"
+url = "/interests/mechanical-keyboards"
+title = "Mechanical Keyboards"
+
+[[input.files]]
+path = "python/library-jinja2/index.html"
+url = "/python/library-jinja2"
+title = "Python Library: jinja2"
+
+[[input.files]]
 path = "home-office/kinesis/index.html"
 url = "/home-office/kinesis"
 title = "Kinesis Advantage keyboard"
@@ -61,11 +71,6 @@ title = "Contour ShuttlePRO v2"
 path = "helpers/applescript/index.html"
 url = "/helpers/applescript"
 title = "AppleScript"
-
-[[input.files]]
-path = "interests/mechanical-keyboards/index.html"
-url = "/interests/mechanical-keyboards"
-title = "Mechanical Keyboards"
 
 [[input.files]]
 path = "projects/meta-url/index.html"
@@ -2333,14 +2338,14 @@ url = "/helpers/clipper"
 title = "My web clipboard"
 
 [[input.files]]
-path = "random/ai/index.html"
-url = "/random/ai"
-title = "AI"
-
-[[input.files]]
 path = "learning/ai/index.html"
 url = "/learning/ai"
 title = "Learning AI"
+
+[[input.files]]
+path = "random/ai/index.html"
+url = "/random/ai"
+title = "AI"
 
 [[input.files]]
 path = "interests/ai/index.html"
