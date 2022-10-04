@@ -44,7 +44,7 @@
             </div>
 
             <div class="above-navbar">
-                <div class="last_updated">04 Oct 2022 | 09:00</div>
+                <div class="last_updated">04 Oct 2022 | 09:22</div>
                 <div>
                     <p class="notes_count">
                         <a href="https://notes.nicolasdeville.com/tags">by tags</a> 
@@ -101,14 +101,14 @@
 <footer class="post-info">
 
     <p>
-        03 Oct 2022 <span class="separator">|</span> in <a class="link_tag" href="https://notes.nicolasdeville.com/ai/">ai</a>
+        04 Oct 2022 <span class="separator">|</span> in <a class="link_tag" href="https://notes.nicolasdeville.com/ai/">ai</a>
  tags: <a class="link_tag" href="https://notes.nicolasdeville.com/tag/python.html">python</a>
 <a class="link_tag" href="https://notes.nicolasdeville.com/tag/speech-recognition.html">speech recognition</a>
 
         <!-- added 4/7 -->
         <!-- 		<br />
-        <abbr class="modified" title="2022-10-03T11:08:18.858158+02:00">
-                Updated: 03 Oct 2022
+        <abbr class="modified" title="2022-10-04T09:19:42.759652+02:00">
+                Updated: 04 Oct 2022
         </abbr>
  -->
 
@@ -311,6 +311,25 @@ Extracted audio-only [<a href="../../helpers/extract-audio-from-video/index.html
 <p>152,288 characters on 7 lines! <br>
 Hope to see improvements re layout and speaker recognition in future updates.   </p>
 <p>Will check tomorrow for accuracy &amp; SRT implemenentation.   </p>
+<p><span class="datestamp">04 Oct 2022</span> </p>
+<p>SRT generation implemented with:  </p>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">whisper.utils</span> <span class="kn">import</span> <span class="n">write_srt</span>
+
+<span class="n">model</span> <span class="o">=</span> <span class="n">whisper</span><span class="o">.</span><span class="n">load_model</span><span class="p">(</span><span class="s2">&quot;medium&quot;</span><span class="p">)</span>
+<span class="n">response</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">transcribe</span><span class="p">(</span><span class="n">file_path</span><span class="p">,</span><span class="n">language</span><span class="o">=</span><span class="s1">&#39;english&#39;</span><span class="p">)</span> 
+<span class="c1"># text = response[&quot;text&quot;]</span>
+<span class="c1"># language = response[&quot;language&quot;]</span>
+<span class="n">srt</span> <span class="o">=</span> <span class="n">response</span><span class="p">[</span><span class="s2">&quot;segments&quot;</span><span class="p">]</span>
+
+<span class="n">parent_folder</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">abspath</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">file_path</span><span class="p">,</span> <span class="n">os</span><span class="o">.</span><span class="n">pardir</span><span class="p">))</span>
+
+<span class="c1"># write SRT</span>
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">parent_folder</span><span class="si">}</span><span class="s2">/</span><span class="si">{</span><span class="n">uid</span><span class="si">}</span><span class="s2">.srt&quot;</span><span class="p">,</span> <span class="s1">&#39;w&#39;</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s2">&quot;utf-8&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">srt_file</span><span class="p">:</span>
+    <span class="n">write_srt</span><span class="p">(</span><span class="n">srt</span><span class="p">,</span> <span class="n">file</span><span class="o">=</span><span class="n">srt_file</span><span class="p">)</span>
+</code></pre></div>
+
+<p>Again, works surprisingly well 😁   </p>
+<p>See example with a 3.5h video (transcribed in 2h) at [<a href="../../tesla/ai-day-2022/index.html">Nic Note: Tesla AI Day 2022</a>]   </p>
             </main>
         </div><!-- /.entry-content -->
     </article>
