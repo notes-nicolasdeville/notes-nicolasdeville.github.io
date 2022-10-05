@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="generator" content="Pelican" />
     <title>Python Library: pickle</title>
-    
+
     <!-- Logo -->
     <meta property="og:logo" content="https://notes.nicolasdeville.com/logo.svg">
 
@@ -16,7 +16,7 @@
     <link rel="alternate icon" class="js-site-favicon" type="image/png" href="https://notes.nicolasdeville.com/favicon.png">
     <link rel="icon" class="js-site-favicon" type="image/svg+xml" href="https://notes.nicolasdeville.com/favicon.svg">
     <link rel="fluid-icon" href="https://notes.nicolasdeville.com/favicon.png" title="Nic's notes">
-    
+
     <!-- CSS -->
     <link rel="stylesheet" href="https://notes.nicolasdeville.com/theme/css/main.css" />
 
@@ -24,8 +24,8 @@
 
         <meta name="description" content="how to store Python objects to file" />
 
-    <!-- for Stork seach engine -->
-    <link rel="stylesheet" href="https://files.stork-search.net/basic.css" /> 
+    <!-- for Stork seach engine / 221005 moved to main.css-->
+    <!-- <link rel="stylesheet" href="https://files.stork-search.net/basic.css" />  -->
     <!-- <link rel="stylesheet" href="https://files.stork-search.net/releases/v1.5.0/edible.css" /> # tried 220924-->
 
 </head>
@@ -44,17 +44,17 @@
             </div>
 
             <div class="above-navbar">
-                <div class="last_updated">05 Oct 2022 | 08:31</div>
+                <div class="last_updated">05 Oct 2022 | 12:03</div>
                 <div>
                     <p class="notes_count">
-                        <a href="https://notes.nicolasdeville.com/tags">by tags</a> 
-                        <span style="color:#C74350">|</span> 
+                        <a href="https://notes.nicolasdeville.com/tags">by tags</a>
+                        <span style="color:#C74350">|</span>
                         <a href="https://notes.nicolasdeville.com/2020/">2020</a>
                         <span style="color:#C74350">|</span>
-                        <a href="https://notes.nicolasdeville.com/2021/">2021</a> 
+                        <a href="https://notes.nicolasdeville.com/2021/">2021</a>
                         <span style="color:#C74350">|</span>
-                        <a href="https://notes.nicolasdeville.com/2022/">2022</a> 
-                        <span style="color:#C74350">|</span> 
+                        <a href="https://notes.nicolasdeville.com/2022/">2022</a>
+                        <span style="color:#C74350">|</span>
                         459 notes
                     </p>
                 </div>
@@ -101,12 +101,12 @@
 <footer class="post-info">
 
     <p>
-        30 Sep 2022 <span class="separator">|</span> in <a class="link_tag" href="https://notes.nicolasdeville.com/python/">python</a>
+        05 Oct 2022 <span class="separator">|</span> in <a class="link_tag" href="https://notes.nicolasdeville.com/python/">python</a>
 
         <!-- added 4/7 -->
         <!-- 		<br />
-        <abbr class="modified" title="2022-09-30T10:21:27.029412+02:00">
-                Updated: 30 Sep 2022
+        <abbr class="modified" title="2022-10-05T09:24:44.961601+02:00">
+                Updated: 05 Oct 2022
         </abbr>
  -->
 
@@ -119,6 +119,7 @@
 <li><a href="#usage">Usage</a><ul>
 <li><a href="#with-open">with open()</a></li>
 <li><a href="#or-close-at-the-end">or close at the end</a></li>
+<li><a href="#how-i-use-it-now">how I use it now</a></li>
 </ul>
 </li>
 <li><a href="#what-tripped-me-up">What tripped me up</a><ul>
@@ -235,6 +236,30 @@
     <span class="n">soup_backup</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
 </code></pre></div>
 
+<h2 id="how-i-use-it-now">how I use it now</h2>
+<p><span class="datestamp">05 Oct 2022</span> </p>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">pickle</span>
+
+<span class="n">refresh</span> <span class="o">=</span> <span class="kc">True</span>
+
+<span class="c1">### Path to pickle file</span>
+<span class="n">pickle_path</span> <span class="o">=</span> <span class="s2">&quot;test/xxxxx.pickle&quot;</span>
+
+<span class="c1">### Generate pickle file</span>
+<span class="k">if</span> <span class="n">refresh</span><span class="p">:</span>
+    <span class="n">my_variable</span> <span class="o">=</span> <span class="n">xxxxxxx</span>
+    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">pickle_path</span><span class="p">,</span> <span class="s1">&#39;wb&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">pf</span><span class="p">:</span>
+        <span class="n">pickle</span><span class="o">.</span><span class="n">dump</span><span class="p">(</span><span class="n">my_variable</span><span class="p">,</span> <span class="n">pf</span><span class="p">)</span> 
+
+<span class="k">if</span> <span class="ow">not</span> <span class="n">refresh</span><span class="p">:</span>
+    <span class="n">pickle_dump</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="n">pickle_path</span><span class="p">,</span> <span class="s2">&quot;rb&quot;</span><span class="p">)</span>
+    <span class="n">my_variable</span> <span class="o">=</span> <span class="n">pickle</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">pickle_dump</span><span class="p">)</span>
+
+<span class="c1">### End Of File - Close pickle file</span>
+<span class="k">if</span> <span class="ow">not</span> <span class="n">refresh</span><span class="p">:</span>
+    <span class="n">my_variable</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+</code></pre></div>
+
 <h1 id="what-tripped-me-up">What tripped me up</h1>
 <h2 id="recursion-error">Recursion Error</h2>
 <p>Getting error <code>RecursionError: maximum recursion depth exceeded while pickling an object</code>...   </p>
@@ -272,13 +297,13 @@
 
         <footer id="contentinfo" class="body">
                 <address id="about" class="vcard body">
-                Powered by <a href="https://github.com/getpelican/pelican" target="_blank">Pelican</a>, 
+                Powered by <a href="https://github.com/getpelican/pelican" target="_blank">Pelican</a>,
                 with <a href="https://stork-search.net/" target="_blank">Stork</a> & <a href="https://github.com/pelican-plugins/search" target="_blank">Pelican Search plugin</a>.
                 <br>
                 <a href="https://clearbit.com" target="_blank">Logos provided by Clearbit</a>
                 <br>
                 <!-- <span style="color:#C74350">|</span> <img src="https://notes.nicolasdeville.com/images/python.svg" alt="python_logo" width="16" style="vertical-align: middle;"/> <a href="https://www.python.org/" target="_blank">Python</a>  -->
-                <img src="https://notes.nicolasdeville.com/images/python.svg" alt="python_logo" width="16" style="vertical-align: middle;"/> <a href="https://www.python.org/" target="_blank">Python</a> 
+                <img src="https://notes.nicolasdeville.com/images/python.svg" alt="python_logo" width="16" style="vertical-align: middle;"/> <a href="https://www.python.org/" target="_blank">Python</a>
                 </address><!-- /#about -->
 
         </footer><!-- /#contentinfo -->

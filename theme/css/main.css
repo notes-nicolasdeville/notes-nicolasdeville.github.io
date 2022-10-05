@@ -1,4 +1,5 @@
 @import url("pygment.css");
+@import url("stork.css");
 /* @import url('https://fonts.googleapis.com/css?family=Lato'); */
 /* @import url('https://fonts.googleapis.com/css2?family=Lato:wght@900&display=swap'); */
 @import url('https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400;700;900&display=swap');
@@ -178,7 +179,7 @@ h1 {
     color: var(--nic_main);
 }
 /* only H1s not in title, ie with IDs */
-h1[id] { 
+h1[id] {
     font-size: 1.5em;
     margin-top: 1em;
     color: var(--nic_main);
@@ -243,7 +244,7 @@ a {
     outline: 0;
 }
 a img {
-    border: 0px; 
+    border: 0px;
     text-decoration: none;
 }
 
@@ -318,7 +319,7 @@ li {
     /* margin-top: 1px;
     margin-bottom: 1px; */
 
-.readmore { 
+.readmore {
     float: right;
 }
 
@@ -329,7 +330,7 @@ dd {
 }
 
 pre {
-    background-color: #1d1d1d; 
+    background-color: #1d1d1d;
     color: #fff;
     padding-left: 30px;
     padding-right: 10px;
@@ -348,7 +349,7 @@ pre {
     font-size: 1rem;
 }
 /* pre:hover, pre:focus {
-    width: min-content; 
+    width: min-content;
 } */
 
 code {
@@ -370,7 +371,7 @@ code {
 
     /* 220916 adding for mobile responsiveness */
     /* width: 100%; makes each code snippet full width */
-    
+
 }
 
 /* 220911 adding for copy code feature: */
@@ -410,7 +411,7 @@ code {
     .highlight:hover > .clipboard-button {
         opacity: 1;
         transition: 0.2s;
-    }  
+    }
 
 blockquote {
 
@@ -467,13 +468,13 @@ div.note {
 
 /* Tables */
 table {
-    margin: .5em auto 1.5em auto; 
+    margin: .5em auto 1.5em auto;
     width: 100%;
 }
 
 	/* Thead */
 	thead th {
-        padding: .5em .4em; 
+        padding: .5em .4em;
         text-align: left;
         font-weight: bold;
         font-size: 1.1em;
@@ -502,7 +503,7 @@ table {
 
     /* to ensure content in first column does not wrap */
     tbody > tr > td:first-child { /* 220920 removing tr:first-child > to apply to all rows */
-        white-space: nowrap; 
+        white-space: nowrap;
     }
 
 
@@ -1003,7 +1004,7 @@ li:first-child .hentry, #content > .hentry {
 }
 
 /* for line number colouring in code blocks */
-.normal {  
+.normal {
     color: #fff;
     font-weight: bold;
     font-size: 1.1em;
@@ -1121,7 +1122,7 @@ li:first-child .hentry, #content > .hentry {
             margin-left: 0.8em;
             font-size: 1.1em;
             /* Lato Black = weight 900 */
-            font-weight: 900; 
+            font-weight: 900;
         }
 
         .link_tagline {

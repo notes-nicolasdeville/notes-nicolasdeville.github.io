@@ -13,9 +13,24 @@ url = "/why/"
 title = "Why this site?"
 
 [[input.files]]
+path = "python/library-pickle/index.html"
+url = "/python/library-pickle"
+title = "Python Library: pickle"
+
+[[input.files]]
 path = "home-office/deep-work/index.html"
 url = "/home-office/deep-work"
 title = "Resources for Deep Work"
+
+[[input.files]]
+path = "projects/meta-url/index.html"
+url = "/projects/meta-url"
+title = "Python Open-Source Project: metaURL"
+
+[[input.files]]
+path = "helpers/vodafone-kabel/index.html"
+url = "/helpers/vodafone-kabel"
+title = "Vodafone Kabel"
 
 [[input.files]]
 path = "helpers/icons/index.html"
@@ -76,11 +91,6 @@ title = "Contour ShuttlePRO v2"
 path = "helpers/applescript/index.html"
 url = "/helpers/applescript"
 title = "AppleScript"
-
-[[input.files]]
-path = "projects/meta-url/index.html"
-url = "/projects/meta-url"
-title = "Python Open-Source Project: metaURL"
 
 [[input.files]]
 path = "apps/hubspot/index.html"
@@ -158,11 +168,6 @@ url = "/python/library-beautifulsoup"
 title = "Python Library: Beautifulsoup"
 
 [[input.files]]
-path = "python/library-pickle/index.html"
-url = "/python/library-pickle"
-title = "Python Library: pickle"
-
-[[input.files]]
 path = "python/files/index.html"
 url = "/python/files"
 title = "Dealing with files in Python"
@@ -178,14 +183,14 @@ url = "/movies/1000"
 title = "My Top 1,000 Movies"
 
 [[input.files]]
-path = "b2b-sales/books/index.html"
-url = "/b2b-sales/books"
-title = "My B2B Books Library"
-
-[[input.files]]
 path = "python/books/index.html"
 url = "/python/books"
 title = "My Python Books Library"
+
+[[input.files]]
+path = "b2b-sales/books/index.html"
+url = "/b2b-sales/books"
+title = "My B2B Books Library"
 
 [[input.files]]
 path = "helpers/clipper/index.html"
@@ -376,11 +381,6 @@ title = "Get parent folder name with Python"
 path = "python/snippet-pass-arguments/index.html"
 url = "/python/snippet-pass-arguments"
 title = "How to pass variables to a Python scripts with argument"
-
-[[input.files]]
-path = "helpers/vodafone-kabel/index.html"
-url = "/helpers/vodafone-kabel"
-title = "Vodafone Kabel"
 
 [[input.files]]
 path = "random/quotes/index.html"
@@ -2313,14 +2313,14 @@ url = "/books/deep-work"
 title = "Deep Work, by Cal Newport"
 
 [[input.files]]
-path = "python/books/index.html"
-url = "/python/books"
-title = "My Python Books Library"
-
-[[input.files]]
 path = "b2b-sales/books/index.html"
 url = "/b2b-sales/books"
 title = "My B2B Books Library"
+
+[[input.files]]
+path = "python/books/index.html"
+url = "/python/books"
+title = "My Python Books Library"
 
 [[input.files]]
 path = "projects/clipper/index.html"
@@ -2353,6 +2353,11 @@ url = "/learning/ai"
 title = "Learning AI"
 
 [[input.files]]
+path = "interests/ai/index.html"
+url = "/interests/ai"
+title = "AI"
+
+[[input.files]]
 path = "random/ai/index.html"
 url = "/random/ai"
 title = "AI"
@@ -2366,11 +2371,6 @@ title = "AI"
 path = "learning/ai/index.html"
 url = "/learning/ai"
 title = "Learning AI"
-
-[[input.files]]
-path = "interests/ai/index.html"
-url = "/interests/ai"
-title = "AI"
 
 [[input.files]]
 path = "home-office/deep-work/index.html"

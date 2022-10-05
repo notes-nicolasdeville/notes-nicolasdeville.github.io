@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="generator" content="Pelican" />
     <title>Nic's notes - Nic</title>
-    
+
     <!-- Logo -->
     <meta property="og:logo" content="https://notes.nicolasdeville.com/logo.svg">
 
@@ -16,15 +16,15 @@
     <link rel="alternate icon" class="js-site-favicon" type="image/png" href="https://notes.nicolasdeville.com/favicon.png">
     <link rel="icon" class="js-site-favicon" type="image/svg+xml" href="https://notes.nicolasdeville.com/favicon.svg">
     <link rel="fluid-icon" href="https://notes.nicolasdeville.com/favicon.png" title="Nic's notes">
-    
+
     <!-- CSS -->
     <link rel="stylesheet" href="https://notes.nicolasdeville.com/theme/css/main.css" />
 
 
 
 
-    <!-- for Stork seach engine -->
-    <link rel="stylesheet" href="https://files.stork-search.net/basic.css" /> 
+    <!-- for Stork seach engine / 221005 moved to main.css-->
+    <!-- <link rel="stylesheet" href="https://files.stork-search.net/basic.css" />  -->
     <!-- <link rel="stylesheet" href="https://files.stork-search.net/releases/v1.5.0/edible.css" /> # tried 220924-->
 
 </head>
@@ -43,17 +43,17 @@
             </div>
 
             <div class="above-navbar">
-                <div class="last_updated">05 Oct 2022 | 08:31</div>
+                <div class="last_updated">05 Oct 2022 | 12:03</div>
                 <div>
                     <p class="notes_count">
-                        <a href="https://notes.nicolasdeville.com/tags">by tags</a> 
-                        <span style="color:#C74350">|</span> 
+                        <a href="https://notes.nicolasdeville.com/tags">by tags</a>
+                        <span style="color:#C74350">|</span>
                         <a href="https://notes.nicolasdeville.com/2020/">2020</a>
                         <span style="color:#C74350">|</span>
-                        <a href="https://notes.nicolasdeville.com/2021/">2021</a> 
+                        <a href="https://notes.nicolasdeville.com/2021/">2021</a>
                         <span style="color:#C74350">|</span>
-                        <a href="https://notes.nicolasdeville.com/2022/">2022</a> 
-                        <span style="color:#C74350">|</span> 
+                        <a href="https://notes.nicolasdeville.com/2022/">2022</a>
+                        <span style="color:#C74350">|</span>
                         459 notes
                     </p>
                 </div>
@@ -102,563 +102,185 @@
             <hr/>
 
                 <article class="hentry">
-                    <h1 class="entry-title"><a href="https://notes.nicolasdeville.com/home-office/deep-work">Resources for Deep Work</a></h1>
+                    <h1 class="entry-title"><a href="https://notes.nicolasdeville.com/python/library-pickle">Python Library: pickle</a></h1>
 
                     <!-- added 4/7 -->
                     <div>
                         <p class="header_summary">
-                            <p>since reading "Deep Work", I have optimised my work sessions for it.</p>
+                            <p>how to store Python objects to file</p>
                         </p>
                     </div>
 
 <footer class="post-info">
 
     <p>
-        05 Oct 2022 <span class="separator">|</span> in <a class="link_tag" href="https://notes.nicolasdeville.com/home-office/">home office</a>
- tags: <a class="link_tag" href="https://notes.nicolasdeville.com/tag/productivity.html">productivity</a>
-<a class="link_tag" href="https://notes.nicolasdeville.com/tag/music.html">music</a>
+        05 Oct 2022 <span class="separator">|</span> in <a class="link_tag" href="https://notes.nicolasdeville.com/python/">python</a>
 
         <!-- added 4/7 -->
         <!-- 		<br />
-        <abbr class="modified" title="2022-10-05T08:31:16.569914+02:00">
+        <abbr class="modified" title="2022-10-05T09:24:44.961601+02:00">
                 Updated: 05 Oct 2022
         </abbr>
  -->
 
     </p>
 
-    Translations:
-        <a href="https://notes.nicolasdeville.com/books/deep-work" hreflang="en">en</a>
-
+    
 
 </footer><div class="toc"><span class="toctitle">Table of Contents</span><ul>
-<li><a href="#reference-book">Reference Book</a></li>
-<li><a href="#avoid-distractions">Avoid distractions</a><ul>
-<li><a href="#freedom">Freedom</a></li>
-<li><a href="#timer">Timer</a></li>
-<li><a href="#things">Things</a></li>
+<li><a href="#usage">Usage</a><ul>
+<li><a href="#with-open">with open()</a></li>
+<li><a href="#or-close-at-the-end">or close at the end</a></li>
+<li><a href="#how-i-use-it-now">how I use it now</a></li>
 </ul>
 </li>
-<li><a href="#favourite-deep-work-music">Favourite Deep Work Music</a><ul>
-<li><a href="#carbon-based-lifeforms">Carbon Based Lifeforms</a><ul>
-<li><a href="#albums">albums</a></li>
+<li><a href="#what-tripped-me-up">What tripped me up</a><ul>
+<li><a href="#recursion-error">Recursion Error</a></li>
 </ul>
 </li>
-<li><a href="#boards-of-canada">Boards of Canada</a></li>
-<li><a href="#ogre-sound">OGRE Sound</a></li>
-<li><a href="#fool">F.O.O.L.</a></li>
-<li><a href="#overwerk">OVERWERK</a></li>
-<li><a href="#just-her">Just Her</a></li>
-<li><a href="#matt-fax">Matt Fax</a></li>
-<li><a href="#notakeer">Notakeer</a></li>
-<li><a href="#budd">Budd</a></li>
-<li><a href="#fatum">Fatum</a></li>
-</ul>
-</li>
-<li><a href="#deep-work-music-to-test">Deep Work Music to test</a><ul>
-<li><a href="#binaural-music">Binaural music</a><ul>
-<li><a href="#brainfm">Brain.fm</a></li>
-<li><a href="#lofi">Lofi</a></li>
-</ul>
-</li>
-</ul>
-</li>
+<li><a href="#tests">Tests</a></li>
 </ul>
 </div>
-<p><span class="datestamp">01 Oct 2021</span> starting note.          </p>
-<h1 id="reference-book">Reference Book</h1>
-<p>[<a href="../../books/deep-work/index.html">Nic Note: Deep Work, by Cal Newport</a>]</p>
-<h1 id="avoid-distractions">Avoid distractions</h1>
-<h2 id="freedom">Freedom</h2>
-<p>[<a href="../../apps/freedom/index.html">Nic Note: Freedom</a>]</p>
-<h2 id="timer">Timer</h2>
-<p>A digital timer</p>
-<p>I'm not following the famous Pomodoro technique per se, but rather use it as a measuring stick and visual aid for length of my current work session.  </p>
-<p>Where it helps is mostly in avoiding me leaving my desk/task if I get a "Oh I need to do that other thing" moment, check the timer, and see that I have not worked long enough.<br>
-In that case, I will just add my thought/to-do in Things, and refocus on the task at hand.   </p>
-<h2 id="things">Things</h2>
-<p>[<a href="../../apps/things/index.html">Nic Note: Things</a>]</p>
-<p>I have lots of ideas and thoughts bubbling.. I use Things to quickly add a reminder/to-do on my list so I don't forget (or can assess for discarding) but can refocus on task at hand.  </p>
-<p>My global shortcut to add to Things from anywhere on macOS: <code>Ctrl + Space</code>   </p>
-<h1 id="favourite-deep-work-music">Favourite Deep Work Music</h1>
-<h2 id="carbon-based-lifeforms">Carbon Based Lifeforms</h2>
-<p>I discovered CBL early 2020 and have listened to some of their music almost every single working day since. My favourite deep-work music.  </p>
-<p>16 albums available - I bought all from:  </p>
-<div class="link_border"><div class="link_logo_box"><img class="link_logo" src="https://notes.nicolasdeville.com/images/logos/bandcamp.png" alt="logo"/></div><div class="link_content">
-<div class="link_title">Carbon Based Lifeforms</div>
-<div class="link_tagline">bandcamp.com</div>
-<div class="link_url"><a href="https://carbonbasedlifeforms.bandcamp.com/" target="_blank">https://carbonbasedlifeforms.bandcamp.com/</a></div></div></div>
+<p><span class="datestamp">30 Sep 2022</span>   </p>
+<p>I was looking for a better way to save Python objects for tests. Specifically when debugging a scraper where the issue lies in parsing the soup object, ie no need to scrape the site live each run.   </p>
+<div class="link_border"><div class="link_logo_box"><img class="link_logo" src="https://logo.clearbit.com/realpython.com?size=35" alt="logo"/></div><div class="link_content">
+<div class="link_title">The Python pickle Module: How to Persist Objects in Python</div>
+<div class="link_tagline">realpython.com</div>
+<div class="link_url"><a href="https://realpython.com/python-pickle-module/" target="_blank">https://realpython.com/python-pickle-module/</a></div></div></div>
 
-<h3 id="albums">albums</h3>
-<p>Favourite album: Interloper. This is the album I start when I need to get my brain to switch to deep focus mode.    </p>
-<p><img class="album" src="https://notes.nicolasdeville.com/images/home-office_deep-work-music-cbl-interloper.jpg" alt="home-office_deep-work-music-cbl-interloper.jpg"/>  </p>
-<p>About Stochastic:         </p>
-<div class="book_quote">
-<div class="book_quote_highlight">What started as an experiment grew into a concept for an entire album.<br>By exploring the random functionalities on some synthesizers we had not used for a while, we found sequences that were best suited for passive listening whilst not stealing focus. <br>It appeared as if the randomness kept our minds focused and relaxed at the same time. <br>For a few weeks we listened to the tracks over and over for hours while coding, emailing, packing and other tasks and found them very stimulating. <br>We defined the sounds, harmonies and the frequencies of the random pulse generators and then let the synthesizers perform the actual tracks. Sometimes by using randomly generated sequences, sometimes by looped and randomly modulated envelopes.</div>
-<div class="book_quote_location"><a href="https://carbonbasedlifeforms.bandcamp.com/album/stochastic" target="_blank">https://carbonbasedlifeforms.bandcamp.com/album/stochastic</a></div></div>
-
-<table>
-<thead>
-<tr>
-<th>focus</th>
-<th>title</th>
-<th>year released</th>
-<th>notes</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>🟢</td>
-<td>The Path</td>
-<td>1998</td>
-<td>"Our first Ambient album, made even before we took the name CBL."---</td>
-</tr>
-<tr>
-<td>🟢</td>
-<td>Hydroponic Garden</td>
-<td>2003</td>
-<td></td>
-</tr>
-<tr>
-<td>🟢</td>
-<td>World Of Sleepers</td>
-<td>2006</td>
-<td></td>
-</tr>
-<tr>
-<td>🟢🟢🟢</td>
-<td>Interloper</td>
-<td>2010</td>
-<td></td>
-</tr>
-<tr>
-<td>🟢</td>
-<td>Twentythree</td>
-<td>2011</td>
-<td></td>
-</tr>
-<tr>
-<td>🟢</td>
-<td>Irdial</td>
-<td>2013</td>
-<td></td>
-</tr>
-<tr>
-<td>🟢</td>
-<td>REFUGE</td>
-<td>2014</td>
-<td>Original Motion Picture Soundtrack for the motion picture Refuge</td>
-</tr>
-<tr>
-<td>🟢</td>
-<td>Photosynthesis Remixes</td>
-<td>2016</td>
-<td></td>
-</tr>
-<tr>
-<td>🟢</td>
-<td>MOS 6581 REMIXES</td>
-<td>2016</td>
-<td></td>
-</tr>
-<tr>
-<td>🟢</td>
-<td>ALT:01</td>
-<td>2016</td>
-<td></td>
-</tr>
-<tr>
-<td>🟢</td>
-<td>VLA</td>
-<td>2016</td>
-<td></td>
-</tr>
-<tr>
-<td>🟢</td>
-<td>Derelicts</td>
-<td>2017</td>
-<td></td>
-</tr>
-<tr>
-<td>🟢</td>
-<td>ALT:02</td>
-<td>2020</td>
-<td></td>
-</tr>
-<tr>
-<td>🟢</td>
-<td>20 Minutes</td>
-<td>2021</td>
-<td>"A twenty minutes long story that takes you on a soothing journey through the ambient soundscapes of Carbon Based Lifeforms."</td>
-</tr>
-<tr>
-<td>🟢</td>
-<td>Stochastic</td>
-<td>2021</td>
-<td></td>
-</tr>
-</tbody>
-</table>
-<h2 id="boards-of-canada">Boards of Canada</h2>
-<p>10 albums available.   </p>
-<p>Boards of Canada are a Scottish electronic music duo consisting of brothers Michael Sandison and Marcus Eoin.   </p>
-<div class="link_border"><div class="link_logo_box"><img class="link_logo" src="https://logo.clearbit.com/bleep.com?size=35" alt="logo"/></div><div class="link_content">
-<div class="link_title">Bleep - Boards of Canada</div>
-<div class="link_tagline">bleep.com</div>
-<div class="link_url"><a href="https://bleep.com/artist/78-boards-of-canada" target="_blank">https://bleep.com/artist/78-boards-of-canada</a></div></div></div>
-
-<h2 id="ogre-sound">OGRE Sound</h2>
-<p><span class="datestamp">15 Sep 2022</span> listening to:    </p>
-<div class="link_border"><div class="link_logo_box"><img class="link_logo" src="https://logo.clearbit.com/bandcamp.com?size=35" alt="logo"/></div><div class="link_content">
-<div class="link_title">Music | OGRE</div>
-<div class="link_tagline">bandcamp.com</div>
-<div class="link_url"><a href="https://ogresound.bandcamp.com" target="_blank">https://ogresound.bandcamp.com</a></div></div></div>
-
-<h2 id="fool">F.O.O.L.</h2>
-<p><img class="album" src="https://notes.nicolasdeville.com/images/deep-work/fool-logo.jpg" alt="fool-logo"/>  </p>
-<p>Fuck Our Ordinary Lives, or F.O.O.L for short, is the alias of Rasmus Hermansen, a Swedish electronic act who debuted on Monstercat with his song Keep On Rocking, which was released on August 11, 2014.</p>
-<div class="link_border"><div class="link_logo_box"><img class="link_logo" src="https://logo.clearbit.com/fandom.com?size=35" alt="logo"/></div><div class="link_content">
-<div class="link_title">F.O.O.L | Monstercat Wiki | Fandom</div>
-<div class="link_tagline">fandom.com</div>
-<div class="link_url"><a href="https://monstercat.fandom.com/wiki/F.O.O.L" target="_blank">https://monstercat.fandom.com/wiki/F.O.O.L</a></div></div></div>
-
-<p><span class="datestamp">16 Sep 2022</span> listening to:    </p>
-<table>
-<thead>
-<tr>
-<th>focus</th>
-<th>title</th>
-<th>year released</th>
-<th>notes</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>---</td>
-<td>The Game</td>
-<td>---</td>
-<td>---</td>
-</tr>
-<tr>
-<td>---</td>
-<td>Reborn (EP)</td>
-<td>---</td>
-<td>---</td>
-</tr>
-<tr>
-<td>---</td>
-<td>Feelings (EP)</td>
-<td>---</td>
-<td>---</td>
-</tr>
-<tr>
-<td>---</td>
-<td>Highway (EP)</td>
-<td>---</td>
-<td>---</td>
-</tr>
-<tr>
-<td>---</td>
-<td>Fresh Kids Forever</td>
-<td>---</td>
-<td>---</td>
-</tr>
-<tr>
-<td>---</td>
-<td>Views From My Story</td>
-<td>---</td>
-<td>---</td>
-</tr>
-</tbody>
-</table>
-<blockquote>
-<p>slightly too aggressive overall to deep focus</p>
-</blockquote>
-<h2 id="overwerk">OVERWERK</h2>
-<p><span class="datestamp">19 Sep 2022</span> listening to albums:   </p>
-<table>
-<thead>
-<tr>
-<th>focus</th>
-<th>title</th>
-<th>year released</th>
-<th>notes</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>🟢</td>
-<td>The Nth</td>
-<td>---</td>
-<td>Daft Punk-ish</td>
-</tr>
-<tr>
-<td>🔴</td>
-<td>State</td>
-<td>---</td>
-<td>too much vocals, distracting</td>
-</tr>
-<tr>
-<td>🔴</td>
-<td>Altered State</td>
-<td>---</td>
-<td>---</td>
-</tr>
-<tr>
-<td>🟢</td>
-<td>Vessel</td>
-<td>---</td>
-<td>---</td>
-</tr>
-</tbody>
-</table>
-<h2 id="just-her">Just Her</h2>
-<p>eg All We Have Is Now <br>
-<span class="datestamp">20 Sep 2022</span> listening to albums:   </p>
-<div class="link_border"><div class="link_logo_box"><img class="link_logo" src="https://logo.clearbit.com/junodownload.com?size=35" alt="logo"/></div><div class="link_content">
-<div class="link_title">Just Her Music Downloads at Juno Download</div>
-<div class="link_tagline">junodownload.com</div>
-<div class="link_url"><a href="https://www.junodownload.com/artists/Just+Her/releases/" target="_blank">https://www.junodownload.com/artists/Just+Her/releases/</a></div></div></div>
-
-<table>
-<thead>
-<tr>
-<th>focus</th>
-<th>title</th>
-<th>year released</th>
-<th>notes</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>🟢🟢</td>
-<td>Flatline (EP)</td>
-<td>2015</td>
-<td>---</td>
-</tr>
-<tr>
-<td>🟢</td>
-<td>Let Myself Go</td>
-<td>---</td>
-<td>slightly too much vocals for pure deep work</td>
-</tr>
-<tr>
-<td>🟢</td>
-<td>Follow You Down</td>
-<td>---</td>
-<td>---</td>
-</tr>
-<tr>
-<td>🟢</td>
-<td>Busy Minds</td>
-<td>2017</td>
-<td>---</td>
-</tr>
-<tr>
-<td>🟢</td>
-<td>Anjunadeep Explorations</td>
-<td>---</td>
-<td>---</td>
-</tr>
-<tr>
-<td>🟢</td>
-<td>Beautiful Nothing (EP)</td>
-<td>---</td>
-<td>---</td>
-</tr>
-<tr>
-<td>---</td>
-<td>Silence</td>
-<td>2015</td>
-<td>---</td>
-</tr>
-</tbody>
-</table>
-<h2 id="matt-fax">Matt Fax</h2>
-<table>
-<thead>
-<tr>
-<th>focus</th>
-<th>title</th>
-<th>year released</th>
-<th>notes</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>🔴</td>
-<td>X</td>
-<td>---</td>
-<td>---</td>
-</tr>
-<tr>
-<td>🟢</td>
-<td>Progressions</td>
-<td>---</td>
-<td>Abenaki, Fallen</td>
-</tr>
-<tr>
-<td>🟢</td>
-<td>Colorscapes</td>
-<td>---</td>
-<td>---</td>
-</tr>
-<tr>
-<td>---</td>
-<td>Contrast</td>
-<td>---</td>
-<td>---</td>
-</tr>
-<tr>
-<td>---</td>
-<td>Arrival</td>
-<td>---</td>
-<td>---</td>
-</tr>
-<tr>
-<td>---</td>
-<td>---</td>
-<td>---</td>
-<td>---</td>
-</tr>
-</tbody>
-</table>
-<h2 id="notakeer">Notakeer</h2>
-<p><span class="datestamp">19 Sep 2022</span> listening to albums:   </p>
-<table>
-<thead>
-<tr>
-<th>focus</th>
-<th>title</th>
-<th>year released</th>
-<th>notes</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>🟢</td>
-<td>Ocn (Single)</td>
-<td>---</td>
-<td>---</td>
-</tr>
-<tr>
-<td>🟢</td>
-<td>From Dust &amp; Ashes (Single)</td>
-<td>2019</td>
-<td>---</td>
-</tr>
-<tr>
-<td>---</td>
-<td>Echelon (Single)</td>
-<td>2021</td>
-<td>---</td>
-</tr>
-<tr>
-<td>---</td>
-<td>Life's a glitch and then you die (Single)</td>
-<td>2021</td>
-<td>---</td>
-</tr>
-<tr>
-<td>---</td>
-<td>About 3am / 4am (Single)</td>
-<td>2022</td>
-<td>---</td>
-</tr>
-<tr>
-<td>---</td>
-<td>---</td>
-<td>---</td>
-<td>---</td>
-</tr>
-</tbody>
-</table>
-<h2 id="budd">Budd</h2>
-<p><span class="datestamp">04 Oct 2022</span> </p>
-<table>
-<thead>
-<tr>
-<th>focus</th>
-<th>title</th>
-<th>year released</th>
-<th>notes</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>---</td>
-<td>Beginner's Guide To Procrastination (Single)</td>
-<td>2022</td>
-<td>---</td>
-</tr>
-<tr>
-<td>---</td>
-<td>Silent Album To Vibe With (EP)</td>
-<td>2022</td>
-<td>---</td>
-</tr>
-<tr>
-<td>🟢</td>
-<td>Highline (Single))</td>
-<td>2019</td>
-<td>---</td>
-</tr>
-</tbody>
-</table>
-<h2 id="fatum">Fatum</h2>
-<p><span class="datestamp">05 Oct 2022</span> </p>
-<table>
-<thead>
-<tr>
-<th>focus</th>
-<th>title</th>
-<th>year released</th>
-<th>notes</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>🔴</td>
-<td>Forward</td>
-<td>2018</td>
-<td>too aggressive</td>
-</tr>
-<tr>
-<td>---</td>
-<td>Momentum (EP)</td>
-<td>---</td>
-<td>---</td>
-</tr>
-<tr>
-<td>---</td>
-<td>Stream starting</td>
-<td>---</td>
-<td>---</td>
-</tr>
-</tbody>
-</table>
-<h1 id="deep-work-music-to-test">Deep Work Music to test</h1>
+<p>Quotes:</p>
+<p>The serialization process is a way to convert a data structure into a linear form that can be stored or transmitted over a network.</p>
+<p>Python offers three different modules in the standard library that allow you to serialize and deserialize objects:</p>
 <ul>
-<li>Sysdemes, eg Dragon's Gamble</li>
-<li>Naden, eg Undulatus</li>
-<li>LudoWic, eg Delusive Bunker</li>
-<li>Cinnamon Chasers, eg Signals</li>
-<li>Sound Remedy, eg Astralis</li>
-<li>Thomas Barrandon, eg Fragment</li>
-<li>Angara, eg Kyoto</li>
+<li>the <code>marshal</code> module</li>
+<li>the <code>json</code> module</li>
+<li>the <code>pickle</code> module</li>
 </ul>
-<h2 id="binaural-music">Binaural music</h2>
-<h3 id="brainfm">Brain.fm</h3>
-<div class="link_border"><div class="link_logo_box"><img class="link_logo" src="https://logo.clearbit.com/brain.fm?size=35" alt="logo"/></div><div class="link_content">
-<div class="link_title">Music to Focus Better - Brain.fm</div>
-<div class="link_tagline">brain.fm</div>
-<div class="link_url"><a href="https://www.brain.fm" target="_blank">https://www.brain.fm</a></div></div></div>
+<p>Here are three general guidelines for deciding which approach to use:</p>
+<ol>
+<li>
+<p>Don’t use the <code>marshal</code> module. It’s used mainly by the interpreter, and the official documentation warns that the Python maintainers may modify the format in backward-incompatible ways.</p>
+</li>
+<li>
+<p>The <code>json</code> module and XML are good choices if you need interoperability with different languages or a human-readable format.</p>
+</li>
+<li>
+<p>The Python <code>pickle</code> module is a better choice for all the remaining use cases. If you don’t need a human-readable format or a standard interoperable format, or if you need to serialize custom objects, then go with pickle.</p>
+</li>
+</ol>
+<p>The Python pickle module basically consists of 4 methods:</p>
+<p>Pickling:   </p>
+<ol>
+<li><code>pickle.dump(obj, file, protocol=None, *, fix_imports=True, buffer_callback=None)</code></li>
+<li><code>pickle.dumps(obj, protocol=None, *, fix_imports=True, buffer_callback=None)</code></li>
+</ol>
+<p>Unpickling:  </p>
+<ol>
+<li><code>pickle.load(file, *, fix_imports=True, encoding="ASCII", errors="strict", buffers=None)</code></li>
+<li><code>pickle.loads(bytes_object, *, fix_imports=True, encoding="ASCII", errors="strict", buffers=None)</code></li>
+</ol>
+<p><code>s</code> is for string, ie:  </p>
+<ul>
+<li><code>dump</code> makes bytes file and <code>dumps</code> dumps as string. </li>
+<li><code>load</code> loads bytes file and <code>loads</code> loads as string. </li>
+</ul>
+<h1 id="usage">Usage</h1>
+<h2 id="with-open">with open()</h2>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">pickle</span>
 
-<h3 id="lofi">Lofi</h3>
-<div class="link_border"><div class="link_logo_box"><img class="link_logo" src="https://logo.clearbit.com/lofi.co?size=35" alt="logo"/></div><div class="link_content">
-<div class="link_title">Lofi.co - Craft your focus environment</div>
-<div class="link_tagline">lofi.co</div>
-<div class="link_url"><a href="https://lofi.co/home/" target="_blank">https://lofi.co/home/</a></div></div></div>
+<span class="c1">### if RecursionError, uncomment the following and play with value</span>
+<span class="c1"># import sys</span>
+<span class="c1"># sys.setrecursionlimit(5000)</span>
+
+<span class="p">[</span><span class="o">...</span><span class="p">]</span>
+
+<span class="k">if</span> <span class="n">test</span><span class="p">:</span>
+    <span class="n">pickle_dump</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;test/soup-</span><span class="si">{</span><span class="n">slug_from_url</span><span class="p">(</span><span class="n">url</span><span class="p">)</span><span class="si">}</span><span class="s2">.pkl&quot;</span>
+    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">pickle_dump</span><span class="p">,</span> <span class="s2">&quot;rb&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">tp</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">TEST: LOADING FROM PICKLE FILE: </span><span class="si">{</span><span class="n">pickle_dump</span><span class="si">}</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="n">soup</span> <span class="o">=</span> <span class="n">pickle</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">tp</span><span class="p">)</span>
+        <span class="c1"># all remaining code logic needs to be here while file is open</span>
+        <span class="n">output</span> <span class="o">=</span> <span class="n">process_soup</span><span class="p">(</span><span class="n">soup</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">RUNNING LIVE SCRAPING OF </span><span class="si">{</span><span class="n">url</span><span class="si">}</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="n">chrome_options</span> <span class="o">=</span> <span class="n">ChromeOptions</span><span class="p">()</span>
+    <span class="n">chrome_options</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s1">&#39;--headless&#39;</span><span class="p">)</span>
+
+    <span class="n">s</span> <span class="o">=</span> <span class="n">Service</span><span class="p">(</span><span class="n">driverpath</span><span class="p">)</span>
+    <span class="n">web</span> <span class="o">=</span> <span class="n">Chrome</span><span class="p">(</span><span class="n">service</span><span class="o">=</span><span class="n">s</span><span class="p">,</span><span class="n">options</span><span class="o">=</span><span class="n">chrome_options</span><span class="p">)</span>
+    <span class="n">web</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
+    <span class="n">xml</span> <span class="o">=</span> <span class="n">web</span><span class="o">.</span><span class="n">page_source</span>
+    <span class="n">web</span><span class="o">.</span><span class="n">quit</span><span class="p">()</span>
+    <span class="n">soup</span> <span class="o">=</span> <span class="n">BeautifulSoup</span><span class="p">(</span><span class="n">xml</span><span class="p">,</span> <span class="n">features</span><span class="o">=</span><span class="s1">&#39;html.parser&#39;</span><span class="p">)</span>
+
+    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;test/soup-</span><span class="si">{</span><span class="n">slug_from_url</span><span class="p">(</span><span class="n">url</span><span class="p">)</span><span class="si">}</span><span class="s2">.pkl&quot;</span><span class="p">,</span> <span class="s1">&#39;wb&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">pf</span><span class="p">:</span>
+        <span class="n">pickle</span><span class="o">.</span><span class="n">dump</span><span class="p">(</span><span class="n">soup</span><span class="p">,</span> <span class="n">pf</span><span class="p">)</span>
+</code></pre></div>
+
+<h2 id="or-close-at-the-end">or close at the end</h2>
+<p>easier sometimes for code structure:   </p>
+<div class="highlight"><pre><span></span><code><span class="k">if</span> <span class="n">test</span><span class="p">:</span>
+    <span class="n">pickle_dump</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;test/soup-</span><span class="si">{</span><span class="n">slug_from_url</span><span class="p">(</span><span class="n">url</span><span class="p">)</span><span class="si">}</span><span class="s2">.pkl&quot;</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">TEST: LOADING FROM PICKLE FILE: </span><span class="si">{</span><span class="n">pickle_dump</span><span class="si">}</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="n">soup_backup</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="n">pickle_dump</span><span class="p">,</span> <span class="s2">&quot;rb&quot;</span><span class="p">)</span>
+    <span class="n">soup</span> <span class="o">=</span> <span class="n">pickle</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">soup_backup</span><span class="p">)</span>
+    <span class="c1"># soup object can now be used after if/else statement</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">RUNNING LIVE SCRAPING OF </span><span class="si">{</span><span class="n">url</span><span class="si">}</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="n">chrome_options</span> <span class="o">=</span> <span class="n">ChromeOptions</span><span class="p">()</span>
+    <span class="n">chrome_options</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s1">&#39;--headless&#39;</span><span class="p">)</span>
+
+    <span class="n">s</span> <span class="o">=</span> <span class="n">Service</span><span class="p">(</span><span class="n">driverpath</span><span class="p">)</span>
+    <span class="n">web</span> <span class="o">=</span> <span class="n">Chrome</span><span class="p">(</span><span class="n">service</span><span class="o">=</span><span class="n">s</span><span class="p">,</span><span class="n">options</span><span class="o">=</span><span class="n">chrome_options</span><span class="p">)</span>
+    <span class="n">web</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
+    <span class="n">xml</span> <span class="o">=</span> <span class="n">web</span><span class="o">.</span><span class="n">page_source</span>
+    <span class="n">web</span><span class="o">.</span><span class="n">quit</span><span class="p">()</span>
+    <span class="n">soup</span> <span class="o">=</span> <span class="n">BeautifulSoup</span><span class="p">(</span><span class="n">xml</span><span class="p">,</span> <span class="n">features</span><span class="o">=</span><span class="s1">&#39;html.parser&#39;</span><span class="p">)</span>
+
+    <span class="c1"># this can stay as with open(), as quick file save with not further action required</span>
+    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;test/soup-</span><span class="si">{</span><span class="n">slug_from_url</span><span class="p">(</span><span class="n">url</span><span class="p">)</span><span class="si">}</span><span class="s2">.pkl&quot;</span><span class="p">,</span> <span class="s1">&#39;wb&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">pf</span><span class="p">:</span>
+        <span class="n">pickle</span><span class="o">.</span><span class="n">dump</span><span class="p">(</span><span class="n">soup</span><span class="p">,</span> <span class="n">pf</span><span class="p">)</span>
+
+    <span class="n">output</span> <span class="o">=</span> <span class="n">process_soup</span><span class="p">(</span><span class="n">soup</span><span class="p">)</span>
+
+<span class="k">if</span> <span class="n">test</span><span class="p">:</span>
+    <span class="c1"># and soup object gets closed here</span>
+    <span class="n">soup_backup</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+</code></pre></div>
+
+<h2 id="how-i-use-it-now">how I use it now</h2>
+<p><span class="datestamp">05 Oct 2022</span> </p>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">pickle</span>
+
+<span class="n">refresh</span> <span class="o">=</span> <span class="kc">True</span>
+
+<span class="c1">### Path to pickle file</span>
+<span class="n">pickle_path</span> <span class="o">=</span> <span class="s2">&quot;test/xxxxx.pickle&quot;</span>
+
+<span class="c1">### Generate pickle file</span>
+<span class="k">if</span> <span class="n">refresh</span><span class="p">:</span>
+    <span class="n">my_variable</span> <span class="o">=</span> <span class="n">xxxxxxx</span>
+    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">pickle_path</span><span class="p">,</span> <span class="s1">&#39;wb&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">pf</span><span class="p">:</span>
+        <span class="n">pickle</span><span class="o">.</span><span class="n">dump</span><span class="p">(</span><span class="n">my_variable</span><span class="p">,</span> <span class="n">pf</span><span class="p">)</span> 
+
+<span class="k">if</span> <span class="ow">not</span> <span class="n">refresh</span><span class="p">:</span>
+    <span class="n">pickle_dump</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="n">pickle_path</span><span class="p">,</span> <span class="s2">&quot;rb&quot;</span><span class="p">)</span>
+    <span class="n">my_variable</span> <span class="o">=</span> <span class="n">pickle</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">pickle_dump</span><span class="p">)</span>
+
+<span class="c1">### End Of File - Close pickle file</span>
+<span class="k">if</span> <span class="ow">not</span> <span class="n">refresh</span><span class="p">:</span>
+    <span class="n">my_variable</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+</code></pre></div>
+
+<h1 id="what-tripped-me-up">What tripped me up</h1>
+<h2 id="recursion-error">Recursion Error</h2>
+<p>Getting error <code>RecursionError: maximum recursion depth exceeded while pickling an object</code>...   </p>
+<p>solved with increasing the recursion limit:  </p>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">sys</span>
+<span class="n">sys</span><span class="o">.</span><span class="n">setrecursionlimit</span><span class="p">(</span><span class="mi">5000</span><span class="p">)</span>
+</code></pre></div>
+
+<h1 id="tests">Tests</h1>
                 </article>
             </aside>
 
@@ -669,6 +291,128 @@ In that case, I will just add my thought/to-do in Things, and refocus on the tas
                 <hr>
 
                 <ol id="posts-list" class="hfeed">
+            
+
+
+
+            <li>
+                <article class="hentry">
+                    <header>
+                        <!-- PREVIOUS NOTE TITLE -->
+                        <h1><a href="https://notes.nicolasdeville.com/home-office/deep-work" rel="bookmark"
+                            title="Resources for Deep Work">Resources for Deep Work</a></h1>
+                        <!-- PREVIOUS NOTE SUMMARY -->
+                        <div class="entry-content">
+                            <p>since reading "Deep Work", I have optimised my work sessions for it.</p>
+                        </div>
+                    </header>
+
+                    <div class="entry-content">
+                        <!-- PREVIOUS NOTE METADATA -->
+<footer class="post-info">
+
+    <p>
+        05 Oct 2022 <span class="separator">|</span> in <a class="link_tag" href="https://notes.nicolasdeville.com/home-office/">home office</a>
+ tags: <a class="link_tag" href="https://notes.nicolasdeville.com/tag/productivity.html">productivity</a>
+<a class="link_tag" href="https://notes.nicolasdeville.com/tag/music.html">music</a>
+
+        <!-- added 4/7 -->
+        <!-- 		<br />
+        <abbr class="modified" title="2022-10-05T09:07:58.904422+02:00">
+                Updated: 05 Oct 2022
+        </abbr>
+ -->
+
+    </p>
+
+    Translations:
+        <a href="https://notes.nicolasdeville.com/books/deep-work" hreflang="en">en</a>
+
+
+</footer>                    </div>
+                    
+                </article>
+                <hr/>
+            </li>
+            
+
+
+
+            <li>
+                <article class="hentry">
+                    <header>
+                        <!-- PREVIOUS NOTE TITLE -->
+                        <h1><a href="https://notes.nicolasdeville.com/projects/meta-url" rel="bookmark"
+                            title="Python Open-Source Project: metaURL">Python Open-Source Project: metaURL</a></h1>
+                        <!-- PREVIOUS NOTE SUMMARY -->
+                        <div class="entry-content">
+                            <p>generates metadata for a given URL</p>
+                        </div>
+                    </header>
+
+                    <div class="entry-content">
+                        <!-- PREVIOUS NOTE METADATA -->
+<footer class="post-info">
+
+    <p>
+        05 Oct 2022 <span class="separator">|</span> in <a class="link_tag" href="https://notes.nicolasdeville.com/projects/">projects</a>
+
+        <!-- added 4/7 -->
+        <!-- 		<br />
+        <abbr class="modified" title="2022-10-05T08:46:20.382030+02:00">
+                Updated: 05 Oct 2022
+        </abbr>
+ -->
+
+    </p>
+
+    
+
+</footer>                    </div>
+                    
+                </article>
+                <hr/>
+            </li>
+            
+
+
+
+            <li>
+                <article class="hentry">
+                    <header>
+                        <!-- PREVIOUS NOTE TITLE -->
+                        <h1><a href="https://notes.nicolasdeville.com/helpers/vodafone-kabel" rel="bookmark"
+                            title="Vodafone Kabel">Vodafone Kabel</a></h1>
+                        <!-- PREVIOUS NOTE SUMMARY -->
+                        <div class="entry-content">
+                            
+                        </div>
+                    </header>
+
+                    <div class="entry-content">
+                        <!-- PREVIOUS NOTE METADATA -->
+<footer class="post-info">
+
+    <p>
+        05 Oct 2022 <span class="separator">|</span> in <a class="link_tag" href="https://notes.nicolasdeville.com/helpers/">helpers</a>
+ tags: <a class="link_tag" href="https://notes.nicolasdeville.com/tag/internet.html">internet</a>
+
+        <!-- added 4/7 -->
+        <!-- 		<br />
+        <abbr class="modified" title="2022-10-05T08:35:13.926631+02:00">
+                Updated: 05 Oct 2022
+        </abbr>
+ -->
+
+    </p>
+
+    
+
+</footer>                    </div>
+                    
+                </article>
+                <hr/>
+            </li>
             
 
 
@@ -1138,45 +882,6 @@ In that case, I will just add my thought/to-do in Things, and refocus on the tas
         <!-- added 4/7 -->
         <!-- 		<br />
         <abbr class="modified" title="2022-10-02T22:24:33.075842+02:00">
-                Updated: 02 Oct 2022
-        </abbr>
- -->
-
-    </p>
-
-    
-
-</footer>                    </div>
-                    
-                </article>
-                <hr/>
-            </li>
-            
-
-
-
-            <li>
-                <article class="hentry">
-                    <header>
-                        <!-- PREVIOUS NOTE TITLE -->
-                        <h1><a href="https://notes.nicolasdeville.com/projects/meta-url" rel="bookmark"
-                            title="Python Open-Source Project: metaURL">Python Open-Source Project: metaURL</a></h1>
-                        <!-- PREVIOUS NOTE SUMMARY -->
-                        <div class="entry-content">
-                            <p>generates metadata for a given URL</p>
-                        </div>
-                    </header>
-
-                    <div class="entry-content">
-                        <!-- PREVIOUS NOTE METADATA -->
-<footer class="post-info">
-
-    <p>
-        02 Oct 2022 <span class="separator">|</span> in <a class="link_tag" href="https://notes.nicolasdeville.com/projects/">projects</a>
-
-        <!-- added 4/7 -->
-        <!-- 		<br />
-        <abbr class="modified" title="2022-10-02T09:37:13.992513+02:00">
                 Updated: 02 Oct 2022
         </abbr>
  -->
@@ -1792,45 +1497,6 @@ In that case, I will just add my thought/to-do in Things, and refocus on the tas
                 <article class="hentry">
                     <header>
                         <!-- PREVIOUS NOTE TITLE -->
-                        <h1><a href="https://notes.nicolasdeville.com/python/library-pickle" rel="bookmark"
-                            title="Python Library: pickle">Python Library: pickle</a></h1>
-                        <!-- PREVIOUS NOTE SUMMARY -->
-                        <div class="entry-content">
-                            <p>how to store Python objects to file</p>
-                        </div>
-                    </header>
-
-                    <div class="entry-content">
-                        <!-- PREVIOUS NOTE METADATA -->
-<footer class="post-info">
-
-    <p>
-        30 Sep 2022 <span class="separator">|</span> in <a class="link_tag" href="https://notes.nicolasdeville.com/python/">python</a>
-
-        <!-- added 4/7 -->
-        <!-- 		<br />
-        <abbr class="modified" title="2022-09-30T10:21:27.029412+02:00">
-                Updated: 30 Sep 2022
-        </abbr>
- -->
-
-    </p>
-
-    
-
-</footer>                    </div>
-                    
-                </article>
-                <hr/>
-            </li>
-            
-
-
-
-            <li>
-                <article class="hentry">
-                    <header>
-                        <!-- PREVIOUS NOTE TITLE -->
                         <h1><a href="https://notes.nicolasdeville.com/python/files" rel="bookmark"
                             title="Dealing with files in Python">Dealing with files in Python</a></h1>
                         <!-- PREVIOUS NOTE SUMMARY -->
@@ -1949,48 +1615,6 @@ In that case, I will just add my thought/to-do in Things, and refocus on the tas
                 <article class="hentry">
                     <header>
                         <!-- PREVIOUS NOTE TITLE -->
-                        <h1><a href="https://notes.nicolasdeville.com/b2b-sales/books" rel="bookmark"
-                            title="My B2B Books Library">My B2B Books Library</a></h1>
-                        <!-- PREVIOUS NOTE SUMMARY -->
-                        <div class="entry-content">
-                            <p>keeping track of B2B Sales books read and on my radar</p>
-                        </div>
-                    </header>
-
-                    <div class="entry-content">
-                        <!-- PREVIOUS NOTE METADATA -->
-<footer class="post-info">
-
-    <p>
-        30 Sep 2022 <span class="separator">|</span> in <a class="link_tag" href="https://notes.nicolasdeville.com/b2b-sales/">b2b sales</a>
- tags: <a class="link_tag" href="https://notes.nicolasdeville.com/tag/books.html">books</a>
-
-        <!-- added 4/7 -->
-        <!-- 		<br />
-        <abbr class="modified" title="2022-10-01T00:56:40.302799+02:00">
-                Updated: 01 Oct 2022
-        </abbr>
- -->
-
-    </p>
-
-    Translations:
-        <a href="https://notes.nicolasdeville.com/python/books" hreflang="en">en</a>
-
-
-</footer>                    </div>
-                    
-                </article>
-                <hr/>
-            </li>
-            
-
-
-
-            <li>
-                <article class="hentry">
-                    <header>
-                        <!-- PREVIOUS NOTE TITLE -->
                         <h1><a href="https://notes.nicolasdeville.com/python/books" rel="bookmark"
                             title="My Python Books Library">My Python Books Library</a></h1>
                         <!-- PREVIOUS NOTE SUMMARY -->
@@ -2018,6 +1642,48 @@ In that case, I will just add my thought/to-do in Things, and refocus on the tas
 
     Translations:
         <a href="https://notes.nicolasdeville.com/b2b-sales/books" hreflang="en">en</a>
+
+
+</footer>                    </div>
+                    
+                </article>
+                <hr/>
+            </li>
+            
+
+
+
+            <li>
+                <article class="hentry">
+                    <header>
+                        <!-- PREVIOUS NOTE TITLE -->
+                        <h1><a href="https://notes.nicolasdeville.com/b2b-sales/books" rel="bookmark"
+                            title="My B2B Books Library">My B2B Books Library</a></h1>
+                        <!-- PREVIOUS NOTE SUMMARY -->
+                        <div class="entry-content">
+                            <p>keeping track of B2B Sales books read and on my radar</p>
+                        </div>
+                    </header>
+
+                    <div class="entry-content">
+                        <!-- PREVIOUS NOTE METADATA -->
+<footer class="post-info">
+
+    <p>
+        30 Sep 2022 <span class="separator">|</span> in <a class="link_tag" href="https://notes.nicolasdeville.com/b2b-sales/">b2b sales</a>
+ tags: <a class="link_tag" href="https://notes.nicolasdeville.com/tag/books.html">books</a>
+
+        <!-- added 4/7 -->
+        <!-- 		<br />
+        <abbr class="modified" title="2022-10-01T00:56:40.302799+02:00">
+                Updated: 01 Oct 2022
+        </abbr>
+ -->
+
+    </p>
+
+    Translations:
+        <a href="https://notes.nicolasdeville.com/python/books" hreflang="en">en</a>
 
 
 </footer>                    </div>
@@ -3549,46 +3215,6 @@ In that case, I will just add my thought/to-do in Things, and refocus on the tas
                 <article class="hentry">
                     <header>
                         <!-- PREVIOUS NOTE TITLE -->
-                        <h1><a href="https://notes.nicolasdeville.com/helpers/vodafone-kabel" rel="bookmark"
-                            title="Vodafone Kabel">Vodafone Kabel</a></h1>
-                        <!-- PREVIOUS NOTE SUMMARY -->
-                        <div class="entry-content">
-                            
-                        </div>
-                    </header>
-
-                    <div class="entry-content">
-                        <!-- PREVIOUS NOTE METADATA -->
-<footer class="post-info">
-
-    <p>
-        25 Sep 2022 <span class="separator">|</span> in <a class="link_tag" href="https://notes.nicolasdeville.com/helpers/">helpers</a>
- tags: <a class="link_tag" href="https://notes.nicolasdeville.com/tag/internet.html">internet</a>
-
-        <!-- added 4/7 -->
-        <!-- 		<br />
-        <abbr class="modified" title="2022-09-25T20:54:04.116445+02:00">
-                Updated: 25 Sep 2022
-        </abbr>
- -->
-
-    </p>
-
-    
-
-</footer>                    </div>
-                    
-                </article>
-                <hr/>
-            </li>
-            
-
-
-
-            <li>
-                <article class="hentry">
-                    <header>
-                        <!-- PREVIOUS NOTE TITLE -->
                         <h1><a href="https://notes.nicolasdeville.com/random/quotes" rel="bookmark"
                             title="My favourite quotes">My favourite quotes</a></h1>
                         <!-- PREVIOUS NOTE SUMMARY -->
@@ -4665,13 +4291,13 @@ In that case, I will just add my thought/to-do in Things, and refocus on the tas
 
         <footer id="contentinfo" class="body">
                 <address id="about" class="vcard body">
-                Powered by <a href="https://github.com/getpelican/pelican" target="_blank">Pelican</a>, 
+                Powered by <a href="https://github.com/getpelican/pelican" target="_blank">Pelican</a>,
                 with <a href="https://stork-search.net/" target="_blank">Stork</a> & <a href="https://github.com/pelican-plugins/search" target="_blank">Pelican Search plugin</a>.
                 <br>
                 <a href="https://clearbit.com" target="_blank">Logos provided by Clearbit</a>
                 <br>
                 <!-- <span style="color:#C74350">|</span> <img src="https://notes.nicolasdeville.com/images/python.svg" alt="python_logo" width="16" style="vertical-align: middle;"/> <a href="https://www.python.org/" target="_blank">Python</a>  -->
-                <img src="https://notes.nicolasdeville.com/images/python.svg" alt="python_logo" width="16" style="vertical-align: middle;"/> <a href="https://www.python.org/" target="_blank">Python</a> 
+                <img src="https://notes.nicolasdeville.com/images/python.svg" alt="python_logo" width="16" style="vertical-align: middle;"/> <a href="https://www.python.org/" target="_blank">Python</a>
                 </address><!-- /#about -->
 
         </footer><!-- /#contentinfo -->
