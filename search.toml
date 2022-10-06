@@ -13,9 +13,14 @@ url = "/why/"
 title = "Why this site?"
 
 [[input.files]]
-path = "python/library-pickle/index.html"
-url = "/python/library-pickle"
-title = "Python Library: pickle"
+path = "projects/meta-url/index.html"
+url = "/projects/meta-url"
+title = "Python Open-Source Project: metaURL"
+
+[[input.files]]
+path = "ai/dall-e/index.html"
+url = "/ai/dall-e"
+title = "Dall-E"
 
 [[input.files]]
 path = "home-office/deep-work/index.html"
@@ -23,14 +28,34 @@ url = "/home-office/deep-work"
 title = "Resources for Deep Work"
 
 [[input.files]]
-path = "projects/meta-url/index.html"
-url = "/projects/meta-url"
-title = "Python Open-Source Project: metaURL"
+path = "home-office/kinesis/index.html"
+url = "/home-office/kinesis"
+title = "Kinesis Advantage keyboard"
+
+[[input.files]]
+path = "python/paths/index.html"
+url = "/python/paths"
+title = "How to find all paths being searched by Python"
+
+[[input.files]]
+path = "b2b-sales/cyberleads/index.html"
+url = "/b2b-sales/cyberleads"
+title = "Cyberleads"
+
+[[input.files]]
+path = "python/library-pickle/index.html"
+url = "/python/library-pickle"
+title = "Python Library: pickle"
 
 [[input.files]]
 path = "helpers/vodafone-kabel/index.html"
 url = "/helpers/vodafone-kabel"
 title = "Vodafone Kabel"
+
+[[input.files]]
+path = "helpers/css-responsive-tables/index.html"
+url = "/helpers/css-responsive-tables"
+title = "Responsive tables in CSS"
 
 [[input.files]]
 path = "helpers/icons/index.html"
@@ -46,11 +71,6 @@ title = "Mechanical Keyboards"
 path = "python/library-jinja2/index.html"
 url = "/python/library-jinja2"
 title = "Python Library: jinja2"
-
-[[input.files]]
-path = "home-office/kinesis/index.html"
-url = "/home-office/kinesis"
-title = "Kinesis Advantage keyboard"
 
 [[input.files]]
 path = "learning/touch-typing/index.html"
@@ -198,14 +218,14 @@ url = "/helpers/clipper"
 title = "My web clipboard"
 
 [[input.files]]
-path = "apps/library/index.html"
-url = "/apps/library"
-title = "My Apps Library"
-
-[[input.files]]
 path = "books/library/index.html"
 url = "/books/library"
 title = "My Books Library"
+
+[[input.files]]
+path = "apps/library/index.html"
+url = "/apps/library"
+title = "My Apps Library"
 
 [[input.files]]
 path = "apps/radar/index.html"
@@ -301,11 +321,6 @@ title = "Python Library: tkinter"
 path = "apps/adobe-illustrator/index.html"
 url = "/apps/adobe-illustrator"
 title = "Adobe Illustrator"
-
-[[input.files]]
-path = "b2b-sales/cyberleads/index.html"
-url = "/b2b-sales/cyberleads"
-title = "Cyberleads"
 
 [[input.files]]
 path = "projects/notes/index.html"
@@ -556,11 +571,6 @@ title = "Starlink"
 path = "ai/questions/index.html"
 url = "/ai/questions"
 title = "AI questions"
-
-[[input.files]]
-path = "ai/dall-e/index.html"
-url = "/ai/dall-e"
-title = "Dall-E"
 
 [[input.files]]
 path = "home-office/monitors/index.html"
@@ -931,11 +941,6 @@ title = "How to get a website's metadata with Python"
 path = "python/pip/index.html"
 url = "/python/pip"
 title = "PIP: Python's Package Manager"
-
-[[input.files]]
-path = "python/paths/index.html"
-url = "/python/paths"
-title = "How to find all paths being searched by Python"
 
 [[input.files]]
 path = "python/solve-certificate-verify-failed/index.html"
@@ -2328,14 +2333,14 @@ url = "/projects/clipper"
 title = "Clipper"
 
 [[input.files]]
-path = "books/library/index.html"
-url = "/books/library"
-title = "My Books Library"
-
-[[input.files]]
 path = "apps/library/index.html"
 url = "/apps/library"
 title = "My Apps Library"
+
+[[input.files]]
+path = "books/library/index.html"
+url = "/books/library"
+title = "My Books Library"
 
 [[input.files]]
 path = "helpers/clipper/index.html"
@@ -2353,13 +2358,13 @@ url = "/learning/ai"
 title = "Learning AI"
 
 [[input.files]]
-path = "interests/ai/index.html"
-url = "/interests/ai"
+path = "random/ai/index.html"
+url = "/random/ai"
 title = "AI"
 
 [[input.files]]
-path = "random/ai/index.html"
-url = "/random/ai"
+path = "interests/ai/index.html"
+url = "/interests/ai"
 title = "AI"
 
 [[input.files]]

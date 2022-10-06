@@ -43,7 +43,7 @@
             </div>
 
             <div class="above-navbar">
-                <div class="last_updated">05 Oct 2022 | 12:03</div>
+                <div class="last_updated">06 Oct 2022 | 15:40</div>
                 <div>
                     <p class="notes_count">
                         <a href="https://notes.nicolasdeville.com/tags">by tags</a>
@@ -102,15 +102,160 @@
             <hr/>
 
                 <article class="hentry">
-                    <h1 class="entry-title"><a href="https://notes.nicolasdeville.com/python/boilerplate">My Python scripts boilerplate</a></h1>
+                    <h1 class="entry-title"><a href="https://notes.nicolasdeville.com/python/paths">How to find all paths being searched by Python</a></h1>
 
                     <!-- added 4/7 -->
                     <div>
                         <p class="header_summary">
-                            <p>this is the boilerplate I use as a snippet in VS Code when I create a new Python script</p>
+                            
                         </p>
                     </div>
 
+<footer class="post-info">
+
+    <p>
+        06 Oct 2022 <span class="separator">|</span> in <a class="link_tag" href="https://notes.nicolasdeville.com/python/">python</a>
+ tags: <a class="link_tag" href="https://notes.nicolasdeville.com/tag/snippets.html">snippets</a>
+
+        <!-- added 4/7 -->
+        <!-- 		<br />
+        <abbr class="modified" title="2022-10-06T10:18:25.934047+02:00">
+                Updated: 06 Oct 2022
+        </abbr>
+ -->
+
+    </p>
+
+    
+
+</footer><div class="toc"><span class="toctitle">Table of Contents</span><ul>
+<li><a href="#resources">Resources</a></li>
+</ul>
+</div>
+<p><span class="datestamp">15 Sep 2022</span>   </p>
+<p>run this to see all paths being searched by python:  </p>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">sys</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Paths:&quot;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">path</span> <span class="ow">in</span> <span class="n">sys</span><span class="o">.</span><span class="n">path</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">path</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</code></pre></div>
+
+<p>prints:  </p>
+<div class="highlight"><pre><span></span><code>/Users/xxxx/Python/homee
+/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/lib/python39.zip
+/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9
+/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/lib-dynload
+/Users/xxxx/Python/indeXee
+/Users/xxxx/Python/Scrapee
+</code></pre></div>
+
+<p>or from terminal:   </p>
+<p>GLOBAL:   </p>
+<div class="highlight"><pre><span></span><code>python -m site
+</code></pre></div>
+
+<p>prints:  </p>
+<div class="highlight"><pre><span></span><code>sys.path <span class="o">=</span> <span class="o">[</span>
+    <span class="s1">&#39;/Users/xxxx/Python/homee/notes&#39;</span>,
+    <span class="s1">&#39;/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/lib/python39.zip&#39;</span>,
+    <span class="s1">&#39;/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9&#39;</span>,
+    <span class="s1">&#39;/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/lib-dynload&#39;</span>,
+<span class="o">]</span>
+USER_BASE: <span class="s1">&#39;/Users/xxxx/Library/Python/3.9&#39;</span> <span class="o">(</span>exists<span class="o">)</span>
+USER_SITE: <span class="s1">&#39;/Users/xxxx/Library/Python/3.9/lib/python/site-packages&#39;</span> <span class="o">(</span>exists<span class="o">)</span>
+ENABLE_USER_SITE: False
+</code></pre></div>
+
+<p>getting site packages, running from venv:   </p>
+<div class="highlight"><pre><span></span><code>python -c <span class="s1">&#39;import site; print(site.getsitepackages())&#39;</span>
+</code></pre></div>
+
+<p>prints:   </p>
+<div class="highlight"><pre><span></span><code><span class="o">[</span><span class="s1">&#39;/Users/xxxx/Python/homee/venv/lib/python3.9/site-packages&#39;</span><span class="o">]</span>
+</code></pre></div>
+
+<p>USER:    </p>
+<div class="highlight"><pre><span></span><code>python -m site --user-site
+</code></pre></div>
+
+<p>prints:   </p>
+<div class="highlight"><pre><span></span><code>/Users/nic/Library/Python/3.9/lib/python/site-packages
+</code></pre></div>
+
+<p>Get site packages used within venv:   </p>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">distutils.sysconfig</span> <span class="kn">import</span> <span class="n">get_python_lib</span>
+<span class="n">python_lib</span> <span class="o">=</span> <span class="n">get_python_lib</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Python lib:&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">python_lib</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</code></pre></div>
+
+<p>prints:   </p>
+<div class="highlight"><pre><span></span><code><span class="nv">python_lib</span><span class="o">=</span><span class="s1">&#39;/Users/xxxx/Python/homee/venv/lib/python3.9/site-packages&#39;</span>
+</code></pre></div>
+
+<hr>
+<p>Python may be installed in multiple places in your computer. When you get a new Mac, the default python directory may be</p>
+<div class="highlight"><pre><span></span><code><span class="s1">&#39;usr/bin/python2.7&#39;</span>
+</code></pre></div>
+
+<p>You may also have a directory</p>
+<div class="highlight"><pre><span></span><code><span class="s1">&#39;System/Library/Frameworks/Python.framework/Versions/2.7/bin/python&#39;</span>
+</code></pre></div>
+
+<p>The first one is the symlink of the second one. NOTE: not my case - <code>usr/bin</code> is not a symlink, but an executable 🤔  </p>
+<p>If you use HomeBrew to install python, you may get a directory in</p>
+<div class="highlight"><pre><span></span><code><span class="s1">&#39;usr/local/bin/python2.7&#39;</span>
+</code></pre></div>
+
+<p>You may also have a directory as</p>
+<div class="highlight"><pre><span></span><code><span class="s1">&#39;Library/Frameworks/Python.framework/Versions/2.7/bin/python&#39;</span>
+</code></pre></div>
+
+<p>from: <a href="https://stackoverflow.com/questions/23329034/python-osx-which-python-gives-library-frameworks-python-framework-versions-2" target="_blank">https://stackoverflow.com/questions/23329034/python-osx-which-python-gives-library-frameworks-python-framework-versions-2</a>   </p>
+<h1 id="resources">Resources</h1>
+<div class="link_border"><div class="link_logo_box"><img class="link_logo" src="https://logo.clearbit.com/realpython.com?size=35" alt="logo"/></div><div class="link_content">
+<div class="link_title">How to Add Python to PATH on Linux and macOS</div>
+<div class="link_tagline">realpython.com</div>
+<div class="link_url"><a href="https://realpython.com/add-python-to-path/#how-to-add-python-to-path-on-linux-and-macos" target="_blank">https://realpython.com/add-python-to-path/#how-to-add-python-to-path-on-linux-and-macos</a></div></div></div>
+
+<div class="link_border"><div class="link_logo_box"><img class="link_logo" src="https://logo.clearbit.com/stackoverflow.com?size=35" alt="logo"/></div><div class="link_content">
+<div class="link_title">virtualenv - How do Python Virtual Environment Symlinks Work? - Stack Overflow</div>
+<div class="link_tagline">stackoverflow.com</div>
+<div class="link_url"><a href="https://stackoverflow.com/questions/73708028/how-do-python-virtual-environment-symlinks-work" target="_blank">https://stackoverflow.com/questions/73708028/how-do-python-virtual-environment-symlinks-work</a></div></div></div>
+
+<div class="link_border"><div class="link_logo_box"><img class="link_logo" src="https://logo.clearbit.com/stackoverflow.com?size=35" alt="logo"/></div><div class="link_content">
+<div class="link_title">How do I find the location of my Python site-packages directory? - Stack Overflow</div>
+<div class="link_tagline">stackoverflow.com</div>
+<div class="link_url"><a href="https://stackoverflow.com/questions/122327/how-do-i-find-the-location-of-my-python-site-packages-directory" target="_blank">https://stackoverflow.com/questions/122327/how-do-i-find-the-location-of-my-python-site-packages-directory</a></div></div></div>
+                </article>
+            </aside>
+
+                <section id="content" class="body">
+
+                <!-- PREVIOUS NOTES -->
+				<p class="notes-section">previous notes</p>
+                <hr>
+
+                <ol id="posts-list" class="hfeed">
+            
+
+
+
+            <li>
+                <article class="hentry">
+                    <header>
+                        <!-- PREVIOUS NOTE TITLE -->
+                        <h1><a href="https://notes.nicolasdeville.com/python/boilerplate" rel="bookmark"
+                            title="My Python scripts boilerplate">My Python scripts boilerplate</a></h1>
+                        <!-- PREVIOUS NOTE SUMMARY -->
+                        <div class="entry-content">
+                            <p>this is the boilerplate I use as a snippet in VS Code when I create a new Python script</p>
+                        </div>
+                    </header>
+
+                    <div class="entry-content">
+                        <!-- PREVIOUS NOTE METADATA -->
 <footer class="post-info">
 
     <p>
@@ -129,184 +274,11 @@
 
     
 
-</footer><p><span class="datestamp">21 Jul 2022</span> starting note.           </p>
-<p>When I create a new Python file, I just type my shortcut <code>bp</code> (=boilerplate) and select my snippet <code>bp_python</code> to insert all the below at once - massive time saver.   </p>
-<p>In VS Code: <code>Code &gt; Preferences &gt; Configure User Snippets &gt; python.json</code>    </p>
-<p><span class="datestamp">29 Sep 2022</span> updated.   </p>
-<div class="highlight"><pre><span></span><code><span class="w">    </span><span class="nt">&quot;Nic: Python boilerplate&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">        </span><span class="nt">&quot;prefix&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;bp_python&quot;</span><span class="p">,</span><span class="w"></span>
-<span class="w">        </span><span class="nt">&quot;body&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"></span>
-<span class="w">            </span><span class="s2">&quot;from datetime import datetime&quot;</span><span class="p">,</span><span class="w"></span>
-<span class="w">            </span><span class="s2">&quot;import os&quot;</span><span class="p">,</span><span class="w"></span>
-<span class="w">            </span><span class="s2">&quot;print(\&quot;----------\&quot;)&quot;</span><span class="p">,</span><span class="w"></span>
-<span class="w">            </span><span class="s2">&quot;ts_file = f\&quot;{datetime.now().strftime(&#39;%y%m%d-%H%M&#39;)}\&quot;&quot;</span><span class="p">,</span><span class="w"></span>
-<span class="w">            </span><span class="s2">&quot;ts_db = f\&quot;{datetime.now().strftime(&#39;%Y-%m-%d %H:%M&#39;)}\&quot;&quot;</span><span class="p">,</span><span class="w"></span>
-<span class="w">            </span><span class="s2">&quot;ts_time = f\&quot;{datetime.now().strftime(&#39;%H:%M:%S&#39;)}\&quot;&quot;</span><span class="p">,</span><span class="w"></span>
-<span class="w">            </span><span class="s2">&quot;print(f\&quot;{ts_time} starting {os.path.basename(__file__)}\&quot;)&quot;</span><span class="p">,</span><span class="w"></span>
-<span class="w">            </span><span class="s2">&quot;import time&quot;</span><span class="p">,</span><span class="w"></span>
-<span class="w">            </span><span class="s2">&quot;start_time = time.time()&quot;</span><span class="p">,</span><span class="w"></span>
-<span class="w">            </span><span class="s2">&quot;&quot;</span><span class="p">,</span><span class="w"></span>
-<span class="w">            </span><span class="s2">&quot;from dotenv import load_dotenv&quot;</span><span class="p">,</span><span class="w"></span>
-<span class="w">            </span><span class="s2">&quot;load_dotenv()&quot;</span><span class="p">,</span><span class="w"></span>
-<span class="w">            </span><span class="s2">&quot;USER = os.getenv(\&quot;USER\&quot;)&quot;</span><span class="p">,</span><span class="w"></span>
-<span class="w">            </span><span class="s2">&quot;&quot;</span><span class="p">,</span><span class="w"></span>
-<span class="w">            </span><span class="s2">&quot;import sys&quot;</span><span class="p">,</span><span class="w"></span>
-<span class="w">            </span><span class="s2">&quot;sys.path.append(f\&quot;/Users/{USER}/Python/indeXee\&quot;)&quot;</span><span class="p">,</span><span class="w"></span>
-<span class="w">            </span><span class="s2">&quot;&quot;</span><span class="p">,</span><span class="w"></span>
-<span class="w">            </span><span class="s2">&quot;# import my_utils&quot;</span><span class="p">,</span><span class="w"></span>
-<span class="w">            </span><span class="s2">&quot;# import grist_BB&quot;</span><span class="p">,</span><span class="w"></span>
-<span class="w">            </span><span class="s2">&quot;# import grist_PE&quot;</span><span class="p">,</span><span class="w"></span>
-<span class="w">            </span><span class="s2">&quot;# import dbee&quot;</span><span class="p">,</span><span class="w"></span>
-<span class="w">            </span><span class="s2">&quot;&quot;</span><span class="p">,</span><span class="w"></span>
-<span class="w">            </span><span class="s2">&quot;from inspect import currentframe&quot;</span><span class="p">,</span><span class="w"></span>
-<span class="w">            </span><span class="s2">&quot;def get_linenumber():&quot;</span><span class="p">,</span><span class="w"></span>
-<span class="w">            </span><span class="s2">&quot;    \&quot;\&quot;\&quot;&quot;</span><span class="p">,</span><span class="w"></span>
-<span class="w">            </span><span class="s2">&quot;    print line numbers with f\&quot;{get_linenumber()}\&quot;&quot;</span><span class="p">,</span><span class="w"></span>
-<span class="w">            </span><span class="s2">&quot;    \&quot;\&quot;\&quot;&quot;</span><span class="p">,</span><span class="w"></span>
-<span class="w">            </span><span class="s2">&quot;    cf = currentframe()&quot;</span><span class="p">,</span><span class="w"></span>
-<span class="w">            </span><span class="s2">&quot;    return cf.f_back.f_lineno&quot;</span><span class="p">,</span><span class="w"></span>
-<span class="w">            </span><span class="s2">&quot;&quot;</span><span class="p">,</span><span class="w"></span>
-<span class="w">            </span><span class="s2">&quot;import pprint&quot;</span><span class="p">,</span><span class="w"></span>
-<span class="w">            </span><span class="s2">&quot;pp = pprint.PrettyPrinter(indent=4)&quot;</span><span class="p">,</span><span class="w"></span>
-<span class="w">            </span><span class="s2">&quot;&quot;</span><span class="p">,</span><span class="w"></span>
-<span class="w">            </span><span class="s2">&quot;count = 0&quot;</span><span class="p">,</span><span class="w"></span>
-<span class="w">            </span><span class="s2">&quot;count_row = 0&quot;</span><span class="p">,</span><span class="w"></span>
-<span class="w">            </span><span class="s2">&quot;&quot;</span><span class="p">,</span><span class="w"></span>
-<span class="w">            </span><span class="s2">&quot;test = True&quot;</span><span class="p">,</span><span class="w"></span>
-<span class="w">            </span><span class="s2">&quot;v = True # verbose mode&quot;</span><span class="p">,</span><span class="w"></span>
-<span class="w">            </span><span class="s2">&quot;&quot;</span><span class="p">,</span><span class="w"></span>
-<span class="w">            </span><span class="s2">&quot;print(f\&quot;{os.path.basename(__file__)} boilerplate loaded -----------\\n\&quot;)&quot;</span><span class="p">,</span><span class="w"></span>
-<span class="w">            </span><span class="s2">&quot;####################&quot;</span><span class="p">,</span><span class="w"></span>
-<span class="w">            </span><span class="s2">&quot;# $0SCRIPT_TITLE&quot;</span><span class="p">,</span><span class="w"></span>
-<span class="w">            </span><span class="s2">&quot;&quot;</span><span class="p">,</span><span class="w"></span>
-<span class="w">            </span><span class="s2">&quot;### Script-specific imports&quot;</span><span class="p">,</span><span class="w"></span>
-<span class="w">            </span><span class="s2">&quot;&quot;</span><span class="p">,</span><span class="w"></span>
-<span class="w">            </span><span class="s2">&quot;&quot;</span><span class="p">,</span><span class="w"></span>
-<span class="w">            </span><span class="s2">&quot;&quot;</span><span class="p">,</span><span class="w"></span>
-<span class="w">            </span><span class="s2">&quot;### Global Variables&quot;</span><span class="p">,</span><span class="w"></span>
-<span class="w">            </span><span class="s2">&quot;&quot;</span><span class="p">,</span><span class="w"></span>
-<span class="w">            </span><span class="s2">&quot;&quot;</span><span class="p">,</span><span class="w"></span>
-<span class="w">            </span><span class="s2">&quot;&quot;</span><span class="p">,</span><span class="w"></span>
-<span class="w">            </span><span class="s2">&quot;### Functions&quot;</span><span class="p">,</span><span class="w"></span>
-<span class="w">            </span><span class="s2">&quot;&quot;</span><span class="p">,</span><span class="w"></span>
-<span class="w">            </span><span class="s2">&quot;&quot;</span><span class="p">,</span><span class="w"></span>
-<span class="w">            </span><span class="s2">&quot;&quot;</span><span class="p">,</span><span class="w"></span>
-<span class="w">            </span><span class="s2">&quot;### Main&quot;</span><span class="p">,</span><span class="w"></span>
-<span class="w">            </span><span class="s2">&quot;&quot;</span><span class="p">,</span><span class="w"></span>
-<span class="w">            </span><span class="s2">&quot;&quot;</span><span class="p">,</span><span class="w"></span>
-<span class="w">            </span><span class="s2">&quot;&quot;</span><span class="p">,</span><span class="w"></span>
-<span class="w">            </span><span class="s2">&quot;&quot;</span><span class="p">,</span><span class="w"></span>
-<span class="w">            </span><span class="s2">&quot;########################################################################################################&quot;</span><span class="p">,</span><span class="w"></span>
-<span class="w">            </span><span class="s2">&quot;&quot;</span><span class="p">,</span><span class="w"></span>
-<span class="w">            </span><span class="s2">&quot;if __name__ == &#39;__main__&#39;:&quot;</span><span class="p">,</span><span class="w"></span>
-<span class="w">            </span><span class="s2">&quot;    print()&quot;</span><span class="p">,</span><span class="w"></span>
-<span class="w">            </span><span class="s2">&quot;    print()&quot;</span><span class="p">,</span><span class="w"></span>
-<span class="w">            </span><span class="s2">&quot;    print(&#39;-------------------------------&#39;)&quot;</span><span class="p">,</span><span class="w"></span>
-<span class="w">            </span><span class="s2">&quot;    print(f\&quot;{os.path.basename(__file__)}\&quot;)&quot;</span><span class="p">,</span><span class="w"></span>
-<span class="w">            </span><span class="s2">&quot;    print()&quot;</span><span class="p">,</span><span class="w"></span>
-<span class="w">            </span><span class="s2">&quot;    print(f\&quot;{count=}\&quot;)&quot;</span><span class="p">,</span><span class="w"></span>
-<span class="w">            </span><span class="s2">&quot;    print()&quot;</span><span class="p">,</span><span class="w"></span>
-<span class="w">            </span><span class="s2">&quot;    print(&#39;-------------------------------&#39;)&quot;</span><span class="p">,</span><span class="w"></span>
-<span class="w">            </span><span class="s2">&quot;    run_time = round((time.time() - start_time), 1)&quot;</span><span class="p">,</span><span class="w"></span>
-<span class="w">            </span><span class="s2">&quot;    if run_time &gt; 60:&quot;</span><span class="p">,</span><span class="w"></span>
-<span class="w">            </span><span class="s2">&quot;        print(f&#39;{os.path.basename(__file__)} finished in {run_time/60} minutes.&#39;)&quot;</span><span class="p">,</span><span class="w"></span>
-<span class="w">            </span><span class="s2">&quot;    else:&quot;</span><span class="p">,</span><span class="w"></span>
-<span class="w">            </span><span class="s2">&quot;        print(f&#39;{os.path.basename(__file__)} finished in {run_time}s.&#39;)&quot;</span><span class="p">,</span><span class="w"></span>
-<span class="w">            </span><span class="s2">&quot;    print()&quot;</span><span class="p">,</span><span class="w"></span>
-<span class="w">        </span><span class="p">],</span><span class="w"></span>
-<span class="w">        </span><span class="nt">&quot;description&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Nic: Python boilerplate&quot;</span><span class="w"></span>
-<span class="w">    </span><span class="p">},</span><span class="w"></span>
-</code></pre></div>
-
-<p>outputs:   </p>
-<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">datetime</span> <span class="kn">import</span> <span class="n">datetime</span>
-<span class="kn">import</span> <span class="nn">os</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;----------&quot;</span><span class="p">)</span>
-<span class="n">ts_file</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">datetime</span><span class="o">.</span><span class="n">now</span><span class="p">()</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="s1">&#39;%y%m</span><span class="si">%d</span><span class="s1">-%H%M&#39;</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span>
-<span class="n">ts_db</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">datetime</span><span class="o">.</span><span class="n">now</span><span class="p">()</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="s1">&#39;%Y-%m-</span><span class="si">%d</span><span class="s1"> %H:%M&#39;</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span>
-<span class="n">ts_time</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">datetime</span><span class="o">.</span><span class="n">now</span><span class="p">()</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="s1">&#39;%H:%M:%S&#39;</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">ts_time</span><span class="si">}</span><span class="s2"> starting </span><span class="si">{</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">basename</span><span class="p">(</span><span class="vm">__file__</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-<span class="kn">import</span> <span class="nn">time</span>
-<span class="n">start_time</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>
-
-<span class="kn">from</span> <span class="nn">dotenv</span> <span class="kn">import</span> <span class="n">load_dotenv</span>
-<span class="n">load_dotenv</span><span class="p">()</span>
-<span class="n">USER</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">getenv</span><span class="p">(</span><span class="s2">&quot;USER&quot;</span><span class="p">)</span>
-
-<span class="kn">import</span> <span class="nn">sys</span>
-<span class="n">sys</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;/Users/</span><span class="si">{</span><span class="n">USER</span><span class="si">}</span><span class="s2">/Python/indeXee&quot;</span><span class="p">)</span>
-
-<span class="c1"># import my_utils</span>
-<span class="c1"># import grist_BB</span>
-<span class="c1"># import grist_PE</span>
-<span class="c1"># import dbee</span>
-
-<span class="kn">from</span> <span class="nn">inspect</span> <span class="kn">import</span> <span class="n">currentframe</span>
-<span class="k">def</span> <span class="nf">get_linenumber</span><span class="p">():</span>
-    <span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">    print line numbers with f&quot;{get_linenumber()}&quot;</span>
-<span class="sd">    &quot;&quot;&quot;</span>
-    <span class="n">cf</span> <span class="o">=</span> <span class="n">currentframe</span><span class="p">()</span>
-    <span class="k">return</span> <span class="n">cf</span><span class="o">.</span><span class="n">f_back</span><span class="o">.</span><span class="n">f_lineno</span>
-
-<span class="kn">import</span> <span class="nn">pprint</span>
-<span class="n">pp</span> <span class="o">=</span> <span class="n">pprint</span><span class="o">.</span><span class="n">PrettyPrinter</span><span class="p">(</span><span class="n">indent</span><span class="o">=</span><span class="mi">4</span><span class="p">)</span>
-
-<span class="n">count</span> <span class="o">=</span> <span class="mi">0</span>
-<span class="n">count_row</span> <span class="o">=</span> <span class="mi">0</span>
-
-<span class="n">test</span> <span class="o">=</span> <span class="kc">True</span>
-<span class="n">v</span> <span class="o">=</span> <span class="kc">True</span> <span class="c1"># verbose mode</span>
-
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">basename</span><span class="p">(</span><span class="vm">__file__</span><span class="p">)</span><span class="si">}</span><span class="s2"> boilerplate loaded -----------</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
-<span class="c1">####################</span>
-<span class="c1"># SCRIPT_TITLE</span>
-
-<span class="c1">### Script-specific imports</span>
-
-
-
-<span class="c1">### Global Variables</span>
-
-
-
-<span class="c1">### Functions</span>
-
-
-
-<span class="c1">### Main</span>
-
-
-
-
-<span class="c1">########################################################################################################</span>
-
-<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">()</span>
-    <span class="nb">print</span><span class="p">()</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;-------------------------------&#39;</span><span class="p">)</span>
-    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">basename</span><span class="p">(</span><span class="vm">__file__</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-    <span class="nb">print</span><span class="p">()</span>
-    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">count</span><span class="si">=}</span><span class="s2">&quot;</span><span class="p">)</span>
-    <span class="nb">print</span><span class="p">()</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;-------------------------------&#39;</span><span class="p">)</span>
-    <span class="n">run_time</span> <span class="o">=</span> <span class="nb">round</span><span class="p">((</span><span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span> <span class="o">-</span> <span class="n">start_time</span><span class="p">),</span> <span class="mi">1</span><span class="p">)</span>
-    <span class="k">if</span> <span class="n">run_time</span> <span class="o">&gt;</span> <span class="mi">60</span><span class="p">:</span>
-        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">basename</span><span class="p">(</span><span class="vm">__file__</span><span class="p">)</span><span class="si">}</span><span class="s1"> finished in </span><span class="si">{</span><span class="n">run_time</span><span class="o">/</span><span class="mi">60</span><span class="si">}</span><span class="s1"> minutes.&#39;</span><span class="p">)</span>
-    <span class="k">else</span><span class="p">:</span>
-        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">basename</span><span class="p">(</span><span class="vm">__file__</span><span class="p">)</span><span class="si">}</span><span class="s1"> finished in </span><span class="si">{</span><span class="n">run_time</span><span class="si">}</span><span class="s1">s.&#39;</span><span class="p">)</span>
-    <span class="nb">print</span><span class="p">()</span>
-</code></pre></div>
+</footer>                    </div>
+                    
                 </article>
-            </aside>
-
-                <section id="content" class="body">
-
-                <!-- PREVIOUS NOTES -->
-				<p class="notes-section">previous notes</p>
-                <hr>
-
-                <ol id="posts-list" class="hfeed">
+                <hr/>
+            </li>
             
 
 
@@ -823,46 +795,6 @@
         <!-- added 4/7 -->
         <!-- 		<br />
         <abbr class="modified" title="2022-09-15T17:35:00.193787+02:00">
-                Updated: 15 Sep 2022
-        </abbr>
- -->
-
-    </p>
-
-    
-
-</footer>                    </div>
-                    
-                </article>
-                <hr/>
-            </li>
-            
-
-
-
-            <li>
-                <article class="hentry">
-                    <header>
-                        <!-- PREVIOUS NOTE TITLE -->
-                        <h1><a href="https://notes.nicolasdeville.com/python/paths" rel="bookmark"
-                            title="How to find all paths being searched by Python">How to find all paths being searched by Python</a></h1>
-                        <!-- PREVIOUS NOTE SUMMARY -->
-                        <div class="entry-content">
-                            
-                        </div>
-                    </header>
-
-                    <div class="entry-content">
-                        <!-- PREVIOUS NOTE METADATA -->
-<footer class="post-info">
-
-    <p>
-        15 Sep 2022 <span class="separator">|</span> in <a class="link_tag" href="https://notes.nicolasdeville.com/python/">python</a>
- tags: <a class="link_tag" href="https://notes.nicolasdeville.com/tag/snippets.html">snippets</a>
-
-        <!-- added 4/7 -->
-        <!-- 		<br />
-        <abbr class="modified" title="2022-09-15T11:59:11.754080+02:00">
                 Updated: 15 Sep 2022
         </abbr>
  -->
