@@ -43,7 +43,7 @@
             </div>
 
             <div class="above-navbar">
-                <div class="last_updated">06 Oct 2022 | 15:40</div>
+                <div class="last_updated">07 Oct 2022 | 12:17</div>
                 <div>
                     <p class="notes_count">
                         <a href="https://notes.nicolasdeville.com/tags">by tags</a>
@@ -54,7 +54,7 @@
                         <span style="color:#C74350">|</span>
                         <a href="https://notes.nicolasdeville.com/2022/">2022</a>
                         <span style="color:#C74350">|</span>
-                        24 notes
+                        25 notes
                     </p>
                 </div>
             </div>
@@ -83,7 +83,7 @@
 
 <!-- 220911 moved to base.html -->
 <!-- <p class="notes_count">
-    24 notes 
+    25 notes 
     <span style="color:#C74350">|</span> 
     <a href="https://notes.nicolasdeville.com/tags">by tags</a> 
     <span style="color:#C74350">|</span> 
@@ -102,15 +102,372 @@
             <hr/>
 
                 <article class="hentry">
-                    <h1 class="entry-title"><a href="https://notes.nicolasdeville.com/python/library-jinja2">Python Library: jinja2</a></h1>
+                    <h1 class="entry-title"><a href="https://notes.nicolasdeville.com/projects/meta-url">Python Open-Source Project: metaURL</a></h1>
 
                     <!-- added 4/7 -->
                     <div>
                         <p class="header_summary">
-                            <p>A very fast and expressive template engine.</p>
+                            <p>generates metadata for a given URL</p>
                         </p>
                     </div>
 
+<footer class="post-info">
+
+    <p>
+        07 Oct 2022 <span class="separator">|</span> in <a class="link_tag" href="https://notes.nicolasdeville.com/projects/">projects</a>
+ tags: <a class="link_tag" href="https://notes.nicolasdeville.com/tag/python-libraries.html">python libraries</a>
+
+        <!-- added 4/7 -->
+        <!-- 		<br />
+        <abbr class="modified" title="2022-10-07T12:17:01.183270+02:00">
+                Updated: 07 Oct 2022
+        </abbr>
+ -->
+
+    </p>
+
+    
+
+</footer><p>Open-source (work in progress) at: </p>
+<div class="link_border"><div class="link_logo_box"><img class="link_logo" src="https://logo.clearbit.com/github.com?size=35" alt="logo"/></div><div class="link_content">
+<div class="link_title">GitHub - ndeville/meta-url: Function to generate metadata from URL</div>
+<div class="link_tagline">github.com</div>
+<div class="link_url"><a href="https://github.com/ndeville/meta_url" target="_blank">https://github.com/ndeville/meta_url</a></div></div></div>
+
+<div class="toc"><span class="toctitle">Table of Contents</span><ul>
+<li><a href="#background">Background</a></li>
+<li><a href="#goal">Goal</a></li>
+<li><a href="#logic">Logic</a></li>
+<li><a href="#components">Components</a><ul>
+<li><a href="#imports">imports</a></li>
+<li><a href="#clean-url-with-path">clean URL with path</a></li>
+<li><a href="#root-website-ie-without-path">root website (ie without path)</a></li>
+<li><a href="#domain">domain</a></li>
+<li><a href="#slug">slug</a></li>
+<li><a href="#metadata">metadata</a><ul>
+<li><a href="#with-request">with request</a></li>
+<li><a href="#with-selenium">with selenium</a></li>
+</ul>
+</li>
+<li><a href="#title">title</a></li>
+<li><a href="#name">name</a></li>
+<li><a href="#summary">summary</a></li>
+<li><a href="#tags">tags</a></li>
+<li><a href="#emails">emails</a></li>
+<li><a href="#countries">countries</a></li>
+<li><a href="#socials">socials</a></li>
+<li><a href="#logo">logo</a></li>
+</ul>
+</li>
+<li><a href="#output">Output</a></li>
+<li><a href="#to-explore">To explore</a></li>
+<li><a href="#work-in-progress">Work in progress</a></li>
+<li><a href="#future">Future</a><ul>
+<li><a href="#open-source">open-source</a></li>
+<li><a href="#api">API</a><ul>
+<li><a href="#data-sources-for-paid-for-api">data sources for paid-for API</a><ul>
+<li><a href="#clearbit">Clearbit</a></li>
+<li><a href="#tuxx">Tuxx</a></li>
+<li><a href="#cufinder">CUFinder</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<p><span class="datestamp">29 Sep 2022</span> starting note.     </p>
+<h1 id="background">Background</h1>
+<p>I deal a lot with URLs in my Python scripts, and it's always painful to piece together several functions I have accumulated over time to get what I need from a URL.   </p>
+<h1 id="goal">Goal</h1>
+<p>Fetch as much data as possible from a single URL input. </p>
+<p>Aim here is to write an overarching function that does it all and that I can call easily from any script.  </p>
+<h1 id="logic">Logic</h1>
+<p>Input: <code>URL</code>   </p>
+<p>Output: return namedtuple with</p>
+<ul>
+<li>clean URL with path</li>
+<li>root website (ie without path)</li>
+<li>domain</li>
+<li>slug</li>
+<li>header</li>
+<li>title</li>
+<li>name</li>
+<li>summary</li>
+<li>tags</li>
+<li>emails</li>
+<li>email patterns</li>
+<li>phone</li>
+<li>facebook</li>
+<li>twitter</li>
+<li>linkedin</li>
+<li>youtube</li>
+<li>tiktok</li>
+<li>country(ies)</li>
+<li>logo</li>
+<li>whois data</li>
+</ul>
+<p>Use should be as follow:</p>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">meta_url</span> <span class="kn">import</span> <span class="n">meta</span>
+
+<span class="n">url</span> <span class="o">=</span> <span class="s1">&#39;https://...&#39;</span>
+
+<span class="n">x</span> <span class="o">=</span> <span class="n">meta</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="o">.</span><span class="n">title</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="o">.</span><span class="n">slug</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="o">.</span><span class="n">twitter</span><span class="p">)</span>
+<span class="n">etc</span><span class="o">...</span>
+</code></pre></div>
+
+<h1 id="components">Components</h1>
+<p>Tests with:</p>
+<div class="highlight"><pre><span></span><code><span class="n">test_url</span> <span class="o">=</span> <span class="s1">&#39;https://www.amazon.co.uk/Great-Dune-Trilogy-Children-GOLLANCZ-ebook/dp/B07G17V69X/ref=sr_1_1?crid=3BQYT3B98L09M&amp;keywords=dune+kindle&amp;qid=1664442334&amp;qu=eyJxc2MiOiIyLjI0IiwicXNhIjoiMS44OSIsInFzcCI6IjEuODkifQ%3D%3D&amp;sprefix=dune+kindle%2Caps%2C91&amp;sr=8-1&#39;</span>
+</code></pre></div>
+
+<h2 id="imports">imports</h2>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">urllib</span> <span class="kn">import</span> <span class="n">request</span>
+<span class="kn">from</span> <span class="nn">urllib.parse</span> <span class="kn">import</span> <span class="n">urlparse</span>
+<span class="kn">import</span> <span class="nn">tldextract</span>
+<span class="kn">from</span> <span class="nn">bs4</span> <span class="kn">import</span> <span class="n">BeautifulSoup</span>
+<span class="kn">from</span> <span class="nn">selenium.webdriver</span> <span class="kn">import</span> <span class="n">Chrome</span><span class="p">,</span> <span class="n">ChromeOptions</span>
+<span class="kn">from</span> <span class="nn">selenium</span> <span class="kn">import</span> <span class="n">webdriver</span>
+<span class="kn">from</span> <span class="nn">selenium.webdriver.chrome.service</span> <span class="kn">import</span> <span class="n">Service</span>
+</code></pre></div>
+
+<h2 id="clean-url-with-path">clean URL with path</h2>
+<div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">clean_url</span><span class="p">(</span><span class="n">url</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+    <span class="kn">from</span> <span class="nn">urllib.parse</span> <span class="kn">import</span> <span class="n">urlparse</span>
+    <span class="n">purl</span> <span class="o">=</span> <span class="n">urlparse</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
+    <span class="n">scheme</span> <span class="o">=</span> <span class="n">purl</span><span class="o">.</span><span class="n">scheme</span> <span class="o">+</span> <span class="s1">&#39;://&#39;</span> <span class="k">if</span> <span class="n">purl</span><span class="o">.</span><span class="n">scheme</span> <span class="k">else</span> <span class="s1">&#39;&#39;</span>
+    <span class="k">return</span> <span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">scheme</span><span class="si">}{</span><span class="n">purl</span><span class="o">.</span><span class="n">netloc</span><span class="si">}{</span><span class="n">purl</span><span class="o">.</span><span class="n">path</span><span class="si">}</span><span class="s1">&#39;</span>
+</code></pre></div>
+
+<p>outputs:   </p>
+<div class="highlight"><pre><span></span><code><span class="s1">&#39;https://www.amazon.co.uk/Great-Dune-Trilogy-Children-GOLLANCZ-ebook/dp/B07G17V69X/ref=sr_1_1&#39;</span>
+</code></pre></div>
+
+<h2 id="root-website-ie-without-path">root website (ie without path)</h2>
+<div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">root_url</span><span class="p">(</span><span class="n">url</span><span class="p">):</span>
+    <span class="n">o</span> <span class="o">=</span> <span class="n">urlparse</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
+    <span class="n">root_website</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">o</span><span class="o">.</span><span class="n">scheme</span><span class="si">}</span><span class="s2">//</span><span class="si">{</span><span class="n">o</span><span class="o">.</span><span class="n">hostname</span><span class="si">}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span>
+    <span class="k">return</span> <span class="n">root_website</span>
+</code></pre></div>
+
+<p>outputs:</p>
+<div class="highlight"><pre><span></span><code><span class="s1">&#39;https//www.amazon.co.uk&#39;</span>
+</code></pre></div>
+
+<h2 id="domain">domain</h2>
+<div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">domain_from_url</span><span class="p">(</span><span class="n">url</span><span class="p">):</span>
+    <span class="n">o</span> <span class="o">=</span> <span class="n">tldextract</span><span class="o">.</span><span class="n">extract</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
+    <span class="n">domain</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">o</span><span class="o">.</span><span class="n">domain</span><span class="si">}</span><span class="s2">.</span><span class="si">{</span><span class="n">o</span><span class="o">.</span><span class="n">suffix</span><span class="si">}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span>
+    <span class="k">if</span> <span class="s1">&#39;www.&#39;</span> <span class="ow">in</span> <span class="n">domain</span><span class="p">:</span>
+        <span class="n">domain</span> <span class="o">=</span> <span class="n">domain</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;www.&#39;</span><span class="p">,</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">domain</span>
+</code></pre></div>
+
+<p>outputs:</p>
+<div class="highlight"><pre><span></span><code><span class="s1">&#39;amazon.co.uk&#39;</span>
+</code></pre></div>
+
+<h2 id="slug">slug</h2>
+<div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">slug_from_url</span><span class="p">(</span><span class="n">url</span><span class="p">):</span>
+    <span class="n">o</span> <span class="o">=</span> <span class="n">tldextract</span><span class="o">.</span><span class="n">extract</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
+    <span class="n">domain_name</span> <span class="o">=</span> <span class="n">o</span><span class="o">.</span><span class="n">domain</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span>
+    <span class="k">if</span> <span class="s1">&#39;www.&#39;</span> <span class="ow">in</span> <span class="n">domain_name</span><span class="p">:</span>
+        <span class="n">domain_name</span> <span class="o">=</span> <span class="n">domain_name</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;www.&#39;</span><span class="p">,</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">domain_name</span>
+</code></pre></div>
+
+<p>outputs:</p>
+<div class="highlight"><pre><span></span><code><span class="s1">&#39;amazon&#39;</span>
+</code></pre></div>
+
+<h2 id="metadata">metadata</h2>
+<p>2 approaches here:</p>
+<ul>
+<li>with Selenium (which requires a browser driver)</li>
+<li>with simple request</li>
+</ul>
+<p>need to test results for both approaches - perfect solution might be using both, starting with one and falling back on the other.   </p>
+<h3 id="with-request">with request</h3>
+<h3 id="with-selenium">with selenium</h3>
+<p>See [<a href="../../python/fetch-metadata-from-url/index.html">Nic Note: Fetch website metadata from URL</a>]   </p>
+<div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">metadata_from_url_selenium</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">v</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">v</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">#</span><span class="si">{</span><span class="n">get_linenumber</span><span class="p">()</span><span class="si">}</span><span class="s2"> starting metadata_from_url_selenium with </span><span class="si">{</span><span class="n">url</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+    <span class="n">chrome_options</span> <span class="o">=</span> <span class="n">ChromeOptions</span><span class="p">()</span>
+    <span class="n">chrome_options</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s1">&#39;--headless&#39;</span><span class="p">)</span>
+
+    <span class="n">s</span> <span class="o">=</span> <span class="n">Service</span><span class="p">(</span><span class="n">driverpath</span><span class="p">)</span>
+    <span class="n">web</span> <span class="o">=</span> <span class="n">Chrome</span><span class="p">(</span><span class="n">service</span><span class="o">=</span><span class="n">s</span><span class="p">,</span><span class="n">options</span><span class="o">=</span><span class="n">chrome_options</span><span class="p">)</span>
+    <span class="n">web</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
+    <span class="n">xml</span> <span class="o">=</span> <span class="n">web</span><span class="o">.</span><span class="n">page_source</span>
+    <span class="k">if</span> <span class="n">test</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">#</span><span class="si">{</span><span class="n">get_linenumber</span><span class="p">()</span><span class="si">}</span><span class="s2"> </span><span class="si">{</span><span class="n">xml</span><span class="si">=}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="n">web</span><span class="o">.</span><span class="n">quit</span><span class="p">()</span>
+    <span class="n">soup</span> <span class="o">=</span> <span class="n">BeautifulSoup</span><span class="p">(</span><span class="n">xml</span><span class="p">,</span> <span class="n">features</span><span class="o">=</span><span class="s1">&#39;html.parser&#39;</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">test</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">#</span><span class="si">{</span><span class="n">get_linenumber</span><span class="p">()</span><span class="si">}</span><span class="s2"> </span><span class="si">{</span><span class="n">soup</span><span class="si">=}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="n">metas</span> <span class="o">=</span> <span class="p">[</span><span class="n">x</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">soup</span><span class="o">.</span><span class="n">find_all</span><span class="p">(</span><span class="s1">&#39;meta&#39;</span><span class="p">)</span> <span class="k">if</span> <span class="n">x</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;property&#39;</span><span class="p">)]</span>
+    <span class="k">if</span> <span class="n">v</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">#</span><span class="si">{</span><span class="n">get_linenumber</span><span class="p">()</span><span class="si">}</span><span class="s2"> metas:</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="n">pp</span><span class="o">.</span><span class="n">pprint</span><span class="p">(</span><span class="n">metas</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="p">[{</span><span class="n">x</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;property&#39;</span><span class="p">):</span> <span class="n">x</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;content&#39;</span><span class="p">)}</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">metas</span><span class="p">]</span> <span class="c1"># list of dicts</span>
+</code></pre></div>
+
+<p>outputs eg:   </p>
+<div class="highlight"><pre><span></span><code><span class="o">[</span>   <span class="o">{</span><span class="s1">&#39;og:site_name&#39;</span>: <span class="s1">&#39;xxx&#39;</span><span class="o">}</span>,
+    <span class="o">{</span>   <span class="s1">&#39;og:title&#39;</span>: <span class="s1">&#39;xxx&#39;</span><span class="o">}</span>,
+    <span class="o">{</span>   <span class="s1">&#39;og:description&#39;</span>: <span class="s1">&#39;xxx&#39;</span><span class="o">}</span>,
+    <span class="o">{</span>   <span class="s1">&#39;og:image&#39;</span>: <span class="s1">&#39;https://xxx&#39;</span><span class="o">}</span>,
+    <span class="o">{</span><span class="s1">&#39;og:url&#39;</span>: <span class="s1">&#39;https://xxx&#39;</span><span class="o">}</span>,
+    <span class="o">{</span><span class="s1">&#39;og:locale&#39;</span>: <span class="s1">&#39;en_US&#39;</span><span class="o">}</span>,
+    <span class="o">{</span><span class="s1">&#39;og:type&#39;</span>: <span class="s1">&#39;website&#39;</span><span class="o">}</span>,
+    <span class="o">{</span><span class="s1">&#39;og:url&#39;</span>: <span class="s1">&#39;https://xxx&#39;</span><span class="o">}</span>,
+    <span class="o">{</span><span class="s1">&#39;og:site_name&#39;</span>: <span class="s1">&#39;xxx&#39;</span><span class="o">}</span>
+    <span class="o">]</span>
+</code></pre></div>
+
+<p>Note: output depends on meta-tag available on website. Need to implement try/except when using.   </p>
+<h2 id="title">title</h2>
+<h2 id="name">name</h2>
+<h2 id="summary">summary</h2>
+<p>Find AI solution? <br>
+Fallback: use title / header.   </p>
+<h2 id="tags">tags</h2>
+<p>Find AI solution?   </p>
+<h2 id="emails">emails</h2>
+<h2 id="countries">countries</h2>
+<h2 id="socials">socials</h2>
+<h2 id="logo">logo</h2>
+<p>Using Clearbit API:   </p>
+<div class="link_border"><div class="link_logo_box"><img class="link_logo" src="https://logo.clearbit.com/clearbit.com?size=35" alt="logo"/></div><div class="link_content">
+<div class="link_title">Logo API Tool | Find & Embed Company Logos for Free | Clearbit</div>
+<div class="link_tagline">Find Company Logos</div>
+<div class="link_url"><a href="https://clearbit.com/logo" target="_blank">https://clearbit.com/logo</a></div></div></div>
+
+<h1 id="output">Output</h1>
+<p>namedtuple object   </p>
+<p>+ structured log of the object (JSON)?</p>
+<h1 id="to-explore">To explore</h1>
+<div class="link_border"><div class="link_logo_box"><img class="link_logo" src="https://logo.clearbit.com/rapidapi.com?size=35" alt="logo"/></div><div class="link_content">
+<div class="link_title">Data APIs</div>
+<div class="link_tagline">rapidapi.com</div>
+<div class="link_url"><a href="https://rapidapi.com/category/Data" target="_blank">https://rapidapi.com/category/Data</a></div></div></div>
+
+<h1 id="work-in-progress">Work in progress</h1>
+<p><span class="datestamp">30 Sep 2022</span> works currently as follows:   </p>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">meta_url</span> <span class="kn">import</span> <span class="n">meta</span>
+
+<span class="n">test</span> <span class="o">=</span> <span class="n">meta</span><span class="p">(</span><span class="s1">&#39;https://notes.nicolasdeville.com&#39;</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">()</span>
+<span class="n">pp</span><span class="o">.</span><span class="n">pprint</span><span class="p">(</span><span class="n">test</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">()</span> 
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">test</span><span class="o">.</span><span class="n">clean_url</span><span class="si">=}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">test</span><span class="o">.</span><span class="n">root_website_url</span><span class="si">=}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">test</span><span class="o">.</span><span class="n">domain</span><span class="si">=}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">test</span><span class="o">.</span><span class="n">slug</span><span class="si">=}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">test</span><span class="o">.</span><span class="n">header</span><span class="si">=}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">test</span><span class="o">.</span><span class="n">title</span><span class="si">=}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">test</span><span class="o">.</span><span class="n">name</span><span class="si">=}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">test</span><span class="o">.</span><span class="n">description</span><span class="si">=}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">test</span><span class="o">.</span><span class="n">tags</span><span class="si">=}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">test</span><span class="o">.</span><span class="n">emails</span><span class="si">=}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">test</span><span class="o">.</span><span class="n">twitter</span><span class="si">=}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">test</span><span class="o">.</span><span class="n">facebook</span><span class="si">=}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">test</span><span class="o">.</span><span class="n">youtube</span><span class="si">=}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">test</span><span class="o">.</span><span class="n">tiktok</span><span class="si">=}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">test</span><span class="o">.</span><span class="n">countries</span><span class="si">=}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">test</span><span class="o">.</span><span class="n">logo</span><span class="si">=}</span><span class="s2">&quot;</span><span class="p">)</span>
+</code></pre></div>
+
+<p>outputs: </p>
+<div class="highlight"><pre><span></span><code>metaURL<span class="o">(</span><span class="nv">clean_url</span><span class="o">=</span><span class="s1">&#39;https://notes.nicolasdeville.com&#39;</span>, <span class="nv">root_website_url</span><span class="o">=</span><span class="s1">&#39;https//notes.nicolasdeville.com&#39;</span>, <span class="nv">domain</span><span class="o">=</span><span class="s1">&#39;nicolasdeville.com&#39;</span>, <span class="nv">slug</span><span class="o">=</span><span class="s1">&#39;nicolasdeville&#39;</span>, <span class="nv">header</span><span class="o">=</span><span class="s1">&#39;Building a static site with Pelican&#39;</span>, <span class="nv">title</span><span class="o">=</span><span class="s1">&#39;&#39;</span>, <span class="nv">name</span><span class="o">=</span><span class="s1">&#39;&#39;</span>, <span class="nv">description</span><span class="o">=</span><span class="s1">&#39;&#39;</span>, <span class="nv">tags</span><span class="o">=</span><span class="s1">&#39;&#39;</span>, <span class="nv">emails</span><span class="o">=[]</span>, <span class="nv">twitter</span><span class="o">=[</span><span class="s1">&#39;https://www.twitter.com/ndeville&#39;</span><span class="o">]</span>, <span class="nv">facebook</span><span class="o">=[]</span>, <span class="nv">youtube</span><span class="o">=[]</span>, <span class="nv">tiktok</span><span class="o">=[]</span>, <span class="nv">countries</span><span class="o">=[]</span>, <span class="nv">logo</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="o">)</span>
+
+test.clean_url<span class="o">=</span><span class="s1">&#39;https://notes.nicolasdeville.com&#39;</span>
+test.root_website_url<span class="o">=</span><span class="s1">&#39;https//notes.nicolasdeville.com&#39;</span>
+test.domain<span class="o">=</span><span class="s1">&#39;nicolasdeville.com&#39;</span>
+test.slug<span class="o">=</span><span class="s1">&#39;nicolasdeville&#39;</span>
+test.header<span class="o">=</span><span class="s1">&#39;Building a static site with Pelican&#39;</span>
+test.title<span class="o">=</span><span class="s1">&#39;&#39;</span>
+test.name<span class="o">=</span><span class="s1">&#39;&#39;</span>
+test.description<span class="o">=</span><span class="s1">&#39;&#39;</span>
+test.tags<span class="o">=</span><span class="s1">&#39;&#39;</span>
+test.emails<span class="o">=[]</span>
+test.twitter<span class="o">=[</span><span class="s1">&#39;https://www.twitter.com/ndeville&#39;</span><span class="o">]</span>
+test.facebook<span class="o">=[]</span>
+test.youtube<span class="o">=[]</span>
+test.tiktok<span class="o">=[]</span>
+test.countries<span class="o">=[]</span>
+test.logo<span class="o">=</span><span class="s1">&#39;&#39;</span>
+</code></pre></div>
+
+<p>Thinking about breaking it down so that each part of the output is a separate script within the package 🤔   </p>
+<h1 id="future">Future</h1>
+<p>Though I don't have the skills for it, this could evolve as free open-source and paid-for API. </p>
+<h2 id="open-source">open-source</h2>
+<ul>
+<li><strong>free</strong></li>
+<li>runs <strong>locally</strong>, ie requires driver download and scrapes from one's IP</li>
+<li><strong>limited</strong> to publicly available data, eg domain's website</li>
+</ul>
+<h2 id="api">API</h2>
+<ul>
+<li><strong>paid-for</strong>, as much to build + commercial licenses needed for databases access</li>
+<li>runs in the <strong>cloud</strong>, ie no driver install nore scraping jobs from one's IP</li>
+<li><strong>expand data</strong> &amp; <strong>increase data quality</strong> with use of commercial databases</li>
+</ul>
+<p>This would be acting as channel partner for existing paid-for API providers with company or website data.   </p>
+<h3 id="data-sources-for-paid-for-api">data sources for paid-for API</h3>
+<h4 id="clearbit">Clearbit</h4>
+<h4 id="tuxx">Tuxx</h4>
+<div class="link_border"><div class="link_logo_box"><img class="link_logo" src="https://logo.clearbit.com/tuxx.co.uk?size=35" alt="logo"/></div><div class="link_content">
+<div class="link_title">Company data enrichment API service</div>
+<div class="link_tagline">tuxx.co.uk</div>
+<div class="link_url"><a href="https://developer.tuxx.co.uk/api-overview/data-enrichment-company" target="_blank">https://developer.tuxx.co.uk/api-overview/data-enrichment-company</a></div></div></div>
+
+<ul>
+<li>focus on NL companies only? </li>
+</ul>
+<h4 id="cufinder">CUFinder</h4>
+<div class="link_border"><div class="link_logo_box"><img class="link_logo" src="https://logo.clearbit.com/companyurlfinder.com?size=35" alt="logo"/></div><div class="link_content">
+<div class="link_title">Company URL Finder - Convert Company Name to Gold 🥇</div>
+<div class="link_tagline">Enrich Your Companies' Data with CUF</div>
+<div class="link_url"><a href="https://companyurlfinder.com/" target="_blank">https://companyurlfinder.com/</a></div></div></div>
+                </article>
+            </aside>
+
+                <section id="content" class="body">
+
+                <!-- PREVIOUS NOTES -->
+				<p class="notes-section">previous notes</p>
+                <hr>
+
+                <ol id="posts-list" class="hfeed">
+            
+
+
+
+            <li>
+                <article class="hentry">
+                    <header>
+                        <!-- PREVIOUS NOTE TITLE -->
+                        <h1><a href="https://notes.nicolasdeville.com/python/library-jinja2" rel="bookmark"
+                            title="Python Library: jinja2">Python Library: jinja2</a></h1>
+                        <!-- PREVIOUS NOTE SUMMARY -->
+                        <div class="entry-content">
+                            <p>A very fast and expressive template engine.</p>
+                        </div>
+                    </header>
+
+                    <div class="entry-content">
+                        <!-- PREVIOUS NOTE METADATA -->
 <footer class="post-info">
 
     <p>
@@ -128,50 +485,11 @@
 
     
 
-</footer><div class="toc"><span class="toctitle">Table of Contents</span><ul>
-<li><a href="#getting-started">Getting Started</a></li>
-</ul>
-</div>
-<p><span class="datestamp">04 Oct 2022</span>   </p>
-<table>
-<thead>
-<tr>
-<th>Library resources</th>
-<th></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>PyPI</td>
-<td><a href="https://pypi.org/project/Jinja2/" target="_blank">https://pypi.org/project/Jinja2/</a></td>
-</tr>
-<tr>
-<td>Github</td>
-<td><a href="https://github.com/pallets/jinja/" target="_blank">https://github.com/pallets/jinja/</a></td>
-</tr>
-<tr>
-<td>Documentation</td>
-<td><a href="https://jinja.palletsprojects.com/en/latest/" target="_blank">https://jinja.palletsprojects.com/en/latest/</a></td>
-</tr>
-<tr>
-<td>Homepage</td>
-<td><a href="https://palletsprojects.com/p/jinja/" target="_blank">https://palletsprojects.com/p/jinja/</a></td>
-</tr>
-</tbody>
-</table>
-<h1 id="getting-started">Getting Started</h1>
-<div class="highlight"><pre><span></span><code>pip3 install Jinja2
-</code></pre></div>
+</footer>                    </div>
+                    
                 </article>
-            </aside>
-
-                <section id="content" class="body">
-
-                <!-- PREVIOUS NOTES -->
-				<p class="notes-section">previous notes</p>
-                <hr>
-
-                <ol id="posts-list" class="hfeed">
+                <hr/>
+            </li>
             
 
 

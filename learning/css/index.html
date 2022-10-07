@@ -43,7 +43,7 @@
             </div>
 
             <div class="above-navbar">
-                <div class="last_updated">06 Oct 2022 | 15:40</div>
+                <div class="last_updated">07 Oct 2022 | 12:17</div>
                 <div>
                     <p class="notes_count">
                         <a href="https://notes.nicolasdeville.com/tags">by tags</a>
@@ -100,13 +100,13 @@
 <footer class="post-info">
 
     <p>
-        20 Sep 2022 <span class="separator">|</span> in <a class="link_tag" href="https://notes.nicolasdeville.com/learning/">learning</a>
+        07 Oct 2022 <span class="separator">|</span> in <a class="link_tag" href="https://notes.nicolasdeville.com/learning/">learning</a>
  tags: <a class="link_tag" href="https://notes.nicolasdeville.com/tag/css.html">css</a>
 
         <!-- added 4/7 -->
         <!-- 		<br />
-        <abbr class="modified" title="2022-09-20T15:42:40.805948+02:00">
-                Updated: 20 Sep 2022
+        <abbr class="modified" title="2022-10-07T10:10:17.652501+02:00">
+                Updated: 07 Oct 2022
         </abbr>
  -->
 
@@ -118,9 +118,11 @@
                 <div class="toc"><span class="toctitle">Table of Contents</span><ul>
 <li><a href="#learning-journey">Learning journey</a></li>
 <li><a href="#snippets">Snippets</a><ul>
+<li><a href="#center-a-table">center a table</a></li>
+<li><a href="#center-an-image">center an image</a></li>
 <li><a href="#ensures-padding-and-borders-are-included-in-widthheights-definitions">ensures padding and borders are included in width/heights definitions</a></li>
 <li><a href="#global-reset-clean-slate">global reset / clean slate</a></li>
-<li><a href="#center-an-image">center an image</a></li>
+<li><a href="#center-an-image_1">center an image</a></li>
 <li><a href="#target-first-column-of-tables">Target first column of tables</a></li>
 <li><a href="#target-last-row-of-table">target last row of table</a></li>
 <li><a href="#custom-properties-css-variables">Custom properties (--*): CSS variables</a></li>
@@ -141,11 +143,16 @@
 <li><a href="#get-css-element-that-starts-with">get CSS element that starts with</a><ul>
 <li><a href="#for-element-name">for element name</a></li>
 <li><a href="#for-value-within-element">for value within element</a></li>
-<li><a href="#resources">Resources</a></li>
 </ul>
 </li>
 </ul>
 </li>
+<li><a href="#responsive-tables">Responsive Tables</a><ul>
+<li><a href="#my-preferred-solution">my preferred solution</a></li>
+<li><a href="#resources">resources</a></li>
+</ul>
+</li>
+<li><a href="#resources_1">Resources</a></li>
 </ul>
 </div>
 <p><span class="datestamp-starting">13 Jul 2022</span>   </p>
@@ -156,6 +163,22 @@ The CSS of the (live) HTML page can be found under <code>Inspect</code> &gt; <co
 Changes are reflected in real-time, so no caching and/or publish time issues like with other approaches.  </p>
 <p><img class="screenshot" src="https://notes.nicolasdeville.com/images/css/developing-and-testing-in-chrome.jpg" alt="developing-and-testing-in-chrome"/>  </p>
 <h1 id="snippets">Snippets</h1>
+<h3 id="center-a-table">center a table</h3>
+<div class="highlight"><pre><span></span><code><span class="p">.</span><span class="nc">center</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">  </span><span class="k">margin-left</span><span class="p">:</span><span class="w"> </span><span class="kc">auto</span><span class="p">;</span><span class="w"></span>
+<span class="w">  </span><span class="k">margin-right</span><span class="p">:</span><span class="w"> </span><span class="kc">auto</span><span class="p">;</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</code></pre></div>
+
+<h3 id="center-an-image">center an image</h3>
+<div class="highlight"><pre><span></span><code><span class="nt">img</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">  </span><span class="k">display</span><span class="p">:</span><span class="w"> </span><span class="kc">block</span><span class="p">;</span><span class="w"></span>
+<span class="w">  </span><span class="k">margin-left</span><span class="p">:</span><span class="w"> </span><span class="kc">auto</span><span class="p">;</span><span class="w"></span>
+<span class="w">  </span><span class="k">margin-right</span><span class="p">:</span><span class="w"> </span><span class="kc">auto</span><span class="p">;</span><span class="w"></span>
+<span class="w">  </span><span class="k">width</span><span class="p">:</span><span class="w"> </span><span class="mi">50</span><span class="kt">%</span><span class="p">;</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</code></pre></div>
+
 <h3 id="ensures-padding-and-borders-are-included-in-widthheights-definitions">ensures padding and borders are included in width/heights definitions</h3>
 <p>to be included in all CSS files</p>
 <div class="highlight"><pre><span></span><code><span class="o">*,</span><span class="w"></span>
@@ -172,7 +195,7 @@ Changes are reflected in real-time, so no caching and/or publish time issues lik
 <span class="p">}</span><span class="w"></span>
 </code></pre></div>
 
-<h3 id="center-an-image">center an image</h3>
+<h3 id="center-an-image_1">center an image</h3>
 <p>Needs all 3 properties:  </p>
 <div class="highlight"><pre><span></span><code><span class="p">.</span><span class="nc">book</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
 <span class="w">    </span><span class="k">width</span><span class="p">:</span><span class="w"> </span><span class="mi">60</span><span class="kt">%</span><span class="p">;</span><span class="w"></span>
@@ -329,11 +352,55 @@ Changes are reflected in real-time, so no caching and/or publish time issues lik
 <div class="link_tagline">w3.org</div>
 <div class="link_url"><a href="https://www.w3.org/TR/selectors-3/#attribute-selectors" target="_blank">https://www.w3.org/TR/selectors-3/#attribute-selectors</a></div></div></div>
 
-<h3 id="resources">Resources</h3>
+<h1 id="responsive-tables">Responsive Tables</h1>
+<p>to collapse rows, add <code>display: block;</code> to <code>th</code> and <code>td</code>.   </p>
+<h2 id="my-preferred-solution">my preferred solution</h2>
+<div class="link_border"><div class="link_logo_box"><img class="link_logo" src="https://logo.clearbit.com/codepen.io?size=35" alt="logo"/></div><div class="link_content">
+<div class="link_title">Responsive Table Demo</div>
+<div class="link_tagline">codepen.io</div>
+<div class="link_url"><a href="https://codepen.io/team/css-tricks/pen/wXgJww?editors=1100" target="_blank">https://codepen.io/team/css-tricks/pen/wXgJww?editors=1100</a></div></div></div>
+
+<h2 id="resources">resources</h2>
+<div class="link_border"><div class="link_logo_box"><img class="link_logo" src="https://logo.clearbit.com/css-tricks.com?size=35" alt="logo"/></div><div class="link_content">
+<div class="link_title">Accessible, Simple, Responsive Tables</div>
+<div class="link_tagline">css-tricks.com</div>
+<div class="link_url"><a href="https://css-tricks.com/accessible-simple-responsive-tables" target="_blank">https://css-tricks.com/accessible-simple-responsive-tables</a></div></div></div>
+
+<div class="link_border"><div class="link_logo_box"><img class="link_logo" src="https://logo.clearbit.com/css-tricks.com?size=35" alt="logo"/></div><div class="link_content">
+<div class="link_title">Responsive Data Table Roundup</div>
+<div class="link_tagline">css-tricks.com</div>
+<div class="link_url"><a href="https://css-tricks.com/responsive-data-table-roundup/" target="_blank">https://css-tricks.com/responsive-data-table-roundup/</a></div></div></div>
+
+<div class="link_border"><div class="link_logo_box"><img class="link_logo" src="https://logo.clearbit.com/dbushell.com?size=35" alt="logo"/></div><div class="link_content">
+<div class="link_title">CSS only Responsive Tables</div>
+<div class="link_tagline">dbushell.com</div>
+<div class="link_url"><a href="http://dbushell.com/2016/03/04/css-only-responsive-tables/" target="_blank">http://dbushell.com/2016/03/04/css-only-responsive-tables/</a></div></div></div>
+
+<div class="link_border"><div class="link_logo_box"><img class="link_logo" src="https://logo.clearbit.com/cloudfour.com?size=35" alt="logo"/></div><div class="link_content">
+<div class="link_title">Picking a Responsive Tables Solution</div>
+<div class="link_tagline">cloudfour.com</div>
+<div class="link_url"><a href="http://blog.cloudfour.com/picking-responsive-tables-solution/" target="_blank">http://blog.cloudfour.com/picking-responsive-tables-solution/</a></div></div></div>
+
+<div class="link_border"><div class="link_logo_box"><img class="link_logo" src="https://logo.clearbit.com/css-tricks.com?size=35" alt="logo"/></div><div class="link_content">
+<div class="link_title">Responsive Data Tables</div>
+<div class="link_tagline">css-tricks.com</div>
+<div class="link_url"><a href="https://css-tricks.com/responsive-data-tables/" target="_blank">https://css-tricks.com/responsive-data-tables/</a></div></div></div>
+
+<div class="link_border"><div class="link_logo_box"><img class="link_logo" src="https://logo.clearbit.com/codyhouse.co?size=35" alt="logo"/></div><div class="link_content">
+<div class="link_title">A (Responsive) Products Comparison Table</div>
+<div class="link_tagline">codyhouse.co</div>
+<div class="link_url"><a href="https://codyhouse.co/gem/products-comparison-table/" target="_blank">https://codyhouse.co/gem/products-comparison-table/</a></div></div></div>
+
+<h1 id="resources_1">Resources</h1>
 <div class="link_border"><div class="link_logo_box"><img class="link_logo" src="https://logo.clearbit.com/google.com?size=35" alt="logo"/></div><div class="link_content">
 <div class="link_title">CSS API update  |  Google Fonts  |  Google Developers</div>
 <div class="link_tagline">google.com</div>
 <div class="link_url"><a href="https://developers.google.com/fonts/docs/css2" target="_blank">https://developers.google.com/fonts/docs/css2</a></div></div></div>
+
+<div class="link_border"><div class="link_logo_box"><img class="link_logo" src="https://logo.clearbit.com/w3schools.com?size=35" alt="logo"/></div><div class="link_content">
+<div class="link_title">Responsive Web Design Introduction</div>
+<div class="link_tagline">Responsive Web Design - Introduction</div>
+<div class="link_url"><a href="https://www.w3schools.com/css/css_rwd_intro.asp" target="_blank">https://www.w3schools.com/css/css_rwd_intro.asp</a></div></div></div>
 
 <hr>
 <p>"The aim of web design is not to use all available screen space. It is legibility. Text is most legible with no more than 70 characters per line."<br>
