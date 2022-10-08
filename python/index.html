@@ -43,7 +43,7 @@
             </div>
 
             <div class="above-navbar">
-                <div class="last_updated">07 Oct 2022 | 17:15</div>
+                <div class="last_updated">08 Oct 2022 | 14:10</div>
                 <div>
                     <p class="notes_count">
                         <a href="https://notes.nicolasdeville.com/tags">by tags</a>
@@ -102,132 +102,111 @@
             <hr/>
 
                 <article class="hentry">
-                    <h1 class="entry-title"><a href="https://notes.nicolasdeville.com/python/paths">How to find all paths being searched by Python</a></h1>
+                    <h1 class="entry-title"><a href="https://notes.nicolasdeville.com/python/books">My Python Books Library</a></h1>
 
                     <!-- added 4/7 -->
                     <div>
                         <p class="header_summary">
-                            
+                            <p>keeping track of Python books read and on my radar</p>
                         </p>
                     </div>
 
 <footer class="post-info">
 
     <p>
-        06 Oct 2022 <span class="separator">|</span> in <a class="link_tag" href="https://notes.nicolasdeville.com/python/">python</a>
- tags: <a class="link_tag" href="https://notes.nicolasdeville.com/tag/snippets.html">snippets</a>
+        07 Oct 2022 <span class="separator">|</span> in <a class="link_tag" href="https://notes.nicolasdeville.com/python/">python</a>
+ tags: <a class="link_tag" href="https://notes.nicolasdeville.com/tag/books.html">books</a>
 
         <!-- added 4/7 -->
         <!-- 		<br />
-        <abbr class="modified" title="2022-10-06T10:18:25.934047+02:00">
-                Updated: 06 Oct 2022
+        <abbr class="modified" title="2022-10-08T14:10:19.386066+02:00">
+                Updated: 08 Oct 2022
         </abbr>
  -->
 
     </p>
 
-    
+    Translations:
+        <a href="https://notes.nicolasdeville.com/b2b-sales/books" hreflang="en">en</a>
 
-</footer><div class="toc"><span class="toctitle">Table of Contents</span><ul>
-<li><a href="#resources">Resources</a></li>
-</ul>
-</div>
-<p><span class="datestamp">15 Sep 2022</span>   </p>
-<p>run this to see all paths being searched by python:  </p>
-<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">sys</span>
 
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Paths:&quot;</span><span class="p">)</span>
-<span class="k">for</span> <span class="n">path</span> <span class="ow">in</span> <span class="n">sys</span><span class="o">.</span><span class="n">path</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">path</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-</code></pre></div>
-
-<p>prints:  </p>
-<div class="highlight"><pre><span></span><code>/Users/xxxx/Python/homee
-/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/lib/python39.zip
-/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9
-/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/lib-dynload
-/Users/xxxx/Python/indeXee
-/Users/xxxx/Python/Scrapee
-</code></pre></div>
-
-<p>or from terminal:   </p>
-<p>GLOBAL:   </p>
-<div class="highlight"><pre><span></span><code>python -m site
-</code></pre></div>
-
-<p>prints:  </p>
-<div class="highlight"><pre><span></span><code>sys.path <span class="o">=</span> <span class="o">[</span>
-    <span class="s1">&#39;/Users/xxxx/Python/homee/notes&#39;</span>,
-    <span class="s1">&#39;/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/lib/python39.zip&#39;</span>,
-    <span class="s1">&#39;/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9&#39;</span>,
-    <span class="s1">&#39;/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/lib-dynload&#39;</span>,
-<span class="o">]</span>
-USER_BASE: <span class="s1">&#39;/Users/xxxx/Library/Python/3.9&#39;</span> <span class="o">(</span>exists<span class="o">)</span>
-USER_SITE: <span class="s1">&#39;/Users/xxxx/Library/Python/3.9/lib/python/site-packages&#39;</span> <span class="o">(</span>exists<span class="o">)</span>
-ENABLE_USER_SITE: False
-</code></pre></div>
-
-<p>getting site packages, running from venv:   </p>
-<div class="highlight"><pre><span></span><code>python -c <span class="s1">&#39;import site; print(site.getsitepackages())&#39;</span>
-</code></pre></div>
-
-<p>prints:   </p>
-<div class="highlight"><pre><span></span><code><span class="o">[</span><span class="s1">&#39;/Users/xxxx/Python/homee/venv/lib/python3.9/site-packages&#39;</span><span class="o">]</span>
-</code></pre></div>
-
-<p>USER:    </p>
-<div class="highlight"><pre><span></span><code>python -m site --user-site
-</code></pre></div>
-
-<p>prints:   </p>
-<div class="highlight"><pre><span></span><code>/Users/nic/Library/Python/3.9/lib/python/site-packages
-</code></pre></div>
-
-<p>Get site packages used within venv:   </p>
-<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">distutils.sysconfig</span> <span class="kn">import</span> <span class="n">get_python_lib</span>
-<span class="n">python_lib</span> <span class="o">=</span> <span class="n">get_python_lib</span><span class="p">()</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Python lib:&quot;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">python_lib</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-</code></pre></div>
-
-<p>prints:   </p>
-<div class="highlight"><pre><span></span><code><span class="nv">python_lib</span><span class="o">=</span><span class="s1">&#39;/Users/xxxx/Python/homee/venv/lib/python3.9/site-packages&#39;</span>
-</code></pre></div>
-
-<hr>
-<p>Python may be installed in multiple places in your computer. When you get a new Mac, the default python directory may be</p>
-<div class="highlight"><pre><span></span><code><span class="s1">&#39;usr/bin/python2.7&#39;</span>
-</code></pre></div>
-
-<p>You may also have a directory</p>
-<div class="highlight"><pre><span></span><code><span class="s1">&#39;System/Library/Frameworks/Python.framework/Versions/2.7/bin/python&#39;</span>
-</code></pre></div>
-
-<p>The first one is the symlink of the second one. NOTE: not my case - <code>usr/bin</code> is not a symlink, but an executable 🤔  </p>
-<p>If you use HomeBrew to install python, you may get a directory in</p>
-<div class="highlight"><pre><span></span><code><span class="s1">&#39;usr/local/bin/python2.7&#39;</span>
-</code></pre></div>
-
-<p>You may also have a directory as</p>
-<div class="highlight"><pre><span></span><code><span class="s1">&#39;Library/Frameworks/Python.framework/Versions/2.7/bin/python&#39;</span>
-</code></pre></div>
-
-<p>from: <a href="https://stackoverflow.com/questions/23329034/python-osx-which-python-gives-library-frameworks-python-framework-versions-2" target="_blank">https://stackoverflow.com/questions/23329034/python-osx-which-python-gives-library-frameworks-python-framework-versions-2</a>   </p>
-<h1 id="resources">Resources</h1>
-<div class="link_border"><div class="link_logo_box"><img class="link_logo" src="https://logo.clearbit.com/realpython.com?size=35" alt="logo"/></div><div class="link_content">
-<div class="link_title">How to Add Python to PATH on Linux and macOS</div>
-<div class="link_tagline">realpython.com</div>
-<div class="link_url"><a href="https://realpython.com/add-python-to-path/#how-to-add-python-to-path-on-linux-and-macos" target="_blank">https://realpython.com/add-python-to-path/#how-to-add-python-to-path-on-linux-and-macos</a></div></div></div>
-
-<div class="link_border"><div class="link_logo_box"><img class="link_logo" src="https://logo.clearbit.com/stackoverflow.com?size=35" alt="logo"/></div><div class="link_content">
-<div class="link_title">virtualenv - How do Python Virtual Environment Symlinks Work? - Stack Overflow</div>
-<div class="link_tagline">stackoverflow.com</div>
-<div class="link_url"><a href="https://stackoverflow.com/questions/73708028/how-do-python-virtual-environment-symlinks-work" target="_blank">https://stackoverflow.com/questions/73708028/how-do-python-virtual-environment-symlinks-work</a></div></div></div>
-
-<div class="link_border"><div class="link_logo_box"><img class="link_logo" src="https://logo.clearbit.com/stackoverflow.com?size=35" alt="logo"/></div><div class="link_content">
-<div class="link_title">How do I find the location of my Python site-packages directory? - Stack Overflow</div>
-<div class="link_tagline">stackoverflow.com</div>
-<div class="link_url"><a href="https://stackoverflow.com/questions/122327/how-do-i-find-the-location-of-my-python-site-packages-directory" target="_blank">https://stackoverflow.com/questions/122327/how-do-i-find-the-location-of-my-python-site-packages-directory</a></div></div></div>
+</footer><p>6 books  </p>
+<table>
+<thead>
+<tr>
+<th>cover</th>
+<th>title</th>
+<th>author</th>
+<th>year</th>
+<th>pages</th>
+<th>tags</th>
+<th>tagline</th>
+<th>rating</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><img class="illustration" src="https://notes.nicolasdeville.com/images/book_blank.jpg" alt="automate-the-boring-stuff-with-python"/></td>
+<td><a href="https://www.amazon.co.uk/Automate-Boring-Stuff-Python-2nd-ebook/dp/B07VSXS4NK/ref=tmm_kin_swatch_0" target="_blank">Automate the Boring Stuff with Python</a></td>
+<td>Al Sweigart</td>
+<td>2019</td>
+<td>500</td>
+<td>Python, Sales Automation</td>
+<td>Practical Programming for Total Beginners</td>
+<td>⭐️⭐️⭐️⭐️⭐️</td>
+</tr>
+<tr>
+<td><img class="illustration" src="https://notes.nicolasdeville.com/images/book_blank.jpg" alt="learn-python-3-the-hard-way"/></td>
+<td><a href="" target="_blank">Learn Python 3 the Hard Way</a></td>
+<td>Shaw Zed A.</td>
+<td></td>
+<td></td>
+<td>Python</td>
+<td>A Very Simple Introduction to the Terrifyingly Beautiful World of Computers and Code</td>
+<td>⭐️⭐️⭐️⭐️</td>
+</tr>
+<tr>
+<td><img class="illustration" src="https://notes.nicolasdeville.com/images/book_blank.jpg" alt="learn-python-in-one-day-and-learn-it-well"/></td>
+<td><a href="https://www.amazon.co.uk/Python-2nd-Beginners-Hands-Project-ebook/dp/B071Z2Q6TQ/ref=sr_1_1" target="_blank">Learn Python in One Day and Learn It Well</a></td>
+<td>Jamie Chan</td>
+<td>2017</td>
+<td>175</td>
+<td>Python</td>
+<td>Python for Beginners with Hands-on Project</td>
+<td>⭐️⭐️⭐️⭐️</td>
+</tr>
+<tr>
+<td><img class="illustration" src="https://notes.nicolasdeville.com/images/book_blank.jpg" alt="python-2nd-edition"/></td>
+<td><a href="" target="_blank">Python (2nd Edition)</a></td>
+<td>LCF Publishing, Jamie Chan</td>
+<td></td>
+<td></td>
+<td>Python</td>
+<td>Learn Python in One Day and Learn It Well. Python for Beginners with Hands-on Project. (Learn Coding Fast with Hands-On Project Book 1)</td>
+<td>⭐️⭐️⭐️</td>
+</tr>
+<tr>
+<td><img class="illustration" src="https://notes.nicolasdeville.com/images/book_blank.jpg" alt="python"/></td>
+<td><a href="" target="_blank">Python 4 Books in 1</a></td>
+<td>Charlie Masterson</td>
+<td></td>
+<td></td>
+<td>Python</td>
+<td></td>
+<td>⭐️⭐️⭐️</td>
+</tr>
+<tr>
+<td><img class="illustration" src="https://notes.nicolasdeville.com/images/book_blank.jpg" alt="python-tricks"/></td>
+<td><a href="" target="_blank">Python Tricks</a></td>
+<td>Dan Bader</td>
+<td></td>
+<td></td>
+<td>Python</td>
+<td>A Buffet of Awesome Python Features</td>
+<td>⭐️⭐️⭐️</td>
+</tr>
+</tbody>
+</table>
                 </article>
             </aside>
 
@@ -246,11 +225,11 @@ ENABLE_USER_SITE: False
                 <article class="hentry">
                     <header>
                         <!-- PREVIOUS NOTE TITLE -->
-                        <h1><a href="https://notes.nicolasdeville.com/python/books" rel="bookmark"
-                            title="My Python Books Library">My Python Books Library</a></h1>
+                        <h1><a href="https://notes.nicolasdeville.com/python/paths" rel="bookmark"
+                            title="How to find all paths being searched by Python">How to find all paths being searched by Python</a></h1>
                         <!-- PREVIOUS NOTE SUMMARY -->
                         <div class="entry-content">
-                            <p>keeping track of Python books read and on my radar</p>
+                            
                         </div>
                     </header>
 
@@ -260,20 +239,18 @@ ENABLE_USER_SITE: False
 
     <p>
         06 Oct 2022 <span class="separator">|</span> in <a class="link_tag" href="https://notes.nicolasdeville.com/python/">python</a>
- tags: <a class="link_tag" href="https://notes.nicolasdeville.com/tag/books.html">books</a>
+ tags: <a class="link_tag" href="https://notes.nicolasdeville.com/tag/snippets.html">snippets</a>
 
         <!-- added 4/7 -->
         <!-- 		<br />
-        <abbr class="modified" title="2022-10-07T17:15:02.622477+02:00">
-                Updated: 07 Oct 2022
+        <abbr class="modified" title="2022-10-06T10:18:25.934047+02:00">
+                Updated: 06 Oct 2022
         </abbr>
  -->
 
     </p>
 
-    Translations:
-        <a href="https://notes.nicolasdeville.com/b2b-sales/books" hreflang="en">en</a>
-
+    
 
 </footer>                    </div>
                     
