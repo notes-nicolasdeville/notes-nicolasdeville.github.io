@@ -43,7 +43,7 @@
             </div>
 
             <div class="above-navbar">
-                <div class="last_updated">08 Oct 2022 | 14:10</div>
+                <div class="last_updated">09 Oct 2022 | 10:11</div>
                 <div>
                     <p class="notes_count">
                         <a href="https://notes.nicolasdeville.com/tags">by tags</a>
@@ -102,169 +102,734 @@
             <hr/>
 
                 <article class="hentry">
-                    <h1 class="entry-title"><a href="https://notes.nicolasdeville.com/helpers/responsive-web-design">How to build a responsive website</a></h1>
+                    <h1 class="entry-title"><a href="https://notes.nicolasdeville.com/helpers/clipper">My web clipboard</a></h1>
 
                     <!-- added 4/7 -->
                     <div>
                         <p class="header_summary">
-                            
+                            <p>links I bookmarked for reference or later review</p>
                         </p>
                     </div>
 
 <footer class="post-info">
 
     <p>
-        07 Oct 2022 <span class="separator">|</span> in <a class="link_tag" href="https://notes.nicolasdeville.com/helpers/">helpers</a>
+        08 Oct 2022 <span class="separator">|</span> in <a class="link_tag" href="https://notes.nicolasdeville.com/helpers/">helpers</a>
+ tags: <a class="link_tag" href="https://notes.nicolasdeville.com/tag/clipper.html">clipper</a>
 
         <!-- added 4/7 -->
         <!-- 		<br />
-        <abbr class="modified" title="2022-10-07T12:49:58.578799+02:00">
-                Updated: 07 Oct 2022
+        <abbr class="modified" title="2022-10-09T10:11:46.536783+02:00">
+                Updated: 09 Oct 2022
         </abbr>
  -->
 
     </p>
 
-    
+    Translations:
+        <a href="https://notes.nicolasdeville.com/projects/clipper" hreflang="en">en</a>
 
-</footer><div class="toc"><span class="toctitle">Table of Contents</span><ul>
-<li><a href="#layout">Layout</a><ul>
-<li><a href="#media-queries">media queries</a><ul>
-<li><a href="#hide-elements">hide elements</a></li>
-<li><a href="#variable-font-size">variable font-size</a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li><a href="#images">Images</a></li>
-<li><a href="#demos">Demos</a><ul>
-<li><a href="#approach-to-implement">approach to implement</a></li>
-</ul>
-</li>
-</ul>
-</div>
-<p><span class="datestamp">07 Oct 2022</span>   </p>
-<p>Main resource:  </p>
-<div class="link_border"><div class="link_logo_box"><img class="link_logo" src="https://logo.clearbit.com/w3schools.com?size=35" alt="logo"/></div><div class="link_content">
-<div class="link_title">Responsive Web Design - Introduction</div>
-<div class="link_tagline">w3schools.com</div>
-<div class="link_url"><a href="https://www.w3schools.com/css/css_rwd_intro.asp" target="_blank">https://www.w3schools.com/css/css_rwd_intro.asp</a></div></div></div>
 
-<p>Add a viewport as:  </p>
-<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">meta</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;viewport&quot;</span> <span class="na">content</span><span class="o">=</span><span class="s">&quot;width=device-width, initial-scale=1.0, maximum-scale=1.0&quot;</span> <span class="p">/&gt;</span>
-</code></pre></div>
-
-<h1 id="layout">Layout</h1>
-<h2 id="media-queries">media queries</h2>
-<p>Use <code>@media</code> to change properties based on viewport size.  </p>
-<p>Mobile first means changing properties if viewport is larger than mobile:   </p>
-<div class="highlight"><pre><span></span><code><span class="c">/* For mobile phones: */</span><span class="w"></span>
-<span class="o">[</span><span class="nt">class</span><span class="o">*=</span><span class="s2">&quot;col-&quot;</span><span class="o">]</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">  </span><span class="k">width</span><span class="p">:</span><span class="w"> </span><span class="mi">100</span><span class="kt">%</span><span class="p">;</span><span class="w"></span>
-<span class="p">}</span><span class="w"></span>
-
-<span class="p">@</span><span class="k">media</span><span class="w"> </span><span class="nt">only</span><span class="w"> </span><span class="nt">screen</span><span class="w"> </span><span class="nt">and</span><span class="w"> </span><span class="o">(</span><span class="nt">min-width</span><span class="o">:</span><span class="w"> </span><span class="nt">600px</span><span class="o">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">  </span><span class="c">/* For tablets: */</span><span class="w"></span>
-<span class="w">  </span><span class="p">.</span><span class="nc">col-s-1</span><span class="w"> </span><span class="p">{</span><span class="k">width</span><span class="p">:</span><span class="w"> </span><span class="mf">8.33</span><span class="kt">%</span><span class="p">;}</span><span class="w"></span>
-<span class="w">  </span><span class="p">.</span><span class="nc">col-s-2</span><span class="w"> </span><span class="p">{</span><span class="k">width</span><span class="p">:</span><span class="w"> </span><span class="mf">16.66</span><span class="kt">%</span><span class="p">;}</span><span class="w"></span>
-<span class="w">  </span><span class="p">.</span><span class="nc">col-s-3</span><span class="w"> </span><span class="p">{</span><span class="k">width</span><span class="p">:</span><span class="w"> </span><span class="mi">25</span><span class="kt">%</span><span class="p">;}</span><span class="w"></span>
-<span class="w">  </span><span class="p">.</span><span class="nc">col-s-4</span><span class="w"> </span><span class="p">{</span><span class="k">width</span><span class="p">:</span><span class="w"> </span><span class="mf">33.33</span><span class="kt">%</span><span class="p">;}</span><span class="w"></span>
-<span class="w">  </span><span class="p">.</span><span class="nc">col-s-5</span><span class="w"> </span><span class="p">{</span><span class="k">width</span><span class="p">:</span><span class="w"> </span><span class="mf">41.66</span><span class="kt">%</span><span class="p">;}</span><span class="w"></span>
-<span class="w">  </span><span class="p">.</span><span class="nc">col-s-6</span><span class="w"> </span><span class="p">{</span><span class="k">width</span><span class="p">:</span><span class="w"> </span><span class="mi">50</span><span class="kt">%</span><span class="p">;}</span><span class="w"></span>
-<span class="w">  </span><span class="p">.</span><span class="nc">col-s-7</span><span class="w"> </span><span class="p">{</span><span class="k">width</span><span class="p">:</span><span class="w"> </span><span class="mf">58.33</span><span class="kt">%</span><span class="p">;}</span><span class="w"></span>
-<span class="w">  </span><span class="p">.</span><span class="nc">col-s-8</span><span class="w"> </span><span class="p">{</span><span class="k">width</span><span class="p">:</span><span class="w"> </span><span class="mf">66.66</span><span class="kt">%</span><span class="p">;}</span><span class="w"></span>
-<span class="w">  </span><span class="p">.</span><span class="nc">col-s-9</span><span class="w"> </span><span class="p">{</span><span class="k">width</span><span class="p">:</span><span class="w"> </span><span class="mi">75</span><span class="kt">%</span><span class="p">;}</span><span class="w"></span>
-<span class="w">  </span><span class="p">.</span><span class="nc">col-s-10</span><span class="w"> </span><span class="p">{</span><span class="k">width</span><span class="p">:</span><span class="w"> </span><span class="mf">83.33</span><span class="kt">%</span><span class="p">;}</span><span class="w"></span>
-<span class="w">  </span><span class="p">.</span><span class="nc">col-s-11</span><span class="w"> </span><span class="p">{</span><span class="k">width</span><span class="p">:</span><span class="w"> </span><span class="mf">91.66</span><span class="kt">%</span><span class="p">;}</span><span class="w"></span>
-<span class="w">  </span><span class="p">.</span><span class="nc">col-s-12</span><span class="w"> </span><span class="p">{</span><span class="k">width</span><span class="p">:</span><span class="w"> </span><span class="mi">100</span><span class="kt">%</span><span class="p">;}</span><span class="w"></span>
-<span class="p">}</span><span class="w"></span>
-
-<span class="p">@</span><span class="k">media</span><span class="w"> </span><span class="nt">only</span><span class="w"> </span><span class="nt">screen</span><span class="w"> </span><span class="nt">and</span><span class="w"> </span><span class="o">(</span><span class="nt">min-width</span><span class="o">:</span><span class="w"> </span><span class="nt">768px</span><span class="o">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">  </span><span class="c">/* For desktop: */</span><span class="w"></span>
-<span class="w">  </span><span class="p">.</span><span class="nc">col-1</span><span class="w"> </span><span class="p">{</span><span class="k">width</span><span class="p">:</span><span class="w"> </span><span class="mf">8.33</span><span class="kt">%</span><span class="p">;}</span><span class="w"></span>
-<span class="w">  </span><span class="p">.</span><span class="nc">col-2</span><span class="w"> </span><span class="p">{</span><span class="k">width</span><span class="p">:</span><span class="w"> </span><span class="mf">16.66</span><span class="kt">%</span><span class="p">;}</span><span class="w"></span>
-<span class="w">  </span><span class="p">.</span><span class="nc">col-3</span><span class="w"> </span><span class="p">{</span><span class="k">width</span><span class="p">:</span><span class="w"> </span><span class="mi">25</span><span class="kt">%</span><span class="p">;}</span><span class="w"></span>
-<span class="w">  </span><span class="p">.</span><span class="nc">col-4</span><span class="w"> </span><span class="p">{</span><span class="k">width</span><span class="p">:</span><span class="w"> </span><span class="mf">33.33</span><span class="kt">%</span><span class="p">;}</span><span class="w"></span>
-<span class="w">  </span><span class="p">.</span><span class="nc">col-5</span><span class="w"> </span><span class="p">{</span><span class="k">width</span><span class="p">:</span><span class="w"> </span><span class="mf">41.66</span><span class="kt">%</span><span class="p">;}</span><span class="w"></span>
-<span class="w">  </span><span class="p">.</span><span class="nc">col-6</span><span class="w"> </span><span class="p">{</span><span class="k">width</span><span class="p">:</span><span class="w"> </span><span class="mi">50</span><span class="kt">%</span><span class="p">;}</span><span class="w"></span>
-<span class="w">  </span><span class="p">.</span><span class="nc">col-7</span><span class="w"> </span><span class="p">{</span><span class="k">width</span><span class="p">:</span><span class="w"> </span><span class="mf">58.33</span><span class="kt">%</span><span class="p">;}</span><span class="w"></span>
-<span class="w">  </span><span class="p">.</span><span class="nc">col-8</span><span class="w"> </span><span class="p">{</span><span class="k">width</span><span class="p">:</span><span class="w"> </span><span class="mf">66.66</span><span class="kt">%</span><span class="p">;}</span><span class="w"></span>
-<span class="w">  </span><span class="p">.</span><span class="nc">col-9</span><span class="w"> </span><span class="p">{</span><span class="k">width</span><span class="p">:</span><span class="w"> </span><span class="mi">75</span><span class="kt">%</span><span class="p">;}</span><span class="w"></span>
-<span class="w">  </span><span class="p">.</span><span class="nc">col-10</span><span class="w"> </span><span class="p">{</span><span class="k">width</span><span class="p">:</span><span class="w"> </span><span class="mf">83.33</span><span class="kt">%</span><span class="p">;}</span><span class="w"></span>
-<span class="w">  </span><span class="p">.</span><span class="nc">col-11</span><span class="w"> </span><span class="p">{</span><span class="k">width</span><span class="p">:</span><span class="w"> </span><span class="mf">91.66</span><span class="kt">%</span><span class="p">;}</span><span class="w"></span>
-<span class="w">  </span><span class="p">.</span><span class="nc">col-12</span><span class="w"> </span><span class="p">{</span><span class="k">width</span><span class="p">:</span><span class="w"> </span><span class="mi">100</span><span class="kt">%</span><span class="p">;}</span><span class="w"></span>
-<span class="p">}</span><span class="w"></span>
-</code></pre></div>
-
-<p>ideally:  </p>
-<div class="highlight"><pre><span></span><code><span class="c">/* Extra small devices (phones, 600px and down) */</span><span class="w"></span>
-<span class="p">@</span><span class="k">media</span><span class="w"> </span><span class="nt">only</span><span class="w"> </span><span class="nt">screen</span><span class="w"> </span><span class="nt">and</span><span class="w"> </span><span class="o">(</span><span class="nt">max-width</span><span class="o">:</span><span class="w"> </span><span class="nt">600px</span><span class="o">)</span><span class="w"> </span><span class="p">{</span><span class="o">...</span><span class="p">}</span><span class="w"></span>
-
-<span class="c">/* Small devices (portrait tablets and large phones, 600px and up) */</span><span class="w"></span>
-<span class="p">@</span><span class="k">media</span><span class="w"> </span><span class="nt">only</span><span class="w"> </span><span class="nt">screen</span><span class="w"> </span><span class="nt">and</span><span class="w"> </span><span class="o">(</span><span class="nt">min-width</span><span class="o">:</span><span class="w"> </span><span class="nt">600px</span><span class="o">)</span><span class="w"> </span><span class="p">{</span><span class="o">...</span><span class="p">}</span><span class="w"></span>
-
-<span class="c">/* Medium devices (landscape tablets, 768px and up) */</span><span class="w"></span>
-<span class="p">@</span><span class="k">media</span><span class="w"> </span><span class="nt">only</span><span class="w"> </span><span class="nt">screen</span><span class="w"> </span><span class="nt">and</span><span class="w"> </span><span class="o">(</span><span class="nt">min-width</span><span class="o">:</span><span class="w"> </span><span class="nt">768px</span><span class="o">)</span><span class="w"> </span><span class="p">{</span><span class="o">...</span><span class="p">}</span><span class="w"></span>
-
-<span class="c">/* Large devices (laptops/desktops, 992px and up) */</span><span class="w"></span>
-<span class="p">@</span><span class="k">media</span><span class="w"> </span><span class="nt">only</span><span class="w"> </span><span class="nt">screen</span><span class="w"> </span><span class="nt">and</span><span class="w"> </span><span class="o">(</span><span class="nt">min-width</span><span class="o">:</span><span class="w"> </span><span class="nt">992px</span><span class="o">)</span><span class="w"> </span><span class="p">{</span><span class="o">...</span><span class="p">}</span><span class="w"></span>
-
-<span class="c">/* Extra large devices (large laptops and desktops, 1200px and up) */</span><span class="w"></span>
-<span class="p">@</span><span class="k">media</span><span class="w"> </span><span class="nt">only</span><span class="w"> </span><span class="nt">screen</span><span class="w"> </span><span class="nt">and</span><span class="w"> </span><span class="o">(</span><span class="nt">min-width</span><span class="o">:</span><span class="w"> </span><span class="nt">1200px</span><span class="o">)</span><span class="w"> </span><span class="p">{</span><span class="o">...</span><span class="p">}</span><span class="w"></span>
-</code></pre></div>
-
-<p>to handle orientation: </p>
-<div class="highlight"><pre><span></span><code><span class="p">@</span><span class="k">media</span><span class="w"> </span><span class="nt">only</span><span class="w"> </span><span class="nt">screen</span><span class="w"> </span><span class="nt">and</span><span class="w"> </span><span class="o">(</span><span class="nt">orientation</span><span class="o">:</span><span class="w"> </span><span class="nt">landscape</span><span class="o">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">  </span><span class="nt">body</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">    </span><span class="k">background-color</span><span class="p">:</span><span class="w"> </span><span class="kc">lightblue</span><span class="p">;</span><span class="w"></span>
-<span class="w">  </span><span class="p">}</span><span class="w"></span>
-<span class="p">}</span><span class="w"></span>
-</code></pre></div>
-
-<h3 id="hide-elements">hide elements</h3>
-<div class="highlight"><pre><span></span><code><span class="c">/* If the screen size is 600px wide or less, hide the element */</span><span class="w"></span>
-<span class="p">@</span><span class="k">media</span><span class="w"> </span><span class="nt">only</span><span class="w"> </span><span class="nt">screen</span><span class="w"> </span><span class="nt">and</span><span class="w"> </span><span class="o">(</span><span class="nt">max-width</span><span class="o">:</span><span class="w"> </span><span class="nt">600px</span><span class="o">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">  </span><span class="nt">div</span><span class="p">.</span><span class="nc">example</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">    </span><span class="k">display</span><span class="p">:</span><span class="w"> </span><span class="kc">none</span><span class="p">;</span><span class="w"></span>
-<span class="w">  </span><span class="p">}</span><span class="w"></span>
-<span class="p">}</span><span class="w"></span>
-</code></pre></div>
-
-<h3 id="variable-font-size">variable font-size</h3>
-<div class="highlight"><pre><span></span><code><span class="c">/* If the screen size is 601px or more, set the font-size of &lt;div&gt; to 80px */</span><span class="w"></span>
-<span class="p">@</span><span class="k">media</span><span class="w"> </span><span class="nt">only</span><span class="w"> </span><span class="nt">screen</span><span class="w"> </span><span class="nt">and</span><span class="w"> </span><span class="o">(</span><span class="nt">min-width</span><span class="o">:</span><span class="w"> </span><span class="nt">601px</span><span class="o">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">  </span><span class="nt">div</span><span class="p">.</span><span class="nc">example</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">    </span><span class="k">font-size</span><span class="p">:</span><span class="w"> </span><span class="mi">80</span><span class="kt">px</span><span class="p">;</span><span class="w"></span>
-<span class="w">  </span><span class="p">}</span><span class="w"></span>
-<span class="p">}</span><span class="w"></span>
-
-<span class="c">/* If the screen size is 600px or less, set the font-size of &lt;div&gt; to 30px */</span><span class="w"></span>
-<span class="p">@</span><span class="k">media</span><span class="w"> </span><span class="nt">only</span><span class="w"> </span><span class="nt">screen</span><span class="w"> </span><span class="nt">and</span><span class="w"> </span><span class="o">(</span><span class="nt">max-width</span><span class="o">:</span><span class="w"> </span><span class="nt">600px</span><span class="o">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">  </span><span class="nt">div</span><span class="p">.</span><span class="nc">example</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">    </span><span class="k">font-size</span><span class="p">:</span><span class="w"> </span><span class="mi">30</span><span class="kt">px</span><span class="p">;</span><span class="w"></span>
-<span class="w">  </span><span class="p">}</span><span class="w"></span>
-<span class="p">}</span><span class="w"></span>
-</code></pre></div>
-
-<h1 id="images">Images</h1>
-<div class="book_quote">
-<div class="book_quote_highlight">If the width property is set to a percentage and the height property is set to "auto", the image will be responsive and scale up and down</div>
-<div class="book_quote_location"><a href="https://www.w3schools.com/css/css_rwd_images.asp" target="_blank">https://www.w3schools.com/css/css_rwd_images.asp</a></div></div>
-
-<div class="highlight"><pre><span></span><code><span class="nt">img</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">  </span><span class="k">width</span><span class="p">:</span><span class="w"> </span><span class="mi">100</span><span class="kt">%</span><span class="p">;</span><span class="w"></span>
-<span class="w">  </span><span class="k">height</span><span class="p">:</span><span class="w"> </span><span class="kc">auto</span><span class="p">;</span><span class="w"></span>
-<span class="p">}</span><span class="w"></span>
-</code></pre></div>
-
-<h1 id="demos">Demos</h1>
-<h2 id="approach-to-implement">approach to implement</h2>
-<p>with collapsing rows while maintaining headers:  </p>
-<div class="link_border"><div class="link_logo_box"><img class="link_logo" src="https://logo.clearbit.com/codepen.io?size=35" alt="logo"/></div><div class="link_content">
-<div class="link_title">CodePen Home 
-Responsive Table Demo</div>
-<div class="link_tagline">codepen.io</div>
-<div class="link_url"><a href="https://codepen.io/team/css-tricks/pen/wXgJww?editors=1100" target="_blank">https://codepen.io/team/css-tricks/pen/wXgJww?editors=1100</a></div></div></div>
+</footer><p>96 clips.  </p>
+<table>
+<thead>
+<tr>
+<th>timestamp</th>
+<th>link</th>
+<th>category</th>
+<th>tags</th>
+<th>notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>2022-10-08</td>
+<td><a href="https://www.this.one/" target="_blank">This One</a></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>2022-10-06</td>
+<td><a href="https://simplescraper.io/" target="_blank">Simplescraper — Scrape Websites and turn them into APIs</a></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>2022-10-06</td>
+<td><a href="https://companyurlfinder.com/" target="_blank">Company URL Finder - Convert Company Name to Gold 🥇</a></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>2022-10-06</td>
+<td><a href="https://www.therabody.com/uk/en-gb/home" target="_blank">Theragun Therabody - World-Leading Wellness Solutions - Therabody</a></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>2022-10-05</td>
+<td><a href="https://www.summarize.tech/?utm_campaign=Insanely%20Useful%20Websites&utm_medium=email&utm_source=Revue%20newsletter" target="_blank">summarize.tech: AI-powered video summaries</a></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>2022-10-05</td>
+<td><a href="https://12ft.io/?utm_campaign=Insanely%20Useful%20Websites&utm_medium=email&utm_source=Revue%20newsletter" target="_blank">12ft Ladder</a></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>2022-10-05</td>
+<td><a href="https://jimpl.com/?utm_campaign=Insanely%20Useful%20Websites&utm_medium=email&utm_source=Revue%20newsletter" target="_blank">Online photo metadata and EXIF data viewer - Jimpl</a></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>2022-10-05</td>
+<td><a href="https://www.webclipboard.io/40812802" target="_blank">webclipboard - Share clipboard text between multiple devices</a></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>2022-09-28</td>
+<td><a href="https://rows.com/community/explore-all" target="_blank">Community - Rows</a></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>2022-09-28</td>
+<td><a href="https://tjukanovt.github.io/notable-people" target="_blank">Notable people</a></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>2022-09-28</td>
+<td><a href="https://www.confluence.vc/investors?ref=producthunt" target="_blank">2,000+ Top VCs — Confluence.VC</a></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>2022-09-28</td>
+<td><a href="https://www.getcyberleads.com/" target="_blank">CyberLeads - Find new clients for your agency business</a></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>2022-09-28</td>
+<td><a href="https://howchoo.com/macos/connect-airpods-with-keyboard-shortcut-in-macos" target="_blank">How To Connect Your AirPods With a Keyboard Shortcut in MacOS - Howchoo</a></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>2022-09-24</td>
+<td><a href="https://superuser.com/questions/1045791/icloud-drive-sync-stuck" target="_blank">macos - icloud drive sync stuck - Super User</a></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>2022-09-24</td>
+<td><a href="https://macos-defaults.com/" target="_blank">macOS defaults list</a></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>2022-09-23</td>
+<td><a href="https://about.crunchbase.com/blog/crunchbase-hubspot-integration/" target="_blank">Crunchbase’s New HubSpot Integration - Crunchbase</a></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>2022-09-23</td>
+<td><a href="https://colorswall.com/" target="_blank">ColorsWall - colors palettes, palettes collections, colours schemes</a></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>2022-09-23</td>
+<td><a href="https://stackoverflow.com/questions/17536216/create-a-table-without-a-header-in-markdown" target="_blank">Create a table without a header in Markdown - Stack Overflow</a></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>2022-09-22</td>
+<td><a href="https://bytek.ai/en/retention-ai-product-hunt/?ref=producthunt" target="_blank">Retention AI on Product Hunt - ByTek</a></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>2022-09-22</td>
+<td><a href="https://stackoverflow.com/questions/16912445/how-to-set-styles-for-different-headlines-h1-h2-in-css#16912485" target="_blank">html - How to set styles for different headlines (h1, h2, ...) in CSS? - Stack Overflow</a></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>2022-09-22</td>
+<td><a href="https://warmly.ai/" target="_blank">Warmly - Professional Networking in Zoom</a></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>2022-09-22</td>
+<td><a href="https://www.shell.how/" target="_blank">shell.how - How this shell command works?</a></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>2022-09-22</td>
+<td><a href="https://www.wired.com/story/randall-munroe-is-back-to-answer-your-impossible-questions/?utm_medium=social&utm_social-type=owned&utm_source=twitter&utm_brand=wired&mbid=social_twitter" target="_blank">With 'What If? 2', Randall Munroe Is Back to Answer Your Impossible Questions - WIRED</a></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>2022-09-22</td>
+<td><a href="None" target="_blank"></a></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>2022-09-22</td>
+<td><a href="https://consensus.app/" target="_blank">Consensus - Evidence-Based Answers, Faster</a></td>
+<td></td>
+<td></td>
+<td>September 21, 2022 6:22 PM</td>
+</tr>
+<tr>
+<td>2022-09-22</td>
+<td><a href="https://www.tutorialexample.com/fix-couldnt-find-ffmpeg-or-avconv-in-pydub-python-tutorial/" target="_blank">Fix Couldn't find ffmpeg or avconv in pydub - Python Tutorial</a></td>
+<td></td>
+<td></td>
+<td>September 18, 2022 7:44 AM</td>
+</tr>
+<tr>
+<td>2022-09-22</td>
+<td><a href="https://fjolt.com/article/python-command-not-found" target="_blank">How to fix 'zsh: command not found: python'</a></td>
+<td></td>
+<td></td>
+<td>September 16, 2022 9:52 AM</td>
+</tr>
+<tr>
+<td>2022-09-22</td>
+<td><a href="https://logfetch.com/js-get-website-user-location-country-city/" target="_blank">How to Get a Website User's Location in JavaScript - LogFetch</a></td>
+<td></td>
+<td></td>
+<td>September 14, 2022 9:18 PM</td>
+</tr>
+<tr>
+<td>2022-09-22</td>
+<td><a href="https://favicon.io/favicon-converter/" target="_blank">Favicon Generator - Image to Favicon - favicon.io</a></td>
+<td></td>
+<td></td>
+<td>September 16, 2022 10:13 AM</td>
+</tr>
+<tr>
+<td>2022-09-17</td>
+<td><a href="https://www.guru99.com/ethernet-cables-types.html" target="_blank">Ethernet Cables Types: Cat 3, 5, 5e, 6, 6a, 7, 8 Wires Explained</a></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>2022-09-17</td>
+<td><a href="https://www.getrevue.co/" target="_blank">Revue - An editorial newsletter tool for writers and publishers.</a></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>2022-09-14</td>
+<td><a href="https://www.youtube.com/channel/UCbfYPyITQ-7l4upoX8nvctg" target="_blank">Two Minute Papers - YouTube</a></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>2022-09-11</td>
+<td><a href="https://logfetch.com/saas-economics/" target="_blank">Introduction to SaaS Economics - LogFetch</a></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>2022-09-11</td>
+<td><a href="https://www.11ty.dev/" target="_blank">Eleventy, a simpler static site generator</a></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>2022-09-08</td>
+<td><a href="https://twitter.com/frederikriedel/status/1315324134327549952?s=12&t=8Cku1sq-9sC9Y0LOTX_VbQ" target="_blank">“one sec” Shortcuts Automation app</a></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>2022-09-08</td>
+<td><a href="https://lingojam.com/FancyTextGenerator" target="_blank">Fancy Text Generator for Linkedin ― LingoJam</a></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>2022-09-08</td>
+<td><a href="https://lingojam.com/FancyTextGenerator" target="_blank">Fancy Text Generator (𝓬𝓸𝓹𝔂 𝖆𝖓𝖉 𝓹𝓪𝓼𝓽𝓮) ― LingoJam</a></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>2022-09-08</td>
+<td><a href="https://www.linkedin-makeover.com/linkedin-text-formatter/" target="_blank">LinkedIn Text Formatter - LinkedIn Makeover: LinkedIn Profile Optimization</a></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>2022-09-08</td>
+<td><a href="https://www.linkedin-makeover.com/tools/symbols/" target="_blank">Format Your LinkedIn Profile with Symbols / Bullets</a></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>2022-09-04</td>
+<td><a href="https://tjukanovt.github.io/notable-people" target="_blank">Notable people</a></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>2022-08-19</td>
+<td><a href="https://github.com/polo2ro/imapbox/blob/master/README.md" target="_blank">imapbox/README.md at master · polo2ro/imapbox</a></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>2022-08-19</td>
+<td><a href="https://github.com/vinta/awesome-python" target="_blank">vinta/awesome-python: A curated list of awesome Python frameworks, libraries, software and resources</a></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>2022-08-19</td>
+<td><a href="https://www.reddit.com/r/airguns/comments/wowxms/best_airguns_brands/" target="_blank">Best airguns brands : airguns</a></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>2022-08-19</td>
+<td><a href="https://github.com/mikeroyal/Apple-Silicon-Guide#Productivity--Workflow-Apps" target="_blank">mikeroyal/Apple-Silicon-Guide: Apple Silicon Guide. Learn all about the M1, M1 Pro, M1 Max, M1 Ultra, and M2 chips.</a></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>2022-08-15</td>
+<td><a href="https://inboxpirates.com/" target="_blank">Email Preview &amp; Email Testing Tool - Inbox Pirates</a></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>2022-08-15</td>
+<td><a href="https://www.mailmodo.com/" target="_blank">Mailmodo - Best Interactive Email Marketing Software - Send 10,000 Free Emails/Month</a></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>2022-08-15</td>
+<td><a href="https://snov.io/email-warm-up" target="_blank">Email Warm-up • Always reach the inbox - Snov.io</a></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>2022-08-12</td>
+<td><a href="https://www.wired.com/story/best-rss-feed-readers/?mbid=social_twitter&utm_brand=wired&utm_campaign=falcon&utm_medium=social&utm_social-type=owned&utm_source=twitter" target="_blank">The 3 Best RSS Feeders (2022): Feedly, Inoreader, and Tips - WIRED</a></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>2022-08-12</td>
+<td><a href="https://www.abstracloud.com/" target="_blank">Abstra Cloud - Free online UIs for your Python scripts</a></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>2022-08-12</td>
+<td><a href="https://www.folk.app/" target="_blank">folk — Next generation CRM for teams</a></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>2022-08-12</td>
+<td><a href="https://www.sellx.com/" target="_blank">SellX: Effortlessly source, manage &amp; scale remote sales talent</a></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>2022-08-12</td>
+<td><a href="https://www.emlen.io/en/home" target="_blank">emlen - Platform for B2B Buyer Enablement (Go Live Plan)</a></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>2022-08-12</td>
+<td><a href="https://skaled.com/" target="_blank">Skaled - Creating the Future of Sales</a></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>2022-08-12</td>
+<td><a href="https://zetup.me/" target="_blank">zetup.me - Build or share your desktop setup</a></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>2022-08-12</td>
+<td><a href="https://chrome.google.com/webstore/detail/tango-screenshots-trainin/lggdbpblkekjjbobadliahffoaobaknh" target="_blank">Tango: screenshots, training, &amp; documentation - Chrome Web Store</a></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>2022-08-12</td>
+<td><a href="https://typedream.com/" target="_blank">Typedream.com: Free No-Code Website Builder - Create a Free Website</a></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>2022-08-12</td>
+<td><a href="https://contra.com/" target="_blank">Contra - Everything you need to launch, build, and grow</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>your Independent career.</a></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>2022-08-12</td>
+<td><a href="https://www.paperless.io/" target="_blank">Paperless - Integrated &amp; Scalable Document Workflows</a></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>2022-08-12</td>
+<td><a href="https://pastepixel.com/" target="_blank">PastePixel - Email tracking made easy</a></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>2022-08-12</td>
+<td><a href="https://denigma.app/" target="_blank">Denigma - AI that reads and explains code in understandable english</a></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>2022-08-12</td>
+<td><a href="https://extract.pics/" target="_blank">Image Extractor - From any public website by using a virtual browser</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></a></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>2022-08-12</td>
+<td><a href="https://joinzoe.com/" target="_blank">ZOE—Understand how food affects your body</a></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>2022-08-12</td>
+<td><a href="https://demodesk.com/" target="_blank">Demodesk - The sales meeting platform</a></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>2022-08-12</td>
+<td><a href="https://pitch.com/" target="_blank">Pitch - Collaborative presentation software for modern teams</a></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>2022-08-12</td>
+<td><a href="https://www.demostack.com/" target="_blank">Demostack - The no-code product demo experience platform</a></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>2022-08-12</td>
+<td><a href="https://you-tldr.com/" target="_blank">you-tldr - Get The tldr Of Any YouTube Video In Seconds</a></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>2022-08-12</td>
+<td><a href="https://copysmith.ai/" target="_blank">Copysmith - The AI Copywriting Software For eCommerce Teams &amp; Agencies</a></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>2022-08-12</td>
+<td><a href="https://mattermost.com/" target="_blank">Mattermost - Open Source Collaboration for Developers</a></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>2022-08-12</td>
+<td><a href="https://nova.app/" target="_blank">Nova Code Editor from Panic</a></td>
+<td>macOS</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>2022-08-12</td>
+<td><a href="https://www.synthesia.io" target="_blank">Synthesia - #1 AI Video Generation Platform</a></td>
+<td>SaaS</td>
+<td>sales</td>
+<td></td>
+</tr>
+<tr>
+<td>2022-08-12</td>
+<td><a href="https://playlumi.com/lumi-keys" target="_blank">LUMI Keys: Portable illuminated keyboard for learning piano - LUMI</a></td>
+<td>Hardware</td>
+<td></td>
+<td>not launched yet. Check back later this year.</td>
+</tr>
+<tr>
+<td>2022-07-22</td>
+<td><a href="https://bryter.com/" target="_blank">BRYTER Service Automation - The No-Code Enterprise Platform</a></td>
+<td>SaaS</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>2022-07-22</td>
+<td><a href="https://evervault.com/" target="_blank">Encryption Infrastructure — Evervault</a></td>
+<td>SaaS</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>2022-07-22</td>
+<td><a href="https://www.manna.aero/" target="_blank">Manna Drone Delivery</a></td>
+<td>SaaS</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>2022-07-22</td>
+<td><a href="https://www.clear.bio/" target="_blank">Clear: Improve your metabolic health with blood glucose monitoring</a></td>
+<td>SaaS</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>2022-07-18</td>
+<td><a href="https://www.qdev.de/?location=mac/exifrenamer" target="_blank">ExifRenamer</a></td>
+<td>macOS</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>2022-07-16</td>
+<td><a href="https://www.tweetic.io" target="_blank">Tweetic - Convert Tweets to Static HTML</a></td>
+<td>SaaS</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>2022-07-06</td>
+<td><a href="https://code.visualstudio.com/docs/python/environments#_more-python-resources" target="_blank">Using Python Environments in Visual Studio Code</a></td>
+<td>SaaS</td>
+<td>VS Code</td>
+<td></td>
+</tr>
+<tr>
+<td>2022-07-06</td>
+<td><a href="https://www.macstories.net/stories/getting-started-with-shortcuts-for-mac-and-the-stream-deck/" target="_blank">Getting Started with Shortcuts for Mac and the Stream Deck - MacStories</a></td>
+<td>SaaS</td>
+<td>stream deck</td>
+<td></td>
+</tr>
+<tr>
+<td>2022-07-06</td>
+<td><a href="https://fig.io/" target="_blank">Fig - Your terminal, reimagined</a></td>
+<td>macOS</td>
+<td>terminal</td>
+<td></td>
+</tr>
+<tr>
+<td>2022-07-06</td>
+<td><a href="https://peerlist.io/" target="_blank">Peerlist - Your most meaningful professional network</a></td>
+<td>SaaS</td>
+<td>to review</td>
+<td></td>
+</tr>
+<tr>
+<td>2022-07-06</td>
+<td><a href="https://www.shell-tips.com/mac/defaults/#gsc.tab=0" target="_blank">How To Change Preferences from the Command Line on macOS?</a></td>
+<td>macOS</td>
+<td>terminal</td>
+<td></td>
+</tr>
+<tr>
+<td>2022-07-06</td>
+<td><a href="https://www.hammerspoon.org/docs/" target="_blank">Hammerspoon Docs</a></td>
+<td>macOS</td>
+<td>automation</td>
+<td></td>
+</tr>
+<tr>
+<td>2022-07-06</td>
+<td><a href="https://www.askdavetaylor.com/can_i_check_my_plist_files_in_mac_os_x_for_problems/" target="_blank">Can I check my "plist" files in Mac OS X for problems? - Ask Dave Taylor</a></td>
+<td>macOS</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>2022-07-06</td>
+<td><a href="https://wilsonmar.github.io/dotfiles/" target="_blank">Dotfiles (MacOS custom configuration specifications) – Index</a></td>
+<td>macOS</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>2022-07-06</td>
+<td><a href="http://windowflow.com/" target="_blank">Optimal Layout</a></td>
+<td>macOS</td>
+<td>window management</td>
+<td></td>
+</tr>
+<tr>
+<td>2022-07-06</td>
+<td><a href="https://github.com/jigish/slate" target="_blank">jigish/slate: A window management application (replacement for Divvy/SizeUp/ShiftIt)</a></td>
+<td>macOS</td>
+<td>window management</td>
+<td>Not maintained since 2013</td>
+</tr>
+<tr>
+<td>2022-07-06</td>
+<td><a href="https://rows.com/community/explore-all" target="_blank">Community - Rows</a></td>
+<td>SaaS</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>2022-07-06</td>
+<td><a href="https://iterm2.com/features.html" target="_blank">Features - iTerm2 - macOS Terminal Replacement</a></td>
+<td>macOS</td>
+<td>terminal</td>
+<td></td>
+</tr>
+<tr>
+<td>2022-07-06</td>
+<td><a href="http://sandgrains.com/" target="_blank">Sandgrains.com - Microscope Photography Art Video Film Services Book Lectures Talks</a></td>
+<td>misc</td>
+<td>wtf</td>
+<td></td>
+</tr>
+<tr>
+<td>2022-07-06</td>
+<td><a href="https://causal.app/" target="_blank">Causal: The Business Planning Platform</a></td>
+<td>SaaS</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>2022-07-06</td>
+<td><a href="https://thume.ca/howto/2012/11/19/using-slate/" target="_blank">Using Slate: A Hacker's Window Manager for Macs - Tristan Hume</a></td>
+<td>macOS</td>
+<td>window management</td>
+<td>old</td>
+</tr>
+<tr>
+<td>2022-07-06</td>
+<td><a href="https://kapeli.com/dash" target="_blank">Dash for macOS - API Documentation Browser, Snippet Manager - Kapeli</a></td>
+<td>SaaS</td>
+<td>programming</td>
+<td></td>
+</tr>
+<tr>
+<td>2022-07-06</td>
+<td><a href="https://www.jiffyreader.com/" target="_blank">Jiffy Reader</a></td>
+<td>SaaS</td>
+<td>reading</td>
+<td></td>
+</tr>
+<tr>
+<td>2022-07-06</td>
+<td><a href="https://bionic-reading.com/" target="_blank">Faster. Better. More focused. Reading.</a></td>
+<td>SaaS</td>
+<td>reading</td>
+<td></td>
+</tr>
+<tr>
+<td>2022-07-06</td>
+<td><a href="https://codekitapp.com/" target="_blank">CodeKit - THE Mac App for Web Developers</a></td>
+<td>SaaS</td>
+<td>programming</td>
+<td></td>
+</tr>
+</tbody>
+</table>
                 </article>
             </aside>
 
@@ -283,11 +848,11 @@ Responsive Table Demo</div>
                 <article class="hentry">
                     <header>
                         <!-- PREVIOUS NOTE TITLE -->
-                        <h1><a href="https://notes.nicolasdeville.com/helpers/clipper" rel="bookmark"
-                            title="My web clipboard">My web clipboard</a></h1>
+                        <h1><a href="https://notes.nicolasdeville.com/helpers/responsive-web-design" rel="bookmark"
+                            title="How to build a responsive website">How to build a responsive website</a></h1>
                         <!-- PREVIOUS NOTE SUMMARY -->
                         <div class="entry-content">
-                            <p>links I bookmarked for reference or later review</p>
+                            
                         </div>
                     </header>
 
@@ -297,20 +862,17 @@ Responsive Table Demo</div>
 
     <p>
         07 Oct 2022 <span class="separator">|</span> in <a class="link_tag" href="https://notes.nicolasdeville.com/helpers/">helpers</a>
- tags: <a class="link_tag" href="https://notes.nicolasdeville.com/tag/clipper.html">clipper</a>
 
         <!-- added 4/7 -->
         <!-- 		<br />
-        <abbr class="modified" title="2022-10-08T14:10:20.314813+02:00">
-                Updated: 08 Oct 2022
+        <abbr class="modified" title="2022-10-07T12:49:58.578799+02:00">
+                Updated: 07 Oct 2022
         </abbr>
  -->
 
     </p>
 
-    Translations:
-        <a href="https://notes.nicolasdeville.com/projects/clipper" hreflang="en">en</a>
-
+    
 
 </footer>                    </div>
                     
