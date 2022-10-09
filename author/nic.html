@@ -43,7 +43,7 @@
             </div>
 
             <div class="above-navbar">
-                <div class="last_updated">09 Oct 2022 | 10:11</div>
+                <div class="last_updated">09 Oct 2022 | 20:49</div>
                 <div>
                     <p class="notes_count">
                         <a href="https://notes.nicolasdeville.com/tags">by tags</a>
@@ -54,7 +54,7 @@
                         <span style="color:#C74350">|</span>
                         <a href="https://notes.nicolasdeville.com/2022/">2022</a>
                         <span style="color:#C74350">|</span>
-                        465 notes
+                        466 notes
                     </p>
                 </div>
             </div>
@@ -83,7 +83,7 @@
 
 <!-- 220911 moved to base.html -->
 <!-- <p class="notes_count">
-    465 notes 
+    466 notes 
     <span style="color:#C74350">|</span> 
     <a href="https://notes.nicolasdeville.com/tags">by tags</a> 
     <span style="color:#C74350">|</span> 
@@ -102,23 +102,24 @@
             <hr/>
 
                 <article class="hentry">
-                    <h1 class="entry-title"><a href="https://notes.nicolasdeville.com/python/library-tqdm">Python library: tqdm</a></h1>
+                    <h1 class="entry-title"><a href="https://notes.nicolasdeville.com/helpers/github">Github</a></h1>
 
                     <!-- added 4/7 -->
                     <div>
                         <p class="header_summary">
-                            <p>make your loops show a smart progress meter</p>
+                            <p>notes on my Github use and learning</p>
                         </p>
                     </div>
 
 <footer class="post-info">
 
     <p>
-        09 Oct 2022 <span class="separator">|</span> in <a class="link_tag" href="https://notes.nicolasdeville.com/python/">python</a>
+        09 Oct 2022 <span class="separator">|</span> in <a class="link_tag" href="https://notes.nicolasdeville.com/helpers/">helpers</a>
+ tags: <a class="link_tag" href="https://notes.nicolasdeville.com/tag/git.html">git</a>
 
         <!-- added 4/7 -->
         <!-- 		<br />
-        <abbr class="modified" title="2022-10-09T10:11:29.374038+02:00">
+        <abbr class="modified" title="2022-10-09T20:49:18.992669+02:00">
                 Updated: 09 Oct 2022
         </abbr>
  -->
@@ -127,41 +128,53 @@
 
     
 
-</footer><div class="toc"><span class="toctitle">Table of Contents</span><ul>
-<li><a href="#getting-started">Getting Started</a></li>
-<li><a href="#example">Example</a></li>
-</ul>
-</div>
-<table>
-<thead>
-<tr>
-<th>Library resources</th>
-<th></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>PyPI</td>
-<td><a href="https://pypi.org/project/tqdm/" target="_blank">https://pypi.org/project/tqdm/</a></td>
-</tr>
-<tr>
-<td>Github</td>
-<td><a href="https://github.com/tqdm/tqdm" target="_blank">https://github.com/tqdm/tqdm</a></td>
-</tr>
-<tr>
-<td>Documentation</td>
-<td><a href="https://tqdm.github.io/" target="_blank">https://tqdm.github.io/</a></td>
-</tr>
-</tbody>
-</table>
-<h1 id="getting-started">Getting Started</h1>
-<div class="highlight"><pre><span></span><code>pip3 install tqdm
+</footer><p><span class="datestamp">03 Jul 2022</span>   </p>
+<p>See also:    </p>
+<p>[<a href="../../learning/git/index.html">Nic Note: Learning Git</a>]</p>
+<h1 id="get-started">Get Started</h1>
+<h2 id="github-hello-world">GitHub "Hello World"</h2>
+<p>Github's own "get started" is a good starting place - though I realised this later in the game.       </p>
+<div class="link_border"><div class="link_logo_box"><img class="link_logo" src="https://logo.clearbit.com/github.com?size=35" alt="logo"/></div><div class="link_content">
+<div class="link_title">Hello World - GitHub Docs</div>
+<div class="link_tagline">github.com</div>
+<div class="link_url"><a href="https://docs.github.com/en/get-started/quickstart/hello-world" target="_blank">https://docs.github.com/en/get-started/quickstart/hello-world</a></div></div></div>
+
+<h1 id="clearing-a-github-repo">Clearing a Github repo</h1>
+<p>without deleting it. Use case: static generator leaves deleted or renamed articles as HTML behind, thus impacting SEO. </p>
+<div class="highlight"><pre><span></span><code>git init
+git add .
+git commit -m <span class="s1">&#39;Initial commit&#39;</span>
 </code></pre></div>
 
-<h1 id="example">Example</h1>
-<p>copying my music library:  </p>
-<div style="padding:23.92% 0 0 0;position:relative;"><iframe src="https://player.vimeo.com/video/758402785?h=dc7be49def&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen style="position:absolute;top:0;left:0;width:100%;height:100%;" title="tqdm-progress-example1-converted"></iframe></div>
-<script src="https://player.vimeo.com/api/player.js"></script>
+<p>if the above alone does not work, add:  </p>
+<div class="highlight"><pre><span></span><code>git remote add origin <span class="o">[</span>repo_address<span class="o">]</span>
+git push --mirror --force
+</code></pre></div>
+
+<p>from: <a href="https://gist.github.com/stephenhardy/5470814" target="_blank">https://gist.github.com/stephenhardy/5470814</a>    </p>
+<h3 id="misc">Misc</h3>
+<p>I have started starring repos I like.  </p>
+<p>See:   </p>
+<div class="link_border"><div class="link_logo_box"><img class="link_logo" src="https://logo.clearbit.com/infracost.io?size=35" alt="logo"/></div><div class="link_content">
+<div class="link_title">GitHub stars matter! Here is why | Infracost</div>
+<div class="link_tagline">infracost.io</div>
+<div class="link_url"><a href="https://www.infracost.io/blog/github-stars-matter-here-is-why" target="_blank">https://www.infracost.io/blog/github-stars-matter-here-is-why</a></div></div></div>
+
+<blockquote>
+<p>There are two main reasons why people star GitHub projects:<br>
+1. Bookmarks<br>
+1. <strong>Show support or appreciation</strong>  </p>
+</blockquote>
+<h1 id="troubleshooting">Troubleshooting</h1>
+<p><span class="datestamp">05 Sep 2022</span>   </p>
+<h2 id="git-push-hangs-after-total-line">git push hangs after Total line</h2>
+<div class="link_border"><div class="link_logo_box"><img class="link_logo" src="https://logo.clearbit.com/stackoverflow.com?size=35" alt="logo"/></div><div class="link_content">
+<div class="link_title">git push hangs after Total line - Stack Overflow</div>
+<div class="link_tagline">stackoverflow.com</div>
+<div class="link_url"><a href="https://stackoverflow.com/questions/15843937/git-push-hangs-after-total-line" target="_blank">https://stackoverflow.com/questions/15843937/git-push-hangs-after-total-line</a></div></div></div>
+
+<p><code>git config --global http.postBuffer 157286400</code> worked for me. <br>
+Also, in the case of pushing my static site with Pelican, deactivating <code>pelican -r</code> (auto-refresh) to avoid any updates while Git is pushing.    </p>
                 </article>
             </aside>
 
@@ -172,6 +185,126 @@
                 <hr>
 
                 <ol id="posts-list" class="hfeed">
+            
+
+
+
+            <li>
+                <article class="hentry">
+                    <header>
+                        <!-- PREVIOUS NOTE TITLE -->
+                        <h1><a href="https://notes.nicolasdeville.com/python/library-requests" rel="bookmark"
+                            title="Python Library: requests">Python Library: requests</a></h1>
+                        <!-- PREVIOUS NOTE SUMMARY -->
+                        <div class="entry-content">
+                            <p>Python HTTP for Humans. Requests is a simple, yet elegant HTTP library.</p>
+                        </div>
+                    </header>
+
+                    <div class="entry-content">
+                        <!-- PREVIOUS NOTE METADATA -->
+<footer class="post-info">
+
+    <p>
+        09 Oct 2022 <span class="separator">|</span> in <a class="link_tag" href="https://notes.nicolasdeville.com/python/">python</a>
+ tags: <a class="link_tag" href="https://notes.nicolasdeville.com/tag/python-libraries.html">python libraries</a>
+
+        <!-- added 4/7 -->
+        <!-- 		<br />
+        <abbr class="modified" title="2022-10-09T20:33:49.783013+02:00">
+                Updated: 09 Oct 2022
+        </abbr>
+ -->
+
+    </p>
+
+    
+
+</footer>                    </div>
+                    
+                </article>
+                <hr/>
+            </li>
+            
+
+
+
+            <li>
+                <article class="hentry">
+                    <header>
+                        <!-- PREVIOUS NOTE TITLE -->
+                        <h1><a href="https://notes.nicolasdeville.com/python/sitemap-generator" rel="bookmark"
+                            title="Generate Sitemap with Python">Generate Sitemap with Python</a></h1>
+                        <!-- PREVIOUS NOTE SUMMARY -->
+                        <div class="entry-content">
+                            <p>simple script to generate my sitemaps</p>
+                        </div>
+                    </header>
+
+                    <div class="entry-content">
+                        <!-- PREVIOUS NOTE METADATA -->
+<footer class="post-info">
+
+    <p>
+        09 Oct 2022 <span class="separator">|</span> in <a class="link_tag" href="https://notes.nicolasdeville.com/python/">python</a>
+ tags: <a class="link_tag" href="https://notes.nicolasdeville.com/tag/scripts.html">scripts</a>
+<a class="link_tag" href="https://notes.nicolasdeville.com/tag/jinja.html">jinja</a>
+
+        <!-- added 4/7 -->
+        <!-- 		<br />
+        <abbr class="modified" title="2022-10-09T10:22:52.842943+02:00">
+                Updated: 09 Oct 2022
+        </abbr>
+ -->
+
+    </p>
+
+    
+
+</footer>                    </div>
+                    
+                </article>
+                <hr/>
+            </li>
+            
+
+
+
+            <li>
+                <article class="hentry">
+                    <header>
+                        <!-- PREVIOUS NOTE TITLE -->
+                        <h1><a href="https://notes.nicolasdeville.com/python/library-tqdm" rel="bookmark"
+                            title="Python library: tqdm">Python library: tqdm</a></h1>
+                        <!-- PREVIOUS NOTE SUMMARY -->
+                        <div class="entry-content">
+                            <p>make your loops show a smart progress meter</p>
+                        </div>
+                    </header>
+
+                    <div class="entry-content">
+                        <!-- PREVIOUS NOTE METADATA -->
+<footer class="post-info">
+
+    <p>
+        09 Oct 2022 <span class="separator">|</span> in <a class="link_tag" href="https://notes.nicolasdeville.com/python/">python</a>
+
+        <!-- added 4/7 -->
+        <!-- 		<br />
+        <abbr class="modified" title="2022-10-09T10:18:59.025540+02:00">
+                Updated: 09 Oct 2022
+        </abbr>
+ -->
+
+    </p>
+
+    
+
+</footer>                    </div>
+                    
+                </article>
+                <hr/>
+            </li>
             
 
 
@@ -197,7 +330,7 @@
 
         <!-- added 4/7 -->
         <!-- 		<br />
-        <abbr class="modified" title="2022-10-09T07:47:23.461867+02:00">
+        <abbr class="modified" title="2022-10-09T10:17:48.992930+02:00">
                 Updated: 09 Oct 2022
         </abbr>
  -->
@@ -236,7 +369,7 @@
 
         <!-- added 4/7 -->
         <!-- 		<br />
-        <abbr class="modified" title="2022-10-09T10:11:41.580338+02:00">
+        <abbr class="modified" title="2022-10-09T20:49:35.639339+02:00">
                 Updated: 09 Oct 2022
         </abbr>
  -->
@@ -244,48 +377,6 @@
     </p>
 
     
-
-</footer>                    </div>
-                    
-                </article>
-                <hr/>
-            </li>
-            
-
-
-
-            <li>
-                <article class="hentry">
-                    <header>
-                        <!-- PREVIOUS NOTE TITLE -->
-                        <h1><a href="https://notes.nicolasdeville.com/python/books" rel="bookmark"
-                            title="My Python Books Library">My Python Books Library</a></h1>
-                        <!-- PREVIOUS NOTE SUMMARY -->
-                        <div class="entry-content">
-                            <p>keeping track of Python books read and on my radar</p>
-                        </div>
-                    </header>
-
-                    <div class="entry-content">
-                        <!-- PREVIOUS NOTE METADATA -->
-<footer class="post-info">
-
-    <p>
-        08 Oct 2022 <span class="separator">|</span> in <a class="link_tag" href="https://notes.nicolasdeville.com/python/">python</a>
- tags: <a class="link_tag" href="https://notes.nicolasdeville.com/tag/books.html">books</a>
-
-        <!-- added 4/7 -->
-        <!-- 		<br />
-        <abbr class="modified" title="2022-10-09T10:11:45.723984+02:00">
-                Updated: 09 Oct 2022
-        </abbr>
- -->
-
-    </p>
-
-    Translations:
-        <a href="https://notes.nicolasdeville.com/b2b-sales/books" hreflang="en">en</a>
-
 
 </footer>                    </div>
                     
@@ -318,7 +409,7 @@
 
         <!-- added 4/7 -->
         <!-- 		<br />
-        <abbr class="modified" title="2022-10-09T10:11:45.723646+02:00">
+        <abbr class="modified" title="2022-10-09T20:49:40.101916+02:00">
                 Updated: 09 Oct 2022
         </abbr>
  -->
@@ -327,6 +418,48 @@
 
     Translations:
         <a href="https://notes.nicolasdeville.com/python/books" hreflang="en">en</a>
+
+
+</footer>                    </div>
+                    
+                </article>
+                <hr/>
+            </li>
+            
+
+
+
+            <li>
+                <article class="hentry">
+                    <header>
+                        <!-- PREVIOUS NOTE TITLE -->
+                        <h1><a href="https://notes.nicolasdeville.com/python/books" rel="bookmark"
+                            title="My Python Books Library">My Python Books Library</a></h1>
+                        <!-- PREVIOUS NOTE SUMMARY -->
+                        <div class="entry-content">
+                            <p>keeping track of Python books read and on my radar</p>
+                        </div>
+                    </header>
+
+                    <div class="entry-content">
+                        <!-- PREVIOUS NOTE METADATA -->
+<footer class="post-info">
+
+    <p>
+        08 Oct 2022 <span class="separator">|</span> in <a class="link_tag" href="https://notes.nicolasdeville.com/python/">python</a>
+ tags: <a class="link_tag" href="https://notes.nicolasdeville.com/tag/books.html">books</a>
+
+        <!-- added 4/7 -->
+        <!-- 		<br />
+        <abbr class="modified" title="2022-10-09T20:49:40.102948+02:00">
+                Updated: 09 Oct 2022
+        </abbr>
+ -->
+
+    </p>
+
+    Translations:
+        <a href="https://notes.nicolasdeville.com/b2b-sales/books" hreflang="en">en</a>
 
 
 </footer>                    </div>
@@ -360,7 +493,7 @@
 
         <!-- added 4/7 -->
         <!-- 		<br />
-        <abbr class="modified" title="2022-10-09T10:11:46.536783+02:00">
+        <abbr class="modified" title="2022-10-09T20:49:41.134978+02:00">
                 Updated: 09 Oct 2022
         </abbr>
  -->
@@ -402,7 +535,7 @@
 
         <!-- added 4/7 -->
         <!-- 		<br />
-        <abbr class="modified" title="2022-10-09T10:11:43.618930+02:00">
+        <abbr class="modified" title="2022-10-09T20:49:37.922655+02:00">
                 Updated: 09 Oct 2022
         </abbr>
  -->
@@ -444,7 +577,7 @@
 
         <!-- added 4/7 -->
         <!-- 		<br />
-        <abbr class="modified" title="2022-10-09T10:11:45.719682+02:00">
+        <abbr class="modified" title="2022-10-09T20:49:40.097539+02:00">
                 Updated: 09 Oct 2022
         </abbr>
  -->
@@ -486,7 +619,7 @@
 
         <!-- added 4/7 -->
         <!-- 		<br />
-        <abbr class="modified" title="2022-10-09T10:11:43.619703+02:00">
+        <abbr class="modified" title="2022-10-09T20:49:37.923101+02:00">
                 Updated: 09 Oct 2022
         </abbr>
  -->
@@ -803,8 +936,8 @@
 
         <!-- added 4/7 -->
         <!-- 		<br />
-        <abbr class="modified" title="2022-10-07T23:33:46.172092+02:00">
-                Updated: 07 Oct 2022
+        <abbr class="modified" title="2022-10-09T10:19:59.879565+02:00">
+                Updated: 09 Oct 2022
         </abbr>
  -->
 
@@ -3976,46 +4109,6 @@
                 <article class="hentry">
                     <header>
                         <!-- PREVIOUS NOTE TITLE -->
-                        <h1><a href="https://notes.nicolasdeville.com/python/library-requests" rel="bookmark"
-                            title="Python Library: requests">Python Library: requests</a></h1>
-                        <!-- PREVIOUS NOTE SUMMARY -->
-                        <div class="entry-content">
-                            <p>Python HTTP for Humans. Requests is a simple, yet elegant HTTP library.</p>
-                        </div>
-                    </header>
-
-                    <div class="entry-content">
-                        <!-- PREVIOUS NOTE METADATA -->
-<footer class="post-info">
-
-    <p>
-        25 Sep 2022 <span class="separator">|</span> in <a class="link_tag" href="https://notes.nicolasdeville.com/python/">python</a>
- tags: <a class="link_tag" href="https://notes.nicolasdeville.com/tag/python-libraries.html">python libraries</a>
-
-        <!-- added 4/7 -->
-        <!-- 		<br />
-        <abbr class="modified" title="2022-09-25T08:26:20.564925+02:00">
-                Updated: 25 Sep 2022
-        </abbr>
- -->
-
-    </p>
-
-    
-
-</footer>                    </div>
-                    
-                </article>
-                <hr/>
-            </li>
-            
-
-
-
-            <li>
-                <article class="hentry">
-                    <header>
-                        <!-- PREVIOUS NOTE TITLE -->
                         <h1><a href="https://notes.nicolasdeville.com/python/library-pynput" rel="bookmark"
                             title="Python Library: pynput">Python Library: pynput</a></h1>
                         <!-- PREVIOUS NOTE SUMMARY -->
@@ -4036,86 +4129,6 @@
         <!-- added 4/7 -->
         <!-- 		<br />
         <abbr class="modified" title="2022-09-25T08:26:20.545376+02:00">
-                Updated: 25 Sep 2022
-        </abbr>
- -->
-
-    </p>
-
-    
-
-</footer>                    </div>
-                    
-                </article>
-                <hr/>
-            </li>
-            
-
-
-
-            <li>
-                <article class="hentry">
-                    <header>
-                        <!-- PREVIOUS NOTE TITLE -->
-                        <h1><a href="https://notes.nicolasdeville.com/python/library-send2trash" rel="bookmark"
-                            title="Python Library: Send2Trash">Python Library: Send2Trash</a></h1>
-                        <!-- PREVIOUS NOTE SUMMARY -->
-                        <div class="entry-content">
-                            <p>small package that sends files to the Trash (or Recycle Bin) natively and on all platforms</p>
-                        </div>
-                    </header>
-
-                    <div class="entry-content">
-                        <!-- PREVIOUS NOTE METADATA -->
-<footer class="post-info">
-
-    <p>
-        25 Sep 2022 <span class="separator">|</span> in <a class="link_tag" href="https://notes.nicolasdeville.com/python/">python</a>
- tags: <a class="link_tag" href="https://notes.nicolasdeville.com/tag/python-libraries.html">python libraries</a>
-
-        <!-- added 4/7 -->
-        <!-- 		<br />
-        <abbr class="modified" title="2022-09-25T08:26:20.543957+02:00">
-                Updated: 25 Sep 2022
-        </abbr>
- -->
-
-    </p>
-
-    
-
-</footer>                    </div>
-                    
-                </article>
-                <hr/>
-            </li>
-            
-
-
-
-            <li>
-                <article class="hentry">
-                    <header>
-                        <!-- PREVIOUS NOTE TITLE -->
-                        <h1><a href="https://notes.nicolasdeville.com/python/library-imap-tools" rel="bookmark"
-                            title="Python Library: imap-tools">Python Library: imap-tools</a></h1>
-                        <!-- PREVIOUS NOTE SUMMARY -->
-                        <div class="entry-content">
-                            <p>High level lib for work with email by IMAP</p>
-                        </div>
-                    </header>
-
-                    <div class="entry-content">
-                        <!-- PREVIOUS NOTE METADATA -->
-<footer class="post-info">
-
-    <p>
-        25 Sep 2022 <span class="separator">|</span> in <a class="link_tag" href="https://notes.nicolasdeville.com/python/">python</a>
- tags: <a class="link_tag" href="https://notes.nicolasdeville.com/tag/python-libraries.html">python libraries</a>
-
-        <!-- added 4/7 -->
-        <!-- 		<br />
-        <abbr class="modified" title="2022-09-25T08:26:20.543923+02:00">
                 Updated: 25 Sep 2022
         </abbr>
  -->

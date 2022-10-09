@@ -146,12 +146,6 @@
     </url>
     
     <url>
-        <loc>https://notes.nicolasdeville.com/b2b-sales/price-add-on-for-custom-t&cs</loc>
-        <lastmod>2022-10-09</lastmod>
-        <priority>0.8</priority>        
-    </url>
-    
-    <url>
         <loc>https://notes.nicolasdeville.com/b2b-sales/going-over-your-boss-head-just-be-careful</loc>
         <lastmod>2022-10-09</lastmod>
         <priority>0.8</priority>        
@@ -327,6 +321,12 @@
     
     <url>
         <loc>https://notes.nicolasdeville.com/b2b-sales/producing-videos</loc>
+        <lastmod>2022-10-09</lastmod>
+        <priority>0.8</priority>        
+    </url>
+    
+    <url>
+        <loc>https://notes.nicolasdeville.com/b2b-sales/price-add-on-for-custom-terms</loc>
         <lastmod>2022-10-09</lastmod>
         <priority>0.8</priority>        
     </url>
@@ -2763,6 +2763,12 @@
     
     <url>
         <loc>https://notes.nicolasdeville.com/helpers/terminal-commands</loc>
+        <lastmod>2022-10-09</lastmod>
+        <priority>0.8</priority>        
+    </url>
+    
+    <url>
+        <loc>https://notes.nicolasdeville.com/helpers/google</loc>
         <lastmod>2022-10-09</lastmod>
         <priority>0.8</priority>        
     </url>

@@ -44,7 +44,7 @@
             </div>
 
             <div class="above-navbar">
-                <div class="last_updated">09 Oct 2022 | 10:11</div>
+                <div class="last_updated">09 Oct 2022 | 20:49</div>
                 <div>
                     <p class="notes_count">
                         <a href="https://notes.nicolasdeville.com/tags">by tags</a>
@@ -55,7 +55,7 @@
                         <span style="color:#C74350">|</span>
                         <a href="https://notes.nicolasdeville.com/2022/">2022</a>
                         <span style="color:#C74350">|</span>
-                        465 notes
+                        466 notes
                     </p>
                 </div>
             </div>
@@ -105,7 +105,7 @@
 
         <!-- added 4/7 -->
         <!-- 		<br />
-        <abbr class="modified" title="2022-10-09T10:11:29.374038+02:00">
+        <abbr class="modified" title="2022-10-09T10:18:59.025540+02:00">
                 Updated: 09 Oct 2022
         </abbr>
  -->
@@ -117,6 +117,7 @@
 </footer>            <main> <!-- for indexing by Stork -->
                 <div class="toc"><span class="toctitle">Table of Contents</span><ul>
 <li><a href="#getting-started">Getting Started</a></li>
+<li><a href="#usage">Usage</a></li>
 <li><a href="#example">Example</a></li>
 </ul>
 </div>
@@ -146,6 +147,13 @@
 <div class="highlight"><pre><span></span><code>pip3 install tqdm
 </code></pre></div>
 
+<h1 id="usage">Usage</h1>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">tqdm</span> <span class="kn">import</span> <span class="n">tqdm</span>
+
+<span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">tqdm</span><span class="p">(</span><span class="n">data</span><span class="p">):</span>
+</code></pre></div>
+
+<p>not only does it show a progress bar, but it also handles count (done/to do) and estimated time to completion!    </p>
 <h1 id="example">Example</h1>
 <p>copying my music library:  </p>
 <div style="padding:23.92% 0 0 0;position:relative;"><iframe src="https://player.vimeo.com/video/758402785?h=dc7be49def&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen style="position:absolute;top:0;left:0;width:100%;height:100%;" title="tqdm-progress-example1-converted"></iframe></div>

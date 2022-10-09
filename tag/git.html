@@ -43,7 +43,7 @@
             </div>
 
             <div class="above-navbar">
-                <div class="last_updated">09 Oct 2022 | 10:11</div>
+                <div class="last_updated">09 Oct 2022 | 20:49</div>
                 <div>
                     <p class="notes_count">
                         <a href="https://notes.nicolasdeville.com/tags">by tags</a>
@@ -114,13 +114,13 @@
 <footer class="post-info">
 
     <p>
-        19 Sep 2022 <span class="separator">|</span> in <a class="link_tag" href="https://notes.nicolasdeville.com/helpers/">helpers</a>
+        09 Oct 2022 <span class="separator">|</span> in <a class="link_tag" href="https://notes.nicolasdeville.com/helpers/">helpers</a>
  tags: <a class="link_tag" href="https://notes.nicolasdeville.com/tag/git.html">git</a>
 
         <!-- added 4/7 -->
         <!-- 		<br />
-        <abbr class="modified" title="2022-09-19T11:18:20.743306+02:00">
-                Updated: 19 Sep 2022
+        <abbr class="modified" title="2022-10-09T20:49:18.992669+02:00">
+                Updated: 09 Oct 2022
         </abbr>
  -->
 
@@ -139,6 +139,19 @@
 <div class="link_tagline">github.com</div>
 <div class="link_url"><a href="https://docs.github.com/en/get-started/quickstart/hello-world" target="_blank">https://docs.github.com/en/get-started/quickstart/hello-world</a></div></div></div>
 
+<h1 id="clearing-a-github-repo">Clearing a Github repo</h1>
+<p>without deleting it. Use case: static generator leaves deleted or renamed articles as HTML behind, thus impacting SEO. </p>
+<div class="highlight"><pre><span></span><code>git init
+git add .
+git commit -m <span class="s1">&#39;Initial commit&#39;</span>
+</code></pre></div>
+
+<p>if the above alone does not work, add:  </p>
+<div class="highlight"><pre><span></span><code>git remote add origin <span class="o">[</span>repo_address<span class="o">]</span>
+git push --mirror --force
+</code></pre></div>
+
+<p>from: <a href="https://gist.github.com/stephenhardy/5470814" target="_blank">https://gist.github.com/stephenhardy/5470814</a>    </p>
 <h3 id="misc">Misc</h3>
 <p>I have started starring repos I like.  </p>
 <p>See:   </p>

@@ -13,6 +13,21 @@ url = "/why/"
 title = "Why this site?"
 
 [[input.files]]
+path = "helpers/github/index.html"
+url = "/helpers/github"
+title = "Github"
+
+[[input.files]]
+path = "python/library-requests/index.html"
+url = "/python/library-requests"
+title = "Python Library: requests"
+
+[[input.files]]
+path = "python/sitemap-generator/index.html"
+url = "/python/sitemap-generator"
+title = "Generate Sitemap with Python"
+
+[[input.files]]
 path = "python/library-tqdm/index.html"
 url = "/python/library-tqdm"
 title = "Python library: tqdm"
@@ -28,14 +43,14 @@ url = "/movies/1000"
 title = "My Top 1,000 Movies"
 
 [[input.files]]
-path = "python/books/index.html"
-url = "/python/books"
-title = "My Python Books Library"
-
-[[input.files]]
 path = "b2b-sales/books/index.html"
 url = "/b2b-sales/books"
 title = "My B2B Books Library"
+
+[[input.files]]
+path = "python/books/index.html"
+url = "/python/books"
+title = "My Python Books Library"
 
 [[input.files]]
 path = "helpers/clipper/index.html"
@@ -493,11 +508,6 @@ url = "/python/library-pydub"
 title = "Python Library: pydub"
 
 [[input.files]]
-path = "python/library-requests/index.html"
-url = "/python/library-requests"
-title = "Python Library: requests"
-
-[[input.files]]
 path = "python/library-pynput/index.html"
 url = "/python/library-pynput"
 title = "Python Library: pynput"
@@ -901,11 +911,6 @@ title = "Copy file name to clipboard upon saving file in macOS"
 path = "helpers/html-metatags/index.html"
 url = "/helpers/html-metatags"
 title = "HTML Meta tags for SEO"
-
-[[input.files]]
-path = "helpers/github/index.html"
-url = "/helpers/github"
-title = "Github"
 
 [[input.files]]
 path = "helpers/ffmpeg-ffprobe/index.html"
@@ -1331,11 +1336,6 @@ title = "Learning Javascript"
 path = "helpers/regex/index.html"
 url = "/helpers/regex"
 title = "Regex"
-
-[[input.files]]
-path = "python/generate-sitemap-with-python/index.html"
-url = "/python/generate-sitemap-with-python"
-title = "Generate Sitemap with Python"
 
 [[input.files]]
 path = "python/importing-ghost-blog-posts-to-pelican-with-python/index.html"
@@ -1843,8 +1843,8 @@ url = "/b2b-sales/playing-the-long-game"
 title = "Playing the long game"
 
 [[input.files]]
-path = "b2b-sales/price-add-on-for-custom-t&cs/index.html"
-url = "/b2b-sales/price-add-on-for-custom-t&cs"
+path = "b2b-sales/price-add-on-for-custom-terms/index.html"
+url = "/b2b-sales/price-add-on-for-custom-terms"
 title = "Price add-on for custom T&Cs"
 
 [[input.files]]
@@ -2093,6 +2093,11 @@ url = "/books/tech-powered-sales"
 title = "Tech-Powered Sales, by Justin Michael & Tony Hughes"
 
 [[input.files]]
+path = "helpers/google/index.html"
+url = "/helpers/google"
+title = "Google services"
+
+[[input.files]]
 path = "interests/speedcubing/index.html"
 url = "/interests/speedcubing"
 title = "Solving the Rubik's cube"
@@ -2338,14 +2343,14 @@ url = "/projects/nicai"
 title = "nicAI | my personal AI assistant"
 
 [[input.files]]
-path = "b2b-sales/books/index.html"
-url = "/b2b-sales/books"
-title = "My B2B Books Library"
-
-[[input.files]]
 path = "python/books/index.html"
 url = "/python/books"
 title = "My Python Books Library"
+
+[[input.files]]
+path = "b2b-sales/books/index.html"
+url = "/b2b-sales/books"
+title = "My B2B Books Library"
 
 [[input.files]]
 path = "projects/clipper/index.html"
@@ -2373,6 +2378,11 @@ url = "/helpers/clipper"
 title = "My web clipboard"
 
 [[input.files]]
+path = "random/ai/index.html"
+url = "/random/ai"
+title = "AI"
+
+[[input.files]]
 path = "learning/ai/index.html"
 url = "/learning/ai"
 title = "Learning AI"
@@ -2385,11 +2395,6 @@ title = "AI"
 [[input.files]]
 path = "interests/ai/index.html"
 url = "/interests/ai"
-title = "AI"
-
-[[input.files]]
-path = "random/ai/index.html"
-url = "/random/ai"
 title = "AI"
 
 [[input.files]]
