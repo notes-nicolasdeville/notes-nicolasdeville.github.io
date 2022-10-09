@@ -43,14 +43,14 @@ url = "/movies/1000"
 title = "My Top 1,000 Movies"
 
 [[input.files]]
-path = "b2b-sales/books/index.html"
-url = "/b2b-sales/books"
-title = "My B2B Books Library"
-
-[[input.files]]
 path = "python/books/index.html"
 url = "/python/books"
 title = "My Python Books Library"
+
+[[input.files]]
+path = "b2b-sales/books/index.html"
+url = "/b2b-sales/books"
+title = "My B2B Books Library"
 
 [[input.files]]
 path = "helpers/clipper/index.html"
@@ -1863,8 +1863,8 @@ url = "/b2b-sales/putting-the-business-first"
 title = "Putting the business first"
 
 [[input.files]]
-path = "b2b-sales/putting-yourself-in-the-other-ones-shoes-your-shoe-size-does-not-matter/index.html"
-url = "/b2b-sales/putting-yourself-in-the-other-ones-shoes-your-shoe-size-does-not-matter"
+path = "b2b-sales/putting-yourself-in-the-other-ones-shoes/index.html"
+url = "/b2b-sales/putting-yourself-in-the-other-ones-shoes"
 title = "Putting yourself in the other one's shoes (your shoe size does not matter)"
 
 [[input.files]]
@@ -2343,14 +2343,14 @@ url = "/projects/nicai"
 title = "nicAI | my personal AI assistant"
 
 [[input.files]]
-path = "python/books/index.html"
-url = "/python/books"
-title = "My Python Books Library"
-
-[[input.files]]
 path = "b2b-sales/books/index.html"
 url = "/b2b-sales/books"
 title = "My B2B Books Library"
+
+[[input.files]]
+path = "python/books/index.html"
+url = "/python/books"
+title = "My Python Books Library"
 
 [[input.files]]
 path = "projects/clipper/index.html"
@@ -2388,6 +2388,11 @@ url = "/learning/ai"
 title = "Learning AI"
 
 [[input.files]]
+path = "interests/ai/index.html"
+url = "/interests/ai"
+title = "AI"
+
+[[input.files]]
 path = "random/ai/index.html"
 url = "/random/ai"
 title = "AI"
@@ -2401,11 +2406,6 @@ title = "AI"
 path = "learning/ai/index.html"
 url = "/learning/ai"
 title = "Learning AI"
-
-[[input.files]]
-path = "interests/ai/index.html"
-url = "/interests/ai"
-title = "AI"
 
 [[input.files]]
 path = "home-office/deep-work/index.html"
