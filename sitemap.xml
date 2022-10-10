@@ -296,12 +296,6 @@
     </url>
     
     <url>
-        <loc>https://notes.nicolasdeville.com/b2b-sales/being-bad-at-something-is-the-first-step-to-being-good-at-something</loc>
-        <lastmod>2022-10-10</lastmod>
-        <priority>0.8</priority>        
-    </url>
-    
-    <url>
         <loc>https://notes.nicolasdeville.com/b2b-sales/every-situation-has-something-positive-to-it</loc>
         <lastmod>2022-10-10</lastmod>
         <priority>0.8</priority>        
@@ -447,6 +441,12 @@
     
     <url>
         <loc>https://notes.nicolasdeville.com/b2b-sales/acting</loc>
+        <lastmod>2022-10-10</lastmod>
+        <priority>0.8</priority>        
+    </url>
+    
+    <url>
+        <loc>https://notes.nicolasdeville.com/b2b-sales/being-bad-at-something</loc>
         <lastmod>2022-10-10</lastmod>
         <priority>0.8</priority>        
     </url>
@@ -2223,6 +2223,12 @@
     
     <url>
         <loc>https://notes.nicolasdeville.com/leadership/being-on-the-front-line</loc>
+        <lastmod>2022-10-10</lastmod>
+        <priority>0.8</priority>        
+    </url>
+    
+    <url>
+        <loc>https://notes.nicolasdeville.com/leadership/okr</loc>
         <lastmod>2022-10-10</lastmod>
         <priority>0.8</priority>        
     </url>

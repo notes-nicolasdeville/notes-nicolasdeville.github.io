@@ -18,9 +18,19 @@ url = "/ai/generative-ai"
 title = "Generative AI"
 
 [[input.files]]
+path = "b2b-sales/being-bad-at-something/index.html"
+url = "/b2b-sales/being-bad-at-something"
+title = "Being bad at something"
+
+[[input.files]]
 path = "ai/dall-e/index.html"
 url = "/ai/dall-e"
 title = "Dall-E"
+
+[[input.files]]
+path = "leadership/okr/index.html"
+url = "/leadership/okr"
+title = "OKR"
 
 [[input.files]]
 path = "helpers/search-engines/index.html"
@@ -58,14 +68,14 @@ url = "/movies/1000"
 title = "My Top 1,000 Movies"
 
 [[input.files]]
-path = "b2b-sales/books/index.html"
-url = "/b2b-sales/books"
-title = "My B2B Books Library"
-
-[[input.files]]
 path = "python/books/index.html"
 url = "/python/books"
 title = "My Python Books Library"
+
+[[input.files]]
+path = "b2b-sales/books/index.html"
+url = "/b2b-sales/books"
+title = "My B2B Books Library"
 
 [[input.files]]
 path = "helpers/clipper/index.html"
@@ -1528,11 +1538,6 @@ url = "/b2b-sales/being-a-whalehunter"
 title = "Being a whalehunter"
 
 [[input.files]]
-path = "b2b-sales/being-bad-at-something-is-the-first-step-to-being-good-at-something/index.html"
-url = "/b2b-sales/being-bad-at-something-is-the-first-step-to-being-good-at-something"
-title = "Being bad at something is the first step to being good at something"
-
-[[input.files]]
 path = "b2b-sales/being-different/index.html"
 url = "/b2b-sales/being-different"
 title = "Being different"
@@ -2348,14 +2353,14 @@ url = "/projects/nicai"
 title = "nicAI | my personal AI assistant"
 
 [[input.files]]
-path = "python/books/index.html"
-url = "/python/books"
-title = "My Python Books Library"
-
-[[input.files]]
 path = "b2b-sales/books/index.html"
 url = "/b2b-sales/books"
 title = "My B2B Books Library"
+
+[[input.files]]
+path = "python/books/index.html"
+url = "/python/books"
+title = "My Python Books Library"
 
 [[input.files]]
 path = "projects/clipper/index.html"
@@ -2393,13 +2398,13 @@ url = "/learning/ai"
 title = "Learning AI"
 
 [[input.files]]
-path = "interests/ai/index.html"
-url = "/interests/ai"
+path = "random/ai/index.html"
+url = "/random/ai"
 title = "AI"
 
 [[input.files]]
-path = "random/ai/index.html"
-url = "/random/ai"
+path = "interests/ai/index.html"
+url = "/interests/ai"
 title = "AI"
 
 [[input.files]]
