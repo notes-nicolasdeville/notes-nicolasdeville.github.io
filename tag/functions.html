@@ -18,7 +18,8 @@
     <link rel="fluid-icon" href="https://notes.nicolasdeville.com/favicon.png" title="Nic's notes">
 
     <!-- CSS -->
-    <link rel="stylesheet" href="https://notes.nicolasdeville.com/theme/css/main.css" />
+    <!-- <link rel="stylesheet" href="https://notes.nicolasdeville.com/theme/css/main.css" /> -->
+    <link rel="stylesheet" href="theme/css/main.css" />
 
 
 
@@ -43,7 +44,7 @@
             </div>
 
             <div class="above-navbar">
-                <div class="last_updated">09 Oct 2022 | 20:53</div>
+                <div class="last_updated">10 Oct 2022 | 10:21</div>
                 <div>
                     <p class="notes_count">
                         <a href="https://notes.nicolasdeville.com/tags">by tags</a>
@@ -79,38 +80,24 @@
             </ul></nav>
         </header>
 
+        <!-- index.html injection -->
 
 
-<!-- 220911 moved to base.html -->
-<!-- <p class="notes_count">
-    2 notes 
-    <span style="color:#C74350">|</span> 
-    <a href="https://notes.nicolasdeville.com/tags">by tags</a> 
-    <span style="color:#C74350">|</span> 
-    <a href="https://notes.nicolasdeville.com/2022/">2022</a> 
-    <span style="color:#C74350">|</span> 
-    <a href="https://notes.nicolasdeville.com/2021/">2021</a> 
-    <span style="color:#C74350">|</span> 
-    <a href="https://notes.nicolasdeville.com/2020/">2020</a>
-</p> -->
+        <section id="content" class="body">
 
+        <ol id="posts-list" class="hfeed">
 
-
-            <aside id="featured" class="body">
-            <!-- LATEST NOTE -->
-            <p class="notes-section">last (updated) note</p>
-            <hr/>
-
-                <article class="hentry">
-                    <h1 class="entry-title"><a href="https://notes.nicolasdeville.com/python/function-separator">A short function to generate print separators</a></h1>
-
-                    <!-- added 4/7 -->
-                    <div>
-                        <p class="header_summary">
-                            
-                        </p>
+        <li>
+            <article class="hentry">
+                <header>
+                    <h1><a href="https://notes.nicolasdeville.com/python/function-separator" rel="bookmark"
+                        title="A short function to generate print separators">A short function to generate print separators</a></h1>
+                    <div class="entry-content">
+                        
                     </div>
+                </header>
 
+                <div class="entry-content">
 <footer class="post-info">
 
     <p>
@@ -129,86 +116,29 @@
 
     
 
-</footer><p>I was tired of typing symbols in my scripts to act as separators in my prints.  </p>
-<p>Now using:  </p>
-<div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">separator</span><span class="p">(</span><span class="n">count</span><span class="o">=</span><span class="mi">50</span><span class="p">,</span> <span class="n">lines</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">symbol</span><span class="o">=</span><span class="s1">&#39;=&#39;</span><span class="p">):</span>
-    <span class="n">separator</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">symbol</span> <span class="o">*</span> <span class="n">count</span><span class="si">}</span><span class="s2">&quot;</span> <span class="o">+</span> <span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span>
-    <span class="n">separator</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n</span><span class="si">{</span><span class="n">separator</span> <span class="o">*</span> <span class="n">lines</span><span class="si">}</span><span class="s2">&quot;</span>
-    <span class="nb">print</span><span class="p">(</span><span class="n">separator</span><span class="p">)</span>
-</code></pre></div>
-
-<p>eg.  </p>
-<div class="highlight"><pre><span></span><code><span class="n">separator</span><span class="p">()</span>
-</code></pre></div>
-
-<p>prints:   </p>
-<div class="highlight"><pre><span></span><code><span class="o">==================================================</span>
-<span class="o">==================================================</span>
-<span class="o">==================================================</span>
-</code></pre></div>
-
-<div class="highlight"><pre><span></span><code><span class="n">separator</span><span class="p">(</span><span class="mi">30</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span>
-</code></pre></div>
-
-<p>prints:   </p>
-<div class="highlight"><pre><span></span><code><span class="o">==============================</span>
-<span class="o">==============================</span>
-</code></pre></div>
-
-<div class="highlight"><pre><span></span><code><span class="n">separator</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>
-</code></pre></div>
-
-<p>prints:   </p>
-<div class="highlight"><pre><span></span><code><span class="o">==========</span>
-</code></pre></div>
-
-<div class="highlight"><pre><span></span><code><span class="n">separator</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="s1">&#39;|&#39;</span><span class="p">)</span>
-</code></pre></div>
-
-<p>prints:   </p>
-<div class="highlight"><pre><span></span><code><span class="o">||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||</span>
-</code></pre></div>
-
-<div class="highlight"><pre><span></span><code><span class="n">separator</span><span class="p">(</span><span class="mi">50</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="s1">&#39;?&#39;</span><span class="p">)</span>
-</code></pre></div>
-
-<p>prints:   </p>
-<div class="highlight"><pre><span></span><code>??????????????????????????????????????????????????
-??????????????????????????????????????????????????
-??????????????????????????????????????????????????
-??????????????????????????????????????????????????
-??????????????????????????????????????????????????
-</code></pre></div>
-
-<p>Might add to my boilerplate.   </p>
-                </article>
-            </aside>
-
-                <section id="content" class="body">
-
-                <!-- PREVIOUS NOTES -->
-				<p class="notes-section">previous notes</p>
-                <hr>
-
-                <ol id="posts-list" class="hfeed">
+</footer>                </div>
+                
+            </article>
+            <!-- <hr/> black separation bar between articles -->
+        </li>
+        
             
 
+        <section id="content" class="body">
 
+        <ol id="posts-list" class="hfeed">
 
-            <li>
-                <article class="hentry">
-                    <header>
-                        <!-- PREVIOUS NOTE TITLE -->
-                        <h1><a href="https://notes.nicolasdeville.com/python/fetch-metadata-from-url" rel="bookmark"
-                            title="Fetch website metadata from URL">Fetch website metadata from URL</a></h1>
-                        <!-- PREVIOUS NOTE SUMMARY -->
-                        <div class="entry-content">
-                            
-                        </div>
-                    </header>
-
+        <li>
+            <article class="hentry">
+                <header>
+                    <h1><a href="https://notes.nicolasdeville.com/python/fetch-metadata-from-url" rel="bookmark"
+                        title="Fetch website metadata from URL">Fetch website metadata from URL</a></h1>
                     <div class="entry-content">
-                        <!-- PREVIOUS NOTE METADATA -->
+                        
+                    </div>
+                </header>
+
+                <div class="entry-content">
 <footer class="post-info">
 
     <p>
@@ -228,23 +158,28 @@
 
     
 
-</footer>                    </div>
-                    
-                </article>
-                <hr/>
-            </li>
+</footer>                </div>
+                
+            </article>
+            <!-- <hr/> black separation bar between articles -->
+        </li>
+        
             
                 </ol><!-- /#posts-list -->
+                <hr>
                 </section><!-- /#content -->
 
+
+        <!-- footer -->
         <section id="extras" class="body">
 
         <!-- /.blogroll -->
                 <div class="blogroll">
                         <h2>links</h2>
                         <ul>
-                            <li><a href="https://indeXall.io">Side project: indeXall.io</a></li>
                             <li><a href="https://btobsales.eu">Services: BtoBSales.EU</a></li>
+                            <li><a href="https://indeXall.io">Side project: indeXall.io</a></li>
+                            <li><a href="https://github.com/ndeville">Github: ndeville</a></li>
                         </ul>
                 </div>
 

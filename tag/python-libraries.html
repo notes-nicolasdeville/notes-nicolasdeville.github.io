@@ -18,7 +18,8 @@
     <link rel="fluid-icon" href="https://notes.nicolasdeville.com/favicon.png" title="Nic's notes">
 
     <!-- CSS -->
-    <link rel="stylesheet" href="https://notes.nicolasdeville.com/theme/css/main.css" />
+    <!-- <link rel="stylesheet" href="https://notes.nicolasdeville.com/theme/css/main.css" /> -->
+    <link rel="stylesheet" href="theme/css/main.css" />
 
 
 
@@ -43,7 +44,7 @@
             </div>
 
             <div class="above-navbar">
-                <div class="last_updated">09 Oct 2022 | 20:53</div>
+                <div class="last_updated">10 Oct 2022 | 10:21</div>
                 <div>
                     <p class="notes_count">
                         <a href="https://notes.nicolasdeville.com/tags">by tags</a>
@@ -79,38 +80,24 @@
             </ul></nav>
         </header>
 
+        <!-- index.html injection -->
 
 
-<!-- 220911 moved to base.html -->
-<!-- <p class="notes_count">
-    25 notes 
-    <span style="color:#C74350">|</span> 
-    <a href="https://notes.nicolasdeville.com/tags">by tags</a> 
-    <span style="color:#C74350">|</span> 
-    <a href="https://notes.nicolasdeville.com/2022/">2022</a> 
-    <span style="color:#C74350">|</span> 
-    <a href="https://notes.nicolasdeville.com/2021/">2021</a> 
-    <span style="color:#C74350">|</span> 
-    <a href="https://notes.nicolasdeville.com/2020/">2020</a>
-</p> -->
+        <section id="content" class="body">
 
+        <ol id="posts-list" class="hfeed">
 
-
-            <aside id="featured" class="body">
-            <!-- LATEST NOTE -->
-            <p class="notes-section">last (updated) note</p>
-            <hr/>
-
-                <article class="hentry">
-                    <h1 class="entry-title"><a href="https://notes.nicolasdeville.com/python/library-requests">Python Library: requests</a></h1>
-
-                    <!-- added 4/7 -->
-                    <div>
-                        <p class="header_summary">
-                            <p>Python HTTP for Humans. Requests is a simple, yet elegant HTTP library.</p>
-                        </p>
+        <li>
+            <article class="hentry">
+                <header>
+                    <h1><a href="https://notes.nicolasdeville.com/python/library-requests" rel="bookmark"
+                        title="Python Library: requests">Python Library: requests</a></h1>
+                    <div class="entry-content">
+                        <p>Python HTTP for Humans. Requests is a simple, yet elegant HTTP library.</p>
                     </div>
+                </header>
 
+                <div class="entry-content">
 <footer class="post-info">
 
     <p>
@@ -128,121 +115,29 @@
 
     
 
-</footer><p><span class="datestamp">23 Jul 2022</span> starting note (<em>Note date indicates latest update.</em>).  </p>
-<table>
-<thead>
-<tr>
-<th>Library resources</th>
-<th></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>PyPI</td>
-<td><a href="https://pypi.org/project/requests/" target="_blank">https://pypi.org/project/requests/</a></td>
-</tr>
-<tr>
-<td>Github</td>
-<td><a href="https://github.com/psf/requests" target="_blank">https://github.com/psf/requests</a></td>
-</tr>
-<tr>
-<td>Documentation</td>
-<td><a href="https://requests.readthedocs.io/en/latest/" target="_blank">https://requests.readthedocs.io/en/latest/</a></td>
-</tr>
-</tbody>
-</table>
-<p>Install with: </p>
-<div class="highlight"><pre><span></span><code>pip3 install requests
-</code></pre></div>
-
-<p>then:   </p>
-<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">requests</span>
-</code></pre></div>
-
-<h2 id="post">POST</h2>
-<div class="highlight"><pre><span></span><code><span class="n">url</span> <span class="o">=</span> <span class="s1">&#39;https://www.w3schools.com/python/demopage.php&#39;</span>
-<span class="n">myobj</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;somekey&#39;</span><span class="p">:</span> <span class="s1">&#39;somevalue&#39;</span><span class="p">}</span>
-
-<span class="n">x</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">post</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">json</span> <span class="o">=</span> <span class="n">myobj</span><span class="p">)</span>
-</code></pre></div>
-
-<h3 id="sending-requests-with-json-data-and-headers">Sending requests with JSON data and headers</h3>
-<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">requests</span>
-<span class="kn">import</span> <span class="nn">json</span>
-
-<span class="n">url</span> <span class="o">=</span> <span class="s2">&quot;https://httpbin.org/post&quot;</span>
-
-<span class="n">headers</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;Content-Type&quot;</span><span class="p">:</span> <span class="s2">&quot;application/json; charset=utf-8&quot;</span><span class="p">}</span>
-
-<span class="n">data</span> <span class="o">=</span> <span class="p">{</span>
-    <span class="s2">&quot;id&quot;</span><span class="p">:</span> <span class="mi">1001</span><span class="p">,</span>
-    <span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;geek&quot;</span><span class="p">,</span>
-    <span class="s2">&quot;passion&quot;</span><span class="p">:</span> <span class="s2">&quot;coding&quot;</span><span class="p">,</span>
-<span class="p">}</span>
-
-<span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">post</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="n">headers</span><span class="p">,</span> <span class="n">json</span><span class="o">=</span><span class="n">data</span><span class="p">)</span>
-
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Status Code&quot;</span><span class="p">,</span> <span class="n">response</span><span class="o">.</span><span class="n">status_code</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;JSON Response &quot;</span><span class="p">,</span> <span class="n">response</span><span class="o">.</span><span class="n">json</span><span class="p">())</span>
-</code></pre></div>
-
-<h4 id="example-with-grist">Example with Grist</h4>
-<div class="highlight"><pre><span></span><code><span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">post</span><span class="p">(</span>
-    <span class="sa">f</span><span class="s2">&quot;https://docs.getgrist.com/api/docs/</span><span class="si">{</span><span class="n">doc_id</span><span class="si">}</span><span class="s2">/attachments&quot;</span><span class="p">,</span>
-    <span class="n">files</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;upload&quot;</span><span class="p">:</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;my_pic.png&quot;</span><span class="p">,</span> <span class="s2">&quot;rb&quot;</span><span class="p">)},</span>
-    <span class="n">headers</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;Authorization&quot;</span><span class="p">:</span> <span class="sa">f</span><span class="s2">&quot;Bearer </span><span class="si">{</span><span class="n">api_key</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">},</span>
-<span class="p">)</span>
-<span class="n">attachment_id</span> <span class="o">=</span> <span class="n">response</span><span class="o">.</span><span class="n">json</span><span class="p">()[</span><span class="mi">0</span><span class="p">]</span>
-</code></pre></div>
-
-<h1 id="caching-sessions">Caching sessions</h1>
-<div class="link_border"><div class="link_logo_box"><img class="link_logo" src="https://logo.clearbit.com/readthedocs.io?size=35" alt="logo"/></div><div class="link_content">
-<div class="link_title">General Usage - requests-cache 0.9.6 documentation</div>
-<div class="link_tagline"> General Usage#</div>
-<div class="link_url"><a href="https://requests-cache.readthedocs.io/en/stable/user_guide/general.html" target="_blank">https://requests-cache.readthedocs.io/en/stable/user_guide/general.html</a></div></div></div>
-
-<h2 id="usage">usage</h2>
-<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">requests_cache</span> <span class="kn">import</span> <span class="n">CachedSession</span>
-
-<span class="n">session</span> <span class="o">=</span> <span class="n">CachedSession</span><span class="p">()</span>
-<span class="n">session</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;http://httpbin.org/get&#39;</span><span class="p">)</span>
-</code></pre></div>
-
-<p>to clear cache:   </p>
-<div class="highlight"><pre><span></span><code><span class="n">session</span><span class="o">.</span><span class="n">cache</span><span class="o">.</span><span class="n">clear</span><span class="p">()</span>
-</code></pre></div>
-
-<p>or install globally with:   </p>
-<div class="highlight"><pre><span></span><code><span class="n">requests_cache</span><span class="o">.</span><span class="n">install_cache</span><span class="p">()</span>
-</code></pre></div>
-                </article>
-            </aside>
-
-                <section id="content" class="body">
-
-                <!-- PREVIOUS NOTES -->
-				<p class="notes-section">previous notes</p>
-                <hr>
-
-                <ol id="posts-list" class="hfeed">
+</footer>                </div>
+                
+            </article>
+            <!-- <hr/> black separation bar between articles -->
+        </li>
+        
             
 
+        <section id="content" class="body">
 
+        <ol id="posts-list" class="hfeed">
 
-            <li>
-                <article class="hentry">
-                    <header>
-                        <!-- PREVIOUS NOTE TITLE -->
-                        <h1><a href="https://notes.nicolasdeville.com/projects/meta-url" rel="bookmark"
-                            title="Python Open-Source Project: metaURL">Python Open-Source Project: metaURL</a></h1>
-                        <!-- PREVIOUS NOTE SUMMARY -->
-                        <div class="entry-content">
-                            <p>generates metadata for a given URL</p>
-                        </div>
-                    </header>
-
+        <li>
+            <article class="hentry">
+                <header>
+                    <h1><a href="https://notes.nicolasdeville.com/projects/meta-url" rel="bookmark"
+                        title="Python Open-Source Project: metaURL">Python Open-Source Project: metaURL</a></h1>
                     <div class="entry-content">
-                        <!-- PREVIOUS NOTE METADATA -->
+                        <p>generates metadata for a given URL</p>
+                    </div>
+                </header>
+
+                <div class="entry-content">
 <footer class="post-info">
 
     <p>
@@ -260,29 +155,29 @@
 
     
 
-</footer>                    </div>
-                    
-                </article>
-                <hr/>
-            </li>
+</footer>                </div>
+                
+            </article>
+            <!-- <hr/> black separation bar between articles -->
+        </li>
+        
             
 
+        <section id="content" class="body">
 
+        <ol id="posts-list" class="hfeed">
 
-            <li>
-                <article class="hentry">
-                    <header>
-                        <!-- PREVIOUS NOTE TITLE -->
-                        <h1><a href="https://notes.nicolasdeville.com/python/library-jinja2" rel="bookmark"
-                            title="Python Library: jinja2">Python Library: jinja2</a></h1>
-                        <!-- PREVIOUS NOTE SUMMARY -->
-                        <div class="entry-content">
-                            <p>A very fast and expressive template engine.</p>
-                        </div>
-                    </header>
-
+        <li>
+            <article class="hentry">
+                <header>
+                    <h1><a href="https://notes.nicolasdeville.com/python/library-jinja2" rel="bookmark"
+                        title="Python Library: jinja2">Python Library: jinja2</a></h1>
                     <div class="entry-content">
-                        <!-- PREVIOUS NOTE METADATA -->
+                        <p>A very fast and expressive template engine.</p>
+                    </div>
+                </header>
+
+                <div class="entry-content">
 <footer class="post-info">
 
     <p>
@@ -300,29 +195,29 @@
 
     
 
-</footer>                    </div>
-                    
-                </article>
-                <hr/>
-            </li>
+</footer>                </div>
+                
+            </article>
+            <!-- <hr/> black separation bar between articles -->
+        </li>
+        
             
 
+        <section id="content" class="body">
 
+        <ol id="posts-list" class="hfeed">
 
-            <li>
-                <article class="hentry">
-                    <header>
-                        <!-- PREVIOUS NOTE TITLE -->
-                        <h1><a href="https://notes.nicolasdeville.com/python/library-tweepy" rel="bookmark"
-                            title="Python Library: tweepy">Python Library: tweepy</a></h1>
-                        <!-- PREVIOUS NOTE SUMMARY -->
-                        <div class="entry-content">
-                            <p>Twitter for Python</p>
-                        </div>
-                    </header>
-
+        <li>
+            <article class="hentry">
+                <header>
+                    <h1><a href="https://notes.nicolasdeville.com/python/library-tweepy" rel="bookmark"
+                        title="Python Library: tweepy">Python Library: tweepy</a></h1>
                     <div class="entry-content">
-                        <!-- PREVIOUS NOTE METADATA -->
+                        <p>Twitter for Python</p>
+                    </div>
+                </header>
+
+                <div class="entry-content">
 <footer class="post-info">
 
     <p>
@@ -341,29 +236,29 @@
 
     
 
-</footer>                    </div>
-                    
-                </article>
-                <hr/>
-            </li>
+</footer>                </div>
+                
+            </article>
+            <!-- <hr/> black separation bar between articles -->
+        </li>
+        
             
 
+        <section id="content" class="body">
 
+        <ol id="posts-list" class="hfeed">
 
-            <li>
-                <article class="hentry">
-                    <header>
-                        <!-- PREVIOUS NOTE TITLE -->
-                        <h1><a href="https://notes.nicolasdeville.com/python/library-beautifulsoup" rel="bookmark"
-                            title="Python Library: Beautifulsoup">Python Library: Beautifulsoup</a></h1>
-                        <!-- PREVIOUS NOTE SUMMARY -->
-                        <div class="entry-content">
-                            <p>makes it easy to scrape information from web pages</p>
-                        </div>
-                    </header>
-
+        <li>
+            <article class="hentry">
+                <header>
+                    <h1><a href="https://notes.nicolasdeville.com/python/library-beautifulsoup" rel="bookmark"
+                        title="Python Library: Beautifulsoup">Python Library: Beautifulsoup</a></h1>
                     <div class="entry-content">
-                        <!-- PREVIOUS NOTE METADATA -->
+                        <p>makes it easy to scrape information from web pages</p>
+                    </div>
+                </header>
+
+                <div class="entry-content">
 <footer class="post-info">
 
     <p>
@@ -381,29 +276,29 @@
 
     
 
-</footer>                    </div>
-                    
-                </article>
-                <hr/>
-            </li>
+</footer>                </div>
+                
+            </article>
+            <!-- <hr/> black separation bar between articles -->
+        </li>
+        
             
 
+        <section id="content" class="body">
 
+        <ol id="posts-list" class="hfeed">
 
-            <li>
-                <article class="hentry">
-                    <header>
-                        <!-- PREVIOUS NOTE TITLE -->
-                        <h1><a href="https://notes.nicolasdeville.com/python/library-pymsgbox" rel="bookmark"
-                            title="Python Library: PyMsgBox">Python Library: PyMsgBox</a></h1>
-                        <!-- PREVIOUS NOTE SUMMARY -->
-                        <div class="entry-content">
-                            <p>A simple, cross-platform, pure Python module for JavaScript-like message boxes.</p>
-                        </div>
-                    </header>
-
+        <li>
+            <article class="hentry">
+                <header>
+                    <h1><a href="https://notes.nicolasdeville.com/python/library-pymsgbox" rel="bookmark"
+                        title="Python Library: PyMsgBox">Python Library: PyMsgBox</a></h1>
                     <div class="entry-content">
-                        <!-- PREVIOUS NOTE METADATA -->
+                        <p>A simple, cross-platform, pure Python module for JavaScript-like message boxes.</p>
+                    </div>
+                </header>
+
+                <div class="entry-content">
 <footer class="post-info">
 
     <p>
@@ -422,29 +317,29 @@
 
     
 
-</footer>                    </div>
-                    
-                </article>
-                <hr/>
-            </li>
+</footer>                </div>
+                
+            </article>
+            <!-- <hr/> black separation bar between articles -->
+        </li>
+        
             
 
+        <section id="content" class="body">
 
+        <ol id="posts-list" class="hfeed">
 
-            <li>
-                <article class="hentry">
-                    <header>
-                        <!-- PREVIOUS NOTE TITLE -->
-                        <h1><a href="https://notes.nicolasdeville.com/python/library-tkinter" rel="bookmark"
-                            title="Python Library: tkinter">Python Library: tkinter</a></h1>
-                        <!-- PREVIOUS NOTE SUMMARY -->
-                        <div class="entry-content">
-                            <p>built-in Python library for UI</p>
-                        </div>
-                    </header>
-
+        <li>
+            <article class="hentry">
+                <header>
+                    <h1><a href="https://notes.nicolasdeville.com/python/library-tkinter" rel="bookmark"
+                        title="Python Library: tkinter">Python Library: tkinter</a></h1>
                     <div class="entry-content">
-                        <!-- PREVIOUS NOTE METADATA -->
+                        <p>built-in Python library for UI</p>
+                    </div>
+                </header>
+
+                <div class="entry-content">
 <footer class="post-info">
 
     <p>
@@ -462,29 +357,29 @@
 
     
 
-</footer>                    </div>
-                    
-                </article>
-                <hr/>
-            </li>
+</footer>                </div>
+                
+            </article>
+            <!-- <hr/> black separation bar between articles -->
+        </li>
+        
             
 
+        <section id="content" class="body">
 
+        <ol id="posts-list" class="hfeed">
 
-            <li>
-                <article class="hentry">
-                    <header>
-                        <!-- PREVIOUS NOTE TITLE -->
-                        <h1><a href="https://notes.nicolasdeville.com/python/library-geopy" rel="bookmark"
-                            title="Python Library: geopy">Python Library: geopy</a></h1>
-                        <!-- PREVIOUS NOTE SUMMARY -->
-                        <div class="entry-content">
-                            <p>locate the coordinates of addresses.</p>
-                        </div>
-                    </header>
-
+        <li>
+            <article class="hentry">
+                <header>
+                    <h1><a href="https://notes.nicolasdeville.com/python/library-geopy" rel="bookmark"
+                        title="Python Library: geopy">Python Library: geopy</a></h1>
                     <div class="entry-content">
-                        <!-- PREVIOUS NOTE METADATA -->
+                        <p>locate the coordinates of addresses.</p>
+                    </div>
+                </header>
+
+                <div class="entry-content">
 <footer class="post-info">
 
     <p>
@@ -502,29 +397,29 @@
 
     
 
-</footer>                    </div>
-                    
-                </article>
-                <hr/>
-            </li>
+</footer>                </div>
+                
+            </article>
+            <!-- <hr/> black separation bar between articles -->
+        </li>
+        
             
 
+        <section id="content" class="body">
 
+        <ol id="posts-list" class="hfeed">
 
-            <li>
-                <article class="hentry">
-                    <header>
-                        <!-- PREVIOUS NOTE TITLE -->
-                        <h1><a href="https://notes.nicolasdeville.com/python/library-dateutil" rel="bookmark"
-                            title="Python Library: dateutil">Python Library: dateutil</a></h1>
-                        <!-- PREVIOUS NOTE SUMMARY -->
-                        <div class="entry-content">
-                            <p>better library for date parsing than datetime's <code>strptime</code></p>
-                        </div>
-                    </header>
-
+        <li>
+            <article class="hentry">
+                <header>
+                    <h1><a href="https://notes.nicolasdeville.com/python/library-dateutil" rel="bookmark"
+                        title="Python Library: dateutil">Python Library: dateutil</a></h1>
                     <div class="entry-content">
-                        <!-- PREVIOUS NOTE METADATA -->
+                        <p>better library for date parsing than datetime's <code>strptime</code></p>
+                    </div>
+                </header>
+
+                <div class="entry-content">
 <footer class="post-info">
 
     <p>
@@ -542,29 +437,29 @@
 
     
 
-</footer>                    </div>
-                    
-                </article>
-                <hr/>
-            </li>
+</footer>                </div>
+                
+            </article>
+            <!-- <hr/> black separation bar between articles -->
+        </li>
+        
             
 
+        <section id="content" class="body">
 
+        <ol id="posts-list" class="hfeed">
 
-            <li>
-                <article class="hentry">
-                    <header>
-                        <!-- PREVIOUS NOTE TITLE -->
-                        <h1><a href="https://notes.nicolasdeville.com/python/library-datetime" rel="bookmark"
-                            title="Python Library: datetime">Python Library: datetime</a></h1>
-                        <!-- PREVIOUS NOTE SUMMARY -->
-                        <div class="entry-content">
-                            <p>The datetime module supplies classes for manipulating dates and times.</p>
-                        </div>
-                    </header>
-
+        <li>
+            <article class="hentry">
+                <header>
+                    <h1><a href="https://notes.nicolasdeville.com/python/library-datetime" rel="bookmark"
+                        title="Python Library: datetime">Python Library: datetime</a></h1>
                     <div class="entry-content">
-                        <!-- PREVIOUS NOTE METADATA -->
+                        <p>The datetime module supplies classes for manipulating dates and times.</p>
+                    </div>
+                </header>
+
+                <div class="entry-content">
 <footer class="post-info">
 
     <p>
@@ -582,29 +477,29 @@
 
     
 
-</footer>                    </div>
-                    
-                </article>
-                <hr/>
-            </li>
+</footer>                </div>
+                
+            </article>
+            <!-- <hr/> black separation bar between articles -->
+        </li>
+        
             
 
+        <section id="content" class="body">
 
+        <ol id="posts-list" class="hfeed">
 
-            <li>
-                <article class="hentry">
-                    <header>
-                        <!-- PREVIOUS NOTE TITLE -->
-                        <h1><a href="https://notes.nicolasdeville.com/python/library-re" rel="bookmark"
-                            title="Python Library: re (regex)">Python Library: re (regex)</a></h1>
-                        <!-- PREVIOUS NOTE SUMMARY -->
-                        <div class="entry-content">
-                            
-                        </div>
-                    </header>
-
+        <li>
+            <article class="hentry">
+                <header>
+                    <h1><a href="https://notes.nicolasdeville.com/python/library-re" rel="bookmark"
+                        title="Python Library: re (regex)">Python Library: re (regex)</a></h1>
                     <div class="entry-content">
-                        <!-- PREVIOUS NOTE METADATA -->
+                        
+                    </div>
+                </header>
+
+                <div class="entry-content">
 <footer class="post-info">
 
     <p>
@@ -622,29 +517,29 @@
 
     
 
-</footer>                    </div>
-                    
-                </article>
-                <hr/>
-            </li>
+</footer>                </div>
+                
+            </article>
+            <!-- <hr/> black separation bar between articles -->
+        </li>
+        
             
 
+        <section id="content" class="body">
 
+        <ol id="posts-list" class="hfeed">
 
-            <li>
-                <article class="hentry">
-                    <header>
-                        <!-- PREVIOUS NOTE TITLE -->
-                        <h1><a href="https://notes.nicolasdeville.com/python/library-tmdbv3api" rel="bookmark"
-                            title="Python Library: tmdbv3api | fetching movie data">Python Library: tmdbv3api | fetching movie data</a></h1>
-                        <!-- PREVIOUS NOTE SUMMARY -->
-                        <div class="entry-content">
-                            <p>Python wrapper for the TMDB API - themoviedb.org</p>
-                        </div>
-                    </header>
-
+        <li>
+            <article class="hentry">
+                <header>
+                    <h1><a href="https://notes.nicolasdeville.com/python/library-tmdbv3api" rel="bookmark"
+                        title="Python Library: tmdbv3api | fetching movie data">Python Library: tmdbv3api | fetching movie data</a></h1>
                     <div class="entry-content">
-                        <!-- PREVIOUS NOTE METADATA -->
+                        <p>Python wrapper for the TMDB API - themoviedb.org</p>
+                    </div>
+                </header>
+
+                <div class="entry-content">
 <footer class="post-info">
 
     <p>
@@ -664,29 +559,29 @@
 
     
 
-</footer>                    </div>
-                    
-                </article>
-                <hr/>
-            </li>
+</footer>                </div>
+                
+            </article>
+            <!-- <hr/> black separation bar between articles -->
+        </li>
+        
             
 
+        <section id="content" class="body">
 
+        <ol id="posts-list" class="hfeed">
 
-            <li>
-                <article class="hentry">
-                    <header>
-                        <!-- PREVIOUS NOTE TITLE -->
-                        <h1><a href="https://notes.nicolasdeville.com/python/library-tmdbapis" rel="bookmark"
-                            title="Python Library: tmdbapis | fetching movie data">Python Library: tmdbapis | fetching movie data</a></h1>
-                        <!-- PREVIOUS NOTE SUMMARY -->
-                        <div class="entry-content">
-                            <p>Python wrapper for the TMDB API - themoviedb.org - with support for API v4</p>
-                        </div>
-                    </header>
-
+        <li>
+            <article class="hentry">
+                <header>
+                    <h1><a href="https://notes.nicolasdeville.com/python/library-tmdbapis" rel="bookmark"
+                        title="Python Library: tmdbapis | fetching movie data">Python Library: tmdbapis | fetching movie data</a></h1>
                     <div class="entry-content">
-                        <!-- PREVIOUS NOTE METADATA -->
+                        <p>Python wrapper for the TMDB API - themoviedb.org - with support for API v4</p>
+                    </div>
+                </header>
+
+                <div class="entry-content">
 <footer class="post-info">
 
     <p>
@@ -706,29 +601,29 @@
 
     
 
-</footer>                    </div>
-                    
-                </article>
-                <hr/>
-            </li>
+</footer>                </div>
+                
+            </article>
+            <!-- <hr/> black separation bar between articles -->
+        </li>
+        
             
 
+        <section id="content" class="body">
 
+        <ol id="posts-list" class="hfeed">
 
-            <li>
-                <article class="hentry">
-                    <header>
-                        <!-- PREVIOUS NOTE TITLE -->
-                        <h1><a href="https://notes.nicolasdeville.com/python/libraries" rel="bookmark"
-                            title="Libraries for Python">Libraries for Python</a></h1>
-                        <!-- PREVIOUS NOTE SUMMARY -->
-                        <div class="entry-content">
-                            
-                        </div>
-                    </header>
-
+        <li>
+            <article class="hentry">
+                <header>
+                    <h1><a href="https://notes.nicolasdeville.com/python/libraries" rel="bookmark"
+                        title="Libraries for Python">Libraries for Python</a></h1>
                     <div class="entry-content">
-                        <!-- PREVIOUS NOTE METADATA -->
+                        
+                    </div>
+                </header>
+
+                <div class="entry-content">
 <footer class="post-info">
 
     <p>
@@ -746,29 +641,29 @@
 
     
 
-</footer>                    </div>
-                    
-                </article>
-                <hr/>
-            </li>
+</footer>                </div>
+                
+            </article>
+            <!-- <hr/> black separation bar between articles -->
+        </li>
+        
             
 
+        <section id="content" class="body">
 
+        <ol id="posts-list" class="hfeed">
 
-            <li>
-                <article class="hentry">
-                    <header>
-                        <!-- PREVIOUS NOTE TITLE -->
-                        <h1><a href="https://notes.nicolasdeville.com/python/library-pydub" rel="bookmark"
-                            title="Python Library: pydub">Python Library: pydub</a></h1>
-                        <!-- PREVIOUS NOTE SUMMARY -->
-                        <div class="entry-content">
-                            <p>Manipulate audio with an simple and easy high level interface.</p>
-                        </div>
-                    </header>
-
+        <li>
+            <article class="hentry">
+                <header>
+                    <h1><a href="https://notes.nicolasdeville.com/python/library-pydub" rel="bookmark"
+                        title="Python Library: pydub">Python Library: pydub</a></h1>
                     <div class="entry-content">
-                        <!-- PREVIOUS NOTE METADATA -->
+                        <p>Manipulate audio with an simple and easy high level interface.</p>
+                    </div>
+                </header>
+
+                <div class="entry-content">
 <footer class="post-info">
 
     <p>
@@ -787,29 +682,29 @@
 
     
 
-</footer>                    </div>
-                    
-                </article>
-                <hr/>
-            </li>
+</footer>                </div>
+                
+            </article>
+            <!-- <hr/> black separation bar between articles -->
+        </li>
+        
             
 
+        <section id="content" class="body">
 
+        <ol id="posts-list" class="hfeed">
 
-            <li>
-                <article class="hentry">
-                    <header>
-                        <!-- PREVIOUS NOTE TITLE -->
-                        <h1><a href="https://notes.nicolasdeville.com/python/library-pynput" rel="bookmark"
-                            title="Python Library: pynput">Python Library: pynput</a></h1>
-                        <!-- PREVIOUS NOTE SUMMARY -->
-                        <div class="entry-content">
-                            <p>control mouse and keyboard with Python</p>
-                        </div>
-                    </header>
-
+        <li>
+            <article class="hentry">
+                <header>
+                    <h1><a href="https://notes.nicolasdeville.com/python/library-pynput" rel="bookmark"
+                        title="Python Library: pynput">Python Library: pynput</a></h1>
                     <div class="entry-content">
-                        <!-- PREVIOUS NOTE METADATA -->
+                        <p>control mouse and keyboard with Python</p>
+                    </div>
+                </header>
+
+                <div class="entry-content">
 <footer class="post-info">
 
     <p>
@@ -828,29 +723,29 @@
 
     
 
-</footer>                    </div>
-                    
-                </article>
-                <hr/>
-            </li>
+</footer>                </div>
+                
+            </article>
+            <!-- <hr/> black separation bar between articles -->
+        </li>
+        
             
 
+        <section id="content" class="body">
 
+        <ol id="posts-list" class="hfeed">
 
-            <li>
-                <article class="hentry">
-                    <header>
-                        <!-- PREVIOUS NOTE TITLE -->
-                        <h1><a href="https://notes.nicolasdeville.com/python/library-send2trash" rel="bookmark"
-                            title="Python Library: Send2Trash">Python Library: Send2Trash</a></h1>
-                        <!-- PREVIOUS NOTE SUMMARY -->
-                        <div class="entry-content">
-                            <p>small package that sends files to the Trash (or Recycle Bin) natively and on all platforms</p>
-                        </div>
-                    </header>
-
+        <li>
+            <article class="hentry">
+                <header>
+                    <h1><a href="https://notes.nicolasdeville.com/python/library-send2trash" rel="bookmark"
+                        title="Python Library: Send2Trash">Python Library: Send2Trash</a></h1>
                     <div class="entry-content">
-                        <!-- PREVIOUS NOTE METADATA -->
+                        <p>small package that sends files to the Trash (or Recycle Bin) natively and on all platforms</p>
+                    </div>
+                </header>
+
+                <div class="entry-content">
 <footer class="post-info">
 
     <p>
@@ -868,29 +763,29 @@
 
     
 
-</footer>                    </div>
-                    
-                </article>
-                <hr/>
-            </li>
+</footer>                </div>
+                
+            </article>
+            <!-- <hr/> black separation bar between articles -->
+        </li>
+        
             
 
+        <section id="content" class="body">
 
+        <ol id="posts-list" class="hfeed">
 
-            <li>
-                <article class="hentry">
-                    <header>
-                        <!-- PREVIOUS NOTE TITLE -->
-                        <h1><a href="https://notes.nicolasdeville.com/python/library-imap-tools" rel="bookmark"
-                            title="Python Library: imap-tools">Python Library: imap-tools</a></h1>
-                        <!-- PREVIOUS NOTE SUMMARY -->
-                        <div class="entry-content">
-                            <p>High level lib for work with email by IMAP</p>
-                        </div>
-                    </header>
-
+        <li>
+            <article class="hentry">
+                <header>
+                    <h1><a href="https://notes.nicolasdeville.com/python/library-imap-tools" rel="bookmark"
+                        title="Python Library: imap-tools">Python Library: imap-tools</a></h1>
                     <div class="entry-content">
-                        <!-- PREVIOUS NOTE METADATA -->
+                        <p>High level lib for work with email by IMAP</p>
+                    </div>
+                </header>
+
+                <div class="entry-content">
 <footer class="post-info">
 
     <p>
@@ -908,29 +803,29 @@
 
     
 
-</footer>                    </div>
-                    
-                </article>
-                <hr/>
-            </li>
+</footer>                </div>
+                
+            </article>
+            <!-- <hr/> black separation bar between articles -->
+        </li>
+        
             
 
+        <section id="content" class="body">
 
+        <ol id="posts-list" class="hfeed">
 
-            <li>
-                <article class="hentry">
-                    <header>
-                        <!-- PREVIOUS NOTE TITLE -->
-                        <h1><a href="https://notes.nicolasdeville.com/python/library-openpyxl" rel="bookmark"
-                            title="Python Library: openpyxl">Python Library: openpyxl</a></h1>
-                        <!-- PREVIOUS NOTE SUMMARY -->
-                        <div class="entry-content">
-                            <p>A Python library to read/write Excel 2010 xlsx/xlsm files</p>
-                        </div>
-                    </header>
-
+        <li>
+            <article class="hentry">
+                <header>
+                    <h1><a href="https://notes.nicolasdeville.com/python/library-openpyxl" rel="bookmark"
+                        title="Python Library: openpyxl">Python Library: openpyxl</a></h1>
                     <div class="entry-content">
-                        <!-- PREVIOUS NOTE METADATA -->
+                        <p>A Python library to read/write Excel 2010 xlsx/xlsm files</p>
+                    </div>
+                </header>
+
+                <div class="entry-content">
 <footer class="post-info">
 
     <p>
@@ -948,29 +843,29 @@
 
     
 
-</footer>                    </div>
-                    
-                </article>
-                <hr/>
-            </li>
+</footer>                </div>
+                
+            </article>
+            <!-- <hr/> black separation bar between articles -->
+        </li>
+        
             
 
+        <section id="content" class="body">
 
+        <ol id="posts-list" class="hfeed">
 
-            <li>
-                <article class="hentry">
-                    <header>
-                        <!-- PREVIOUS NOTE TITLE -->
-                        <h1><a href="https://notes.nicolasdeville.com/python/library-yagmail" rel="bookmark"
-                            title="Python Library: Yagmail">Python Library: Yagmail</a></h1>
-                        <!-- PREVIOUS NOTE SUMMARY -->
-                        <div class="entry-content">
-                            <p>GMAIL/SMTP client that aims to make it as simple as possible to send emails.</p>
-                        </div>
-                    </header>
-
+        <li>
+            <article class="hentry">
+                <header>
+                    <h1><a href="https://notes.nicolasdeville.com/python/library-yagmail" rel="bookmark"
+                        title="Python Library: Yagmail">Python Library: Yagmail</a></h1>
                     <div class="entry-content">
-                        <!-- PREVIOUS NOTE METADATA -->
+                        <p>GMAIL/SMTP client that aims to make it as simple as possible to send emails.</p>
+                    </div>
+                </header>
+
+                <div class="entry-content">
 <footer class="post-info">
 
     <p>
@@ -989,29 +884,29 @@
 
     
 
-</footer>                    </div>
-                    
-                </article>
-                <hr/>
-            </li>
+</footer>                </div>
+                
+            </article>
+            <!-- <hr/> black separation bar between articles -->
+        </li>
+        
             
 
+        <section id="content" class="body">
 
+        <ol id="posts-list" class="hfeed">
 
-            <li>
-                <article class="hentry">
-                    <header>
-                        <!-- PREVIOUS NOTE TITLE -->
-                        <h1><a href="https://notes.nicolasdeville.com/python/library-slugify" rel="bookmark"
-                            title="Python Library: slugify">Python Library: slugify</a></h1>
-                        <!-- PREVIOUS NOTE SUMMARY -->
-                        <div class="entry-content">
-                            
-                        </div>
-                    </header>
-
+        <li>
+            <article class="hentry">
+                <header>
+                    <h1><a href="https://notes.nicolasdeville.com/python/library-slugify" rel="bookmark"
+                        title="Python Library: slugify">Python Library: slugify</a></h1>
                     <div class="entry-content">
-                        <!-- PREVIOUS NOTE METADATA -->
+                        
+                    </div>
+                </header>
+
+                <div class="entry-content">
 <footer class="post-info">
 
     <p>
@@ -1030,29 +925,29 @@
 
     
 
-</footer>                    </div>
-                    
-                </article>
-                <hr/>
-            </li>
+</footer>                </div>
+                
+            </article>
+            <!-- <hr/> black separation bar between articles -->
+        </li>
+        
             
 
+        <section id="content" class="body">
 
+        <ol id="posts-list" class="hfeed">
 
-            <li>
-                <article class="hentry">
-                    <header>
-                        <!-- PREVIOUS NOTE TITLE -->
-                        <h1><a href="https://notes.nicolasdeville.com/python/library-defaultdict" rel="bookmark"
-                            title="Python Library: defaultdict">Python Library: defaultdict</a></h1>
-                        <!-- PREVIOUS NOTE SUMMARY -->
-                        <div class="entry-content">
-                            <p>standard Python libraries useful when creating dicts</p>
-                        </div>
-                    </header>
-
+        <li>
+            <article class="hentry">
+                <header>
+                    <h1><a href="https://notes.nicolasdeville.com/python/library-defaultdict" rel="bookmark"
+                        title="Python Library: defaultdict">Python Library: defaultdict</a></h1>
                     <div class="entry-content">
-                        <!-- PREVIOUS NOTE METADATA -->
+                        <p>standard Python libraries useful when creating dicts</p>
+                    </div>
+                </header>
+
+                <div class="entry-content">
 <footer class="post-info">
 
     <p>
@@ -1070,29 +965,29 @@
 
     
 
-</footer>                    </div>
-                    
-                </article>
-                <hr/>
-            </li>
+</footer>                </div>
+                
+            </article>
+            <!-- <hr/> black separation bar between articles -->
+        </li>
+        
             
 
+        <section id="content" class="body">
 
+        <ol id="posts-list" class="hfeed">
 
-            <li>
-                <article class="hentry">
-                    <header>
-                        <!-- PREVIOUS NOTE TITLE -->
-                        <h1><a href="https://notes.nicolasdeville.com/python/library-sqlite3" rel="bookmark"
-                            title="Python Library: sqlite3">Python Library: sqlite3</a></h1>
-                        <!-- PREVIOUS NOTE SUMMARY -->
-                        <div class="entry-content">
-                            <p>built-in library for managing SQLite database</p>
-                        </div>
-                    </header>
-
+        <li>
+            <article class="hentry">
+                <header>
+                    <h1><a href="https://notes.nicolasdeville.com/python/library-sqlite3" rel="bookmark"
+                        title="Python Library: sqlite3">Python Library: sqlite3</a></h1>
                     <div class="entry-content">
-                        <!-- PREVIOUS NOTE METADATA -->
+                        <p>built-in library for managing SQLite database</p>
+                    </div>
+                </header>
+
+                <div class="entry-content">
 <footer class="post-info">
 
     <p>
@@ -1110,29 +1005,29 @@
 
     
 
-</footer>                    </div>
-                    
-                </article>
-                <hr/>
-            </li>
+</footer>                </div>
+                
+            </article>
+            <!-- <hr/> black separation bar between articles -->
+        </li>
+        
             
 
+        <section id="content" class="body">
 
+        <ol id="posts-list" class="hfeed">
 
-            <li>
-                <article class="hentry">
-                    <header>
-                        <!-- PREVIOUS NOTE TITLE -->
-                        <h1><a href="https://notes.nicolasdeville.com/python/library-mutagen" rel="bookmark"
-                            title="Python Library: mutagen">Python Library: mutagen</a></h1>
-                        <!-- PREVIOUS NOTE SUMMARY -->
-                        <div class="entry-content">
-                            <p>read and write audio tags for many formats</p>
-                        </div>
-                    </header>
-
+        <li>
+            <article class="hentry">
+                <header>
+                    <h1><a href="https://notes.nicolasdeville.com/python/library-mutagen" rel="bookmark"
+                        title="Python Library: mutagen">Python Library: mutagen</a></h1>
                     <div class="entry-content">
-                        <!-- PREVIOUS NOTE METADATA -->
+                        <p>read and write audio tags for many formats</p>
+                    </div>
+                </header>
+
+                <div class="entry-content">
 <footer class="post-info">
 
     <p>
@@ -1150,29 +1045,29 @@
 
     
 
-</footer>                    </div>
-                    
-                </article>
-                <hr/>
-            </li>
+</footer>                </div>
+                
+            </article>
+            <!-- <hr/> black separation bar between articles -->
+        </li>
+        
             
 
+        <section id="content" class="body">
 
+        <ol id="posts-list" class="hfeed">
 
-            <li>
-                <article class="hentry">
-                    <header>
-                        <!-- PREVIOUS NOTE TITLE -->
-                        <h1><a href="https://notes.nicolasdeville.com/python/library-tinytag" rel="bookmark"
-                            title="Python Library: tinytag">Python Library: tinytag</a></h1>
-                        <!-- PREVIOUS NOTE SUMMARY -->
-                        <div class="entry-content">
-                            <p>Read music meta data and length of MP3, OGG, OPUS, MP4, M4A, FLAC, WMA and Wave files</p>
-                        </div>
-                    </header>
-
+        <li>
+            <article class="hentry">
+                <header>
+                    <h1><a href="https://notes.nicolasdeville.com/python/library-tinytag" rel="bookmark"
+                        title="Python Library: tinytag">Python Library: tinytag</a></h1>
                     <div class="entry-content">
-                        <!-- PREVIOUS NOTE METADATA -->
+                        <p>Read music meta data and length of MP3, OGG, OPUS, MP4, M4A, FLAC, WMA and Wave files</p>
+                    </div>
+                </header>
+
+                <div class="entry-content">
 <footer class="post-info">
 
     <p>
@@ -1190,23 +1085,28 @@
 
     
 
-</footer>                    </div>
-                    
-                </article>
-                <hr/>
-            </li>
+</footer>                </div>
+                
+            </article>
+            <!-- <hr/> black separation bar between articles -->
+        </li>
+        
             
                 </ol><!-- /#posts-list -->
+                <hr>
                 </section><!-- /#content -->
 
+
+        <!-- footer -->
         <section id="extras" class="body">
 
         <!-- /.blogroll -->
                 <div class="blogroll">
                         <h2>links</h2>
                         <ul>
-                            <li><a href="https://indeXall.io">Side project: indeXall.io</a></li>
                             <li><a href="https://btobsales.eu">Services: BtoBSales.EU</a></li>
+                            <li><a href="https://indeXall.io">Side project: indeXall.io</a></li>
+                            <li><a href="https://github.com/ndeville">Github: ndeville</a></li>
                         </ul>
                 </div>
 

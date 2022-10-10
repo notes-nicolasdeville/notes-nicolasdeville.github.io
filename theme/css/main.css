@@ -48,6 +48,10 @@ aside, article, figure {
     width: 100%;
 }
 
+#content {
+    margin-top: 1rem;
+}
+
 body {
     display: flex;
     flex-flow: row wrap;
@@ -754,6 +758,11 @@ li:first-child .hentry, #content > .hentry {
 .entry-content {
     margin-left: 0.1rem;
     margin-right: 0.5rem;
+}
+
+.entry-content p {
+    padding-bottom: 0;
+    margin-bottom: 0;
 }
 
 .hentry .post-info * {

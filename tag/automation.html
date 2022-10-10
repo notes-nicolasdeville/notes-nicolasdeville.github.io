@@ -18,7 +18,8 @@
     <link rel="fluid-icon" href="https://notes.nicolasdeville.com/favicon.png" title="Nic's notes">
 
     <!-- CSS -->
-    <link rel="stylesheet" href="https://notes.nicolasdeville.com/theme/css/main.css" />
+    <!-- <link rel="stylesheet" href="https://notes.nicolasdeville.com/theme/css/main.css" /> -->
+    <link rel="stylesheet" href="theme/css/main.css" />
 
 
 
@@ -43,7 +44,7 @@
             </div>
 
             <div class="above-navbar">
-                <div class="last_updated">09 Oct 2022 | 20:53</div>
+                <div class="last_updated">10 Oct 2022 | 10:21</div>
                 <div>
                     <p class="notes_count">
                         <a href="https://notes.nicolasdeville.com/tags">by tags</a>
@@ -79,38 +80,24 @@
             </ul></nav>
         </header>
 
+        <!-- index.html injection -->
 
 
-<!-- 220911 moved to base.html -->
-<!-- <p class="notes_count">
-    14 notes 
-    <span style="color:#C74350">|</span> 
-    <a href="https://notes.nicolasdeville.com/tags">by tags</a> 
-    <span style="color:#C74350">|</span> 
-    <a href="https://notes.nicolasdeville.com/2022/">2022</a> 
-    <span style="color:#C74350">|</span> 
-    <a href="https://notes.nicolasdeville.com/2021/">2021</a> 
-    <span style="color:#C74350">|</span> 
-    <a href="https://notes.nicolasdeville.com/2020/">2020</a>
-</p> -->
+        <section id="content" class="body">
 
+        <ol id="posts-list" class="hfeed">
 
-
-            <aside id="featured" class="body">
-            <!-- LATEST NOTE -->
-            <p class="notes-section">last (updated) note</p>
-            <hr/>
-
-                <article class="hentry">
-                    <h1 class="entry-title"><a href="https://notes.nicolasdeville.com/projects/script-screenshot-app">Script: screenshot video app, save file & generate HTML code</a></h1>
-
-                    <!-- added 4/7 -->
-                    <div>
-                        <p class="header_summary">
-                            
-                        </p>
+        <li>
+            <article class="hentry">
+                <header>
+                    <h1><a href="https://notes.nicolasdeville.com/projects/script-screenshot-app" rel="bookmark"
+                        title="Script: screenshot video app, save file & generate HTML code">Script: screenshot video app, save file & generate HTML code</a></h1>
+                    <div class="entry-content">
+                        
                     </div>
+                </header>
 
+                <div class="entry-content">
 <footer class="post-info">
 
     <p>
@@ -131,300 +118,29 @@
 
     
 
-</footer><div class="toc"><span class="toctitle">Table of Contents</span><ul>
-<li><a href="#objective">Objective</a></li>
-<li><a href="#gathering-infos">Gathering infos</a><ul>
-<li><a href="#work-in-progress">Work in progress</a><ul>
-<li><a href="#1st-working-script">1st working script</a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li><a href="#final-solution">Final solution</a></li>
-</ul>
-</div>
-<p><span class="datestamp">02 Oct 2022</span>   </p>
-<p>When I review videos and want to take notes about it with illustrations - be it Youtube videos I downloaded or business meeting recordings - it's painful to have to use several keyboard shortcuts and mouse actions to get to the point where I can just copy in my note the relevant image (ie HTML code pointing to the path of the saved image). </p>
-<p>A script to do this end-to-end would be a time-saver and improve my workflows so as to use illustrations more.   </p>
-<p>Need to figure out how to do it - AppleScript seems more appropriate than Python for this, considering the need to target a specific app to be screeshot. </p>
-<h1 id="objective">Objective</h1>
-<p>App I want to focus on is my media player of choice: IINA [<a href="../../apps/iina/index.html">Nic Note: IINA</a>]    </p>
-<p>Single command to trigger: keyboard shortcut and/or Streamdeck key [<a href="../../home-office/streamdeck/index.html">Nic Note: Streamdeck</a>] and /or Contour Shuttle key -ideal [<a href="../../home-office/contour-shuttle/index.html">Nic Note: Contour Shuttle</a>]  </p>
-<p>Automates:<br>
-- puts IINA at the foreground
-- capture screenshot of app only
-- saved to a dedicated folder</p>
-<p>Output: <br>
-- saved image file with video title and timestamp. <br>
-- HTML code in clipboard, ready to be pasted, with path to image and CSS styling (see [<a href="../../projects/clipee/#clipee-note">Nic Note: Clipee #Clipee Note</a>])  </p>
-<p>Could be a multi-tool solution, ie shell script + AppleScript + Hazel [<a href="../../apps/hazel/index.html">Nic Note: Hazel</a>].    </p>
-<h1 id="gathering-infos">Gathering infos</h1>
-<div class="link_border"><div class="link_logo_box"><img class="link_logo" src="https://logo.clearbit.com/engadget.com?size=35" alt="logo"/></div><div class="link_content">
-<div class="link_title">AppleScript: Taking screenshots | Engadget</div>
-<div class="link_tagline">engadget.com</div>
-<div class="link_url"><a href="https://www.engadget.com/2008-07-07-applescript-taking-screenshots.html" target="_blank">https://www.engadget.com/2008-07-07-applescript-taking-screenshots.html</a></div></div></div>
-
-<div class="highlight"><pre><span></span><code><span class="k">property</span> <span class="nv">N</span> <span class="p">:</span> <span class="mi">0</span>
-<span class="k">set</span> <span class="nv">N</span> <span class="k">to</span> <span class="nv">N</span> <span class="o">+</span> <span class="mi">1</span>
-<span class="k">set</span> <span class="nv">picPath</span> <span class="k">to</span> <span class="p">((</span><span class="nv">POSIX</span> <span class="na">path</span> <span class="k">of</span> <span class="p">(</span><span class="nb">path to</span> <span class="nv">desktop</span><span class="p">))</span> <span class="o">&amp;</span> <span class="s2">&quot;Picture_&quot;</span> <span class="o">&amp;</span> <span class="nv">N</span> <span class="o">&amp;</span> <span class="s2">&quot;.png&quot;</span><span class="p">)</span> <span class="k">as </span><span class="nc">string</span>
-<span class="nb">do shell script</span> <span class="s2">&quot;screencapture -tjpg &quot;</span> <span class="o">&amp;</span> <span class="nb">quoted form</span> <span class="k">of</span> <span class="nv">picPath</span>
-</code></pre></div>
-
-<div class="link_border"><div class="link_logo_box"><img class="link_logo" src="https://logo.clearbit.com/apple.com?size=35" alt="logo"/></div><div class="link_content">
-<div class="link_title">AppleScript to take screenshot of a specific area and save to desktop | Apple Community</div>
-<div class="link_tagline">discussions.apple.com</div>
-<div class="link_url"><a href="https://discussions.apple.com/thread/5641587" target="_blank">https://discussions.apple.com/thread/5641587</a></div></div></div>
-
-<div class="highlight"><pre><span></span><code><span class="k">set</span> <span class="p">{</span><span class="nv">l</span><span class="p">,</span> <span class="nv">t</span><span class="p">,</span> <span class="nv">r</span><span class="p">,</span> <span class="nv">b</span><span class="p">}</span> <span class="k">to</span> <span class="p">{</span><span class="mi">911</span><span class="p">,</span> <span class="mi">173</span><span class="p">,</span> <span class="mi">1738</span><span class="p">,</span> <span class="mi">794</span><span class="p">}</span>
-<span class="k">set</span> <span class="p">{</span><span class="nv">x</span><span class="p">,</span> <span class="nv">y</span><span class="p">,</span> <span class="nv">w</span><span class="p">,</span> <span class="nv">h</span><span class="p">}</span> <span class="k">to</span> <span class="p">{</span><span class="nv">l</span><span class="p">,</span> <span class="nv">t</span><span class="p">,</span> <span class="nv">r</span> <span class="o">-</span> <span class="nv">l</span><span class="p">,</span> <span class="nv">b</span> <span class="o">-</span> <span class="nv">t</span><span class="p">}</span>
-<span class="nv">screencapture</span><span class="p">(</span><span class="nv">x</span><span class="p">,</span> <span class="nv">y</span><span class="p">,</span> <span class="nv">w</span><span class="p">,</span> <span class="nv">h</span><span class="p">)</span>
-
-<span class="k">on</span> <span class="nv">screencapture</span><span class="p">(</span><span class="nv">x</span><span class="p">,</span> <span class="nv">y</span><span class="p">,</span> <span class="nv">w</span><span class="p">,</span> <span class="nv">h</span><span class="p">)</span>
-    <span class="cm">(*</span>
-<span class="cm">        number x, y, w, h: rectangle parameters</span>
-<span class="cm">            (x, y) = x, y-coordinates of origin point</span>
-<span class="cm">            (w, h) = width and height of rectangle</span>
-
-<span class="cm">        * screen shot is saved as ~/Desktop/yyyy-mm-dd hh.mm.ss.png</span>
-<span class="cm">    *)</span>
-    <span class="k">set</span> <span class="nv">args</span> <span class="k">to</span> <span class="s2">&quot;&quot;</span>
-    <span class="k">repeat</span> <span class="nv">with</span> <span class="nv">a</span> <span class="k">in</span> <span class="p">{</span><span class="nv">x</span><span class="p">,</span> <span class="nv">y</span><span class="p">,</span> <span class="nv">w</span><span class="p">,</span> <span class="nv">h</span><span class="p">}</span>
-        <span class="k">set</span> <span class="nv">args</span> <span class="k">to</span> <span class="nv">args</span> <span class="o">&amp;</span> <span class="no">space</span> <span class="o">&amp;</span> <span class="p">(</span><span class="s2">&quot;&quot;</span> <span class="o">&amp;</span> <span class="nv">a</span><span class="p">)</span>&#39;s <span class="nb">quoted form</span>
-    <span class="k">end</span> <span class="k">repeat</span>
-    <span class="k">considering </span><span class="nb">numeric strings</span>
-        <span class="k">if</span> <span class="p">(</span><span class="nb">system info</span><span class="p">)</span>&#39;s <span class="nv">system</span> <span class="no">version</span> <span class="o">&lt;</span> <span class="s2">&quot;10.9&quot;</span> <span class="k">then</span>
-            <span class="k">set</span> <span class="nv">ruby</span> <span class="k">to</span> <span class="s2">&quot;/usr/bin/ruby&quot;</span>
-        <span class="k">else</span>
-            <span class="k">set</span> <span class="nv">ruby</span> <span class="k">to</span> <span class="s2">&quot;/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/bin/ruby&quot;</span>
-        <span class="k">end</span> <span class="k">if</span>
-    <span class="k">end</span> <span class="k">considering</span>
-    <span class="nb">do shell script</span> <span class="nv">ruby</span> <span class="o">&amp;</span> <span class="s2">&quot; &lt;&lt;&#39;EOF&#39; - &quot;</span> <span class="o">&amp;</span> <span class="nv">args</span> <span class="o">&amp;</span> <span class="s2">&quot;</span>
-<span class="s2">require &#39;osx/cocoa&#39;</span>
-<span class="s2">include OSX</span>
-<span class="s2">raise ArgumentError, \&quot;Usage: #{File.basename($0)} x, y, w, h\&quot; unless ARGV.length == 4</span>
-<span class="s2">x, y, w, h = ARGV.map {|a| a.to_f}</span>
-<span class="s2">outfile = File.expand_path(%x[date +&#39;%F %H.%M.%S.png&#39;].chomp, &#39;~/Desktop&#39;)</span>
-<span class="s2">img = CGDisplayCreateImageForRect(CGMainDisplayID(), CGRectMake(x, y, w, h))</span>
-<span class="s2">brep = NSBitmapImageRep.alloc.initWithCGImage(img)</span>
-<span class="s2">data = brep.objc_send(</span>
-<span class="s2">    :representationUsingType, NSPNGFileType,</span>
-<span class="s2">    :properties, {})</span>
-<span class="s2">data.objc_send(</span>
-<span class="s2">    :writeToFile, outfile,</span>
-<span class="s2">    :atomically, false)</span>
-<span class="s2">EOF&quot;</span>
-<span class="k">end</span> <span class="nv">screencapture</span>
-</code></pre></div>
-
-<p>The command to size a window in AppleScript is:  </p>
-<div class="highlight"><pre><span></span><code><span class="k">tell</span> <span class="nb">application</span> <span class="s2">&quot;Finder&quot;</span> <span class="k">to</span> <span class="k">set</span> <span class="nb">the</span> <span class="na">bounds</span> <span class="k">of</span> <span class="nb">the</span> <span class="nb">front</span> <span class="na">window</span> <span class="k">to</span> <span class="p">{</span><span class="mi">25</span><span class="p">,</span> <span class="mi">50</span><span class="p">,</span> <span class="mi">1025</span><span class="p">,</span> <span class="mi">650</span><span class="p">}</span>
-</code></pre></div>
-
-<p>active application:   </p>
-<div class="highlight"><pre><span></span><code><span class="nb">activate</span> <span class="nb">application</span> <span class="s2">&quot;Safari&quot;</span>
-</code></pre></div>
-
-<h2 id="work-in-progress">Work in progress</h2>
-<h3 id="1st-working-script">1st working script</h3>
-<p>working: </p>
-<ul>
-<li>put IINA at foreground</li>
-<li>screenshot</li>
-<li>saves file</li>
-</ul>
-<p><img class="screenshot" src="https://notes.nicolasdeville.com/images/script-screenshot-app/Picture_1.png" alt="script-screenshot-app/Picture_1.png"/>  </p>
-<p>to figure out:</p>
-<ol>
-<li>capture app only, not full screen ➤ shell script syntax</li>
-<li>capture video file name ➤ AppleScript</li>
-<li>capture timestamp ➤ possible? 🤔  </li>
-<li>generate HTML code ➤ I know how to do it with Python, not sure how to connect both or if I have to redo logic in AppleScript? 🤔</li>
-</ol>
-<p>For 1) looking at command line tools that would help, eg.:  </p>
-<ul>
-<li>gnome-screenshot</li>
-<li>scrot</li>
-<li>ImageMagick</li>
-</ul>
-<div class="link_border"><div class="link_logo_box"><img class="link_logo" src="https://logo.clearbit.com/tecmint.com?size=35" alt="logo"/></div><div class="link_content">
-<div class="link_title">Scrot: A Command Line Tool to Take Desktop/Server Screenshots Automatically in Linux</div>
-<div class="link_tagline">tecmint.com</div>
-<div class="link_url"><a href="https://www.tecmint.com/take-screenshots-in-linux-using-scrot/" target="_blank">https://www.tecmint.com/take-screenshots-in-linux-using-scrot/</a></div></div></div>
-
-<p>doesn't seem to be available for macOS</p>
-<div class="link_border"><div class="link_logo_box"><img class="link_logo" src="https://logo.clearbit.com/osxdaily.com?size=35" alt="logo"/></div><div class="link_content">
-<div class="link_title">   Take Screen Shots from the Terminal in Mac OS X   </div>
-<div class="link_tagline">osxdaily.com</div>
-<div class="link_url"><a href="https://osxdaily.com/2011/08/11/take-screen-shots-terminal-mac-os-x/" target="_blank">https://osxdaily.com/2011/08/11/take-screen-shots-terminal-mac-os-x/</a></div></div></div>
-
-<p>To silently take a screen shot just use the -x flag:</p>
-<div class="highlight"><pre><span></span><code>screencapture -x quiet.jpg
-</code></pre></div>
-
-<p>Learning of the day: make use more often of the <code>-h</code> (help) switch when a shell command is known. <code>screencapture -h</code> gives:   </p>
-<div class="highlight"><pre><span></span><code>xxx@xxxx ~ % screencapture -h
-screencapture: illegal option -- h
-usage: screencapture <span class="o">[</span>-icMPmwsWxSCUtoa<span class="o">]</span> <span class="o">[</span>files<span class="o">]</span>
-  -c         force screen capture to go to the clipboard
-  -b         capture Touch Bar - non-interactive modes only
-  -C         capture the cursor as well as the screen. only <span class="k">in</span> non-interactive modes
-  -d         display errors to the user graphically
-  -i         capture screen interactively, by selection or window
-               control key - causes screen shot to go to clipboard
-               space key   - toggle between mouse selection and
-                             window selection modes
-               escape key  - cancels interactive screen shot
-  -m         only capture the main monitor, undefined <span class="k">if</span> -i is <span class="nb">set</span>
-  -D&lt;display&gt; screen capture or record from the display specified. -D <span class="m">1</span> is main display, -D <span class="m">2</span> secondary, etc.
-  -o         <span class="k">in</span> window capture mode, <span class="k">do</span> not capture the shadow of the window
-  -p         screen capture will use the default settings <span class="k">for</span> capture. The files argument will be ignored
-  -M         screen capture output will go to a new Mail message
-  -P         screen capture output will open <span class="k">in</span> Preview or QuickTime Player <span class="k">if</span> video
-  -I         screen capture output will open <span class="k">in</span> Messages
-  -B&lt;bundleid&gt; screen capture output will open <span class="k">in</span> app with bundleid
-  -s         only allow mouse selection mode
-  -S         <span class="k">in</span> window capture mode, capture the screen not the window
-  -J&lt;style&gt;  sets the starting of interfactive capture
-               selection       - captures screen <span class="k">in</span> selection mode
-               window          - captures screen <span class="k">in</span> window mode
-               video           - records screen <span class="k">in</span> selection mode
-  -t&lt;format&gt; image format to create, default is png <span class="o">(</span>other options include pdf, jpg, tiff and other formats<span class="o">)</span>
-  -T&lt;seconds&gt; take the picture after a delay of &lt;seconds&gt;, default is <span class="m">5</span>
-  -w         only allow window selection mode
-  -W         start interaction <span class="k">in</span> window selection mode
-  -x         <span class="k">do</span> not play sounds
-  -a         <span class="k">do</span> not include windows attached to selected windows
-  -r         <span class="k">do</span> not add dpi meta data to image
-  -l&lt;windowid&gt; capture this windowsid
-  -R&lt;x,y,w,h&gt; capture screen rect
-  -v        capture video recording of the screen
-  -V&lt;seconds&gt; limits video capture to specified seconds
-  -g        captures audio during a video recording using default input.
-  -G&lt;id&gt;    captures audio during a video recording using audio id specified.
-  -k        show clicks <span class="k">in</span> video recording mode
-  -U        Show interactive toolbar <span class="k">in</span> interactive mode
-  -u        present UI after screencapture is complete. files passed to <span class="nb">command</span> line will be ignored
-  files   where to save the screen capture, <span class="m">1</span> file per screen
-</code></pre></div>
-
-<p>so need:   </p>
-<div class="highlight"><pre><span></span><code>screencapture -w -d -i -o -x -tjpg
-</code></pre></div>
-
-<p><code>-i</code> is interactive so mouse click required to select windown 😕   </p>
-<p>or trying   </p>
-<div class="highlight"><pre><span></span><code>screencapture -wdioxtjpg
-</code></pre></div>
-
-<p>Working solution seems to be using Shortcuts 🤯   </p>
-<div class="link_border"><div class="link_logo_box"><img class="link_logo" src="https://logo.clearbit.com/stackexchange.com?size=35" alt="logo"/></div><div class="link_content">
-<div class="link_title">macos - How do I find the windowid to pass to screencapture -l? - Ask Different</div>
-<div class="link_tagline">stackexchange.com</div>
-<div class="link_url"><a href="https://apple.stackexchange.com/questions/56561/how-do-i-find-the-windowid-to-pass-to-screencapture-l" target="_blank">https://apple.stackexchange.com/questions/56561/how-do-i-find-the-windowid-to-pass-to-screencapture-l</a></div></div></div>
-
-<p>need to figure out if I can get timestamp and video name.   </p>
-<p>To run: <code>shortcuts run "Screenshot IINA"</code>  </p>
-<p>Works even when window is not at the foreground 😁   </p>
-<p>Took a different turn, but now have it so that a key on my Contour Shuttle [<a href="../../home-office/contour-shuttle/index.html">Nic Note: Contour Shuttle</a>] takes the screenshot and adds to a folder with video name.  </p>
-<p>Need to figure out how to rename files with no spaces and generate HTML. Probably triggering a Python script with Hazel - will be the quickest.    </p>
-<p>Enough for today though 😁   </p>
-<h1 id="final-solution">Final solution</h1>
-<p><span class="datestamp">03 Oct 2022</span> </p>
-<p>macOS Shortcuts
-+ Hazel
-+ Python</p>
-<p>Workflow:  </p>
-<p>when I plan to take screenshots of a video, only manual step is to go in Hazel (<code>Cmd Space</code> then <code>haz</code>) and change the output folder as needed:   </p>
-<p><img class="screenshot" src="https://notes.nicolasdeville.com/images/script-screenshot-app/221003-1252_hazel_process_iina.jpg" alt="script-screenshot-app/221003-1252_hazel_process_iina.jpg"/>  </p>
-<p>then:   </p>
-<p>if I am actively in IINA, I have a key on my Contour Shuttle to take the screenshot:  </p>
-<p><img class="screenshot" src="https://notes.nicolasdeville.com/images/script-screenshot-app/contour-iina.jpg" alt="script-screenshot-app/contour-iina.jpg"/>  </p>
-<p>if I'm outside of IINA - even if it is hidden behind another app! - I use a key on my Streamdeck to take the screenshot:    </p>
-<p><img class="screenshot" src="https://notes.nicolasdeville.com/images/script-screenshot-app/streamdeck-iina.jpg" alt="script-screenshot-app/streamdeck-iina.jpg"/>  </p>
-<p>which triggers the macOS Shortcut:  </p>
-<p><img class="screenshot" src="https://notes.nicolasdeville.com/images/script-screenshot-app/iina-macos-shortcut.jpg" alt="script-screenshot-app/iina-macos-shortcut.jpg"/>  </p>
-<p>in any case, 3s later, I have the HTML snippet in my clipboard, ready to be pasted in my note, like so:   </p>
-<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">img</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;screenshot&quot;</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;https://notes.nicolasdeville.com/images/221003-125026-tesla-ai-day-2022.png&quot;</span> <span class="na">alt</span><span class="o">=</span><span class="s">&quot;221003-125026-tesla-ai-day-2022&quot;</span><span class="p">/&gt;</span>
-</code></pre></div>
-
-<p>Python script used for reference:  </p>
-<div class="highlight"><pre><span></span><code><span class="sd">&#39;&#39;&#39;</span>
-<span class="sd">Complement script to the &quot;Screenshot IINA&quot; Apple Shortcuts. </span>
-<span class="sd">- copy HTML to clipboard</span>
-<span class="sd">&#39;&#39;&#39;</span>
-
-<span class="kn">import</span> <span class="nn">subprocess</span>
-<span class="kn">from</span> <span class="nn">inspect</span> <span class="kn">import</span> <span class="n">currentframe</span>
-<span class="kn">import</span> <span class="nn">os</span>
-
-<span class="kn">import</span> <span class="nn">time</span>
-<span class="n">start_time</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>
-
-<span class="kn">import</span> <span class="nn">sys</span>
-<span class="kn">import</span> <span class="nn">pymsgbox</span>
-
-<span class="n">output_folder</span> <span class="o">=</span> <span class="s1">&#39;/Users/path/to/content/images&#39;</span>
-
-<span class="c1">### Functions</span>
-
-<span class="k">def</span> <span class="nf">write_to_clipboard</span><span class="p">(</span><span class="n">output</span><span class="p">):</span>
-    <span class="n">process</span> <span class="o">=</span> <span class="n">subprocess</span><span class="o">.</span><span class="n">Popen</span><span class="p">(</span>
-        <span class="s1">&#39;pbcopy&#39;</span><span class="p">,</span> <span class="n">env</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;LANG&#39;</span><span class="p">:</span> <span class="s1">&#39;en_US.UTF-8&#39;</span><span class="p">},</span> <span class="n">stdin</span><span class="o">=</span><span class="n">subprocess</span><span class="o">.</span><span class="n">PIPE</span><span class="p">)</span>
-    <span class="n">process</span><span class="o">.</span><span class="n">communicate</span><span class="p">(</span><span class="n">output</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span><span class="s1">&#39;utf-8&#39;</span><span class="p">))</span>
-    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">OUTPUT COPIED TO CLIPBOARD</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
-
-<span class="k">def</span> <span class="nf">process_iina_screenshot</span><span class="p">(</span><span class="n">filepath</span><span class="p">,</span> <span class="n">v</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">test</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
-
-    <span class="n">image_path</span> <span class="o">=</span> <span class="n">filepath</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="n">output_folder</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">)[</span><span class="mi">1</span><span class="p">:]</span> <span class="c1"># remove trailing /</span>
-
-    <span class="k">if</span> <span class="n">image_path</span> <span class="ow">not</span> <span class="ow">in</span> <span class="p">[</span><span class="kc">None</span><span class="p">,</span> <span class="s1">&#39;None&#39;</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">]:</span>
-
-        <span class="n">image_name</span> <span class="o">=</span> <span class="n">image_path</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;.&#39;</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
-        <span class="k">if</span> <span class="n">image_name</span><span class="o">.</span><span class="n">endswith</span><span class="p">(</span><span class="s1">&#39;-&#39;</span><span class="p">):</span>
-            <span class="n">image_name</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;-&#39;</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">)</span>
-
-        <span class="n">output</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;&lt;img class=</span><span class="se">\&quot;</span><span class="s2">screenshot</span><span class="se">\&quot;</span><span class="s2"> src=</span><span class="se">\&quot;</span><span class="s2">https://notes.nicolasdeville.com/images/</span><span class="si">{</span><span class="n">image_path</span><span class="si">}</span><span class="se">\&quot;</span><span class="s2"> alt=</span><span class="se">\&quot;</span><span class="si">{</span><span class="n">image_name</span><span class="si">}</span><span class="se">\&quot;</span><span class="s2">/&gt;&quot;</span>  
-
-        <span class="n">write_to_clipboard</span><span class="p">(</span><span class="n">output</span><span class="p">)</span>
-
-<span class="n">run_time</span> <span class="o">=</span> <span class="nb">round</span><span class="p">((</span><span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span> <span class="o">-</span> <span class="n">start_time</span><span class="p">),</span> <span class="mi">1</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;finished in </span><span class="si">{</span><span class="n">run_time</span><span class="si">}</span><span class="s1">s.</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
-
-<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
-    <span class="n">filepath</span> <span class="o">=</span> <span class="n">sys</span><span class="o">.</span><span class="n">argv</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
-    <span class="n">process_iina_screenshot</span><span class="p">(</span><span class="n">filepath</span><span class="p">)</span>    
-</code></pre></div>
-
-<p>I'm happy with this new workflow 😁 </p>
-<p>First use of the workflow: [<a href="../../tesla/ai-day-2022/index.html">Nic Note: Tesla AI Day 2022</a>]    </p>
-                </article>
-            </aside>
-
-                <section id="content" class="body">
-
-                <!-- PREVIOUS NOTES -->
-				<p class="notes-section">previous notes</p>
-                <hr>
-
-                <ol id="posts-list" class="hfeed">
+</footer>                </div>
+                
+            </article>
+            <!-- <hr/> black separation bar between articles -->
+        </li>
+        
             
 
+        <section id="content" class="body">
 
+        <ol id="posts-list" class="hfeed">
 
-            <li>
-                <article class="hentry">
-                    <header>
-                        <!-- PREVIOUS NOTE TITLE -->
-                        <h1><a href="https://notes.nicolasdeville.com/helpers/applescript" rel="bookmark"
-                            title="AppleScript">AppleScript</a></h1>
-                        <!-- PREVIOUS NOTE SUMMARY -->
-                        <div class="entry-content">
-                            
-                        </div>
-                    </header>
-
+        <li>
+            <article class="hentry">
+                <header>
+                    <h1><a href="https://notes.nicolasdeville.com/helpers/applescript" rel="bookmark"
+                        title="AppleScript">AppleScript</a></h1>
                     <div class="entry-content">
-                        <!-- PREVIOUS NOTE METADATA -->
+                        
+                    </div>
+                </header>
+
+                <div class="entry-content">
 <footer class="post-info">
 
     <p>
@@ -444,29 +160,29 @@ usage: screencapture <span class="o">[</span>-icMPmwsWxSCUtoa<span class="o">]</
 
     
 
-</footer>                    </div>
-                    
-                </article>
-                <hr/>
-            </li>
+</footer>                </div>
+                
+            </article>
+            <!-- <hr/> black separation bar between articles -->
+        </li>
+        
             
 
+        <section id="content" class="body">
 
+        <ol id="posts-list" class="hfeed">
 
-            <li>
-                <article class="hentry">
-                    <header>
-                        <!-- PREVIOUS NOTE TITLE -->
-                        <h1><a href="https://notes.nicolasdeville.com/helpers/javascript-for-automation" rel="bookmark"
-                            title="Javascript for automation">Javascript for automation</a></h1>
-                        <!-- PREVIOUS NOTE SUMMARY -->
-                        <div class="entry-content">
-                            
-                        </div>
-                    </header>
-
+        <li>
+            <article class="hentry">
+                <header>
+                    <h1><a href="https://notes.nicolasdeville.com/helpers/javascript-for-automation" rel="bookmark"
+                        title="Javascript for automation">Javascript for automation</a></h1>
                     <div class="entry-content">
-                        <!-- PREVIOUS NOTE METADATA -->
+                        
+                    </div>
+                </header>
+
+                <div class="entry-content">
 <footer class="post-info">
 
     <p>
@@ -485,29 +201,29 @@ usage: screencapture <span class="o">[</span>-icMPmwsWxSCUtoa<span class="o">]</
 
     
 
-</footer>                    </div>
-                    
-                </article>
-                <hr/>
-            </li>
+</footer>                </div>
+                
+            </article>
+            <!-- <hr/> black separation bar between articles -->
+        </li>
+        
             
 
+        <section id="content" class="body">
 
+        <ol id="posts-list" class="hfeed">
 
-            <li>
-                <article class="hentry">
-                    <header>
-                        <!-- PREVIOUS NOTE TITLE -->
-                        <h1><a href="https://notes.nicolasdeville.com/projects/transcribee" rel="bookmark"
-                            title="Transcribee">Transcribee</a></h1>
-                        <!-- PREVIOUS NOTE SUMMARY -->
-                        <div class="entry-content">
-                            <p>End-to-end automated workflow from recordings to markdown note.</p>
-                        </div>
-                    </header>
-
+        <li>
+            <article class="hentry">
+                <header>
+                    <h1><a href="https://notes.nicolasdeville.com/projects/transcribee" rel="bookmark"
+                        title="Transcribee">Transcribee</a></h1>
                     <div class="entry-content">
-                        <!-- PREVIOUS NOTE METADATA -->
+                        <p>End-to-end automated workflow from recordings to markdown note.</p>
+                    </div>
+                </header>
+
+                <div class="entry-content">
 <footer class="post-info">
 
     <p>
@@ -526,29 +242,29 @@ usage: screencapture <span class="o">[</span>-icMPmwsWxSCUtoa<span class="o">]</
 
     
 
-</footer>                    </div>
-                    
-                </article>
-                <hr/>
-            </li>
+</footer>                </div>
+                
+            </article>
+            <!-- <hr/> black separation bar between articles -->
+        </li>
+        
             
 
+        <section id="content" class="body">
 
+        <ol id="posts-list" class="hfeed">
 
-            <li>
-                <article class="hentry">
-                    <header>
-                        <!-- PREVIOUS NOTE TITLE -->
-                        <h1><a href="https://notes.nicolasdeville.com/apps/alfred" rel="bookmark"
-                            title="Alfred">Alfred</a></h1>
-                        <!-- PREVIOUS NOTE SUMMARY -->
-                        <div class="entry-content">
-                            <p>my notes on using Alfred</p>
-                        </div>
-                    </header>
-
+        <li>
+            <article class="hentry">
+                <header>
+                    <h1><a href="https://notes.nicolasdeville.com/apps/alfred" rel="bookmark"
+                        title="Alfred">Alfred</a></h1>
                     <div class="entry-content">
-                        <!-- PREVIOUS NOTE METADATA -->
+                        <p>my notes on using Alfred</p>
+                    </div>
+                </header>
+
+                <div class="entry-content">
 <footer class="post-info">
 
     <p>
@@ -567,29 +283,29 @@ usage: screencapture <span class="o">[</span>-icMPmwsWxSCUtoa<span class="o">]</
 
     
 
-</footer>                    </div>
-                    
-                </article>
-                <hr/>
-            </li>
+</footer>                </div>
+                
+            </article>
+            <!-- <hr/> black separation bar between articles -->
+        </li>
+        
             
 
+        <section id="content" class="body">
 
+        <ol id="posts-list" class="hfeed">
 
-            <li>
-                <article class="hentry">
-                    <header>
-                        <!-- PREVIOUS NOTE TITLE -->
-                        <h1><a href="https://notes.nicolasdeville.com/projects/twittee" rel="bookmark"
-                            title="Twittee">Twittee</a></h1>
-                        <!-- PREVIOUS NOTE SUMMARY -->
-                        <div class="entry-content">
-                            <p>[operational] Lead generation using Twitter</p>
-                        </div>
-                    </header>
-
+        <li>
+            <article class="hentry">
+                <header>
+                    <h1><a href="https://notes.nicolasdeville.com/projects/twittee" rel="bookmark"
+                        title="Twittee">Twittee</a></h1>
                     <div class="entry-content">
-                        <!-- PREVIOUS NOTE METADATA -->
+                        <p>[operational] Lead generation using Twitter</p>
+                    </div>
+                </header>
+
+                <div class="entry-content">
 <footer class="post-info">
 
     <p>
@@ -609,29 +325,29 @@ usage: screencapture <span class="o">[</span>-icMPmwsWxSCUtoa<span class="o">]</
 
     
 
-</footer>                    </div>
-                    
-                </article>
-                <hr/>
-            </li>
+</footer>                </div>
+                
+            </article>
+            <!-- <hr/> black separation bar between articles -->
+        </li>
+        
             
 
+        <section id="content" class="body">
 
+        <ol id="posts-list" class="hfeed">
 
-            <li>
-                <article class="hentry">
-                    <header>
-                        <!-- PREVIOUS NOTE TITLE -->
-                        <h1><a href="https://notes.nicolasdeville.com/b2b-sales/email-automation" rel="bookmark"
-                            title="Email Automation for Sales outreaches">Email Automation for Sales outreaches</a></h1>
-                        <!-- PREVIOUS NOTE SUMMARY -->
-                        <div class="entry-content">
-                            <p>a key skill in today's Sales world</p>
-                        </div>
-                    </header>
-
+        <li>
+            <article class="hentry">
+                <header>
+                    <h1><a href="https://notes.nicolasdeville.com/b2b-sales/email-automation" rel="bookmark"
+                        title="Email Automation for Sales outreaches">Email Automation for Sales outreaches</a></h1>
                     <div class="entry-content">
-                        <!-- PREVIOUS NOTE METADATA -->
+                        <p>a key skill in today's Sales world</p>
+                    </div>
+                </header>
+
+                <div class="entry-content">
 <footer class="post-info">
 
     <p>
@@ -651,29 +367,29 @@ usage: screencapture <span class="o">[</span>-icMPmwsWxSCUtoa<span class="o">]</
 
     
 
-</footer>                    </div>
-                    
-                </article>
-                <hr/>
-            </li>
+</footer>                </div>
+                
+            </article>
+            <!-- <hr/> black separation bar between articles -->
+        </li>
+        
             
 
+        <section id="content" class="body">
 
+        <ol id="posts-list" class="hfeed">
 
-            <li>
-                <article class="hentry">
-                    <header>
-                        <!-- PREVIOUS NOTE TITLE -->
-                        <h1><a href="https://notes.nicolasdeville.com/python/library-pynput" rel="bookmark"
-                            title="Python Library: pynput">Python Library: pynput</a></h1>
-                        <!-- PREVIOUS NOTE SUMMARY -->
-                        <div class="entry-content">
-                            <p>control mouse and keyboard with Python</p>
-                        </div>
-                    </header>
-
+        <li>
+            <article class="hentry">
+                <header>
+                    <h1><a href="https://notes.nicolasdeville.com/python/library-pynput" rel="bookmark"
+                        title="Python Library: pynput">Python Library: pynput</a></h1>
                     <div class="entry-content">
-                        <!-- PREVIOUS NOTE METADATA -->
+                        <p>control mouse and keyboard with Python</p>
+                    </div>
+                </header>
+
+                <div class="entry-content">
 <footer class="post-info">
 
     <p>
@@ -692,29 +408,29 @@ usage: screencapture <span class="o">[</span>-icMPmwsWxSCUtoa<span class="o">]</
 
     
 
-</footer>                    </div>
-                    
-                </article>
-                <hr/>
-            </li>
+</footer>                </div>
+                
+            </article>
+            <!-- <hr/> black separation bar between articles -->
+        </li>
+        
             
 
+        <section id="content" class="body">
 
+        <ol id="posts-list" class="hfeed">
 
-            <li>
-                <article class="hentry">
-                    <header>
-                        <!-- PREVIOUS NOTE TITLE -->
-                        <h1><a href="https://notes.nicolasdeville.com/python/library-yagmail" rel="bookmark"
-                            title="Python Library: Yagmail">Python Library: Yagmail</a></h1>
-                        <!-- PREVIOUS NOTE SUMMARY -->
-                        <div class="entry-content">
-                            <p>GMAIL/SMTP client that aims to make it as simple as possible to send emails.</p>
-                        </div>
-                    </header>
-
+        <li>
+            <article class="hentry">
+                <header>
+                    <h1><a href="https://notes.nicolasdeville.com/python/library-yagmail" rel="bookmark"
+                        title="Python Library: Yagmail">Python Library: Yagmail</a></h1>
                     <div class="entry-content">
-                        <!-- PREVIOUS NOTE METADATA -->
+                        <p>GMAIL/SMTP client that aims to make it as simple as possible to send emails.</p>
+                    </div>
+                </header>
+
+                <div class="entry-content">
 <footer class="post-info">
 
     <p>
@@ -733,29 +449,29 @@ usage: screencapture <span class="o">[</span>-icMPmwsWxSCUtoa<span class="o">]</
 
     
 
-</footer>                    </div>
-                    
-                </article>
-                <hr/>
-            </li>
+</footer>                </div>
+                
+            </article>
+            <!-- <hr/> black separation bar between articles -->
+        </li>
+        
             
 
+        <section id="content" class="body">
 
+        <ol id="posts-list" class="hfeed">
 
-            <li>
-                <article class="hentry">
-                    <header>
-                        <!-- PREVIOUS NOTE TITLE -->
-                        <h1><a href="https://notes.nicolasdeville.com/apps/fig" rel="bookmark"
-                            title="Fig">Fig</a></h1>
-                        <!-- PREVIOUS NOTE SUMMARY -->
-                        <div class="entry-content">
-                            
-                        </div>
-                    </header>
-
+        <li>
+            <article class="hentry">
+                <header>
+                    <h1><a href="https://notes.nicolasdeville.com/apps/fig" rel="bookmark"
+                        title="Fig">Fig</a></h1>
                     <div class="entry-content">
-                        <!-- PREVIOUS NOTE METADATA -->
+                        
+                    </div>
+                </header>
+
+                <div class="entry-content">
 <footer class="post-info">
 
     <p>
@@ -774,29 +490,29 @@ usage: screencapture <span class="o">[</span>-icMPmwsWxSCUtoa<span class="o">]</
 
     
 
-</footer>                    </div>
-                    
-                </article>
-                <hr/>
-            </li>
+</footer>                </div>
+                
+            </article>
+            <!-- <hr/> black separation bar between articles -->
+        </li>
+        
             
 
+        <section id="content" class="body">
 
+        <ol id="posts-list" class="hfeed">
 
-            <li>
-                <article class="hentry">
-                    <header>
-                        <!-- PREVIOUS NOTE TITLE -->
-                        <h1><a href="https://notes.nicolasdeville.com/projects/imagee" rel="bookmark"
-                            title="Imagee">Imagee</a></h1>
-                        <!-- PREVIOUS NOTE SUMMARY -->
-                        <div class="entry-content">
-                            <p>collection of scripts for image processing</p>
-                        </div>
-                    </header>
-
+        <li>
+            <article class="hentry">
+                <header>
+                    <h1><a href="https://notes.nicolasdeville.com/projects/imagee" rel="bookmark"
+                        title="Imagee">Imagee</a></h1>
                     <div class="entry-content">
-                        <!-- PREVIOUS NOTE METADATA -->
+                        <p>collection of scripts for image processing</p>
+                    </div>
+                </header>
+
+                <div class="entry-content">
 <footer class="post-info">
 
     <p>
@@ -815,29 +531,29 @@ usage: screencapture <span class="o">[</span>-icMPmwsWxSCUtoa<span class="o">]</
 
     
 
-</footer>                    </div>
-                    
-                </article>
-                <hr/>
-            </li>
+</footer>                </div>
+                
+            </article>
+            <!-- <hr/> black separation bar between articles -->
+        </li>
+        
             
 
+        <section id="content" class="body">
 
+        <ol id="posts-list" class="hfeed">
 
-            <li>
-                <article class="hentry">
-                    <header>
-                        <!-- PREVIOUS NOTE TITLE -->
-                        <h1><a href="https://notes.nicolasdeville.com/b2b-sales/email-tools" rel="bookmark"
-                            title="Tools for email finding & validation">Tools for email finding & validation</a></h1>
-                        <!-- PREVIOUS NOTE SUMMARY -->
-                        <div class="entry-content">
-                            
-                        </div>
-                    </header>
-
+        <li>
+            <article class="hentry">
+                <header>
+                    <h1><a href="https://notes.nicolasdeville.com/b2b-sales/email-tools" rel="bookmark"
+                        title="Tools for email finding & validation">Tools for email finding & validation</a></h1>
                     <div class="entry-content">
-                        <!-- PREVIOUS NOTE METADATA -->
+                        
+                    </div>
+                </header>
+
+                <div class="entry-content">
 <footer class="post-info">
 
     <p>
@@ -858,29 +574,29 @@ usage: screencapture <span class="o">[</span>-icMPmwsWxSCUtoa<span class="o">]</
 
     
 
-</footer>                    </div>
-                    
-                </article>
-                <hr/>
-            </li>
+</footer>                </div>
+                
+            </article>
+            <!-- <hr/> black separation bar between articles -->
+        </li>
+        
             
 
+        <section id="content" class="body">
 
+        <ol id="posts-list" class="hfeed">
 
-            <li>
-                <article class="hentry">
-                    <header>
-                        <!-- PREVIOUS NOTE TITLE -->
-                        <h1><a href="https://notes.nicolasdeville.com/helpers/api-tinify" rel="bookmark"
-                            title="API: Tinify (TinyPNG)">API: Tinify (TinyPNG)</a></h1>
-                        <!-- PREVIOUS NOTE SUMMARY -->
-                        <div class="entry-content">
-                            <p>Optimise your images to be more lightweight with TinyPNG.</p>
-                        </div>
-                    </header>
-
+        <li>
+            <article class="hentry">
+                <header>
+                    <h1><a href="https://notes.nicolasdeville.com/helpers/api-tinify" rel="bookmark"
+                        title="API: Tinify (TinyPNG)">API: Tinify (TinyPNG)</a></h1>
                     <div class="entry-content">
-                        <!-- PREVIOUS NOTE METADATA -->
+                        <p>Optimise your images to be more lightweight with TinyPNG.</p>
+                    </div>
+                </header>
+
+                <div class="entry-content">
 <footer class="post-info">
 
     <p>
@@ -900,29 +616,29 @@ usage: screencapture <span class="o">[</span>-icMPmwsWxSCUtoa<span class="o">]</
 
     
 
-</footer>                    </div>
-                    
-                </article>
-                <hr/>
-            </li>
+</footer>                </div>
+                
+            </article>
+            <!-- <hr/> black separation bar between articles -->
+        </li>
+        
             
 
+        <section id="content" class="body">
 
+        <ol id="posts-list" class="hfeed">
 
-            <li>
-                <article class="hentry">
-                    <header>
-                        <!-- PREVIOUS NOTE TITLE -->
-                        <h1><a href="https://notes.nicolasdeville.com/helpers/macos-copy-filename" rel="bookmark"
-                            title="Copy file name to clipboard upon saving file in macOS">Copy file name to clipboard upon saving file in macOS</a></h1>
-                        <!-- PREVIOUS NOTE SUMMARY -->
-                        <div class="entry-content">
-                            
-                        </div>
-                    </header>
-
+        <li>
+            <article class="hentry">
+                <header>
+                    <h1><a href="https://notes.nicolasdeville.com/helpers/macos-copy-filename" rel="bookmark"
+                        title="Copy file name to clipboard upon saving file in macOS">Copy file name to clipboard upon saving file in macOS</a></h1>
                     <div class="entry-content">
-                        <!-- PREVIOUS NOTE METADATA -->
+                        
+                    </div>
+                </header>
+
+                <div class="entry-content">
 <footer class="post-info">
 
     <p>
@@ -941,23 +657,28 @@ usage: screencapture <span class="o">[</span>-icMPmwsWxSCUtoa<span class="o">]</
 
     
 
-</footer>                    </div>
-                    
-                </article>
-                <hr/>
-            </li>
+</footer>                </div>
+                
+            </article>
+            <!-- <hr/> black separation bar between articles -->
+        </li>
+        
             
                 </ol><!-- /#posts-list -->
+                <hr>
                 </section><!-- /#content -->
 
+
+        <!-- footer -->
         <section id="extras" class="body">
 
         <!-- /.blogroll -->
                 <div class="blogroll">
                         <h2>links</h2>
                         <ul>
-                            <li><a href="https://indeXall.io">Side project: indeXall.io</a></li>
                             <li><a href="https://btobsales.eu">Services: BtoBSales.EU</a></li>
+                            <li><a href="https://indeXall.io">Side project: indeXall.io</a></li>
+                            <li><a href="https://github.com/ndeville">Github: ndeville</a></li>
                         </ul>
                 </div>
 

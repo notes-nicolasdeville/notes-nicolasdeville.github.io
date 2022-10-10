@@ -18,7 +18,8 @@
     <link rel="fluid-icon" href="https://notes.nicolasdeville.com/favicon.png" title="Nic's notes">
 
     <!-- CSS -->
-    <link rel="stylesheet" href="https://notes.nicolasdeville.com/theme/css/main.css" />
+    <!-- <link rel="stylesheet" href="https://notes.nicolasdeville.com/theme/css/main.css" /> -->
+    <link rel="stylesheet" href="theme/css/main.css" />
 
 
 
@@ -43,7 +44,7 @@
             </div>
 
             <div class="above-navbar">
-                <div class="last_updated">09 Oct 2022 | 20:53</div>
+                <div class="last_updated">10 Oct 2022 | 10:21</div>
                 <div>
                     <p class="notes_count">
                         <a href="https://notes.nicolasdeville.com/tags">by tags</a>
@@ -79,38 +80,24 @@
             </ul></nav>
         </header>
 
+        <!-- index.html injection -->
 
 
-<!-- 220911 moved to base.html -->
-<!-- <p class="notes_count">
-    8 notes 
-    <span style="color:#C74350">|</span> 
-    <a href="https://notes.nicolasdeville.com/tags">by tags</a> 
-    <span style="color:#C74350">|</span> 
-    <a href="https://notes.nicolasdeville.com/2022/">2022</a> 
-    <span style="color:#C74350">|</span> 
-    <a href="https://notes.nicolasdeville.com/2021/">2021</a> 
-    <span style="color:#C74350">|</span> 
-    <a href="https://notes.nicolasdeville.com/2020/">2020</a>
-</p> -->
+        <section id="content" class="body">
 
+        <ol id="posts-list" class="hfeed">
 
-
-            <aside id="featured" class="body">
-            <!-- LATEST NOTE -->
-            <p class="notes-section">last (updated) note</p>
-            <hr/>
-
-                <article class="hentry">
-                    <h1 class="entry-title"><a href="https://notes.nicolasdeville.com/python/library-tmdbv3api">Python Library: tmdbv3api | fetching movie data</a></h1>
-
-                    <!-- added 4/7 -->
-                    <div>
-                        <p class="header_summary">
-                            <p>Python wrapper for the TMDB API - themoviedb.org</p>
-                        </p>
+        <li>
+            <article class="hentry">
+                <header>
+                    <h1><a href="https://notes.nicolasdeville.com/python/library-tmdbv3api" rel="bookmark"
+                        title="Python Library: tmdbv3api | fetching movie data">Python Library: tmdbv3api | fetching movie data</a></h1>
+                    <div class="entry-content">
+                        <p>Python wrapper for the TMDB API - themoviedb.org</p>
                     </div>
+                </header>
 
+                <div class="entry-content">
 <footer class="post-info">
 
     <p>
@@ -130,254 +117,29 @@
 
     
 
-</footer><p><span class="datestamp">17 Jul 2022</span> starting note *<em>note date indicates latest update.</em>   </p>
-<table>
-<thead>
-<tr>
-<th>Library resources</th>
-<th></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>PyPI</td>
-<td>---</td>
-</tr>
-<tr>
-<td>Github</td>
-<td>---</td>
-</tr>
-<tr>
-<td>API Documentation</td>
-<td><a href="https://developers.themoviedb.org/3/getting-started/introduction" target="_blank">https://developers.themoviedb.org/3/getting-started/introduction</a></td>
-</tr>
-<tr>
-<td>Wrapper Documentation</td>
-<td><a href="https://github.com/AnthonyBloomer/tmdbv3api" target="_blank">https://github.com/AnthonyBloomer/tmdbv3api</a></td>
-</tr>
-</tbody>
-</table>
-<p>Using this library to fetch data from TMDB:<br>
-<a href="https://www.themoviedb.org/" target="_blank">https://www.themoviedb.org/</a><br>
-The Movie Database (TMDB) is a popular, user editable database for movies and TV shows.  </p>
-<h1 id="movie-endpoint">Movie endpoint</h1>
-<p>Search by Movie ID: </p>
-<p>AVAILABLE FIELDS:<br>
-adult<br>
-backdrop_path<br>
-belongs_to_collection<br>
-budget<br>
-genres<br>
-homepage<br>
-id 
-imdb_id<br>
-original_language<br>
-original_title<br>
-overview<br>
-popularity<br>
-poster_path<br>
-production_companies<br>
-production_countries<br>
-release_date<br>
-revenue<br>
-runtime<br>
-spoken_languages <br>
-status <br>
-tagline<br>
-title<br>
-video<br>
-vote_average<br>
-vote_count<br>
-videos<br>
-trailers<br>
-images<br>
-casts<br>
-translations<br>
-keywords<br>
-release_dates  </p>
-<h2 id="generic-search-example">Generic Search example</h2>
-<p><code>.search</code> using movie title.  </p>
-<div class="highlight"><pre><span></span><code><span class="n">movie</span> <span class="o">=</span> <span class="n">Movie</span><span class="p">()</span>
-<span class="n">search</span> <span class="o">=</span> <span class="n">movie</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="s1">&#39;Interstellar&#39;</span><span class="p">)</span> <span class="c1"># list of dict</span>
-<span class="k">for</span> <span class="n">result</span> <span class="ow">in</span> <span class="n">search</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
-    <span class="nb">print</span><span class="p">()</span>
-</code></pre></div>
-
-<p>returns:  </p>
-<div class="highlight"><pre><span></span><code>{&#39;adult&#39;: False, &#39;backdrop_path&#39;: &#39;/pbrkL804c8yAv3zBZR4QPEafpAR.jpg&#39;, &#39;genre_ids&#39;: [12, 18, 878], &#39;id&#39;: 157336, &#39;original_language&#39;: &#39;en&#39;, &#39;original_title&#39;: &#39;Interstellar&#39;, &#39;overview&#39;: &#39;The adventures of a group of explorers who make use of a newly discovered wormhole to surpass the limitations on human space travel and conquer the vast distances involved in an interstellar voyage.&#39;, &#39;popularity&#39;: 189.43, &#39;poster_path&#39;: &#39;/gEU2QniE6E77NI6lCU6MxlNBvIx.jpg&#39;, &#39;release_date&#39;: &#39;2014-11-05&#39;, &#39;title&#39;: &#39;Interstellar&#39;, &#39;video&#39;: False, &#39;vote_average&#39;: 8.4, &#39;vote_count&#39;: 28848}
-{&#39;adult&#39;: False, &#39;backdrop_path&#39;: &#39;/qpynYr3NPHkj1E7UKfd0OWJ2e2n.jpg&#39;, &#39;genre_ids&#39;: [99], &#39;id&#39;: 301959, &#39;original_language&#39;: &#39;en&#39;, &#39;original_title&#39;: &quot;Interstellar: Nolan&#39;s Odyssey&quot;, &#39;overview&#39;: &quot;A look behind the lens of Christopher Nolan&#39;s space epic.&quot;, &#39;popularity&#39;: 14.741, &#39;poster_path&#39;: &#39;/wUmyEjrLqYpJYjVMD2YR7IffFeE.jpg&#39;, &#39;release_date&#39;: &#39;2014-11-05&#39;, &#39;title&#39;: &quot;Interstellar: Nolan&#39;s Odyssey&quot;, &#39;video&#39;: False, &#39;vote_average&#39;: 7.7, &#39;vote_count&#39;: 158}
-{&#39;adult&#39;: False, &#39;backdrop_path&#39;: &#39;/zjZmXyugypJ8aDc2WdybuG9cmoh.jpg&#39;, &#39;genre_ids&#39;: [99], &#39;id&#39;: 336592, &#39;original_language&#39;: &#39;en&#39;, &#39;original_title&#39;: &#39;The Science of Interstellar&#39;, &#39;overview&#39;: &quot;Matthew McConaughey narrates a fascinating look at Christopher Nolan&#39;s sci-fi film Interstellar, including scientific foundations, the work of consulting Scientist Kip Thorne, basic film themes, the science behind the search for planets capable of hosting life, space-time and the theory of relativity, the science of wormholes and black holes, crafting the film&#39;s visuals based on real scientific observation, the birth of the universe, the Dust Bowl and the evolution of dust as a toxin, the likelihood of future dust storms, the prospects of escaping a dying or doomed planet, and the possibilities of colonizing Mars.&quot;, &#39;popularity&#39;: 9.55, &#39;poster_path&#39;: &#39;/qUZiVjFBd67WKktIrjJ9H3tesyo.jpg&#39;, &#39;release_date&#39;: &#39;2014-11-25&#39;, &#39;title&#39;: &#39;The Science of Interstellar&#39;, &#39;video&#39;: False, &#39;vote_average&#39;: 7, &#39;vote_count&#39;: 21}
-{&#39;adult&#39;: False, &#39;backdrop_path&#39;: &#39;/wUZID3WzrzuIQmcIjXahZkV1ItI.jpg&#39;, &#39;genre_ids&#39;: [878], &#39;id&#39;: 398188, &#39;original_language&#39;: &#39;en&#39;, &#39;original_title&#39;: &#39;Interstellar Wars&#39;, &#39;overview&#39;: &#39;For Millennia the Aliien force has watched and waited, a brooding menace that has now at last decided to take over the Earth. Communications systems worldwide are sent into chaos by a strange atmospheric interference and this has turned into a global phenomenon. A massive spaceship headed towards Earth and smaller spaceships began to cover entire cities around the world. Suddenly, the wonder turns into horror as the spaceships destroy the cities with energy weapons. When the world counterattacks, the alien ships are invincible to military weapons.  The survivors have to use their wits to kill the aliens, or die.&#39;, &#39;popularity&#39;: 5.229, &#39;poster_path&#39;: &#39;/4uWZ8cdrXMLiyLNgdmqQCIM6z40.jpg&#39;, &#39;release_date&#39;: &#39;2016-06-09&#39;, &#39;title&#39;: &#39;Interstellar Wars&#39;, &#39;video&#39;: False, &#39;vote_average&#39;: 3.7, &#39;vote_count&#39;: 10}
-{&#39;adult&#39;: False, &#39;backdrop_path&#39;: None, &#39;genre_ids&#39;: [35], &#39;id&#39;: 287954, &#39;original_language&#39;: &#39;en&#39;, &#39;original_title&#39;: &#39;Lolita from Interstellar Space&#39;, &#39;overview&#39;: &#39;An undeniably beautiful alien is sent to Earth to study the complex mating rituals of human beings, which leads to the young interstellar traveler experiencing the passion that surrounds the centuries-old ritual of the species.&#39;, &#39;popularity&#39;: 6.842, &#39;poster_path&#39;: &#39;/nhWlip1s5YzhRFKGlHABGJrBhZn.jpg&#39;, &#39;release_date&#39;: &#39;2014-03-08&#39;, &#39;title&#39;: &#39;Lolita from Interstellar Space&#39;, &#39;video&#39;: False, &#39;vote_average&#39;: 5.7, &#39;vote_count&#39;: 6}
-{&#39;adult&#39;: False, &#39;backdrop_path&#39;: None, &#39;genre_ids&#39;: [99], &#39;id&#39;: 529107, &#39;original_language&#39;: &#39;en&#39;, &#39;original_title&#39;: &#39;Inside Interstellar&#39;, &#39;overview&#39;: &quot;Cast and crew of Christopher Nolan&#39;s &#39;Interstellar&#39; discuss project origins, the film&#39;s imagery, ambitions, incorporating IMAX footage, the human element within the film, arm shooting locations outside of Calgary, the set construction and design, working with real corn, mechanical characters, including backstory, design, the blend of practical and digital effects in bringing them to life, the differences in the characters, the human performances behind the characters, the creative process behind the film&#39;s music, Icelandic locations, vehicle interiors, the processes of simulating the absence of gravity, the crucial end-film visuals and influence and inspiration for future generations&quot;, &#39;popularity&#39;: 3.894, &#39;poster_path&#39;: &#39;/vemBplPKQhVe5cRWL7kxtgp15Vq.jpg&#39;, &#39;release_date&#39;: &#39;2015-03-31&#39;, &#39;title&#39;: &#39;Inside Interstellar&#39;, &#39;video&#39;: False, &#39;vote_average&#39;: 6.6, &#39;vote_count&#39;: 8}
-{&#39;adult&#39;: False, &#39;backdrop_path&#39;: &#39;/lQS9il7YqGjmmBefZY27uG5wbzT.jpg&#39;, &#39;genre_ids&#39;: [99], &#39;id&#39;: 660698, &#39;original_language&#39;: &#39;en&#39;, &#39;original_title&#39;: &#39;Faster Than Light: the Dream of Interstellar Flight&#39;, &#39;overview&#39;: &#39;“Faster Than Light” explores the longstanding quest to develop spacecraft with enough power and speed to reach the stars. The film asks: What will it take to reach a newly discovered planet circling our Sun’s nearest neighbor, Proxima Centauri? Based on real science and engineering, “Faster Than Light” takes audiences on a thrilling journey into the future, aboard laser-driven space sails, antimatter engines, and even warp drive – right out of science fiction. “Who can say how far, and how fast, our technology will one day take us?” said director Thomas Lucas.&#39;, &#39;popularity&#39;: 10.358, &#39;poster_path&#39;: &#39;/mbgJxB70uMFK2H8DXHUj5lAMgXx.jpg&#39;, &#39;release_date&#39;: &#39;2017-06-07&#39;, &#39;title&#39;: &#39;Faster Than Light: the Dream of Interstellar Flight&#39;, &#39;video&#39;: False, &#39;vote_average&#39;: 6, &#39;vote_count&#39;: 1}
-{&#39;adult&#39;: False, &#39;backdrop_path&#39;: None, &#39;genre_ids&#39;: [], &#39;id&#39;: 838389, &#39;original_language&#39;: &#39;en&#39;, &#39;original_title&#39;: &quot;Interstellar: Desgornia&#39;s Cut&quot;, &#39;overview&#39;: &quot;A team of explorers travel through a wormhole in space in an attempt to ensure humanity&#39;s survival.&quot;, &#39;popularity&#39;: 2.571, &#39;poster_path&#39;: &#39;/geOB25wA6VHSlANpJ1UMyuokjJl.jpg&#39;, &#39;release_date&#39;: &#39;&#39;, &#39;title&#39;: &quot;Interstellar: Desgornia&#39;s Cut&quot;, &#39;video&#39;: False, &#39;vote_average&#39;: 0, &#39;vote_count&#39;: 0}
-{&#39;adult&#39;: False, &#39;backdrop_path&#39;: None, &#39;genre_ids&#39;: [28, 14, 878], &#39;id&#39;: 460616, &#39;original_language&#39;: &#39;en&#39;, &#39;original_title&#39;: &#39;Interstellar Civil War: Shadows of the Empire&#39;, &#39;overview&#39;: &quot;The Imperial Empire is attacked by an Alliance of rebels led by fanatical mystics. The ruler, Empress Nobu, the 8th generation of her family, wants to execute a bold plan to rescue a cyborg, Leah C6, trapped on the battle ravaged planet Endor. The Empress believes Leah C6 holds the secret to destroying the Alliance of Rebels before their insurgency can kill millions of citizens of the Empire. She recruits her heroic fleet commander, Lord General Luka Raan and asks him to gather a team from the Empire&#39;s elite soldiers, the Galactic Rangers. Raan assembles the team in the ruins of Endor which was attacked by depraved Rebels and outlaws led by, Kindo-Ker, a fanatical mystic in Dark Energy. The Galactic Rangers begin a desperate search to find and rescue Leah C6 before the Alliance Rebels can.&quot;, &#39;popularity&#39;: 1.457, &#39;poster_path&#39;: &#39;/1lDY7ZpEKOl3OaIQURjRbmFPfT8.jpg&#39;, &#39;release_date&#39;: &#39;2018-04-15&#39;, &#39;title&#39;: &#39;Interstellar Civil War: Shadows of the Empire&#39;, &#39;video&#39;: False, &#39;vote_average&#39;: 4, &#39;vote_count&#39;: 1}
-{&#39;adult&#39;: False, &#39;backdrop_path&#39;: None, &#39;genre_ids&#39;: [12], &#39;id&#39;: 552531, &#39;original_language&#39;: &#39;en&#39;, &#39;original_title&#39;: &quot;The Prom Goer&#39;s Interstellar Excursion&quot;, &#39;overview&#39;: &#39;High schooler Bennett lands the prom date of his dreams, Sophie, just days before the dance. Not long after, he witnesses Sophie being abducted by aliens in the middle of the New Mexico desert.&#39;, &#39;popularity&#39;: 0.6, &#39;poster_path&#39;: None, &#39;release_date&#39;: &#39;&#39;, &#39;title&#39;: &quot;The Prom Goer&#39;s Interstellar Excursion&quot;, &#39;video&#39;: False, &#39;vote_average&#39;: 0, &#39;vote_count&#39;: 0}
-{&#39;adult&#39;: False, &#39;backdrop_path&#39;: None, &#39;genre_ids&#39;: [], &#39;id&#39;: 763179, &#39;original_language&#39;: &#39;en&#39;, &#39;original_title&#39;: &#39;Cosmic Journey: The Voyager Interstellar Mission and Message&#39;, &#39;overview&#39;: &#39;The farthest Voyager: &quot;Cosmic Journey,&quot; a documentary premiering on the A&amp;E cable network, tells the saga of the farthest-flung space journey to date - the Voyager interstellar mission, which started out 25 years ago and sailed past Jupiter, Saturn, Uranus and Neptune in the 1980s.&#39;, &#39;popularity&#39;: 1.091, &#39;poster_path&#39;: None, &#39;release_date&#39;: &#39;2003-01-16&#39;, &#39;title&#39;: &#39;Cosmic Journey: The Voyager Interstellar Mission and Message&#39;, &#39;video&#39;: False, &#39;vote_average&#39;: 0, &#39;vote_count&#39;: 0}
-{&#39;adult&#39;: False, &#39;backdrop_path&#39;: None, &#39;genre_ids&#39;: [35, 18], &#39;id&#39;: 716603, &#39;original_language&#39;: &#39;en&#39;, &#39;original_title&#39;: &#39;Only Interstellar Pinball Lives Forever&#39;, &#39;overview&#39;: &quot;A young boy (played by an actual re-purposed Sunday school puppet) loses all faith in religion and afterlife options after having to bury his umpteenth pet, and vows that someday, when he&#39;s an adult with money, he&#39;ll find a way to become an &#39;eternal molecule&#39; through science. Then, twenty-two years later, the playing of a pinball game brings dredges up the memory of that vow. Utilizing the hallucinogenic properties of alcohol and cough syrup blends, he undertakes the design of a pinball machine so poignant and dignified that it will convince scientists to create a pinball that we can download our consciousness into and thereby become digitally immortal.&quot;, &#39;popularity&#39;: 0.6, &#39;poster_path&#39;: &#39;/uLJMGZlrkmvAO9Ria9zrp8GUqjx.jpg&#39;, &#39;release_date&#39;: &#39;2010-06-28&#39;, &#39;title&#39;: &#39;Only Interstellar Pinball Lives Forever&#39;, &#39;video&#39;: False, &#39;vote_average&#39;: 0, &#39;vote_count&#39;: 0}
-{&#39;adult&#39;: False, &#39;backdrop_path&#39;: &#39;/jiD3YVlYyOqcIgLXGn1W7r0rL7p.jpg&#39;, &#39;genre_ids&#39;: [16, 878, 10402, 12], &#39;id&#39;: 11049, &#39;original_language&#39;: &#39;ja&#39;, &#39;original_title&#39;: &#39;Interstella 5555: The 5tory of the 5ecret 5tar 5ystem&#39;, &#39;overview&#39;: &#39;Four talented alien musicians are kidnapped by a record producer who disguises them as humans. Shep, a space pilot in love with bass player Stella, follows them to Earth. Reprogrammed to forget their real identities and renamed The Crescendolls, the group quickly becomes a huge success playing soulless corporate pop. At a concert, Shep manages to free all the musicians except Stella, and the band sets out to rediscover who they really are -- and to rescue Stella.&#39;, &#39;popularity&#39;: 9.073, &#39;poster_path&#39;: &#39;/AsvPgdcSlHocAbMp3yGZXjPiKKF.jpg&#39;, &#39;release_date&#39;: &#39;2003-05-28&#39;, &#39;title&#39;: &#39;Interstella 5555: The 5tory of the 5ecret 5tar 5ystem&#39;, &#39;video&#39;: False, &#39;vote_average&#39;: 7.8, &#39;vote_count&#39;: 323}
-{&#39;adult&#39;: False, &#39;backdrop_path&#39;: None, &#39;genre_ids&#39;: [], &#39;id&#39;: 986255, &#39;original_language&#39;: &#39;en&#39;, &#39;original_title&#39;: &#39;How to Colonize the Stars: The Challenge of Interstellar Flight&#39;, &#39;overview&#39;: &quot;Leading physicists and engineers in the field of interstellar travel discuss some of the deep issues we face when considering the problem of sending spacecraft to other stars. Will mankind ever truly become a space fairing civilization? Space colonization is no longer the fodder of science fiction, it is becoming a reality. We&#39;ll need to learn how to grow food, manufacture and live off our planet.&quot;, &#39;popularity&#39;: 0.6, &#39;poster_path&#39;: &#39;/ddYoMPJioxY7qQxt7JyUaLCWMjw.jpg&#39;, &#39;release_date&#39;: &#39;2009-06-09&#39;, &#39;title&#39;: &#39;How to Colonize the Stars: The Challenge of Interstellar Flight&#39;, &#39;video&#39;: False, &#39;vote_average&#39;: 0, &#39;vote_count&#39;: 0}
-{&#39;adult&#39;: False, &#39;backdrop_path&#39;: None, &#39;genre_ids&#39;: [28], &#39;id&#39;: 649745, &#39;original_language&#39;: &#39;zh&#39;, &#39;original_title&#39;: &#39;星际流浪&#39;, &#39;overview&#39;: &#39;The film tells that the catastrophe era, the earth is a waste land, the survivors are divided into wanderers and civilians, they are attached to the rule of the interstellar armed groups, in which the rogues rely on the plundering of civilian materials as a livelihood, making civilians in this harsh It is difficult to survive in the environment. After a hundred years of black technology explosion, it will bring about a civilized renaissance. In the face of the deteriorating planet, mankind is determined to continue the race and is determined to interstellar immigration. The &quot;curvature engine&quot; developed by the Chinese researcher Hailei has become the key to the interstellar immigration, and is also the target of robbers and interstellar armed groups.&#39;, &#39;popularity&#39;: 0.664, &#39;poster_path&#39;: &#39;/oUWDbde5bWu9syBZglWDIwB1SPm.jpg&#39;, &#39;release_date&#39;: &#39;2019-08-02&#39;, &#39;title&#39;: &#39;Interstellar Wandering&#39;, &#39;video&#39;: False, &#39;vote_average&#39;: 0, &#39;vote_count&#39;: 0}
-{&#39;adult&#39;: False, &#39;backdrop_path&#39;: &#39;/yl9QqtS3tbLCL4e6lHM349joALK.jpg&#39;, &#39;genre_ids&#39;: [28, 53, 878], &#39;id&#39;: 47663, &#39;original_language&#39;: &#39;en&#39;, &#39;original_title&#39;: &#39;Trancers 5: Sudden Deth&#39;, &#39;overview&#39;: &quot;Jack Deth is back for one more round with the trancers. Jack must attempt to find his way home from the other-dimensional world of Orpheus, where magic works and the trancers were the ruling class (before Trancers IV, that is). Unfortunately, Jack&#39;s quest to find the mystical Tiamond in the Castle of Unrelenting Terror may be thwarted by the return of Caliban, king of the trancers who was thought dead.&quot;, &#39;popularity&#39;: 3.503, &#39;poster_path&#39;: &#39;/t4to2HtWP1lT6TkvTwSUD7cQqIH.jpg&#39;, &#39;release_date&#39;: &#39;1994-11-04&#39;, &#39;title&#39;: &#39;Trancers 5: Sudden Deth&#39;, &#39;video&#39;: False, &#39;vote_average&#39;: 4.9, &#39;vote_count&#39;: 14}
-{&#39;adult&#39;: False, &#39;backdrop_path&#39;: None, &#39;genre_ids&#39;: [], &#39;id&#39;: 772265, &#39;original_language&#39;: &#39;zh&#39;, &#39;original_title&#39;: &#39;星际变种&#39;, &#39;overview&#39;: &#39;After long years of searching, the unknown creature was finally captured by the crew of the Thunder and named &quot;Baal&quot;. Under the lure of Baal, the young Jamie released it. &quot;Baal&quot; who escaped from the experimental tank killed all the crew and Jamie\&#39;s parents, and the young Jamie escaped back to Earth in an escape capsule alone. Twenty years later, a variant of &quot;Baal&quot; appeared on the earth, and Jamie began the story of the journey to save mankind and self-redemption&#39;, &#39;popularity&#39;: 0.6, &#39;poster_path&#39;: &#39;/mMidfcVVaESbYdF9Tzgejp3FvPR.jpg&#39;, &#39;release_date&#39;: &#39;&#39;, &#39;title&#39;: &#39;Variant&#39;, &#39;video&#39;: False, &#39;vote_average&#39;: 0, &#39;vote_count&#39;: 0}
-{&#39;adult&#39;: False, &#39;backdrop_path&#39;: None, &#39;genre_ids&#39;: [878], &#39;id&#39;: 261443, &#39;original_language&#39;: &#39;en&#39;, &#39;original_title&#39;: &#39;Angry Planet&#39;, &#39;overview&#39;: &#39;A criminal sentenced to life on a prison planet reveals his true purpose: to extract revenge on the killers who murdered his family.&#39;, &#39;popularity&#39;: 0.995, &#39;poster_path&#39;: &#39;/6Bv0rl9R5gaN8X58LOjUT4MWKR7.jpg&#39;, &#39;release_date&#39;: &#39;2008-01-01&#39;, &#39;title&#39;: &#39;Angry Planet&#39;, &#39;video&#39;: False, &#39;vote_average&#39;: 2.8, &#39;vote_count&#39;: 2}
-{&#39;adult&#39;: False, &#39;backdrop_path&#39;: &#39;/aPXNyG6035Wz2DhtGAgf7PeGNsz.jpg&#39;, &#39;genre_ids&#39;: [878, 28], &#39;id&#39;: 47662, &#39;original_language&#39;: &#39;en&#39;, &#39;original_title&#39;: &#39;Trancers 4: Jack of Swords&#39;, &#39;overview&#39;: &#39;Jack is now back in the future. He had since lost Lena, and finds out that he\&#39;s lost his other wife Alice to none other than Harris. While heading out for another assignment, something goes awry with the TCL chamber. Jack finds himself in a whole new dimension. He also runs across a different version of trancers. These guys seem to be in control of this planet. Jack manages to assist a rebel group known as the &quot;Tunnel Rats&quot; crush the rule of the evil Lord Calaban.&#39;, &#39;popularity&#39;: 2.457, &#39;poster_path&#39;: &#39;/ec081IWKkRalPO14KAmqJ2vWeYB.jpg&#39;, &#39;release_date&#39;: &#39;1994-02-02&#39;, &#39;title&#39;: &#39;Trancers 4: Jack of Swords&#39;, &#39;video&#39;: False, &#39;vote_average&#39;: 5.4, &#39;vote_count&#39;: 21}
-{&#39;adult&#39;: False, &#39;backdrop_path&#39;: &#39;/ynF37QsffZ1b3Xm2ktpb79ioP6R.jpg&#39;, &#39;genre_ids&#39;: [99], &#39;id&#39;: 436305, &#39;original_language&#39;: &#39;en&#39;, &#39;original_title&#39;: &#39;The Farthest&#39;, &#39;overview&#39;: &quot;The captivating tales of the people and events behind one of humanity&#39;s greatest achievements in exploration: NASA&#39;s Voyager mission.&quot;, &#39;popularity&#39;: 3.57, &#39;poster_path&#39;: &#39;/jHbSJo4FoKvqaGn3b7q49bcSYVZ.jpg&#39;, &#39;release_date&#39;: &#39;2018-03-15&#39;, &#39;title&#39;: &#39;The Farthest&#39;, &#39;video&#39;: False, &#39;vote_average&#39;: 7.8, &#39;vote_count&#39;: 41}
-</code></pre></div>
-
-<h1 id="person-endpoint">Person endpoint</h1>
-<p><code>.details</code> using Person ID  </p>
-<p>AVAILABLE FIELDS:<br>
-adult<br>
-also_known_as<br>
-biography<br>
-birthday<br>
-deathday<br>
-gender<br>
-homepage<br>
-id<br>
-imdb_id<br>
-known_for_department<br>
-name<br>
-place_of_birth<br>
-popularity<br>
-profile_path<br>
-images  </p>
-<div class="highlight"><pre><span></span><code><span class="n">person</span> <span class="o">=</span> <span class="n">Person</span><span class="p">()</span>
-<span class="n">p</span> <span class="o">=</span> <span class="n">person</span><span class="o">.</span><span class="n">details</span><span class="p">(</span><span class="mi">138</span><span class="p">)</span> <span class="c1"># 138 is Quentin Tarantino&#39;s ID on TMDB</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">p</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">p</span><span class="o">.</span><span class="n">name</span><span class="si">=}</span><span class="s2">&quot;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">p</span><span class="o">.</span><span class="n">biography</span><span class="si">=}</span><span class="s2">&quot;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">p</span><span class="o">.</span><span class="n">known_for_department</span><span class="si">=}</span><span class="s2">&quot;</span><span class="p">)</span>
-</code></pre></div>
-
-<p>returns:  </p>
-<div class="highlight"><pre><span></span><code>p.name=&#39;Quentin Tarantino&#39;
-p.biography=&quot;Quentin Jerome Tarantino (born March 27, 1963) is an American film director, screenwriter, producer, cinematographer and actor. In the early 1990s he was an independent filmmaker whose films used nonlinear storylines and aestheticization of violence. His films have earned him a variety of Academy Award, Golden Globe, BAFTA and Palme d&#39;Or Awards and he has been nominated for Emmy and Grammy Awards. In 2007, Total Film named him the 12th-greatest director of all time.\n\nTarantino was born in Knoxville, Tennessee, the son of Connie McHugh Tarantino Zastoupil, a health care executive and nurse born in Knoxville, and Tony Tarantino, an actor and amateur musician born in Queens, New York. Tarantino&#39;s mother allowed him to quit school at age 17, to attend an acting class full time. Tarantino gave up acting while attending the acting school, saying that he admired directors more than actors. Tarantino also worked in a video rental store before becoming a filmmaker, paid close attention to the types of films people liked to rent, and has cited that experience as inspiration for his directorial career.\n\nDescription above from the Wikipedia article Quentin Tarantino, licensed under CC-BY-SA, full list of contributors on Wikipedia.&quot;
-p.known_for_department=&#39;Directing&#39;
-</code></pre></div>
-
-<p><code>.movie_credits</code> using Person ID  </p>
-<p>AVAILABLE FIELDS:<br>
-cast<br>
-crew <br>
-id      </p>
-<div class="highlight"><pre><span></span><code><span class="n">person</span> <span class="o">=</span> <span class="n">Person</span><span class="p">()</span>
-<span class="n">p</span> <span class="o">=</span> <span class="n">person</span><span class="o">.</span><span class="n">movie_credits</span><span class="p">(</span><span class="mi">138</span><span class="p">)</span> <span class="c1"># &lt;class &#39;tmdbv3api.as_obj.AsObj&#39;&gt; with 3 values: cast, crew and id. Note: 138 is Quentin Tarantino</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;All movies where that person is listed as CAST:&quot;</span><span class="p">)</span>
-<span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">p</span><span class="o">.</span><span class="n">cast</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> 
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">All movies where that person is listed as CREW:&quot;</span><span class="p">)</span>
-<span class="k">for</span> <span class="n">y</span> <span class="ow">in</span> <span class="n">p</span><span class="o">.</span><span class="n">crew</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="n">y</span><span class="p">)</span> 
-</code></pre></div>
-
-<p>returns (edited to 2 results for length):  </p>
-<div class="highlight"><pre><span></span><code>All movies where that person is listed as CAST:
-{&#39;adult&#39;: False, &#39;backdrop_path&#39;: &#39;/olFse9isSpx1L2i2wKNFJO9OR83.jpg&#39;, &#39;genre_ids&#39;: [35], &#39;id&#39;: 10614, &#39;original_language&#39;: &#39;en&#39;, &#39;original_title&#39;: &quot;My Best Friend&#39;s Birthday&quot;, &#39;overview&#39;: &quot;My Best Friend&#39;s Birthday is a partially lost black-and-white amateur film. The original cut was about 70 minutes long but due to a fire only 36 minutes of the film survived. It is about Mickey, who has been dumped by his girlfriend, and Clarence, who&#39;s trying to give his friend an unforgettable birthday.&quot;, &#39;popularity&#39;: 6.475, &#39;poster_path&#39;: &#39;/q5tp3fPHL3jveTjREC4WieY7AoU.jpg&#39;, &#39;release_date&#39;: &#39;1987-01-01&#39;, &#39;title&#39;: &quot;My Best Friend&#39;s Birthday&quot;, &#39;video&#39;: False, &#39;vote_average&#39;: 5.583, &#39;vote_count&#39;: 103, &#39;character&#39;: &#39;Clarence Pool&#39;, &#39;credit_id&#39;: &#39;52fe43949251416c75015ecb&#39;, &#39;order&#39;: 0}
-{&#39;adult&#39;: False, &#39;backdrop_path&#39;: &#39;/ulKw0ytuwp9L2RmikvO3mg8Ll6b.jpg&#39;, &#39;genre_ids&#39;: [99], &#39;id&#39;: 631143, &#39;original_language&#39;: &#39;en&#39;, &#39;original_title&#39;: &#39;QT8: The First Eight&#39;, &#39;overview&#39;: &#39;A detailed account of the life and artistic career of legendary filmmaker Quentin Tarantino, from his early days as a video club manager to the scandalous fall in disgrace of producer Harvey Weinstein. A story about how to shoot eight great movies and become an icon of modern pop culture.&#39;, &#39;popularity&#39;: 10.886, &#39;poster_path&#39;: &#39;/rGPwMYUeygsUAmo0NS8IPlhQEfH.jpg&#39;, &#39;release_date&#39;: &#39;2019-10-21&#39;, &#39;title&#39;: &#39;QT8: The First Eight&#39;, &#39;video&#39;: False, &#39;vote_average&#39;: 7.3, &#39;vote_count&#39;: 105, &#39;character&#39;: &#39;Self&#39;, &#39;credit_id&#39;: &#39;60d4f3cd3e6f2b00298aa267&#39;, &#39;order&#39;: 0}
-
-All movies where that person is listed as CREW:
-{&#39;adult&#39;: False, &#39;backdrop_path&#39;: None, &#39;genre_ids&#39;: [878], &#39;id&#39;: 755563, &#39;original_language&#39;: &#39;pt&#39;, &#39;original_title&#39;: &#39;Um Moço Muito Branco&#39;, &#39;overview&#39;: &#39;&#39;, &#39;popularity&#39;: 0.6, &#39;poster_path&#39;: &#39;/wwzfIItcHRKeftnCqRPkV42BphE.jpg&#39;, &#39;release_date&#39;: &#39;2019-02-06&#39;, &#39;title&#39;: &#39;Um Moço Muito Branco&#39;, &#39;video&#39;: False, &#39;vote_average&#39;: 0.0, &#39;vote_count&#39;: 0, &#39;credit_id&#39;: &#39;5f8f217d55c1f400361e6dd1&#39;, &#39;department&#39;: &#39;Art&#39;, &#39;job&#39;: &#39;Second Assistant Art Director&#39;}
-{&#39;adult&#39;: False, &#39;backdrop_path&#39;: &#39;/c7k9ZZb1MoFzJeyjphKRMLHOgqU.jpg&#39;, &#39;genre_ids&#39;: [28, 53], &#39;id&#39;: 1991, &#39;original_language&#39;: &#39;en&#39;, &#39;original_title&#39;: &#39;Death Proof&#39;, &#39;overview&#39;: &quot;Austin&#39;s hottest DJ, Jungle Julia, sets out into the night to unwind with her two friends Shanna and Arlene. Covertly tracking their moves is Stuntman Mike, a scarred rebel leering from behind the wheel of his muscle car, revving just feet away.&quot;, &#39;popularity&#39;: 19.585, &#39;poster_path&#39;: &#39;/vtu6H4NWnQVqEp3aanUq3hNeeot.jpg&#39;, &#39;release_date&#39;: &#39;2007-05-22&#39;, &#39;title&#39;: &#39;Death Proof&#39;, &#39;video&#39;: False, &#39;vote_average&#39;: 6.817, &#39;vote_count&#39;: 4159, &#39;credit_id&#39;: &#39;52fe4329c3a36847f803f099&#39;, &#39;department&#39;: &#39;Camera&#39;, &#39;job&#39;: &#39;Director of Photography&#39;}
-</code></pre></div>
-
-<h1 id="my-functions">My functions</h1>
-<p>For finding the director(s) based on Movie ID:</p>
-<div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">director_by_movie_id</span><span class="p">(</span><span class="n">movie_id</span><span class="p">):</span> <span class="c1"># returns list of strings</span>
-    <span class="n">list_directors</span> <span class="o">=</span> <span class="p">[]</span>
-    <span class="n">movie</span> <span class="o">=</span> <span class="n">Movie</span><span class="p">()</span>
-    <span class="n">movie_title</span> <span class="o">=</span> <span class="n">movie</span><span class="o">.</span><span class="n">details</span><span class="p">(</span><span class="n">movie_id</span><span class="p">)[</span><span class="s1">&#39;title&#39;</span><span class="p">]</span>
-    <span class="n">m</span> <span class="o">=</span> <span class="n">movie</span><span class="o">.</span><span class="n">credits</span><span class="p">(</span><span class="n">movie_id</span><span class="p">)</span> 
-    <span class="k">for</span> <span class="n">crew</span> <span class="ow">in</span> <span class="n">m</span><span class="o">.</span><span class="n">crew</span><span class="p">:</span> <span class="c1"># list of dict</span>
-        <span class="k">if</span> <span class="n">crew</span><span class="p">[</span><span class="s1">&#39;job&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;Director&#39;</span><span class="p">:</span>
-            <span class="n">list_directors</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">crew</span><span class="p">[</span><span class="s1">&#39;name&#39;</span><span class="p">])</span>
-    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Checked </span><span class="si">{</span><span class="n">movie_title</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="s1">&#39; &#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">list_directors</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-    <span class="k">return</span> <span class="n">list_directors</span>
-</code></pre></div>
-
-<p>For getting all movies from a specific director based on the Person ID:</p>
-<div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">movies_from_director</span><span class="p">(</span><span class="n">director_id</span><span class="p">):</span> <span class="c1"># returns list of movie IDs</span>
-    <span class="n">person</span> <span class="o">=</span> <span class="n">Person</span><span class="p">()</span>
-    <span class="n">movie</span> <span class="o">=</span> <span class="n">Movie</span><span class="p">()</span>
-    <span class="n">list_movies</span> <span class="o">=</span> <span class="p">[]</span>
-    <span class="n">list_movies_ids_from_director</span> <span class="o">=</span> <span class="p">[]</span>
-    <span class="n">list_movies_from_director</span> <span class="o">=</span> <span class="p">[]</span>
-    <span class="n">director_name</span> <span class="o">=</span> <span class="n">person</span><span class="o">.</span><span class="n">details</span><span class="p">(</span><span class="n">director_id</span><span class="p">)[</span><span class="s1">&#39;name&#39;</span><span class="p">]</span>
-    <span class="n">p</span> <span class="o">=</span> <span class="n">person</span><span class="o">.</span><span class="n">movie_credits</span><span class="p">(</span><span class="n">director_id</span><span class="p">)</span>
-
-    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Checking </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">p</span><span class="o">.</span><span class="n">crew</span><span class="p">)</span><span class="si">}</span><span class="s2"> movies where </span><span class="si">{</span><span class="n">director_name</span><span class="si">}</span><span class="s2"> is listed as crew:&quot;</span><span class="p">)</span>
-    <span class="k">for</span> <span class="n">movie</span> <span class="ow">in</span> <span class="n">p</span><span class="o">.</span><span class="n">crew</span><span class="p">:</span> <span class="c1"># all movies where person is listed in crew</span>
-        <span class="n">movie_title</span> <span class="o">=</span> <span class="n">movie</span><span class="p">[</span><span class="s1">&#39;title&#39;</span><span class="p">]</span>
-        <span class="n">movie_id</span> <span class="o">=</span> <span class="n">movie</span><span class="p">[</span><span class="s1">&#39;id&#39;</span><span class="p">]</span>
-        <span class="k">if</span> <span class="n">movie_id</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">list_movies</span><span class="p">:</span> <span class="c1"># dedupe</span>
-            <span class="n">list_movies</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">movie_id</span><span class="p">)</span> <span class="c1"># dedupe</span>
-            <span class="n">directors</span> <span class="o">=</span> <span class="n">director_by_movie_id</span><span class="p">(</span><span class="n">movie_id</span><span class="p">)</span> <span class="c1"># returns list of directors, usually only one</span>
-            <span class="k">if</span> <span class="n">director_name</span> <span class="ow">in</span> <span class="n">directors</span><span class="p">:</span>
-                <span class="n">list_movies_ids_from_director</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">movie_id</span><span class="p">)</span>
-                <span class="n">list_movies_from_director</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">movie_title</span><span class="p">)</span>
-                <span class="c1"># print(movie_title)</span>
-    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n\n</span><span class="s2">From </span><span class="si">{</span><span class="n">director_name</span><span class="si">}</span><span class="s2"> (</span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">list_movies_from_director</span><span class="p">)</span><span class="si">}</span><span class="s2"> movies):&quot;</span><span class="p">)</span>
-    <span class="k">for</span> <span class="n">movie_found</span> <span class="ow">in</span> <span class="n">list_movies_from_director</span><span class="p">:</span>
-        <span class="nb">print</span><span class="p">(</span><span class="n">movie_found</span><span class="p">)</span>
-    <span class="k">return</span> <span class="n">list_movies_ids_from_director</span>
-</code></pre></div>
-
-<h1 id="getting-list-of-top-rated-movies">Getting list of top rated movies</h1>
-<p>This works, but returns only 20 movies:   </p>
-<div class="highlight"><pre><span></span><code><span class="n">movie</span> <span class="o">=</span> <span class="n">Movie</span><span class="p">()</span>
-<span class="n">popular</span> <span class="o">=</span> <span class="n">movie</span><span class="o">.</span><span class="n">top_rated</span><span class="p">()</span>
-
-<span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="n">popular</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="n">p</span><span class="o">.</span><span class="n">id</span><span class="p">)</span>
-    <span class="nb">print</span><span class="p">(</span><span class="n">p</span><span class="o">.</span><span class="n">title</span><span class="p">)</span>
-    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;https://image.tmdb.org/t/p/original/</span><span class="si">{</span><span class="n">p</span><span class="o">.</span><span class="n">poster_path</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-    <span class="nb">print</span><span class="p">()</span>
-</code></pre></div>
-
-<p>It seems this might be a limitation of the API v3, with v4 solving this:</p>
-<blockquote>
-<p>What are some of the improvements in v4?<br>
-You can import "unlimited" items in a single request<br>
-You can use mixed type (movie and TV) lists<br>
-You can use private lists<br>
-You can add and use comments per item<br>
-There are more sort options<br>
-They are faster  </p>
-</blockquote>
-<p>Though the wrapper is called tmdb<strong>v3</strong>api so does not support v4.   <br>
-Might need to scrap the library and do manual requests instead. It's a pain - I always struggle with authentication.   </p>
-<p>The quest continues at <a href="../../python/library-tmdbapis/index.html">Nic Note: Library: tmdbapis | fetching movie data</a>...  </p>
-                </article>
-            </aside>
-
-                <section id="content" class="body">
-
-                <!-- PREVIOUS NOTES -->
-				<p class="notes-section">previous notes</p>
-                <hr>
-
-                <ol id="posts-list" class="hfeed">
+</footer>                </div>
+                
+            </article>
+            <!-- <hr/> black separation bar between articles -->
+        </li>
+        
             
 
+        <section id="content" class="body">
 
+        <ol id="posts-list" class="hfeed">
 
-            <li>
-                <article class="hentry">
-                    <header>
-                        <!-- PREVIOUS NOTE TITLE -->
-                        <h1><a href="https://notes.nicolasdeville.com/python/library-tmdbapis" rel="bookmark"
-                            title="Python Library: tmdbapis | fetching movie data">Python Library: tmdbapis | fetching movie data</a></h1>
-                        <!-- PREVIOUS NOTE SUMMARY -->
-                        <div class="entry-content">
-                            <p>Python wrapper for the TMDB API - themoviedb.org - with support for API v4</p>
-                        </div>
-                    </header>
-
+        <li>
+            <article class="hentry">
+                <header>
+                    <h1><a href="https://notes.nicolasdeville.com/python/library-tmdbapis" rel="bookmark"
+                        title="Python Library: tmdbapis | fetching movie data">Python Library: tmdbapis | fetching movie data</a></h1>
                     <div class="entry-content">
-                        <!-- PREVIOUS NOTE METADATA -->
+                        <p>Python wrapper for the TMDB API - themoviedb.org - with support for API v4</p>
+                    </div>
+                </header>
+
+                <div class="entry-content">
 <footer class="post-info">
 
     <p>
@@ -397,29 +159,29 @@ Might need to scrap the library and do manual requests instead. It's a pain - I 
 
     
 
-</footer>                    </div>
-                    
-                </article>
-                <hr/>
-            </li>
+</footer>                </div>
+                
+            </article>
+            <!-- <hr/> black separation bar between articles -->
+        </li>
+        
             
 
+        <section id="content" class="body">
 
+        <ol id="posts-list" class="hfeed">
 
-            <li>
-                <article class="hentry">
-                    <header>
-                        <!-- PREVIOUS NOTE TITLE -->
-                        <h1><a href="https://notes.nicolasdeville.com/projects/emailee" rel="bookmark"
-                            title="Emailee">Emailee</a></h1>
-                        <!-- PREVIOUS NOTE SUMMARY -->
-                        <div class="entry-content">
-                            <p>toolbox of scripts for emails</p>
-                        </div>
-                    </header>
-
+        <li>
+            <article class="hentry">
+                <header>
+                    <h1><a href="https://notes.nicolasdeville.com/projects/emailee" rel="bookmark"
+                        title="Emailee">Emailee</a></h1>
                     <div class="entry-content">
-                        <!-- PREVIOUS NOTE METADATA -->
+                        <p>toolbox of scripts for emails</p>
+                    </div>
+                </header>
+
+                <div class="entry-content">
 <footer class="post-info">
 
     <p>
@@ -438,29 +200,29 @@ Might need to scrap the library and do manual requests instead. It's a pain - I 
 
     
 
-</footer>                    </div>
-                    
-                </article>
-                <hr/>
-            </li>
+</footer>                </div>
+                
+            </article>
+            <!-- <hr/> black separation bar between articles -->
+        </li>
+        
             
 
+        <section id="content" class="body">
 
+        <ol id="posts-list" class="hfeed">
 
-            <li>
-                <article class="hentry">
-                    <header>
-                        <!-- PREVIOUS NOTE TITLE -->
-                        <h1><a href="https://notes.nicolasdeville.com/apps/grist" rel="bookmark"
-                            title="Grist | The Evolution of Spreadsheets">Grist | The Evolution of Spreadsheets</a></h1>
-                        <!-- PREVIOUS NOTE SUMMARY -->
-                        <div class="entry-content">
-                            <p>an online, powerful, Python-driven alternative to Excel</p>
-                        </div>
-                    </header>
-
+        <li>
+            <article class="hentry">
+                <header>
+                    <h1><a href="https://notes.nicolasdeville.com/apps/grist" rel="bookmark"
+                        title="Grist | The Evolution of Spreadsheets">Grist | The Evolution of Spreadsheets</a></h1>
                     <div class="entry-content">
-                        <!-- PREVIOUS NOTE METADATA -->
+                        <p>an online, powerful, Python-driven alternative to Excel</p>
+                    </div>
+                </header>
+
+                <div class="entry-content">
 <footer class="post-info">
 
     <p>
@@ -482,29 +244,29 @@ Might need to scrap the library and do manual requests instead. It's a pain - I 
 
     
 
-</footer>                    </div>
-                    
-                </article>
-                <hr/>
-            </li>
+</footer>                </div>
+                
+            </article>
+            <!-- <hr/> black separation bar between articles -->
+        </li>
+        
             
 
+        <section id="content" class="body">
 
+        <ol id="posts-list" class="hfeed">
 
-            <li>
-                <article class="hentry">
-                    <header>
-                        <!-- PREVIOUS NOTE TITLE -->
-                        <h1><a href="https://notes.nicolasdeville.com/projects/mailingee" rel="bookmark"
-                            title="Mailingee">Mailingee</a></h1>
-                        <!-- PREVIOUS NOTE SUMMARY -->
-                        <div class="entry-content">
-                            <p>email automation &amp; sequencing system</p>
-                        </div>
-                    </header>
-
+        <li>
+            <article class="hentry">
+                <header>
+                    <h1><a href="https://notes.nicolasdeville.com/projects/mailingee" rel="bookmark"
+                        title="Mailingee">Mailingee</a></h1>
                     <div class="entry-content">
-                        <!-- PREVIOUS NOTE METADATA -->
+                        <p>email automation &amp; sequencing system</p>
+                    </div>
+                </header>
+
+                <div class="entry-content">
 <footer class="post-info">
 
     <p>
@@ -523,29 +285,29 @@ Might need to scrap the library and do manual requests instead. It's a pain - I 
 
     
 
-</footer>                    </div>
-                    
-                </article>
-                <hr/>
-            </li>
+</footer>                </div>
+                
+            </article>
+            <!-- <hr/> black separation bar between articles -->
+        </li>
+        
             
 
+        <section id="content" class="body">
 
+        <ol id="posts-list" class="hfeed">
 
-            <li>
-                <article class="hentry">
-                    <header>
-                        <!-- PREVIOUS NOTE TITLE -->
-                        <h1><a href="https://notes.nicolasdeville.com/python/library-notion-py" rel="bookmark"
-                            title="Fetching data from Notion API with Python">Fetching data from Notion API with Python</a></h1>
-                        <!-- PREVIOUS NOTE SUMMARY -->
-                        <div class="entry-content">
-                            <p>Unofficial Python 3 client for Notion.so API v3</p>
-                        </div>
-                    </header>
-
+        <li>
+            <article class="hentry">
+                <header>
+                    <h1><a href="https://notes.nicolasdeville.com/python/library-notion-py" rel="bookmark"
+                        title="Fetching data from Notion API with Python">Fetching data from Notion API with Python</a></h1>
                     <div class="entry-content">
-                        <!-- PREVIOUS NOTE METADATA -->
+                        <p>Unofficial Python 3 client for Notion.so API v3</p>
+                    </div>
+                </header>
+
+                <div class="entry-content">
 <footer class="post-info">
 
     <p>
@@ -563,29 +325,29 @@ Might need to scrap the library and do manual requests instead. It's a pain - I 
 
     
 
-</footer>                    </div>
-                    
-                </article>
-                <hr/>
-            </li>
+</footer>                </div>
+                
+            </article>
+            <!-- <hr/> black separation bar between articles -->
+        </li>
+        
             
 
+        <section id="content" class="body">
 
+        <ol id="posts-list" class="hfeed">
 
-            <li>
-                <article class="hentry">
-                    <header>
-                        <!-- PREVIOUS NOTE TITLE -->
-                        <h1><a href="https://notes.nicolasdeville.com/projects/1000-movies" rel="bookmark"
-                            title="Project: Top 1000 movies">Project: Top 1000 movies</a></h1>
-                        <!-- PREVIOUS NOTE SUMMARY -->
-                        <div class="entry-content">
-                            <p>because why not</p>
-                        </div>
-                    </header>
-
+        <li>
+            <article class="hentry">
+                <header>
+                    <h1><a href="https://notes.nicolasdeville.com/projects/1000-movies" rel="bookmark"
+                        title="Project: Top 1000 movies">Project: Top 1000 movies</a></h1>
                     <div class="entry-content">
-                        <!-- PREVIOUS NOTE METADATA -->
+                        <p>because why not</p>
+                    </div>
+                </header>
+
+                <div class="entry-content">
 <footer class="post-info">
 
     <p>
@@ -605,29 +367,29 @@ Might need to scrap the library and do manual requests instead. It's a pain - I 
 
     
 
-</footer>                    </div>
-                    
-                </article>
-                <hr/>
-            </li>
+</footer>                </div>
+                
+            </article>
+            <!-- <hr/> black separation bar between articles -->
+        </li>
+        
             
 
+        <section id="content" class="body">
 
+        <ol id="posts-list" class="hfeed">
 
-            <li>
-                <article class="hentry">
-                    <header>
-                        <!-- PREVIOUS NOTE TITLE -->
-                        <h1><a href="https://notes.nicolasdeville.com/python/tmdb-api" rel="bookmark"
-                            title="Fetching data from TMDB API">Fetching data from TMDB API</a></h1>
-                        <!-- PREVIOUS NOTE SUMMARY -->
-                        <div class="entry-content">
-                            <p>after failing with 2 libraries, just using Python's requests to fetch movie data from TMDB API - themoviedb.org</p>
-                        </div>
-                    </header>
-
+        <li>
+            <article class="hentry">
+                <header>
+                    <h1><a href="https://notes.nicolasdeville.com/python/tmdb-api" rel="bookmark"
+                        title="Fetching data from TMDB API">Fetching data from TMDB API</a></h1>
                     <div class="entry-content">
-                        <!-- PREVIOUS NOTE METADATA -->
+                        <p>after failing with 2 libraries, just using Python's requests to fetch movie data from TMDB API - themoviedb.org</p>
+                    </div>
+                </header>
+
+                <div class="entry-content">
 <footer class="post-info">
 
     <p>
@@ -647,23 +409,28 @@ Might need to scrap the library and do manual requests instead. It's a pain - I 
 
     
 
-</footer>                    </div>
-                    
-                </article>
-                <hr/>
-            </li>
+</footer>                </div>
+                
+            </article>
+            <!-- <hr/> black separation bar between articles -->
+        </li>
+        
             
                 </ol><!-- /#posts-list -->
+                <hr>
                 </section><!-- /#content -->
 
+
+        <!-- footer -->
         <section id="extras" class="body">
 
         <!-- /.blogroll -->
                 <div class="blogroll">
                         <h2>links</h2>
                         <ul>
-                            <li><a href="https://indeXall.io">Side project: indeXall.io</a></li>
                             <li><a href="https://btobsales.eu">Services: BtoBSales.EU</a></li>
+                            <li><a href="https://indeXall.io">Side project: indeXall.io</a></li>
+                            <li><a href="https://github.com/ndeville">Github: ndeville</a></li>
                         </ul>
                 </div>
 

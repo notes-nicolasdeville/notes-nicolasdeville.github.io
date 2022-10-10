@@ -18,7 +18,8 @@
     <link rel="fluid-icon" href="https://notes.nicolasdeville.com/favicon.png" title="Nic's notes">
 
     <!-- CSS -->
-    <link rel="stylesheet" href="https://notes.nicolasdeville.com/theme/css/main.css" />
+    <!-- <link rel="stylesheet" href="https://notes.nicolasdeville.com/theme/css/main.css" /> -->
+    <link rel="stylesheet" href="theme/css/main.css" />
 
 
 
@@ -43,7 +44,7 @@
             </div>
 
             <div class="above-navbar">
-                <div class="last_updated">09 Oct 2022 | 20:53</div>
+                <div class="last_updated">10 Oct 2022 | 10:21</div>
                 <div>
                     <p class="notes_count">
                         <a href="https://notes.nicolasdeville.com/tags">by tags</a>
@@ -79,38 +80,24 @@
             </ul></nav>
         </header>
 
+        <!-- index.html injection -->
 
 
-<!-- 220911 moved to base.html -->
-<!-- <p class="notes_count">
-    1 notes 
-    <span style="color:#C74350">|</span> 
-    <a href="https://notes.nicolasdeville.com/tags">by tags</a> 
-    <span style="color:#C74350">|</span> 
-    <a href="https://notes.nicolasdeville.com/2022/">2022</a> 
-    <span style="color:#C74350">|</span> 
-    <a href="https://notes.nicolasdeville.com/2021/">2021</a> 
-    <span style="color:#C74350">|</span> 
-    <a href="https://notes.nicolasdeville.com/2020/">2020</a>
-</p> -->
+        <section id="content" class="body">
 
+        <ol id="posts-list" class="hfeed">
 
-
-            <aside id="featured" class="body">
-            <!-- LATEST NOTE -->
-            <p class="notes-section">last (updated) note</p>
-            <hr/>
-
-                <article class="hentry">
-                    <h1 class="entry-title"><a href="https://notes.nicolasdeville.com/python/extract-app-logos">Extract all app logos to PNG</a></h1>
-
-                    <!-- added 4/7 -->
-                    <div>
-                        <p class="header_summary">
-                            
-                        </p>
+        <li>
+            <article class="hentry">
+                <header>
+                    <h1><a href="https://notes.nicolasdeville.com/python/extract-app-logos" rel="bookmark"
+                        title="Extract all app logos to PNG">Extract all app logos to PNG</a></h1>
+                    <div class="entry-content">
+                        
                     </div>
+                </header>
 
+                <div class="entry-content">
 <footer class="post-info">
 
     <p>
@@ -128,86 +115,25 @@
 
     
 
-</footer><p><span class="datestamp">15 Aug 2022</span>        </p>
-<h2 id="getting-apps-logos-from-local-app-folders">Getting apps logos from local .app folders</h2>
-<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">slugify</span> <span class="kn">import</span> <span class="n">slugify</span>
-
-<span class="kn">import</span> <span class="nn">glob</span>
-<span class="kn">import</span> <span class="nn">os</span>
-<span class="kn">import</span> <span class="nn">shutil</span>
-
-<span class="n">list_locations</span> <span class="o">=</span> <span class="p">[</span>
-    <span class="s1">&#39;/Applications/*.app&#39;</span><span class="p">,</span>
-    <span class="s1">&#39;/Applications/Setapp/*.app&#39;</span><span class="p">,</span>
-    <span class="s1">&#39;/Volumes/Macintosh HD-1/Applications/*.app&#39;</span><span class="p">,</span>
-<span class="p">]</span>
-
-<span class="n">list_errors</span> <span class="o">=</span> <span class="p">[]</span>
-
-<span class="n">count_file</span> <span class="o">=</span> <span class="mi">0</span>
-
-<span class="k">for</span> <span class="n">location</span> <span class="ow">in</span> <span class="n">list_locations</span><span class="p">:</span>
-
-    <span class="n">parts</span> <span class="o">=</span> <span class="n">location</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;*&#39;</span><span class="p">)</span>
-    <span class="n">prefix</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">parts</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
-
-    <span class="n">list_of_files</span> <span class="o">=</span> <span class="n">glob</span><span class="o">.</span><span class="n">glob</span><span class="p">(</span><span class="n">location</span><span class="p">)</span>
-
-    <span class="nb">print</span><span class="p">()</span>
-    <span class="k">for</span> <span class="n">file</span> <span class="ow">in</span> <span class="n">list_of_files</span><span class="p">:</span>
-        <span class="n">count</span> <span class="o">+=</span> <span class="mi">1</span>
-        <span class="c1"># print(file)</span>
-
-        <span class="n">app</span> <span class="o">=</span> <span class="n">file</span><span class="p">[</span><span class="n">prefix</span><span class="p">:</span><span class="o">-</span><span class="mi">4</span><span class="p">]</span>
-        <span class="nb">print</span><span class="p">(</span><span class="n">app</span><span class="p">)</span>
-        <span class="n">slug</span> <span class="o">=</span> <span class="n">slugify</span><span class="p">(</span><span class="n">app</span><span class="p">)</span>
-
-        <span class="k">for</span> <span class="n">root</span><span class="p">,</span> <span class="n">dirs</span><span class="p">,</span> <span class="n">files</span> <span class="ow">in</span> <span class="n">os</span><span class="o">.</span><span class="n">walk</span><span class="p">(</span><span class="n">file</span><span class="p">):</span>
-            <span class="k">for</span> <span class="n">name</span> <span class="ow">in</span> <span class="n">files</span><span class="p">:</span>
-                <span class="k">if</span> <span class="n">name</span><span class="o">.</span><span class="n">endswith</span><span class="p">((</span><span class="s2">&quot;.icns&quot;</span><span class="p">)):</span>
-                    <span class="n">count_file</span> <span class="o">+=</span> <span class="mi">1</span>
-
-                    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">root</span><span class="si">}</span><span class="s2">/</span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-
-                    <span class="k">try</span><span class="p">:</span>
-                        <span class="n">shutil</span><span class="o">.</span><span class="n">copy2</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">root</span><span class="si">}</span><span class="s1">/</span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">,</span> <span class="sa">f</span><span class="s2">&quot;/path/to/output/folder/</span><span class="si">{</span><span class="n">slug</span><span class="si">}</span><span class="s2">_</span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s2">.icns&quot;</span><span class="p">)</span>
-                    <span class="k">except</span><span class="p">:</span>
-                        <span class="n">list_errors</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
-                        <span class="k">continue</span>
-</code></pre></div>
-
-<h2 id="batch-converting-all-to-png">Batch converting all to PNG</h2>
-<div class="highlight"><pre><span></span><code><span class="c1"># Convert .icns files to .png </span>
-
-<span class="kn">import</span> <span class="nn">icnsutil</span>
-
-<span class="k">for</span> <span class="n">root</span><span class="p">,</span> <span class="n">dirs</span><span class="p">,</span> <span class="n">files</span> <span class="ow">in</span> <span class="n">os</span><span class="o">.</span><span class="n">walk</span><span class="p">(</span><span class="s2">&quot;/path/to/folder/with/icns/files&quot;</span><span class="p">):</span>
-    <span class="k">for</span> <span class="n">name</span> <span class="ow">in</span> <span class="n">files</span><span class="p">:</span>
-        <span class="k">if</span> <span class="n">name</span><span class="o">.</span><span class="n">endswith</span><span class="p">((</span><span class="s2">&quot;.icns&quot;</span><span class="p">)):</span>
-            <span class="n">count</span> <span class="o">+=</span> <span class="mi">1</span>
-            <span class="n">file_path</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">root</span><span class="si">}</span><span class="s2">/</span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s2">&quot;</span>
-            <span class="nb">print</span><span class="p">(</span><span class="n">file_path</span><span class="p">)</span>
-            <span class="n">slug</span> <span class="o">=</span> <span class="n">name</span><span class="p">[:</span><span class="o">-</span><span class="mi">5</span><span class="p">]</span>
-            <span class="nb">print</span><span class="p">(</span><span class="n">slug</span><span class="p">)</span>
-
-            <span class="n">img</span> <span class="o">=</span> <span class="n">icnsutil</span><span class="o">.</span><span class="n">IcnsFile</span><span class="p">(</span><span class="n">file_path</span><span class="p">)</span>
-            <span class="n">output_path</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;/path/to/output/folder/</span><span class="si">{</span><span class="n">slug</span><span class="si">}</span><span class="s2">&quot;</span>
-            <span class="n">os</span><span class="o">.</span><span class="n">makedirs</span><span class="p">(</span><span class="n">output_path</span><span class="p">)</span>
-            <span class="n">img</span><span class="o">.</span><span class="n">export</span><span class="p">(</span><span class="n">output_path</span><span class="p">,</span> <span class="n">allowed_ext</span><span class="o">=</span><span class="s1">&#39;png&#39;</span><span class="p">,</span> <span class="n">convert_png</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-</code></pre></div>
-                </article>
-            </aside>
-
+</footer>                </div>
+                
+            </article>
+            <!-- <hr/> black separation bar between articles -->
+        </li>
+        
             
 
+
+        <!-- footer -->
         <section id="extras" class="body">
 
         <!-- /.blogroll -->
                 <div class="blogroll">
                         <h2>links</h2>
                         <ul>
-                            <li><a href="https://indeXall.io">Side project: indeXall.io</a></li>
                             <li><a href="https://btobsales.eu">Services: BtoBSales.EU</a></li>
+                            <li><a href="https://indeXall.io">Side project: indeXall.io</a></li>
+                            <li><a href="https://github.com/ndeville">Github: ndeville</a></li>
                         </ul>
                 </div>
 

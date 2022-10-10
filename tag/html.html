@@ -18,7 +18,8 @@
     <link rel="fluid-icon" href="https://notes.nicolasdeville.com/favicon.png" title="Nic's notes">
 
     <!-- CSS -->
-    <link rel="stylesheet" href="https://notes.nicolasdeville.com/theme/css/main.css" />
+    <!-- <link rel="stylesheet" href="https://notes.nicolasdeville.com/theme/css/main.css" /> -->
+    <link rel="stylesheet" href="theme/css/main.css" />
 
 
 
@@ -43,7 +44,7 @@
             </div>
 
             <div class="above-navbar">
-                <div class="last_updated">09 Oct 2022 | 20:53</div>
+                <div class="last_updated">10 Oct 2022 | 10:21</div>
                 <div>
                     <p class="notes_count">
                         <a href="https://notes.nicolasdeville.com/tags">by tags</a>
@@ -79,38 +80,64 @@
             </ul></nav>
         </header>
 
+        <!-- index.html injection -->
 
 
-<!-- 220911 moved to base.html -->
-<!-- <p class="notes_count">
-    6 notes 
-    <span style="color:#C74350">|</span> 
-    <a href="https://notes.nicolasdeville.com/tags">by tags</a> 
-    <span style="color:#C74350">|</span> 
-    <a href="https://notes.nicolasdeville.com/2022/">2022</a> 
-    <span style="color:#C74350">|</span> 
-    <a href="https://notes.nicolasdeville.com/2021/">2021</a> 
-    <span style="color:#C74350">|</span> 
-    <a href="https://notes.nicolasdeville.com/2020/">2020</a>
-</p> -->
+        <section id="content" class="body">
 
+        <ol id="posts-list" class="hfeed">
 
-
-            <aside id="featured" class="body">
-            <!-- LATEST NOTE -->
-            <p class="notes-section">last (updated) note</p>
-            <hr/>
-
-                <article class="hentry">
-                    <h1 class="entry-title"><a href="https://notes.nicolasdeville.com/learning/html">Learning HTML</a></h1>
-
-                    <!-- added 4/7 -->
-                    <div>
-                        <p class="header_summary">
-                            
-                        </p>
+        <li>
+            <article class="hentry">
+                <header>
+                    <h1><a href="https://notes.nicolasdeville.com/helpers/search-engines" rel="bookmark"
+                        title="How to reference a site in search engines">How to reference a site in search engines</a></h1>
+                    <div class="entry-content">
+                        <p>my ongoing notes on referencing my sites to search engines</p>
                     </div>
+                </header>
 
+                <div class="entry-content">
+<footer class="post-info">
+
+    <p>
+        09 Oct 2022 <span class="separator">|</span> in <a class="link_tag" href="https://notes.nicolasdeville.com/helpers/">helpers</a>
+ tags: <a class="link_tag" href="https://notes.nicolasdeville.com/tag/html.html">html</a>
+
+        <!-- added 4/7 -->
+        <!-- 		<br />
+        <abbr class="modified" title="2022-10-09T21:00:51.258194+02:00">
+                Updated: 09 Oct 2022
+        </abbr>
+ -->
+
+    </p>
+
+    
+
+</footer>                </div>
+                
+            </article>
+            <!-- <hr/> black separation bar between articles -->
+        </li>
+        
+            
+
+        <section id="content" class="body">
+
+        <ol id="posts-list" class="hfeed">
+
+        <li>
+            <article class="hentry">
+                <header>
+                    <h1><a href="https://notes.nicolasdeville.com/learning/html" rel="bookmark"
+                        title="Learning HTML">Learning HTML</a></h1>
+                    <div class="entry-content">
+                        
+                    </div>
+                </header>
+
+                <div class="entry-content">
 <footer class="post-info">
 
     <p>
@@ -128,57 +155,29 @@
 
     
 
-</footer><p><span class="datestamp">11 Sep 2022</span> starting note.   </p>
-<h3 id="add-favicon">add favicon</h3>
-<div class="link_border"><div class="link_logo_box"><img class="link_logo" src="https://logo.clearbit.com/w3schools.com?size=35" alt="logo"/></div><div class="link_content">
-<div class="link_title">HTML Favicon</div>
-<div class="link_tagline">w3schools.com</div>
-<div class="link_url"><a href="https://www.w3schools.com/html/html_favicon.asp" target="_blank">https://www.w3schools.com/html/html_favicon.asp</a></div></div></div>
-
-<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">link</span> <span class="na">rel</span><span class="o">=</span><span class="s">&quot;icon&quot;</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;image/x-icon&quot;</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;/images/favicon.ico&quot;</span><span class="p">&gt;</span>
-</code></pre></div>
-
-<p>didn't work for me. Copied the below from Github's CSS and this works:  </p>
-<div class="highlight"><pre><span></span><code><span class="cm">&lt;!-- Favicon --&gt;</span>
-    <span class="p">&lt;</span><span class="nt">link</span> <span class="na">rel</span><span class="o">=</span><span class="s">&quot;icon&quot;</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;image/x-icon&quot;</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;https://notes.nicolasdeville.com/favicon.ico&quot;</span><span class="p">&gt;</span>
-    <span class="p">&lt;</span><span class="nt">link</span> <span class="na">rel</span><span class="o">=</span><span class="s">&quot;mask-icon&quot;</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;https://notes.nicolasdeville.com/favicon.svg&quot;</span> <span class="na">color</span><span class="o">=</span><span class="s">&quot;#FFFFFF&quot;</span><span class="p">&gt;</span>
-    <span class="p">&lt;</span><span class="nt">link</span> <span class="na">rel</span><span class="o">=</span><span class="s">&quot;alternate icon&quot;</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;js-site-favicon&quot;</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;image/png&quot;</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;https://notes.nicolasdeville.com/favicon.png&quot;</span><span class="p">&gt;</span>
-    <span class="p">&lt;</span><span class="nt">link</span> <span class="na">rel</span><span class="o">=</span><span class="s">&quot;icon&quot;</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;js-site-favicon&quot;</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;image/svg+xml&quot;</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;https://notes.nicolasdeville.com/favicon.svg&quot;</span><span class="p">&gt;</span>
-    <span class="p">&lt;</span><span class="nt">link</span> <span class="na">rel</span><span class="o">=</span><span class="s">&quot;fluid-icon&quot;</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;https://notes.nicolasdeville.com/favicon.png&quot;</span> <span class="na">title</span><span class="o">=</span><span class="s">&quot;Nic&#39;s notes&quot;</span><span class="p">&gt;</span>
-</code></pre></div>
-
-<h1 id="snippets">Snippets</h1>
-<h2 id="viewport">viewport</h2>
-<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">meta</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;viewport&quot;</span> <span class="na">content</span><span class="o">=</span><span class="s">&quot;width=device-width, initial-scale=1.0, maximum-scale=1.0&quot;</span> <span class="p">/&gt;</span>
-</code></pre></div>
-                </article>
-            </aside>
-
-                <section id="content" class="body">
-
-                <!-- PREVIOUS NOTES -->
-				<p class="notes-section">previous notes</p>
-                <hr>
-
-                <ol id="posts-list" class="hfeed">
+</footer>                </div>
+                
+            </article>
+            <!-- <hr/> black separation bar between articles -->
+        </li>
+        
             
 
+        <section id="content" class="body">
 
+        <ol id="posts-list" class="hfeed">
 
-            <li>
-                <article class="hentry">
-                    <header>
-                        <!-- PREVIOUS NOTE TITLE -->
-                        <h1><a href="https://notes.nicolasdeville.com/helpers/display-emails-website" rel="bookmark"
-                            title="How to display emails on websites to avoid spam">How to display emails on websites to avoid spam</a></h1>
-                        <!-- PREVIOUS NOTE SUMMARY -->
-                        <div class="entry-content">
-                            
-                        </div>
-                    </header>
-
+        <li>
+            <article class="hentry">
+                <header>
+                    <h1><a href="https://notes.nicolasdeville.com/helpers/display-emails-website" rel="bookmark"
+                        title="How to display emails on websites to avoid spam">How to display emails on websites to avoid spam</a></h1>
                     <div class="entry-content">
-                        <!-- PREVIOUS NOTE METADATA -->
+                        
+                    </div>
+                </header>
+
+                <div class="entry-content">
 <footer class="post-info">
 
     <p>
@@ -197,69 +196,29 @@
 
     
 
-</footer>                    </div>
-                    
-                </article>
-                <hr/>
-            </li>
+</footer>                </div>
+                
+            </article>
+            <!-- <hr/> black separation bar between articles -->
+        </li>
+        
             
 
+        <section id="content" class="body">
 
+        <ol id="posts-list" class="hfeed">
 
-            <li>
-                <article class="hentry">
-                    <header>
-                        <!-- PREVIOUS NOTE TITLE -->
-                        <h1><a href="https://notes.nicolasdeville.com/helpers/search-engines" rel="bookmark"
-                            title="How to reference a site in search engines">How to reference a site in search engines</a></h1>
-                        <!-- PREVIOUS NOTE SUMMARY -->
-                        <div class="entry-content">
-                            <p>my ongoing notes on referencing my sites to search engines</p>
-                        </div>
-                    </header>
-
+        <li>
+            <article class="hentry">
+                <header>
+                    <h1><a href="https://notes.nicolasdeville.com/helpers/html-metatags" rel="bookmark"
+                        title="HTML Meta tags for SEO">HTML Meta tags for SEO</a></h1>
                     <div class="entry-content">
-                        <!-- PREVIOUS NOTE METADATA -->
-<footer class="post-info">
+                        
+                    </div>
+                </header>
 
-    <p>
-        20 Sep 2022 <span class="separator">|</span> in <a class="link_tag" href="https://notes.nicolasdeville.com/helpers/">helpers</a>
- tags: <a class="link_tag" href="https://notes.nicolasdeville.com/tag/html.html">html</a>
-
-        <!-- added 4/7 -->
-        <!-- 		<br />
-        <abbr class="modified" title="2022-09-20T11:18:43.520131+02:00">
-                Updated: 20 Sep 2022
-        </abbr>
- -->
-
-    </p>
-
-    
-
-</footer>                    </div>
-                    
-                </article>
-                <hr/>
-            </li>
-            
-
-
-
-            <li>
-                <article class="hentry">
-                    <header>
-                        <!-- PREVIOUS NOTE TITLE -->
-                        <h1><a href="https://notes.nicolasdeville.com/helpers/html-metatags" rel="bookmark"
-                            title="HTML Meta tags for SEO">HTML Meta tags for SEO</a></h1>
-                        <!-- PREVIOUS NOTE SUMMARY -->
-                        <div class="entry-content">
-                            
-                        </div>
-                    </header>
-
-                    <div class="entry-content">
-                        <!-- PREVIOUS NOTE METADATA -->
+                <div class="entry-content">
 <footer class="post-info">
 
     <p>
@@ -278,29 +237,29 @@
 
     
 
-</footer>                    </div>
-                    
-                </article>
-                <hr/>
-            </li>
+</footer>                </div>
+                
+            </article>
+            <!-- <hr/> black separation bar between articles -->
+        </li>
+        
             
 
+        <section id="content" class="body">
 
+        <ol id="posts-list" class="hfeed">
 
-            <li>
-                <article class="hentry">
-                    <header>
-                        <!-- PREVIOUS NOTE TITLE -->
-                        <h1><a href="https://notes.nicolasdeville.com/helpers/iframe" rel="bookmark"
-                            title="iFrame">iFrame</a></h1>
-                        <!-- PREVIOUS NOTE SUMMARY -->
-                        <div class="entry-content">
-                            
-                        </div>
-                    </header>
-
+        <li>
+            <article class="hentry">
+                <header>
+                    <h1><a href="https://notes.nicolasdeville.com/helpers/iframe" rel="bookmark"
+                        title="iFrame">iFrame</a></h1>
                     <div class="entry-content">
-                        <!-- PREVIOUS NOTE METADATA -->
+                        
+                    </div>
+                </header>
+
+                <div class="entry-content">
 <footer class="post-info">
 
     <p>
@@ -319,29 +278,29 @@
 
     
 
-</footer>                    </div>
-                    
-                </article>
-                <hr/>
-            </li>
+</footer>                </div>
+                
+            </article>
+            <!-- <hr/> black separation bar between articles -->
+        </li>
+        
             
 
+        <section id="content" class="body">
 
+        <ol id="posts-list" class="hfeed">
 
-            <li>
-                <article class="hentry">
-                    <header>
-                        <!-- PREVIOUS NOTE TITLE -->
-                        <h1><a href="https://notes.nicolasdeville.com/python/text-to-html" rel="bookmark"
-                            title="Converting text to HTML with Python">Converting text to HTML with Python</a></h1>
-                        <!-- PREVIOUS NOTE SUMMARY -->
-                        <div class="entry-content">
-                            <p>simple script to add HTML tags</p>
-                        </div>
-                    </header>
-
+        <li>
+            <article class="hentry">
+                <header>
+                    <h1><a href="https://notes.nicolasdeville.com/python/text-to-html" rel="bookmark"
+                        title="Converting text to HTML with Python">Converting text to HTML with Python</a></h1>
                     <div class="entry-content">
-                        <!-- PREVIOUS NOTE METADATA -->
+                        <p>simple script to add HTML tags</p>
+                    </div>
+                </header>
+
+                <div class="entry-content">
 <footer class="post-info">
 
     <p>
@@ -360,23 +319,28 @@
 
     
 
-</footer>                    </div>
-                    
-                </article>
-                <hr/>
-            </li>
+</footer>                </div>
+                
+            </article>
+            <!-- <hr/> black separation bar between articles -->
+        </li>
+        
             
                 </ol><!-- /#posts-list -->
+                <hr>
                 </section><!-- /#content -->
 
+
+        <!-- footer -->
         <section id="extras" class="body">
 
         <!-- /.blogroll -->
                 <div class="blogroll">
                         <h2>links</h2>
                         <ul>
-                            <li><a href="https://indeXall.io">Side project: indeXall.io</a></li>
                             <li><a href="https://btobsales.eu">Services: BtoBSales.EU</a></li>
+                            <li><a href="https://indeXall.io">Side project: indeXall.io</a></li>
+                            <li><a href="https://github.com/ndeville">Github: ndeville</a></li>
                         </ul>
                 </div>
 

@@ -13,6 +13,11 @@ url = "/why/"
 title = "Why this site?"
 
 [[input.files]]
+path = "helpers/search-engines/index.html"
+url = "/helpers/search-engines"
+title = "How to reference a site in search engines"
+
+[[input.files]]
 path = "helpers/github/index.html"
 url = "/helpers/github"
 title = "Github"
@@ -43,14 +48,14 @@ url = "/movies/1000"
 title = "My Top 1,000 Movies"
 
 [[input.files]]
-path = "python/books/index.html"
-url = "/python/books"
-title = "My Python Books Library"
-
-[[input.files]]
 path = "b2b-sales/books/index.html"
 url = "/b2b-sales/books"
 title = "My B2B Books Library"
+
+[[input.files]]
+path = "python/books/index.html"
+url = "/python/books"
+title = "My Python Books Library"
 
 [[input.files]]
 path = "helpers/clipper/index.html"
@@ -786,11 +791,6 @@ title = "Tidal"
 path = "learning/git/index.html"
 url = "/learning/git"
 title = "Learning Git"
-
-[[input.files]]
-path = "helpers/search-engines/index.html"
-url = "/helpers/search-engines"
-title = "How to reference a site in search engines"
 
 [[input.files]]
 path = "apps/things/index.html"
@@ -2343,14 +2343,14 @@ url = "/projects/nicai"
 title = "nicAI | my personal AI assistant"
 
 [[input.files]]
-path = "b2b-sales/books/index.html"
-url = "/b2b-sales/books"
-title = "My B2B Books Library"
-
-[[input.files]]
 path = "python/books/index.html"
 url = "/python/books"
 title = "My Python Books Library"
+
+[[input.files]]
+path = "b2b-sales/books/index.html"
+url = "/b2b-sales/books"
+title = "My B2B Books Library"
 
 [[input.files]]
 path = "projects/clipper/index.html"

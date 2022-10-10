@@ -18,7 +18,8 @@
     <link rel="fluid-icon" href="https://notes.nicolasdeville.com/favicon.png" title="Nic's notes">
 
     <!-- CSS -->
-    <link rel="stylesheet" href="https://notes.nicolasdeville.com/theme/css/main.css" />
+    <!-- <link rel="stylesheet" href="https://notes.nicolasdeville.com/theme/css/main.css" /> -->
+    <link rel="stylesheet" href="theme/css/main.css" />
 
 
 
@@ -43,7 +44,7 @@
             </div>
 
             <div class="above-navbar">
-                <div class="last_updated">09 Oct 2022 | 20:53</div>
+                <div class="last_updated">10 Oct 2022 | 10:21</div>
                 <div>
                     <p class="notes_count">
                         <a href="https://notes.nicolasdeville.com/tags">by tags</a>
@@ -79,38 +80,24 @@
             </ul></nav>
         </header>
 
+        <!-- index.html injection -->
 
 
-<!-- 220911 moved to base.html -->
-<!-- <p class="notes_count">
-    1 notes 
-    <span style="color:#C74350">|</span> 
-    <a href="https://notes.nicolasdeville.com/tags">by tags</a> 
-    <span style="color:#C74350">|</span> 
-    <a href="https://notes.nicolasdeville.com/2022/">2022</a> 
-    <span style="color:#C74350">|</span> 
-    <a href="https://notes.nicolasdeville.com/2021/">2021</a> 
-    <span style="color:#C74350">|</span> 
-    <a href="https://notes.nicolasdeville.com/2020/">2020</a>
-</p> -->
+        <section id="content" class="body">
 
+        <ol id="posts-list" class="hfeed">
 
-
-            <aside id="featured" class="body">
-            <!-- LATEST NOTE -->
-            <p class="notes-section">last (updated) note</p>
-            <hr/>
-
-                <article class="hentry">
-                    <h1 class="entry-title"><a href="https://notes.nicolasdeville.com/helpers/twitter-cli">How to use Twitter via CLI (Command Line Interface) on macOS</a></h1>
-
-                    <!-- added 4/7 -->
-                    <div>
-                        <p class="header_summary">
-                            
-                        </p>
+        <li>
+            <article class="hentry">
+                <header>
+                    <h1><a href="https://notes.nicolasdeville.com/helpers/twitter-cli" rel="bookmark"
+                        title="How to use Twitter via CLI (Command Line Interface) on macOS">How to use Twitter via CLI (Command Line Interface) on macOS</a></h1>
+                    <div class="entry-content">
+                        
                     </div>
+                </header>
 
+                <div class="entry-content">
 <footer class="post-info">
 
     <p>
@@ -130,94 +117,25 @@
 
     
 
-</footer><div class="toc"><span class="toctitle">Table of Contents</span><ul>
-<li><a href="#t-a-command-line-power-tool-for-twitter">T | A command-line power tool for Twitter</a><ul>
-<li><a href="#getting-started">Getting started</a></li>
-</ul>
-</li>
-<li><a href="#own-solution">Own solution?</a></li>
-</ul>
-</div>
-<p><span class="datestamp">27 Sep 2022</span>   </p>
-<p>I'm thinking about sharing more on Twitter. Always be relunctant, but some of my notes might be of interest to some, and tweeting about them might bring some visibility.  </p>
-<p>It has to be as seamless as possible in my workflows, if I aim to get the hang of it.  </p>
-<p>Tweeting via CLI would be the easiest, as I always have a terminal window open - or can automate from it.  </p>
-<h1 id="t-a-command-line-power-tool-for-twitter">T | A command-line power tool for Twitter</h1>
-<div class="link_border"><div class="link_logo_box"><img class="link_logo" src="https://logo.clearbit.com/unixmen.com?size=35" alt="logo"/></div><div class="link_content">
-<div class="link_title">How To Access Twitter Via Command Line (Terminal)</div>
-<div class="link_tagline">unixmen.com</div>
-<div class="link_url"><a href="https://www.unixmen.com/access-twitter-via-command-line-terminal/" target="_blank">https://www.unixmen.com/access-twitter-via-command-line-terminal/</a></div></div></div>
-
-<ul>
-<li>not sure if working on macOS. Need to find brew for it.  </li>
-</ul>
-<p><img class="screenshot" src="https://notes.nicolasdeville.com/images/twitter-cli/brew-twitter.jpg" alt="twitter-cli/brew-twitter.jpg"/> </p>
-<p>🤔   </p>
-<p>Official project:  </p>
-<div class="link_border"><div class="link_logo_box"><img class="link_logo" src="https://logo.clearbit.com/github.io?size=35" alt="logo"/></div><div class="link_content">
-<div class="link_title">T by sferik</div>
-<div class="link_tagline">github.io</div>
-<div class="link_url"><a href="https://sferik.github.io/t/" target="_blank">https://sferik.github.io/t/</a></div></div></div>
-
-<div class="link_border"><div class="link_logo_box"><img class="link_logo" src="https://logo.clearbit.com/github.com?size=35" alt="logo"/></div><div class="link_content">
-<div class="link_title">GitHub - sferik/t: A command-line power tool for Twitter.</div>
-<div class="link_tagline">github.com</div>
-<div class="link_url"><a href="https://github.com/sferik/t" target="_blank">https://github.com/sferik/t</a></div></div></div>
-
-<p>Last update on 13 Feb '20.   </p>
-<h2 id="getting-started">Getting started</h2>
-<p>Confirmed that Ruby is installed on my system with <code>ruby -v</code>.   </p>
-<div class="highlight"><pre><span></span><code>gem install t
-</code></pre></div>
-
-<p>A Twitter API access and "App" created on Twitter are necessary.   </p>
-<p>I have already access for Twittee [<a href="../../projects/twittee/index.html">Nic Note: Twittee</a>] but my app is for <a href="https://btobsales.eu/" target="_blank">https://btobsales.eu/</a> - need to create a new one.   </p>
-<div class="link_border"><div class="link_logo_box"><img class="link_logo" src="https://logo.clearbit.com/twitter.com?size=35" alt="logo"/></div><div class="link_content">
-<div class="link_title">Authentication overview | Docs | Twitter Developer Platform  </div>
-<div class="link_tagline">twitter.com</div>
-<div class="link_url"><a href="https://developer.twitter.com/en/docs/authentication/overview" target="_blank">https://developer.twitter.com/en/docs/authentication/overview</a></div></div></div>
-
-<p>Getting error:   </p>
-<div class="highlight"><pre><span></span><code>Enter your API key: xxxxxxxx
-Enter your API secret: xxxxxxxx
-/Library/Ruby/Gems/2.6.0/gems/t-3.1.0/lib/t/cli.rb:82:in <span class="sb">`</span>authorize<span class="s1">&#39;: uninitialized constant Twitter::REST::Client::BASE_URL (NameError)</span>
-<span class="s1">    from /Library/Ruby/Gems/2.6.0/gems/thor-1.2.1/lib/thor/command.rb:27:in `run&#39;</span>
-    from /Library/Ruby/Gems/2.6.0/gems/thor-1.2.1/lib/thor/invocation.rb:127:in <span class="sb">`</span>invoke_command<span class="s1">&#39;</span>
-<span class="s1">    from /Library/Ruby/Gems/2.6.0/gems/thor-1.2.1/lib/thor.rb:392:in `dispatch&#39;</span>
-    from /Library/Ruby/Gems/2.6.0/gems/thor-1.2.1/lib/thor/base.rb:485:in <span class="sb">`</span>start<span class="s1">&#39;</span>
-<span class="s1">    from /Library/Ruby/Gems/2.6.0/gems/t-3.1.0/bin/t:20:in `&lt;top (required)&gt;&#39;</span>
-    from /usr/local/bin/t:23:in <span class="sb">`</span>load<span class="s1">&#39;</span>
-<span class="s1">    from /usr/local/bin/t:23:in `&lt;main&gt;&#39;</span>
-xxxxxxxx@xxxxxxxx ~ % 
-</code></pre></div>
-
-<p>Seems it's a known one, with no resolution: 😕    </p>
-<div class="link_border"><div class="link_logo_box"><img class="link_logo" src="https://logo.clearbit.com/github.com?size=35" alt="logo"/></div><div class="link_content">
-<div class="link_title">uninitialized constant Twitter::REST::Client::BASE_URL (NameError) · Issue #458 · sferik/t · GitHub</div>
-<div class="link_tagline">uninitialized constant Twitter::REST::Client::BASE_URL (NameError) #458</div>
-<div class="link_url"><a href="https://github.com/sferik/t/issues/458" target="_blank">https://github.com/sferik/t/issues/458</a></div></div></div>
-
-<h1 id="own-solution">Own solution?</h1>
-<p>Else I might first write my note for Twittee [<a href="../../projects/twittee/index.html">Nic Note: Twittee</a>] to refresh my memory on Twitter's API, and build something myself.   </p>
-<p>Easiest workflow I can think of: 
-- write anywhere and copy content
-- Alfred workflow with keyword <code>ct</code> (Clipee Tweet) tweets content of clipboard</p>
-<p>Danger to tweet something wrong 😅😂   </p>
-<p>Perhaps opening tweet after posting for double-check, and deleting tweet if mistake, is a fine workaround.  </p>
-<p>Moving to note [<a href="../../projects/clipee/index.html">Nic Note: Clipee</a>]    </p>
-                </article>
-            </aside>
-
+</footer>                </div>
+                
+            </article>
+            <!-- <hr/> black separation bar between articles -->
+        </li>
+        
             
 
+
+        <!-- footer -->
         <section id="extras" class="body">
 
         <!-- /.blogroll -->
                 <div class="blogroll">
                         <h2>links</h2>
                         <ul>
-                            <li><a href="https://indeXall.io">Side project: indeXall.io</a></li>
                             <li><a href="https://btobsales.eu">Services: BtoBSales.EU</a></li>
+                            <li><a href="https://indeXall.io">Side project: indeXall.io</a></li>
+                            <li><a href="https://github.com/ndeville">Github: ndeville</a></li>
                         </ul>
                 </div>
 

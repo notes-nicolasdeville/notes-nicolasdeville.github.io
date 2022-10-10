@@ -18,7 +18,8 @@
     <link rel="fluid-icon" href="https://notes.nicolasdeville.com/favicon.png" title="Nic's notes">
 
     <!-- CSS -->
-    <link rel="stylesheet" href="https://notes.nicolasdeville.com/theme/css/main.css" />
+    <!-- <link rel="stylesheet" href="https://notes.nicolasdeville.com/theme/css/main.css" /> -->
+    <link rel="stylesheet" href="theme/css/main.css" />
 
 
 
@@ -43,7 +44,7 @@
             </div>
 
             <div class="above-navbar">
-                <div class="last_updated">09 Oct 2022 | 20:53</div>
+                <div class="last_updated">10 Oct 2022 | 10:21</div>
                 <div>
                     <p class="notes_count">
                         <a href="https://notes.nicolasdeville.com/tags">by tags</a>
@@ -79,38 +80,24 @@
             </ul></nav>
         </header>
 
+        <!-- index.html injection -->
 
 
-<!-- 220911 moved to base.html -->
-<!-- <p class="notes_count">
-    1 notes 
-    <span style="color:#C74350">|</span> 
-    <a href="https://notes.nicolasdeville.com/tags">by tags</a> 
-    <span style="color:#C74350">|</span> 
-    <a href="https://notes.nicolasdeville.com/2022/">2022</a> 
-    <span style="color:#C74350">|</span> 
-    <a href="https://notes.nicolasdeville.com/2021/">2021</a> 
-    <span style="color:#C74350">|</span> 
-    <a href="https://notes.nicolasdeville.com/2020/">2020</a>
-</p> -->
+        <section id="content" class="body">
 
+        <ol id="posts-list" class="hfeed">
 
-
-            <aside id="featured" class="body">
-            <!-- LATEST NOTE -->
-            <p class="notes-section">last (updated) note</p>
-            <hr/>
-
-                <article class="hentry">
-                    <h1 class="entry-title"><a href="https://notes.nicolasdeville.com/python/solve-certificate-verify-failed">How to solve urlopen error SSL: CERTIFICATE_VERIFY_FAILED</a></h1>
-
-                    <!-- added 4/7 -->
-                    <div>
-                        <p class="header_summary">
-                            
-                        </p>
+        <li>
+            <article class="hentry">
+                <header>
+                    <h1><a href="https://notes.nicolasdeville.com/python/solve-certificate-verify-failed" rel="bookmark"
+                        title="How to solve urlopen error SSL: CERTIFICATE_VERIFY_FAILED">How to solve urlopen error SSL: CERTIFICATE_VERIFY_FAILED</a></h1>
+                    <div class="entry-content">
+                        
                     </div>
+                </header>
 
+                <div class="entry-content">
 <footer class="post-info">
 
     <p>
@@ -128,52 +115,25 @@
 
     
 
-</footer><p>After installing Python 3.10 from python.org, got the following error when running some scripts:  </p>
-<div class="highlight"><pre><span></span><code>urlopen error <span class="o">[</span>SSL: CERTIFICATE_VERIFY_FAILED<span class="o">]</span> certificate verify failed: unable to get <span class="nb">local</span> issuer certificate <span class="o">(</span>_ssl.c:997<span class="o">)</span>
-</code></pre></div>
-
-<p>Solution:  </p>
-<p>install certificates by double-clicking:  </p>
-<p><code>/Applications/Python 3.10/Install Certificates.command</code>  </p>
-<p>prints:   </p>
-<div class="highlight"><pre><span></span><code>Last login: Thu Sep <span class="m">15</span> <span class="m">23</span>:14:04 on ttys002
-xxx@yyy ~ % /Applications/Python<span class="se">\ </span><span class="m">3</span>.10/Install<span class="se">\ </span>Certificates.command <span class="p">;</span> exit<span class="p">;</span>
- -- pip install --upgrade certifi
-Collecting certifi
-  Using cached certifi-2022.9.14-py3-none-any.whl <span class="o">(</span><span class="m">162</span> kB<span class="o">)</span>
-Installing collected packages: certifi
-Successfully installed certifi-2022.9.14
- -- removing any existing file or link
- -- creating symlink to certifi certificate bundle
- -- setting permissions
- -- update <span class="nb">complete</span>
-
-Saving session...
-...copying shared history...
-...saving history...truncating <span class="nb">history</span> files...
-...completed.
-
-<span class="o">[</span>Process completed<span class="o">]</span>
-</code></pre></div>
-
-<p>Alternative solution found but not tested:   </p>
-<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">ssl</span>
-
-<span class="n">ssl</span><span class="o">.</span><span class="n">_create_default_https_context</span> <span class="o">=</span> <span class="n">ssl</span><span class="o">.</span><span class="n">_create_unverified_context</span>
-</code></pre></div>
-                </article>
-            </aside>
-
+</footer>                </div>
+                
+            </article>
+            <!-- <hr/> black separation bar between articles -->
+        </li>
+        
             
 
+
+        <!-- footer -->
         <section id="extras" class="body">
 
         <!-- /.blogroll -->
                 <div class="blogroll">
                         <h2>links</h2>
                         <ul>
-                            <li><a href="https://indeXall.io">Side project: indeXall.io</a></li>
                             <li><a href="https://btobsales.eu">Services: BtoBSales.EU</a></li>
+                            <li><a href="https://indeXall.io">Side project: indeXall.io</a></li>
+                            <li><a href="https://github.com/ndeville">Github: ndeville</a></li>
                         </ul>
                 </div>
 

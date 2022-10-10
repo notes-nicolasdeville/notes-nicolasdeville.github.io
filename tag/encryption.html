@@ -18,7 +18,8 @@
     <link rel="fluid-icon" href="https://notes.nicolasdeville.com/favicon.png" title="Nic's notes">
 
     <!-- CSS -->
-    <link rel="stylesheet" href="https://notes.nicolasdeville.com/theme/css/main.css" />
+    <!-- <link rel="stylesheet" href="https://notes.nicolasdeville.com/theme/css/main.css" /> -->
+    <link rel="stylesheet" href="theme/css/main.css" />
 
 
 
@@ -43,7 +44,7 @@
             </div>
 
             <div class="above-navbar">
-                <div class="last_updated">09 Oct 2022 | 20:53</div>
+                <div class="last_updated">10 Oct 2022 | 10:21</div>
                 <div>
                     <p class="notes_count">
                         <a href="https://notes.nicolasdeville.com/tags">by tags</a>
@@ -79,38 +80,24 @@
             </ul></nav>
         </header>
 
+        <!-- index.html injection -->
 
 
-<!-- 220911 moved to base.html -->
-<!-- <p class="notes_count">
-    1 notes 
-    <span style="color:#C74350">|</span> 
-    <a href="https://notes.nicolasdeville.com/tags">by tags</a> 
-    <span style="color:#C74350">|</span> 
-    <a href="https://notes.nicolasdeville.com/2022/">2022</a> 
-    <span style="color:#C74350">|</span> 
-    <a href="https://notes.nicolasdeville.com/2021/">2021</a> 
-    <span style="color:#C74350">|</span> 
-    <a href="https://notes.nicolasdeville.com/2020/">2020</a>
-</p> -->
+        <section id="content" class="body">
 
+        <ol id="posts-list" class="hfeed">
 
-
-            <aside id="featured" class="body">
-            <!-- LATEST NOTE -->
-            <p class="notes-section">last (updated) note</p>
-            <hr/>
-
-                <article class="hentry">
-                    <h1 class="entry-title"><a href="https://notes.nicolasdeville.com/apps/gpg">GPG Suite</a></h1>
-
-                    <!-- added 4/7 -->
-                    <div>
-                        <p class="header_summary">
-                            <p>how to encrypt messages with GPG...</p>
-                        </p>
+        <li>
+            <article class="hentry">
+                <header>
+                    <h1><a href="https://notes.nicolasdeville.com/apps/gpg" rel="bookmark"
+                        title="GPG Suite">GPG Suite</a></h1>
+                    <div class="entry-content">
+                        <p>how to encrypt messages with GPG...</p>
                     </div>
+                </header>
 
+                <div class="entry-content">
 <footer class="post-info">
 
     <p>
@@ -129,61 +116,25 @@
 
     
 
-</footer><p><span class="datestamp">19 Jul 2022</span>   </p>
-<p><a href="https://gpgtools.org/" target="_blank">https://gpgtools.org/</a>  </p>
-<p>"GPG Suite: One simple package with everything you need, to protect your emails and files."  </p>
-<p>With the tools installed by this package, you can encrypt, decrypt, sign and verify files or messages.  </p>
-<h1 id="encrypting-emails">Encrypting emails</h1>
-<p>This can be done with GPG Mail - a paid-for add-on.<br>
-Allows to encrypt emails straight within Apple's Mail app.   </p>
-<p>I am not using that myself, though I do think that encryption should be natively supported by all mail providers and clients, and become mainstream. <br>
-It's crazy that emails by default is like sending an open postcard by mail.<br>
-I have used encrypted emails for a while a decade ago, but considering most people do not encrypt emails, it was a very clunky, time-consuming (setup and troubleshooting) and friction-creating workflow.  </p>
-<h1 id="encrypting-text">Encrypting text</h1>
-<p>My main use for it. Text can be encrypted and copy/pasted anywhere you like - email, DM, etc..</p>
-<h1 id="terminal-commands">Terminal commands</h1>
-<h2 id="exporting-private-keys">Exporting private key(s)</h2>
-<p>export the private key with the command-line tool from GPG:</p>
-<p><code>gpg --export-secret-keys</code>   </p>
-<p>A normal export with <code>--export</code> will not include any private keys, therefore you have to use <code>--export-secret-keys</code>.  </p>
-<p>This is the command that allows you to export a specific key with the ID 1234ABCD to the file <code>secret.asc</code>:  </p>
-<p><code>gpg --export-secret-keys --armor 1234ABCD &gt; secret.asc</code>   </p>
-<p>You can find the ID that you need using the following command - usually an email address:</p>
-<p><code>gpg --list-keys</code>  </p>
-<p>To export just 1 specific secret key instead of all of them:  </p>
-<p><code>gpg --export-secret-keys keyIDNumber &gt; exportedKeyFilename.asc</code>   </p>
-<p>If issues, one crucial step is to edit the imported key and "ultimately trust" that key:   </p>
-<div class="highlight"><pre><span></span><code>gpg --edit-key (keyIDNumber)
-gpg&gt; trust
-
-Please decide how far you trust this user to correctly verify other users&#39; keys:
-
-  1 = I don&#39;t know or won&#39;t say
-  2 = I do NOT trust
-  3 = I trust marginally
-  4 = I trust fully
-  5 = I trust ultimately
-  m = back to the main menu
-</code></pre></div>
-
-<p>Source: <a href="https://stackoverflow.com/questions/5587513/how-to-export-private-secret-asc-key-to-decrypt-gpg-files#5588513" target="_blank">https://stackoverflow.com/questions/5587513/how-to-export-private-secret-asc-key-to-decrypt-gpg-files#5588513</a>   </p>
-<h1 id="sending-the-encrypted-message">Sending the encrypted message</h1>
-<p>Anything will do - email, IM, etc - if you want to be extra careful, you can use:   </p>
-<p><a href="https://privnote.com/" target="_blank">https://privnote.com/</a> <br>
-"PrivnoteSend notes that will self-destruct after being read."   </p>
-                </article>
-            </aside>
-
+</footer>                </div>
+                
+            </article>
+            <!-- <hr/> black separation bar between articles -->
+        </li>
+        
             
 
+
+        <!-- footer -->
         <section id="extras" class="body">
 
         <!-- /.blogroll -->
                 <div class="blogroll">
                         <h2>links</h2>
                         <ul>
-                            <li><a href="https://indeXall.io">Side project: indeXall.io</a></li>
                             <li><a href="https://btobsales.eu">Services: BtoBSales.EU</a></li>
+                            <li><a href="https://indeXall.io">Side project: indeXall.io</a></li>
+                            <li><a href="https://github.com/ndeville">Github: ndeville</a></li>
                         </ul>
                 </div>
 
