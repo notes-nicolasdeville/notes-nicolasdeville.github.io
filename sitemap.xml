@@ -1940,6 +1940,12 @@
     </url>
     
     <url>
+        <loc>https://notes.nicolasdeville.com/ai/gpt-3</loc>
+        <lastmod>2022-10-10</lastmod>
+        <priority>0.8</priority>        
+    </url>
+    
+    <url>
         <loc>https://notes.nicolasdeville.com/ai/questions</loc>
         <lastmod>2022-10-10</lastmod>
         <priority>0.8</priority>        
@@ -2745,6 +2751,12 @@
     
     <url>
         <loc>https://notes.nicolasdeville.com/helpers/get-current-url</loc>
+        <lastmod>2022-10-10</lastmod>
+        <priority>0.8</priority>        
+    </url>
+    
+    <url>
+        <loc>https://notes.nicolasdeville.com/helpers/seo</loc>
         <lastmod>2022-10-10</lastmod>
         <priority>0.8</priority>        
     </url>

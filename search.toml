@@ -13,6 +13,21 @@ url = "/why/"
 title = "Why this site?"
 
 [[input.files]]
+path = "helpers/seo/index.html"
+url = "/helpers/seo"
+title = "SEO"
+
+[[input.files]]
+path = "learning/python/index.html"
+url = "/learning/python"
+title = "Learning Python"
+
+[[input.files]]
+path = "ai/gpt-3/index.html"
+url = "/ai/gpt-3"
+title = "GPT-3"
+
+[[input.files]]
 path = "ai/generative-ai/index.html"
 url = "/ai/generative-ai"
 title = "Generative AI"
@@ -68,14 +83,14 @@ url = "/movies/1000"
 title = "My Top 1,000 Movies"
 
 [[input.files]]
-path = "python/books/index.html"
-url = "/python/books"
-title = "My Python Books Library"
-
-[[input.files]]
 path = "b2b-sales/books/index.html"
 url = "/b2b-sales/books"
 title = "My B2B Books Library"
+
+[[input.files]]
+path = "python/books/index.html"
+url = "/python/books"
+title = "My Python Books Library"
 
 [[input.files]]
 path = "helpers/clipper/index.html"
@@ -1031,11 +1046,6 @@ title = "Managing Virtual Environments in Python"
 path = "python/gitignore/index.html"
 url = "/python/gitignore"
 title = "Gitignore"
-
-[[input.files]]
-path = "learning/python/index.html"
-url = "/learning/python"
-title = "Learning Python"
 
 [[input.files]]
 path = "python/script-consolidate-log/index.html"
@@ -2353,14 +2363,14 @@ url = "/projects/nicai"
 title = "nicAI | my personal AI assistant"
 
 [[input.files]]
-path = "b2b-sales/books/index.html"
-url = "/b2b-sales/books"
-title = "My B2B Books Library"
-
-[[input.files]]
 path = "python/books/index.html"
 url = "/python/books"
 title = "My Python Books Library"
+
+[[input.files]]
+path = "b2b-sales/books/index.html"
+url = "/b2b-sales/books"
+title = "My B2B Books Library"
 
 [[input.files]]
 path = "projects/clipper/index.html"
@@ -2388,11 +2398,6 @@ url = "/helpers/clipper"
 title = "My web clipboard"
 
 [[input.files]]
-path = "random/ai/index.html"
-url = "/random/ai"
-title = "AI"
-
-[[input.files]]
 path = "learning/ai/index.html"
 url = "/learning/ai"
 title = "Learning AI"
@@ -2405,6 +2410,11 @@ title = "AI"
 [[input.files]]
 path = "interests/ai/index.html"
 url = "/interests/ai"
+title = "AI"
+
+[[input.files]]
+path = "random/ai/index.html"
+url = "/random/ai"
 title = "AI"
 
 [[input.files]]
