@@ -21,8 +21,8 @@
     <!-- <meta property="og:description" content="Messy online notebook covering B2B Sales, Leadership, Python programming, Automation, AI and more. I take these notes for myself (and my kids later) - perhaps they can help someone else..." /> min. 2 max. 4 sentences -->
         <meta name="description" content="Messy online notebook covering B2B Sales, Leadership, Python programming, Automation, AI and more. I take these notes for myself (and my kids later) - perhaps they can help someone else..."/>
   
-        <meta property="article:published_time" content="2022-10-07 12:49:58.578799+02:00" />
-        <meta property="article:modified_time" content="2022-10-07 12:49:58.578799+02:00" />
+        <meta property="article:published_time" content="2022-10-11 09:59:54.956741+02:00" />
+        <meta property="article:modified_time" content="2022-10-11 09:59:54.956741+02:00" />
     <meta property="og:url" content="https://notes.nicolasdeville.com" /> <!-- canonical URL for your page without session variables, user id parameters or counters -->
     <meta property="og:site_name" content="Nic's notes" />
     <meta property="og:image" content="https://notes.nicolasdeville.com/images/btobsales-eu-og-image.jpg" /> <!-- at least 600x315 pixels, preferable 1200x630 pixels -->
@@ -69,7 +69,7 @@
             </div>
 
             <div class="above-navbar">
-                <div class="last_updated">10 Oct 2022 | 22:25</div>
+                <div class="last_updated">11 Oct 2022 | 10:01</div>
                 <div>
                     <p class="notes_count">
                         <a href="https://notes.nicolasdeville.com/tags">by tags</a>
@@ -127,12 +127,12 @@
 <footer class="post-info">
 
     <p>
-        07 Oct 2022 <span class="separator">|</span> in <a class="link_tag" href="https://notes.nicolasdeville.com/helpers/">helpers</a>
+        11 Oct 2022 <span class="separator">|</span> in <a class="link_tag" href="https://notes.nicolasdeville.com/helpers/">helpers</a>
 
         <!-- added 4/7 -->
         <!-- 		<br />
-        <abbr class="modified" title="2022-10-07T12:49:58.578799+02:00">
-                Updated: 07 Oct 2022
+        <abbr class="modified" title="2022-10-11T09:59:54.956741+02:00">
+                Updated: 11 Oct 2022
         </abbr>
  -->
 
@@ -143,6 +143,22 @@
 </footer>            <main> <!-- for indexing by Stork -->
                 <div class="toc"><span class="toctitle">Table of Contents</span><ul>
 <li><a href="#layout">Layout</a><ul>
+<li><a href="#flexbox">Flexbox</a></li>
+<li><a href="#css-grid">CSS grid</a><ul>
+<li><a href="#grid-containers">grid containers</a><ul>
+<li><a href="#repeat-function">repeat function</a></li>
+<li><a href="#align-within-containers">align within containers</a></li>
+</ul>
+</li>
+<li><a href="#grid-items">grid items</a><ul>
+<li><a href="#align-within-grid-items">align within grid items</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#css">CSS</a><ul>
 <li><a href="#media-queries">media queries</a><ul>
 <li><a href="#hide-elements">hide elements</a></li>
 <li><a href="#variable-font-size">variable font-size</a></li>
@@ -150,25 +166,79 @@
 </li>
 </ul>
 </li>
+<li><a href="#typefaces">Typefaces</a></li>
 <li><a href="#images">Images</a></li>
+<li><a href="#colors">Colors</a></li>
+<li><a href="#design-resources">Design resources</a></li>
 <li><a href="#demos">Demos</a><ul>
 <li><a href="#approach-to-implement">approach to implement</a></li>
 </ul>
 </li>
+<li><a href="#resources">Resources</a></li>
 </ul>
 </div>
-<p><span class="datestamp">07 Oct 2022</span>   </p>
-<p>Main resource:  </p>
-<div class="link_border"><div class="link_logo_box"><img class="link_logo" src="https://logo.clearbit.com/w3schools.com?size=35" alt="logo"/></div><div class="link_content">
-<div class="link_title">Responsive Web Design - Introduction</div>
-<div class="link_tagline">w3schools.com</div>
-<div class="link_url"><a href="https://www.w3schools.com/css/css_rwd_intro.asp" target="_blank">https://www.w3schools.com/css/css_rwd_intro.asp</a></div></div></div>
-
 <p>Add a viewport as:  </p>
 <div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">meta</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;viewport&quot;</span> <span class="na">content</span><span class="o">=</span><span class="s">&quot;width=device-width, initial-scale=1.0, maximum-scale=1.0&quot;</span> <span class="p">/&gt;</span>
 </code></pre></div>
 
 <h1 id="layout">Layout</h1>
+<p>3 ways:</p>
+<ul>
+<li>Float layouts (old, dismiss)</li>
+<li>Flexbox (1-dimensional rows, for simple components layout)</li>
+<li>CSS grid (2-dimensional grid, for page layouts and complex components)</li>
+</ul>
+<h2 id="flexbox">Flexbox</h2>
+<h2 id="css-grid">CSS grid</h2>
+<h3 id="grid-containers">grid containers</h3>
+<div class="highlight"><pre><span></span><code><span class="w">    </span><span class="nt">display</span><span class="o">:</span><span class="w"> </span><span class="nt">grid</span><span class="o">;</span><span class="w"></span>
+<span class="w">    </span><span class="c">/* number and size of columns and rows */</span><span class="w"></span>
+<span class="w">    </span><span class="nt">grid-template-columns</span><span class="o">:</span><span class="w"> </span><span class="nt">3fr</span><span class="w"> </span><span class="nt">auto</span><span class="w"> </span><span class="nt">1fr</span><span class="w"> </span><span class="nt">2fr</span><span class="o">;</span><span class="w"> </span><span class="c">/* 2 fixed columns, 2 responsive columns. `fr` for fractional */</span><span class="w"></span>
+<span class="w">    </span><span class="nt">grid-template-rows</span><span class="o">:</span><span class="w"> </span><span class="nt">300px</span><span class="w"> </span><span class="nt">200px</span><span class="w"> </span><span class="o">;</span><span class="w"> </span><span class="c">/* sets rows heights */</span><span class="w"></span>
+<span class="w">    </span><span class="c">/* gaps / gutters */</span><span class="w"></span>
+<span class="w">    </span><span class="nt">columnn-gap</span><span class="o">:</span><span class="w"> </span><span class="nt">30px</span><span class="o">;</span><span class="w"></span>
+<span class="w">    </span><span class="nt">row-gap</span><span class="o">:</span><span class="w"> </span><span class="nt">50px</span><span class="o">;</span><span class="w"></span>
+<span class="w">    </span><span class="c">/* alignment */</span><span class="w"></span>
+<span class="w">    </span><span class="nt">justify-items</span><span class="o">:</span><span class="w"> </span><span class="nt">stretch</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="nt">start</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="nt">center</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="nt">end</span><span class="o">;</span><span class="w"></span>
+<span class="w">    </span><span class="nt">align-items</span><span class="o">:</span><span class="w"> </span><span class="nt">stretch</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="nt">start</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="nt">center</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="nt">end</span><span class="o">;</span><span class="w"></span>
+</code></pre></div>
+
+<h4 id="repeat-function">repeat function</h4>
+<div class="highlight"><pre><span></span><code><span class="w">    </span><span class="nt">grid-template-columns</span><span class="o">:</span><span class="w"> </span><span class="nt">repeat</span><span class="o">(</span><span class="nt">16</span><span class="o">,</span><span class="w"> </span><span class="nt">1fr</span><span class="o">);</span><span class="w"> </span><span class="c">/* for 16 columns, each 1fr */</span><span class="w"></span>
+</code></pre></div>
+
+<h4 id="align-within-containers">align within containers</h4>
+<div class="highlight"><pre><span></span><code><span class="w">    </span><span class="c">/* cell alignment */</span><span class="w"></span>
+<span class="w">    </span><span class="nt">justify-content</span><span class="o">:</span><span class="w"> </span><span class="nt">center</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="nt">space-between</span><span class="o">;</span><span class="w"></span>
+<span class="w">    </span><span class="nt">align-content</span><span class="o">:</span><span class="w"> </span><span class="nt">center</span><span class="o">;</span><span class="w"></span>
+<span class="w">    </span><span class="c">/* items alignment within cells */</span><span class="w"></span>
+<span class="w">    </span><span class="nt">align-items</span><span class="o">:</span><span class="w"> </span><span class="nt">center</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="nt">stretch</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="nt">start</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="nt">end</span><span class="o">;</span><span class="w"> </span><span class="c">/* stretch is default */</span><span class="w"></span>
+<span class="w">    </span><span class="nt">justify-items</span><span class="o">:</span><span class="w"> </span><span class="nt">center</span><span class="o">;</span><span class="w"> </span><span class="c">/* stretch is default */</span><span class="w"></span>
+</code></pre></div>
+
+<h3 id="grid-items">grid items</h3>
+<div class="highlight"><pre><span></span><code><span class="c">/* to place a grid item into a specific cell or group of cells */</span><span class="w"></span>
+<span class="p">.</span><span class="nc">el-1</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="k">grid-column</span><span class="p">:</span><span class="w"> </span><span class="o">&lt;</span><span class="kc">start</span><span class="w"> </span><span class="n">line</span><span class="o">&gt;</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="o">&lt;</span><span class="kc">end</span><span class="w"> </span><span class="n">line</span><span class="o">&gt;</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="n">span</span><span class="w"> </span><span class="o">&lt;</span><span class="n">number</span><span class="o">&gt;</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="k">grid-row</span><span class="p">:</span><span class="w"> </span><span class="o">&lt;</span><span class="kc">start</span><span class="w"> </span><span class="n">line</span><span class="o">&gt;</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="o">&lt;</span><span class="kc">end</span><span class="w"> </span><span class="n">line</span><span class="o">&gt;</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="n">span</span><span class="w"> </span><span class="o">&lt;</span><span class="n">number</span><span class="o">&gt;</span><span class="p">;</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</code></pre></div>
+
+<p>eg   </p>
+<div class="highlight"><pre><span></span><code><span class="p">.</span><span class="nc">el-1</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="err">grid</span><span class="w"> </span><span class="n">column</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="mi">-1</span><span class="p">;</span><span class="w"> </span><span class="c">/* -1 to span the rest of the space, eg full row here */</span><span class="w"></span>
+<span class="w">    </span><span class="err">grid</span><span class="w"> </span><span class="n">row</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="mi">3</span><span class="p">;</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</code></pre></div>
+
+<h4 id="align-within-grid-items">align within grid items</h4>
+<div class="highlight"><pre><span></span><code><span class="p">.</span><span class="nc">el-1</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="k">align-self</span><span class="p">:</span><span class="w"> </span><span class="kc">center</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="k">justify-self</span><span class="p">:</span><span class="w"> </span><span class="kc">center</span><span class="p">;</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</code></pre></div>
+
+<h1 id="css">CSS</h1>
 <h2 id="media-queries">media queries</h2>
 <p>Use <code>@media</code> to change properties based on viewport size.  </p>
 <p>Mobile first means changing properties if viewport is larger than mobile:   </p>
@@ -260,6 +330,12 @@
 <span class="p">}</span><span class="w"></span>
 </code></pre></div>
 
+<h1 id="typefaces">Typefaces</h1>
+<p>16px to 32px for most text. Titles can be bigger, eg 85px.   </p>
+<p>Font weight 400 or more.  </p>
+<p>&lt;75 characters per line.    </p>
+<p>line height 1.5 or 2 (1.5 for big text)</p>
+<p>All caps for short titles</p>
 <h1 id="images">Images</h1>
 <div class="book_quote">
 <div class="book_quote_highlight">If the width property is set to a percentage and the height property is set to "auto", the image will be responsive and scale up and down</div>
@@ -271,6 +347,37 @@
 <span class="p">}</span><span class="w"></span>
 </code></pre></div>
 
+<h1 id="colors">Colors</h1>
+<p>Main, Accent and Grey.
+Tints are lighter, shades are darker.  </p>
+<p>Use:   </p>
+<div class="link_border"><div class="link_logo_box"><img class="link_logo" src="https://logo.clearbit.com/coolors.co?size=35" alt="logo"/></div><div class="link_content">
+<div class="link_title">Coolors</div>
+<div class="link_tagline">coolors.co</div>
+<div class="link_url"><a href="https://coolors.co/" target="_blank">https://coolors.co/</a></div></div></div>
+
+<p>or    </p>
+<div class="link_border"><div class="link_logo_box"><img class="link_logo" src="https://logo.clearbit.com/paletton.com?size=35" alt="logo"/></div><div class="link_content">
+<div class="link_title">Paletton</div>
+<div class="link_tagline">paletton.com</div>
+<div class="link_url"><a href="https://paletton.com/" target="_blank">https://paletton.com/</a></div></div></div>
+
+<h1 id="design-resources">Design resources</h1>
+<div class="link_border"><div class="link_logo_box"><img class="link_logo" src="https://logo.clearbit.com/land-book.com?size=35" alt="logo"/></div><div class="link_content">
+<div class="link_title">Land-book - website design inspiration gallery</div>
+<div class="link_tagline">land-book.com</div>
+<div class="link_url"><a href="https://land-book.com/" target="_blank">https://land-book.com/</a></div></div></div>
+
+<div class="link_border"><div class="link_logo_box"><img class="link_logo" src="https://logo.clearbit.com/awwwards.com?size=35" alt="logo"/></div><div class="link_content">
+<div class="link_title">Awwwards - Website Awards - Best Web Design Trends</div>
+<div class="link_tagline">The awards of design, creativity and innovation on the internet</div>
+<div class="link_url"><a href="https://www.awwwards.com/" target="_blank">https://www.awwwards.com/</a></div></div></div>
+
+<div class="link_border"><div class="link_logo_box"><img class="link_logo" src="https://logo.clearbit.com/onepagelove.com?size=35" alt="logo"/></div><div class="link_content">
+<div class="link_title">One Page Love - One Page Website Inspiration and Templates</div>
+<div class="link_tagline">One Page websites, templates and resources</div>
+<div class="link_url"><a href="https://onepagelove.com/" target="_blank">https://onepagelove.com/</a></div></div></div>
+
 <h1 id="demos">Demos</h1>
 <h2 id="approach-to-implement">approach to implement</h2>
 <p>with collapsing rows while maintaining headers:  </p>
@@ -279,6 +386,17 @@
 Responsive Table Demo</div>
 <div class="link_tagline">codepen.io</div>
 <div class="link_url"><a href="https://codepen.io/team/css-tricks/pen/wXgJww?editors=1100" target="_blank">https://codepen.io/team/css-tricks/pen/wXgJww?editors=1100</a></div></div></div>
+
+<h1 id="resources">Resources</h1>
+<div class="link_border"><div class="link_logo_box"><img class="link_logo" src="https://logo.clearbit.com/w3schools.com?size=35" alt="logo"/></div><div class="link_content">
+<div class="link_title">Responsive Web Design - Introduction</div>
+<div class="link_tagline">w3schools.com</div>
+<div class="link_url"><a href="https://www.w3schools.com/css/css_rwd_intro.asp" target="_blank">https://www.w3schools.com/css/css_rwd_intro.asp</a></div></div></div>
+
+<div class="link_border"><div class="link_logo_box"><img class="link_logo" src="https://logo.clearbit.com/udemy.com?size=35" alt="logo"/></div><div class="link_content">
+<div class="link_title">Build Responsive Websites with HTML5 and CSS3 | Udemy</div>
+<div class="link_tagline">udemy.com</div>
+<div class="link_url"><a href="https://www.udemy.com/course/design-and-develop-a-killer-website-with-html5-and-css3" target="_blank">https://www.udemy.com/course/design-and-develop-a-killer-website-with-html5-and-css3</a></div></div></div>
             </main>
         </div><!-- /.entry-content -->
     </article>
