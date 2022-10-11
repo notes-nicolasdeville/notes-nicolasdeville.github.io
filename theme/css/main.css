@@ -133,7 +133,7 @@ img.left, figure.left, div.figure.align-left {
     width: 100%;
     border-top-style: solid;
     border-top-width: 10px;
-    border-top-color: #000;
+    border-top-color: var(--nic_main);
     /* order: 2; */
 }
 
@@ -237,7 +237,7 @@ h1, h2, h3, h4, h5, h6 {
 /* h2, h3, h4, h5, h6 { margin-top: .8em; } */
 
 hr {
-    border: 2px solid #000;
+    border: 2px solid var(--nic_main);
     /* margin: 0 10px 0 0; */
 }
 
@@ -251,7 +251,7 @@ a img {
 }
 
 a:link, a:visited {
-	color: #000000;
+	color: var(--nic_main);
 	padding: 0 1px;
 	text-decoration: underline;
 }
@@ -263,7 +263,7 @@ a:link, a:visited {
 
 a:hover, a:active {
 	/* background-color: #C74350; */
-	color: #C74350;
+	color: var(--nic_red);
 	/* text-decoration: none; */
 }
 
@@ -480,10 +480,10 @@ table {
         text-align: left;
         font-weight: bold;
         font-size: 1.1em;
-        border-bottom: 1px solid black;
+        border-bottom: 1px solid var(--nic_main);
         vertical-align: bottom;
         color: white;
-        background-color: black;
+        background-color: var(--nic_main);
         line-height: 1em;
     }
 	thead td {}
@@ -536,7 +536,7 @@ table {
 	}
 	#banner h1 a:hover, #banner h1 a:active {
 		background: none;
-		color: #C74350;
+		color: var(--nic_red);
 		text-shadow: none;
 	}
 
@@ -579,7 +579,7 @@ table {
 	}
 	#banner nav a:hover, #banner nav a:active,
 	#banner nav .active a:link, #banner nav .active a:visited {
-		background: #C74451;
+		background: var(--nic_red);
 		color: #fff;
 		text-shadow: none !important;
 	}
@@ -615,7 +615,7 @@ table {
 #extras ul {list-style: none; margin: 0;}
 #extras li {border-bottom: 1px solid #fff;}
 #extras h2 {
-	color: #C74350;
+	color: var(--nic_red);
 	font-size: 1.429em;
 	margin-bottom: .25em;
 	padding: 0 3px;
@@ -629,7 +629,7 @@ table {
 	padding: .3em .25em;
 }
 
-#extras a:hover, #extras a:active {color: #C74350;}
+#extras a:hover, #extras a:active {color: var(--nic_red);}
 
 	/* Blogroll */
 	#extras .blogroll {
@@ -872,7 +872,7 @@ li:first-child .hentry, #content > .hentry {
 }
 
 .link_tag:hover, .link_tag:active {
-    background-color: #C74350;
+    background-color: var(--nic_red);
     /* color: white; */
     /* text-decoration: underline; */
     /* border: 2px solid white; */
@@ -898,7 +898,7 @@ li:first-child .hentry, #content > .hentry {
 /* IMAGES */
 
 .illustration {
-    box-shadow: 4px 4px 10px #000; /* offset-x | offset-y | blur-radius | color */
+    box-shadow: 4px 4px 10px var(--nic_main); /* offset-x | offset-y | blur-radius | color */
     margin: auto;
     display: block;
 }
@@ -915,21 +915,21 @@ li:first-child .hentry, #content > .hentry {
 }
 
 .iphone {
-    box-shadow: 4px 4px 10px #000; /* offset-x | offset-y | blur-radius | color */
+    box-shadow: 4px 4px 10px var(--nic_main); /* offset-x | offset-y | blur-radius | color */
     width: 50%;
     margin: auto;
     display: block;
 }
 
 .book {
-    box-shadow: 4px 4px 10px #000; /* offset-x | offset-y | blur-radius | color */
+    box-shadow: 4px 4px 10px var(--nic_main); /* offset-x | offset-y | blur-radius | color */
     width: 50%;
     margin: auto;
     display: block;
 }
 
 .album {
-    box-shadow: 4px 4px 10px #000; /* offset-x | offset-y | blur-radius | color */
+    box-shadow: 4px 4px 10px var(--nic_main); /* offset-x | offset-y | blur-radius | color */
     margin: auto;
     display: block;
 	max-width: 400px;
@@ -973,7 +973,7 @@ li:first-child .hentry, #content > .hentry {
 .article_container {
     width: 100%;
     padding: 1em 1em 1em 1em;
-    border: 1px solid #000;
+    border: 1px solid var(--nic_main);
     position: relative;
     padding: 1em 1em 1em 1em;
 }
@@ -1026,11 +1026,11 @@ li:first-child .hentry, #content > .hentry {
     font-size: 0.8em;
     font-weight: bold;
     /* color: #333; */
-    color: #000;
+    color: var(--nic_main);
     /* background-color: #ddd; */
     padding: 0.3em 0.5em 0.3em 0.5em;
     /* border: solid 2px #999; */
-    border: solid 3px #000;
+    border: solid 3px var(--nic_main);
     /* border-radius: 1em; */
     line-height: 3em; /* to avoid overlap over lines */
     margin-right: 0.5em;
@@ -1040,11 +1040,11 @@ li:first-child .hentry, #content > .hentry {
     font-size: 0.8em;
     font-weight: bold;
     /* color: #333; */
-    color: #000;
+    color: var(--nic_main);
     /* background-color: #ddd; */
     padding: 0.3em 0.5em 0.3em 0.5em;
     /* border: solid 2px #999; */
-    border: solid 3px #000;
+    border: solid 3px var(--nic_main);
     /* border-radius: 1em; */
     line-height: 3em; /* to avoid overlap over lines */
     margin-right: 0.5em;
@@ -1062,7 +1062,7 @@ li:first-child .hentry, #content > .hentry {
     /* background-color: #ddd; */
     padding: 0.3em 0.5em 0.3em 0.5em;
     /* border: solid 2px #999; */
-    border: solid 3px #000;
+    border: solid 3px var(--nic_main);
     /* border-radius: 1em; */
     line-height: 3em; /* to avoid overlap over lines */
     margin-right: 0.5em;
@@ -1081,19 +1081,19 @@ li:first-child .hentry, #content > .hentry {
 
     /*Borders*/
 
-    border-left: 8px solid black;
+    border-left: 8px solid var(--nic_main);
 
     border-top-style: solid;
     border-top-width: 1px;
-    border-top-color: #000;
+    border-top-color: var(--nic_main);
 
     border-right-style: solid;
     border-right-width: 1px;
-    border-right-color: #000;
+    border-right-color: var(--nic_main);
 
     border-bottom-style: solid;
     border-bottom-width: 1px;
-    border-bottom-color: #000;
+    border-bottom-color: var(--nic_main);
 
     padding: 0.5rem;
 
@@ -1156,15 +1156,15 @@ li:first-child .hentry, #content > .hentry {
 
     border-top-style: solid;
     border-top-width: 1px;
-    border-top-color: #000;
+    border-top-color: var(--nic_main);
 
     border-right-style: solid;
     border-right-width: 1px;
-    border-right-color: #000;
+    border-right-color: var(--nic_main);
 
     border-bottom-style: solid;
     border-bottom-width: 1px;
-    border-bottom-color: #000;
+    border-bottom-color: var(--nic_main);
 
     /* border-left-style: solid;
     border-left-width: 15px;
