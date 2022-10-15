@@ -4,6 +4,8 @@ html_selector = "main"
 url_prefix = "https://notes.nicolasdeville.com/"
 title_boost = "Large"
 minimum_indexed_substring_length = 4
+
+[output]
 excerpts_per_result = 0
 excerpt_buffer = 0
 
@@ -128,14 +130,14 @@ url = "/helpers/clipper"
 title = "My web clipboard"
 
 [[input.files]]
-path = "apps/library/index.html"
-url = "/apps/library"
-title = "My Apps Library"
-
-[[input.files]]
 path = "books/library/index.html"
 url = "/books/library"
 title = "My Books Library"
+
+[[input.files]]
+path = "apps/library/index.html"
+url = "/apps/library"
+title = "My Apps Library"
 
 [[input.files]]
 path = "apps/radar/index.html"
@@ -2388,14 +2390,14 @@ url = "/projects/clipper"
 title = "Clipper"
 
 [[input.files]]
-path = "books/library/index.html"
-url = "/books/library"
-title = "My Books Library"
-
-[[input.files]]
 path = "apps/library/index.html"
 url = "/apps/library"
 title = "My Apps Library"
+
+[[input.files]]
+path = "books/library/index.html"
+url = "/books/library"
+title = "My Books Library"
 
 [[input.files]]
 path = "helpers/clipper/index.html"
@@ -2413,13 +2415,13 @@ url = "/random/ai"
 title = "AI"
 
 [[input.files]]
-path = "random/ai/index.html"
-url = "/random/ai"
+path = "interests/ai/index.html"
+url = "/interests/ai"
 title = "AI"
 
 [[input.files]]
-path = "interests/ai/index.html"
-url = "/interests/ai"
+path = "random/ai/index.html"
+url = "/random/ai"
 title = "AI"
 
 [[input.files]]
