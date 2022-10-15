@@ -2431,3 +2431,7 @@ title = "Learning AI"
 path = "home-office/deep-work/index.html"
 url = "/home-office/deep-work"
 title = "Resources for Deep Work"
+
+
+[output]
+excerpts_per_result = 0
