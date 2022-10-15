@@ -1,6 +1,11 @@
 [input]
 base_directory = "/Users/nic/Github/notes-nicolasdeville.github.io/"
 html_selector = "main"
+url_prefix = "https://notes.nicolasdeville.com/"
+title_boost = "Large"
+minimum_indexed_substring_length = 4
+excerpts_per_result = 0
+excerpt_buffer = 0
 
 [[input.files]]
 path = "ABOUT/index.html"
@@ -11,6 +16,16 @@ title = ""
 path = "why/index.html"
 url = "/why/"
 title = "Why this site?"
+
+[[input.files]]
+path = "projects/notes/index.html"
+url = "/projects/notes"
+title = "This site"
+
+[[input.files]]
+path = "ai/whisper/index.html"
+url = "/ai/whisper"
+title = "Whisper"
 
 [[input.files]]
 path = "ai/dall-e/index.html"
@@ -98,14 +113,14 @@ url = "/movies/1000"
 title = "My Top 1,000 Movies"
 
 [[input.files]]
-path = "b2b-sales/books/index.html"
-url = "/b2b-sales/books"
-title = "My B2B Books Library"
-
-[[input.files]]
 path = "python/books/index.html"
 url = "/python/books"
 title = "My Python Books Library"
+
+[[input.files]]
+path = "b2b-sales/books/index.html"
+url = "/b2b-sales/books"
+title = "My B2B Books Library"
 
 [[input.files]]
 path = "helpers/clipper/index.html"
@@ -113,14 +128,14 @@ url = "/helpers/clipper"
 title = "My web clipboard"
 
 [[input.files]]
-path = "books/library/index.html"
-url = "/books/library"
-title = "My Books Library"
-
-[[input.files]]
 path = "apps/library/index.html"
 url = "/apps/library"
 title = "My Apps Library"
+
+[[input.files]]
+path = "books/library/index.html"
+url = "/books/library"
+title = "My Books Library"
 
 [[input.files]]
 path = "apps/radar/index.html"
@@ -211,11 +226,6 @@ title = "Script: screenshot video app, save file & generate HTML code"
 path = "tesla/ai-day-2022/index.html"
 url = "/tesla/ai-day-2022"
 title = "Tesla AI Day 2022"
-
-[[input.files]]
-path = "ai/whisper/index.html"
-url = "/ai/whisper"
-title = "Whisper"
 
 [[input.files]]
 path = "interests/crypto/index.html"
@@ -411,11 +421,6 @@ title = "Python Library: tkinter"
 path = "apps/adobe-illustrator/index.html"
 url = "/apps/adobe-illustrator"
 title = "Adobe Illustrator"
-
-[[input.files]]
-path = "projects/notes/index.html"
-url = "/projects/notes"
-title = "This site"
 
 [[input.files]]
 path = "python/library-geopy/index.html"
@@ -2368,14 +2373,14 @@ url = "/books/deep-work"
 title = "Deep Work, by Cal Newport"
 
 [[input.files]]
-path = "python/books/index.html"
-url = "/python/books"
-title = "My Python Books Library"
-
-[[input.files]]
 path = "b2b-sales/books/index.html"
 url = "/b2b-sales/books"
 title = "My B2B Books Library"
+
+[[input.files]]
+path = "python/books/index.html"
+url = "/python/books"
+title = "My Python Books Library"
 
 [[input.files]]
 path = "projects/clipper/index.html"
@@ -2383,14 +2388,14 @@ url = "/projects/clipper"
 title = "Clipper"
 
 [[input.files]]
-path = "apps/library/index.html"
-url = "/apps/library"
-title = "My Apps Library"
-
-[[input.files]]
 path = "books/library/index.html"
 url = "/books/library"
 title = "My Books Library"
+
+[[input.files]]
+path = "apps/library/index.html"
+url = "/apps/library"
+title = "My Apps Library"
 
 [[input.files]]
 path = "helpers/clipper/index.html"
@@ -2408,13 +2413,13 @@ url = "/random/ai"
 title = "AI"
 
 [[input.files]]
-path = "interests/ai/index.html"
-url = "/interests/ai"
+path = "random/ai/index.html"
+url = "/random/ai"
 title = "AI"
 
 [[input.files]]
-path = "random/ai/index.html"
-url = "/random/ai"
+path = "interests/ai/index.html"
+url = "/interests/ai"
 title = "AI"
 
 [[input.files]]

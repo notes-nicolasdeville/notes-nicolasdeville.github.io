@@ -61,6 +61,7 @@
   box-shadow: 0 0 8px var(--stork-accent-color);
   height: 1px;
   transition: width 0.25s ease, opacity 0.4s ease 0.4s;
+  display: none;
 }
 
 .stork-output {
