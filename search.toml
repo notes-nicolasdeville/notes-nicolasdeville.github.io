@@ -1,13 +1,6 @@
 [input]
 base_directory = "/Users/nic/Github/notes-nicolasdeville.github.io/"
 html_selector = "main"
-url_prefix = "https://notes.nicolasdeville.com/"
-title_boost = "Large"
-minimum_indexed_substring_length = 4
-
-[output]
-excerpts_per_result = 0
-excerpt_buffer = 0
 
 [[input.files]]
 path = "ABOUT/index.html"
@@ -130,14 +123,14 @@ url = "/helpers/clipper"
 title = "My web clipboard"
 
 [[input.files]]
-path = "books/library/index.html"
-url = "/books/library"
-title = "My Books Library"
-
-[[input.files]]
 path = "apps/library/index.html"
 url = "/apps/library"
 title = "My Apps Library"
+
+[[input.files]]
+path = "books/library/index.html"
+url = "/books/library"
+title = "My Books Library"
 
 [[input.files]]
 path = "apps/radar/index.html"
@@ -1290,6 +1283,11 @@ url = "/python/save-images"
 title = "Save images with Python"
 
 [[input.files]]
+path = "projects/nicai/index.html"
+url = "/projects/nicai"
+title = "nicAI | my personal AI assistant"
+
+[[input.files]]
 path = "b2b-sales/producing-videos/index.html"
 url = "/b2b-sales/producing-videos"
 title = "Producing Sales videos"
@@ -2365,11 +2363,6 @@ url = "/python/snippet-print-line"
 title = "Print current line number with Python"
 
 [[input.files]]
-path = "projects/nicai/index.html"
-url = "/projects/nicai"
-title = "nicAI | my personal AI assistant"
-
-[[input.files]]
 path = "books/deep-work/index.html"
 url = "/books/deep-work"
 title = "Deep Work, by Cal Newport"
@@ -2390,14 +2383,14 @@ url = "/projects/clipper"
 title = "Clipper"
 
 [[input.files]]
-path = "apps/library/index.html"
-url = "/apps/library"
-title = "My Apps Library"
-
-[[input.files]]
 path = "books/library/index.html"
 url = "/books/library"
 title = "My Books Library"
+
+[[input.files]]
+path = "apps/library/index.html"
+url = "/apps/library"
+title = "My Apps Library"
 
 [[input.files]]
 path = "helpers/clipper/index.html"
@@ -2405,21 +2398,6 @@ url = "/helpers/clipper"
 title = "My web clipboard"
 
 [[input.files]]
-path = "learning/ai/index.html"
-url = "/learning/ai"
-title = "Learning AI"
-
-[[input.files]]
-path = "random/ai/index.html"
-url = "/random/ai"
-title = "AI"
-
-[[input.files]]
-path = "interests/ai/index.html"
-url = "/interests/ai"
-title = "AI"
-
-[[input.files]]
 path = "random/ai/index.html"
 url = "/random/ai"
 title = "AI"
@@ -2433,6 +2411,21 @@ title = "Learning AI"
 path = "interests/ai/index.html"
 url = "/interests/ai"
 title = "AI"
+
+[[input.files]]
+path = "random/ai/index.html"
+url = "/random/ai"
+title = "AI"
+
+[[input.files]]
+path = "interests/ai/index.html"
+url = "/interests/ai"
+title = "AI"
+
+[[input.files]]
+path = "learning/ai/index.html"
+url = "/learning/ai"
+title = "Learning AI"
 
 [[input.files]]
 path = "home-office/deep-work/index.html"
