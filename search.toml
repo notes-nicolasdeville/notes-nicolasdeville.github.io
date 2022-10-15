@@ -1,6 +1,8 @@
 [input]
 base_directory = "/Users/nic/Github/notes-nicolasdeville.github.io/"
 html_selector = "main"
+[output]
+excerpts_per_result = 0
 
 [[input.files]]
 path = "ABOUT/index.html"
@@ -108,14 +110,14 @@ url = "/movies/1000"
 title = "My Top 1,000 Movies"
 
 [[input.files]]
-path = "python/books/index.html"
-url = "/python/books"
-title = "My Python Books Library"
-
-[[input.files]]
 path = "b2b-sales/books/index.html"
 url = "/b2b-sales/books"
 title = "My B2B Books Library"
+
+[[input.files]]
+path = "python/books/index.html"
+url = "/python/books"
+title = "My Python Books Library"
 
 [[input.files]]
 path = "helpers/clipper/index.html"
@@ -2368,14 +2370,14 @@ url = "/books/deep-work"
 title = "Deep Work, by Cal Newport"
 
 [[input.files]]
-path = "b2b-sales/books/index.html"
-url = "/b2b-sales/books"
-title = "My B2B Books Library"
-
-[[input.files]]
 path = "python/books/index.html"
 url = "/python/books"
 title = "My Python Books Library"
+
+[[input.files]]
+path = "b2b-sales/books/index.html"
+url = "/b2b-sales/books"
+title = "My B2B Books Library"
 
 [[input.files]]
 path = "projects/clipper/index.html"
@@ -2398,14 +2400,14 @@ url = "/helpers/clipper"
 title = "My web clipboard"
 
 [[input.files]]
-path = "learning/ai/index.html"
-url = "/learning/ai"
-title = "Learning AI"
-
-[[input.files]]
 path = "random/ai/index.html"
 url = "/random/ai"
 title = "AI"
+
+[[input.files]]
+path = "learning/ai/index.html"
+url = "/learning/ai"
+title = "Learning AI"
 
 [[input.files]]
 path = "interests/ai/index.html"
@@ -2431,7 +2433,3 @@ title = "Learning AI"
 path = "home-office/deep-work/index.html"
 url = "/home-office/deep-work"
 title = "Resources for Deep Work"
-
-
-[output]
-excerpts_per_result = 0
