@@ -1,8 +1,6 @@
 [input]
 base_directory = "/Users/nic/Github/notes-nicolasdeville.github.io/"
 html_selector = "main"
-[output]
-excerpts_per_result = 0
 
 [[input.files]]
 path = "ABOUT/index.html"
@@ -18,6 +16,11 @@ title = "Why this site?"
 path = "projects/notes/index.html"
 url = "/projects/notes"
 title = "This site"
+
+[[input.files]]
+path = "ai/stable-diffusion/index.html"
+url = "/ai/stable-diffusion"
+title = "Stable Diffusion"
 
 [[input.files]]
 path = "ai/whisper/index.html"
@@ -2410,11 +2413,6 @@ url = "/learning/ai"
 title = "Learning AI"
 
 [[input.files]]
-path = "interests/ai/index.html"
-url = "/interests/ai"
-title = "AI"
-
-[[input.files]]
 path = "random/ai/index.html"
 url = "/random/ai"
 title = "AI"
@@ -2428,6 +2426,11 @@ title = "AI"
 path = "learning/ai/index.html"
 url = "/learning/ai"
 title = "Learning AI"
+
+[[input.files]]
+path = "interests/ai/index.html"
+url = "/interests/ai"
+title = "AI"
 
 [[input.files]]
 path = "home-office/deep-work/index.html"
