@@ -13,6 +13,11 @@ url = "/why/"
 title = "Why this site?"
 
 [[input.files]]
+path = "helpers/responsive-web-design/index.html"
+url = "/helpers/responsive-web-design"
+title = "How to build a responsive website"
+
+[[input.files]]
 path = "projects/notes/index.html"
 url = "/projects/notes"
 title = "This site"
@@ -46,11 +51,6 @@ title = "SEO"
 path = "ai/generative-ai/index.html"
 url = "/ai/generative-ai"
 title = "Generative AI"
-
-[[input.files]]
-path = "helpers/responsive-web-design/index.html"
-url = "/helpers/responsive-web-design"
-title = "How to build a responsive website"
 
 [[input.files]]
 path = "learning/css/index.html"
@@ -128,14 +128,14 @@ url = "/helpers/clipper"
 title = "My web clipboard"
 
 [[input.files]]
-path = "apps/library/index.html"
-url = "/apps/library"
-title = "My Apps Library"
-
-[[input.files]]
 path = "books/library/index.html"
 url = "/books/library"
 title = "My Books Library"
+
+[[input.files]]
+path = "apps/library/index.html"
+url = "/apps/library"
+title = "My Apps Library"
 
 [[input.files]]
 path = "apps/radar/index.html"
@@ -1001,6 +1001,11 @@ title = "F1 Model Cars"
 path = "python/function-separator/index.html"
 url = "/python/function-separator"
 title = "A short function to generate print separators"
+
+[[input.files]]
+path = "b2b-sales/plan-your-moves-ahead/index.html"
+url = "/b2b-sales/plan-your-moves-ahead"
+title = "Plan your moves ahead"
 
 [[input.files]]
 path = "python/metadata-from-url/index.html"
@@ -2388,14 +2393,14 @@ url = "/projects/clipper"
 title = "Clipper"
 
 [[input.files]]
-path = "books/library/index.html"
-url = "/books/library"
-title = "My Books Library"
-
-[[input.files]]
 path = "apps/library/index.html"
 url = "/apps/library"
 title = "My Apps Library"
+
+[[input.files]]
+path = "books/library/index.html"
+url = "/books/library"
+title = "My Books Library"
 
 [[input.files]]
 path = "helpers/clipper/index.html"
@@ -2403,14 +2408,14 @@ url = "/helpers/clipper"
 title = "My web clipboard"
 
 [[input.files]]
-path = "random/ai/index.html"
-url = "/random/ai"
-title = "AI"
-
-[[input.files]]
 path = "learning/ai/index.html"
 url = "/learning/ai"
 title = "Learning AI"
+
+[[input.files]]
+path = "random/ai/index.html"
+url = "/random/ai"
+title = "AI"
 
 [[input.files]]
 path = "random/ai/index.html"
