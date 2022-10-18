@@ -13,6 +13,21 @@ url = "/why/"
 title = "Why this site?"
 
 [[input.files]]
+path = "home-office/kinesis/index.html"
+url = "/home-office/kinesis"
+title = "Kinesis Advantage keyboard"
+
+[[input.files]]
+path = "helpers/keyboard-shortcuts/index.html"
+url = "/helpers/keyboard-shortcuts"
+title = "My keyboard shortcuts"
+
+[[input.files]]
+path = "ai/generative-ai/index.html"
+url = "/ai/generative-ai"
+title = "Generative AI"
+
+[[input.files]]
 path = "helpers/responsive-web-design/index.html"
 url = "/helpers/responsive-web-design"
 title = "How to build a responsive website"
@@ -46,11 +61,6 @@ title = "Resources for Deep Work"
 path = "helpers/seo/index.html"
 url = "/helpers/seo"
 title = "SEO"
-
-[[input.files]]
-path = "ai/generative-ai/index.html"
-url = "/ai/generative-ai"
-title = "Generative AI"
 
 [[input.files]]
 path = "learning/css/index.html"
@@ -103,11 +113,6 @@ url = "/python/library-tqdm"
 title = "Python library: tqdm"
 
 [[input.files]]
-path = "home-office/kinesis/index.html"
-url = "/home-office/kinesis"
-title = "Kinesis Advantage keyboard"
-
-[[input.files]]
 path = "movies/1000/index.html"
 url = "/movies/1000"
 title = "My Top 1,000 Movies"
@@ -128,14 +133,14 @@ url = "/helpers/clipper"
 title = "My web clipboard"
 
 [[input.files]]
-path = "books/library/index.html"
-url = "/books/library"
-title = "My Books Library"
-
-[[input.files]]
 path = "apps/library/index.html"
 url = "/apps/library"
 title = "My Apps Library"
+
+[[input.files]]
+path = "books/library/index.html"
+url = "/books/library"
+title = "My Books Library"
 
 [[input.files]]
 path = "apps/radar/index.html"
@@ -381,11 +386,6 @@ title = "My Python scripts boilerplate"
 path = "apps/alfred/index.html"
 url = "/apps/alfred"
 title = "Alfred"
-
-[[input.files]]
-path = "helpers/keyboard-shortcuts/index.html"
-url = "/helpers/keyboard-shortcuts"
-title = "My keyboard shortcuts"
 
 [[input.files]]
 path = "home-office/airpods-max/index.html"
@@ -2393,14 +2393,14 @@ url = "/projects/clipper"
 title = "Clipper"
 
 [[input.files]]
-path = "apps/library/index.html"
-url = "/apps/library"
-title = "My Apps Library"
-
-[[input.files]]
 path = "books/library/index.html"
 url = "/books/library"
 title = "My Books Library"
+
+[[input.files]]
+path = "apps/library/index.html"
+url = "/apps/library"
+title = "My Apps Library"
 
 [[input.files]]
 path = "helpers/clipper/index.html"
