@@ -218,11 +218,6 @@ url = "/python/library-jinja2"
 title = "Python Library: jinja2"
 
 [[input.files]]
-path = "learning/touch-typing/index.html"
-url = "/learning/touch-typing"
-title = "Learning Touch Typing"
-
-[[input.files]]
 path = "projects/script-screenshot-app/index.html"
 url = "/projects/script-screenshot-app"
 title = "Script: screenshot video app, save file & generate HTML code"
