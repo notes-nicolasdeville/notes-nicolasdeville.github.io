@@ -13,14 +13,29 @@ url = "/why/"
 title = "Why this site?"
 
 [[input.files]]
+path = "ai/stable-diffusion/index.html"
+url = "/ai/stable-diffusion"
+title = "Stable Diffusion"
+
+[[input.files]]
 path = "learning/ai/index.html"
 url = "/learning/ai"
 title = "Learning AI"
 
 [[input.files]]
+path = "python/script-download-stripe-invoices/index.html"
+url = "/python/script-download-stripe-invoices"
+title = "Python script to download all invoices from Stripe as PDFs"
+
+[[input.files]]
 path = "home-office/kinesis/index.html"
 url = "/home-office/kinesis"
 title = "Kinesis Advantage keyboard"
+
+[[input.files]]
+path = "helpers/datev/index.html"
+url = "/helpers/datev"
+title = "Working with DATEV"
 
 [[input.files]]
 path = "leadership/delegating-automating/index.html"
@@ -51,11 +66,6 @@ title = "How to build a responsive website"
 path = "projects/notes/index.html"
 url = "/projects/notes"
 title = "This site"
-
-[[input.files]]
-path = "ai/stable-diffusion/index.html"
-url = "/ai/stable-diffusion"
-title = "Stable Diffusion"
 
 [[input.files]]
 path = "ai/whisper/index.html"
@@ -2378,13 +2388,13 @@ url = "/python/snippet-print-line"
 title = "Print current line number with Python"
 
 [[input.files]]
-path = "interests/ai/index.html"
-url = "/interests/ai"
+path = "random/ai/index.html"
+url = "/random/ai"
 title = "AI"
 
 [[input.files]]
-path = "random/ai/index.html"
-url = "/random/ai"
+path = "interests/ai/index.html"
+url = "/interests/ai"
 title = "AI"
 
 [[input.files]]
@@ -2423,11 +2433,6 @@ url = "/helpers/clipper"
 title = "My web clipboard"
 
 [[input.files]]
-path = "learning/ai/index.html"
-url = "/learning/ai"
-title = "Learning AI"
-
-[[input.files]]
 path = "random/ai/index.html"
 url = "/random/ai"
 title = "AI"
@@ -2441,6 +2446,11 @@ title = "Learning AI"
 path = "interests/ai/index.html"
 url = "/interests/ai"
 title = "AI"
+
+[[input.files]]
+path = "learning/ai/index.html"
+url = "/learning/ai"
+title = "Learning AI"
 
 [[input.files]]
 path = "home-office/deep-work/index.html"
