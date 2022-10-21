@@ -13,14 +13,34 @@ url = "/why/"
 title = "Why this site?"
 
 [[input.files]]
+path = "learning/ai/index.html"
+url = "/learning/ai"
+title = "Learning AI"
+
+[[input.files]]
+path = "projects/notes/index.html"
+url = "/projects/notes"
+title = "This site"
+
+[[input.files]]
 path = "ai/stable-diffusion/index.html"
 url = "/ai/stable-diffusion"
 title = "Stable Diffusion"
 
 [[input.files]]
-path = "learning/ai/index.html"
-url = "/learning/ai"
-title = "Learning AI"
+path = "ai/221021-1053-linkedin/index.html"
+url = "/ai/221021-1053-linkedin"
+title = "Linkedin post"
+
+[[input.files]]
+path = "ai/221021-1054-linkedin/index.html"
+url = "/ai/221021-1054-linkedin"
+title = "Linkedin post"
+
+[[input.files]]
+path = "ai/221021-1624-linkedin/index.html"
+url = "/ai/221021-1624-linkedin"
+title = "Linkedin post"
 
 [[input.files]]
 path = "python/script-download-stripe-invoices/index.html"
@@ -61,11 +81,6 @@ title = "Generative AI"
 path = "helpers/responsive-web-design/index.html"
 url = "/helpers/responsive-web-design"
 title = "How to build a responsive website"
-
-[[input.files]]
-path = "projects/notes/index.html"
-url = "/projects/notes"
-title = "This site"
 
 [[input.files]]
 path = "ai/whisper/index.html"
@@ -143,14 +158,14 @@ url = "/movies/1000"
 title = "My Top 1,000 Movies"
 
 [[input.files]]
-path = "python/books/index.html"
-url = "/python/books"
-title = "My Python Books Library"
-
-[[input.files]]
 path = "b2b-sales/books/index.html"
 url = "/b2b-sales/books"
 title = "My B2B Books Library"
+
+[[input.files]]
+path = "python/books/index.html"
+url = "/python/books"
+title = "My Python Books Library"
 
 [[input.files]]
 path = "helpers/clipper/index.html"
@@ -2178,6 +2193,11 @@ url = "/careerplaybook/careerplaybook-018-leaders-and-managers"
 title = "#CareerPlaybook 018: Knowing the difference between a good Leader and a good Manager"
 
 [[input.files]]
+path = "learning/touch-typing/index.html"
+url = "/learning/touch-typing"
+title = "Learning Touch Typing"
+
+[[input.files]]
 path = "python/learning-python/index.html"
 url = "/python/learning-python"
 title = "My guide to start learning programming in Python (for Business People)"
@@ -2403,14 +2423,14 @@ url = "/books/deep-work"
 title = "Deep Work, by Cal Newport"
 
 [[input.files]]
-path = "b2b-sales/books/index.html"
-url = "/b2b-sales/books"
-title = "My B2B Books Library"
-
-[[input.files]]
 path = "python/books/index.html"
 url = "/python/books"
 title = "My Python Books Library"
+
+[[input.files]]
+path = "b2b-sales/books/index.html"
+url = "/b2b-sales/books"
+title = "My B2B Books Library"
 
 [[input.files]]
 path = "projects/clipper/index.html"
