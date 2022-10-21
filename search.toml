@@ -13,6 +13,16 @@ url = "/why/"
 title = "Why this site?"
 
 [[input.files]]
+path = "ai/services/index.html"
+url = "/ai/services"
+title = "Exciting AI services"
+
+[[input.files]]
+path = "ai/generative-ai/index.html"
+url = "/ai/generative-ai"
+title = "Generative AI"
+
+[[input.files]]
 path = "learning/sql/index.html"
 url = "/learning/sql"
 title = "Learning SQL"
@@ -48,11 +58,6 @@ url = "/apps/best-lists"
 title = "Lists of 'Best apps for macOS'"
 
 [[input.files]]
-path = "ai/services/index.html"
-url = "/ai/services"
-title = "Exciting AI services"
-
-[[input.files]]
 path = "ai/stable-diffusion/index.html"
 url = "/ai/stable-diffusion"
 title = "Stable Diffusion"
@@ -75,12 +80,12 @@ title = "Linkedin post: Learning AI"
 [[input.files]]
 path = "ai/221021-1054-linkedin/index.html"
 url = "/ai/221021-1054-linkedin"
-title = "Linkedin post"
+title = "Linkedin post: Fying is impossible"
 
 [[input.files]]
 path = "ai/221021-1722-linkedin/index.html"
 url = "/ai/221021-1722-linkedin"
-title = "Posted on Linkedin"
+title = "Posted on Linkedin post: Lex Fridman's Deep Learning Basics"
 
 [[input.files]]
 path = "python/script-download-stripe-invoices/index.html"
@@ -111,11 +116,6 @@ title = "Accel's Euroscape 2022 report"
 path = "helpers/keyboard-shortcuts/index.html"
 url = "/helpers/keyboard-shortcuts"
 title = "My keyboard shortcuts"
-
-[[input.files]]
-path = "ai/generative-ai/index.html"
-url = "/ai/generative-ai"
-title = "Generative AI"
 
 [[input.files]]
 path = "helpers/responsive-web-design/index.html"
@@ -2443,6 +2443,11 @@ url = "/helpers/clipper"
 title = "My web clipboard"
 
 [[input.files]]
+path = "learning/ai/index.html"
+url = "/learning/ai"
+title = "Learning AI"
+
+[[input.files]]
 path = "random/ai/index.html"
 url = "/random/ai"
 title = "AI"
@@ -2456,11 +2461,6 @@ title = "Learning AI"
 path = "interests/ai/index.html"
 url = "/interests/ai"
 title = "AI"
-
-[[input.files]]
-path = "learning/ai/index.html"
-url = "/learning/ai"
-title = "Learning AI"
 
 [[input.files]]
 path = "home-office/deep-work/index.html"
