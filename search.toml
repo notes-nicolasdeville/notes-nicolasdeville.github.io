@@ -13,6 +13,51 @@ url = "/why/"
 title = "Why this site?"
 
 [[input.files]]
+path = "learning/sql/index.html"
+url = "/learning/sql"
+title = "Learning SQL"
+
+[[input.files]]
+path = "learning/touch-typing/index.html"
+url = "/learning/touch-typing"
+title = "Learning Touch Typing"
+
+[[input.files]]
+path = "learning/javascript/index.html"
+url = "/learning/javascript"
+title = "Learning Javascript"
+
+[[input.files]]
+path = "learning/git/index.html"
+url = "/learning/git"
+title = "Learning Git"
+
+[[input.files]]
+path = "learning/basketball/index.html"
+url = "/learning/basketball"
+title = "Learning Basketball"
+
+[[input.files]]
+path = "learning/computer-science/index.html"
+url = "/learning/computer-science"
+title = "Learning Computer Science"
+
+[[input.files]]
+path = "apps/best-lists/index.html"
+url = "/apps/best-lists"
+title = "Lists of 'Best apps for macOS'"
+
+[[input.files]]
+path = "ai/services/index.html"
+url = "/ai/services"
+title = "Exciting AI services"
+
+[[input.files]]
+path = "ai/stable-diffusion/index.html"
+url = "/ai/stable-diffusion"
+title = "Stable Diffusion"
+
+[[input.files]]
 path = "learning/ai/index.html"
 url = "/learning/ai"
 title = "Learning AI"
@@ -23,14 +68,9 @@ url = "/projects/notes"
 title = "This site"
 
 [[input.files]]
-path = "ai/stable-diffusion/index.html"
-url = "/ai/stable-diffusion"
-title = "Stable Diffusion"
-
-[[input.files]]
 path = "ai/221021-1053-linkedin/index.html"
 url = "/ai/221021-1053-linkedin"
-title = "Linkedin post"
+title = "Linkedin post: Learning AI"
 
 [[input.files]]
 path = "ai/221021-1054-linkedin/index.html"
@@ -38,9 +78,9 @@ url = "/ai/221021-1054-linkedin"
 title = "Linkedin post"
 
 [[input.files]]
-path = "ai/221021-1624-linkedin/index.html"
-url = "/ai/221021-1624-linkedin"
-title = "Linkedin post"
+path = "ai/221021-1722-linkedin/index.html"
+url = "/ai/221021-1722-linkedin"
+title = "Posted on Linkedin"
 
 [[input.files]]
 path = "python/script-download-stripe-invoices/index.html"
@@ -453,11 +493,6 @@ url = "/python/library-tkinter"
 title = "Python Library: tkinter"
 
 [[input.files]]
-path = "apps/adobe-illustrator/index.html"
-url = "/apps/adobe-illustrator"
-title = "Adobe Illustrator"
-
-[[input.files]]
 path = "python/library-geopy/index.html"
 url = "/python/library-geopy"
 title = "Python Library: geopy"
@@ -466,11 +501,6 @@ title = "Python Library: geopy"
 path = "helpers/twitter-cli/index.html"
 url = "/helpers/twitter-cli"
 title = "How to use Twitter via CLI (Command Line Interface) on macOS"
-
-[[input.files]]
-path = "ai/services/index.html"
-url = "/ai/services"
-title = "Exciting AI services"
 
 [[input.files]]
 path = "ai/art/index.html"
@@ -693,11 +723,6 @@ url = "/interests/starlink"
 title = "Starlink"
 
 [[input.files]]
-path = "ai/questions/index.html"
-url = "/ai/questions"
-title = "AI questions"
-
-[[input.files]]
 path = "home-office/monitors/index.html"
 url = "/home-office/monitors"
 title = "Monitors"
@@ -716,6 +741,11 @@ title = "Fig"
 path = "projects/apps-library/index.html"
 url = "/projects/apps-library"
 title = "Project: Apps Library"
+
+[[input.files]]
+path = "ai/questions/index.html"
+url = "/ai/questions"
+title = "AI questions"
 
 [[input.files]]
 path = "leadership/comp-plans/index.html"
@@ -833,11 +863,6 @@ url = "/apps/fantastical"
 title = "Fantastical"
 
 [[input.files]]
-path = "learning/italian/index.html"
-url = "/learning/italian"
-title = "Learning Italian"
-
-[[input.files]]
 path = "b2b-sales/meeting-tools/index.html"
 url = "/b2b-sales/meeting-tools"
 title = "Meeting tools for Sales"
@@ -853,19 +878,9 @@ url = "/apps/tidal"
 title = "Tidal"
 
 [[input.files]]
-path = "learning/git/index.html"
-url = "/learning/git"
-title = "Learning Git"
-
-[[input.files]]
 path = "apps/things/index.html"
 url = "/apps/things"
 title = "App: Things"
-
-[[input.files]]
-path = "learning/computer-science/index.html"
-url = "/learning/computer-science"
-title = "Learning Computer Science"
 
 [[input.files]]
 path = "helpers/ionos/index.html"
@@ -916,11 +931,6 @@ title = "indeXall | indexing the worlds of passions"
 path = "learning/speed-reading/index.html"
 url = "/learning/speed-reading"
 title = "Learning Speed Reading"
-
-[[input.files]]
-path = "learning/javascript/index.html"
-url = "/learning/javascript"
-title = "Learning Javascript"
 
 [[input.files]]
 path = "interests/watches/index.html"
@@ -1001,11 +1011,6 @@ title = "Print statement tricks"
 path = "helpers/logos/index.html"
 url = "/helpers/logos"
 title = "How to get company logos from websites"
-
-[[input.files]]
-path = "apps/best-lists/index.html"
-url = "/apps/best-lists"
-title = "Lists of 'Best apps for macOS'"
 
 [[input.files]]
 path = "python/snippet-download-files/index.html"
@@ -1198,11 +1203,6 @@ url = "/interests/apple"
 title = "Apple"
 
 [[input.files]]
-path = "learning/sql/index.html"
-url = "/learning/sql"
-title = "Learning SQL"
-
-[[input.files]]
 path = "learning/markdown/index.html"
 url = "/learning/markdown"
 title = "Learning Markdown"
@@ -1216,11 +1216,6 @@ title = "my-utils"
 path = "python/library-notion-py/index.html"
 url = "/python/library-notion-py"
 title = "Fetching data from Notion API with Python"
-
-[[input.files]]
-path = "learning/basketball/index.html"
-url = "/learning/basketball"
-title = "Learning Basketball"
 
 [[input.files]]
 path = "leadership/resources/index.html"
@@ -2191,11 +2186,6 @@ title = "#CareerPlaybook 019: The Power of ‘Thank You’"
 path = "careerplaybook/careerplaybook-018-leaders-and-managers/index.html"
 url = "/careerplaybook/careerplaybook-018-leaders-and-managers"
 title = "#CareerPlaybook 018: Knowing the difference between a good Leader and a good Manager"
-
-[[input.files]]
-path = "learning/touch-typing/index.html"
-url = "/learning/touch-typing"
-title = "Learning Touch Typing"
 
 [[input.files]]
 path = "python/learning-python/index.html"
