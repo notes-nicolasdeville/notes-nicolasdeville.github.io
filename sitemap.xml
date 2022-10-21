@@ -1922,6 +1922,12 @@
     </url>
     
     <url>
+        <loc>https://notes.nicolasdeville.com/ai/221021-1054-linkedin</loc>
+        <lastmod>2022-10-21</lastmod>
+        <priority>0.8</priority>        
+    </url>
+    
+    <url>
         <loc>https://notes.nicolasdeville.com/ai/art</loc>
         <lastmod>2022-10-21</lastmod>
         <priority>0.8</priority>        
@@ -1970,7 +1976,19 @@
     </url>
     
     <url>
+        <loc>https://notes.nicolasdeville.com/ai/221021-1624-linkedin</loc>
+        <lastmod>2022-10-21</lastmod>
+        <priority>0.8</priority>        
+    </url>
+    
+    <url>
         <loc>https://notes.nicolasdeville.com/ai/stable-diffusion</loc>
+        <lastmod>2022-10-21</lastmod>
+        <priority>0.8</priority>        
+    </url>
+    
+    <url>
+        <loc>https://notes.nicolasdeville.com/ai/221021-1053-linkedin</loc>
         <lastmod>2022-10-21</lastmod>
         <priority>0.8</priority>        
     </url>
