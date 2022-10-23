@@ -13,9 +13,29 @@ url = "/why/"
 title = "Why this site?"
 
 [[input.files]]
+path = "home-office/deep-work/index.html"
+url = "/home-office/deep-work"
+title = "Resources for Deep Work"
+
+[[input.files]]
+path = "home-office/kinesis/index.html"
+url = "/home-office/kinesis"
+title = "Kinesis Advantage keyboard"
+
+[[input.files]]
 path = "ai/eu-aia/index.html"
 url = "/ai/eu-aia"
 title = "The EU’s Artificial Intelligence Act (AIA)"
+
+[[input.files]]
+path = "ai/221023-1009-linkedin/index.html"
+url = "/ai/221023-1009-linkedin"
+title = "Joe Rogan Meets Steve Jobs in an AI-Generated Podcast"
+
+[[input.files]]
+path = "ai/221023-1050-linkedin/index.html"
+url = "/ai/221023-1050-linkedin"
+title = "Linkedin post: Google Flan"
 
 [[input.files]]
 path = "learning/touch-typing/index.html"
@@ -98,11 +118,6 @@ url = "/python/script-download-stripe-invoices"
 title = "Python script to download all invoices from Stripe as PDFs"
 
 [[input.files]]
-path = "home-office/kinesis/index.html"
-url = "/home-office/kinesis"
-title = "Kinesis Advantage keyboard"
-
-[[input.files]]
 path = "helpers/datev/index.html"
 url = "/helpers/datev"
 title = "Working with DATEV"
@@ -136,11 +151,6 @@ title = "Whisper"
 path = "ai/dall-e/index.html"
 url = "/ai/dall-e"
 title = "Dall-E"
-
-[[input.files]]
-path = "home-office/deep-work/index.html"
-url = "/home-office/deep-work"
-title = "Resources for Deep Work"
 
 [[input.files]]
 path = "helpers/seo/index.html"
@@ -2403,9 +2413,9 @@ url = "/python/snippet-print-line"
 title = "Print current line number with Python"
 
 [[input.files]]
-path = "interests/ai/index.html"
-url = "/interests/ai"
-title = "AI"
+path = "books/deep-work/index.html"
+url = "/books/deep-work"
+title = "Deep Work, by Cal Newport"
 
 [[input.files]]
 path = "random/ai/index.html"
@@ -2413,9 +2423,9 @@ url = "/random/ai"
 title = "AI"
 
 [[input.files]]
-path = "books/deep-work/index.html"
-url = "/books/deep-work"
-title = "Deep Work, by Cal Newport"
+path = "interests/ai/index.html"
+url = "/interests/ai"
+title = "AI"
 
 [[input.files]]
 path = "b2b-sales/books/index.html"
@@ -2448,11 +2458,6 @@ url = "/helpers/clipper"
 title = "My web clipboard"
 
 [[input.files]]
-path = "learning/ai/index.html"
-url = "/learning/ai"
-title = "Learning AI"
-
-[[input.files]]
 path = "random/ai/index.html"
 url = "/random/ai"
 title = "AI"
@@ -2466,6 +2471,11 @@ title = "Learning AI"
 path = "interests/ai/index.html"
 url = "/interests/ai"
 title = "AI"
+
+[[input.files]]
+path = "learning/ai/index.html"
+url = "/learning/ai"
+title = "Learning AI"
 
 [[input.files]]
 path = "home-office/deep-work/index.html"
