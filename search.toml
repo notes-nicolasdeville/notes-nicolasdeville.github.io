@@ -13,14 +13,34 @@ url = "/why/"
 title = "Why this site?"
 
 [[input.files]]
-path = "ai/generative-ai/index.html"
-url = "/ai/generative-ai"
-title = "Generative AI"
+path = "learning/ai/index.html"
+url = "/learning/ai"
+title = "Learning AI"
+
+[[input.files]]
+path = "tesla/share-price/index.html"
+url = "/tesla/share-price"
+title = "Tesla"
+
+[[input.files]]
+path = "projects/imapee/index.html"
+url = "/projects/imapee"
+title = "Imapee"
+
+[[input.files]]
+path = "home-office/setup/index.html"
+url = "/home-office/setup"
+title = "Home Office Setup"
 
 [[input.files]]
 path = "home-office/deep-work/index.html"
 url = "/home-office/deep-work"
 title = "Resources for Deep Work"
+
+[[input.files]]
+path = "ai/generative-ai/index.html"
+url = "/ai/generative-ai"
+title = "Generative AI"
 
 [[input.files]]
 path = "home-office/kinesis/index.html"
@@ -86,11 +106,6 @@ title = "Lists of 'Best apps for macOS'"
 path = "ai/stable-diffusion/index.html"
 url = "/ai/stable-diffusion"
 title = "Stable Diffusion"
-
-[[input.files]]
-path = "learning/ai/index.html"
-url = "/learning/ai"
-title = "Learning AI"
 
 [[input.files]]
 path = "projects/notes/index.html"
@@ -213,14 +228,14 @@ url = "/movies/1000"
 title = "My Top 1,000 Movies"
 
 [[input.files]]
-path = "python/books/index.html"
-url = "/python/books"
-title = "My Python Books Library"
-
-[[input.files]]
 path = "b2b-sales/books/index.html"
 url = "/b2b-sales/books"
 title = "My B2B Books Library"
+
+[[input.files]]
+path = "python/books/index.html"
+url = "/python/books"
+title = "My Python Books Library"
 
 [[input.files]]
 path = "helpers/clipper/index.html"
@@ -228,14 +243,14 @@ url = "/helpers/clipper"
 title = "My web clipboard"
 
 [[input.files]]
-path = "books/library/index.html"
-url = "/books/library"
-title = "My Books Library"
-
-[[input.files]]
 path = "apps/library/index.html"
 url = "/apps/library"
 title = "My Apps Library"
+
+[[input.files]]
+path = "books/library/index.html"
+url = "/books/library"
+title = "My Books Library"
 
 [[input.files]]
 path = "apps/radar/index.html"
@@ -246,11 +261,6 @@ title = "Apps on my radar"
 path = "ai/youtube-channels/index.html"
 url = "/ai/youtube-channels"
 title = "AI Youtube channels"
-
-[[input.files]]
-path = "tesla/share-price/index.html"
-url = "/tesla/share-price"
-title = "Tesla"
 
 [[input.files]]
 path = "projects/meta-url/index.html"
@@ -1083,11 +1093,6 @@ url = "/projects/libraree"
 title = "Libraree"
 
 [[input.files]]
-path = "projects/imapee/index.html"
-url = "/projects/imapee"
-title = "Imapee"
-
-[[input.files]]
 path = "books/learn-javascript-quickly/index.html"
 url = "/books/learn-javascript-quickly"
 title = "Book: Learn JavaScript Quickly"
@@ -1208,11 +1213,6 @@ url = "/home-office/herman-miller-embody"
 title = "Herman Miller x Logitech Embody Chair"
 
 [[input.files]]
-path = "home-office/setup/index.html"
-url = "/home-office/setup"
-title = "Home Office Setup"
-
-[[input.files]]
 path = "interests/apple/index.html"
 url = "/interests/apple"
 title = "Apple"
@@ -1323,6 +1323,11 @@ url = "/helpers/terminal-commands"
 title = "macOS List of Terminal Commands"
 
 [[input.files]]
+path = "helpers/reddit/index.html"
+url = "/helpers/reddit"
+title = "Reddit"
+
+[[input.files]]
 path = "random/20-scariest-theories/index.html"
 url = "/random/20-scariest-theories"
 title = "20 Scariest Theories Known to Man"
@@ -1371,6 +1376,11 @@ title = "Visualing the target and achievement"
 path = "python/copy-files/index.html"
 url = "/python/copy-files"
 title = "Mass copy selected files with Python"
+
+[[input.files]]
+path = "tesla/elon/index.html"
+url = "/tesla/elon"
+title = "Elon Musk"
 
 [[input.files]]
 path = "python/broken-links/index.html"
@@ -2413,11 +2423,6 @@ url = "/python/snippet-print-line"
 title = "Print current line number with Python"
 
 [[input.files]]
-path = "books/deep-work/index.html"
-url = "/books/deep-work"
-title = "Deep Work, by Cal Newport"
-
-[[input.files]]
 path = "interests/ai/index.html"
 url = "/interests/ai"
 title = "AI"
@@ -2428,9 +2433,9 @@ url = "/random/ai"
 title = "AI"
 
 [[input.files]]
-path = "b2b-sales/books/index.html"
-url = "/b2b-sales/books"
-title = "My B2B Books Library"
+path = "books/deep-work/index.html"
+url = "/books/deep-work"
+title = "Deep Work, by Cal Newport"
 
 [[input.files]]
 path = "python/books/index.html"
@@ -2438,14 +2443,14 @@ url = "/python/books"
 title = "My Python Books Library"
 
 [[input.files]]
+path = "b2b-sales/books/index.html"
+url = "/b2b-sales/books"
+title = "My B2B Books Library"
+
+[[input.files]]
 path = "projects/clipper/index.html"
 url = "/projects/clipper"
 title = "Clipper"
-
-[[input.files]]
-path = "apps/library/index.html"
-url = "/apps/library"
-title = "My Apps Library"
 
 [[input.files]]
 path = "books/library/index.html"
@@ -2453,9 +2458,24 @@ url = "/books/library"
 title = "My Books Library"
 
 [[input.files]]
+path = "apps/library/index.html"
+url = "/apps/library"
+title = "My Apps Library"
+
+[[input.files]]
+path = "tesla/elon/index.html"
+url = "/tesla/elon"
+title = "Elon Musk"
+
+[[input.files]]
 path = "helpers/clipper/index.html"
 url = "/helpers/clipper"
 title = "My web clipboard"
+
+[[input.files]]
+path = "learning/ai/index.html"
+url = "/learning/ai"
+title = "Learning AI"
 
 [[input.files]]
 path = "random/ai/index.html"
@@ -2463,9 +2483,9 @@ url = "/random/ai"
 title = "AI"
 
 [[input.files]]
-path = "learning/ai/index.html"
-url = "/learning/ai"
-title = "Learning AI"
+path = "interests/elon/index.html"
+url = "/interests/elon"
+title = "Elon Musk"
 
 [[input.files]]
 path = "interests/ai/index.html"
