@@ -13,6 +13,16 @@ url = "/why/"
 title = "Why this site?"
 
 [[input.files]]
+path = "python/script-extract-audio/index.html"
+url = "/python/script-extract-audio"
+title = "Python script: Extract audio from Youtube videos"
+
+[[input.files]]
+path = "python/library-moviepy/index.html"
+url = "/python/library-moviepy"
+title = "Python library: moviepy"
+
+[[input.files]]
 path = "learning/ai/index.html"
 url = "/learning/ai"
 title = "Learning AI"
@@ -243,14 +253,14 @@ url = "/helpers/clipper"
 title = "My web clipboard"
 
 [[input.files]]
-path = "apps/library/index.html"
-url = "/apps/library"
-title = "My Apps Library"
-
-[[input.files]]
 path = "books/library/index.html"
 url = "/books/library"
 title = "My Books Library"
+
+[[input.files]]
+path = "apps/library/index.html"
+url = "/apps/library"
+title = "My Apps Library"
 
 [[input.files]]
 path = "apps/radar/index.html"
@@ -1301,6 +1311,11 @@ title = "Fetch website metadata from URL"
 path = "careerplaybook/023-leaving-on-a-high/index.html"
 url = "/careerplaybook/023-leaving-on-a-high"
 title = "#CareerPlaybook 023: Leaving On A High"
+
+[[input.files]]
+path = "apps/pulltube/index.html"
+url = "/apps/pulltube"
+title = "Pulltube"
 
 [[input.files]]
 path = "python/tmdb-api/index.html"
@@ -2423,13 +2438,13 @@ url = "/python/snippet-print-line"
 title = "Print current line number with Python"
 
 [[input.files]]
-path = "interests/ai/index.html"
-url = "/interests/ai"
+path = "random/ai/index.html"
+url = "/random/ai"
 title = "AI"
 
 [[input.files]]
-path = "random/ai/index.html"
-url = "/random/ai"
+path = "interests/ai/index.html"
+url = "/interests/ai"
 title = "AI"
 
 [[input.files]]
@@ -2453,14 +2468,14 @@ url = "/projects/clipper"
 title = "Clipper"
 
 [[input.files]]
-path = "books/library/index.html"
-url = "/books/library"
-title = "My Books Library"
-
-[[input.files]]
 path = "apps/library/index.html"
 url = "/apps/library"
 title = "My Apps Library"
+
+[[input.files]]
+path = "books/library/index.html"
+url = "/books/library"
+title = "My Books Library"
 
 [[input.files]]
 path = "tesla/elon/index.html"
@@ -2473,14 +2488,14 @@ url = "/helpers/clipper"
 title = "My web clipboard"
 
 [[input.files]]
-path = "learning/ai/index.html"
-url = "/learning/ai"
-title = "Learning AI"
-
-[[input.files]]
 path = "random/ai/index.html"
 url = "/random/ai"
 title = "AI"
+
+[[input.files]]
+path = "learning/ai/index.html"
+url = "/learning/ai"
+title = "Learning AI"
 
 [[input.files]]
 path = "interests/elon/index.html"
