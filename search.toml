@@ -13,14 +13,44 @@ url = "/why/"
 title = "Why this site?"
 
 [[input.files]]
-path = "learning/ai/index.html"
-url = "/learning/ai"
-title = "Learning AI"
+path = "home-office/shopping/index.html"
+url = "/home-office/shopping"
+title = "Shopping ideas for home office"
+
+[[input.files]]
+path = "home-office/deep-work/index.html"
+url = "/home-office/deep-work"
+title = "Resources for Deep Work"
+
+[[input.files]]
+path = "ai/generative-ai/index.html"
+url = "/ai/generative-ai"
+title = "Generative AI"
+
+[[input.files]]
+path = "python/script-process-heic-images/index.html"
+url = "/python/script-process-heic-images"
+title = "Convert and resize iPhone images with Python"
+
+[[input.files]]
+path = "ai/stable-diffusion/index.html"
+url = "/ai/stable-diffusion"
+title = "Stable Diffusion"
 
 [[input.files]]
 path = "home-office/setup/index.html"
 url = "/home-office/setup"
 title = "Home Office Setup"
+
+[[input.files]]
+path = "learning/ai/index.html"
+url = "/learning/ai"
+title = "Learning AI"
+
+[[input.files]]
+path = "python/library-pillow/index.html"
+url = "/python/library-pillow"
+title = "Python library: Pillow"
 
 [[input.files]]
 path = "python/script-extract-audio/index.html"
@@ -36,16 +66,6 @@ title = "Python library: moviepy"
 path = "projects/imapee/index.html"
 url = "/projects/imapee"
 title = "Imapee"
-
-[[input.files]]
-path = "home-office/deep-work/index.html"
-url = "/home-office/deep-work"
-title = "Resources for Deep Work"
-
-[[input.files]]
-path = "ai/generative-ai/index.html"
-url = "/ai/generative-ai"
-title = "Generative AI"
 
 [[input.files]]
 path = "home-office/kinesis/index.html"
@@ -106,11 +126,6 @@ title = "Learning Computer Science"
 path = "apps/best-lists/index.html"
 url = "/apps/best-lists"
 title = "Lists of 'Best apps for macOS'"
-
-[[input.files]]
-path = "ai/stable-diffusion/index.html"
-url = "/ai/stable-diffusion"
-title = "Stable Diffusion"
 
 [[input.files]]
 path = "projects/notes/index.html"
@@ -721,11 +736,6 @@ title = "Managing text files with Python"
 path = "helpers/icloud-download/index.html"
 url = "/helpers/icloud-download"
 title = "Download all iCloud photos to a local directory"
-
-[[input.files]]
-path = "home-office/shopping/index.html"
-url = "/home-office/shopping"
-title = "Shopping ideas for home office"
 
 [[input.files]]
 path = "python/library-speech-recognition/index.html"
@@ -2433,9 +2443,9 @@ url = "/python/snippet-print-line"
 title = "Print current line number with Python"
 
 [[input.files]]
-path = "interests/ai/index.html"
-url = "/interests/ai"
-title = "AI"
+path = "books/deep-work/index.html"
+url = "/books/deep-work"
+title = "Deep Work, by Cal Newport"
 
 [[input.files]]
 path = "random/ai/index.html"
@@ -2443,9 +2453,9 @@ url = "/random/ai"
 title = "AI"
 
 [[input.files]]
-path = "books/deep-work/index.html"
-url = "/books/deep-work"
-title = "Deep Work, by Cal Newport"
+path = "interests/ai/index.html"
+url = "/interests/ai"
+title = "AI"
 
 [[input.files]]
 path = "b2b-sales/books/index.html"
@@ -2488,14 +2498,14 @@ url = "/learning/ai"
 title = "Learning AI"
 
 [[input.files]]
-path = "interests/ai/index.html"
-url = "/interests/ai"
-title = "AI"
-
-[[input.files]]
 path = "learning/ai/index.html"
 url = "/learning/ai"
 title = "Learning AI"
+
+[[input.files]]
+path = "interests/ai/index.html"
+url = "/interests/ai"
+title = "AI"
 
 [[input.files]]
 path = "home-office/deep-work/index.html"
