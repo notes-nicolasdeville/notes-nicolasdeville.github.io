@@ -13,9 +13,14 @@ url = "/why/"
 title = "Why this site?"
 
 [[input.files]]
+path = "ai/stable-diffusion/index.html"
+url = "/ai/stable-diffusion"
+title = "Stable Diffusion"
+
+[[input.files]]
 path = "home-office/shopping/index.html"
 url = "/home-office/shopping"
-title = "Shopping ideas for home office"
+title = "Upgrade ideas for home office"
 
 [[input.files]]
 path = "home-office/deep-work/index.html"
@@ -26,16 +31,6 @@ title = "Resources for Deep Work"
 path = "ai/generative-ai/index.html"
 url = "/ai/generative-ai"
 title = "Generative AI"
-
-[[input.files]]
-path = "python/script-process-heic-images/index.html"
-url = "/python/script-process-heic-images"
-title = "Convert and resize iPhone images with Python"
-
-[[input.files]]
-path = "ai/stable-diffusion/index.html"
-url = "/ai/stable-diffusion"
-title = "Stable Diffusion"
 
 [[input.files]]
 path = "home-office/setup/index.html"
@@ -248,14 +243,14 @@ url = "/movies/1000"
 title = "My Top 1,000 Movies"
 
 [[input.files]]
-path = "python/books/index.html"
-url = "/python/books"
-title = "My Python Books Library"
-
-[[input.files]]
 path = "b2b-sales/books/index.html"
 url = "/b2b-sales/books"
 title = "My B2B Books Library"
+
+[[input.files]]
+path = "python/books/index.html"
+url = "/python/books"
+title = "My Python Books Library"
 
 [[input.files]]
 path = "helpers/clipper/index.html"
@@ -2458,14 +2453,14 @@ url = "/interests/ai"
 title = "AI"
 
 [[input.files]]
-path = "b2b-sales/books/index.html"
-url = "/b2b-sales/books"
-title = "My B2B Books Library"
-
-[[input.files]]
 path = "python/books/index.html"
 url = "/python/books"
 title = "My Python Books Library"
+
+[[input.files]]
+path = "b2b-sales/books/index.html"
+url = "/b2b-sales/books"
+title = "My B2B Books Library"
 
 [[input.files]]
 path = "projects/clipper/index.html"
@@ -2498,14 +2493,14 @@ url = "/learning/ai"
 title = "Learning AI"
 
 [[input.files]]
-path = "learning/ai/index.html"
-url = "/learning/ai"
-title = "Learning AI"
-
-[[input.files]]
 path = "interests/ai/index.html"
 url = "/interests/ai"
 title = "AI"
+
+[[input.files]]
+path = "learning/ai/index.html"
+url = "/learning/ai"
+title = "Learning AI"
 
 [[input.files]]
 path = "home-office/deep-work/index.html"
