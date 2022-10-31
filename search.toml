@@ -13,9 +13,29 @@ url = "/why/"
 title = "Why this site?"
 
 [[input.files]]
+path = "learning/touch-typing/index.html"
+url = "/learning/touch-typing"
+title = "Learning Touch Typing"
+
+[[input.files]]
+path = "b2b-sales/outbound/index.html"
+url = "/b2b-sales/outbound"
+title = "Outbound Lead Generation"
+
+[[input.files]]
+path = "learning/ai/index.html"
+url = "/learning/ai"
+title = "Learning AI"
+
+[[input.files]]
 path = "projects/notes/index.html"
 url = "/projects/notes"
 title = "This site"
+
+[[input.files]]
+path = "home-office/charachorder/index.html"
+url = "/home-office/charachorder"
+title = "CharaChorder"
 
 [[input.files]]
 path = "random/quotes/index.html"
@@ -63,11 +83,6 @@ url = "/home-office/setup"
 title = "Home Office Setup"
 
 [[input.files]]
-path = "learning/ai/index.html"
-url = "/learning/ai"
-title = "Learning AI"
-
-[[input.files]]
 path = "python/library-pillow/index.html"
 url = "/python/library-pillow"
 title = "Python library: Pillow"
@@ -106,11 +121,6 @@ title = "Joe Rogan Meets Steve Jobs in an AI-Generated Podcast"
 path = "ai/221023-1050-linkedin/index.html"
 url = "/ai/221023-1050-linkedin"
 title = "Linkedin post: Google Flan"
-
-[[input.files]]
-path = "learning/touch-typing/index.html"
-url = "/learning/touch-typing"
-title = "Learning Touch Typing"
 
 [[input.files]]
 path = "ai/services/index.html"
@@ -263,14 +273,14 @@ url = "/movies/1000"
 title = "My Top 1,000 Movies"
 
 [[input.files]]
-path = "python/books/index.html"
-url = "/python/books"
-title = "My Python Books Library"
-
-[[input.files]]
 path = "b2b-sales/books/index.html"
 url = "/b2b-sales/books"
 title = "My B2B Books Library"
+
+[[input.files]]
+path = "python/books/index.html"
+url = "/python/books"
+title = "My Python Books Library"
 
 [[input.files]]
 path = "helpers/clipper/index.html"
@@ -1228,11 +1238,6 @@ url = "/apps/cloudapp"
 title = "CloudApp | A visual collaboration solution"
 
 [[input.files]]
-path = "b2b-sales/outbound/index.html"
-url = "/b2b-sales/outbound"
-title = "Outbound Lead Generation"
-
-[[input.files]]
 path = "home-office/herman-miller-embody/index.html"
 url = "/home-office/herman-miller-embody"
 title = "Herman Miller x Logitech Embody Chair"
@@ -2183,6 +2188,11 @@ url = "/b2b-sales/you-will-be-directed-to-who-you-sound-like"
 title = "You Will Be Directed To Who You Sound Like"
 
 [[input.files]]
+path = "leadership/vp-sales/index.html"
+url = "/leadership/vp-sales"
+title = "What Makes a Great VP Sales"
+
+[[input.files]]
 path = "leadership/underpromise-overdeliver/index.html"
 url = "/leadership/underpromise-overdeliver"
 title = "Underpromise, Overdeliver"
@@ -2453,11 +2463,6 @@ url = "/python/snippet-print-line"
 title = "Print current line number with Python"
 
 [[input.files]]
-path = "books/deep-work/index.html"
-url = "/books/deep-work"
-title = "Deep Work, by Cal Newport"
-
-[[input.files]]
 path = "interests/ai/index.html"
 url = "/interests/ai"
 title = "AI"
@@ -2468,14 +2473,19 @@ url = "/random/ai"
 title = "AI"
 
 [[input.files]]
-path = "b2b-sales/books/index.html"
-url = "/b2b-sales/books"
-title = "My B2B Books Library"
+path = "books/deep-work/index.html"
+url = "/books/deep-work"
+title = "Deep Work, by Cal Newport"
 
 [[input.files]]
 path = "python/books/index.html"
 url = "/python/books"
 title = "My Python Books Library"
+
+[[input.files]]
+path = "b2b-sales/books/index.html"
+url = "/b2b-sales/books"
+title = "My B2B Books Library"
 
 [[input.files]]
 path = "projects/clipper/index.html"
@@ -2498,14 +2508,14 @@ url = "/helpers/clipper"
 title = "My web clipboard"
 
 [[input.files]]
-path = "random/ai/index.html"
-url = "/random/ai"
-title = "AI"
-
-[[input.files]]
 path = "learning/ai/index.html"
 url = "/learning/ai"
 title = "Learning AI"
+
+[[input.files]]
+path = "random/ai/index.html"
+url = "/random/ai"
+title = "AI"
 
 [[input.files]]
 path = "interests/ai/index.html"

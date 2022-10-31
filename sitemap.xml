@@ -1376,6 +1376,12 @@
     </url>
     
     <url>
+        <loc>https://notes.nicolasdeville.com/home-office/charachorder</loc>
+        <lastmod>2022-10-31</lastmod>
+        <priority>0.8</priority>        
+    </url>
+    
+    <url>
         <loc>https://notes.nicolasdeville.com/home-office/contour-shuttle</loc>
         <lastmod>2022-10-31</lastmod>
         <priority>0.8</priority>        
@@ -2223,6 +2229,12 @@
     
     <url>
         <loc>https://notes.nicolasdeville.com/leadership/resources</loc>
+        <lastmod>2022-10-31</lastmod>
+        <priority>0.8</priority>        
+    </url>
+    
+    <url>
+        <loc>https://notes.nicolasdeville.com/leadership/vp-sales</loc>
         <lastmod>2022-10-31</lastmod>
         <priority>0.8</priority>        
     </url>
