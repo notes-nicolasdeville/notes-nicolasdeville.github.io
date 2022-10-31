@@ -13,6 +13,16 @@ url = "/why/"
 title = "Why this site?"
 
 [[input.files]]
+path = "projects/notes/index.html"
+url = "/projects/notes"
+title = "This site"
+
+[[input.files]]
+path = "random/quotes/index.html"
+url = "/random/quotes"
+title = "My favourite quotes"
+
+[[input.files]]
 path = "ai/stable-diffusion/index.html"
 url = "/ai/stable-diffusion"
 title = "Stable Diffusion"
@@ -36,6 +46,16 @@ title = "Resources for Deep Work"
 path = "ai/generative-ai/index.html"
 url = "/ai/generative-ai"
 title = "Generative AI"
+
+[[input.files]]
+path = "b2b-sales/coi/index.html"
+url = "/b2b-sales/coi"
+title = "Cost Of Inaction (COI) as urgency driver"
+
+[[input.files]]
+path = "b2b-sales/icp/index.html"
+url = "/b2b-sales/icp"
+title = "How to build an Ideal Customer Profile (ICP)"
 
 [[input.files]]
 path = "home-office/setup/index.html"
@@ -126,11 +146,6 @@ title = "Learning Computer Science"
 path = "apps/best-lists/index.html"
 url = "/apps/best-lists"
 title = "Lists of 'Best apps for macOS'"
-
-[[input.files]]
-path = "projects/notes/index.html"
-url = "/projects/notes"
-title = "This site"
 
 [[input.files]]
 path = "ai/221021-1053-linkedin/index.html"
@@ -263,14 +278,14 @@ url = "/helpers/clipper"
 title = "My web clipboard"
 
 [[input.files]]
-path = "books/library/index.html"
-url = "/books/library"
-title = "My Books Library"
-
-[[input.files]]
 path = "apps/library/index.html"
 url = "/apps/library"
 title = "My Apps Library"
+
+[[input.files]]
+path = "books/library/index.html"
+url = "/books/library"
+title = "My Books Library"
 
 [[input.files]]
 path = "apps/radar/index.html"
@@ -606,11 +621,6 @@ title = "Get parent folder name with Python"
 path = "python/snippet-pass-arguments/index.html"
 url = "/python/snippet-pass-arguments"
 title = "How to pass variables to a Python scripts with argument"
-
-[[input.files]]
-path = "random/quotes/index.html"
-url = "/random/quotes"
-title = "My favourite quotes"
 
 [[input.files]]
 path = "b2b-sales/cold-emails/index.html"
@@ -2473,14 +2483,14 @@ url = "/projects/clipper"
 title = "Clipper"
 
 [[input.files]]
-path = "apps/library/index.html"
-url = "/apps/library"
-title = "My Apps Library"
-
-[[input.files]]
 path = "books/library/index.html"
 url = "/books/library"
 title = "My Books Library"
+
+[[input.files]]
+path = "apps/library/index.html"
+url = "/apps/library"
+title = "My Apps Library"
 
 [[input.files]]
 path = "helpers/clipper/index.html"
@@ -2488,14 +2498,14 @@ url = "/helpers/clipper"
 title = "My web clipboard"
 
 [[input.files]]
-path = "learning/ai/index.html"
-url = "/learning/ai"
-title = "Learning AI"
-
-[[input.files]]
 path = "random/ai/index.html"
 url = "/random/ai"
 title = "AI"
+
+[[input.files]]
+path = "learning/ai/index.html"
+url = "/learning/ai"
+title = "Learning AI"
 
 [[input.files]]
 path = "interests/ai/index.html"

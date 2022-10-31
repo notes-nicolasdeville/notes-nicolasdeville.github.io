@@ -19,9 +19,9 @@
 <meta name="twitter:description" content="keeping notes about building this site" /> <!-- max. 200 characters -->
  
 
-<meta property="article:published_time" content="2022-10-21 15:01:55.433003+02:00" />
+<meta property="article:published_time" content="2022-10-31 10:40:49.759814+01:00" />
 
-<meta property="article:modified_time" content="2022-10-21 15:01:55.433003+02:00" />
+<meta property="article:modified_time" content="2022-10-31 10:40:49.759814+01:00" />
 
 <meta name="robots" content="all, follow" />
 
@@ -69,7 +69,7 @@
             </div>
 
             <div class="above-navbar">
-                <div class="last_updated">30 Oct 2022 | 16:56</div>
+                <div class="last_updated">31 Oct 2022 | 10:41</div>
                 <div>
                     <p class="notes_count">
                         <a href="https://notes.nicolasdeville.com/tags">by tags</a>
@@ -80,7 +80,7 @@
                         <span style="color:#C74350">|</span>
                         <a href="https://notes.nicolasdeville.com/2022/">2022</a>
                         <span style="color:#C74350">|</span>
-                        486 notes
+                        488 notes
                     </p>
                 </div>
             </div>
@@ -127,12 +127,12 @@
 <footer class="post-info">
 
     <p>
-        21 Oct 2022 <span class="separator">|</span> in <a class="link_tag" href="https://notes.nicolasdeville.com/projects/">projects</a>
+        31 Oct 2022 <span class="separator">|</span> in <a class="link_tag" href="https://notes.nicolasdeville.com/projects/">projects</a>
 
         <!-- added 4/7 -->
         <!-- 		<br />
-        <abbr class="modified" title="2022-10-21T15:01:55.433003+02:00">
-                Updated: 21 Oct 2022
+        <abbr class="modified" title="2022-10-31T10:40:49.759814+01:00">
+                Updated: 31 Oct 2022
         </abbr>
  -->
 
@@ -363,6 +363,45 @@ though might just have to wait for Stork 2.0.0:  <br>
 </code></pre></div>
 
 <p>Index file <code>.st</code> now down to 9Mb from 12.8Mb... but no results showing up anymore!!</p>
+<p><span class="datestamp">31 Oct 2022</span> </p>
+<p>Still stuck.  </p>
+<p>I have tried to use JS to remove Stork when accessing from mobile (as a workaround in the meantime), to no avail.. my JS skills are lacking. This is what I have used:</p>
+<div class="highlight"><pre><span></span><code><span class="cm">&lt;!-- for Stork seach engine --&gt;</span>
+<span class="cm">&lt;!-- &lt;script src=&quot;https://files.stork-search.net/stork.js&quot;&gt;&lt;/script&gt;</span>
+<span class="cm">&lt;script&gt;</span>
+<span class="cm">    stork.register(&quot;sitesearch&quot;, &quot;{{ SITEURL }}/search-index.st&quot;)</span>
+<span class="cm">&lt;/script&gt; --&gt;</span>
+
+<span class="p">&lt;</span><span class="nt">script</span><span class="p">&gt;</span><span class="w"></span>
+<span class="w">    </span><span class="p">(</span><span class="kd">function</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="k">if</span><span class="p">(</span><span class="w"> </span><span class="nb">window</span><span class="p">.</span><span class="nx">innerWidth</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mf">600</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="kd">var</span><span class="w"> </span><span class="nx">stork_script</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">document</span><span class="p">.</span><span class="nx">createElement</span><span class="p">(</span><span class="s1">&#39;script&#39;</span><span class="p">);</span><span class="w"></span>
+<span class="w">        </span><span class="nx">stork_script</span><span class="p">.</span><span class="nx">type</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;text/javascript&#39;</span><span class="p">;</span><span class="w"></span>
+<span class="w">        </span><span class="nx">stork_script</span><span class="p">.</span><span class="nx">src</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;https://files.stork-search.net/stork.js&#39;</span><span class="p">;</span><span class="w"></span>
+
+<span class="w">        </span><span class="kd">var</span><span class="w"> </span><span class="nx">stork_register</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="s1">&#39;script&#39;</span><span class="p">);</span><span class="w"></span>
+<span class="w">        </span><span class="c1">// stork_register.type = &#39;stork.register(&quot;sitesearch&quot;, &quot;{{ SITEURL }}/search-index.st&quot;)&#39;;</span><span class="w"></span>
+<span class="w">        </span><span class="nx">stork_register</span><span class="p">.</span><span class="nx">innerHTML</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;stork.register(&quot;sitesearch&quot;, &quot;{{ SITEURL }}/search-index.st&quot;)&#39;</span><span class="p">;</span><span class="w"></span>
+
+<span class="w">        </span><span class="kd">var</span><span class="w"> </span><span class="nx">head</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">document</span><span class="p">.</span><span class="nx">getElementsByTagName</span><span class="p">(</span><span class="s1">&#39;head&#39;</span><span class="p">)[</span><span class="mf">0</span><span class="p">];</span><span class="w"></span>
+<span class="w">        </span><span class="nx">head</span><span class="p">.</span><span class="nx">appendChild</span><span class="p">(</span><span class="nx">stork_script</span><span class="p">);</span><span class="w"></span>
+<span class="w">        </span><span class="nx">head</span><span class="p">.</span><span class="nx">appendChild</span><span class="p">(</span><span class="nx">stork_register</span><span class="p">);</span><span class="w"></span>
+
+<span class="w">        </span><span class="c1">// stork_script.appendTo(&#39;body&#39;)</span><span class="w"></span>
+<span class="w">        </span><span class="c1">// stork_register.appendTo(&#39;body&#39;)</span><span class="w"></span>
+
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+<span class="w">    </span><span class="p">})();</span><span class="w"></span>
+<span class="p">&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+</code></pre></div>
+
+<p>I have also found Pagefind as a potential alternative (which looks good and is optimised for large sites) - though wary of changing everything.</p>
+<div class="link_border"><div class="link_logo_box"><img class="link_logo" src="https://logo.clearbit.com/pagefind.app?size=35" alt="logo"/></div><div class="link_content">
+<div class="link_title">Pagefind</div>
+<div class="link_tagline">pagefind.app</div>
+<div class="link_url"><a href="https://pagefind.app" target="_blank">https://pagefind.app</a></div></div></div>
+
+<p>I like Stork and would like to find a way to make it work.</p>
 <h2 id="copy-code-block">Copy Code Block</h2>
 <p>Using my own site to surface code snippets or scripts during my programming time has become a habit.   </p>
 <p>As I've set the search bar to be active upon page load, it's as easy as launching <code>https://notes.nicolasdeville.com</code> (with a shortcut) to be in a position to search what I need.   </p>
@@ -873,11 +912,29 @@ not sureif it makes sense to implement (yet).    </p>
 <script src="https://notes.nicolasdeville.com/theme/js/nic.js"></script>
 
 <!-- for Stork seach engine -->
-<!-- <script src="https://files.stork-search.net/releases/v1.2.1/stork.js"></script> #updated 220924 -->
 <script src="https://files.stork-search.net/stork.js"></script>
 <script>
     stork.register("sitesearch", "https://notes.nicolasdeville.com/search-index.st")
 </script>
+
+<!-- <script>
+    (function() {
+    if( window.innerWidth > 600 ) {
+        var stork_script = document.createElement('script');
+        stork_script.type = 'text/javascript';
+        stork_script.src = 'https://files.stork-search.net/stork.js';
+
+        var stork_register = ('script');
+        stork_register.innerHTML = 'stork.register("sitesearch", "https://notes.nicolasdeville.com/search-index.st")';
+
+        var head = document.getElementsByTagName('head')[0];
+        head.appendChild(stork_script);
+        head.appendChild(stork_register);
+
+
+    }
+    })();
+</script> -->
 
 </body>
 </html>

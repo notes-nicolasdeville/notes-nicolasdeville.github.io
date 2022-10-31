@@ -22,7 +22,7 @@
 
 <meta property="article:published_time" content="2022-10-29 00:00:00+02:00" />
 
-<meta property="article:modified_time" content="2022-10-30 16:54:04.425445+01:00" />
+<meta property="article:modified_time" content="2022-10-30 17:26:55.782972+01:00" />
 
 <meta name="robots" content="all, follow" />
 
@@ -70,7 +70,7 @@
             </div>
 
             <div class="above-navbar">
-                <div class="last_updated">30 Oct 2022 | 16:56</div>
+                <div class="last_updated">31 Oct 2022 | 10:41</div>
                 <div>
                     <p class="notes_count">
                         <a href="https://notes.nicolasdeville.com/tags">by tags</a>
@@ -81,7 +81,7 @@
                         <span style="color:#C74350">|</span>
                         <a href="https://notes.nicolasdeville.com/2022/">2022</a>
                         <span style="color:#C74350">|</span>
-                        486 notes
+                        488 notes
                     </p>
                 </div>
             </div>
@@ -132,7 +132,7 @@
 
         <!-- added 4/7 -->
         <!-- 		<br />
-        <abbr class="modified" title="2022-10-30T16:54:04.425445+01:00">
+        <abbr class="modified" title="2022-10-30T17:26:55.782972+01:00">
                 Updated: 30 Oct 2022
         </abbr>
  -->
@@ -142,7 +142,31 @@
     
 
 </footer>            <main> <!-- for indexing by Stork -->
-                <p>Photos taken with an iPhone results in files with the <code>.heic</code> extension.   </p>
+                <p>Photos taken with an iPhone results in files with the <code>.heic</code> extension.  </p>
+<p>The PIL Python library helps with file conversion &amp; more [<a href="../../python/library-pillow/index.html">Nic Note: Python library: Pillow</a>]</p>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">PIL</span> <span class="kn">import</span> <span class="n">Image</span><span class="p">,</span> <span class="n">ImageOps</span>
+<span class="kn">import</span> <span class="nn">pillow_heif</span>
+
+<span class="n">input_folder</span> <span class="o">=</span> <span class="s1">&#39;/path/to/folder/with/heic/&#39;</span>
+<span class="n">output_folder</span> <span class="o">=</span> <span class="s1">&#39;/path/to/output/jpeg/&#39;</span>
+
+<span class="n">existing_files</span> <span class="o">=</span> <span class="p">[</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">input_folder</span><span class="si">}</span><span class="s2">/</span><span class="si">{</span><span class="n">file</span><span class="si">}</span><span class="s2">&quot;</span> <span class="k">for</span> <span class="n">file</span> <span class="ow">in</span> <span class="n">os</span><span class="o">.</span><span class="n">listdir</span><span class="p">(</span><span class="n">input_folder</span><span class="p">)</span> <span class="k">if</span> <span class="s1">&#39;.heic&#39;</span> <span class="ow">in</span> <span class="n">file</span><span class="o">.</span><span class="n">lower</span><span class="p">()]</span>
+
+<span class="k">for</span> <span class="n">file</span> <span class="ow">in</span> <span class="n">existing_files</span><span class="p">:</span>
+    <span class="n">count</span> <span class="o">+=</span> <span class="mi">1</span>
+    <span class="n">heif_file</span> <span class="o">=</span> <span class="n">pillow_heif</span><span class="o">.</span><span class="n">read_heif</span><span class="p">(</span><span class="n">file</span><span class="p">)</span>
+    <span class="n">image</span> <span class="o">=</span> <span class="n">Image</span><span class="o">.</span><span class="n">frombytes</span><span class="p">(</span>
+        <span class="n">heif_file</span><span class="o">.</span><span class="n">mode</span><span class="p">,</span>
+        <span class="n">heif_file</span><span class="o">.</span><span class="n">size</span><span class="p">,</span>
+        <span class="n">heif_file</span><span class="o">.</span><span class="n">data</span><span class="p">,</span>
+        <span class="s2">&quot;raw&quot;</span><span class="p">,</span>
+    <span class="p">)</span>
+
+    <span class="n">image</span> <span class="o">=</span> <span class="n">ImageOps</span><span class="o">.</span><span class="n">contain</span><span class="p">(</span><span class="n">image</span><span class="p">,</span> <span class="p">(</span><span class="mi">1000</span><span class="p">,</span><span class="mi">1000</span><span class="p">))</span>
+    <span class="n">image</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">output_folder</span><span class="si">}</span><span class="s2">/</span><span class="si">{</span><span class="n">date</span><span class="si">}</span><span class="s2">_</span><span class="si">{</span><span class="n">count</span><span class="si">}</span><span class="s2">.jpg&quot;</span><span class="p">,</span> <span class="n">optimize</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span> <span class="c1"># can add quality=80</span>
+</code></pre></div>
+
+<p>The <code>ImageOps.contain</code> is great: it enables to resize an image ensuring ouput image does not go beyond the limits of the "box" (1000 x 1000 here) while keeping original ratio.  </p>
             </main>
         </div><!-- /.entry-content -->
     </article>
@@ -192,11 +216,29 @@
 <script src="https://notes.nicolasdeville.com/theme/js/nic.js"></script>
 
 <!-- for Stork seach engine -->
-<!-- <script src="https://files.stork-search.net/releases/v1.2.1/stork.js"></script> #updated 220924 -->
 <script src="https://files.stork-search.net/stork.js"></script>
 <script>
     stork.register("sitesearch", "https://notes.nicolasdeville.com/search-index.st")
 </script>
+
+<!-- <script>
+    (function() {
+    if( window.innerWidth > 600 ) {
+        var stork_script = document.createElement('script');
+        stork_script.type = 'text/javascript';
+        stork_script.src = 'https://files.stork-search.net/stork.js';
+
+        var stork_register = ('script');
+        stork_register.innerHTML = 'stork.register("sitesearch", "https://notes.nicolasdeville.com/search-index.st")';
+
+        var head = document.getElementsByTagName('head')[0];
+        head.appendChild(stork_script);
+        head.appendChild(stork_register);
+
+
+    }
+    })();
+</script> -->
 
 </body>
 </html>
