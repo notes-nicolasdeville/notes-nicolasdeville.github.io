@@ -1,0 +1,5 @@
+# pagefind.yml
+source: "/Users/nic/Github/notes-nicolasdeville.github.io"
+bundle_dir: pagefind
+showEmptyFilters: false
+showImages: false
