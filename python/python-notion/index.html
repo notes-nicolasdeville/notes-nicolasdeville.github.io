@@ -19,9 +19,9 @@
 <meta name="twitter:description" content="Get data from Notion with Python" /> <!-- max. 200 characters -->
  
 
-<meta property="article:published_time" content="2022-09-30 11:57:28.291481+02:00" />
+<meta property="article:published_time" content="2022-11-02 22:53:59.786566+01:00" />
 
-<meta property="article:modified_time" content="2022-09-30 11:57:28.291481+02:00" />
+<meta property="article:modified_time" content="2022-11-02 22:53:59.786566+01:00" />
 
 <meta name="robots" content="all, follow" />
 
@@ -85,7 +85,7 @@
             
 
             <div class="above-navbar">
-                <div class="last_updated">02 Nov 2022 | 20:45</div>
+                <div class="last_updated">02 Nov 2022 | 22:54</div>
                 <div>
                     <p class="notes_count">
                         <a href="https://notes.nicolasdeville.com/tags">by tags</a>
@@ -143,7 +143,7 @@
 <footer class="post-info">
 
     <p>
-        30 Sep 2022 
+        02 Nov 2022 
         <span class="separator">|</span> in <a class="link_tag" href="https://notes.nicolasdeville.com/python/"><span data-pagefind-filter="python">python</span></a>
 
  tags: <a class="link_tag" href="https://notes.nicolasdeville.com/tag/scripts.html">scripts</a>
@@ -151,8 +151,8 @@
 
         <!-- added 4/7 -->
         <!-- 		<br />
-        <abbr class="modified" title="2022-09-30T11:57:28.291481+02:00">
-                Updated: 30 Sep 2022
+        <abbr class="modified" title="2022-11-02T22:53:59.786566+01:00">
+                Updated: 02 Nov 2022
         </abbr>
  -->
 
@@ -165,10 +165,10 @@
                 <p><span class="datestamp">07 Jul 2022</span>   </p>
 <p>Needed a way to fetch data from Notion to generate Markdown files dynamically for this static site.</p>
 <h2 id="reference">Reference</h2>
-<div class="link_border"><div class="link_logo_box"><img class="link_logo" src="https://logo.clearbit.com/notion.com?size=35" alt="logo"/></div><div class="link_content">
+<div class="link_border"><div class="link_logo_box"><img class="link_logo" src="https://notes.nicolasdeville.com/images/logos/notion.png" alt="logo"/></div><div class="link_content">
 <div class="link_title">Learn how to make your first API requests using the Notion API</div>
-<div class="link_tagline">notion.com</div>
-<div class="link_url"><a href="https://developers.notion.com/docs/getting-started" target="_blank">https://developers.notion.com/docs/getting-started</a></div></div></div>
+<div class="link_tagline">notion</div>
+<div class="link_url"><a href="https://developers.notion/docs/getting-started" target="_blank">https://developers.notion/docs/getting-started</a></div></div></div>
 
 <p>Source database:  </p>
 <p><img class="illustration" src="https://notes.nicolasdeville.com/images/notion-clipper.jpg" alt="notion-clipper.jpg"/>  </p>
@@ -184,7 +184,7 @@
 <p>This can be found in the URL of the database page to fetch:</p>
 <p><code>https://www.notion.so/myworkspacename/THIS_IS_THE_DATABASE_ID?v=XXXXXXXXXXXXXXXXXXXXXXXXXXXX</code></p>
 <p><span class="datestamp">28 Sep 2022</span> </p>
-<p>The database needs to be shared with the integration: <a href="https://developers.notion.com/docs/getting-started#step-2-share-a-database-with-your-integration" target="_blank">https://developers.notion.com/docs/getting-started#step-2-share-a-database-with-your-integration</a>  </p>
+<p>The database needs to be shared with the integration: <a href="https://developers.notion/docs/getting-started#step-2-share-a-database-with-your-integration" target="_blank">https://developers.notion/docs/getting-started#step-2-share-a-database-with-your-integration</a>  </p>
 <p><img class="screenshot" src="https://notes.nicolasdeville.com/images/python-notion/notion-integration-share.jpg" alt="python-notion/notion-integration-share.jpg"/><br>
 here <code>Clipper Import</code> is the name of the integration I setup for this. </p>
 <p>Note: if when selecting <code>Add Connections</code> your newly created integration does not show up:  </p>
@@ -208,7 +208,7 @@ here <code>Clipper Import</code> is the name of the integration I setup for this
     <span class="s2">&quot;Notion-Version&quot;</span><span class="p">:</span> <span class="s2">&quot;2021-05-13&quot;</span>
 <span class="p">}</span>
 
-<span class="n">url</span> <span class="o">=</span> <span class="sa">f</span><span class="s1">&#39;https://api.notion.com/v1/databases/</span><span class="si">{</span><span class="n">database_id</span><span class="si">}</span><span class="s1">/query&#39;</span>
+<span class="n">url</span> <span class="o">=</span> <span class="sa">f</span><span class="s1">&#39;https://api.notion/v1/databases/</span><span class="si">{</span><span class="n">database_id</span><span class="si">}</span><span class="s1">/query&#39;</span>
 
 <span class="n">r</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">post</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="p">{</span>
     <span class="s2">&quot;Authorization&quot;</span><span class="p">:</span> <span class="sa">f</span><span class="s2">&quot;Bearer </span><span class="si">{</span><span class="n">token</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">,</span>
@@ -310,7 +310,7 @@ here <code>Clipper Import</code> is the name of the integration I setup for this
 <span class="n">record_id</span> <span class="o">=</span> <span class="n">record</span><span class="p">[</span><span class="s1">&#39;id&#39;</span><span class="p">]</span>
 <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">DELETING </span><span class="si">{</span><span class="n">record_id</span><span class="si">}</span><span class="s2"> from Notion...&quot;</span><span class="p">)</span>
 
-<span class="n">url_delete</span> <span class="o">=</span> <span class="sa">f</span><span class="s1">&#39;https://api.notion.com/v1/blocks/</span><span class="si">{</span><span class="n">record_id</span><span class="si">}</span><span class="s1">&#39;</span>
+<span class="n">url_delete</span> <span class="o">=</span> <span class="sa">f</span><span class="s1">&#39;https://api.notion/v1/blocks/</span><span class="si">{</span><span class="n">record_id</span><span class="si">}</span><span class="s1">&#39;</span>
 <span class="n">request_delete</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">delete</span><span class="p">(</span><span class="n">url_delete</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="p">{</span>
     <span class="s2">&quot;Authorization&quot;</span><span class="p">:</span> <span class="sa">f</span><span class="s2">&quot;Bearer </span><span class="si">{</span><span class="n">token</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">,</span>
     <span class="s2">&quot;Notion-Version&quot;</span><span class="p">:</span> <span class="s2">&quot;2021-08-16&quot;</span>

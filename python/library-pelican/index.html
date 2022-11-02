@@ -19,9 +19,9 @@
 <meta name="twitter:description" content="How I built this site, migrating away from (expensive) Ghost." /> <!-- max. 200 characters -->
  
 
-<meta property="article:published_time" content="2022-09-30 09:13:55.168368+02:00" />
+<meta property="article:published_time" content="2022-11-02 22:53:59.814006+01:00" />
 
-<meta property="article:modified_time" content="2022-09-30 09:13:55.168368+02:00" />
+<meta property="article:modified_time" content="2022-11-02 22:53:59.814006+01:00" />
 
 <meta name="robots" content="all, follow" />
 
@@ -85,7 +85,7 @@
             
 
             <div class="above-navbar">
-                <div class="last_updated">02 Nov 2022 | 20:45</div>
+                <div class="last_updated">02 Nov 2022 | 22:54</div>
                 <div>
                     <p class="notes_count">
                         <a href="https://notes.nicolasdeville.com/tags">by tags</a>
@@ -143,15 +143,15 @@
 <footer class="post-info">
 
     <p>
-        30 Sep 2022 
+        02 Nov 2022 
         <span class="separator">|</span> in <a class="link_tag" href="https://notes.nicolasdeville.com/python/"><span data-pagefind-filter="python">python</span></a>
 
  tags: <a class="link_tag" href="https://notes.nicolasdeville.com/tag/static.html">static</a>
 
         <!-- added 4/7 -->
         <!-- 		<br />
-        <abbr class="modified" title="2022-09-30T09:13:55.168368+02:00">
-                Updated: 30 Sep 2022
+        <abbr class="modified" title="2022-11-02T22:53:59.814006+01:00">
+                Updated: 02 Nov 2022
         </abbr>
  -->
 
@@ -233,7 +233,7 @@
 </tr>
 <tr>
 <td>Github</td>
-<td><a href="https://github.com/getpelican/pelican" target="_blank">https://github.com/getpelican/pelican</a></td>
+<td><a href="https://github/getpelican/pelican" target="_blank">https://github/getpelican/pelican</a></td>
 </tr>
 <tr>
 <td>Documentation</td>
@@ -301,13 +301,13 @@ pages and <span class="m">0</span> draft pages <span class="k">in</span> <span c
                                <span class="n">lang_items</span><span class="p">,</span> <span class="n">with_str</span><span class="p">,</span> <span class="n">lang</span><span class="p">)</span>
 </code></pre></div>
 
-<p>from: <a href="https://github.com/getpelican/pelican/blob/d5d792060cd5e4c3ff6da82359589b990fa83f27/pelican/utils.py" target="_blank">https://github.com/getpelican/pelican/blob/d5d792060cd5e4c3ff6da82359589b990fa83f27/pelican/utils.py</a>.  </p>
+<p>from: <a href="https://github/getpelican/pelican/blob/d5d792060cd5e4c3ff6da82359589b990fa83f27/pelican/utils.py" target="_blank">https://github/getpelican/pelican/blob/d5d792060cd5e4c3ff6da82359589b990fa83f27/pelican/utils.py</a>.  </p>
 <p>Not working:  </p>
 <div class="highlight"><pre><span></span><code><span class="n">LOG_FILTER</span> <span class="o">=</span> <span class="p">[(</span><span class="n">logging</span><span class="o">.</span><span class="n">WARN</span><span class="p">,</span> <span class="s1">&#39;There are </span><span class="si">%s</span><span class="s1"> items &quot;</span><span class="si">%s</span><span class="s1">&quot; with lang </span><span class="si">%s</span><span class="s1">&#39;</span><span class="p">)]</span>
 </code></pre></div>
 
 <h5 id="avaris-help">avaris help</h5>
-<p><span class="datestamp">30 Sep 2022</span> trying approach from <a href="https://github.com/getpelican/pelican/discussions/3046" target="_blank">https://github.com/getpelican/pelican/discussions/3046</a>   </p>
+<p><span class="datestamp">30 Sep 2022</span> trying approach from <a href="https://github/getpelican/pelican/discussions/3046" target="_blank">https://github/getpelican/pelican/discussions/3046</a>   </p>
 <p>Baseline: 10 warnings as:</p>
 <div class="highlight"><pre><span></span><code><span class="o">[</span><span class="m">08</span>:44:52<span class="o">]</span> WARNING  There are <span class="m">3</span> items <span class="s2">&quot;with slug &quot;</span>ai<span class="s2">&quot;&quot;</span> with lang en:                   log.py:91
                     /Users/xxx/content/articles/interests/ai.md                                                          
@@ -444,10 +444,10 @@ Slug: github-pages
 <p>will get the slug <code>github-pages.html</code></p>
 <h3 id="syntax-highlighting">syntax highlighting</h3>
 <p>Pelican installs the syntax highlighter Pygments. Haven't read the Pygments doc though:      </p>
-<div class="link_border"><div class="link_logo_box"><img class="link_logo" src="https://logo.clearbit.com/pygments.org?size=35" alt="logo"/></div><div class="link_content">
+<div class="link_border"><div class="link_logo_box"><img class="link_logo" src="https://notes.nicolasdeville.com/images/logos/pygments.png" alt="logo"/></div><div class="link_content">
 <div class="link_title">Pygments</div>
-<div class="link_tagline">pygments.org</div>
-<div class="link_url"><a href="https://pygments.org" target="_blank">https://pygments.org</a></div></div></div>
+<div class="link_tagline">pygments</div>
+<div class="link_url"><a href="https://pygments" target="_blank">https://pygments</a></div></div></div>
 
 <p>Changed the formatting of my code blocks to reflect my VS Code theme.</p>
 <p>Tedious way:</p>
@@ -475,7 +475,7 @@ Slug: github-pages
 
 <p>(note to self: need to rework my css when line numbers are showing)</p>
 <p>I have not been able to make 2) and 3) work. </p>
-<p>Also not able to make the line highlights work with <code>``` python hl_lines="3 4"</code> (from <a href="https://yakworks.github.io/docmark/extensions/codehilite/" target="_blank">https://yakworks.github.io/docmark/extensions/codehilite/</a>)</p>
+<p>Also not able to make the line highlights work with <code>``` python hl_lines="3 4"</code> (from <a href="https://yakworks.github/docmark/extensions/codehilite/" target="_blank">https://yakworks.github/docmark/extensions/codehilite/</a>)</p>
 <h4 id="for-tables">for tables:</h4>
 <p>Add to <code>pelicanconf.py</code>:  </p>
 <div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">markdown.extensions.tables</span> <span class="kn">import</span> <span class="n">TableExtension</span>
@@ -545,10 +545,10 @@ Learning: escape quotes in article titles, eg <code>I \"like\" spam</code>.  </p
 </code></pre></div>
 
 <p>source:    </p>
-<div class="link_border"><div class="link_logo_box"><img class="link_logo" src="https://logo.clearbit.com/stackoverflow.com?size=35" alt="logo"/></div><div class="link_content">
+<div class="link_border"><div class="link_logo_box"><img class="link_logo" src="https://notes.nicolasdeville.com/images/logos/stackoverflow.png" alt="logo"/></div><div class="link_content">
 <div class="link_title">python - How to count authors in Pelican Blogs? - Stack Overflow</div>
-<div class="link_tagline">stackoverflow.com</div>
-<div class="link_url"><a href="https://stackoverflow.com/questions/41112939/how-to-count-authors-in-pelican-blogs" target="_blank">https://stackoverflow.com/questions/41112939/how-to-count-authors-in-pelican-blogs</a></div></div></div>
+<div class="link_tagline">stackoverflow</div>
+<div class="link_url"><a href="https://stackoverflow/questions/41112939/how-to-count-authors-in-pelican-blogs" target="_blank">https://stackoverflow/questions/41112939/how-to-count-authors-in-pelican-blogs</a></div></div></div>
 
 <h2 id="my-config-file">My Config file</h2>
 <p><span class="datestamp">28 Sep 2022</span>   updated version:    </p>
@@ -716,40 +716,40 @@ Learning: escape quotes in article titles, eg <code>I \"like\" spam</code>.  </p
 </ol>
 <h2 id="search">Search</h2>
 <h3 id="stork">Stork</h3>
-<div class="link_border"><div class="link_logo_box"><img class="link_logo" src="https://logo.clearbit.com/stork-search.net?size=35" alt="logo"/></div><div class="link_content">
+<div class="link_border"><div class="link_logo_box"><img class="link_logo" src="https://notes.nicolasdeville.com/images/logos/stork-search.png" alt="logo"/></div><div class="link_content">
 <div class="link_title">Stork Search</div>
 <div class="link_tagline">Impossibly Fast Web Search</div>
-<div class="link_url"><a href="https://stork-search.net" target="_blank">https://stork-search.net</a></div></div></div>
+<div class="link_url"><a href="https://stork-search" target="_blank">https://stork-search</a></div></div></div>
 
 <p>especially:  </p>
-<div class="link_border"><div class="link_logo_box"><img class="link_logo" src="https://logo.clearbit.com/stork-search.net?size=35" alt="logo"/></div><div class="link_content">
+<div class="link_border"><div class="link_logo_box"><img class="link_logo" src="https://notes.nicolasdeville.com/images/logos/stork-search.png" alt="logo"/></div><div class="link_content">
 <div class="link_title">Installation • Stork Search</div>
-<div class="link_tagline">stork-search.net</div>
-<div class="link_url"><a href="https://stork-search.net/docs/install" target="_blank">https://stork-search.net/docs/install</a></div></div></div>
+<div class="link_tagline">stork-search</div>
+<div class="link_url"><a href="https://stork-search/docs/install" target="_blank">https://stork-search/docs/install</a></div></div></div>
 
 <p>on Github:  </p>
-<div class="link_border"><div class="link_logo_box"><img class="link_logo" src="https://logo.clearbit.com/github.com?size=35" alt="logo"/></div><div class="link_content">
+<div class="link_border"><div class="link_logo_box"><img class="link_logo" src="https://notes.nicolasdeville.com/images/logos/github.png" alt="logo"/></div><div class="link_content">
 <div class="link_title">GitHub - jameslittle230/stork: 🔎 Impossibly fast web search, made for static sites.</div>
-<div class="link_tagline">github.com</div>
-<div class="link_url"><a href="https://github.com/jameslittle230/stork" target="_blank">https://github.com/jameslittle230/stork</a></div></div></div>
+<div class="link_tagline">github</div>
+<div class="link_url"><a href="https://github/jameslittle230/stork" target="_blank">https://github/jameslittle230/stork</a></div></div></div>
 
 <p>Javascript API Reference:   </p>
-<div class="link_border"><div class="link_logo_box"><img class="link_logo" src="https://logo.clearbit.com/stork-search.net?size=35" alt="logo"/></div><div class="link_content">
+<div class="link_border"><div class="link_logo_box"><img class="link_logo" src="https://notes.nicolasdeville.com/images/logos/stork-search.png" alt="logo"/></div><div class="link_content">
 <div class="link_title">JavaScript Reference • Stork Search</div>
 <div class="link_tagline">Javascript API Reference</div>
-<div class="link_url"><a href="https://stork-search.net/docs/js-ref" target="_blank">https://stork-search.net/docs/js-ref</a></div></div></div>
+<div class="link_url"><a href="https://stork-search/docs/js-ref" target="_blank">https://stork-search/docs/js-ref</a></div></div></div>
 
 <p>creator's personal website, with nice search input animation:    </p>
-<div class="link_border"><div class="link_logo_box"><img class="link_logo" src="https://logo.clearbit.com/jameslittle.me?size=35" alt="logo"/></div><div class="link_content">
-<div class="link_title">Home • jameslittle.me</div>
-<div class="link_tagline">jameslittle.me</div>
-<div class="link_url"><a href="https://jameslittle.me" target="_blank">https://jameslittle.me</a></div></div></div>
+<div class="link_border"><div class="link_logo_box"><img class="link_logo" src="https://notes.nicolasdeville.com/images/logos/jameslittle.png" alt="logo"/></div><div class="link_content">
+<div class="link_title">Home • jameslittle</div>
+<div class="link_tagline">jameslittle</div>
+<div class="link_url"><a href="https://jameslittle" target="_blank">https://jameslittle</a></div></div></div>
 
 <p>Plus plug-in:   </p>
-<div class="link_border"><div class="link_logo_box"><img class="link_logo" src="https://logo.clearbit.com/github.com?size=35" alt="logo"/></div><div class="link_content">
+<div class="link_border"><div class="link_logo_box"><img class="link_logo" src="https://notes.nicolasdeville.com/images/logos/github.png" alt="logo"/></div><div class="link_content">
 <div class="link_title">GitHub - pelican-plugins/search: Pelican plugin that adds site search capability</div>
-<div class="link_tagline">github.com</div>
-<div class="link_url"><a href="https://github.com/pelican-plugins/search" target="_blank">https://github.com/pelican-plugins/search</a></div></div></div>
+<div class="link_tagline">github</div>
+<div class="link_url"><a href="https://github/pelican-plugins/search" target="_blank">https://github/pelican-plugins/search</a></div></div></div>
 
 <p><span class="datestamp">16 Jul 2022</span> Testing notes:  </p>
 <ul>
@@ -780,7 +780,7 @@ Learning: escape quotes in article titles, eg <code>I \"like\" spam</code>.  </p
                     line <span class="m">278</span> column <span class="m">13</span><span class="sb">`</span> 
 </code></pre></div>
 
-<p>Solved: <a href="https://github.com/pelican-plugins/search/issues/3" target="_blank">https://github.com/pelican-plugins/search/issues/3</a><br>
+<p>Solved: <a href="https://github/pelican-plugins/search/issues/3" target="_blank">https://github/pelican-plugins/search/issues/3</a><br>
 The issue was that some of my article titles had quotes that were not escaped.   </p>
 <p><span class="datestamp">26 Jul 2022</span>   noticed an error when searching on a page other than the homepage (wrong path). TODO investigate. <br>
 =&gt; solved with latest update.    </p>
@@ -789,24 +789,24 @@ Checked if filtering by category helps - does not. <br>
 Workaround: add <code>search code: XXX</code> to pages were quick access is required, where <code>XXX</code> is a unique combination of characters in the Stork index.    </p>
 <h3 id="algolia-search-a-plugin-for-pelican">Algolia Search: A Plugin for Pelican</h3>
 <p>decided against, preferring Stork (see above)    </p>
-<div class="link_border"><div class="link_logo_box"><img class="link_logo" src="https://logo.clearbit.com/github.com?size=35" alt="logo"/></div><div class="link_content">
+<div class="link_border"><div class="link_logo_box"><img class="link_logo" src="https://notes.nicolasdeville.com/images/logos/github.png" alt="logo"/></div><div class="link_content">
 <div class="link_title">GitHub - rehanhaider/pelican-algolia: Pelican Algolia Search: A Plugin to integrated Algolia Search in Pelican</div>
-<div class="link_tagline">github.com</div>
-<div class="link_url"><a href="https://github.com/rehanhaider/pelican-algolia" target="_blank">https://github.com/rehanhaider/pelican-algolia</a></div></div></div>
+<div class="link_tagline">github</div>
+<div class="link_url"><a href="https://github/rehanhaider/pelican-algolia" target="_blank">https://github/rehanhaider/pelican-algolia</a></div></div></div>
 
 <h2 id="add-build-timestamp-last-updated-to-pelican-site-automatically">Add Build Timestamp ("Last Updated") to Pelican Site Automatically</h2>
 <p><span class="datestamp">12 Sep 2022</span> implemented.  </p>
-<div class="link_border"><div class="link_logo_box"><img class="link_logo" src="https://logo.clearbit.com/github.io?size=35" alt="logo"/></div><div class="link_content">
+<div class="link_border"><div class="link_logo_box"><img class="link_logo" src="https://notes.nicolasdeville.com/images/logos/github.png" alt="logo"/></div><div class="link_content">
 <div class="link_title">[Pelican] Add Build Timestamp to Pelican Site Automatically</div>
-<div class="link_tagline">github.io</div>
-<div class="link_url"><a href="https://siongui.github.io/2020/11/30/auto-add-build-timestamp-to-pelican-website/" target="_blank">https://siongui.github.io/2020/11/30/auto-add-build-timestamp-to-pelican-website/</a></div></div></div>
+<div class="link_tagline">github</div>
+<div class="link_url"><a href="https://siongui.github/2020/11/30/auto-add-build-timestamp-to-pelican-website/" target="_blank">https://siongui.github/2020/11/30/auto-add-build-timestamp-to-pelican-website/</a></div></div></div>
 
 <h2 id="seo">SEO</h2>
 <p><span class="datestamp">16 Sep 2022</span> testing:    </p>
-<div class="link_border"><div class="link_logo_box"><img class="link_logo" src="https://logo.clearbit.com/github.com?size=35" alt="logo"/></div><div class="link_content">
+<div class="link_border"><div class="link_logo_box"><img class="link_logo" src="https://notes.nicolasdeville.com/images/logos/github.png" alt="logo"/></div><div class="link_content">
 <div class="link_title">GitHub - pelican-plugins/seo: Pelican plugin to improve search engine optimization (SEO)</div>
-<div class="link_tagline">github.com</div>
-<div class="link_url"><a href="https://github.com/pelican-plugins/seo" target="_blank">https://github.com/pelican-plugins/seo</a></div></div></div>
+<div class="link_tagline">github</div>
+<div class="link_url"><a href="https://github/pelican-plugins/seo" target="_blank">https://github/pelican-plugins/seo</a></div></div></div>
 
 <p>increased build time to 5.72-10.49 seconds from 3+ seconds!     </p>
 <p>added to <code>pelicancond.py</code>:  </p>
@@ -824,76 +824,76 @@ Will implement SEO best practices manually - more in the SEO section of [<a href
 <h2 id="plugins-to-test">Plugins to test</h2>
 <h3 id="more-categories">more Categories</h3>
 <p>for subcategories and more than 1 category per article   </p>
-<div class="link_border"><div class="link_logo_box"><img class="link_logo" src="https://logo.clearbit.com/github.com?size=35" alt="logo"/></div><div class="link_content">
+<div class="link_border"><div class="link_logo_box"><img class="link_logo" src="https://notes.nicolasdeville.com/images/logos/github.png" alt="logo"/></div><div class="link_content">
 <div class="link_title">GitHub - pelican-plugins/more-categories: Enables nested categories and multiple categories per article</div>
-<div class="link_tagline">github.com</div>
-<div class="link_url"><a href="https://github.com/pelican-plugins/more-categories" target="_blank">https://github.com/pelican-plugins/more-categories</a></div></div></div>
+<div class="link_tagline">github</div>
+<div class="link_url"><a href="https://github/pelican-plugins/more-categories" target="_blank">https://github/pelican-plugins/more-categories</a></div></div></div>
 
 <h3 id="sitemap">sitemap</h3>
 <p>for auto-generation of <code>sitemap.xml</code>  </p>
-<div class="link_border"><div class="link_logo_box"><img class="link_logo" src="https://logo.clearbit.com/github.com?size=35" alt="logo"/></div><div class="link_content">
+<div class="link_border"><div class="link_logo_box"><img class="link_logo" src="https://notes.nicolasdeville.com/images/logos/github.png" alt="logo"/></div><div class="link_content">
 <div class="link_title">GitHub - pelican-plugins/sitemap: Generates a site map for Pelican-powered sites</div>
-<div class="link_tagline">github.com</div>
-<div class="link_url"><a href="https://github.com/pelican-plugins/sitemap" target="_blank">https://github.com/pelican-plugins/sitemap</a></div></div></div>
+<div class="link_tagline">github</div>
+<div class="link_url"><a href="https://github/pelican-plugins/sitemap" target="_blank">https://github/pelican-plugins/sitemap</a></div></div></div>
 
 <h3 id="staticman-comments-for-static-sites">Staticman | comments for static sites</h3>
 <p>found here:</p>
-<div class="link_border"><div class="link_logo_box"><img class="link_logo" src="https://logo.clearbit.com/snipcart.com?size=35" alt="logo"/></div><div class="link_content">
+<div class="link_border"><div class="link_logo_box"><img class="link_logo" src="https://notes.nicolasdeville.com/images/logos/snipcart.png" alt="logo"/></div><div class="link_content">
 <div class="link_title">Pelican Tutorial: Static Blog with Search & Comments [Demo]</div>
-<div class="link_tagline">snipcart.com</div>
-<div class="link_url"><a href="https://snipcart.com/blog/pelican-blog-tutorial-search-comments" target="_blank">https://snipcart.com/blog/pelican-blog-tutorial-search-comments</a></div></div></div>
+<div class="link_tagline">snipcart</div>
+<div class="link_url"><a href="https://snipcart/blog/pelican-blog-tutorial-search-comments" target="_blank">https://snipcart/blog/pelican-blog-tutorial-search-comments</a></div></div></div>
 
 <p>Github:   </p>
-<div class="link_border"><div class="link_logo_box"><img class="link_logo" src="https://logo.clearbit.com/github.com?size=35" alt="logo"/></div><div class="link_content">
+<div class="link_border"><div class="link_logo_box"><img class="link_logo" src="https://notes.nicolasdeville.com/images/logos/github.png" alt="logo"/></div><div class="link_content">
 <div class="link_title">GitHub - eduardoboucas/staticman: 💪  User-generated content for Git-powered websites</div>
-<div class="link_tagline">github.com</div>
-<div class="link_url"><a href="https://github.com/eduardoboucas/staticman" target="_blank">https://github.com/eduardoboucas/staticman</a></div></div></div>
+<div class="link_tagline">github</div>
+<div class="link_url"><a href="https://github/eduardoboucas/staticman" target="_blank">https://github/eduardoboucas/staticman</a></div></div></div>
 
 <h3 id="theme-example-word-count-search-feature">theme example + word count + search feature</h3>
-<div class="link_border"><div class="link_logo_box"><img class="link_logo" src="https://logo.clearbit.com/github.com?size=35" alt="logo"/></div><div class="link_content">
+<div class="link_border"><div class="link_logo_box"><img class="link_logo" src="https://notes.nicolasdeville.com/images/logos/github.png" alt="logo"/></div><div class="link_content">
 <div class="link_title">GitHub - pilosus/pilosus-pelican-theme: A responsive minimalistic theme for Pelican static blog generator</div>
-<div class="link_tagline">github.com</div>
-<div class="link_url"><a href="https://github.com/pilosus/pilosus-pelican-theme" target="_blank">https://github.com/pilosus/pilosus-pelican-theme</a></div></div></div>
+<div class="link_tagline">github</div>
+<div class="link_url"><a href="https://github/pilosus/pilosus-pelican-theme" target="_blank">https://github/pilosus/pilosus-pelican-theme</a></div></div></div>
 
 <h3 id="summary-plugin">summary plugin</h3>
-<div class="link_border"><div class="link_logo_box"><img class="link_logo" src="https://logo.clearbit.com/github.com?size=35" alt="logo"/></div><div class="link_content">
+<div class="link_border"><div class="link_logo_box"><img class="link_logo" src="https://notes.nicolasdeville.com/images/logos/github.png" alt="logo"/></div><div class="link_content">
 <div class="link_title">pelican-plugins/summary at master · getpelican/pelican-plugins · GitHub</div>
-<div class="link_tagline">github.com</div>
-<div class="link_url"><a href="https://github.com/getpelican/pelican-plugins/tree/master/summary" target="_blank">https://github.com/getpelican/pelican-plugins/tree/master/summary</a></div></div></div>
+<div class="link_tagline">github</div>
+<div class="link_url"><a href="https://github/getpelican/pelican-plugins/tree/master/summary" target="_blank">https://github/getpelican/pelican-plugins/tree/master/summary</a></div></div></div>
 
 <h3 id="image-process">image-process</h3>
-<div class="link_border"><div class="link_logo_box"><img class="link_logo" src="https://logo.clearbit.com/github.com?size=35" alt="logo"/></div><div class="link_content">
+<div class="link_border"><div class="link_logo_box"><img class="link_logo" src="https://notes.nicolasdeville.com/images/logos/github.png" alt="logo"/></div><div class="link_content">
 <div class="link_title">GitHub - pelican-plugins/image-process: Pelican plugin that automates image processing</div>
-<div class="link_tagline">github.com</div>
-<div class="link_url"><a href="https://github.com/pelican-plugins/image-process" target="_blank">https://github.com/pelican-plugins/image-process</a></div></div></div>
+<div class="link_tagline">github</div>
+<div class="link_url"><a href="https://github/pelican-plugins/image-process" target="_blank">https://github/pelican-plugins/image-process</a></div></div></div>
 
 <h2 id="additional-resources">additional resources</h2>
 <h3 id="markdown-syntax">markdown syntax</h3>
 <p>helpful guide at the beginning to get used to the Markdown syntax    </p>
-<div class="link_border"><div class="link_logo_box"><img class="link_logo" src="https://logo.clearbit.com/markdownguide.org?size=35" alt="logo"/></div><div class="link_content">
+<div class="link_border"><div class="link_logo_box"><img class="link_logo" src="https://notes.nicolasdeville.com/images/logos/markdownguide.png" alt="logo"/></div><div class="link_content">
 <div class="link_title">Basic Syntax | Markdown Guide</div>
-<div class="link_tagline">markdownguide.org</div>
-<div class="link_url"><a href="https://www.markdownguide.org/basic-syntax" target="_blank">https://www.markdownguide.org/basic-syntax</a></div></div></div>
+<div class="link_tagline">markdownguide</div>
+<div class="link_url"><a href="https://www.markdownguide/basic-syntax" target="_blank">https://www.markdownguide/basic-syntax</a></div></div></div>
 
 <h3 id="code-hilite">Code HiLite</h3>
-<div class="link_border"><div class="link_logo_box"><img class="link_logo" src="https://logo.clearbit.com/github.io?size=35" alt="logo"/></div><div class="link_content">
+<div class="link_border"><div class="link_logo_box"><img class="link_logo" src="https://notes.nicolasdeville.com/images/logos/github.png" alt="logo"/></div><div class="link_content">
 <div class="link_title">Codehilite - MkDocs Docmark</div>
-<div class="link_tagline">github.io</div>
-<div class="link_url"><a href="https://yakworks.github.io/docmark/extensions/codehilite" target="_blank">https://yakworks.github.io/docmark/extensions/codehilite</a></div></div></div>
+<div class="link_tagline">github</div>
+<div class="link_url"><a href="https://yakworks.github/docmark/extensions/codehilite" target="_blank">https://yakworks.github/docmark/extensions/codehilite</a></div></div></div>
 
 <h3 id="pelican-folder-structure">Pelican Folder Structure</h3>
 <p>helped me rework my project structure based on subfolfers in <code>content</code>  </p>
-<div class="link_border"><div class="link_logo_box"><img class="link_logo" src="https://logo.clearbit.com/archerimagine.com?size=35" alt="logo"/></div><div class="link_content">
+<div class="link_border"><div class="link_logo_box"><img class="link_logo" src="https://notes.nicolasdeville.com/images/logos/archerimagine.png" alt="logo"/></div><div class="link_content">
 <div class="link_title">Pelican Folder Structure  - Creating Magic  · Archer Imagine</div>
-<div class="link_tagline">archerimagine.com</div>
-<div class="link_url"><a href="https://www.archerimagine.com/articles/pelican/pelican-folder-structure.html" target="_blank">https://www.archerimagine.com/articles/pelican/pelican-folder-structure.html</a></div></div></div>
+<div class="link_tagline">archerimagine</div>
+<div class="link_url"><a href="https://www.archerimagine/articles/pelican/pelican-folder-structure.html" target="_blank">https://www.archerimagine/articles/pelican/pelican-folder-structure.html</a></div></div></div>
 
 <h3 id="pelicans-use_folder_as_category-setting-and-behaviour">Pelican's USE_FOLDER_AS_CATEGORY setting and behaviour</h3>
 <p>clear once logic is understood, but good overview:    </p>
-<div class="link_border"><div class="link_logo_box"><img class="link_logo" src="https://logo.clearbit.com/louistiao.me?size=35" alt="logo"/></div><div class="link_content">
+<div class="link_border"><div class="link_logo_box"><img class="link_logo" src="https://notes.nicolasdeville.com/images/logos/louistiao.png" alt="logo"/></div><div class="link_content">
 <div class="link_title">Pelican's USE_FOLDER_AS_CATEGORY setting and behaviour | Louis Tiao</div>
-<div class="link_tagline">louistiao.me</div>
-<div class="link_url"><a href="http://louistiao.me/posts/pelicans-use_folder_as_category-setting-and-behaviour" target="_blank">http://louistiao.me/posts/pelicans-use_folder_as_category-setting-and-behaviour</a></div></div></div>
+<div class="link_tagline">louistiao</div>
+<div class="link_url"><a href="http://louistiao/posts/pelicans-use_folder_as_category-setting-and-behaviour" target="_blank">http://louistiao/posts/pelicans-use_folder_as_category-setting-and-behaviour</a></div></div></div>
 
 <h1 id="ongoing-management">Ongoing management</h1>
 <p>see [<a href="../../projects/notes/index.html">Nic Note: Buiding and maintaining this site</a>]  </p>

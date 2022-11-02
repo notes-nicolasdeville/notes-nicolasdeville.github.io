@@ -19,9 +19,9 @@
 <meta name="twitter:description" content="[operational] Lead generation using Twitter" /> <!-- max. 200 characters -->
  
 
-<meta property="article:published_time" content="2022-09-28 17:00:47.036624+02:00" />
+<meta property="article:published_time" content="2022-11-02 22:53:59.847732+01:00" />
 
-<meta property="article:modified_time" content="2022-09-28 17:00:47.036624+02:00" />
+<meta property="article:modified_time" content="2022-11-02 22:53:59.847732+01:00" />
 
 <meta name="robots" content="all, follow" />
 
@@ -85,7 +85,7 @@
             
 
             <div class="above-navbar">
-                <div class="last_updated">02 Nov 2022 | 20:45</div>
+                <div class="last_updated">02 Nov 2022 | 22:54</div>
                 <div>
                     <p class="notes_count">
                         <a href="https://notes.nicolasdeville.com/tags">by tags</a>
@@ -143,7 +143,7 @@
 <footer class="post-info">
 
     <p>
-        28 Sep 2022 
+        02 Nov 2022 
         <span class="separator">|</span> in <a class="link_tag" href="https://notes.nicolasdeville.com/projects/"><span data-pagefind-filter="projects">projects</span></a>
 
  tags: <a class="link_tag" href="https://notes.nicolasdeville.com/tag/python.html">python</a>
@@ -152,8 +152,8 @@
 
         <!-- added 4/7 -->
         <!-- 		<br />
-        <abbr class="modified" title="2022-09-28T17:00:47.036624+02:00">
-                Updated: 28 Sep 2022
+        <abbr class="modified" title="2022-11-02T22:53:59.847732+01:00">
+                Updated: 02 Nov 2022
         </abbr>
  -->
 
@@ -176,10 +176,10 @@
 </div>
 <p><span class="datestamp">08 Sep 2022</span>   </p>
 <p>Build started end '21, as part of a client engagement.   </p>
-<div class="link_border"><div class="link_logo_box"><img class="link_logo" src="https://logo.clearbit.com/btobsales.eu?size=35" alt="logo"/></div><div class="link_content">
+<div class="link_border"><div class="link_logo_box"><img class="link_logo" src="https://notes.nicolasdeville.com/images/logos/btobsales.png" alt="logo"/></div><div class="link_content">
 <div class="link_title">BtoBSales.EU</div>
 <div class="link_tagline">Helping US B2B SaaS companies expand in Europe</div>
-<div class="link_url"><a href="https://btobsales.eu" target="_blank">https://btobsales.eu</a></div></div></div>
+<div class="link_url"><a href="https://btobsales" target="_blank">https://btobsales</a></div></div></div>
 
 <p>TODO: document.  </p>
 <h1 id="context">Context</h1>
@@ -241,7 +241,7 @@
 
         <span class="n">returned</span> <span class="o">=</span> <span class="mi">0</span>
         <span class="c1"># Endpoint to use</span>
-        <span class="n">search_url</span> <span class="o">=</span> <span class="s2">&quot;https://api.twitter.com/2/tweets/search/recent&quot;</span> 
+        <span class="n">search_url</span> <span class="o">=</span> <span class="s2">&quot;https://api.twitter/2/tweets/search/recent&quot;</span> 
 
 
 
@@ -381,7 +381,7 @@
                 <span class="c1"># Filter url&#39;s based on list_blacklist and hardcode-remove some urls</span>
                 <span class="k">for</span> <span class="n">url</span> <span class="ow">in</span> <span class="n">endpoint_response</span><span class="p">[</span><span class="s2">&quot;data&quot;</span><span class="p">][</span><span class="n">i</span><span class="p">][</span><span class="s2">&quot;entities&quot;</span><span class="p">][</span><span class="s2">&quot;urls&quot;</span><span class="p">]:</span>
 
-                    <span class="k">if</span> <span class="ow">not</span> <span class="n">url</span><span class="p">[</span><span class="s2">&quot;expanded_url&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s2">&quot;https://twitter.com&quot;</span><span class="p">)</span> <span class="ow">and</span> <span class="s1">&#39;facebook.com&#39;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">url</span> <span class="ow">and</span> <span class="s1">&#39;linkedin.com&#39;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">url</span><span class="p">:</span>
+                    <span class="k">if</span> <span class="ow">not</span> <span class="n">url</span><span class="p">[</span><span class="s2">&quot;expanded_url&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s2">&quot;https://twitter&quot;</span><span class="p">)</span> <span class="ow">and</span> <span class="s1">&#39;facebook.com&#39;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">url</span> <span class="ow">and</span> <span class="s1">&#39;linkedin.com&#39;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">url</span><span class="p">:</span>
                         <span class="n">domain</span> <span class="o">=</span> <span class="n">url</span><span class="p">[</span><span class="s2">&quot;expanded_url&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;//&quot;</span><span class="p">)[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;/&quot;</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
                         <span class="k">if</span> <span class="n">domain</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">list_blacklist</span><span class="p">:</span>
                             <span class="n">data_of_tweet</span><span class="p">[</span><span class="s2">&quot;entities&quot;</span><span class="p">][</span><span class="s2">&quot;urls&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">url</span><span class="p">[</span><span class="s2">&quot;expanded_url&quot;</span><span class="p">])</span>
@@ -410,13 +410,13 @@
                         <span class="c1"># Set name, username, user_url from endpoint_response to data_of_tweet</span>
                         <span class="n">data_of_tweet</span><span class="p">[</span><span class="s2">&quot;name&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">user</span><span class="p">[</span><span class="s2">&quot;name&quot;</span><span class="p">]</span>
                         <span class="n">data_of_tweet</span><span class="p">[</span><span class="s2">&quot;username&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">user</span><span class="p">[</span><span class="s2">&quot;username&quot;</span><span class="p">]</span>
-                        <span class="n">data_of_tweet</span><span class="p">[</span><span class="s2">&quot;user_url&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;https://twitter.com/&quot;</span> <span class="o">+</span> <span class="n">user</span><span class="p">[</span><span class="s2">&quot;username&quot;</span><span class="p">]</span>
+                        <span class="n">data_of_tweet</span><span class="p">[</span><span class="s2">&quot;user_url&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;https://twitter/&quot;</span> <span class="o">+</span> <span class="n">user</span><span class="p">[</span><span class="s2">&quot;username&quot;</span><span class="p">]</span>
 
                 <span class="c1"># --------------------------------------------------------------------------</span>
 
                 <span class="c1"># Set tweet_id and tweet_url</span>
                 <span class="n">data_of_tweet</span><span class="p">[</span><span class="s2">&quot;tweet_id&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">endpoint_response</span><span class="p">[</span><span class="s2">&quot;data&quot;</span><span class="p">][</span><span class="n">i</span><span class="p">][</span><span class="s2">&quot;id&quot;</span><span class="p">]</span>
-                <span class="n">data_of_tweet</span><span class="p">[</span><span class="s2">&quot;tweet_url&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;https://twitter.com/&quot;</span><span class="o">+</span><span class="n">data_of_tweet</span><span class="p">[</span><span class="s2">&quot;username&quot;</span><span class="p">]</span><span class="o">+</span><span class="s2">&quot;/status/&quot;</span><span class="o">+</span><span class="n">data_of_tweet</span><span class="p">[</span><span class="s2">&quot;tweet_id&quot;</span><span class="p">]</span>
+                <span class="n">data_of_tweet</span><span class="p">[</span><span class="s2">&quot;tweet_url&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;https://twitter/&quot;</span><span class="o">+</span><span class="n">data_of_tweet</span><span class="p">[</span><span class="s2">&quot;username&quot;</span><span class="p">]</span><span class="o">+</span><span class="s2">&quot;/status/&quot;</span><span class="o">+</span><span class="n">data_of_tweet</span><span class="p">[</span><span class="s2">&quot;tweet_id&quot;</span><span class="p">]</span>
                 <span class="c1"># ---------------------------------------------------------------------------------------------------------------</span>
 
                 <span class="c1"># Getting the tweet language from endpoint_response</span>
@@ -496,7 +496,7 @@
                     <span class="c1"># Filter url&#39;s based on list_blacklist and hardcode-remove some urls</span>
                     <span class="k">for</span> <span class="n">url</span> <span class="ow">in</span> <span class="n">endpoint_response</span><span class="p">[</span><span class="s2">&quot;data&quot;</span><span class="p">][</span><span class="n">i</span><span class="p">][</span><span class="s2">&quot;entities&quot;</span><span class="p">][</span><span class="s2">&quot;urls&quot;</span><span class="p">]:</span>
 
-                        <span class="k">if</span> <span class="ow">not</span> <span class="n">url</span><span class="p">[</span><span class="s2">&quot;expanded_url&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s2">&quot;https://twitter.com&quot;</span><span class="p">)</span> <span class="ow">and</span> <span class="n">url</span> <span class="o">!=</span> <span class="s1">&#39;facebook.com&#39;</span> <span class="ow">and</span> <span class="n">url</span> <span class="o">!=</span> <span class="s1">&#39;linkedin.com&#39;</span><span class="p">:</span>
+                        <span class="k">if</span> <span class="ow">not</span> <span class="n">url</span><span class="p">[</span><span class="s2">&quot;expanded_url&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s2">&quot;https://twitter&quot;</span><span class="p">)</span> <span class="ow">and</span> <span class="n">url</span> <span class="o">!=</span> <span class="s1">&#39;facebook.com&#39;</span> <span class="ow">and</span> <span class="n">url</span> <span class="o">!=</span> <span class="s1">&#39;linkedin.com&#39;</span><span class="p">:</span>
                             <span class="n">domain</span> <span class="o">=</span> <span class="n">url</span><span class="p">[</span><span class="s2">&quot;expanded_url&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;//&quot;</span><span class="p">)[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;/&quot;</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
                             <span class="k">if</span> <span class="n">domain</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">list_blacklist</span><span class="p">:</span>
                                 <span class="n">data_of_tweet</span><span class="p">[</span><span class="s2">&quot;entities&quot;</span><span class="p">][</span><span class="s2">&quot;urls&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">url</span><span class="p">[</span><span class="s2">&quot;expanded_url&quot;</span><span class="p">])</span>
@@ -527,13 +527,13 @@
                             <span class="c1"># Set name, username, user_url from endpoint_response to data_of_tweet</span>
                             <span class="n">data_of_tweet</span><span class="p">[</span><span class="s2">&quot;name&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">user</span><span class="p">[</span><span class="s2">&quot;name&quot;</span><span class="p">]</span>
                             <span class="n">data_of_tweet</span><span class="p">[</span><span class="s2">&quot;username&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">user</span><span class="p">[</span><span class="s2">&quot;username&quot;</span><span class="p">]</span>
-                            <span class="n">data_of_tweet</span><span class="p">[</span><span class="s2">&quot;user_url&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;https://twitter.com/&quot;</span> <span class="o">+</span> <span class="n">user</span><span class="p">[</span><span class="s2">&quot;username&quot;</span><span class="p">]</span>
+                            <span class="n">data_of_tweet</span><span class="p">[</span><span class="s2">&quot;user_url&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;https://twitter/&quot;</span> <span class="o">+</span> <span class="n">user</span><span class="p">[</span><span class="s2">&quot;username&quot;</span><span class="p">]</span>
 
                     <span class="c1"># --------------------------------------------------------------------------</span>
 
                     <span class="c1"># Set tweet_id and tweet_url</span>
                     <span class="n">data_of_tweet</span><span class="p">[</span><span class="s2">&quot;tweet_id&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">endpoint_response</span><span class="p">[</span><span class="s2">&quot;data&quot;</span><span class="p">][</span><span class="n">i</span><span class="p">][</span><span class="s2">&quot;id&quot;</span><span class="p">]</span>
-                    <span class="n">data_of_tweet</span><span class="p">[</span><span class="s2">&quot;tweet_url&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;https://twitter.com/&quot;</span><span class="o">+</span><span class="n">data_of_tweet</span><span class="p">[</span><span class="s2">&quot;username&quot;</span><span class="p">]</span><span class="o">+</span><span class="s2">&quot;/status/&quot;</span><span class="o">+</span><span class="n">data_of_tweet</span><span class="p">[</span><span class="s2">&quot;tweet_id&quot;</span><span class="p">]</span>
+                    <span class="n">data_of_tweet</span><span class="p">[</span><span class="s2">&quot;tweet_url&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;https://twitter/&quot;</span><span class="o">+</span><span class="n">data_of_tweet</span><span class="p">[</span><span class="s2">&quot;username&quot;</span><span class="p">]</span><span class="o">+</span><span class="s2">&quot;/status/&quot;</span><span class="o">+</span><span class="n">data_of_tweet</span><span class="p">[</span><span class="s2">&quot;tweet_id&quot;</span><span class="p">]</span>
                     <span class="c1"># ---------------------------------------------------------------------------------------------------------------</span>
 
                     <span class="c1"># Getting the tweet language from endpoint_response</span>
@@ -681,15 +681,15 @@
 </code></pre></div>
 
 <h1 id="twitter-api">Twitter API</h1>
-<div class="link_border"><div class="link_logo_box"><img class="link_logo" src="https://logo.clearbit.com/twitter.com?size=35" alt="logo"/></div><div class="link_content">
+<div class="link_border"><div class="link_logo_box"><img class="link_logo" src="https://notes.nicolasdeville.com/images/logos/twitter.png" alt="logo"/></div><div class="link_content">
 <div class="link_title">Developer Portal - Dashboard</div>
-<div class="link_tagline">twitter.com</div>
-<div class="link_url"><a href="https://developer.twitter.com/en/portal/dashboard" target="_blank">https://developer.twitter.com/en/portal/dashboard</a></div></div></div>
+<div class="link_tagline">twitter</div>
+<div class="link_url"><a href="https://developer.twitter/en/portal/dashboard" target="_blank">https://developer.twitter/en/portal/dashboard</a></div></div></div>
 
-<div class="link_border"><div class="link_logo_box"><img class="link_logo" src="https://logo.clearbit.com/twitter.com?size=35" alt="logo"/></div><div class="link_content">
+<div class="link_border"><div class="link_logo_box"><img class="link_logo" src="https://notes.nicolasdeville.com/images/logos/twitter.png" alt="logo"/></div><div class="link_content">
 <div class="link_title">Documentation Home | Docs | Twitter Developer Platform  </div>
-<div class="link_tagline">twitter.com</div>
-<div class="link_url"><a href="https://developer.twitter.com/en/docs" target="_blank">https://developer.twitter.com/en/docs</a></div></div></div>
+<div class="link_tagline">twitter</div>
+<div class="link_url"><a href="https://developer.twitter/en/docs" target="_blank">https://developer.twitter/en/docs</a></div></div></div>
 
 <h1 id="clipee-tweet">Clipee Tweet</h1>
 <p>Some of the logic used for this initial project is being reused for Clipee Tweet [<a href="../../projects/clipee/index.html">Nic Note: Clipee</a>] - tweet from clipboard.   </p>

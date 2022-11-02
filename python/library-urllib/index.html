@@ -19,9 +19,9 @@
 <meta name="twitter:description" content="built-in library for URL handling" /> <!-- max. 200 characters -->
  
 
-<meta property="article:published_time" content="2022-09-29 10:53:40.532509+02:00" />
+<meta property="article:published_time" content="2022-11-02 22:53:59.775826+01:00" />
 
-<meta property="article:modified_time" content="2022-09-29 10:53:40.532509+02:00" />
+<meta property="article:modified_time" content="2022-11-02 22:53:59.775826+01:00" />
 
 <meta name="robots" content="all, follow" />
 
@@ -85,7 +85,7 @@
             
 
             <div class="above-navbar">
-                <div class="last_updated">02 Nov 2022 | 20:45</div>
+                <div class="last_updated">02 Nov 2022 | 22:54</div>
                 <div>
                     <p class="notes_count">
                         <a href="https://notes.nicolasdeville.com/tags">by tags</a>
@@ -143,14 +143,14 @@
 <footer class="post-info">
 
     <p>
-        29 Sep 2022 
+        02 Nov 2022 
         <span class="separator">|</span> in <a class="link_tag" href="https://notes.nicolasdeville.com/python/"><span data-pagefind-filter="python">python</span></a>
 
 
         <!-- added 4/7 -->
         <!-- 		<br />
-        <abbr class="modified" title="2022-09-29T10:53:40.532509+02:00">
-                Updated: 29 Sep 2022
+        <abbr class="modified" title="2022-11-02T22:53:59.775826+01:00">
+                Updated: 02 Nov 2022
         </abbr>
  -->
 
@@ -182,7 +182,7 @@
 </tr>
 <tr>
 <td>Documentation</td>
-<td><a href="https://docs.python.org/3/library/urllib.html" target="_blank">https://docs.python.org/3/library/urllib.html</a></td>
+<td><a href="https://docs.python/3/library/urllib.html" target="_blank">https://docs.python/3/library/urllib.html</a></td>
 </tr>
 </tbody>
 </table>
@@ -198,10 +198,10 @@
 <div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">urllib.parse</span> <span class="kn">import</span> <span class="n">urlparse</span>
 </code></pre></div>
 
-<div class="link_border"><div class="link_logo_box"><img class="link_logo" src="https://logo.clearbit.com/python.org?size=35" alt="logo"/></div><div class="link_content">
+<div class="link_border"><div class="link_logo_box"><img class="link_logo" src="https://notes.nicolasdeville.com/images/logos/python.png" alt="logo"/></div><div class="link_content">
 <div class="link_title">urllib.parse — Parse URLs into components — Python 3.10.7 documentation</div>
 <div class="link_tagline">urllib.parse — Parse URLs into components¶</div>
-<div class="link_url"><a href="https://docs.python.org/3/library/urllib.parse.html" target="_blank">https://docs.python.org/3/library/urllib.parse.html</a></div></div></div>
+<div class="link_url"><a href="https://docs.python/3/library/urllib.parse.html" target="_blank">https://docs.python/3/library/urllib.parse.html</a></div></div></div>
 
 <div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">urllib.parse</span> <span class="kn">import</span> <span class="n">urlparse</span>
 
@@ -210,18 +210,18 @@
 <span class="c1"># ParseResult(scheme=&#39;scheme&#39;, netloc=&#39;netloc&#39;, path=&#39;/path;parameters&#39;, params=&#39;&#39;,query=&#39;query&#39;, fragment=&#39;fragment&#39;)</span>
 </code></pre></div>
 
-<div class="highlight"><pre><span></span><code><span class="n">o</span> <span class="o">=</span> <span class="n">urlparse</span><span class="p">(</span><span class="s2">&quot;http://docs.python.org:80/3/library/urllib.parse.html?highlight=params#url-parsing&quot;</span><span class="p">)</span>
+<div class="highlight"><pre><span></span><code><span class="n">o</span> <span class="o">=</span> <span class="n">urlparse</span><span class="p">(</span><span class="s2">&quot;http://docs.python:80/3/library/urllib.parse.html?highlight=params#url-parsing&quot;</span><span class="p">)</span>
 
-<span class="n">ParseResult</span><span class="p">(</span><span class="n">scheme</span><span class="o">=</span><span class="s1">&#39;http&#39;</span><span class="p">,</span> <span class="n">netloc</span><span class="o">=</span><span class="s1">&#39;docs.python.org:80&#39;</span><span class="p">,</span>
+<span class="n">ParseResult</span><span class="p">(</span><span class="n">scheme</span><span class="o">=</span><span class="s1">&#39;http&#39;</span><span class="p">,</span> <span class="n">netloc</span><span class="o">=</span><span class="s1">&#39;docs.python:80&#39;</span><span class="p">,</span>
             <span class="n">path</span><span class="o">=</span><span class="s1">&#39;/3/library/urllib.parse.html&#39;</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">,</span>
             <span class="n">query</span><span class="o">=</span><span class="s1">&#39;highlight=params&#39;</span><span class="p">,</span> <span class="n">fragment</span><span class="o">=</span><span class="s1">&#39;url-parsing&#39;</span><span class="p">)</span>
 
 <span class="n">o</span><span class="o">.</span><span class="n">scheme</span>
 <span class="s1">&#39;http&#39;</span>
 <span class="n">o</span><span class="o">.</span><span class="n">netloc</span>
-<span class="s1">&#39;docs.python.org:80&#39;</span>
+<span class="s1">&#39;docs.python:80&#39;</span>
 <span class="n">o</span><span class="o">.</span><span class="n">hostname</span>
-<span class="s1">&#39;docs.python.org&#39;</span>
+<span class="s1">&#39;docs.python&#39;</span>
 </code></pre></div>
             <!-- </main> -->
         </div><!-- /.entry-content -->
