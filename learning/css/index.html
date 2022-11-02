@@ -53,6 +53,16 @@
 <!-- CSS -->
 <link rel="stylesheet" href="https://notes.nicolasdeville.com/theme/css/main.css" />
 
+<!-- Pagefind -->
+<link href="https://notes.nicolasdeville.com/theme/css/pagefind-ui-nic.css" rel="stylesheet">
+<script src="https://notes.nicolasdeville.com/pagefind/pagefind-ui.js" type="text/javascript"></script>
+
+<script>
+    window.addEventListener('DOMContentLoaded', (event) => {
+        new PagefindUI({ element: "#search" });
+    });
+</script>
+
 
 </head>
 
@@ -76,7 +86,7 @@
             
 
             <div class="above-navbar">
-                <div class="last_updated">02 Nov 2022 | 19:12</div>
+                <div class="last_updated">02 Nov 2022 | 20:45</div>
                 <div>
                     <p class="notes_count">
                         <a href="https://notes.nicolasdeville.com/tags">by tags</a>
@@ -477,6 +487,7 @@ Changes are reflected in real-time, so no caching and/or publish time issues lik
         </section><!-- /#extras -->
 
         <footer id="contentinfo" class="body" data-pagefind-ignore>
+                <img src="https://notes.nicolasdeville.com/favicon.svg" alt="nic_logo" width="16" style="vertical-align: middle;"/>
                 <address id="about" class="vcard body">
                 Powered by <a href="https://github.com/getpelican/pelican" target="_blank">Pelican</a>
                 <!-- with <a href="https://stork-search.net/" target="_blank">Stork</a> & <a href="https://github.com/pelican-plugins/search" target="_blank">Pelican Search plugin</a>. -->
