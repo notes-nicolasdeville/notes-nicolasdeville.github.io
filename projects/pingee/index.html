@@ -19,9 +19,9 @@
 <meta name="twitter:description" content="[work in progress] Internet & Network monitoring tool (script)" /> <!-- max. 200 characters -->
  
 
-<meta property="article:published_time" content="2022-11-02 22:53:59.849043+01:00" />
+<meta property="article:published_time" content="2022-11-11 11:15:02.570872+01:00" />
 
-<meta property="article:modified_time" content="2022-11-02 22:53:59.849043+01:00" />
+<meta property="article:modified_time" content="2022-11-11 11:15:02.570872+01:00" />
 
 <meta name="robots" content="all, follow" />
 
@@ -85,7 +85,7 @@
             
 
             <div class="above-navbar">
-                <div class="last_updated">10 Nov 2022 | 22:10</div>
+                <div class="last_updated">11 Nov 2022 | 11:56</div>
                 <div>
                     <p class="notes_count">
                         <a href="https://notes.nicolasdeville.com/tags">by tags</a>
@@ -96,7 +96,7 @@
                         <span style="color:#C74350">|</span>
                         <a href="https://notes.nicolasdeville.com/2022/">2022</a>
                         <span style="color:#C74350">|</span>
-                        503 notes
+                        504 notes
                     </p>
                 </div>
             </div>
@@ -143,7 +143,7 @@
 <footer class="post-info">
 
     <p>
-        02 Nov 2022 
+        11 Nov 2022 
         <span class="separator">|</span> in <a class="link_tag" href="https://notes.nicolasdeville.com/projects/"><span data-pagefind-filter="projects">projects</span></a>
 
  tags: <a class="link_tag" href="https://notes.nicolasdeville.com/tag/python.html">python</a>
@@ -151,8 +151,8 @@
 
         <!-- added 4/7 -->
         <!-- 		<br />
-        <abbr class="modified" title="2022-11-02T22:53:59.849043+01:00">
-                Updated: 02 Nov 2022
+        <abbr class="modified" title="2022-11-11T11:15:02.570872+01:00">
+                Updated: 11 Nov 2022
         </abbr>
  -->
 
@@ -164,8 +164,8 @@
             <!-- <main>  -->
                 <p><span class="datestamp">19 Aug 2022</span></p>
 <p>Goal: 24/7 monitoring of network &amp; internet connection to identify source and log dropouts for reporting to ISP.   </p>
-<p>My setup:s
-Cable modem &gt; Unifi Router USG &gt; Unifi Switch US-8 &gt; Ethernet connection to macOS Monterey    </p>
+<p>My setup:   </p>
+<p>Cable modem &gt; Unifi Router USG &gt; Unifi Switch US-8 &gt; Ethernet connection to macOS Monterey    </p>
 <h2 id="good-resources">Good Resources</h2>
 <div class="link_border"><div class="link_logo_box"><img class="link_logo" src="https://notes.nicolasdeville.com/images/logos/linuxhint.png" alt="logo"/></div><div class="link_content">
 <div class="link_title">Python Script to Monitor Network Connection</div>
@@ -181,6 +181,11 @@ Cable modem &gt; Unifi Router USG &gt; Unifi Switch US-8 &gt; Ethernet connectio
 <div class="link_title">Pinging servers in Python - Stack Overflow</div>
 <div class="link_tagline">stackoverflow</div>
 <div class="link_url"><a href="https://stackoverflow/questions/2953462/pinging-servers-in-python" target="_blank">https://stackoverflow/questions/2953462/pinging-servers-in-python</a></div></div></div>
+
+<div class="link_border"><div class="link_logo_box"><img class="link_logo" src="https://notes.nicolasdeville.com/images/logos/medium.png" alt="logo"/></div><div class="link_content">
+<div class="link_title">Measuring internet consistency with speedtest.net, plotly and docker</div>
+<div class="link_tagline">medium.com</div>
+<div class="link_url"><a href="https://medium.com/@metahertz/measuring-internet-consistency-with-speedtest-net-plotly-and-docker-95f30a132574" target="_blank">https://medium.com/@metahertz/measuring-internet-consistency-with-speedtest-net-plotly-and-docker-95f30a132574</a></div></div></div>
 
 <h2 id="resources-references">Resources / References</h2>
 <h3 id="monitor-downloadupload-speeds">Monitor download/upload speeds</h3>
@@ -223,6 +228,13 @@ Not a good fit.  </p>
 
 <p>For reference only. Too complex for my needs. <br>
 Not a good fit.   </p>
+<h3 id="speednet-cli">Speednet CLI</h3>
+<div class="link_border"><div class="link_logo_box"><img class="link_logo" src="https://notes.nicolasdeville.com/images/logos/github.png" alt="logo"/></div><div class="link_content">
+<div class="link_title">sivel/speedtest-cli: Command line interface for testing internet bandwidth using speedtest.net</div>
+<div class="link_tagline">github.com</div>
+<div class="link_url"><a href="https://github.com/sivel/speedtest-cli" target="_blank">https://github.com/sivel/speedtest-cli</a></div></div></div>
+
+<p>with Python API: <a href="https://github.com/sivel/speedtest-cli/wiki" target="_blank">https://github.com/sivel/speedtest-cli/wiki</a>    </p>
 <p><span class="datestamp">04 Sep 2022</span>   </p>
 <p>Starting code, open-sourcing repo here:      </p>
 <div class="link_border"><div class="link_logo_box"><img class="link_logo" src="https://notes.nicolasdeville.com/images/logos/github.png" alt="logo"/></div><div class="link_content">
@@ -365,6 +377,69 @@ external_ping=0
 </code></pre></div>
 
 <p>Need to find a way to avoid terminal printing when all OK. Lookup other method. </p>
+<p><span class="datestamp">11 Nov 2022</span>   </p>
+<p>Tests using the <code>speedtest-cli</code> library [<a href="../../python/library-speedtest-cli/index.html">Nic Note: Python library: speedtest-cli</a>]    </p>
+<p>Working script:  </p>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">datetime</span> <span class="kn">import</span> <span class="n">datetime</span>
+<span class="kn">import</span> <span class="nn">os</span>
+<span class="kn">import</span> <span class="nn">time</span>
+<span class="kn">import</span> <span class="nn">speedtest</span>
+<span class="kn">import</span> <span class="nn">csv</span>
+
+<span class="n">date</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">datetime</span><span class="o">.</span><span class="n">now</span><span class="p">()</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="s1">&#39;%y%m</span><span class="si">%d</span><span class="s1">&#39;</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span>
+
+<span class="n">tests_to_run</span> <span class="o">=</span> <span class="mi">3</span>
+<span class="n">threads</span> <span class="o">=</span> <span class="mi">1</span> <span class="c1"># 1 simulates a typical file transfer, else None</span>
+<span class="n">log_file</span> <span class="o">=</span> <span class="s1">&#39;path/to/log.csv&#39;</span>
+
+<span class="n">count</span> <span class="o">=</span> <span class="mi">0</span>
+
+<span class="k">def</span> <span class="nf">test_speed</span><span class="p">(</span><span class="n">count</span><span class="p">,</span> <span class="n">threads</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">servers</span><span class="o">=</span><span class="p">[]):</span>
+    <span class="k">global</span> <span class="n">date</span>
+    <span class="n">start_test_time</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>
+    <span class="n">s</span> <span class="o">=</span> <span class="n">speedtest</span><span class="o">.</span><span class="n">Speedtest</span><span class="p">()</span>
+    <span class="c1"># s.get_servers(servers)</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="n">s</span><span class="o">.</span><span class="n">get_best_server</span><span class="p">()</span>
+        <span class="n">download</span> <span class="o">=</span> <span class="n">s</span><span class="o">.</span><span class="n">download</span><span class="p">(</span><span class="n">threads</span><span class="o">=</span><span class="n">threads</span><span class="p">)</span>
+        <span class="n">download_mbps</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="nb">round</span><span class="p">(</span><span class="n">download</span> <span class="o">/</span> <span class="mi">1000000</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span><span class="si">}</span><span class="s2"> Mbit/s&quot;</span>
+        <span class="n">run_time</span> <span class="o">=</span> <span class="nb">round</span><span class="p">((</span><span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span> <span class="o">-</span> <span class="n">start_test_time</span><span class="p">),</span> <span class="mi">1</span><span class="p">)</span>
+        <span class="n">timestamp</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">now</span><span class="p">()</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="s1">&#39;%H:%M:%S&#39;</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;#</span><span class="si">{</span><span class="n">count</span><span class="si">}</span><span class="s2"> [</span><span class="si">{</span><span class="n">timestamp</span><span class="si">}</span><span class="s2">] </span><span class="si">{</span><span class="n">download_mbps</span><span class="si">}</span><span class="s2"> (</span><span class="si">{</span><span class="n">run_time</span><span class="si">}</span><span class="s2">s test time)&quot;</span><span class="p">)</span>
+
+        <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">log_file</span><span class="p">,</span> <span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="n">newline</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s1">&#39;utf-8&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">i</span><span class="p">:</span>
+            <span class="n">writer</span> <span class="o">=</span> <span class="n">csv</span><span class="o">.</span><span class="n">writer</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">delimiter</span><span class="o">=</span><span class="s1">&#39;,&#39;</span><span class="p">,</span> <span class="n">quotechar</span><span class="o">=</span><span class="s1">&#39;|&#39;</span><span class="p">,</span> <span class="n">quoting</span><span class="o">=</span><span class="n">csv</span><span class="o">.</span><span class="n">QUOTE_MINIMAL</span><span class="p">,</span> <span class="n">lineterminator</span><span class="o">=</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
+            <span class="k">if</span> <span class="n">threads</span> <span class="o">==</span> <span class="kc">None</span><span class="p">:</span>
+                <span class="n">threads</span> <span class="o">=</span> <span class="s1">&#39;multi&#39;</span>
+            <span class="n">writer</span><span class="o">.</span><span class="n">writerow</span><span class="p">([</span><span class="n">date</span><span class="p">,</span> <span class="n">timestamp</span><span class="p">,</span> <span class="nb">int</span><span class="p">(</span><span class="n">download</span><span class="p">),</span> <span class="n">download_mbps</span><span class="p">,</span> <span class="n">threads</span><span class="p">,</span> <span class="n">run_time</span><span class="p">,</span> <span class="s2">&quot;OK&quot;</span><span class="p">])</span>
+
+        <span class="k">return</span> <span class="n">download</span>
+
+    <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+        <span class="n">timestamp</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">now</span><span class="p">()</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="s1">&#39;%H:%M:%S&#39;</span><span class="p">)</span>
+        <span class="n">run_time</span> <span class="o">=</span> <span class="nb">round</span><span class="p">((</span><span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span> <span class="o">-</span> <span class="n">start_test_time</span><span class="p">),</span> <span class="mi">1</span><span class="p">)</span>
+        <span class="n">error_message</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;ERROR: </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">&quot;</span>
+        <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;log.csv&quot;</span><span class="p">,</span> <span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="n">newline</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s1">&#39;utf-8&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">i</span><span class="p">:</span>
+            <span class="n">writer</span> <span class="o">=</span> <span class="n">csv</span><span class="o">.</span><span class="n">writer</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">delimiter</span><span class="o">=</span><span class="s1">&#39;,&#39;</span><span class="p">,</span> <span class="n">quotechar</span><span class="o">=</span><span class="s1">&#39;|&#39;</span><span class="p">,</span> <span class="n">quoting</span><span class="o">=</span><span class="n">csv</span><span class="o">.</span><span class="n">QUOTE_MINIMAL</span><span class="p">,</span> <span class="n">lineterminator</span><span class="o">=</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
+            <span class="k">if</span> <span class="n">threads</span> <span class="o">==</span> <span class="kc">None</span><span class="p">:</span>
+                <span class="n">threads</span> <span class="o">=</span> <span class="s1">&#39;multi&#39;</span>
+            <span class="n">writer</span><span class="o">.</span><span class="n">writerow</span><span class="p">([</span><span class="n">date</span><span class="p">,</span> <span class="n">timestamp</span><span class="p">,</span> <span class="s2">&quot;ERROR&quot;</span><span class="p">,</span> <span class="s2">&quot;ERROR&quot;</span><span class="p">,</span> <span class="n">threads</span><span class="p">,</span> <span class="n">run_time</span><span class="p">,</span> <span class="n">error_message</span><span class="p">])</span>
+
+        <span class="nb">print</span><span class="p">(</span><span class="n">error_message</span><span class="p">)</span>
+
+        <span class="k">return</span> <span class="s2">&quot;ERROR&quot;</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Starting speed test with </span><span class="si">{</span><span class="n">tests_to_run</span><span class="si">}</span><span class="s2"> runs (threads=</span><span class="si">{</span><span class="n">threads</span><span class="si">}</span><span class="s2">)...</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">tests_to_run</span><span class="p">):</span>
+    <span class="n">count</span> <span class="o">+=</span> <span class="mi">1</span>
+    <span class="n">test_speed</span><span class="p">(</span><span class="n">count</span><span class="p">,</span> <span class="n">threads</span><span class="o">=</span><span class="n">threads</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">()</span>
+</code></pre></div>
+
+<p>Though got a <code>403 Forbidden</code> after a while?   </p>
+<p>Branched out <code>speed_test.py</code> and <code>ping_test.py</code>.  </p>
+<p>For <code>ping_test.py</code>, will use Python library <code>ping3</code> [<a href="../../python/library-ping3/index.html">Nic Note: Python library: ping3</a>]    </p>
 <h2 id="traceroute">Traceroute</h2>
 <p><span class="datestamp">06 Sep 2022</span> ideally, I would want the script to figure out the IP addresses of the devices to ping on the internal network. <code>Traceroute</code> seems to be the way to go.   </p>
 <div class="link_border"><div class="link_logo_box"><img class="link_logo" src="https://notes.nicolasdeville.com/images/logos/fortinet.png" alt="logo"/></div><div class="link_content">
