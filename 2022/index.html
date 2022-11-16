@@ -1,0 +1,2165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <!-- Base -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="generator" content="Pelican" />
+    <meta name="author" content="Nic Deville">
+
+    
+    <!-- Title -->
+        <title>Nic's notes</title>
+        <meta name="og:title" content="Nic's notes (not a blog)"/> <!-- 40 characters for mobile and 60 for desktop -->
+        <!-- <link rel="canonical" href="https://notes.nicolasdeville.com" /> -->
+        <meta name="twitter:title" content="Nic's notes (not a blog)" /> <!-- max. 70 characters -->
+
+        <meta name="description" content="Messy online notebook covering B2B Sales, Leadership, Python programming, Automation, AI and more. I take these notes for myself (and my kids later) - perhaps they can help someone else..."/>
+        <meta name="og:description" content="Messy online notebook covering B2B Sales, Leadership, Python programming, Automation, AI and more. I take these notes for myself (and my kids later) - perhaps they can help someone else..."/>
+ 
+
+
+
+    <meta name="robots" content="all, follow" />
+
+    <!-- Social -->
+    <meta property="og:locale" content="en_GB" />
+    <meta property="og:type" content="article" />
+
+    <!-- <meta property="og:description" content="Messy online notebook covering B2B Sales, Leadership, Python programming, Automation, AI and more. I take these notes for myself (and my kids later) - perhaps they can help someone else..." /> min. 2 max. 4 sentences -->
+
+    <meta property="og:url" content="https://notes.nicolasdeville.com" /> <!-- canonical URL for your page without session variables, user id parameters or counters -->
+    <meta property="og:site_name" content="Nic's notes" />
+    <meta property="og:image" content="https://notes.nicolasdeville.com/images/btobsales-eu-og-image.jpg" /> <!-- at least 600x315 pixels, preferable 1200x630 pixels -->
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content="@ndeville" />
+    
+    <meta name="twitter:description" content="Messy online notebook covering B2B Sales, Leadership, Python programming, Automation, AI and more. I take these notes for myself (and my kids later) - perhaps they can help someone else..." /> <!-- max. 200 characters -->
+    <meta name="twitter:image" content="https://notes.nicolasdeville.com/images/notes-twitter-image.jpg" /> <!-- aspect ratio of 2:1 with minimum dimensions of 300x157 or maximum of 4096x4096 pixels. Going with 900x471 -->
+    
+    <!-- Logo -->
+    <meta property="og:logo" content="https://notes.nicolasdeville.com/logo.svg">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="https://notes.nicolasdeville.com/favicon.ico">
+    <link rel="mask-icon" href="https://notes.nicolasdeville.com/favicon.svg" color="#FFFFFF">
+    <link rel="alternate icon" class="js-site-favicon" type="image/png" href="https://notes.nicolasdeville.com/favicon.png">
+    <link rel="icon" class="js-site-favicon" type="image/svg+xml" href="https://notes.nicolasdeville.com/favicon.svg">
+    <link rel="fluid-icon" href="https://notes.nicolasdeville.com/favicon.png" title="Nic's notes">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="https://notes.nicolasdeville.com/theme/css/main.css" />
+
+    <!-- Pagefind -->
+    <link href="https://notes.nicolasdeville.com/theme/css/pagefind-ui-nic.css" rel="stylesheet">
+    <script src="https://notes.nicolasdeville.com/pagefind/pagefind-ui.js" type="text/javascript"></script>
+    
+    <script>
+        window.addEventListener('DOMContentLoaded', (event) => {
+            new PagefindUI({ 
+                element: "#search",
+                showEmptyFilters: false,
+            });
+        });
+    </script>
+
+    <!-- <meta data-pagefind-default-meta="image[content]" content="/social.png" property="og:image"> -->
+    <!-- <meta data-pagefind-default-meta="https://notes.nicolasdeville.com/favicon.svg" property="og:image"> -->
+
+    <!-- Feeds / Not used at present -->
+
+
+
+
+</head>
+
+<body id="index" class="body">
+        <header id="banner" class="body">
+
+            <div class="logo-and-search">
+                <a href="https://notes.nicolasdeville.com/"><img class="header_image" src="https://notes.nicolasdeville.com/images/nic_notes_header.svg" alt="Nic's notes" width="266"/></a>
+
+                <!-- for Stork seach engine -->
+                <!-- <div class="search-input-block">
+                    <input data-stork="sitesearch" class="search-input" placeholder="Search notes..." autofocus="autofocus"/>
+                    <div data-stork="sitesearch-output"></div>
+                </div> -->
+
+                <!-- Pagefind -->
+                <div class="search-input-block" id="search"></div>
+
+            </div>
+
+            
+
+            <div class="above-navbar">
+                <div class="last_updated">16 Nov 2022 | 09:00</div>
+                <div>
+                    <p class="notes_count">
+                        <a href="https://notes.nicolasdeville.com/tags">by tags</a>
+                        <span style="color:#C74350">|</span>
+                        <a href="https://notes.nicolasdeville.com/2020/">2020</a>
+                        <span style="color:#C74350">|</span>
+                        <a href="https://notes.nicolasdeville.com/2021/">2021</a>
+                        <span style="color:#C74350">|</span>
+                        <a href="https://notes.nicolasdeville.com/2022/">2022</a>
+                        <span style="color:#C74350">|</span>
+                        324 notes
+                    </p>
+                </div>
+            </div>
+
+            <nav><ul>
+                <li><a href="https://notes.nicolasdeville.com/ai/">ai</a></li>
+                <li><a href="https://notes.nicolasdeville.com/apps/">apps</a></li>
+                <li><a href="https://notes.nicolasdeville.com/b2b-sales/">b2b sales</a></li>
+                <li><a href="https://notes.nicolasdeville.com/books/">books</a></li>
+                <li><a href="https://notes.nicolasdeville.com/careerplaybook/">#careerplaybook</a></li>
+                <li><a href="https://notes.nicolasdeville.com/helpers/">helpers</a></li>
+                <li><a href="https://notes.nicolasdeville.com/home-office/">home office</a></li>
+                <li><a href="https://notes.nicolasdeville.com/interests/">interests</a></li>
+                <li><a href="https://notes.nicolasdeville.com/leadership/">leadership</a></li>
+                <li><a href="https://notes.nicolasdeville.com/learning/">learning</a></li>
+                <li><a href="https://notes.nicolasdeville.com/movies/">movies</a></li>
+                <li><a href="https://notes.nicolasdeville.com/projects/">projects</a></li>
+                <li><a href="https://notes.nicolasdeville.com/python/">python</a></li>
+                <li><a href="https://notes.nicolasdeville.com/random/">random</a></li>
+                <li><a href="https://notes.nicolasdeville.com/startups/">startups</a></li>
+                <li><a href="https://notes.nicolasdeville.com/tesla/">tesla</a></li>
+            </ul></nav>
+        </header>
+
+        <!-- index.html injection -->
+<section id="content" class="body">
+<h1>Archives for 2022</h1>
+
+<!-- <dl>
+    <dt>15 Nov 2022</dt>
+    <dd><a href="https://notes.nicolasdeville.com/home-office/unifi">Unifi Network</a></dd>
+    <dt>15 Nov 2022</dt>
+    <dd><a href="https://notes.nicolasdeville.com/home-office/internet-load-balancing-failover">Load Balancing my internet connection</a></dd>
+    <dt>15 Nov 2022</dt>
+    <dd><a href="https://notes.nicolasdeville.com/movies/1000">My Top 1,000 Movies</a></dd>
+    <dt>15 Nov 2022</dt>
+    <dd><a href="https://notes.nicolasdeville.com/python/books">My Python Books Library</a></dd>
+    <dt>15 Nov 2022</dt>
+    <dd><a href="https://notes.nicolasdeville.com/b2b-sales/books">My B2B Books Library</a></dd>
+    <dt>15 Nov 2022</dt>
+    <dd><a href="https://notes.nicolasdeville.com/books/library">My Books Library</a></dd>
+    <dt>15 Nov 2022</dt>
+    <dd><a href="https://notes.nicolasdeville.com/home-office/starlink">Starlink</a></dd>
+    <dt>14 Nov 2022</dt>
+    <dd><a href="https://notes.nicolasdeville.com/learning/git">Learning Git</a></dd>
+    <dt>14 Nov 2022</dt>
+    <dd><a href="https://notes.nicolasdeville.com/home-office/f1-models">F1 Model Cars</a></dd>
+    <dt>13 Nov 2022</dt>
+    <dd><a href="https://notes.nicolasdeville.com/python/fetch-metadata-from-url">Fetch website metadata from URL</a></dd>
+    <dt>13 Nov 2022</dt>
+    <dd><a href="https://notes.nicolasdeville.com/python/library-thefuzz">Python library: thefuzz</a></dd>
+    <dt>12 Nov 2022</dt>
+    <dd><a href="https://notes.nicolasdeville.com/home-office/airpods-max">Airpods Max</a></dd>
+    <dt>12 Nov 2022</dt>
+    <dd><a href="https://notes.nicolasdeville.com/helpers/macos-remove-audio-devices">How to remove audio devices on macOS</a></dd>
+    <dt>11 Nov 2022</dt>
+    <dd><a href="https://notes.nicolasdeville.com/projects/pingee">Pingee</a></dd>
+    <dt>11 Nov 2022</dt>
+    <dd><a href="https://notes.nicolasdeville.com/projects/notes">Project: this site</a></dd>
+    <dt>11 Nov 2022</dt>
+    <dd><a href="https://notes.nicolasdeville.com/helpers/github-pages">Hosting my static website(s) with Github Pages</a></dd>
+    <dt>11 Nov 2022</dt>
+    <dd><a href="https://notes.nicolasdeville.com/interests/221111-2202-linkedin-crypto">Cryptos & NFTs</a></dd>
+    <dt>11 Nov 2022</dt>
+    <dd><a href="https://notes.nicolasdeville.com/ai/github-copilot">Using Github Copilot</a></dd>
+    <dt>11 Nov 2022</dt>
+    <dd><a href="https://notes.nicolasdeville.com/python/library-ping3">Python library: ping3</a></dd>
+    <dt>11 Nov 2022</dt>
+    <dd><a href="https://notes.nicolasdeville.com/python/library-speedtest-cli">Python library: speedtest-cli</a></dd>
+    <dt>11 Nov 2022</dt>
+    <dd><a href="https://notes.nicolasdeville.com/projects/unifee">Unifee</a></dd>
+    <dt>11 Nov 2022</dt>
+    <dd><a href="https://notes.nicolasdeville.com/helpers/unifi">Unifi network</a></dd>
+    <dt>10 Nov 2022</dt>
+    <dd><a href="https://notes.nicolasdeville.com/learning/python">Learning Python</a></dd>
+    <dt>10 Nov 2022</dt>
+    <dd><a href="https://notes.nicolasdeville.com/ai/dall-e">Dall-E</a></dd>
+    <dt>10 Nov 2022</dt>
+    <dd><a href="https://notes.nicolasdeville.com/apps/affinity">Affinity creative apps</a></dd>
+    <dt>10 Nov 2022</dt>
+    <dd><a href="https://notes.nicolasdeville.com/random/eu-dma">The EU's Digital Markets Act</a></dd>
+    <dt>10 Nov 2022</dt>
+    <dd><a href="https://notes.nicolasdeville.com/random/sabbatical-reflections">Sabbatical reflections</a></dd>
+    <dt>09 Nov 2022</dt>
+    <dd><a href="https://notes.nicolasdeville.com/helpers/responsive-web-design">How to build a responsive website</a></dd>
+    <dt>09 Nov 2022</dt>
+    <dd><a href="https://notes.nicolasdeville.com/learning/ai">Learning AI</a></dd>
+    <dt>09 Nov 2022</dt>
+    <dd><a href="https://notes.nicolasdeville.com/learning/css">Learning CSS</a></dd>
+    <dt>09 Nov 2022</dt>
+    <dd><a href="https://notes.nicolasdeville.com/ai/221109-1549-linkedin">Hebbia</a></dd>
+    <dt>07 Nov 2022</dt>
+    <dd><a href="https://notes.nicolasdeville.com/helpers/js-show-more-show-less">Javascript: How to add multiple Show More and Show Less buttons on a page</a></dd>
+    <dt>05 Nov 2022</dt>
+    <dd><a href="https://notes.nicolasdeville.com/helpers/keyboard-shortcuts">My keyboard shortcuts</a></dd>
+    <dt>05 Nov 2022</dt>
+    <dd><a href="https://notes.nicolasdeville.com/helpers/clipper">Clipper | my web clipboard</a></dd>
+    <dt>05 Nov 2022</dt>
+    <dd><a href="https://notes.nicolasdeville.com/apps/library">My Apps Library</a></dd>
+    <dt>05 Nov 2022</dt>
+    <dd><a href="https://notes.nicolasdeville.com/apps/radar">Apps on my radar</a></dd>
+    <dt>04 Nov 2022</dt>
+    <dd><a href="https://notes.nicolasdeville.com/ai/stable-diffusion">Stable Diffusion</a></dd>
+    <dt>04 Nov 2022</dt>
+    <dd><a href="https://notes.nicolasdeville.com/projects/meta-url">Python Open-Source Project: metaURL</a></dd>
+    <dt>04 Nov 2022</dt>
+    <dd><a href="https://notes.nicolasdeville.com/ai/221104-0023-linkedin">How fast will Generative AI be mainstream?</a></dd>
+    <dt>04 Nov 2022</dt>
+    <dd><a href="https://notes.nicolasdeville.com/ai/221104-0025-linkedin">Gartner Hype Cycle for AI</a></dd>
+    <dt>04 Nov 2022</dt>
+    <dd><a href="https://notes.nicolasdeville.com/ai/221104-0048-linkedin">Generative Adversarial Networks (GAN)</a></dd>
+    <dt>04 Nov 2022</dt>
+    <dd><a href="https://notes.nicolasdeville.com/python/library-spacy">Python library: spaCy</a></dd>
+    <dt>04 Nov 2022</dt>
+    <dd><a href="https://notes.nicolasdeville.com/books/the-qualified-sales-leader">The Qualified Sales Leader, by John McMahon</a></dd>
+    <dt>03 Nov 2022</dt>
+    <dd><a href="https://notes.nicolasdeville.com/ai/generative-ai">Generative AI</a></dd>
+    <dt>03 Nov 2022</dt>
+    <dd><a href="https://notes.nicolasdeville.com/b2b-sales/icp">How to build an Ideal Customer Profile (ICP)</a></dd>
+    <dt>02 Nov 2022</dt>
+    <dd><a href="https://notes.nicolasdeville.com/helpers/api-tinify">API: Tinify (TinyPNG)</a></dd>
+    <dt>02 Nov 2022</dt>
+    <dd><a href="https://notes.nicolasdeville.com/helpers/icloud-drive">iCloud Drive</a></dd>
+    <dt>02 Nov 2022</dt>
+    <dd><a href="https://notes.nicolasdeville.com/helpers/iframe">iFrame</a></dd>
+    <dt>02 Nov 2022</dt>
+    <dd><a href="https://notes.nicolasdeville.com/helpers/terminal-issues">macOS Terminal issues & troubleshooting</a></dd>
+    <dt>02 Nov 2022</dt>
+    <dd><a href="https://notes.nicolasdeville.com/helpers/seo">SEO</a></dd>
+    <dt>02 Nov 2022</dt>
+    <dd><a href="https://notes.nicolasdeville.com/helpers/terminal">macOS Terminal</a></dd>
+    <dt>02 Nov 2022</dt>
+    <dd><a href="https://notes.nicolasdeville.com/helpers/logos">How to get company logos from websites</a></dd>
+    <dt>02 Nov 2022</dt>
+    <dd><a href="https://notes.nicolasdeville.com/helpers/github">Github</a></dd>
+    <dt>02 Nov 2022</dt>
+    <dd><a href="https://notes.nicolasdeville.com/helpers/icloud-download">Download all iCloud photos to a local directory</a></dd>
+    <dt>02 Nov 2022</dt>
+    <dd><a href="https://notes.nicolasdeville.com/helpers/search-engines">How to reference a site in search engines</a></dd>
+    <dt>02 Nov 2022</dt>
+    <dd><a href="https://notes.nicolasdeville.com/helpers/macos-copy-filename">Copy file name to clipboard upon saving file in macOS</a></dd>
+    <dt>02 Nov 2022</dt>
+    <dd><a href="https://notes.nicolasdeville.com/helpers/apis">APIs</a></dd>
+    <dt>02 Nov 2022</dt>
+    <dd><a href="https://notes.nicolasdeville.com/helpers/ionos">Ionos</a></dd>
+    <dt>02 Nov 2022</dt>
+    <dd><a href="https://notes.nicolasdeville.com/helpers/ffmpeg-ffprobe">ffmpeg and ffprobe</a></dd>
+    <dt>02 Nov 2022</dt>
+    <dd><a href="https://notes.nicolasdeville.com/apps/alfred">Alfred</a></dd>
+    <dt>02 Nov 2022</dt>
+    <dd><a href="https://notes.nicolasdeville.com/apps/grist">Grist | The Evolution of Spreadsheets</a></dd>
+    <dt>02 Nov 2022</dt>
+    <dd><a href="https://notes.nicolasdeville.com/apps/vs-code">VS Code</a></dd>
+    <dt>02 Nov 2022</dt>
+    <dd><a href="https://notes.nicolasdeville.com/interests/ai">AI</a></dd>
+    <dt>02 Nov 2022</dt>
+    <dd><a href="https://notes.nicolasdeville.com/interests/programming">Programming</a></dd>
+    <dt>02 Nov 2022</dt>
+    <dd><a href="https://notes.nicolasdeville.com/interests/airguns">Airguns</a></dd>
+    <dt>02 Nov 2022</dt>
+    <dd><a href="https://notes.nicolasdeville.com/interests/metaverse">The Metaverse</a></dd>
+    <dt>02 Nov 2022</dt>
+    <dd><a href="https://notes.nicolasdeville.com/interests/f1">F1</a></dd>
+    <dt>02 Nov 2022</dt>
+    <dd><a href="https://notes.nicolasdeville.com/interests/longboarding">Longboarding & Skateboarding</a></dd>
+    <dt>02 Nov 2022</dt>
+    <dd><a href="https://notes.nicolasdeville.com/interests/tea">Tea</a></dd>
+    <dt>02 Nov 2022</dt>
+    <dd><a href="https://notes.nicolasdeville.com/interests/starlink">Starlink</a></dd>
+    <dt>02 Nov 2022</dt>
+    <dd><a href="https://notes.nicolasdeville.com/interests/watches">Watches</a></dd>
+    <dt>02 Nov 2022</dt>
+    <dd><a href="https://notes.nicolasdeville.com/interests/flat-caps">Flat Caps</a></dd>
+    <dt>02 Nov 2022</dt>
+    <dd><a href="https://notes.nicolasdeville.com/interests/traditional-archery">Traditional Archery</a></dd>
+    <dt>02 Nov 2022</dt>
+    <dd><a href="https://notes.nicolasdeville.com/interests/apple">Apple</a></dd>
+    <dt>02 Nov 2022</dt>
+    <dd><a href="https://notes.nicolasdeville.com/interests/diabolo">Diabolo</a></dd>
+    <dt>02 Nov 2022</dt>
+    <dd><a href="https://notes.nicolasdeville.com/interests/tactical-pens">Tactical Pens</a></dd>
+    <dt>02 Nov 2022</dt>
+    <dd><a href="https://notes.nicolasdeville.com/interests/crypto">Crypto</a></dd>
+    <dt>02 Nov 2022</dt>
+    <dd><a href="https://notes.nicolasdeville.com/interests/fidget-spinners">Fidget Spinners</a></dd>
+    <dt>02 Nov 2022</dt>
+    <dd><a href="https://notes.nicolasdeville.com/interests/web3">Web3</a></dd>
+    <dt>02 Nov 2022</dt>
+    <dd><a href="https://notes.nicolasdeville.com/interests/mechanical-keyboards">Mechanical Keyboards</a></dd>
+    <dt>02 Nov 2022</dt>
+    <dd><a href="https://notes.nicolasdeville.com/interests/the-doors">The Doors</a></dd>
+    <dt>02 Nov 2022</dt>
+    <dd><a href="https://notes.nicolasdeville.com/leadership/resources">Resources about Sales Leadership</a></dd>
+    <dt>02 Nov 2022</dt>
+    <dd><a href="https://notes.nicolasdeville.com/random/automation-roi">Automation ROI</a></dd>
+    <dt>02 Nov 2022</dt>
+    <dd><a href="https://notes.nicolasdeville.com/random/meme">Memes</a></dd>
+    <dt>02 Nov 2022</dt>
+    <dd><a href="https://notes.nicolasdeville.com/random/thoughts">Random Thoughts</a></dd>
+    <dt>02 Nov 2022</dt>
+    <dd><a href="https://notes.nicolasdeville.com/random/quotes">My favourite quotes</a></dd>
+    <dt>02 Nov 2022</dt>
+    <dd><a href="https://notes.nicolasdeville.com/random/dad-bag">My dad bag</a></dd>
+    <dt>02 Nov 2022</dt>
+    <dd><a href="https://notes.nicolasdeville.com/random/vim">Vim</a></dd>
+    <dt>02 Nov 2022</dt>
+    <dd><a href="https://notes.nicolasdeville.com/ai/eu-aia">The EU’s Artificial Intelligence Act (AIA)</a></dd>
+    <dt>02 Nov 2022</dt>
+    <dd><a href="https://notes.nicolasdeville.com/ai/gpt-3">GPT-3</a></dd>
+    <dt>02 Nov 2022</dt>
+    <dd><a href="https://notes.nicolasdeville.com/ai/services">Exciting AI services</a></dd>
+    <dt>02 Nov 2022</dt>
+    <dd><a href="https://notes.nicolasdeville.com/ai/whisper">Whisper</a></dd>
+    <dt>02 Nov 2022</dt>
+    <dd><a href="https://notes.nicolasdeville.com/ai/art">AI-generated art</a></dd>
+    <dt>02 Nov 2022</dt>
+    <dd><a href="https://notes.nicolasdeville.com/tesla/ai-day-2022">Tesla AI Day 2022</a></dd>
+    <dt>02 Nov 2022</dt>
+    <dd><a href="https://notes.nicolasdeville.com/projects/script-screenshot-app">Script: screenshot video app, save file & generate HTML code</a></dd>
+    <dt>02 Nov 2022</dt>
+    <dd><a href="https://notes.nicolasdeville.com/projects/apps-library">Project: Apps Library</a></dd>
+    <dt>02 Nov 2022</dt>
+    <dd><a href="https://notes.nicolasdeville.com/projects/scrapee">Scrapee</a></dd>
+    <dt>02 Nov 2022</dt>
+    <dd><a href="https://notes.nicolasdeville.com/projects/imapee">Imapee</a></dd>
+    <dt>02 Nov 2022</dt>
+    <dd><a href="https://notes.nicolasdeville.com/projects/transcribee">Transcribee</a></dd>
+    <dt>02 Nov 2022</dt>
+    <dd><a href="https://notes.nicolasdeville.com/projects/indexall">indeXall | indexing the worlds of passions</a></dd>
+    <dt>02 Nov 2022</dt>
+    <dd><a href="https://notes.nicolasdeville.com/projects/clipee">Clipee</a></dd>
+    <dt>02 Nov 2022</dt>
+    <dd><a href="https://notes.nicolasdeville.com/projects/emailee">Emailee</a></dd>
+    <dt>02 Nov 2022</dt>
+    <dd><a href="https://notes.nicolasdeville.com/projects/mailingee">Mailingee</a></dd>
+    <dt>02 Nov 2022</dt>
+    <dd><a href="https://notes.nicolasdeville.com/projects/imagee">Imagee</a></dd>
+    <dt>02 Nov 2022</dt>
+    <dd><a href="https://notes.nicolasdeville.com/projects/twittee">Twittee</a></dd>
+    <dt>02 Nov 2022</dt>
+    <dd><a href="https://notes.nicolasdeville.com/projects/recruiters-directory">Building a directory of EU recruiters</a></dd>
+    <dt>02 Nov 2022</dt>
+    <dd><a href="https://notes.nicolasdeville.com/projects/libraree">Libraree</a></dd>
+    <dt>02 Nov 2022</dt>
+    <dd><a href="https://notes.nicolasdeville.com/projects/books-library">Managing my books library with Python</a></dd>
+    <dt>02 Nov 2022</dt>
+    <dd><a href="https://notes.nicolasdeville.com/projects/1000-movies">Project: Top 1000 movies</a></dd>
+    <dt>02 Nov 2022</dt>
+    <dd><a href="https://notes.nicolasdeville.com/learning/html">Learning HTML</a></dd>
+    <dt>02 Nov 2022</dt>
+    <dd><a href="https://notes.nicolasdeville.com/learning/udemy">My courses on Udemy</a></dd>
+    <dt>02 Nov 2022</dt>
+    <dd><a href="https://notes.nicolasdeville.com/learning/speed-reading">Learning Speed Reading</a></dd>
+    <dt>02 Nov 2022</dt>
+    <dd><a href="https://notes.nicolasdeville.com/learning/new-words">Learning new words</a></dd>
+    <dt>02 Nov 2022</dt>
+    <dd><a href="https://notes.nicolasdeville.com/learning/computer-science">Learning Computer Science</a></dd>
+    <dt>02 Nov 2022</dt>
+    <dd><a href="https://notes.nicolasdeville.com/learning/javascript">Learning Javascript</a></dd>
+    <dt>02 Nov 2022</dt>
+    <dd><a href="https://notes.nicolasdeville.com/learning/sql">Learning SQL</a></dd>
+    <dt>02 Nov 2022</dt>
+    <dd><a href="https://notes.nicolasdeville.com/learning/touch-typing">Learning Touch Typing</a></dd>
+    <dt>02 Nov 2022</dt>
+    <dd><a href="https://notes.nicolasdeville.com/learning/markdown">Learning Markdown</a></dd>
+    <dt>02 Nov 2022</dt>
+    <dd><a href="https://notes.nicolasdeville.com/learning/basketball">Learning Basketball</a></dd>
+    <dt>02 Nov 2022</dt>
+    <dd><a href="https://notes.nicolasdeville.com/home-office/deep-work">Resources for Deep Work</a></dd>
+    <dt>02 Nov 2022</dt>
+    <dd><a href="https://notes.nicolasdeville.com/home-office/kinesis">Kinesis Advantage keyboard</a></dd>
+    <dt>02 Nov 2022</dt>
+    <dd><a href="https://notes.nicolasdeville.com/home-office/shopping">Upgrade ideas for home office</a></dd>
+    <dt>02 Nov 2022</dt>
+    <dd><a href="https://notes.nicolasdeville.com/home-office/scanner">Fujitsu ScanSnap iX500</a></dd>
+    <dt>02 Nov 2022</dt>
+    <dd><a href="https://notes.nicolasdeville.com/home-office/desk">Standing desk: Leetdesk</a></dd>
+    <dt>02 Nov 2022</dt>
+    <dd><a href="https://notes.nicolasdeville.com/home-office/herman-miller-embody">Herman Miller x Logitech Embody Chair</a></dd>
+    <dt>02 Nov 2022</dt>
+    <dd><a href="https://notes.nicolasdeville.com/home-office/monitors">Monitors</a></dd>
+    <dt>02 Nov 2022</dt>
+    <dd><a href="https://notes.nicolasdeville.com/home-office/kvm">KVM Switch</a></dd>
+    <dt>02 Nov 2022</dt>
+    <dd><a href="https://notes.nicolasdeville.com/home-office/streamdeck">Streamdeck for business users</a></dd>
+    <dt>02 Nov 2022</dt>
+    <dd><a href="https://notes.nicolasdeville.com/home-office/setup">Home Office Setup</a></dd>
+    <dt>02 Nov 2022</dt>
+    <dd><a href="https://notes.nicolasdeville.com/home-office/usb-hubs-and-docks">USB Hubs & Docks</a></dd>
+    <dt>02 Nov 2022</dt>
+    <dd><a href="https://notes.nicolasdeville.com/home-office/cable-tester">Ethernet Cable Tester</a></dd>
+    <dt>02 Nov 2022</dt>
+    <dd><a href="https://notes.nicolasdeville.com/home-office/contour-shuttle">Contour ShuttlePRO v2</a></dd>
+    <dt>02 Nov 2022</dt>
+    <dd><a href="https://notes.nicolasdeville.com/python/library-sqlite3">Python Library: sqlite3</a></dd>
+    <dt>02 Nov 2022</dt>
+    <dd><a href="https://notes.nicolasdeville.com/python/library-tkinter">Python Library: tkinter</a></dd>
+    <dt>02 Nov 2022</dt>
+    <dd><a href="https://notes.nicolasdeville.com/python/open-source">About open-source projects</a></dd>
+    <dt>02 Nov 2022</dt>
+    <dd><a href="https://notes.nicolasdeville.com/python/snippet-download-files">Python snippet: download files</a></dd>
+    <dt>02 Nov 2022</dt>
+    <dd><a href="https://notes.nicolasdeville.com/python/library-pymsgbox">Python Library: PyMsgBox</a></dd>
+    <dt>02 Nov 2022</dt>
+    <dd><a href="https://notes.nicolasdeville.com/python/library-tweepy">Python Library: tweepy</a></dd>
+    <dt>02 Nov 2022</dt>
+    <dd><a href="https://notes.nicolasdeville.com/python/library-dateutil">Python Library: dateutil</a></dd>
+    <dt>02 Nov 2022</dt>
+    <dd><a href="https://notes.nicolasdeville.com/python/ui">How to create user interfaces with Python</a></dd>
+    <dt>02 Nov 2022</dt>
+    <dd><a href="https://notes.nicolasdeville.com/python/libraries">Libraries for Python</a></dd>
+    <dt>02 Nov 2022</dt>
+    <dd><a href="https://notes.nicolasdeville.com/python/library-pelican">Building a static site with Pelican</a></dd>
+    <dt>02 Nov 2022</dt>
+    <dd><a href="https://notes.nicolasdeville.com/python/sending-emails">Sending emails with Python</a></dd>
+    <dt>02 Nov 2022</dt>
+    <dd><a href="https://notes.nicolasdeville.com/python/sitemap-generator">Generate Sitemap with Python</a></dd>
+    <dt>02 Nov 2022</dt>
+    <dd><a href="https://notes.nicolasdeville.com/python/extract-app-logos">Extract all app logos to PNG</a></dd>
+    <dt>02 Nov 2022</dt>
+    <dd><a href="https://notes.nicolasdeville.com/python/files">Dealing with files in Python</a></dd>
+    <dt>02 Nov 2022</dt>
+    <dd><a href="https://notes.nicolasdeville.com/python/snippet-clean-beginning-strings">Python snippet: Clean beginning of strings</a></dd>
+    <dt>02 Nov 2022</dt>
+    <dd><a href="https://notes.nicolasdeville.com/python/my-utils">my-utils</a></dd>
+    <dt>02 Nov 2022</dt>
+    <dd><a href="https://notes.nicolasdeville.com/python/save-images">Save images with Python</a></dd>
+    <dt>02 Nov 2022</dt>
+    <dd><a href="https://notes.nicolasdeville.com/python/script-get-urls-from-html">Get all links in a HTML page</a></dd>
+    <dt>02 Nov 2022</dt>
+    <dd><a href="https://notes.nicolasdeville.com/python/library-requests">Python Library: requests</a></dd>
+    <dt>02 Nov 2022</dt>
+    <dd><a href="https://notes.nicolasdeville.com/python/library-beautifulsoup">Python Library: Beautifulsoup</a></dd>
+    <dt>02 Nov 2022</dt>
+    <dd><a href="https://notes.nicolasdeville.com/python/library-datetime">Python Library: datetime</a></dd>
+    <dt>02 Nov 2022</dt>
+    <dd><a href="https://notes.nicolasdeville.com/python/text-files">Managing text files with Python</a></dd>
+    <dt>02 Nov 2022</dt>
+    <dd><a href="https://notes.nicolasdeville.com/python/paths">How to find all paths being searched by Python</a></dd>
+    <dt>02 Nov 2022</dt>
+    <dd><a href="https://notes.nicolasdeville.com/python/library-tmdbapis">Python Library: tmdbapis | fetching movie data</a></dd>
+    <dt>02 Nov 2022</dt>
+    <dd><a href="https://notes.nicolasdeville.com/python/boilerplate">My Python scripts boilerplate</a></dd>
+    <dt>02 Nov 2022</dt>
+    <dd><a href="https://notes.nicolasdeville.com/python/create-executable">Create executable of a Pyhon application</a></dd>
+    <dt>02 Nov 2022</dt>
+    <dd><a href="https://notes.nicolasdeville.com/python/library-jinja2">Python Library: jinja2</a></dd>
+    <dt>02 Nov 2022</dt>
+    <dd><a href="https://notes.nicolasdeville.com/python/unicode">Unicode in Python</a></dd>
+    <dt>02 Nov 2022</dt>
+    <dd><a href="https://notes.nicolasdeville.com/python/library-yagmail">Python Library: Yagmail</a></dd>
+    <dt>02 Nov 2022</dt>
+    <dd><a href="https://notes.nicolasdeville.com/python/library-tldextract">Python Library: tldextract</a></dd>
+    <dt>02 Nov 2022</dt>
+    <dd><a href="https://notes.nicolasdeville.com/python/library-os">Python Library: os (built-in)</a></dd>
+    <dt>02 Nov 2022</dt>
+    <dd><a href="https://notes.nicolasdeville.com/python/library-geopy">Python Library: geopy</a></dd>
+    <dt>02 Nov 2022</dt>
+    <dd><a href="https://notes.nicolasdeville.com/python/library-defaultdict">Python Library: defaultdict</a></dd>
+    <dt>02 Nov 2022</dt>
+    <dd><a href="https://notes.nicolasdeville.com/python/metadata-from-url">How to get a website's metadata with Python</a></dd>
+    <dt>02 Nov 2022</dt>
+    <dd><a href="https://notes.nicolasdeville.com/python/shell-scripts">How to run Python scripts with shell scripts</a></dd>
+    <dt>02 Nov 2022</dt>
+    <dd><a href="https://notes.nicolasdeville.com/python/namedtuples">namedtuples</a></dd>
+    <dt>02 Nov 2022</dt>
+    <dd><a href="https://notes.nicolasdeville.com/python/library-tmdbv3api">Python Library: tmdbv3api | fetching movie data</a></dd>
+    <dt>02 Nov 2022</dt>
+    <dd><a href="https://notes.nicolasdeville.com/python/string">String snippets</a></dd>
+    <dt>02 Nov 2022</dt>
+    <dd><a href="https://notes.nicolasdeville.com/python/pip">PIP: Python's Package Manager</a></dd>
+    <dt>02 Nov 2022</dt>
+    <dd><a href="https://notes.nicolasdeville.com/python/library-dotenv">How to save confidential data in environment variables with dotenv</a></dd>
+    <dt>02 Nov 2022</dt>
+    <dd><a href="https://notes.nicolasdeville.com/python/library-termtables">Python Library: termtables | Pretty tables in terminal</a></dd>
+    <dt>02 Nov 2022</dt>
+    <dd><a href="https://notes.nicolasdeville.com/python/library-nltk">Python Library: nltk</a></dd>
+    <dt>02 Nov 2022</dt>
+    <dd><a href="https://notes.nicolasdeville.com/python/virtual-environments">Managing Virtual Environments in Python</a></dd>
+    <dt>02 Nov 2022</dt>
+    <dd><a href="https://notes.nicolasdeville.com/python/copy-folder">Copy folders with Python</a></dd>
+    <dt>02 Nov 2022</dt>
+    <dd><a href="https://notes.nicolasdeville.com/python/library-tqdm">Python library: tqdm</a></dd>
+    <dt>02 Nov 2022</dt>
+    <dd><a href="https://notes.nicolasdeville.com/python/library-pickle">Python Library: pickle</a></dd>
+    <dt>02 Nov 2022</dt>
+    <dd><a href="https://notes.nicolasdeville.com/python/python-notion">Fetch Notion database data with Python</a></dd>
+    <dt>02 Nov 2022</dt>
+    <dd><a href="https://notes.nicolasdeville.com/python/library-openpyxl">Python Library: openpyxl</a></dd>
+    <dt>02 Nov 2022</dt>
+    <dd><a href="https://notes.nicolasdeville.com/python/library-notion-py">Fetching data from Notion API with Python</a></dd>
+    <dt>02 Nov 2022</dt>
+    <dd><a href="https://notes.nicolasdeville.com/python/library-imap-tools">Python Library: imap-tools</a></dd>
+    <dt>02 Nov 2022</dt>
+    <dd><a href="https://notes.nicolasdeville.com/python/tmdb-api">Fetching data from TMDB API</a></dd>
+    <dt>02 Nov 2022</dt>
+    <dd><a href="https://notes.nicolasdeville.com/python/library-speech-recognition">Python Library: speech_recognition</a></dd>
+    <dt>02 Nov 2022</dt>
+    <dd><a href="https://notes.nicolasdeville.com/python/library-moviepy">Python library: moviepy</a></dd>
+    <dt>02 Nov 2022</dt>
+    <dd><a href="https://notes.nicolasdeville.com/python/gitignore">Gitignore</a></dd>
+    <dt>02 Nov 2022</dt>
+    <dd><a href="https://notes.nicolasdeville.com/python/snippets">Python Snippets</a></dd>
+    <dt>02 Nov 2022</dt>
+    <dd><a href="https://notes.nicolasdeville.com/python/library-slugify">Python Library: slugify</a></dd>
+    <dt>02 Nov 2022</dt>
+    <dd><a href="https://notes.nicolasdeville.com/python/library-pynput">Python Library: pynput</a></dd>
+    <dt>02 Nov 2022</dt>
+    <dd><a href="https://notes.nicolasdeville.com/python/export-kindle-library">Exporting my Kindle library data</a></dd>
+    <dt>02 Nov 2022</dt>
+    <dd><a href="https://notes.nicolasdeville.com/python/print">Print statement tricks</a></dd>
+    <dt>02 Nov 2022</dt>
+    <dd><a href="https://notes.nicolasdeville.com/python/library-selenium">Python Library: Selenium</a></dd>
+    <dt>02 Nov 2022</dt>
+    <dd><a href="https://notes.nicolasdeville.com/python/library-urllib">Python Library: urllib</a></dd>
+    <dt>02 Nov 2022</dt>
+    <dd><a href="https://notes.nicolasdeville.com/python/library-pydub">Python Library: pydub</a></dd>
+    <dt>02 Nov 2022</dt>
+    <dd><a href="https://notes.nicolasdeville.com/python/library-re">Python Library: re (regex)</a></dd>
+    <dt>02 Nov 2022</dt>
+    <dd><a href="https://notes.nicolasdeville.com/python/library-send2trash">Python Library: Send2Trash</a></dd>
+    <dt>02 Nov 2022</dt>
+    <dd><a href="https://notes.nicolasdeville.com/b2b-sales/cold-emails">Cold Emails</a></dd>
+    <dt>02 Nov 2022</dt>
+    <dd><a href="https://notes.nicolasdeville.com/b2b-sales/email-tools">Tools for email finding & validation</a></dd>
+    <dt>02 Nov 2022</dt>
+    <dd><a href="https://notes.nicolasdeville.com/b2b-sales/email-automation">Email Automation for Sales outreaches</a></dd>
+    <dt>02 Nov 2022</dt>
+    <dd><a href="https://notes.nicolasdeville.com/startups/advisable">Advisable</a></dd>
+    <dt>31 Oct 2022</dt>
+    <dd><a href="https://notes.nicolasdeville.com/home-office/charachorder">CharaChorder</a></dd>
+    <dt>31 Oct 2022</dt>
+    <dd><a href="https://notes.nicolasdeville.com/helpers/pagefind">Pagefind</a></dd>
+    <dt>30 Oct 2022</dt>
+    <dd><a href="https://notes.nicolasdeville.com/tesla/ai-robotics-company">Tesla is an AI & Robotics company.</a></dd>
+    <dt>29 Oct 2022</dt>
+    <dd><a href="https://notes.nicolasdeville.com/b2b-sales/coi">Cost Of Inaction (COI) as urgency driver</a></dd>
+    <dt>28 Oct 2022</dt>
+    <dd><a href="https://notes.nicolasdeville.com/python/library-pillow">Python library: Pillow</a></dd>
+    <dt>28 Oct 2022</dt>
+    <dd><a href="https://notes.nicolasdeville.com/python/script-extract-audio">Python script: Extract audio from Youtube videos</a></dd>
+    <dt>23 Oct 2022</dt>
+    <dd><a href="https://notes.nicolasdeville.com/ai/221023-1009-linkedin">Joe Rogan Meets Steve Jobs in an AI-Generated Podcast</a></dd>
+    <dt>23 Oct 2022</dt>
+    <dd><a href="https://notes.nicolasdeville.com/ai/221023-1050-linkedin">Linkedin post: Google Flan</a></dd>
+    <dt>21 Oct 2022</dt>
+    <dd><a href="https://notes.nicolasdeville.com/ai/221021-1053-linkedin">Linkedin post: Learning AI</a></dd>
+    <dt>21 Oct 2022</dt>
+    <dd><a href="https://notes.nicolasdeville.com/ai/221021-1054-linkedin">Linkedin post: Flying is impossible</a></dd>
+    <dt>21 Oct 2022</dt>
+    <dd><a href="https://notes.nicolasdeville.com/ai/221021-1722-linkedin">Linkedin post: Lex Fridman's Deep Learning Basics</a></dd>
+    <dt>19 Oct 2022</dt>
+    <dd><a href="https://notes.nicolasdeville.com/python/script-download-stripe-invoices">Python script to download all invoices from Stripe as PDFs</a></dd>
+    <dt>18 Oct 2022</dt>
+    <dd><a href="https://notes.nicolasdeville.com/b2b-sales/being-bad-at-something">Being bad at something</a></dd>
+    <dt>18 Oct 2022</dt>
+    <dd><a href="https://notes.nicolasdeville.com/helpers/datev">Working with DATEV</a></dd>
+    <dt>18 Oct 2022</dt>
+    <dd><a href="https://notes.nicolasdeville.com/leadership/delegating-automating">Delegating & automating</a></dd>
+    <dt>18 Oct 2022</dt>
+    <dd><a href="https://notes.nicolasdeville.com/startups/euroscape-2022">Accel's Euroscape 2022 report</a></dd>
+    <dt>10 Oct 2022</dt>
+    <dd><a href="https://notes.nicolasdeville.com/leadership/okr">OKR</a></dd>
+    <dt>08 Oct 2022</dt>
+    <dd><a href="https://notes.nicolasdeville.com/helpers/icons">Icons Libraries</a></dd>
+    <dt>08 Oct 2022</dt>
+    <dd><a href="https://notes.nicolasdeville.com/ai/youtube-channels">AI Youtube channels</a></dd>
+    <dt>07 Oct 2022</dt>
+    <dd><a href="https://notes.nicolasdeville.com/helpers/display-emails-website">How to display emails on websites to avoid spam</a></dd>
+    <dt>07 Oct 2022</dt>
+    <dd><a href="https://notes.nicolasdeville.com/tesla/optimus">Optimus - Tesla's humanoid robot</a></dd>
+    <dt>07 Oct 2022</dt>
+    <dd><a href="https://notes.nicolasdeville.com/tesla/share-price">Tesla Share Price</a></dd>
+    <dt>06 Oct 2022</dt>
+    <dd><a href="https://notes.nicolasdeville.com/b2b-sales/cyberleads">Cyberleads</a></dd>
+    <dt>05 Oct 2022</dt>
+    <dd><a href="https://notes.nicolasdeville.com/helpers/css-responsive-tables">Responsive tables in CSS</a></dd>
+    <dt>03 Oct 2022</dt>
+    <dd><a href="https://notes.nicolasdeville.com/random/rowing">Indoor rowing</a></dd>
+    <dt>02 Oct 2022</dt>
+    <dd><a href="https://notes.nicolasdeville.com/startups/idea-mass-cv-drop">Mass CV Drop</a></dd>
+    <dt>02 Oct 2022</dt>
+    <dd><a href="https://notes.nicolasdeville.com/apps/iina">IINA</a></dd>
+    <dt>02 Oct 2022</dt>
+    <dd><a href="https://notes.nicolasdeville.com/helpers/javascript-for-automation">Javascript for automation</a></dd>
+    <dt>02 Oct 2022</dt>
+    <dd><a href="https://notes.nicolasdeville.com/leadership/seasoned-vp-stretch-vp.">Seasoned VP vs Stretch VP</a></dd>
+    <dt>02 Oct 2022</dt>
+    <dd><a href="https://notes.nicolasdeville.com/interests/traditional-shaving">Traditional Shaving</a></dd>
+    <dt>01 Oct 2022</dt>
+    <dd><a href="https://notes.nicolasdeville.com/apps/excel">Excel</a></dd>
+    <dt>01 Oct 2022</dt>
+    <dd><a href="https://notes.nicolasdeville.com/helpers/extract-audio-from-video">How to extract audio from video on macOS</a></dd>
+    <dt>01 Oct 2022</dt>
+    <dd><a href="https://notes.nicolasdeville.com/startups/idea-impromptu-conference-calls">Impromptu conference calls</a></dd>
+    <dt>30 Sep 2022</dt>
+    <dd><a href="https://notes.nicolasdeville.com/apps/hubspot">Hubspot</a></dd>
+    <dt>27 Sep 2022</dt>
+    <dd><a href="https://notes.nicolasdeville.com/apps/atom">Atom</a></dd>
+    <dt>27 Sep 2022</dt>
+    <dd><a href="https://notes.nicolasdeville.com/helpers/get-current-url">Get current URL from browser in macOS</a></dd>
+    <dt>27 Sep 2022</dt>
+    <dd><a href="https://notes.nicolasdeville.com/apps/proton-vpn">Proton VPN</a></dd>
+    <dt>27 Sep 2022</dt>
+    <dd><a href="https://notes.nicolasdeville.com/helpers/twitter-cli">How to use Twitter via CLI (Command Line Interface) on macOS</a></dd>
+    <dt>26 Sep 2022</dt>
+    <dd><a href="https://notes.nicolasdeville.com/python/snippet-parent-folder-name">Get parent folder name with Python</a></dd>
+    <dt>26 Sep 2022</dt>
+    <dd><a href="https://notes.nicolasdeville.com/python/snippet-pass-arguments">How to pass variables to a Python scripts with argument</a></dd>
+    <dt>25 Sep 2022</dt>
+    <dd><a href="https://notes.nicolasdeville.com/learning/map-coordinates">Learning Map Coordinates</a></dd>
+    <dt>23 Sep 2022</dt>
+    <dd><a href="https://notes.nicolasdeville.com/apps/fig">Fig</a></dd>
+    <dt>23 Sep 2022</dt>
+    <dd><a href="https://notes.nicolasdeville.com/ai/questions">AI questions</a></dd>
+    <dt>22 Sep 2022</dt>
+    <dd><a href="https://notes.nicolasdeville.com/apps/audirvana">Audirvana</a></dd>
+    <dt>22 Sep 2022</dt>
+    <dd><a href="https://notes.nicolasdeville.com/python/basic-string-encryption">Basic string encryption with Python</a></dd>
+    <dt>22 Sep 2022</dt>
+    <dd><a href="https://notes.nicolasdeville.com/projects/clipper">Clipper</a></dd>
+    <dt>22 Sep 2022</dt>
+    <dd><a href="https://notes.nicolasdeville.com/python/import-txt-to-grist">Import text file to Grist</a></dd>
+    <dt>22 Sep 2022</dt>
+    <dd><a href="https://notes.nicolasdeville.com/home-office/ipad">iPad</a></dd>
+    <dt>22 Sep 2022</dt>
+    <dd><a href="https://notes.nicolasdeville.com/python/snippet-open-text-file">Open text files with Python</a></dd>
+    <dt>21 Sep 2022</dt>
+    <dd><a href="https://notes.nicolasdeville.com/apps/calendar-tools">Calendar Tools</a></dd>
+    <dt>21 Sep 2022</dt>
+    <dd><a href="https://notes.nicolasdeville.com/b2b-sales/meeting-tools">Meeting tools for Sales</a></dd>
+    <dt>21 Sep 2022</dt>
+    <dd><a href="https://notes.nicolasdeville.com/apps/spark">Spark</a></dd>
+    <dt>21 Sep 2022</dt>
+    <dd><a href="https://notes.nicolasdeville.com/b2b-sales/video-tools">Video Tools for Sales</a></dd>
+    <dt>19 Sep 2022</dt>
+    <dd><a href="https://notes.nicolasdeville.com/apps/best-lists">Lists of 'Best apps for macOS'</a></dd>
+    <dt>18 Sep 2022</dt>
+    <dd><a href="https://notes.nicolasdeville.com/helpers/applescript">AppleScript</a></dd>
+    <dt>17 Sep 2022</dt>
+    <dd><a href="https://notes.nicolasdeville.com/apps/just-press-record">Just Press Record</a></dd>
+    <dt>16 Sep 2022</dt>
+    <dd><a href="https://notes.nicolasdeville.com/python/function-separator">A short function to generate print separators</a></dd>
+    <dt>16 Sep 2022</dt>
+    <dd><a href="https://notes.nicolasdeville.com/helpers/html-metatags">HTML Meta tags for SEO</a></dd>
+    <dt>16 Sep 2022</dt>
+    <dd><a href="https://notes.nicolasdeville.com/b2b-sales/plan-your-moves-ahead">Plan your moves ahead</a></dd>
+    <dt>15 Sep 2022</dt>
+    <dd><a href="https://notes.nicolasdeville.com/python/solve-certificate-verify-failed">How to solve urlopen error SSL: CERTIFICATE_VERIFY_FAILED</a></dd>
+    <dt>11 Sep 2022</dt>
+    <dd><a href="https://notes.nicolasdeville.com/python/script-consolidate-log">Python Script: consolidate list of emails from txt log files</a></dd>
+    <dt>09 Sep 2022</dt>
+    <dd><a href="https://notes.nicolasdeville.com/leadership/comp-plans">Compensation Plans</a></dd>
+    <dt>06 Sep 2022</dt>
+    <dd><a href="https://notes.nicolasdeville.com/b2b-sales/outbound">Outbound Lead Generation</a></dd>
+    <dt>01 Sep 2022</dt>
+    <dd><a href="https://notes.nicolasdeville.com/careerplaybook/023-leaving-on-a-high">#CareerPlaybook 023: Leaving On A High</a></dd>
+    <dt>28 Aug 2022</dt>
+    <dd><a href="https://notes.nicolasdeville.com/apps/pulltube">Pulltube</a></dd>
+    <dt>17 Aug 2022</dt>
+    <dd><a href="https://notes.nicolasdeville.com/helpers/vodafone-kabel">Vodafone Kabel</a></dd>
+    <dt>12 Aug 2022</dt>
+    <dd><a href="https://notes.nicolasdeville.com/apps/pathfinder">Pathfinder - Finder alternative</a></dd>
+    <dt>11 Aug 2022</dt>
+    <dd><a href="https://notes.nicolasdeville.com/books/learn-javascript-quickly">Book: Learn JavaScript Quickly</a></dd>
+    <dt>04 Aug 2022</dt>
+    <dd><a href="https://notes.nicolasdeville.com/books/the-first-90-days">The First 90 Days, by Michael Watkins</a></dd>
+    <dt>26 Jul 2022</dt>
+    <dd><a href="https://notes.nicolasdeville.com/apps/hazel">Hazel</a></dd>
+    <dt>26 Jul 2022</dt>
+    <dd><a href="https://notes.nicolasdeville.com/python/library-mutagen">Python Library: mutagen</a></dd>
+    <dt>26 Jul 2022</dt>
+    <dd><a href="https://notes.nicolasdeville.com/python/library-tinytag">Python Library: tinytag</a></dd>
+    <dt>26 Jul 2022</dt>
+    <dd><a href="https://notes.nicolasdeville.com/helpers/terminal-commands">macOS List of Terminal Commands</a></dd>
+    <dt>25 Jul 2022</dt>
+    <dd><a href="https://notes.nicolasdeville.com/helpers/reddit">Reddit</a></dd>
+    <dt>24 Jul 2022</dt>
+    <dd><a href="https://notes.nicolasdeville.com/random/20-scariest-theories">20 Scariest Theories Known to Man</a></dd>
+    <dt>23 Jul 2022</dt>
+    <dd><a href="https://notes.nicolasdeville.com/projects/nicai">nicAI | my personal AI assistant</a></dd>
+    <dt>22 Jul 2022</dt>
+    <dd><a href="https://notes.nicolasdeville.com/apps/espanso">Espanso</a></dd>
+    <dt>20 Jul 2022</dt>
+    <dd><a href="https://notes.nicolasdeville.com/apps/pixelsnap">Pixelsnap</a></dd>
+    <dt>20 Jul 2022</dt>
+    <dd><a href="https://notes.nicolasdeville.com/apps/text-expanders">Text expanders</a></dd>
+    <dt>20 Jul 2022</dt>
+    <dd><a href="https://notes.nicolasdeville.com/apps/things">App: Things</a></dd>
+    <dt>19 Jul 2022</dt>
+    <dd><a href="https://notes.nicolasdeville.com/apps/gpg">GPG Suite</a></dd>
+    <dt>19 Jul 2022</dt>
+    <dd><a href="https://notes.nicolasdeville.com/b2b-sales/producing-videos">Producing Sales videos</a></dd>
+    <dt>19 Jul 2022</dt>
+    <dd><a href="https://notes.nicolasdeville.com/apps/screenflow">Producing videos with Screenflow</a></dd>
+    <dt>19 Jul 2022</dt>
+    <dd><a href="https://notes.nicolasdeville.com/home-office/teleprompter">Using a teleprompter for business users</a></dd>
+    <dt>19 Jul 2022</dt>
+    <dd><a href="https://notes.nicolasdeville.com/random/wutang">Wutang</a></dd>
+    <dt>18 Jul 2022</dt>
+    <dd><a href="https://notes.nicolasdeville.com/random/chickens-are-weird">Chickens are weird</a></dd>
+    <dt>18 Jul 2022</dt>
+    <dd><a href="https://notes.nicolasdeville.com/apps/moom">Moom | Window management</a></dd>
+    <dt>18 Jul 2022</dt>
+    <dd><a href="https://notes.nicolasdeville.com/apps/screenshotx">ScreenShotX</a></dd>
+    <dt>18 Jul 2022</dt>
+    <dd><a href="https://notes.nicolasdeville.com/home-office/ups">Uninterrupted Power Supply</a></dd>
+    <dt>17 Jul 2022</dt>
+    <dd><a href="https://notes.nicolasdeville.com/leadership/visualising-target-achievement">Visualing the target and achievement</a></dd>
+    <dt>16 Jul 2022</dt>
+    <dd><a href="https://notes.nicolasdeville.com/python/copy-files">Mass copy selected files with Python</a></dd>
+    <dt>16 Jul 2022</dt>
+    <dd><a href="https://notes.nicolasdeville.com/tesla/elon">Elon Musk</a></dd>
+    <dt>16 Jul 2022</dt>
+    <dd><a href="https://notes.nicolasdeville.com/apps/newsletter-readers">Newsletter readers</a></dd>
+    <dt>14 Jul 2022</dt>
+    <dd><a href="https://notes.nicolasdeville.com/python/broken-links">How to Find Broken Links With Python</a></dd>
+    <dt>14 Jul 2022</dt>
+    <dd><a href="https://notes.nicolasdeville.com/helpers/unzip-split-zip-files">Unzip split zip files (from Google Takeout)</a></dd>
+    <dt>13 Jul 2022</dt>
+    <dd><a href="https://notes.nicolasdeville.com/b2b-sales/overselling-vs-underselling">Overselling vs Underselling</a></dd>
+    <dt>12 Jul 2022</dt>
+    <dd><a href="https://notes.nicolasdeville.com/random/ark-invest">Ark Invest</a></dd>
+    <dt>12 Jul 2022</dt>
+    <dd><a href="https://notes.nicolasdeville.com/b2b-sales/b2b-sales-resources">B2B Sales Resources</a></dd>
+    <dt>12 Jul 2022</dt>
+    <dd><a href="https://notes.nicolasdeville.com/random/supplements">Supplements</a></dd>
+    <dt>11 Jul 2022</dt>
+    <dd><a href="https://notes.nicolasdeville.com/random/ai">AI</a></dd>
+    <dt>11 Jul 2022</dt>
+    <dd><a href="https://notes.nicolasdeville.com/helpers/learning-javascript">Learning Javascript</a></dd>
+    <dt>11 Jul 2022</dt>
+    <dd><a href="https://notes.nicolasdeville.com/helpers/regex">Regex</a></dd>
+    <dt>07 Jul 2022</dt>
+    <dd><a href="https://notes.nicolasdeville.com/python/importing-ghost-blog-posts-to-pelican-with-python">Import Ghost blog posts to Pelican with Python</a></dd>
+    <dt>07 Jul 2022</dt>
+    <dd><a href="https://notes.nicolasdeville.com/python/importing-notion-markdown-files-to-pelican-with-python">Notion Markdown files to Pelican Markdown files with Python</a></dd>
+    <dt>06 Jul 2022</dt>
+    <dd><a href="https://notes.nicolasdeville.com/b2b-sales/chrome-extensions-for-sales">Google Chrome extensions for Sales</a></dd>
+    <dt>06 Jul 2022</dt>
+    <dd><a href="https://notes.nicolasdeville.com/random/netflix">How to see and download Netflix viewing history</a></dd>
+    <dt>05 Jul 2022</dt>
+    <dd><a href="https://notes.nicolasdeville.com/python/text-to-html">Converting text to HTML with Python</a></dd>
+    <dt>04 Jul 2022</dt>
+    <dd><a href="https://notes.nicolasdeville.com/python/download-website">Download a website with Python</a></dd>
+    <dt>04 Jul 2022</dt>
+    <dd><a href="https://notes.nicolasdeville.com/random/ev">Electric Vehicles</a></dd>
+    <dt>03 Jul 2022</dt>
+    <dd><a href="https://notes.nicolasdeville.com/apps/my-stack">Apps I use</a></dd>
+    <dt>03 Jul 2022</dt>
+    <dd><a href="https://notes.nicolasdeville.com/apps/readwise">Readwise | helps me retain what I read</a></dd>
+    <dt>03 Jul 2022</dt>
+    <dd><a href="https://notes.nicolasdeville.com/apps/snippetslab">SnippetsLab | Snippets manager</a></dd>
+    <dt>02 Jul 2022</dt>
+    <dd><a href="https://notes.nicolasdeville.com/helpers/kindle">Kindle</a></dd>
+    <dt>02 Jul 2022</dt>
+    <dd><a href="https://notes.nicolasdeville.com/b2b-sales/scheduling-meetings">Scheduling Meetings</a></dd>
+    <dt>02 Jul 2022</dt>
+    <dd><a href="https://notes.nicolasdeville.com/apps/setapp">Setapp: macOS app subsciption</a></dd>
+    <dt>02 Jul 2022</dt>
+    <dd><a href="https://notes.nicolasdeville.com/books/simply-said">Simply Said, by Jay Sullivan</a></dd>
+    <dt>01 Jul 2022</dt>
+    <dd><a href="https://notes.nicolasdeville.com/helpers/ascii-tree">ASCII tree</a></dd>
+    <dt>01 Jul 2022</dt>
+    <dd><a href="https://notes.nicolasdeville.com/random/germany-tax">Germany taxes</a></dd>
+    <dt>07 Apr 2022</dt>
+    <dd><a href="https://notes.nicolasdeville.com/books/pro-git">Pro Git, by Scott Chacon</a></dd>
+    <dt>18 Mar 2022</dt>
+    <dd><a href="https://notes.nicolasdeville.com/random/space_how-long">How long will the Earth remain habitable?</a></dd>
+    <dt>10 Mar 2022</dt>
+    <dd><a href="https://notes.nicolasdeville.com/apps/cloudapp">CloudApp | A visual collaboration solution</a></dd>
+    <dt>13 Feb 2022</dt>
+    <dd><a href="https://notes.nicolasdeville.com/apps/ulysses">Ulysses</a></dd>
+    <dt>22 Jan 2022</dt>
+    <dd><a href="https://notes.nicolasdeville.com/leadership/rfp-and-tribal-knowledge">RFP and tribal knowledge</a></dd>
+    <dt>01 Jan 2022</dt>
+    <dd><a href="https://notes.nicolasdeville.com/home-office/home-office-setup-jan-22">Home Office Setup (-May '22)</a></dd>
+</dl> -->
+
+<table>
+    <tbody>
+        
+        <tr>
+            <td style="white-space: nowrap;">15 Nov 2022</td>
+            <td><a href="https://notes.nicolasdeville.com/home-office/unifi">Unifi Network</a></td>
+        </tr>
+        <tr>
+            <td style="white-space: nowrap;">15 Nov 2022</td>
+            <td><a href="https://notes.nicolasdeville.com/home-office/internet-load-balancing-failover">Load Balancing my internet connection</a></td>
+        </tr>
+        <tr>
+            <td style="white-space: nowrap;">15 Nov 2022</td>
+            <td><a href="https://notes.nicolasdeville.com/movies/1000">My Top 1,000 Movies</a></td>
+        </tr>
+        <tr>
+            <td style="white-space: nowrap;">15 Nov 2022</td>
+            <td><a href="https://notes.nicolasdeville.com/python/books">My Python Books Library</a></td>
+        </tr>
+        <tr>
+            <td style="white-space: nowrap;">15 Nov 2022</td>
+            <td><a href="https://notes.nicolasdeville.com/b2b-sales/books">My B2B Books Library</a></td>
+        </tr>
+        <tr>
+            <td style="white-space: nowrap;">15 Nov 2022</td>
+            <td><a href="https://notes.nicolasdeville.com/books/library">My Books Library</a></td>
+        </tr>
+        <tr>
+            <td style="white-space: nowrap;">15 Nov 2022</td>
+            <td><a href="https://notes.nicolasdeville.com/home-office/starlink">Starlink</a></td>
+        </tr>
+        <tr>
+            <td style="white-space: nowrap;">14 Nov 2022</td>
+            <td><a href="https://notes.nicolasdeville.com/learning/git">Learning Git</a></td>
+        </tr>
+        <tr>
+            <td style="white-space: nowrap;">14 Nov 2022</td>
+            <td><a href="https://notes.nicolasdeville.com/home-office/f1-models">F1 Model Cars</a></td>
+        </tr>
+        <tr>
+            <td style="white-space: nowrap;">13 Nov 2022</td>
+            <td><a href="https://notes.nicolasdeville.com/python/fetch-metadata-from-url">Fetch website metadata from URL</a></td>
+        </tr>
+        <tr>
+            <td style="white-space: nowrap;">13 Nov 2022</td>
+            <td><a href="https://notes.nicolasdeville.com/python/library-thefuzz">Python library: thefuzz</a></td>
+        </tr>
+        <tr>
+            <td style="white-space: nowrap;">12 Nov 2022</td>
+            <td><a href="https://notes.nicolasdeville.com/home-office/airpods-max">Airpods Max</a></td>
+        </tr>
+        <tr>
+            <td style="white-space: nowrap;">12 Nov 2022</td>
+            <td><a href="https://notes.nicolasdeville.com/helpers/macos-remove-audio-devices">How to remove audio devices on macOS</a></td>
+        </tr>
+        <tr>
+            <td style="white-space: nowrap;">11 Nov 2022</td>
+            <td><a href="https://notes.nicolasdeville.com/projects/pingee">Pingee</a></td>
+        </tr>
+        <tr>
+            <td style="white-space: nowrap;">11 Nov 2022</td>
+            <td><a href="https://notes.nicolasdeville.com/projects/notes">Project: this site</a></td>
+        </tr>
+        <tr>
+            <td style="white-space: nowrap;">11 Nov 2022</td>
+            <td><a href="https://notes.nicolasdeville.com/helpers/github-pages">Hosting my static website(s) with Github Pages</a></td>
+        </tr>
+        <tr>
+            <td style="white-space: nowrap;">11 Nov 2022</td>
+            <td><a href="https://notes.nicolasdeville.com/interests/221111-2202-linkedin-crypto">Cryptos & NFTs</a></td>
+        </tr>
+        <tr>
+            <td style="white-space: nowrap;">11 Nov 2022</td>
+            <td><a href="https://notes.nicolasdeville.com/ai/github-copilot">Using Github Copilot</a></td>
+        </tr>
+        <tr>
+            <td style="white-space: nowrap;">11 Nov 2022</td>
+            <td><a href="https://notes.nicolasdeville.com/python/library-ping3">Python library: ping3</a></td>
+        </tr>
+        <tr>
+            <td style="white-space: nowrap;">11 Nov 2022</td>
+            <td><a href="https://notes.nicolasdeville.com/python/library-speedtest-cli">Python library: speedtest-cli</a></td>
+        </tr>
+        <tr>
+            <td style="white-space: nowrap;">11 Nov 2022</td>
+            <td><a href="https://notes.nicolasdeville.com/projects/unifee">Unifee</a></td>
+        </tr>
+        <tr>
+            <td style="white-space: nowrap;">11 Nov 2022</td>
+            <td><a href="https://notes.nicolasdeville.com/helpers/unifi">Unifi network</a></td>
+        </tr>
+        <tr>
+            <td style="white-space: nowrap;">10 Nov 2022</td>
+            <td><a href="https://notes.nicolasdeville.com/learning/python">Learning Python</a></td>
+        </tr>
+        <tr>
+            <td style="white-space: nowrap;">10 Nov 2022</td>
+            <td><a href="https://notes.nicolasdeville.com/ai/dall-e">Dall-E</a></td>
+        </tr>
+        <tr>
+            <td style="white-space: nowrap;">10 Nov 2022</td>
+            <td><a href="https://notes.nicolasdeville.com/apps/affinity">Affinity creative apps</a></td>
+        </tr>
+        <tr>
+            <td style="white-space: nowrap;">10 Nov 2022</td>
+            <td><a href="https://notes.nicolasdeville.com/random/eu-dma">The EU's Digital Markets Act</a></td>
+        </tr>
+        <tr>
+            <td style="white-space: nowrap;">10 Nov 2022</td>
+            <td><a href="https://notes.nicolasdeville.com/random/sabbatical-reflections">Sabbatical reflections</a></td>
+        </tr>
+        <tr>
+            <td style="white-space: nowrap;">09 Nov 2022</td>
+            <td><a href="https://notes.nicolasdeville.com/helpers/responsive-web-design">How to build a responsive website</a></td>
+        </tr>
+        <tr>
+            <td style="white-space: nowrap;">09 Nov 2022</td>
+            <td><a href="https://notes.nicolasdeville.com/learning/ai">Learning AI</a></td>
+        </tr>
+        <tr>
+            <td style="white-space: nowrap;">09 Nov 2022</td>
+            <td><a href="https://notes.nicolasdeville.com/learning/css">Learning CSS</a></td>
+        </tr>
+        <tr>
+            <td style="white-space: nowrap;">09 Nov 2022</td>
+            <td><a href="https://notes.nicolasdeville.com/ai/221109-1549-linkedin">Hebbia</a></td>
+        </tr>
+        <tr>
+            <td style="white-space: nowrap;">07 Nov 2022</td>
+            <td><a href="https://notes.nicolasdeville.com/helpers/js-show-more-show-less">Javascript: How to add multiple Show More and Show Less buttons on a page</a></td>
+        </tr>
+        <tr>
+            <td style="white-space: nowrap;">05 Nov 2022</td>
+            <td><a href="https://notes.nicolasdeville.com/helpers/keyboard-shortcuts">My keyboard shortcuts</a></td>
+        </tr>
+        <tr>
+            <td style="white-space: nowrap;">05 Nov 2022</td>
+            <td><a href="https://notes.nicolasdeville.com/helpers/clipper">Clipper | my web clipboard</a></td>
+        </tr>
+        <tr>
+            <td style="white-space: nowrap;">05 Nov 2022</td>
+            <td><a href="https://notes.nicolasdeville.com/apps/library">My Apps Library</a></td>
+        </tr>
+        <tr>
+            <td style="white-space: nowrap;">05 Nov 2022</td>
+            <td><a href="https://notes.nicolasdeville.com/apps/radar">Apps on my radar</a></td>
+        </tr>
+        <tr>
+            <td style="white-space: nowrap;">04 Nov 2022</td>
+            <td><a href="https://notes.nicolasdeville.com/ai/stable-diffusion">Stable Diffusion</a></td>
+        </tr>
+        <tr>
+            <td style="white-space: nowrap;">04 Nov 2022</td>
+            <td><a href="https://notes.nicolasdeville.com/projects/meta-url">Python Open-Source Project: metaURL</a></td>
+        </tr>
+        <tr>
+            <td style="white-space: nowrap;">04 Nov 2022</td>
+            <td><a href="https://notes.nicolasdeville.com/ai/221104-0023-linkedin">How fast will Generative AI be mainstream?</a></td>
+        </tr>
+        <tr>
+            <td style="white-space: nowrap;">04 Nov 2022</td>
+            <td><a href="https://notes.nicolasdeville.com/ai/221104-0025-linkedin">Gartner Hype Cycle for AI</a></td>
+        </tr>
+        <tr>
+            <td style="white-space: nowrap;">04 Nov 2022</td>
+            <td><a href="https://notes.nicolasdeville.com/ai/221104-0048-linkedin">Generative Adversarial Networks (GAN)</a></td>
+        </tr>
+        <tr>
+            <td style="white-space: nowrap;">04 Nov 2022</td>
+            <td><a href="https://notes.nicolasdeville.com/python/library-spacy">Python library: spaCy</a></td>
+        </tr>
+        <tr>
+            <td style="white-space: nowrap;">04 Nov 2022</td>
+            <td><a href="https://notes.nicolasdeville.com/books/the-qualified-sales-leader">The Qualified Sales Leader, by John McMahon</a></td>
+        </tr>
+        <tr>
+            <td style="white-space: nowrap;">03 Nov 2022</td>
+            <td><a href="https://notes.nicolasdeville.com/ai/generative-ai">Generative AI</a></td>
+        </tr>
+        <tr>
+            <td style="white-space: nowrap;">03 Nov 2022</td>
+            <td><a href="https://notes.nicolasdeville.com/b2b-sales/icp">How to build an Ideal Customer Profile (ICP)</a></td>
+        </tr>
+        <tr>
+            <td style="white-space: nowrap;">02 Nov 2022</td>
+            <td><a href="https://notes.nicolasdeville.com/helpers/api-tinify">API: Tinify (TinyPNG)</a></td>
+        </tr>
+        <tr>
+            <td style="white-space: nowrap;">02 Nov 2022</td>
+            <td><a href="https://notes.nicolasdeville.com/helpers/icloud-drive">iCloud Drive</a></td>
+        </tr>
+        <tr>
+            <td style="white-space: nowrap;">02 Nov 2022</td>
+            <td><a href="https://notes.nicolasdeville.com/helpers/iframe">iFrame</a></td>
+        </tr>
+        <tr>
+            <td style="white-space: nowrap;">02 Nov 2022</td>
+            <td><a href="https://notes.nicolasdeville.com/helpers/terminal-issues">macOS Terminal issues & troubleshooting</a></td>
+        </tr>
+        <tr>
+            <td style="white-space: nowrap;">02 Nov 2022</td>
+            <td><a href="https://notes.nicolasdeville.com/helpers/seo">SEO</a></td>
+        </tr>
+        <tr>
+            <td style="white-space: nowrap;">02 Nov 2022</td>
+            <td><a href="https://notes.nicolasdeville.com/helpers/terminal">macOS Terminal</a></td>
+        </tr>
+        <tr>
+            <td style="white-space: nowrap;">02 Nov 2022</td>
+            <td><a href="https://notes.nicolasdeville.com/helpers/logos">How to get company logos from websites</a></td>
+        </tr>
+        <tr>
+            <td style="white-space: nowrap;">02 Nov 2022</td>
+            <td><a href="https://notes.nicolasdeville.com/helpers/github">Github</a></td>
+        </tr>
+        <tr>
+            <td style="white-space: nowrap;">02 Nov 2022</td>
+            <td><a href="https://notes.nicolasdeville.com/helpers/icloud-download">Download all iCloud photos to a local directory</a></td>
+        </tr>
+        <tr>
+            <td style="white-space: nowrap;">02 Nov 2022</td>
+            <td><a href="https://notes.nicolasdeville.com/helpers/search-engines">How to reference a site in search engines</a></td>
+        </tr>
+        <tr>
+            <td style="white-space: nowrap;">02 Nov 2022</td>
+            <td><a href="https://notes.nicolasdeville.com/helpers/macos-copy-filename">Copy file name to clipboard upon saving file in macOS</a></td>
+        </tr>
+        <tr>
+            <td style="white-space: nowrap;">02 Nov 2022</td>
+            <td><a href="https://notes.nicolasdeville.com/helpers/apis">APIs</a></td>
+        </tr>
+        <tr>
+            <td style="white-space: nowrap;">02 Nov 2022</td>
+            <td><a href="https://notes.nicolasdeville.com/helpers/ionos">Ionos</a></td>
+        </tr>
+        <tr>
+            <td style="white-space: nowrap;">02 Nov 2022</td>
+            <td><a href="https://notes.nicolasdeville.com/helpers/ffmpeg-ffprobe">ffmpeg and ffprobe</a></td>
+        </tr>
+        <tr>
+            <td style="white-space: nowrap;">02 Nov 2022</td>
+            <td><a href="https://notes.nicolasdeville.com/apps/alfred">Alfred</a></td>
+        </tr>
+        <tr>
+            <td style="white-space: nowrap;">02 Nov 2022</td>
+            <td><a href="https://notes.nicolasdeville.com/apps/grist">Grist | The Evolution of Spreadsheets</a></td>
+        </tr>
+        <tr>
+            <td style="white-space: nowrap;">02 Nov 2022</td>
+            <td><a href="https://notes.nicolasdeville.com/apps/vs-code">VS Code</a></td>
+        </tr>
+        <tr>
+            <td style="white-space: nowrap;">02 Nov 2022</td>
+            <td><a href="https://notes.nicolasdeville.com/interests/ai">AI</a></td>
+        </tr>
+        <tr>
+            <td style="white-space: nowrap;">02 Nov 2022</td>
+            <td><a href="https://notes.nicolasdeville.com/interests/programming">Programming</a></td>
+        </tr>
+        <tr>
+            <td style="white-space: nowrap;">02 Nov 2022</td>
+            <td><a href="https://notes.nicolasdeville.com/interests/airguns">Airguns</a></td>
+        </tr>
+        <tr>
+            <td style="white-space: nowrap;">02 Nov 2022</td>
+            <td><a href="https://notes.nicolasdeville.com/interests/metaverse">The Metaverse</a></td>
+        </tr>
+        <tr>
+            <td style="white-space: nowrap;">02 Nov 2022</td>
+            <td><a href="https://notes.nicolasdeville.com/interests/f1">F1</a></td>
+        </tr>
+        <tr>
+            <td style="white-space: nowrap;">02 Nov 2022</td>
+            <td><a href="https://notes.nicolasdeville.com/interests/longboarding">Longboarding & Skateboarding</a></td>
+        </tr>
+        <tr>
+            <td style="white-space: nowrap;">02 Nov 2022</td>
+            <td><a href="https://notes.nicolasdeville.com/interests/tea">Tea</a></td>
+        </tr>
+        <tr>
+            <td style="white-space: nowrap;">02 Nov 2022</td>
+            <td><a href="https://notes.nicolasdeville.com/interests/starlink">Starlink</a></td>
+        </tr>
+        <tr>
+            <td style="white-space: nowrap;">02 Nov 2022</td>
+            <td><a href="https://notes.nicolasdeville.com/interests/watches">Watches</a></td>
+        </tr>
+        <tr>
+            <td style="white-space: nowrap;">02 Nov 2022</td>
+            <td><a href="https://notes.nicolasdeville.com/interests/flat-caps">Flat Caps</a></td>
+        </tr>
+        <tr>
+            <td style="white-space: nowrap;">02 Nov 2022</td>
+            <td><a href="https://notes.nicolasdeville.com/interests/traditional-archery">Traditional Archery</a></td>
+        </tr>
+        <tr>
+            <td style="white-space: nowrap;">02 Nov 2022</td>
+            <td><a href="https://notes.nicolasdeville.com/interests/apple">Apple</a></td>
+        </tr>
+        <tr>
+            <td style="white-space: nowrap;">02 Nov 2022</td>
+            <td><a href="https://notes.nicolasdeville.com/interests/diabolo">Diabolo</a></td>
+        </tr>
+        <tr>
+            <td style="white-space: nowrap;">02 Nov 2022</td>
+            <td><a href="https://notes.nicolasdeville.com/interests/tactical-pens">Tactical Pens</a></td>
+        </tr>
+        <tr>
+            <td style="white-space: nowrap;">02 Nov 2022</td>
+            <td><a href="https://notes.nicolasdeville.com/interests/crypto">Crypto</a></td>
+        </tr>
+        <tr>
+            <td style="white-space: nowrap;">02 Nov 2022</td>
+            <td><a href="https://notes.nicolasdeville.com/interests/fidget-spinners">Fidget Spinners</a></td>
+        </tr>
+        <tr>
+            <td style="white-space: nowrap;">02 Nov 2022</td>
+            <td><a href="https://notes.nicolasdeville.com/interests/web3">Web3</a></td>
+        </tr>
+        <tr>
+            <td style="white-space: nowrap;">02 Nov 2022</td>
+            <td><a href="https://notes.nicolasdeville.com/interests/mechanical-keyboards">Mechanical Keyboards</a></td>
+        </tr>
+        <tr>
+            <td style="white-space: nowrap;">02 Nov 2022</td>
+            <td><a href="https://notes.nicolasdeville.com/interests/the-doors">The Doors</a></td>
+        </tr>
+        <tr>
+            <td style="white-space: nowrap;">02 Nov 2022</td>
+            <td><a href="https://notes.nicolasdeville.com/leadership/resources">Resources about Sales Leadership</a></td>
+        </tr>
+        <tr>
+            <td style="white-space: nowrap;">02 Nov 2022</td>
+            <td><a href="https://notes.nicolasdeville.com/random/automation-roi">Automation ROI</a></td>
+        </tr>
+        <tr>
+            <td style="white-space: nowrap;">02 Nov 2022</td>
+            <td><a href="https://notes.nicolasdeville.com/random/meme">Memes</a></td>
+        </tr>
+        <tr>
+            <td style="white-space: nowrap;">02 Nov 2022</td>
+            <td><a href="https://notes.nicolasdeville.com/random/thoughts">Random Thoughts</a></td>
+        </tr>
+        <tr>
+            <td style="white-space: nowrap;">02 Nov 2022</td>
+            <td><a href="https://notes.nicolasdeville.com/random/quotes">My favourite quotes</a></td>
+        </tr>
+        <tr>
+            <td style="white-space: nowrap;">02 Nov 2022</td>
+            <td><a href="https://notes.nicolasdeville.com/random/dad-bag">My dad bag</a></td>
+        </tr>
+        <tr>
+            <td style="white-space: nowrap;">02 Nov 2022</td>
+            <td><a href="https://notes.nicolasdeville.com/random/vim">Vim</a></td>
+        </tr>
+        <tr>
+            <td style="white-space: nowrap;">02 Nov 2022</td>
+            <td><a href="https://notes.nicolasdeville.com/ai/eu-aia">The EU’s Artificial Intelligence Act (AIA)</a></td>
+        </tr>
+        <tr>
+            <td style="white-space: nowrap;">02 Nov 2022</td>
+            <td><a href="https://notes.nicolasdeville.com/ai/gpt-3">GPT-3</a></td>
+        </tr>
+        <tr>
+            <td style="white-space: nowrap;">02 Nov 2022</td>
+            <td><a href="https://notes.nicolasdeville.com/ai/services">Exciting AI services</a></td>
+        </tr>
+        <tr>
+            <td style="white-space: nowrap;">02 Nov 2022</td>
+            <td><a href="https://notes.nicolasdeville.com/ai/whisper">Whisper</a></td>
+        </tr>
+        <tr>
+            <td style="white-space: nowrap;">02 Nov 2022</td>
+            <td><a href="https://notes.nicolasdeville.com/ai/art">AI-generated art</a></td>
+        </tr>
+        <tr>
+            <td style="white-space: nowrap;">02 Nov 2022</td>
+            <td><a href="https://notes.nicolasdeville.com/tesla/ai-day-2022">Tesla AI Day 2022</a></td>
+        </tr>
+        <tr>
+            <td style="white-space: nowrap;">02 Nov 2022</td>
+            <td><a href="https://notes.nicolasdeville.com/projects/script-screenshot-app">Script: screenshot video app, save file & generate HTML code</a></td>
+        </tr>
+        <tr>
+            <td style="white-space: nowrap;">02 Nov 2022</td>
+            <td><a href="https://notes.nicolasdeville.com/projects/apps-library">Project: Apps Library</a></td>
+        </tr>
+        <tr>
+            <td style="white-space: nowrap;">02 Nov 2022</td>
+            <td><a href="https://notes.nicolasdeville.com/projects/scrapee">Scrapee</a></td>
+        </tr>
+        <tr>
+            <td style="white-space: nowrap;">02 Nov 2022</td>
+            <td><a href="https://notes.nicolasdeville.com/projects/imapee">Imapee</a></td>
+        </tr>
+        <tr>
+            <td style="white-space: nowrap;">02 Nov 2022</td>
+            <td><a href="https://notes.nicolasdeville.com/projects/transcribee">Transcribee</a></td>
+        </tr>
+        <tr>
+            <td style="white-space: nowrap;">02 Nov 2022</td>
+            <td><a href="https://notes.nicolasdeville.com/projects/indexall">indeXall | indexing the worlds of passions</a></td>
+        </tr>
+        <tr>
+            <td style="white-space: nowrap;">02 Nov 2022</td>
+            <td><a href="https://notes.nicolasdeville.com/projects/clipee">Clipee</a></td>
+        </tr>
+        <tr>
+            <td style="white-space: nowrap;">02 Nov 2022</td>
+            <td><a href="https://notes.nicolasdeville.com/projects/emailee">Emailee</a></td>
+        </tr>
+        <tr>
+            <td style="white-space: nowrap;">02 Nov 2022</td>
+            <td><a href="https://notes.nicolasdeville.com/projects/mailingee">Mailingee</a></td>
+        </tr>
+        <tr>
+            <td style="white-space: nowrap;">02 Nov 2022</td>
+            <td><a href="https://notes.nicolasdeville.com/projects/imagee">Imagee</a></td>
+        </tr>
+        <tr>
+            <td style="white-space: nowrap;">02 Nov 2022</td>
+            <td><a href="https://notes.nicolasdeville.com/projects/twittee">Twittee</a></td>
+        </tr>
+        <tr>
+            <td style="white-space: nowrap;">02 Nov 2022</td>
+            <td><a href="https://notes.nicolasdeville.com/projects/recruiters-directory">Building a directory of EU recruiters</a></td>
+        </tr>
+        <tr>
+            <td style="white-space: nowrap;">02 Nov 2022</td>
+            <td><a href="https://notes.nicolasdeville.com/projects/libraree">Libraree</a></td>
+        </tr>
+        <tr>
+            <td style="white-space: nowrap;">02 Nov 2022</td>
+            <td><a href="https://notes.nicolasdeville.com/projects/books-library">Managing my books library with Python</a></td>
+        </tr>
+        <tr>
+            <td style="white-space: nowrap;">02 Nov 2022</td>
+            <td><a href="https://notes.nicolasdeville.com/projects/1000-movies">Project: Top 1000 movies</a></td>
+        </tr>
+        <tr>
+            <td style="white-space: nowrap;">02 Nov 2022</td>
+            <td><a href="https://notes.nicolasdeville.com/learning/html">Learning HTML</a></td>
+        </tr>
+        <tr>
+            <td style="white-space: nowrap;">02 Nov 2022</td>
+            <td><a href="https://notes.nicolasdeville.com/learning/udemy">My courses on Udemy</a></td>
+        </tr>
+        <tr>
+            <td style="white-space: nowrap;">02 Nov 2022</td>
+            <td><a href="https://notes.nicolasdeville.com/learning/speed-reading">Learning Speed Reading</a></td>
+        </tr>
+        <tr>
+            <td style="white-space: nowrap;">02 Nov 2022</td>
+            <td><a href="https://notes.nicolasdeville.com/learning/new-words">Learning new words</a></td>
+        </tr>
+        <tr>
+            <td style="white-space: nowrap;">02 Nov 2022</td>
+            <td><a href="https://notes.nicolasdeville.com/learning/computer-science">Learning Computer Science</a></td>
+        </tr>
+        <tr>
+            <td style="white-space: nowrap;">02 Nov 2022</td>
+            <td><a href="https://notes.nicolasdeville.com/learning/javascript">Learning Javascript</a></td>
+        </tr>
+        <tr>
+            <td style="white-space: nowrap;">02 Nov 2022</td>
+            <td><a href="https://notes.nicolasdeville.com/learning/sql">Learning SQL</a></td>
+        </tr>
+        <tr>
+            <td style="white-space: nowrap;">02 Nov 2022</td>
+            <td><a href="https://notes.nicolasdeville.com/learning/touch-typing">Learning Touch Typing</a></td>
+        </tr>
+        <tr>
+            <td style="white-space: nowrap;">02 Nov 2022</td>
+            <td><a href="https://notes.nicolasdeville.com/learning/markdown">Learning Markdown</a></td>
+        </tr>
+        <tr>
+            <td style="white-space: nowrap;">02 Nov 2022</td>
+            <td><a href="https://notes.nicolasdeville.com/learning/basketball">Learning Basketball</a></td>
+        </tr>
+        <tr>
+            <td style="white-space: nowrap;">02 Nov 2022</td>
+            <td><a href="https://notes.nicolasdeville.com/home-office/deep-work">Resources for Deep Work</a></td>
+        </tr>
+        <tr>
+            <td style="white-space: nowrap;">02 Nov 2022</td>
+            <td><a href="https://notes.nicolasdeville.com/home-office/kinesis">Kinesis Advantage keyboard</a></td>
+        </tr>
+        <tr>
+            <td style="white-space: nowrap;">02 Nov 2022</td>
+            <td><a href="https://notes.nicolasdeville.com/home-office/shopping">Upgrade ideas for home office</a></td>
+        </tr>
+        <tr>
+            <td style="white-space: nowrap;">02 Nov 2022</td>
+            <td><a href="https://notes.nicolasdeville.com/home-office/scanner">Fujitsu ScanSnap iX500</a></td>
+        </tr>
+        <tr>
+            <td style="white-space: nowrap;">02 Nov 2022</td>
+            <td><a href="https://notes.nicolasdeville.com/home-office/desk">Standing desk: Leetdesk</a></td>
+        </tr>
+        <tr>
+            <td style="white-space: nowrap;">02 Nov 2022</td>
+            <td><a href="https://notes.nicolasdeville.com/home-office/herman-miller-embody">Herman Miller x Logitech Embody Chair</a></td>
+        </tr>
+        <tr>
+            <td style="white-space: nowrap;">02 Nov 2022</td>
+            <td><a href="https://notes.nicolasdeville.com/home-office/monitors">Monitors</a></td>
+        </tr>
+        <tr>
+            <td style="white-space: nowrap;">02 Nov 2022</td>
+            <td><a href="https://notes.nicolasdeville.com/home-office/kvm">KVM Switch</a></td>
+        </tr>
+        <tr>
+            <td style="white-space: nowrap;">02 Nov 2022</td>
+            <td><a href="https://notes.nicolasdeville.com/home-office/streamdeck">Streamdeck for business users</a></td>
+        </tr>
+        <tr>
+            <td style="white-space: nowrap;">02 Nov 2022</td>
+            <td><a href="https://notes.nicolasdeville.com/home-office/setup">Home Office Setup</a></td>
+        </tr>
+        <tr>
+            <td style="white-space: nowrap;">02 Nov 2022</td>
+            <td><a href="https://notes.nicolasdeville.com/home-office/usb-hubs-and-docks">USB Hubs & Docks</a></td>
+        </tr>
+        <tr>
+            <td style="white-space: nowrap;">02 Nov 2022</td>
+            <td><a href="https://notes.nicolasdeville.com/home-office/cable-tester">Ethernet Cable Tester</a></td>
+        </tr>
+        <tr>
+            <td style="white-space: nowrap;">02 Nov 2022</td>
+            <td><a href="https://notes.nicolasdeville.com/home-office/contour-shuttle">Contour ShuttlePRO v2</a></td>
+        </tr>
+        <tr>
+            <td style="white-space: nowrap;">02 Nov 2022</td>
+            <td><a href="https://notes.nicolasdeville.com/python/library-sqlite3">Python Library: sqlite3</a></td>
+        </tr>
+        <tr>
+            <td style="white-space: nowrap;">02 Nov 2022</td>
+            <td><a href="https://notes.nicolasdeville.com/python/library-tkinter">Python Library: tkinter</a></td>
+        </tr>
+        <tr>
+            <td style="white-space: nowrap;">02 Nov 2022</td>
+            <td><a href="https://notes.nicolasdeville.com/python/open-source">About open-source projects</a></td>
+        </tr>
+        <tr>
+            <td style="white-space: nowrap;">02 Nov 2022</td>
+            <td><a href="https://notes.nicolasdeville.com/python/snippet-download-files">Python snippet: download files</a></td>
+        </tr>
+        <tr>
+            <td style="white-space: nowrap;">02 Nov 2022</td>
+            <td><a href="https://notes.nicolasdeville.com/python/library-pymsgbox">Python Library: PyMsgBox</a></td>
+        </tr>
+        <tr>
+            <td style="white-space: nowrap;">02 Nov 2022</td>
+            <td><a href="https://notes.nicolasdeville.com/python/library-tweepy">Python Library: tweepy</a></td>
+        </tr>
+        <tr>
+            <td style="white-space: nowrap;">02 Nov 2022</td>
+            <td><a href="https://notes.nicolasdeville.com/python/library-dateutil">Python Library: dateutil</a></td>
+        </tr>
+        <tr>
+            <td style="white-space: nowrap;">02 Nov 2022</td>
+            <td><a href="https://notes.nicolasdeville.com/python/ui">How to create user interfaces with Python</a></td>
+        </tr>
+        <tr>
+            <td style="white-space: nowrap;">02 Nov 2022</td>
+            <td><a href="https://notes.nicolasdeville.com/python/libraries">Libraries for Python</a></td>
+        </tr>
+        <tr>
+            <td style="white-space: nowrap;">02 Nov 2022</td>
+            <td><a href="https://notes.nicolasdeville.com/python/library-pelican">Building a static site with Pelican</a></td>
+        </tr>
+        <tr>
+            <td style="white-space: nowrap;">02 Nov 2022</td>
+            <td><a href="https://notes.nicolasdeville.com/python/sending-emails">Sending emails with Python</a></td>
+        </tr>
+        <tr>
+            <td style="white-space: nowrap;">02 Nov 2022</td>
+            <td><a href="https://notes.nicolasdeville.com/python/sitemap-generator">Generate Sitemap with Python</a></td>
+        </tr>
+        <tr>
+            <td style="white-space: nowrap;">02 Nov 2022</td>
+            <td><a href="https://notes.nicolasdeville.com/python/extract-app-logos">Extract all app logos to PNG</a></td>
+        </tr>
+        <tr>
+            <td style="white-space: nowrap;">02 Nov 2022</td>
+            <td><a href="https://notes.nicolasdeville.com/python/files">Dealing with files in Python</a></td>
+        </tr>
+        <tr>
+            <td style="white-space: nowrap;">02 Nov 2022</td>
+            <td><a href="https://notes.nicolasdeville.com/python/snippet-clean-beginning-strings">Python snippet: Clean beginning of strings</a></td>
+        </tr>
+        <tr>
+            <td style="white-space: nowrap;">02 Nov 2022</td>
+            <td><a href="https://notes.nicolasdeville.com/python/my-utils">my-utils</a></td>
+        </tr>
+        <tr>
+            <td style="white-space: nowrap;">02 Nov 2022</td>
+            <td><a href="https://notes.nicolasdeville.com/python/save-images">Save images with Python</a></td>
+        </tr>
+        <tr>
+            <td style="white-space: nowrap;">02 Nov 2022</td>
+            <td><a href="https://notes.nicolasdeville.com/python/script-get-urls-from-html">Get all links in a HTML page</a></td>
+        </tr>
+        <tr>
+            <td style="white-space: nowrap;">02 Nov 2022</td>
+            <td><a href="https://notes.nicolasdeville.com/python/library-requests">Python Library: requests</a></td>
+        </tr>
+        <tr>
+            <td style="white-space: nowrap;">02 Nov 2022</td>
+            <td><a href="https://notes.nicolasdeville.com/python/library-beautifulsoup">Python Library: Beautifulsoup</a></td>
+        </tr>
+        <tr>
+            <td style="white-space: nowrap;">02 Nov 2022</td>
+            <td><a href="https://notes.nicolasdeville.com/python/library-datetime">Python Library: datetime</a></td>
+        </tr>
+        <tr>
+            <td style="white-space: nowrap;">02 Nov 2022</td>
+            <td><a href="https://notes.nicolasdeville.com/python/text-files">Managing text files with Python</a></td>
+        </tr>
+        <tr>
+            <td style="white-space: nowrap;">02 Nov 2022</td>
+            <td><a href="https://notes.nicolasdeville.com/python/paths">How to find all paths being searched by Python</a></td>
+        </tr>
+        <tr>
+            <td style="white-space: nowrap;">02 Nov 2022</td>
+            <td><a href="https://notes.nicolasdeville.com/python/library-tmdbapis">Python Library: tmdbapis | fetching movie data</a></td>
+        </tr>
+        <tr>
+            <td style="white-space: nowrap;">02 Nov 2022</td>
+            <td><a href="https://notes.nicolasdeville.com/python/boilerplate">My Python scripts boilerplate</a></td>
+        </tr>
+        <tr>
+            <td style="white-space: nowrap;">02 Nov 2022</td>
+            <td><a href="https://notes.nicolasdeville.com/python/create-executable">Create executable of a Pyhon application</a></td>
+        </tr>
+        <tr>
+            <td style="white-space: nowrap;">02 Nov 2022</td>
+            <td><a href="https://notes.nicolasdeville.com/python/library-jinja2">Python Library: jinja2</a></td>
+        </tr>
+        <tr>
+            <td style="white-space: nowrap;">02 Nov 2022</td>
+            <td><a href="https://notes.nicolasdeville.com/python/unicode">Unicode in Python</a></td>
+        </tr>
+        <tr>
+            <td style="white-space: nowrap;">02 Nov 2022</td>
+            <td><a href="https://notes.nicolasdeville.com/python/library-yagmail">Python Library: Yagmail</a></td>
+        </tr>
+        <tr>
+            <td style="white-space: nowrap;">02 Nov 2022</td>
+            <td><a href="https://notes.nicolasdeville.com/python/library-tldextract">Python Library: tldextract</a></td>
+        </tr>
+        <tr>
+            <td style="white-space: nowrap;">02 Nov 2022</td>
+            <td><a href="https://notes.nicolasdeville.com/python/library-os">Python Library: os (built-in)</a></td>
+        </tr>
+        <tr>
+            <td style="white-space: nowrap;">02 Nov 2022</td>
+            <td><a href="https://notes.nicolasdeville.com/python/library-geopy">Python Library: geopy</a></td>
+        </tr>
+        <tr>
+            <td style="white-space: nowrap;">02 Nov 2022</td>
+            <td><a href="https://notes.nicolasdeville.com/python/library-defaultdict">Python Library: defaultdict</a></td>
+        </tr>
+        <tr>
+            <td style="white-space: nowrap;">02 Nov 2022</td>
+            <td><a href="https://notes.nicolasdeville.com/python/metadata-from-url">How to get a website's metadata with Python</a></td>
+        </tr>
+        <tr>
+            <td style="white-space: nowrap;">02 Nov 2022</td>
+            <td><a href="https://notes.nicolasdeville.com/python/shell-scripts">How to run Python scripts with shell scripts</a></td>
+        </tr>
+        <tr>
+            <td style="white-space: nowrap;">02 Nov 2022</td>
+            <td><a href="https://notes.nicolasdeville.com/python/namedtuples">namedtuples</a></td>
+        </tr>
+        <tr>
+            <td style="white-space: nowrap;">02 Nov 2022</td>
+            <td><a href="https://notes.nicolasdeville.com/python/library-tmdbv3api">Python Library: tmdbv3api | fetching movie data</a></td>
+        </tr>
+        <tr>
+            <td style="white-space: nowrap;">02 Nov 2022</td>
+            <td><a href="https://notes.nicolasdeville.com/python/string">String snippets</a></td>
+        </tr>
+        <tr>
+            <td style="white-space: nowrap;">02 Nov 2022</td>
+            <td><a href="https://notes.nicolasdeville.com/python/pip">PIP: Python's Package Manager</a></td>
+        </tr>
+        <tr>
+            <td style="white-space: nowrap;">02 Nov 2022</td>
+            <td><a href="https://notes.nicolasdeville.com/python/library-dotenv">How to save confidential data in environment variables with dotenv</a></td>
+        </tr>
+        <tr>
+            <td style="white-space: nowrap;">02 Nov 2022</td>
+            <td><a href="https://notes.nicolasdeville.com/python/library-termtables">Python Library: termtables | Pretty tables in terminal</a></td>
+        </tr>
+        <tr>
+            <td style="white-space: nowrap;">02 Nov 2022</td>
+            <td><a href="https://notes.nicolasdeville.com/python/library-nltk">Python Library: nltk</a></td>
+        </tr>
+        <tr>
+            <td style="white-space: nowrap;">02 Nov 2022</td>
+            <td><a href="https://notes.nicolasdeville.com/python/virtual-environments">Managing Virtual Environments in Python</a></td>
+        </tr>
+        <tr>
+            <td style="white-space: nowrap;">02 Nov 2022</td>
+            <td><a href="https://notes.nicolasdeville.com/python/copy-folder">Copy folders with Python</a></td>
+        </tr>
+        <tr>
+            <td style="white-space: nowrap;">02 Nov 2022</td>
+            <td><a href="https://notes.nicolasdeville.com/python/library-tqdm">Python library: tqdm</a></td>
+        </tr>
+        <tr>
+            <td style="white-space: nowrap;">02 Nov 2022</td>
+            <td><a href="https://notes.nicolasdeville.com/python/library-pickle">Python Library: pickle</a></td>
+        </tr>
+        <tr>
+            <td style="white-space: nowrap;">02 Nov 2022</td>
+            <td><a href="https://notes.nicolasdeville.com/python/python-notion">Fetch Notion database data with Python</a></td>
+        </tr>
+        <tr>
+            <td style="white-space: nowrap;">02 Nov 2022</td>
+            <td><a href="https://notes.nicolasdeville.com/python/library-openpyxl">Python Library: openpyxl</a></td>
+        </tr>
+        <tr>
+            <td style="white-space: nowrap;">02 Nov 2022</td>
+            <td><a href="https://notes.nicolasdeville.com/python/library-notion-py">Fetching data from Notion API with Python</a></td>
+        </tr>
+        <tr>
+            <td style="white-space: nowrap;">02 Nov 2022</td>
+            <td><a href="https://notes.nicolasdeville.com/python/library-imap-tools">Python Library: imap-tools</a></td>
+        </tr>
+        <tr>
+            <td style="white-space: nowrap;">02 Nov 2022</td>
+            <td><a href="https://notes.nicolasdeville.com/python/tmdb-api">Fetching data from TMDB API</a></td>
+        </tr>
+        <tr>
+            <td style="white-space: nowrap;">02 Nov 2022</td>
+            <td><a href="https://notes.nicolasdeville.com/python/library-speech-recognition">Python Library: speech_recognition</a></td>
+        </tr>
+        <tr>
+            <td style="white-space: nowrap;">02 Nov 2022</td>
+            <td><a href="https://notes.nicolasdeville.com/python/library-moviepy">Python library: moviepy</a></td>
+        </tr>
+        <tr>
+            <td style="white-space: nowrap;">02 Nov 2022</td>
+            <td><a href="https://notes.nicolasdeville.com/python/gitignore">Gitignore</a></td>
+        </tr>
+        <tr>
+            <td style="white-space: nowrap;">02 Nov 2022</td>
+            <td><a href="https://notes.nicolasdeville.com/python/snippets">Python Snippets</a></td>
+        </tr>
+        <tr>
+            <td style="white-space: nowrap;">02 Nov 2022</td>
+            <td><a href="https://notes.nicolasdeville.com/python/library-slugify">Python Library: slugify</a></td>
+        </tr>
+        <tr>
+            <td style="white-space: nowrap;">02 Nov 2022</td>
+            <td><a href="https://notes.nicolasdeville.com/python/library-pynput">Python Library: pynput</a></td>
+        </tr>
+        <tr>
+            <td style="white-space: nowrap;">02 Nov 2022</td>
+            <td><a href="https://notes.nicolasdeville.com/python/export-kindle-library">Exporting my Kindle library data</a></td>
+        </tr>
+        <tr>
+            <td style="white-space: nowrap;">02 Nov 2022</td>
+            <td><a href="https://notes.nicolasdeville.com/python/print">Print statement tricks</a></td>
+        </tr>
+        <tr>
+            <td style="white-space: nowrap;">02 Nov 2022</td>
+            <td><a href="https://notes.nicolasdeville.com/python/library-selenium">Python Library: Selenium</a></td>
+        </tr>
+        <tr>
+            <td style="white-space: nowrap;">02 Nov 2022</td>
+            <td><a href="https://notes.nicolasdeville.com/python/library-urllib">Python Library: urllib</a></td>
+        </tr>
+        <tr>
+            <td style="white-space: nowrap;">02 Nov 2022</td>
+            <td><a href="https://notes.nicolasdeville.com/python/library-pydub">Python Library: pydub</a></td>
+        </tr>
+        <tr>
+            <td style="white-space: nowrap;">02 Nov 2022</td>
+            <td><a href="https://notes.nicolasdeville.com/python/library-re">Python Library: re (regex)</a></td>
+        </tr>
+        <tr>
+            <td style="white-space: nowrap;">02 Nov 2022</td>
+            <td><a href="https://notes.nicolasdeville.com/python/library-send2trash">Python Library: Send2Trash</a></td>
+        </tr>
+        <tr>
+            <td style="white-space: nowrap;">02 Nov 2022</td>
+            <td><a href="https://notes.nicolasdeville.com/b2b-sales/cold-emails">Cold Emails</a></td>
+        </tr>
+        <tr>
+            <td style="white-space: nowrap;">02 Nov 2022</td>
+            <td><a href="https://notes.nicolasdeville.com/b2b-sales/email-tools">Tools for email finding & validation</a></td>
+        </tr>
+        <tr>
+            <td style="white-space: nowrap;">02 Nov 2022</td>
+            <td><a href="https://notes.nicolasdeville.com/b2b-sales/email-automation">Email Automation for Sales outreaches</a></td>
+        </tr>
+        <tr>
+            <td style="white-space: nowrap;">02 Nov 2022</td>
+            <td><a href="https://notes.nicolasdeville.com/startups/advisable">Advisable</a></td>
+        </tr>
+        <tr>
+            <td style="white-space: nowrap;">31 Oct 2022</td>
+            <td><a href="https://notes.nicolasdeville.com/home-office/charachorder">CharaChorder</a></td>
+        </tr>
+        <tr>
+            <td style="white-space: nowrap;">31 Oct 2022</td>
+            <td><a href="https://notes.nicolasdeville.com/helpers/pagefind">Pagefind</a></td>
+        </tr>
+        <tr>
+            <td style="white-space: nowrap;">30 Oct 2022</td>
+            <td><a href="https://notes.nicolasdeville.com/tesla/ai-robotics-company">Tesla is an AI & Robotics company.</a></td>
+        </tr>
+        <tr>
+            <td style="white-space: nowrap;">29 Oct 2022</td>
+            <td><a href="https://notes.nicolasdeville.com/b2b-sales/coi">Cost Of Inaction (COI) as urgency driver</a></td>
+        </tr>
+        <tr>
+            <td style="white-space: nowrap;">28 Oct 2022</td>
+            <td><a href="https://notes.nicolasdeville.com/python/library-pillow">Python library: Pillow</a></td>
+        </tr>
+        <tr>
+            <td style="white-space: nowrap;">28 Oct 2022</td>
+            <td><a href="https://notes.nicolasdeville.com/python/script-extract-audio">Python script: Extract audio from Youtube videos</a></td>
+        </tr>
+        <tr>
+            <td style="white-space: nowrap;">23 Oct 2022</td>
+            <td><a href="https://notes.nicolasdeville.com/ai/221023-1009-linkedin">Joe Rogan Meets Steve Jobs in an AI-Generated Podcast</a></td>
+        </tr>
+        <tr>
+            <td style="white-space: nowrap;">23 Oct 2022</td>
+            <td><a href="https://notes.nicolasdeville.com/ai/221023-1050-linkedin">Linkedin post: Google Flan</a></td>
+        </tr>
+        <tr>
+            <td style="white-space: nowrap;">21 Oct 2022</td>
+            <td><a href="https://notes.nicolasdeville.com/ai/221021-1053-linkedin">Linkedin post: Learning AI</a></td>
+        </tr>
+        <tr>
+            <td style="white-space: nowrap;">21 Oct 2022</td>
+            <td><a href="https://notes.nicolasdeville.com/ai/221021-1054-linkedin">Linkedin post: Flying is impossible</a></td>
+        </tr>
+        <tr>
+            <td style="white-space: nowrap;">21 Oct 2022</td>
+            <td><a href="https://notes.nicolasdeville.com/ai/221021-1722-linkedin">Linkedin post: Lex Fridman's Deep Learning Basics</a></td>
+        </tr>
+        <tr>
+            <td style="white-space: nowrap;">19 Oct 2022</td>
+            <td><a href="https://notes.nicolasdeville.com/python/script-download-stripe-invoices">Python script to download all invoices from Stripe as PDFs</a></td>
+        </tr>
+        <tr>
+            <td style="white-space: nowrap;">18 Oct 2022</td>
+            <td><a href="https://notes.nicolasdeville.com/b2b-sales/being-bad-at-something">Being bad at something</a></td>
+        </tr>
+        <tr>
+            <td style="white-space: nowrap;">18 Oct 2022</td>
+            <td><a href="https://notes.nicolasdeville.com/helpers/datev">Working with DATEV</a></td>
+        </tr>
+        <tr>
+            <td style="white-space: nowrap;">18 Oct 2022</td>
+            <td><a href="https://notes.nicolasdeville.com/leadership/delegating-automating">Delegating & automating</a></td>
+        </tr>
+        <tr>
+            <td style="white-space: nowrap;">18 Oct 2022</td>
+            <td><a href="https://notes.nicolasdeville.com/startups/euroscape-2022">Accel's Euroscape 2022 report</a></td>
+        </tr>
+        <tr>
+            <td style="white-space: nowrap;">10 Oct 2022</td>
+            <td><a href="https://notes.nicolasdeville.com/leadership/okr">OKR</a></td>
+        </tr>
+        <tr>
+            <td style="white-space: nowrap;">08 Oct 2022</td>
+            <td><a href="https://notes.nicolasdeville.com/helpers/icons">Icons Libraries</a></td>
+        </tr>
+        <tr>
+            <td style="white-space: nowrap;">08 Oct 2022</td>
+            <td><a href="https://notes.nicolasdeville.com/ai/youtube-channels">AI Youtube channels</a></td>
+        </tr>
+        <tr>
+            <td style="white-space: nowrap;">07 Oct 2022</td>
+            <td><a href="https://notes.nicolasdeville.com/helpers/display-emails-website">How to display emails on websites to avoid spam</a></td>
+        </tr>
+        <tr>
+            <td style="white-space: nowrap;">07 Oct 2022</td>
+            <td><a href="https://notes.nicolasdeville.com/tesla/optimus">Optimus - Tesla's humanoid robot</a></td>
+        </tr>
+        <tr>
+            <td style="white-space: nowrap;">07 Oct 2022</td>
+            <td><a href="https://notes.nicolasdeville.com/tesla/share-price">Tesla Share Price</a></td>
+        </tr>
+        <tr>
+            <td style="white-space: nowrap;">06 Oct 2022</td>
+            <td><a href="https://notes.nicolasdeville.com/b2b-sales/cyberleads">Cyberleads</a></td>
+        </tr>
+        <tr>
+            <td style="white-space: nowrap;">05 Oct 2022</td>
+            <td><a href="https://notes.nicolasdeville.com/helpers/css-responsive-tables">Responsive tables in CSS</a></td>
+        </tr>
+        <tr>
+            <td style="white-space: nowrap;">03 Oct 2022</td>
+            <td><a href="https://notes.nicolasdeville.com/random/rowing">Indoor rowing</a></td>
+        </tr>
+        <tr>
+            <td style="white-space: nowrap;">02 Oct 2022</td>
+            <td><a href="https://notes.nicolasdeville.com/startups/idea-mass-cv-drop">Mass CV Drop</a></td>
+        </tr>
+        <tr>
+            <td style="white-space: nowrap;">02 Oct 2022</td>
+            <td><a href="https://notes.nicolasdeville.com/apps/iina">IINA</a></td>
+        </tr>
+        <tr>
+            <td style="white-space: nowrap;">02 Oct 2022</td>
+            <td><a href="https://notes.nicolasdeville.com/helpers/javascript-for-automation">Javascript for automation</a></td>
+        </tr>
+        <tr>
+            <td style="white-space: nowrap;">02 Oct 2022</td>
+            <td><a href="https://notes.nicolasdeville.com/leadership/seasoned-vp-stretch-vp.">Seasoned VP vs Stretch VP</a></td>
+        </tr>
+        <tr>
+            <td style="white-space: nowrap;">02 Oct 2022</td>
+            <td><a href="https://notes.nicolasdeville.com/interests/traditional-shaving">Traditional Shaving</a></td>
+        </tr>
+        <tr>
+            <td style="white-space: nowrap;">01 Oct 2022</td>
+            <td><a href="https://notes.nicolasdeville.com/apps/excel">Excel</a></td>
+        </tr>
+        <tr>
+            <td style="white-space: nowrap;">01 Oct 2022</td>
+            <td><a href="https://notes.nicolasdeville.com/helpers/extract-audio-from-video">How to extract audio from video on macOS</a></td>
+        </tr>
+        <tr>
+            <td style="white-space: nowrap;">01 Oct 2022</td>
+            <td><a href="https://notes.nicolasdeville.com/startups/idea-impromptu-conference-calls">Impromptu conference calls</a></td>
+        </tr>
+        <tr>
+            <td style="white-space: nowrap;">30 Sep 2022</td>
+            <td><a href="https://notes.nicolasdeville.com/apps/hubspot">Hubspot</a></td>
+        </tr>
+        <tr>
+            <td style="white-space: nowrap;">27 Sep 2022</td>
+            <td><a href="https://notes.nicolasdeville.com/apps/atom">Atom</a></td>
+        </tr>
+        <tr>
+            <td style="white-space: nowrap;">27 Sep 2022</td>
+            <td><a href="https://notes.nicolasdeville.com/helpers/get-current-url">Get current URL from browser in macOS</a></td>
+        </tr>
+        <tr>
+            <td style="white-space: nowrap;">27 Sep 2022</td>
+            <td><a href="https://notes.nicolasdeville.com/apps/proton-vpn">Proton VPN</a></td>
+        </tr>
+        <tr>
+            <td style="white-space: nowrap;">27 Sep 2022</td>
+            <td><a href="https://notes.nicolasdeville.com/helpers/twitter-cli">How to use Twitter via CLI (Command Line Interface) on macOS</a></td>
+        </tr>
+        <tr>
+            <td style="white-space: nowrap;">26 Sep 2022</td>
+            <td><a href="https://notes.nicolasdeville.com/python/snippet-parent-folder-name">Get parent folder name with Python</a></td>
+        </tr>
+        <tr>
+            <td style="white-space: nowrap;">26 Sep 2022</td>
+            <td><a href="https://notes.nicolasdeville.com/python/snippet-pass-arguments">How to pass variables to a Python scripts with argument</a></td>
+        </tr>
+        <tr>
+            <td style="white-space: nowrap;">25 Sep 2022</td>
+            <td><a href="https://notes.nicolasdeville.com/learning/map-coordinates">Learning Map Coordinates</a></td>
+        </tr>
+        <tr>
+            <td style="white-space: nowrap;">23 Sep 2022</td>
+            <td><a href="https://notes.nicolasdeville.com/apps/fig">Fig</a></td>
+        </tr>
+        <tr>
+            <td style="white-space: nowrap;">23 Sep 2022</td>
+            <td><a href="https://notes.nicolasdeville.com/ai/questions">AI questions</a></td>
+        </tr>
+        <tr>
+            <td style="white-space: nowrap;">22 Sep 2022</td>
+            <td><a href="https://notes.nicolasdeville.com/apps/audirvana">Audirvana</a></td>
+        </tr>
+        <tr>
+            <td style="white-space: nowrap;">22 Sep 2022</td>
+            <td><a href="https://notes.nicolasdeville.com/python/basic-string-encryption">Basic string encryption with Python</a></td>
+        </tr>
+        <tr>
+            <td style="white-space: nowrap;">22 Sep 2022</td>
+            <td><a href="https://notes.nicolasdeville.com/projects/clipper">Clipper</a></td>
+        </tr>
+        <tr>
+            <td style="white-space: nowrap;">22 Sep 2022</td>
+            <td><a href="https://notes.nicolasdeville.com/python/import-txt-to-grist">Import text file to Grist</a></td>
+        </tr>
+        <tr>
+            <td style="white-space: nowrap;">22 Sep 2022</td>
+            <td><a href="https://notes.nicolasdeville.com/home-office/ipad">iPad</a></td>
+        </tr>
+        <tr>
+            <td style="white-space: nowrap;">22 Sep 2022</td>
+            <td><a href="https://notes.nicolasdeville.com/python/snippet-open-text-file">Open text files with Python</a></td>
+        </tr>
+        <tr>
+            <td style="white-space: nowrap;">21 Sep 2022</td>
+            <td><a href="https://notes.nicolasdeville.com/apps/calendar-tools">Calendar Tools</a></td>
+        </tr>
+        <tr>
+            <td style="white-space: nowrap;">21 Sep 2022</td>
+            <td><a href="https://notes.nicolasdeville.com/b2b-sales/meeting-tools">Meeting tools for Sales</a></td>
+        </tr>
+        <tr>
+            <td style="white-space: nowrap;">21 Sep 2022</td>
+            <td><a href="https://notes.nicolasdeville.com/apps/spark">Spark</a></td>
+        </tr>
+        <tr>
+            <td style="white-space: nowrap;">21 Sep 2022</td>
+            <td><a href="https://notes.nicolasdeville.com/b2b-sales/video-tools">Video Tools for Sales</a></td>
+        </tr>
+        <tr>
+            <td style="white-space: nowrap;">19 Sep 2022</td>
+            <td><a href="https://notes.nicolasdeville.com/apps/best-lists">Lists of 'Best apps for macOS'</a></td>
+        </tr>
+        <tr>
+            <td style="white-space: nowrap;">18 Sep 2022</td>
+            <td><a href="https://notes.nicolasdeville.com/helpers/applescript">AppleScript</a></td>
+        </tr>
+        <tr>
+            <td style="white-space: nowrap;">17 Sep 2022</td>
+            <td><a href="https://notes.nicolasdeville.com/apps/just-press-record">Just Press Record</a></td>
+        </tr>
+        <tr>
+            <td style="white-space: nowrap;">16 Sep 2022</td>
+            <td><a href="https://notes.nicolasdeville.com/python/function-separator">A short function to generate print separators</a></td>
+        </tr>
+        <tr>
+            <td style="white-space: nowrap;">16 Sep 2022</td>
+            <td><a href="https://notes.nicolasdeville.com/helpers/html-metatags">HTML Meta tags for SEO</a></td>
+        </tr>
+        <tr>
+            <td style="white-space: nowrap;">16 Sep 2022</td>
+            <td><a href="https://notes.nicolasdeville.com/b2b-sales/plan-your-moves-ahead">Plan your moves ahead</a></td>
+        </tr>
+        <tr>
+            <td style="white-space: nowrap;">15 Sep 2022</td>
+            <td><a href="https://notes.nicolasdeville.com/python/solve-certificate-verify-failed">How to solve urlopen error SSL: CERTIFICATE_VERIFY_FAILED</a></td>
+        </tr>
+        <tr>
+            <td style="white-space: nowrap;">11 Sep 2022</td>
+            <td><a href="https://notes.nicolasdeville.com/python/script-consolidate-log">Python Script: consolidate list of emails from txt log files</a></td>
+        </tr>
+        <tr>
+            <td style="white-space: nowrap;">09 Sep 2022</td>
+            <td><a href="https://notes.nicolasdeville.com/leadership/comp-plans">Compensation Plans</a></td>
+        </tr>
+        <tr>
+            <td style="white-space: nowrap;">06 Sep 2022</td>
+            <td><a href="https://notes.nicolasdeville.com/b2b-sales/outbound">Outbound Lead Generation</a></td>
+        </tr>
+        <tr>
+            <td style="white-space: nowrap;">01 Sep 2022</td>
+            <td><a href="https://notes.nicolasdeville.com/careerplaybook/023-leaving-on-a-high">#CareerPlaybook 023: Leaving On A High</a></td>
+        </tr>
+        <tr>
+            <td style="white-space: nowrap;">28 Aug 2022</td>
+            <td><a href="https://notes.nicolasdeville.com/apps/pulltube">Pulltube</a></td>
+        </tr>
+        <tr>
+            <td style="white-space: nowrap;">17 Aug 2022</td>
+            <td><a href="https://notes.nicolasdeville.com/helpers/vodafone-kabel">Vodafone Kabel</a></td>
+        </tr>
+        <tr>
+            <td style="white-space: nowrap;">12 Aug 2022</td>
+            <td><a href="https://notes.nicolasdeville.com/apps/pathfinder">Pathfinder - Finder alternative</a></td>
+        </tr>
+        <tr>
+            <td style="white-space: nowrap;">11 Aug 2022</td>
+            <td><a href="https://notes.nicolasdeville.com/books/learn-javascript-quickly">Book: Learn JavaScript Quickly</a></td>
+        </tr>
+        <tr>
+            <td style="white-space: nowrap;">04 Aug 2022</td>
+            <td><a href="https://notes.nicolasdeville.com/books/the-first-90-days">The First 90 Days, by Michael Watkins</a></td>
+        </tr>
+        <tr>
+            <td style="white-space: nowrap;">26 Jul 2022</td>
+            <td><a href="https://notes.nicolasdeville.com/apps/hazel">Hazel</a></td>
+        </tr>
+        <tr>
+            <td style="white-space: nowrap;">26 Jul 2022</td>
+            <td><a href="https://notes.nicolasdeville.com/python/library-mutagen">Python Library: mutagen</a></td>
+        </tr>
+        <tr>
+            <td style="white-space: nowrap;">26 Jul 2022</td>
+            <td><a href="https://notes.nicolasdeville.com/python/library-tinytag">Python Library: tinytag</a></td>
+        </tr>
+        <tr>
+            <td style="white-space: nowrap;">26 Jul 2022</td>
+            <td><a href="https://notes.nicolasdeville.com/helpers/terminal-commands">macOS List of Terminal Commands</a></td>
+        </tr>
+        <tr>
+            <td style="white-space: nowrap;">25 Jul 2022</td>
+            <td><a href="https://notes.nicolasdeville.com/helpers/reddit">Reddit</a></td>
+        </tr>
+        <tr>
+            <td style="white-space: nowrap;">24 Jul 2022</td>
+            <td><a href="https://notes.nicolasdeville.com/random/20-scariest-theories">20 Scariest Theories Known to Man</a></td>
+        </tr>
+        <tr>
+            <td style="white-space: nowrap;">23 Jul 2022</td>
+            <td><a href="https://notes.nicolasdeville.com/projects/nicai">nicAI | my personal AI assistant</a></td>
+        </tr>
+        <tr>
+            <td style="white-space: nowrap;">22 Jul 2022</td>
+            <td><a href="https://notes.nicolasdeville.com/apps/espanso">Espanso</a></td>
+        </tr>
+        <tr>
+            <td style="white-space: nowrap;">20 Jul 2022</td>
+            <td><a href="https://notes.nicolasdeville.com/apps/pixelsnap">Pixelsnap</a></td>
+        </tr>
+        <tr>
+            <td style="white-space: nowrap;">20 Jul 2022</td>
+            <td><a href="https://notes.nicolasdeville.com/apps/text-expanders">Text expanders</a></td>
+        </tr>
+        <tr>
+            <td style="white-space: nowrap;">20 Jul 2022</td>
+            <td><a href="https://notes.nicolasdeville.com/apps/things">App: Things</a></td>
+        </tr>
+        <tr>
+            <td style="white-space: nowrap;">19 Jul 2022</td>
+            <td><a href="https://notes.nicolasdeville.com/apps/gpg">GPG Suite</a></td>
+        </tr>
+        <tr>
+            <td style="white-space: nowrap;">19 Jul 2022</td>
+            <td><a href="https://notes.nicolasdeville.com/b2b-sales/producing-videos">Producing Sales videos</a></td>
+        </tr>
+        <tr>
+            <td style="white-space: nowrap;">19 Jul 2022</td>
+            <td><a href="https://notes.nicolasdeville.com/apps/screenflow">Producing videos with Screenflow</a></td>
+        </tr>
+        <tr>
+            <td style="white-space: nowrap;">19 Jul 2022</td>
+            <td><a href="https://notes.nicolasdeville.com/home-office/teleprompter">Using a teleprompter for business users</a></td>
+        </tr>
+        <tr>
+            <td style="white-space: nowrap;">19 Jul 2022</td>
+            <td><a href="https://notes.nicolasdeville.com/random/wutang">Wutang</a></td>
+        </tr>
+        <tr>
+            <td style="white-space: nowrap;">18 Jul 2022</td>
+            <td><a href="https://notes.nicolasdeville.com/random/chickens-are-weird">Chickens are weird</a></td>
+        </tr>
+        <tr>
+            <td style="white-space: nowrap;">18 Jul 2022</td>
+            <td><a href="https://notes.nicolasdeville.com/apps/moom">Moom | Window management</a></td>
+        </tr>
+        <tr>
+            <td style="white-space: nowrap;">18 Jul 2022</td>
+            <td><a href="https://notes.nicolasdeville.com/apps/screenshotx">ScreenShotX</a></td>
+        </tr>
+        <tr>
+            <td style="white-space: nowrap;">18 Jul 2022</td>
+            <td><a href="https://notes.nicolasdeville.com/home-office/ups">Uninterrupted Power Supply</a></td>
+        </tr>
+        <tr>
+            <td style="white-space: nowrap;">17 Jul 2022</td>
+            <td><a href="https://notes.nicolasdeville.com/leadership/visualising-target-achievement">Visualing the target and achievement</a></td>
+        </tr>
+        <tr>
+            <td style="white-space: nowrap;">16 Jul 2022</td>
+            <td><a href="https://notes.nicolasdeville.com/python/copy-files">Mass copy selected files with Python</a></td>
+        </tr>
+        <tr>
+            <td style="white-space: nowrap;">16 Jul 2022</td>
+            <td><a href="https://notes.nicolasdeville.com/tesla/elon">Elon Musk</a></td>
+        </tr>
+        <tr>
+            <td style="white-space: nowrap;">16 Jul 2022</td>
+            <td><a href="https://notes.nicolasdeville.com/apps/newsletter-readers">Newsletter readers</a></td>
+        </tr>
+        <tr>
+            <td style="white-space: nowrap;">14 Jul 2022</td>
+            <td><a href="https://notes.nicolasdeville.com/python/broken-links">How to Find Broken Links With Python</a></td>
+        </tr>
+        <tr>
+            <td style="white-space: nowrap;">14 Jul 2022</td>
+            <td><a href="https://notes.nicolasdeville.com/helpers/unzip-split-zip-files">Unzip split zip files (from Google Takeout)</a></td>
+        </tr>
+        <tr>
+            <td style="white-space: nowrap;">13 Jul 2022</td>
+            <td><a href="https://notes.nicolasdeville.com/b2b-sales/overselling-vs-underselling">Overselling vs Underselling</a></td>
+        </tr>
+        <tr>
+            <td style="white-space: nowrap;">12 Jul 2022</td>
+            <td><a href="https://notes.nicolasdeville.com/random/ark-invest">Ark Invest</a></td>
+        </tr>
+        <tr>
+            <td style="white-space: nowrap;">12 Jul 2022</td>
+            <td><a href="https://notes.nicolasdeville.com/b2b-sales/b2b-sales-resources">B2B Sales Resources</a></td>
+        </tr>
+        <tr>
+            <td style="white-space: nowrap;">12 Jul 2022</td>
+            <td><a href="https://notes.nicolasdeville.com/random/supplements">Supplements</a></td>
+        </tr>
+        <tr>
+            <td style="white-space: nowrap;">11 Jul 2022</td>
+            <td><a href="https://notes.nicolasdeville.com/random/ai">AI</a></td>
+        </tr>
+        <tr>
+            <td style="white-space: nowrap;">11 Jul 2022</td>
+            <td><a href="https://notes.nicolasdeville.com/helpers/learning-javascript">Learning Javascript</a></td>
+        </tr>
+        <tr>
+            <td style="white-space: nowrap;">11 Jul 2022</td>
+            <td><a href="https://notes.nicolasdeville.com/helpers/regex">Regex</a></td>
+        </tr>
+        <tr>
+            <td style="white-space: nowrap;">07 Jul 2022</td>
+            <td><a href="https://notes.nicolasdeville.com/python/importing-ghost-blog-posts-to-pelican-with-python">Import Ghost blog posts to Pelican with Python</a></td>
+        </tr>
+        <tr>
+            <td style="white-space: nowrap;">07 Jul 2022</td>
+            <td><a href="https://notes.nicolasdeville.com/python/importing-notion-markdown-files-to-pelican-with-python">Notion Markdown files to Pelican Markdown files with Python</a></td>
+        </tr>
+        <tr>
+            <td style="white-space: nowrap;">06 Jul 2022</td>
+            <td><a href="https://notes.nicolasdeville.com/b2b-sales/chrome-extensions-for-sales">Google Chrome extensions for Sales</a></td>
+        </tr>
+        <tr>
+            <td style="white-space: nowrap;">06 Jul 2022</td>
+            <td><a href="https://notes.nicolasdeville.com/random/netflix">How to see and download Netflix viewing history</a></td>
+        </tr>
+        <tr>
+            <td style="white-space: nowrap;">05 Jul 2022</td>
+            <td><a href="https://notes.nicolasdeville.com/python/text-to-html">Converting text to HTML with Python</a></td>
+        </tr>
+        <tr>
+            <td style="white-space: nowrap;">04 Jul 2022</td>
+            <td><a href="https://notes.nicolasdeville.com/python/download-website">Download a website with Python</a></td>
+        </tr>
+        <tr>
+            <td style="white-space: nowrap;">04 Jul 2022</td>
+            <td><a href="https://notes.nicolasdeville.com/random/ev">Electric Vehicles</a></td>
+        </tr>
+        <tr>
+            <td style="white-space: nowrap;">03 Jul 2022</td>
+            <td><a href="https://notes.nicolasdeville.com/apps/my-stack">Apps I use</a></td>
+        </tr>
+        <tr>
+            <td style="white-space: nowrap;">03 Jul 2022</td>
+            <td><a href="https://notes.nicolasdeville.com/apps/readwise">Readwise | helps me retain what I read</a></td>
+        </tr>
+        <tr>
+            <td style="white-space: nowrap;">03 Jul 2022</td>
+            <td><a href="https://notes.nicolasdeville.com/apps/snippetslab">SnippetsLab | Snippets manager</a></td>
+        </tr>
+        <tr>
+            <td style="white-space: nowrap;">02 Jul 2022</td>
+            <td><a href="https://notes.nicolasdeville.com/helpers/kindle">Kindle</a></td>
+        </tr>
+        <tr>
+            <td style="white-space: nowrap;">02 Jul 2022</td>
+            <td><a href="https://notes.nicolasdeville.com/b2b-sales/scheduling-meetings">Scheduling Meetings</a></td>
+        </tr>
+        <tr>
+            <td style="white-space: nowrap;">02 Jul 2022</td>
+            <td><a href="https://notes.nicolasdeville.com/apps/setapp">Setapp: macOS app subsciption</a></td>
+        </tr>
+        <tr>
+            <td style="white-space: nowrap;">02 Jul 2022</td>
+            <td><a href="https://notes.nicolasdeville.com/books/simply-said">Simply Said, by Jay Sullivan</a></td>
+        </tr>
+        <tr>
+            <td style="white-space: nowrap;">01 Jul 2022</td>
+            <td><a href="https://notes.nicolasdeville.com/helpers/ascii-tree">ASCII tree</a></td>
+        </tr>
+        <tr>
+            <td style="white-space: nowrap;">01 Jul 2022</td>
+            <td><a href="https://notes.nicolasdeville.com/random/germany-tax">Germany taxes</a></td>
+        </tr>
+        <tr>
+            <td style="white-space: nowrap;">07 Apr 2022</td>
+            <td><a href="https://notes.nicolasdeville.com/books/pro-git">Pro Git, by Scott Chacon</a></td>
+        </tr>
+        <tr>
+            <td style="white-space: nowrap;">18 Mar 2022</td>
+            <td><a href="https://notes.nicolasdeville.com/random/space_how-long">How long will the Earth remain habitable?</a></td>
+        </tr>
+        <tr>
+            <td style="white-space: nowrap;">10 Mar 2022</td>
+            <td><a href="https://notes.nicolasdeville.com/apps/cloudapp">CloudApp | A visual collaboration solution</a></td>
+        </tr>
+        <tr>
+            <td style="white-space: nowrap;">13 Feb 2022</td>
+            <td><a href="https://notes.nicolasdeville.com/apps/ulysses">Ulysses</a></td>
+        </tr>
+        <tr>
+            <td style="white-space: nowrap;">22 Jan 2022</td>
+            <td><a href="https://notes.nicolasdeville.com/leadership/rfp-and-tribal-knowledge">RFP and tribal knowledge</a></td>
+        </tr>
+        <tr>
+            <td style="white-space: nowrap;">01 Jan 2022</td>
+            <td><a href="https://notes.nicolasdeville.com/home-office/home-office-setup-jan-22">Home Office Setup (-May '22)</a></td>
+        </tr>
+        
+    </tbody>
+</table>
+
+
+</section>
+
+        <!-- footer -->
+        <section id="extras" class="body" data-pagefind-ignore>
+
+        <!-- /.blogroll -->
+                <div class="blogroll">
+                        <h2>links</h2>
+                        <ul>
+                            <li><a href="https://btobsales.eu">Services: BtoBSales.EU</a></li>
+                            <li><a href="https://indeXall.io">Side project: indeXall.io</a></li>
+                            <li><a href="https://github.com/ndeville">Github: ndeville</a></li>
+                        </ul>
+                </div>
+
+        <!-- /.social -->
+                <div class="social">
+                        <h2>social</h2>
+                        <ul>
+
+                            <li><a href="https://www.linkedin.com/in/ndeville/">Linkedin</a></li>
+                            <li><a href="https://www.twitter.com/ndeville">Twitter</a></li>
+                        </ul>
+                </div>
+        </section><!-- /#extras -->
+
+        <footer id="contentinfo" class="body" data-pagefind-ignore>
+                <address id="about" class="vcard body">
+                    <img src="https://notes.nicolasdeville.com/favicon.svg" alt="nic_logo" width="16" style="vertical-align: middle;"/>
+                Powered by <a href="https://github.com/getpelican/pelican" target="_blank">Pelican</a>
+                <!-- with <a href="https://stork-search.net/" target="_blank">Stork</a> & <a href="https://github.com/pelican-plugins/search" target="_blank">Pelican Search plugin</a>. -->
+                <br>
+                <a href="https://clearbit.com" target="_blank">Logos provided by Clearbit</a>
+                <br>
+                <!-- <span style="color:#C74350">|</span> <img src="https://notes.nicolasdeville.com/images/python.svg" alt="python_logo" width="16" style="vertical-align: middle;"/> <a href="https://www.python.org/" target="_blank">Python</a>  -->
+                <img src="https://notes.nicolasdeville.com/images/python.svg" alt="python_logo" width="16" style="vertical-align: middle;"/> <a href="https://www.python.org/" target="_blank">Python</a>
+                </address><!-- /#about -->
+
+        </footer><!-- /#contentinfo -->
+
+
+<!-- JS -->
+
+<!-- my JS script (with code block copy) -->
+<script src="https://notes.nicolasdeville.com/theme/js/nic.js"></script>
+
+<!-- for Stork seach engine -->
+<!-- <script src="https://files.stork-search.net/stork.js"></script>
+<script>
+    stork.register("sitesearch", "https://notes.nicolasdeville.com/search-index.st")
+</script> -->
+
+<!-- <script>
+    (function() {
+    if( window.innerWidth > 600 ) {
+        var stork_script = document.createElement('script');
+        stork_script.type = 'text/javascript';
+        stork_script.src = 'https://files.stork-search.net/stork.js';
+
+        var stork_register = ('script');
+        stork_register.innerHTML = 'stork.register("sitesearch", "https://notes.nicolasdeville.com/search-index.st")';
+
+        var head = document.getElementsByTagName('head')[0];
+        head.appendChild(stork_script);
+        head.appendChild(stork_register);
+
+
+    }
+    })();
+</script> -->
+
+</body>
+</html>

@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <!-- Base -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="generator" content="Pelican" />
+    <meta name="author" content="Nic Deville">
+
+<!-- Title -->
+<title>Alfred | Nic's notes</title>
+<meta name="og:title" content="Alfred | Nic's notes"/> <!-- 40 characters for mobile and 60 for desktop -->
+<link rel="canonical" href="https://notes.nicolasdeville.com/apps/alfred" />
+<meta name="twitter:title" content="Alfred | Nic's notes" /> <!-- max. 70 characters -->
+
+<meta name="description" content="my notes on using Alfred"/>
+<meta property="og:description" content="my notes on using Alfred"/>
+<meta name="twitter:description" content="my notes on using Alfred" /> <!-- max. 200 characters -->
+ 
+
+<meta property="article:published_time" content="2022-11-02 22:53:59.929528+01:00" />
+
+<meta property="article:modified_time" content="2022-11-02 22:53:59.929528+01:00" />
+
+<meta name="robots" content="all, follow" />
+
+<!-- Social -->
+<meta property="og:type" content="article" />
+
+<!-- <meta property="og:description" content="Messy online notebook covering B2B Sales, Leadership, Python programming, Automation, AI and more. I take these notes for myself (and my kids later) - perhaps they can help someone else..." /> min. 2 max. 4 sentences -->
+
+<meta property="og:url" content="https://notes.nicolasdeville.com/apps/alfred" /> <!-- canonical URL for your page without session variables, user id parameters or counters -->
+<meta property="og:site_name" content="Nic's notes" />
+<meta name="image" property="og:image" content="https://notes.nicolasdeville.com/images/notes-twitter-image.jpg" /> <!-- at least 600x315 pixels, preferable 1200x630 pixels -->
+
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:site" content="@ndeville" />
+
+<meta name="twitter:image" content="https://notes.nicolasdeville.com/images/notes-twitter-image.jpg" /> <!-- aspect ratio of 2:1 with minimum dimensions of 300x157 or maximum of 4096x4096 pixels. Going with 900x471 -->
+
+<!-- Logo -->
+<meta property="og:logo" content="https://notes.nicolasdeville.com/logo.svg">
+
+<!-- Favicon -->
+<link rel="icon" type="image/x-icon" href="https://notes.nicolasdeville.com/favicon.ico">
+<link rel="mask-icon" href="https://notes.nicolasdeville.com/favicon.svg" color="#FFFFFF">
+<link rel="alternate icon" class="js-site-favicon" type="image/png" href="https://notes.nicolasdeville.com/favicon.png">
+<link rel="icon" class="js-site-favicon" type="image/svg+xml" href="https://notes.nicolasdeville.com/favicon.svg">
+<link rel="fluid-icon" href="https://notes.nicolasdeville.com/favicon.png" title="Nic's notes">
+
+<!-- CSS -->
+<link rel="stylesheet" href="https://notes.nicolasdeville.com/theme/css/main.css" />
+
+<!-- Pagefind -->
+<link href="https://notes.nicolasdeville.com/theme/css/pagefind-ui-nic.css" rel="stylesheet">
+<script src="https://notes.nicolasdeville.com/pagefind/pagefind-ui.js" type="text/javascript"></script>
+
+<script>
+    window.addEventListener('DOMContentLoaded', (event) => {
+        new PagefindUI({ element: "#search" });
+    });
+</script>
+
+
+</head>
+
+<body id="index" class="body">
+        <header id="banner" class="body">
+
+            <div class="logo-and-search">
+                <a href="https://notes.nicolasdeville.com/"><img class="header_image" src="https://notes.nicolasdeville.com/images/nic_notes_header.svg" alt="Nic's notes" width="266"/></a>
+
+                <!-- for Stork seach engine -->
+                <!-- <div class="search-input-block">
+                    <input data-stork="sitesearch" class="search-input" placeholder="Search notes..." autofocus="autofocus"/>
+                    <div data-stork="sitesearch-output"></div>
+                </div> -->
+
+                <!-- Pagefind -->
+                <div class="search-input-block" id="search"></div>
+
+            </div>
+
+            
+
+            <div class="above-navbar">
+                <div class="last_updated">16 Nov 2022 | 09:00</div>
+                <div>
+                    <p class="notes_count">
+                        <a href="https://notes.nicolasdeville.com/tags">by tags</a>
+                        <span style="color:#C74350">|</span>
+                        <a href="https://notes.nicolasdeville.com/2020/">2020</a>
+                        <span style="color:#C74350">|</span>
+                        <a href="https://notes.nicolasdeville.com/2021/">2021</a>
+                        <span style="color:#C74350">|</span>
+                        <a href="https://notes.nicolasdeville.com/2022/">2022</a>
+                        <span style="color:#C74350">|</span>
+                        511 notes
+                    </p>
+                </div>
+            </div>
+
+            <nav><ul>
+                <li><a href="https://notes.nicolasdeville.com/ai/">ai</a></li>
+                <li class="active"><a href="https://notes.nicolasdeville.com/apps/">apps</a></li>
+                <li><a href="https://notes.nicolasdeville.com/b2b-sales/">b2b sales</a></li>
+                <li><a href="https://notes.nicolasdeville.com/books/">books</a></li>
+                <li><a href="https://notes.nicolasdeville.com/careerplaybook/">#careerplaybook</a></li>
+                <li><a href="https://notes.nicolasdeville.com/helpers/">helpers</a></li>
+                <li><a href="https://notes.nicolasdeville.com/home-office/">home office</a></li>
+                <li><a href="https://notes.nicolasdeville.com/interests/">interests</a></li>
+                <li><a href="https://notes.nicolasdeville.com/leadership/">leadership</a></li>
+                <li><a href="https://notes.nicolasdeville.com/learning/">learning</a></li>
+                <li><a href="https://notes.nicolasdeville.com/movies/">movies</a></li>
+                <li><a href="https://notes.nicolasdeville.com/projects/">projects</a></li>
+                <li><a href="https://notes.nicolasdeville.com/python/">python</a></li>
+                <li><a href="https://notes.nicolasdeville.com/random/">random</a></li>
+                <li><a href="https://notes.nicolasdeville.com/startups/">startups</a></li>
+                <li><a href="https://notes.nicolasdeville.com/tesla/">tesla</a></li>
+            </ul></nav>
+        </header>
+
+        <!-- index.html injection -->
+<section id="content" class="body">
+    <article>
+        <header>
+            <h1 class="entry-title">
+                <main> <!-- for indexing by Stork -->
+                    <a href="https://notes.nicolasdeville.com/apps/alfred" rel="bookmark"
+                    title="Permalink to Alfred">Alfred
+                    </a>
+                </main>
+            </h1>
+            <p class="header_summary">
+                <main> <!-- for indexing by Stork -->
+                    <p>my notes on using Alfred</p>
+                </main>
+            </p>
+        </header>
+
+        <div class="entry-content">
+<footer class="post-info">
+
+    <p>
+        02 Nov 2022 
+        <span class="separator">|</span> in <a class="link_tag" href="https://notes.nicolasdeville.com/apps/"><span data-pagefind-filter="category">apps</span></a>
+
+ tags: <a class="link_tag" href="https://notes.nicolasdeville.com/tag/macos.html">macOS</a>
+<a class="link_tag" href="https://notes.nicolasdeville.com/tag/automation.html">automation</a>
+
+        <!-- added 4/7 -->
+        <!-- 		<br />
+        <abbr class="modified" title="2022-11-02T22:53:59.929528+01:00">
+                Updated: 02 Nov 2022
+        </abbr>
+ -->
+
+    </p>
+
+    
+
+</footer>            <!-- for indexing by Stork -->
+            <!-- <main>  -->
+                <div class="toc"><span class="toctitle">Table of Contents</span><ul>
+<li><a href="#universal-actions">Universal Actions</a></li>
+<li><a href="#sync">Sync</a><ul>
+<li><a href="#migrating-to-alfred-5">Migrating to Alfred 5</a></li>
+</ul>
+</li>
+<li><a href="#workflows">Workflows</a><ul>
+<li><a href="#learning">Learning</a></li>
+<li><a href="#using">Using</a><ul>
+<li><a href="#get-latest-file-from-trickster">Get latest file from Trickster</a></li>
+<li><a href="#dash">Dash</a></li>
+<li><a href="#music">Music</a></li>
+<li><a href="#google-suggest">Google Suggest</a></li>
+<li><a href="#stack-overflow">Stack Overflow</a></li>
+<li><a href="#github">GitHub</a></li>
+<li><a href="#tinypng">TinyPNG</a></li>
+<li><a href="#advanced-maps">Advanced Maps</a><ul>
+<li><a href="#show-directions-from-home-to-address">Show directions from Home to address</a></li>
+</ul>
+</li>
+<li><a href="#timezones">Timezones</a></li>
+<li><a href="#convert">Convert</a></li>
+</ul>
+</li>
+<li><a href="#custom-workflows">Custom Workflows</a><ul>
+<li><a href="#copy-file-name-and-parent-folder-for-notes">Copy File Name and parent folder for notes</a></li>
+<li><a href="#paste-clipboard-to-atom">Paste clipboard to Atom</a></li>
+<li><a href="#url-actions">URL Actions</a></li>
+<li><a href="#copy-url">Copy URL</a></li>
+<li><a href="#my-ip">My IP</a></li>
+</ul>
+</li>
+<li><a href="#others">Others</a><ul>
+<li><a href="#spotify-mini-player">Spotify Mini Player</a></li>
+<li><a href="#omnifocus">OmniFocus</a></li>
+<li><a href="#shortcuts">Shortcuts</a></li>
+<li><a href="#launch-a-url-in-3-browsers">Launch a URL in 3 browsers</a></li>
+<li><a href="#reddit">Reddit</a></li>
+<li><a href="#google-drive">Google Drive</a></li>
+<li><a href="#amazon-suggest">Amazon Suggest</a></li>
+<li><a href="#movie-tv-show-search">Movie &amp; TV Show Search</a></li>
+<li><a href="#power-thesaurus">Power Thesaurus</a></li>
+<li><a href="#smart-folders">Smart Folders</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<p><span class="datestamp">2020</span> started using.   </p>
+<p><span class="datestamp">03 Jul 2022</span> starting note.    </p>
+<p>I'm using Alfred 25-100 times/day based on in-app report.   </p>
+<div class="link_border"><div class="link_logo_box"><img class="link_logo" src="https://notes.nicolasdeville.com/images/logos/alfredapp.png" alt="logo"/></div><div class="link_content">
+<div class="link_title">Alfred - Productivity App for macOS</div>
+<div class="link_tagline">Alfred 5 for Mac</div>
+<div class="link_url"><a href="https://www.alfredapp/" target="_blank">https://www.alfredapp/</a></div></div></div>
+
+<p>Forum:   </p>
+<div class="link_border"><div class="link_logo_box"><img class="link_logo" src="https://notes.nicolasdeville.com/images/logos/alfredforum.png" alt="logo"/></div><div class="link_content">
+<div class="link_title">Forums - Alfred App Community Forum</div>
+<div class="link_tagline">alfredforum</div>
+<div class="link_url"><a href="https://www.alfredforum/" target="_blank">https://www.alfredforum/</a></div></div></div>
+
+<h1 id="universal-actions">Universal Actions</h1>
+<div class="link_border"><div class="link_logo_box"><img class="link_logo" src="https://notes.nicolasdeville.com/images/logos/alfredapp.png" alt="logo"/></div><div class="link_content">
+<div class="link_title">Universal Actions - Alfred Help and Support</div>
+<div class="link_tagline">alfredapp</div>
+<div class="link_url"><a href="https://www.alfredapp/help/features/universal-actions/" target="_blank">https://www.alfredapp/help/features/universal-actions/</a></div></div></div>
+
+<h1 id="sync">Sync</h1>
+<p>alfLocal data: <code>~/Library/Application Support/Alfred</code>    </p>
+<p>Alfred settings can be backed up to Dropbox, enabling syncing across Macs with Alfred installed.   </p>
+<p><code>Dropbox/Alfred.alfredpreferences</code>   </p>
+<p>Location of the file can be set under Alfred Preferences <code>Advanced</code> &gt; <code>Syncing</code> &gt; <code>Set preferences folder</code>.    </p>
+<div class="link_border"><div class="link_logo_box"><img class="link_logo" src="https://notes.nicolasdeville.com/images/logos/alfredapp.png" alt="logo"/></div><div class="link_content">
+<div class="link_title">Sync your Alfred settings between Macs - Alfred Help and Support</div>
+<div class="link_tagline">alfredapp</div>
+<div class="link_url"><a href="https://www.alfredapp/help/advanced/sync/" target="_blank">https://www.alfredapp/help/advanced/sync/</a></div></div></div>
+
+<h2 id="migrating-to-alfred-5">Migrating to Alfred 5</h2>
+<p><span class="datestamp">20 Sep 2022</span> </p>
+<p>Before migrating, v4 settings for reference:  </p>
+<p><img class="screenshot" src="https://notes.nicolasdeville.com/images/alfred/v4-settings-1.jpg" alt="v4-settings-1.jpg"/>  </p>
+<p><img class="screenshot" src="https://notes.nicolasdeville.com/images/alfred/v4-settings-2.jpg" alt="v4-settings-2.jpg"/>  </p>
+<p><img class="screenshot" src="https://notes.nicolasdeville.com/images/alfred/v4-settings-3-workflows.jpg" alt="v4-settings-3-workflows.jpg"/>  </p>
+<p><img class="screenshot" src="https://notes.nicolasdeville.com/images/alfred/v4-settings-4.jpg" alt="v4-settings-4.jpg"/>  </p>
+<h1 id="workflows">Workflows</h1>
+<div class="link_border"><div class="link_logo_box"><img class="link_logo" src="https://notes.nicolasdeville.com/images/logos/alfredapp.png" alt="logo"/></div><div class="link_content">
+<div class="link_title">Alfred Workflows - Extend Alfred and Boost Your Productivity</div>
+<div class="link_tagline">alfredapp</div>
+<div class="link_url"><a href="https://www.alfredapp/workflows/" target="_blank">https://www.alfredapp/workflows/</a></div></div></div>
+
+<h2 id="learning">Learning</h2>
+<div class="link_border"><div class="link_logo_box"><img class="link_logo" src="https://notes.nicolasdeville.com/images/logos/alfredapp.png" alt="logo"/></div><div class="link_content">
+<div class="link_title">Using Variables in Workflows - Alfred Help and Support</div>
+<div class="link_tagline">alfredapp</div>
+<div class="link_url"><a href="https://www.alfredapp/help/workflows/advanced/variables/" target="_blank">https://www.alfredapp/help/workflows/advanced/variables/</a></div></div></div>
+
+<h2 id="using">Using</h2>
+<h3 id="get-latest-file-from-trickster">Get latest file from Trickster</h3>
+<p>Configured to list latest items from Trickster with:  </p>
+<p>Global key: <code>Alt L</code>  </p>
+<p>or from Alfred with keyword: <code>tt</code>  </p>
+<h3 id="dash">Dash</h3>
+<p>Add blisteringly fast search of the Dash documentation / API browser app, with in-line results and responsive integration.  </p>
+<h3 id="music">Music</h3>
+<p>Find and launch music in Apple Music - by artist, album, playlist, etc..</p>
+<p><img class="screenshot" src="https://notes.nicolasdeville.com/images/alfred/music-player-1.jpg" alt="alfred/music-player-1.jpg"/>  </p>
+<p><img class="screenshot" src="https://notes.nicolasdeville.com/images/alfred/alfred-music-2.jpg" alt="alfred/alfred-music-2.jpg"/>  </p>
+<h3 id="google-suggest">Google Suggest</h3>
+<p>An example included in Alfred: Search Google from Alfred's search box and see results in-line.</p>
+<h3 id="stack-overflow">Stack Overflow</h3>
+<p>Search for answers to your programming questions on Stack Overflow.</p>
+<p>Download here:  </p>
+<div class="link_border"><div class="link_logo_box"><img class="link_logo" src="https://notes.nicolasdeville.com/images/logos/github.png" alt="logo"/></div><div class="link_content">
+<div class="link_title">Releases · deanishe/alfred-stackexchange · GitHub</div>
+<div class="link_tagline">Releases: deanishe/alfred-stackexchange</div>
+<div class="link_url"><a href="https://github/deanishe/alfred-stackexchange/releases" target="_blank">https://github/deanishe/alfred-stackexchange/releases</a></div></div></div>
+
+<p>Use <code>.so</code> to search StackOverflow from Alfred.   </p>
+<h3 id="github">GitHub</h3>
+<p>Quickly pick which GitHub repository you want to open and launch it from Alfred.</p>
+<h3 id="tinypng">TinyPNG</h3>
+<p>Optimise your images to be more lightweight with TinyPNG.  </p>
+<div class="link_border"><div class="link_logo_box"><img class="link_logo" src="https://notes.nicolasdeville.com/images/logos/github.png" alt="logo"/></div><div class="link_content">
+<div class="link_title">GitHub - alfredapp/tinypng-workflow: Compress images via TinyPNG</div>
+<div class="link_tagline">github</div>
+<div class="link_url"><a href="https://github/alfredapp/tinypng-workflow" target="_blank">https://github/alfredapp/tinypng-workflow</a></div></div></div>
+
+<p><span class="datestamp">19 Sep 2022</span> </p>
+<p>Requires API key:   </p>
+<div class="link_border"><div class="link_logo_box"><img class="link_logo" src="https://notes.nicolasdeville.com/images/logos/tinypng.png" alt="logo"/></div><div class="link_content">
+<div class="link_title">TinyPNG – Developer API</div>
+<div class="link_tagline">tinypng</div>
+<div class="link_url"><a href="https://tinypng/developers" target="_blank">https://tinypng/developers</a></div></div></div>
+
+<p><img class="screenshot" src="https://notes.nicolasdeville.com/images/alfred/tiny-png-pricing.jpg" alt="tiny-png-pricing.jpg"/>  </p>
+<p>No password required for signup! API key obtained in &lt;1mns! 😁  </p>
+<p>Only works with Alfred 5 though 😕   </p>
+<p><img class="screenshot" src="https://notes.nicolasdeville.com/images/alfred/tinypng-alfred5.jpg" alt="tinypng-alfred5.jpg"/>  </p>
+<h3 id="advanced-maps">Advanced Maps</h3>
+<p>Advanced Google and Apple Maps search, including the ability to configure a Home and Work location, to see Google traffic reports before travelling.</p>
+<div class="link_border"><div class="link_logo_box"><img class="link_logo" src="https://notes.nicolasdeville.com/images/logos/github.png" alt="logo"/></div><div class="link_content">
+<div class="link_title">GitHub - stuartcryan/advanced-google-maps-alfred-workflow: Advanced Google Maps and Apple Maps Workflow for Alfred</div>
+<div class="link_tagline">github</div>
+<div class="link_url"><a href="https://github/stuartcryan/advanced-google-maps-alfred-workflow" target="_blank">https://github/stuartcryan/advanced-google-maps-alfred-workflow</a></div></div></div>
+
+<p>good overview:  </p>
+<div class="link_border"><div class="link_logo_box"><img class="link_logo" src="https://notes.nicolasdeville.com/images/logos/guillaumeb.png" alt="logo"/></div><div class="link_content">
+<div class="link_title">How I master Google Maps with this Alfred workflow | Guillaume Belfiore</div>
+<div class="link_tagline">guillaumeb</div>
+<div class="link_url"><a href="https://guillaumeb/journal/mac-alfred-google-maps.html" target="_blank">https://guillaumeb/journal/mac-alfred-google-maps.html</a></div></div></div>
+
+<h4 id="show-directions-from-home-to-address">Show directions from Home to address</h4>
+<div class="highlight"><pre><span></span><code>dirfh your-query
+</code></pre></div>
+
+<h3 id="timezones">Timezones</h3>
+<p>A customised world clock — shows a list of user-configured cities with the current local times.</p>
+<h3 id="convert">Convert</h3>
+<p>Convert between different units of quantities, distances, time and more. No internet connection required.  </p>
+<p>The Convert workflow has stopped working since last macOS updates which have removed support for Python 2 (ie <code>usr/bin/python</code>).   <br>
+Original workflow creator has not updated the pachage.   </p>
+<p>Using this updated fork instead now:   </p>
+<div class="link_border"><div class="link_logo_box"><img class="link_logo" src="https://notes.nicolasdeville.com/images/logos/github.png" alt="logo"/></div><div class="link_content">
+<div class="link_title">GitHub - giovannicoppola/alfred-convert: Convert between different units in Alfred</div>
+<div class="link_tagline">github</div>
+<div class="link_url"><a href="https://github/giovannicoppola/alfred-convert" target="_blank">https://github/giovannicoppola/alfred-convert</a></div></div></div>
+
+<h2 id="custom-workflows">Custom Workflows</h2>
+<h3 id="copy-file-name-and-parent-folder-for-notes">Copy File Name and parent folder for notes</h3>
+<p>When I save an image to insert in a note like here, I combine the Trickster workflow above, with this custom workflow to copy to clipboard the file name with its parent folder (note name).<br>
+Combined with a VS Code snippet/shortcut that inserts the content of the clipboard as part of it, I have a very streamlined/quick process to add images to this site.   </p>
+<p><img class="screenshot" src="https://notes.nicolasdeville.com/images/alfred/220921-copy-filepath-workflow1.jpg" alt="alfred/220921-copy-filepath-workflow1.jpg"/>  </p>
+<p><img class="screenshot" src="https://notes.nicolasdeville.com/images/alfred/220921-copy-filepath-workflow2.jpg" alt="alfred/220921-copy-filepath-workflow2.jpg"/>  </p>
+<h3 id="paste-clipboard-to-atom">Paste clipboard to Atom</h3>
+<p><code>pa</code> (Paste to Atom) triggers creation of a <code>.txt</code> file with timestamp in a central folder (for backup and avoiding all the annoying "Save as" file dialogs) and opens in Atom.  </p>
+<p>Implemented with AppleScript, as much easier to handle opening files with specific applications versus using Python.   </p>
+<p>Workflow is better and much quicker than my previous one using only Streamdeck. </p>
+<p><img class="screenshot" src="https://notes.nicolasdeville.com/images/alfred/alfred-workflow-paste-atom-1.jpg" alt="alfred/alfred-workflow-paste-atom-1.jpg"/>  </p>
+<div class="highlight"><pre><span></span><code><span class="k">set</span> <span class="nv">command</span> <span class="k">to</span> <span class="s2">&quot;pbpaste &gt; &quot;</span>
+
+<span class="k">set</span> <span class="nv">root_path</span> <span class="k">to</span> <span class="s2">&quot;/Users/xxxx/path/to/folder/&quot;</span>
+
+<span class="k">set</span> <span class="nv">timestamp</span> <span class="k">to</span> <span class="p">(</span><span class="nb">do shell script</span> <span class="s2">&quot;date &#39;+%y%m%d-%H%M&#39;%S&quot;</span><span class="p">)</span>
+
+<span class="k">set</span> <span class="nv">file_extension</span> <span class="k">to</span> <span class="s2">&quot;.txt&quot;</span>
+
+<span class="k">set</span> <span class="nv">file_path</span> <span class="k">to</span> <span class="nv">root_path</span> <span class="o">&amp;</span> <span class="nv">timestamp</span> <span class="o">&amp;</span> <span class="nv">file_extension</span>
+
+<span class="k">set</span> <span class="nv">full_command</span> <span class="k">to</span> <span class="nv">command</span> <span class="o">&amp;</span> <span class="nv">root_path</span> <span class="o">&amp;</span> <span class="nv">timestamp</span> <span class="o">&amp;</span> <span class="nv">file_extension</span>
+
+<span class="nb">do shell script</span> <span class="nv">full_command</span>
+
+<span class="k">tell</span> <span class="nb">application</span> <span class="s2">&quot;Atom&quot;</span> <span class="k">to</span> <span class="nb">open</span> <span class="nv">POSIX</span> <span class="nv">file</span> <span class="nv">file_path</span>
+</code></pre></div>
+
+<p>Important to remove all Escaping parameters for the script to work:   </p>
+<p><img class="screenshot" src="https://notes.nicolasdeville.com/images/alfred/alfred-workflow-paste-atom-2.jpg" alt="alfred/alfred-workflow-paste-atom-2.jpg"/>  </p>
+<h3 id="url-actions">URL Actions</h3>
+<div class="link_border"><div class="link_logo_box"><img class="link_logo" src="https://notes.nicolasdeville.com/images/logos/alfredforum.png" alt="logo"/></div><div class="link_content">
+<div class="link_title">URL Actions -- Getting the URL and title of browser's current tab - Share your Workflows - Alfred App Community Forum</div>
+<div class="link_tagline">alfredforum</div>
+<div class="link_url"><a href="https://www.alfredforum/topic/14191-url-actions-getting-the-url-and-title-of-browsers-current-tab/" target="_blank">https://www.alfredforum/topic/14191-url-actions-getting-the-url-and-title-of-browsers-current-tab/</a></div></div></div>
+
+<p>Not working.   </p>
+<h3 id="copy-url">Copy URL</h3>
+<p><span class="datestamp">23 Sep 2022</span>   </p>
+<div class="link_border"><div class="link_logo_box"><img class="link_logo" src="https://notes.nicolasdeville.com/images/logos/github.png" alt="logo"/></div><div class="link_content">
+<div class="link_title">GitHub - fallroot/copy-url-for-alfred: You can copy browser's URL and title with various formats like markdown, anchor tag and your own.</div>
+<div class="link_tagline">github</div>
+<div class="link_url"><a href="https://github/fallroot/copy-url-for-alfred" target="_blank">https://github/fallroot/copy-url-for-alfred</a></div></div></div>
+
+<p><img class="screenshot" src="https://notes.nicolasdeville.com/images/alfred/alfred-ip-address.jpg" alt="alfred/alfred-ip-address.jpg"/>  </p>
+<p>not working?  </p>
+<h3 id="my-ip">My IP</h3>
+<div class="link_border"><div class="link_logo_box"><img class="link_logo" src="https://notes.nicolasdeville.com/images/logos/github.png" alt="logo"/></div><div class="link_content">
+<div class="link_title">GitHub - alexchantastic/alfred-ip-address-workflow: Alfred 5 workflow for getting your local and external IP addresses.</div>
+<div class="link_tagline">github</div>
+<div class="link_url"><a href="https://github/alexchantastic/alfred-ip-address-workflow" target="_blank">https://github/alexchantastic/alfred-ip-address-workflow</a></div></div></div>
+
+<p><img class="screenshot" src="https://notes.nicolasdeville.com/images/alfred/alfred-ip-address.jpg" alt="alfred/alfred-ip-address.jpg"/>  </p>
+<h2 id="others">Others</h2>
+<h3 id="spotify-mini-player">Spotify Mini Player</h3>
+<p>The Mini Player gives you control over the Spotify app on your Mac. Find albums, search for artists &amp; play songs to groove to. </p>
+<h3 id="omnifocus">OmniFocus</h3>
+<p>Search for your projects, folders and tasks in OmniFocus 3.  </p>
+<h3 id="shortcuts">Shortcuts</h3>
+<p>Run installed Shortcuts in macOS 12 Monterey.</p>
+<h3 id="launch-a-url-in-3-browsers">Launch a URL in 3 browsers</h3>
+<p>Launch a URL in three browsers (Safari, Chrome and Firefox) to speed up website testing.  </p>
+<h3 id="reddit">Reddit</h3>
+<p>Browse and search Reddit directories (subreddits), and search hot results within a subreddit.</p>
+<h3 id="google-drive">Google Drive</h3>
+<p>List File Stream contents from Google Drive.</p>
+<h3 id="amazon-suggest">Amazon Suggest</h3>
+<p>An example included in Alfred: Search Amazon from Alfred's search box and see results in-line.</p>
+<h3 id="movie-tv-show-search">Movie &amp; TV Show Search</h3>
+<p>Search for a movie or TV show, and get a few ratings.</p>
+<h3 id="power-thesaurus">Power Thesaurus</h3>
+<p>Search in-line for synonyms and antonyms on Power Thesaurus.</p>
+<h3 id="smart-folders">Smart Folders</h3>
+<p>View and explore your Smart Folders.</p>
+            <!-- </main> -->
+        </div><!-- /.entry-content -->
+    </article>
+</section>
+
+        <!-- footer -->
+        <section id="extras" class="body" data-pagefind-ignore>
+
+        <!-- /.blogroll -->
+                <div class="blogroll">
+                        <h2>links</h2>
+                        <ul>
+                            <li><a href="https://btobsales.eu">Services: BtoBSales.EU</a></li>
+                            <li><a href="https://indeXall.io">Side project: indeXall.io</a></li>
+                            <li><a href="https://github.com/ndeville">Github: ndeville</a></li>
+                        </ul>
+                </div>
+
+        <!-- /.social -->
+                <div class="social">
+                        <h2>social</h2>
+                        <ul>
+
+                            <li><a href="https://www.linkedin.com/in/ndeville/">Linkedin</a></li>
+                            <li><a href="https://www.twitter.com/ndeville">Twitter</a></li>
+                        </ul>
+                </div>
+        </section><!-- /#extras -->
+
+        <footer id="contentinfo" class="body" data-pagefind-ignore>
+                <address id="about" class="vcard body">
+                    <img src="https://notes.nicolasdeville.com/favicon.svg" alt="nic_logo" width="16" style="vertical-align: middle;"/>
+                Powered by <a href="https://github.com/getpelican/pelican" target="_blank">Pelican</a>
+                <!-- with <a href="https://stork-search.net/" target="_blank">Stork</a> & <a href="https://github.com/pelican-plugins/search" target="_blank">Pelican Search plugin</a>. -->
+                <br>
+                <a href="https://clearbit.com" target="_blank">Logos provided by Clearbit</a>
+                <br>
+                <!-- <span style="color:#C74350">|</span> <img src="https://notes.nicolasdeville.com/images/python.svg" alt="python_logo" width="16" style="vertical-align: middle;"/> <a href="https://www.python.org/" target="_blank">Python</a>  -->
+                <img src="https://notes.nicolasdeville.com/images/python.svg" alt="python_logo" width="16" style="vertical-align: middle;"/> <a href="https://www.python.org/" target="_blank">Python</a>
+                </address><!-- /#about -->
+
+        </footer><!-- /#contentinfo -->
+
+
+<!-- JS -->
+
+<!-- my JS script (with code block copy) -->
+<script src="https://notes.nicolasdeville.com/theme/js/nic.js"></script>
+
+<!-- for Stork seach engine -->
+<!-- <script src="https://files.stork-search.net/stork.js"></script>
+<script>
+    stork.register("sitesearch", "https://notes.nicolasdeville.com/search-index.st")
+</script> -->
+
+<!-- <script>
+    (function() {
+    if( window.innerWidth > 600 ) {
+        var stork_script = document.createElement('script');
+        stork_script.type = 'text/javascript';
+        stork_script.src = 'https://files.stork-search.net/stork.js';
+
+        var stork_register = ('script');
+        stork_register.innerHTML = 'stork.register("sitesearch", "https://notes.nicolasdeville.com/search-index.st")';
+
+        var head = document.getElementsByTagName('head')[0];
+        head.appendChild(stork_script);
+        head.appendChild(stork_register);
+
+
+    }
+    })();
+</script> -->
+
+</body>
+</html>

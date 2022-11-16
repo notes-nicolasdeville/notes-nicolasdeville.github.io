@@ -1,0 +1,535 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <!-- Base -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="generator" content="Pelican" />
+    <meta name="author" content="Nic Deville">
+
+<!-- Title -->
+<title>How to build a responsive website | Nic's notes</title>
+<meta name="og:title" content="How to build a responsive website | Nic's notes"/> <!-- 40 characters for mobile and 60 for desktop -->
+<link rel="canonical" href="https://notes.nicolasdeville.com/helpers/responsive-web-design" />
+<meta name="twitter:title" content="How to build a responsive website | Nic's notes" /> <!-- max. 70 characters -->
+
+<meta name="description" content="Messy online notebook covering B2B Sales, Leadership, Python programming, Automation, AI and more. I take these notes for myself (and my kids later) - perhaps they can help someone else..."/>
+<meta property="og:description" content="Messy online notebook covering B2B Sales, Leadership, Python programming, Automation, AI and more. I take these notes for myself (and my kids later) - perhaps they can help someone else..."/>
+<meta name="twitter:description" content="Messy online notebook covering B2B Sales, Leadership, Python programming, Automation, AI and more. I take these notes for myself (and my kids later) - perhaps they can help someone else..." /> <!-- max. 200 characters -->
+
+ 
+
+<meta property="article:published_time" content="2022-11-09 21:31:37.498002+01:00" />
+
+<meta property="article:modified_time" content="2022-11-09 21:31:37.498002+01:00" />
+
+<meta name="robots" content="all, follow" />
+
+<!-- Social -->
+<meta property="og:type" content="article" />
+
+<!-- <meta property="og:description" content="Messy online notebook covering B2B Sales, Leadership, Python programming, Automation, AI and more. I take these notes for myself (and my kids later) - perhaps they can help someone else..." /> min. 2 max. 4 sentences -->
+
+<meta property="og:url" content="https://notes.nicolasdeville.com/helpers/responsive-web-design" /> <!-- canonical URL for your page without session variables, user id parameters or counters -->
+<meta property="og:site_name" content="Nic's notes" />
+<meta name="image" property="og:image" content="https://notes.nicolasdeville.com/images/notes-twitter-image.jpg" /> <!-- at least 600x315 pixels, preferable 1200x630 pixels -->
+
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:site" content="@ndeville" />
+
+<meta name="twitter:image" content="https://notes.nicolasdeville.com/images/notes-twitter-image.jpg" /> <!-- aspect ratio of 2:1 with minimum dimensions of 300x157 or maximum of 4096x4096 pixels. Going with 900x471 -->
+
+<!-- Logo -->
+<meta property="og:logo" content="https://notes.nicolasdeville.com/logo.svg">
+
+<!-- Favicon -->
+<link rel="icon" type="image/x-icon" href="https://notes.nicolasdeville.com/favicon.ico">
+<link rel="mask-icon" href="https://notes.nicolasdeville.com/favicon.svg" color="#FFFFFF">
+<link rel="alternate icon" class="js-site-favicon" type="image/png" href="https://notes.nicolasdeville.com/favicon.png">
+<link rel="icon" class="js-site-favicon" type="image/svg+xml" href="https://notes.nicolasdeville.com/favicon.svg">
+<link rel="fluid-icon" href="https://notes.nicolasdeville.com/favicon.png" title="Nic's notes">
+
+<!-- CSS -->
+<link rel="stylesheet" href="https://notes.nicolasdeville.com/theme/css/main.css" />
+
+<!-- Pagefind -->
+<link href="https://notes.nicolasdeville.com/theme/css/pagefind-ui-nic.css" rel="stylesheet">
+<script src="https://notes.nicolasdeville.com/pagefind/pagefind-ui.js" type="text/javascript"></script>
+
+<script>
+    window.addEventListener('DOMContentLoaded', (event) => {
+        new PagefindUI({ element: "#search" });
+    });
+</script>
+
+
+</head>
+
+<body id="index" class="body">
+        <header id="banner" class="body">
+
+            <div class="logo-and-search">
+                <a href="https://notes.nicolasdeville.com/"><img class="header_image" src="https://notes.nicolasdeville.com/images/nic_notes_header.svg" alt="Nic's notes" width="266"/></a>
+
+                <!-- for Stork seach engine -->
+                <!-- <div class="search-input-block">
+                    <input data-stork="sitesearch" class="search-input" placeholder="Search notes..." autofocus="autofocus"/>
+                    <div data-stork="sitesearch-output"></div>
+                </div> -->
+
+                <!-- Pagefind -->
+                <div class="search-input-block" id="search"></div>
+
+            </div>
+
+            
+
+            <div class="above-navbar">
+                <div class="last_updated">16 Nov 2022 | 09:00</div>
+                <div>
+                    <p class="notes_count">
+                        <a href="https://notes.nicolasdeville.com/tags">by tags</a>
+                        <span style="color:#C74350">|</span>
+                        <a href="https://notes.nicolasdeville.com/2020/">2020</a>
+                        <span style="color:#C74350">|</span>
+                        <a href="https://notes.nicolasdeville.com/2021/">2021</a>
+                        <span style="color:#C74350">|</span>
+                        <a href="https://notes.nicolasdeville.com/2022/">2022</a>
+                        <span style="color:#C74350">|</span>
+                        511 notes
+                    </p>
+                </div>
+            </div>
+
+            <nav><ul>
+                <li><a href="https://notes.nicolasdeville.com/ai/">ai</a></li>
+                <li><a href="https://notes.nicolasdeville.com/apps/">apps</a></li>
+                <li><a href="https://notes.nicolasdeville.com/b2b-sales/">b2b sales</a></li>
+                <li><a href="https://notes.nicolasdeville.com/books/">books</a></li>
+                <li><a href="https://notes.nicolasdeville.com/careerplaybook/">#careerplaybook</a></li>
+                <li class="active"><a href="https://notes.nicolasdeville.com/helpers/">helpers</a></li>
+                <li><a href="https://notes.nicolasdeville.com/home-office/">home office</a></li>
+                <li><a href="https://notes.nicolasdeville.com/interests/">interests</a></li>
+                <li><a href="https://notes.nicolasdeville.com/leadership/">leadership</a></li>
+                <li><a href="https://notes.nicolasdeville.com/learning/">learning</a></li>
+                <li><a href="https://notes.nicolasdeville.com/movies/">movies</a></li>
+                <li><a href="https://notes.nicolasdeville.com/projects/">projects</a></li>
+                <li><a href="https://notes.nicolasdeville.com/python/">python</a></li>
+                <li><a href="https://notes.nicolasdeville.com/random/">random</a></li>
+                <li><a href="https://notes.nicolasdeville.com/startups/">startups</a></li>
+                <li><a href="https://notes.nicolasdeville.com/tesla/">tesla</a></li>
+            </ul></nav>
+        </header>
+
+        <!-- index.html injection -->
+<section id="content" class="body">
+    <article>
+        <header>
+            <h1 class="entry-title">
+                <main> <!-- for indexing by Stork -->
+                    <a href="https://notes.nicolasdeville.com/helpers/responsive-web-design" rel="bookmark"
+                    title="Permalink to How to build a responsive website">How to build a responsive website
+                    </a>
+                </main>
+            </h1>
+            <p class="header_summary">
+                <main> <!-- for indexing by Stork -->
+                    
+                </main>
+            </p>
+        </header>
+
+        <div class="entry-content">
+<footer class="post-info">
+
+    <p>
+        09 Nov 2022 
+        <span class="separator">|</span> in <a class="link_tag" href="https://notes.nicolasdeville.com/helpers/"><span data-pagefind-filter="category">helpers</span></a>
+
+
+        <!-- added 4/7 -->
+        <!-- 		<br />
+        <abbr class="modified" title="2022-11-09T21:31:37.498002+01:00">
+                Updated: 09 Nov 2022
+        </abbr>
+ -->
+
+    </p>
+
+    
+
+</footer>            <!-- for indexing by Stork -->
+            <!-- <main>  -->
+                <div class="toc"><span class="toctitle">Table of Contents</span><ul>
+<li><a href="#viewport">Viewport</a></li>
+<li><a href="#layout">Layout</a><ul>
+<li><a href="#flexbox">Flexbox</a></li>
+<li><a href="#css-grid">CSS grid</a><ul>
+<li><a href="#grid-containers">grid containers</a><ul>
+<li><a href="#repeat-function">repeat function</a></li>
+<li><a href="#align-within-containers">align within containers</a></li>
+</ul>
+</li>
+<li><a href="#grid-items">grid items</a><ul>
+<li><a href="#align-within-grid-items">align within grid items</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#css">CSS</a><ul>
+<li><a href="#media-queries">media queries</a><ul>
+<li><a href="#hide-elements">hide elements</a></li>
+<li><a href="#variable-font-size">variable font-size</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#typefaces">Typefaces</a></li>
+<li><a href="#images">Images</a></li>
+<li><a href="#colors">Colors</a></li>
+<li><a href="#frameworks">Frameworks</a></li>
+<li><a href="#design-resources">Design resources</a></li>
+<li><a href="#demos">Demos</a><ul>
+<li><a href="#approach-to-implement">approach to implement</a></li>
+</ul>
+</li>
+<li><a href="#resources">Resources</a></li>
+</ul>
+</div>
+<h1 id="viewport">Viewport</h1>
+<p>The viewport defines the visible area of the device the site is accessed from.   </p>
+<p>Add a viewport in <code>&lt;head&gt;</code> as:  </p>
+<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">meta</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;viewport&quot;</span> <span class="na">content</span><span class="o">=</span><span class="s">&quot;width=device-width, initial-scale=1.0, maximum-scale=1.0&quot;</span> <span class="p">/&gt;</span>
+</code></pre></div>
+
+<h1 id="layout">Layout</h1>
+<p>3 ways:</p>
+<ul>
+<li>Float layouts (old, dismiss)</li>
+<li>Flexbox (1-dimensional rows, for simple components layout)</li>
+<li>CSS grid (2-dimensional grid, for page layouts and complex components)</li>
+</ul>
+<h2 id="flexbox">Flexbox</h2>
+<h2 id="css-grid">CSS grid</h2>
+<h3 id="grid-containers">grid containers</h3>
+<div class="highlight"><pre><span></span><code><span class="w">    </span><span class="nt">display</span><span class="o">:</span><span class="w"> </span><span class="nt">grid</span><span class="o">;</span><span class="w"></span>
+<span class="w">    </span><span class="c">/* number and size of columns and rows */</span><span class="w"></span>
+<span class="w">    </span><span class="nt">grid-template-columns</span><span class="o">:</span><span class="w"> </span><span class="nt">3fr</span><span class="w"> </span><span class="nt">auto</span><span class="w"> </span><span class="nt">1fr</span><span class="w"> </span><span class="nt">2fr</span><span class="o">;</span><span class="w"> </span><span class="c">/* 2 fixed columns, 2 responsive columns. `fr` for fractional */</span><span class="w"></span>
+<span class="w">    </span><span class="nt">grid-template-rows</span><span class="o">:</span><span class="w"> </span><span class="nt">300px</span><span class="w"> </span><span class="nt">200px</span><span class="w"> </span><span class="o">;</span><span class="w"> </span><span class="c">/* sets rows heights */</span><span class="w"></span>
+<span class="w">    </span><span class="c">/* gaps / gutters */</span><span class="w"></span>
+<span class="w">    </span><span class="nt">column-gap</span><span class="o">:</span><span class="w"> </span><span class="nt">30px</span><span class="o">;</span><span class="w"></span>
+<span class="w">    </span><span class="nt">row-gap</span><span class="o">:</span><span class="w"> </span><span class="nt">50px</span><span class="o">;</span><span class="w"></span>
+<span class="w">    </span><span class="c">/* alignment */</span><span class="w"></span>
+<span class="w">    </span><span class="nt">justify-items</span><span class="o">:</span><span class="w"> </span><span class="nt">stretch</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="nt">start</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="nt">center</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="nt">end</span><span class="o">;</span><span class="w"></span>
+<span class="w">    </span><span class="nt">align-items</span><span class="o">:</span><span class="w"> </span><span class="nt">stretch</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="nt">start</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="nt">center</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="nt">end</span><span class="o">;</span><span class="w"></span>
+</code></pre></div>
+
+<h4 id="repeat-function">repeat function</h4>
+<div class="highlight"><pre><span></span><code><span class="w">    </span><span class="nt">grid-template-columns</span><span class="o">:</span><span class="w"> </span><span class="nt">repeat</span><span class="o">(</span><span class="nt">16</span><span class="o">,</span><span class="w"> </span><span class="nt">1fr</span><span class="o">);</span><span class="w"> </span><span class="c">/* for 16 columns, each 1fr */</span><span class="w"></span>
+</code></pre></div>
+
+<h4 id="align-within-containers">align within containers</h4>
+<div class="highlight"><pre><span></span><code><span class="w">    </span><span class="c">/* cell alignment */</span><span class="w"></span>
+<span class="w">    </span><span class="nt">justify-content</span><span class="o">:</span><span class="w"> </span><span class="nt">center</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="nt">space-between</span><span class="o">;</span><span class="w"></span>
+<span class="w">    </span><span class="nt">align-content</span><span class="o">:</span><span class="w"> </span><span class="nt">center</span><span class="o">;</span><span class="w"></span>
+<span class="w">    </span><span class="c">/* items alignment within cells */</span><span class="w"></span>
+<span class="w">    </span><span class="nt">align-items</span><span class="o">:</span><span class="w"> </span><span class="nt">center</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="nt">stretch</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="nt">start</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="nt">end</span><span class="o">;</span><span class="w"> </span><span class="c">/* stretch is default */</span><span class="w"></span>
+<span class="w">    </span><span class="nt">justify-items</span><span class="o">:</span><span class="w"> </span><span class="nt">center</span><span class="o">;</span><span class="w"> </span><span class="c">/* stretch is default */</span><span class="w"></span>
+</code></pre></div>
+
+<h3 id="grid-items">grid items</h3>
+<div class="highlight"><pre><span></span><code><span class="c">/* to place a grid item into a specific cell or group of cells */</span><span class="w"></span>
+<span class="p">.</span><span class="nc">el-1</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="k">grid-column</span><span class="p">:</span><span class="w"> </span><span class="o">&lt;</span><span class="kc">start</span><span class="w"> </span><span class="n">line</span><span class="o">&gt;</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="o">&lt;</span><span class="kc">end</span><span class="w"> </span><span class="n">line</span><span class="o">&gt;</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="n">span</span><span class="w"> </span><span class="o">&lt;</span><span class="n">number</span><span class="o">&gt;</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="k">grid-row</span><span class="p">:</span><span class="w"> </span><span class="o">&lt;</span><span class="kc">start</span><span class="w"> </span><span class="n">line</span><span class="o">&gt;</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="o">&lt;</span><span class="kc">end</span><span class="w"> </span><span class="n">line</span><span class="o">&gt;</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="n">span</span><span class="w"> </span><span class="o">&lt;</span><span class="n">number</span><span class="o">&gt;</span><span class="p">;</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</code></pre></div>
+
+<p>eg   </p>
+<div class="highlight"><pre><span></span><code><span class="p">.</span><span class="nc">el-1</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="err">grid</span><span class="w"> </span><span class="n">column</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="mi">-1</span><span class="p">;</span><span class="w"> </span><span class="c">/* -1 to span the rest of the space, eg full row here */</span><span class="w"></span>
+<span class="w">    </span><span class="err">grid</span><span class="w"> </span><span class="n">row</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="mi">3</span><span class="p">;</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</code></pre></div>
+
+<h4 id="align-within-grid-items">align within grid items</h4>
+<div class="highlight"><pre><span></span><code><span class="p">.</span><span class="nc">el-1</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="k">align-self</span><span class="p">:</span><span class="w"> </span><span class="kc">center</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="k">justify-self</span><span class="p">:</span><span class="w"> </span><span class="kc">center</span><span class="p">;</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</code></pre></div>
+
+<h1 id="css">CSS</h1>
+<h2 id="media-queries">media queries</h2>
+<p>Use <code>@media</code> to change properties based on viewport size.  </p>
+<p>Mobile first means changing properties if viewport is larger than mobile:   </p>
+<div class="highlight"><pre><span></span><code><span class="c">/* For mobile phones: */</span><span class="w"></span>
+<span class="o">[</span><span class="nt">class</span><span class="o">*=</span><span class="s2">&quot;col-&quot;</span><span class="o">]</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">  </span><span class="k">width</span><span class="p">:</span><span class="w"> </span><span class="mi">100</span><span class="kt">%</span><span class="p">;</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+
+<span class="p">@</span><span class="k">media</span><span class="w"> </span><span class="nt">only</span><span class="w"> </span><span class="nt">screen</span><span class="w"> </span><span class="nt">and</span><span class="w"> </span><span class="o">(</span><span class="nt">min-width</span><span class="o">:</span><span class="w"> </span><span class="nt">600px</span><span class="o">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">  </span><span class="c">/* For tablets: */</span><span class="w"></span>
+<span class="w">  </span><span class="p">.</span><span class="nc">col-s-1</span><span class="w"> </span><span class="p">{</span><span class="k">width</span><span class="p">:</span><span class="w"> </span><span class="mf">8.33</span><span class="kt">%</span><span class="p">;}</span><span class="w"></span>
+<span class="w">  </span><span class="p">.</span><span class="nc">col-s-2</span><span class="w"> </span><span class="p">{</span><span class="k">width</span><span class="p">:</span><span class="w"> </span><span class="mf">16.66</span><span class="kt">%</span><span class="p">;}</span><span class="w"></span>
+<span class="w">  </span><span class="p">.</span><span class="nc">col-s-3</span><span class="w"> </span><span class="p">{</span><span class="k">width</span><span class="p">:</span><span class="w"> </span><span class="mi">25</span><span class="kt">%</span><span class="p">;}</span><span class="w"></span>
+<span class="w">  </span><span class="p">.</span><span class="nc">col-s-4</span><span class="w"> </span><span class="p">{</span><span class="k">width</span><span class="p">:</span><span class="w"> </span><span class="mf">33.33</span><span class="kt">%</span><span class="p">;}</span><span class="w"></span>
+<span class="w">  </span><span class="p">.</span><span class="nc">col-s-5</span><span class="w"> </span><span class="p">{</span><span class="k">width</span><span class="p">:</span><span class="w"> </span><span class="mf">41.66</span><span class="kt">%</span><span class="p">;}</span><span class="w"></span>
+<span class="w">  </span><span class="p">.</span><span class="nc">col-s-6</span><span class="w"> </span><span class="p">{</span><span class="k">width</span><span class="p">:</span><span class="w"> </span><span class="mi">50</span><span class="kt">%</span><span class="p">;}</span><span class="w"></span>
+<span class="w">  </span><span class="p">.</span><span class="nc">col-s-7</span><span class="w"> </span><span class="p">{</span><span class="k">width</span><span class="p">:</span><span class="w"> </span><span class="mf">58.33</span><span class="kt">%</span><span class="p">;}</span><span class="w"></span>
+<span class="w">  </span><span class="p">.</span><span class="nc">col-s-8</span><span class="w"> </span><span class="p">{</span><span class="k">width</span><span class="p">:</span><span class="w"> </span><span class="mf">66.66</span><span class="kt">%</span><span class="p">;}</span><span class="w"></span>
+<span class="w">  </span><span class="p">.</span><span class="nc">col-s-9</span><span class="w"> </span><span class="p">{</span><span class="k">width</span><span class="p">:</span><span class="w"> </span><span class="mi">75</span><span class="kt">%</span><span class="p">;}</span><span class="w"></span>
+<span class="w">  </span><span class="p">.</span><span class="nc">col-s-10</span><span class="w"> </span><span class="p">{</span><span class="k">width</span><span class="p">:</span><span class="w"> </span><span class="mf">83.33</span><span class="kt">%</span><span class="p">;}</span><span class="w"></span>
+<span class="w">  </span><span class="p">.</span><span class="nc">col-s-11</span><span class="w"> </span><span class="p">{</span><span class="k">width</span><span class="p">:</span><span class="w"> </span><span class="mf">91.66</span><span class="kt">%</span><span class="p">;}</span><span class="w"></span>
+<span class="w">  </span><span class="p">.</span><span class="nc">col-s-12</span><span class="w"> </span><span class="p">{</span><span class="k">width</span><span class="p">:</span><span class="w"> </span><span class="mi">100</span><span class="kt">%</span><span class="p">;}</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+
+<span class="p">@</span><span class="k">media</span><span class="w"> </span><span class="nt">only</span><span class="w"> </span><span class="nt">screen</span><span class="w"> </span><span class="nt">and</span><span class="w"> </span><span class="o">(</span><span class="nt">min-width</span><span class="o">:</span><span class="w"> </span><span class="nt">768px</span><span class="o">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">  </span><span class="c">/* For desktop: */</span><span class="w"></span>
+<span class="w">  </span><span class="p">.</span><span class="nc">col-1</span><span class="w"> </span><span class="p">{</span><span class="k">width</span><span class="p">:</span><span class="w"> </span><span class="mf">8.33</span><span class="kt">%</span><span class="p">;}</span><span class="w"></span>
+<span class="w">  </span><span class="p">.</span><span class="nc">col-2</span><span class="w"> </span><span class="p">{</span><span class="k">width</span><span class="p">:</span><span class="w"> </span><span class="mf">16.66</span><span class="kt">%</span><span class="p">;}</span><span class="w"></span>
+<span class="w">  </span><span class="p">.</span><span class="nc">col-3</span><span class="w"> </span><span class="p">{</span><span class="k">width</span><span class="p">:</span><span class="w"> </span><span class="mi">25</span><span class="kt">%</span><span class="p">;}</span><span class="w"></span>
+<span class="w">  </span><span class="p">.</span><span class="nc">col-4</span><span class="w"> </span><span class="p">{</span><span class="k">width</span><span class="p">:</span><span class="w"> </span><span class="mf">33.33</span><span class="kt">%</span><span class="p">;}</span><span class="w"></span>
+<span class="w">  </span><span class="p">.</span><span class="nc">col-5</span><span class="w"> </span><span class="p">{</span><span class="k">width</span><span class="p">:</span><span class="w"> </span><span class="mf">41.66</span><span class="kt">%</span><span class="p">;}</span><span class="w"></span>
+<span class="w">  </span><span class="p">.</span><span class="nc">col-6</span><span class="w"> </span><span class="p">{</span><span class="k">width</span><span class="p">:</span><span class="w"> </span><span class="mi">50</span><span class="kt">%</span><span class="p">;}</span><span class="w"></span>
+<span class="w">  </span><span class="p">.</span><span class="nc">col-7</span><span class="w"> </span><span class="p">{</span><span class="k">width</span><span class="p">:</span><span class="w"> </span><span class="mf">58.33</span><span class="kt">%</span><span class="p">;}</span><span class="w"></span>
+<span class="w">  </span><span class="p">.</span><span class="nc">col-8</span><span class="w"> </span><span class="p">{</span><span class="k">width</span><span class="p">:</span><span class="w"> </span><span class="mf">66.66</span><span class="kt">%</span><span class="p">;}</span><span class="w"></span>
+<span class="w">  </span><span class="p">.</span><span class="nc">col-9</span><span class="w"> </span><span class="p">{</span><span class="k">width</span><span class="p">:</span><span class="w"> </span><span class="mi">75</span><span class="kt">%</span><span class="p">;}</span><span class="w"></span>
+<span class="w">  </span><span class="p">.</span><span class="nc">col-10</span><span class="w"> </span><span class="p">{</span><span class="k">width</span><span class="p">:</span><span class="w"> </span><span class="mf">83.33</span><span class="kt">%</span><span class="p">;}</span><span class="w"></span>
+<span class="w">  </span><span class="p">.</span><span class="nc">col-11</span><span class="w"> </span><span class="p">{</span><span class="k">width</span><span class="p">:</span><span class="w"> </span><span class="mf">91.66</span><span class="kt">%</span><span class="p">;}</span><span class="w"></span>
+<span class="w">  </span><span class="p">.</span><span class="nc">col-12</span><span class="w"> </span><span class="p">{</span><span class="k">width</span><span class="p">:</span><span class="w"> </span><span class="mi">100</span><span class="kt">%</span><span class="p">;}</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</code></pre></div>
+
+<p>ideally:  </p>
+<div class="highlight"><pre><span></span><code><span class="c">/* Extra small devices (phones, 600px and down) */</span><span class="w"></span>
+<span class="p">@</span><span class="k">media</span><span class="w"> </span><span class="nt">only</span><span class="w"> </span><span class="nt">screen</span><span class="w"> </span><span class="nt">and</span><span class="w"> </span><span class="o">(</span><span class="nt">max-width</span><span class="o">:</span><span class="w"> </span><span class="nt">600px</span><span class="o">)</span><span class="w"> </span><span class="p">{</span><span class="o">...</span><span class="p">}</span><span class="w"></span>
+
+<span class="c">/* Small devices (portrait tablets and large phones, 600px and up) */</span><span class="w"></span>
+<span class="p">@</span><span class="k">media</span><span class="w"> </span><span class="nt">only</span><span class="w"> </span><span class="nt">screen</span><span class="w"> </span><span class="nt">and</span><span class="w"> </span><span class="o">(</span><span class="nt">min-width</span><span class="o">:</span><span class="w"> </span><span class="nt">600px</span><span class="o">)</span><span class="w"> </span><span class="p">{</span><span class="o">...</span><span class="p">}</span><span class="w"></span>
+
+<span class="c">/* Medium devices (landscape tablets, 768px and up) */</span><span class="w"></span>
+<span class="p">@</span><span class="k">media</span><span class="w"> </span><span class="nt">only</span><span class="w"> </span><span class="nt">screen</span><span class="w"> </span><span class="nt">and</span><span class="w"> </span><span class="o">(</span><span class="nt">min-width</span><span class="o">:</span><span class="w"> </span><span class="nt">768px</span><span class="o">)</span><span class="w"> </span><span class="p">{</span><span class="o">...</span><span class="p">}</span><span class="w"></span>
+
+<span class="c">/* Large devices (laptops/desktops, 992px and up) */</span><span class="w"></span>
+<span class="p">@</span><span class="k">media</span><span class="w"> </span><span class="nt">only</span><span class="w"> </span><span class="nt">screen</span><span class="w"> </span><span class="nt">and</span><span class="w"> </span><span class="o">(</span><span class="nt">min-width</span><span class="o">:</span><span class="w"> </span><span class="nt">992px</span><span class="o">)</span><span class="w"> </span><span class="p">{</span><span class="o">...</span><span class="p">}</span><span class="w"></span>
+
+<span class="c">/* Extra large devices (large laptops and desktops, 1200px and up) */</span><span class="w"></span>
+<span class="p">@</span><span class="k">media</span><span class="w"> </span><span class="nt">only</span><span class="w"> </span><span class="nt">screen</span><span class="w"> </span><span class="nt">and</span><span class="w"> </span><span class="o">(</span><span class="nt">min-width</span><span class="o">:</span><span class="w"> </span><span class="nt">1200px</span><span class="o">)</span><span class="w"> </span><span class="p">{</span><span class="o">...</span><span class="p">}</span><span class="w"></span>
+</code></pre></div>
+
+<p>to handle orientation: </p>
+<div class="highlight"><pre><span></span><code><span class="p">@</span><span class="k">media</span><span class="w"> </span><span class="nt">only</span><span class="w"> </span><span class="nt">screen</span><span class="w"> </span><span class="nt">and</span><span class="w"> </span><span class="o">(</span><span class="nt">orientation</span><span class="o">:</span><span class="w"> </span><span class="nt">landscape</span><span class="o">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">  </span><span class="nt">body</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="k">background-color</span><span class="p">:</span><span class="w"> </span><span class="kc">lightblue</span><span class="p">;</span><span class="w"></span>
+<span class="w">  </span><span class="p">}</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</code></pre></div>
+
+<h3 id="hide-elements">hide elements</h3>
+<div class="highlight"><pre><span></span><code><span class="c">/* If the screen size is 600px wide or less, hide the element */</span><span class="w"></span>
+<span class="p">@</span><span class="k">media</span><span class="w"> </span><span class="nt">only</span><span class="w"> </span><span class="nt">screen</span><span class="w"> </span><span class="nt">and</span><span class="w"> </span><span class="o">(</span><span class="nt">max-width</span><span class="o">:</span><span class="w"> </span><span class="nt">600px</span><span class="o">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">  </span><span class="nt">div</span><span class="p">.</span><span class="nc">example</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="k">display</span><span class="p">:</span><span class="w"> </span><span class="kc">none</span><span class="p">;</span><span class="w"></span>
+<span class="w">  </span><span class="p">}</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</code></pre></div>
+
+<h3 id="variable-font-size">variable font-size</h3>
+<div class="highlight"><pre><span></span><code><span class="c">/* If the screen size is 601px or more, set the font-size of &lt;div&gt; to 80px */</span><span class="w"></span>
+<span class="p">@</span><span class="k">media</span><span class="w"> </span><span class="nt">only</span><span class="w"> </span><span class="nt">screen</span><span class="w"> </span><span class="nt">and</span><span class="w"> </span><span class="o">(</span><span class="nt">min-width</span><span class="o">:</span><span class="w"> </span><span class="nt">601px</span><span class="o">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">  </span><span class="nt">div</span><span class="p">.</span><span class="nc">example</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="k">font-size</span><span class="p">:</span><span class="w"> </span><span class="mi">80</span><span class="kt">px</span><span class="p">;</span><span class="w"></span>
+<span class="w">  </span><span class="p">}</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+
+<span class="c">/* If the screen size is 600px or less, set the font-size of &lt;div&gt; to 30px */</span><span class="w"></span>
+<span class="p">@</span><span class="k">media</span><span class="w"> </span><span class="nt">only</span><span class="w"> </span><span class="nt">screen</span><span class="w"> </span><span class="nt">and</span><span class="w"> </span><span class="o">(</span><span class="nt">max-width</span><span class="o">:</span><span class="w"> </span><span class="nt">600px</span><span class="o">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">  </span><span class="nt">div</span><span class="p">.</span><span class="nc">example</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="k">font-size</span><span class="p">:</span><span class="w"> </span><span class="mi">30</span><span class="kt">px</span><span class="p">;</span><span class="w"></span>
+<span class="w">  </span><span class="p">}</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</code></pre></div>
+
+<h1 id="typefaces">Typefaces</h1>
+<p>16px to 32px for most text. Titles can be bigger, eg 85px.   </p>
+<p>Font weight 400 or more.  </p>
+<p>&lt;75 characters per line.    </p>
+<p>line height 1.5 or 2 (1.5 for big text)</p>
+<p>All caps for short titles</p>
+<h1 id="images">Images</h1>
+<div class="book_quote">
+<div class="book_quote_highlight">If the width property is set to a percentage and the height property is set to "auto", the image will be responsive and scale up and down</div>
+<div class="book_quote_location"><a href="https://www.w3schools/css/css_rwd_images.asp" target="_blank">https://www.w3schools/css/css_rwd_images.asp</a></div></div>
+
+<div class="highlight"><pre><span></span><code><span class="nt">img</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">  </span><span class="k">width</span><span class="p">:</span><span class="w"> </span><span class="mi">100</span><span class="kt">%</span><span class="p">;</span><span class="w"></span>
+<span class="w">  </span><span class="k">height</span><span class="p">:</span><span class="w"> </span><span class="kc">auto</span><span class="p">;</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</code></pre></div>
+
+<h1 id="colors">Colors</h1>
+<p>Main, Accent and Grey.
+Tints are lighter, shades are darker.  </p>
+<p>Use:   </p>
+<div class="link_border"><div class="link_logo_box"><img class="link_logo" src="https://notes.nicolasdeville.com/images/logos/coolors.png" alt="logo"/></div><div class="link_content">
+<div class="link_title">Coolors</div>
+<div class="link_tagline">coolors</div>
+<div class="link_url"><a href="https://coolors/" target="_blank">https://coolors/</a></div></div></div>
+
+<p>or    </p>
+<div class="link_border"><div class="link_logo_box"><img class="link_logo" src="https://notes.nicolasdeville.com/images/logos/paletton.png" alt="logo"/></div><div class="link_content">
+<div class="link_title">Paletton</div>
+<div class="link_tagline">paletton</div>
+<div class="link_url"><a href="https://paletton/" target="_blank">https://paletton/</a></div></div></div>
+
+<h1 id="frameworks">Frameworks</h1>
+<div class="link_border"><div class="link_logo_box"><img class="link_logo" src="https://notes.nicolasdeville.com/images/logos/getskeleton.png" alt="logo"/></div><div class="link_content">
+<div class="link_title">Skeleton: Responsive CSS Boilerplate</div>
+<div class="link_tagline">Heading <h1> 50rem</div>
+<div class="link_url"><a href="http://getskeleton/" target="_blank">http://getskeleton/</a></div></div></div>
+
+<ul>
+<li>good candidate, like the style, but perhaps too bare bones?</li>
+</ul>
+<div class="link_border"><div class="link_logo_box"><img class="link_logo" src="https://notes.nicolasdeville.com/images/logos/html5boilerplate.png" alt="logo"/></div><div class="link_content">
+<div class="link_title">HTML5 boilerplate</div>
+<div class="link_tagline">html5boilerplate</div>
+<div class="link_url"><a href="https://html5boilerplate/" target="_blank">https://html5boilerplate/</a></div></div></div>
+
+<ul>
+<li>this is the one I started with. Lacks grid system and more though. Too bare bones for my needs.   </li>
+</ul>
+<div class="link_border"><div class="link_logo_box"><img class="link_logo" src="https://notes.nicolasdeville.com/images/logos/99lime.png" alt="logo"/></div><div class="link_content">
+<div class="link_title">HTML KickStart</div>
+<div class="link_tagline">99lime</div>
+<div class="link_url"><a href="http://www.99lime/elements/" target="_blank">http://www.99lime/elements/</a></div></div></div>
+
+<ul>
+<li>looks comprehensive, but not a fan of the elements' design.  </li>
+</ul>
+<div class="link_border"><div class="link_logo_box"><img class="link_logo" src="https://notes.nicolasdeville.com/images/logos/getbootstrap.png" alt="logo"/></div><div class="link_content">
+<div class="link_title">Bootstrap</div>
+<div class="link_tagline">getbootstrap</div>
+<div class="link_url"><a href="https://getbootstrap/" target="_blank">https://getbootstrap/</a></div></div></div>
+
+<div class="link_border"><div class="link_logo_box"><img class="link_logo" src="https://notes.nicolasdeville.com/images/logos/get.png" alt="logo"/></div><div class="link_content">
+<div class="link_title">Foundation for Sites | The most advanced responsive front-end framework in the world.</div>
+<div class="link_tagline">Foundation for Sites 6</div>
+<div class="link_url"><a href="https://get/sites.html" target="_blank">https://get/sites.html</a></div></div></div>
+
+<p>See all elements: <a href="https://get/sites/docs/kitchen-sink.html#accordion" target="_blank">https://get/sites/docs/kitchen-sink.html#accordion</a>   </p>
+<h1 id="design-resources">Design resources</h1>
+<div class="link_border"><div class="link_logo_box"><img class="link_logo" src="https://notes.nicolasdeville.com/images/logos/land-book.png" alt="logo"/></div><div class="link_content">
+<div class="link_title">Land-book - website design inspiration gallery</div>
+<div class="link_tagline">land-book</div>
+<div class="link_url"><a href="https://land-book/" target="_blank">https://land-book/</a></div></div></div>
+
+<div class="link_border"><div class="link_logo_box"><img class="link_logo" src="https://notes.nicolasdeville.com/images/logos/awwwards.png" alt="logo"/></div><div class="link_content">
+<div class="link_title">Awwwards - Website Awards - Best Web Design Trends</div>
+<div class="link_tagline">The awards of design, creativity and innovation on the internet</div>
+<div class="link_url"><a href="https://www.awwwards/" target="_blank">https://www.awwwards/</a></div></div></div>
+
+<div class="link_border"><div class="link_logo_box"><img class="link_logo" src="https://notes.nicolasdeville.com/images/logos/onepagelove.png" alt="logo"/></div><div class="link_content">
+<div class="link_title">One Page Love - One Page Website Inspiration and Templates</div>
+<div class="link_tagline">One Page websites, templates and resources</div>
+<div class="link_url"><a href="https://onepagelove/" target="_blank">https://onepagelove/</a></div></div></div>
+
+<h1 id="demos">Demos</h1>
+<h2 id="approach-to-implement">approach to implement</h2>
+<p>with collapsing rows while maintaining headers:  </p>
+<div class="link_border"><div class="link_logo_box"><img class="link_logo" src="https://notes.nicolasdeville.com/images/logos/codepen.png" alt="logo"/></div><div class="link_content">
+<div class="link_title">CodePen Home 
+Responsive Table Demo</div>
+<div class="link_tagline">codepen</div>
+<div class="link_url"><a href="https://codepen/team/css-tricks/pen/wXgJww?editors=1100" target="_blank">https://codepen/team/css-tricks/pen/wXgJww?editors=1100</a></div></div></div>
+
+<h1 id="resources">Resources</h1>
+<div class="link_border"><div class="link_logo_box"><img class="link_logo" src="https://notes.nicolasdeville.com/images/logos/w3schools.png" alt="logo"/></div><div class="link_content">
+<div class="link_title">Responsive Web Design - Introduction</div>
+<div class="link_tagline">w3schools</div>
+<div class="link_url"><a href="https://www.w3schools/css/css_rwd_intro.asp" target="_blank">https://www.w3schools/css/css_rwd_intro.asp</a></div></div></div>
+
+<div class="link_border"><div class="link_logo_box"><img class="link_logo" src="https://notes.nicolasdeville.com/images/logos/udemy.png" alt="logo"/></div><div class="link_content">
+<div class="link_title">Build Responsive Websites with HTML5 and CSS3 | Udemy</div>
+<div class="link_tagline">udemy</div>
+<div class="link_url"><a href="https://www.udemy/course/design-and-develop-a-killer-website-with-html5-and-css3" target="_blank">https://www.udemy/course/design-and-develop-a-killer-website-with-html5-and-css3</a></div></div></div>
+            <!-- </main> -->
+        </div><!-- /.entry-content -->
+    </article>
+</section>
+
+        <!-- footer -->
+        <section id="extras" class="body" data-pagefind-ignore>
+
+        <!-- /.blogroll -->
+                <div class="blogroll">
+                        <h2>links</h2>
+                        <ul>
+                            <li><a href="https://btobsales.eu">Services: BtoBSales.EU</a></li>
+                            <li><a href="https://indeXall.io">Side project: indeXall.io</a></li>
+                            <li><a href="https://github.com/ndeville">Github: ndeville</a></li>
+                        </ul>
+                </div>
+
+        <!-- /.social -->
+                <div class="social">
+                        <h2>social</h2>
+                        <ul>
+
+                            <li><a href="https://www.linkedin.com/in/ndeville/">Linkedin</a></li>
+                            <li><a href="https://www.twitter.com/ndeville">Twitter</a></li>
+                        </ul>
+                </div>
+        </section><!-- /#extras -->
+
+        <footer id="contentinfo" class="body" data-pagefind-ignore>
+                <address id="about" class="vcard body">
+                    <img src="https://notes.nicolasdeville.com/favicon.svg" alt="nic_logo" width="16" style="vertical-align: middle;"/>
+                Powered by <a href="https://github.com/getpelican/pelican" target="_blank">Pelican</a>
+                <!-- with <a href="https://stork-search.net/" target="_blank">Stork</a> & <a href="https://github.com/pelican-plugins/search" target="_blank">Pelican Search plugin</a>. -->
+                <br>
+                <a href="https://clearbit.com" target="_blank">Logos provided by Clearbit</a>
+                <br>
+                <!-- <span style="color:#C74350">|</span> <img src="https://notes.nicolasdeville.com/images/python.svg" alt="python_logo" width="16" style="vertical-align: middle;"/> <a href="https://www.python.org/" target="_blank">Python</a>  -->
+                <img src="https://notes.nicolasdeville.com/images/python.svg" alt="python_logo" width="16" style="vertical-align: middle;"/> <a href="https://www.python.org/" target="_blank">Python</a>
+                </address><!-- /#about -->
+
+        </footer><!-- /#contentinfo -->
+
+
+<!-- JS -->
+
+<!-- my JS script (with code block copy) -->
+<script src="https://notes.nicolasdeville.com/theme/js/nic.js"></script>
+
+<!-- for Stork seach engine -->
+<!-- <script src="https://files.stork-search.net/stork.js"></script>
+<script>
+    stork.register("sitesearch", "https://notes.nicolasdeville.com/search-index.st")
+</script> -->
+
+<!-- <script>
+    (function() {
+    if( window.innerWidth > 600 ) {
+        var stork_script = document.createElement('script');
+        stork_script.type = 'text/javascript';
+        stork_script.src = 'https://files.stork-search.net/stork.js';
+
+        var stork_register = ('script');
+        stork_register.innerHTML = 'stork.register("sitesearch", "https://notes.nicolasdeville.com/search-index.st")';
+
+        var head = document.getElementsByTagName('head')[0];
+        head.appendChild(stork_script);
+        head.appendChild(stork_register);
+
+
+    }
+    })();
+</script> -->
+
+</body>
+</html>

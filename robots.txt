@@ -1,0 +1,4 @@
+User-agent: *
+Sitemap: https://notes.nicolasdeville.com/sitemap.xml
+Disallow: /cannabis
+Disallow: cannabis
