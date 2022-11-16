@@ -1,6 +1,0 @@
-# pagefind.yml
-source: "/Users/nic/Github/notes-nicolasdeville.github.io"
-bundle_dir: pagefind
-showEmptyFilters: false
-showImages: false
-glob: "{ai,apps,b2b-sales,books,careerplaybook,home-office,interests,leadership,learning,movies,projects,python,random,startups,tesla}/**/*.html}"
