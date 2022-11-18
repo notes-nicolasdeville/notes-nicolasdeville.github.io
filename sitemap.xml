@@ -20,6 +20,12 @@
     </url>
     
     <url>
+        <loc>https://notes.nicolasdeville.com/startups/culture</loc>
+        <lastmod>2022-11-18</lastmod>
+        <priority>0.8</priority>        
+    </url>
+    
+    <url>
         <loc>https://notes.nicolasdeville.com/startups/00-my-learnings</loc>
         <lastmod>2022-11-18</lastmod>
         <priority>0.8</priority>        
@@ -2505,6 +2511,12 @@
     
     <url>
         <loc>https://notes.nicolasdeville.com/leadership/okr</loc>
+        <lastmod>2022-11-18</lastmod>
+        <priority>0.8</priority>        
+    </url>
+    
+    <url>
+        <loc>https://notes.nicolasdeville.com/leadership/mochary-method-curriculum</loc>
         <lastmod>2022-11-18</lastmod>
         <priority>0.8</priority>        
     </url>
