@@ -687,7 +687,7 @@ table {
 	font-style: normal;
 	/* margin: 1em; */
 	overflow: hidden;
-	padding-left: 1rem;
+	padding-left: 0.3rem;
 	text-align: left;
 	max-width: 760px;
 }
