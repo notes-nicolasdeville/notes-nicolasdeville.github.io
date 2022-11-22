@@ -21,7 +21,7 @@
 
 <meta property="article:published_time" content="2022-07-22 00:00:00+02:00" />
 
-<meta property="article:modified_time" content="2022-11-04 11:38:15.726582+01:00" />
+<meta property="article:modified_time" content="2022-11-19 15:31:01.267396+01:00" />
 
 <meta name="robots" content="all, follow" />
 
@@ -85,7 +85,7 @@
             
 
             <div class="above-navbar">
-                <div class="last_updated">19 Nov 2022 | 00:38</div>
+                <div class="last_updated">22 Nov 2022 | 09:16</div>
                 <div>
                     <p class="notes_count">
                         <a href="https://notes.nicolasdeville.com/tags">by tags</a>
@@ -151,8 +151,8 @@
 
         <!-- added 4/7 -->
         <!-- 		<br />
-        <abbr class="modified" title="2022-11-04T11:38:15.726582+01:00">
-                Updated: 04 Nov 2022
+        <abbr class="modified" title="2022-11-19T15:31:01.267396+01:00">
+                Updated: 19 Nov 2022
         </abbr>
  -->
 
@@ -268,6 +268,141 @@
 <p><a href="https://hub.espanso.org/markdown-shortcuts" target="_blank">https://hub.espanso.org/markdown-shortcuts</a> (note a lot of keystrokes saved though)    </p>
 <h2 id="espanso-get-ip-pack">espanso-get-ip-pack</h2>
 <p><a href="https://hub.espanso.org/get-ip" target="_blank">https://hub.espanso.org/get-ip</a>   </p>
+<h1 id="my-configuration-file">My configuration file</h1>
+<p><span class="datestamp">19 Nov 2022</span> </p>
+<p>My <code>base.yml</code>:  </p>
+<div class="highlight"><pre><span></span><code><span class="c1"># espanso match file</span><span class="w"></span>
+
+<span class="c1"># For a complete introduction, visit the official docs at: https://espanso.org/docs/</span><span class="w"></span>
+
+<span class="c1"># You can use this file to define the base matches (aka snippets)</span><span class="w"></span>
+<span class="c1"># that will be available in every application when using espanso.</span><span class="w"></span>
+
+<span class="c1"># Matches are substitution rules: when you type the &quot;trigger&quot; string</span><span class="w"></span>
+<span class="c1"># it gets replaced by the &quot;replace&quot; string.</span><span class="w"></span>
+<span class="n">matches</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="c1"># Simple text replacement</span><span class="w"></span>
+<span class="w">  </span><span class="o">-</span><span class="w"> </span><span class="n">trigger</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;:espanso&quot;</span><span class="w"></span>
+<span class="w">    </span><span class="n">replace</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Hi there!&quot;</span><span class="w"></span>
+
+<span class="w">  </span><span class="c1"># NOTE: espanso uses YAML to define matches, so pay attention to the indentation!</span><span class="w"></span>
+
+<span class="w">  </span><span class="c1"># But matches can also be dynamic:</span><span class="w"></span>
+
+<span class="w">  </span><span class="c1"># Current date as YYMMDD</span><span class="w"></span>
+<span class="w">  </span><span class="o">-</span><span class="w"> </span><span class="n">trigger</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;;d&quot;</span><span class="w"></span>
+<span class="w">    </span><span class="n">replace</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;{{mydate}}&quot;</span><span class="w"></span>
+<span class="w">    </span><span class="n">vars</span><span class="p">:</span><span class="w"></span>
+<span class="w">      </span><span class="o">-</span><span class="w"> </span><span class="n">name</span><span class="p">:</span><span class="w"> </span><span class="n">mydate</span><span class="w"></span>
+<span class="w">        </span><span class="n">type</span><span class="p">:</span><span class="w"> </span><span class="n">date</span><span class="w"></span>
+<span class="w">        </span><span class="n">params</span><span class="p">:</span><span class="w"></span>
+<span class="w">          </span><span class="n">format</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;%y%m</span><span class="si">%d</span><span class="s2">&quot;</span><span class="w"></span>
+
+<span class="w">  </span><span class="c1"># Timestamp as YYMMDD-HHMM</span><span class="w"></span>
+<span class="w">  </span><span class="o">-</span><span class="w"> </span><span class="n">trigger</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;;t&quot;</span><span class="w"></span>
+<span class="w">    </span><span class="n">replace</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;{{mydate}}&quot;</span><span class="w"></span>
+<span class="w">    </span><span class="n">vars</span><span class="p">:</span><span class="w"></span>
+<span class="w">      </span><span class="o">-</span><span class="w"> </span><span class="n">name</span><span class="p">:</span><span class="w"> </span><span class="n">mydate</span><span class="w"></span>
+<span class="w">        </span><span class="n">type</span><span class="p">:</span><span class="w"> </span><span class="n">date</span><span class="w"></span>
+<span class="w">        </span><span class="n">params</span><span class="p">:</span><span class="w"></span>
+<span class="w">          </span><span class="n">format</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;%y%m</span><span class="si">%d</span><span class="s2">-%H%M&quot;</span><span class="w"></span>
+
+<span class="w">  </span><span class="c1"># Print the output of a shell command</span><span class="w"></span>
+<span class="w">  </span><span class="o">-</span><span class="w"> </span><span class="n">trigger</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;:shell&quot;</span><span class="w"></span>
+<span class="w">    </span><span class="n">replace</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;{{output}}&quot;</span><span class="w"></span>
+<span class="w">    </span><span class="n">vars</span><span class="p">:</span><span class="w"></span>
+<span class="w">      </span><span class="o">-</span><span class="w"> </span><span class="n">name</span><span class="p">:</span><span class="w"> </span><span class="n">output</span><span class="w"></span>
+<span class="w">        </span><span class="n">type</span><span class="p">:</span><span class="w"> </span><span class="n">shell</span><span class="w"></span>
+<span class="w">        </span><span class="n">params</span><span class="p">:</span><span class="w"></span>
+<span class="w">          </span><span class="n">cmd</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;echo &#39;Hello from your shell&#39;&quot;</span><span class="w"></span>
+
+<span class="w">  </span><span class="c1"># And much more! For more information, visit the docs: https://espanso.org/docs/</span><span class="w"></span>
+
+<span class="w">  </span><span class="c1"># MY SHORTCUTS</span><span class="w"></span>
+<span class="w">  </span><span class="c1"># sorted alphabetically to avoid overlapses</span><span class="w"></span>
+<span class="w">  </span><span class="o">-</span><span class="w"> </span><span class="n">trigger</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;6cz&quot;</span><span class="w"></span>
+<span class="w">    </span><span class="n">replace</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;https://us02web.zoom.us/my/nicolas.deville?pwd=xxxxxxxxx&quot;</span><span class="w"></span>
+<span class="w">  </span><span class="o">-</span><span class="w"> </span><span class="n">trigger</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;;100&quot;</span><span class="w"></span>
+<span class="w">    </span><span class="n">replace</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;💯&quot;</span><span class="w"></span>
+<span class="w">  </span><span class="o">-</span><span class="w"> </span><span class="n">trigger</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;;ang&quot;</span><span class="w"> </span><span class="c1"># ANGel</span><span class="w"></span>
+<span class="w">    </span><span class="n">replace</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;😇&quot;</span><span class="w"></span>
+<span class="w">  </span><span class="o">-</span><span class="w"> </span><span class="n">trigger</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;;ard&quot;</span><span class="w"> </span><span class="c1"># ARrow Down</span><span class="w"></span>
+<span class="w">    </span><span class="n">replace</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;⬇︎&quot;</span><span class="w"></span>
+<span class="w">  </span><span class="o">-</span><span class="w"> </span><span class="n">trigger</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;;arl&quot;</span><span class="w"> </span><span class="c1"># ARrow Left</span><span class="w"></span>
+<span class="w">    </span><span class="n">replace</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;⬅︎&quot;</span><span class="w"></span>
+<span class="w">  </span><span class="o">-</span><span class="w"> </span><span class="n">trigger</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;;arr&quot;</span><span class="w"> </span><span class="c1"># ARrow Right</span><span class="w"></span>
+<span class="w">    </span><span class="n">replace</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;➤&quot;</span><span class="w"></span>
+<span class="w">  </span><span class="o">-</span><span class="w"> </span><span class="n">trigger</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;;aru&quot;</span><span class="w"> </span><span class="c1"># ARrow Up</span><span class="w"></span>
+<span class="w">    </span><span class="n">replace</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;⬆︎&quot;</span><span class="w"></span>
+<span class="w">  </span><span class="o">-</span><span class="w"> </span><span class="n">trigger</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;;bb&quot;</span><span class="w"> </span><span class="c1"># BtoBsales</span><span class="w"></span>
+<span class="w">    </span><span class="n">replace</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;https://btobsales.eu&quot;</span><span class="w"></span>
+<span class="w">  </span><span class="o">-</span><span class="w"> </span><span class="n">trigger</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;;blo&quot;</span><span class="w"> </span><span class="c1"># BLOwn</span><span class="w"></span>
+<span class="w">    </span><span class="n">replace</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;🤯&quot;</span><span class="w"></span>
+<span class="w">  </span><span class="o">-</span><span class="w"> </span><span class="n">trigger</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;;blu&quot;</span><span class="w"> </span><span class="c1"># BLUsh</span><span class="w"></span>
+<span class="w">    </span><span class="n">replace</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;😳&quot;</span><span class="w"></span>
+<span class="w">  </span><span class="o">-</span><span class="w"> </span><span class="n">trigger</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;;conf&quot;</span><span class="w"> </span><span class="c1"># CONFused</span><span class="w"></span>
+<span class="w">    </span><span class="n">replace</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;😕&quot;</span><span class="w"></span>
+<span class="w">  </span><span class="o">-</span><span class="w"> </span><span class="n">trigger</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;;cool&quot;</span><span class="w"></span>
+<span class="w">    </span><span class="n">replace</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;😎&quot;</span><span class="w"></span>
+<span class="w">  </span><span class="o">-</span><span class="w"> </span><span class="n">trigger</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;;cv&quot;</span><span class="w"></span>
+<span class="w">    </span><span class="n">replace</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;https://cv.nicolasdeville.com&quot;</span><span class="w"></span>
+<span class="w">    </span><span class="c1"># ;d taken by date insertion above</span><span class="w"></span>
+<span class="w">  </span><span class="o">-</span><span class="w"> </span><span class="n">trigger</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;;ex&quot;</span><span class="w"> </span><span class="c1"># EXcited</span><span class="w"></span>
+<span class="w">    </span><span class="n">replace</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;🤗&quot;</span><span class="w"></span>
+<span class="w">  </span><span class="o">-</span><span class="w"> </span><span class="n">trigger</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;;fc&quot;</span><span class="w"> </span><span class="c1"># Fingers Crossed</span><span class="w"></span>
+<span class="w">    </span><span class="n">replace</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;🤞🏼&quot;</span><span class="w"></span>
+<span class="w">  </span><span class="o">-</span><span class="w"> </span><span class="n">trigger</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;;geek&quot;</span><span class="w"></span>
+<span class="w">    </span><span class="n">replace</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;🤓&quot;</span><span class="w"></span>
+<span class="w">  </span><span class="o">-</span><span class="w"> </span><span class="n">trigger</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;;gg&quot;</span><span class="w"></span>
+<span class="w">    </span><span class="n">replace</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;👍🏼&quot;</span><span class="w"></span>
+<span class="w">  </span><span class="o">-</span><span class="w"> </span><span class="n">trigger</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;;hap&quot;</span><span class="w"> </span><span class="c1"># HAPpy</span><span class="w"></span>
+<span class="w">    </span><span class="n">replace</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;😁&quot;</span><span class="w"></span>
+<span class="w">  </span><span class="o">-</span><span class="w"> </span><span class="n">trigger</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;;li&quot;</span><span class="w"> </span><span class="c1"># LInkedin</span><span class="w"></span>
+<span class="w">    </span><span class="n">replace</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;https://www.linkedin.com/in/ndeville&quot;</span><span class="w"></span>
+<span class="w">  </span><span class="o">-</span><span class="w"> </span><span class="n">trigger</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;;ll&quot;</span><span class="w"></span>
+<span class="w">    </span><span class="n">replace</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;😂😂😂&quot;</span><span class="w"></span>
+<span class="w">  </span><span class="o">-</span><span class="w"> </span><span class="n">trigger</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;;lol&quot;</span><span class="w"></span>
+<span class="w">    </span><span class="n">replace</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;😂&quot;</span><span class="w"></span>
+<span class="w">  </span><span class="o">-</span><span class="w"> </span><span class="n">trigger</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;;luc&quot;</span><span class="w"> </span><span class="c1"># LUCk</span><span class="w"></span>
+<span class="w">    </span><span class="n">replace</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;🍀&quot;</span><span class="w"></span>
+<span class="w">  </span><span class="o">-</span><span class="w"> </span><span class="n">trigger</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;;mer&quot;</span><span class="w"></span>
+<span class="w">    </span><span class="n">replace</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;🙏🏼&quot;</span><span class="w"></span>
+<span class="w">  </span><span class="o">-</span><span class="w"> </span><span class="n">trigger</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;;nd&quot;</span><span class="w"></span>
+<span class="w">    </span><span class="n">replace</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;@nicolasdeville.com&quot;</span><span class="w"></span>
+<span class="w">  </span><span class="o">-</span><span class="w"> </span><span class="n">trigger</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;;ok&quot;</span><span class="w"></span>
+<span class="w">    </span><span class="n">replace</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;👌🏼&quot;</span><span class="w"></span>
+<span class="w">  </span><span class="o">-</span><span class="w"> </span><span class="n">trigger</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;;phd&quot;</span><span class="w"> </span><span class="c1"># PHone De</span><span class="w"></span>
+<span class="w">    </span><span class="n">replace</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;+49 xxx xxx xxxx&quot;</span><span class="w"></span>
+<span class="w">  </span><span class="o">-</span><span class="w"> </span><span class="n">trigger</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;;phu&quot;</span><span class="w"> </span><span class="c1"># PHone Uk</span><span class="w"></span>
+<span class="w">    </span><span class="n">replace</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;+44 xxx xxxx xxx&quot;</span><span class="w"></span>
+<span class="w">  </span><span class="o">-</span><span class="w"> </span><span class="n">trigger</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;;puz&quot;</span><span class="w"></span>
+<span class="w">    </span><span class="n">replace</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;🤔&quot;</span><span class="w"></span>
+<span class="w">  </span><span class="o">-</span><span class="w"> </span><span class="n">trigger</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;;re&quot;</span><span class="w"></span>
+<span class="w">    </span><span class="n">replace</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;🙄&quot;</span><span class="w"></span>
+<span class="w">  </span><span class="o">-</span><span class="w"> </span><span class="n">trigger</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;;sad&quot;</span><span class="w"></span>
+<span class="w">    </span><span class="n">replace</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;😕&quot;</span><span class="w"></span>
+<span class="w">  </span><span class="o">-</span><span class="w"> </span><span class="n">trigger</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;;shrug&quot;</span><span class="w"></span>
+<span class="w">    </span><span class="n">replace</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;🤷🏻‍♂️&quot;</span><span class="w"></span>
+<span class="w">  </span><span class="o">-</span><span class="w"> </span><span class="n">trigger</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;;smi&quot;</span><span class="w"></span>
+<span class="w">    </span><span class="n">replace</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;😄&quot;</span><span class="w"></span>
+<span class="w">  </span><span class="o">-</span><span class="w"> </span><span class="n">trigger</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;;sml&quot;</span><span class="w"></span>
+<span class="w">    </span><span class="n">replace</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;😊&quot;</span><span class="w"></span>
+<span class="w">  </span><span class="o">-</span><span class="w"> </span><span class="n">trigger</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;;sta&quot;</span><span class="w"> </span>
+<span class="w">    </span><span class="n">replace</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;⭐️&quot;</span><span class="w"></span>
+<span class="w">  </span><span class="o">-</span><span class="w"> </span><span class="n">trigger</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;;str&quot;</span><span class="w"></span>
+<span class="w">    </span><span class="n">replace</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;💪🏼&quot;</span><span class="w"></span>
+<span class="w">  </span><span class="o">-</span><span class="w"> </span><span class="n">trigger</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;;sw&quot;</span><span class="w"></span>
+<span class="w">    </span><span class="n">replace</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;😅&quot;</span><span class="w"></span>
+<span class="w">    </span><span class="c1"># ;t taken by date-time insertion above</span><span class="w"></span>
+<span class="w">  </span><span class="o">-</span><span class="w"> </span><span class="n">trigger</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;;what&quot;</span><span class="w"></span>
+<span class="w">    </span><span class="n">replace</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;🤷🏻‍♂️&quot;</span><span class="w"></span>
+<span class="w">  </span><span class="o">-</span><span class="w"> </span><span class="n">trigger</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;;wi&quot;</span><span class="w"></span>
+<span class="w">    </span><span class="n">replace</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;😉&quot;</span><span class="w"></span>
+<span class="w">  </span><span class="o">-</span><span class="w"> </span><span class="n">trigger</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;;wow&quot;</span><span class="w"></span>
+<span class="w">    </span><span class="n">replace</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;😮&quot;</span><span class="w"></span>
+<span class="w">  </span><span class="o">-</span><span class="w"> </span><span class="n">trigger</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;;wt&quot;</span><span class="w"></span>
+<span class="w">    </span><span class="n">replace</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;😜&quot;</span><span class="w"></span>
+</code></pre></div>
             <!-- </main> -->
         </div><!-- /.entry-content -->
     </article>
