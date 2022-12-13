@@ -20,9 +20,9 @@
 
  
 
-<meta property="article:published_time" content="2022-11-02 22:53:59.797770+01:00" />
+<meta property="article:published_time" content="2022-12-13 00:44:03.980073+01:00" />
 
-<meta property="article:modified_time" content="2022-11-02 22:53:59.797770+01:00" />
+<meta property="article:modified_time" content="2022-12-13 00:44:03.980073+01:00" />
 
 <meta name="robots" content="all, follow" />
 
@@ -86,7 +86,7 @@
             
 
             <div class="above-navbar">
-                <div class="last_updated">10 Dec 2022 | 20:29</div>
+                <div class="last_updated">13 Dec 2022 | 20:35</div>
                 <div>
                     <p class="notes_count">
                         <a href="https://notes.nicolasdeville.com/tags">by tags</a>
@@ -97,7 +97,7 @@
                         <span style="color:#C74350">|</span>
                         <a href="https://notes.nicolasdeville.com/2022/">2022</a>
                         <span style="color:#C74350">|</span>
-                        536 notes
+                        537 notes
                     </p>
                 </div>
             </div>
@@ -144,15 +144,15 @@
 <footer class="post-info">
 
     <p>
-        02 Nov 2022 
+        13 Dec 2022 
         <span class="separator">|</span> in <a class="link_tag" href="https://notes.nicolasdeville.com/python/"><span data-pagefind-filter="category">python</span></a>
 
  tags: <a class="link_tag" href="https://notes.nicolasdeville.com/tag/scripts.html">scripts</a>
 
         <!-- added 4/7 -->
         <!-- 		<br />
-        <abbr class="modified" title="2022-11-02T22:53:59.797770+01:00">
-                Updated: 02 Nov 2022
+        <abbr class="modified" title="2022-12-13T00:44:03.980073+01:00">
+                Updated: 13 Dec 2022
         </abbr>
  -->
 
@@ -216,6 +216,63 @@ python3 /Users/xxx/Python/transcribee/test.py
 </code></pre></div>
 
 <p>note the backslash <code>\</code> to escape white spaces in paths.  </p>
+<h2 id="displaying-a-notification-if-background-shell-script-encounters-an-issue">displaying a notification if background shell script encounters an issue</h2>
+<p><span class="datestamp">13 Dec 2022</span> </p>
+<p>I'm running a lot of Python scripts these days using shell scripts.  </p>
+<p>One issue is that when one of the Python scripts within the shell scripts fails, the shell script continues to run, and I don't get any notification.  </p>
+<p>Example would be my static sites where the Python generator might fail, but the Github push proceeds anyway without the site being updated:</p>
+<div class="highlight"><pre><span></span><code><span class="ch">#! /bin/zsh</span>
+
+<span class="nb">source</span> /path/to/project/venv/bin/activate
+
+python3 /path/to/project/generate_btobsales.py
+
+<span class="nb">cd</span> /path/to/github/folder/
+
+git add .
+
+<span class="nv">CURRENTDATETIME</span><span class="o">=</span><span class="sb">`</span>date +<span class="s2">&quot;%Y-%m-%d %T&quot;</span><span class="sb">`</span>
+
+git commit -m <span class="nv">$CURRENTDATETIME</span>
+
+git push origin main
+
+open -a /Applications/Google<span class="se">\ </span>Chrome.app https://github.com/my_project
+</code></pre></div>
+
+<p>Solution seems to be as follows:  </p>
+<ul>
+<li>adding <code>set -e</code> to return an error if any command fails.</li>
+<li>adding <code>trap 'zenity --error --text="The Python script failed"' ERR</code> to display a notification if an error is returned.</li>
+</ul>
+<p>like:    </p>
+<div class="highlight"><pre><span></span><code><span class="ch">#! /bin/zsh</span>
+
+<span class="nb">set</span> -e
+
+<span class="nb">source</span> /path/to/project/venv/bin/activate
+
+python3 /path/to/project/generate_btobsales.py
+
+<span class="nb">trap</span> <span class="s1">&#39;zenity --error --text=&quot;The Python script failed&quot;&#39;</span> ERR
+
+<span class="nb">cd</span> /path/to/github/folder/
+
+git add .
+
+<span class="nv">CURRENTDATETIME</span><span class="o">=</span><span class="sb">`</span>date +<span class="s2">&quot;%Y-%m-%d %T&quot;</span><span class="sb">`</span>
+
+git commit -m <span class="nv">$CURRENTDATETIME</span>
+
+git push origin main
+
+open -a /Applications/Google<span class="se">\ </span>Chrome.app https://github.com/my_project
+</code></pre></div>
+
+<p>However zenity is not installed on my Mac.   </p>
+<p>Needs to be installed with brew as <code>brew install zenity</code>.    </p>
+<p>Not working though. </p>
+<p>TODO come back to this later.</p>
             <!-- </main> -->
         </div><!-- /.entry-content -->
     </article>
