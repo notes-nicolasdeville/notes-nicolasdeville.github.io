@@ -86,6 +86,12 @@
     </url>
     
     <url>
+        <loc>https://notes.nicolasdeville.com/b2b-sales/stack</loc>
+        <lastmod>2022-12-20</lastmod>
+        <priority>0.8</priority>        
+    </url>
+    
+    <url>
         <loc>https://notes.nicolasdeville.com/b2b-sales/selling-against-own-reseller</loc>
         <lastmod>2022-12-20</lastmod>
         <priority>0.8</priority>        
@@ -159,6 +165,12 @@
     
     <url>
         <loc>https://notes.nicolasdeville.com/b2b-sales/overselling</loc>
+        <lastmod>2022-12-20</lastmod>
+        <priority>0.8</priority>        
+    </url>
+    
+    <url>
+        <loc>https://notes.nicolasdeville.com/b2b-sales/linkedin-scrapers</loc>
         <lastmod>2022-12-20</lastmod>
         <priority>0.8</priority>        
     </url>
