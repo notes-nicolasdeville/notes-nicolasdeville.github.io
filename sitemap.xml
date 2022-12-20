@@ -2144,6 +2144,12 @@
     </url>
     
     <url>
+        <loc>https://notes.nicolasdeville.com/ai/nlp</loc>
+        <lastmod>2022-12-20</lastmod>
+        <priority>0.8</priority>        
+    </url>
+    
+    <url>
         <loc>https://notes.nicolasdeville.com/ai/whisper</loc>
         <lastmod>2022-12-20</lastmod>
         <priority>0.8</priority>        
