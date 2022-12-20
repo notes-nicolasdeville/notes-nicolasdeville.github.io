@@ -2450,6 +2450,18 @@
     </url>
     
     <url>
+        <loc>https://notes.nicolasdeville.com/random/pinned</loc>
+        <lastmod>2022-12-20</lastmod>
+        <priority>0.8</priority>        
+    </url>
+    
+    <url>
+        <loc>https://notes.nicolasdeville.com/random/at-protocol</loc>
+        <lastmod>2022-12-20</lastmod>
+        <priority>0.8</priority>        
+    </url>
+    
+    <url>
         <loc>https://notes.nicolasdeville.com/random/ai</loc>
         <lastmod>2022-12-20</lastmod>
         <priority>0.8</priority>        
