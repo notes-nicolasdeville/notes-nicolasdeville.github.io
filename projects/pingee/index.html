@@ -19,9 +19,9 @@
 <meta name="twitter:description" content="[work in progress] Internet & Network monitoring tool (script)" /> <!-- max. 200 characters -->
  
 
-<meta property="article:published_time" content="2022-11-11 21:21:33.864469+01:00" />
+<meta property="article:published_time" content="2022-12-31 17:27:53.716182+01:00" />
 
-<meta property="article:modified_time" content="2022-11-11 21:21:33.864469+01:00" />
+<meta property="article:modified_time" content="2022-12-31 17:27:53.716182+01:00" />
 
 <meta name="robots" content="all, follow" />
 
@@ -85,7 +85,7 @@
             
 
             <div class="above-navbar">
-                <div class="last_updated">31 Dec 2022 | 15:13</div>
+                <div class="last_updated">31 Dec 2022 | 18:56</div>
                 <div>
                     <p class="notes_count">
                         <a href="https://notes.nicolasdeville.com/tags">by tags</a>
@@ -96,7 +96,7 @@
                         <span style="color:#C74350">|</span>
                         <a href="https://notes.nicolasdeville.com/2022/">2022</a>
                         <span style="color:#C74350">|</span>
-                        555 notes
+                        556 notes
                     </p>
                 </div>
             </div>
@@ -142,7 +142,7 @@
 <footer class="post-info">
 
     <p>
-        11 Nov 2022 
+        31 Dec 2022 
         <span class="separator">|</span> in <a class="link_tag" href="https://notes.nicolasdeville.com/projects/"><span data-pagefind-filter="category">projects</span></a>
 
  tags: <a class="link_tag" href="https://notes.nicolasdeville.com/tag/python.html">python</a>
@@ -150,8 +150,8 @@
 
         <!-- added 4/7 -->
         <!-- 		<br />
-        <abbr class="modified" title="2022-11-11T21:21:33.864469+01:00">
-                Updated: 11 Nov 2022
+        <abbr class="modified" title="2022-12-31T17:27:53.716182+01:00">
+                Updated: 31 Dec 2022
         </abbr>
  -->
 
@@ -445,6 +445,99 @@ external_ping=0
 <div class="link_title">SPEEDTEST® CLI</div>
 <div class="link_tagline">speedtest.net</div>
 <div class="link_url"><a href="https://www.speedtest.net/apps/cli" target="_blank">https://www.speedtest.net/apps/cli</a></div></div></div>
+
+<p><span class="datestamp">31 Dec 2022</span> </p>
+<p>Using a basic ping loop now:  </p>
+<div class="highlight"><pre><span></span><code><span class="c1">### Basic ping loop</span>
+
+<span class="kn">from</span> <span class="nn">datetime</span> <span class="kn">import</span> <span class="n">datetime</span>
+
+<span class="n">hostnames</span> <span class="o">=</span> <span class="p">[</span>
+<span class="s1">&#39;208.67.222.222&#39;</span><span class="p">,</span> <span class="c1"># OpenDNS</span>
+<span class="s1">&#39;208.67.220.220&#39;</span><span class="p">,</span> <span class="c1"># OpenDNS  </span>
+<span class="s1">&#39;1.1.1.1&#39;</span><span class="p">,</span> <span class="c1"># Cloudflare</span>
+<span class="s1">&#39;1.0.0.1&#39;</span><span class="p">,</span> <span class="c1"># Cloudflare</span>
+<span class="s1">&#39;8.8.8.8&#39;</span><span class="p">,</span> <span class="c1"># Google DNS</span>
+<span class="s1">&#39;8.8.4.4&#39;</span><span class="p">,</span> <span class="c1"># Google DNS</span>
+<span class="p">]</span>
+
+<span class="kn">from</span> <span class="nn">ping3</span> <span class="kn">import</span> <span class="n">ping</span><span class="p">,</span> <span class="n">verbose_ping</span>
+<span class="kn">import</span> <span class="nn">time</span>
+
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">10000</span><span class="p">):</span>
+
+    <span class="k">for</span> <span class="n">host</span> <span class="ow">in</span> <span class="n">hostnames</span><span class="p">:</span>
+        <span class="n">p</span> <span class="o">=</span> <span class="n">ping</span><span class="p">(</span><span class="n">host</span><span class="p">)</span>
+        <span class="c1"># print(f&quot;\n{p=}&quot;)</span>
+        <span class="k">if</span> <span class="n">p</span> <span class="o">!=</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">p_format</span> <span class="o">=</span> <span class="nb">round</span><span class="p">(</span><span class="n">p</span><span class="o">*</span><span class="mi">1000</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">datetime</span><span class="o">.</span><span class="n">now</span><span class="p">()</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="s1">&#39;%H:%M:%S&#39;</span><span class="p">)</span><span class="si">}</span><span class="s2"> OK </span><span class="se">\t</span><span class="s2"> </span><span class="si">{</span><span class="n">host</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="n">p_format</span><span class="si">}</span><span class="s2">ms&quot;</span><span class="p">)</span>
+            <span class="c1"># print(&quot;\r&quot; + f&quot;{host}: {p_format}ms&quot;, end=&#39;&#39;)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">datetime</span><span class="o">.</span><span class="n">now</span><span class="p">()</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="s1">&#39;%H:%M:%S&#39;</span><span class="p">)</span><span class="si">}</span><span class="s2"> NOK </span><span class="se">\t</span><span class="s2"> </span><span class="si">{</span><span class="n">host</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="n">p</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+            <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;log/log.txt&#39;</span><span class="p">,</span> <span class="s1">&#39;a&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">file</span><span class="p">:</span>
+                <span class="n">file</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n</span><span class="si">{</span><span class="n">datetime</span><span class="o">.</span><span class="n">now</span><span class="p">()</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="s1">&#39;%H:%M:%S&#39;</span><span class="p">)</span><span class="si">}</span><span class="s2"> NOK </span><span class="si">{</span><span class="n">host</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="n">p</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+        <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+</code></pre></div>
+
+<p>⬇︎</p>
+<div class="highlight"><pre><span></span><code><span class="m">13</span>:10:40 OK      <span class="m">208</span>.67.220.220: <span class="m">19</span>.83ms
+<span class="m">13</span>:10:42 OK      <span class="m">1</span>.1.1.1: <span class="m">93</span>.14ms
+<span class="m">13</span>:10:43 OK      <span class="m">1</span>.0.0.1: <span class="m">20</span>.63ms
+<span class="m">13</span>:10:44 OK      <span class="m">8</span>.8.8.8: <span class="m">13</span>.91ms
+<span class="m">13</span>:10:45 OK      <span class="m">8</span>.8.4.4: <span class="m">18</span>.77ms
+<span class="m">13</span>:10:46 OK      <span class="m">208</span>.67.222.222: <span class="m">18</span>.85ms
+<span class="m">13</span>:10:47 OK      <span class="m">208</span>.67.220.220: <span class="m">20</span>.05ms
+<span class="m">13</span>:10:48 OK      <span class="m">1</span>.1.1.1: <span class="m">95</span>.95ms
+<span class="m">13</span>:10:49 OK      <span class="m">1</span>.0.0.1: <span class="m">22</span>.12ms
+<span class="m">13</span>:10:50 OK      <span class="m">8</span>.8.8.8: <span class="m">14</span>.56ms
+<span class="m">13</span>:10:51 OK      <span class="m">8</span>.8.4.4: <span class="m">13</span>.82ms
+<span class="m">13</span>:10:52 OK      <span class="m">208</span>.67.222.222: <span class="m">20</span>.49ms
+<span class="m">13</span>:10:53 OK      <span class="m">208</span>.67.220.220: <span class="m">20</span>.87ms
+<span class="m">13</span>:10:54 OK      <span class="m">1</span>.1.1.1: <span class="m">33</span>.76ms
+<span class="m">13</span>:10:55 OK      <span class="m">1</span>.0.0.1: <span class="m">21</span>.06ms
+<span class="m">13</span>:10:56 OK      <span class="m">8</span>.8.8.8: <span class="m">17</span>.02ms
+<span class="m">13</span>:10:57 OK      <span class="m">8</span>.8.4.4: <span class="m">16</span>.27ms
+<span class="m">13</span>:10:58 OK      <span class="m">208</span>.67.222.222: <span class="m">20</span>.5ms
+<span class="m">13</span>:10:59 OK      <span class="m">208</span>.67.220.220: <span class="m">21</span>.94ms
+<span class="m">13</span>:11:00 OK      <span class="m">1</span>.1.1.1: <span class="m">33</span>.78ms
+<span class="m">13</span>:11:01 OK      <span class="m">1</span>.0.0.1: <span class="m">26</span>.58ms
+<span class="m">13</span>:11:02 OK      <span class="m">8</span>.8.8.8: <span class="m">12</span>.99ms
+<span class="m">13</span>:11:03 OK      <span class="m">8</span>.8.4.4: <span class="m">15</span>.64ms
+<span class="m">13</span>:11:04 OK      <span class="m">208</span>.67.222.222: <span class="m">23</span>.74ms
+<span class="m">13</span>:11:05 OK      <span class="m">208</span>.67.220.220: <span class="m">20</span>.6ms
+<span class="m">13</span>:11:10 NOK     <span class="m">1</span>.1.1.1: None
+<span class="m">13</span>:11:11 OK      <span class="m">1</span>.0.0.1: <span class="m">22</span>.53ms
+<span class="m">13</span>:11:12 OK      <span class="m">8</span>.8.8.8: <span class="m">13</span>.98ms
+<span class="m">13</span>:11:13 OK      <span class="m">8</span>.8.4.4: <span class="m">16</span>.91ms
+<span class="m">13</span>:11:14 OK      <span class="m">208</span>.67.222.222: <span class="m">19</span>.28ms
+<span class="m">13</span>:11:15 OK      <span class="m">208</span>.67.220.220: <span class="m">18</span>.69ms
+<span class="m">13</span>:11:16 OK      <span class="m">1</span>.1.1.1: <span class="m">29</span>.85ms
+<span class="m">13</span>:11:17 OK      <span class="m">1</span>.0.0.1: <span class="m">20</span>.9ms
+<span class="m">13</span>:11:18 OK      <span class="m">8</span>.8.8.8: <span class="m">14</span>.24ms
+<span class="m">13</span>:11:19 OK      <span class="m">8</span>.8.4.4: <span class="m">17</span>.14ms
+<span class="m">13</span>:11:20 OK      <span class="m">208</span>.67.222.222: <span class="m">17</span>.94ms
+<span class="m">13</span>:11:21 OK      <span class="m">208</span>.67.220.220: <span class="m">21</span>.56ms
+<span class="m">13</span>:11:23 OK      <span class="m">1</span>.1.1.1: <span class="m">34</span>.88ms
+<span class="m">13</span>:11:24 OK      <span class="m">1</span>.0.0.1: <span class="m">18</span>.69ms
+<span class="m">13</span>:11:25 OK      <span class="m">8</span>.8.8.8: <span class="m">13</span>.14ms
+<span class="m">13</span>:11:26 OK      <span class="m">8</span>.8.4.4: <span class="m">16</span>.33ms
+<span class="m">13</span>:11:27 OK      <span class="m">208</span>.67.222.222: <span class="m">24</span>.02ms
+<span class="m">13</span>:11:28 OK      <span class="m">208</span>.67.220.220: <span class="m">21</span>.89ms
+<span class="m">13</span>:11:29 OK      <span class="m">1</span>.1.1.1: <span class="m">32</span>.43ms
+<span class="m">13</span>:11:30 OK      <span class="m">1</span>.0.0.1: <span class="m">23</span>.03ms
+<span class="m">13</span>:11:31 OK      <span class="m">8</span>.8.8.8: <span class="m">15</span>.13ms
+<span class="m">13</span>:11:32 OK      <span class="m">8</span>.8.4.4: <span class="m">16</span>.65ms
+<span class="m">13</span>:11:33 OK      <span class="m">208</span>.67.222.222: <span class="m">20</span>.19ms
+<span class="m">13</span>:11:34 OK      <span class="m">208</span>.67.220.220: <span class="m">20</span>.07ms
+<span class="m">13</span>:11:35 OK      <span class="m">1</span>.1.1.1: <span class="m">51</span>.86ms
+<span class="m">13</span>:11:36 OK      <span class="m">1</span>.0.0.1: <span class="m">20</span>.87ms
+<span class="m">13</span>:11:37 OK      <span class="m">8</span>.8.8.8: <span class="m">15</span>.78ms
+<span class="m">13</span>:11:38 OK      <span class="m">8</span>.8.4.4: <span class="m">18</span>.24ms
+<span class="m">13</span>:11:39 OK      <span class="m">208</span>.67.222.222: <span class="m">18</span>.08ms
+<span class="m">13</span>:11:40 OK      <span class="m">208</span>.67.220.220: <span class="m">20</span>.19ms
+</code></pre></div>
 
 <h2 id="traceroute">Traceroute</h2>
 <p><span class="datestamp">06 Sep 2022</span> ideally, I would want the script to figure out the IP addresses of the devices to ping on the internal network. <code>Traceroute</code> seems to be the way to go.   </p>
