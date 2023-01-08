@@ -19,9 +19,9 @@
 <meta name="twitter:description" content="makes it easy to scrape information from web pages" /> <!-- max. 200 characters -->
  
 
-<meta property="article:published_time" content="2022-11-18 09:09:57.778501+01:00" />
+<meta property="article:published_time" content="2023-01-05 23:12:04.889974+01:00" />
 
-<meta property="article:modified_time" content="2022-11-18 09:09:57.778501+01:00" />
+<meta property="article:modified_time" content="2023-01-05 23:12:04.889974+01:00" />
 
 <meta name="robots" content="all, follow" />
 
@@ -85,7 +85,7 @@
             
 
             <div class="above-navbar">
-                <div class="last_updated">05 Jan 2023 | 17:39</div>
+                <div class="last_updated">08 Jan 2023 | 20:44</div>
                 <div>
                     <p class="notes_count">
                         <a href="https://notes.nicolasdeville.com/tags">by tags</a>
@@ -142,15 +142,15 @@
 <footer class="post-info">
 
     <p>
-        18 Nov 2022 
+        05 Jan 2023 
         <span class="separator">|</span> in <a class="link_tag" href="https://notes.nicolasdeville.com/python/"><span data-pagefind-filter="category">python</span></a>
 
  tags: <a class="link_tag" href="https://notes.nicolasdeville.com/tag/python-libraries.html">python libraries</a>
 
         <!-- added 4/7 -->
         <!-- 		<br />
-        <abbr class="modified" title="2022-11-18T09:09:57.778501+01:00">
-                Updated: 18 Nov 2022
+        <abbr class="modified" title="2023-01-05T23:12:04.889974+01:00">
+                Updated: 05 Jan 2023
         </abbr>
  -->
 
@@ -223,6 +223,11 @@
 
 <h3 id="find-the-next-element-after-a-tag">Find the next element after a tag</h3>
 <div class="highlight"><pre><span></span><code><span class="n">soup</span><span class="o">.</span><span class="n">head</span><span class="o">.</span><span class="n">next_element</span><span class="o">.</span><span class="n">next_element</span>
+</code></pre></div>
+
+<h3 id="find-an-element-based-on-a-custom-tag-attribute">Find an element based on a custom tag attribute</h3>
+<p>eg. <code>data-field</code> attribute:   </p>
+<div class="highlight"><pre><span></span><code><span class="k">if</span> <span class="n">content</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="p">{</span><span class="s1">&#39;data-field&#39;</span><span class="p">:</span> <span class="s1">&#39;experience_company_logo&#39;</span><span class="p">}):</span>
 </code></pre></div>
 
 <h1 id="resources">Resources</h1>
