@@ -926,6 +926,12 @@
     </url>
     
     <url>
+        <loc>https://notes.nicolasdeville.com/b2b-sales/5mns-debrief-call</loc>
+        <lastmod>2023-01-15</lastmod>
+        <priority>0.8</priority>        
+    </url>
+    
+    <url>
         <loc>https://notes.nicolasdeville.com/python/library-thefuzz</loc>
         <lastmod>2023-01-15</lastmod>
         <priority>0.8</priority>        
@@ -2438,6 +2444,12 @@
     </url>
     
     <url>
+        <loc>https://notes.nicolasdeville.com/random/exciting-times</loc>
+        <lastmod>2023-01-15</lastmod>
+        <priority>0.8</priority>        
+    </url>
+    
+    <url>
         <loc>https://notes.nicolasdeville.com/random/crypto_bubble</loc>
         <lastmod>2023-01-15</lastmod>
         <priority>0.8</priority>        
@@ -2529,6 +2541,12 @@
     
     <url>
         <loc>https://notes.nicolasdeville.com/random/tesla-handbook</loc>
+        <lastmod>2023-01-15</lastmod>
+        <priority>0.8</priority>        
+    </url>
+    
+    <url>
+        <loc>https://notes.nicolasdeville.com/random/latin</loc>
         <lastmod>2023-01-15</lastmod>
         <priority>0.8</priority>        
     </url>
