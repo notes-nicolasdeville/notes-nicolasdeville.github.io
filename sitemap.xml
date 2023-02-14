@@ -860,6 +860,12 @@
     </url>
     
     <url>
+        <loc>https://notes.nicolasdeville.com/b2b-sales/selling-to-cfos</loc>
+        <lastmod>2023-02-14</lastmod>
+        <priority>0.8</priority>        
+    </url>
+    
+    <url>
         <loc>https://notes.nicolasdeville.com/b2b-sales/product-demos</loc>
         <lastmod>2023-02-14</lastmod>
         <priority>0.8</priority>        
@@ -3002,12 +3008,6 @@
     </url>
     
     <url>
-        <loc>https://notes.nicolasdeville.com/interests/self-driving</loc>
-        <lastmod>2023-02-14</lastmod>
-        <priority>0.8</priority>        
-    </url>
-    
-    <url>
         <loc>https://notes.nicolasdeville.com/interests/autonomous-vehicles</loc>
         <lastmod>2023-02-14</lastmod>
         <priority>0.8</priority>        
@@ -3033,6 +3033,12 @@
     
     <url>
         <loc>https://notes.nicolasdeville.com/interests/tea</loc>
+        <lastmod>2023-02-14</lastmod>
+        <priority>0.8</priority>        
+    </url>
+    
+    <url>
+        <loc>https://notes.nicolasdeville.com/interests/spacex</loc>
         <lastmod>2023-02-14</lastmod>
         <priority>0.8</priority>        
     </url>
@@ -3105,6 +3111,12 @@
     
     <url>
         <loc>https://notes.nicolasdeville.com/interests/tesla-ai-robotics-company</loc>
+        <lastmod>2023-02-14</lastmod>
+        <priority>0.8</priority>        
+    </url>
+    
+    <url>
+        <loc>https://notes.nicolasdeville.com/interests/fsd</loc>
         <lastmod>2023-02-14</lastmod>
         <priority>0.8</priority>        
     </url>
