@@ -21,7 +21,7 @@
 
 <meta property="article:published_time" content="2023-02-13 00:00:00+01:00" />
 
-<meta property="article:modified_time" content="2023-02-13 23:48:56.076458+01:00" />
+<meta property="article:modified_time" content="2023-02-16 10:31:11.855921+01:00" />
 
 <meta name="robots" content="all, follow" />
 
@@ -85,7 +85,7 @@
             
 
             <div class="above-navbar">
-                <div class="last_updated">15 Feb 2023 | 00:36</div>
+                <div class="last_updated">16 Feb 2023 | 18:01</div>
                 <div>
                     <p class="notes_count">
                         <a href="https://notes.nicolasdeville.com/tags">by tags</a>
@@ -96,7 +96,7 @@
                         <span style="color:#C74350">|</span>
                         <a href="https://notes.nicolasdeville.com/2022/">2022</a>
                         <span style="color:#C74350">|</span>
-                        607 notes
+                        609 notes
                     </p>
                 </div>
             </div>
@@ -148,8 +148,8 @@
 
         <!-- added 4/7 -->
         <!-- 		<br />
-        <abbr class="modified" title="2023-02-13T23:48:56.076458+01:00">
-                Updated: 13 Feb 2023
+        <abbr class="modified" title="2023-02-16T10:31:11.855921+01:00">
+                Updated: 16 Feb 2023
         </abbr>
  -->
 
@@ -161,6 +161,10 @@
             <!-- <main>  -->
                 <div class="toc"><span class="toctitle">Table of Contents</span><ul>
 <li><a href="#process">Process</a></li>
+<li><a href="#issues">Issues</a><ul>
+<li><a href="#token-resolved">Token (RESOLVED)</a></li>
+</ul>
+</li>
 </ul>
 </div>
 <p><span class="datestamp">13 Feb 2023</span>   </p>
@@ -168,8 +172,37 @@
 - insert my availabilities as text in an email.<br>
 - ability to select timezone of the recipient (method TBC)
 - combines availabilities across my 2 pro calendars (both using Google Calendar)</p>
+<p>Output should be like: </p>
+<div class="highlight"><pre><span></span><code>Germany
+- Wed 15 Feb 10:00
+- Wed 15 Feb 11:00
+- Fri 17 Feb 10:00
+</code></pre></div>
+
+<p>with date/time format adapted based on recipient's timezone: </p>
+<div class="highlight"><pre><span></span><code>PT
+- Wed Feb 15 10am
+- Wed Feb 15 11am
+- Fri 17 Feb 3pm
+</code></pre></div>
+
+<p>so:  </p>
+<div class="highlight"><pre><span></span><code>{recipient_timezone}
+- {date} {time}
+- {date} {time}
+- {date} {time}
+</code></pre></div>
+
+<p>Timezone selection passed as a parameter to the script.  </p>
+<p>v2:<br>
+- "tomorrow" when applicable (instead of full date)</p>
 <h1 id="process">Process</h1>
 <p>Authorisation works by creating a token file using the Credentials JSON file downloaded from Google.   </p>
+<div class="link_border"><div class="link_logo_box"><img class="link_logo" src="https://notes.nicolasdeville.com/images/logos/google.png" alt="logo"/></div><div class="link_content">
+<div class="link_title">Create access credentials  |  Google Workspace  |  Google Developers</div>
+<div class="link_tagline">google.com</div>
+<div class="link_url"><a href="https://developers.google.com/workspace/guides/create-credentials" target="_blank">https://developers.google.com/workspace/guides/create-credentials</a></div></div></div>
+
 <p>Steps:  </p>
 <ul>
 <li>Access <code>https://console.cloud.google.com/apis</code></li>
@@ -281,6 +314,43 @@
 </code></pre></div>
 
 <p>Note: <code>token</code> is the path to the token file created by the <code>quickstart.py</code> script.    </p>
+<p><span class="datestamp">16 Feb 2023</span> </p>
+<p>Basic logic is working. <br>
+Some troubleshooting left re removing available time when events span more than 1 hour + formatting of output, currently coming out as:  </p>
+<div class="highlight"><pre><span></span><code>- tomorrow 12:00
+- tomorrow 17:00
+- Mon 20th 12:00
+- Tue 21st 17:00
+- Wed 22nd 12:00
+- Thu 23rd 12:00
+</code></pre></div>
+
+<h1 id="issues">Issues</h1>
+<h2 id="token-resolved">Token (RESOLVED)</h2>
+<p>Token needs to be refreshed every day? <br>
+Need to find how to configure for perpetual use, or automate.  </p>
+<p>Seems like using a "Service Account" with "Domain Wide Delegation" is the way to go: <a href="https://medium.com/@ArchTaqi/google-calendar-api-in-your-application-without-oauth-consent-screen-4fcc1f8eb380" target="_blank">https://medium.com/@ArchTaqi/google-calendar-api-in-your-application-without-oauth-consent-screen-4fcc1f8eb380</a></p>
+<div class="link_border"><div class="link_logo_box"><img class="link_logo" src="https://notes.nicolasdeville.com/images/logos/google.png" alt="logo"/></div><div class="link_content">
+<div class="link_title">Control API access with domain-wide delegation - Google Workspace Admin Help</div>
+<div class="link_tagline">google.com</div>
+<div class="link_url"><a href="https://support.google.com/a/answer/162106?product_name=UnuFlow&hl=en&visit_id=638120857399575487-3089946761&rd=1&src=supportwidget0&hl=en#zippy=%2Cbefore-you-begin%2Cset-up-domain-wide-delegation-for-a-client" target="_blank">https://support.google.com/a/answer/162106?product_name=UnuFlow&hl=en&visit_id=638120857399575487-3089946761&rd=1&src=supportwidget0&hl=en#zippy=%2Cbefore-you-begin%2Cset-up-domain-wide-delegation-for-a-client</a></div></div></div>
+
+<p><img class="screenshot" src="https://notes.nicolasdeville.com/images/calendaree/230215-2026-google-admin-domain-wide-delegation.jpg" alt="calendaree/230215-2026-google-admin-domain-wide-delegation.jpg"/>  </p>
+<p>Solved with:  </p>
+<ul>
+<li>create Service account &amp; download Service key as '.json' file (see Medium article above)</li>
+<li>apply Domain Wide Delegation to the Service account (see Google Admin article above) </li>
+<li>use following code:   </li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">google.oauth2</span> <span class="kn">import</span> <span class="n">service_account</span>
+
+<span class="n">SCOPES</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;https://www.googleapis.com/auth/calendar&#39;</span><span class="p">]</span>
+<span class="n">credentials</span> <span class="o">=</span> <span class="n">service_account</span><span class="o">.</span><span class="n">Credentials</span><span class="o">.</span><span class="n">from_service_account_file</span><span class="p">(</span><span class="n">token</span><span class="p">,</span> <span class="n">scopes</span><span class="o">=</span><span class="n">SCOPES</span><span class="p">)</span>
+<span class="n">creds</span> <span class="o">=</span> <span class="n">credentials</span><span class="o">.</span><span class="n">with_subject</span><span class="p">(</span><span class="n">calendar_id</span><span class="p">)</span>
+<span class="n">service</span> <span class="o">=</span> <span class="n">build</span><span class="p">(</span><span class="s1">&#39;calendar&#39;</span><span class="p">,</span> <span class="s1">&#39;v3&#39;</span><span class="p">,</span> <span class="n">credentials</span><span class="o">=</span><span class="n">creds</span><span class="p">)</span>
+</code></pre></div>
+
+<p>where <code>token</code> is the path to the Service key file, and <code>calendar_id</code> is the email address of the Google Calendar.   </p>
             <!-- </main> -->
         </div><!-- /.entry-content -->
     </article>
