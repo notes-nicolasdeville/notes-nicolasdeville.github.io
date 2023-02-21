@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <!-- Base -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="generator" content="Pelican" />
+    <meta name="author" content="Nic Deville">
+
+<!-- Title -->
+<title>Automate the Boring Stuff with Python | Nic's notes</title>
+<meta name="og:title" content="Automate the Boring Stuff with Python | Nic's notes"/> <!-- 40 characters for mobile and 60 for desktop -->
+<link rel="canonical" href="https://notes.nicolasdeville.com/books/automate-the-boring-stuff" />
+<meta name="twitter:title" content="Automate the Boring Stuff with Python | Nic's notes" /> <!-- max. 70 characters -->
+
+<meta name="description" content="⭐️⭐️⭐️⭐️⭐️ In my journey of learning how to program in Python this one book has made all the difference for me."/>
+<meta property="og:description" content="⭐️⭐️⭐️⭐️⭐️ In my journey of learning how to program in Python this one book has made all the difference for me."/>
+<meta name="twitter:description" content="⭐️⭐️⭐️⭐️⭐️ In my journey of learning how to program in Python this one book has made all the difference for me." /> <!-- max. 200 characters -->
+ 
+
+<meta property="article:published_time" content="2020-02-20 00:00:00+01:00" />
+
+<meta property="article:modified_time" content="2022-11-04 10:30:38.450298+01:00" />
+
+<meta name="robots" content="all, follow" />
+
+<!-- Social -->
+<meta property="og:type" content="article" />
+
+<!-- <meta property="og:description" content="Messy online notebook covering B2B Sales, Leadership, Python programming, Automation, AI and more. I take these notes for myself (and my kids later) - perhaps they can help someone else..." /> min. 2 max. 4 sentences -->
+
+<meta property="og:url" content="https://notes.nicolasdeville.com/books/automate-the-boring-stuff" /> <!-- canonical URL for your page without session variables, user id parameters or counters -->
+<meta property="og:site_name" content="Nic's notes" />
+<meta name="image" property="og:image" content="https://notes.nicolasdeville.com/images/notes-twitter-image.jpg" /> <!-- at least 600x315 pixels, preferable 1200x630 pixels -->
+
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:site" content="@ndeville" />
+
+<meta name="twitter:image" content="https://notes.nicolasdeville.com/images/notes-twitter-image.jpg" /> <!-- aspect ratio of 2:1 with minimum dimensions of 300x157 or maximum of 4096x4096 pixels. Going with 900x471 -->
+
+<!-- Logo -->
+<meta property="og:logo" content="https://notes.nicolasdeville.com/logo.svg">
+
+<!-- Favicon -->
+<link rel="icon" type="image/x-icon" href="https://notes.nicolasdeville.com/favicon.ico">
+<link rel="mask-icon" href="https://notes.nicolasdeville.com/favicon.svg" color="#FFFFFF">
+<link rel="alternate icon" class="js-site-favicon" type="image/png" href="https://notes.nicolasdeville.com/favicon.png">
+<link rel="icon" class="js-site-favicon" type="image/svg+xml" href="https://notes.nicolasdeville.com/favicon.svg">
+<link rel="fluid-icon" href="https://notes.nicolasdeville.com/favicon.png" title="Nic's notes">
+
+<!-- CSS -->
+<link rel="stylesheet" href="https://notes.nicolasdeville.com/theme/css/main.css" />
+
+<!-- Pagefind -->
+<link href="https://notes.nicolasdeville.com/theme/css/pagefind-ui-nic.css" rel="stylesheet">
+<script src="https://notes.nicolasdeville.com/pagefind/pagefind-ui.js" type="text/javascript"></script>
+
+<script>
+    window.addEventListener('DOMContentLoaded', (event) => {
+        new PagefindUI({ element: "#search" });
+    });
+</script>
+
+
+</head>
+
+<body id="index" class="body">
+        <header id="banner" class="body">
+
+            <div class="logo-and-search">
+                <a href="https://notes.nicolasdeville.com/"><img class="header_image" src="https://notes.nicolasdeville.com/images/nic_notes_header.svg" alt="Nic's notes" width="266"/></a>
+
+                <!-- for Stork seach engine -->
+                <!-- <div class="search-input-block">
+                    <input data-stork="sitesearch" class="search-input" placeholder="Search notes..." autofocus="autofocus"/>
+                    <div data-stork="sitesearch-output"></div>
+                </div> -->
+
+                <!-- Pagefind -->
+                <div class="search-input-block" id="search"></div>
+
+            </div>
+
+            
+
+            <div class="above-navbar">
+                <div class="last_updated">21 Feb 2023 | 09:41</div>
+                <div>
+                    <p class="notes_count">
+                        <a href="https://notes.nicolasdeville.com/tags">by tags</a>
+                        <span style="color:#C74350">|</span>
+                        <a href="https://notes.nicolasdeville.com/2020/">2020</a>
+                        <span style="color:#C74350">|</span>
+                        <a href="https://notes.nicolasdeville.com/2021/">2021</a>
+                        <span style="color:#C74350">|</span>
+                        <a href="https://notes.nicolasdeville.com/2022/">2022</a>
+                        <span style="color:#C74350">|</span>
+                        609 notes
+                    </p>
+                </div>
+            </div>
+
+            <nav><ul>
+                <li><a href="https://notes.nicolasdeville.com/ai/">ai</a></li>
+                <li><a href="https://notes.nicolasdeville.com/apps/">apps</a></li>
+                <li><a href="https://notes.nicolasdeville.com/b2b-sales/">b2b sales</a></li>
+                <li class="active"><a href="https://notes.nicolasdeville.com/books/">books</a></li>
+                <li><a href="https://notes.nicolasdeville.com/careerplaybook/">#careerplaybook</a></li>
+                <li><a href="https://notes.nicolasdeville.com/helpers/">helpers</a></li>
+                <li><a href="https://notes.nicolasdeville.com/home-office/">home office</a></li>
+                <li><a href="https://notes.nicolasdeville.com/interests/">interests</a></li>
+                <li><a href="https://notes.nicolasdeville.com/leadership/">leadership</a></li>
+                <li><a href="https://notes.nicolasdeville.com/learning/">learning</a></li>
+                <li><a href="https://notes.nicolasdeville.com/movies/">movies</a></li>
+                <li><a href="https://notes.nicolasdeville.com/projects/">projects</a></li>
+                <li><a href="https://notes.nicolasdeville.com/python/">python</a></li>
+                <li><a href="https://notes.nicolasdeville.com/random/">random</a></li>
+                <li><a href="https://notes.nicolasdeville.com/startups/">startups</a></li>
+            </ul></nav>
+        </header>
+
+        <!-- index.html injection -->
+<section id="content" class="body">
+    <article>
+        <header>
+            <h1 class="entry-title">
+                <main> <!-- for indexing by Stork -->
+                    <a href="https://notes.nicolasdeville.com/books/automate-the-boring-stuff" rel="bookmark"
+                    title="Permalink to Automate the Boring Stuff with Python">Automate the Boring Stuff with Python
+                    </a>
+                </main>
+            </h1>
+            <p class="header_summary">
+                <main> <!-- for indexing by Stork -->
+                    <p>⭐️⭐️⭐️⭐️⭐️ In my journey of learning how to program in Python this one book has made all the difference for me.</p>
+                </main>
+            </p>
+        </header>
+
+        <div class="entry-content">
+<footer class="post-info">
+
+    <p>
+        20 Feb 2020 
+        <span class="separator">|</span> in <a class="link_tag" href="https://notes.nicolasdeville.com/books/"><span data-pagefind-filter="category">books</span></a>
+
+ tags: <a class="link_tag" href="https://notes.nicolasdeville.com/tag/python.html">python</a>
+
+        <!-- added 4/7 -->
+        <!-- 		<br />
+        <abbr class="modified" title="2022-11-04T10:30:38.450298+01:00">
+                Updated: 04 Nov 2022
+        </abbr>
+ -->
+
+    </p>
+
+    
+
+</footer>            <!-- for indexing by Stork -->
+            <!-- <main>  -->
+                <p><img class="book" src="https://notes.nicolasdeville.com/images/book_automatetheboringstuffwithpython.png" alt="Automate The Boring Stuff"/></p>
+<p>"Automate the Boring Stuff with Python", by Al Sweigart<br>
+(free to read under a Creative Commons license)</p>
+<h2 id="its-never-too-late">It's never too late</h2>
+<p>While I'm tech-savvy, an overall geek, have tinkered with computers, and been working in Technology for the last 20 years, I never thought before a few years ago about learning to program, because it seemed "out of reach".</p>
+<p>For some reason, I held to the perception that programming requires you to be good at advanced mathematics, and requires years of full-time practice 🤷🏻‍♂️.</p>
+<p>Aged 37 (it's never too late!) and triggered by a critical need, I came round to diving into it because I could not find a Tech co-founder for my 1st startup, and decided to do it myself. More here:</p>
+<p><a href="/startupplaybook-01-how-to-bootstrap-a-tech-startup.md">How to bootstrap a Tech startup without a Tech cofounder</a></p>
+<p>I wish someone had told me earlier that programming, and building tech solutions, is not that hard to learn, especially with tools available these days, and for the purpose of a MVP or early stage startup.</p>
+<p>And realised I should have done that two decades ago! 🙄</p>
+<p>Truth is, programming is just another language. It's computer language.</p>
+<p>And contrary to human languages, it's extremely logical (contrary to say, French grammar! 🇫🇷😅).</p>
+<p>All you need is good logic - better if innate, though learning to program will also help you think more logically and in a structured way - and perseverance.</p>
+<p>I decided to learn Python: <a href="https://www.python.org/" target="_blank">https://www.python.org/</a></p>
+<p>It was described as an easy to learn language, extremely popular and gaining even more, and the primary language for all things AI and Machine Learning, which is a topic I'm passionate about.</p>
+<p>In that journey of learning how to program - which has led me to build a startup heavily relying on automation, and my current startup, <a href="https://OfficeBots.io">OfficeBots.io</a>, focusing entirely on it - this one book has made all the difference for me.</p>
+<h2 id="perfect-starting-point-for-business-people">Perfect starting point for business people</h2>
+<p>Most books and online courses about learning Python (or other programming languages) focus on the language itself, and in most cases will use the creation of a basic video game 🤓 to illustrate the learnings.</p>
+<p>The 1st book I read about Python (for beginners) felt like I was reading chinese! Though I could read the words, so not quite that bad.. but I understood perhaps 10% of it 😅</p>
+<p>The 2nd book was similar, though I understood a bit more.</p>
+<p>With Automate the Boring Stuff with Python, everything clicked for me. 💡</p>
+<p>Because the book is written with a background of automating things with commonly used office files - PDF, Excel, Word, etc..</p>
+<p>The use cases made so much sense, and provided the context for me to relate the theory of the language, with its real-life applications.</p>
+<p>It "blew my mind" as my mind started to race, thinking about all the potential applications.</p>
+<h2 id="applications">Applications</h2>
+<p>In my case, here are some applications I developed - with help from freelancers to troubleshoot, clean up my code (or redo it!):</p>
+<h3 id="automated-invoice-processing">Automated invoice processing</h3>
+<p>Supplier sends PDF invoice to dedicated email address. A bot written in Python, extracts the data, checks a couple things, flags to a human if needed, and provides the data in a format that can be ingested by our system, and that of our client (accounting system or CFRM).</p>
+<h3 id="price-engine-custom-report-generator">Price engine &amp; custom report generator.</h3>
+<p>Fetches data from various sources (e.g. in-house CRM database, in-house flight records database) to generate custom internal or external reports in XLSX format.</p>
+<h3 id="data-fetching">Data fetching</h3>
+<p>Daily login to a portal, download of a CSV file and parsing data into our database.</p>
+<h3 id="hyper-personalised-spam-safe-emailing">Hyper-personalised spam-safe emailing</h3>
+<p>Send hyper-personalised emails at scale, sent directly from the actual local email client (no difference with a manually written and sent email, so no more risk to be caught in spam filters).</p>
+<h3 id="email-finder">Email finder</h3>
+<p>Find email addresses at scale with just first name, last name and company website (from excel list).</p>
+<h3 id="kpi-slackbot">KPI Slackbot</h3>
+<p>Slackbot publishing daily metrics, with data fetched across various systems (e.g. in-house CRM, Dropbox, etc..).</p>
+<h3 id="various-scripts">Various scripts</h3>
+<p>Along with a flurry of useful scripts for my day-to-day, like:</p>
+<ul>
+<li>splits PDFs with many pages into single page PDF files.</li>
+<li>Custom URL shortener (Slackbot).</li>
+<li>Formatting of Excel spreadsheets (so database exports look professional when sending to clients).</li>
+<li>Happy password generator</li>
+<li>etc..</li>
+</ul>
+<p>I credit Automate the Boring Stuff with Python for being the seed that has helped me come up and build all of these.</p>
+<p>And you can get help from freelancers, when you get stuck, or know what needs to be done, but lack the time to do it yourself. More here:</p>
+<p><a href="careerplaybook-009-outsourcing-tasks/">#CareerPlaybook 009: Outsourcing Tasks</a></p>
+<p>Ultimately, it is not about doing everything oneself. Low-value tasks should be delegated. Tasks for which your skills are not good enough, should be delegated.</p>
+<h2 id="chapters">Chapters</h2>
+<p>Here is an overview of its chapters, to give you a better sense of its content:</p>
+<p>Chapter 0 – Introduction</p>
+<p>Chapter 1 – Python Basics</p>
+<p>Chapter 2 – Flow Control</p>
+<p>Chapter 3 – Functions</p>
+<p>Chapter 4 – Lists</p>
+<p>Chapter 5 – Dictionaries and Structuring Data</p>
+<p>Chapter 6 – Manipulating Strings</p>
+<p>Chapter 7 – Pattern Matching with Regular Expressions</p>
+<p>Chapter 8 – Input Validation</p>
+<p>Chapter 9 – Reading and Writing Files</p>
+<p>Chapter 10 – Organising Files</p>
+<p>Chapter 11 – Debugging</p>
+<p>Chapter 12 – Web Scraping</p>
+<p>Chapter 13 – Working with Excel Spreadsheets</p>
+<p>Chapter 14 – Working with Google Spreadsheets</p>
+<p>Chapter 15 – Working with PDF and Word Documents</p>
+<p>Chapter 16 – Working with CSV Files and JSON Data</p>
+<p>Chapter 17 – Keeping Time, Scheduling Tasks, and Launching Programs</p>
+<p>Chapter 18 – Sending Email and Text Messages</p>
+<p>Chapter 19 – Manipulating Images</p>
+<p>Chapter 20 – Controlling the Keyboard and Mouse with GUI Automation</p>
+<p>Appendix A – Installing Third-Party Modules</p>
+<p>Appendix B – Running Programs</p>
+<p>Appendix C – Answers to the Practice Questions</p>
+<p>As you can see, if you come at it from a business background, what you learn in chapters 1 to 11, will then completely make sense in chapters 12 to 20, as it puts the theory in the context of things you probably do on a daily basis.</p>
+<h2 id="read">Read</h2>
+<p>The book is available to read for free under a Creative Commons license at <a href="https://automatetheboringstuff.com/">https://automatetheboringstuff.com/</a></p>
+<p>Else, you can buy it (supports the author) on Amazon:</p>
+<p>Automate the Boring Stuff with Python, 2nd Edition: Practical Programming for Total Beginners: Al Sweigart:
+<a href="https://www.amazon.com/Automate-Boring-Stuff-Python-2nd/dp/1593279922/ref=sr_1_1" target="_blank">https://www.amazon.com/Automate-Boring-Stuff-Python-2nd/dp/1593279922/ref=sr_1_1</a></p>
+<p>Obviously there is no audiobook to recommend here! 😂</p>
+<p><em>(All links are clean)</em></p>
+<hr>
+<p>Hope you find the book useful.</p>
+<p>Let me know if the book has helped it "click" for you.</p>
+<p>Or if you have found other good resources for learning Python when not coming from a technical background.</p>
+            <!-- </main> -->
+        </div><!-- /.entry-content -->
+    </article>
+</section>
+
+        <!-- footer -->
+        <section id="extras" class="body" data-pagefind-ignore>
+
+        <!-- /.blogroll -->
+                <div class="blogroll">
+                        <h2>links</h2>
+                        <ul>
+                            <li><a href="https://btobsales.eu">Services: BtoBSales.EU</a></li>
+                            <li><a href="https://indeXall.io">Side project: indeXall.io</a></li>
+                            <li><a href="https://github.com/ndeville">Github: ndeville</a></li>
+                        </ul>
+                </div>
+
+        <!-- /.social -->
+                <div class="social">
+                        <h2>social</h2>
+                        <ul>
+
+                            <li><a href="https://www.linkedin.com/in/ndeville/">Linkedin</a></li>
+                            <li><a href="https://www.twitter.com/ndeville">Twitter</a></li>
+                        </ul>
+                </div>
+        </section><!-- /#extras -->
+
+        <footer id="contentinfo" class="body" data-pagefind-ignore>
+                <address id="about" class="vcard body">
+                    <img src="https://notes.nicolasdeville.com/favicon.svg" alt="nic_logo" width="24" style="vertical-align: middle;"/> Nic's notes:
+                    <br>
+                    <img src="https://notes.nicolasdeville.com/images/logos/getpelican.png" alt="pelican" width="16" style="vertical-align: middle;"/> Powered by <a href="https://getpelican.com" target="_blank">Pelican</a>
+                    <br>
+                    <img src="https://notes.nicolasdeville.com/images/logos/pagefind.png" alt="pagefind" width="16" style="vertical-align: middle;"/> Search by <a href="https://pagefind.app" target="_blank">Pagefind</a>
+                    <br>
+                    <img src="https://notes.nicolasdeville.com/images/logos/clearbit.png" alt="clearbit" width="16" style="vertical-align: middle;"/> Logos by <a href="https://clearbit.com" target="_blank">Clearbit</a>
+                    <br>
+                    <img src="https://notes.nicolasdeville.com/images/python.svg" alt="python_logo" width="16" style="vertical-align: middle;"/> Made with <a href="https://www.python.org/" target="_blank">Python</a>
+                </address><!-- /#about -->
+
+        </footer><!-- /#contentinfo -->
+
+
+<!-- JS -->
+
+<!-- my JS script (with code block copy) -->
+<script src="https://notes.nicolasdeville.com/theme/js/nic.js"></script>
+
+<!-- for Stork seach engine -->
+<!-- <script src="https://files.stork-search.net/stork.js"></script>
+<script>
+    stork.register("sitesearch", "https://notes.nicolasdeville.com/search-index.st")
+</script> -->
+
+<!-- <script>
+    (function() {
+    if( window.innerWidth > 600 ) {
+        var stork_script = document.createElement('script');
+        stork_script.type = 'text/javascript';
+        stork_script.src = 'https://files.stork-search.net/stork.js';
+
+        var stork_register = ('script');
+        stork_register.innerHTML = 'stork.register("sitesearch", "https://notes.nicolasdeville.com/search-index.st")';
+
+        var head = document.getElementsByTagName('head')[0];
+        head.appendChild(stork_script);
+        head.appendChild(stork_register);
+
+
+    }
+    })();
+</script> -->
+
+</body>
+</html>

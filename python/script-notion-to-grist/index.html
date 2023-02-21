@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <!-- Base -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="generator" content="Pelican" />
+    <meta name="author" content="Nic Deville">
+
+<!-- Title -->
+<title>Import Notion data to Grist | Nic's notes</title>
+<meta name="og:title" content="Import Notion data to Grist | Nic's notes"/> <!-- 40 characters for mobile and 60 for desktop -->
+<link rel="canonical" href="https://notes.nicolasdeville.com/python/script-notion-to-grist" />
+<meta name="twitter:title" content="Import Notion data to Grist | Nic's notes" /> <!-- max. 70 characters -->
+
+<meta name="description" content="Python script"/>
+<meta property="og:description" content="Python script"/>
+<meta name="twitter:description" content="Python script" /> <!-- max. 200 characters -->
+ 
+
+<meta property="article:published_time" content="2022-12-29 00:00:00+01:00" />
+
+<meta property="article:modified_time" content="2022-12-29 10:37:28.398074+01:00" />
+
+<meta name="robots" content="all, follow" />
+
+<!-- Social -->
+<meta property="og:type" content="article" />
+
+<!-- <meta property="og:description" content="Messy online notebook covering B2B Sales, Leadership, Python programming, Automation, AI and more. I take these notes for myself (and my kids later) - perhaps they can help someone else..." /> min. 2 max. 4 sentences -->
+
+<meta property="og:url" content="https://notes.nicolasdeville.com/python/script-notion-to-grist" /> <!-- canonical URL for your page without session variables, user id parameters or counters -->
+<meta property="og:site_name" content="Nic's notes" />
+<meta name="image" property="og:image" content="https://notes.nicolasdeville.com/images/notes-twitter-image.jpg" /> <!-- at least 600x315 pixels, preferable 1200x630 pixels -->
+
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:site" content="@ndeville" />
+
+<meta name="twitter:image" content="https://notes.nicolasdeville.com/images/notes-twitter-image.jpg" /> <!-- aspect ratio of 2:1 with minimum dimensions of 300x157 or maximum of 4096x4096 pixels. Going with 900x471 -->
+
+<!-- Logo -->
+<meta property="og:logo" content="https://notes.nicolasdeville.com/logo.svg">
+
+<!-- Favicon -->
+<link rel="icon" type="image/x-icon" href="https://notes.nicolasdeville.com/favicon.ico">
+<link rel="mask-icon" href="https://notes.nicolasdeville.com/favicon.svg" color="#FFFFFF">
+<link rel="alternate icon" class="js-site-favicon" type="image/png" href="https://notes.nicolasdeville.com/favicon.png">
+<link rel="icon" class="js-site-favicon" type="image/svg+xml" href="https://notes.nicolasdeville.com/favicon.svg">
+<link rel="fluid-icon" href="https://notes.nicolasdeville.com/favicon.png" title="Nic's notes">
+
+<!-- CSS -->
+<link rel="stylesheet" href="https://notes.nicolasdeville.com/theme/css/main.css" />
+
+<!-- Pagefind -->
+<link href="https://notes.nicolasdeville.com/theme/css/pagefind-ui-nic.css" rel="stylesheet">
+<script src="https://notes.nicolasdeville.com/pagefind/pagefind-ui.js" type="text/javascript"></script>
+
+<script>
+    window.addEventListener('DOMContentLoaded', (event) => {
+        new PagefindUI({ element: "#search" });
+    });
+</script>
+
+
+</head>
+
+<body id="index" class="body">
+        <header id="banner" class="body">
+
+            <div class="logo-and-search">
+                <a href="https://notes.nicolasdeville.com/"><img class="header_image" src="https://notes.nicolasdeville.com/images/nic_notes_header.svg" alt="Nic's notes" width="266"/></a>
+
+                <!-- for Stork seach engine -->
+                <!-- <div class="search-input-block">
+                    <input data-stork="sitesearch" class="search-input" placeholder="Search notes..." autofocus="autofocus"/>
+                    <div data-stork="sitesearch-output"></div>
+                </div> -->
+
+                <!-- Pagefind -->
+                <div class="search-input-block" id="search"></div>
+
+            </div>
+
+            
+
+            <div class="above-navbar">
+                <div class="last_updated">21 Feb 2023 | 09:41</div>
+                <div>
+                    <p class="notes_count">
+                        <a href="https://notes.nicolasdeville.com/tags">by tags</a>
+                        <span style="color:#C74350">|</span>
+                        <a href="https://notes.nicolasdeville.com/2020/">2020</a>
+                        <span style="color:#C74350">|</span>
+                        <a href="https://notes.nicolasdeville.com/2021/">2021</a>
+                        <span style="color:#C74350">|</span>
+                        <a href="https://notes.nicolasdeville.com/2022/">2022</a>
+                        <span style="color:#C74350">|</span>
+                        609 notes
+                    </p>
+                </div>
+            </div>
+
+            <nav><ul>
+                <li><a href="https://notes.nicolasdeville.com/ai/">ai</a></li>
+                <li><a href="https://notes.nicolasdeville.com/apps/">apps</a></li>
+                <li><a href="https://notes.nicolasdeville.com/b2b-sales/">b2b sales</a></li>
+                <li><a href="https://notes.nicolasdeville.com/books/">books</a></li>
+                <li><a href="https://notes.nicolasdeville.com/careerplaybook/">#careerplaybook</a></li>
+                <li><a href="https://notes.nicolasdeville.com/helpers/">helpers</a></li>
+                <li><a href="https://notes.nicolasdeville.com/home-office/">home office</a></li>
+                <li><a href="https://notes.nicolasdeville.com/interests/">interests</a></li>
+                <li><a href="https://notes.nicolasdeville.com/leadership/">leadership</a></li>
+                <li><a href="https://notes.nicolasdeville.com/learning/">learning</a></li>
+                <li><a href="https://notes.nicolasdeville.com/movies/">movies</a></li>
+                <li><a href="https://notes.nicolasdeville.com/projects/">projects</a></li>
+                <li class="active"><a href="https://notes.nicolasdeville.com/python/">python</a></li>
+                <li><a href="https://notes.nicolasdeville.com/random/">random</a></li>
+                <li><a href="https://notes.nicolasdeville.com/startups/">startups</a></li>
+            </ul></nav>
+        </header>
+
+        <!-- index.html injection -->
+<section id="content" class="body">
+    <article>
+        <header>
+            <h1 class="entry-title">
+                <main> <!-- for indexing by Stork -->
+                    <a href="https://notes.nicolasdeville.com/python/script-notion-to-grist" rel="bookmark"
+                    title="Permalink to Import Notion data to Grist">Import Notion data to Grist
+                    </a>
+                </main>
+            </h1>
+            <p class="header_summary">
+                <main> <!-- for indexing by Stork -->
+                    <p>Python script</p>
+                </main>
+            </p>
+        </header>
+
+        <div class="entry-content">
+<footer class="post-info">
+
+    <p>
+        29 Dec 2022 
+        <span class="separator">|</span> in <a class="link_tag" href="https://notes.nicolasdeville.com/python/"><span data-pagefind-filter="category">python</span></a>
+
+ tags: <a class="link_tag" href="https://notes.nicolasdeville.com/tag/python-script.html">python script</a>
+
+        <!-- added 4/7 -->
+        <!-- 		<br />
+        <abbr class="modified" title="2022-12-29T10:37:28.398074+01:00">
+                Updated: 29 Dec 2022
+        </abbr>
+ -->
+
+    </p>
+
+    
+
+</footer>            <!-- for indexing by Stork -->
+            <!-- <main>  -->
+                <p><span class="datestamp">29 Dec 2022</span>   </p>
+<p>I use Notion to clip URLs for reference but use Grist [<a href="../../apps/grist/index.html">Nic Note: Grist</a>] to manage my data.  </p>
+<p>Here is a script to import one of my "Notion Queues" to Grist.  </p>
+<p>Future improvement would be to build a Chrome extension that adds straight to Grist instead.    </p>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">datetime</span> <span class="kn">import</span> <span class="n">datetime</span>
+<span class="kn">import</span> <span class="nn">os</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;----------&quot;</span><span class="p">)</span>
+<span class="n">ts_file</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">datetime</span><span class="o">.</span><span class="n">now</span><span class="p">()</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="s1">&#39;%y%m</span><span class="si">%d</span><span class="s1">-%H%M&#39;</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span>
+<span class="n">ts_db</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">datetime</span><span class="o">.</span><span class="n">now</span><span class="p">()</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="s1">&#39;%Y-%m-</span><span class="si">%d</span><span class="s1"> %H:%M&#39;</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span>
+<span class="n">ts_time</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">datetime</span><span class="o">.</span><span class="n">now</span><span class="p">()</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="s1">&#39;%H:%M:%S&#39;</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">ts_time</span><span class="si">}</span><span class="s2"> starting </span><span class="si">{</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">basename</span><span class="p">(</span><span class="vm">__file__</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="kn">import</span> <span class="nn">time</span>
+<span class="n">start_time</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>
+
+<span class="kn">from</span> <span class="nn">dotenv</span> <span class="kn">import</span> <span class="n">load_dotenv</span>
+<span class="n">load_dotenv</span><span class="p">()</span>
+<span class="n">USER</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">getenv</span><span class="p">(</span><span class="s2">&quot;USER&quot;</span><span class="p">)</span>
+
+<span class="kn">import</span> <span class="nn">sys</span>
+<span class="n">sys</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;/Users/</span><span class="si">{</span><span class="n">USER</span><span class="si">}</span><span class="s2">/Python/indeXee&quot;</span><span class="p">)</span>
+
+<span class="kn">import</span> <span class="nn">my_utils</span>
+<span class="kn">import</span> <span class="nn">grist_PE</span>
+
+<span class="c1"># get script name</span>
+<span class="kn">import</span> <span class="nn">sys</span>
+<span class="n">loc</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">sys</span><span class="o">.</span><span class="n">argv</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">18</span><span class="p">:</span><span class="o">-</span><span class="mi">3</span><span class="p">]</span><span class="si">}</span><span class="s2">&quot;</span>
+
+<span class="c1"># get line numbers</span>
+<span class="kn">from</span> <span class="nn">inspect</span> <span class="kn">import</span> <span class="n">currentframe</span>
+<span class="k">def</span> <span class="nf">ln</span><span class="p">():</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    print line numbers with f&quot;{ln()}&quot;</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">cf</span> <span class="o">=</span> <span class="n">currentframe</span><span class="p">()</span>
+    <span class="k">return</span> <span class="n">cf</span><span class="o">.</span><span class="n">f_back</span><span class="o">.</span><span class="n">f_lineno</span>
+
+<span class="kn">import</span> <span class="nn">pprint</span>
+<span class="n">pp</span> <span class="o">=</span> <span class="n">pprint</span><span class="o">.</span><span class="n">PrettyPrinter</span><span class="p">(</span><span class="n">indent</span><span class="o">=</span><span class="mi">4</span><span class="p">)</span>
+
+<span class="n">count</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">count_row</span> <span class="o">=</span> <span class="mi">0</span>
+
+<span class="n">test</span> <span class="o">=</span> <span class="kc">True</span>
+<span class="n">v</span> <span class="o">=</span> <span class="kc">True</span> <span class="c1"># verbose mode</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">basename</span><span class="p">(</span><span class="vm">__file__</span><span class="p">)</span><span class="si">}</span><span class="s2"> boilerplate loaded -----------</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="c1">####################</span>
+<span class="c1"># import Clipper Queue from Notion to Grist</span>
+
+<span class="n">existing_domains</span> <span class="o">=</span> <span class="p">[</span><span class="n">x</span><span class="o">.</span><span class="n">domain</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">grist_PE</span><span class="o">.</span><span class="n">Clipper</span><span class="o">.</span><span class="n">fetch_table</span><span class="p">(</span><span class="s1">&#39;Master&#39;</span><span class="p">)]</span>
+
+<span class="n">lu</span> <span class="o">=</span> <span class="p">[]</span>
+
+<span class="kn">from</span> <span class="nn">dotenv</span> <span class="kn">import</span> <span class="n">load_dotenv</span>
+<span class="n">load_dotenv</span><span class="p">()</span>
+
+<span class="kn">import</span> <span class="nn">json</span>
+<span class="kn">import</span> <span class="nn">requests</span>
+
+<span class="c1"># To pretty print results list</span>
+<span class="kn">import</span> <span class="nn">pprint</span>
+<span class="n">pp</span> <span class="o">=</span> <span class="n">pprint</span><span class="o">.</span><span class="n">PrettyPrinter</span><span class="p">(</span><span class="n">indent</span><span class="o">=</span><span class="mi">4</span><span class="p">)</span>
+
+<span class="c1">## Define Published Date as yesterday so library updates do not show up as Featured article</span>
+<span class="kn">from</span> <span class="nn">datetime</span> <span class="kn">import</span> <span class="n">date</span>
+<span class="kn">from</span> <span class="nn">datetime</span> <span class="kn">import</span> <span class="n">timedelta</span>
+<span class="n">today</span> <span class="o">=</span> <span class="n">date</span><span class="o">.</span><span class="n">today</span><span class="p">()</span>
+<span class="n">yesterday</span> <span class="o">=</span> <span class="n">today</span> <span class="o">-</span> <span class="n">timedelta</span><span class="p">(</span><span class="n">days</span> <span class="o">=</span> <span class="mi">1</span><span class="p">)</span>
+<span class="n">publish_date</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">yesterday</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="s1">&#39;%Y-%m-</span><span class="si">%d</span><span class="s1">&#39;</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span>
+
+<span class="c1"># Notion access</span>
+<span class="n">token</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">getenv</span><span class="p">(</span><span class="s2">&quot;NOTION_TOKEN&quot;</span><span class="p">)</span> <span class="c1"># generate at https://www.notion.so/my-integrations + ensure all access is granted</span>
+<span class="n">database_id</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">getenv</span><span class="p">(</span><span class="s2">&quot;NOTION_DATABASE_ID_CLIPPER&quot;</span><span class="p">)</span> <span class="c1"># first variable in database URL, ie before ?</span>
+
+<span class="n">headers</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s2">&quot;Authorization&quot;</span><span class="p">:</span> <span class="s2">&quot;Bearer &quot;</span> <span class="o">+</span> <span class="n">token</span><span class="p">,</span>
+    <span class="s2">&quot;Content-Type&quot;</span><span class="p">:</span> <span class="s2">&quot;application/json&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;Notion-Version&quot;</span><span class="p">:</span> <span class="s2">&quot;2021-05-13&quot;</span>
+<span class="p">}</span>
+
+<span class="n">url</span> <span class="o">=</span> <span class="sa">f</span><span class="s1">&#39;https://api.notion.com/v1/databases/</span><span class="si">{</span><span class="n">database_id</span><span class="si">}</span><span class="s1">/query&#39;</span>
+
+<span class="n">r</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">post</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="p">{</span>
+    <span class="s2">&quot;Authorization&quot;</span><span class="p">:</span> <span class="sa">f</span><span class="s2">&quot;Bearer </span><span class="si">{</span><span class="n">token</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;Notion-Version&quot;</span><span class="p">:</span> <span class="s2">&quot;2021-08-16&quot;</span>
+    <span class="p">})</span>
+
+<span class="n">result_dict</span> <span class="o">=</span> <span class="n">r</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
+<span class="k">if</span> <span class="n">v</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">#</span><span class="si">{</span><span class="n">ln</span><span class="p">()</span><span class="si">}</span><span class="s2"> </span><span class="si">{</span><span class="n">result_dict</span><span class="si">=}</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="n">results</span> <span class="o">=</span> <span class="n">result_dict</span><span class="p">[</span><span class="s1">&#39;results&#39;</span><span class="p">]</span>
+
+<span class="c1"># for analysis of results structure</span>
+<span class="k">if</span> <span class="n">v</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;results: </span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="n">pp</span><span class="o">.</span><span class="n">pprint</span><span class="p">(</span><span class="n">results</span><span class="p">)</span> 
+    <span class="nb">print</span><span class="p">()</span>
+
+<span class="kn">from</span> <span class="nn">datetime</span> <span class="kn">import</span> <span class="n">datetime</span>
+<span class="n">today</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">now</span><span class="p">()</span>
+<span class="n">date_today</span> <span class="o">=</span> <span class="n">today</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="s1">&#39;%Y-%m-</span><span class="si">%d</span><span class="s1">&#39;</span><span class="p">)</span>
+
+<span class="n">output_rows</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span>
+
+<span class="n">count_records</span> <span class="o">=</span> <span class="mi">0</span>
+
+<span class="n">list_missing</span> <span class="o">=</span> <span class="p">[]</span>
+
+<span class="n">name_summary_split</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="s1">&#39;|&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;:&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;-&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;·&#39;</span><span class="p">,</span>
+    <span class="p">]</span>
+
+<span class="k">for</span> <span class="n">record</span> <span class="ow">in</span> <span class="n">results</span><span class="p">:</span>
+    <span class="k">if</span> <span class="n">v</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n</span><span class="si">{</span><span class="n">ln</span><span class="p">()</span><span class="si">}</span><span class="s2"> record:</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="n">pp</span><span class="o">.</span><span class="n">pprint</span><span class="p">(</span><span class="n">record</span><span class="p">)</span>
+    <span class="n">count_records</span> <span class="o">+=</span> <span class="mi">1</span>
+
+    <span class="n">timestamp</span> <span class="o">=</span> <span class="n">record</span><span class="p">[</span><span class="s1">&#39;created_time&#39;</span><span class="p">][:</span><span class="mi">10</span><span class="p">]</span> <span class="c1"># only 10 first chars for YYYY-MM-DD format</span>
+
+    <span class="c1"># below: 2nd field in &#39;properties&#39; field will depend on column headers in database</span>
+    <span class="n">url</span> <span class="o">=</span> <span class="n">record</span><span class="p">[</span><span class="s1">&#39;properties&#39;</span><span class="p">][</span><span class="s1">&#39;URL&#39;</span><span class="p">][</span><span class="s1">&#39;url&#39;</span><span class="p">]</span>
+
+    <span class="n">domain</span> <span class="o">=</span> <span class="n">my_utils</span><span class="o">.</span><span class="n">domain_from_url</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">domain</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">existing_domains</span><span class="p">:</span>
+
+        <span class="c1"># name</span>
+
+        <span class="n">title</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span>
+        <span class="n">name</span> <span class="o">=</span> <span class="n">record</span><span class="p">[</span><span class="s1">&#39;properties&#39;</span><span class="p">][</span><span class="s1">&#39;Name&#39;</span><span class="p">][</span><span class="s1">&#39;title&#39;</span><span class="p">][</span><span class="mi">0</span><span class="p">][</span><span class="s1">&#39;plain_text&#39;</span><span class="p">]</span> <span class="c1"># some need deep navigation / nested fields</span>
+        <span class="k">for</span> <span class="n">split_char</span> <span class="ow">in</span> <span class="n">name_summary_split</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">split_char</span> <span class="ow">in</span> <span class="n">name</span><span class="p">:</span>
+                <span class="n">parts</span> <span class="o">=</span> <span class="n">name</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="n">split_char</span><span class="p">)</span>
+                <span class="n">name</span> <span class="o">=</span> <span class="n">parts</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
+                <span class="n">title</span> <span class="o">=</span> <span class="n">parts</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
+
+        <span class="n">slug</span> <span class="o">=</span> <span class="n">my_utils</span><span class="o">.</span><span class="n">slug_from_url</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
+
+        <span class="n">lu</span><span class="o">.</span><span class="n">append</span><span class="p">(</span>
+                    <span class="p">{</span>   
+                        <span class="s1">&#39;url&#39;</span><span class="p">:</span> <span class="n">my_utils</span><span class="o">.</span><span class="n">clean_url</span><span class="p">(</span><span class="n">url</span><span class="p">),</span>
+                        <span class="s1">&#39;raw_url&#39;</span><span class="p">:</span> <span class="n">url</span><span class="p">,</span>
+                        <span class="s1">&#39;domain&#39;</span><span class="p">:</span> <span class="n">domain</span><span class="p">,</span>
+                        <span class="s1">&#39;slug&#39;</span><span class="p">:</span> <span class="n">slug</span><span class="p">,</span>
+                        <span class="s1">&#39;title&#39;</span><span class="p">:</span> <span class="n">title</span><span class="p">,</span>
+                        <span class="s1">&#39;name&#39;</span><span class="p">:</span> <span class="n">name</span><span class="p">,</span>
+                        <span class="p">}</span>
+        <span class="p">)</span>
+
+        <span class="n">existing_domains</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">domain</span><span class="p">)</span>
+
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;timestamp: </span><span class="si">{</span><span class="n">timestamp</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;URL: </span><span class="si">{</span><span class="n">url</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span> 
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;domain: </span><span class="si">{</span><span class="n">domain</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span> 
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Name: </span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span> 
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Title: </span><span class="si">{</span><span class="n">title</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span> 
+    <span class="nb">print</span><span class="p">()</span>
+
+<span class="k">if</span> <span class="ow">not</span> <span class="n">test</span><span class="p">:</span>
+    <span class="c1"># Bulk update Grist</span>
+    <span class="n">grist_PE</span><span class="o">.</span><span class="n">Clipper</span><span class="o">.</span><span class="n">add_records</span><span class="p">(</span><span class="s1">&#39;Master&#39;</span><span class="p">,</span> <span class="n">lu</span><span class="p">)</span>
+    <span class="c1"># Check new domains</span>
+    <span class="n">new_existing_domains</span> <span class="o">=</span> <span class="p">[</span><span class="n">x</span><span class="o">.</span><span class="n">domain</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">grist_PE</span><span class="o">.</span><span class="n">Clipper</span><span class="o">.</span><span class="n">fetch_table</span><span class="p">(</span><span class="s1">&#39;Master&#39;</span><span class="p">)]</span>
+    <span class="c1"># Delete from Notion</span>
+    <span class="k">for</span> <span class="n">record</span> <span class="ow">in</span> <span class="n">results</span><span class="p">:</span>
+        <span class="n">url</span> <span class="o">=</span> <span class="n">record</span><span class="p">[</span><span class="s1">&#39;properties&#39;</span><span class="p">][</span><span class="s1">&#39;URL&#39;</span><span class="p">][</span><span class="s1">&#39;url&#39;</span><span class="p">]</span>
+        <span class="n">domain</span> <span class="o">=</span> <span class="n">my_utils</span><span class="o">.</span><span class="n">domain_from_url</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">domain</span> <span class="ow">in</span> <span class="n">new_existing_domains</span><span class="p">:</span>
+            <span class="c1"># Delete from Notion</span>
+            <span class="n">record_id</span> <span class="o">=</span> <span class="n">record</span><span class="p">[</span><span class="s1">&#39;id&#39;</span><span class="p">]</span>
+            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">DELETING </span><span class="si">{</span><span class="n">record_id</span><span class="si">}</span><span class="s2"> from Notion.&quot;</span><span class="p">)</span>
+
+            <span class="n">url_delete</span> <span class="o">=</span> <span class="sa">f</span><span class="s1">&#39;https://api.notion.com/v1/blocks/</span><span class="si">{</span><span class="n">record_id</span><span class="si">}</span><span class="s1">&#39;</span>
+            <span class="n">request_delete</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">delete</span><span class="p">(</span><span class="n">url_delete</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="p">{</span>
+                <span class="s2">&quot;Authorization&quot;</span><span class="p">:</span> <span class="sa">f</span><span class="s2">&quot;Bearer </span><span class="si">{</span><span class="n">token</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;Notion-Version&quot;</span><span class="p">:</span> <span class="s2">&quot;2021-08-16&quot;</span>
+                <span class="p">})</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">lu:</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="n">pp</span><span class="o">.</span><span class="n">pprint</span><span class="p">(</span><span class="n">lu</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">TEST RUN</span><span class="se">\n</span><span class="s2">Nothing added to Grist&quot;</span><span class="p">)</span>
+
+
+<span class="c1">########################################################################################################</span>
+
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">()</span>
+    <span class="nb">print</span><span class="p">()</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;-------------------------------&#39;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">basename</span><span class="p">(</span><span class="vm">__file__</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">()</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">count</span><span class="si">=}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">()</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;-------------------------------&#39;</span><span class="p">)</span>
+    <span class="n">run_time</span> <span class="o">=</span> <span class="nb">round</span><span class="p">((</span><span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span> <span class="o">-</span> <span class="n">start_time</span><span class="p">),</span> <span class="mi">1</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">run_time</span> <span class="o">&gt;</span> <span class="mi">60</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">basename</span><span class="p">(</span><span class="vm">__file__</span><span class="p">)</span><span class="si">}</span><span class="s1"> finished in </span><span class="si">{</span><span class="n">run_time</span><span class="o">/</span><span class="mi">60</span><span class="si">}</span><span class="s1"> minutes.&#39;</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">basename</span><span class="p">(</span><span class="vm">__file__</span><span class="p">)</span><span class="si">}</span><span class="s1"> finished in </span><span class="si">{</span><span class="n">run_time</span><span class="si">}</span><span class="s1">s.&#39;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">()</span>
+</code></pre></div>
+            <!-- </main> -->
+        </div><!-- /.entry-content -->
+    </article>
+</section>
+
+        <!-- footer -->
+        <section id="extras" class="body" data-pagefind-ignore>
+
+        <!-- /.blogroll -->
+                <div class="blogroll">
+                        <h2>links</h2>
+                        <ul>
+                            <li><a href="https://btobsales.eu">Services: BtoBSales.EU</a></li>
+                            <li><a href="https://indeXall.io">Side project: indeXall.io</a></li>
+                            <li><a href="https://github.com/ndeville">Github: ndeville</a></li>
+                        </ul>
+                </div>
+
+        <!-- /.social -->
+                <div class="social">
+                        <h2>social</h2>
+                        <ul>
+
+                            <li><a href="https://www.linkedin.com/in/ndeville/">Linkedin</a></li>
+                            <li><a href="https://www.twitter.com/ndeville">Twitter</a></li>
+                        </ul>
+                </div>
+        </section><!-- /#extras -->
+
+        <footer id="contentinfo" class="body" data-pagefind-ignore>
+                <address id="about" class="vcard body">
+                    <img src="https://notes.nicolasdeville.com/favicon.svg" alt="nic_logo" width="24" style="vertical-align: middle;"/> Nic's notes:
+                    <br>
+                    <img src="https://notes.nicolasdeville.com/images/logos/getpelican.png" alt="pelican" width="16" style="vertical-align: middle;"/> Powered by <a href="https://getpelican.com" target="_blank">Pelican</a>
+                    <br>
+                    <img src="https://notes.nicolasdeville.com/images/logos/pagefind.png" alt="pagefind" width="16" style="vertical-align: middle;"/> Search by <a href="https://pagefind.app" target="_blank">Pagefind</a>
+                    <br>
+                    <img src="https://notes.nicolasdeville.com/images/logos/clearbit.png" alt="clearbit" width="16" style="vertical-align: middle;"/> Logos by <a href="https://clearbit.com" target="_blank">Clearbit</a>
+                    <br>
+                    <img src="https://notes.nicolasdeville.com/images/python.svg" alt="python_logo" width="16" style="vertical-align: middle;"/> Made with <a href="https://www.python.org/" target="_blank">Python</a>
+                </address><!-- /#about -->
+
+        </footer><!-- /#contentinfo -->
+
+
+<!-- JS -->
+
+<!-- my JS script (with code block copy) -->
+<script src="https://notes.nicolasdeville.com/theme/js/nic.js"></script>
+
+<!-- for Stork seach engine -->
+<!-- <script src="https://files.stork-search.net/stork.js"></script>
+<script>
+    stork.register("sitesearch", "https://notes.nicolasdeville.com/search-index.st")
+</script> -->
+
+<!-- <script>
+    (function() {
+    if( window.innerWidth > 600 ) {
+        var stork_script = document.createElement('script');
+        stork_script.type = 'text/javascript';
+        stork_script.src = 'https://files.stork-search.net/stork.js';
+
+        var stork_register = ('script');
+        stork_register.innerHTML = 'stork.register("sitesearch", "https://notes.nicolasdeville.com/search-index.st")';
+
+        var head = document.getElementsByTagName('head')[0];
+        head.appendChild(stork_script);
+        head.appendChild(stork_register);
+
+
+    }
+    })();
+</script> -->
+
+</body>
+</html>

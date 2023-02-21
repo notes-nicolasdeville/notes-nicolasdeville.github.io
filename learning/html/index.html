@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <!-- Base -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="generator" content="Pelican" />
+    <meta name="author" content="Nic Deville">
+
+<!-- Title -->
+<title>Learning HTML | Nic's notes</title>
+<meta name="og:title" content="Learning HTML | Nic's notes"/> <!-- 40 characters for mobile and 60 for desktop -->
+<link rel="canonical" href="https://notes.nicolasdeville.com/learning/html" />
+<meta name="twitter:title" content="Learning HTML | Nic's notes" /> <!-- max. 70 characters -->
+
+<meta name="description" content="Messy online notebook covering B2B Sales, Leadership, Python programming, Automation, AI and more. I take these notes for myself (and my kids later) - perhaps they can help someone else..."/>
+<meta property="og:description" content="Messy online notebook covering B2B Sales, Leadership, Python programming, Automation, AI and more. I take these notes for myself (and my kids later) - perhaps they can help someone else..."/>
+<meta name="twitter:description" content="Messy online notebook covering B2B Sales, Leadership, Python programming, Automation, AI and more. I take these notes for myself (and my kids later) - perhaps they can help someone else..." /> <!-- max. 200 characters -->
+
+ 
+
+<meta property="article:published_time" content="2022-12-11 22:29:56.911616+01:00" />
+
+<meta property="article:modified_time" content="2022-12-11 22:29:56.911616+01:00" />
+
+<meta name="robots" content="all, follow" />
+
+<!-- Social -->
+<meta property="og:type" content="article" />
+
+<!-- <meta property="og:description" content="Messy online notebook covering B2B Sales, Leadership, Python programming, Automation, AI and more. I take these notes for myself (and my kids later) - perhaps they can help someone else..." /> min. 2 max. 4 sentences -->
+
+<meta property="og:url" content="https://notes.nicolasdeville.com/learning/html" /> <!-- canonical URL for your page without session variables, user id parameters or counters -->
+<meta property="og:site_name" content="Nic's notes" />
+<meta name="image" property="og:image" content="https://notes.nicolasdeville.com/images/notes-twitter-image.jpg" /> <!-- at least 600x315 pixels, preferable 1200x630 pixels -->
+
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:site" content="@ndeville" />
+
+<meta name="twitter:image" content="https://notes.nicolasdeville.com/images/notes-twitter-image.jpg" /> <!-- aspect ratio of 2:1 with minimum dimensions of 300x157 or maximum of 4096x4096 pixels. Going with 900x471 -->
+
+<!-- Logo -->
+<meta property="og:logo" content="https://notes.nicolasdeville.com/logo.svg">
+
+<!-- Favicon -->
+<link rel="icon" type="image/x-icon" href="https://notes.nicolasdeville.com/favicon.ico">
+<link rel="mask-icon" href="https://notes.nicolasdeville.com/favicon.svg" color="#FFFFFF">
+<link rel="alternate icon" class="js-site-favicon" type="image/png" href="https://notes.nicolasdeville.com/favicon.png">
+<link rel="icon" class="js-site-favicon" type="image/svg+xml" href="https://notes.nicolasdeville.com/favicon.svg">
+<link rel="fluid-icon" href="https://notes.nicolasdeville.com/favicon.png" title="Nic's notes">
+
+<!-- CSS -->
+<link rel="stylesheet" href="https://notes.nicolasdeville.com/theme/css/main.css" />
+
+<!-- Pagefind -->
+<link href="https://notes.nicolasdeville.com/theme/css/pagefind-ui-nic.css" rel="stylesheet">
+<script src="https://notes.nicolasdeville.com/pagefind/pagefind-ui.js" type="text/javascript"></script>
+
+<script>
+    window.addEventListener('DOMContentLoaded', (event) => {
+        new PagefindUI({ element: "#search" });
+    });
+</script>
+
+
+</head>
+
+<body id="index" class="body">
+        <header id="banner" class="body">
+
+            <div class="logo-and-search">
+                <a href="https://notes.nicolasdeville.com/"><img class="header_image" src="https://notes.nicolasdeville.com/images/nic_notes_header.svg" alt="Nic's notes" width="266"/></a>
+
+                <!-- for Stork seach engine -->
+                <!-- <div class="search-input-block">
+                    <input data-stork="sitesearch" class="search-input" placeholder="Search notes..." autofocus="autofocus"/>
+                    <div data-stork="sitesearch-output"></div>
+                </div> -->
+
+                <!-- Pagefind -->
+                <div class="search-input-block" id="search"></div>
+
+            </div>
+
+            
+
+            <div class="above-navbar">
+                <div class="last_updated">21 Feb 2023 | 09:41</div>
+                <div>
+                    <p class="notes_count">
+                        <a href="https://notes.nicolasdeville.com/tags">by tags</a>
+                        <span style="color:#C74350">|</span>
+                        <a href="https://notes.nicolasdeville.com/2020/">2020</a>
+                        <span style="color:#C74350">|</span>
+                        <a href="https://notes.nicolasdeville.com/2021/">2021</a>
+                        <span style="color:#C74350">|</span>
+                        <a href="https://notes.nicolasdeville.com/2022/">2022</a>
+                        <span style="color:#C74350">|</span>
+                        609 notes
+                    </p>
+                </div>
+            </div>
+
+            <nav><ul>
+                <li><a href="https://notes.nicolasdeville.com/ai/">ai</a></li>
+                <li><a href="https://notes.nicolasdeville.com/apps/">apps</a></li>
+                <li><a href="https://notes.nicolasdeville.com/b2b-sales/">b2b sales</a></li>
+                <li><a href="https://notes.nicolasdeville.com/books/">books</a></li>
+                <li><a href="https://notes.nicolasdeville.com/careerplaybook/">#careerplaybook</a></li>
+                <li><a href="https://notes.nicolasdeville.com/helpers/">helpers</a></li>
+                <li><a href="https://notes.nicolasdeville.com/home-office/">home office</a></li>
+                <li><a href="https://notes.nicolasdeville.com/interests/">interests</a></li>
+                <li><a href="https://notes.nicolasdeville.com/leadership/">leadership</a></li>
+                <li class="active"><a href="https://notes.nicolasdeville.com/learning/">learning</a></li>
+                <li><a href="https://notes.nicolasdeville.com/movies/">movies</a></li>
+                <li><a href="https://notes.nicolasdeville.com/projects/">projects</a></li>
+                <li><a href="https://notes.nicolasdeville.com/python/">python</a></li>
+                <li><a href="https://notes.nicolasdeville.com/random/">random</a></li>
+                <li><a href="https://notes.nicolasdeville.com/startups/">startups</a></li>
+            </ul></nav>
+        </header>
+
+        <!-- index.html injection -->
+<section id="content" class="body">
+    <article>
+        <header>
+            <h1 class="entry-title">
+                <main> <!-- for indexing by Stork -->
+                    <a href="https://notes.nicolasdeville.com/learning/html" rel="bookmark"
+                    title="Permalink to Learning HTML">Learning HTML
+                    </a>
+                </main>
+            </h1>
+            <p class="header_summary">
+                <main> <!-- for indexing by Stork -->
+                    
+                </main>
+            </p>
+        </header>
+
+        <div class="entry-content">
+<footer class="post-info">
+
+    <p>
+        11 Dec 2022 
+        <span class="separator">|</span> in <a class="link_tag" href="https://notes.nicolasdeville.com/learning/"><span data-pagefind-filter="category">learning</span></a>
+
+ tags: <a class="link_tag" href="https://notes.nicolasdeville.com/tag/html.html">html</a>
+
+        <!-- added 4/7 -->
+        <!-- 		<br />
+        <abbr class="modified" title="2022-12-11T22:29:56.911616+01:00">
+                Updated: 11 Dec 2022
+        </abbr>
+ -->
+
+    </p>
+
+    
+
+</footer>            <!-- for indexing by Stork -->
+            <!-- <main>  -->
+                <p><span class="datestamp">11 Sep 2022</span> starting note.   </p>
+<h1 id="tools">Tools</h1>
+<h2 id="vs-code-extensions">VS Code / &amp; extensions</h2>
+<h2 id="online-test">Online test</h2>
+<div class="link_border"><div class="link_logo_box"><img class="link_logo" src="https://notes.nicolasdeville.com/images/logos/w3schools.png" alt="logo"/></div><div class="link_content">
+<div class="link_title">W3Schools Tryit Editor</div>
+<div class="link_tagline">w3schools.com</div>
+<div class="link_url"><a href="https://www.w3schools.com/html/tryit.asp?filename=tryhtml_default_default" target="_blank">https://www.w3schools.com/html/tryit.asp?filename=tryhtml_default_default</a></div></div></div>
+
+<h3 id="add-favicon">add favicon</h3>
+<div class="link_border"><div class="link_logo_box"><img class="link_logo" src="https://notes.nicolasdeville.com/images/logos/w3schools.png" alt="logo"/></div><div class="link_content">
+<div class="link_title">HTML Favicon</div>
+<div class="link_tagline">w3schools</div>
+<div class="link_url"><a href="https://www.w3schools/html/html_favicon.asp" target="_blank">https://www.w3schools/html/html_favicon.asp</a></div></div></div>
+
+<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">link</span> <span class="na">rel</span><span class="o">=</span><span class="s">&quot;icon&quot;</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;image/x-icon&quot;</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;/images/favicon.ico&quot;</span><span class="p">&gt;</span>
+</code></pre></div>
+
+<p>didn't work for me. Copied the below from Github's CSS and this works:  </p>
+<div class="highlight"><pre><span></span><code><span class="cm">&lt;!-- Favicon --&gt;</span>
+    <span class="p">&lt;</span><span class="nt">link</span> <span class="na">rel</span><span class="o">=</span><span class="s">&quot;icon&quot;</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;image/x-icon&quot;</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;https://notes.nicolasdeville.com/favicon.ico&quot;</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">link</span> <span class="na">rel</span><span class="o">=</span><span class="s">&quot;mask-icon&quot;</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;https://notes.nicolasdeville.com/favicon.svg&quot;</span> <span class="na">color</span><span class="o">=</span><span class="s">&quot;#FFFFFF&quot;</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">link</span> <span class="na">rel</span><span class="o">=</span><span class="s">&quot;alternate icon&quot;</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;js-site-favicon&quot;</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;image/png&quot;</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;https://notes.nicolasdeville.com/favicon.png&quot;</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">link</span> <span class="na">rel</span><span class="o">=</span><span class="s">&quot;icon&quot;</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;js-site-favicon&quot;</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;image/svg+xml&quot;</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;https://notes.nicolasdeville.com/favicon.svg&quot;</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">link</span> <span class="na">rel</span><span class="o">=</span><span class="s">&quot;fluid-icon&quot;</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;https://notes.nicolasdeville.com/favicon.png&quot;</span> <span class="na">title</span><span class="o">=</span><span class="s">&quot;Nic&#39;s notes&quot;</span><span class="p">&gt;</span>
+</code></pre></div>
+
+<h1 id="snippets">Snippets</h1>
+<h2 id="viewport">viewport</h2>
+<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">meta</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;viewport&quot;</span> <span class="na">content</span><span class="o">=</span><span class="s">&quot;width=device-width, initial-scale=1.0, maximum-scale=1.0&quot;</span> <span class="p">/&gt;</span>
+</code></pre></div>
+            <!-- </main> -->
+        </div><!-- /.entry-content -->
+    </article>
+</section>
+
+        <!-- footer -->
+        <section id="extras" class="body" data-pagefind-ignore>
+
+        <!-- /.blogroll -->
+                <div class="blogroll">
+                        <h2>links</h2>
+                        <ul>
+                            <li><a href="https://btobsales.eu">Services: BtoBSales.EU</a></li>
+                            <li><a href="https://indeXall.io">Side project: indeXall.io</a></li>
+                            <li><a href="https://github.com/ndeville">Github: ndeville</a></li>
+                        </ul>
+                </div>
+
+        <!-- /.social -->
+                <div class="social">
+                        <h2>social</h2>
+                        <ul>
+
+                            <li><a href="https://www.linkedin.com/in/ndeville/">Linkedin</a></li>
+                            <li><a href="https://www.twitter.com/ndeville">Twitter</a></li>
+                        </ul>
+                </div>
+        </section><!-- /#extras -->
+
+        <footer id="contentinfo" class="body" data-pagefind-ignore>
+                <address id="about" class="vcard body">
+                    <img src="https://notes.nicolasdeville.com/favicon.svg" alt="nic_logo" width="24" style="vertical-align: middle;"/> Nic's notes:
+                    <br>
+                    <img src="https://notes.nicolasdeville.com/images/logos/getpelican.png" alt="pelican" width="16" style="vertical-align: middle;"/> Powered by <a href="https://getpelican.com" target="_blank">Pelican</a>
+                    <br>
+                    <img src="https://notes.nicolasdeville.com/images/logos/pagefind.png" alt="pagefind" width="16" style="vertical-align: middle;"/> Search by <a href="https://pagefind.app" target="_blank">Pagefind</a>
+                    <br>
+                    <img src="https://notes.nicolasdeville.com/images/logos/clearbit.png" alt="clearbit" width="16" style="vertical-align: middle;"/> Logos by <a href="https://clearbit.com" target="_blank">Clearbit</a>
+                    <br>
+                    <img src="https://notes.nicolasdeville.com/images/python.svg" alt="python_logo" width="16" style="vertical-align: middle;"/> Made with <a href="https://www.python.org/" target="_blank">Python</a>
+                </address><!-- /#about -->
+
+        </footer><!-- /#contentinfo -->
+
+
+<!-- JS -->
+
+<!-- my JS script (with code block copy) -->
+<script src="https://notes.nicolasdeville.com/theme/js/nic.js"></script>
+
+<!-- for Stork seach engine -->
+<!-- <script src="https://files.stork-search.net/stork.js"></script>
+<script>
+    stork.register("sitesearch", "https://notes.nicolasdeville.com/search-index.st")
+</script> -->
+
+<!-- <script>
+    (function() {
+    if( window.innerWidth > 600 ) {
+        var stork_script = document.createElement('script');
+        stork_script.type = 'text/javascript';
+        stork_script.src = 'https://files.stork-search.net/stork.js';
+
+        var stork_register = ('script');
+        stork_register.innerHTML = 'stork.register("sitesearch", "https://notes.nicolasdeville.com/search-index.st")';
+
+        var head = document.getElementsByTagName('head')[0];
+        head.appendChild(stork_script);
+        head.appendChild(stork_register);
+
+
+    }
+    })();
+</script> -->
+
+</body>
+</html>

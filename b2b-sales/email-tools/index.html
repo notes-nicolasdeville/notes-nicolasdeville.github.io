@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <!-- Base -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="generator" content="Pelican" />
+    <meta name="author" content="Nic Deville">
+
+<!-- Title -->
+<title>Tools for email finding & validation | Nic's notes</title>
+<meta name="og:title" content="Tools for email finding & validation | Nic's notes"/> <!-- 40 characters for mobile and 60 for desktop -->
+<link rel="canonical" href="https://notes.nicolasdeville.com/b2b-sales/email-tools" />
+<meta name="twitter:title" content="Tools for email finding & validation | Nic's notes" /> <!-- max. 70 characters -->
+
+<meta name="description" content="keeping track of tools to help with finding & validating emails for outreaches"/>
+<meta property="og:description" content="keeping track of tools to help with finding & validating emails for outreaches"/>
+<meta name="twitter:description" content="keeping track of tools to help with finding & validating emails for outreaches" /> <!-- max. 200 characters -->
+ 
+
+<meta property="article:published_time" content="2023-01-17 23:54:29.034211+01:00" />
+
+<meta property="article:modified_time" content="2023-01-17 23:54:29.034211+01:00" />
+
+<meta name="robots" content="all, follow" />
+
+<!-- Social -->
+<meta property="og:type" content="article" />
+
+<!-- <meta property="og:description" content="Messy online notebook covering B2B Sales, Leadership, Python programming, Automation, AI and more. I take these notes for myself (and my kids later) - perhaps they can help someone else..." /> min. 2 max. 4 sentences -->
+
+<meta property="og:url" content="https://notes.nicolasdeville.com/b2b-sales/email-tools" /> <!-- canonical URL for your page without session variables, user id parameters or counters -->
+<meta property="og:site_name" content="Nic's notes" />
+<meta name="image" property="og:image" content="https://notes.nicolasdeville.com/images/notes-twitter-image.jpg" /> <!-- at least 600x315 pixels, preferable 1200x630 pixels -->
+
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:site" content="@ndeville" />
+
+<meta name="twitter:image" content="https://notes.nicolasdeville.com/images/notes-twitter-image.jpg" /> <!-- aspect ratio of 2:1 with minimum dimensions of 300x157 or maximum of 4096x4096 pixels. Going with 900x471 -->
+
+<!-- Logo -->
+<meta property="og:logo" content="https://notes.nicolasdeville.com/logo.svg">
+
+<!-- Favicon -->
+<link rel="icon" type="image/x-icon" href="https://notes.nicolasdeville.com/favicon.ico">
+<link rel="mask-icon" href="https://notes.nicolasdeville.com/favicon.svg" color="#FFFFFF">
+<link rel="alternate icon" class="js-site-favicon" type="image/png" href="https://notes.nicolasdeville.com/favicon.png">
+<link rel="icon" class="js-site-favicon" type="image/svg+xml" href="https://notes.nicolasdeville.com/favicon.svg">
+<link rel="fluid-icon" href="https://notes.nicolasdeville.com/favicon.png" title="Nic's notes">
+
+<!-- CSS -->
+<link rel="stylesheet" href="https://notes.nicolasdeville.com/theme/css/main.css" />
+
+<!-- Pagefind -->
+<link href="https://notes.nicolasdeville.com/theme/css/pagefind-ui-nic.css" rel="stylesheet">
+<script src="https://notes.nicolasdeville.com/pagefind/pagefind-ui.js" type="text/javascript"></script>
+
+<script>
+    window.addEventListener('DOMContentLoaded', (event) => {
+        new PagefindUI({ element: "#search" });
+    });
+</script>
+
+
+</head>
+
+<body id="index" class="body">
+        <header id="banner" class="body">
+
+            <div class="logo-and-search">
+                <a href="https://notes.nicolasdeville.com/"><img class="header_image" src="https://notes.nicolasdeville.com/images/nic_notes_header.svg" alt="Nic's notes" width="266"/></a>
+
+                <!-- for Stork seach engine -->
+                <!-- <div class="search-input-block">
+                    <input data-stork="sitesearch" class="search-input" placeholder="Search notes..." autofocus="autofocus"/>
+                    <div data-stork="sitesearch-output"></div>
+                </div> -->
+
+                <!-- Pagefind -->
+                <div class="search-input-block" id="search"></div>
+
+            </div>
+
+            
+
+            <div class="above-navbar">
+                <div class="last_updated">21 Feb 2023 | 09:41</div>
+                <div>
+                    <p class="notes_count">
+                        <a href="https://notes.nicolasdeville.com/tags">by tags</a>
+                        <span style="color:#C74350">|</span>
+                        <a href="https://notes.nicolasdeville.com/2020/">2020</a>
+                        <span style="color:#C74350">|</span>
+                        <a href="https://notes.nicolasdeville.com/2021/">2021</a>
+                        <span style="color:#C74350">|</span>
+                        <a href="https://notes.nicolasdeville.com/2022/">2022</a>
+                        <span style="color:#C74350">|</span>
+                        609 notes
+                    </p>
+                </div>
+            </div>
+
+            <nav><ul>
+                <li><a href="https://notes.nicolasdeville.com/ai/">ai</a></li>
+                <li><a href="https://notes.nicolasdeville.com/apps/">apps</a></li>
+                <li class="active"><a href="https://notes.nicolasdeville.com/b2b-sales/">b2b sales</a></li>
+                <li><a href="https://notes.nicolasdeville.com/books/">books</a></li>
+                <li><a href="https://notes.nicolasdeville.com/careerplaybook/">#careerplaybook</a></li>
+                <li><a href="https://notes.nicolasdeville.com/helpers/">helpers</a></li>
+                <li><a href="https://notes.nicolasdeville.com/home-office/">home office</a></li>
+                <li><a href="https://notes.nicolasdeville.com/interests/">interests</a></li>
+                <li><a href="https://notes.nicolasdeville.com/leadership/">leadership</a></li>
+                <li><a href="https://notes.nicolasdeville.com/learning/">learning</a></li>
+                <li><a href="https://notes.nicolasdeville.com/movies/">movies</a></li>
+                <li><a href="https://notes.nicolasdeville.com/projects/">projects</a></li>
+                <li><a href="https://notes.nicolasdeville.com/python/">python</a></li>
+                <li><a href="https://notes.nicolasdeville.com/random/">random</a></li>
+                <li><a href="https://notes.nicolasdeville.com/startups/">startups</a></li>
+            </ul></nav>
+        </header>
+
+        <!-- index.html injection -->
+<section id="content" class="body">
+    <article>
+        <header>
+            <h1 class="entry-title">
+                <main> <!-- for indexing by Stork -->
+                    <a href="https://notes.nicolasdeville.com/b2b-sales/email-tools" rel="bookmark"
+                    title="Permalink to Tools for email finding & validation">Tools for email finding & validation
+                    </a>
+                </main>
+            </h1>
+            <p class="header_summary">
+                <main> <!-- for indexing by Stork -->
+                    <p>keeping track of tools to help with finding &amp; validating emails for outreaches</p>
+                </main>
+            </p>
+        </header>
+
+        <div class="entry-content">
+<footer class="post-info">
+
+    <p>
+        17 Jan 2023 
+        <span class="separator">|</span> in <a class="link_tag" href="https://notes.nicolasdeville.com/b2b-sales/"><span data-pagefind-filter="category">b2b sales</span></a>
+
+ tags: <a class="link_tag" href="https://notes.nicolasdeville.com/tag/automation.html">automation</a>
+<a class="link_tag" href="https://notes.nicolasdeville.com/tag/emails.html">emails</a>
+<a class="link_tag" href="https://notes.nicolasdeville.com/tag/python.html">python</a>
+<a class="link_tag" href="https://notes.nicolasdeville.com/tag/saas.html">SaaS</a>
+
+        <!-- added 4/7 -->
+        <!-- 		<br />
+        <abbr class="modified" title="2023-01-17T23:54:29.034211+01:00">
+                Updated: 17 Jan 2023
+        </abbr>
+ -->
+
+    </p>
+
+    
+
+</footer>            <!-- for indexing by Stork -->
+            <!-- <main>  -->
+                <div class="toc"><span class="toctitle">Table of Contents</span><ul>
+<li><a href="#email-finding">Email Finding</a><ul>
+<li><a href="#email-lookup-tools">Email lookup tools</a><ul>
+<li><a href="#apollo">Apollo</a></li>
+<li><a href="#clearbit-connect">Clearbit Connect</a></li>
+<li><a href="#datagma-enrich">Datagma "Enrich"</a></li>
+<li><a href="#dropcontact">Dropcontact</a></li>
+<li><a href="#find-that-email">Find That Email</a></li>
+<li><a href="#findymail">Findymail</a></li>
+<li><a href="#getemailio">Getemail.io</a></li>
+<li><a href="#hunter">Hunter</a></li>
+<li><a href="#name2email">Name2email</a></li>
+<li><a href="#seamlessai">Seamless.ai</a></li>
+<li><a href="#snovio">Snov.io</a></li>
+<li><a href="#uplead">UpLead</a></li>
+<li><a href="#voila-norbert">Voila Norbert</a></li>
+</ul>
+</li>
+<li><a href="#email-permutators">Email Permutators</a><ul>
+<li><a href="#mail-meteor">Mail Meteor</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#email-validation">Email Validation</a><ul>
+<li><a href="#bouncer">Bouncer</a></li>
+<li><a href="#clearout">Clearout</a></li>
+<li><a href="#emailable">Emailable</a></li>
+<li><a href="#emaillistverify">EmailListVerify</a></li>
+<li><a href="#find-that-email_1">Find That Email</a></li>
+<li><a href="#neverbounce">Neverbounce</a></li>
+<li><a href="#voila-norbert_1">Voila Norbert</a></li>
+<li><a href="#zerobounce">ZeroBounce</a></li>
+</ul>
+</li>
+<li><a href="#email-deliverability">Email Deliverability</a><ul>
+<li><a href="#lemwarm">lemwarm</a></li>
+</ul>
+</li>
+<li><a href="#resources">Resources</a></li>
+</ul>
+</div>
+<p>My own project including email validation APIs: [<a href="../../projects/emailee/index.html">Nic Note: Emailee</a>]     </p>
+<p>See also: [<a href="../../b2b-sales/finding-email-addresses/index.html">Nic Note: Finding email addresses</a>]  </p>
+<h1 id="email-finding">Email Finding</h1>
+<p>Most common patterns:  </p>
+<p><img class="screenshot" src="https://notes.nicolasdeville.com/images/email-tools/most-common-email-patterns.jpg" alt="email-tools/most-common-email-patterns.jpg"/><br>
+source: <a href="https://hunter.io/blog/how-to-find-someones-email-address/" target="_blank">https://hunter.io/blog/how-to-find-someones-email-address/</a>    </p>
+<p>Surprising to see <code>first@</code> topping the list!!   </p>
+<h2 id="email-lookup-tools">Email lookup tools</h2>
+<p><img class="screenshot" src="https://notes.nicolasdeville.com/images/email-tools/221130-email-lookup-tool-test.jpg" alt="email-tools/221130-email-lookup-tool-test.jpg"/>   </p>
+<h3 id="apollo">Apollo</h3>
+<div class="link_border"><div class="link_logo_box"><img class="link_logo" src="https://notes.nicolasdeville.com/images/logos/apollo.png" alt="logo"/></div><div class="link_content">
+<div class="link_title">Apollo</div>
+<div class="link_tagline">apollo.io</div>
+<div class="link_url"><a href="https://www.apollo.io/product/api/" target="_blank">https://www.apollo.io/product/api/</a></div></div></div>
+
+<ul>
+<li>recommended by Lemlist</li>
+</ul>
+<p>$49/month "Unlimited Email Credit"?    </p>
+<p>TO TEST</p>
+<h3 id="clearbit-connect">Clearbit Connect</h3>
+<div class="link_border"><div class="link_logo_box"><img class="link_logo" src="https://notes.nicolasdeville.com/images/logos/clearbit.png" alt="logo"/></div><div class="link_content">
+<div class="link_title">Find any email address with Clearbit Connect</div>
+<div class="link_tagline">connect.clearbit.com</div>
+<div class="link_url"><a href="https://connect.clearbit.com/" target="_blank">https://connect.clearbit.com/</a></div></div></div>
+
+<p>➤ Gmail plugin </p>
+<h3 id="datagma-enrich">Datagma "Enrich"</h3>
+<div class="link_border"><div class="link_logo_box"><img class="link_logo" src="https://notes.nicolasdeville.com/images/logos/datagma.png" alt="logo"/></div><div class="link_content">
+<div class="link_title">Datagma Enrich API</div>
+<div class="link_tagline">datagma.com</div>
+<div class="link_url"><a href="https://datagma.com/api/" target="_blank">https://datagma.com/api/</a></div></div></div>
+
+<ul>
+<li>Recommended by Lemlist</li>
+<li>Real Time Company &amp; Person API   </li>
+<li>By developers for developers</li>
+</ul>
+<p>$60/month up to 8k searches?  <br>
+Free trial up to 1k searches.   </p>
+<p>TEST NEXT      </p>
+<h3 id="dropcontact">Dropcontact</h3>
+<div class="link_border"><div class="link_logo_box"><img class="link_logo" src="https://notes.nicolasdeville.com/images/logos/dropcontact.png" alt="logo"/></div><div class="link_content">
+<div class="link_title">Dropcontact</div>
+<div class="link_tagline">B2B Email Finder and enrichment in CRM | Enrich all your B2B contacts</div>
+<div class="link_url"><a href="https://www.dropcontact.com/" target="_blank">https://www.dropcontact.com/</a></div></div></div>
+
+<p>➤ used by PhantomBuster to provide emails. <br>
+➤ founded in Paris, at Station F / GDPR compliant
+➤ no clear pricing on website = expensive</p>
+<h3 id="find-that-email">Find That Email</h3>
+<div class="link_border"><div class="link_logo_box"><img class="link_logo" src="https://notes.nicolasdeville.com/images/logos/findthat.png" alt="logo"/></div><div class="link_content">
+<div class="link_title">The Yellow Pages of Emails | Find That Email</div>
+<div class="link_tagline">The Yellow Pages of Email</div>
+<div class="link_url"><a href="https://findthat.email/" target="_blank">https://findthat.email/</a></div></div></div>
+
+<p><img class="screenshot" src="https://notes.nicolasdeville.com/images/email-tools/find-that-email-pricing.jpg" alt="email-tools/find-that-email-pricing.jpg"/>  </p>
+<h3 id="findymail">Findymail</h3>
+<div class="link_border"><div class="link_logo_box"><img class="link_logo" src="https://notes.nicolasdeville.com/images/logos/findymail.png" alt="logo"/></div><div class="link_content">
+<div class="link_title">Findymail</div>
+<div class="link_tagline">Build lead lists, faster</div>
+<div class="link_url"><a href="https://www.findymail.com/" target="_blank">https://www.findymail.com/</a></div></div></div>
+
+<h3 id="getemailio">Getemail.io</h3>
+<div class="link_border"><div class="link_logo_box"><img class="link_logo" src="https://notes.nicolasdeville.com/images/logos/getemail.png" alt="logo"/></div><div class="link_content">
+<div class="link_title">Getemail.io</div>
+<div class="link_tagline">Get Anyone's Email in Seconds</div>
+<div class="link_url"><a href="https://getemail.io/" target="_blank">https://getemail.io/</a></div></div></div>
+
+<p><img class="screenshot" src="https://notes.nicolasdeville.com/images/email-tools/getemail-pricing.jpg" alt="email-tools/getemail-pricing.jpg"/>  </p>
+<h3 id="hunter">Hunter</h3>
+<div class="link_border"><div class="link_logo_box"><img class="link_logo" src="https://notes.nicolasdeville.com/images/logos/hunter.png" alt="logo"/></div><div class="link_content">
+<div class="link_title">Hunter.io</div>
+<div class="link_tagline">Email Finder</div>
+<div class="link_url"><a href="https://hunter.io/email-finder" target="_blank">https://hunter.io/email-finder</a></div></div></div>
+
+<p><img class="screenshot" src="https://notes.nicolasdeville.com/images/email-tools/email-tools-hunter-pricing.jpg" alt="email-tools/email-tools-hunter-pricing.jpg"/>  </p>
+<h3 id="name2email">Name2email</h3>
+<div class="link_border"><div class="link_logo_box"><img class="link_logo" src="https://notes.nicolasdeville.com/images/logos/name2email.png" alt="logo"/></div><div class="link_content">
+<div class="link_title">Name2email</div>
+<div class="link_tagline">Find an email address by name right from Gmail</div>
+<div class="link_url"><a href="https://name2email.com/" target="_blank">https://name2email.com/</a></div></div></div>
+
+<p>➤ Gmail plugin </p>
+<p><span class="datestamp">20 Dec 2022</span> have used it for around 100 contacts' emails. It seems to work well though still need to validate the emails. Also it's quite labour intensive to use it for a large number of contacts. Not a good solution to scale, but a good one to have in one's toolbox for one-off searches, straight in the Gmail interface.    </p>
+<h3 id="seamlessai">Seamless.ai</h3>
+<div class="link_border"><div class="link_logo_box"><img class="link_logo" src="https://notes.nicolasdeville.com/images/logos/seamless.png" alt="logo"/></div><div class="link_content">
+<div class="link_title">Seamless AI | Sales Software | Best Sales Leads & Tools</div>
+<div class="link_tagline">seamless.ai</div>
+<div class="link_url"><a href="https://seamless.ai/" target="_blank">https://seamless.ai/</a></div></div></div>
+
+<p><img class="screenshot" src="https://notes.nicolasdeville.com/images/email-tools/seamless-ai-features.jpg" alt="email-tools/seamless-ai-features.jpg"/>  </p>
+<p><img class="screenshot" src="https://notes.nicolasdeville.com/images/email-tools/seamless-ai-pricing.jpg" alt="email-tools/seamless-ai-pricing.jpg"/>  </p>
+<h3 id="snovio">Snov.io</h3>
+<div class="link_border"><div class="link_logo_box"><img class="link_logo" src="https://notes.nicolasdeville.com/images/logos/snov.png" alt="logo"/></div><div class="link_content">
+<div class="link_title">Snov.io</div>
+<div class="link_tagline">Sales automation & acceleration at scale</div>
+<div class="link_url"><a href="https://snov.io/" target="_blank">https://snov.io/</a></div></div></div>
+
+<p>Tested their email finding service in 2019 and was disappointed with results.  </p>
+<h3 id="uplead">UpLead</h3>
+<div class="link_border"><div class="link_logo_box"><img class="link_logo" src="https://notes.nicolasdeville.com/images/logos/uplead.png" alt="logo"/></div><div class="link_content">
+<div class="link_title">UpLead</div>
+<div class="link_tagline">B2B Database & Business Contact Data Provider</div>
+<div class="link_url"><a href="https://www.uplead.com/" target="_blank">https://www.uplead.com/</a></div></div></div>
+
+<p><img class="screenshot" src="https://notes.nicolasdeville.com/images/email-tools/uplead-pricing.jpg" alt="email-tools/uplead-pricing.jpg"/>  </p>
+<h3 id="voila-norbert">Voila Norbert</h3>
+<div class="link_border"><div class="link_logo_box"><img class="link_logo" src="https://notes.nicolasdeville.com/images/logos/voilanorbert.png" alt="logo"/></div><div class="link_content">
+<div class="link_title">Email Finder: Free 50 Verified Email Addresses - VoilaNorbert</div>
+<div class="link_tagline">I can find anyone's email address</div>
+<div class="link_url"><a href="https://www.voilanorbert.com/" target="_blank">https://www.voilanorbert.com/</a></div></div></div>
+
+<p><img class="screenshot" src="https://notes.nicolasdeville.com/images/email-tools/norbert-prospecting-pricing.jpg" alt="email-tools/norbert-prospecting-pricing.jpg"/>  </p>
+<h2 id="email-permutators">Email Permutators</h2>
+<h3 id="mail-meteor">Mail Meteor</h3>
+<div class="link_border"><div class="link_logo_box"><img class="link_logo" src="https://notes.nicolasdeville.com/images/logos/mailmeteor.png" alt="logo"/></div><div class="link_content">
+<div class="link_title">Mail Meteor: Email Permutator</div>
+<div class="link_tagline">Find Anyone Email Address for Free</div>
+<div class="link_url"><a href="https://mailmeteor/email-permutator" target="_blank">https://mailmeteor/email-permutator</a></div></div></div>
+
+<p><img class="screenshot" src="https://notes.nicolasdeville.com/images/email-tools/mailmeteor-email-permutator1.jpg" alt="email-tools/mailmeteor-email-permutator1.jpg"/>  </p>
+<iframe width="690" height="388" src="https://www.youtube.com/embed/1vU3idLYUlI" title="How to find anyone's email address? (Gmail Tips & Tricks)" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+<h1 id="email-validation">Email Validation</h1>
+<h2 id="bouncer">Bouncer</h2>
+<div class="link_border"><div class="link_logo_box"><img class="link_logo" src="https://notes.nicolasdeville.com/images/logos/usebouncer.png" alt="logo"/></div><div class="link_content">
+<div class="link_title">Bouncer</div>
+<div class="link_tagline">Email Validation and Verification Service</div>
+<div class="link_url"><a href="https://www.usebouncer/" target="_blank">https://www.usebouncer/</a></div></div></div>
+
+<h2 id="clearout">Clearout</h2>
+<div class="link_border"><div class="link_logo_box"><img class="link_logo" src="https://notes.nicolasdeville.com/images/logos/clearout.png" alt="logo"/></div><div class="link_content">
+<div class="link_title">Clearout</div>
+<div class="link_tagline">Email Finder & Email Verification Service</div>
+<div class="link_url"><a href="https://clearout/" target="_blank">https://clearout/</a></div></div></div>
+
+<h2 id="emailable">Emailable</h2>
+<div class="link_border"><div class="link_logo_box"><img class="link_logo" src="https://notes.nicolasdeville.com/images/logos/emailable.png" alt="logo"/></div><div class="link_content">
+<div class="link_title">Emailable</div>
+<div class="link_tagline">Email Checker & List Cleaning Software Solution</div>
+<div class="link_url"><a href="https://emailable/" target="_blank">https://emailable/</a></div></div></div>
+
+<p>➤ Test next</p>
+<h2 id="emaillistverify">EmailListVerify</h2>
+<div class="link_border"><div class="link_logo_box"><img class="link_logo" src="https://notes.nicolasdeville.com/images/logos/emaillistverify.png" alt="logo"/></div><div class="link_content">
+<div class="link_title">Emaillistverify</div>
+<div class="link_tagline">Full-Featured Email Verification.But half the price.</div>
+<div class="link_url"><a href="https://www.emaillistverify.com/" target="_blank">https://www.emaillistverify.com/</a></div></div></div>
+
+<p>➤ Test next</p>
+<h2 id="find-that-email_1">Find That Email</h2>
+<div class="link_border"><div class="link_logo_box"><img class="link_logo" src="https://notes.nicolasdeville.com/images/logos/findthat.png" alt="logo"/></div><div class="link_content">
+<div class="link_title">Find That Email</div>
+<div class="link_tagline">The Yellow Pages of Email</div>
+<div class="link_url"><a href="https://findthat.email/" target="_blank">https://findthat.email/</a></div></div></div>
+
+<p><img class="screenshot" src="https://notes.nicolasdeville.com/images/email-tools/find-that-email-verify-pricing.jpg" alt="email-tools/find-that-email-verify-pricing.jpg"/>  </p>
+<h2 id="neverbounce">Neverbounce</h2>
+<div class="link_border"><div class="link_logo_box"><img class="link_logo" src="https://notes.nicolasdeville.com/images/logos/neverbounce.png" alt="logo"/></div><div class="link_content">
+<div class="link_title">Neverbounce</div>
+<div class="link_tagline">Email Deliverability Your Business Can Depend On</div>
+<div class="link_url"><a href="https://neverbounce/" target="_blank">https://neverbounce/</a></div></div></div>
+
+<h2 id="voila-norbert_1">Voila Norbert</h2>
+<div class="link_border"><div class="link_logo_box"><img class="link_logo" src="https://notes.nicolasdeville.com/images/logos/voilanorbert.png" alt="logo"/></div><div class="link_content">
+<div class="link_title">VoilaNorbert</div>
+<div class="link_tagline">I can find anyone's email address</div>
+<div class="link_url"><a href="https://www.voilanorbert.com/" target="_blank">https://www.voilanorbert.com/</a></div></div></div>
+
+<p>Reasonable pricing:   </p>
+<p><img class="screenshot" src="https://notes.nicolasdeville.com/images/email-tools/norbert-verify-pricing.jpg" alt="email-tools/norbert-verify-pricing.jpg"/>  </p>
+<h2 id="zerobounce">ZeroBounce</h2>
+<div class="link_border"><div class="link_logo_box"><img class="link_logo" src="https://notes.nicolasdeville.com/images/logos/zerobounce.png" alt="logo"/></div><div class="link_content">
+<div class="link_title">ZeroBounce</div>
+<div class="link_tagline">Email Validation Service and Deliverability Toolkit</div>
+<div class="link_url"><a href="https://www.zerobounce/" target="_blank">https://www.zerobounce/</a></div></div></div>
+
+<p>Bad experience in 2021 testing this service on 1k+ emails - most were wrong!!!  </p>
+<h1 id="email-deliverability">Email Deliverability</h1>
+<p>See also dedicated note: [<a href="../../b2b-sales/email-deliverability/index.html">Nic Note: Email Deliverability</a>]   </p>
+<p>Main tool for warming up an email:   </p>
+<h2 id="lemwarm">lemwarm</h2>
+<p>With a new email (and domain!), there is a higher risk of your emails being marked as spam.   </p>
+<p>This kind of tool automates sending/receiving emails to/from your email address to build a reputation.   </p>
+<div class="link_border"><div class="link_logo_box"><img class="link_logo" src="https://notes.nicolasdeville.com/images/logos/lemwarm.png" alt="logo"/></div><div class="link_content">
+<div class="link_title">lemwarm</div>
+<div class="link_tagline">Keep your emails away from spam</div>
+<div class="link_url"><a href="https://www.lemwarm.com/" target="_blank">https://www.lemwarm.com/</a></div></div></div>
+
+<p>Not cheap though..  </p>
+<p><img class="screenshot" src="https://notes.nicolasdeville.com/images/email-tools/lemwarm-pricing.jpg" alt="email-tools/lemwarm-pricing.jpg"/>  </p>
+<p>See [<a href="../../apps/lemwarm/index.html">Nic Note: Lemwarm</a>]</p>
+<h1 id="resources">Resources</h1>
+<div class="link_border"><div class="link_logo_box"><img class="link_logo" src="https://notes.nicolasdeville.com/images/logos/ahrefs.png" alt="logo"/></div><div class="link_content">
+<div class="link_title">6 Ways To Find Anyone’s Email Address (Tried & Tested)</div>
+<div class="link_tagline">ahrefs.com</div>
+<div class="link_url"><a href="https://ahrefs.com/blog/find-email-address/" target="_blank">https://ahrefs.com/blog/find-email-address/</a></div></div></div>
+
+<div class="link_border"><div class="link_logo_box"><img class="link_logo" src="https://notes.nicolasdeville.com/images/logos/hunter.png" alt="logo"/></div><div class="link_content">
+<div class="link_title">11 Ways to Find Someone's Email Address in 2022 (Detailed Guide)</div>
+<div class="link_tagline">hunter.io</div>
+<div class="link_url"><a href="https://hunter.io/blog/how-to-find-someones-email-address/" target="_blank">https://hunter.io/blog/how-to-find-someones-email-address/</a></div></div></div>
+            <!-- </main> -->
+        </div><!-- /.entry-content -->
+    </article>
+</section>
+
+        <!-- footer -->
+        <section id="extras" class="body" data-pagefind-ignore>
+
+        <!-- /.blogroll -->
+                <div class="blogroll">
+                        <h2>links</h2>
+                        <ul>
+                            <li><a href="https://btobsales.eu">Services: BtoBSales.EU</a></li>
+                            <li><a href="https://indeXall.io">Side project: indeXall.io</a></li>
+                            <li><a href="https://github.com/ndeville">Github: ndeville</a></li>
+                        </ul>
+                </div>
+
+        <!-- /.social -->
+                <div class="social">
+                        <h2>social</h2>
+                        <ul>
+
+                            <li><a href="https://www.linkedin.com/in/ndeville/">Linkedin</a></li>
+                            <li><a href="https://www.twitter.com/ndeville">Twitter</a></li>
+                        </ul>
+                </div>
+        </section><!-- /#extras -->
+
+        <footer id="contentinfo" class="body" data-pagefind-ignore>
+                <address id="about" class="vcard body">
+                    <img src="https://notes.nicolasdeville.com/favicon.svg" alt="nic_logo" width="24" style="vertical-align: middle;"/> Nic's notes:
+                    <br>
+                    <img src="https://notes.nicolasdeville.com/images/logos/getpelican.png" alt="pelican" width="16" style="vertical-align: middle;"/> Powered by <a href="https://getpelican.com" target="_blank">Pelican</a>
+                    <br>
+                    <img src="https://notes.nicolasdeville.com/images/logos/pagefind.png" alt="pagefind" width="16" style="vertical-align: middle;"/> Search by <a href="https://pagefind.app" target="_blank">Pagefind</a>
+                    <br>
+                    <img src="https://notes.nicolasdeville.com/images/logos/clearbit.png" alt="clearbit" width="16" style="vertical-align: middle;"/> Logos by <a href="https://clearbit.com" target="_blank">Clearbit</a>
+                    <br>
+                    <img src="https://notes.nicolasdeville.com/images/python.svg" alt="python_logo" width="16" style="vertical-align: middle;"/> Made with <a href="https://www.python.org/" target="_blank">Python</a>
+                </address><!-- /#about -->
+
+        </footer><!-- /#contentinfo -->
+
+
+<!-- JS -->
+
+<!-- my JS script (with code block copy) -->
+<script src="https://notes.nicolasdeville.com/theme/js/nic.js"></script>
+
+<!-- for Stork seach engine -->
+<!-- <script src="https://files.stork-search.net/stork.js"></script>
+<script>
+    stork.register("sitesearch", "https://notes.nicolasdeville.com/search-index.st")
+</script> -->
+
+<!-- <script>
+    (function() {
+    if( window.innerWidth > 600 ) {
+        var stork_script = document.createElement('script');
+        stork_script.type = 'text/javascript';
+        stork_script.src = 'https://files.stork-search.net/stork.js';
+
+        var stork_register = ('script');
+        stork_register.innerHTML = 'stork.register("sitesearch", "https://notes.nicolasdeville.com/search-index.st")';
+
+        var head = document.getElementsByTagName('head')[0];
+        head.appendChild(stork_script);
+        head.appendChild(stork_register);
+
+
+    }
+    })();
+</script> -->
+
+</body>
+</html>

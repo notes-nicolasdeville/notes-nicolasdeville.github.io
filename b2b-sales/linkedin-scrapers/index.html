@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <!-- Base -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="generator" content="Pelican" />
+    <meta name="author" content="Nic Deville">
+
+<!-- Title -->
+<title>LinkedIn scrapers | Nic's notes</title>
+<meta name="og:title" content="LinkedIn scrapers | Nic's notes"/> <!-- 40 characters for mobile and 60 for desktop -->
+<link rel="canonical" href="https://notes.nicolasdeville.com/b2b-sales/linkedin-scrapers" />
+<meta name="twitter:title" content="LinkedIn scrapers | Nic's notes" /> <!-- max. 70 characters -->
+
+<meta name="description" content="everyone's at it."/>
+<meta property="og:description" content="everyone's at it."/>
+<meta name="twitter:description" content="everyone's at it." /> <!-- max. 200 characters -->
+ 
+
+<meta property="article:published_time" content="2023-01-17 10:03:00+01:00" />
+
+<meta property="article:modified_time" content="2023-01-26 09:38:13.171562+01:00" />
+
+<meta name="robots" content="all, follow" />
+
+<!-- Social -->
+<meta property="og:type" content="article" />
+
+<!-- <meta property="og:description" content="Messy online notebook covering B2B Sales, Leadership, Python programming, Automation, AI and more. I take these notes for myself (and my kids later) - perhaps they can help someone else..." /> min. 2 max. 4 sentences -->
+
+<meta property="og:url" content="https://notes.nicolasdeville.com/b2b-sales/linkedin-scrapers" /> <!-- canonical URL for your page without session variables, user id parameters or counters -->
+<meta property="og:site_name" content="Nic's notes" />
+<meta name="image" property="og:image" content="https://notes.nicolasdeville.com/images/notes-twitter-image.jpg" /> <!-- at least 600x315 pixels, preferable 1200x630 pixels -->
+
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:site" content="@ndeville" />
+
+<meta name="twitter:image" content="https://notes.nicolasdeville.com/images/notes-twitter-image.jpg" /> <!-- aspect ratio of 2:1 with minimum dimensions of 300x157 or maximum of 4096x4096 pixels. Going with 900x471 -->
+
+<!-- Logo -->
+<meta property="og:logo" content="https://notes.nicolasdeville.com/logo.svg">
+
+<!-- Favicon -->
+<link rel="icon" type="image/x-icon" href="https://notes.nicolasdeville.com/favicon.ico">
+<link rel="mask-icon" href="https://notes.nicolasdeville.com/favicon.svg" color="#FFFFFF">
+<link rel="alternate icon" class="js-site-favicon" type="image/png" href="https://notes.nicolasdeville.com/favicon.png">
+<link rel="icon" class="js-site-favicon" type="image/svg+xml" href="https://notes.nicolasdeville.com/favicon.svg">
+<link rel="fluid-icon" href="https://notes.nicolasdeville.com/favicon.png" title="Nic's notes">
+
+<!-- CSS -->
+<link rel="stylesheet" href="https://notes.nicolasdeville.com/theme/css/main.css" />
+
+<!-- Pagefind -->
+<link href="https://notes.nicolasdeville.com/theme/css/pagefind-ui-nic.css" rel="stylesheet">
+<script src="https://notes.nicolasdeville.com/pagefind/pagefind-ui.js" type="text/javascript"></script>
+
+<script>
+    window.addEventListener('DOMContentLoaded', (event) => {
+        new PagefindUI({ element: "#search" });
+    });
+</script>
+
+
+</head>
+
+<body id="index" class="body">
+        <header id="banner" class="body">
+
+            <div class="logo-and-search">
+                <a href="https://notes.nicolasdeville.com/"><img class="header_image" src="https://notes.nicolasdeville.com/images/nic_notes_header.svg" alt="Nic's notes" width="266"/></a>
+
+                <!-- for Stork seach engine -->
+                <!-- <div class="search-input-block">
+                    <input data-stork="sitesearch" class="search-input" placeholder="Search notes..." autofocus="autofocus"/>
+                    <div data-stork="sitesearch-output"></div>
+                </div> -->
+
+                <!-- Pagefind -->
+                <div class="search-input-block" id="search"></div>
+
+            </div>
+
+            
+
+            <div class="above-navbar">
+                <div class="last_updated">21 Feb 2023 | 09:41</div>
+                <div>
+                    <p class="notes_count">
+                        <a href="https://notes.nicolasdeville.com/tags">by tags</a>
+                        <span style="color:#C74350">|</span>
+                        <a href="https://notes.nicolasdeville.com/2020/">2020</a>
+                        <span style="color:#C74350">|</span>
+                        <a href="https://notes.nicolasdeville.com/2021/">2021</a>
+                        <span style="color:#C74350">|</span>
+                        <a href="https://notes.nicolasdeville.com/2022/">2022</a>
+                        <span style="color:#C74350">|</span>
+                        609 notes
+                    </p>
+                </div>
+            </div>
+
+            <nav><ul>
+                <li><a href="https://notes.nicolasdeville.com/ai/">ai</a></li>
+                <li><a href="https://notes.nicolasdeville.com/apps/">apps</a></li>
+                <li class="active"><a href="https://notes.nicolasdeville.com/b2b-sales/">b2b sales</a></li>
+                <li><a href="https://notes.nicolasdeville.com/books/">books</a></li>
+                <li><a href="https://notes.nicolasdeville.com/careerplaybook/">#careerplaybook</a></li>
+                <li><a href="https://notes.nicolasdeville.com/helpers/">helpers</a></li>
+                <li><a href="https://notes.nicolasdeville.com/home-office/">home office</a></li>
+                <li><a href="https://notes.nicolasdeville.com/interests/">interests</a></li>
+                <li><a href="https://notes.nicolasdeville.com/leadership/">leadership</a></li>
+                <li><a href="https://notes.nicolasdeville.com/learning/">learning</a></li>
+                <li><a href="https://notes.nicolasdeville.com/movies/">movies</a></li>
+                <li><a href="https://notes.nicolasdeville.com/projects/">projects</a></li>
+                <li><a href="https://notes.nicolasdeville.com/python/">python</a></li>
+                <li><a href="https://notes.nicolasdeville.com/random/">random</a></li>
+                <li><a href="https://notes.nicolasdeville.com/startups/">startups</a></li>
+            </ul></nav>
+        </header>
+
+        <!-- index.html injection -->
+<section id="content" class="body">
+    <article>
+        <header>
+            <h1 class="entry-title">
+                <main> <!-- for indexing by Stork -->
+                    <a href="https://notes.nicolasdeville.com/b2b-sales/linkedin-scrapers" rel="bookmark"
+                    title="Permalink to LinkedIn scrapers">LinkedIn scrapers
+                    </a>
+                </main>
+            </h1>
+            <p class="header_summary">
+                <main> <!-- for indexing by Stork -->
+                    <p>everyone's at it.</p>
+                </main>
+            </p>
+        </header>
+
+        <div class="entry-content">
+<footer class="post-info">
+
+    <p>
+        17 Jan 2023 
+        <span class="separator">|</span> in <a class="link_tag" href="https://notes.nicolasdeville.com/b2b-sales/"><span data-pagefind-filter="category">b2b sales</span></a>
+
+
+        <!-- added 4/7 -->
+        <!-- 		<br />
+        <abbr class="modified" title="2023-01-26T09:38:13.171562+01:00">
+                Updated: 26 Jan 2023
+        </abbr>
+ -->
+
+    </p>
+
+    
+
+</footer>            <!-- for indexing by Stork -->
+            <!-- <main>  -->
+                <p>... but I'm wary of using them as I got flagged/blocked by Linkedin some time ago because I used one.   </p>
+<p>Keeping track here of tools I'm coming across for future reference, but use at your own risk.   </p>
+<div class="toc"><span class="toctitle">Table of Contents</span><ul>
+<li><a href="#dux-soup">Dux-Soup</a></li>
+<li><a href="#evaboot">Evaboot</a></li>
+<li><a href="#expandi">Expandi</a></li>
+<li><a href="#lusha">Lusha</a></li>
+<li><a href="#meetalfred">MeetAlfred</a></li>
+<li><a href="#phantombuster">Phantombuster</a></li>
+<li><a href="#wiza">Wiza</a><ul>
+<li><a href="#leadfuze">LeadFuze</a></li>
+<li><a href="#zopto">Zopto</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<h3 id="dux-soup">Dux-Soup</h3>
+<div class="link_border"><div class="link_logo_box"><img class="link_logo" src="https://notes.nicolasdeville.com/images/logos/dux-soup.png" alt="logo"/></div><div class="link_content">
+<div class="link_title">Dux-Soup</div>
+<div class="link_tagline">LinkedIn Automation</div>
+<div class="link_url"><a href="https://www.dux-soup.com/" target="_blank">https://www.dux-soup.com/</a></div></div></div>
+
+<p><img class="screenshot" src="https://notes.nicolasdeville.com/images/linkedin-scrapers/dux-soup-pricing.jpg" alt="linkedin-scrapers/dux-soup-pricing.jpg"/>  </p>
+<h1 id="evaboot">Evaboot</h1>
+<div class="link_border"><div class="link_logo_box"><img class="link_logo" src="https://notes.nicolasdeville.com/images/logos/evaboot.png" alt="logo"/></div><div class="link_content">
+<div class="link_title">Evaboot- The Smartest LinkedIn Sales Navigator Scraper</div>
+<div class="link_tagline">evaboot.com</div>
+<div class="link_url"><a href="https://evaboot.com/" target="_blank">https://evaboot.com/</a></div></div></div>
+
+<p><img class="screenshot" src="https://notes.nicolasdeville.com/images/linkedin-scrapers/evaboot.jpg" alt="linkedin-scrapers/evaboot.jpg"/>  </p>
+<p><img class="screenshot" src="https://notes.nicolasdeville.com/images/linkedin-scrapers/evaboot-pricing.jpg" alt="linkedin-scrapers/evaboot-pricing.jpg"/>  </p>
+<h1 id="expandi">Expandi</h1>
+<div class="link_border"><div class="link_logo_box"><img class="link_logo" src="https://notes.nicolasdeville.com/images/logos/expandi.png" alt="logo"/></div><div class="link_content">
+<div class="link_title">Expandi.io</div>
+<div class="link_tagline">#1 Linkedin Automation Tool</div>
+<div class="link_url"><a href="https://expandi.io/" target="_blank">https://expandi.io/</a></div></div></div>
+
+<h1 id="lusha">Lusha</h1>
+<div class="link_border"><div class="link_logo_box"><img class="link_logo" src="https://notes.nicolasdeville.com/images/logos/lusha.png" alt="logo"/></div><div class="link_content">
+<div class="link_title">Lusha - Reach the right decision makers</div>
+<div class="link_tagline">lusha.com</div>
+<div class="link_url"><a href="https://www.lusha.com/" target="_blank">https://www.lusha.com/</a></div></div></div>
+
+<p><img class="screenshot" src="https://notes.nicolasdeville.com/images/linkedin-scrapers/lusha_1.gif" alt="linkedin-scrapers/lusha_1.webm"/>  </p>
+<p><img class="screenshot" src="https://notes.nicolasdeville.com/images/linkedin-scrapers/lusha-pricing.jpg" alt="linkedin-scrapers/lusha-pricing.jpg"/>  </p>
+<h1 id="meetalfred">MeetAlfred</h1>
+<div class="link_border"><div class="link_logo_box"><img class="link_logo" src="https://notes.nicolasdeville.com/images/logos/meetalfred.png" alt="logo"/></div><div class="link_content">
+<div class="link_title">MeetAlfred</div>
+<div class="link_tagline">Automate your LinkedIn prospecting|</div>
+<div class="link_url"><a href="https://meetalfred.com/" target="_blank">https://meetalfred.com/</a></div></div></div>
+
+<p><img class="screenshot" src="https://notes.nicolasdeville.com/images/linkedin-scrapers/meet-alfred-pricing.jpg" alt="linkedin-scrapers/meet-alfred-pricing.jpg"/>  </p>
+<h1 id="phantombuster">Phantombuster</h1>
+<div class="link_border"><div class="link_logo_box"><img class="link_logo" src="https://notes.nicolasdeville.com/images/logos/phantombuster.png" alt="logo"/></div><div class="link_content">
+<div class="link_title">PhantomBuster - A new era of lead generation</div>
+<div class="link_tagline">phantombuster.com</div>
+<div class="link_url"><a href="https://phantombuster.com/" target="_blank">https://phantombuster.com/</a></div></div></div>
+
+<p><img class="screenshot" src="https://notes.nicolasdeville.com/images/linkedin-scrapers/phantombuster-1.jpg" alt="linkedin-scrapers/phantombuster-1.jpg"/><br>
+<img class="screenshot" src="https://notes.nicolasdeville.com/images/linkedin-scrapers/phantombuster-2.jpg" alt="linkedin-scrapers/phantombuster-2.jpg"/><br>
+<img class="screenshot" src="https://notes.nicolasdeville.com/images/linkedin-scrapers/phantombuster-3.jpg" alt="linkedin-scrapers/phantombuster-3.jpg"/>  </p>
+<p>List of all tools: <a href="https://phantombuster.com/phantombuster" target="_blank">https://phantombuster.com/phantombuster</a></p>
+<h1 id="wiza">Wiza</h1>
+<div class="link_border"><div class="link_logo_box"><img class="link_logo" src="https://notes.nicolasdeville.com/images/logos/wiza.png" alt="logo"/></div><div class="link_content">
+<div class="link_title">Wiza - Create prospect lists from LinkedIn.</div>
+<div class="link_tagline">wiza.co</div>
+<div class="link_url"><a href="https://wiza.co/" target="_blank">https://wiza.co/</a></div></div></div>
+
+<p><img class="screenshot" src="https://notes.nicolasdeville.com/images/linkedin-scrapers/wiza_email_finder_short.gif" alt="linkedin-scrapers/wiza_email_finder_short.webm"/>  </p>
+<p><img class="screenshot" src="https://notes.nicolasdeville.com/images/linkedin-scrapers/wiza-pricing.jpg" alt="linkedin-scrapers/wiza-pricing.jpg"/>  </p>
+<h3 id="leadfuze">LeadFuze</h3>
+<div class="link_border"><div class="link_logo_box"><img class="link_logo" src="https://notes.nicolasdeville.com/images/logos/leadfuze.png" alt="logo"/></div><div class="link_content">
+<div class="link_title">LeadFuze</div>
+<div class="link_tagline">#1 Prospecting Tool for Business Leads & Candidate Sourcing</div>
+<div class="link_url"><a href="https://www.leadfuze.com/" target="_blank">https://www.leadfuze.com/</a></div></div></div>
+
+<h3 id="zopto">Zopto</h3>
+<div class="link_border"><div class="link_logo_box"><img class="link_logo" src="https://notes.nicolasdeville.com/images/logos/zopto.png" alt="logo"/></div><div class="link_content">
+<div class="link_title">Zopto</div>
+<div class="link_tagline">LinkedIn Lead Generation Like You Always Imagined</div>
+<div class="link_url"><a href="https://zopto.com/" target="_blank">https://zopto.com/</a></div></div></div>
+
+<p><img class="screenshot" src="https://notes.nicolasdeville.com/images/linkedin-scrapers/zopto-pricing.jpg" alt="linkedin-scrapers/zopto-pricing.jpg"/>  </p>
+            <!-- </main> -->
+        </div><!-- /.entry-content -->
+    </article>
+</section>
+
+        <!-- footer -->
+        <section id="extras" class="body" data-pagefind-ignore>
+
+        <!-- /.blogroll -->
+                <div class="blogroll">
+                        <h2>links</h2>
+                        <ul>
+                            <li><a href="https://btobsales.eu">Services: BtoBSales.EU</a></li>
+                            <li><a href="https://indeXall.io">Side project: indeXall.io</a></li>
+                            <li><a href="https://github.com/ndeville">Github: ndeville</a></li>
+                        </ul>
+                </div>
+
+        <!-- /.social -->
+                <div class="social">
+                        <h2>social</h2>
+                        <ul>
+
+                            <li><a href="https://www.linkedin.com/in/ndeville/">Linkedin</a></li>
+                            <li><a href="https://www.twitter.com/ndeville">Twitter</a></li>
+                        </ul>
+                </div>
+        </section><!-- /#extras -->
+
+        <footer id="contentinfo" class="body" data-pagefind-ignore>
+                <address id="about" class="vcard body">
+                    <img src="https://notes.nicolasdeville.com/favicon.svg" alt="nic_logo" width="24" style="vertical-align: middle;"/> Nic's notes:
+                    <br>
+                    <img src="https://notes.nicolasdeville.com/images/logos/getpelican.png" alt="pelican" width="16" style="vertical-align: middle;"/> Powered by <a href="https://getpelican.com" target="_blank">Pelican</a>
+                    <br>
+                    <img src="https://notes.nicolasdeville.com/images/logos/pagefind.png" alt="pagefind" width="16" style="vertical-align: middle;"/> Search by <a href="https://pagefind.app" target="_blank">Pagefind</a>
+                    <br>
+                    <img src="https://notes.nicolasdeville.com/images/logos/clearbit.png" alt="clearbit" width="16" style="vertical-align: middle;"/> Logos by <a href="https://clearbit.com" target="_blank">Clearbit</a>
+                    <br>
+                    <img src="https://notes.nicolasdeville.com/images/python.svg" alt="python_logo" width="16" style="vertical-align: middle;"/> Made with <a href="https://www.python.org/" target="_blank">Python</a>
+                </address><!-- /#about -->
+
+        </footer><!-- /#contentinfo -->
+
+
+<!-- JS -->
+
+<!-- my JS script (with code block copy) -->
+<script src="https://notes.nicolasdeville.com/theme/js/nic.js"></script>
+
+<!-- for Stork seach engine -->
+<!-- <script src="https://files.stork-search.net/stork.js"></script>
+<script>
+    stork.register("sitesearch", "https://notes.nicolasdeville.com/search-index.st")
+</script> -->
+
+<!-- <script>
+    (function() {
+    if( window.innerWidth > 600 ) {
+        var stork_script = document.createElement('script');
+        stork_script.type = 'text/javascript';
+        stork_script.src = 'https://files.stork-search.net/stork.js';
+
+        var stork_register = ('script');
+        stork_register.innerHTML = 'stork.register("sitesearch", "https://notes.nicolasdeville.com/search-index.st")';
+
+        var head = document.getElementsByTagName('head')[0];
+        head.appendChild(stork_script);
+        head.appendChild(stork_register);
+
+
+    }
+    })();
+</script> -->
+
+</body>
+</html>

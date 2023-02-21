@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <!-- Base -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="generator" content="Pelican" />
+    <meta name="author" content="Nic Deville">
+
+<!-- Title -->
+<title>ChatGPT | Nic's notes</title>
+<meta name="og:title" content="ChatGPT | Nic's notes"/> <!-- 40 characters for mobile and 60 for desktop -->
+<link rel="canonical" href="https://notes.nicolasdeville.com/ai/chat-gpt" />
+<meta name="twitter:title" content="ChatGPT | Nic's notes" /> <!-- max. 70 characters -->
+
+<meta name="description" content="The OG of GPT chatbots"/>
+<meta property="og:description" content="The OG of GPT chatbots"/>
+<meta name="twitter:description" content="The OG of GPT chatbots" /> <!-- max. 200 characters -->
+ 
+
+<meta property="article:published_time" content="2023-02-19 09:50:03.373864+01:00" />
+
+<meta property="article:modified_time" content="2023-02-19 09:50:03.373864+01:00" />
+
+<meta name="robots" content="all, follow" />
+
+<!-- Social -->
+<meta property="og:type" content="article" />
+
+<!-- <meta property="og:description" content="Messy online notebook covering B2B Sales, Leadership, Python programming, Automation, AI and more. I take these notes for myself (and my kids later) - perhaps they can help someone else..." /> min. 2 max. 4 sentences -->
+
+<meta property="og:url" content="https://notes.nicolasdeville.com/ai/chat-gpt" /> <!-- canonical URL for your page without session variables, user id parameters or counters -->
+<meta property="og:site_name" content="Nic's notes" />
+<meta name="image" property="og:image" content="https://notes.nicolasdeville.com/images/notes-twitter-image.jpg" /> <!-- at least 600x315 pixels, preferable 1200x630 pixels -->
+
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:site" content="@ndeville" />
+
+<meta name="twitter:image" content="https://notes.nicolasdeville.com/images/notes-twitter-image.jpg" /> <!-- aspect ratio of 2:1 with minimum dimensions of 300x157 or maximum of 4096x4096 pixels. Going with 900x471 -->
+
+<!-- Logo -->
+<meta property="og:logo" content="https://notes.nicolasdeville.com/logo.svg">
+
+<!-- Favicon -->
+<link rel="icon" type="image/x-icon" href="https://notes.nicolasdeville.com/favicon.ico">
+<link rel="mask-icon" href="https://notes.nicolasdeville.com/favicon.svg" color="#FFFFFF">
+<link rel="alternate icon" class="js-site-favicon" type="image/png" href="https://notes.nicolasdeville.com/favicon.png">
+<link rel="icon" class="js-site-favicon" type="image/svg+xml" href="https://notes.nicolasdeville.com/favicon.svg">
+<link rel="fluid-icon" href="https://notes.nicolasdeville.com/favicon.png" title="Nic's notes">
+
+<!-- CSS -->
+<link rel="stylesheet" href="https://notes.nicolasdeville.com/theme/css/main.css" />
+
+<!-- Pagefind -->
+<link href="https://notes.nicolasdeville.com/theme/css/pagefind-ui-nic.css" rel="stylesheet">
+<script src="https://notes.nicolasdeville.com/pagefind/pagefind-ui.js" type="text/javascript"></script>
+
+<script>
+    window.addEventListener('DOMContentLoaded', (event) => {
+        new PagefindUI({ element: "#search" });
+    });
+</script>
+
+
+</head>
+
+<body id="index" class="body">
+        <header id="banner" class="body">
+
+            <div class="logo-and-search">
+                <a href="https://notes.nicolasdeville.com/"><img class="header_image" src="https://notes.nicolasdeville.com/images/nic_notes_header.svg" alt="Nic's notes" width="266"/></a>
+
+                <!-- for Stork seach engine -->
+                <!-- <div class="search-input-block">
+                    <input data-stork="sitesearch" class="search-input" placeholder="Search notes..." autofocus="autofocus"/>
+                    <div data-stork="sitesearch-output"></div>
+                </div> -->
+
+                <!-- Pagefind -->
+                <div class="search-input-block" id="search"></div>
+
+            </div>
+
+            
+
+            <div class="above-navbar">
+                <div class="last_updated">21 Feb 2023 | 09:41</div>
+                <div>
+                    <p class="notes_count">
+                        <a href="https://notes.nicolasdeville.com/tags">by tags</a>
+                        <span style="color:#C74350">|</span>
+                        <a href="https://notes.nicolasdeville.com/2020/">2020</a>
+                        <span style="color:#C74350">|</span>
+                        <a href="https://notes.nicolasdeville.com/2021/">2021</a>
+                        <span style="color:#C74350">|</span>
+                        <a href="https://notes.nicolasdeville.com/2022/">2022</a>
+                        <span style="color:#C74350">|</span>
+                        609 notes
+                    </p>
+                </div>
+            </div>
+
+            <nav><ul>
+                <li class="active"><a href="https://notes.nicolasdeville.com/ai/">ai</a></li>
+                <li><a href="https://notes.nicolasdeville.com/apps/">apps</a></li>
+                <li><a href="https://notes.nicolasdeville.com/b2b-sales/">b2b sales</a></li>
+                <li><a href="https://notes.nicolasdeville.com/books/">books</a></li>
+                <li><a href="https://notes.nicolasdeville.com/careerplaybook/">#careerplaybook</a></li>
+                <li><a href="https://notes.nicolasdeville.com/helpers/">helpers</a></li>
+                <li><a href="https://notes.nicolasdeville.com/home-office/">home office</a></li>
+                <li><a href="https://notes.nicolasdeville.com/interests/">interests</a></li>
+                <li><a href="https://notes.nicolasdeville.com/leadership/">leadership</a></li>
+                <li><a href="https://notes.nicolasdeville.com/learning/">learning</a></li>
+                <li><a href="https://notes.nicolasdeville.com/movies/">movies</a></li>
+                <li><a href="https://notes.nicolasdeville.com/projects/">projects</a></li>
+                <li><a href="https://notes.nicolasdeville.com/python/">python</a></li>
+                <li><a href="https://notes.nicolasdeville.com/random/">random</a></li>
+                <li><a href="https://notes.nicolasdeville.com/startups/">startups</a></li>
+            </ul></nav>
+        </header>
+
+        <!-- index.html injection -->
+<section id="content" class="body">
+    <article>
+        <header>
+            <h1 class="entry-title">
+                <main> <!-- for indexing by Stork -->
+                    <a href="https://notes.nicolasdeville.com/ai/chat-gpt" rel="bookmark"
+                    title="Permalink to ChatGPT">ChatGPT
+                    </a>
+                </main>
+            </h1>
+            <p class="header_summary">
+                <main> <!-- for indexing by Stork -->
+                    <p>The OG of GPT chatbots</p>
+                </main>
+            </p>
+        </header>
+
+        <div class="entry-content">
+<footer class="post-info">
+
+    <p>
+        19 Feb 2023 
+        <span class="separator">|</span> in <a class="link_tag" href="https://notes.nicolasdeville.com/ai/"><span data-pagefind-filter="category">ai</span></a>
+
+ tags: <a class="link_tag" href="https://notes.nicolasdeville.com/tag/ai.html">ai</a>
+<a class="link_tag" href="https://notes.nicolasdeville.com/tag/chat.html">chat</a>
+
+        <!-- added 4/7 -->
+        <!-- 		<br />
+        <abbr class="modified" title="2023-02-19T09:50:03.373864+01:00">
+                Updated: 19 Feb 2023
+        </abbr>
+ -->
+
+    </p>
+
+    
+
+</footer>            <!-- for indexing by Stork -->
+            <!-- <main>  -->
+                <div class="link_border"><div class="link_logo_box"><img class="link_logo" src="https://notes.nicolasdeville.com/images/logos/openai.png" alt="logo"/></div><div class="link_content">
+<div class="link_title">ChatGPT</div>
+<div class="link_tagline">chat.openai.com</div>
+<div class="link_url"><a href="https://chat.openai.com/chat" target="_blank">https://chat.openai.com/chat</a></div></div></div>
+
+<p><span class="datestamp">14 Dec 2022</span> </p>
+<p>It's annoying when ChatGPT is down (how do I search stuff again?).... but I love their "Sorry we're at full capacity" screen, each time with a new generated and context-relevant message.   </p>
+<p><img class="screenshot" src="https://notes.nicolasdeville.com/images/chatgpt/chatgpt-at-capacity-jokes.jpg" alt="chatgpt/chatgpt-at-capacity-jokes.jpg"/>  </p>
+<p><img class="screenshot" src="https://notes.nicolasdeville.com/images/chatgpt/chatgpt-at-capacity-message-pirate.jpg" alt="chatgpt/chatgpt-at-capacity-message-pirate.jpg"/>  </p>
+<p><img class="screenshot" src="https://notes.nicolasdeville.com/images/chatgpt/chatgpt-at-capacity-inspirational.jpg" alt="chatgpt/chatgpt-at-capacity-inspirational.jpg"/>  </p>
+<h1 id="prompting">Prompting</h1>
+<h2 id="to-remove-unnecessary-pre-text-and-post-text">to remove unnecessary pre-text and post-text</h2>
+<blockquote>
+<p>Return only the main response. Remove pre-text and post-text.</p>
+</blockquote>
+<h2 id="to-get-simple-language">to get simple language</h2>
+<blockquote>
+<p>Voice and style guide: write at a 5th grade level. Use clear and simple language, even when explaining complex top8ics. Bias toward short sentences. Avoid jargon and acronyms.</p>
+</blockquote>
+<h2 id="to-format-in-markdown">to format in Markdown</h2>
+<blockquote>
+<p>Format in Markdown. Use bold, italics, and links to make the response more readable.</p>
+</blockquote>
+<h2 id="for-punchy-and-attention-grabbing-writing">for punchy and attention-grabbing writing</h2>
+<blockquote>
+<p>Voice and style guide: use sentence fragments and figurative language. Write as a master of brevity would. Frequently use short, pithy sentences that pack a punch. </p>
+</blockquote>
+<h2 id="to-get-a-professional-tone">to get a professional tone</h2>
+<blockquote>
+<p>Voice and style guide: write in a professional and informative tone. Avoid slang and colloquialisms. Use industry-specific language and terminology. Provide detailed and accurate information. Use statistics, research and expert opinions to back up your argument. Write in a way that is both informative and knowledgeable.  </p>
+</blockquote>
+<h2 id="train-with-your-style">Train with your style</h2>
+<blockquote class="twitter-tweet"><p lang="en" dir="ltr">Why write emails when you can train ChatGPT to do it.<br><br>Here&#39;s how to train chatGPT to learn your writing style, so you never have to write an email again:<br><br>(written in your tone)</p>&mdash; Rowan Cheung (@rowancheung) <a href="https://twitter.com/rowancheung/status/1625857972546183171?ref_src=twsrc%5Etfw">February 15, 2023</a></blockquote>
+<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+<h1 id="chatgpt-plus">ChatGPT Plus</h1>
+<p><span class="datestamp">12 Feb 2023</span> subscribed.  </p>
+<p><img class="screenshot" src="https://notes.nicolasdeville.com/images/chatgpt/230213-0946-chatgpt-plus.jpg" alt="chatgpt/230213-0946-chatgpt-plus.jpg"/>  </p>
+<p>$20/month for the value I'm getting out of it - time saved &amp; unlocking things I would not have done before - is a no-brainer to me.   </p>
+<p>Easy access to the community of users, with a seamless transition from the product's interface to a Slack or Discord server, should be normalised in B2B SaaS.  </p>
+<p>For most at least.  </p>
+<p>ChatGPT Plus' Discord here as illustration - with direct access from the main prompt interface.  </p>
+<p><img class="screenshot" src="https://notes.nicolasdeville.com/images/chatgpt/230213-0942-chat-gpt-discord-integration.jpg" alt="chatgpt/230213-0942-chat-gpt-discord-integration.jpg"/>  </p>
+<p><img class="screenshot" src="https://notes.nicolasdeville.com/images/chatgpt/230213-chatgpt-discord.jpg" alt="chatgpt/230213-chatgpt-discord.jpg"/>  </p>
+<h2 id="feedbach">Feedbach</h2>
+<p>Not sure if providing feedback really helps - they must know about the "hallucinations" issue by now.   </p>
+<p><img class="screenshot" src="https://notes.nicolasdeville.com/images/chatgpt/230214-2241-chatgpt-feedback.jpg" alt="chatgpt/230214-2241-chatgpt-feedback.jpg"/>  </p>
+<h2 id="for-sales">for Sales</h2>
+<p>ChatGPT Plus (or any of its alternatives) is a must-have now I think for anyone in Sales. </p>
+<p>Helps you do quick research:
+- into a specific sector/industry/company
+- to clarify &amp; learn the lingo and acronyms used
+- to surface trends &amp; talking points</p>
+<p>Just in a few seconds, eg ahead of a call.... or even ON a call.</p>
+<p>Amongst the many other things it can do.</p>
+<h1 id="thoughts">Thoughts</h1>
+<h2 id="chatgpt-has-changed-seo-forever">"ChatGPT has changed SEO forever"</h2>
+<p>The funny thing about that:   </p>
+<ul>
+<li>GPT solutions will help churn out SEO-friendly content like never before   </li>
+<li>but chatbot interfaces based on GPT might make typical SEO redundant (ie "ranking on 1st results page" will not matter anymore when most search results are generated)</li>
+</ul>
+<p>🙃  </p>
+<h1 id="resources">Resources</h1>
+<h2 id="700-resources-list">700 resources list</h2>
+<div class="link_border"><div class="link_logo_box"><img class="link_logo" src="https://notes.nicolasdeville.com/images/logos/notion.png" alt="logo"/></div><div class="link_content">
+<div class="link_title">ChatGPT Resources from Steve Nouri</div>
+<div class="link_tagline">notion.site</div>
+<div class="link_url"><a href="https://snow-crop-601.notion.site/ChatGPT-Resources-b355bb9d97d449608bbcc86da72a5642" target="_blank">https://snow-crop-601.notion.site/ChatGPT-Resources-b355bb9d97d449608bbcc86da72a5642</a></div></div></div>
+
+<h2 id="others">Others</h2>
+<div class="link_border"><div class="link_logo_box"><img class="link_logo" src="https://notes.nicolasdeville.com/images/logos/linkedin.png" alt="logo"/></div><div class="link_content">
+<div class="link_title">ChatGPT and The Professional's Guide to Using AI</div>
+<div class="link_tagline">linkedin.com</div>
+<div class="link_url"><a href="https://www.linkedin.com/pulse/chatgpt-professionals-guide-using-ai-allie-k-miller/" target="_blank">https://www.linkedin.com/pulse/chatgpt-professionals-guide-using-ai-allie-k-miller/</a></div></div></div>
+            <!-- </main> -->
+        </div><!-- /.entry-content -->
+    </article>
+</section>
+
+        <!-- footer -->
+        <section id="extras" class="body" data-pagefind-ignore>
+
+        <!-- /.blogroll -->
+                <div class="blogroll">
+                        <h2>links</h2>
+                        <ul>
+                            <li><a href="https://btobsales.eu">Services: BtoBSales.EU</a></li>
+                            <li><a href="https://indeXall.io">Side project: indeXall.io</a></li>
+                            <li><a href="https://github.com/ndeville">Github: ndeville</a></li>
+                        </ul>
+                </div>
+
+        <!-- /.social -->
+                <div class="social">
+                        <h2>social</h2>
+                        <ul>
+
+                            <li><a href="https://www.linkedin.com/in/ndeville/">Linkedin</a></li>
+                            <li><a href="https://www.twitter.com/ndeville">Twitter</a></li>
+                        </ul>
+                </div>
+        </section><!-- /#extras -->
+
+        <footer id="contentinfo" class="body" data-pagefind-ignore>
+                <address id="about" class="vcard body">
+                    <img src="https://notes.nicolasdeville.com/favicon.svg" alt="nic_logo" width="24" style="vertical-align: middle;"/> Nic's notes:
+                    <br>
+                    <img src="https://notes.nicolasdeville.com/images/logos/getpelican.png" alt="pelican" width="16" style="vertical-align: middle;"/> Powered by <a href="https://getpelican.com" target="_blank">Pelican</a>
+                    <br>
+                    <img src="https://notes.nicolasdeville.com/images/logos/pagefind.png" alt="pagefind" width="16" style="vertical-align: middle;"/> Search by <a href="https://pagefind.app" target="_blank">Pagefind</a>
+                    <br>
+                    <img src="https://notes.nicolasdeville.com/images/logos/clearbit.png" alt="clearbit" width="16" style="vertical-align: middle;"/> Logos by <a href="https://clearbit.com" target="_blank">Clearbit</a>
+                    <br>
+                    <img src="https://notes.nicolasdeville.com/images/python.svg" alt="python_logo" width="16" style="vertical-align: middle;"/> Made with <a href="https://www.python.org/" target="_blank">Python</a>
+                </address><!-- /#about -->
+
+        </footer><!-- /#contentinfo -->
+
+
+<!-- JS -->
+
+<!-- my JS script (with code block copy) -->
+<script src="https://notes.nicolasdeville.com/theme/js/nic.js"></script>
+
+<!-- for Stork seach engine -->
+<!-- <script src="https://files.stork-search.net/stork.js"></script>
+<script>
+    stork.register("sitesearch", "https://notes.nicolasdeville.com/search-index.st")
+</script> -->
+
+<!-- <script>
+    (function() {
+    if( window.innerWidth > 600 ) {
+        var stork_script = document.createElement('script');
+        stork_script.type = 'text/javascript';
+        stork_script.src = 'https://files.stork-search.net/stork.js';
+
+        var stork_register = ('script');
+        stork_register.innerHTML = 'stork.register("sitesearch", "https://notes.nicolasdeville.com/search-index.st")';
+
+        var head = document.getElementsByTagName('head')[0];
+        head.appendChild(stork_script);
+        head.appendChild(stork_register);
+
+
+    }
+    })();
+</script> -->
+
+</body>
+</html>

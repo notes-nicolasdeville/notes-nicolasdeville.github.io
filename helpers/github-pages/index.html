@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <!-- Base -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="generator" content="Pelican" />
+    <meta name="author" content="Nic Deville">
+
+<!-- Title -->
+<title>Hosting my static website(s) with Github Pages | Nic's notes</title>
+<meta name="og:title" content="Hosting my static website(s) with Github Pages | Nic's notes"/> <!-- 40 characters for mobile and 60 for desktop -->
+<link rel="canonical" href="https://notes.nicolasdeville.com/helpers/github-pages" />
+<meta name="twitter:title" content="Hosting my static website(s) with Github Pages | Nic's notes" /> <!-- max. 70 characters -->
+
+<meta name="description" content="Github offers free hosting of static websites - and it's very easy, if you have some …"/>
+<meta property="og:description" content="Github offers free hosting of static websites - and it's very easy, if you have some …"/>
+<meta name="twitter:description" content="Github offers free hosting of static websites - and it's very easy, if you have some …" /> <!-- max. 200 characters -->
+ 
+
+<meta property="article:published_time" content="2022-11-30 22:13:32.599994+01:00" />
+
+<meta property="article:modified_time" content="2022-11-30 22:13:32.599994+01:00" />
+
+<meta name="robots" content="all, follow" />
+
+<!-- Social -->
+<meta property="og:type" content="article" />
+
+<!-- <meta property="og:description" content="Messy online notebook covering B2B Sales, Leadership, Python programming, Automation, AI and more. I take these notes for myself (and my kids later) - perhaps they can help someone else..." /> min. 2 max. 4 sentences -->
+
+<meta property="og:url" content="https://notes.nicolasdeville.com/helpers/github-pages" /> <!-- canonical URL for your page without session variables, user id parameters or counters -->
+<meta property="og:site_name" content="Nic's notes" />
+<meta name="image" property="og:image" content="https://notes.nicolasdeville.com/images/notes-twitter-image.jpg" /> <!-- at least 600x315 pixels, preferable 1200x630 pixels -->
+
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:site" content="@ndeville" />
+
+<meta name="twitter:image" content="https://notes.nicolasdeville.com/images/notes-twitter-image.jpg" /> <!-- aspect ratio of 2:1 with minimum dimensions of 300x157 or maximum of 4096x4096 pixels. Going with 900x471 -->
+
+<!-- Logo -->
+<meta property="og:logo" content="https://notes.nicolasdeville.com/logo.svg">
+
+<!-- Favicon -->
+<link rel="icon" type="image/x-icon" href="https://notes.nicolasdeville.com/favicon.ico">
+<link rel="mask-icon" href="https://notes.nicolasdeville.com/favicon.svg" color="#FFFFFF">
+<link rel="alternate icon" class="js-site-favicon" type="image/png" href="https://notes.nicolasdeville.com/favicon.png">
+<link rel="icon" class="js-site-favicon" type="image/svg+xml" href="https://notes.nicolasdeville.com/favicon.svg">
+<link rel="fluid-icon" href="https://notes.nicolasdeville.com/favicon.png" title="Nic's notes">
+
+<!-- CSS -->
+<link rel="stylesheet" href="https://notes.nicolasdeville.com/theme/css/main.css" />
+
+<!-- Pagefind -->
+<link href="https://notes.nicolasdeville.com/theme/css/pagefind-ui-nic.css" rel="stylesheet">
+<script src="https://notes.nicolasdeville.com/pagefind/pagefind-ui.js" type="text/javascript"></script>
+
+<script>
+    window.addEventListener('DOMContentLoaded', (event) => {
+        new PagefindUI({ element: "#search" });
+    });
+</script>
+
+
+</head>
+
+<body id="index" class="body">
+        <header id="banner" class="body">
+
+            <div class="logo-and-search">
+                <a href="https://notes.nicolasdeville.com/"><img class="header_image" src="https://notes.nicolasdeville.com/images/nic_notes_header.svg" alt="Nic's notes" width="266"/></a>
+
+                <!-- for Stork seach engine -->
+                <!-- <div class="search-input-block">
+                    <input data-stork="sitesearch" class="search-input" placeholder="Search notes..." autofocus="autofocus"/>
+                    <div data-stork="sitesearch-output"></div>
+                </div> -->
+
+                <!-- Pagefind -->
+                <div class="search-input-block" id="search"></div>
+
+            </div>
+
+            
+
+            <div class="above-navbar">
+                <div class="last_updated">21 Feb 2023 | 09:41</div>
+                <div>
+                    <p class="notes_count">
+                        <a href="https://notes.nicolasdeville.com/tags">by tags</a>
+                        <span style="color:#C74350">|</span>
+                        <a href="https://notes.nicolasdeville.com/2020/">2020</a>
+                        <span style="color:#C74350">|</span>
+                        <a href="https://notes.nicolasdeville.com/2021/">2021</a>
+                        <span style="color:#C74350">|</span>
+                        <a href="https://notes.nicolasdeville.com/2022/">2022</a>
+                        <span style="color:#C74350">|</span>
+                        609 notes
+                    </p>
+                </div>
+            </div>
+
+            <nav><ul>
+                <li><a href="https://notes.nicolasdeville.com/ai/">ai</a></li>
+                <li><a href="https://notes.nicolasdeville.com/apps/">apps</a></li>
+                <li><a href="https://notes.nicolasdeville.com/b2b-sales/">b2b sales</a></li>
+                <li><a href="https://notes.nicolasdeville.com/books/">books</a></li>
+                <li><a href="https://notes.nicolasdeville.com/careerplaybook/">#careerplaybook</a></li>
+                <li class="active"><a href="https://notes.nicolasdeville.com/helpers/">helpers</a></li>
+                <li><a href="https://notes.nicolasdeville.com/home-office/">home office</a></li>
+                <li><a href="https://notes.nicolasdeville.com/interests/">interests</a></li>
+                <li><a href="https://notes.nicolasdeville.com/leadership/">leadership</a></li>
+                <li><a href="https://notes.nicolasdeville.com/learning/">learning</a></li>
+                <li><a href="https://notes.nicolasdeville.com/movies/">movies</a></li>
+                <li><a href="https://notes.nicolasdeville.com/projects/">projects</a></li>
+                <li><a href="https://notes.nicolasdeville.com/python/">python</a></li>
+                <li><a href="https://notes.nicolasdeville.com/random/">random</a></li>
+                <li><a href="https://notes.nicolasdeville.com/startups/">startups</a></li>
+            </ul></nav>
+        </header>
+
+        <!-- index.html injection -->
+<section id="content" class="body">
+    <article>
+        <header>
+            <h1 class="entry-title">
+                <main> <!-- for indexing by Stork -->
+                    <a href="https://notes.nicolasdeville.com/helpers/github-pages" rel="bookmark"
+                    title="Permalink to Hosting my static website(s) with Github Pages">Hosting my static website(s) with Github Pages
+                    </a>
+                </main>
+            </h1>
+            <p class="header_summary">
+                <main> <!-- for indexing by Stork -->
+                    <p>Github offers free hosting of static websites - and it's very easy, if you have some …</p>
+                </main>
+            </p>
+        </header>
+
+        <div class="entry-content">
+<footer class="post-info">
+
+    <p>
+        30 Nov 2022 
+        <span class="separator">|</span> in <a class="link_tag" href="https://notes.nicolasdeville.com/helpers/"><span data-pagefind-filter="category">helpers</span></a>
+
+ tags: <a class="link_tag" href="https://notes.nicolasdeville.com/tag/hosting.html">hosting</a>
+
+        <!-- added 4/7 -->
+        <!-- 		<br />
+        <abbr class="modified" title="2022-11-30T22:13:32.599994+01:00">
+                Updated: 30 Nov 2022
+        </abbr>
+ -->
+
+    </p>
+
+    
+
+</footer>            <!-- for indexing by Stork -->
+            <!-- <main>  -->
+                <p>Github offers free hosting of static websites - and it's very easy, if you have some experience with Github (ie managing repos).   </p>
+<p>Basically all you need is a public repo with a website's folder structure within it, and Github Pages will take care of the deployment.   </p>
+<p>The only important thing to know is that your repo name needs to end with <code>.github.io</code> - this is the trigger for Github to recognise it as a Github Pages repo.    </p>
+<p>Each commit will trigger a Github Actions that will take a few minutes. Your website is Live therafter.  </p>
+<p>Custom domain can be assigned to your website at no extra cost too, assuming you own the domain already.    </p>
+<div class="link_border"><div class="link_logo_box"><img class="link_logo" src="https://notes.nicolasdeville.com/images/logos/github.png" alt="logo"/></div><div class="link_content">
+<div class="link_title">GitHub Pages | Websites for you and your projects, hosted directly from your GitHub repository. Just edit, push, and your changes are live.</div>
+<div class="link_tagline">Websites for you and your projects.</div>
+<div class="link_url"><a href="https://pages.github.com/" target="_blank">https://pages.github.com/</a></div></div></div>
+
+<p><img class="header" src="https://notes.nicolasdeville.com/images/github-pages.jpg" alt="github-pages.jpg"/>  </p>
+<p>Currently hosting with Github Pages:  </p>
+<ul>
+<li>this site (<a href="https://notes.nicolasdeville.com/" target="_blank">https://notes.nicolasdeville.com/</a>)  </li>
+<li>my side project, indeXall.io (<a href="https://indexall.io/" target="_blank">https://indexall.io/</a>)</li>
+<li>my professional services site, BtoBales.EU (<a href="https://btobsales.eu/" target="_blank">https://btobsales.eu/</a>)</li>
+</ul>
+<p>Github Pages is powered by Jekyll under the hood:  </p>
+<div class="link_border"><div class="link_logo_box"><img class="link_logo" src="https://notes.nicolasdeville.com/images/logos/jekyllrb.png" alt="logo"/></div><div class="link_content">
+<div class="link_title">Jekyll • Simple, blog-aware, static sites | Transform your plain text into static websites and blogs</div>
+<div class="link_tagline">jekyllrb.com</div>
+<div class="link_url"><a href="https://jekyllrb.com/" target="_blank">https://jekyllrb.com/</a></div></div></div>
+
+<h3 id="githubs-documentation">Github's documentation</h3>
+<p>The Github documentation is well written and very helpful.  </p>
+<p>eg:   </p>
+<div class="link_border"><div class="link_logo_box"><img class="link_logo" src="https://notes.nicolasdeville.com/images/logos/github.png" alt="logo"/></div><div class="link_content">
+<div class="link_title">Configuring a custom domain for your GitHub Pages site </div>
+<div class="link_tagline">github.com</div>
+<div class="link_url"><a href="https://docs.github.com/en/pages/configuring-a-custom-domain-for-your-github-pages-site" target="_blank">https://docs.github.com/en/pages/configuring-a-custom-domain-for-your-github-pages-site</a></div></div></div>
+
+<h3 id="reset-a-repo">Reset a repo</h3>
+<p>To delete old pages, etc...</p>
+<ul>
+<li>optional (because generated anyway): backup the local folder</li>
+<li>delete all local files, except invisible ones (eg <code>.gitignore</code>)</li>
+<li><code>git add .</code></li>
+<li><code>git commit -m "reset"</code></li>
+<li><code>git push -f</code></li>
+</ul>
+<p>source: <a href="https://stackoverflow.com/questions/31608203/how-to-delete-the-content-of-github-repository" target="_blank">https://stackoverflow.com/questions/31608203/how-to-delete-the-content-of-github-repository</a>   </p>
+<h3 id="301-redirects">301 redirects</h3>
+<p>Usually done in <code>.htaccess</code> but adding eg.:    </p>
+<div class="highlight"><pre><span></span><code># BEGIN 301 Redirects
+
+redirect 301 /recruiters-directory https://btobsales.eu/resources/directory-recruiters
+redirect 301 /vc-directory https://btobsales.eu/resources/directory-vcs
+
+# END 301 Redirects
+</code></pre></div>
+
+<p>however, Github Pages does not allow to change the <code>.htaccess</code> file - tried adding it to the repo to no avail, and confirmed on Stackoverflow.  </p>
+<p>Workaround: keep the page live with a redirect as follows:   </p>
+<div class="highlight"><pre><span></span><code><span class="cp">&lt;!DOCTYPE html&gt;</span>
+<span class="p">&lt;</span><span class="nt">html</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">link</span> <span class="na">rel</span><span class="o">=</span><span class="s">&quot;canonical&quot;</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;https://btobsales.eu/resources/directory-recruiters&quot;</span><span class="p">/&gt;</span>
+<span class="p">&lt;</span><span class="nt">meta</span> <span class="na">http-equiv</span><span class="o">=</span><span class="s">&quot;content-type&quot;</span> <span class="na">content</span><span class="o">=</span><span class="s">&quot;text/html; charset=utf-8&quot;</span> <span class="p">/&gt;</span>
+<span class="p">&lt;</span><span class="nt">meta</span> <span class="na">http-equiv</span><span class="o">=</span><span class="s">&quot;refresh&quot;</span> <span class="na">content</span><span class="o">=</span><span class="s">&quot;0;url=https://btobsales.eu/resources/directory-recruiters&quot;</span> <span class="p">/&gt;</span>
+<span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">h1</span><span class="p">&gt;</span>Redirecting...<span class="p">&lt;/</span><span class="nt">h1</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;https://btobsales.eu/resources/directory-recruiters&quot;</span><span class="p">&gt;</span>Click here if you are not redirected.<span class="p">&lt;</span><span class="nt">a</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">script</span><span class="p">&gt;</span><span class="nx">location</span><span class="o">=</span><span class="s1">&#39;https://btobsales.eu/resources/directory-recruiters&#39;</span><span class="p">&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
+</code></pre></div>
+
+<h3 id="other-resources">Other resources</h3>
+<p>Some that have helped me:</p>
+<div class="link_border"><div class="link_logo_box"><img class="link_logo" src="https://notes.nicolasdeville.com/images/logos/medium.png" alt="logo"/></div><div class="link_content">
+<div class="link_title">How to Host a Static Website on Github for Free  </div>
+<div class="link_tagline">medium.com</div>
+<div class="link_url"><a href="https://medium.com/any-writers/how-to-host-a-static-website-on-github-for-free-f47b12790775" target="_blank">https://medium.com/any-writers/how-to-host-a-static-website-on-github-for-free-f47b12790775</a></div></div></div>
+            <!-- </main> -->
+        </div><!-- /.entry-content -->
+    </article>
+</section>
+
+        <!-- footer -->
+        <section id="extras" class="body" data-pagefind-ignore>
+
+        <!-- /.blogroll -->
+                <div class="blogroll">
+                        <h2>links</h2>
+                        <ul>
+                            <li><a href="https://btobsales.eu">Services: BtoBSales.EU</a></li>
+                            <li><a href="https://indeXall.io">Side project: indeXall.io</a></li>
+                            <li><a href="https://github.com/ndeville">Github: ndeville</a></li>
+                        </ul>
+                </div>
+
+        <!-- /.social -->
+                <div class="social">
+                        <h2>social</h2>
+                        <ul>
+
+                            <li><a href="https://www.linkedin.com/in/ndeville/">Linkedin</a></li>
+                            <li><a href="https://www.twitter.com/ndeville">Twitter</a></li>
+                        </ul>
+                </div>
+        </section><!-- /#extras -->
+
+        <footer id="contentinfo" class="body" data-pagefind-ignore>
+                <address id="about" class="vcard body">
+                    <img src="https://notes.nicolasdeville.com/favicon.svg" alt="nic_logo" width="24" style="vertical-align: middle;"/> Nic's notes:
+                    <br>
+                    <img src="https://notes.nicolasdeville.com/images/logos/getpelican.png" alt="pelican" width="16" style="vertical-align: middle;"/> Powered by <a href="https://getpelican.com" target="_blank">Pelican</a>
+                    <br>
+                    <img src="https://notes.nicolasdeville.com/images/logos/pagefind.png" alt="pagefind" width="16" style="vertical-align: middle;"/> Search by <a href="https://pagefind.app" target="_blank">Pagefind</a>
+                    <br>
+                    <img src="https://notes.nicolasdeville.com/images/logos/clearbit.png" alt="clearbit" width="16" style="vertical-align: middle;"/> Logos by <a href="https://clearbit.com" target="_blank">Clearbit</a>
+                    <br>
+                    <img src="https://notes.nicolasdeville.com/images/python.svg" alt="python_logo" width="16" style="vertical-align: middle;"/> Made with <a href="https://www.python.org/" target="_blank">Python</a>
+                </address><!-- /#about -->
+
+        </footer><!-- /#contentinfo -->
+
+
+<!-- JS -->
+
+<!-- my JS script (with code block copy) -->
+<script src="https://notes.nicolasdeville.com/theme/js/nic.js"></script>
+
+<!-- for Stork seach engine -->
+<!-- <script src="https://files.stork-search.net/stork.js"></script>
+<script>
+    stork.register("sitesearch", "https://notes.nicolasdeville.com/search-index.st")
+</script> -->
+
+<!-- <script>
+    (function() {
+    if( window.innerWidth > 600 ) {
+        var stork_script = document.createElement('script');
+        stork_script.type = 'text/javascript';
+        stork_script.src = 'https://files.stork-search.net/stork.js';
+
+        var stork_register = ('script');
+        stork_register.innerHTML = 'stork.register("sitesearch", "https://notes.nicolasdeville.com/search-index.st")';
+
+        var head = document.getElementsByTagName('head')[0];
+        head.appendChild(stork_script);
+        head.appendChild(stork_register);
+
+
+    }
+    })();
+</script> -->
+
+</body>
+</html>

@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <!-- Base -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="generator" content="Pelican" />
+    <meta name="author" content="Nic Deville">
+
+<!-- Title -->
+<title>Generative AI | Nic's notes</title>
+<meta name="og:title" content="Generative AI | Nic's notes"/> <!-- 40 characters for mobile and 60 for desktop -->
+<link rel="canonical" href="https://notes.nicolasdeville.com/ai/generative-ai" />
+<meta name="twitter:title" content="Generative AI | Nic's notes" /> <!-- max. 70 characters -->
+
+<meta name="description" content="a new world of creativity"/>
+<meta property="og:description" content="a new world of creativity"/>
+<meta name="twitter:description" content="a new world of creativity" /> <!-- max. 200 characters -->
+ 
+
+<meta property="article:published_time" content="2022-11-03 23:46:06.436267+01:00" />
+
+<meta property="article:modified_time" content="2022-11-03 23:46:06.436267+01:00" />
+
+<meta name="robots" content="all, follow" />
+
+<!-- Social -->
+<meta property="og:type" content="article" />
+
+<!-- <meta property="og:description" content="Messy online notebook covering B2B Sales, Leadership, Python programming, Automation, AI and more. I take these notes for myself (and my kids later) - perhaps they can help someone else..." /> min. 2 max. 4 sentences -->
+
+<meta property="og:url" content="https://notes.nicolasdeville.com/ai/generative-ai" /> <!-- canonical URL for your page without session variables, user id parameters or counters -->
+<meta property="og:site_name" content="Nic's notes" />
+<meta name="image" property="og:image" content="https://notes.nicolasdeville.com/images/notes-twitter-image.jpg" /> <!-- at least 600x315 pixels, preferable 1200x630 pixels -->
+
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:site" content="@ndeville" />
+
+<meta name="twitter:image" content="https://notes.nicolasdeville.com/images/notes-twitter-image.jpg" /> <!-- aspect ratio of 2:1 with minimum dimensions of 300x157 or maximum of 4096x4096 pixels. Going with 900x471 -->
+
+<!-- Logo -->
+<meta property="og:logo" content="https://notes.nicolasdeville.com/logo.svg">
+
+<!-- Favicon -->
+<link rel="icon" type="image/x-icon" href="https://notes.nicolasdeville.com/favicon.ico">
+<link rel="mask-icon" href="https://notes.nicolasdeville.com/favicon.svg" color="#FFFFFF">
+<link rel="alternate icon" class="js-site-favicon" type="image/png" href="https://notes.nicolasdeville.com/favicon.png">
+<link rel="icon" class="js-site-favicon" type="image/svg+xml" href="https://notes.nicolasdeville.com/favicon.svg">
+<link rel="fluid-icon" href="https://notes.nicolasdeville.com/favicon.png" title="Nic's notes">
+
+<!-- CSS -->
+<link rel="stylesheet" href="https://notes.nicolasdeville.com/theme/css/main.css" />
+
+<!-- Pagefind -->
+<link href="https://notes.nicolasdeville.com/theme/css/pagefind-ui-nic.css" rel="stylesheet">
+<script src="https://notes.nicolasdeville.com/pagefind/pagefind-ui.js" type="text/javascript"></script>
+
+<script>
+    window.addEventListener('DOMContentLoaded', (event) => {
+        new PagefindUI({ element: "#search" });
+    });
+</script>
+
+
+</head>
+
+<body id="index" class="body">
+        <header id="banner" class="body">
+
+            <div class="logo-and-search">
+                <a href="https://notes.nicolasdeville.com/"><img class="header_image" src="https://notes.nicolasdeville.com/images/nic_notes_header.svg" alt="Nic's notes" width="266"/></a>
+
+                <!-- for Stork seach engine -->
+                <!-- <div class="search-input-block">
+                    <input data-stork="sitesearch" class="search-input" placeholder="Search notes..." autofocus="autofocus"/>
+                    <div data-stork="sitesearch-output"></div>
+                </div> -->
+
+                <!-- Pagefind -->
+                <div class="search-input-block" id="search"></div>
+
+            </div>
+
+            
+
+            <div class="above-navbar">
+                <div class="last_updated">21 Feb 2023 | 09:41</div>
+                <div>
+                    <p class="notes_count">
+                        <a href="https://notes.nicolasdeville.com/tags">by tags</a>
+                        <span style="color:#C74350">|</span>
+                        <a href="https://notes.nicolasdeville.com/2020/">2020</a>
+                        <span style="color:#C74350">|</span>
+                        <a href="https://notes.nicolasdeville.com/2021/">2021</a>
+                        <span style="color:#C74350">|</span>
+                        <a href="https://notes.nicolasdeville.com/2022/">2022</a>
+                        <span style="color:#C74350">|</span>
+                        609 notes
+                    </p>
+                </div>
+            </div>
+
+            <nav><ul>
+                <li class="active"><a href="https://notes.nicolasdeville.com/ai/">ai</a></li>
+                <li><a href="https://notes.nicolasdeville.com/apps/">apps</a></li>
+                <li><a href="https://notes.nicolasdeville.com/b2b-sales/">b2b sales</a></li>
+                <li><a href="https://notes.nicolasdeville.com/books/">books</a></li>
+                <li><a href="https://notes.nicolasdeville.com/careerplaybook/">#careerplaybook</a></li>
+                <li><a href="https://notes.nicolasdeville.com/helpers/">helpers</a></li>
+                <li><a href="https://notes.nicolasdeville.com/home-office/">home office</a></li>
+                <li><a href="https://notes.nicolasdeville.com/interests/">interests</a></li>
+                <li><a href="https://notes.nicolasdeville.com/leadership/">leadership</a></li>
+                <li><a href="https://notes.nicolasdeville.com/learning/">learning</a></li>
+                <li><a href="https://notes.nicolasdeville.com/movies/">movies</a></li>
+                <li><a href="https://notes.nicolasdeville.com/projects/">projects</a></li>
+                <li><a href="https://notes.nicolasdeville.com/python/">python</a></li>
+                <li><a href="https://notes.nicolasdeville.com/random/">random</a></li>
+                <li><a href="https://notes.nicolasdeville.com/startups/">startups</a></li>
+            </ul></nav>
+        </header>
+
+        <!-- index.html injection -->
+<section id="content" class="body">
+    <article>
+        <header>
+            <h1 class="entry-title">
+                <main> <!-- for indexing by Stork -->
+                    <a href="https://notes.nicolasdeville.com/ai/generative-ai" rel="bookmark"
+                    title="Permalink to Generative AI">Generative AI
+                    </a>
+                </main>
+            </h1>
+            <p class="header_summary">
+                <main> <!-- for indexing by Stork -->
+                    <p>a new world of creativity</p>
+                </main>
+            </p>
+        </header>
+
+        <div class="entry-content">
+<footer class="post-info">
+
+    <p>
+        03 Nov 2022 
+        <span class="separator">|</span> in <a class="link_tag" href="https://notes.nicolasdeville.com/ai/"><span data-pagefind-filter="category">ai</span></a>
+
+
+        <!-- added 4/7 -->
+        <!-- 		<br />
+        <abbr class="modified" title="2022-11-03T23:46:06.436267+01:00">
+                Updated: 03 Nov 2022
+        </abbr>
+ -->
+
+    </p>
+
+    
+
+</footer>            <!-- for indexing by Stork -->
+            <!-- <main>  -->
+                <div class="toc"><span class="toctitle">Table of Contents</span><ul>
+<li><a href="#landscape">Landscape</a><ul>
+<li><a href="#models-use-cases">Models &amp; Use Cases</a></li>
+<li><a href="#applications">Applications</a></li>
+</ul>
+</li>
+<li><a href="#gartner-hype-cycle">Gartner Hype Cycle</a></li>
+<li><a href="#text">Text</a><ul>
+<li><a href="#models">Models</a><ul>
+<li><a href="#gpt-3-by-openai">GPT-3 by OpenAI</a></li>
+</ul>
+</li>
+<li><a href="#apps">Apps</a></li>
+</ul>
+</li>
+<li><a href="#image">Image</a><ul>
+<li><a href="#models_1">Models</a><ul>
+<li><a href="#dall-e">Dall-E</a></li>
+<li><a href="#dreambooth-google">Dreambooth (Google)</a></li>
+<li><a href="#stable-diffusion">Stable Diffusion</a></li>
+<li><a href="#midjourney">Midjourney</a></li>
+<li><a href="#resources">resources</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#video">Video</a><ul>
+<li><a href="#models_2">Models</a><ul>
+<li><a href="#_1"></a></li>
+</ul>
+</li>
+<li><a href="#apps_1">Apps</a></li>
+</ul>
+</li>
+<li><a href="#audio">Audio</a></li>
+<li><a href="#speech">Speech</a><ul>
+<li><a href="#openai-whisper">OpenAI Whisper</a></li>
+<li><a href="#descript">Descript</a></li>
+</ul>
+</li>
+<li><a href="#code">Code</a><ul>
+<li><a href="#github-copilot">Github Copilot</a></li>
+<li><a href="#tabnine">Tabnine</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="link_border"><div class="link_logo_box"><img class="link_logo" src="https://notes.nicolasdeville.com/images/logos/sequoiacap.png" alt="logo"/></div><div class="link_content">
+<div class="link_title">Generative AI: A Creative New World | Sequoia Capital US/Europe</div>
+<div class="link_tagline">sequoiacap</div>
+<div class="link_url"><a href="https://www.sequoiacap/article/generative-ai-a-creative-new-world/" target="_blank">https://www.sequoiacap/article/generative-ai-a-creative-new-world/</a></div></div></div>
+
+<h1 id="landscape">Landscape</h1>
+<h2 id="models-use-cases">Models &amp; Use Cases</h2>
+<p><img class="screenshot" src="https://notes.nicolasdeville.com/images/generative-ai/generative-ai-landscape.jpg" alt="generative-ai/generative-ai-landscape.jpg"/>  </p>
+<h2 id="applications">Applications</h2>
+<p><img class="screenshot" src="https://notes.nicolasdeville.com/images/linkedin/generative-ai-app-landscape.png" alt="linkedin/generative-ai-app-landscape.png"/>  </p>
+<h1 id="gartner-hype-cycle">Gartner Hype Cycle</h1>
+<p><img class="screenshot" src="https://notes.nicolasdeville.com/images/generative-ai/hype-cycle-for-artificial-intelligence-2022.png" alt="generative-ai/hype-cycle-for-artificial-intelligence-2022.png"/><br>
+source: <a href="https://www.gartner.com/en/articles/what-s-new-in-artificial-intelligence-from-the-2022-gartner-hype-cycle" target="_blank">https://www.gartner.com/en/articles/what-s-new-in-artificial-intelligence-from-the-2022-gartner-hype-cycle</a>    </p>
+<h1 id="text">Text</h1>
+<h2 id="models">Models</h2>
+<h3 id="gpt-3-by-openai">GPT-3 by OpenAI</h3>
+<div class="link_border"><div class="link_logo_box"><img class="link_logo" src="https://notes.nicolasdeville.com/images/logos/openai.png" alt="logo"/></div><div class="link_content">
+<div class="link_title">OpenAI API</div>
+<div class="link_tagline">openai</div>
+<div class="link_url"><a href="https://beta.openai/examples" target="_blank">https://beta.openai/examples</a></div></div></div>
+
+<p><img class="screenshot" src="https://notes.nicolasdeville.com/images/generative-ai/gpt3-capabilities.jpg" alt="generative-ai/gpt3-capabilities.jpg"/>  </p>
+<h2 id="apps">Apps</h2>
+<div class="link_border"><div class="link_logo_box"><img class="link_logo" src="https://notes.nicolasdeville.com/images/logos/copy.png" alt="logo"/></div><div class="link_content">
+<div class="link_title">Copy.ai: Write better marketing copy and content with AI</div>
+<div class="link_tagline">Say ‘goodbye’ to the blank page for good</div>
+<div class="link_url"><a href="https://www.copy/" target="_blank">https://www.copy/</a></div></div></div>
+
+<div class="link_border"><div class="link_logo_box"><img class="link_logo" src="https://notes.nicolasdeville.com/images/logos/jasper.png" alt="logo"/></div><div class="link_content">
+<div class="link_title">Jasper - The Best AI Writing Assistant</div>
+<div class="link_tagline">The Future of Writing</div>
+<div class="link_url"><a href="https://www.jasper/" target="_blank">https://www.jasper/</a></div></div></div>
+
+<div class="link_border"><div class="link_logo_box"><img class="link_logo" src="https://notes.nicolasdeville.com/images/logos/hypotenuse.png" alt="logo"/></div><div class="link_content">
+<div class="link_title">Hypotenuse AI: AI Writing Assistant and Text Generator</div>
+<div class="link_tagline">Let AI write your content in seconds. Without writer’s block.</div>
+<div class="link_url"><a href="https://www.hypotenuse/" target="_blank">https://www.hypotenuse/</a></div></div></div>
+
+<div class="link_border"><div class="link_logo_box"><img class="link_logo" src="https://notes.nicolasdeville.com/images/logos/lex.png" alt="logo"/></div><div class="link_content">
+<div class="link_title">lex</div>
+<div class="link_tagline">lex</div>
+<div class="link_url"><a href="https://lex/" target="_blank">https://lex/</a></div></div></div>
+
+<h1 id="image">Image</h1>
+<h2 id="models_1">Models</h2>
+<h3 id="dall-e">Dall-E</h3>
+<p>[<a href="../../ai/dall-e/index.html">Nic Note: Dall-E</a>]    </p>
+<h3 id="dreambooth-google">Dreambooth (Google)</h3>
+<div class="link_border"><div class="link_logo_box"><img class="link_logo" src="https://notes.nicolasdeville.com/images/logos/github.png" alt="logo"/></div><div class="link_content">
+<div class="link_title">DreamBooth: Fine Tuning Text-to-Image Diffusion Models for Subject-Driven Generation</div>
+<div class="link_tagline">github</div>
+<div class="link_url"><a href="https://dreambooth.github/" target="_blank">https://dreambooth.github/</a></div></div></div>
+<p>s</p>
+<h3 id="stable-diffusion">Stable Diffusion</h3>
+<p>developed by Compvis (the Computer Vision research group at Ludwig Maximilian University of Munich) and sponsored primarily by Stability AI, a startup that aims to be the driving-force behind a grass-roots, open-source AI revolution.</p>
+<p>can actually be run on consumer-grade graphics cards.</p>
+<p>[<a href="../../ai/stable-diffusion/index.html">Nic Note: Stable Diffusion</a>]</p>
+<h3 id="midjourney">Midjourney</h3>
+<div class="link_border"><div class="link_logo_box"><img class="link_logo" src="https://notes.nicolasdeville.com/images/logos/midjourney.png" alt="logo"/></div><div class="link_content">
+<div class="link_title">Midjourney</div>
+<div class="link_tagline">midjourney</div>
+<div class="link_url"><a href="https://www.midjourney/home/" target="_blank">https://www.midjourney/home/</a></div></div></div>
+
+<h3 id="resources">resources</h3>
+<blockquote class="twitter-tweet"><p lang="en" dir="ltr">Alright, here&#39;s what you actually came for! These are some of my most commonly used descriptive terms and phrases. <a href="https://t.co/JpbLOs4ZFC">pic.twitter.com/JpbLOs4ZFC</a></p>&mdash; Pizza Later (@Pizza_Later) <a href="https://twitter.com/Pizza_Later/status/1576364724601561088?ref_src=twsrc%5Etfw">October 2, 2022</a></blockquote>
+<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+<h1 id="video">Video</h1>
+<h2 id="models_2">Models</h2>
+<h3 id="_1"></h3>
+<h2 id="apps_1">Apps</h2>
+<p>Considering the pace of advancement in generative AI, how long until we can submit an entire book to the AI for it to generate a movie version of it? 
+Or an infinite number of versions, tailored for your taste or age?</p>
+<div class="link_border"><div class="link_logo_box"><img class="link_logo" src="https://notes.nicolasdeville.com/images/logos/runwayml.png" alt="logo"/></div><div class="link_content">
+<div class="link_title">Runway - Online Video Editor | Everything you need to edit video, fast.</div>
+<div class="link_tagline">runwayml</div>
+<div class="link_url"><a href="https://runwayml/" target="_blank">https://runwayml/</a></div></div></div>
+
+<h1 id="audio">Audio</h1>
+<div class="link_border"><div class="link_logo_box"><img class="link_logo" src="https://notes.nicolasdeville.com/images/logos/technologyreview.png" alt="logo"/></div><div class="link_content">
+<div class="link_title">Google’s new AI can hear a snippet of song—and then keep on playing | MIT Technology Review</div>
+<div class="link_tagline">technologyreview</div>
+<div class="link_url"><a href="https://www.technologyreview/2022/10/07/1060897/ai-audio-generation/" target="_blank">https://www.technologyreview/2022/10/07/1060897/ai-audio-generation/</a></div></div></div>
+
+<h1 id="speech">Speech</h1>
+<h2 id="openai-whisper">OpenAI Whisper</h2>
+<p>[<a href="../../ai/whisper/index.html">Nic Note: Whisper</a>]   </p>
+<h2 id="descript">Descript</h2>
+<div class="link_border"><div class="link_logo_box"><img class="link_logo" src="https://notes.nicolasdeville.com/images/logos/descript.png" alt="logo"/></div><div class="link_content">
+<div class="link_title">Descript | All-in-one audio/video editing, as easy as a doc.</div>
+<div class="link_tagline">All-in-one audio & video editing, as easy as a doc.</div>
+<div class="link_url"><a href="https://www.descript/" target="_blank">https://www.descript/</a></div></div></div>
+
+<h1 id="code">Code</h1>
+<h2 id="github-copilot">Github Copilot</h2>
+<div class="link_border"><div class="link_logo_box"><img class="link_logo" src="https://notes.nicolasdeville.com/images/logos/github.png" alt="logo"/></div><div class="link_content">
+<div class="link_title">GitHub Copilot · Your AI pair programmer · GitHub</div>
+<div class="link_tagline">github</div>
+<div class="link_url"><a href="https://github/features/copilot" target="_blank">https://github/features/copilot</a></div></div></div>
+
+<h2 id="tabnine">Tabnine</h2>
+<div class="link_border"><div class="link_logo_box"><img class="link_logo" src="https://notes.nicolasdeville.com/images/logos/tabnine.png" alt="logo"/></div><div class="link_content">
+<div class="link_title">Code Faster with AI Code Completions | Tabnine</div>
+<div class="link_tagline">AI assistant for software developers</div>
+<div class="link_url"><a href="https://www.tabnine/" target="_blank">https://www.tabnine/</a></div></div></div>
+            <!-- </main> -->
+        </div><!-- /.entry-content -->
+    </article>
+</section>
+
+        <!-- footer -->
+        <section id="extras" class="body" data-pagefind-ignore>
+
+        <!-- /.blogroll -->
+                <div class="blogroll">
+                        <h2>links</h2>
+                        <ul>
+                            <li><a href="https://btobsales.eu">Services: BtoBSales.EU</a></li>
+                            <li><a href="https://indeXall.io">Side project: indeXall.io</a></li>
+                            <li><a href="https://github.com/ndeville">Github: ndeville</a></li>
+                        </ul>
+                </div>
+
+        <!-- /.social -->
+                <div class="social">
+                        <h2>social</h2>
+                        <ul>
+
+                            <li><a href="https://www.linkedin.com/in/ndeville/">Linkedin</a></li>
+                            <li><a href="https://www.twitter.com/ndeville">Twitter</a></li>
+                        </ul>
+                </div>
+        </section><!-- /#extras -->
+
+        <footer id="contentinfo" class="body" data-pagefind-ignore>
+                <address id="about" class="vcard body">
+                    <img src="https://notes.nicolasdeville.com/favicon.svg" alt="nic_logo" width="24" style="vertical-align: middle;"/> Nic's notes:
+                    <br>
+                    <img src="https://notes.nicolasdeville.com/images/logos/getpelican.png" alt="pelican" width="16" style="vertical-align: middle;"/> Powered by <a href="https://getpelican.com" target="_blank">Pelican</a>
+                    <br>
+                    <img src="https://notes.nicolasdeville.com/images/logos/pagefind.png" alt="pagefind" width="16" style="vertical-align: middle;"/> Search by <a href="https://pagefind.app" target="_blank">Pagefind</a>
+                    <br>
+                    <img src="https://notes.nicolasdeville.com/images/logos/clearbit.png" alt="clearbit" width="16" style="vertical-align: middle;"/> Logos by <a href="https://clearbit.com" target="_blank">Clearbit</a>
+                    <br>
+                    <img src="https://notes.nicolasdeville.com/images/python.svg" alt="python_logo" width="16" style="vertical-align: middle;"/> Made with <a href="https://www.python.org/" target="_blank">Python</a>
+                </address><!-- /#about -->
+
+        </footer><!-- /#contentinfo -->
+
+
+<!-- JS -->
+
+<!-- my JS script (with code block copy) -->
+<script src="https://notes.nicolasdeville.com/theme/js/nic.js"></script>
+
+<!-- for Stork seach engine -->
+<!-- <script src="https://files.stork-search.net/stork.js"></script>
+<script>
+    stork.register("sitesearch", "https://notes.nicolasdeville.com/search-index.st")
+</script> -->
+
+<!-- <script>
+    (function() {
+    if( window.innerWidth > 600 ) {
+        var stork_script = document.createElement('script');
+        stork_script.type = 'text/javascript';
+        stork_script.src = 'https://files.stork-search.net/stork.js';
+
+        var stork_register = ('script');
+        stork_register.innerHTML = 'stork.register("sitesearch", "https://notes.nicolasdeville.com/search-index.st")';
+
+        var head = document.getElementsByTagName('head')[0];
+        head.appendChild(stork_script);
+        head.appendChild(stork_register);
+
+
+    }
+    })();
+</script> -->
+
+</body>
+</html>

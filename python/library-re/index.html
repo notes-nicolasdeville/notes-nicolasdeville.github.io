@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <!-- Base -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="generator" content="Pelican" />
+    <meta name="author" content="Nic Deville">
+
+<!-- Title -->
+<title>Python Library: re (regex) | Nic's notes</title>
+<meta name="og:title" content="Python Library: re (regex) | Nic's notes"/> <!-- 40 characters for mobile and 60 for desktop -->
+<link rel="canonical" href="https://notes.nicolasdeville.com/python/library-re" />
+<meta name="twitter:title" content="Python Library: re (regex) | Nic's notes" /> <!-- max. 70 characters -->
+
+<meta name="description" content="Messy online notebook covering B2B Sales, Leadership, Python programming, Automation, AI and more. I take these notes for myself (and my kids later) - perhaps they can help someone else..."/>
+<meta property="og:description" content="Messy online notebook covering B2B Sales, Leadership, Python programming, Automation, AI and more. I take these notes for myself (and my kids later) - perhaps they can help someone else..."/>
+<meta name="twitter:description" content="Messy online notebook covering B2B Sales, Leadership, Python programming, Automation, AI and more. I take these notes for myself (and my kids later) - perhaps they can help someone else..." /> <!-- max. 200 characters -->
+
+ 
+
+<meta property="article:published_time" content="2022-11-02 22:53:59.774880+01:00" />
+
+<meta property="article:modified_time" content="2022-11-02 22:53:59.774880+01:00" />
+
+<meta name="robots" content="all, follow" />
+
+<!-- Social -->
+<meta property="og:type" content="article" />
+
+<!-- <meta property="og:description" content="Messy online notebook covering B2B Sales, Leadership, Python programming, Automation, AI and more. I take these notes for myself (and my kids later) - perhaps they can help someone else..." /> min. 2 max. 4 sentences -->
+
+<meta property="og:url" content="https://notes.nicolasdeville.com/python/library-re" /> <!-- canonical URL for your page without session variables, user id parameters or counters -->
+<meta property="og:site_name" content="Nic's notes" />
+<meta name="image" property="og:image" content="https://notes.nicolasdeville.com/images/notes-twitter-image.jpg" /> <!-- at least 600x315 pixels, preferable 1200x630 pixels -->
+
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:site" content="@ndeville" />
+
+<meta name="twitter:image" content="https://notes.nicolasdeville.com/images/notes-twitter-image.jpg" /> <!-- aspect ratio of 2:1 with minimum dimensions of 300x157 or maximum of 4096x4096 pixels. Going with 900x471 -->
+
+<!-- Logo -->
+<meta property="og:logo" content="https://notes.nicolasdeville.com/logo.svg">
+
+<!-- Favicon -->
+<link rel="icon" type="image/x-icon" href="https://notes.nicolasdeville.com/favicon.ico">
+<link rel="mask-icon" href="https://notes.nicolasdeville.com/favicon.svg" color="#FFFFFF">
+<link rel="alternate icon" class="js-site-favicon" type="image/png" href="https://notes.nicolasdeville.com/favicon.png">
+<link rel="icon" class="js-site-favicon" type="image/svg+xml" href="https://notes.nicolasdeville.com/favicon.svg">
+<link rel="fluid-icon" href="https://notes.nicolasdeville.com/favicon.png" title="Nic's notes">
+
+<!-- CSS -->
+<link rel="stylesheet" href="https://notes.nicolasdeville.com/theme/css/main.css" />
+
+<!-- Pagefind -->
+<link href="https://notes.nicolasdeville.com/theme/css/pagefind-ui-nic.css" rel="stylesheet">
+<script src="https://notes.nicolasdeville.com/pagefind/pagefind-ui.js" type="text/javascript"></script>
+
+<script>
+    window.addEventListener('DOMContentLoaded', (event) => {
+        new PagefindUI({ element: "#search" });
+    });
+</script>
+
+
+</head>
+
+<body id="index" class="body">
+        <header id="banner" class="body">
+
+            <div class="logo-and-search">
+                <a href="https://notes.nicolasdeville.com/"><img class="header_image" src="https://notes.nicolasdeville.com/images/nic_notes_header.svg" alt="Nic's notes" width="266"/></a>
+
+                <!-- for Stork seach engine -->
+                <!-- <div class="search-input-block">
+                    <input data-stork="sitesearch" class="search-input" placeholder="Search notes..." autofocus="autofocus"/>
+                    <div data-stork="sitesearch-output"></div>
+                </div> -->
+
+                <!-- Pagefind -->
+                <div class="search-input-block" id="search"></div>
+
+            </div>
+
+            
+
+            <div class="above-navbar">
+                <div class="last_updated">21 Feb 2023 | 09:41</div>
+                <div>
+                    <p class="notes_count">
+                        <a href="https://notes.nicolasdeville.com/tags">by tags</a>
+                        <span style="color:#C74350">|</span>
+                        <a href="https://notes.nicolasdeville.com/2020/">2020</a>
+                        <span style="color:#C74350">|</span>
+                        <a href="https://notes.nicolasdeville.com/2021/">2021</a>
+                        <span style="color:#C74350">|</span>
+                        <a href="https://notes.nicolasdeville.com/2022/">2022</a>
+                        <span style="color:#C74350">|</span>
+                        609 notes
+                    </p>
+                </div>
+            </div>
+
+            <nav><ul>
+                <li><a href="https://notes.nicolasdeville.com/ai/">ai</a></li>
+                <li><a href="https://notes.nicolasdeville.com/apps/">apps</a></li>
+                <li><a href="https://notes.nicolasdeville.com/b2b-sales/">b2b sales</a></li>
+                <li><a href="https://notes.nicolasdeville.com/books/">books</a></li>
+                <li><a href="https://notes.nicolasdeville.com/careerplaybook/">#careerplaybook</a></li>
+                <li><a href="https://notes.nicolasdeville.com/helpers/">helpers</a></li>
+                <li><a href="https://notes.nicolasdeville.com/home-office/">home office</a></li>
+                <li><a href="https://notes.nicolasdeville.com/interests/">interests</a></li>
+                <li><a href="https://notes.nicolasdeville.com/leadership/">leadership</a></li>
+                <li><a href="https://notes.nicolasdeville.com/learning/">learning</a></li>
+                <li><a href="https://notes.nicolasdeville.com/movies/">movies</a></li>
+                <li><a href="https://notes.nicolasdeville.com/projects/">projects</a></li>
+                <li class="active"><a href="https://notes.nicolasdeville.com/python/">python</a></li>
+                <li><a href="https://notes.nicolasdeville.com/random/">random</a></li>
+                <li><a href="https://notes.nicolasdeville.com/startups/">startups</a></li>
+            </ul></nav>
+        </header>
+
+        <!-- index.html injection -->
+<section id="content" class="body">
+    <article>
+        <header>
+            <h1 class="entry-title">
+                <main> <!-- for indexing by Stork -->
+                    <a href="https://notes.nicolasdeville.com/python/library-re" rel="bookmark"
+                    title="Permalink to Python Library: re (regex)">Python Library: re (regex)
+                    </a>
+                </main>
+            </h1>
+            <p class="header_summary">
+                <main> <!-- for indexing by Stork -->
+                    
+                </main>
+            </p>
+        </header>
+
+        <div class="entry-content">
+<footer class="post-info">
+
+    <p>
+        02 Nov 2022 
+        <span class="separator">|</span> in <a class="link_tag" href="https://notes.nicolasdeville.com/python/"><span data-pagefind-filter="category">python</span></a>
+
+ tags: <a class="link_tag" href="https://notes.nicolasdeville.com/tag/python-libraries.html">python libraries</a>
+
+        <!-- added 4/7 -->
+        <!-- 		<br />
+        <abbr class="modified" title="2022-11-02T22:53:59.774880+01:00">
+                Updated: 02 Nov 2022
+        </abbr>
+ -->
+
+    </p>
+
+    
+
+</footer>            <!-- for indexing by Stork -->
+            <!-- <main>  -->
+                <p><span class="datestamp">26 Jul 2022</span>        </p>
+<p>New app:  <br>
+"English to RegEx with Natural Language Processing" <br>
+"Regex is difficult to write and comprehend to the average human reader because of its complex patterns. This website uses GPT-3 to translate back and forth between English and RegEx" <br>
+<a href="https://www.autoregex.xyz/" target="_blank">https://www.autoregex.xyz/</a></p>
+<p><img class="screenshot" src="https://notes.nicolasdeville.com/images/apps_autoregex.jpg" alt="apps_autoregex.jpg"/>  </p>
+<h1 id="script-examples">Script examples</h1>
+<h2 id="spilt-on-first-uppercase-letter-in-string">spilt on first uppercase letter in string</h2>
+<p>Given the following, I want to split each string on first uppercase letter to separate command and description (separated by a variable amount of spaces, no tab):   </p>
+<div class="highlight"><pre><span></span><code>&#39;afconvert Audio File Convert&#39;
+&#39;afinfo    Audio File Info&#39;
+&#39;afplay    Audio File Play&#39;
+&#39;airport   Manage Apple AirPort&#39;
+&#39;alias     Create an alias •&#39;
+&#39;alloc     List used and free memory&#39;
+&#39;apropos   Search the whatis database for strings&#39;
+&#39;asr       Apple Software Restore&#39;
+&#39;atsutil   Font registration system utility&#39;
+</code></pre></div>
+
+<p>working code:    </p>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">re</span>
+
+<span class="k">for</span> <span class="n">row</span> <span class="ow">in</span> <span class="n">ws</span><span class="p">:</span>
+    <span class="n">count_row</span> <span class="o">+=</span> <span class="mi">1</span>
+    <span class="n">first</span> <span class="o">=</span> <span class="n">row</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">value</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
+    <span class="n">command</span> <span class="o">=</span> <span class="p">[</span><span class="n">s</span> <span class="k">for</span> <span class="n">s</span> <span class="ow">in</span> <span class="n">re</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;([A-Z][^A-Z]*)&quot;</span><span class="p">,</span> <span class="n">first</span><span class="p">)</span> <span class="k">if</span> <span class="n">s</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
+    <span class="n">description</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">findall</span><span class="p">(</span><span class="s1">&#39;[A-Z][^A-Z]*&#39;</span><span class="p">,</span> <span class="n">first</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">command</span><span class="si">=}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">description</span><span class="si">=}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">()</span>
+</code></pre></div>
+
+<h2 id="regex-email-addresses">regex email addresses</h2>
+<div class="highlight"><pre><span></span><code><span class="n">x</span><span class="o">=</span><span class="n">re</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="s1">&#39;(\w+[.|\w])*@(\w+[.])*\w+&#39;</span><span class="p">,</span><span class="n">email4</span><span class="p">)</span>
+<span class="n">x</span><span class="o">.</span><span class="n">group</span><span class="p">()</span>
+
+<span class="c1"># EXAMPLE:</span>
+
+<span class="n">x</span> <span class="o">=</span> <span class="s1">&#39;(\w+[.|\w])*@(\w+[.])*\w+&#39;</span>
+
+<span class="n">listEmails</span> <span class="o">=</span> <span class="nb">list</span><span class="p">()</span>
+
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;/path/to/folder/recipients.txt&#39;</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+    <span class="n">f</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+    <span class="n">string</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">f</span><span class="p">)</span>
+    <span class="n">array</span> <span class="o">=</span> <span class="n">string</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;,&quot;</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">array</span><span class="p">:</span>
+        <span class="n">x</span> <span class="o">=</span> <span class="n">x</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;&lt;&#39;</span><span class="p">,</span> <span class="mi">1</span><span class="p">)[</span><span class="mi">1</span><span class="p">]</span>
+        <span class="n">x</span> <span class="o">=</span> <span class="n">x</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;&gt;&#39;</span><span class="p">,</span> <span class="mi">1</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+        <span class="n">listEmails</span><span class="o">.</span><span class="n">append</span><span class="p">([</span><span class="n">x</span><span class="p">])</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="nb">list</span><span class="p">)</span>
+</code></pre></div>
+
+<h2 id="remove-invisible-characters">remove invisible characters</h2>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">re</span>
+
+<span class="c1">##GETS RID OF SPACES    </span>
+
+<span class="c1"># string contains the \u2003 character</span>
+<span class="n">string</span> <span class="o">=</span> <span class="sa">u</span><span class="s1">&#39;This is a   test string ’&#39;</span>
+<span class="c1"># this regex will replace all special characters with a space</span>
+<span class="n">re</span><span class="o">.</span><span class="n">sub</span><span class="p">(</span><span class="s1">&#39;\W+&#39;</span><span class="p">,</span><span class="s1">&#39; &#39;</span><span class="p">,</span><span class="n">string</span><span class="p">)</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
+
+<span class="c1">#PRESERVES SPACES:</span>
+<span class="n">re</span><span class="o">.</span><span class="n">sub</span><span class="p">(</span><span class="s1">&#39;[^!-~ ]+&#39;</span><span class="p">,</span><span class="s1">&#39; &#39;</span><span class="p">,</span><span class="n">country</span><span class="p">)</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
+</code></pre></div>
+
+<h2 id="capitalise-sentence">capitalise sentence</h2>
+<p><span class="datestamp">25 Sep 2022</span> </p>
+<div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">capitalise_sentence</span><span class="p">(</span><span class="n">og_string</span><span class="p">,</span> <span class="n">v</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">v</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;---start verbose capitalise_sentence (deactivate with v=False)&quot;</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n</span><span class="si">{</span><span class="n">og_string</span><span class="si">=}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="c1"># lowercase everything</span>
+    <span class="n">lower_s</span> <span class="o">=</span> <span class="n">og_string</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span>
+    <span class="k">if</span> <span class="n">v</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n</span><span class="si">{</span><span class="n">lower_s</span><span class="si">=}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="c1"># start of string &amp; acronyms</span>
+    <span class="n">final</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">sub</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;(\A\w)|&quot;</span><span class="o">+</span>                  <span class="c1"># start of string</span>
+            <span class="s2">&quot;(?&lt;!\.\w)([\.?!] )\w|&quot;</span><span class="o">+</span>    <span class="c1"># after a ?/!/. and a space, </span>
+                                        <span class="c1"># but not after an acronym</span>
+            <span class="s2">&quot;\w(?:\.\w)|&quot;</span><span class="o">+</span>              <span class="c1"># start/middle of acronym</span>
+            <span class="s2">&quot;(?&lt;=\w\.)\w&quot;</span><span class="p">,</span>              <span class="c1"># end of acronym</span>
+            <span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="o">.</span><span class="n">group</span><span class="p">()</span><span class="o">.</span><span class="n">upper</span><span class="p">(),</span> 
+            <span class="n">lower_s</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">v</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">start_string </span><span class="si">{</span><span class="n">final</span><span class="si">=}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="c1"># I exception</span>
+    <span class="k">if</span> <span class="s1">&#39; i &#39;</span> <span class="ow">in</span> <span class="n">final</span><span class="p">:</span>
+        <span class="n">final</span> <span class="o">=</span> <span class="n">final</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39; i &#39;</span><span class="p">,</span> <span class="s1">&#39; I &#39;</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">v</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&#39; i &#39; </span><span class="si">{</span><span class="n">final</span><span class="si">=}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="k">if</span> <span class="s2">&quot; i&#39;m &quot;</span> <span class="ow">in</span> <span class="n">final</span><span class="p">:</span>
+        <span class="n">final</span> <span class="o">=</span> <span class="n">final</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot; i&#39;m &quot;</span><span class="p">,</span> <span class="s2">&quot; I&#39;m &quot;</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">v</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&#39; i&#39;m &#39; </span><span class="si">{</span><span class="n">final</span><span class="si">=}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">v</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">returned repr(final)=</span><span class="si">{</span><span class="nb">repr</span><span class="p">(</span><span class="n">final</span><span class="p">)</span><span class="si">}</span><span class="se">\n\n</span><span class="s2">---end verbose capitalise_sentence</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">final</span>
+
+<span class="n">s</span> <span class="o">=</span> <span class="s2">&quot;hey. how are you? i&#39;m A.F.K. At the Moment but i don&#39;t Mind!  &quot;</span>
+
+<span class="n">test</span> <span class="o">=</span> <span class="n">capitalise_sentence</span><span class="p">(</span><span class="n">s</span><span class="p">,</span> <span class="n">v</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">test</span><span class="p">)</span>
+</code></pre></div>
+
+<p>outputs:</p>
+<div class="highlight"><pre><span></span><code>---start verbose capitalise_sentence (deactivate with v=False)
+
+og_string=&quot;hey. how are you? i&#39;m A.F.K. At the Moment but i don&#39;t Mind!  &quot;
+
+lower_s=&quot;hey. how are you? i&#39;m a.f.k. at the moment but i don&#39;t mind!  &quot;
+
+start_string final=&quot;Hey. How are you? I&#39;m A.F.K. at the moment but i don&#39;t mind!  &quot;
+
+&#39; i &#39; final=&quot;Hey. How are you? I&#39;m A.F.K. at the moment but I don&#39;t mind!  &quot;
+
+returned repr(final)=&quot;Hey. How are you? I&#39;m A.F.K. at the moment but I don&#39;t mind!  &quot;
+
+---end verbose capitalise_sentence
+
+Hey. How are you? I&#39;m A.F.K. at the moment but I don&#39;t mind!  
+</code></pre></div>
+
+<p>inspired by &amp; tweaked from <a href="https://stackoverflow.com/questions/19785458/capitalization-of-sentences-in-python" target="_blank">https://stackoverflow.com/questions/19785458/capitalization-of-sentences-in-python</a>   </p>
+            <!-- </main> -->
+        </div><!-- /.entry-content -->
+    </article>
+</section>
+
+        <!-- footer -->
+        <section id="extras" class="body" data-pagefind-ignore>
+
+        <!-- /.blogroll -->
+                <div class="blogroll">
+                        <h2>links</h2>
+                        <ul>
+                            <li><a href="https://btobsales.eu">Services: BtoBSales.EU</a></li>
+                            <li><a href="https://indeXall.io">Side project: indeXall.io</a></li>
+                            <li><a href="https://github.com/ndeville">Github: ndeville</a></li>
+                        </ul>
+                </div>
+
+        <!-- /.social -->
+                <div class="social">
+                        <h2>social</h2>
+                        <ul>
+
+                            <li><a href="https://www.linkedin.com/in/ndeville/">Linkedin</a></li>
+                            <li><a href="https://www.twitter.com/ndeville">Twitter</a></li>
+                        </ul>
+                </div>
+        </section><!-- /#extras -->
+
+        <footer id="contentinfo" class="body" data-pagefind-ignore>
+                <address id="about" class="vcard body">
+                    <img src="https://notes.nicolasdeville.com/favicon.svg" alt="nic_logo" width="24" style="vertical-align: middle;"/> Nic's notes:
+                    <br>
+                    <img src="https://notes.nicolasdeville.com/images/logos/getpelican.png" alt="pelican" width="16" style="vertical-align: middle;"/> Powered by <a href="https://getpelican.com" target="_blank">Pelican</a>
+                    <br>
+                    <img src="https://notes.nicolasdeville.com/images/logos/pagefind.png" alt="pagefind" width="16" style="vertical-align: middle;"/> Search by <a href="https://pagefind.app" target="_blank">Pagefind</a>
+                    <br>
+                    <img src="https://notes.nicolasdeville.com/images/logos/clearbit.png" alt="clearbit" width="16" style="vertical-align: middle;"/> Logos by <a href="https://clearbit.com" target="_blank">Clearbit</a>
+                    <br>
+                    <img src="https://notes.nicolasdeville.com/images/python.svg" alt="python_logo" width="16" style="vertical-align: middle;"/> Made with <a href="https://www.python.org/" target="_blank">Python</a>
+                </address><!-- /#about -->
+
+        </footer><!-- /#contentinfo -->
+
+
+<!-- JS -->
+
+<!-- my JS script (with code block copy) -->
+<script src="https://notes.nicolasdeville.com/theme/js/nic.js"></script>
+
+<!-- for Stork seach engine -->
+<!-- <script src="https://files.stork-search.net/stork.js"></script>
+<script>
+    stork.register("sitesearch", "https://notes.nicolasdeville.com/search-index.st")
+</script> -->
+
+<!-- <script>
+    (function() {
+    if( window.innerWidth > 600 ) {
+        var stork_script = document.createElement('script');
+        stork_script.type = 'text/javascript';
+        stork_script.src = 'https://files.stork-search.net/stork.js';
+
+        var stork_register = ('script');
+        stork_register.innerHTML = 'stork.register("sitesearch", "https://notes.nicolasdeville.com/search-index.st")';
+
+        var head = document.getElementsByTagName('head')[0];
+        head.appendChild(stork_script);
+        head.appendChild(stork_register);
+
+
+    }
+    })();
+</script> -->
+
+</body>
+</html>
