@@ -38,6 +38,18 @@
     </url>
     
     <url>
+        <loc>https://notes.nicolasdeville.com/research/iot</loc>
+        <lastmod>2023-03-03</lastmod>
+        <priority>0.8</priority>        
+    </url>
+    
+    <url>
+        <loc>https://notes.nicolasdeville.com/research/teemyco</loc>
+        <lastmod>2023-03-03</lastmod>
+        <priority>0.8</priority>        
+    </url>
+    
+    <url>
         <loc>https://notes.nicolasdeville.com/research/pocketlaw</loc>
         <lastmod>2023-03-03</lastmod>
         <priority>0.8</priority>        
@@ -57,6 +69,12 @@
     
     <url>
         <loc>https://notes.nicolasdeville.com/research/urbantz</loc>
+        <lastmod>2023-03-03</lastmod>
+        <priority>0.8</priority>        
+    </url>
+    
+    <url>
+        <loc>https://notes.nicolasdeville.com/research/accenture</loc>
         <lastmod>2023-03-03</lastmod>
         <priority>0.8</priority>        
     </url>
@@ -2642,12 +2660,6 @@
     </url>
     
     <url>
-        <loc>https://notes.nicolasdeville.com/random/teemyco</loc>
-        <lastmod>2023-03-03</lastmod>
-        <priority>0.8</priority>        
-    </url>
-    
-    <url>
         <loc>https://notes.nicolasdeville.com/random/generations</loc>
         <lastmod>2023-03-03</lastmod>
         <priority>0.8</priority>        
@@ -2727,12 +2739,6 @@
     
     <url>
         <loc>https://notes.nicolasdeville.com/random/netflix</loc>
-        <lastmod>2023-03-03</lastmod>
-        <priority>0.8</priority>        
-    </url>
-    
-    <url>
-        <loc>https://notes.nicolasdeville.com/random/accenture</loc>
         <lastmod>2023-03-03</lastmod>
         <priority>0.8</priority>        
     </url>
@@ -3033,12 +3039,6 @@
     
     <url>
         <loc>https://notes.nicolasdeville.com/interests/apple</loc>
-        <lastmod>2023-03-03</lastmod>
-        <priority>0.8</priority>        
-    </url>
-    
-    <url>
-        <loc>https://notes.nicolasdeville.com/interests/iot</loc>
         <lastmod>2023-03-03</lastmod>
         <priority>0.8</priority>        
     </url>
