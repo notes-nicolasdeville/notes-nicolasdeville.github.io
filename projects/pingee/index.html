@@ -19,9 +19,9 @@
 <meta name="twitter:description" content="Internet & Network monitoring tool (script)" /> <!-- max. 200 characters -->
  
 
-<meta property="article:published_time" content="2023-01-09 15:45:29.851097+01:00" />
+<meta property="article:published_time" content="2023-03-01 21:11:22.419277+01:00" />
 
-<meta property="article:modified_time" content="2023-01-09 15:45:29.851097+01:00" />
+<meta property="article:modified_time" content="2023-03-01 21:11:22.419277+01:00" />
 
 <meta name="robots" content="all, follow" />
 
@@ -85,7 +85,7 @@
             
 
             <div class="above-navbar">
-                <div class="last_updated">28 Feb 2023 | 15:29</div>
+                <div class="last_updated">02 Mar 2023 | 10:24</div>
                 <div>
                     <p class="notes_count">
                         <a href="https://notes.nicolasdeville.com/tags">by tags</a>
@@ -96,7 +96,7 @@
                         <span style="color:#C74350">|</span>
                         <a href="https://notes.nicolasdeville.com/2022/">2022</a>
                         <span style="color:#C74350">|</span>
-                        611 notes
+                        613 notes
                     </p>
                 </div>
             </div>
@@ -116,6 +116,7 @@
                 <li class="active"><a href="https://notes.nicolasdeville.com/projects/">projects</a></li>
                 <li><a href="https://notes.nicolasdeville.com/python/">python</a></li>
                 <li><a href="https://notes.nicolasdeville.com/random/">random</a></li>
+                <li><a href="https://notes.nicolasdeville.com/research/">research</a></li>
                 <li><a href="https://notes.nicolasdeville.com/startups/">startups</a></li>
             </ul></nav>
         </header>
@@ -142,7 +143,7 @@
 <footer class="post-info">
 
     <p>
-        09 Jan 2023 
+        01 Mar 2023 
         <span class="separator">|</span> in <a class="link_tag" href="https://notes.nicolasdeville.com/projects/"><span data-pagefind-filter="category">projects</span></a>
 
  tags: <a class="link_tag" href="https://notes.nicolasdeville.com/tag/python.html">python</a>
@@ -150,8 +151,8 @@
 
         <!-- added 4/7 -->
         <!-- 		<br />
-        <abbr class="modified" title="2023-01-09T15:45:29.851097+01:00">
-                Updated: 09 Jan 2023
+        <abbr class="modified" title="2023-03-01T21:11:22.419277+01:00">
+                Updated: 01 Mar 2023
         </abbr>
  -->
 
@@ -630,7 +631,136 @@ external_ping=0
 </table>
 <p>Asterisk in front of device name: indicates that the router it reached was configured to deprioritize or automatically reject ICMP packets, which is done because ICMP is not categorized as essential traffic by many routers.  </p>
 <p>“If there is an issue, you can use Simple Network Management Protocol (SNMP) to diagnose the problem.” </p>
-<h1 id="unrelated-somewhat">Unrelated, somewhat</h1>
+<h1 id="working-code">Working code</h1>
+<p>Divided in two parts:  </p>
+<ul>
+<li><code>ping_test.py</code></li>
+<li><code>speed_test.py</code></li>
+</ul>
+<h2 id="ping_testpy">ping_test.py</h2>
+<p>Working (basic) script for monitoring internet connection.  </p>
+<p>Can be run for a specified amount of time, looping hosts to ping every x seconds.<br>
+Logs ping errors to a <code>txt</code> file.  </p>
+<p>I use it mainly as needed for quick checks, launching the script via a keyboard shortcut.   </p>
+<p>Variables:   </p>
+<div class="highlight"><pre><span></span><code><span class="n">run_time</span> <span class="o">=</span> <span class="mi">24</span> <span class="c1"># in hours, as integer</span>
+
+<span class="n">ping_wait</span> <span class="o">=</span> <span class="mi">1</span> <span class="c1"># in seconds, as integer</span>
+
+<span class="n">log_file</span> <span class="o">=</span> <span class="s1">&#39;/path/to/log/file.txt&#39;</span>
+
+<span class="n">hostnames</span> <span class="o">=</span> <span class="p">{</span>
+            <span class="s1">&#39;208.67.222.222&#39;</span><span class="p">:</span> <span class="s1">&#39;OpenDNS&#39;</span><span class="p">,</span> <span class="c1"># OpenDNS</span>
+            <span class="s1">&#39;208.67.220.220&#39;</span><span class="p">:</span> <span class="s1">&#39;OpenDNS&#39;</span><span class="p">,</span> <span class="c1"># OpenDNS  </span>
+            <span class="s1">&#39;1.1.1.1&#39;</span><span class="p">:</span> <span class="s1">&#39;Cloudflare&#39;</span><span class="p">,</span> <span class="c1"># Cloudflare</span>
+            <span class="s1">&#39;1.0.0.1&#39;</span><span class="p">:</span> <span class="s1">&#39;Cloudflare&#39;</span><span class="p">,</span> <span class="c1"># Cloudflare</span>
+            <span class="s1">&#39;8.8.8.8&#39;</span><span class="p">:</span> <span class="s1">&#39;Google&#39;</span><span class="p">,</span> <span class="c1"># Google</span>
+            <span class="s1">&#39;8.8.4.4&#39;</span><span class="p">:</span> <span class="s1">&#39;Google&#39;</span><span class="p">,</span> <span class="c1"># Google</span>
+<span class="p">}</span>
+</code></pre></div>
+
+<p>prints as:   </p>
+<div class="highlight"><pre><span></span><code>Running <span class="m">14400</span> loops...
+
+<span class="m">0</span>/14400 <span class="m">17</span>:46:42        ✅      <span class="m">208</span>.67.222.222/OpenDNS  <span class="m">22</span>.01ms
+<span class="m">0</span>/14400 <span class="m">17</span>:46:43        ✅      <span class="m">208</span>.67.220.220/OpenDNS  <span class="m">23</span>.97ms
+<span class="m">0</span>/14400 <span class="m">17</span>:46:44        ✅      <span class="m">1</span>.1.1.1/Cloudflare      <span class="m">20</span>.11ms
+<span class="m">0</span>/14400 <span class="m">17</span>:46:45        ✅      <span class="m">1</span>.0.0.1/Cloudflare      <span class="m">23</span>.05ms
+<span class="m">0</span>/14400 <span class="m">17</span>:46:46        ✅      <span class="m">8</span>.8.8.8/Google          <span class="m">13</span>.31ms
+<span class="m">0</span>/14400 <span class="m">17</span>:46:47        ✅      <span class="m">8</span>.8.4.4/Google          <span class="m">15</span>.93ms
+
+<span class="m">1</span>/14400 <span class="m">17</span>:46:48        ✅      <span class="m">208</span>.67.222.222/OpenDNS  <span class="m">21</span>.93ms
+<span class="m">1</span>/14400 <span class="m">17</span>:46:49        ✅      <span class="m">208</span>.67.220.220/OpenDNS  <span class="m">19</span>.6ms
+<span class="m">1</span>/14400 <span class="m">17</span>:46:50        ✅      <span class="m">1</span>.1.1.1/Cloudflare      <span class="m">25</span>.94ms
+<span class="m">1</span>/14400 <span class="m">17</span>:46:51        ✅      <span class="m">1</span>.0.0.1/Cloudflare      <span class="m">19</span>.57ms
+<span class="m">1</span>/14400 <span class="m">17</span>:46:52        ✅      <span class="m">8</span>.8.8.8/Google          <span class="m">16</span>.17ms
+<span class="m">1</span>/14400 <span class="m">17</span>:46:53        ✅      <span class="m">8</span>.8.4.4/Google          <span class="m">17</span>.55ms
+</code></pre></div>
+
+<p>Full code:   </p>
+<div class="highlight"><pre><span></span><code><span class="c1">### Working code for pinging a list of hosts every x second</span>
+
+<span class="kn">from</span> <span class="nn">ping3</span> <span class="kn">import</span> <span class="n">ping</span>
+<span class="kn">import</span> <span class="nn">time</span>
+<span class="kn">from</span> <span class="nn">datetime</span> <span class="kn">import</span> <span class="n">datetime</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;----------</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="n">run_time</span> <span class="o">=</span> <span class="mi">24</span> <span class="c1"># in hours, as integer</span>
+
+<span class="n">ping_wait</span> <span class="o">=</span> <span class="mi">1</span> <span class="c1"># in seconds, as integer</span>
+
+<span class="n">log_file</span> <span class="o">=</span> <span class="s1">&#39;/Users/nic/Python/pingee/log/log.txt&#39;</span>
+
+<span class="n">hostnames</span> <span class="o">=</span> <span class="p">{</span>
+            <span class="s1">&#39;208.67.222.222&#39;</span><span class="p">:</span> <span class="s1">&#39;OpenDNS&#39;</span><span class="p">,</span> <span class="c1"># OpenDNS</span>
+            <span class="s1">&#39;208.67.220.220&#39;</span><span class="p">:</span> <span class="s1">&#39;OpenDNS&#39;</span><span class="p">,</span> <span class="c1"># OpenDNS  </span>
+            <span class="s1">&#39;1.1.1.1&#39;</span><span class="p">:</span> <span class="s1">&#39;Cloudflare&#39;</span><span class="p">,</span> <span class="c1"># Cloudflare</span>
+            <span class="s1">&#39;1.0.0.1&#39;</span><span class="p">:</span> <span class="s1">&#39;Cloudflare&#39;</span><span class="p">,</span> <span class="c1"># Cloudflare</span>
+            <span class="s1">&#39;8.8.8.8&#39;</span><span class="p">:</span> <span class="s1">&#39;Google&#39;</span><span class="p">,</span> <span class="c1"># Google</span>
+            <span class="s1">&#39;8.8.4.4&#39;</span><span class="p">:</span> <span class="s1">&#39;Google&#39;</span><span class="p">,</span> <span class="c1"># Google</span>
+<span class="p">}</span>
+
+<span class="k">def</span> <span class="nf">log_message</span><span class="p">(</span><span class="n">s</span><span class="p">):</span>
+    <span class="k">global</span> <span class="n">log_file</span>
+    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">log_file</span><span class="p">,</span> <span class="s1">&#39;a&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">file</span><span class="p">:</span>
+        <span class="n">file</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
+
+<span class="n">loops</span> <span class="o">=</span> <span class="nb">int</span><span class="p">((</span><span class="n">run_time</span> <span class="o">*</span> <span class="mi">60</span> <span class="o">*</span> <span class="mi">60</span><span class="p">)</span> <span class="o">/</span> <span class="nb">len</span><span class="p">(</span><span class="n">hostnames</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Running </span><span class="si">{</span><span class="n">loops</span><span class="si">}</span><span class="s2"> loops...</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="n">log_message</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n\n</span><span class="s2">---------- STARTING </span><span class="si">{</span><span class="n">datetime</span><span class="o">.</span><span class="n">now</span><span class="p">()</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="s1">&#39;%Y-%m-</span><span class="si">%d</span><span class="s1"> %H:%M:%S&#39;</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="n">loops</span><span class="p">):</span> <span class="c1"># 14400 seconds in 24h</span>
+
+    <span class="k">for</span> <span class="n">host</span><span class="p">,</span><span class="n">hostname</span> <span class="ow">in</span> <span class="n">hostnames</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+        <span class="n">p</span> <span class="o">=</span> <span class="n">ping</span><span class="p">(</span><span class="n">host</span><span class="p">)</span>
+        <span class="c1"># print(f&quot;\n{p=}&quot;)</span>
+        <span class="k">if</span> <span class="n">p</span> <span class="o">!=</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">p_format</span> <span class="o">=</span> <span class="nb">round</span><span class="p">(</span><span class="n">p</span><span class="o">*</span><span class="mi">1000</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>   
+
+            <span class="k">if</span> <span class="n">hostname</span> <span class="o">==</span> <span class="s1">&#39;OpenDNS&#39;</span><span class="p">:</span>
+                <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">i</span><span class="si">}</span><span class="s2">/</span><span class="si">{</span><span class="n">loops</span><span class="si">}</span><span class="se">\t</span><span class="si">{</span><span class="n">datetime</span><span class="o">.</span><span class="n">now</span><span class="p">()</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="s1">&#39;%H:%M:%S&#39;</span><span class="p">)</span><span class="si">}</span><span class="se">\t</span><span class="s2">✅</span><span class="se">\t</span><span class="si">{</span><span class="n">host</span><span class="si">}</span><span class="s2">/</span><span class="si">{</span><span class="n">hostname</span><span class="si">}</span><span class="se">\t</span><span class="si">{</span><span class="n">p_format</span><span class="si">}</span><span class="s2">ms&quot;</span><span class="p">)</span>
+            <span class="k">if</span> <span class="n">hostname</span> <span class="o">==</span> <span class="s1">&#39;Cloudflare&#39;</span><span class="p">:</span>
+                <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">i</span><span class="si">}</span><span class="s2">/</span><span class="si">{</span><span class="n">loops</span><span class="si">}</span><span class="se">\t</span><span class="si">{</span><span class="n">datetime</span><span class="o">.</span><span class="n">now</span><span class="p">()</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="s1">&#39;%H:%M:%S&#39;</span><span class="p">)</span><span class="si">}</span><span class="se">\t</span><span class="s2">✅</span><span class="se">\t</span><span class="si">{</span><span class="n">host</span><span class="si">}</span><span class="s2">/</span><span class="si">{</span><span class="n">hostname</span><span class="si">}</span><span class="se">\t</span><span class="si">{</span><span class="n">p_format</span><span class="si">}</span><span class="s2">ms&quot;</span><span class="p">)</span>
+            <span class="k">if</span> <span class="n">hostname</span> <span class="o">==</span> <span class="s1">&#39;Google&#39;</span><span class="p">:</span>
+                <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">i</span><span class="si">}</span><span class="s2">/</span><span class="si">{</span><span class="n">loops</span><span class="si">}</span><span class="se">\t</span><span class="si">{</span><span class="n">datetime</span><span class="o">.</span><span class="n">now</span><span class="p">()</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="s1">&#39;%H:%M:%S&#39;</span><span class="p">)</span><span class="si">}</span><span class="se">\t</span><span class="s2">✅</span><span class="se">\t</span><span class="si">{</span><span class="n">host</span><span class="si">}</span><span class="s2">/</span><span class="si">{</span><span class="n">hostname</span><span class="si">}</span><span class="se">\t\t</span><span class="si">{</span><span class="n">p_format</span><span class="si">}</span><span class="s2">ms&quot;</span><span class="p">)</span>
+
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">p</span> <span class="o">=</span> <span class="s1">&#39;-&#39;</span>
+            <span class="k">if</span> <span class="n">hostname</span> <span class="o">==</span> <span class="s1">&#39;OpenDNS&#39;</span><span class="p">:</span>
+                <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">i</span><span class="si">}</span><span class="s2">/</span><span class="si">{</span><span class="n">loops</span><span class="si">}</span><span class="s2"> </span><span class="si">{</span><span class="n">datetime</span><span class="o">.</span><span class="n">now</span><span class="p">()</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="s1">&#39;%H:%M:%S&#39;</span><span class="p">)</span><span class="si">}</span><span class="se">\t</span><span class="s2">❌</span><span class="se">\t</span><span class="si">{</span><span class="n">host</span><span class="si">}</span><span class="s2">/</span><span class="si">{</span><span class="n">hostname</span><span class="si">}</span><span class="se">\t</span><span class="si">{</span><span class="n">p</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+            <span class="k">if</span> <span class="n">hostname</span> <span class="o">==</span> <span class="s1">&#39;Cloudflare&#39;</span><span class="p">:</span>
+                <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">i</span><span class="si">}</span><span class="s2">/</span><span class="si">{</span><span class="n">loops</span><span class="si">}</span><span class="s2"> </span><span class="si">{</span><span class="n">datetime</span><span class="o">.</span><span class="n">now</span><span class="p">()</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="s1">&#39;%H:%M:%S&#39;</span><span class="p">)</span><span class="si">}</span><span class="se">\t</span><span class="s2">❌</span><span class="se">\t</span><span class="si">{</span><span class="n">host</span><span class="si">}</span><span class="s2">/</span><span class="si">{</span><span class="n">hostname</span><span class="si">}</span><span class="se">\t</span><span class="si">{</span><span class="n">p</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+            <span class="k">if</span> <span class="n">hostname</span> <span class="o">==</span> <span class="s1">&#39;Google&#39;</span><span class="p">:</span>
+                <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">i</span><span class="si">}</span><span class="s2">/</span><span class="si">{</span><span class="n">loops</span><span class="si">}</span><span class="s2"> </span><span class="si">{</span><span class="n">datetime</span><span class="o">.</span><span class="n">now</span><span class="p">()</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="s1">&#39;%H:%M:%S&#39;</span><span class="p">)</span><span class="si">}</span><span class="se">\t</span><span class="s2">❌</span><span class="se">\t</span><span class="si">{</span><span class="n">host</span><span class="si">}</span><span class="s2">/</span><span class="si">{</span><span class="n">hostname</span><span class="si">}</span><span class="se">\t\t</span><span class="si">{</span><span class="n">p</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+            <span class="n">log_message</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n</span><span class="si">{</span><span class="n">datetime</span><span class="o">.</span><span class="n">now</span><span class="p">()</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="s1">&#39;%H:%M:%S&#39;</span><span class="p">)</span><span class="si">}</span><span class="se">\t</span><span class="s2">❌</span><span class="se">\t</span><span class="si">{</span><span class="n">host</span><span class="si">}</span><span class="s2">/</span><span class="si">{</span><span class="n">hostname</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="n">p</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+        <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="n">ping_wait</span><span class="p">)</span>
+
+    <span class="nb">print</span><span class="p">()</span>
+
+<span class="n">log_message</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n\n</span><span class="s2">---------- STOPPED </span><span class="si">{</span><span class="n">datetime</span><span class="o">.</span><span class="n">now</span><span class="p">()</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="s1">&#39;%Y-%m-</span><span class="si">%d</span><span class="s1"> %H:%M:%S&#39;</span><span class="p">)</span><span class="si">}</span><span class="se">\n\n</span><span class="s2">&quot;</span><span class="p">)</span>
+</code></pre></div>
+
+<h2 id="speed_testpy">speed_test.py</h2>
+<p>Using the <code>speedtest-cli</code> Python library, looping download tests.   </p>
+<p>Variables:   </p>
+<div class="highlight"><pre><span></span><code><span class="n">tests_to_run</span> <span class="o">=</span> <span class="mi">3</span>
+<span class="n">threads</span> <span class="o">=</span> <span class="mi">1</span> <span class="c1"># 1 simulates a typical file transfer, else None</span>
+<span class="n">log_file</span> <span class="o">=</span> <span class="s1">&#39;/path/to/log.csv&#39;</span>
+</code></pre></div>
+
+<p>prints as:   </p>
+<div class="highlight"><pre><span></span><code>Starting speed <span class="nb">test</span> with <span class="m">3</span> runs <span class="o">(</span><span class="nv">threads</span><span class="o">=</span><span class="m">1</span><span class="o">)</span>...
+
+<span class="c1">#1 [10:19:44] 60.85 Mbit/s (11.3s test time)</span>
+<span class="c1">#2 [10:19:55] 72.8 Mbit/s (11.3s test time)</span>
+<span class="c1">#3 [10:20:06] 25.89 Mbit/s (11.4s test time)</span>
+</code></pre></div>
+
+<p>and logs to CSV file.    </p>
+<h1 id="reference-ping-times">Reference ping times</h1>
 <p>Here are the guidelines for required ping time when playing online:   </p>
 <p>Winning: 0-59 ms <br>
 In the game: 60-129 ms <br>
