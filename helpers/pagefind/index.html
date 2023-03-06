@@ -21,7 +21,7 @@
 
 <meta property="article:published_time" content="2022-10-31 00:00:00+01:00" />
 
-<meta property="article:modified_time" content="2023-02-21 08:56:23.116658+01:00" />
+<meta property="article:modified_time" content="2023-03-05 21:17:07.362321+01:00" />
 
 <meta name="robots" content="all, follow" />
 
@@ -85,7 +85,7 @@
             
 
             <div class="above-navbar">
-                <div class="last_updated">04 Mar 2023 | 22:23</div>
+                <div class="last_updated">06 Mar 2023 | 10:27</div>
                 <div>
                     <p class="notes_count">
                         <a href="https://notes.nicolasdeville.com/tags">by tags</a>
@@ -96,7 +96,7 @@
                         <span style="color:#C74350">|</span>
                         <a href="https://notes.nicolasdeville.com/2022/">2022</a>
                         <span style="color:#C74350">|</span>
-                        612 notes
+                        619 notes
                     </p>
                 </div>
             </div>
@@ -149,8 +149,8 @@
 
         <!-- added 4/7 -->
         <!-- 		<br />
-        <abbr class="modified" title="2023-02-21T08:56:23.116658+01:00">
-                Updated: 21 Feb 2023
+        <abbr class="modified" title="2023-03-05T21:17:07.362321+01:00">
+                Updated: 05 Mar 2023
         </abbr>
  -->
 
@@ -163,6 +163,10 @@
                 <div class="toc"><span class="toctitle">Table of Contents</span><ul>
 <li><a href="#setup">Setup</a><ul>
 <li><a href="#exclude-folders-from-search-index">exclude folders from search index</a></li>
+</ul>
+</li>
+<li><a href="#open">Open</a><ul>
+<li><a href="#passing-a-search-query-via-url-parameter">passing a search query via URL parameter</a></li>
 </ul>
 </li>
 </ul>
@@ -240,6 +244,20 @@ Asked: <a href="https://github/CloudCannon/pagefind/discussions/126" target="_bl
 <div class="link_title">Excluding folders from index · Discussion #127 · CloudCannon/pagefind · GitHub</div>
 <div class="link_tagline">github.com</div>
 <div class="link_url"><a href="https://github.com/CloudCannon/pagefind/discussions/127" target="_blank">https://github.com/CloudCannon/pagefind/discussions/127</a></div></div></div>
+
+<p><span class="datestamp">05 Mar 2023</span> been in place and working well since Nov'.   </p>
+<h1 id="open">Open</h1>
+<h2 id="passing-a-search-query-via-url-parameter">passing a search query via URL parameter</h2>
+<p>See:  </p>
+<div class="link_border"><div class="link_logo_box"><img class="link_logo" src="https://notes.nicolasdeville.com/images/logos/github.png" alt="logo"/></div><div class="link_content">
+<div class="link_title">Pagefind UI: Focus the search input · Issue #121 · CloudCannon/pagefind · GitHub</div>
+<div class="link_tagline">github.com</div>
+<div class="link_url"><a href="https://github.com/CloudCannon/pagefind/issues/121#issuecomment-1334362506" target="_blank">https://github.com/CloudCannon/pagefind/issues/121#issuecomment-1334362506</a></div></div></div>
+
+<p>"There's some discussion of this in #144 — it is possible but you'll need a small code snippet of your own to get the query from the URL 🙂"</p>
+<div class="highlight"><pre><span></span><code><span class="kd">let</span><span class="w"> </span><span class="nx">pagefind</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">PagefindUI</span><span class="p">({</span><span class="w"> </span><span class="nx">element</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;#search&quot;</span><span class="w"> </span><span class="p">});</span><span class="w"></span>
+<span class="nx">pagefind</span><span class="p">.</span><span class="nx">triggerSearch</span><span class="p">(</span><span class="s2">&quot;some search terms&quot;</span><span class="p">);</span><span class="w"></span>
+</code></pre></div>
             <!-- </main> -->
         </div><!-- /.entry-content -->
     </article>

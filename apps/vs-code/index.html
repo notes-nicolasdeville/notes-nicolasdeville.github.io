@@ -19,9 +19,9 @@
 <meta name="twitter:description" content="my IDE of choice" /> <!-- max. 200 characters -->
  
 
-<meta property="article:published_time" content="2022-12-02 08:00:28.174071+01:00" />
+<meta property="article:published_time" content="2023-03-06 10:00:29.226774+01:00" />
 
-<meta property="article:modified_time" content="2022-12-02 08:00:28.174071+01:00" />
+<meta property="article:modified_time" content="2023-03-06 10:00:29.226774+01:00" />
 
 <meta name="robots" content="all, follow" />
 
@@ -85,7 +85,7 @@
             
 
             <div class="above-navbar">
-                <div class="last_updated">04 Mar 2023 | 22:23</div>
+                <div class="last_updated">06 Mar 2023 | 10:27</div>
                 <div>
                     <p class="notes_count">
                         <a href="https://notes.nicolasdeville.com/tags">by tags</a>
@@ -96,7 +96,7 @@
                         <span style="color:#C74350">|</span>
                         <a href="https://notes.nicolasdeville.com/2022/">2022</a>
                         <span style="color:#C74350">|</span>
-                        612 notes
+                        619 notes
                     </p>
                 </div>
             </div>
@@ -143,15 +143,15 @@
 <footer class="post-info">
 
     <p>
-        02 Dec 2022 
+        06 Mar 2023 
         <span class="separator">|</span> in <a class="link_tag" href="https://notes.nicolasdeville.com/apps/"><span data-pagefind-filter="category">apps</span></a>
 
  tags: <a class="link_tag" href="https://notes.nicolasdeville.com/tag/macos.html">macOS</a>
 
         <!-- added 4/7 -->
         <!-- 		<br />
-        <abbr class="modified" title="2022-12-02T08:00:28.174071+01:00">
-                Updated: 02 Dec 2022
+        <abbr class="modified" title="2023-03-06T10:00:29.226774+01:00">
+                Updated: 06 Mar 2023
         </abbr>
  -->
 
@@ -168,14 +168,77 @@
 <p><code>Code &gt; Preferences &gt; Configure User Snippets</code> then choose the <code>.json</code> relevant to the language for which those snippets need to be available.  </p>
 <h4 id="variables">Variables</h4>
 <p>The following variables can be used:  </p>
-<p>TM_SELECTED_TEXT The currently selected text or the empty string<br>
-TM_CURRENT_LINE The contents of the current line<br>
-TM_CURRENT_WORD The contents of the word under cursor or the empty string<br>
-TM_LINE_INDEX The zero-index based line number<br>
-TM_LINE_NUMBER The one-index based line number<br>
-TM_FILENAME The filename of the current document<br>
-TM_FILENAME_BASE The filename of the current document without its extensions<br>
-ex:   </p>
+<table>
+<thead>
+<tr>
+<th>Variable Name</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>TM_SELECTED_TEXT</code></td>
+<td>The currently selected text or the empty string</td>
+</tr>
+<tr>
+<td><code>TM_CURRENT_LINE</code></td>
+<td>The contents of the current line</td>
+</tr>
+<tr>
+<td><code>TM_CURRENT_WORD</code></td>
+<td>The contents of the word under cursor or the empty string</td>
+</tr>
+<tr>
+<td><code>TM_LINE_INDEX</code></td>
+<td>The zero-index based line number</td>
+</tr>
+<tr>
+<td><code>TM_LINE_NUMBER</code></td>
+<td>The one-index based line number</td>
+</tr>
+<tr>
+<td><code>TM_FILENAME</code></td>
+<td>The filename of the current document</td>
+</tr>
+<tr>
+<td><code>TM_FILENAME_BASE</code></td>
+<td>The filename of the current document without its extensions</td>
+</tr>
+<tr>
+<td><code>TM_DIRECTORY</code></td>
+<td>The directory of the current document</td>
+</tr>
+<tr>
+<td><code>TM_FILEPATH</code></td>
+<td>The full file path of the current document</td>
+</tr>
+<tr>
+<td><code>RELATIVE_FILEPATH</code></td>
+<td>The relative (to the opened workspace or folder) file path</td>
+</tr>
+<tr>
+<td><code>CLIPBOARD</code></td>
+<td>The contents of your clipboard</td>
+</tr>
+<tr>
+<td><code>WORKSPACE_NAME</code></td>
+<td>The name of the opened workspace or folder</td>
+</tr>
+<tr>
+<td><code>WORKSPACE_FOLDER</code></td>
+<td>The path of the opened workspace or folder</td>
+</tr>
+<tr>
+<td><code>CURSOR_INDEX</code></td>
+<td>The zero-index based cursor number</td>
+</tr>
+<tr>
+<td><code>CURSOR_NUMBER</code></td>
+<td>The one-index based cursor number</td>
+</tr>
+</tbody>
+</table>
+<p>ex with <code>TM_FILENAME_BASE</code>:   </p>
 <div class="highlight"><pre><span></span><code><span class="s2">&quot;&lt;img class=\&quot;$1screenshot\&quot; src=\&quot;{static}../../images/$TM_FILENAME_BASE/$CLIPBOARD.jpg\&quot; alt=\&quot;$CLIPBOARD\&quot;/&gt;  &quot;</span><span class="p">,</span><span class="w"></span>
 </code></pre></div>
 
@@ -183,31 +246,85 @@ ex:   </p>
 <div class="highlight"><pre><span></span><code>&lt;img class=&quot;screenshot&quot; src=&quot;{static}../../images/vs-code/vs-code-shortcuts.jpg&quot; alt=&quot;vs-code-shortcuts&quot;/&gt;  
 </code></pre></div>
 
-<p>TM_DIRECTORY The directory of the current document<br>
-TM_FILEPATH The full file path of the current document<br>
-RELATIVE_FILEPATH The relative (to the opened workspace or folder) file path of the current document<br>
-CLIPBOARD The contents of your clipboard<br>
-WORKSPACE_NAME The name of the opened workspace or folder<br>
-WORKSPACE_FOLDER The path of the opened workspace or folder<br>
-CURSOR_INDEX The zero-index based cursor number<br>
-CURSOR_NUMBER The one-index based cursor number    </p>
 <p>For inserting the current date and time:  </p>
-<p>CURRENT_YEAR The current year<br>
-CURRENT_YEAR_SHORT The current year's last two digits<br>
-CURRENT_MONTH The month as two digits (example '02')<br>
-CURRENT_MONTH_NAME The full name of the month (example 'July')<br>
-CURRENT_MONTH_NAME_SHORT The short name of the month (example 'Jul')<br>
-CURRENT_DATE The day of the month as two digits (example '08')<br>
-CURRENT_DAY_NAME The name of day (example 'Monday')<br>
-CURRENT_DAY_NAME_SHORT The short name of the day (example 'Mon')<br>
-CURRENT_HOUR The current hour in 24-hour clock format<br>
-CURRENT_MINUTE The current minute as two digits<br>
-CURRENT_SECOND The current second as two digits<br>
-CURRENT_SECONDS_UNIX The number of seconds since the Unix epoch  </p>
+<table>
+<thead>
+<tr>
+<th>Variable Name</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>CURRENT_YEAR</code></td>
+<td>The current year</td>
+</tr>
+<tr>
+<td><code>CURRENT_YEAR_SHORT</code></td>
+<td>The current year's last two digits</td>
+</tr>
+<tr>
+<td><code>CURRENT_MONTH</code></td>
+<td>The month as two digits (example '02')</td>
+</tr>
+<tr>
+<td><code>CURRENT_MONTH_NAME</code></td>
+<td>The full name of the month (example 'July')</td>
+</tr>
+<tr>
+<td><code>CURRENT_MONTH_NAME_SHORT</code></td>
+<td>The short name of the month (example 'Jul')</td>
+</tr>
+<tr>
+<td><code>CURRENT_DATE</code></td>
+<td>The day of the month as two digits (example '08')</td>
+</tr>
+<tr>
+<td><code>CURRENT_DAY_NAME</code></td>
+<td>The name of day (example 'Monday')</td>
+</tr>
+<tr>
+<td><code>CURRENT_DAY_NAME_SHORT</code></td>
+<td>The short name of the day (example 'Mon')</td>
+</tr>
+<tr>
+<td><code>CURRENT_HOUR</code></td>
+<td>The current hour in 24-hour clock format</td>
+</tr>
+<tr>
+<td><code>CURRENT_MINUTE</code></td>
+<td>The current minute as two digits</td>
+</tr>
+<tr>
+<td><code>CURRENT_SECOND</code></td>
+<td>The current second as two digits</td>
+</tr>
+<tr>
+<td><code>CURRENT_SECONDS_UNIX</code></td>
+<td>The number of seconds since the Unix epoch</td>
+</tr>
+</tbody>
+</table>
 <p>For inserting random values:  </p>
-<p>RANDOM 6 random Base-10 digits<br>
-RANDOM_HEX 6 random Base-16 digits<br>
-UUID A Version 4 UUID  </p>
+<table>
+<thead>
+<tr>
+<th>Variable Name</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>RANDOM</code></td>
+<td>6 random Base-10 digits</td>
+</tr>
+<tr>
+<td><code>RANDOM_HEX</code></td>
+<td>6 random Base-16 digits</td>
+</tr>
+</tbody>
+</table>
+<p>| <code>UUID</code>        | A Version 4 UUID                |</p>
 <h3 id="extensions">Extensions</h3>
 <p><span class="datestamp">05 Jul 2022</span>   </p>
 <p>Current extensions:   </p>
