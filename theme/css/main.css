@@ -1302,3 +1302,38 @@ li:first-child .hentry, #content > .hentry {
     top: 0;
     left: 0;
 }
+
+/* NIC NOTE LINKS */
+
+.nic_link {
+    display: inline-block;
+    border: 0.15rem solid black;
+    padding-left: 6rem;
+    padding-right: 0.2rem;
+    position: relative;
+}
+
+.nic_link:before {
+    content: "➤ Nic Note";
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    background-color: black;
+    color: white;
+    padding: 0.2rem 0.7rem 0.2rem 0.5rem;
+}
+
+.nic_link a {
+    display: inline-block;
+    background-color: white;
+    padding: 0.1rem 0.2rem;
+    text-decoration: none;
+    color: inherit; /* inherit the color from the parent element */
+}
+.nic_link a:hover {
+    color: var(--nic_red);
+}
+.nic_link a:visited {
+    color: var(--nic_blue);
+    }
