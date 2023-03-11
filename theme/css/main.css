@@ -1191,7 +1191,8 @@ li:first-child .hentry, #content > .hentry {
 
 .toc {
 	border-left: 4px solid #333;
-    margin-bottom: 1em;
+    margin-bottom: 1rem;
+    margin-top: 1rem;
 	color: #333;
 	font-size: 0.8em;
 	background: #eee;
