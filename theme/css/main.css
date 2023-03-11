@@ -1,6 +1,6 @@
 @import url("pygment.css");
 @import url("stork.css");
-@import url('https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400;700;900&family=Roboto:wght@400;700;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;700;800&family=Lato:wght@100;300;400;700;900&family=Roboto:wght@400;700;900&display=swap');
 
 /* Global variables */
 :root {
@@ -56,7 +56,7 @@ body {
     background: #fff;
     color: var(--nic_main);
     font-size: 90%; /* Base font size: 14px */
-    font-family: 'Lato', sans-serif;
+    font-family: 'Montserrat', sans-serif;
     line-height: 1.429;
     margin: 0;
     margin-left: 0.1rem;
@@ -1309,9 +1309,11 @@ li:first-child .hentry, #content > .hentry {
 .nic_link {
     display: inline-block;
     border: 0.15rem solid black;
+    font-size: 0.9rem;
     padding-left: 6rem;
     padding-right: 0.2rem;
     position: relative;
+    margin: 0.1rem 0.3rem 0.1rem 0.3rem;
 }
 
 .nic_link:before {
@@ -1323,6 +1325,7 @@ li:first-child .hentry, #content > .hentry {
     background-color: black;
     color: white;
     padding: 0.2rem 0.7rem 0.2rem 0.5rem;
+    font-size: 0.9rem;
 }
 
 .nic_link a {
@@ -1331,6 +1334,7 @@ li:first-child .hentry, #content > .hentry {
     padding: 0.1rem 0.2rem;
     text-decoration: none;
     color: inherit; /* inherit the color from the parent element */
+    font-size: 0.9rem;
 }
 .nic_link a:hover {
     color: var(--nic_red);
