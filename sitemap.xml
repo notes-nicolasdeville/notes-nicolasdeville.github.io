@@ -1508,12 +1508,6 @@
     </url>
     
     <url>
-        <loc>https://notes.nicolasdeville.com/python/library-jinja2</loc>
-        <lastmod>2023-03-11</lastmod>
-        <priority>0.8</priority>        
-    </url>
-    
-    <url>
         <loc>https://notes.nicolasdeville.com/python/create-executable</loc>
         <lastmod>2023-03-11</lastmod>
         <priority>0.8</priority>        
@@ -1653,6 +1647,12 @@
     
     <url>
         <loc>https://notes.nicolasdeville.com/python/copy-files</loc>
+        <lastmod>2023-03-11</lastmod>
+        <priority>0.8</priority>        
+    </url>
+    
+    <url>
+        <loc>https://notes.nicolasdeville.com/python/library-jinja</loc>
         <lastmod>2023-03-11</lastmod>
         <priority>0.8</priority>        
     </url>
@@ -1965,6 +1965,18 @@
     
     <url>
         <loc>https://notes.nicolasdeville.com/learning/css</loc>
+        <lastmod>2023-03-11</lastmod>
+        <priority>0.8</priority>        
+    </url>
+    
+    <url>
+        <loc>https://notes.nicolasdeville.com/learning/nlp</loc>
+        <lastmod>2023-03-11</lastmod>
+        <priority>0.8</priority>        
+    </url>
+    
+    <url>
+        <loc>https://notes.nicolasdeville.com/learning/ml</loc>
         <lastmod>2023-03-11</lastmod>
         <priority>0.8</priority>        
     </url>
@@ -3375,6 +3387,12 @@
     
     <url>
         <loc>https://notes.nicolasdeville.com/apps/descript</loc>
+        <lastmod>2023-03-11</lastmod>
+        <priority>0.8</priority>        
+    </url>
+    
+    <url>
+        <loc>https://notes.nicolasdeville.com/apps/fantastical</loc>
         <lastmod>2023-03-11</lastmod>
         <priority>0.8</priority>        
     </url>

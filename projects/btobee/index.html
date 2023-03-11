@@ -21,7 +21,7 @@
 
 <meta property="article:published_time" content="2022-11-26 00:00:00+01:00" />
 
-<meta property="article:modified_time" content="2022-11-28 09:33:42.042734+01:00" />
+<meta property="article:modified_time" content="2023-03-11 12:03:56.761657+01:00" />
 
 <meta name="robots" content="all, follow" />
 
@@ -85,7 +85,7 @@
             
 
             <div class="above-navbar">
-                <div class="last_updated">11 Mar 2023 | 00:06</div>
+                <div class="last_updated">11 Mar 2023 | 12:43</div>
                 <div>
                     <p class="notes_count">
                         <a href="https://notes.nicolasdeville.com/tags">by tags</a>
@@ -96,7 +96,7 @@
                         <span style="color:#C74350">|</span>
                         <a href="https://notes.nicolasdeville.com/2022/">2022</a>
                         <span style="color:#C74350">|</span>
-                        637 notes
+                        640 notes
                     </p>
                 </div>
             </div>
@@ -149,8 +149,8 @@
 
         <!-- added 4/7 -->
         <!-- 		<br />
-        <abbr class="modified" title="2022-11-28T09:33:42.042734+01:00">
-                Updated: 28 Nov 2022
+        <abbr class="modified" title="2023-03-11T12:03:56.761657+01:00">
+                Updated: 11 Mar 2023
         </abbr>
  -->
 
@@ -172,12 +172,12 @@
 </div>
 <p><span class="datestamp">26 Nov 2022</span>   </p>
 <p>I have built websites in the past using no-code tools (and a couple never published using Macromedia's Dreamweaver - an old WYSIWYG tool).    </p>
-<p>Building this site here since June, using a static site generator ([<a href="../../python/library-pelican/index.html">Nic Note: Python library: Pelican</a>]) taught me more about how these are built.    </p>
+<p>Building this site here since June, using a static site generator (!python/library-pelican) taught me more about how these are built.    </p>
 <p>As I need a website to promote my B2B Sales services (<a href="https://btobsales.eu/" target="_blank">https://btobsales.eu/</a>), I decided to give it a shot at building it from scratch, just with code - Python, HTML, CSS &amp; JS.      </p>
 <p>Benefits:   </p>
 <ul>
 <li>learning opportunity in those 4 languages    </li>
-<li>free website (hosted on Github Pages [<a href="../../helpers/github-pages/index.html">Nic Note: Github Pages</a>])</li>
+<li>free website (hosted on Github Pages !helpers/github-pages)</li>
 </ul>
 <p>Alternative considered last month was to use something like Webflow (<a href="https://webflow.com/" target="_blank">https://webflow.com/</a>) - a better no-code tool than the one I had used 5 years ago for my startup's website.. supposedly.   </p>
 <p>I did invest ~10 hours of my time with Webflow, going through the tutorial and building a version 0.1 with it.  </p>
@@ -196,7 +196,7 @@ I decided to start building a generator with Python, so I could manage my projec
 <h1 id="phase-2-static-website-generator">Phase 2: static website generator</h1>
 <p>Decided to go with Jinja, for which I had some exposure already (underlying the Python library Pelican &amp; used by my dev while we were building Officebots).  </p>
 <p>Jinja is a templating engine library for Python, meaning it helps deal with templates from which actual content (ie pages) get generated.    </p>
-<p>[<a href="../../python/library-jinja/index.html">Nic Note: Python library: Jinja</a>]   </p>
+<p>!python/library-jinja   </p>
 <p>Current working code:    </p>
 <div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">jinja2</span> <span class="kn">import</span> <span class="n">Environment</span><span class="p">,</span> <span class="n">FileSystemLoader</span>
 <span class="kn">import</span> <span class="nn">os</span>
@@ -488,7 +488,7 @@ I decided to start building a generator with Python, so I could manage my projec
 
 <h2 id="generate-data-for-directory-sections">generate data for directory sections</h2>
 <p>Logic to generate the data for the directory sections, eg here with VCs:   </p>
-<p>Source is a Grist spreadsheet [<a href="../../apps/grist/index.html">Nic Note: Grist</a>]   </p>
+<p>Source is a Grist spreadsheet !apps/grist   </p>
 <div class="highlight"><pre><span></span><code><span class="c1"># Generate data for BB VCs to be used in generate_btobsales.py for https://btobsales.eu/resources/directory-vcs</span>
 
 <span class="k">def</span> <span class="nf">generate_vcs_list</span><span class="p">():</span>
