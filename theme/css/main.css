@@ -502,9 +502,10 @@ table {
 	tfoot td {}
 
     /* to ensure content in first column does not wrap */
-    tbody > tr > td:first-child { /* 220920 removing tr:first-child > to apply to all rows */
+    /* 220920 removing tr:first-child > to apply to all rows */
+    /* tbody > tr > td:first-child { 
         white-space: nowrap;
-    }
+    } */
 
 
 
@@ -1310,7 +1311,7 @@ li:first-child .hentry, #content > .hentry {
     display: inline-block;
     border: 0.15rem solid black;
     font-size: 0.9rem;
-    padding-left: 6rem;
+    padding-left: 6.7rem;
     padding-right: 0.2rem;
     position: relative;
     margin: 0.1rem 0.3rem 0.1rem 0.3rem;
