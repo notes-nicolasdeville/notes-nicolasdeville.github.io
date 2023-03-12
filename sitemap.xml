@@ -1490,6 +1490,12 @@
     </url>
     
     <url>
+        <loc>https://notes.nicolasdeville.com/python/libraries-markdown-parsers</loc>
+        <lastmod>2023-03-12</lastmod>
+        <priority>0.8</priority>        
+    </url>
+    
+    <url>
         <loc>https://notes.nicolasdeville.com/python/library-tldextract</loc>
         <lastmod>2023-03-12</lastmod>
         <priority>0.8</priority>        
@@ -1539,6 +1545,12 @@
     
     <url>
         <loc>https://notes.nicolasdeville.com/python/text-files</loc>
+        <lastmod>2023-03-12</lastmod>
+        <priority>0.8</priority>        
+    </url>
+    
+    <url>
+        <loc>https://notes.nicolasdeville.com/python/script-git-backups</loc>
         <lastmod>2023-03-12</lastmod>
         <priority>0.8</priority>        
     </url>
