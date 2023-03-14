@@ -116,6 +116,12 @@
     </url>
     
     <url>
+        <loc>https://notes.nicolasdeville.com/startups/freelance-contract</loc>
+        <lastmod>2023-03-14</lastmod>
+        <priority>0.8</priority>        
+    </url>
+    
+    <url>
         <loc>https://notes.nicolasdeville.com/startups/00-my-learnings</loc>
         <lastmod>2023-03-14</lastmod>
         <priority>0.8</priority>        
@@ -2288,6 +2294,12 @@
     </url>
     
     <url>
+        <loc>https://notes.nicolasdeville.com/books/to-read</loc>
+        <lastmod>2023-03-14</lastmod>
+        <priority>0.8</priority>        
+    </url>
+    
+    <url>
         <loc>https://notes.nicolasdeville.com/books/gap-selling</loc>
         <lastmod>2023-03-14</lastmod>
         <priority>0.8</priority>        
@@ -3243,6 +3255,12 @@
     
     <url>
         <loc>https://notes.nicolasdeville.com/interests/flat-caps</loc>
+        <lastmod>2023-03-14</lastmod>
+        <priority>0.8</priority>        
+    </url>
+    
+    <url>
+        <loc>https://notes.nicolasdeville.com/interests/pocket-operator-po33</loc>
         <lastmod>2023-03-14</lastmod>
         <priority>0.8</priority>        
     </url>
