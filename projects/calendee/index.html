@@ -19,9 +19,9 @@
 <meta name="twitter:description" content="my own Python-powered Calendly alternative" /> <!-- max. 200 characters -->
  
 
-<meta property="article:published_time" content="2023-03-11 12:03:56.759770+01:00" />
+<meta property="article:published_time" content="2023-03-16 08:16:20.443775+01:00" />
 
-<meta property="article:modified_time" content="2023-03-11 12:03:56.759770+01:00" />
+<meta property="article:modified_time" content="2023-03-16 08:16:20.443775+01:00" />
 
 <meta name="robots" content="all, follow" />
 
@@ -85,7 +85,7 @@
             
 
             <div class="above-navbar">
-                <div class="last_updated">15 Mar 2023 | 08:58</div>
+                <div class="last_updated">16 Mar 2023 | 09:08</div>
                 <div>
                     <p class="notes_count">
                         <a href="https://notes.nicolasdeville.com/tags">by tags</a>
@@ -96,7 +96,7 @@
                         <span style="color:#C74350">|</span>
                         <a href="https://notes.nicolasdeville.com/2022/">2022</a>
                         <span style="color:#C74350">|</span>
-                        657 notes
+                        660 notes
                     </p>
                 </div>
             </div>
@@ -143,14 +143,14 @@
 <footer class="post-info">
 
     <p>
-        11 Mar 2023 
+        16 Mar 2023 
         <span class="separator">|</span> in <a class="link_tag" href="https://notes.nicolasdeville.com/projects/"><span data-pagefind-filter="category">projects</span></a>
 
 
         <!-- added 4/7 -->
         <!-- 		<br />
-        <abbr class="modified" title="2023-03-11T12:03:56.759770+01:00">
-                Updated: 11 Mar 2023
+        <abbr class="modified" title="2023-03-16T08:16:20.443775+01:00">
+                Updated: 16 Mar 2023
         </abbr>
  -->
 
@@ -161,18 +161,29 @@
 </footer>            <!-- for indexing by Stork -->
             <!-- <main>  -->
                 <div class="toc"><span class="toctitle">Table of Contents</span><ul>
+<li><a href="#availabilities">Availabilities</a><ul>
 <li><a href="#process">Process</a></li>
-<li><a href="#working-code">Working code</a><ul>
-<li><a href="#variables">Variables</a></li>
-<li><a href="#outputs">Outputs</a></li>
+<li><a href="#working-code">working code</a><ul>
+<li><a href="#variables">variables</a></li>
+<li><a href="#outputs">outputs</a></li>
 </ul>
 </li>
+</ul>
+</li>
+<li><a href="#meetings">Meetings</a></li>
 <li><a href="#issues">Issues</a><ul>
 <li><a href="#token-resolved">Token (RESOLVED)</a></li>
 </ul>
 </li>
 </ul>
 </div>
+<p>Open-sourced at:  </p>
+<div class="link_border"><div class="link_logo_box"><img class="link_logo" src="https://notes.nicolasdeville.com/images/logos/github.png" alt="logo"/></div><div class="link_content">
+<div class="link_title">GitHub - ndeville/calendee: Generates availabilities as text to be inserted anywhere, checking with Google Calendar API</div>
+<div class="link_tagline">github.com</div>
+<div class="link_url"><a href="https://github.com/ndeville/calendee" target="_blank">https://github.com/ndeville/calendee</a></div></div></div>
+
+<h1 id="availabilities">Availabilities</h1>
 <p><span class="datestamp">13 Feb 2023</span>   </p>
 <p>Goal:<br>
 - insert my availabilities as text in an email.<br>
@@ -202,7 +213,7 @@
 <p>Timezone selection passed as a parameter to the script.  </p>
 <p>v2:<br>
 - "tomorrow" when applicable (instead of full date)</p>
-<h1 id="process">Process</h1>
+<h2 id="process">Process</h2>
 <p>Authorisation works by creating a token file using the Credentials JSON file downloaded from Google.   </p>
 <div class="link_border"><div class="link_logo_box"><img class="link_logo" src="https://notes.nicolasdeville.com/images/logos/google.png" alt="logo"/></div><div class="link_content">
 <div class="link_title">Create access credentials  |  Google Workspace  |  Google Developers</div>
@@ -331,8 +342,14 @@ Some troubleshooting left re removing available time when events span more than 
 - Thu 23rd 12:00
 </code></pre></div>
 
-<h1 id="working-code">Working code</h1>
-<h2 id="variables">Variables</h2>
+<h2 id="working-code">working code</h2>
+<p>See:  </p>
+<div class="link_border"><div class="link_logo_box"><img class="link_logo" src="https://notes.nicolasdeville.com/images/logos/github.png" alt="logo"/></div><div class="link_content">
+<div class="link_title">calendee/availabilities.py at main · ndeville/calendee · GitHub</div>
+<div class="link_tagline">github.com</div>
+<div class="link_url"><a href="https://github.com/ndeville/calendee/blob/main/availabilities.py" target="_blank">https://github.com/ndeville/calendee/blob/main/availabilities.py</a></div></div></div>
+
+<h3 id="variables">variables</h3>
 <p>are <code>available_days</code>, <code>available_hours</code>, <code>timezones</code>, <code>slot</code> &amp; <code>weekdays_forward</code>:  </p>
 <div class="highlight"><pre><span></span><code><span class="n">slot</span> <span class="o">=</span> <span class="mi">30</span> <span class="c1"># minutes</span>
 
@@ -374,7 +391,7 @@ Some troubleshooting left re removing available time when events span more than 
 <span class="p">}</span>
 </code></pre></div>
 
-<h2 id="outputs">Outputs</h2>
+<h3 id="outputs">outputs</h3>
 <p>Standard:  </p>
 <div class="highlight"><pre><span></span><code><span class="o">(</span>CET / Germany <span class="nb">time</span><span class="o">)</span>
 
@@ -404,6 +421,26 @@ or see all at https://cal.com/ndeville
 
 or see all at https://cal.com/ndeville
 </code></pre></div>
+
+<h1 id="meetings">Meetings</h1>
+<p>Generates list of past meetings objects when external attendees present, for ingestion anywhere (eg. CRM).  </p>
+<p>Each meeting returned as:  </p>
+<div class="highlight"><pre><span></span><code><span class="k">class</span> <span class="nc">Meeting</span><span class="p">:</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">id</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span> <span class="c1"># from Google</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">summary</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_date</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span> <span class="c1"># from Google &#39;start&#39;, in YYYY-MM-DD format</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">htmlLink</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">attendees</span> <span class="o">=</span> <span class="nb">set</span><span class="p">()</span> <span class="c1"># unique emails from both &#39;attendees&#39; and &#39;organiser&#39;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">description</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">domain</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span> <span class="c1"># WARNING: this caters only for 1 domain per meeting</span>
+</code></pre></div>
+
+<p>See:  </p>
+<div class="link_border"><div class="link_logo_box"><img class="link_logo" src="https://notes.nicolasdeville.com/images/logos/github.png" alt="logo"/></div><div class="link_content">
+<div class="link_title">calendee/meetings.py at main · ndeville/calendee · GitHub</div>
+<div class="link_tagline">github.com</div>
+<div class="link_url"><a href="https://github.com/ndeville/calendee/blob/main/meetings.py" target="_blank">https://github.com/ndeville/calendee/blob/main/meetings.py</a></div></div></div>
 
 <h1 id="issues">Issues</h1>
 <h2 id="token-resolved">Token (RESOLVED)</h2>
