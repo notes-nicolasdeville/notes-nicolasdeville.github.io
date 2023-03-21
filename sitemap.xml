@@ -2810,6 +2810,12 @@
     </url>
     
     <url>
+        <loc>https://notes.nicolasdeville.com/random/linkedin</loc>
+        <lastmod>2023-03-21</lastmod>
+        <priority>0.8</priority>        
+    </url>
+    
+    <url>
         <loc>https://notes.nicolasdeville.com/random/221118-2202-linkedin</loc>
         <lastmod>2023-03-21</lastmod>
         <priority>0.8</priority>        
@@ -2942,6 +2948,12 @@
     </url>
     
     <url>
+        <loc>https://notes.nicolasdeville.com/random/essays</loc>
+        <lastmod>2023-03-21</lastmod>
+        <priority>0.8</priority>        
+    </url>
+    
+    <url>
         <loc>https://notes.nicolasdeville.com/random/meme</loc>
         <lastmod>2023-03-21</lastmod>
         <priority>0.8</priority>        
@@ -2979,6 +2991,12 @@
     
     <url>
         <loc>https://notes.nicolasdeville.com/random/bikes</loc>
+        <lastmod>2023-03-21</lastmod>
+        <priority>0.8</priority>        
+    </url>
+    
+    <url>
+        <loc>https://notes.nicolasdeville.com/random/essays-expert</loc>
         <lastmod>2023-03-21</lastmod>
         <priority>0.8</priority>        
     </url>
