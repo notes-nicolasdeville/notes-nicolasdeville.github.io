@@ -22,7 +22,7 @@
 
 <meta property="article:published_time" content="2022-09-30 00:00:00+02:00" />
 
-<meta property="article:modified_time" content="2023-03-11 12:03:56.829991+01:00" />
+<meta property="article:modified_time" content="2023-03-21 08:52:21.866061+01:00" />
 
 <meta name="robots" content="all, follow" />
 
@@ -86,7 +86,7 @@
             
 
             <div class="above-navbar">
-                <div class="last_updated">20 Mar 2023 | 13:23</div>
+                <div class="last_updated">21 Mar 2023 | 10:08</div>
                 <div>
                     <p class="notes_count">
                         <a href="https://notes.nicolasdeville.com/tags">by tags</a>
@@ -97,7 +97,7 @@
                         <span style="color:#C74350">|</span>
                         <a href="https://notes.nicolasdeville.com/2022/">2022</a>
                         <span style="color:#C74350">|</span>
-                        669 notes
+                        670 notes
                     </p>
                 </div>
             </div>
@@ -150,8 +150,8 @@
 
         <!-- added 4/7 -->
         <!-- 		<br />
-        <abbr class="modified" title="2023-03-11T12:03:56.829991+01:00">
-                Updated: 11 Mar 2023
+        <abbr class="modified" title="2023-03-21T08:52:21.866061+01:00">
+                Updated: 21 Mar 2023
         </abbr>
  -->
 
@@ -167,6 +167,12 @@
 <li><a href="#companies">Companies</a></li>
 </ul>
 </li>
+</ul>
+</li>
+<li><a href="#log-emails-automatically">Log emails automatically</a></li>
+<li><a href="#api">API</a><ul>
+<li><a href="#private-apps">Private Apps</a></li>
+<li><a href="#authentication">Authentication</a></li>
 </ul>
 </li>
 </ul>
@@ -378,6 +384,23 @@ Associated Subscription IDs
 <span class="n">associated_payment_ids</span> <span class="o">=</span> <span class="n">row</span><span class="p">[</span><span class="mi">97</span><span class="p">]</span>
 <span class="n">associated_subscription_ids</span> <span class="o">=</span> <span class="n">row</span><span class="p">[</span><span class="mi">98</span><span class="p">]</span>
 </code></pre></div>
+
+<h1 id="log-emails-automatically">Log emails automatically</h1>
+<p>Add in Bcc the unique email address of your Hubspot account (unique per user), under <code>Settings &gt; Data Management &gt; Activities &gt; Email Log &amp; Track &gt; Manual Logging</code>:  </p>
+<p><img class="screenshot" src="https://notes.nicolasdeville.com/images/hubspot/hubspot-manual-email-logging.jpg" alt="hubspot/hubspot-manual-email-logging.jpg"/>  </p>
+<h1 id="api">API</h1>
+<h2 id="private-apps">Private Apps</h2>
+<p><span class="datestamp">21 Mar 2023</span> </p>
+<p>Seems the standard API has changed - replaced with "Private Apps".  </p>
+<p><img class="screenshot" src="https://notes.nicolasdeville.com/images/hubspot/private-apps-replacing-api.jpg" alt="hubspot/private-apps-replacing-api.jpg"/>  </p>
+<p>Similar to eg. Google API, need to create a project/app and assign scope:  </p>
+<p><img class="screenshot" src="https://notes.nicolasdeville.com/images/hubspot/nic-api-scope.jpg" alt="hubspot/nic-api-scope.jpg"/> </p>
+<p>"Your HubSpot account is allowed to make 250.000 API calls per day."   </p>
+<h2 id="authentication">Authentication</h2>
+<div class="link_border"><div class="link_logo_box"><img class="link_logo" src="https://notes.nicolasdeville.com/images/logos/hubspot.png" alt="logo"/></div><div class="link_content">
+<div class="link_title">HubSpot API Docs - Managing tokens</div>
+<div class="link_tagline">hubspot.com</div>
+<div class="link_url"><a href="https://developers.hubspot.com/docs/api/oauth/tokens" target="_blank">https://developers.hubspot.com/docs/api/oauth/tokens</a></div></div></div>
             <!-- </main> -->
         </div><!-- /.entry-content -->
     </article>
