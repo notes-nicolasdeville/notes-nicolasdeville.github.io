@@ -518,6 +518,12 @@
     </url>
     
     <url>
+        <loc>https://notes.nicolasdeville.com/b2b-sales/leverage</loc>
+        <lastmod>2023-03-22</lastmod>
+        <priority>0.8</priority>        
+    </url>
+    
+    <url>
         <loc>https://notes.nicolasdeville.com/b2b-sales/every-situation-has-something-positive-to-it</loc>
         <lastmod>2023-03-22</lastmod>
         <priority>0.8</priority>        
@@ -992,12 +998,6 @@
     </url>
     
     <url>
-        <loc>https://notes.nicolasdeville.com/b2b-sales/build-systems</loc>
-        <lastmod>2023-03-22</lastmod>
-        <priority>0.8</priority>        
-    </url>
-    
-    <url>
         <loc>https://notes.nicolasdeville.com/b2b-sales/video-tools</loc>
         <lastmod>2023-03-22</lastmod>
         <priority>0.8</priority>        
@@ -1023,6 +1023,12 @@
     
     <url>
         <loc>https://notes.nicolasdeville.com/b2b-sales/challenging</loc>
+        <lastmod>2023-03-22</lastmod>
+        <priority>0.8</priority>        
+    </url>
+    
+    <url>
+        <loc>https://notes.nicolasdeville.com/b2b-sales/building-systems</loc>
         <lastmod>2023-03-22</lastmod>
         <priority>0.8</priority>        
     </url>
@@ -1298,6 +1304,12 @@
     </url>
     
     <url>
+        <loc>https://notes.nicolasdeville.com/python/script-notion</loc>
+        <lastmod>2023-03-22</lastmod>
+        <priority>0.8</priority>        
+    </url>
+    
+    <url>
         <loc>https://notes.nicolasdeville.com/python/library-tinytag</loc>
         <lastmod>2023-03-22</lastmod>
         <priority>0.8</priority>        
@@ -1359,12 +1371,6 @@
     
     <url>
         <loc>https://notes.nicolasdeville.com/python/fetch-metadata-from-url</loc>
-        <lastmod>2023-03-22</lastmod>
-        <priority>0.8</priority>        
-    </url>
-    
-    <url>
-        <loc>https://notes.nicolasdeville.com/python/python-notion</loc>
         <lastmod>2023-03-22</lastmod>
         <priority>0.8</priority>        
     </url>
@@ -3704,6 +3710,12 @@
     </url>
     
     <url>
+        <loc>https://notes.nicolasdeville.com/apps/notion</loc>
+        <lastmod>2023-03-22</lastmod>
+        <priority>0.8</priority>        
+    </url>
+    
+    <url>
         <loc>https://notes.nicolasdeville.com/apps/chrome</loc>
         <lastmod>2023-03-22</lastmod>
         <priority>0.8</priority>        
@@ -3975,6 +3987,12 @@
     
     <url>
         <loc>https://notes.nicolasdeville.com/helpers/ethernet</loc>
+        <lastmod>2023-03-22</lastmod>
+        <priority>0.8</priority>        
+    </url>
+    
+    <url>
+        <loc>https://notes.nicolasdeville.com/helpers/email-patterns</loc>
         <lastmod>2023-03-22</lastmod>
         <priority>0.8</priority>        
     </url>

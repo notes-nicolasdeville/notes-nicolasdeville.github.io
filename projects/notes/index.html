@@ -85,7 +85,7 @@
             
 
             <div class="above-navbar">
-                <div class="last_updated">22 Mar 2023 | 08:48</div>
+                <div class="last_updated">22 Mar 2023 | 12:01</div>
                 <div>
                     <p class="notes_count">
                         <a href="https://notes.nicolasdeville.com/tags">by tags</a>
@@ -96,7 +96,7 @@
                         <span style="color:#C74350">|</span>
                         <a href="https://notes.nicolasdeville.com/2022/">2022</a>
                         <span style="color:#C74350">|</span>
-                        692 notes
+                        695 notes
                     </p>
                 </div>
             </div>
@@ -233,7 +233,7 @@
 <p>I will use this note to keep track of further building and maintenance of it, outside of Pelican-related things.    </p>
 <h1 id="static-site-generators">Static Site Generators</h1>
 <p>As Python is my main language, I am using the Python static site generator library Pelican:   </p>
-<p><span class="nic_link"><a href="https://notes.nicolasdeville.com/python/library-pelican" target="_blank">Building a static site with Pelican</a></span>  </p>
+<p>!python/library-pelican  </p>
 <div class="link_border"><div class="link_logo_box"><img class="link_logo" src="https://notes.nicolasdeville.com/images/logos/getpelican.png" alt="logo"/></div><div class="link_content">
 <div class="link_title">Pelican</div>
 <div class="link_tagline">getpelican.com</div>
@@ -281,15 +281,15 @@
 <p>Some of the notes on this site are generated via Python scripts - basically all the "lists" notes:   </p>
 <h2 id="movies-library">Movies library</h2>
 <h3 id="project">Project</h3>
-<p><span class="nic_link"><a href="https://notes.nicolasdeville.com/projects/1000-movies" target="_blank">Project: Top 1000 movies</a></span></p>
+<p>!projects/1000-movies</p>
 <h3 id="list">List</h3>
 <p>Output of the script is this note:  </p>
-<p><span class="nic_link"><a href="https://notes.nicolasdeville.com/movies/1000" target="_blank">My Top 1,000 Movies</a></span></p>
+<p>!movies/1000</p>
 <h2 id="music-library">Music library</h2>
 <h3 id="project_1">Project</h3>
 <p>Before being able to publish a list (as markdown, in form of a note), I need to bring order to my music library.   </p>
 <p>1st step is therefore this project:  </p>
-<p><span class="nic_link"><a href="https://notes.nicolasdeville.com/projects/libraree" target="_blank">Libraree</a></span></p>
+<p>!projects/libraree</p>
 <h3 id="list_1">List</h3>
 <p>Output note TBC.   </p>
 <h2 id="apps-library">Apps library</h2>
@@ -302,12 +302,12 @@ etc..  </p>
 <h3 id="project_2">Project</h3>
 <p>TBC</p>
 <h3 id="list_2">List</h3>
-<p><span class="nic_link"><a href="https://notes.nicolasdeville.com/apps/library" target="_blank">My Apps Library</a></span></p>
+<p>!apps/library</p>
 <h2 id="clipper">Clipper</h2>
 <h3 id="project_3">Project</h3>
-<p><span class="nic_link"><a href="https://notes.nicolasdeville.com/projects/clipee" target="_blank">Clipee</a></span></p>
+<p>!projects/clipee</p>
 <h3 id="list_3">List</h3>
-<p><span class="nic_link"><a href="https://notes.nicolasdeville.com/helpers/clipper" target="_blank">Clipper | my web clipboard</a></span></p>
+<p>!helpers/clipper</p>
 <p>TODO generate clippers per category (B2B Sales, Python, etc..).   </p>
 <h1 id="deploy">Deploy</h1>
 <p><code>cd</code> to notes folder with HTML output  </p>
@@ -327,15 +327,15 @@ etc..  </p>
 <h2 id="deploy-via-python-script">deploy via Python script.</h2>
 <p>Steps to include are:  </p>
 <ul>
-<li>generate Clipper notes <span class="nic_link"><a href="https://notes.nicolasdeville.com/projects/clipee" target="_blank">Clipee</a></span>  </li>
-<li>generate Book notes <span class="nic_link"><a href="https://notes.nicolasdeville.com/projects/books-library" target="_blank">Managing my books library with Python</a></span></li>
-<li>generate Movies list/note <span class="nic_link"><a href="https://notes.nicolasdeville.com/projects/1000-movies" target="_blank">Project: Top 1000 movies</a></span></li>
-<li>generate Apps notes <span class="nic_link"><a href="https://notes.nicolasdeville.com/projects/apps-library" target="_blank">Project: Apps Library</a></span></li>
-<li>publish with Pelican <span class="nic_link"><a href="https://notes.nicolasdeville.com/projects/notes" target="_blank">Building this site: notes.nicolasdeville.com</a></span> &amp; <span class="nic_link"><a href="https://notes.nicolasdeville.com/python/library-pelican" target="_blank">Building a static site with Pelican</a></span></li>
-<li>push with Git<span class="nic_link"><a href="https://notes.nicolasdeville.com/projects/notes" target="_blank">Building this site: notes.nicolasdeville.com</a></span> &amp; <span class="nic_link"><a href="https://notes.nicolasdeville.com/helpers/github" target="_blank">Github</a></span></li>
+<li>generate Clipper notes !projects/clipee  </li>
+<li>generate Book notes !projects/books-library</li>
+<li>generate Movies list/note !projects/1000-movies</li>
+<li>generate Apps notes !projects/apps-library</li>
+<li>publish with Pelican !projects/notes &amp; !python/library-pelican</li>
+<li>push with Git!projects/notes &amp; !helpers/github</li>
 </ul>
 <p><span class="datestamp">27 Sep 2022</span> </p>
-<p>Implemented yesterday via shell script <span class="nic_link"><a href="https://notes.nicolasdeville.com/python/shell-scripts" target="_blank">How to run Python scripts with shell scripts</a></span></p>
+<p>Implemented yesterday via shell script !python/shell-scripts</p>
 <p>Script gets triggered by Alfred keyword <code>nnlo</code> (Nic's Notes Local) to only generate the site locally, or <code>nnli</code> (Nic's Notes Live) which also pushes to Github Pages.   </p>
 <p>6 different scripts triggered by 5 keystrokes in &lt;2s! 😍🤓</p>
 <h1 id="further-building">Further building</h1>
@@ -430,7 +430,7 @@ though might just have to wait for Stork 2.0.0:  <br>
 <p>Using my own site to surface code snippets or scripts during my programming time has become a habit.   </p>
 <p>As I've set the search bar to be active upon page load, it's as easy as launching <code>https://notes.nicolasdeville.com</code> (with a shortcut) to be in a position to search what I need.   </p>
 <p>I need now to add the capability to copy code snippets (in <code>&lt;code&gt;</code> and <code>&lt;pre&gt;</code>) to clipboard, like on programming websites.  </p>
-<p>Will need to use Javascript for this.  <span class="nic_link"><a href="https://notes.nicolasdeville.com/learning/javascript" target="_blank">Learning Javascript</a></span>    </p>
+<p>Will need to use Javascript for this.  !learning/javascript    </p>
 <p>v1 test:  </p>
 <div class="link_border"><div class="link_logo_box"><img class="link_logo" src="https://notes.nicolasdeville.com/images/logos/stackoverflow.png" alt="logo"/></div><div class="link_content">
 <div class="link_title">How do I copy to the clipboard in JavaScript? - Stack Overflow</div>
@@ -593,7 +593,7 @@ Albeit just a copy/paste, it was really helpful to learn to try and understand t
 <p>Snippet above not working.  </p>
 <p>TODO rethink the approach with:  </p>
 <ul>
-<li>fetch favicon or logo from website with Clipee <span class="nic_link"><a href="https://notes.nicolasdeville.com/projects/clipee" target="_blank">Clipee</a></span> at time of HTML snippet generation with the URL to be bookmarked</li>
+<li>fetch favicon or logo from website with Clipee !projects/clipee at time of HTML snippet generation with the URL to be bookmarked</li>
 <li>insert as image in div</li>
 <li>style image (width/height) via CSS</li>
 </ul>
@@ -838,8 +838,8 @@ Add categories and tags and years in table format - values separated by pipes.  
 </code></pre></div>
 
 <p><span class="datestamp">16 Sep 2022</span>   </p>
-<p>Tried the <code>pelican-seo</code> plugin without success (see <span class="nic_link"><a href="https://notes.nicolasdeville.com/python/library-pelican" target="_blank">Building a static site with Pelican</a></span>).  </p>
-<p>Next step is to implement manually, following the links below + notes in <span class="nic_link"><a href="https://notes.nicolasdeville.com/helpers/html-metatags" target="_blank">HTML Meta tags for SEO</a></span>   </p>
+<p>Tried the <code>pelican-seo</code> plugin without success (see !python/library-pelican).  </p>
+<p>Next step is to implement manually, following the links below + notes in !helpers/html-metatags   </p>
 <div class="link_border"><div class="link_logo_box"><img class="link_logo" src="https://notes.nicolasdeville.com/images/logos/kmonsoor.png" alt="logo"/></div><div class="link_content">
 <div class="link_title">Pelican Static sites - SEO Optimization</div>
 <div class="link_tagline">kmonsoor</div>

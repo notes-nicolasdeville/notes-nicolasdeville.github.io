@@ -20,9 +20,9 @@
 
  
 
-<meta property="article:published_time" content="2023-03-22 08:48:27.227757+01:00" />
+<meta property="article:published_time" content="2023-03-22 10:26:18.156244+01:00" />
 
-<meta property="article:modified_time" content="2023-03-22 08:48:27.227757+01:00" />
+<meta property="article:modified_time" content="2023-03-22 10:26:18.156244+01:00" />
 
 <meta name="robots" content="all, follow" />
 
@@ -86,7 +86,7 @@
             
 
             <div class="above-navbar">
-                <div class="last_updated">22 Mar 2023 | 08:48</div>
+                <div class="last_updated">22 Mar 2023 | 12:01</div>
                 <div>
                     <p class="notes_count">
                         <a href="https://notes.nicolasdeville.com/tags">by tags</a>
@@ -97,7 +97,7 @@
                         <span style="color:#C74350">|</span>
                         <a href="https://notes.nicolasdeville.com/2022/">2022</a>
                         <span style="color:#C74350">|</span>
-                        692 notes
+                        695 notes
                     </p>
                 </div>
             </div>
@@ -150,7 +150,7 @@
 
         <!-- added 4/7 -->
         <!-- 		<br />
-        <abbr class="modified" title="2023-03-22T08:48:27.227757+01:00">
+        <abbr class="modified" title="2023-03-22T10:26:18.156244+01:00">
                 Updated: 22 Mar 2023
         </abbr>
  -->
@@ -172,19 +172,35 @@
 <li><a href="#importing">Importing</a><ul>
 <li><a href="#best-practices">best practices</a><ul>
 <li><a href="#importing-company-records">importing Company records</a></li>
+<li><a href="#importing-csvs">importing CSVs</a></li>
 </ul>
 </li>
-<li><a href="#importing-csvs">importing CSVs</a></li>
+<li><a href="#delete-last-import">delete last import</a></li>
 </ul>
 </li>
 <li><a href="#log-emails-automatically">Log emails automatically</a></li>
 <li><a href="#api">API</a><ul>
-<li><a href="#private-apps">Private Apps</a></li>
+<li><a href="#private-apps">Private Apps</a><ul>
 <li><a href="#authentication">Authentication</a></li>
 </ul>
 </li>
 </ul>
+</li>
+</ul>
 </div>
+<p>Salesforce is bloated and expensive. Good for large companies with a dedicated SalesOps/Salesforce team. Not for small companies.  </p>
+<p>Hubspot is easy to use, feature-complete &amp; free to start with, which makes it a no-brainer.  </p>
+<p>The only catch is that upgrading to their Marketing module (their original product) is expensive, and based on number of contacts in your database. Beware making the jump. </p>
+<p>Hubspot Sales CRM <strong>without</strong> the Marketing module is a great CRM for small &amp; medium companies.   </p>
+<p>And even at scale, it seems to have taken over the Salesforce crown for a large part of the Startups market:   </p>
+<blockquote class="twitter-tweet"><p lang="en" dir="ltr">Salesforce is ceding the startup CRM market to HubSpot<br><br>Does it matter?<br><br>Maybe not. Salesforce is focused on $100m+ deals, and SFA/CRM is a minority of their revenue<br><br>Perhaps they’ll still get them when they cross $50m, $100m ARR<br><br>But maybe someday, they … won’t anymore</p>&mdash; Jason ✨Be Kind✨ Lemkin  (@jasonlk) <a href="https://twitter.com/jasonlk/status/1608859857469452288?ref_src=twsrc%5Etfw">December 30, 2022</a></blockquote>
+<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+<div class="link_border"><div class="link_logo_box"><img class="link_logo" src="https://notes.nicolasdeville.com/images/logos/saastr.png" alt="logo"/></div><div class="link_content">
+<div class="link_title">saastr.com</div>
+<div class="link_tagline">saastr.com</div>
+<div class="link_url"><a href="https://www.saastr.com/has-hubspot-taken-over-the-startup-world-from-salesforce/" target="_blank">https://www.saastr.com/has-hubspot-taken-over-the-startup-world-from-salesforce/</a></div></div></div>
+
 <p><span class="datestamp">30 Sep 2022</span>   </p>
 <h1 id="export">Export</h1>
 <p>s</p>
@@ -292,7 +308,7 @@ Associated Payment IDs
 Associated Subscription IDs
 </code></pre></div>
 
-<p>for use in Python scripts (generated with Clipee CSV <span class="nic_link"><a href="https://notes.nicolasdeville.com/projects/clipee" target="_blank">Clipee</a></span>#clipee-csv):   </p>
+<p>for use in Python scripts (generated with Clipee CSV !projects/clipee#clipee-csv):   </p>
 <div class="highlight"><pre><span></span><code><span class="n">record_id</span> <span class="o">=</span> <span class="n">row</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
 <span class="n">target_account</span> <span class="o">=</span> <span class="n">row</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
 <span class="n">last_modified_date</span> <span class="o">=</span> <span class="n">row</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span>
@@ -401,7 +417,7 @@ Associated Subscription IDs
 <p>So it is important to ensure Hubspot does this when you import your data. </p>
 <p>The absolute minimum you can upload is a list of domain names (see format below).  </p>
 <p>You can append to this list other fields (eg. company owner and custom company type in my example below) but importing only the domain works perfectly. </p>
-<h2 id="importing-csvs">importing CSVs</h2>
+<h3 id="importing-csvs">importing CSVs</h3>
 <p>Format used for import of domain names of target accounts + company owner assignment + specific company type:  </p>
 <div class="highlight"><pre><span></span><code><span class="n">Company</span><span class="w"> </span><span class="k">domain</span><span class="w"> </span><span class="n">name</span><span class="p">,</span><span class="n">Company</span><span class="w"> </span><span class="n">owner</span><span class="p">,</span><span class="n">Company</span><span class="w"> </span><span class="n">type</span><span class="w"></span>
 <span class="n">xxx</span><span class="p">.</span><span class="n">com</span><span class="p">,</span><span class="n">n</span><span class="nv">@d</span><span class="p">.</span><span class="n">com</span><span class="p">,</span><span class="n">University</span><span class="w"></span>
@@ -414,9 +430,26 @@ Associated Subscription IDs
 If the domain name already exists in Hubspot, the Company record will be updated.<br>
 This behaviour can be changed.   </p>
 <p><img class="screenshot" src="https://notes.nicolasdeville.com/images/hubspot/230321-hubspot-import-companies.jpg" alt="hubspot/230321-hubspot-import-companies.jpg"/>  </p>
+<h2 id="delete-last-import">delete last import</h2>
+<p>If you made a mistake with your import, it's easy to delete only the imported records.  </p>
+<p>You can access the pre-filtered view here:  </p>
+<p><img class="screenshot" src="https://notes.nicolasdeville.com/images/hubspot/hubspot-import-view.jpg" alt="hubspot/hubspot-import-view.jpg"/>  </p>
+<p>and from there mass delete as usual:  </p>
+<p><img class="screenshot" src="https://notes.nicolasdeville.com/images/hubspot/hubspot-mass-delete.jpg" alt="hubspot/hubspot-mass-delete.jpg"/>  </p>
 <h1 id="log-emails-automatically">Log emails automatically</h1>
-<p>Add in Bcc the unique email address of your Hubspot account (unique per user), under <code>Settings &gt; Data Management &gt; Activities &gt; Email Log &amp; Track &gt; Manual Logging</code>:  </p>
+<p>Obviously, you can connect your email account (eg Google) to Hubspot, and it will log all your emails automatically.  </p>
+<p>But I dislike this nuclear approach, and prefer to log emails "manually" - keeping granular control over what I log and don't log. Both for privacy reasons ("Ooops didn't want to have my confidential info/banter in the CRM") and for CRM data health quality reasons. 
+Overbloated logging clouds automatations, reports, workflows, etc.     </p>
+<p>The best &amp; easy way for me to use Hubspot with emails is by adding your unique Hubspot email address in Bcc.    </p>
+<p>This is the unique email address of your Hubspot account (unique per user), to be found under <code>Settings &gt; Data Management &gt; Activities &gt; Email Log &amp; Track &gt; Manual Logging</code>:</p>
 <p><img class="screenshot" src="https://notes.nicolasdeville.com/images/hubspot/hubspot-manual-email-logging.jpg" alt="hubspot/hubspot-manual-email-logging.jpg"/>  </p>
+<p>Now this can be used in different ways:  </p>
+<ul>
+<li>added in Bcc ad-hoc, manually  </li>
+<li>included by default in Bcc when you open a new email in your email client (easier to delete when not needed vs. adding manually each time)</li>
+<li>added as a Bcc field in email automation systems !projects/mailingee  </li>
+</ul>
+<p>Hubspot will automatically log the email, and associate it with the company record - or create a new company record if the domain name is not already in Hubspot.   </p>
 <h1 id="api">API</h1>
 <h2 id="private-apps">Private Apps</h2>
 <p><span class="datestamp">21 Mar 2023</span> </p>
@@ -425,7 +458,7 @@ This behaviour can be changed.   </p>
 <p>Similar to eg. Google API, need to create a project/app and assign scope:  </p>
 <p><img class="screenshot" src="https://notes.nicolasdeville.com/images/hubspot/nic-api-scope.jpg" alt="hubspot/nic-api-scope.jpg"/> </p>
 <p>"Your HubSpot account is allowed to make 250.000 API calls per day."   </p>
-<h2 id="authentication">Authentication</h2>
+<h3 id="authentication">Authentication</h3>
 <div class="link_border"><div class="link_logo_box"><img class="link_logo" src="https://notes.nicolasdeville.com/images/logos/hubspot.png" alt="logo"/></div><div class="link_content">
 <div class="link_title">HubSpot API Docs - Managing tokens</div>
 <div class="link_tagline">hubspot.com</div>
