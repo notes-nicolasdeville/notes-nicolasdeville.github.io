@@ -22,7 +22,7 @@
 
 <meta property="article:published_time" content="2022-09-30 00:00:00+02:00" />
 
-<meta property="article:modified_time" content="2023-03-21 08:52:21.866061+01:00" />
+<meta property="article:modified_time" content="2023-03-21 22:28:09.072259+01:00" />
 
 <meta name="robots" content="all, follow" />
 
@@ -86,7 +86,7 @@
             
 
             <div class="above-navbar">
-                <div class="last_updated">21 Mar 2023 | 16:08</div>
+                <div class="last_updated">22 Mar 2023 | 06:20</div>
                 <div>
                     <p class="notes_count">
                         <a href="https://notes.nicolasdeville.com/tags">by tags</a>
@@ -150,7 +150,7 @@
 
         <!-- added 4/7 -->
         <!-- 		<br />
-        <abbr class="modified" title="2023-03-21T08:52:21.866061+01:00">
+        <abbr class="modified" title="2023-03-21T22:28:09.072259+01:00">
                 Updated: 21 Mar 2023
         </abbr>
  -->
@@ -169,6 +169,7 @@
 </li>
 </ul>
 </li>
+<li><a href="#import-csv">Import CSV</a></li>
 <li><a href="#log-emails-automatically">Log emails automatically</a></li>
 <li><a href="#api">API</a><ul>
 <li><a href="#private-apps">Private Apps</a></li>
@@ -283,7 +284,7 @@ Associated Payment IDs
 Associated Subscription IDs
 </code></pre></div>
 
-<p>for use in Python scripts (generated with Clipee CSV !projects/clipee#clipee-csv):   </p>
+<p>for use in Python scripts (generated with Clipee CSV <span class="nic_link"><a href="https://notes.nicolasdeville.com/projects/clipee" target="_blank">Clipee</a></span>#clipee-csv):   </p>
 <div class="highlight"><pre><span></span><code><span class="n">record_id</span> <span class="o">=</span> <span class="n">row</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
 <span class="n">target_account</span> <span class="o">=</span> <span class="n">row</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
 <span class="n">last_modified_date</span> <span class="o">=</span> <span class="n">row</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span>
@@ -385,6 +386,15 @@ Associated Subscription IDs
 <span class="n">associated_subscription_ids</span> <span class="o">=</span> <span class="n">row</span><span class="p">[</span><span class="mi">98</span><span class="p">]</span>
 </code></pre></div>
 
+<h1 id="import-csv">Import CSV</h1>
+<p>Format used for import of domain names of target accounts + company owner assignment + specific company type:  </p>
+<div class="highlight"><pre><span></span><code><span class="n">Company</span><span class="w"> </span><span class="k">domain</span><span class="w"> </span><span class="n">name</span><span class="p">,</span><span class="n">Company</span><span class="w"> </span><span class="n">owner</span><span class="p">,</span><span class="n">Company</span><span class="w"> </span><span class="n">type</span><span class="w"></span>
+<span class="n">xxx</span><span class="p">.</span><span class="n">com</span><span class="p">,</span><span class="n">n</span><span class="nv">@d</span><span class="p">.</span><span class="n">com</span><span class="p">,</span><span class="n">University</span><span class="w"></span>
+<span class="n">yyy</span><span class="p">.</span><span class="n">com</span><span class="p">,</span><span class="n">n</span><span class="nv">@d</span><span class="p">.</span><span class="n">com</span><span class="p">,</span><span class="n">University</span><span class="w"></span>
+<span class="n">zzz</span><span class="p">.</span><span class="n">xom</span><span class="p">,</span><span class="n">n</span><span class="nv">@d</span><span class="p">.</span><span class="n">com</span><span class="p">,</span><span class="n">University</span><span class="w"></span>
+</code></pre></div>
+
+<p>where <code>n@d.com</code> is the email address of the Hubspot user/owner.      </p>
 <h1 id="log-emails-automatically">Log emails automatically</h1>
 <p>Add in Bcc the unique email address of your Hubspot account (unique per user), under <code>Settings &gt; Data Management &gt; Activities &gt; Email Log &amp; Track &gt; Manual Logging</code>:  </p>
 <p><img class="screenshot" src="https://notes.nicolasdeville.com/images/hubspot/hubspot-manual-email-logging.jpg" alt="hubspot/hubspot-manual-email-logging.jpg"/>  </p>
