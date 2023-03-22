@@ -20,9 +20,9 @@
 
  
 
-<meta property="article:published_time" content="2022-09-30 00:00:00+02:00" />
+<meta property="article:published_time" content="2023-03-22 08:48:27.227757+01:00" />
 
-<meta property="article:modified_time" content="2023-03-21 22:28:09.072259+01:00" />
+<meta property="article:modified_time" content="2023-03-22 08:48:27.227757+01:00" />
 
 <meta name="robots" content="all, follow" />
 
@@ -86,7 +86,7 @@
             
 
             <div class="above-navbar">
-                <div class="last_updated">22 Mar 2023 | 07:51</div>
+                <div class="last_updated">22 Mar 2023 | 08:48</div>
                 <div>
                     <p class="notes_count">
                         <a href="https://notes.nicolasdeville.com/tags">by tags</a>
@@ -144,14 +144,14 @@
 <footer class="post-info">
 
     <p>
-        30 Sep 2022 
+        22 Mar 2023 
         <span class="separator">|</span> in <a class="link_tag" href="https://notes.nicolasdeville.com/apps/"><span data-pagefind-filter="category">apps</span></a>
 
 
         <!-- added 4/7 -->
         <!-- 		<br />
-        <abbr class="modified" title="2023-03-21T22:28:09.072259+01:00">
-                Updated: 21 Mar 2023
+        <abbr class="modified" title="2023-03-22T08:48:27.227757+01:00">
+                Updated: 22 Mar 2023
         </abbr>
  -->
 
@@ -169,7 +169,14 @@
 </li>
 </ul>
 </li>
-<li><a href="#import-csv">Import CSV</a></li>
+<li><a href="#importing">Importing</a><ul>
+<li><a href="#best-practices">best practices</a><ul>
+<li><a href="#importing-company-records">importing Company records</a></li>
+</ul>
+</li>
+<li><a href="#importing-csvs">importing CSVs</a></li>
+</ul>
+</li>
 <li><a href="#log-emails-automatically">Log emails automatically</a></li>
 <li><a href="#api">API</a><ul>
 <li><a href="#private-apps">Private Apps</a></li>
@@ -180,6 +187,7 @@
 </div>
 <p><span class="datestamp">30 Sep 2022</span>   </p>
 <h1 id="export">Export</h1>
+<p>s</p>
 <h2 id="fields-exported-in-csv">fields exported in CSV</h2>
 <h3 id="companies">Companies</h3>
 <p>by default, when selecting all fields:</p>
@@ -386,7 +394,14 @@ Associated Subscription IDs
 <span class="n">associated_subscription_ids</span> <span class="o">=</span> <span class="n">row</span><span class="p">[</span><span class="mi">98</span><span class="p">]</span>
 </code></pre></div>
 
-<h1 id="import-csv">Import CSV</h1>
+<h1 id="importing">Importing</h1>
+<h2 id="best-practices">best practices</h2>
+<h3 id="importing-company-records">importing Company records</h3>
+<p>One of the great things about Hubspot, is that it will populate company data automatically, based on what it has in its database for that domain name, and structured with the fields listed above.  </p>
+<p>So it is important to ensure Hubspot does this when you import your data. </p>
+<p>The absolute minimum you can upload is a list of domain names (see format below).  </p>
+<p>You can append to this list other fields (eg. company owner and custom company type in my example below) but importing only the domain works perfectly. </p>
+<h2 id="importing-csvs">importing CSVs</h2>
 <p>Format used for import of domain names of target accounts + company owner assignment + specific company type:  </p>
 <div class="highlight"><pre><span></span><code><span class="n">Company</span><span class="w"> </span><span class="k">domain</span><span class="w"> </span><span class="n">name</span><span class="p">,</span><span class="n">Company</span><span class="w"> </span><span class="n">owner</span><span class="p">,</span><span class="n">Company</span><span class="w"> </span><span class="n">type</span><span class="w"></span>
 <span class="n">xxx</span><span class="p">.</span><span class="n">com</span><span class="p">,</span><span class="n">n</span><span class="nv">@d</span><span class="p">.</span><span class="n">com</span><span class="p">,</span><span class="n">University</span><span class="w"></span>
@@ -395,6 +410,10 @@ Associated Subscription IDs
 </code></pre></div>
 
 <p>where <code>n@d.com</code> is the email address of the Hubspot user/owner.      </p>
+<p>Hubspot will dedupe the list of domain names, and will automatically populate the company name, and other fields.<br>
+If the domain name already exists in Hubspot, the Company record will be updated.<br>
+This behaviour can be changed.   </p>
+<p><img class="screenshot" src="https://notes.nicolasdeville.com/images/hubspot/230321-hubspot-import-companies.jpg" alt="hubspot/230321-hubspot-import-companies.jpg"/>  </p>
 <h1 id="log-emails-automatically">Log emails automatically</h1>
 <p>Add in Bcc the unique email address of your Hubspot account (unique per user), under <code>Settings &gt; Data Management &gt; Activities &gt; Email Log &amp; Track &gt; Manual Logging</code>:  </p>
 <p><img class="screenshot" src="https://notes.nicolasdeville.com/images/hubspot/hubspot-manual-email-logging.jpg" alt="hubspot/hubspot-manual-email-logging.jpg"/>  </p>
