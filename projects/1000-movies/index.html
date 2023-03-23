@@ -85,7 +85,7 @@
             
 
             <div class="above-navbar">
-                <div class="last_updated">23 Mar 2023 | 06:45</div>
+                <div class="last_updated">23 Mar 2023 | 07:51</div>
                 <div>
                     <p class="notes_count">
                         <a href="https://notes.nicolasdeville.com/tags">by tags</a>
@@ -96,7 +96,7 @@
                         <span style="color:#C74350">|</span>
                         <a href="https://notes.nicolasdeville.com/2022/">2022</a>
                         <span style="color:#C74350">|</span>
-                        701 notes
+                        703 notes
                     </p>
                 </div>
             </div>
@@ -175,9 +175,9 @@
 <p><span class="datestamp">17 Jul 2022</span>   </p>
 <p>Steps:    </p>
 <ul>
-<li>add selected movies to a private list on TMDB !python/tmdb-api   </li>
-<li>fetch data from TMDB into Grist spreadsheet !apps/grist for movie management    </li>
-<li>generate Markdown files for this site !python/library-pelican</li>
+<li>add selected movies to a private list on TMDB <span class="nic_link"><a href="https://notes.nicolasdeville.com/python/tmdb-api" target="_blank">Fetching data from TMDB API</a></span>   </li>
+<li>fetch data from TMDB into Grist spreadsheet <span class="nic_link"><a href="https://notes.nicolasdeville.com/apps/grist" target="_blank">Grist | The Evolution of Spreadsheets</a></span> for movie management    </li>
+<li>generate Markdown files for this site <span class="nic_link"><a href="https://notes.nicolasdeville.com/python/library-pelican" target="_blank">Building a static site with Pelican</a></span></li>
 </ul>
 <p><span class="datestamp">24 Jul 2022</span>   </p>
 <h2 id="download-private-list-from-tmdb-add-to-grist-for-management-and-prepare-for-upload-to-this-site">Download private list from TMDB, add to Grist for management and prepare for upload to this site</h2>
@@ -480,7 +480,7 @@ Running the script from now on (runs in 5s-ish) will add to Grist only the new a
 <p>Asked for help: <a href="https://www.themoviedb.org/talk/62de52250d9f5a0067b7fb72" target="_blank">https://www.themoviedb.org/talk/62de52250d9f5a0067b7fb72</a>   </p>
 <p>Get back to it later...   </p>
 <h2 id="adding-missing-director-for-each-movie-in-grist-data-point-not-available-from-top_rated-or-list">adding missing director for each movie in Grist (data point not available from top_rated or list)</h2>
-<p>Working code, adding to Grist directly !apps/grist :  </p>
+<p>Working code, adding to Grist directly <span class="nic_link"><a href="https://notes.nicolasdeville.com/apps/grist" target="_blank">Grist | The Evolution of Spreadsheets</a></span> :  </p>
 <div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">dotenv</span> <span class="kn">import</span> <span class="n">load_dotenv</span>
 <span class="n">load_dotenv</span><span class="p">()</span>
 
@@ -574,7 +574,7 @@ Running the script from now on (runs in 5s-ish) will add to Grist only the new a
         <span class="n">output</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">output</span><span class="si">}</span><span class="se">\n</span><span class="si">{</span><span class="n">poster_path</span><span class="si">}</span><span class="s2"> | &lt;a href=</span><span class="se">\&quot;</span><span class="si">{</span><span class="n">tmdb_url</span><span class="si">}</span><span class="se">\&quot;</span><span class="s2"> target=</span><span class="se">\&quot;</span><span class="s2">_blank</span><span class="se">\&quot;</span><span class="s2">&gt;</span><span class="si">{</span><span class="n">title</span><span class="si">}</span><span class="s2">&lt;/a&gt; | </span><span class="si">{</span><span class="n">director</span><span class="si">}</span><span class="s2"> | </span><span class="si">{</span><span class="n">year</span><span class="si">}</span><span class="s2"> | </span><span class="si">{</span><span class="n">tagline</span><span class="si">}</span><span class="s2"> | </span><span class="si">{</span><span class="n">rating</span><span class="si">}</span><span class="s2"> | &quot;</span>
 
 <span class="c1"># Adding the header at the end to ensure proper movie count</span>
-<span class="n">header</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;Title: My Top 1,000 Movies  </span><span class="se">\n</span><span class="s2">Summary: an ongoing project...</span><span class="se">\n\n</span><span class="s2">!projects/1000-movies   </span><span class="se">\n\n</span><span class="si">{</span><span class="n">count</span><span class="si">}</span><span class="s2"> movies so far, for a total runtime of </span><span class="si">{</span><span class="nb">int</span><span class="p">(</span><span class="n">total_runtime</span> <span class="o">/</span> <span class="mi">60</span><span class="p">)</span><span class="si">}</span><span class="s2">h or </span><span class="si">{</span><span class="nb">round</span><span class="p">(((</span><span class="n">total_runtime</span> <span class="o">/</span> <span class="mi">60</span><span class="p">)</span> <span class="o">/</span> <span class="mi">24</span><span class="p">),</span> <span class="mi">1</span><span class="p">)</span><span class="si">}</span><span class="s2"> days...</span><span class="se">\n\n</span><span class="s2">poster | title | director | year | tagline | rating |</span><span class="se">\n</span><span class="s2">---|---|---|---|---|---|&quot;</span>
+<span class="n">header</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;Title: My Top 1,000 Movies  </span><span class="se">\n</span><span class="s2">Summary: an ongoing project...</span><span class="se">\n\n</span><span class="s2"><span class="nic_link"><a href="https://notes.nicolasdeville.com/projects/1000-movies" target="_blank">Project: Top 1000 movies</a></span>   </span><span class="se">\n\n</span><span class="si">{</span><span class="n">count</span><span class="si">}</span><span class="s2"> movies so far, for a total runtime of </span><span class="si">{</span><span class="nb">int</span><span class="p">(</span><span class="n">total_runtime</span> <span class="o">/</span> <span class="mi">60</span><span class="p">)</span><span class="si">}</span><span class="s2">h or </span><span class="si">{</span><span class="nb">round</span><span class="p">(((</span><span class="n">total_runtime</span> <span class="o">/</span> <span class="mi">60</span><span class="p">)</span> <span class="o">/</span> <span class="mi">24</span><span class="p">),</span> <span class="mi">1</span><span class="p">)</span><span class="si">}</span><span class="s2"> days...</span><span class="se">\n\n</span><span class="s2">poster | title | director | year | tagline | rating |</span><span class="se">\n</span><span class="s2">---|---|---|---|---|---|&quot;</span>
 
 <span class="n">output</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">header</span><span class="si">}</span><span class="s2">  </span><span class="si">{</span><span class="n">output</span><span class="si">}</span><span class="s2">  </span><span class="se">\n\n</span><span class="s2">Data &amp; images from TMDB: &lt;a href=</span><span class="se">\&quot;</span><span class="s2">https://www.themoviedb.org/</span><span class="se">\&quot;</span><span class="s2"> target=</span><span class="se">\&quot;</span><span class="s2">_blank</span><span class="se">\&quot;</span><span class="s2">&gt;&lt;img src=</span><span class="se">\&quot;</span><span class="s2">https://notes.nicolasdeville.com/images/logo_tmdb.svg</span><span class="se">\&quot;</span><span class="s2"> alt=</span><span class="se">\&quot;</span><span class="s2">logo_tmdb.svg</span><span class="se">\&quot;</span><span class="s2">/&gt;  &lt;/a&gt;&quot;</span>
 
@@ -586,7 +586,7 @@ Running the script from now on (runs in 5s-ish) will add to Grist only the new a
 <div class="highlight"><pre><span></span><code>Title: My Top 1,000 Movies  
 Summary: an ongoing project...
 
-!projects/1000-movies   
+<span class="nic_link"><a href="https://notes.nicolasdeville.com/projects/1000-movies" target="_blank">Project: Top 1000 movies</a></span>   
 
 445 movies so far, for a total runtime of 945h or 39.4 days...
 
@@ -597,7 +597,7 @@ poster | title | director | year | tagline | rating |
 &lt;img class=&quot;screenshot&quot; src=&quot;https://notes.nicolasdeville.com/images/movies/poster_gone-with-the-wind_w154.jpg&quot; alt=&quot;gone-with-the-wind&quot;/&gt; | &lt;a href=&quot;https://www.themoviedb.org/movie/770-gone-with-the-wind&quot; target=&quot;_blank&quot;&gt;Gone with the Wind&lt;/a&gt; | Victor Fleming | 1939 | The greatest romance of all time! | ⭐️⭐️⭐️ | 
 </code></pre></div>
 
-<p>Converted to HTML with Pelican !python/library-pelican:    </p>
+<p>Converted to HTML with Pelican <span class="nic_link"><a href="https://notes.nicolasdeville.com/python/library-pelican" target="_blank">Building a static site with Pelican</a></span>:    </p>
 <p><a href="../../movies/1000/index.html">Nic Note: My Top 1,000 Movies</a> 😁     </p>
 <h2 id="add-movies-from-top-rated-list-on-grist-to-my-tmdb-list_1">add movies from top rated list on Grist to my TMDB list</h2>
 <p><span class="datestamp">27 Jul 2022</span>   </p>
