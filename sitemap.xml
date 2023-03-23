@@ -3698,6 +3698,12 @@
     </url>
     
     <url>
+        <loc>https://notes.nicolasdeville.com/apps/slack</loc>
+        <lastmod>2023-03-23</lastmod>
+        <priority>0.8</priority>        
+    </url>
+    
+    <url>
         <loc>https://notes.nicolasdeville.com/apps/fantastical</loc>
         <lastmod>2023-03-23</lastmod>
         <priority>0.8</priority>        
