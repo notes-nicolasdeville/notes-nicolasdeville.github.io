@@ -14,14 +14,14 @@
 <link rel="canonical" href="https://notes.nicolasdeville.com/helpers/github-pages" />
 <meta name="twitter:title" content="Hosting my static website(s) with Github Pages | Nic's notes" /> <!-- max. 70 characters -->
 
-<meta name="description" content="Github offers free hosting of static websites - and it's very easy, if you have some …"/>
-<meta property="og:description" content="Github offers free hosting of static websites - and it's very easy, if you have some …"/>
-<meta name="twitter:description" content="Github offers free hosting of static websites - and it's very easy, if you have some …" /> <!-- max. 200 characters -->
+<meta name="description" content="a good option for hosting for free."/>
+<meta property="og:description" content="a good option for hosting for free."/>
+<meta name="twitter:description" content="a good option for hosting for free." /> <!-- max. 200 characters -->
  
 
-<meta property="article:published_time" content="2023-03-16 09:18:51.121910+01:00" />
+<meta property="article:published_time" content="2023-03-24 06:51:16.558084+01:00" />
 
-<meta property="article:modified_time" content="2023-03-16 09:18:51.121910+01:00" />
+<meta property="article:modified_time" content="2023-03-24 06:51:16.558084+01:00" />
 
 <meta name="robots" content="all, follow" />
 
@@ -85,7 +85,7 @@
             
 
             <div class="above-navbar">
-                <div class="last_updated">23 Mar 2023 | 21:39</div>
+                <div class="last_updated">24 Mar 2023 | 07:02</div>
                 <div>
                     <p class="notes_count">
                         <a href="https://notes.nicolasdeville.com/tags">by tags</a>
@@ -96,7 +96,7 @@
                         <span style="color:#C74350">|</span>
                         <a href="https://notes.nicolasdeville.com/2022/">2022</a>
                         <span style="color:#C74350">|</span>
-                        708 notes
+                        709 notes
                     </p>
                 </div>
             </div>
@@ -134,7 +134,7 @@
             </h1>
             <p class="header_summary">
                 <main> <!-- for indexing by Stork -->
-                    <p>Github offers free hosting of static websites - and it's very easy, if you have some …</p>
+                    <p>a good option for hosting for free.</p>
                 </main>
             </p>
         </header>
@@ -143,15 +143,15 @@
 <footer class="post-info">
 
     <p>
-        16 Mar 2023 
+        24 Mar 2023 
         <span class="separator">|</span> in <a class="link_tag" href="https://notes.nicolasdeville.com/helpers/"><span data-pagefind-filter="category">helpers</span></a>
 
  tags: <a class="link_tag" href="https://notes.nicolasdeville.com/tag/hosting.html">hosting</a>
 
         <!-- added 4/7 -->
         <!-- 		<br />
-        <abbr class="modified" title="2023-03-16T09:18:51.121910+01:00">
-                Updated: 16 Mar 2023
+        <abbr class="modified" title="2023-03-24T06:51:16.558084+01:00">
+                Updated: 24 Mar 2023
         </abbr>
  -->
 
@@ -164,6 +164,9 @@
                 <p>Github offers free hosting of static websites - and it's very easy, if you have some experience with Github (ie managing repos).   </p>
 <p>Basically all you need is a public repo with a website's folder structure within it, and Github Pages will take care of the deployment.   </p>
 <p>The only important thing to know is that your repo name needs to end with <code>.github.io</code> - this is the trigger for Github to recognise it as a Github Pages repo.    </p>
+<p><img class="screenshot" src="https://notes.nicolasdeville.com/images/github-pages/github-pages-settings.jpg" alt="github-pages/github-pages-settings.jpg"/>  </p>
+<p>Default is <code>Deploy from a branch</code> - you can change this to <code>GitHub Actions</code>.  </p>
+<p><img class="screenshot" src="https://notes.nicolasdeville.com/images/github-pages/github-pages-settings-source.jpg" alt="github-pages/github-pages-settings-source.jpg"/>  </p>
 <p>Each commit will trigger a Github Actions that will take a few minutes. Your website is Live therafter.  </p>
 <p>Custom domain can be assigned to your website at no extra cost too, assuming you own the domain already.    </p>
 <div class="link_border"><div class="link_logo_box"><img class="link_logo" src="https://notes.nicolasdeville.com/images/logos/github.png" alt="logo"/></div><div class="link_content">
@@ -229,6 +232,15 @@ redirect 301 /vc-directory https://btobsales.eu/resources/directory-vcs
 <span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
 </code></pre></div>
 
+<h1 id="other-resources">Other resources</h1>
+<p>Some that have helped me:</p>
+<div class="link_border"><div class="link_logo_box"><img class="link_logo" src="https://notes.nicolasdeville.com/images/logos/medium.png" alt="logo"/></div><div class="link_content">
+<div class="link_title">How to Host a Static Website on Github for Free  </div>
+<div class="link_tagline">medium.com</div>
+<div class="link_url"><a href="https://medium.com/any-writers/how-to-host-a-static-website-on-github-for-free-f47b12790775" target="_blank">https://medium.com/any-writers/how-to-host-a-static-website-on-github-for-free-f47b12790775</a></div></div></div>
+
+<h1 id="deployment">Deployment</h1>
+<p>Deployment process time has ballooned up for me to 5-10mns - this is with 700+ pages &amp; includes large folders like <code>/media</code> and <code>/images</code>.   </p>
 <h2 id="bloated-git-folder">Bloated .git folder</h2>
 <p><span class="datestamp">16 Mar 2023</span> </p>
 <p>My local git repo (<code>.git</code>) is now 1.3Gb (!) despite the fact that the folder's content is less than 500Mb.  </p>
@@ -253,8 +265,7 @@ Git has a built-in garbage collection mechanism that can help you clean up unnec
 </li>
 </ol>
 <p>Navigate to project's root folder in Terminal (ie one folder above <code>.git</code> folder) and run:  </p>
-<p><code>git gc</code> should be sufficient, else nuclear option: <code>git gc --aggressive --prune=now</code>. <br>
-```</p>
+<p><code>git gc</code> should be sufficient, else nuclear option: <code>git gc --aggressive --prune=now</code>.   </p>
 <ol>
 <li>
 <p>Remove old or unnecessary commits
@@ -266,12 +277,13 @@ If all else fails, you can clone a fresh copy of your repository and start fresh
 </li>
 </ol>
 <p>Might go with 5. 😁   </p>
-<h1 id="other-resources">Other resources</h1>
-<p>Some that have helped me:</p>
-<div class="link_border"><div class="link_logo_box"><img class="link_logo" src="https://notes.nicolasdeville.com/images/logos/medium.png" alt="logo"/></div><div class="link_content">
-<div class="link_title">How to Host a Static Website on Github for Free  </div>
-<div class="link_tagline">medium.com</div>
-<div class="link_url"><a href="https://medium.com/any-writers/how-to-host-a-static-website-on-github-for-free-f47b12790775" target="_blank">https://medium.com/any-writers/how-to-host-a-static-website-on-github-for-free-f47b12790775</a></div></div></div>
+<p><span class="datestamp">24 Mar 2023</span> </p>
+<h2 id="tests">tests</h2>
+<p>Setting up a repo from scratch with only the <code>.html</code> files &amp; basic folders (no media &amp; images).  </p>
+<p>40Mb repo = 1m48s to deploy.  </p>
+<p><img class="screenshot" src="https://notes.nicolasdeville.com/images/github-pages/230324-ghp-deploy-test-1.jpg" alt="github-pages/230324-ghp-deploy-test-1.jpg"/>  </p>
+<p>Changing only 1 <code>.html</code> file in repo = 1m11s to deploy.  </p>
+<p><img class="screenshot" src="https://notes.nicolasdeville.com/images/github-pages/230324-ghp-deploy-test-2.jpg" alt="github-pages/230324-ghp-deploy-test-2.jpg"/>  </p>
             <!-- </main> -->
         </div><!-- /.entry-content -->
     </article>
