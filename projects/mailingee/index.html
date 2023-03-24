@@ -85,7 +85,7 @@
             
 
             <div class="above-navbar">
-                <div class="last_updated">24 Mar 2023 | 07:02</div>
+                <div class="last_updated">24 Mar 2023 | 09:50</div>
                 <div>
                     <p class="notes_count">
                         <a href="https://notes.nicolasdeville.com/tags">by tags</a>
@@ -96,7 +96,7 @@
                         <span style="color:#C74350">|</span>
                         <a href="https://notes.nicolasdeville.com/2022/">2022</a>
                         <span style="color:#C74350">|</span>
-                        709 notes
+                        715 notes
                     </p>
                 </div>
             </div>
@@ -180,21 +180,21 @@
 <li><strong>multi-lingual</strong>: send emails in English, French &amp; German (my main working languages) depending on the recipient's </li>
 <li><strong>time personalisation</strong>: greetings based on time of day</li>
 <li><strong>snippets insertion</strong>: customise emails very flexibly with any contact-level information</li>
-<li><strong>integration</strong>: working as part of my stack and other automations, eg Twittee (lead generation using the Twitter API) <span class="nic_link"><a href="https://notes.nicolasdeville.com/projects/twittee" target="_blank">Twittee</a></span>  </li>
+<li><strong>integration</strong>: working as part of my stack and other automations, eg Twittee (lead generation using the Twitter API) !projects/twittee  </li>
 </ul>
 <h1 id="overall-structure">Overall structure</h1>
 <p>3 components to the system:   </p>
 <ul>
-<li><strong>data management</strong>: spreadsheet-like "source of truth" of recipients and sequences, using Grist <span class="nic_link"><a href="https://notes.nicolasdeville.com/apps/grist" target="_blank">Grist | The Evolution of Spreadsheets</a></span>   </li>
+<li><strong>data management</strong>: spreadsheet-like "source of truth" of recipients and sequences, using Grist !apps/grist   </li>
 <li><strong>email content</strong>: text files   </li>
 <li><strong>sending emails</strong>: python script   </li>
 </ul>
 <h1 id="data-management">DATA MANAGEMENT</h1>
-<p>I turned to my online spreadsheet solution of choice (Grist: <span class="nic_link"><a href="https://notes.nicolasdeville.com/apps/grist" target="_blank">Grist | The Evolution of Spreadsheets</a></span>) to manage the list of contacts and sequences. </p>
+<p>I turned to my online spreadsheet solution of choice (Grist: !apps/grist) to manage the list of contacts and sequences. </p>
 <h2 id="example">Example</h2>
 <p>Here is an overview of a campaign in Grist:   </p>
 <p><img class="screenshot" src="https://notes.nicolasdeville.com/images/mailingee/campaign-overview.jpg" alt="campaign-overview"/>  </p>
-<p>This particular campaign was based on reaching out to webinar organisers, based on webinar data I gathered from Twitter (see <span class="nic_link"><a href="https://notes.nicolasdeville.com/projects/twittee" target="_blank">Twittee</a></span>)</p>
+<p>This particular campaign was based on reaching out to webinar organisers, based on webinar data I gathered from Twitter (see !projects/twittee)</p>
 <p>The spreadsheet format enables to maintain quick and full visibility of the entire campaign, easy to filter as needed.  </p>
 <p>It includes the following fields:   </p>
 <ul>
@@ -330,7 +330,7 @@ Nic
 <p>Cadences can go up to as many emails as desired and A/B testing is possible. <br>
 I have seen good success with the above campaign, as it was personalised with the solution they used, their own webinar title, and targeting the webinar organiser(s) directly.   </p>
 <p>Typical other cadences or tests might include dropping other clients in same industry, success metrics, etc...  </p>
-<p>See <span class="nic_link"><a href="https://notes.nicolasdeville.com/b2b-sales/outbound" target="_blank">Outbound Lead Generation</a></span> for more.    </p>
+<p>See !b2b-sales/outbound for more.    </p>
 <h1 id="sending-emails">SENDING EMAILS</h1>
 <h2 id="sending-methods">Sending methods</h2>
 <p>Script allows for 3 ways to send emails:   </p>
@@ -384,10 +384,10 @@ Sending is easy - circumventing complex spam filtering looking at email metadata
 <span class="c1"># I always have a counter in my boilerplate/footer, to add easily when coding for verification purposes</span>
 <span class="n">count</span> <span class="o">=</span> <span class="mi">0</span>
 
-<span class="c1"># my collection of utilities. See <span class="nic_link"><a href="https://notes.nicolasdeville.com/python/my-utils" target="_blank">my-utils</a></span></span>
+<span class="c1"># my collection of utilities. See !python/my-utils</span>
 <span class="kn">import</span> <span class="nn">my_utils</span>
 
-<span class="c1"># my Grist interface modules. Anonymised here with &quot;XX&quot; - one module per Grist workspace (ie per client in my case). See <span class="nic_link"><a href="https://notes.nicolasdeville.com/apps/grist" target="_blank">Grist | The Evolution of Spreadsheets</a></span></span>
+<span class="c1"># my Grist interface modules. Anonymised here with &quot;XX&quot; - one module per Grist workspace (ie per client in my case). See !apps/grist</span>
 <span class="kn">import</span> <span class="nn">grist_XX</span>
 <span class="kn">import</span> <span class="nn">grist_XX</span>
 <span class="kn">import</span> <span class="nn">grist_XX</span>

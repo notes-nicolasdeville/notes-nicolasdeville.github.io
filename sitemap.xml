@@ -218,6 +218,12 @@
     </url>
     
     <url>
+        <loc>https://notes.nicolasdeville.com/b2b-sales/how-to-sell-to</loc>
+        <lastmod>2023-03-24</lastmod>
+        <priority>0.8</priority>        
+    </url>
+    
+    <url>
         <loc>https://notes.nicolasdeville.com/b2b-sales/selling-against-own-reseller</loc>
         <lastmod>2023-03-24</lastmod>
         <priority>0.8</priority>        
@@ -620,6 +626,12 @@
     </url>
     
     <url>
+        <loc>https://notes.nicolasdeville.com/b2b-sales/decision-making</loc>
+        <lastmod>2023-03-24</lastmod>
+        <priority>0.8</priority>        
+    </url>
+    
+    <url>
         <loc>https://notes.nicolasdeville.com/b2b-sales/what-is-your-cost-per-error</loc>
         <lastmod>2023-03-24</lastmod>
         <priority>0.8</priority>        
@@ -842,6 +854,12 @@
     </url>
     
     <url>
+        <loc>https://notes.nicolasdeville.com/b2b-sales/playbook</loc>
+        <lastmod>2023-03-24</lastmod>
+        <priority>0.8</priority>        
+    </url>
+    
+    <url>
         <loc>https://notes.nicolasdeville.com/b2b-sales/vp-sales-as-a-service</loc>
         <lastmod>2023-03-24</lastmod>
         <priority>0.8</priority>        
@@ -908,6 +926,12 @@
     </url>
     
     <url>
+        <loc>https://notes.nicolasdeville.com/b2b-sales/objection-handling</loc>
+        <lastmod>2023-03-24</lastmod>
+        <priority>0.8</priority>        
+    </url>
+    
+    <url>
         <loc>https://notes.nicolasdeville.com/b2b-sales/fud-fear-uncertainty-doubt</loc>
         <lastmod>2023-03-24</lastmod>
         <priority>0.8</priority>        
@@ -957,6 +981,12 @@
     
     <url>
         <loc>https://notes.nicolasdeville.com/b2b-sales/email-deliverability</loc>
+        <lastmod>2023-03-24</lastmod>
+        <priority>0.8</priority>        
+    </url>
+    
+    <url>
+        <loc>https://notes.nicolasdeville.com/b2b-sales/metrics</loc>
         <lastmod>2023-03-24</lastmod>
         <priority>0.8</priority>        
     </url>
@@ -1017,12 +1047,6 @@
     
     <url>
         <loc>https://notes.nicolasdeville.com/b2b-sales/every-tunnel-has-an-end</loc>
-        <lastmod>2023-03-24</lastmod>
-        <priority>0.8</priority>        
-    </url>
-    
-    <url>
-        <loc>https://notes.nicolasdeville.com/b2b-sales/crm-implementations</loc>
         <lastmod>2023-03-24</lastmod>
         <priority>0.8</priority>        
     </url>
@@ -1101,6 +1125,12 @@
     
     <url>
         <loc>https://notes.nicolasdeville.com/b2b-sales/the-advice-i-always-give-when-mentoring</loc>
+        <lastmod>2023-03-24</lastmod>
+        <priority>0.8</priority>        
+    </url>
+    
+    <url>
+        <loc>https://notes.nicolasdeville.com/b2b-sales/crm</loc>
         <lastmod>2023-03-24</lastmod>
         <priority>0.8</priority>        
     </url>
@@ -3705,6 +3735,12 @@
     
     <url>
         <loc>https://notes.nicolasdeville.com/apps/vs-code</loc>
+        <lastmod>2023-03-24</lastmod>
+        <priority>0.8</priority>        
+    </url>
+    
+    <url>
+        <loc>https://notes.nicolasdeville.com/apps/music</loc>
         <lastmod>2023-03-24</lastmod>
         <priority>0.8</priority>        
     </url>
