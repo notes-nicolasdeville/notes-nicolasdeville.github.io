@@ -250,27 +250,24 @@ a img {
     border: 0px;
     text-decoration: none;
 }
-
 a:link, a:visited {
 	color: var(--nic_main);
 	padding: 0 1px;
-	/* text-decoration: underline; */
+	text-decoration: none;
 }
-/* 220920 removing as gets applied to ALL link. Need to find a way to target internal links only. */
-/* a:link:before {
-    content: '>> ';
-    color: var(--nic_red);
-} */
-
 a:hover, a:active {
 	/* background-color: #C74350; */
 	color: var(--nic_red);
-	/* text-decoration: none; */
+	text-decoration: none;
 }
-
+a:-webkit-any-link {
+    color: red; /* Change the text color to red */
+    text-decoration: none; /* Remove the underline from the link */
+}
 h1 a:hover {
     background-color: inherit
 }
+
 
 /* Paragraphs */
 div.line-block,
