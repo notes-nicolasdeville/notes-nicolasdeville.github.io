@@ -37,6 +37,7 @@ aside, article, figure {
 
 footer {
     padding-top: 1rem;
+
 }
 
 #banner {
@@ -610,77 +611,139 @@ table {
 	Extras
 *****************/
 #extras {
-    margin: 0 auto 3em auto; 
+    /* margin: 0 auto 3em auto;  */
+    /* padding: 1rem; */
     overflow: hidden;
     color: #ffffff;
     background-color: var(--nic_main);
 }
-
-#extras ul {list-style: none; margin: 0;}
-#extras li {border-bottom: 1px solid #fff;}
+#extras ul {
+    list-style: none; 
+    margin: 0;
+}
+#extras li {
+    border-bottom: 1px solid #fff;
+}
 #extras h2 {
 	color: var(--nic_red);
 	font-size: 1.429em;
 	margin-bottom: .25em;
 	padding: 0 3px;
 }
-
-#extras a:link, #extras a:visited {
-	color: #444;
+#extras a:link {
 	display: block;
 	border-bottom: 1px solid #F4E3E3;
 	text-decoration: none;
 	padding: .3em .25em;
 }
+#extras a:visited {
+	color: var(--nic_red);
+	display: block;
+	border-bottom: 1px solid #F4E3E3;
+	text-decoration: none;
+	padding: .3em .25em;
+}
+#extras a:hover, #extras a:active {
+    color: var(--nic_red);
+}
 
-#extras a:hover, #extras a:active {color: var(--nic_red);}
+/* Blogroll */
+#extras .blogroll {
+    padding-left: 1rem;
+    margin-left: 0.1rem;
+    margin-right: 0.5rem;
+    line-height: 2em;
+    float: left;
+    max-width: 200px;
+}
+#extras .blogroll a {
+    color: #ffffff;
+}
+#extras .blogroll a:hover {
+    color: var(--nic_red);
+}
+#extras .blogroll li {
+    float: left; 
+    margin: 0 20px 0 0; 
+    max-width: 185px;}
 
-	/* Blogroll */
-	#extras .blogroll {
-        margin-left: 0.1rem;
-        margin-right: 0.5rem;
-        line-height: 2em;
-		float: left;
-		max-width: 200px;
-	}
+/* Social */
+#extras .social {
+    padding-right: 1rem;
+    float: right;
+    max-width: 175px;
+    margin-right: 0.5em;
+}
+#extras .social a {
+    color: #ffffff;
+}
+#extras .social a:hover {
+    color: var(--nic_red);
+}
 
-	#extras .blogroll li {float: left; margin: 0 20px 0 0; max-width: 185px;}
+#extras div[class='social'] a {
+    background-repeat: no-repeat;
+    background-position: 3px 6px;
+    padding-left: 25px;
+}
 
-	/* Social */
-	#extras .social {
-		float: right;
-		max-width: 175px;
-        margin-right: 0.5em;
-	}
+/* Icons */
+.social a[href*='about.me'] {background-image: url('../images/icons/aboutme.png');}
+.social a[href*='github.com'],
+.social a[href*='git.io'] {
+    background-image: url('../images/icons/github.png');
+    background-size: 16px 16px;
+}
+.social a[href*='linkedin.com'] {
+background-image: url('../images/icons/linkedin_white.svg');
+background-size: 16px 16px;
+}
+.social a[href*='reddit.com'] {background-image: url('../images/icons/reddit.png');}
+.social a[href*='stackoverflow.com'] {background-image: url('../images/icons/stackoverflow.png');}
+.social a[href*='twitter.com'] {
+background-image: url('../images/icons/twitter_white.svg');
+background-size: 16px 16px;
+}
 
-	#extras div[class='social'] a {
-		background-repeat: no-repeat;
-		background-position: 3px 6px;
-		padding-left: 25px;
-	}
+#contentinfo {
+    padding-bottom: 2rem;
+    padding-top: 2rem;
+    /* text-align: right; */
+    color: #ffffff;
+    background-color: var(--nic_main);
+}
 
-		/* Icons */
-		.social a[href*='about.me'] {background-image: url('../images/icons/aboutme.png');}
-		.social a[href*='github.com'],
-		.social a[href*='git.io'] {
-			background-image: url('../images/icons/github.png');
-			background-size: 16px 16px;
-		}
-		.social a[href*='linkedin.com'] {
-        background-image: url('../images/icons/linkedin.svg');
-        background-size: 16px 16px;
-    }
-		.social a[href*='reddit.com'] {background-image: url('../images/icons/reddit.png');}
-		.social a[href*='stackoverflow.com'] {background-image: url('../images/icons/stackoverflow.png');}
-		.social a[href*='twitter.com'] {
-        background-image: url('../images/icons/twitter.svg');
-        background-size: 16px 16px;
-    }
+#about {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
 
-    /* .blogroll a[href*='indeXall.io'] {
-        background-image: url('../images/icons/indeXall.svg');
-        background-size: 16px 16px;
-    } */
+#about .content-row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+#about .content-row img {
+    vertical-align: middle;
+}
+
+#about .content-row a {
+    vertical-align: middle;
+    color: #fff;
+    text-decoration: none;
+}
+
+#about .content-row .separator {
+    color: #d9534f;
+    margin: 0 5px;
+}
+
+
+
+
 
 /*
 	About
@@ -718,15 +781,7 @@ table {
     max-width: 500px;
 }
 
-/*
-	Footer
-*****************/
-#contentinfo {
-    padding-bottom: 2em;
-    text-align: right;
-    color: #ffffff;
-    background-color: var(--nic_main);
-}
+
 
 /***** Sections *****/
 /* Blog */
