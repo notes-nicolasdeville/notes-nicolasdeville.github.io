@@ -261,7 +261,6 @@ a:hover, a:active {
 	text-decoration: none;
 }
 a:-webkit-any-link {
-    color: red; /* Change the text color to red */
     text-decoration: none; /* Remove the underline from the link */
 }
 h1 a:hover {
