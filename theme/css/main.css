@@ -254,7 +254,7 @@ a img {
 a:link, a:visited {
 	color: var(--nic_main);
 	padding: 0 1px;
-	text-decoration: underline;
+	/* text-decoration: underline; */
 }
 /* 220920 removing as gets applied to ALL link. Need to find a way to target internal links only. */
 /* a:link:before {
