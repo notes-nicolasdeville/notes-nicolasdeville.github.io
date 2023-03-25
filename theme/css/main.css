@@ -35,6 +35,10 @@ aside, article, figure {
 	display: block;
 }
 
+footer {
+    padding-top: 1rem;
+}
+
 #banner {
     display: flex;
     flex-flow: row wrap;
@@ -677,7 +681,7 @@ table {
 	About
 *****************/
 #about {
-	background: #fff;
+	/* background: #fff; */
 	font-style: normal;
 	/* margin: 1em; */
 	overflow: hidden;
@@ -700,16 +704,23 @@ table {
     margin: 5px 20px;
 }
 
-#about .url:link, #about .url:visited {text-decoration: none;}
+#about .url:link, #about .url:visited {
+    text-decoration: none;
+}
 
-#about .bio {float: right; max-width: 500px;}
+#about .bio {
+    float: right; 
+    max-width: 500px;
+}
 
 /*
-	Footer
+	Footernn
 *****************/
 #contentinfo {
     padding-bottom: 2em;
     text-align: right;
+    color: #ffffff;
+    background-color: var(--nic_main);
 }
 
 /***** Sections *****/
