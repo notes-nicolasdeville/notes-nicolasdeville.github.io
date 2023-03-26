@@ -85,7 +85,7 @@
             
 
             <div class="above-navbar">
-                <div class="last_updated">26 Mar 2023 | 08:16</div>
+                <div class="last_updated">26 Mar 2023 | 22:05</div>
                 <div>
                     <p class="notes_count">
                         <a href="https://notes.nicolasdeville.com/tags">by tags</a>
@@ -96,7 +96,7 @@
                         <span style="color:#C74350">|</span>
                         <a href="https://notes.nicolasdeville.com/2022/">2022</a>
                         <span style="color:#C74350">|</span>
-                        718 notes
+                        720 notes
                     </p>
                 </div>
             </div>
@@ -183,7 +183,7 @@
 </code></pre></div>
 
 <p><span class="datestamp">14 Sep 2022</span>   </p>
-<p>started having problems again, whereby all my scripts return <code>ModuleNotFoundError: No module named 'xxxx'</code> with every library that is installed in the project's venv.
+<p>started having problems again, whereby all my scripts return <code>ModuleNotFoundError: No module named 'xxxx'</code> with every library that is installed in the project's venv.<br>
 The script runs with venv activated (<code>(venv)...</code>), confirmed with <code>which python</code> which accurately returns the path of Python in venv.   </p>
 <p>When trying to (re)install those libraries, with venv still active, they get installed in root Python with following warning:   </p>
 <div class="highlight"><pre><span></span><code>WARNING: The scripts f2py, f2py3 and f2py3.9 are installed <span class="k">in</span> <span class="s1">&#39;/Users/xxxxxx/Library/Python/3.9/bin&#39;</span> which is not on PATH.
@@ -249,7 +249,7 @@ My ZSH points to Python 3.9 in <code>.zprofile</code>.    </p>
 </ul>
 <p>checking the symlink of a Python binary in one of my project's venv, I see the original to be:<br>
 <code>/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/bin/python3.9</code><br>
-which is not in path list!? 🤔
+which is not in path list!? 🤔<br>
 Installed with the macOS update today?</p>
 <p>it seems that all the symlinks to Python in the virtual environments of all of my VS Code projects now point to the binary above, and none of the projects work anymore <code>ModuleNotFoundError</code>.   </p>
 <p>Asked for help on Stackoverflow:  </p>
@@ -302,7 +302,7 @@ xxx@yyy % which python3
 /usr/bin/python3
 </code></pre></div>
 
-<p><code>/usr/local/bin/python</code> = symlink to <code>/usr/bin/python3</code>
+<p><code>/usr/local/bin/python</code> = symlink to <code>/usr/bin/python3</code><br>
 <code>/usr/bin/python3</code> = executable   </p>
 <p>let's reboot and try to change the symlink in one venv to <code>/usr/bin/python3</code> to test.  </p>
 <p>Rebooted and everything seems to work again without changing anything.<br>
@@ -433,7 +433,7 @@ and <code>venv/lib</code> has now only <code>/python3.10</code>  </p>
 <li>install packages with <code>requirements.txt</code> where available, else manually</li>
 <li>once everything is working again and on path, <code>pip3 freeze &gt; requirements.txt</code> to backup</li>
 </ul>
-<p>Certificate issues with some scripts. Solved &amp; details here: 
+<p>Certificate issues with some scripts. Solved &amp; details here: <br>
 [<a href="../../python/solve-certificate-verify-failed/index.html">Nic Note: How to solve urlopen error [SSL: CERTIFICATE_VERIFY_FAILED]</a>]   </p>
             <!-- </main> -->
         </div><!-- /.entry-content -->

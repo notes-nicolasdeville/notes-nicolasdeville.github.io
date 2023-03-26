@@ -85,7 +85,7 @@
             
 
             <div class="above-navbar">
-                <div class="last_updated">26 Mar 2023 | 08:16</div>
+                <div class="last_updated">26 Mar 2023 | 22:05</div>
                 <div>
                     <p class="notes_count">
                         <a href="https://notes.nicolasdeville.com/tags">by tags</a>
@@ -96,7 +96,7 @@
                         <span style="color:#C74350">|</span>
                         <a href="https://notes.nicolasdeville.com/2022/">2022</a>
                         <span style="color:#C74350">|</span>
-                        718 notes
+                        720 notes
                     </p>
                 </div>
             </div>
@@ -216,7 +216,7 @@
 <p><span class="nic_link"><a href="https://notes.nicolasdeville.com/python/script-get-urls-from-html" target="_blank">Get all links in a HTML page</a></span>  </p>
 <h3 id="target-by-id-with-wildcard">Target by ID with wildcard</h3>
 <p>useful when IDs or classes have random strings within them, eg:<br>
--<code>&lt;div id="content-author-B00CR42MOY" class="information_row"&gt;C. S. Lewis&lt;/div&gt;</code>
+-<code>&lt;div id="content-author-B00CR42MOY" class="information_row"&gt;C. S. Lewis&lt;/div&gt;</code><br>
 -<code>&lt;div id="content-author-B08CGP9TJ7" class="information_row"&gt;Ernest Cline&lt;/div&gt;</code></p>
 <p>Snippet:</p>
 <div class="highlight"><pre><span></span><code><span class="n">author</span> <span class="o">=</span> <span class="n">x</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s2">&quot;div&quot;</span><span class="p">,</span> <span class="p">{</span><span class="s2">&quot;id&quot;</span> <span class="p">:</span> <span class="k">lambda</span> <span class="n">L</span><span class="p">:</span> <span class="n">L</span> <span class="ow">and</span> <span class="n">L</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s1">&#39;content-author&#39;</span><span class="p">)})</span><span class="o">.</span><span class="n">text</span>

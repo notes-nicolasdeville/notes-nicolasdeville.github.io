@@ -20,9 +20,9 @@
 
  
 
-<meta property="article:published_time" content="2021-03-23 00:00:00+01:00" />
+<meta property="article:published_time" content="2023-03-26 21:57:21.672546+02:00" />
 
-<meta property="article:modified_time" content="2023-03-26 08:16:34.639284+02:00" />
+<meta property="article:modified_time" content="2023-03-26 21:57:21.672546+02:00" />
 
 <meta name="robots" content="all, follow" />
 
@@ -86,7 +86,7 @@
             
 
             <div class="above-navbar">
-                <div class="last_updated">26 Mar 2023 | 08:16</div>
+                <div class="last_updated">26 Mar 2023 | 22:05</div>
                 <div>
                     <p class="notes_count">
                         <a href="https://notes.nicolasdeville.com/tags">by tags</a>
@@ -97,7 +97,7 @@
                         <span style="color:#C74350">|</span>
                         <a href="https://notes.nicolasdeville.com/2022/">2022</a>
                         <span style="color:#C74350">|</span>
-                        718 notes
+                        720 notes
                     </p>
                 </div>
             </div>
@@ -144,13 +144,13 @@
 <footer class="post-info">
 
     <p>
-        23 Mar 2021 
+        26 Mar 2023 
         <span class="separator">|</span> in <a class="link_tag" href="https://notes.nicolasdeville.com/helpers/"><span data-pagefind-filter="category">helpers</span></a>
 
 
         <!-- added 4/7 -->
         <!-- 		<br />
-        <abbr class="modified" title="2023-03-26T08:16:34.639284+02:00">
+        <abbr class="modified" title="2023-03-26T21:57:21.672546+02:00">
                 Updated: 26 Mar 2023
         </abbr>
  -->
@@ -170,6 +170,11 @@
 </li>
 <li><a href="#api">API</a><ul>
 <li><a href="#working-script">working script</a></li>
+</ul>
+</li>
+<li><a href="#library-upload">Library upload</a></li>
+<li><a href="#supports-pdfs-mp4s-and-other-non-image-files">Supports PDFs, MP4s, and other non-image files</a><ul>
+<li><a href="#list-of-supported-non-image-file-extensions">List of supported non-image file extensions</a></li>
 </ul>
 </li>
 </ul>
@@ -199,6 +204,9 @@
 <p><span class="datestamp">23 Mar 2023</span>   </p>
 <p>My account has been dormant/passive, just using the free tier, for the country flags images on my various projects.  </p>
 <p><img class="screenshot" src="https://ik.imagekit.io/vhucnsp9j1u/images/imagekit/230323-0705-imagekit-usage.jpg" alt="imagekit/230323-0705-imagekit-usage.jpg"/>  </p>
+<p><span class="datestamp">26 Mar 2023</span> </p>
+<p>Aiming to move hosting for this site from Github Pages <span class="nic_link"><a href="https://notes.nicolasdeville.com/helpers/github-pages" target="_blank">Hosting my static website(s) with Github Pages</a></span> to Netlify <span class="nic_link"><a href="https://notes.nicolasdeville.com/helpers/netlify" target="_blank">Netlify</a></span> &amp; ImageKit - mainly for deployment speed optimisation but also load times (Github Pages works well but Netlify seems more optimised).   </p>
+<p>See API use below.  </p>
 <h1 id="image-transformations">Image transformations</h1>
 <h2 id="image-resizing">image resizing</h2>
 <p>width 200px: add <code>/tr:w-200/</code> before file, eg. <code>https://ik.imagekit.io/demo/tr:w-200/medium_cafe_B1iTdD0C.jpg</code>  <br>
@@ -218,6 +226,8 @@ width 40%: add <code>/tr:w-0.4/</code> before file, eg. <code>https://ik.imageki
 <div class="link_url"><a href="https://github.com/imagekit-developer/imagekit-python#file-upload" target="_blank">https://github.com/imagekit-developer/imagekit-python#file-upload</a></div></div></div>
 
 <h2 id="working-script">working script</h2>
+<p>Working script to upload my <code>images</code> folder for my Notes site to ImageKit.  </p>
+<p>Both for initial upload &amp; ongoing, ie included in shell script when updating site.  </p>
 <div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">base64</span>
 <span class="kn">from</span> <span class="nn">imagekitio</span> <span class="kn">import</span> <span class="n">ImageKit</span>
 <span class="kn">from</span> <span class="nn">imagekitio.models.UploadFileRequestOptions</span> <span class="kn">import</span> <span class="n">UploadFileRequestOptions</span>
@@ -259,7 +269,7 @@ width 40%: add <code>/tr:w-0.4/</code> before file, eg. <code>https://ik.imageki
         <span class="c1"># }</span>
     <span class="c1"># ]</span>
 
-    <span class="n">options</span> <span class="o">=</span> <span class="n">UploadFileRequestOptions</span><span class="p">(</span>
+    <span class="n">options</span> <span class="o">=</span> <span class="n">UploadFileRequestOptions</span><span class="p">(</span> <span class="c1"># see https://docs.imagekit.io/api-reference/upload-file-api/client-side-file-upload#request-structure-multipart-form-data</span>
         <span class="n">use_unique_file_name</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="c1"># false = uploaded with provided filename / any existing file with the same name is replaced.</span>
         <span class="c1"># tags=[&#39;abc&#39;, &#39;def&#39;],</span>
         <span class="n">folder</span><span class="o">=</span><span class="n">folder</span><span class="p">,</span> <span class="c1"># passing hierarchy of folders is allowed, eg. &#39;folder1/folder2/folder3&#39;</span>
@@ -297,6 +307,80 @@ width 40%: add <code>/tr:w-0.4/</code> before file, eg. <code>https://ik.imageki
 </code></pre></div>
 
 <p>to manage secrets in environment variables (eg <code>private_key=IMAGEKIT_PRIVATE_KEY</code>) see <span class="nic_link"><a href="https://notes.nicolasdeville.com/python/library-dotenv" target="_blank">How to save confidential data in environment variables with dotenv</a></span>  </p>
+<h1 id="library-upload">Library upload</h1>
+<p><span class="datestamp">26 Mar 2023</span> </p>
+<p><img class="screenshot" src="https://ik.imagekit.io/vhucnsp9j1u/images/imagekit/230326-0845-imagekit-upload.gif" alt="imagekit/230326-0845-imagekit-upload.gif"/>  </p>
+<p><code>upstream connect error or disconnect/reset before headers. reset reason: connection termination</code> after 1,253 uploads 😢     </p>
+<p><img class="screenshot" src="https://ik.imagekit.io/vhucnsp9j1u/images/imagekit/230326-0908-imagekit-upload-fail.jpg" alt="imagekit/230326-0908-imagekit-upload-fail.jpg"/>  </p>
+<p>Need to fetch first what has been uploaded before retrying.  </p>
+<div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">get_existing_files</span><span class="p">(</span><span class="n">v</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+
+    <span class="k">def</span> <span class="nf">fetch_files_batch</span><span class="p">(</span><span class="n">skip</span><span class="p">,</span> <span class="n">limit</span><span class="o">=</span><span class="mi">1000</span><span class="p">):</span>
+        <span class="n">options</span> <span class="o">=</span> <span class="n">ListAndSearchFileRequestOptions</span><span class="p">(</span>
+            <span class="n">limit</span><span class="o">=</span><span class="n">limit</span><span class="p">,</span>
+            <span class="n">skip</span><span class="o">=</span><span class="n">skip</span><span class="p">,</span>
+        <span class="p">)</span>
+        <span class="n">result</span> <span class="o">=</span> <span class="n">imagekit</span><span class="o">.</span><span class="n">list_files</span><span class="p">(</span><span class="n">options</span><span class="o">=</span><span class="n">options</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">result</span><span class="o">.</span><span class="n">response_metadata</span><span class="o">.</span><span class="n">raw</span>
+
+    <span class="k">def</span> <span class="nf">get_all_file_paths</span><span class="p">():</span>
+        <span class="n">all_file_paths</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="n">batch_size</span> <span class="o">=</span> <span class="mi">1000</span>
+        <span class="n">skip</span> <span class="o">=</span> <span class="mi">0</span>
+
+        <span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+            <span class="n">batch</span> <span class="o">=</span> <span class="n">fetch_files_batch</span><span class="p">(</span><span class="n">skip</span><span class="p">,</span> <span class="n">batch_size</span><span class="p">)</span>
+            <span class="k">if</span> <span class="ow">not</span> <span class="n">batch</span><span class="p">:</span>  <span class="c1"># No more files to fetch</span>
+                <span class="k">break</span>
+
+            <span class="k">for</span> <span class="n">r</span> <span class="ow">in</span> <span class="n">batch</span><span class="p">:</span>
+                <span class="n">file_path</span> <span class="o">=</span> <span class="n">r</span><span class="p">[</span><span class="s1">&#39;filePath&#39;</span><span class="p">]</span>
+                <span class="k">if</span> <span class="n">v</span><span class="p">:</span>
+                    <span class="nb">print</span><span class="p">(</span><span class="n">file_path</span><span class="p">)</span>
+                <span class="n">all_file_paths</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">file_path</span><span class="p">)</span>
+
+            <span class="n">skip</span> <span class="o">+=</span> <span class="n">batch_size</span>
+
+        <span class="k">return</span> <span class="n">all_file_paths</span>
+
+    <span class="n">all_paths</span> <span class="o">=</span> <span class="n">get_all_file_paths</span><span class="p">()</span>
+
+    <span class="n">all_images_paths</span> <span class="o">=</span> <span class="p">[</span><span class="n">x</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">all_paths</span> <span class="k">if</span> <span class="n">x</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s1">&#39;/images/&#39;</span><span class="p">)]</span>
+
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">ℹ️   </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">all_images_paths</span><span class="p">)</span><span class="si">}</span><span class="s2"> files found in Imagekit&quot;</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">all_images_paths</span>
+</code></pre></div>
+
+<p>so..</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># Get all files in local directory</span>
+<span class="n">all_file_paths</span> <span class="o">=</span> <span class="n">my_utils</span><span class="o">.</span><span class="n">fetch_file_paths_from_all_dirs</span><span class="p">(</span><span class="s1">&#39;/local/path/to/images&#39;</span><span class="p">)</span>
+<span class="n">count_total</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">all_file_paths</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">ℹ️   </span><span class="si">{</span><span class="n">count_total</span><span class="si">}</span><span class="s2"> files found in local directory&quot;</span><span class="p">)</span>
+
+<span class="c1"># Get all files in Imagekit</span>
+<span class="n">existing_files</span> <span class="o">=</span> <span class="n">get_existing_files</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n</span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">existing_files</span><span class="p">)</span><span class="si">}</span><span class="s2"> files found in Imagekit&quot;</span><span class="p">)</span>
+
+<span class="c1"># Get all files in local directory that are not in Imagekit</span>
+<span class="n">remaining_file_paths</span> <span class="o">=</span> <span class="p">[</span><span class="n">x</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">all_file_paths</span> <span class="k">if</span> <span class="n">x</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot;/Users/xxxx/path/to/content&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">existing_files</span><span class="p">]</span>
+<span class="n">count_todo</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">remaining_file_paths</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n</span><span class="si">{</span><span class="n">count_todo</span><span class="si">}</span><span class="s2"> files remaining&quot;</span><span class="p">)</span>
+
+<span class="k">for</span> <span class="n">file_path</span> <span class="ow">in</span> <span class="n">remaining_file_paths</span><span class="p">:</span>
+</code></pre></div>
+
+<h1 id="supports-pdfs-mp4s-and-other-non-image-files">Supports PDFs, MP4s, and other non-image files</h1>
+<h2 id="list-of-supported-non-image-file-extensions">List of supported non-image file extensions</h2>
+<p><code>.js</code><br>
+<code>.css</code><br>
+<code>.svg</code><br>
+<code>.json</code><br>
+<code>.pdf</code><br>
+<code>.mp4</code><br>
+<code>.txt</code><br>
+<code>.html</code>  </p>
+<p>See full list &amp; non-supported file extensions: <a href="https://docs.imagekit.io/features/non-image-file-compression#non-image-file-extensions" target="_blank">https://docs.imagekit.io/features/non-image-file-compression#non-image-file-extensions</a>   </p>
             <!-- </main> -->
         </div><!-- /.entry-content -->
     </article>

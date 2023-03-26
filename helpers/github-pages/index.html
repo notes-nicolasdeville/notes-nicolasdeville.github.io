@@ -85,7 +85,7 @@
             
 
             <div class="above-navbar">
-                <div class="last_updated">26 Mar 2023 | 08:16</div>
+                <div class="last_updated">26 Mar 2023 | 22:05</div>
                 <div>
                     <p class="notes_count">
                         <a href="https://notes.nicolasdeville.com/tags">by tags</a>
@@ -96,7 +96,7 @@
                         <span style="color:#C74350">|</span>
                         <a href="https://notes.nicolasdeville.com/2022/">2022</a>
                         <span style="color:#C74350">|</span>
-                        718 notes
+                        720 notes
                     </p>
                 </div>
             </div>
@@ -252,15 +252,15 @@ redirect 301 /vc-directory https://btobsales.eu/resources/directory-vcs
 <p>But other than that, I need to optimise the <code>.git</code> folder. Options:   </p>
 <ol>
 <li>
-<p>Use Git Large File Storage (Git LFS)
+<p>Use Git Large File Storage (Git LFS)<br>
 If you have large binary files in your repository, you can use Git LFS to manage them separately. This will reduce the size of your .git folder. To install and set up Git LFS, see the documentation on the Git LFS website.</p>
 </li>
 <li>
-<p>Remove unnecessary files
+<p>Remove unnecessary files<br>
 If there are any files in your repository that you don't need, you can remove them using the <code>git rm</code> command. This will remove the files from the repository and reduce the size of your .git folder. Remember to commit the changes after removing the files.</p>
 </li>
 <li>
-<p>Use Git's built-in <strong>garbage collection</strong>
+<p>Use Git's built-in <strong>garbage collection</strong><br>
 Git has a built-in garbage collection mechanism that can help you clean up unnecessary files and optimize the repository. To run garbage collection, use the git gc command. This may take some time to complete, especially if your repository is large.</p>
 </li>
 </ol>
@@ -268,11 +268,11 @@ Git has a built-in garbage collection mechanism that can help you clean up unnec
 <p><code>git gc</code> should be sufficient, else nuclear option: <code>git gc --aggressive --prune=now</code>.   </p>
 <ol>
 <li>
-<p>Remove old or unnecessary commits
+<p>Remove old or unnecessary commits<br>
 If you have a lot of old or unnecessary commits in your repository, you can use Git's <code>rebase</code> or <code>filter-branch</code> commands to remove them. This can help reduce the size of your .git folder, but be careful as it will rewrite your repository's history.</p>
 </li>
 <li>
-<p>Clone a fresh copy of your repository
+<p>Clone a fresh copy of your repository<br>
 If all else fails, you can clone a fresh copy of your repository and start fresh. This will give you a clean .git folder without any unnecessary files or commits. However, be aware that you will lose all local changes and history when you do this.</p>
 </li>
 </ol>
