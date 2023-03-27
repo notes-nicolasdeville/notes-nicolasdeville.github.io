@@ -29,6 +29,23 @@ html, body, div, h1, h2, h3, h4, h5, h6, ul, ol, li, p, blockquote, pre, form, f
     padding: 0;
 }
 
+/* TEST 230327 to remove the white space when scrolling down on index page */
+html, body {
+    height: 100%;
+}
+
+.body {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.footer {
+    margin-top: auto;
+}
+/* END TEST */
+
+
 /* HTML5 tags */
 section, footer,
 aside, article, figure {

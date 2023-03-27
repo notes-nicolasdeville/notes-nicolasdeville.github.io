@@ -2012,6 +2012,12 @@
     </url>
     
     <url>
+        <loc>https://notes.nicolasdeville.com/home-office/us-8</loc>
+        <lastmod>2023-03-27</lastmod>
+        <priority>0.8</priority>        
+    </url>
+    
+    <url>
         <loc>https://notes.nicolasdeville.com/home-office/atem-mini</loc>
         <lastmod>2023-03-27</lastmod>
         <priority>0.8</priority>        
@@ -2078,6 +2084,18 @@
     </url>
     
     <url>
+        <loc>https://notes.nicolasdeville.com/home-office/unifi-ap</loc>
+        <lastmod>2023-03-27</lastmod>
+        <priority>0.8</priority>        
+    </url>
+    
+    <url>
+        <loc>https://notes.nicolasdeville.com/home-office/unifi-controller</loc>
+        <lastmod>2023-03-27</lastmod>
+        <priority>0.8</priority>        
+    </url>
+    
+    <url>
         <loc>https://notes.nicolasdeville.com/home-office/internet-load-balancing</loc>
         <lastmod>2023-03-27</lastmod>
         <priority>0.8</priority>        
@@ -2103,6 +2121,12 @@
     
     <url>
         <loc>https://notes.nicolasdeville.com/home-office/setup_1</loc>
+        <lastmod>2023-03-27</lastmod>
+        <priority>0.8</priority>        
+    </url>
+    
+    <url>
+        <loc>https://notes.nicolasdeville.com/home-office/udm-se</loc>
         <lastmod>2023-03-27</lastmod>
         <priority>0.8</priority>        
     </url>
@@ -2157,6 +2181,12 @@
     
     <url>
         <loc>https://notes.nicolasdeville.com/learning/ml</loc>
+        <lastmod>2023-03-27</lastmod>
+        <priority>0.8</priority>        
+    </url>
+    
+    <url>
+        <loc>https://notes.nicolasdeville.com/learning/glob-patterns</loc>
         <lastmod>2023-03-27</lastmod>
         <priority>0.8</priority>        
     </url>
