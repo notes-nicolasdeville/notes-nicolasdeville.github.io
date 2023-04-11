@@ -734,6 +734,12 @@
     </url>
     
     <url>
+        <loc>https://notes.nicolasdeville.com/b2b-sales/chatgpt-prompts</loc>
+        <lastmod>2023-04-11</lastmod>
+        <priority>0.8</priority>        
+    </url>
+    
+    <url>
         <loc>https://notes.nicolasdeville.com/b2b-sales/acting</loc>
         <lastmod>2023-04-11</lastmod>
         <priority>0.8</priority>        
@@ -1454,6 +1460,12 @@
     </url>
     
     <url>
+        <loc>https://notes.nicolasdeville.com/python/script-contact-data-apollo</loc>
+        <lastmod>2023-04-11</lastmod>
+        <priority>0.8</priority>        
+    </url>
+    
+    <url>
         <loc>https://notes.nicolasdeville.com/python/fetch-metadata-from-url</loc>
         <lastmod>2023-04-11</lastmod>
         <priority>0.8</priority>        
@@ -1779,6 +1791,12 @@
     
     <url>
         <loc>https://notes.nicolasdeville.com/python/sitemap-generator</loc>
+        <lastmod>2023-04-11</lastmod>
+        <priority>0.8</priority>        
+    </url>
+    
+    <url>
+        <loc>https://notes.nicolasdeville.com/python/function-wait</loc>
         <lastmod>2023-04-11</lastmod>
         <priority>0.8</priority>        
     </url>
@@ -3974,6 +3992,12 @@
     </url>
     
     <url>
+        <loc>https://notes.nicolasdeville.com/apps/apollo</loc>
+        <lastmod>2023-04-11</lastmod>
+        <priority>0.8</priority>        
+    </url>
+    
+    <url>
         <loc>https://notes.nicolasdeville.com/apps/protonvpn</loc>
         <lastmod>2023-04-11</lastmod>
         <priority>0.8</priority>        
@@ -4407,12 +4431,6 @@
     
     <url>
         <loc>https://notes.nicolasdeville.com/helpers/dns</loc>
-        <lastmod>2023-04-11</lastmod>
-        <priority>0.8</priority>        
-    </url>
-    
-    <url>
-        <loc>https://notes.nicolasdeville.com/helpers/apollo</loc>
         <lastmod>2023-04-11</lastmod>
         <priority>0.8</priority>        
     </url>
