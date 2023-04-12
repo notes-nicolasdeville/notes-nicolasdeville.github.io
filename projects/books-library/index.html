@@ -19,9 +19,9 @@
 <meta name="twitter:description" content="Automating my books library and to-read list" /> <!-- max. 200 characters -->
  
 
-<meta property="article:published_time" content="2023-04-10 22:33:14.102507+02:00" />
+<meta property="article:published_time" content="2023-04-12 08:07:34.884926+02:00" />
 
-<meta property="article:modified_time" content="2023-04-10 22:33:14.102507+02:00" />
+<meta property="article:modified_time" content="2023-04-12 08:07:34.884926+02:00" />
 
 <meta name="robots" content="all, follow" />
 
@@ -79,7 +79,7 @@
             
 
             <div class="above-navbar">
-                <div class="last_updated">11 Apr 2023 | 17:18</div>
+                <div class="last_updated">12 Apr 2023 | 08:15</div>
                 <div>
                     <p class="notes_count">
                         <a href="https://notes.nicolasdeville.com/tags">by tags</a>
@@ -137,15 +137,15 @@
 <footer class="post-info">
 
     <p>
-        10 Apr 2023 
+        12 Apr 2023 
         <span class="separator">|</span> in <a class="link_tag" href="https://notes.nicolasdeville.com/projects/"><span data-pagefind-filter="category">projects</span></a>
 
  tags: <a class="link_tag" href="https://notes.nicolasdeville.com/tag/python.html">python</a>
 
         <!-- added 4/7 -->
         <!-- 		<br />
-        <abbr class="modified" title="2023-04-10T22:33:14.102507+02:00">
-                Updated: 10 Apr 2023
+        <abbr class="modified" title="2023-04-12T08:07:34.884926+02:00">
+                Updated: 12 Apr 2023
         </abbr>
  -->
 
@@ -280,6 +280,97 @@ Might need to come back to it for low-level integration.   </p>
     <span class="k">else</span><span class="p">:</span>
         <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;No book found with the title &#39;</span><span class="si">{</span><span class="n">title</span><span class="si">}</span><span class="s2">&#39;.&quot;</span><span class="p">)</span>
         <span class="k">return</span> <span class="kc">False</span>
+</code></pre></div>
+
+<h1 id="working-code-to-download-book-data">working code to download book data</h1>
+<p><span class="datestamp">12 Apr 2023</span> </p>
+<div class="highlight"><pre><span></span><code><span class="c1"># CLASSES</span>
+
+<span class="k">class</span> <span class="nc">Book</span><span class="p">:</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">pages</span><span class="p">,</span> <span class="n">release_year</span><span class="p">,</span> <span class="n">author</span><span class="p">,</span> <span class="n">tagline</span><span class="p">,</span> <span class="n">description</span><span class="p">,</span> <span class="n">google_link</span><span class="p">,</span> <span class="n">category</span><span class="p">,</span> <span class="n">ISBN_10</span><span class="p">,</span> <span class="n">ISBN_13</span><span class="p">,</span> <span class="n">language</span><span class="p">,</span> <span class="n">title</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">pages</span> <span class="o">=</span> <span class="n">pages</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">release_year</span> <span class="o">=</span> <span class="n">release_year</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">author</span> <span class="o">=</span> <span class="n">author</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">tagline</span> <span class="o">=</span> <span class="n">tagline</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">description</span> <span class="o">=</span> <span class="n">description</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">google_link</span> <span class="o">=</span> <span class="n">google_link</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">category</span> <span class="o">=</span> <span class="n">category</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">ISBN_10</span> <span class="o">=</span> <span class="n">ISBN_10</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">ISBN_13</span> <span class="o">=</span> <span class="n">ISBN_13</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">language</span> <span class="o">=</span> <span class="n">language</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">title</span> <span class="o">=</span> <span class="n">title</span>
+
+    <span class="k">def</span> <span class="fm">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="sa">f</span><span class="s1">&#39;Title: </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">title</span><span class="si">}</span><span class="se">\n</span><span class="s1">Author: </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">author</span><span class="si">}</span><span class="se">\n</span><span class="s1">Pages: </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">pages</span><span class="si">}</span><span class="se">\n</span><span class="s1">Release Year: </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">release_year</span><span class="si">}</span><span class="se">\n</span><span class="s1">Tagline: </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">tagline</span><span class="si">}</span><span class="se">\n</span><span class="s1">Description: </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">description</span><span class="si">}</span><span class="se">\n</span><span class="s1">Google Link: </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">google_link</span><span class="si">}</span><span class="se">\n</span><span class="s1">Category: </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">category</span><span class="si">}</span><span class="se">\n</span><span class="s1">ISBN-10: </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">ISBN_10</span><span class="si">}</span><span class="se">\n</span><span class="s1">ISBN-13: </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">ISBN_13</span><span class="si">}</span><span class="se">\n</span><span class="s1">Language: </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">language</span><span class="si">}</span><span class="s1">&#39;</span>
+
+<span class="c1"># FUNCTIONS</span>
+
+<span class="k">def</span> <span class="nf">get_book_data</span><span class="p">(</span><span class="n">title</span><span class="p">,</span> <span class="n">author</span><span class="p">):</span>
+    <span class="k">global</span> <span class="n">GOOGLE_API_KEY</span>
+
+    <span class="n">base_url</span> <span class="o">=</span> <span class="s2">&quot;https://www.googleapis.com/books/v1/volumes&quot;</span>
+    <span class="n">params</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="s1">&#39;q&#39;</span><span class="p">:</span> <span class="sa">f</span><span class="s1">&#39;intitle:&quot;</span><span class="si">{</span><span class="n">title</span><span class="si">}</span><span class="s1">&quot; inauthor:&quot;</span><span class="si">{</span><span class="n">author</span><span class="si">}</span><span class="s1">&quot;&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;key&#39;</span><span class="p">:</span> <span class="n">GOOGLE_API_KEY</span><span class="p">,</span>
+        <span class="s1">&#39;maxResults&#39;</span><span class="p">:</span> <span class="mi">20</span>
+    <span class="p">}</span>
+
+    <span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">base_url</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="n">params</span><span class="p">)</span>
+    <span class="n">data</span> <span class="o">=</span> <span class="n">response</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
+
+    <span class="k">if</span> <span class="s2">&quot;items&quot;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">data</span><span class="p">:</span>
+        <span class="k">return</span> <span class="kc">None</span>
+
+    <span class="c1"># Sort items by published date</span>
+    <span class="n">items</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="s2">&quot;items&quot;</span><span class="p">],</span> <span class="n">key</span><span class="o">=</span><span class="k">lambda</span> <span class="n">item</span><span class="p">:</span> <span class="n">item</span><span class="p">[</span><span class="s2">&quot;volumeInfo&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;publishedDate&quot;</span><span class="p">,</span> <span class="s2">&quot;9999&quot;</span><span class="p">))</span>
+
+    <span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">items</span><span class="p">:</span>
+        <span class="n">volume_info</span> <span class="o">=</span> <span class="n">item</span><span class="p">[</span><span class="s2">&quot;volumeInfo&quot;</span><span class="p">]</span>
+
+        <span class="c1"># Retrieve ISBN-10 and ISBN-13</span>
+        <span class="n">ISBN_10</span><span class="p">,</span> <span class="n">ISBN_13</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="kc">None</span>
+        <span class="k">for</span> <span class="n">identifier</span> <span class="ow">in</span> <span class="n">volume_info</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;industryIdentifiers&quot;</span><span class="p">,</span> <span class="p">[]):</span>
+            <span class="k">if</span> <span class="n">identifier</span><span class="p">[</span><span class="s2">&quot;type&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;ISBN_10&quot;</span><span class="p">:</span>
+                <span class="n">ISBN_10</span> <span class="o">=</span> <span class="n">identifier</span><span class="p">[</span><span class="s2">&quot;identifier&quot;</span><span class="p">]</span>
+            <span class="k">elif</span> <span class="n">identifier</span><span class="p">[</span><span class="s2">&quot;type&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;ISBN_13&quot;</span><span class="p">:</span>
+                <span class="n">ISBN_13</span> <span class="o">=</span> <span class="n">identifier</span><span class="p">[</span><span class="s2">&quot;identifier&quot;</span><span class="p">]</span>
+
+        <span class="c1"># If ISBN-10 is not found, continue with the next book in the list</span>
+        <span class="k">if</span> <span class="n">ISBN_10</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="k">continue</span>
+
+        <span class="c1"># Retrieve other book information</span>
+        <span class="n">pages</span> <span class="o">=</span> <span class="n">volume_info</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;pageCount&quot;</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
+        <span class="n">release_year</span> <span class="o">=</span> <span class="n">volume_info</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;publishedDate&quot;</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
+        <span class="k">if</span> <span class="s1">&#39;-&#39;</span> <span class="ow">in</span> <span class="n">release_year</span><span class="p">:</span>
+            <span class="n">release_year</span> <span class="o">=</span> <span class="n">release_year</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;-&#39;</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+        <span class="n">author</span> <span class="o">=</span> <span class="s2">&quot;, &quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">volume_info</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;authors&quot;</span><span class="p">,</span> <span class="p">[]))</span>
+        <span class="n">tagline</span> <span class="o">=</span> <span class="n">volume_info</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;subtitle&quot;</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
+        <span class="n">description</span> <span class="o">=</span> <span class="n">volume_info</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;description&quot;</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
+        <span class="n">google_link</span> <span class="o">=</span> <span class="n">volume_info</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;canonicalVolumeLink&quot;</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
+        <span class="n">category</span> <span class="o">=</span> <span class="s2">&quot;, &quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">volume_info</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;categories&quot;</span><span class="p">,</span> <span class="p">[]))</span>
+        <span class="n">language</span> <span class="o">=</span> <span class="n">volume_info</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;language&quot;</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
+        <span class="n">title</span> <span class="o">=</span> <span class="n">volume_info</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;title&quot;</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
+
+        <span class="c1"># Create and return a Book object with an ISBN-10 number</span>
+        <span class="k">return</span> <span class="n">Book</span><span class="p">(</span><span class="n">pages</span><span class="p">,</span> <span class="n">release_year</span><span class="p">,</span> <span class="n">author</span><span class="p">,</span> <span class="n">tagline</span><span class="p">,</span> <span class="n">description</span><span class="p">,</span> <span class="n">google_link</span><span class="p">,</span> <span class="n">category</span><span class="p">,</span> <span class="n">ISBN_10</span><span class="p">,</span> <span class="n">ISBN_13</span><span class="p">,</span> <span class="n">language</span><span class="p">,</span> <span class="n">title</span><span class="p">)</span>
+
+    <span class="c1"># If no book with an ISBN-10 number is found, return None</span>
+    <span class="k">return</span> <span class="kc">None</span>
+</code></pre></div>
+
+<p>Output ⬇︎</p>
+<div class="highlight"><pre><span></span><code>Title: Foundation
+Author: Isaac Asimov
+Pages: <span class="m">227</span>
+Release Year: <span class="m">1951</span>
+Tagline: None
+Description: The first of a series of tales <span class="nb">set</span> so far <span class="k">in</span> the future that Earth is all but forgotten by humans who live throughout the galaxy.
+Google Link: https://books.google.com/books/about/Foundation.html?hl<span class="o">=</span><span class="p">&amp;</span><span class="nv">id</span><span class="o">=</span>gFpQswEACAAJ
+Category: Life on other planets
+ISBN-10: 038505047X
+ISBN-13: <span class="m">9780385050470</span>
+Language: en
 </code></pre></div>
 
 <h2 id="goodreads">GoodReads</h2>
