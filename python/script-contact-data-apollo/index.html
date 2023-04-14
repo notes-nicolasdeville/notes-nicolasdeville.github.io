@@ -19,9 +19,9 @@
 <meta name="twitter:description" content="my latest data enrichment tool" /> <!-- max. 200 characters -->
  
 
-<meta property="article:published_time" content="2023-04-11 00:00:00+02:00" />
+<meta property="article:published_time" content="2023-04-13 09:19:35.411871+02:00" />
 
-<meta property="article:modified_time" content="2023-04-11 17:00:46.795365+02:00" />
+<meta property="article:modified_time" content="2023-04-13 09:19:35.411871+02:00" />
 
 <meta name="robots" content="all, follow" />
 
@@ -79,7 +79,7 @@
             
 
             <div class="above-navbar">
-                <div class="last_updated">12 Apr 2023 | 23:02</div>
+                <div class="last_updated">14 Apr 2023 | 06:38</div>
                 <div>
                     <p class="notes_count">
                         <a href="https://notes.nicolasdeville.com/tags">by tags</a>
@@ -90,7 +90,7 @@
                         <span style="color:#C74350">|</span>
                         <a href="https://notes.nicolasdeville.com/2022/">2022</a>
                         <span style="color:#C74350">|</span>
-                        732 notes
+                        735 notes
                     </p>
                 </div>
             </div>
@@ -137,14 +137,14 @@
 <footer class="post-info">
 
     <p>
-        11 Apr 2023 
+        13 Apr 2023 
         <span class="separator">|</span> in <a class="link_tag" href="https://notes.nicolasdeville.com/python/"><span data-pagefind-filter="category">python</span></a>
 
 
         <!-- added 4/7 -->
         <!-- 		<br />
-        <abbr class="modified" title="2023-04-11T17:00:46.795365+02:00">
-                Updated: 11 Apr 2023
+        <abbr class="modified" title="2023-04-13T09:19:35.411871+02:00">
+                Updated: 13 Apr 2023
         </abbr>
  -->
 
@@ -154,7 +154,8 @@
 
 </footer>            <!-- for indexing by Stork -->
             <!-- <main>  -->
-                <div class="toc"><span class="toctitle">Table of Contents</span><ul></ul>
+                <p>Branched out from <span class="nic_link"><a href="https://notes.nicolasdeville.com/apps/apollo" target="_blank">Apollo</a></span>  </p>
+<div class="toc"><span class="toctitle">Table of Contents</span><ul></ul>
 </div>
 <p><span class="datestamp">11 Apr 2023</span>   </p>
 <p>For a current client contract where I'm building a lead generation system with the Twitter API <span class="nic_link"><a href="https://notes.nicolasdeville.com/projects/twittee" target="_blank">Twittee</a></span> and from other sources, I need once again to get contact data in different ways:  </p>
@@ -163,14 +164,38 @@
 <li>from an email only, get first name (+ last name &amp; company name optionally)</li>
 <li>from a name &amp; domain, get email</li>
 </ul>
-<p>I had heard about Apollo <span class="nic_link"><a href="https://notes.nicolasdeville.com/apps/apollo" target="_blank">Apollo</a></span> from Lemwarm <span class="nic_link"><a href="https://notes.nicolasdeville.com/apps/lemwarm" target="_blank">Lemwarm</a></span> and wanted to give it a try following lukewarm experience with other data enrichments solutions. </p>
-<p>Here is the working script to get contact data from Apollo in the 3 scenarios above.  </p>
-<div class="highlight"><pre><span></span><code><span class="c1">####################</span>
+<p>I had heard about Apollo from Lemwarm and wanted to give it a try following lukewarm experience with other data enrichments solutions. </p>
+<p>See notes <span class="nic_link"><a href="https://notes.nicolasdeville.com/apps/apollo" target="_blank">Apollo</a></span> &amp; <span class="nic_link"><a href="https://notes.nicolasdeville.com/apps/lemwarm" target="_blank">Lemwarm</a></span> </p>
+<p>Here is the working script to get contact data from Apollo in the 3 scenarios above, and add to my local database.  </p>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">datetime</span> <span class="kn">import</span> <span class="n">datetime</span>
+<span class="kn">import</span> <span class="nn">os</span>
+<span class="n">ts_file</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">datetime</span><span class="o">.</span><span class="n">now</span><span class="p">()</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="s1">&#39;%y%m</span><span class="si">%d</span><span class="s1">-%H%M&#39;</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span>
+<span class="n">ts_db</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">datetime</span><span class="o">.</span><span class="n">now</span><span class="p">()</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="s1">&#39;%Y-%m-</span><span class="si">%d</span><span class="s1"> %H:%M&#39;</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span>
+<span class="n">ts_time</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">datetime</span><span class="o">.</span><span class="n">now</span><span class="p">()</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="s1">&#39;%H:%M:%S&#39;</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">---------- </span><span class="si">{</span><span class="n">ts_time</span><span class="si">}</span><span class="s2"> starting </span><span class="si">{</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">basename</span><span class="p">(</span><span class="vm">__file__</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="kn">import</span> <span class="nn">time</span>
+<span class="n">start_time</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>
+
+<span class="kn">from</span> <span class="nn">dotenv</span> <span class="kn">import</span> <span class="n">load_dotenv</span>
+<span class="n">load_dotenv</span><span class="p">()</span>
+<span class="n">PROJECTS_FOLDER</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">getenv</span><span class="p">(</span><span class="s2">&quot;PROJECTS_FOLDER&quot;</span><span class="p">)</span>
+<span class="n">APOLLO_API_KEY</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">getenv</span><span class="p">(</span><span class="s2">&quot;APOLLO_API_KEY&quot;</span><span class="p">)</span>
+
+<span class="kn">import</span> <span class="nn">sys</span>
+<span class="n">sys</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">PROJECTS_FOLDER</span><span class="si">}</span><span class="s2">/indeXee&quot;</span><span class="p">)</span>
+
+<span class="kn">import</span> <span class="nn">pprint</span>
+<span class="n">pp</span> <span class="o">=</span> <span class="n">pprint</span><span class="o">.</span><span class="n">PrettyPrinter</span><span class="p">(</span><span class="n">indent</span><span class="o">=</span><span class="mi">4</span><span class="p">)</span>
+
+<span class="c1">####################</span>
 <span class="c1"># Apollo.io - Email enrichment</span>
 
 <span class="c1"># IMPORTS (script-specific)</span>
 
 <span class="kn">import</span> <span class="nn">requests</span>
+<span class="kn">import</span> <span class="nn">sqlite3</span>
+<span class="kn">from</span> <span class="nn">sqlite3</span> <span class="kn">import</span> <span class="n">Error</span>
+<span class="kn">import</span> <span class="nn">my_utils</span>
 
 <span class="c1"># GLOBALS</span>
 
@@ -195,7 +220,23 @@
         <span class="bp">self</span><span class="o">.</span><span class="n">headline</span> <span class="o">=</span> <span class="kc">None</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">country</span> <span class="o">=</span> <span class="kc">None</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">email_status</span> <span class="o">=</span> <span class="kc">None</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">current_company</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">company</span> <span class="o">=</span> <span class="kc">None</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">name</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">first_name</span> <span class="ow">and</span> <span class="bp">self</span><span class="o">.</span><span class="n">last_name</span><span class="p">:</span>
+            <span class="k">return</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">first_name</span><span class="si">}</span><span class="s2"> </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">last_name</span><span class="si">}</span><span class="s2">&quot;</span>
+        <span class="k">elif</span> <span class="bp">self</span><span class="o">.</span><span class="n">first_name</span><span class="p">:</span>
+            <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">first_name</span>
+        <span class="k">elif</span> <span class="bp">self</span><span class="o">.</span><span class="n">last_name</span><span class="p">:</span>
+            <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">last_name</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">return</span> <span class="kc">None</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">email_prefix</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">email</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">email</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;@&#39;</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
 
     <span class="k">def</span> <span class="nf">fetch_data</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">api_key</span><span class="p">,</span> <span class="n">search_type</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
         <span class="n">url</span> <span class="o">=</span> <span class="s2">&quot;https://api.apollo.io/v1/people/match&quot;</span>
@@ -210,16 +251,17 @@
         <span class="p">}</span>
 
         <span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">post</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="n">headers</span><span class="p">,</span> <span class="n">json</span><span class="o">=</span><span class="n">data</span><span class="p">)</span>
+
         <span class="n">response_data</span> <span class="o">=</span> <span class="n">response</span><span class="o">.</span><span class="n">json</span><span class="p">()</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;person&#39;</span><span class="p">,</span> <span class="p">{})</span>
 
         <span class="k">if</span> <span class="n">v</span><span class="p">:</span>
             <span class="k">for</span> <span class="n">k</span><span class="p">,</span><span class="n">value</span> <span class="ow">in</span> <span class="n">response_data</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
-                <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">k</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="n">value</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+                <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n</span><span class="si">{</span><span class="n">k</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="n">value</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 
-        <span class="n">current_company</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="n">company</span> <span class="o">=</span> <span class="kc">None</span>
         <span class="k">for</span> <span class="n">employment</span> <span class="ow">in</span> <span class="n">response_data</span><span class="p">[</span><span class="s1">&#39;employment_history&#39;</span><span class="p">]:</span>
             <span class="k">if</span> <span class="n">employment</span><span class="p">[</span><span class="s1">&#39;current&#39;</span><span class="p">]:</span>
-                <span class="n">current_company</span> <span class="o">=</span> <span class="n">employment</span><span class="p">[</span><span class="s1">&#39;organization_name&#39;</span><span class="p">]</span>
+                <span class="n">company</span> <span class="o">=</span> <span class="n">employment</span><span class="p">[</span><span class="s1">&#39;organization_name&#39;</span><span class="p">]</span>
                 <span class="k">break</span>
 
         <span class="bp">self</span><span class="o">.</span><span class="n">linkedin_url</span> <span class="o">=</span> <span class="n">response_data</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;linkedin_url&#39;</span><span class="p">)</span>
@@ -227,53 +269,137 @@
         <span class="bp">self</span><span class="o">.</span><span class="n">last_name</span> <span class="o">=</span> <span class="n">response_data</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;last_name&#39;</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">title</span> <span class="o">=</span> <span class="n">response_data</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;title&#39;</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">headline</span> <span class="o">=</span> <span class="n">response_data</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;headline&#39;</span><span class="p">)</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">country</span> <span class="o">=</span> <span class="n">response_data</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;country&#39;</span><span class="p">)</span>
+        <span class="n">country</span> <span class="o">=</span> <span class="n">response_data</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;country&#39;</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">country</span> <span class="o">!=</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">country</span> <span class="o">=</span> <span class="n">my_utils</span><span class="o">.</span><span class="n">country_code_from_location</span><span class="p">(</span><span class="n">response_data</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;country&#39;</span><span class="p">))</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">email</span> <span class="o">=</span> <span class="n">response_data</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;email&#39;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">domain</span> <span class="o">=</span> <span class="n">my_utils</span><span class="o">.</span><span class="n">domain_from_email</span><span class="p">(</span><span class="n">response_data</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;email&#39;</span><span class="p">))</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">email_status</span> <span class="o">=</span> <span class="n">response_data</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;email_status&#39;</span><span class="p">)</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">current_company</span> <span class="o">=</span> <span class="n">current_company</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">company</span> <span class="o">=</span> <span class="n">company</span>
 
 <span class="c1"># FUNCTIONS</span>
+
+<span class="k">def</span> <span class="nf">add_person_to_db</span><span class="p">(</span><span class="n">person</span><span class="p">):</span>
+    <span class="n">conn</span> <span class="o">=</span> <span class="kc">None</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="n">conn</span> <span class="o">=</span> <span class="n">sqlite3</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="s2">&quot;/path/to/sqlite/database.db&quot;</span><span class="p">)</span>
+    <span class="k">except</span> <span class="n">Error</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">e</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="n">conn</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Error! cannot create the database connection.&quot;</span><span class="p">)</span>
+        <span class="k">return</span>
+
+    <span class="k">with</span> <span class="n">conn</span><span class="p">:</span>
+        <span class="c1"># Check if the person already exists in the database based on the email</span>
+        <span class="n">cur</span> <span class="o">=</span> <span class="n">conn</span><span class="o">.</span><span class="n">cursor</span><span class="p">()</span>
+
+        <span class="k">if</span> <span class="n">person</span><span class="o">.</span><span class="n">headline</span> <span class="o">!=</span> <span class="kc">None</span> <span class="ow">and</span> <span class="s1">&#39;is a role based email address&#39;</span> <span class="ow">in</span> <span class="n">person</span><span class="o">.</span><span class="n">headline</span><span class="p">:</span>
+            <span class="n">sql</span> <span class="o">=</span> <span class="s1">&#39;&#39;&#39;INSERT INTO team_emails(email)</span>
+<span class="s1">                        VALUES(?)&#39;&#39;&#39;</span>
+            <span class="n">email_prefix</span> <span class="o">=</span> <span class="n">person</span><span class="o">.</span><span class="n">email</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;@&#39;</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+            <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">email_prefix</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">2</span><span class="p">:</span>
+                <span class="n">add_to_db</span> <span class="o">=</span> <span class="p">(</span><span class="n">email_prefix</span><span class="p">,)</span>
+                <span class="n">cur</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="n">sql</span><span class="p">,</span> <span class="n">add_to_db</span><span class="p">)</span>
+                <span class="n">conn</span><span class="o">.</span><span class="n">commit</span><span class="p">()</span>
+                <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">✅ 💿 Email prefix </span><span class="si">{</span><span class="n">email_prefix</span><span class="si">}</span><span class="s2"> added to team_emails in btob.db</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+
+        <span class="k">else</span><span class="p">:</span>
+
+            <span class="n">cur</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="s2">&quot;SELECT * FROM contacts WHERE email = ?&quot;</span><span class="p">,</span> <span class="p">(</span><span class="n">person</span><span class="o">.</span><span class="n">email</span><span class="p">,))</span>
+            <span class="n">existing_person</span> <span class="o">=</span> <span class="n">cur</span><span class="o">.</span><span class="n">fetchone</span><span class="p">()</span>
+
+            <span class="c1"># If the person doesn&#39;t exist in the database, insert the new record</span>
+            <span class="k">if</span> <span class="n">existing_person</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+                <span class="n">current_time</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">now</span><span class="p">()</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="s2">&quot;%Y-%m-</span><span class="si">%d</span><span class="s2"> %H:%M&quot;</span><span class="p">)</span>
+                <span class="n">sql</span> <span class="o">=</span> <span class="s1">&#39;&#39;&#39;INSERT INTO contacts(email, first, last, email_status, domain, country, title, linkedin, created, db, src)</span>
+<span class="s1">                        VALUES(?,?,?,?,?,?,?,?,?,?,?)&#39;&#39;&#39;</span>
+                <span class="n">person_data</span> <span class="o">=</span> <span class="p">(</span><span class="n">person</span><span class="o">.</span><span class="n">email</span><span class="p">,</span> <span class="n">person</span><span class="o">.</span><span class="n">first_name</span><span class="p">,</span> <span class="n">person</span><span class="o">.</span><span class="n">last_name</span><span class="p">,</span> <span class="n">person</span><span class="o">.</span><span class="n">email_status</span><span class="p">,</span> <span class="n">person</span><span class="o">.</span><span class="n">domain</span><span class="p">,</span> <span class="n">person</span><span class="o">.</span><span class="n">country</span><span class="p">,</span> <span class="n">person</span><span class="o">.</span><span class="n">title</span><span class="p">,</span> <span class="n">person</span><span class="o">.</span><span class="n">linkedin_url</span><span class="p">,</span> <span class="n">current_time</span><span class="p">,</span> <span class="s1">&#39;DR&#39;</span><span class="p">,</span> <span class="s1">&#39;Apollo&#39;</span><span class="p">)</span>
+                <span class="n">cur</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="n">sql</span><span class="p">,</span> <span class="n">person_data</span><span class="p">)</span>
+                <span class="n">conn</span><span class="o">.</span><span class="n">commit</span><span class="p">()</span>
+                <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">✅ 💿 Person added to btob.db</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">❌ Person already exists in btob.db</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+
+
+<span class="k">def</span> <span class="nf">print_attributes</span><span class="p">(</span><span class="n">person</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">linkedin_url:</span><span class="se">\t</span><span class="si">{</span><span class="n">person</span><span class="o">.</span><span class="n">linkedin_url</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;first_name:</span><span class="se">\t</span><span class="si">{</span><span class="n">person</span><span class="o">.</span><span class="n">first_name</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;last_name:</span><span class="se">\t</span><span class="si">{</span><span class="n">person</span><span class="o">.</span><span class="n">last_name</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;name:</span><span class="se">\t\t</span><span class="si">{</span><span class="n">person</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;company:</span><span class="se">\t</span><span class="si">{</span><span class="n">person</span><span class="o">.</span><span class="n">company</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;title:</span><span class="se">\t\t</span><span class="si">{</span><span class="n">person</span><span class="o">.</span><span class="n">title</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;headline:</span><span class="se">\t</span><span class="si">{</span><span class="n">person</span><span class="o">.</span><span class="n">headline</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;country:</span><span class="se">\t</span><span class="si">{</span><span class="n">person</span><span class="o">.</span><span class="n">country</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;email:</span><span class="se">\t\t</span><span class="si">{</span><span class="n">person</span><span class="o">.</span><span class="n">email</span><span class="si">}</span><span class="s2"> (</span><span class="si">{</span><span class="n">person</span><span class="o">.</span><span class="n">email_status</span><span class="si">}</span><span class="s2">)&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;email_prefix:</span><span class="se">\t</span><span class="si">{</span><span class="n">person</span><span class="o">.</span><span class="n">email_prefix</span><span class="si">}</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+
 
 <span class="k">def</span> <span class="nf">get_person_data_from_name_and_domain</span><span class="p">(</span><span class="n">first_name</span><span class="p">,</span> <span class="n">last_name</span><span class="p">,</span> <span class="n">domain</span><span class="p">):</span>
     <span class="k">global</span> <span class="n">APOLLO_API_KEY</span>
     <span class="n">person</span> <span class="o">=</span> <span class="n">PersonData</span><span class="p">()</span>
     <span class="n">person</span><span class="o">.</span><span class="n">fetch_data</span><span class="p">(</span><span class="n">APOLLO_API_KEY</span><span class="p">,</span> <span class="s1">&#39;name_and_domain&#39;</span><span class="p">,</span> <span class="n">first_name</span><span class="o">=</span><span class="n">first_name</span><span class="p">,</span> <span class="n">last_name</span><span class="o">=</span><span class="n">last_name</span><span class="p">,</span> <span class="n">domain</span><span class="o">=</span><span class="n">domain</span><span class="p">)</span>
+    <span class="n">print_attributes</span><span class="p">(</span><span class="n">person</span><span class="p">)</span>
+    <span class="n">add_person_to_db</span><span class="p">(</span><span class="n">person</span><span class="p">)</span>
     <span class="k">return</span> <span class="n">person</span>
+
 
 <span class="k">def</span> <span class="nf">get_person_data_from_linkedin_url</span><span class="p">(</span><span class="n">linkedin_url</span><span class="p">):</span>
     <span class="k">global</span> <span class="n">APOLLO_API_KEY</span>
     <span class="n">person</span> <span class="o">=</span> <span class="n">PersonData</span><span class="p">()</span>
     <span class="n">person</span><span class="o">.</span><span class="n">fetch_data</span><span class="p">(</span><span class="n">APOLLO_API_KEY</span><span class="p">,</span> <span class="s1">&#39;linkedin_url&#39;</span><span class="p">,</span> <span class="n">linkedin_url</span><span class="o">=</span><span class="n">linkedin_url</span><span class="p">)</span>
+    <span class="n">print_attributes</span><span class="p">(</span><span class="n">person</span><span class="p">)</span>
+    <span class="n">add_person_to_db</span><span class="p">(</span><span class="n">person</span><span class="p">)</span>
     <span class="k">return</span> <span class="n">person</span>
+
 
 <span class="k">def</span> <span class="nf">get_person_data_from_email</span><span class="p">(</span><span class="n">email</span><span class="p">):</span>
     <span class="k">global</span> <span class="n">APOLLO_API_KEY</span>
     <span class="n">person</span> <span class="o">=</span> <span class="n">PersonData</span><span class="p">()</span>
     <span class="n">person</span><span class="o">.</span><span class="n">fetch_data</span><span class="p">(</span><span class="n">APOLLO_API_KEY</span><span class="p">,</span> <span class="s1">&#39;email&#39;</span><span class="p">,</span> <span class="n">email</span><span class="o">=</span><span class="n">email</span><span class="p">)</span>
+    <span class="n">print_attributes</span><span class="p">(</span><span class="n">person</span><span class="p">)</span>
+    <span class="n">add_person_to_db</span><span class="p">(</span><span class="n">person</span><span class="p">)</span>
     <span class="k">return</span> <span class="n">person</span>
 
+<span class="c1"># ########################################################################################################</span>
 
-<span class="c1"># MAIN</span>
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\n\n</span><span class="s1">-------------------------------&#39;</span><span class="p">)</span>
 
-<span class="c1"># Use as follows</span>
-<span class="c1"># From first, last &amp; domain</span>
-<span class="n">person</span> <span class="o">=</span> <span class="n">get_person_data_from_name_and_domain</span><span class="p">(</span><span class="n">first</span><span class="p">,</span> <span class="n">last</span><span class="p">,</span> <span class="n">domain</span><span class="p">)</span> <span class="c1"># returns a PersonData object</span>
-<span class="c1"># From linkedin url</span>
-<span class="n">person</span> <span class="o">=</span> <span class="n">get_person_data_from_linkedin_url</span><span class="p">(</span><span class="n">linkedin_url</span><span class="p">)</span>
-<span class="c1"># From email</span>
-<span class="n">person</span> <span class="o">=</span> <span class="n">get_person_data_from_email</span><span class="p">(</span><span class="n">email</span><span class="p">)</span>
+    <span class="c1"># Change `run` between &#39;from_name&#39;, &#39;from_linkedin&#39;, and &#39;from_email&#39; to run the script with different inputs</span>
+    <span class="n">run</span> <span class="o">=</span> <span class="s1">&#39;from_email&#39;</span>
 
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n\n</span><span class="s2">&quot;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">person</span><span class="o">.</span><span class="n">linkedin_url</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">person</span><span class="o">.</span><span class="n">first_name</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">person</span><span class="o">.</span><span class="n">last_name</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">person</span><span class="o">.</span><span class="n">current_company</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">person</span><span class="o">.</span><span class="n">title</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">person</span><span class="o">.</span><span class="n">headline</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">person</span><span class="o">.</span><span class="n">country</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">person</span><span class="o">.</span><span class="n">email</span><span class="si">}</span><span class="s2"> (</span><span class="si">{</span><span class="n">person</span><span class="o">.</span><span class="n">email_status</span><span class="si">}</span><span class="s2">)&quot;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n\n</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">run</span> <span class="o">==</span> <span class="s1">&#39;from_name&#39;</span><span class="p">:</span>
+
+        <span class="n">first</span> <span class="o">=</span> <span class="s1">&#39;Paul&#39;</span>
+        <span class="n">last</span> <span class="o">=</span> <span class="s1">&#39;Atreides&#39;</span>
+        <span class="n">domain</span> <span class="o">=</span> <span class="s1">&#39;dune.org&#39;</span>
+
+        <span class="n">person</span> <span class="o">=</span> <span class="n">get_person_data_from_name_and_domain</span><span class="p">(</span><span class="n">first</span><span class="p">,</span> <span class="n">last</span><span class="p">,</span> <span class="n">domain</span><span class="p">)</span> <span class="c1"># returns a PersonData object</span>
+
+    <span class="k">elif</span> <span class="n">run</span> <span class="o">==</span> <span class="s1">&#39;from_linkedin&#39;</span><span class="p">:</span>
+
+        <span class="n">linkedin_url</span> <span class="o">=</span> <span class="s1">&#39;http://www.linkedin.com/in/paul-atreides-123456&#39;</span>
+
+        <span class="n">person</span> <span class="o">=</span> <span class="n">get_person_data_from_linkedin_url</span><span class="p">(</span><span class="n">linkedin_url</span><span class="p">)</span>
+
+    <span class="k">elif</span> <span class="n">run</span> <span class="o">==</span> <span class="s1">&#39;from_email&#39;</span><span class="p">:</span>
+
+        <span class="n">email</span> <span class="o">=</span> <span class="s1">&#39;paul.atreides@dune.org&#39;</span>
+
+        <span class="n">person</span> <span class="o">=</span> <span class="n">get_person_data_from_email</span><span class="p">(</span><span class="n">email</span><span class="p">)</span>
+
+    <span class="n">run_time</span> <span class="o">=</span> <span class="nb">round</span><span class="p">((</span><span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span> <span class="o">-</span> <span class="n">start_time</span><span class="p">),</span> <span class="mi">1</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">run_time</span> <span class="o">&gt;</span> <span class="mi">60</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="se">\n</span><span class="si">{</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">basename</span><span class="p">(</span><span class="vm">__file__</span><span class="p">)</span><span class="si">}</span><span class="s1"> finished in </span><span class="si">{</span><span class="n">run_time</span><span class="o">/</span><span class="mi">60</span><span class="si">}</span><span class="s1"> minutes.</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="se">\n</span><span class="si">{</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">basename</span><span class="p">(</span><span class="vm">__file__</span><span class="p">)</span><span class="si">}</span><span class="s1"> finished in </span><span class="si">{</span><span class="n">run_time</span><span class="si">}</span><span class="s1">s.</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
 </code></pre></div>
+
+<p><span class="datestamp">13 Apr 2023</span>  </p>
+<p>Updated script above to reflect latest version.  </p>
+<p>Used so far to add 1,000+ people to the database - though current job is about getting <code>from_email</code> so no experience yet on % of email found with other 2 input methods.  </p>
+<p>Need to write a script to assess response rates.  </p>
             <!-- </main> -->
         </div><!-- /.entry-content -->
     </article>
