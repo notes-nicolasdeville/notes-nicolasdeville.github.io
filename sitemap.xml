@@ -1808,6 +1808,12 @@
     </url>
     
     <url>
+        <loc>https://notes.nicolasdeville.com/python/experience</loc>
+        <lastmod>2023-04-15</lastmod>
+        <priority>0.8</priority>        
+    </url>
+    
+    <url>
         <loc>https://notes.nicolasdeville.com/python/sending-emails</loc>
         <lastmod>2023-04-15</lastmod>
         <priority>0.8</priority>        
@@ -2565,6 +2571,12 @@
     
     <url>
         <loc>https://notes.nicolasdeville.com/books/foundation-and-empire</loc>
+        <lastmod>2023-04-15</lastmod>
+        <priority>0.8</priority>        
+    </url>
+    
+    <url>
+        <loc>https://notes.nicolasdeville.com/books/clean-code</loc>
         <lastmod>2023-04-15</lastmod>
         <priority>0.8</priority>        
     </url>

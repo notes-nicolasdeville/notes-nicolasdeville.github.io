@@ -20,9 +20,9 @@
 
  
 
-<meta property="article:published_time" content="2023-04-14 08:33:08.217099+02:00" />
+<meta property="article:published_time" content="2023-04-15 07:38:47.791295+02:00" />
 
-<meta property="article:modified_time" content="2023-04-14 08:33:08.217099+02:00" />
+<meta property="article:modified_time" content="2023-04-15 07:38:47.791295+02:00" />
 
 <meta name="robots" content="all, follow" />
 
@@ -80,7 +80,7 @@
             
 
             <div class="above-navbar">
-                <div class="last_updated">15 Apr 2023 | 06:48</div>
+                <div class="last_updated">15 Apr 2023 | 10:37</div>
                 <div>
                     <p class="notes_count">
                         <a href="https://notes.nicolasdeville.com/tags">by tags</a>
@@ -91,7 +91,7 @@
                         <span style="color:#C74350">|</span>
                         <a href="https://notes.nicolasdeville.com/2022/">2022</a>
                         <span style="color:#C74350">|</span>
-                        737 notes
+                        739 notes
                     </p>
                 </div>
             </div>
@@ -138,7 +138,7 @@
 <footer class="post-info">
 
     <p>
-        14 Apr 2023 
+        15 Apr 2023 
         <span class="separator">|</span> in <a class="link_tag" href="https://notes.nicolasdeville.com/helpers/"><span data-pagefind-filter="category">helpers</span></a>
 
  tags: <a class="link_tag" href="https://notes.nicolasdeville.com/tag/api.html">api</a>
@@ -146,8 +146,8 @@
 
         <!-- added 4/7 -->
         <!-- 		<br />
-        <abbr class="modified" title="2023-04-14T08:33:08.217099+02:00">
-                Updated: 14 Apr 2023
+        <abbr class="modified" title="2023-04-15T07:38:47.791295+02:00">
+                Updated: 15 Apr 2023
         </abbr>
  -->
 
@@ -159,10 +159,14 @@
             <!-- <main>  -->
                 <p>Branched out from <span class="nic_link"><a href="https://notes.nicolasdeville.com/helpers/scraping-apis" target="_blank">Scraping APIs</a></span> </p>
 <div class="toc"><span class="toctitle">Table of Contents</span><ul>
-<li><a href="#use">Use</a><ul>
+<li><a href="#basic-use">Basic Use</a><ul>
 <li><a href="#working-function">working function</a></li>
 </ul>
 </li>
+<li><a href="#api-client">API client</a></li>
+<li><a href="#getting-started">Getting Started</a></li>
+<li><a href="#usage">Usage</a></li>
+<li><a href="#error-codes">Error codes</a></li>
 </ul>
 </div>
 <div class="link_border"><div class="link_logo_box"><img class="link_logo" src="https://ik.imagekit.io/vhucnsp9j1u/images/logos/scrapingant.png" alt="logo"/></div><div class="link_content">
@@ -174,7 +178,7 @@
 <p><img class="screenshot" src="https://ik.imagekit.io/vhucnsp9j1u/images/scraping-apis/scrapingant-pricing.jpg" alt="scraping-apis/scrapingant-pricing.jpg"/> </p>
 <p>Starting to test on free plan. </p>
 <p><img class="screenshot" src="https://ik.imagekit.io/vhucnsp9j1u/images/scraping-apis/scrapingant-dashboard.jpg" alt="scraping-apis/scrapingant-dashboard.jpg"/></p>
-<h1 id="use">Use</h1>
+<h1 id="basic-use">Basic Use</h1>
 <div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">requests</span>
 
 <span class="n">url</span> <span class="o">=</span> <span class="s1">&#39;https://api.scrapingant.com/v2/general&#39;</span>
@@ -208,6 +212,91 @@
 
     <span class="k">return</span> <span class="n">soup</span>
 </code></pre></div>
+
+<h1 id="api-client">API client</h1>
+<div class="link_border"><div class="link_logo_box"><img class="link_logo" src="https://ik.imagekit.io/vhucnsp9j1u/images/logos/scrapingant.png" alt="logo"/></div><div class="link_content">
+<div class="link_title">Python API client | ScrapingAnt | Web Scraping API</div>
+<div class="link_tagline">scrapingant.com</div>
+<div class="link_url"><a href="https://docs.scrapingant.com/python-client" target="_blank">https://docs.scrapingant.com/python-client</a></div></div></div>
+
+<table>
+<thead>
+<tr>
+<th>Library resources</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>PyPI</td>
+<td>---</td>
+</tr>
+<tr>
+<td>Github</td>
+<td><a href="https://github.com/ScrapingAnt/scrapingant-client-python" target="_blank">https://github.com/ScrapingAnt/scrapingant-client-python</a></td>
+</tr>
+<tr>
+<td>Documentation</td>
+<td><a href="https://docs.scrapingant.com/python-client" target="_blank">https://docs.scrapingant.com/python-client</a></td>
+</tr>
+</tbody>
+</table>
+<h1 id="getting-started">Getting Started</h1>
+<div class="highlight"><pre><span></span><code>pip install scrapingant-client
+</code></pre></div>
+
+<h1 id="usage">Usage</h1>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">scrapingant_client</span> <span class="kn">import</span> <span class="n">ScrapingAntClient</span>
+
+<span class="n">client</span> <span class="o">=</span> <span class="n">ScrapingAntClient</span><span class="p">(</span><span class="n">token</span><span class="o">=</span><span class="s1">&#39;&lt;YOUR-SCRAPINGANT-API-TOKEN&gt;&#39;</span><span class="p">)</span>
+<span class="c1"># Scrape the example.com site.</span>
+<span class="n">result</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">general_request</span><span class="p">(</span><span class="s1">&#39;https://example.com&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">result</span><span class="o">.</span><span class="n">content</span><span class="p">)</span>
+</code></pre></div>
+
+<h1 id="error-codes">Error codes</h1>
+<table>
+<thead>
+<tr>
+<th>HTTP status code</th>
+<th>Reason</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>400</td>
+<td>Wrong request format. Make sure that you're using a proper JSON input.</td>
+</tr>
+<tr>
+<td>403</td>
+<td>The API token is wrong or you have exceeded the API credits limit.</td>
+</tr>
+<tr>
+<td>404</td>
+<td>The requested URL is not reachable. Please, check it in your browser or try again.</td>
+</tr>
+<tr>
+<td>405</td>
+<td>The API endpoint can only be accessed using the following HTTP methods: GET, POST, PUT, DELETE.</td>
+</tr>
+<tr>
+<td>409</td>
+<td>Concurrent requests limit exceeded. Please, try again or upgrade to the paid plan</td>
+</tr>
+<tr>
+<td>422</td>
+<td>Invalid value provided. Please, look into detail for more info.</td>
+</tr>
+<tr>
+<td>423</td>
+<td>The anti-bot detection system has detected the request. Please, retry or change the request settings.</td>
+</tr>
+<tr>
+<td>500</td>
+<td>Something went wrong with the server side code. Rare case. We're recommending to contact us in this case.</td>
+</tr>
+</tbody>
+</table>
             <!-- </main> -->
         </div><!-- /.entry-content -->
     </article>
