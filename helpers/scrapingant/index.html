@@ -20,9 +20,9 @@
 
  
 
-<meta property="article:published_time" content="2023-04-15 07:38:47.791295+02:00" />
+<meta property="article:published_time" content="2023-04-15 13:14:11.745103+02:00" />
 
-<meta property="article:modified_time" content="2023-04-15 07:38:47.791295+02:00" />
+<meta property="article:modified_time" content="2023-04-15 13:14:11.745103+02:00" />
 
 <meta name="robots" content="all, follow" />
 
@@ -80,7 +80,7 @@
             
 
             <div class="above-navbar">
-                <div class="last_updated">15 Apr 2023 | 10:37</div>
+                <div class="last_updated">16 Apr 2023 | 06:45</div>
                 <div>
                     <p class="notes_count">
                         <a href="https://notes.nicolasdeville.com/tags">by tags</a>
@@ -146,7 +146,7 @@
 
         <!-- added 4/7 -->
         <!-- 		<br />
-        <abbr class="modified" title="2023-04-15T07:38:47.791295+02:00">
+        <abbr class="modified" title="2023-04-15T13:14:11.745103+02:00">
                 Updated: 15 Apr 2023
         </abbr>
  -->
@@ -167,6 +167,7 @@
 <li><a href="#getting-started">Getting Started</a></li>
 <li><a href="#usage">Usage</a></li>
 <li><a href="#error-codes">Error codes</a></li>
+<li><a href="#response-example">Response example</a></li>
 </ul>
 </div>
 <div class="link_border"><div class="link_logo_box"><img class="link_logo" src="https://ik.imagekit.io/vhucnsp9j1u/images/logos/scrapingant.png" alt="logo"/></div><div class="link_content">
@@ -297,6 +298,32 @@
 </tr>
 </tbody>
 </table>
+<h1 id="response-example">Response example</h1>
+<div class="highlight"><pre><span></span><code>apparent_encoding: utf-8
+close: &lt;bound method Response.close of &lt;Response <span class="o">[</span><span class="m">404</span><span class="o">]</span>&gt;&gt;
+connection: &lt;requests.adapters.HTTPAdapter object at 0x1069c6860&gt;
+content: b<span class="s1">&#39;{&quot;detail&quot;:&quot;This site can\xe2\x80\x99t be reached&quot;}&#39;</span>
+cookies: &lt;RequestsCookieJar<span class="o">[]</span>&gt;
+elapsed: <span class="m">0</span>:01:00.988698
+encoding: utf-8
+headers: <span class="o">{</span><span class="s1">&#39;Content-Length&#39;</span>: <span class="s1">&#39;41&#39;</span>, <span class="s1">&#39;Content-Type&#39;</span>: <span class="s1">&#39;application/json&#39;</span>, <span class="s1">&#39;Date&#39;</span>: <span class="s1">&#39;Sat, 15 Apr 2023 11:11:07 GMT&#39;</span>, <span class="s1">&#39;Server&#39;</span>: <span class="s1">&#39;uvicorn&#39;</span>, <span class="s1">&#39;Vary&#39;</span>: <span class="s1">&#39;Accept-Encoding&#39;</span><span class="o">}</span>
+history: <span class="o">[]</span>
+is_permanent_redirect: False
+is_redirect: False
+iter_content: &lt;bound method Response.iter_content of &lt;Response <span class="o">[</span><span class="m">404</span><span class="o">]</span>&gt;&gt;
+iter_lines: &lt;bound method Response.iter_lines of &lt;Response <span class="o">[</span><span class="m">404</span><span class="o">]</span>&gt;&gt;
+json: &lt;bound method Response.json of &lt;Response <span class="o">[</span><span class="m">404</span><span class="o">]</span>&gt;&gt;
+links: <span class="o">{}</span>
+next: None
+ok: False
+raise_for_status: &lt;bound method Response.raise_for_status of &lt;Response <span class="o">[</span><span class="m">404</span><span class="o">]</span>&gt;&gt;
+raw: &lt;urllib3.response.HTTPResponse object at 0x106c63040&gt;
+reason: Not Found
+request: &lt;PreparedRequest <span class="o">[</span>GET<span class="o">]</span>&gt;
+status_code: <span class="m">404</span>
+text: <span class="o">{</span><span class="s2">&quot;detail&quot;</span>:<span class="s2">&quot;This site can’t be reached&quot;</span><span class="o">}</span>
+url: https://api.scrapingant.com/v2/general?url<span class="o">=</span>https%3A%2F%2Fbit.ly%2F3K8jfVx<span class="p">&amp;</span>x-api-key<span class="o">=</span>c967d3da0a484315a5ecbb2aaaeb367a<span class="p">&amp;</span><span class="nv">browser</span><span class="o">=</span>False<span class="p">&amp;</span><span class="nv">proxy_country</span><span class="o">=</span>GB<span class="p">&amp;</span><span class="nv">return_page_source</span><span class="o">=</span>True
+</code></pre></div>
             <!-- </main> -->
         </div><!-- /.entry-content -->
     </article>
