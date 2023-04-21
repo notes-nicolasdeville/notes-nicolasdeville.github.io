@@ -19,9 +19,9 @@
 <meta name="twitter:description" content="[operational] Lead generation using Twitter" /> <!-- max. 200 characters -->
  
 
-<meta property="article:published_time" content="2023-04-12 12:47:56.383986+02:00" />
+<meta property="article:published_time" content="2023-04-18 09:09:22.395043+02:00" />
 
-<meta property="article:modified_time" content="2023-04-12 12:47:56.383986+02:00" />
+<meta property="article:modified_time" content="2023-04-18 09:09:22.395043+02:00" />
 
 <meta name="robots" content="all, follow" />
 
@@ -79,7 +79,7 @@
             
 
             <div class="above-navbar">
-                <div class="last_updated">16 Apr 2023 | 19:15</div>
+                <div class="last_updated">21 Apr 2023 | 12:54</div>
                 <div>
                     <p class="notes_count">
                         <a href="https://notes.nicolasdeville.com/tags">by tags</a>
@@ -90,7 +90,7 @@
                         <span style="color:#C74350">|</span>
                         <a href="https://notes.nicolasdeville.com/2022/">2022</a>
                         <span style="color:#C74350">|</span>
-                        743 notes
+                        747 notes
                     </p>
                 </div>
             </div>
@@ -137,7 +137,7 @@
 <footer class="post-info">
 
     <p>
-        12 Apr 2023 
+        18 Apr 2023 
         <span class="separator">|</span> in <a class="link_tag" href="https://notes.nicolasdeville.com/projects/"><span data-pagefind-filter="category">projects</span></a>
 
  tags: <a class="link_tag" href="https://notes.nicolasdeville.com/tag/python.html">python</a>
@@ -146,8 +146,8 @@
 
         <!-- added 4/7 -->
         <!-- 		<br />
-        <abbr class="modified" title="2023-04-12T12:47:56.383986+02:00">
-                Updated: 12 Apr 2023
+        <abbr class="modified" title="2023-04-18T09:09:22.395043+02:00">
+                Updated: 18 Apr 2023
         </abbr>
  -->
 
@@ -610,6 +610,9 @@
     <span class="c1">#Continue processing tweet data list normally</span>
     <span class="n">index</span> <span class="o">=</span> <span class="mi">1</span>
     <span class="n">num_of_tw</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">tweet_data</span><span class="p">)</span>
+
+    <span class="n">converted_urls</span> <span class="o">=</span> <span class="p">{}</span>
+
     <span class="k">for</span> <span class="n">tweet</span> <span class="ow">in</span> <span class="n">tweet_data</span><span class="p">[:]:</span>
                 <span class="c1"># But skip if tweet is already processed</span>
                 <span class="k">if</span> <span class="n">continue_from_cache</span><span class="p">:</span>
@@ -640,6 +643,7 @@
                             <span class="nb">print</span><span class="p">(</span><span class="n">shortened_url</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">25</span><span class="p">]</span><span class="o">+</span><span class="s2">&quot;...&quot;</span><span class="p">,</span><span class="s2">&quot; &gt;&gt;&gt; &quot;</span> <span class="p">,</span><span class="n">actual_url</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">25</span><span class="p">]</span><span class="o">+</span><span class="s2">&quot;...&quot;</span><span class="p">,</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
 
                             <span class="n">final_urls</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">actual_url</span><span class="p">)</span>
+
                             <span class="k">if</span> <span class="n">DEBUG_MODE</span><span class="p">:</span>
                                 <span class="k">if</span> <span class="s1">&#39;zoom&#39;</span> <span class="ow">in</span> <span class="n">actual_url</span><span class="p">:</span>
                                     <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;yaman.txt&#39;</span><span class="p">,</span><span class="s1">&#39;a&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">df</span><span class="p">:</span> <span class="n">df</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">actual_url</span><span class="o">+</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
