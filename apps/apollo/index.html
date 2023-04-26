@@ -19,9 +19,9 @@
 <meta name="twitter:description" content="Sales Engagement Platform & Data Enrichment API" /> <!-- max. 200 characters -->
  
 
-<meta property="article:published_time" content="2023-04-17 06:51:17.294149+02:00" />
+<meta property="article:published_time" content="2023-04-21 21:29:31.788220+02:00" />
 
-<meta property="article:modified_time" content="2023-04-17 06:51:17.294149+02:00" />
+<meta property="article:modified_time" content="2023-04-21 21:29:31.788220+02:00" />
 
 <meta name="robots" content="all, follow" />
 
@@ -79,7 +79,7 @@
             
 
             <div class="above-navbar">
-                <div class="last_updated">21 Apr 2023 | 12:54</div>
+                <div class="last_updated">26 Apr 2023 | 10:58</div>
                 <div>
                     <p class="notes_count">
                         <a href="https://notes.nicolasdeville.com/tags">by tags</a>
@@ -137,15 +137,15 @@
 <footer class="post-info">
 
     <p>
-        17 Apr 2023 
+        21 Apr 2023 
         <span class="separator">|</span> in <a class="link_tag" href="https://notes.nicolasdeville.com/apps/"><span data-pagefind-filter="category">apps</span></a>
 
  tags: <a class="link_tag" href="https://notes.nicolasdeville.com/tag/b2b-sales.html">b2b sales</a>
 
         <!-- added 4/7 -->
         <!-- 		<br />
-        <abbr class="modified" title="2023-04-17T06:51:17.294149+02:00">
-                Updated: 17 Apr 2023
+        <abbr class="modified" title="2023-04-21T21:29:31.788220+02:00">
+                Updated: 21 Apr 2023
         </abbr>
  -->
 
@@ -162,6 +162,13 @@
 <li><a href="#dashboard">Dashboard</a></li>
 <li><a href="#response">Response</a></li>
 <li><a href="#working-script">Working script</a></li>
+<li><a href="#learnings">Learnings</a><ul>
+<li><a href="#endpoints">Endpoints</a><ul>
+<li><a href="#search_1">/search</a></li>
+</ul>
+</li>
+</ul>
+</li>
 </ul>
 </li>
 <li><a href="#limits">Limits</a></li>
@@ -548,6 +555,157 @@
 <p><span class="datestamp">13 Apr 2023</span> </p>
 <p>See this note for my Python script that works using Apollo's API: </p>
 <p><span class="nic_link"><a href="https://notes.nicolasdeville.com/python/script-contact-data-apollo" target="_blank">Python script: how to get contact data via API from Apollo.io</a></span>   </p>
+<h2 id="learnings">Learnings</h2>
+<p>When connecting Hubspot to Apollo, the API returns the Hubspot object of an organisation as <code>account</code> and the details of that organisation from Apollo under <code>organization</code>, eg:</p>
+<div class="highlight"><pre><span></span><code>organization
+<span class="o">{</span>   <span class="s1">&#39;alexa_ranking&#39;</span>: <span class="m">2020</span>,
+    <span class="s1">&#39;angellist_url&#39;</span>: None,
+    <span class="s1">&#39;blog_url&#39;</span>: None,
+    <span class="s1">&#39;crunchbase_url&#39;</span>: None,
+    <span class="s1">&#39;facebook_url&#39;</span>: <span class="s1">&#39;https://www.facebook.com/UCCRN&#39;</span>,
+    <span class="s1">&#39;founded_year&#39;</span>: <span class="m">1754</span>,
+    <span class="s1">&#39;id&#39;</span>: <span class="s1">&#39;6400651509a89000018c6ce2&#39;</span>,
+    <span class="s1">&#39;languages&#39;</span>: <span class="o">[]</span>,
+    <span class="s1">&#39;linkedin_uid&#39;</span>: <span class="s1">&#39;2624&#39;</span>,
+    <span class="s1">&#39;linkedin_url&#39;</span>: <span class="s1">&#39;http://www.linkedin.com/company/columbia-university&#39;</span>,
+    <span class="s1">&#39;logo_url&#39;</span>: <span class="s1">&#39;https://zenprospect-production.s3.amazonaws.com/uploads/pictures/63e23ba4835f7d0001520563/picture&#39;</span>,
+    <span class="s1">&#39;name&#39;</span>: <span class="s1">&#39;Columbia University&#39;</span>,
+    <span class="s1">&#39;persona_counts&#39;</span>: <span class="o">{}</span>,
+    <span class="s1">&#39;phone&#39;</span>: <span class="s1">&#39;+1212-854-4900&#39;</span>,
+    <span class="s1">&#39;primary_domain&#39;</span>: <span class="s1">&#39;columbia.edu&#39;</span>,
+    <span class="s1">&#39;primary_phone&#39;</span>: <span class="o">{</span>   <span class="s1">&#39;country_code_added_from_hq&#39;</span>: True,
+                         <span class="s1">&#39;number&#39;</span>: <span class="s1">&#39;+1212-854-4900&#39;</span>,
+                         <span class="s1">&#39;source&#39;</span>: <span class="s1">&#39;Owler&#39;</span><span class="o">}</span>,
+    <span class="s1">&#39;publicly_traded_exchange&#39;</span>: None,
+    <span class="s1">&#39;publicly_traded_symbol&#39;</span>: None,
+    <span class="s1">&#39;sanitized_phone&#39;</span>: <span class="s1">&#39;+12128544900&#39;</span>,
+    <span class="s1">&#39;twitter_url&#39;</span>: <span class="s1">&#39;https://twitter.com/UCCRN&#39;</span>,
+    <span class="s1">&#39;website_url&#39;</span>: <span class="s1">&#39;http://www.columbia.edu&#39;</span><span class="o">}</span>
+
+
+
+account
+<span class="o">{</span>   <span class="s1">&#39;account_playbook_statuses&#39;</span>: <span class="o">[]</span>,
+    <span class="s1">&#39;account_stage_id&#39;</span>: <span class="s1">&#39;6435a7afc37f1a00da7470fc&#39;</span>,
+    <span class="s1">&#39;alexa_ranking&#39;</span>: <span class="m">2020</span>,
+    <span class="s1">&#39;angellist_url&#39;</span>: None,
+    <span class="s1">&#39;blog_url&#39;</span>: None,
+    <span class="s1">&#39;created_at&#39;</span>: <span class="s1">&#39;2023-04-12T06:28:06.263Z&#39;</span>,
+    <span class="s1">&#39;crm_owner_id&#39;</span>: <span class="s1">&#39;360460600&#39;</span>,
+    <span class="s1">&#39;crunchbase_url&#39;</span>: None,
+    <span class="s1">&#39;domain&#39;</span>: <span class="s1">&#39;columbia.edu&#39;</span>,
+    <span class="s1">&#39;existence_level&#39;</span>: <span class="s1">&#39;full&#39;</span>,
+    <span class="s1">&#39;facebook_url&#39;</span>: <span class="s1">&#39;https://www.facebook.com/UCCRN&#39;</span>,
+    <span class="s1">&#39;founded_year&#39;</span>: <span class="m">1754</span>,
+    <span class="s1">&#39;hubspot_id&#39;</span>: <span class="s1">&#39;15251006492&#39;</span>,
+    <span class="s1">&#39;hubspot_record_url&#39;</span>: <span class="s1">&#39;https://app.hubspot.com/sales/24308136/company/15251006492&#39;</span>,
+    <span class="s1">&#39;id&#39;</span>: <span class="s1">&#39;64364f763692e50001c461d4&#39;</span>,
+    <span class="s1">&#39;label_ids&#39;</span>: <span class="o">[]</span>,
+    <span class="s1">&#39;languages&#39;</span>: <span class="o">[]</span>,
+    <span class="s1">&#39;linkedin_uid&#39;</span>: <span class="s1">&#39;2624&#39;</span>,
+    <span class="s1">&#39;linkedin_url&#39;</span>: <span class="s1">&#39;http://www.linkedin.com/company/columbia-university&#39;</span>,
+    <span class="s1">&#39;logo_url&#39;</span>: <span class="s1">&#39;https://zenprospect-production.s3.amazonaws.com/uploads/pictures/63e23ba4835f7d0001520563/picture&#39;</span>,
+    <span class="s1">&#39;modality&#39;</span>: <span class="s1">&#39;account&#39;</span>,
+    <span class="s1">&#39;name&#39;</span>: <span class="s1">&#39;Columbia University&#39;</span>,
+    <span class="s1">&#39;organization_id&#39;</span>: <span class="s1">&#39;6400651509a89000018c6ce2&#39;</span>,
+    <span class="s1">&#39;original_source&#39;</span>: <span class="s1">&#39;crm&#39;</span>,
+    <span class="s1">&#39;owner_id&#39;</span>: <span class="s1">&#39;6435a7b0c37f1a00da747176&#39;</span>,
+    <span class="s1">&#39;parent_account_id&#39;</span>: None,
+    <span class="s1">&#39;persona_counts&#39;</span>: <span class="o">{}</span>,
+    <span class="s1">&#39;phone&#39;</span>: <span class="s1">&#39;2123263363&#39;</span>,
+    <span class="s1">&#39;phone_status&#39;</span>: <span class="s1">&#39;no_status&#39;</span>,
+    <span class="s1">&#39;primary_domain&#39;</span>: <span class="s1">&#39;columbia.edu&#39;</span>,
+    <span class="s1">&#39;primary_phone&#39;</span>: <span class="o">{</span>   <span class="s1">&#39;country_code_added_from_hq&#39;</span>: True,
+                         <span class="s1">&#39;number&#39;</span>: <span class="s1">&#39;+1212-854-4900&#39;</span>,
+                         <span class="s1">&#39;source&#39;</span>: <span class="s1">&#39;Owler&#39;</span><span class="o">}</span>,
+    <span class="s1">&#39;publicly_traded_exchange&#39;</span>: None,
+    <span class="s1">&#39;publicly_traded_symbol&#39;</span>: None,
+    <span class="s1">&#39;salesforce_id&#39;</span>: None,
+    <span class="s1">&#39;sanitized_phone&#39;</span>: <span class="s1">&#39;+12123263363&#39;</span>,
+    <span class="s1">&#39;source&#39;</span>: <span class="s1">&#39;crm&#39;</span>,
+    <span class="s1">&#39;team_id&#39;</span>: <span class="s1">&#39;6435a7afc37f1a00da7470f1&#39;</span>,
+    <span class="s1">&#39;twitter_url&#39;</span>: <span class="s1">&#39;https://twitter.com/UCCRN&#39;</span>,
+    <span class="s1">&#39;typed_custom_fields&#39;</span>: <span class="o">{}</span>,
+    <span class="s1">&#39;website_url&#39;</span>: <span class="s1">&#39;http://www.columbia.edu&#39;</span><span class="o">}</span>
+</code></pre></div>
+
+<h3 id="endpoints">Endpoints</h3>
+<h4 id="search_1">/search</h4>
+<div class="highlight"><pre><span></span><code><span class="n">url</span> <span class="o">=</span> <span class="s2">&quot;https://api.apollo.io/v1/mixed_people/search&quot;</span>
+
+<span class="n">data</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s2">&quot;api_key&quot;</span><span class="p">:</span> <span class="n">APOLLO_API_KEY</span><span class="p">,</span>
+    <span class="s2">&quot;q_organization_domains&quot;</span><span class="p">:</span> <span class="s2">&quot;columbia.edu&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;page&quot;</span> <span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+    <span class="s2">&quot;person_titles&quot;</span> <span class="p">:</span> <span class="p">[</span><span class="s2">&quot;event&quot;</span><span class="p">]</span>
+<span class="p">}</span>
+
+<span class="n">headers</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s1">&#39;Cache-Control&#39;</span><span class="p">:</span> <span class="s1">&#39;no-cache&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;Content-Type&#39;</span><span class="p">:</span> <span class="s1">&#39;application/json&#39;</span>
+<span class="p">}</span>
+
+<span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">request</span><span class="p">(</span><span class="s2">&quot;POST&quot;</span><span class="p">,</span> <span class="n">url</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="n">headers</span><span class="p">,</span> <span class="n">json</span><span class="o">=</span><span class="n">data</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;&quot;&quot;</span><span class="se">\n</span><span class="s2">ℹ️  Apollo Response headers: Minute: </span><span class="si">{</span><span class="n">response</span><span class="o">.</span><span class="n">headers</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;x-minute-usage&#39;</span><span class="p">)</span><span class="si">}</span><span class="s2">/</span><span class="si">{</span><span class="n">response</span><span class="o">.</span><span class="n">headers</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;x-minute-requests-left&#39;</span><span class="p">)</span><span class="si">}</span><span class="s2"> | Hourly: </span><span class="si">{</span><span class="n">response</span><span class="o">.</span><span class="n">headers</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;x-hourly-requests-left&#39;</span><span class="p">)</span><span class="si">}</span><span class="s2">/</span><span class="si">{</span><span class="n">response</span><span class="o">.</span><span class="n">headers</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;x-rate-limit-hourly&#39;</span><span class="p">)</span><span class="si">}</span><span class="s2"> | Daily: </span><span class="si">{</span><span class="n">response</span><span class="o">.</span><span class="n">headers</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;x-24-hour-requests-left&#39;</span><span class="p">)</span><span class="si">}</span><span class="s2">/</span><span class="si">{</span><span class="n">response</span><span class="o">.</span><span class="n">headers</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;x-24-hour-usage&#39;</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;&quot;&quot;</span><span class="p">)</span>
+
+<span class="n">response_data</span> <span class="o">=</span> <span class="n">response</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
+
+<span class="c1"># Keys returned by the API:</span>
+<span class="c1"># breadcrumbs = &lt;class &#39;list&#39;&gt;</span>
+<span class="c1"># partial_results_only = &lt;class &#39;bool&#39;&gt;</span>
+<span class="c1"># disable_eu_prospecting = &lt;class &#39;bool&#39;&gt;</span>
+<span class="c1"># partial_results_limit = &lt;class &#39;int&#39;&gt;</span>
+<span class="c1"># pagination = &lt;class &#39;dict&#39;&gt;</span>
+<span class="c1"># contacts = &lt;class &#39;list&#39;&gt;</span>
+<span class="c1"># people = &lt;class &#39;list&#39;&gt;</span>
+<span class="c1"># model_ids = &lt;class &#39;list&#39;&gt;</span>
+<span class="c1"># num_fetch_result = &lt;class &#39;NoneType&#39;&gt;</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">type(response_data) = </span><span class="si">{</span><span class="nb">type</span><span class="p">(</span><span class="n">response_data</span><span class="p">)</span><span class="si">}</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">k</span><span class="p">,</span><span class="n">v</span> <span class="ow">in</span> <span class="n">response_data</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">k</span><span class="si">}</span><span class="s2"> = </span><span class="si">{</span><span class="nb">type</span><span class="p">(</span><span class="n">v</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+
+<span class="n">people</span> <span class="o">=</span> <span class="n">response_data</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;people&#39;</span><span class="p">,</span> <span class="p">[])</span>
+
+<span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="n">people</span><span class="p">:</span>
+
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">========== NEW PERSON ==========&quot;</span><span class="p">)</span>
+
+    <span class="c1"># Keys returned by the API:</span>
+    <span class="c1"># id = &lt;class &#39;str&#39;&gt;</span>
+    <span class="c1"># first_name = &lt;class &#39;str&#39;&gt;</span>
+    <span class="c1"># last_name = &lt;class &#39;str&#39;&gt;</span>
+    <span class="c1"># name = &lt;class &#39;str&#39;&gt;</span>
+    <span class="c1"># linkedin_url = &lt;class &#39;str&#39;&gt;</span>
+    <span class="c1"># title = &lt;class &#39;str&#39;&gt;</span>
+    <span class="c1"># email_status = &lt;class &#39;str&#39;&gt;</span>
+    <span class="c1"># photo_url = &lt;class &#39;str&#39;&gt;</span>
+    <span class="c1"># twitter_url = &lt;class &#39;NoneType&#39;&gt;</span>
+    <span class="c1"># github_url = &lt;class &#39;NoneType&#39;&gt;</span>
+    <span class="c1"># facebook_url = &lt;class &#39;NoneType&#39;&gt;</span>
+    <span class="c1"># extrapolated_email_confidence = &lt;class &#39;NoneType&#39;&gt;</span>
+    <span class="c1"># headline = &lt;class &#39;str&#39;&gt;</span>
+    <span class="c1"># email = &lt;class &#39;str&#39;&gt;</span>
+    <span class="c1"># organization_id = &lt;class &#39;str&#39;&gt;</span>
+    <span class="c1"># employment_history = &lt;class &#39;list&#39;&gt;</span>
+    <span class="c1"># state = &lt;class &#39;str&#39;&gt;</span>
+    <span class="c1"># city = &lt;class &#39;str&#39;&gt;</span>
+    <span class="c1"># country = &lt;class &#39;str&#39;&gt;</span>
+    <span class="c1"># organization = &lt;class &#39;dict&#39;&gt;</span>
+    <span class="c1"># account_id = &lt;class &#39;str&#39;&gt;</span>
+    <span class="c1"># account = &lt;class &#39;dict&#39;&gt;</span>
+    <span class="c1"># phone_numbers = &lt;class &#39;list&#39;&gt;</span>
+    <span class="c1"># intent_strength = &lt;class &#39;NoneType&#39;&gt;</span>
+    <span class="c1"># show_intent = &lt;class &#39;bool&#39;&gt;</span>
+    <span class="c1"># revealed_for_current_team = &lt;class &#39;bool&#39;&gt;</span>
+    <span class="c1"># departments = &lt;class &#39;list&#39;&gt;</span>
+    <span class="c1"># subdepartments = &lt;class &#39;list&#39;&gt;</span>
+    <span class="c1"># functions = &lt;class &#39;list&#39;&gt;</span>
+    <span class="c1"># seniority = &lt;class &#39;str&#39;&gt;</span>
+</code></pre></div>
+
 <h1 id="limits">Limits</h1>
 <p>API rate limits are per minute, hour and day. It's a rolling 24h window, ie doesn't reset at midnight 😅  </p>
 <p>Makes it hard to know when API limit will reset.  </p>
