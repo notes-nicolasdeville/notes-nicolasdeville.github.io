@@ -20,9 +20,9 @@
 
  
 
-<meta property="article:published_time" content="2023-03-11 12:03:56.731627+01:00" />
+<meta property="article:published_time" content="2023-05-01 16:58:40.752523+02:00" />
 
-<meta property="article:modified_time" content="2023-03-11 12:03:56.731627+01:00" />
+<meta property="article:modified_time" content="2023-05-01 16:58:40.752523+02:00" />
 
 <meta name="robots" content="all, follow" />
 
@@ -80,7 +80,7 @@
             
 
             <div class="above-navbar">
-                <div class="last_updated">29 Apr 2023 | 08:21</div>
+                <div class="last_updated">02 May 2023 | 12:59</div>
                 <div>
                     <p class="notes_count">
                         <a href="https://notes.nicolasdeville.com/tags">by tags</a>
@@ -91,7 +91,7 @@
                         <span style="color:#C74350">|</span>
                         <a href="https://notes.nicolasdeville.com/2022/">2022</a>
                         <span style="color:#C74350">|</span>
-                        749 notes
+                        752 notes
                     </p>
                 </div>
             </div>
@@ -138,7 +138,7 @@
 <footer class="post-info">
 
     <p>
-        11 Mar 2023 
+        01 May 2023 
         <span class="separator">|</span> in <a class="link_tag" href="https://notes.nicolasdeville.com/python/"><span data-pagefind-filter="category">python</span></a>
 
  tags: <a class="link_tag" href="https://notes.nicolasdeville.com/tag/snippets.html">snippets</a>
@@ -146,8 +146,8 @@
 
         <!-- added 4/7 -->
         <!-- 		<br />
-        <abbr class="modified" title="2023-03-11T12:03:56.731627+01:00">
-                Updated: 11 Mar 2023
+        <abbr class="modified" title="2023-05-01T16:58:40.752523+02:00">
+                Updated: 01 May 2023
         </abbr>
  -->
 
@@ -209,6 +209,27 @@
 
 <p>outputs:   </p>
 <p><img class="screenshot" src="https://ik.imagekit.io/vhucnsp9j1u/images/library-termtables/output.jpg" alt="output"/>  </p>
+<h1 id="styles">Styles</h1>
+<p>plain - a plain style without any additional formatting.<br>
+single - a style with single lines.<br>
+single_double - a style with single horizontal and double vertical lines.<br>
+double - a style with double lines.<br>
+rounded - a style with rounded corners and single lines.<br>
+markdown - a style resembling Markdown tables.<br>
+tsv - a style similar to tab-separated values format.<br>
+html - a style that generates an HTML table.<br>
+pipe - a style with pipe-separated values.<br>
+orgtbl - a style resembling org-mode tables in Emacs.<br>
+rst - a style resembling reStructuredText tables.</p>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">termtables</span> <span class="k">as</span> <span class="nn">tt</span>
+
+<span class="n">data</span> <span class="o">=</span> <span class="p">[(</span><span class="s2">&quot;Header 1&quot;</span><span class="p">,</span> <span class="s2">&quot;Header 2&quot;</span><span class="p">),</span> <span class="p">(</span><span class="s2">&quot;Row 1, Col 1&quot;</span><span class="p">,</span> <span class="s2">&quot;Row 1, Col 2&quot;</span><span class="p">),</span> <span class="p">(</span><span class="s2">&quot;Row 2, Col 1&quot;</span><span class="p">,</span> <span class="s2">&quot;Row 2, Col 2&quot;</span><span class="p">)]</span>
+
+<span class="n">tt</span><span class="o">.</span><span class="n">print</span><span class="p">(</span>
+    <span class="n">data</span><span class="p">,</span>
+    <span class="n">style</span><span class="o">=</span><span class="n">tt</span><span class="o">.</span><span class="n">styles</span><span class="o">.</span><span class="n">rounded</span><span class="p">,</span>  <span class="c1"># Change this to any available style</span>
+<span class="p">)</span>
+</code></pre></div>
             <!-- </main> -->
         </div><!-- /.entry-content -->
     </article>
