@@ -19,9 +19,9 @@
 <meta name="twitter:description" content="my own Python-powered Calendly alternative" /> <!-- max. 200 characters -->
  
 
-<meta property="article:published_time" content="2023-03-16 08:16:20.443775+01:00" />
+<meta property="article:published_time" content="2023-05-06 10:44:00.826110+02:00" />
 
-<meta property="article:modified_time" content="2023-03-16 08:16:20.443775+01:00" />
+<meta property="article:modified_time" content="2023-05-06 10:44:00.826110+02:00" />
 
 <meta name="robots" content="all, follow" />
 
@@ -79,7 +79,7 @@
             
 
             <div class="above-navbar">
-                <div class="last_updated">03 May 2023 | 07:14</div>
+                <div class="last_updated">08 May 2023 | 20:52</div>
                 <div>
                     <p class="notes_count">
                         <a href="https://notes.nicolasdeville.com/tags">by tags</a>
@@ -90,7 +90,7 @@
                         <span style="color:#C74350">|</span>
                         <a href="https://notes.nicolasdeville.com/2022/">2022</a>
                         <span style="color:#C74350">|</span>
-                        752 notes
+                        755 notes
                     </p>
                 </div>
             </div>
@@ -137,14 +137,14 @@
 <footer class="post-info">
 
     <p>
-        16 Mar 2023 
+        06 May 2023 
         <span class="separator">|</span> in <a class="link_tag" href="https://notes.nicolasdeville.com/projects/"><span data-pagefind-filter="category">projects</span></a>
 
 
         <!-- added 4/7 -->
         <!-- 		<br />
-        <abbr class="modified" title="2023-03-16T08:16:20.443775+01:00">
-                Updated: 16 Mar 2023
+        <abbr class="modified" title="2023-05-06T10:44:00.826110+02:00">
+                Updated: 06 May 2023
         </abbr>
  -->
 
@@ -222,7 +222,21 @@
 <li>Create a new OAuth client ID<br>
 <img class="screenshot" src="https://ik.imagekit.io/vhucnsp9j1u/images/calendaree/google-cloud-calendaree-dv-oauth.jpg" alt="calendaree/google-cloud-calendaree-dv-oauth.jpg"/>  </li>
 <li>Download the credentials JSON file</li>
-<li>Create a <code>quickstart.py</code> with below code, run, authenticate in browser, create the token file:   </li>
+<li>save it as <code>credentials.json</code> in the same folder as <code>quickstart.py</code> (next step)</li>
+<li>
+<p>Create a <code>quickstart.py</code> with below code, run, authenticate in browser, create the token file.</p>
+</li>
+<li>
+<p>Create a <code>service_key.json</code> at <code>https://console.cloud.google.com/iam-admin/serviceaccounts/create</code><br>
+In the menu, click on "APIs &amp; Services" &gt; "Credentials."<br>
+Click on "Create credentials" and choose "Service account."<br>
+Enter a name for the service account, and optionally, add a description. Click "Create."<br>
+Optionally, you can grant the service account a role with specific permissions. Click "Continue."<br>
+Click "Done" to create the service account.<br>
+In the "Service Accounts" section, find the service account you just created and click on its name.<br>
+In the "Keys" tab, click on "Add Key" and choose "JSON."<br>
+The JSON key file will be generated and downloaded to your computer. This is your service_key.json file.</p>
+</li>
 </ul>
 <div class="highlight"><pre><span></span><code><span class="c1"># quickstart.py</span>
 
