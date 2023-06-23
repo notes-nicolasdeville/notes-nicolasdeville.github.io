@@ -19,9 +19,9 @@
 <meta name="twitter:description" content="a tricky topic for something as "simple" as email" /> <!-- max. 200 characters -->
  
 
-<meta property="article:published_time" content="2023-06-23 10:06:20.510797+02:00" />
+<meta property="article:published_time" content="2023-06-23 12:53:58.214849+02:00" />
 
-<meta property="article:modified_time" content="2023-06-23 10:06:20.510797+02:00" />
+<meta property="article:modified_time" content="2023-06-23 12:53:58.214849+02:00" />
 
 <meta name="robots" content="all, follow" />
 
@@ -79,7 +79,7 @@
             
 
             <div class="above-navbar">
-                <div class="last_updated">23 Jun 2023 | 10:08</div>
+                <div class="last_updated">23 Jun 2023 | 12:54</div>
                 <div>
                     <p class="notes_count">
                         <a href="https://notes.nicolasdeville.com/tags">by tags</a>
@@ -144,7 +144,7 @@
 
         <!-- added 4/7 -->
         <!-- 		<br />
-        <abbr class="modified" title="2023-06-23T10:06:20.510797+02:00">
+        <abbr class="modified" title="2023-06-23T12:53:58.214849+02:00">
                 Updated: 23 Jun 2023
         </abbr>
  -->
@@ -157,15 +157,28 @@
             <!-- <main>  -->
                 <div class="toc"><span class="toctitle">Table of Contents</span><ul>
 <li><a href="#email-setup">Email Setup</a><ul>
+<li><a href="#check">Check</a></li>
+<li><a href="#dns-records">DNS Records</a><ul>
+<li><a href="#spf">SPF</a></li>
+<li><a href="#dmarc">DMARC</a></li>
 <li><a href="#dkim">DKIM</a><ul>
 <li><a href="#dkim-record-generator">DKIM Record Generator</a></li>
 </ul>
 </li>
-<li><a href="#dmarc">DMARC</a></li>
+<li><a href="#bimi">BIMI</a></li>
+</ul>
+</li>
 </ul>
 </li>
 <li><a href="#check-your-ip-reputation">Check your IP reputation</a></li>
+<li><a href="#deliverability-services">Deliverability services</a><ul>
+<li><a href="#easydmarc">EasyDMARC</a></li>
+<li><a href="#powerdmarc">PowerDMARC</a></li>
+<li><a href="#dmarcly">DMARCly</a></li>
+</ul>
+</li>
 <li><a href="#deliverability-diagnostics">Deliverability diagnostics</a><ul>
+<li><a href="#folderly">Folderly</a></li>
 <li><a href="#dmarc-reports">DMARC reports</a></li>
 </ul>
 </li>
@@ -184,25 +197,39 @@
 </div>
 <p><span class="datestamp">05 Dec 2022</span>   </p>
 <h1 id="email-setup">Email Setup</h1>
-<p>Configure SPF, DKIM &amp; DMARC properly:  </p>
-<ul>
-<li>setup <a href="https://blog.lemlist.com/how-to-create-spf-record/"><strong>SPF</strong></a></li>
-<li>setup <a href="https://blog.lemlist.com/how-to-setup-dkim/"><strong>DKIM</strong></a></li>
-<li>setup <a href="https://blog.lemlist.com/how-to-setup-mx-records/"><strong>MX records</strong></a></li>
-<li>setup <a href="https://help.lemlist.com/en/articles/5186817-how-to-set-up-your-dkim-spf-and-dmarc"><strong>DMARC</strong></a> (Domain-based Message Authentication, Reporting, and Conformance)</li>
-<li>setup <a href="https://blog.lemlist.com/custom-tracking-domain/"><strong>Custom Tracking Domain</strong></a> (optional - if email tracking is important to you)</li>
-</ul>
+<p>At domain level, specific DNS records need to be setup to ensure that emails are delivered properly. </p>
+<p>Bare minimum are <a href="https://blog.lemlist.com/how-to-setup-mx-records/"><strong>MX records</strong></a></p>
+<p>A DNS MX record helps tell providers which mail servers accept incoming mail for your domain and where should they be routed to. Without MX records, you won't receive emails as they have no way in.<br>
+These records are usually setup by default if you have domain and email with the same provider (e.g. Ionos, Google, etc.). <br>
+MX records just ensures emails can be received, but does not guarantee sent emails will be delivered.</p>
+<p>To ensure deliverability, you need to setup the following:</p>
+<p>Critical:<br>
+- <a href="https://blog.lemlist.com/how-to-create-spf-record/" target="_blank"><strong>SPF</strong></a><br>
+- <a href="https://help.lemlist.com/en/articles/5186817-how-to-set-up-your-dkim-spf-and-dmarc" target="_blank"><strong>DMARC</strong></a></p>
+<p>Good to have:<br>
+- <a href="https://blog.lemlist.com/how-to-setup-dkim/" target="_blank"><strong>DKIM</strong></a></p>
+<p>Optional &amp; new (but costly):<br>
+- <a href="https://easydmarc.com/tools/bimi-record-generator"><strong>BIMI</strong></a> (optional - if you want to display your logo in the inbox + added deliverability)</p>
+<p>Optional if using email tools with tracking:<br>
+- <a href="https://blog.lemlist.com/custom-tracking-domain/"><strong>Custom Tracking Domain</strong></a> (optional - if email tracking is important to you)</p>
 <p>Basically, this means adding DNS records like these to your domain name:</p>
 <p>for SPF: <code>TXT @ v=spf1 include:_spf-eu.ionos.com ~all</code><br>
 for DKIM: <code>TXT google._domainkey.mydomain.com "v=DKIM1; k=rsa; p=MIGfMA0GCSqGSIb3DQEBAQUAA4GN[....]ADCBiQKOz56wSqPQIDAQAB"</code><br>
 for DMARC: <code>TXT _dmarc v=DMARC1; p=quarantine; rua=mailto:XXXX@XXXX.XXXX; pct=90; sp=none</code><br>
 for custom tracking domain: <code>CNAME inst prox.itrackly.com</code></p>
+<h2 id="check">Check</h2>
 <p>Check that your technical setup has been done properly.   </p>
 <p>You can use tools like EasyDMARC:</p>
 <div class="link_border"><div class="link_logo_box"><img class="link_logo" src="https://ik.imagekit.io/vhucnsp9j1u/images/logos/easydmarc.png" alt="logo"/></div><div class="link_content">
 <div class="link_title">Domain Security Scanner - EasyDMARC</div>
 <div class="link_tagline">easydmarc.com</div>
 <div class="link_url"><a href="https://easydmarc.com/tools/domain-scanner" target="_blank">https://easydmarc.com/tools/domain-scanner</a></div></div></div>
+
+<p>or PowerDMARC:</p>
+<div class="link_border"><div class="link_logo_box"><img class="link_logo" src="https://ik.imagekit.io/vhucnsp9j1u/images/logos/powerdmarc.png" alt="logo"/></div><div class="link_content">
+<div class="link_title">Free DMARC DKIM BIMI MTA-STS domain record lookup tool</div>
+<div class="link_tagline">powerdmarc.com</div>
+<div class="link_url"><a href="https://powerdmarc.com/analyzer/" target="_blank">https://powerdmarc.com/analyzer/</a></div></div></div>
 
 <p>or MXtoolbox:</p>
 <div class="link_border"><div class="link_logo_box"><img class="link_logo" src="https://ik.imagekit.io/vhucnsp9j1u/images/logos/mxtoolbox.png" alt="logo"/></div><div class="link_content">
@@ -212,42 +239,101 @@ for custom tracking domain: <code>CNAME inst prox.itrackly.com</code></p>
 
 <p>This can be all a bit technical - I recommend using a <a href="https://www.fiverr.com/" target="_blank">Fiverr</a> gig to get it done properly &amp; quickly. </p>
 <p><img class="screenshot" src="https://ik.imagekit.io/vhucnsp9j1u/images/email-deliverability/221219-0857-btobsales-ckeck.jpg" alt="email-deliverability/221219-0857-btobsales-ckeck.jpg"/>  </p>
-<h2 id="dkim">DKIM</h2>
+<h2 id="dns-records">DNS Records</h2>
+<h3 id="spf">SPF</h3>
+<p>Sender Policy Framework</p>
+<h3 id="dmarc">DMARC</h3>
+<p>Domain-based Message Authentication, Reporting, and Conformance</p>
+<div class="link_border"><div class="link_logo_box"><img class="link_logo" src="https://ik.imagekit.io/vhucnsp9j1u/images/logos/dmarc.png" alt="logo"/></div><div class="link_content">
+<div class="link_title">DMARC Overview</div>
+<div class="link_tagline">dmarc.org</div>
+<div class="link_url"><a href="https://dmarc.org/overview/" target="_blank">https://dmarc.org/overview/</a></div></div></div>
+
+<p>Generate your DMARC record with this tool:</p>
+<div class="link_border"><div class="link_logo_box"><img class="link_logo" src="https://ik.imagekit.io/vhucnsp9j1u/images/logos/easydmarc.png" alt="logo"/></div><div class="link_content">
+<div class="link_title">DMARC Record Generator tools | EasyDMARC</div>
+<div class="link_tagline">easydmarc.com</div>
+<div class="link_url"><a href="https://easydmarc.com/tools/dmarc-record-generator" target="_blank">https://easydmarc.com/tools/dmarc-record-generator</a></div></div></div>
+
+<p>then add DNS record, eg:   </p>
+<p><code>v=DMARC1; p=quarantine; rua=mailto:email-example@btobsales.eu; pct=90; sp=none</code> as TXT file named <code>_dmarc.btobsales.eu</code>.   </p>
+<h3 id="dkim">DKIM</h3>
 <p>Domain Keys Identified Mail (DKIM) is an email authentication method designed to detect forged sender addresses in emails (email spoofing), a technique often used in phishing and email spam.</p>
 <p>Basically, content of email gets hashed and added to header with server signature.<br>
 When receiving server gets email, it can check with sending server if signature is valid.</p>
-<p>Good article about it from IONOS (in German):</p>
-<p><a href="https://www.ionos.de/digitalguide/e-mail/e-mail-sicherheit/dkim-domainkeys/" target="_blank">https://www.ionos.de/digitalguide/e-mail/e-mail-sicherheit/dkim-domainkeys/</a></p>
-<h3 id="dkim-record-generator">DKIM Record Generator</h3>
+<p>Good article about it from IONOS:</p>
+<p><a href="https://www.ionos.com/digitalguide/e-mail/e-mail-security/dkim-domainkeys/" target="_blank">https://www.ionos.com/digitalguide/e-mail/e-mail-security/dkim-domainkeys/</a></p>
+<p>DKIM Record Generator:</p>
+<div class="link_border"><div class="link_logo_box"><img class="link_logo" src="https://ik.imagekit.io/vhucnsp9j1u/images/logos/dmarcly.png" alt="logo"/></div><div class="link_content">
+<div class="link_title">Free DKIM Record Generator - DMARCLY</div>
+<div class="link_tagline">dmarcly.com</div>
+<div class="link_url"><a href="https://dmarcly.com/tools/dkim-record-generator" target="_blank">https://dmarcly.com/tools/dkim-record-generator</a></div></div></div>
+
+<h4 id="dkim-record-generator">DKIM Record Generator</h4>
 <p>Use this DKIM Record Generator to create your DKIM record:</p>
 <div class="link_border"><div class="link_logo_box"><img class="link_logo" src="https://ik.imagekit.io/vhucnsp9j1u/images/logos/easydmarc.png" alt="logo"/></div><div class="link_content">
 <div class="link_title">DKIM Record Generator - EasyDMARC</div>
 <div class="link_tagline">easydmarc.com</div>
 <div class="link_url"><a href="https://easydmarc.com/tools/DKIM-record-generator" target="_blank">https://easydmarc.com/tools/DKIM-record-generator</a></div></div></div>
 
-<h2 id="dmarc">DMARC</h2>
-<div class="link_border"><div class="link_logo_box"><img class="link_logo" src="https://ik.imagekit.io/vhucnsp9j1u/images/logos/dmarc.png" alt="logo"/></div><div class="link_content">
-<div class="link_title">DMARC Overview</div>
-<div class="link_tagline">dmarc.org</div>
-<div class="link_url"><a href="https://dmarc.org/overview/" target="_blank">https://dmarc.org/overview/</a></div></div></div>
+<h3 id="bimi">BIMI</h3>
+<p><strong>Optional</strong></p>
+<p>BIMI is a new standard that allows you to display your logo in the inbox. It also helps with deliverability as it's built on top of DMARC and requires a 3rd party to validate your logo.  </p>
+<div class="link_border"><div class="link_logo_box"><img class="link_logo" src="https://ik.imagekit.io/vhucnsp9j1u/images/logos/easydmarc.png" alt="logo"/></div><div class="link_content">
+<div class="link_title">What are Verified Mark Certificates and Why You Need Them - EasyDMARC</div>
+<div class="link_tagline">easydmarc.com</div>
+<div class="link_url"><a href="https://easydmarc.com/blog/what-are-verified-mark-certificates/" target="_blank">https://easydmarc.com/blog/what-are-verified-mark-certificates/</a></div></div></div>
 
-<p>eg configuration:   </p>
-<p><code>v=DMARC1; p=quarantine; rua=mailto:email-example@btobsales.eu; pct=90; sp=none</code> as TXT file named <code>_dmarc.btobsales.eu</code>.   </p>
+<blockquote>
+<p>You need to make sure that your logo is registered and recognized as an official trademark. VMC certificates will not be granted to any brand logos that aren’t registered by an official intellectual property office.</p>
+</blockquote>
+<p>It's expensive though, eg with Entrust:</p>
+<p><img class="screenshot" src="https://ik.imagekit.io/vhucnsp9j1u/images/email-deliverability/entrust-bimi-vmc-pricing.jpg" alt="email-deliverability/entrust-bimi-vmc-pricing.jpg"/><br>
+<a href="https://store.entrust.com/default/certificate-services/verified-mark/vmc.html" target="_blank">https://store.entrust.com/default/certificate-services/verified-mark/vmc.html</a></p>
+<p>or Digicert:</p>
+<p><img class="screenshot" src="https://ik.imagekit.io/vhucnsp9j1u/images/email-deliverability/digicert-bimi-vmc.jpg" alt="email-deliverability/digicert-bimi-vmc.jpg"/><br>
+<a href="https://order.digicert.com/step1/vmc_basic" target="_blank">https://order.digicert.com/step1/vmc_basic</a></p>
 <h1 id="check-your-ip-reputation">Check your IP reputation</h1>
 <div class="link_border"><div class="link_logo_box"><img class="link_logo" src="https://ik.imagekit.io/vhucnsp9j1u/images/logos/talosintelligence.png" alt="logo"/></div><div class="link_content">
 <div class="link_title">Talos, by Cisco</div>
 <div class="link_tagline">talosintelligence.com</div>
 <div class="link_url"><a href="https://talosintelligence.com/reputation_center" target="_blank">https://talosintelligence.com/reputation_center</a></div></div></div>
 
-<p>Mine is:<br>
-- "Poor" :/ Need get a new one.  <br>
-- listed with PBL.SPAMHAUS.ORG (!!)   </p>
 <div class="link_border"><div class="link_logo_box"><img class="link_logo" src="https://ik.imagekit.io/vhucnsp9j1u/images/logos/gmail.png" alt="logo"/></div><div class="link_content">
 <div class="link_title">Postmaster Tools – Google</div>
 <div class="link_tagline">gmail.com</div>
 <div class="link_url"><a href="https://www.gmail.com/postmaster/" target="_blank">https://www.gmail.com/postmaster/</a></div></div></div>
 
+<h1 id="deliverability-services">Deliverability services</h1>
+<h2 id="easydmarc">EasyDMARC</h2>
+<div class="link_border"><div class="link_logo_box"><img class="link_logo" src="https://ik.imagekit.io/vhucnsp9j1u/images/logos/easydmarc.png" alt="logo"/></div><div class="link_content">
+<div class="link_title">EasyDMARC | DMARC Journey Made Simple</div>
+<div class="link_tagline">easydmarc.com</div>
+<div class="link_url"><a href="https://easydmarc.com/" target="_blank">https://easydmarc.com/</a></div></div></div>
+
+<p>from 40EUR/month!</p>
+<h2 id="powerdmarc">PowerDMARC</h2>
+<div class="link_border"><div class="link_logo_box"><img class="link_logo" src="https://ik.imagekit.io/vhucnsp9j1u/images/logos/powerdmarc.png" alt="logo"/></div><div class="link_content">
+<div class="link_title">Free DMARC Analyzer | DMARC Monitoring Service</div>
+<div class="link_tagline">powerdmarc.com</div>
+<div class="link_url"><a href="https://powerdmarc.com/" target="_blank">https://powerdmarc.com/</a></div></div></div>
+
+<p>starts at $8/month</p>
+<h2 id="dmarcly">DMARCly</h2>
+<div class="link_border"><div class="link_logo_box"><img class="link_logo" src="https://ik.imagekit.io/vhucnsp9j1u/images/logos/dmarcly.png" alt="logo"/></div><div class="link_content">
+<div class="link_title">DMARCLY | Email Security, Authentication, Anti-Phishing, SPF, DKIM, DMARC Monitoring, and DMARC Analyzer</div>
+<div class="link_tagline">dmarcly.com</div>
+<div class="link_url"><a href="https://dmarcly.com/" target="_blank">https://dmarcly.com/</a></div></div></div>
+
+<p>starts at $18/month</p>
 <h1 id="deliverability-diagnostics">Deliverability diagnostics</h1>
+<p>Check email headers with this tool:</p>
+<div class="link_border"><div class="link_logo_box"><img class="link_logo" src="https://ik.imagekit.io/vhucnsp9j1u/images/logos/mxtoolbox.png" alt="logo"/></div><div class="link_content">
+<div class="link_title">Email Header Analyzer</div>
+<div class="link_tagline">mxtoolbox.com</div>
+<div class="link_url"><a href="https://mxtoolbox.com/EmailHeaders.aspx" target="_blank">https://mxtoolbox.com/EmailHeaders.aspx</a></div></div></div>
+
+<h2 id="folderly">Folderly</h2>
 <div class="link_border"><div class="link_logo_box"><img class="link_logo" src="https://ik.imagekit.io/vhucnsp9j1u/images/logos/folderly.png" alt="logo"/></div><div class="link_content">
 <div class="link_title">Folderly - AI-based Platform to Increase Your Email Deliverability</div>
 <div class="link_tagline">folderly.com</div>
