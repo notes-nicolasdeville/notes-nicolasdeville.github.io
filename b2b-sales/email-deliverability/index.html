@@ -19,9 +19,9 @@
 <meta name="twitter:description" content="a tricky topic for something as "simple" as email" /> <!-- max. 200 characters -->
  
 
-<meta property="article:published_time" content="2023-06-23 13:15:52.621109+02:00" />
+<meta property="article:published_time" content="2023-06-23 13:40:02.703557+02:00" />
 
-<meta property="article:modified_time" content="2023-06-23 13:15:52.621109+02:00" />
+<meta property="article:modified_time" content="2023-06-23 13:40:02.703557+02:00" />
 
 <meta name="robots" content="all, follow" />
 
@@ -79,7 +79,7 @@
             
 
             <div class="above-navbar">
-                <div class="last_updated">23 Jun 2023 | 13:15</div>
+                <div class="last_updated">23 Jun 2023 | 13:40</div>
                 <div>
                     <p class="notes_count">
                         <a href="https://notes.nicolasdeville.com/tags">by tags</a>
@@ -144,7 +144,7 @@
 
         <!-- added 4/7 -->
         <!-- 		<br />
-        <abbr class="modified" title="2023-06-23T13:15:52.621109+02:00">
+        <abbr class="modified" title="2023-06-23T13:40:02.703557+02:00">
                 Updated: 23 Jun 2023
         </abbr>
  -->
@@ -156,11 +156,12 @@
 </footer>            <!-- for indexing by Stork -->
             <!-- <main>  -->
                 <div class="toc"><span class="toctitle">Table of Contents</span><ul>
-<li><a href="#email-setup">Email Setup</a><ul>
 <li><a href="#check">Check</a></li>
+<li><a href="#domain-setup">Domain Setup</a><ul>
 <li><a href="#dns-records">DNS Records</a><ul>
 <li><a href="#spf">SPF</a></li>
 <li><a href="#dmarc">DMARC</a></li>
+<li><a href="#custom-tracking">Custom Tracking</a></li>
 <li><a href="#dkim">DKIM</a><ul>
 <li><a href="#dkim-record-generator">DKIM Record Generator</a></li>
 </ul>
@@ -196,12 +197,35 @@
 </ul>
 </div>
 <p><span class="datestamp">05 Dec 2022</span>   </p>
-<h1 id="email-setup">Email Setup</h1>
+<p>When using your own domain, by default, emails are not setup to be delivered properly.   </p>
+<p>Emails might be sent, but they might not be delivered, ie they might get caught in spam filters more often than not.</p>
+<p>Some technical setup is required, to ensure receiving server will see your emails as trustworthy. </p>
+<p>If you know your way with DNS records, it's fairly easy to setup yourself once you wrap your head around what SPF, DMARC, etc.. are.</p>
+<p>Else, this can be all a bit technical - I recommend using a gig/service (see "Done for you" section below).</p>
+<h1 id="check">Check</h1>
+<p>You can start first by checking your current setup.   </p>
+<p>Use tools like EasyDMARC:</p>
+<div class="link_border"><div class="link_logo_box"><img class="link_logo" src="https://ik.imagekit.io/vhucnsp9j1u/images/logos/easydmarc.png" alt="logo"/></div><div class="link_content">
+<div class="link_title">Domain Security Scanner - EasyDMARC</div>
+<div class="link_tagline">easydmarc.com</div>
+<div class="link_url"><a href="https://easydmarc.com/tools/domain-scanner" target="_blank">https://easydmarc.com/tools/domain-scanner</a></div></div></div>
+
+<p>or PowerDMARC:</p>
+<div class="link_border"><div class="link_logo_box"><img class="link_logo" src="https://ik.imagekit.io/vhucnsp9j1u/images/logos/powerdmarc.png" alt="logo"/></div><div class="link_content">
+<div class="link_title">Free DMARC DKIM BIMI MTA-STS domain record lookup tool</div>
+<div class="link_tagline">powerdmarc.com</div>
+<div class="link_url"><a href="https://powerdmarc.com/analyzer/" target="_blank">https://powerdmarc.com/analyzer/</a></div></div></div>
+
+<p>or MXtoolbox:</p>
+<div class="link_border"><div class="link_logo_box"><img class="link_logo" src="https://ik.imagekit.io/vhucnsp9j1u/images/logos/mxtoolbox.png" alt="logo"/></div><div class="link_content">
+<div class="link_title">MXtoolbox</div>
+<div class="link_tagline">mxtoolbox.com</div>
+<div class="link_url"><a href="https://mxtoolbox.com/SuperTool.aspx" target="_blank">https://mxtoolbox.com/SuperTool.aspx</a></div></div></div>
+
+<h1 id="domain-setup">Domain Setup</h1>
 <p>At domain level, specific DNS records need to be setup to ensure that emails are delivered properly. </p>
 <p>Bare minimum are <a href="https://blog.lemlist.com/how-to-setup-mx-records/"><strong>MX records</strong></a></p>
-<p>A DNS MX record helps tell providers which mail servers accept incoming mail for your domain and where should they be routed to. Without MX records, you won't receive emails as they have no way in.<br>
-These records are usually setup by default if you have domain and email with the same provider (e.g. Ionos, Google, etc.). <br>
-MX records just ensures emails can be received, but does not guarantee sent emails will be delivered.</p>
+<p>Though these just ensure that emails can be received, but does not guarantee sent emails will be delivered.</p>
 <p>To ensure deliverability, you need to setup the following:</p>
 <p>Critical:</p>
 <ul>
@@ -220,41 +244,13 @@ MX records just ensures emails can be received, but does not guarantee sent emai
 <ul>
 <li><a href="https://blog.lemlist.com/custom-tracking-domain/"><strong>Custom Tracking Domain</strong></a> (optional - if email tracking is important to you)</li>
 </ul>
-<p>Basically, this means adding DNS records like these to your domain name:</p>
-<ul>
-<li>for SPF: <code>TXT @ v=spf1 include:_spf-eu.ionos.com ~all</code></li>
-<li>for DKIM: <code>TXT google._domainkey.mydomain.com "v=DKIM1; k=rsa; p=MIGfMA0GCSqGSIb3DQEBAQUAA4GN[....]ADCBiQKOz56wSqPQIDAQAB"</code></li>
-<li>for DMARC: <code>TXT _dmarc v=DMARC1; p=quarantine; rua=mailto:XXXX@XXXX.XXXX; pct=90; sp=none</code></li>
-<li>for custom tracking domain: <code>CNAME inst prox.itrackly.com</code></li>
-</ul>
-<h2 id="check">Check</h2>
-<p>Check that your technical setup has been done properly.   </p>
-<p>You can use tools like EasyDMARC:</p>
-<div class="link_border"><div class="link_logo_box"><img class="link_logo" src="https://ik.imagekit.io/vhucnsp9j1u/images/logos/easydmarc.png" alt="logo"/></div><div class="link_content">
-<div class="link_title">Domain Security Scanner - EasyDMARC</div>
-<div class="link_tagline">easydmarc.com</div>
-<div class="link_url"><a href="https://easydmarc.com/tools/domain-scanner" target="_blank">https://easydmarc.com/tools/domain-scanner</a></div></div></div>
-
-<p>or PowerDMARC:</p>
-<div class="link_border"><div class="link_logo_box"><img class="link_logo" src="https://ik.imagekit.io/vhucnsp9j1u/images/logos/powerdmarc.png" alt="logo"/></div><div class="link_content">
-<div class="link_title">Free DMARC DKIM BIMI MTA-STS domain record lookup tool</div>
-<div class="link_tagline">powerdmarc.com</div>
-<div class="link_url"><a href="https://powerdmarc.com/analyzer/" target="_blank">https://powerdmarc.com/analyzer/</a></div></div></div>
-
-<p>or MXtoolbox:</p>
-<div class="link_border"><div class="link_logo_box"><img class="link_logo" src="https://ik.imagekit.io/vhucnsp9j1u/images/logos/mxtoolbox.png" alt="logo"/></div><div class="link_content">
-<div class="link_title">MXtoolbox</div>
-<div class="link_tagline">mxtoolbox.com</div>
-<div class="link_url"><a href="https://mxtoolbox.com/SuperTool.aspx" target="_blank">https://mxtoolbox.com/SuperTool.aspx</a></div></div></div>
-
-<p>if you know your way with DNS records, it's fairly easy to setup yourself.</p>
-<p>Else, this can be all a bit technical - I recommend using a gig/service (see "Done for you" section below).</p>
 <h2 id="dns-records">DNS Records</h2>
+<p>Basically, this means adding DNS records like these to your domain name:</p>
 <h3 id="spf">SPF</h3>
-<p>Sender Policy Framework</p>
-<p>identifies the mail servers that are allowed to send messages for your domain.</p>
 <p>Just a DNS text record along the lines of <code>TXT @ v=spf1 include:_spf-eu.ionos.com ~all</code> - just need to find from provider what to put in as <code>include:</code> value.</p>
+<p>Sender Policy Framework identifies the mail servers that are allowed to send messages for your domain.</p>
 <h3 id="dmarc">DMARC</h3>
+<p>Just a DNS text record along the lines of <code>TXT _dmarc v=DMARC1; p=quarantine; rua=mailto:XXXX@XXXX.XXXX; pct=90; sp=none</code>.</p>
 <p>Domain-based Message Authentication, Reporting, and Conformance</p>
 <div class="link_border"><div class="link_logo_box"><img class="link_logo" src="https://ik.imagekit.io/vhucnsp9j1u/images/logos/dmarc.png" alt="logo"/></div><div class="link_content">
 <div class="link_title">DMARC Overview</div>
@@ -269,7 +265,12 @@ MX records just ensures emails can be received, but does not guarantee sent emai
 
 <p>then add DNS record, eg:   </p>
 <p><code>v=DMARC1; p=quarantine; rua=mailto:email-example@btobsales.eu; pct=90; sp=none</code> as TXT file named <code>_dmarc.btobsales.eu</code>.   </p>
+<h3 id="custom-tracking">Custom Tracking</h3>
+<p>If you use a custom tracking domain, DNS record along the lines of:</p>
+<p><code>CNAME inst prox.itrackly.com</code></p>
+<p>This will be provided by your email tracking provider.  </p>
 <h3 id="dkim">DKIM</h3>
+<p>DNS record along the line of <code>TXT google._domainkey.mydomain.com "v=DKIM1; k=rsa; p=MIGfMA0GCSqGSIb3DQEBAQUAA4GN[....]ADCBiQKOz56wSqPQIDAQAB"</code> with a public key.</p>
 <p>Domain Keys Identified Mail (DKIM) is an email authentication method designed to detect forged sender addresses in emails (email spoofing), a technique often used in phishing and email spam.</p>
 <p>Basically, content of email gets hashed and added to header with server signature.<br>
 When receiving server gets email, it can check with sending server if signature is valid.</p>
@@ -388,7 +389,6 @@ When receiving server gets email, it can check with sending server if signature 
 
 <p>Tool built by <a href="https://www.leadbird.io/" target="_blank">https://www.leadbird.io/</a>   </p>
 <h1 id="done-for-you">Done For You</h1>
-<p><span class="datestamp">21 May 2022</span> </p>
 <p>I used a Fiverr gig to get my email setup properly.</p>
 <p>Plenty of gigs:</p>
 <div class="link_border"><div class="link_logo_box"><img class="link_logo" src="https://ik.imagekit.io/vhucnsp9j1u/images/logos/fiverr.png" alt="logo"/></div><div class="link_content">
