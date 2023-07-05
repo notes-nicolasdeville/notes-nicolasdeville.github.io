@@ -19,9 +19,9 @@
 <meta name="twitter:description" content="a tricky topic for something as "simple" as email" /> <!-- max. 200 characters -->
  
 
-<meta property="article:published_time" content="2023-06-23 13:50:59.417970+02:00" />
+<meta property="article:published_time" content="2023-07-02 22:54:33.077615+02:00" />
 
-<meta property="article:modified_time" content="2023-06-23 13:50:59.417970+02:00" />
+<meta property="article:modified_time" content="2023-07-02 22:54:33.077615+02:00" />
 
 <meta name="robots" content="all, follow" />
 
@@ -79,7 +79,7 @@
             
 
             <div class="above-navbar">
-                <div class="last_updated">23 Jun 2023 | 13:51</div>
+                <div class="last_updated">05 Jul 2023 | 22:34</div>
                 <div>
                     <p class="notes_count">
                         <a href="https://notes.nicolasdeville.com/tags">by tags</a>
@@ -90,7 +90,7 @@
                         <span style="color:#C74350">|</span>
                         <a href="https://notes.nicolasdeville.com/2022/">2022</a>
                         <span style="color:#C74350">|</span>
-                        763 notes
+                        766 notes
                     </p>
                 </div>
             </div>
@@ -137,15 +137,15 @@
 <footer class="post-info">
 
     <p>
-        23 Jun 2023 
+        02 Jul 2023 
         <span class="separator">|</span> in <a class="link_tag" href="https://notes.nicolasdeville.com/b2b-sales/"><span data-pagefind-filter="category">b2b sales</span></a>
 
  tags: <a class="link_tag" href="https://notes.nicolasdeville.com/tag/emails.html">emails</a>
 
         <!-- added 4/7 -->
         <!-- 		<br />
-        <abbr class="modified" title="2023-06-23T13:50:59.417970+02:00">
-                Updated: 23 Jun 2023
+        <abbr class="modified" title="2023-07-02T22:54:33.077615+02:00">
+                Updated: 02 Jul 2023
         </abbr>
  -->
 
@@ -156,6 +156,7 @@
 </footer>            <!-- for indexing by Stork -->
             <!-- <main>  -->
                 <div class="toc"><span class="toctitle">Table of Contents</span><ul>
+<li><a href="#overview">Overview</a></li>
 <li><a href="#check">Check</a></li>
 <li><a href="#domain-setup">Domain Setup</a><ul>
 <li><a href="#dns-records">DNS Records</a><ul>
@@ -179,6 +180,8 @@
 </ul>
 </li>
 <li><a href="#deliverability-diagnostics">Deliverability diagnostics</a><ul>
+<li><a href="#email-headers-check">Email headers check</a></li>
+<li><a href="#spam-blacklist-check">Spam blacklist check</a></li>
 <li><a href="#folderly">Folderly</a></li>
 <li><a href="#dmarc-reports">DMARC reports</a></li>
 </ul>
@@ -202,6 +205,12 @@
 <p>Some technical setup is required, to ensure receiving server will see your emails as trustworthy. </p>
 <p>If you know your way with DNS records, it's fairly easy to setup yourself once you wrap your head around what SPF, DMARC, etc.. are.</p>
 <p>Else, this can be all a bit technical - I recommend using a gig/service (see "Done for you" section below).</p>
+<h1 id="overview">Overview</h1>
+<div class="link_border"><div class="link_logo_box"><img class="link_logo" src="https://ik.imagekit.io/vhucnsp9j1u/images/logos/instantly.png" alt="logo"/></div><div class="link_content">
+<div class="link_title">How to setup MX, SPF, DKIM, DMARC & Forwarding ⏩ | Instantly Help Center</div>
+<div class="link_tagline">instantly.ai</div>
+<div class="link_url"><a href="https://help.instantly.ai/en/articles/6222192-how-to-setup-mx-spf-dkim-dmarc-forwarding" target="_blank">https://help.instantly.ai/en/articles/6222192-how-to-setup-mx-spf-dkim-dmarc-forwarding</a></div></div></div>
+
 <h1 id="check">Check</h1>
 <p>You can start first by checking your current setup.   </p>
 <p>Use tools like EasyDMARC:</p>
@@ -340,11 +349,18 @@ When receiving server gets email, it can check with sending server if signature 
 
 <p>starts at $18/month</p>
 <h1 id="deliverability-diagnostics">Deliverability diagnostics</h1>
+<h2 id="email-headers-check">Email headers check</h2>
 <p>Check email headers with this tool:</p>
 <div class="link_border"><div class="link_logo_box"><img class="link_logo" src="https://ik.imagekit.io/vhucnsp9j1u/images/logos/mxtoolbox.png" alt="logo"/></div><div class="link_content">
 <div class="link_title">Email Header Analyzer</div>
 <div class="link_tagline">mxtoolbox.com</div>
 <div class="link_url"><a href="https://mxtoolbox.com/EmailHeaders.aspx" target="_blank">https://mxtoolbox.com/EmailHeaders.aspx</a></div></div></div>
+
+<h2 id="spam-blacklist-check">Spam blacklist check</h2>
+<div class="link_border"><div class="link_logo_box"><img class="link_logo" src="https://ik.imagekit.io/vhucnsp9j1u/images/logos/mxtoolbox.png" alt="logo"/></div><div class="link_content">
+<div class="link_title">Blacklists</div>
+<div class="link_tagline">mxtoolbox.com</div>
+<div class="link_url"><a href="https://mxtoolbox.com/blacklists.aspx" target="_blank">https://mxtoolbox.com/blacklists.aspx</a></div></div></div>
 
 <h2 id="folderly">Folderly</h2>
 <div class="link_border"><div class="link_logo_box"><img class="link_logo" src="https://ik.imagekit.io/vhucnsp9j1u/images/logos/folderly.png" alt="logo"/></div><div class="link_content">
