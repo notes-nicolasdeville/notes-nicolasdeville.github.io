@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <!-- Base -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="generator" content="Pelican" />
+    <meta name="author" content="Nic Deville">
+
+<!-- Title -->
+<title>Python libray: langchain | Nic's notes</title>
+<meta name="og:title" content="Python libray: langchain | Nic's notes"/> <!-- 40 characters for mobile and 60 for desktop -->
+<link rel="canonical" href="https://notes.nicolasdeville.com/python/library-langchain" />
+<meta name="twitter:title" content="Python libray: langchain | Nic's notes" /> <!-- max. 70 characters -->
+
+<meta name="description" content="Messy online notebook covering B2B Sales, Leadership, Python programming, Automation, AI and more. I take these notes for myself (and my kids later) - perhaps they can help someone else..."/>
+<meta property="og:description" content="Messy online notebook covering B2B Sales, Leadership, Python programming, Automation, AI and more. I take these notes for myself (and my kids later) - perhaps they can help someone else..."/>
+<meta name="twitter:description" content="Messy online notebook covering B2B Sales, Leadership, Python programming, Automation, AI and more. I take these notes for myself (and my kids later) - perhaps they can help someone else..." /> <!-- max. 200 characters -->
+
+ 
+
+<meta property="article:published_time" content="2023-07-21 00:00:00+02:00" />
+
+<meta property="article:modified_time" content="2023-07-24 09:45:51.862641+02:00" />
+
+<meta name="robots" content="all, follow" />
+
+<!-- Social -->
+<meta property="og:type" content="article" />
+
+<!-- <meta property="og:description" content="Messy online notebook covering B2B Sales, Leadership, Python programming, Automation, AI and more. I take these notes for myself (and my kids later) - perhaps they can help someone else..." /> min. 2 max. 4 sentences -->
+
+<meta property="og:url" content="https://notes.nicolasdeville.com/python/library-langchain" /> <!-- canonical URL for your page without session variables, user id parameters or counters -->
+<meta property="og:site_name" content="Nic's notes" />
+<meta name="image" property="og:image" content="https://ik.imagekit.io/vhucnsp9j1u/images/notes-twitter-image.jpg" /> <!-- at least 600x315 pixels, preferable 1200x630 pixels -->
+
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:site" content="@ndeville" />
+
+<meta name="twitter:image" content="https://ik.imagekit.io/vhucnsp9j1u/images/notes-twitter-image.jpg" /> <!-- aspect ratio of 2:1 with minimum dimensions of 300x157 or maximum of 4096x4096 pixels. Going with 900x471 -->
+
+<!-- Logo -->
+<meta property="og:logo" content="https://notes.nicolasdeville.com/logo.svg">
+
+<!-- Favicon -->
+<link rel="icon" type="image/x-icon" href="https://notes.nicolasdeville.com/favicon.ico">
+<link rel="mask-icon" href="https://notes.nicolasdeville.com/favicon.svg" color="#FFFFFF">
+<link rel="alternate icon" class="js-site-favicon" type="image/png" href="https://notes.nicolasdeville.com/favicon.png">
+<link rel="icon" class="js-site-favicon" type="image/svg+xml" href="https://notes.nicolasdeville.com/favicon.svg">
+<link rel="fluid-icon" href="https://notes.nicolasdeville.com/favicon.png" title="Nic's notes">
+
+<!-- CSS -->
+<link rel="stylesheet" href="https://notes.nicolasdeville.com/theme/css/main.css" />
+
+<!-- Pagefind -->
+<link href="https://notes.nicolasdeville.com/theme/css/pagefind-ui-nic.css" rel="stylesheet">
+<script src="https://notes.nicolasdeville.com/pagefind/pagefind-ui.js" type="text/javascript"></script>
+
+<script>
+    window.addEventListener('DOMContentLoaded', (event) => {
+        new PagefindUI({ element: "#search" });
+    });
+</script>
+
+
+</head>
+
+<body id="index" class="body">
+        <header id="banner" class="body">
+
+            <div class="logo-and-search">
+                <a href="https://notes.nicolasdeville.com/"><img class="header_image" src="https://ik.imagekit.io/vhucnsp9j1u/images/nic_notes_header.svg" alt="Nic's notes" width="266"/></a>
+
+                <!-- Pagefind -->
+                <div class="search-input-block" id="search"></div>
+
+            </div>
+
+            
+
+            <div class="above-navbar">
+                <div class="last_updated">24 Jul 2023 | 09:45</div>
+                <div>
+                    <p class="notes_count">
+                        <a href="https://notes.nicolasdeville.com/tags">by tags</a>
+                        <span style="color:#C74350">|</span>
+                        <a href="https://notes.nicolasdeville.com/2020/">2020</a>
+                        <span style="color:#C74350">|</span>
+                        <a href="https://notes.nicolasdeville.com/2021/">2021</a>
+                        <span style="color:#C74350">|</span>
+                        <a href="https://notes.nicolasdeville.com/2022/">2022</a>
+                        <span style="color:#C74350">|</span>
+                        773 notes
+                    </p>
+                </div>
+            </div>
+
+            <nav><ul>
+                <li><a href="https://notes.nicolasdeville.com/ai/">ai</a></li>
+                <li><a href="https://notes.nicolasdeville.com/apps/">apps</a></li>
+                <li><a href="https://notes.nicolasdeville.com/b2b-sales/">b2b sales</a></li>
+                <li><a href="https://notes.nicolasdeville.com/books/">books</a></li>
+                <li><a href="https://notes.nicolasdeville.com/careerplaybook/">#careerplaybook</a></li>
+                <li><a href="https://notes.nicolasdeville.com/helpers/">helpers</a></li>
+                <li><a href="https://notes.nicolasdeville.com/home-office/">home office</a></li>
+                <li><a href="https://notes.nicolasdeville.com/interests/">interests</a></li>
+                <li><a href="https://notes.nicolasdeville.com/leadership/">leadership</a></li>
+                <li><a href="https://notes.nicolasdeville.com/learning/">learning</a></li>
+                <li><a href="https://notes.nicolasdeville.com/movies/">movies</a></li>
+                <li><a href="https://notes.nicolasdeville.com/projects/">projects</a></li>
+                <li class="active"><a href="https://notes.nicolasdeville.com/python/">python</a></li>
+                <li><a href="https://notes.nicolasdeville.com/random/">random</a></li>
+                <li><a href="https://notes.nicolasdeville.com/research/">research</a></li>
+                <li><a href="https://notes.nicolasdeville.com/startups/">startups</a></li>
+            </ul></nav>
+        </header>
+
+        <!-- index.html injection -->
+<section id="content" class="body">
+    <article>
+        <header>
+            <h1 class="entry-title">
+                <main> <!-- for indexing by Stork -->
+                    <a href="https://notes.nicolasdeville.com/python/library-langchain" rel="bookmark"
+                    title="Permalink to Python libray: langchain">Python libray: langchain
+                    </a>
+                </main>
+            </h1>
+            <p class="header_summary">
+                <main> <!-- for indexing by Stork -->
+                    
+                </main>
+            </p>
+        </header>
+
+        <div class="entry-content">
+<footer class="post-info">
+
+    <p>
+        21 Jul 2023 
+        <span class="separator">|</span> in <a class="link_tag" href="https://notes.nicolasdeville.com/python/"><span data-pagefind-filter="category">python</span></a>
+
+
+        <!-- added 4/7 -->
+        <!-- 		<br />
+        <abbr class="modified" title="2023-07-24T09:45:51.862641+02:00">
+                Updated: 24 Jul 2023
+        </abbr>
+ -->
+
+    </p>
+
+    
+
+</footer>            <!-- for indexing by Stork -->
+            <!-- <main>  -->
+                <div class="toc"><span class="toctitle">Table of Contents</span><ul>
+<li><a href="#ecosystem">Ecosystem</a></li>
+<li><a href="#llm-wrapper-unified-api">LLM wrapper &amp; unified API</a></li>
+<li><a href="#qa-and-chat-over-documents">QA and Chat over Documents</a><ul>
+<li><a href="#working-code">Working code</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="wip"><div class="wip_text">👷🏼‍♂️ WORK IN PROGRESS 👷🏼‍♂️</div></div>
+
+<p><span class="datestamp">21 Jul 2023</span>   </p>
+<h1 id="ecosystem">Ecosystem</h1>
+<p><img class="screenshot" src="https://ik.imagekit.io/vhucnsp9j1u/images/library-langchain/langchain-data-ecosystem.png" alt="library-langchain/langchain-data-ecosystem.png"/></p>
+<p>Integrations:</p>
+<p>Document Loaders: 134<br>
+Vector Stores: 41<br>
+Embedding Models: 30<br>
+Chat Models: 8<br>
+LLMs: 54<br>
+Callbacks: 23<br>
+Tools: 87<br>
+Toolkits: 16</p>
+<div class="link_border"><div class="link_logo_box"><img class="link_logo" src="https://ik.imagekit.io/vhucnsp9j1u/images/logos/langchain.png" alt="logo"/></div><div class="link_content">
+<div class="link_title">langchain.com</div>
+<div class="link_tagline">langchain.com</div>
+<div class="link_url"><a href="https://integrations.langchain.com/" target="_blank">https://integrations.langchain.com/</a></div></div></div>
+
+<h1 id="llm-wrapper-unified-api">LLM wrapper &amp; unified API</h1>
+<div class="link_border"><div class="link_logo_box"><img class="link_logo" src="https://ik.imagekit.io/vhucnsp9j1u/images/logos/langchain.png" alt="logo"/></div><div class="link_content">
+<div class="link_title">Quickstart | 🦜️🔗 Langchain</div>
+<div class="link_tagline">langchain.com</div>
+<div class="link_url"><a href="https://python.langchain.com/docs/get_started/quickstart" target="_blank">https://python.langchain.com/docs/get_started/quickstart</a></div></div></div>
+
+<p>Can't get basic example from documentation to work:</p>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">langchain.llms</span> <span class="kn">import</span> <span class="n">OpenAI</span>
+
+<span class="n">llm</span> <span class="o">=</span> <span class="n">OpenAI</span><span class="p">(</span><span class="n">openai_api_key</span><span class="o">=</span><span class="n">OPENAI_API_KEY</span><span class="p">,</span> <span class="n">temperature</span><span class="o">=</span><span class="mf">0.9</span><span class="p">)</span>
+
+<span class="n">llm</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="s2">&quot;What would be a good company name for a company that makes colorful socks?&quot;</span><span class="p">)</span>
+</code></pre></div>
+
+<p>Error ⬇︎</p>
+<div class="highlight"><pre><span></span><code>llm.predict<span class="o">(</span><span class="s2">&quot;What would be a good company name for a company that makes colorful socks?&quot;</span><span class="o">)</span>
+AttributeError: <span class="s1">&#39;OpenAI&#39;</span> object has no attribute <span class="s1">&#39;predict&#39;</span>
+</code></pre></div>
+
+<p>Same with other code example, <em>copy pasted</em> from documentation:</p>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">langchain.prompts</span> <span class="kn">import</span> <span class="n">PromptTemplate</span>
+
+<span class="n">prompt</span> <span class="o">=</span> <span class="n">PromptTemplate</span><span class="o">.</span><span class="n">from_template</span><span class="p">(</span><span class="s2">&quot;What is a good name for a company that makes </span><span class="si">{product}</span><span class="s2">?&quot;</span><span class="p">)</span>
+<span class="n">prompt</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">product</span><span class="o">=</span><span class="s2">&quot;colorful socks&quot;</span><span class="p">)</span>
+</code></pre></div>
+
+<p>Error ⬇︎</p>
+<div class="highlight"><pre><span></span><code><span class="nv">prompt</span> <span class="o">=</span> PromptTemplate.from_template<span class="o">(</span><span class="s2">&quot;What is a good name for a company that makes {product}?&quot;</span><span class="o">)</span>
+AttributeError: <span class="nb">type</span> object <span class="s1">&#39;PromptTemplate&#39;</span> has no attribute <span class="s1">&#39;from_template&#39;</span>
+</code></pre></div>
+
+<p>🤔  </p>
+<p>ERROR SOLVED: <code>pip install langchain --upgrade</code><br>
+Seemed I had installed langchain already a few months ago and was working off an old version 🙄</p>
+<h1 id="qa-and-chat-over-documents">QA and Chat over Documents</h1>
+<p>Good overview:</p>
+<div class="link_border"><div class="link_logo_box"><img class="link_logo" src="https://ik.imagekit.io/vhucnsp9j1u/images/logos/langchain.png" alt="logo"/></div><div class="link_content">
+<div class="link_title">Tutorial: ChatGPT Over Your Data</div>
+<div class="link_tagline">langchain.dev</div>
+<div class="link_url"><a href="https://blog.langchain.dev/tutorial-chatgpt-over-your-data/" target="_blank">https://blog.langchain.dev/tutorial-chatgpt-over-your-data/</a></div></div></div>
+
+<p>Langchain OG:</p>
+<div class="link_border"><div class="link_logo_box"><img class="link_logo" src="https://ik.imagekit.io/vhucnsp9j1u/images/logos/langchain.png" alt="logo"/></div><div class="link_content">
+<div class="link_title">QA and Chat over Documents | 🦜️🔗 Langchain</div>
+<div class="link_tagline">langchain.com</div>
+<div class="link_url"><a href="https://python.langchain.com/docs/use_cases/question_answering/" target="_blank">https://python.langchain.com/docs/use_cases/question_answering/</a></div></div></div>
+
+<blockquote class="twitter-tweet"><p lang="en" dir="ltr">There&#39;s a better way to have QA over source code using AI.<br><br>Working on my own tool to chat with repositories, I came up with a new approach.<br><br>And last week I contributed to <a href="https://twitter.com/LangChainAI?ref_src=twsrc%5Etfw">@LangChainAI</a> with the implementation.<br><br>Let&#39;s dive in.<br><br>🧵👇 <a href="https://t.co/jKMhvCOzSB">pic.twitter.com/jKMhvCOzSB</a></p>&mdash; Cristóbal 🟨 (@cristobal_dev) <a href="https://twitter.com/cristobal_dev/status/1675745314592915456?ref_src=twsrc%5Etfw">July 3, 2023</a></blockquote>
+<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+<p>Code example for chat with code base:</p>
+<div class="link_border"><div class="link_logo_box"><img class="link_logo" src="https://ik.imagekit.io/vhucnsp9j1u/images/logos/langchain.png" alt="logo"/></div><div class="link_content">
+<div class="link_title">Question Answering on Twitter algorithm codebase | 🦜️🔗 Langchain</div>
+<div class="link_tagline">langchain.com</div>
+<div class="link_url"><a href="https://python.langchain.com/docs/use_cases/code/twitter-the-algorithm-analysis-deeplake.html" target="_blank">https://python.langchain.com/docs/use_cases/code/twitter-the-algorithm-analysis-deeplake.html</a></div></div></div>
+
+<h2 id="working-code">Working code</h2>
+<p>My first working code - tested with long text files (1,000s of lines):</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># Load document</span>
+<span class="kn">from</span> <span class="nn">langchain.document_loaders</span> <span class="kn">import</span> <span class="n">TextLoader</span>
+<span class="n">doc_loader</span> <span class="o">=</span> <span class="n">TextLoader</span><span class="p">(</span><span class="s1">&#39;test.txt&#39;</span><span class="p">)</span>
+<span class="n">document</span> <span class="o">=</span> <span class="n">doc_loader</span><span class="o">.</span><span class="n">load</span><span class="p">()</span>
+
+<span class="c1"># Split words</span>
+<span class="kn">from</span> <span class="nn">langchain.text_splitter</span> <span class="kn">import</span> <span class="n">RecursiveCharacterTextSplitter</span>
+<span class="n">text_splitter</span> <span class="o">=</span> <span class="n">RecursiveCharacterTextSplitter</span><span class="p">()</span>
+<span class="n">data</span> <span class="o">=</span> <span class="n">text_splitter</span><span class="o">.</span><span class="n">split_documents</span><span class="p">(</span><span class="n">document</span><span class="p">)</span>
+
+<span class="c1"># Store embeddings</span>
+<span class="kn">from</span> <span class="nn">langchain.vectorstores</span> <span class="kn">import</span> <span class="n">Chroma</span>
+<span class="kn">from</span> <span class="nn">langchain.embeddings</span> <span class="kn">import</span> <span class="n">OpenAIEmbeddings</span>
+<span class="n">vectorstore</span> <span class="o">=</span> <span class="n">Chroma</span><span class="o">.</span><span class="n">from_documents</span><span class="p">(</span><span class="n">documents</span><span class="o">=</span><span class="n">data</span><span class="p">,</span><span class="n">embedding</span><span class="o">=</span><span class="n">OpenAIEmbeddings</span><span class="p">())</span>
+
+<span class="c1"># Select Model</span>
+<span class="kn">from</span> <span class="nn">langchain.chat_models</span> <span class="kn">import</span> <span class="n">ChatOpenAI</span>
+<span class="n">llm</span> <span class="o">=</span> <span class="n">ChatOpenAI</span><span class="p">(</span><span class="n">model_name</span><span class="o">=</span><span class="s2">&quot;gpt-3.5-turbo&quot;</span><span class="p">,</span> <span class="n">temperature</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">openai_api_key</span><span class="o">=</span><span class="n">OPENAI_API_KEY</span><span class="p">)</span>
+
+<span class="c1"># Create QA chain</span>
+<span class="kn">from</span> <span class="nn">langchain.chains</span> <span class="kn">import</span> <span class="n">RetrievalQA</span>
+<span class="n">qa_chain</span> <span class="o">=</span> <span class="n">RetrievalQA</span><span class="o">.</span><span class="n">from_chain_type</span><span class="p">(</span><span class="n">llm</span><span class="p">,</span><span class="n">retriever</span><span class="o">=</span><span class="n">vectorstore</span><span class="o">.</span><span class="n">as_retriever</span><span class="p">())</span>
+
+<span class="c1"># Ask question</span>
+<span class="n">question</span> <span class="o">=</span> <span class="s2">&quot;&quot;&quot;</span>
+<span class="s2">        Tell me what is in this text.</span>
+<span class="s2">&quot;&quot;&quot;</span>
+
+<span class="c1"># Output</span>
+<span class="n">output</span> <span class="o">=</span> <span class="n">qa_chain</span><span class="p">({</span><span class="s2">&quot;query&quot;</span><span class="p">:</span> <span class="n">question</span><span class="p">})</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n</span><span class="si">{</span><span class="n">output</span><span class="p">[</span><span class="s1">&#39;result&#39;</span><span class="p">]</span><span class="si">}</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+</code></pre></div>
+            <!-- </main> -->
+        </div><!-- /.entry-content -->
+    </article>
+</section>
+
+        <!-- footer -->
+        <section id="extras" class="body" data-pagefind-ignore>
+
+        <!-- /.blogroll -->
+                <div class="blogroll">
+                        <h2>links</h2>
+                        <ul>
+                            <li><a href="https://btobsales.eu">Services: BtoBSales.EU</a></li>
+                            <li><a href="https://indeXall.io">Side project: indeXall.io</a></li>
+                            <li><a href="https://github.com/ndeville">Github: ndeville</a></li>
+                        </ul>
+                </div>
+
+        <!-- /.social -->
+                <div class="social">
+                        <h2>social</h2>
+                        <ul>
+
+                            <li><a href="https://www.linkedin.com/in/ndeville/">Linkedin</a></li>
+                            <li><a href="https://www.twitter.com/ndeville">Twitter</a></li>
+                        </ul>
+                </div>
+        </section><!-- /#extras -->
+
+        <footer id="contentinfo" class="body" data-pagefind-ignore>
+
+            <address id="about" class="vcard body">
+                <div class="content-row">
+                    <img src="https://ik.imagekit.io/vhucnsp9j1u/images/logos/pelican-logo.png" alt="pelican" width="16" height="16"> Powered by <a href="https://getpelican.com" target="_blank"> Pelican</a>
+                    <span class="separator">|</span>
+                    <img src="https://ik.imagekit.io/vhucnsp9j1u/images/logos/pagefind.png" alt="pagefind" width="16" height="16"> Search by <a href="https://pagefind.app" target="_blank"> Pagefind</a>
+                    <span class="separator">|</span>
+                    <img src="https://ik.imagekit.io/vhucnsp9j1u/images/logos/clearbit.png" alt="clearbit" width="16" height="16"> Logos by <a href="https://clearbit.com" target="_blank"> Clearbit</a>
+                    <span class="separator">|</span>
+                    <img src="https://ik.imagekit.io/vhucnsp9j1u/images/python.svg" alt="python_logo" width="16" height="16"> Made with <a href="https://www.python.org/" target="_blank"> Python</a>
+                </div>
+                <br>
+                <div class="content-row">
+                    <img src="https://notes.nicolasdeville.com/favicon.svg" alt="nic_logo" width="24"> Nic's notes
+                </div>
+            </address>
+
+        </footer><!-- /#contentinfo -->
+
+
+<!-- JS -->
+
+<!-- my JS script (with code block copy) -->
+<script src="https://notes.nicolasdeville.com/theme/js/nic.js"></script>
+
+</body>
+</html>
