@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <!-- Base -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="generator" content="Pelican" />
+    <meta name="author" content="Nic Deville">
+
+<!-- Title -->
+<title>Python Library: pyfiglet | Nic's notes</title>
+<meta name="og:title" content="Python Library: pyfiglet | Nic's notes"/> <!-- 40 characters for mobile and 60 for desktop -->
+<link rel="canonical" href="https://notes.nicolasdeville.com/python/library-pyfiglet" />
+<meta name="twitter:title" content="Python Library: pyfiglet | Nic's notes" /> <!-- max. 70 characters -->
+
+<meta name="description" content="ascii art text generator"/>
+<meta property="og:description" content="ascii art text generator"/>
+<meta name="twitter:description" content="ascii art text generator" /> <!-- max. 200 characters -->
+ 
+
+<meta property="article:published_time" content="2023-08-06 21:36:51.729280+02:00" />
+
+<meta property="article:modified_time" content="2023-08-06 21:36:51.729280+02:00" />
+
+<meta name="robots" content="all, follow" />
+
+<!-- Social -->
+<meta property="og:type" content="article" />
+
+<!-- <meta property="og:description" content="Messy online notebook covering B2B Sales, Leadership, Python programming, Automation, AI and more. I take these notes for myself (and my kids later) - perhaps they can help someone else..." /> min. 2 max. 4 sentences -->
+
+<meta property="og:url" content="https://notes.nicolasdeville.com/python/library-pyfiglet" /> <!-- canonical URL for your page without session variables, user id parameters or counters -->
+<meta property="og:site_name" content="Nic's notes" />
+<meta name="image" property="og:image" content="https://ik.imagekit.io/vhucnsp9j1u/images/notes-twitter-image.jpg" /> <!-- at least 600x315 pixels, preferable 1200x630 pixels -->
+
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:site" content="@ndeville" />
+
+<meta name="twitter:image" content="https://ik.imagekit.io/vhucnsp9j1u/images/notes-twitter-image.jpg" /> <!-- aspect ratio of 2:1 with minimum dimensions of 300x157 or maximum of 4096x4096 pixels. Going with 900x471 -->
+
+<!-- Logo -->
+<meta property="og:logo" content="https://notes.nicolasdeville.com/logo.svg">
+
+<!-- Favicon -->
+<link rel="icon" type="image/x-icon" href="https://notes.nicolasdeville.com/favicon.ico">
+<link rel="mask-icon" href="https://notes.nicolasdeville.com/favicon.svg" color="#FFFFFF">
+<link rel="alternate icon" class="js-site-favicon" type="image/png" href="https://notes.nicolasdeville.com/favicon.png">
+<link rel="icon" class="js-site-favicon" type="image/svg+xml" href="https://notes.nicolasdeville.com/favicon.svg">
+<link rel="fluid-icon" href="https://notes.nicolasdeville.com/favicon.png" title="Nic's notes">
+
+<!-- CSS -->
+<link rel="stylesheet" href="https://notes.nicolasdeville.com/theme/css/main.css" />
+
+<!-- Pagefind -->
+<link href="https://notes.nicolasdeville.com/theme/css/pagefind-ui-nic.css" rel="stylesheet">
+<script src="https://notes.nicolasdeville.com/pagefind/pagefind-ui.js" type="text/javascript"></script>
+
+<script>
+    window.addEventListener('DOMContentLoaded', (event) => {
+        new PagefindUI({ element: "#search" });
+    });
+</script>
+
+
+</head>
+
+<body id="index" class="body">
+        <header id="banner" class="body">
+
+            <div class="logo-and-search">
+                <a href="https://notes.nicolasdeville.com/"><img class="header_image" src="https://ik.imagekit.io/vhucnsp9j1u/images/nic_notes_header.svg" alt="Nic's notes" width="266"/></a>
+
+                <!-- Pagefind -->
+                <div class="search-input-block" id="search"></div>
+
+            </div>
+
+            
+
+            <div class="above-navbar">
+                <div class="last_updated">06 Aug 2023 | 21:36</div>
+                <div>
+                    <p class="notes_count">
+                        <a href="https://notes.nicolasdeville.com/tags">by tags</a>
+                        <span style="color:#C74350">|</span>
+                        <a href="https://notes.nicolasdeville.com/2020/">2020</a>
+                        <span style="color:#C74350">|</span>
+                        <a href="https://notes.nicolasdeville.com/2021/">2021</a>
+                        <span style="color:#C74350">|</span>
+                        <a href="https://notes.nicolasdeville.com/2022/">2022</a>
+                        <span style="color:#C74350">|</span>
+                        778 notes
+                    </p>
+                </div>
+            </div>
+
+            <nav><ul>
+                <li><a href="https://notes.nicolasdeville.com/ai/">ai</a></li>
+                <li><a href="https://notes.nicolasdeville.com/apps/">apps</a></li>
+                <li><a href="https://notes.nicolasdeville.com/b2b-sales/">b2b sales</a></li>
+                <li><a href="https://notes.nicolasdeville.com/books/">books</a></li>
+                <li><a href="https://notes.nicolasdeville.com/careerplaybook/">#careerplaybook</a></li>
+                <li><a href="https://notes.nicolasdeville.com/helpers/">helpers</a></li>
+                <li><a href="https://notes.nicolasdeville.com/home-office/">home office</a></li>
+                <li><a href="https://notes.nicolasdeville.com/interests/">interests</a></li>
+                <li><a href="https://notes.nicolasdeville.com/leadership/">leadership</a></li>
+                <li><a href="https://notes.nicolasdeville.com/learning/">learning</a></li>
+                <li><a href="https://notes.nicolasdeville.com/movies/">movies</a></li>
+                <li><a href="https://notes.nicolasdeville.com/projects/">projects</a></li>
+                <li class="active"><a href="https://notes.nicolasdeville.com/python/">python</a></li>
+                <li><a href="https://notes.nicolasdeville.com/random/">random</a></li>
+                <li><a href="https://notes.nicolasdeville.com/research/">research</a></li>
+                <li><a href="https://notes.nicolasdeville.com/startups/">startups</a></li>
+            </ul></nav>
+        </header>
+
+        <!-- index.html injection -->
+<section id="content" class="body">
+    <article>
+        <header>
+            <h1 class="entry-title">
+                <main> <!-- for indexing by Stork -->
+                    <a href="https://notes.nicolasdeville.com/python/library-pyfiglet" rel="bookmark"
+                    title="Permalink to Python Library: pyfiglet">Python Library: pyfiglet
+                    </a>
+                </main>
+            </h1>
+            <p class="header_summary">
+                <main> <!-- for indexing by Stork -->
+                    <p>ascii art text generator</p>
+                </main>
+            </p>
+        </header>
+
+        <div class="entry-content">
+<footer class="post-info">
+
+    <p>
+        06 Aug 2023 
+        <span class="separator">|</span> in <a class="link_tag" href="https://notes.nicolasdeville.com/python/"><span data-pagefind-filter="category">python</span></a>
+
+
+        <!-- added 4/7 -->
+        <!-- 		<br />
+        <abbr class="modified" title="2023-08-06T21:36:51.729280+02:00">
+                Updated: 06 Aug 2023
+        </abbr>
+ -->
+
+    </p>
+
+    
+
+</footer>            <!-- for indexing by Stork -->
+            <!-- <main>  -->
+                <div class="toc"><span class="toctitle">Table of Contents</span><ul>
+<li><a href="#getting-started">Getting Started</a></li>
+<li><a href="#usage">Usage</a></li>
+<li><a href="#additional-fonts">Additional fonts</a></li>
+</ul>
+</div>
+<p>pyfiglet is a full port of FIGlet (http://www.figlet.org/) into pure python. It takes ASCII text and renders it in ASCII art fonts.</p>
+<table>
+<thead>
+<tr>
+<th>Library resources</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>PyPI</td>
+<td>---</td>
+</tr>
+<tr>
+<td>Github</td>
+<td><a href="https://github.com/pwaller/pyfiglet" target="_blank">https://github.com/pwaller/pyfiglet</a></td>
+</tr>
+<tr>
+<td>Documentation</td>
+<td>---</td>
+</tr>
+</tbody>
+</table>
+<h1 id="getting-started">Getting Started</h1>
+<div class="highlight"><pre><span></span><code>pip install pyfiglet
+</code></pre></div>
+
+<h1 id="usage">Usage</h1>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">pyfiglet</span> <span class="kn">import</span> <span class="n">Figlet</span>
+<span class="n">f</span> <span class="o">=</span> <span class="n">Figlet</span><span class="p">(</span><span class="n">font</span><span class="o">=</span><span class="s1">&#39;slant&#39;</span><span class="p">)</span>
+<span class="nb">print</span> <span class="n">f</span><span class="o">.</span><span class="n">renderText</span><span class="p">(</span><span class="s1">&#39;text to render&#39;</span><span class="p">)</span>
+</code></pre></div>
+
+<p>⬇︎</p>
+<div class="highlight"><pre><span></span><code> _            _     _                             _           
+<span class="p">|</span> <span class="p">|</span>_ _____  _<span class="p">|</span> <span class="p">|</span>_  <span class="p">|</span> <span class="p">|</span>_ ___    _ __ ___ _ __   __<span class="p">|</span> <span class="p">|</span> ___ _ __ 
+<span class="p">|</span> __/ _ <span class="se">\ \/</span> / __<span class="p">|</span> <span class="p">|</span> __/ _ <span class="se">\ </span> <span class="p">|</span> <span class="s1">&#39;__/ _ \ &#39;</span>_ <span class="se">\ </span>/ _<span class="sb">`</span> <span class="p">|</span>/ _ <span class="se">\ </span><span class="err">&#39;</span>__<span class="p">|</span>
+<span class="p">|</span> <span class="o">||</span>  __/&gt;  &lt;<span class="p">|</span> <span class="p">|</span>_  <span class="p">|</span> <span class="o">||</span> <span class="o">(</span>_<span class="o">)</span> <span class="p">|</span> <span class="p">|</span> <span class="p">|</span> <span class="p">|</span>  __/ <span class="p">|</span> <span class="p">|</span> <span class="p">|</span> <span class="o">(</span>_<span class="p">|</span> <span class="p">|</span>  __/ <span class="p">|</span>   
+ <span class="se">\_</span>_<span class="se">\_</span>__/_/<span class="se">\_\\</span>__<span class="p">|</span>  <span class="se">\_</span>_<span class="se">\_</span>__/  <span class="p">|</span>_<span class="p">|</span>  <span class="se">\_</span>__<span class="p">|</span>_<span class="p">|</span> <span class="p">|</span>_<span class="p">|</span><span class="se">\_</span>_,_<span class="p">|</span><span class="se">\_</span>__<span class="p">|</span>_<span class="p">|</span>   
+</code></pre></div>
+
+<h1 id="additional-fonts">Additional fonts</h1>
+<p>testing with:</p>
+<div class="highlight"><pre><span></span><code><span class="n">fonts</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="s1">&#39;slant&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;small&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;shadow&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;rounded&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;roman&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;drpepper&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;cybermedium&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;cricket&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;colossal&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;chunky&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;broadway&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;big&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;basic&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;banner&#39;</span><span class="p">,</span>
+<span class="p">]</span>
+
+<span class="n">fonts</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">fonts</span><span class="p">)</span>
+
+<span class="kn">from</span> <span class="nn">pyfiglet</span> <span class="kn">import</span> <span class="n">Figlet</span>
+
+<span class="k">for</span> <span class="n">font</span> <span class="ow">in</span> <span class="n">fonts</span><span class="p">:</span>
+    <span class="n">f</span> <span class="o">=</span> <span class="n">Figlet</span><span class="p">(</span><span class="n">font</span><span class="o">=</span><span class="n">font</span><span class="p">)</span>
+    <span class="n">ascii_art</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">renderText</span><span class="p">(</span><span class="n">font</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">ascii_art</span><span class="p">)</span>
+</code></pre></div>
+
+<p>⬇︎</p>
+<div class="highlight"><pre><span></span><code><span class="c1">#####    ##   #    # #    # ###### #####  </span>
+<span class="c1">#    #  #  #  ##   # ##   # #      #    # </span>
+<span class="c1">#####  #    # # #  # # #  # #####  #    # </span>
+<span class="c1">#    # ###### #  # # #  # # #      #####  </span>
+<span class="c1">#    # #    # #   ## #   ## #      #   #  </span>
+<span class="c1">#####  #    # #    # #    # ###### #    # </span>
+
+
+d8888b.  .d8b.  .d8888. d888888b  .o88b. 
+<span class="m">88</span>  <span class="sb">`</span>8D d8<span class="s1">&#39; `8b 88&#39;</span>  YP   <span class="sb">`</span><span class="m">88</span><span class="s1">&#39;   d8P  Y8 </span>
+<span class="s1">88oooY&#39;</span> 88ooo88 <span class="sb">`</span>8bo.      <span class="m">88</span>    8P      
+<span class="m">88</span>~~~b. <span class="m">88</span>~~~88   <span class="sb">`</span>Y8b.    <span class="m">88</span>    8b      
+<span class="m">88</span>   8D <span class="m">88</span>   <span class="m">88</span> db   8D   .88.   Y8b  d8 
+Y8888P<span class="s1">&#39; YP   YP `8888Y&#39;</span> Y888888P  <span class="sb">`</span>Y88P<span class="s1">&#39; </span>
+
+
+
+<span class="s1"> _     _       </span>
+<span class="s1">| |   (_)      </span>
+<span class="s1">| |__  _  __ _ </span>
+<span class="s1">| &#39;</span>_ <span class="se">\|</span> <span class="p">|</span>/ _<span class="sb">`</span> <span class="p">|</span>
+<span class="p">|</span> <span class="p">|</span>_<span class="o">)</span> <span class="p">|</span> <span class="p">|</span> <span class="o">(</span>_<span class="p">|</span> <span class="p">|</span>
+<span class="p">|</span>_.__/<span class="p">|</span>_<span class="p">|</span><span class="se">\_</span>_, <span class="p">|</span>
+          __/ <span class="p">|</span>
+         <span class="p">|</span>___/ 
+
+
+<span class="m">8</span> 888888888o   <span class="m">8</span> 888888888o.      ,o888888o.           .8.          
+<span class="m">8</span> <span class="m">8888</span>    <span class="sb">`</span><span class="m">88</span>. <span class="m">8</span> <span class="m">8888</span>    <span class="sb">`</span><span class="m">88</span>.  . <span class="m">8888</span>     <span class="sb">`</span><span class="m">88</span>.        .888.         
+<span class="m">8</span> <span class="m">8888</span>     <span class="sb">`</span><span class="m">88</span> <span class="m">8</span> <span class="m">8888</span>     <span class="sb">`</span><span class="m">88</span> ,8 <span class="m">8888</span>       <span class="sb">`</span>8b      :88888.        
+<span class="m">8</span> <span class="m">8888</span>     ,88 <span class="m">8</span> <span class="m">8888</span>     ,88 <span class="m">88</span> <span class="m">8888</span>        <span class="sb">`</span>8b    . <span class="sb">`</span><span class="m">88888</span>.       
+<span class="m">8</span> <span class="m">8888</span>.   ,88<span class="s1">&#39; 8 8888.   ,88&#39;</span> <span class="m">88</span> <span class="m">8888</span>         <span class="m">88</span>   .8. <span class="sb">`</span><span class="m">88888</span>.      
+<span class="m">8</span> <span class="m">8888888888</span>   <span class="m">8</span> 888888888P<span class="s1">&#39;  88 8888         88  .8`8. `88888.     </span>
+<span class="s1">8 8888    `88. 8 8888`8b      88 8888        ,8P .8&#39;</span> <span class="sb">`</span><span class="m">8</span>. <span class="sb">`</span><span class="m">88888</span>.    
+<span class="m">8</span> <span class="m">8888</span>      <span class="m">88</span> <span class="m">8</span> <span class="m">8888</span> <span class="sb">`</span>8b.    <span class="sb">`</span><span class="m">8</span> <span class="m">8888</span>       ,8P .8<span class="s1">&#39;   `8. `88888.   </span>
+<span class="s1">8 8888    ,88&#39;</span> <span class="m">8</span> <span class="m">8888</span>   <span class="sb">`</span>8b.   <span class="sb">`</span> <span class="m">8888</span>     ,88<span class="s1">&#39; .888888888. `88888.  </span>
+<span class="s1">8 888888888P   8 8888     `88.    `8888888P&#39;</span>  .8<span class="s1">&#39;       `8. `88888. </span>
+
+<span class="s1">8 888888888o.    `8.`888b                 ,8&#39;</span> .8.   <span class="sb">`</span><span class="m">8</span>.<span class="sb">`</span><span class="m">8888</span>.      ,8<span class="s1">&#39; </span>
+<span class="s1">8 8888    `^888.  `8.`888b               ,8&#39;</span> .888.   <span class="sb">`</span><span class="m">8</span>.<span class="sb">`</span><span class="m">8888</span>.    ,8<span class="s1">&#39;  </span>
+<span class="s1">8 8888        `88. `8.`888b             ,8&#39;</span> :88888.   <span class="sb">`</span><span class="m">8</span>.<span class="sb">`</span><span class="m">8888</span>.  ,8<span class="s1">&#39;   </span>
+<span class="s1">8 8888         `88  `8.`888b     .b    ,8&#39;</span> . <span class="sb">`</span><span class="m">88888</span>.   <span class="sb">`</span><span class="m">8</span>.<span class="sb">`</span><span class="m">8888</span>.,8<span class="s1">&#39;    </span>
+<span class="s1">8 8888          88   `8.`888b    88b  ,8&#39;</span> .8. <span class="sb">`</span><span class="m">88888</span>.   <span class="sb">`</span><span class="m">8</span>.<span class="sb">`</span><span class="m">88888</span><span class="s1">&#39;     </span>
+<span class="s1">8 8888          88    `8.`888b .`888b,8&#39;</span> .8<span class="sb">`</span><span class="m">8</span>. <span class="sb">`</span><span class="m">88888</span>.   <span class="sb">`</span><span class="m">8</span>. <span class="m">8888</span>      
+<span class="m">8</span> <span class="m">8888</span>         ,88     <span class="sb">`</span><span class="m">8</span>.<span class="sb">`</span>888b8.<span class="sb">`</span><span class="m">8888</span><span class="s1">&#39; .8&#39;</span> <span class="sb">`</span><span class="m">8</span>. <span class="sb">`</span><span class="m">88888</span>.   <span class="sb">`</span><span class="m">8</span> <span class="m">8888</span>      
+<span class="m">8</span> <span class="m">8888</span>        ,88<span class="s1">&#39;      `8.`888`8.`88&#39;</span> .8<span class="s1">&#39;   `8. `88888.   8 8888      </span>
+<span class="s1">8 8888    ,o88P&#39;</span>         <span class="sb">`</span><span class="m">8</span>.<span class="sb">`</span><span class="m">8</span><span class="s1">&#39; `8,`&#39;</span> .888888888. <span class="sb">`</span><span class="m">88888</span>.  <span class="m">8</span> <span class="m">8888</span>      
+<span class="m">8</span> 888888888P<span class="s1">&#39;             `8.`   `8&#39;</span> .8<span class="s1">&#39;       `8. `88888. 8 8888      </span>
+
+<span class="s1">       __                 __          </span>
+<span class="s1">.----.|  |--.--.--.-----.|  |--.--.--.</span>
+<span class="s1">|  __||     |  |  |     ||    &lt;|  |  |</span>
+<span class="s1">|____||__|__|_____|__|__||__|__|___  |</span>
+<span class="s1">                               |_____|</span>
+
+<span class="s1">                888                                888 </span>
+<span class="s1">                888                                888 </span>
+<span class="s1">                888                                888 </span>
+<span class="s1"> .d8888b .d88b. 888 .d88b. .d8888b .d8888b  8888b. 888 </span>
+<span class="s1">d88P&quot;   d88&quot;&quot;88b888d88&quot;&quot;88b88K     88K         &quot;88b888 </span>
+<span class="s1">888     888  888888888  888&quot;Y8888b.&quot;Y8888b..d888888888 </span>
+<span class="s1">Y88b.   Y88..88P888Y88..88P     X88     X88888  888888 </span>
+<span class="s1"> &quot;Y8888P &quot;Y88P&quot; 888 &quot;Y88P&quot;  88888P&#39;</span> 88888P<span class="s1">&#39;&quot;Y888888888 </span>
+
+
+
+
+<span class="s1">           __      __          __   </span>
+<span class="s1">.----.----|__.----|  |--.-----|  |_ </span>
+<span class="s1">|  __|   _|  |  __|    &lt;|  -__|   _|</span>
+<span class="s1">|____|__| |__|____|__|__|_____|____|</span>
+
+
+
+
+
+<span class="s1">____ _   _ ___  ____ ____ _  _ ____ ___  _ _  _ _  _ </span>
+<span class="s1">|     \_/  |__] |___ |__/ |\/| |___ |  \ | |  | |\/| </span>
+<span class="s1">|___   |   |__] |___ |  \ |  | |___ |__/ | |__| |  | </span>
+
+
+<span class="s1">   _                                    </span>
+<span class="s1"> _| | _ _  ___  ___  ___  ___  ___  _ _ </span>
+<span class="s1">/ . || &#39;</span>_&gt;<span class="p">|</span> . <span class="se">\/</span> ._&gt;<span class="p">|</span> . <span class="se">\|</span> . <span class="se">\/</span> ._&gt;<span class="p">|</span> <span class="s1">&#39;_&gt;</span>
+<span class="s1">\___||_|  |  _/\___.|  _/|  _/\___.|_|  </span>
+<span class="s1">          |_|       |_|  |_|            </span>
+
+
+
+<span class="s1">oooo d8b  .ooooo.  ooo. .oo.  .oo.    .oooo.   ooo. .oo.   </span>
+<span class="s1">`888&quot;&quot;8P d88&#39;</span> <span class="sb">`</span>88b <span class="sb">`</span>888P<span class="s2">&quot;Y88bP&quot;</span>Y88b  <span class="sb">`</span>P  <span class="o">)</span>88b  <span class="sb">`</span>888P<span class="s2">&quot;Y88b  </span>
+<span class="s2"> 888     888   888  888   888   888   .oP&quot;</span><span class="m">888</span>   <span class="m">888</span>   <span class="m">888</span>  
+ <span class="m">888</span>     <span class="m">888</span>   <span class="m">888</span>  <span class="m">888</span>   <span class="m">888</span>   <span class="m">888</span>  d8<span class="o">(</span>  <span class="m">888</span>   <span class="m">888</span>   <span class="m">888</span>  
+d888b    <span class="sb">`</span>Y8bod8P<span class="s1">&#39; o888o o888o o888o `Y888&quot;&quot;8o o888o o888o </span>
+
+
+
+
+<span class="s1">                            _           _ </span>
+<span class="s1">                           | |         | |</span>
+<span class="s1">  ____ ___  _   _ ____   __| |_____  __| |</span>
+<span class="s1"> / ___) _ \| | | |  _ \ / _  | ___ |/ _  |</span>
+<span class="s1">| |  | |_| | |_| | | | ( (_| | ____( (_| |</span>
+<span class="s1">|_|   \___/|____/|_| |_|\____|_____)\____|</span>
+
+
+<span class="s1">      |               |                </span>
+<span class="s1">  __| __ \   _` |  _` |  _ \\ \  \   / </span>
+<span class="s1">\__ \ | | | (   | (   | (   |\ \  \ /  </span>
+<span class="s1">____/_| |_|\__,_|\__,_|\___/  \_/\_/   </span>
+
+
+<span class="s1">         __            __ </span>
+<span class="s1">   _____/ /___ _____  / /_</span>
+<span class="s1">  / ___/ / __ `/ __ \/ __/</span>
+<span class="s1"> (__  ) / /_/ / / / / /_  </span>
+<span class="s1">/____/_/\__,_/_/ /_/\__/  </span>
+
+
+<span class="s1">               _ _ </span>
+<span class="s1"> ____ __  __ _| | |</span>
+<span class="s1">(_-&lt; &#39;</span>  <span class="se">\/</span> _<span class="sb">`</span> <span class="p">|</span> <span class="p">|</span> <span class="p">|</span>
+/__/_<span class="p">|</span>_<span class="p">|</span>_<span class="se">\_</span>_,_<span class="p">|</span>_<span class="p">|</span>_<span class="p">|</span>
+</code></pre></div>
+
+<p>from:</p>
+<div class="link_border"><div class="link_logo_box"><img class="link_logo" src="https://ik.imagekit.io/vhucnsp9j1u/images/logos/jave.png" alt="logo"/></div><div class="link_content">
+<div class="link_title">FIGlet Fonts Library</div>
+<div class="link_tagline">jave.de</div>
+<div class="link_url"><a href="http://www.jave.de/figlet/fonts.html" target="_blank">http://www.jave.de/figlet/fonts.html</a></div></div></div>
+
+<p>Overview:</p>
+<div class="link_border"><div class="link_logo_box"><img class="link_logo" src="https://ik.imagekit.io/vhucnsp9j1u/images/logos/jave.png" alt="logo"/></div><div class="link_content">
+<div class="link_title">FIGlet Fonts Library - Font sample</div>
+<div class="link_tagline">jave.de</div>
+<div class="link_url"><a href="http://www.jave.de/figlet/fonts/overview.html" target="_blank">http://www.jave.de/figlet/fonts/overview.html</a></div></div></div>
+            <!-- </main> -->
+        </div><!-- /.entry-content -->
+    </article>
+</section>
+
+        <!-- footer -->
+        <section id="extras" class="body" data-pagefind-ignore>
+
+        <!-- /.blogroll -->
+                <div class="blogroll">
+                        <h2>links</h2>
+                        <ul>
+                            <li><a href="https://btobsales.eu">Services: BtoBSales.EU</a></li>
+                            <li><a href="https://indeXall.io">Side project: indeXall.io</a></li>
+                            <li><a href="https://github.com/ndeville">Github: ndeville</a></li>
+                        </ul>
+                </div>
+
+        <!-- /.social -->
+                <div class="social">
+                        <h2>social</h2>
+                        <ul>
+
+                            <li><a href="https://www.linkedin.com/in/ndeville/">Linkedin</a></li>
+                            <li><a href="https://www.twitter.com/ndeville">Twitter</a></li>
+                        </ul>
+                </div>
+        </section><!-- /#extras -->
+
+        <footer id="contentinfo" class="body" data-pagefind-ignore>
+
+            <address id="about" class="vcard body">
+                <div class="content-row">
+                    <img src="https://ik.imagekit.io/vhucnsp9j1u/images/logos/pelican-logo.png" alt="pelican" width="16" height="16"> Powered by <a href="https://getpelican.com" target="_blank"> Pelican</a>
+                    <span class="separator">|</span>
+                    <img src="https://ik.imagekit.io/vhucnsp9j1u/images/logos/pagefind.png" alt="pagefind" width="16" height="16"> Search by <a href="https://pagefind.app" target="_blank"> Pagefind</a>
+                    <span class="separator">|</span>
+                    <img src="https://ik.imagekit.io/vhucnsp9j1u/images/logos/clearbit.png" alt="clearbit" width="16" height="16"> Logos by <a href="https://clearbit.com" target="_blank"> Clearbit</a>
+                    <span class="separator">|</span>
+                    <img src="https://ik.imagekit.io/vhucnsp9j1u/images/python.svg" alt="python_logo" width="16" height="16"> Made with <a href="https://www.python.org/" target="_blank"> Python</a>
+                </div>
+                <br>
+                <div class="content-row">
+                    <img src="https://notes.nicolasdeville.com/favicon.svg" alt="nic_logo" width="24"> Nic's notes
+                </div>
+            </address>
+
+        </footer><!-- /#contentinfo -->
+
+
+<!-- JS -->
+
+<!-- my JS script (with code block copy) -->
+<script src="https://notes.nicolasdeville.com/theme/js/nic.js"></script>
+
+</body>
+</html>

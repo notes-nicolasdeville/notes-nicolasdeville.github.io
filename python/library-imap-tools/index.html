@@ -19,9 +19,9 @@
 <meta name="twitter:description" content="High level lib for work with email by IMAP" /> <!-- max. 200 characters -->
  
 
-<meta property="article:published_time" content="2023-03-11 12:03:56.728463+01:00" />
+<meta property="article:published_time" content="2023-08-06 16:32:31.215742+02:00" />
 
-<meta property="article:modified_time" content="2023-03-11 12:03:56.728463+01:00" />
+<meta property="article:modified_time" content="2023-08-06 16:32:31.215742+02:00" />
 
 <meta name="robots" content="all, follow" />
 
@@ -79,7 +79,7 @@
             
 
             <div class="above-navbar">
-                <div class="last_updated">05 Aug 2023 | 22:11</div>
+                <div class="last_updated">06 Aug 2023 | 21:36</div>
                 <div>
                     <p class="notes_count">
                         <a href="https://notes.nicolasdeville.com/tags">by tags</a>
@@ -90,7 +90,7 @@
                         <span style="color:#C74350">|</span>
                         <a href="https://notes.nicolasdeville.com/2022/">2022</a>
                         <span style="color:#C74350">|</span>
-                        777 notes
+                        778 notes
                     </p>
                 </div>
             </div>
@@ -137,15 +137,15 @@
 <footer class="post-info">
 
     <p>
-        11 Mar 2023 
+        06 Aug 2023 
         <span class="separator">|</span> in <a class="link_tag" href="https://notes.nicolasdeville.com/python/"><span data-pagefind-filter="category">python</span></a>
 
  tags: <a class="link_tag" href="https://notes.nicolasdeville.com/tag/python-libraries.html">python libraries</a>
 
         <!-- added 4/7 -->
         <!-- 		<br />
-        <abbr class="modified" title="2023-03-11T12:03:56.728463+01:00">
-                Updated: 11 Mar 2023
+        <abbr class="modified" title="2023-08-06T16:32:31.215742+02:00">
+                Updated: 06 Aug 2023
         </abbr>
  -->
 
@@ -172,14 +172,77 @@
 <td>Github</td>
 <td><a href="https://github.com/ikvk/imap_tools" target="_blank">https://github.com/ikvk/imap_tools</a></td>
 </tr>
-<tr>
-<td>Documentation</td>
-<td><a href="https://openbase.com/python/imap-tools/documentation" target="_blank">https://openbase.com/python/imap-tools/documentation</a></td>
-</tr>
 </tbody>
 </table>
 <p><code>pip3 install imap-tools</code>   </p>
-<h3 id="bulk-function">bulk function</h3>
+<h2 id="email-attributes">Email attributes</h2>
+<div class="highlight"><pre><span></span><code><span class="k">for</span> <span class="n">msg</span> <span class="ow">in</span> <span class="n">mailbox</span><span class="o">.</span><span class="n">fetch</span><span class="p">():</span>  <span class="c1"># generator: imap_tools.MailMessage</span>
+    <span class="n">msg</span><span class="o">.</span><span class="n">uid</span>          <span class="c1"># str | None: &#39;123&#39;</span>
+    <span class="n">msg</span><span class="o">.</span><span class="n">subject</span>      <span class="c1"># str: &#39;some subject 你 привет&#39;</span>
+    <span class="n">msg</span><span class="o">.</span><span class="n">from_</span>        <span class="c1"># str: &#39;Bartölke@ya.ru&#39;</span>
+    <span class="n">msg</span><span class="o">.</span><span class="n">to</span>           <span class="c1"># tuple: (&#39;iam@goo.ru&#39;, &#39;friend@ya.ru&#39;, )</span>
+    <span class="n">msg</span><span class="o">.</span><span class="n">cc</span>           <span class="c1"># tuple: (&#39;cc@mail.ru&#39;, )</span>
+    <span class="n">msg</span><span class="o">.</span><span class="n">bcc</span>          <span class="c1"># tuple: (&#39;bcc@mail.ru&#39;, )</span>
+    <span class="n">msg</span><span class="o">.</span><span class="n">reply_to</span>     <span class="c1"># tuple: (&#39;reply_to@mail.ru&#39;, )</span>
+    <span class="n">msg</span><span class="o">.</span><span class="n">date</span>         <span class="c1"># datetime.datetime: 1900-1-1 for unparsed, may be naive or with tzinfo</span>
+    <span class="n">msg</span><span class="o">.</span><span class="n">date_str</span>     <span class="c1"># str: original date - &#39;Tue, 03 Jan 2017 22:26:59 +0500&#39;</span>
+    <span class="n">msg</span><span class="o">.</span><span class="n">text</span>         <span class="c1"># str: &#39;Hello 你 Привет&#39;</span>
+    <span class="n">msg</span><span class="o">.</span><span class="n">html</span>         <span class="c1"># str: &#39;&lt;b&gt;Hello 你 Привет&lt;/b&gt;&#39;</span>
+    <span class="n">msg</span><span class="o">.</span><span class="n">flags</span>        <span class="c1"># tuple: (&#39;\\Seen&#39;, &#39;\\Flagged&#39;, &#39;ENCRYPTED&#39;)</span>
+    <span class="n">msg</span><span class="o">.</span><span class="n">headers</span>      <span class="c1"># dict: {&#39;received&#39;: (&#39;from 1.m.ru&#39;, &#39;from 2.m.ru&#39;), &#39;anti-virus&#39;: (&#39;Clean&#39;,)}</span>
+    <span class="n">msg</span><span class="o">.</span><span class="n">size_rfc822</span>  <span class="c1"># int: 20664 bytes - size info from server (*useful with headers_only arg)</span>
+    <span class="n">msg</span><span class="o">.</span><span class="n">size</span>         <span class="c1"># int: 20377 bytes - size of received message</span>
+
+    <span class="k">for</span> <span class="n">att</span> <span class="ow">in</span> <span class="n">msg</span><span class="o">.</span><span class="n">attachments</span><span class="p">:</span>  <span class="c1"># list: imap_tools.MailAttachment</span>
+        <span class="n">att</span><span class="o">.</span><span class="n">filename</span>             <span class="c1"># str: &#39;cat.jpg&#39;</span>
+        <span class="n">att</span><span class="o">.</span><span class="n">payload</span>              <span class="c1"># bytes: b&#39;\xff\xd8\xff\xe0\&#39;</span>
+        <span class="n">att</span><span class="o">.</span><span class="n">content_id</span>           <span class="c1"># str: &#39;part45.06020801.00060008@mail.ru&#39;</span>
+        <span class="n">att</span><span class="o">.</span><span class="n">content_type</span>         <span class="c1"># str: &#39;image/jpeg&#39;</span>
+        <span class="n">att</span><span class="o">.</span><span class="n">content_disposition</span>  <span class="c1"># str: &#39;inline&#39;</span>
+        <span class="n">att</span><span class="o">.</span><span class="n">part</span>                 <span class="c1"># email.message.Message: original object</span>
+        <span class="n">att</span><span class="o">.</span><span class="n">size</span>                 <span class="c1"># int: 17361 bytes</span>
+
+    <span class="n">msg</span><span class="o">.</span><span class="n">obj</span>              <span class="c1"># email.message.Message: original object</span>
+    <span class="n">msg</span><span class="o">.</span><span class="n">from_values</span>      <span class="c1"># imap_tools.EmailAddress | None</span>
+    <span class="n">msg</span><span class="o">.</span><span class="n">to_values</span>        <span class="c1"># tuple: (imap_tools.EmailAddress,)</span>
+    <span class="n">msg</span><span class="o">.</span><span class="n">cc_values</span>        <span class="c1"># tuple: (imap_tools.EmailAddress,)</span>
+    <span class="n">msg</span><span class="o">.</span><span class="n">bcc_values</span>       <span class="c1"># tuple: (imap_tools.EmailAddress,)</span>
+    <span class="n">msg</span><span class="o">.</span><span class="n">reply_to_values</span>  <span class="c1"># tuple: (imap_tools.EmailAddress,)</span>
+    <span class="c1"># EmailAddress(name=&#39;Ya&#39;, email=&#39;im@ya.ru&#39;)  # &quot;full&quot; property = &#39;Ya &lt;im@ya.ru&gt;&#39;</span>
+</code></pre></div>
+
+<h2 id="search-criteria">Search criteria</h2>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">imap_tools</span> <span class="kn">import</span> <span class="n">AND</span>
+
+<span class="n">mailbox</span><span class="o">.</span><span class="n">fetch</span><span class="p">(</span><span class="n">AND</span><span class="p">(</span><span class="n">subject</span><span class="o">=</span><span class="s1">&#39;weather&#39;</span><span class="p">))</span>  <span class="c1"># query, the str-like object</span>
+<span class="n">mailbox</span><span class="o">.</span><span class="n">fetch</span><span class="p">(</span><span class="s1">&#39;TEXT &quot;hello&quot;&#39;</span><span class="p">)</span>          <span class="c1"># str</span>
+<span class="n">mailbox</span><span class="o">.</span><span class="n">fetch</span><span class="p">(</span><span class="sa">b</span><span class="s1">&#39;TEXT &quot;</span><span class="se">\xd1\x8f</span><span class="s1">&quot;&#39;</span><span class="p">)</span>      <span class="c1"># bytes</span>
+</code></pre></div>
+
+<h2 id="mailbox-actions">Mailbox actions</h2>
+<div class="highlight"><pre><span></span><code><span class="k">with</span> <span class="n">MailBox</span><span class="p">(</span><span class="s1">&#39;imap.mail.com&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">login</span><span class="p">(</span><span class="s1">&#39;test@mail.com&#39;</span><span class="p">,</span> <span class="s1">&#39;pwd&#39;</span><span class="p">,</span> <span class="n">initial_folder</span><span class="o">=</span><span class="s1">&#39;INBOX&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">mailbox</span><span class="p">:</span>
+
+    <span class="c1"># COPY messages with uid in 23,27 from current folder to folder1</span>
+    <span class="n">mailbox</span><span class="o">.</span><span class="n">copy</span><span class="p">(</span><span class="s1">&#39;23,27&#39;</span><span class="p">,</span> <span class="s1">&#39;folder1&#39;</span><span class="p">)</span>
+
+    <span class="c1"># MOVE all messages from current folder to INBOX/folder2</span>
+    <span class="n">mailbox</span><span class="o">.</span><span class="n">move</span><span class="p">(</span><span class="n">mailbox</span><span class="o">.</span><span class="n">uids</span><span class="p">(),</span> <span class="s1">&#39;INBOX/folder2&#39;</span><span class="p">)</span>
+
+    <span class="c1"># DELETE messages with &#39;cat&#39; word in its html from current folder</span>
+    <span class="n">mailbox</span><span class="o">.</span><span class="n">delete</span><span class="p">([</span><span class="n">msg</span><span class="o">.</span><span class="n">uid</span> <span class="k">for</span> <span class="n">msg</span> <span class="ow">in</span> <span class="n">mailbox</span><span class="o">.</span><span class="n">fetch</span><span class="p">()</span> <span class="k">if</span> <span class="s1">&#39;cat&#39;</span> <span class="ow">in</span> <span class="n">msg</span><span class="o">.</span><span class="n">html</span><span class="p">])</span>
+
+    <span class="c1"># FLAG unseen messages in current folder as \Seen, \Flagged and TAG1</span>
+    <span class="n">flags</span> <span class="o">=</span> <span class="p">(</span><span class="n">imap_tools</span><span class="o">.</span><span class="n">MailMessageFlags</span><span class="o">.</span><span class="n">SEEN</span><span class="p">,</span> <span class="n">imap_tools</span><span class="o">.</span><span class="n">MailMessageFlags</span><span class="o">.</span><span class="n">FLAGGED</span><span class="p">,</span> <span class="s1">&#39;TAG1&#39;</span><span class="p">)</span>
+    <span class="n">mailbox</span><span class="o">.</span><span class="n">flag</span><span class="p">(</span><span class="n">mailbox</span><span class="o">.</span><span class="n">uids</span><span class="p">(</span><span class="n">AND</span><span class="p">(</span><span class="n">seen</span><span class="o">=</span><span class="kc">False</span><span class="p">)),</span> <span class="n">flags</span><span class="p">,</span> <span class="kc">True</span><span class="p">)</span>
+
+    <span class="c1"># APPEND: add message to mailbox directly, to INBOX folder with \Seen flag and now date</span>
+    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;/tmp/message.eml&#39;</span><span class="p">,</span> <span class="s1">&#39;rb&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+        <span class="n">msg</span> <span class="o">=</span> <span class="n">imap_tools</span><span class="o">.</span><span class="n">MailMessage</span><span class="o">.</span><span class="n">from_bytes</span><span class="p">(</span><span class="n">f</span><span class="o">.</span><span class="n">read</span><span class="p">())</span>  <span class="c1"># *or use bytes instead MailMessage</span>
+    <span class="n">mailbox</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">msg</span><span class="p">,</span> <span class="s1">&#39;INBOX&#39;</span><span class="p">,</span> <span class="n">dt</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">flag_set</span><span class="o">=</span><span class="p">[</span><span class="n">imap_tools</span><span class="o">.</span><span class="n">MailMessageFlags</span><span class="o">.</span><span class="n">SEEN</span><span class="p">])</span>
+</code></pre></div>
+
+<h1 id="snippets">Snippets</h1>
+<h2 id="bulk-function">bulk function</h2>
 <p>use as follows:   </p>
 <p><code>bulk=False</code>, eg:  </p>
 <div class="highlight"><pre><span></span><code><span class="k">with</span> <span class="n">MailBox</span><span class="p">(</span><span class="n">EMAIL_SERVER</span><span class="p">)</span><span class="o">.</span><span class="n">login</span><span class="p">(</span><span class="n">EMAIL_ACCOUNT</span><span class="p">,</span> <span class="n">PASSWORD</span><span class="p">)</span> <span class="k">as</span> <span class="n">mailbox</span><span class="p">:</span>
@@ -206,27 +269,25 @@ test.py finished in 0.7 minutes at 14:42:23.
 </code></pre></div>
 
 <p>so 20x faster in that case.   </p>
-<h3 id="mailbox-actions">Mailbox actions</h3>
-<div class="highlight"><pre><span></span><code><span class="k">with</span> <span class="n">MailBox</span><span class="p">(</span><span class="s1">&#39;imap.mail.com&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">login</span><span class="p">(</span><span class="s1">&#39;test@mail.com&#39;</span><span class="p">,</span> <span class="s1">&#39;pwd&#39;</span><span class="p">,</span> <span class="n">initial_folder</span><span class="o">=</span><span class="s1">&#39;INBOX&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">mailbox</span><span class="p">:</span>
+<h2 id="get-list-of-folders">get list of folders</h2>
+<p>by default <code>with MailBox(EMAIL_SERVER).login(EMAIL_ACCOUNT, PASSWORD, initial_folder=None) as mailbox</code> will only list folders as <code>Inbox</code> is the default folder.</p>
+<p>to list folders at root, use <code>initial_folder=None</code> as follows:</p>
+<div class="highlight"><pre><span></span><code><span class="k">with</span> <span class="n">MailBox</span><span class="p">(</span><span class="n">EMAIL_SERVER</span><span class="p">)</span><span class="o">.</span><span class="n">login</span><span class="p">(</span><span class="n">EMAIL_ACCOUNT</span><span class="p">,</span> <span class="n">PASSWORD</span><span class="p">,</span> <span class="n">initial_folder</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span> <span class="k">as</span> <span class="n">mailbox</span><span class="p">:</span>
 
-    <span class="c1"># COPY messages with uid in 23,27 from current folder to folder1</span>
-    <span class="n">mailbox</span><span class="o">.</span><span class="n">copy</span><span class="p">(</span><span class="s1">&#39;23,27&#39;</span><span class="p">,</span> <span class="s1">&#39;folder1&#39;</span><span class="p">)</span>
-
-    <span class="c1"># MOVE all messages from current folder to INBOX/folder2</span>
-    <span class="n">mailbox</span><span class="o">.</span><span class="n">move</span><span class="p">(</span><span class="n">mailbox</span><span class="o">.</span><span class="n">uids</span><span class="p">(),</span> <span class="s1">&#39;INBOX/folder2&#39;</span><span class="p">)</span>
-
-    <span class="c1"># DELETE messages with &#39;cat&#39; word in its html from current folder</span>
-    <span class="n">mailbox</span><span class="o">.</span><span class="n">delete</span><span class="p">([</span><span class="n">msg</span><span class="o">.</span><span class="n">uid</span> <span class="k">for</span> <span class="n">msg</span> <span class="ow">in</span> <span class="n">mailbox</span><span class="o">.</span><span class="n">fetch</span><span class="p">()</span> <span class="k">if</span> <span class="s1">&#39;cat&#39;</span> <span class="ow">in</span> <span class="n">msg</span><span class="o">.</span><span class="n">html</span><span class="p">])</span>
-
-    <span class="c1"># FLAG unseen messages in current folder as \Seen, \Flagged and TAG1</span>
-    <span class="n">flags</span> <span class="o">=</span> <span class="p">(</span><span class="n">imap_tools</span><span class="o">.</span><span class="n">MailMessageFlags</span><span class="o">.</span><span class="n">SEEN</span><span class="p">,</span> <span class="n">imap_tools</span><span class="o">.</span><span class="n">MailMessageFlags</span><span class="o">.</span><span class="n">FLAGGED</span><span class="p">,</span> <span class="s1">&#39;TAG1&#39;</span><span class="p">)</span>
-    <span class="n">mailbox</span><span class="o">.</span><span class="n">flag</span><span class="p">(</span><span class="n">mailbox</span><span class="o">.</span><span class="n">uids</span><span class="p">(</span><span class="n">AND</span><span class="p">(</span><span class="n">seen</span><span class="o">=</span><span class="kc">False</span><span class="p">)),</span> <span class="n">flags</span><span class="p">,</span> <span class="kc">True</span><span class="p">)</span>
-
-    <span class="c1"># APPEND: add message to mailbox directly, to INBOX folder with \Seen flag and now date</span>
-    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;/tmp/message.eml&#39;</span><span class="p">,</span> <span class="s1">&#39;rb&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
-        <span class="n">msg</span> <span class="o">=</span> <span class="n">imap_tools</span><span class="o">.</span><span class="n">MailMessage</span><span class="o">.</span><span class="n">from_bytes</span><span class="p">(</span><span class="n">f</span><span class="o">.</span><span class="n">read</span><span class="p">())</span>  <span class="c1"># *or use bytes instead MailMessage</span>
-    <span class="n">mailbox</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">msg</span><span class="p">,</span> <span class="s1">&#39;INBOX&#39;</span><span class="p">,</span> <span class="n">dt</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">flag_set</span><span class="o">=</span><span class="p">[</span><span class="n">imap_tools</span><span class="o">.</span><span class="n">MailMessageFlags</span><span class="o">.</span><span class="n">SEEN</span><span class="p">])</span>
+    <span class="k">for</span> <span class="n">f</span> <span class="ow">in</span> <span class="n">mailbox</span><span class="o">.</span><span class="n">folder</span><span class="o">.</span><span class="n">list</span><span class="p">():</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">f</span><span class="p">)</span>
 </code></pre></div>
+
+<p>important trick to use when the IMAP server has weird folder names, eg. in German:</p>
+<div class="highlight"><pre><span></span><code>FolderInfo<span class="o">(</span><span class="nv">name</span><span class="o">=</span><span class="s1">&#39;Entwürfe&#39;</span>, <span class="nv">delim</span><span class="o">=</span><span class="s1">&#39;/&#39;</span>, <span class="nv">flags</span><span class="o">=(</span><span class="s1">&#39;\\Drafts&#39;</span>, <span class="s1">&#39;\\HasNoChildren&#39;</span><span class="o">))</span>
+FolderInfo<span class="o">(</span><span class="nv">name</span><span class="o">=</span><span class="s1">&#39;Gesendete Objekte&#39;</span>, <span class="nv">delim</span><span class="o">=</span><span class="s1">&#39;/&#39;</span>, <span class="nv">flags</span><span class="o">=(</span><span class="s1">&#39;\\Sent&#39;</span>, <span class="s1">&#39;\\HasNoChildren&#39;</span><span class="o">))</span>
+FolderInfo<span class="o">(</span><span class="nv">name</span><span class="o">=</span><span class="s1">&#39;INBOX&#39;</span>, <span class="nv">delim</span><span class="o">=</span><span class="s1">&#39;/&#39;</span>, <span class="nv">flags</span><span class="o">=(</span><span class="s1">&#39;\\HasChildren&#39;</span>,<span class="o">))</span>
+FolderInfo<span class="o">(</span><span class="nv">name</span><span class="o">=</span><span class="s1">&#39;INBOX/warmup&#39;</span>, <span class="nv">delim</span><span class="o">=</span><span class="s1">&#39;/&#39;</span>, <span class="nv">flags</span><span class="o">=(</span><span class="s1">&#39;\\HasNoChildren&#39;</span>,<span class="o">))</span>
+FolderInfo<span class="o">(</span><span class="nv">name</span><span class="o">=</span><span class="s1">&#39;Papierkorb&#39;</span>, <span class="nv">delim</span><span class="o">=</span><span class="s1">&#39;/&#39;</span>, <span class="nv">flags</span><span class="o">=(</span><span class="s1">&#39;\\Trash&#39;</span>, <span class="s1">&#39;\\HasNoChildren&#39;</span><span class="o">))</span>
+FolderInfo<span class="o">(</span><span class="nv">name</span><span class="o">=</span><span class="s1">&#39;Spam&#39;</span>, <span class="nv">delim</span><span class="o">=</span><span class="s1">&#39;/&#39;</span>, <span class="nv">flags</span><span class="o">=(</span><span class="s1">&#39;\\Junk&#39;</span>, <span class="s1">&#39;\\HasNoChildren&#39;</span><span class="o">))</span>
+</code></pre></div>
+
+<p>in my case, it helped me find <code>Gesendete Objekte</code> as the <code>Sent</code> folder.</p>
             <!-- </main> -->
         </div><!-- /.entry-content -->
     </article>
