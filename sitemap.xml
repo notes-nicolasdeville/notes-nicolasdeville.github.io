@@ -2894,7 +2894,19 @@
     </url>
     
     <url>
+        <loc>https://notes.nicolasdeville.com/books/high-output-management</loc>
+        <lastmod>2023-09-18</lastmod>
+        <priority>0.8</priority>        
+    </url>
+    
+    <url>
         <loc>https://notes.nicolasdeville.com/books/automate-the-boring-stuff</loc>
+        <lastmod>2023-09-18</lastmod>
+        <priority>0.8</priority>        
+    </url>
+    
+    <url>
+        <loc>https://notes.nicolasdeville.com/books/who</loc>
         <lastmod>2023-09-18</lastmod>
         <priority>0.8</priority>        
     </url>
@@ -3602,6 +3614,12 @@
     </url>
     
     <url>
+        <loc>https://notes.nicolasdeville.com/leadership/my-style</loc>
+        <lastmod>2023-09-18</lastmod>
+        <priority>0.8</priority>        
+    </url>
+    
+    <url>
         <loc>https://notes.nicolasdeville.com/leadership/vp-sales</loc>
         <lastmod>2023-09-18</lastmod>
         <priority>0.8</priority>        
@@ -3621,6 +3639,12 @@
     
     <url>
         <loc>https://notes.nicolasdeville.com/leadership/fractional-cro</loc>
+        <lastmod>2023-09-18</lastmod>
+        <priority>0.8</priority>        
+    </url>
+    
+    <url>
+        <loc>https://notes.nicolasdeville.com/leadership/my-hiring-style</loc>
         <lastmod>2023-09-18</lastmod>
         <priority>0.8</priority>        
     </url>
