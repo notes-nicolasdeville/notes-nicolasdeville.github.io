@@ -19,9 +19,9 @@
 <meta name="twitter:description" content="control mouse and keyboard with Python" /> <!-- max. 200 characters -->
  
 
-<meta property="article:published_time" content="2023-03-11 12:03:56.726307+01:00" />
+<meta property="article:published_time" content="2023-10-10 12:54:38.883653+02:00" />
 
-<meta property="article:modified_time" content="2023-03-11 12:03:56.726307+01:00" />
+<meta property="article:modified_time" content="2023-10-10 12:54:38.883653+02:00" />
 
 <meta name="robots" content="all, follow" />
 
@@ -79,7 +79,7 @@
             
 
             <div class="above-navbar">
-                <div class="last_updated">08 Oct 2023 | 21:17</div>
+                <div class="last_updated">24 Oct 2023 | 08:19</div>
                 <div>
                     <p class="notes_count">
                         <a href="https://notes.nicolasdeville.com/tags">by tags</a>
@@ -90,7 +90,7 @@
                         <span style="color:#C74350">|</span>
                         <a href="https://notes.nicolasdeville.com/2022/">2022</a>
                         <span style="color:#C74350">|</span>
-                        655 notes
+                        657 notes
                     </p>
                 </div>
             </div>
@@ -137,7 +137,7 @@
 <footer class="post-info">
 
     <p>
-        11 Mar 2023 
+        10 Oct 2023 
         <span class="separator">|</span> in <a class="link_tag" href="https://notes.nicolasdeville.com/python/"><span data-pagefind-filter="category">python</span></a>
 
  tags: <a class="link_tag" href="https://notes.nicolasdeville.com/tag/python-libraries.html">python libraries</a>
@@ -145,8 +145,8 @@
 
         <!-- added 4/7 -->
         <!-- 		<br />
-        <abbr class="modified" title="2023-03-11T12:03:56.726307+01:00">
-                Updated: 11 Mar 2023
+        <abbr class="modified" title="2023-10-10T12:54:38.883653+02:00">
+                Updated: 10 Oct 2023
         </abbr>
  -->
 
@@ -205,6 +205,27 @@
 <span class="c1"># Collect all event until released</span>
 <span class="k">with</span> <span class="n">Listener</span><span class="p">(</span><span class="n">on_press</span> <span class="o">=</span> <span class="n">show</span><span class="p">)</span> <span class="k">as</span> <span class="n">listener</span><span class="p">:</span>
     <span class="n">listener</span><span class="o">.</span><span class="n">join</span><span class="p">()</span>
+</code></pre></div>
+
+<p><span class="datestamp">10 Oct 2023</span> </p>
+<h2 id="switch-between-windows">switch between windows</h2>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">pynput.keyboard</span> <span class="kn">import</span> <span class="n">Key</span><span class="p">,</span> <span class="n">Controller</span>
+
+<span class="n">keyb</span> <span class="o">=</span> <span class="n">Controller</span><span class="p">()</span>
+
+<span class="k">with</span> <span class="n">keyb</span><span class="o">.</span><span class="n">pressed</span><span class="p">(</span><span class="n">Key</span><span class="o">.</span><span class="n">cmd</span><span class="p">):</span>
+    <span class="n">keyb</span><span class="o">.</span><span class="n">press</span><span class="p">(</span><span class="n">Key</span><span class="o">.</span><span class="n">tab</span><span class="p">)</span>
+    <span class="n">keyb</span><span class="o">.</span><span class="n">release</span><span class="p">(</span><span class="n">Key</span><span class="o">.</span><span class="n">tab</span><span class="p">)</span>
+</code></pre></div>
+
+<p>Make sure to print after switching, eg.:</p>
+<div class="highlight"><pre><span></span><code><span class="n">webbrowser</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;chrome&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">open_new_tab</span><span class="p">(</span><span class="n">x</span><span class="o">.</span><span class="n">url</span><span class="p">)</span>
+
+<span class="k">with</span> <span class="n">keyb</span><span class="o">.</span><span class="n">pressed</span><span class="p">(</span><span class="n">Key</span><span class="o">.</span><span class="n">cmd</span><span class="p">):</span>
+    <span class="n">keyb</span><span class="o">.</span><span class="n">press</span><span class="p">(</span><span class="n">Key</span><span class="o">.</span><span class="n">tab</span><span class="p">)</span>
+    <span class="n">keyb</span><span class="o">.</span><span class="n">release</span><span class="p">(</span><span class="n">Key</span><span class="o">.</span><span class="n">tab</span><span class="p">)</span>
+
+<span class="n">keep</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">Keep (y/n)?</span><span class="se">\n</span><span class="s1">&gt; &#39;</span><span class="p">)</span>
 </code></pre></div>
             <!-- </main> -->
         </div><!-- /.entry-content -->
