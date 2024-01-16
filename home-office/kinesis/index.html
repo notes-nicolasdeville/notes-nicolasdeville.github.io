@@ -19,9 +19,9 @@
 <meta name="twitter:description" content="a transformative keyboard" /> <!-- max. 200 characters -->
  
 
-<meta property="article:published_time" content="2023-11-13 07:24:52.336026+01:00" />
+<meta property="article:published_time" content="2024-01-16 07:11:50.231951+01:00" />
 
-<meta property="article:modified_time" content="2023-11-13 07:24:52.336026+01:00" />
+<meta property="article:modified_time" content="2024-01-16 07:11:50.231951+01:00" />
 
 <meta name="robots" content="all, follow" />
 
@@ -79,7 +79,7 @@
             
 
             <div class="above-navbar">
-                <div class="last_updated">01 Jan 2024 | 21:10</div>
+                <div class="last_updated">16 Jan 2024 | 07:12</div>
                 <div>
                     <p class="notes_count">
                         <a href="https://notes.nicolasdeville.com/tags">by tags</a>
@@ -90,7 +90,7 @@
                         <span style="color:#C74350">|</span>
                         <a href="https://notes.nicolasdeville.com/2022/">2022</a>
                         <span style="color:#C74350">|</span>
-                        672 notes
+                        674 notes
                     </p>
                 </div>
             </div>
@@ -112,6 +112,7 @@
                 <li><a href="https://notes.nicolasdeville.com/random/">random</a></li>
                 <li><a href="https://notes.nicolasdeville.com/research/">research</a></li>
                 <li><a href="https://notes.nicolasdeville.com/startups/">startups</a></li>
+                <li><a href="https://notes.nicolasdeville.com/video/">video</a></li>
             </ul></nav>
         </header>
 
@@ -137,14 +138,14 @@
 <footer class="post-info">
 
     <p>
-        13 Nov 2023 
+        16 Jan 2024 
         <span class="separator">|</span> in <a class="link_tag" href="https://notes.nicolasdeville.com/home-office/"><span data-pagefind-filter="category">home office</span></a>
 
 
         <!-- added 4/7 -->
         <!-- 		<br />
-        <abbr class="modified" title="2023-11-13T07:24:52.336026+01:00">
-                Updated: 13 Nov 2023
+        <abbr class="modified" title="2024-01-16T07:11:50.231951+01:00">
+                Updated: 16 Jan 2024
         </abbr>
  -->
 
@@ -171,11 +172,12 @@
 <li><a href="#list-of-codes">list of codes</a></li>
 </ul>
 </li>
-<li><a href="#setup">Setup</a><ul>
-<li><a href="#run-wired-only">run wired only</a></li>
-<li><a href="#my-keyboard-layout">My keyboard layout</a></li>
+<li><a href="#setup">Setup</a></li>
 </ul>
 </li>
+<li><a href="#firmware">Firmware</a><ul>
+<li><a href="#run-wired-only">run wired only</a></li>
+<li><a href="#my-keyboard-layout">My keyboard layout</a></li>
 <li><a href="#typing-speed">Typing speed</a><ul>
 <li><a href="#battery-monitoring">Battery monitoring</a></li>
 </ul>
@@ -183,6 +185,7 @@
 </ul>
 </li>
 <li><a href="#keycaps">Keycaps</a></li>
+<li><a href="#troubleshooting">Troubleshooting</a></li>
 <li><a href="#resources_1">Resources</a><ul>
 <li><a href="#reviews">Reviews</a></li>
 </ul>
@@ -328,6 +331,8 @@ The transparent behavior simply ignores key position presses/releases, so they w
 <li>select the layout &amp; key to assign macro to.</li>
 <li>on the key's upper left corner, choose <code>&amp;macro</code>, then select the macro from the list by clicking on the field within the key.   </li>
 </ul>
+<h1 id="firmware">Firmware</h1>
+<p>Firmware &amp; Reset files: <a href="https://kinesis-ergo.com/support/kb360pro/#firmware-updates" target="_blank">https://kinesis-ergo.com/support/kb360pro/#firmware-updates</a></p>
 <p>To flash firmware:</p>
 <ul>
 <li>download updated keymap file <code>firmware</code> from <code>https://github/ndeville/Adv360-Pro-ZMK/actions/runs/XXXXXXXXXXXXX</code> </li>
@@ -389,6 +394,35 @@ The transparent behavior simply ignores key position presses/releases, so they w
 <div class="link_tagline">keycaps.sh</div>
 <div class="link_url"><a href="https://keycaps.sh/" target="_blank">https://keycaps.sh/</a></div></div></div>
 
+<h1 id="troubleshooting">Troubleshooting</h1>
+<p><span class="datestamp">04 Jan 2024</span> </p>
+<p>Bluetooth issues (profile LED blinking slowly):</p>
+<ul>
+<li>clear Bluetooth connection on Mac ("Forget device" under Settings &gt; Bluetooth)</li>
+<li>perform a "Bluetooth clear" on the keyboard by holding MODE + COMMAND (on Mac, else WINDOWS on Windows)<blockquote>
+<p>light will blink fast, ready to be re-paired</p>
+</blockquote>
+</li>
+<li>re-pair on Mac</li>
+</ul>
+<p>Solved it for me as I'm typing this with my newly re-paired keyboard 😁  </p>
+<p><span class="datestamp">15 Jan 2024</span> </p>
+<p>Technical support ticket:</p>
+<p>I have been using this keyboard for the last 14 months and it is the best keyboard I have ever used. It feels part of me. I can't see myself using any other keyboard at the moment (though I'm typing this on my old Kinesis Advantage 2 - 2nd best option - considering the fault with the 360).</p>
+<p>10 days ago, with seemingly no environment change, I had one issue where bluetooth connection was lost, and wouldn't reconnect despite multiple power cycles. I ended up doing a clean Bluetooth repairing (Mode + Command Right) and it worked again.</p>
+<p>Today, also without seemingly any environment change, the keyboard started to behave erraticly, not registering all key presses, though I couldn't assess the logic (some didn't work, and then worked again). Ultimately, I lost connection entirely (left keyboard blinking white) AND lost the connection between left and right (ie right keyboard flashing red).<br>
+I have tried countless power cycles, short and fast, left and right then the other way around, connected to power or not, to no avail.</p>
+<p>The Bluetooth reset doesn't seem to work anymore, possibly because the left keyboard is not connected to the right one anymore?</p>
+<p>And I cannot get either keyboard to bootload, to try and flash the firmware with an update. </p>
+<p>What can I/should I do?</p>
+<p>Thanks for your help - I really need my 360 back! 😅</p>
+<p>2024-01-15 22:15 managed to get the keyboard to work again by doing a hard reset with paperclip, apply the reset file to both keyboards, and then flashing the firmware with v3.0 from a fresh repo (in /devyer on Github).<br>
+But cannot access the new repo for keymap remapping 🙁</p>
+<p>2024-01-16 07:07 resolved on my own by doing a hard reset &amp; update to V3.0 firmware.<br>
+- deleted Github repo in my account &amp; locally, forked again (V3.0 this time) and cloned locally<br>
+- redid the keymapping using the GUI<br>
+- force bootload by clicking twice on reset button with paperclip (between the thumb clusters keycaps - removed one keycap for easier access)<br>
+Seems to work again now 😁 Lost a few hours, but at least I'm on v3.0 at last which was on my to-do list for a while now. Let's hope it fixes the recent issues.</p>
 <h1 id="resources_1">Resources</h1>
 <h2 id="reviews">Reviews</h2>
 <div class="link_border"><div class="link_logo_box"><img class="link_logo" src="https://ik.imagekit.io/vhucnsp9j1u/images/logos/arslan.png" alt="logo"/></div><div class="link_content">
