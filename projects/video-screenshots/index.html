@@ -80,7 +80,7 @@
             
 
             <div class="above-navbar">
-                <div class="last_updated">20 Jan 2024 | 11:15</div>
+                <div class="last_updated">21 Jan 2024 | 19:08</div>
                 <div>
                     <p class="notes_count">
                         <a href="https://notes.nicolasdeville.com/tags">by tags</a>
@@ -91,7 +91,7 @@
                         <span style="color:#C74350">|</span>
                         <a href="https://notes.nicolasdeville.com/2022/">2022</a>
                         <span style="color:#C74350">|</span>
-                        676 notes
+                        681 notes
                     </p>
                 </div>
             </div>
@@ -111,7 +111,6 @@
                 <li class="active"><a href="https://notes.nicolasdeville.com/projects/">projects</a></li>
                 <li><a href="https://notes.nicolasdeville.com/python/">python</a></li>
                 <li><a href="https://notes.nicolasdeville.com/random/">random</a></li>
-                <li><a href="https://notes.nicolasdeville.com/research/">research</a></li>
                 <li><a href="https://notes.nicolasdeville.com/startups/">startups</a></li>
                 <li><a href="https://notes.nicolasdeville.com/video/">video</a></li>
             </ul></nav>
@@ -180,8 +179,8 @@
 <p>A script to do this end-to-end would be a time-saver and improve my workflows so as to use illustrations more.   </p>
 <p>Need to figure out how to do it - AppleScript seems more appropriate than Python for this, considering the need to target a specific app to be screeshot. </p>
 <h1 id="objective">Objective</h1>
-<p>App I want to focus on is my media player of choice: IINA <span class="nic_link"><a href="https://notes.nicolasdeville.com/apps/iina" target="_blank">IINA</a></span>    </p>
-<p>Single command to trigger: keyboard shortcut and/or Streamdeck key <span class="nic_link"><a href="https://notes.nicolasdeville.com/home-office/streamdeck" target="_blank">Streamdeck for business users</a></span> and /or Contour Shuttle key -ideal <span class="nic_link"><a href="https://notes.nicolasdeville.com/home-office/contour-shuttle" target="_blank">Contour ShuttlePRO v2</a></span>  </p>
+<p>App I want to focus on is my media player of choice: IINA !apps/iina    </p>
+<p>Single command to trigger: keyboard shortcut and/or Streamdeck key !home-office/streamdeck and /or Contour Shuttle key -ideal !home-office/contour-shuttle  </p>
 <p>Automates:  </p>
 <ul>
 <li>puts IINA at the foreground  </li>
@@ -191,9 +190,9 @@
 <p>Output:   </p>
 <ul>
 <li>saved image file with video title and timestamp.     </li>
-<li>HTML code in clipboard, ready to be pasted, with path to image and CSS styling (see <span class="nic_link"><a href="https://notes.nicolasdeville.com/projects/clipee" target="_blank">Clipee</a></span>/#clipee-note)    </li>
+<li>HTML code in clipboard, ready to be pasted, with path to image and CSS styling (see !projects/clipee/#clipee-note)    </li>
 </ul>
-<p>Could be a multi-tool solution, ie shell script + AppleScript + Hazel <span class="nic_link"><a href="https://notes.nicolasdeville.com/apps/hazel" target="_blank">Hazel</a></span>.    </p>
+<p>Could be a multi-tool solution, ie shell script + AppleScript + Hazel !apps/hazel.    </p>
 <h1 id="gathering-infos">Gathering infos</h1>
 <div class="link_border"><div class="link_logo_box"><img class="link_logo" src="https://ik.imagekit.io/vhucnsp9j1u/images/logos/engadget.png" alt="logo"/></div><div class="link_content">
 <div class="link_title">AppleScript: Taking screenshots | Engadget</div>
@@ -361,7 +360,7 @@ usage: screencapture <span class="o">[</span>-icMPmwsWxSCUtoa<span class="o">]</
 <p>need to figure out if I can get timestamp and video name.   </p>
 <p>To run: <code>shortcuts run "Screenshot IINA"</code>  </p>
 <p>Works even when window is not at the foreground 😁   </p>
-<p>Took a different turn, but now have it so that a key on my Contour Shuttle <span class="nic_link"><a href="https://notes.nicolasdeville.com/home-office/contour-shuttle" target="_blank">Contour ShuttlePRO v2</a></span> takes the screenshot and adds to a folder with video name.  </p>
+<p>Took a different turn, but now have it so that a key on my Contour Shuttle !home-office/contour-shuttle takes the screenshot and adds to a folder with video name.  </p>
 <p>Need to figure out how to rename files with no spaces and generate HTML. Probably triggering a Python script with Hazel - will be the quickest.    </p>
 <p>Enough for today though 😁   </p>
 <h1 id="final-solution">Final solution</h1>
@@ -432,12 +431,12 @@ usage: screencapture <span class="o">[</span>-icMPmwsWxSCUtoa<span class="o">]</
 </code></pre></div>
 
 <p>I'm happy with this new workflow 😁 </p>
-<p>First use of the workflow: <span class="nic_link"><a href="https://notes.nicolasdeville.com/interests/tesla-ai-day-2022" target="_blank">Tesla AI Day 2022</a></span>    </p>
+<p>First use of the workflow: !interests/tesla-ai-day-2022    </p>
 <p><span class="datestamp">14 Mar 2023</span> </p>
 <p>Issue with using IINA is that it has poor video playback control - jog &amp; frame-by-frame - making screen capture difficult.   </p>
-<p>Switched the workflow to VLC today <span class="nic_link"><a href="https://notes.nicolasdeville.com/apps/vlc" target="_blank">VLC</a></span> , without code:  </p>
+<p>Switched the workflow to VLC today !apps/vlc , without code:  </p>
 <ul>
-<li>Assign the native "Snapshot" control in VLC (<code>Cmd + Option + S</code> by default) to a key on my ShuttlePro &amp; save to a specific folder (in VLC settings) <span class="nic_link"><a href="https://notes.nicolasdeville.com/home-office/contour-shuttle" target="_blank">Contour ShuttlePRO v2</a></span></li>
+<li>Assign the native "Snapshot" control in VLC (<code>Cmd + Option + S</code> by default) to a key on my ShuttlePro &amp; save to a specific folder (in VLC settings) !home-office/contour-shuttle</li>
 </ul>
 <p><img class="screenshot" src="https://ik.imagekit.io/vhucnsp9j1u/images/script-screenshot-app/230314-contour-shuttle-settings-vlc.jpg" alt="script-screenshot-app/230314-contour-shuttle-settings-vlc.jpg"/>  </p>
 <ul>
@@ -446,7 +445,7 @@ usage: screencapture <span class="o">[</span>-icMPmwsWxSCUtoa<span class="o">]</
 <p><img class="screenshot" src="https://ik.imagekit.io/vhucnsp9j1u/images/script-screenshot-app/230314-2251-hazel-vlc-settings.jpg" alt="script-screenshot-app/230314-2251-hazel-vlc-settings.jpg"/>  </p>
 <p>Works much better. But frame-by-frame is only possible forward (with <code>E</code>)? 🤔  </p>
 <p><span class="datestamp">15 Mar 2023</span> </p>
-<p>Backwards frame-by-frame is not possible in VLC 😕   <span class="nic_link"><a href="https://notes.nicolasdeville.com/apps/vlc" target="_blank">VLC</a></span></p>
+<p>Backwards frame-by-frame is not possible in VLC 😕   !apps/vlc</p>
 <p>Workaround:  </p>
 <ul>
 <li>use <code>Very short backwards jump</code> (<code>Cmd + Ctrl + Right</code>) of 3s</li>
