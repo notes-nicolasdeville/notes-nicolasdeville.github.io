@@ -22,7 +22,7 @@
 
 <meta property="article:published_time" content="2022-09-18 00:00:00+02:00" />
 
-<meta property="article:modified_time" content="2023-05-21 21:52:15.351065+02:00" />
+<meta property="article:modified_time" content="2024-04-20 13:15:27.636125+02:00" />
 
 <meta name="robots" content="all, follow" />
 
@@ -80,7 +80,7 @@
             
 
             <div class="above-navbar">
-                <div class="last_updated">14 Apr 2024 | 17:30</div>
+                <div class="last_updated">27 May 2024 | 06:36</div>
                 <div>
                     <p class="notes_count">
                         <a href="https://notes.nicolasdeville.com/tags">by tags</a>
@@ -91,7 +91,7 @@
                         <span style="color:#C74350">|</span>
                         <a href="https://notes.nicolasdeville.com/2022/">2022</a>
                         <span style="color:#C74350">|</span>
-                        683 notes
+                        685 notes
                     </p>
                 </div>
             </div>
@@ -146,8 +146,8 @@
 
         <!-- added 4/7 -->
         <!-- 		<br />
-        <abbr class="modified" title="2023-05-21T21:52:15.351065+02:00">
-                Updated: 21 May 2023
+        <abbr class="modified" title="2024-04-20T13:15:27.636125+02:00">
+                Updated: 20 Apr 2024
         </abbr>
  -->
 
@@ -168,6 +168,7 @@
 </ul>
 </li>
 <li><a href="#quoted-form-of">quoted form of</a></li>
+<li><a href="#opening-an-application-and-moving-it-to-a-specific-screen">Opening an application and moving it to a specific screen</a></li>
 <li><a href="#resources">Resources</a></li>
 </ul>
 </div>
@@ -284,6 +285,49 @@
 
 <h1 id="quoted-form-of">quoted form of</h1>
 <p>to ensure that strings such as (literal) filenames are passed to the shell unmodified (to protect strings from shell expansions), prefix them with <code>quoted form of</code>.     </p>
+<h1 id="opening-an-application-and-moving-it-to-a-specific-screen">Opening an application and moving it to a specific screen</h1>
+<p><span class="datestamp">20 Apr 2024</span> </p>
+<div class="highlight"><pre><span></span><code><span class="k">tell</span> <span class="nb">application</span> <span class="s2">&quot;Audirvana Studio&quot;</span>
+    <span class="nb">activate</span>
+<span class="k">end</span> <span class="k">tell</span>
+
+<span class="nb">delay</span> <span class="mi">2</span>
+
+<span class="k">tell</span> <span class="nb">application</span> <span class="s2">&quot;System Events&quot;</span>
+    <span class="k">tell</span> <span class="nv">process</span> <span class="s2">&quot;Audirvana Studio&quot;</span>
+        <span class="k">set</span> <span class="na">frontmost</span> <span class="k">to</span> <span class="no">true</span>
+        <span class="nb">delay</span> <span class="mi">1</span>
+        <span class="c">-- Set the initial size to ensure it&#39;s manageable</span>
+        <span class="k">set</span> <span class="na">size</span> <span class="k">of</span> <span class="na">window</span> <span class="mi">1</span> <span class="k">to</span> <span class="p">{</span><span class="mi">1024</span><span class="p">,</span> <span class="mi">600</span><span class="p">}</span>
+        <span class="nb">delay</span> <span class="mi">1</span>
+        <span class="c">-- Check if the &quot;Move to Elgato Prom.&quot; menu item exists and click it if it does</span>
+        <span class="k">tell</span> <span class="na">menu</span> <span class="nv">bar</span> <span class="mi">1</span>
+            <span class="k">tell</span> <span class="na">menu</span> <span class="nv">bar</span> <span class="nb">item</span> <span class="s2">&quot;Window&quot;</span>
+                <span class="k">tell</span> <span class="na">menu</span> <span class="s2">&quot;Window&quot;</span>
+                    <span class="k">if</span> <span class="nb">exists</span> <span class="p">(</span><span class="na">menu</span> <span class="nb">item</span> <span class="s2">&quot;Move to Elgato Prom.&quot;</span><span class="p">)</span> <span class="k">then</span>
+                        <span class="nv">click</span> <span class="na">menu</span> <span class="nb">item</span> <span class="s2">&quot;Move to Elgato Prom.&quot;</span>
+                        <span class="nb">delay</span> <span class="mi">1</span>
+                        <span class="c">-- Adjust the window size on the &quot;Elgato Prom.&quot; monitor</span>
+                        <span class="k">tell</span> <span class="na">menu</span> <span class="nv">bar</span> <span class="mi">1</span>
+                            <span class="k">tell</span> <span class="na">menu</span> <span class="nv">bar</span> <span class="nb">item</span> <span class="s2">&quot;Window&quot;</span>
+                                <span class="k">tell</span> <span class="na">menu</span> <span class="s2">&quot;Window&quot;</span>
+                                    <span class="nv">click</span> <span class="na">menu</span> <span class="nb">item</span> <span class="s2">&quot;Zoom&quot;</span>
+                                <span class="k">end</span> <span class="k">tell</span>
+                            <span class="k">end</span> <span class="k">tell</span>
+                        <span class="k">end</span> <span class="k">tell</span>
+                        <span class="nb">delay</span> <span class="mi">1</span>
+                    <span class="k">end</span> <span class="k">if</span>
+                <span class="k">end</span> <span class="k">tell</span>
+            <span class="k">end</span> <span class="k">tell</span>
+        <span class="k">end</span> <span class="k">tell</span>
+    <span class="k">end</span> <span class="k">tell</span>
+<span class="k">end</span> <span class="k">tell</span>
+
+<span class="k">tell</span> <span class="nb">application</span> <span class="s2">&quot;Audirvana Studio&quot;</span>
+    <span class="nv">playpause</span>
+<span class="k">end</span> <span class="k">tell</span>
+</code></pre></div>
+
 <h1 id="resources">Resources</h1>
 <div class="link_border"><div class="link_logo_box"><img class="link_logo" src="https://ik.imagekit.io/vhucnsp9j1u/images/logos/apple.png" alt="logo"/></div><div class="link_content">
 <div class="link_title">Introduction to AppleScript Language Guide</div>

@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <!-- Base -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="generator" content="Pelican" />
+    <meta name="author" content="Nic Deville">
+
+<!-- Title -->
+<title>Curl | Nic's notes</title>
+<meta name="og:title" content="Curl | Nic's notes"/> <!-- 40 characters for mobile and 60 for desktop -->
+<link rel="canonical" href="https://notes.nicolasdeville.com/helpers/curl" />
+<meta name="twitter:title" content="Curl | Nic's notes" /> <!-- max. 70 characters -->
+
+<meta name="description" content="Messy online notebook covering B2B Sales, Leadership, Python programming, Automation, AI and more. I take these notes for myself (and my kids later) - perhaps they can help someone else..."/>
+<meta property="og:description" content="Messy online notebook covering B2B Sales, Leadership, Python programming, Automation, AI and more. I take these notes for myself (and my kids later) - perhaps they can help someone else..."/>
+<meta name="twitter:description" content="Messy online notebook covering B2B Sales, Leadership, Python programming, Automation, AI and more. I take these notes for myself (and my kids later) - perhaps they can help someone else..." /> <!-- max. 200 characters -->
+
+ 
+
+<meta property="article:published_time" content="2023-04-24 00:00:00+02:00" />
+
+<meta property="article:modified_time" content="2024-05-02 06:56:29.928699+02:00" />
+
+<meta name="robots" content="all, follow" />
+
+<!-- Social -->
+<meta property="og:type" content="article" />
+
+<!-- <meta property="og:description" content="Messy online notebook covering B2B Sales, Leadership, Python programming, Automation, AI and more. I take these notes for myself (and my kids later) - perhaps they can help someone else..." /> min. 2 max. 4 sentences -->
+
+<meta property="og:url" content="https://notes.nicolasdeville.com/helpers/curl" /> <!-- canonical URL for your page without session variables, user id parameters or counters -->
+<meta property="og:site_name" content="Nic's notes" />
+<meta name="image" property="og:image" content="https://ik.imagekit.io/vhucnsp9j1u/images/notes-twitter-image.jpg" /> <!-- at least 600x315 pixels, preferable 1200x630 pixels -->
+
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:site" content="@ndeville" />
+
+<meta name="twitter:image" content="https://ik.imagekit.io/vhucnsp9j1u/images/notes-twitter-image.jpg" /> <!-- aspect ratio of 2:1 with minimum dimensions of 300x157 or maximum of 4096x4096 pixels. Going with 900x471 -->
+
+<!-- Logo -->
+<meta property="og:logo" content="https://notes.nicolasdeville.com/logo.svg">
+
+<!-- Favicon -->
+<link rel="icon" type="image/x-icon" href="https://notes.nicolasdeville.com/favicon.ico">
+<link rel="mask-icon" href="https://notes.nicolasdeville.com/favicon.svg" color="#FFFFFF">
+<link rel="alternate icon" class="js-site-favicon" type="image/png" href="https://notes.nicolasdeville.com/favicon.png">
+<link rel="icon" class="js-site-favicon" type="image/svg+xml" href="https://notes.nicolasdeville.com/favicon.svg">
+<link rel="fluid-icon" href="https://notes.nicolasdeville.com/favicon.png" title="Nic's notes">
+
+<!-- CSS -->
+<link rel="stylesheet" href="https://notes.nicolasdeville.com/theme/css/main.css" />
+
+<!-- Pagefind -->
+<link href="https://notes.nicolasdeville.com/theme/css/pagefind-ui-nic.css" rel="stylesheet">
+<script src="https://notes.nicolasdeville.com/pagefind/pagefind-ui.js" type="text/javascript"></script>
+
+<script>
+    window.addEventListener('DOMContentLoaded', (event) => {
+        new PagefindUI({ element: "#search" });
+    });
+</script>
+
+
+</head>
+
+<body id="index" class="body">
+        <header id="banner" class="body">
+
+            <div class="logo-and-search">
+                <a href="https://notes.nicolasdeville.com/"><img class="header_image" src="https://ik.imagekit.io/vhucnsp9j1u/images/nic_notes_header.svg" alt="Nic's notes" width="266"/></a>
+
+                <!-- Pagefind -->
+                <div class="search-input-block" id="search"></div>
+
+            </div>
+
+            
+
+            <div class="above-navbar">
+                <div class="last_updated">27 May 2024 | 06:36</div>
+                <div>
+                    <p class="notes_count">
+                        <a href="https://notes.nicolasdeville.com/tags">by tags</a>
+                        <span style="color:#C74350">|</span>
+                        <a href="https://notes.nicolasdeville.com/2020/">2020</a>
+                        <span style="color:#C74350">|</span>
+                        <a href="https://notes.nicolasdeville.com/2021/">2021</a>
+                        <span style="color:#C74350">|</span>
+                        <a href="https://notes.nicolasdeville.com/2022/">2022</a>
+                        <span style="color:#C74350">|</span>
+                        685 notes
+                    </p>
+                </div>
+            </div>
+
+            <nav><ul>
+                <li><a href="https://notes.nicolasdeville.com/ai/">ai</a></li>
+                <li><a href="https://notes.nicolasdeville.com/apps/">apps</a></li>
+                <li><a href="https://notes.nicolasdeville.com/b2b-sales/">b2b sales</a></li>
+                <li><a href="https://notes.nicolasdeville.com/books/">books</a></li>
+                <li><a href="https://notes.nicolasdeville.com/careerplaybook/">#careerplaybook</a></li>
+                <li class="active"><a href="https://notes.nicolasdeville.com/helpers/">helpers</a></li>
+                <li><a href="https://notes.nicolasdeville.com/home-office/">home office</a></li>
+                <li><a href="https://notes.nicolasdeville.com/interests/">interests</a></li>
+                <li><a href="https://notes.nicolasdeville.com/leadership/">leadership</a></li>
+                <li><a href="https://notes.nicolasdeville.com/learning/">learning</a></li>
+                <li><a href="https://notes.nicolasdeville.com/movies/">movies</a></li>
+                <li><a href="https://notes.nicolasdeville.com/projects/">projects</a></li>
+                <li><a href="https://notes.nicolasdeville.com/python/">python</a></li>
+                <li><a href="https://notes.nicolasdeville.com/random/">random</a></li>
+                <li><a href="https://notes.nicolasdeville.com/video/">video</a></li>
+            </ul></nav>
+        </header>
+
+        <!-- index.html injection -->
+<section id="content" class="body">
+    <article>
+        <header>
+            <h1 class="entry-title">
+                <main> <!-- for indexing by Stork -->
+                    <a href="https://notes.nicolasdeville.com/helpers/curl" rel="bookmark"
+                    title="Permalink to Curl">Curl
+                    </a>
+                </main>
+            </h1>
+            <p class="header_summary">
+                <main> <!-- for indexing by Stork -->
+                    
+                </main>
+            </p>
+        </header>
+
+        <div class="entry-content">
+<footer class="post-info">
+
+    <p>
+        24 Apr 2023 
+        <span class="separator">|</span> in <a class="link_tag" href="https://notes.nicolasdeville.com/helpers/"><span data-pagefind-filter="category">helpers</span></a>
+
+
+        <!-- added 4/7 -->
+        <!-- 		<br />
+        <abbr class="modified" title="2024-05-02T06:56:29.928699+02:00">
+                Updated: 02 May 2024
+        </abbr>
+ -->
+
+    </p>
+
+    
+
+</footer>            <!-- for indexing by Stork -->
+            <!-- <main>  -->
+                <div class="toc"><span class="toctitle">Table of Contents</span><ul></ul>
+</div>
+<div class="link_border"><div class="link_logo_box"><img class="link_logo" src="https://ik.imagekit.io/vhucnsp9j1u/images/logos/curl.png" alt="logo"/></div><div class="link_content">
+<div class="link_title">curl - How To Use</div>
+<div class="link_tagline">curl.se</div>
+<div class="link_url"><a href="https://curl.se/docs/manpage.html" target="_blank">https://curl.se/docs/manpage.html</a></div></div></div>
+
+<p>To download as HTML in specific location:</p>
+<div class="highlight"><pre><span></span><code>curl -L -o /Users/xxx/test/microsoft.html https://www.website.com/en/partners/microsoft
+</code></pre></div>
+
+<p><code>-L</code> or <code>--location</code> - Follow redirects<br>
+<code>-o</code> or <code>--output</code> - Write to file<br>
+<code>-i</code> or <code>--include</code> - Include the HTTP-header in the output<br>
+<code>-I</code> or <code>--head</code> - Fetch the HTTP-header only<br>
+<code>-X</code> or <code>--request</code> - Specify a custom request method to use when communicating with the HTTP server<br>
+<code>-H</code> or <code>--header</code> - Pass custom header(s) to server<br>
+<code>-d</code> or <code>--data</code> - HTTP POST data<br>
+<code>-F</code> or <code>--form</code> - Specify multipart POST data<br>
+<code>-O</code> or <code>--remote-name</code> - Write output to a file named as the remote file<br>
+<code>-u</code> or <code>--user</code> - Specify user and password<br>
+<code>-A</code> or <code>--user-agent</code> - Send User-Agent header to server<br>
+<code>-v</code> or <code>--verbose</code> - Make the operation more talkative<br>
+<code>-s</code> or <code>--silent</code> - Silent mode<br>
+<code>-k</code> or <code>--insecure</code> - Allow connections to SSL sites without certs<br>
+<code>-x</code> or <code>--proxy</code> - Use the specified HTTP proxy<br>
+<code>-X</code> or <code>--request</code> - Specify a custom request method to use when communicating with the HTTP server<br>
+<code>-T</code> or <code>--upload-file</code> - Transfer file<br>
+<code>-H</code> or <code>--header</code> - Pass custom header(s) to server<br>
+<code>-b</code> or <code>--cookie</code> - Send cookies from string/file<br>
+<code>-c</code> or <code>--cookie-jar</code> - Write cookies to file after operation<br>
+<code>-L</code> or <code>--location</code> - Follow redirects<br>
+<code>-i</code> or <code>--include</code> - Include the HTTP-header in the output<br>
+<code>-I</code> or <code>--head</code> - Fetch the HTTP-header only<br>
+<code>-v</code> or <code>--verbose</code> - Make the operation more talkative<br>
+<code>-s</code> or <code>--silent</code> - Silent mode<br>
+<code>-k</code> or <code>--insecure</code> - Allow connections to SSL sites without certs<br>
+<code>-x</code> or <code>--proxy</code> - Use the specified HTTP proxy<br>
+<code>-T</code> or <code>--upload-file</code> - Transfer file<br>
+<code>-H</code> or <code>--header</code> - Pass custom header(s) to server<br>
+<code>-b</code> or <code>--cookie</code> - Send cookies from string/file</p>
+<p>Script to download JSON files from a website with a loop:</p>
+<div class="highlight"><pre><span></span><code><span class="ch">#!/bin/bash</span>
+
+<span class="c1"># Create the directory if it doesn&#39;t exist</span>
+mkdir -p path/to/directory
+
+<span class="k">for</span> i <span class="k">in</span> <span class="sb">`</span>seq <span class="m">1</span> <span class="m">159</span><span class="sb">`</span><span class="p">;</span> <span class="k">do</span>
+<span class="nb">echo</span> <span class="s2">&quot;Fetching page </span><span class="nv">$i</span><span class="s2">&quot;</span><span class="p">;</span>
+curl -o path/to/directory/<span class="sb">`</span><span class="nb">printf</span> <span class="s2">&quot;%03d&quot;</span> <span class="nv">$i</span><span class="sb">`</span>.json <span class="s1">&#39;https://xxxx.com/search/&#39;</span> <span class="se">\</span>
+  -H <span class="s1">&#39;accept: */*&#39;</span> <span class="se">\</span>
+  -H <span class="s1">&#39;accept-language: en-US,en;q=0.9,nl;q=0.8,de;q=0.7&#39;</span> <span class="se">\</span>
+  -H <span class="s1">&#39;content-type: application/json&#39;</span> <span class="se">\</span>
+  -H <span class="s1">&#39;cookie: [see below for how to get this] \</span>
+<span class="s1">  -H &#39;</span>referer: https://xxxx.com/listings?page<span class="o">=</span>minions<span class="p">&amp;</span><span class="nv">pageNumber</span><span class="o">=</span><span class="m">1</span><span class="s1">&#39; \</span>
+<span class="s1">  -H &#39;</span>sec-ch-ua: <span class="s2">&quot;Google Chrome&quot;</span><span class="p">;</span><span class="nv">v</span><span class="o">=</span><span class="s2">&quot;123&quot;</span>, <span class="s2">&quot;Not:A-Brand&quot;</span><span class="p">;</span><span class="nv">v</span><span class="o">=</span><span class="s2">&quot;8&quot;</span>, <span class="s2">&quot;Chromium&quot;</span><span class="p">;</span><span class="nv">v</span><span class="o">=</span><span class="s2">&quot;123&quot;</span><span class="s1">&#39; \</span>
+<span class="s1">  -H &#39;</span>sec-ch-ua-mobile: ?0<span class="s1">&#39; \</span>
+<span class="s1">  -H &#39;</span>sec-ch-ua-platform: <span class="s2">&quot;macOS&quot;</span><span class="s1">&#39; \</span>
+<span class="s1">  -H &#39;</span>sec-fetch-dest: empty<span class="s1">&#39; \</span>
+<span class="s1">  -H &#39;</span>sec-fetch-mode: cors<span class="s1">&#39; \</span>
+<span class="s1">  -H &#39;</span>sec-fetch-site: same-origin<span class="s1">&#39; \</span>
+<span class="s1">  -H &#39;</span>user-agent: Mozilla/5.0 <span class="o">(</span>Macintosh<span class="p">;</span> Intel Mac OS X 10_15_7<span class="o">)</span> AppleWebKit/537.36 <span class="o">(</span>KHTML, like Gecko<span class="o">)</span> Chrome/123.0.0.0 Safari/537.36<span class="s1">&#39; \</span>
+<span class="s1">  -H &#39;</span>x-auth-token: 115987af9dsfafasd9faf7a477a25<span class="s1">&#39; \</span>
+<span class="s1">  -H &#39;</span>x-lang: en<span class="s1">&#39; \</span>
+<span class="s1">  --data-raw &#39;</span><span class="o">{</span><span class="s2">&quot;page&quot;</span>:<span class="s1">&#39;`printf &quot;%d&quot; $i`&#39;</span>,<span class="s2">&quot;limit&quot;</span>:30<span class="o">}</span><span class="err">&#39;</span>
+<span class="k">done</span>
+</code></pre></div>
+
+<p>To get the cookier header, got to Developer Tools, Network, reload the page, identify the cookie and right click here:</p>
+<p><img class="screenshot" src="https://ik.imagekit.io/vhucnsp9j1u/images/scripts/curl-script-dev-tools.jpg" alt="scripts/curl-script-dev-tools.jpg"/></p>
+<p><img class="screenshot" src="https://ik.imagekit.io/vhucnsp9j1u/images/scripts/curl-script-dev-tools-get-curl.jpg" alt="scripts/curl-script-dev-tools-get-curl.jpg"/></p>
+            <!-- </main> -->
+        </div><!-- /.entry-content -->
+    </article>
+</section>
+
+        <!-- footer -->
+        <section id="extras" class="body" data-pagefind-ignore>
+
+        <!-- /.blogroll -->
+                <div class="blogroll">
+                        <h2>links</h2>
+                        <ul>
+                            <li><a href="https://btobsales.eu">Services: BtoBSales.EU</a></li>
+                            <li><a href="https://indeXall.io">Side project: indeXall.io</a></li>
+                            <li><a href="https://github.com/ndeville">Github: ndeville</a></li>
+                        </ul>
+                </div>
+
+        <!-- /.social -->
+                <div class="social">
+                        <h2>social</h2>
+                        <ul>
+
+                            <li><a href="https://www.linkedin.com/in/ndeville/">Linkedin</a></li>
+                            <li><a href="https://www.twitter.com/ndeville">Twitter</a></li>
+                        </ul>
+                </div>
+        </section><!-- /#extras -->
+
+        <footer id="contentinfo" class="body" data-pagefind-ignore>
+
+            <address id="about" class="vcard body">
+                <div class="content-row">
+                    <img src="https://ik.imagekit.io/vhucnsp9j1u/images/logos/pelican-logo.png" alt="pelican" width="16" height="16"> Powered by <a href="https://getpelican.com" target="_blank"> Pelican</a>
+                    <span class="separator">|</span>
+                    <img src="https://ik.imagekit.io/vhucnsp9j1u/images/logos/pagefind.png" alt="pagefind" width="16" height="16"> Search by <a href="https://pagefind.app" target="_blank"> Pagefind</a>
+                    <span class="separator">|</span>
+                    <img src="https://ik.imagekit.io/vhucnsp9j1u/images/logos/clearbit.png" alt="clearbit" width="16" height="16"> Logos by <a href="https://clearbit.com" target="_blank"> Clearbit</a>
+                    <span class="separator">|</span>
+                    <img src="https://ik.imagekit.io/vhucnsp9j1u/images/python.svg" alt="python_logo" width="16" height="16"> Made with <a href="https://www.python.org/" target="_blank"> Python</a>
+                </div>
+                <br>
+                <div class="content-row">
+                    <img src="https://notes.nicolasdeville.com/favicon.svg" alt="nic_logo" width="24"> Nic's notes
+                </div>
+            </address>
+
+        </footer><!-- /#contentinfo -->
+
+
+<!-- JS -->
+
+<!-- my JS script (with code block copy) -->
+<script src="https://notes.nicolasdeville.com/theme/js/nic.js"></script>
+
+</body>
+</html>
