@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <!-- Base -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="generator" content="Pelican" />
+    <meta name="author" content="Nic Deville">
+
+<!-- Title -->
+<title>ImageMagick | Nic's notes</title>
+<meta name="og:title" content="ImageMagick | Nic's notes"/> <!-- 40 characters for mobile and 60 for desktop -->
+<link rel="canonical" href="https://notes.nicolasdeville.com/helpers/cli-imagemagick" />
+<meta name="twitter:title" content="ImageMagick | Nic's notes" /> <!-- max. 70 characters -->
+
+<meta name="description" content="CLI suite of tools for manipulating bitmap images"/>
+<meta property="og:description" content="CLI suite of tools for manipulating bitmap images"/>
+<meta name="twitter:description" content="CLI suite of tools for manipulating bitmap images" /> <!-- max. 200 characters -->
+ 
+
+<meta property="article:published_time" content="2024-06-02 00:00:00+02:00" />
+
+<meta property="article:modified_time" content="2024-06-02 11:49:42.100439+02:00" />
+
+<meta name="robots" content="all, follow" />
+
+<!-- Social -->
+<meta property="og:type" content="article" />
+
+<!-- <meta property="og:description" content="Messy online notebook covering B2B Sales, Leadership, Python programming, Automation, AI and more. I take these notes for myself (and my kids later) - perhaps they can help someone else..." /> min. 2 max. 4 sentences -->
+
+<meta property="og:url" content="https://notes.nicolasdeville.com/helpers/cli-imagemagick" /> <!-- canonical URL for your page without session variables, user id parameters or counters -->
+<meta property="og:site_name" content="Nic's notes" />
+<meta name="image" property="og:image" content="https://ik.imagekit.io/vhucnsp9j1u/images/notes-twitter-image.jpg" /> <!-- at least 600x315 pixels, preferable 1200x630 pixels -->
+
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:site" content="@ndeville" />
+
+<meta name="twitter:image" content="https://ik.imagekit.io/vhucnsp9j1u/images/notes-twitter-image.jpg" /> <!-- aspect ratio of 2:1 with minimum dimensions of 300x157 or maximum of 4096x4096 pixels. Going with 900x471 -->
+
+<!-- Logo -->
+<meta property="og:logo" content="https://notes.nicolasdeville.com/logo.svg">
+
+<!-- Favicon -->
+<link rel="icon" type="image/x-icon" href="https://notes.nicolasdeville.com/favicon.ico">
+<link rel="mask-icon" href="https://notes.nicolasdeville.com/favicon.svg" color="#FFFFFF">
+<link rel="alternate icon" class="js-site-favicon" type="image/png" href="https://notes.nicolasdeville.com/favicon.png">
+<link rel="icon" class="js-site-favicon" type="image/svg+xml" href="https://notes.nicolasdeville.com/favicon.svg">
+<link rel="fluid-icon" href="https://notes.nicolasdeville.com/favicon.png" title="Nic's notes">
+
+<!-- CSS -->
+<link rel="stylesheet" href="https://notes.nicolasdeville.com/theme/css/main.css" />
+
+<!-- Pagefind -->
+<link href="https://notes.nicolasdeville.com/theme/css/pagefind-ui-nic.css" rel="stylesheet">
+<script src="https://notes.nicolasdeville.com/pagefind/pagefind-ui.js" type="text/javascript"></script>
+
+<script>
+    window.addEventListener('DOMContentLoaded', (event) => {
+        new PagefindUI({ element: "#search" });
+    });
+</script>
+
+
+</head>
+
+<body id="index" class="body">
+        <header id="banner" class="body">
+
+            <div class="logo-and-search">
+                <a href="https://notes.nicolasdeville.com/"><img class="header_image" src="https://ik.imagekit.io/vhucnsp9j1u/images/nic_notes_header.svg" alt="Nic's notes" width="266"/></a>
+
+                <!-- Pagefind -->
+                <div class="search-input-block" id="search"></div>
+
+            </div>
+
+            
+
+            <div class="above-navbar">
+                <div class="last_updated">02 Jun 2024 | 14:43</div>
+                <div>
+                    <p class="notes_count">
+                        <a href="https://notes.nicolasdeville.com/tags">by tags</a>
+                        <span style="color:#C74350">|</span>
+                        <a href="https://notes.nicolasdeville.com/2020/">2020</a>
+                        <span style="color:#C74350">|</span>
+                        <a href="https://notes.nicolasdeville.com/2021/">2021</a>
+                        <span style="color:#C74350">|</span>
+                        <a href="https://notes.nicolasdeville.com/2022/">2022</a>
+                        <span style="color:#C74350">|</span>
+                        688 notes
+                    </p>
+                </div>
+            </div>
+
+            <nav><ul>
+                <li><a href="https://notes.nicolasdeville.com/ai/">ai</a></li>
+                <li><a href="https://notes.nicolasdeville.com/apps/">apps</a></li>
+                <li><a href="https://notes.nicolasdeville.com/b2b-sales/">b2b sales</a></li>
+                <li><a href="https://notes.nicolasdeville.com/books/">books</a></li>
+                <li><a href="https://notes.nicolasdeville.com/careerplaybook/">#careerplaybook</a></li>
+                <li class="active"><a href="https://notes.nicolasdeville.com/helpers/">helpers</a></li>
+                <li><a href="https://notes.nicolasdeville.com/home-office/">home office</a></li>
+                <li><a href="https://notes.nicolasdeville.com/interests/">interests</a></li>
+                <li><a href="https://notes.nicolasdeville.com/leadership/">leadership</a></li>
+                <li><a href="https://notes.nicolasdeville.com/learning/">learning</a></li>
+                <li><a href="https://notes.nicolasdeville.com/movies/">movies</a></li>
+                <li><a href="https://notes.nicolasdeville.com/projects/">projects</a></li>
+                <li><a href="https://notes.nicolasdeville.com/python/">python</a></li>
+                <li><a href="https://notes.nicolasdeville.com/random/">random</a></li>
+                <li><a href="https://notes.nicolasdeville.com/video/">video</a></li>
+            </ul></nav>
+        </header>
+
+        <!-- index.html injection -->
+<section id="content" class="body">
+    <article>
+        <header>
+            <h1 class="entry-title">
+                <main> <!-- for indexing by Stork -->
+                    <a href="https://notes.nicolasdeville.com/helpers/cli-imagemagick" rel="bookmark"
+                    title="Permalink to ImageMagick">ImageMagick
+                    </a>
+                </main>
+            </h1>
+            <p class="header_summary">
+                <main> <!-- for indexing by Stork -->
+                    <p>CLI suite of tools for manipulating bitmap images</p>
+                </main>
+            </p>
+        </header>
+
+        <div class="entry-content">
+<footer class="post-info">
+
+    <p>
+        02 Jun 2024 
+        <span class="separator">|</span> in <a class="link_tag" href="https://notes.nicolasdeville.com/helpers/"><span data-pagefind-filter="category">helpers</span></a>
+
+ tags: <a class="link_tag" href="https://notes.nicolasdeville.com/tag/macos.html">macOS</a>
+<a class="link_tag" href="https://notes.nicolasdeville.com/tag/cli.html">cli</a>
+<a class="link_tag" href="https://notes.nicolasdeville.com/tag/image.html">image</a>
+
+        <!-- added 4/7 -->
+        <!-- 		<br />
+        <abbr class="modified" title="2024-06-02T11:49:42.100439+02:00">
+                Updated: 02 Jun 2024
+        </abbr>
+ -->
+
+    </p>
+
+    
+
+</footer>            <!-- for indexing by Stork -->
+            <!-- <main>  -->
+                <div class="toc"><span class="toctitle">Table of Contents</span><ul>
+<li><a href="#command-line-tools">Command-line Tools</a></li>
+<li><a href="#examples">Examples</a><ul>
+<li><a href="#resize-an-image">Resize an image</a></li>
+<li><a href="#resize-canvas">Resize canvas</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="wip"><div class="wip_text">👷🏼‍♂️ WORK IN PROGRESS 👷🏼‍♂️</div></div>
+
+<p><span class="datestamp">02 Jun 2024</span>   </p>
+<div class="link_border"><div class="link_logo_box"><img class="link_logo" src="https://ik.imagekit.io/vhucnsp9j1u/images/logos/imagemagick.png" alt="logo"/></div><div class="link_content">
+<div class="link_title">ImageMagick – Command-line Tools</div>
+<div class="link_tagline">imagemagick.org</div>
+<div class="link_url"><a href="https://imagemagick.org/script/command-line-tools.php" target="_blank">https://imagemagick.org/script/command-line-tools.php</a></div></div></div>
+
+<div class="highlight"><pre><span></span><code>brew install imagemagick
+</code></pre></div>
+
+<p>then</p>
+<div class="highlight"><pre><span></span><code>brew install ghostscript
+</code></pre></div>
+
+<h1 id="command-line-tools">Command-line Tools</h1>
+<p>magick<br>
+convert between image formats as well as resize an image, blur, crop, despeckle, dither, draw on, flip, join, re-sample, and much more.</p>
+<p>magick-script<br>
+use this scripting language interpreter to convert between image formats as well as resize an image, blur, crop, despeckle, dither, draw on, flip, join, re-sample, and much more.<br>
+We also support sub-commands for compatibility with ImageMagick version 6:</p>
+<p>magick animate<br>
+animate an image sequence on any X server.</p>
+<p>magick compare<br>
+mathematically and visually annotate the difference between an image and its reconstruction.</p>
+<p>magick composite<br>
+overlap one image over another.</p>
+<p>magick conjure<br>
+interpret and execute scripts written in the Magick Scripting Language (MSL).</p>
+<p>magick convert<br>
+convert between image formats as well as resize an image, blur, crop, despeckle, dither, draw on, flip, join, re-sample, and much more.</p>
+<p>magick display<br>
+display an image or image sequence on any X server.</p>
+<p>magick identify<br>
+describe the format and characteristics of one or more image files.</p>
+<p>magick import<br>
+save any visible window on an X server and outputs it as an image file. You can capture a single window, the entire  screen, or any rectangular portion of the  screen.</p>
+<p>magick mogrify<br>
+resize an image, blur, crop, despeckle, dither, draw on, flip, join, re-sample, and much more. Mogrify overwrites the original image file, whereas, magick writes to a different image file.</p>
+<p>magick montage<br>
+create a composite image by combining several separate images. The images are tiled on the composite image optionally adorned with a border, frame, image name, and more.</p>
+<p>magick stream<br>
+a lightweight tool to stream one or more pixel components of the image or portion of the image to your choice of storage formats. It writes the pixel components as they are read from the input image a row at a time making stream desirable when working with large images or when you require raw pixel components.</p>
+<h1 id="examples">Examples</h1>
+<h2 id="resize-an-image">Resize an image</h2>
+<div class="highlight"><pre><span></span><code>magick test.png -resize 2400x output-big.png
+</code></pre></div>
+
+<p><code>2400x</code> is the width, the height is calculated to keep the aspect ratio.</p>
+<p>use <code>2400x1800</code> to set the height as well.</p>
+<p>or <code>x1800</code> to set the height and calculate the width.</p>
+<p>NOTE: for <code>.svg</code> to <code>.png</code> better use <code>inkscape</code>:</p>
+<div class="highlight"><pre><span></span><code>inkscape zurich.svg --export-type<span class="o">=</span>png --export-filename<span class="o">=</span>zurich.png --export-width<span class="o">=</span><span class="m">2000</span>
+</code></pre></div>
+
+<h2 id="resize-canvas">Resize canvas</h2>
+<div class="highlight"><pre><span></span><code>magick test.png -resize 580x281 -background transparent -gravity center -extent 580x281 listpage-logo.png
+</code></pre></div>
+            <!-- </main> -->
+        </div><!-- /.entry-content -->
+    </article>
+</section>
+
+        <!-- footer -->
+        <section id="extras" class="body" data-pagefind-ignore>
+
+        <!-- /.blogroll -->
+                <div class="blogroll">
+                        <h2>links</h2>
+                        <ul>
+                            <li><a href="https://btobsales.eu">Services: BtoBSales.EU</a></li>
+                            <li><a href="https://indeXall.io">Side project: indeXall.io</a></li>
+                            <li><a href="https://github.com/ndeville">Github: ndeville</a></li>
+                        </ul>
+                </div>
+
+        <!-- /.social -->
+                <div class="social">
+                        <h2>social</h2>
+                        <ul>
+
+                            <li><a href="https://www.linkedin.com/in/ndeville/">Linkedin</a></li>
+                            <li><a href="https://www.twitter.com/ndeville">Twitter</a></li>
+                        </ul>
+                </div>
+        </section><!-- /#extras -->
+
+        <footer id="contentinfo" class="body" data-pagefind-ignore>
+
+            <address id="about" class="vcard body">
+                <div class="content-row">
+                    <img src="https://ik.imagekit.io/vhucnsp9j1u/images/logos/pelican-logo.png" alt="pelican" width="16" height="16"> Powered by <a href="https://getpelican.com" target="_blank"> Pelican</a>
+                    <span class="separator">|</span>
+                    <img src="https://ik.imagekit.io/vhucnsp9j1u/images/logos/pagefind.png" alt="pagefind" width="16" height="16"> Search by <a href="https://pagefind.app" target="_blank"> Pagefind</a>
+                    <span class="separator">|</span>
+                    <img src="https://ik.imagekit.io/vhucnsp9j1u/images/logos/clearbit.png" alt="clearbit" width="16" height="16"> Logos by <a href="https://clearbit.com" target="_blank"> Clearbit</a>
+                    <span class="separator">|</span>
+                    <img src="https://ik.imagekit.io/vhucnsp9j1u/images/python.svg" alt="python_logo" width="16" height="16"> Made with <a href="https://www.python.org/" target="_blank"> Python</a>
+                </div>
+                <br>
+                <div class="content-row">
+                    <img src="https://notes.nicolasdeville.com/favicon.svg" alt="nic_logo" width="24"> Nic's notes
+                </div>
+            </address>
+
+        </footer><!-- /#contentinfo -->
+
+
+<!-- JS -->
+
+<!-- my JS script (with code block copy) -->
+<script src="https://notes.nicolasdeville.com/theme/js/nic.js"></script>
+
+</body>
+</html>
