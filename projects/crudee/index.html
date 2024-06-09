@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <!-- Base -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="generator" content="Pelican" />
+    <meta name="author" content="Nic Deville">
+
+<!-- Title -->
+<title>Crudee | Nic's notes</title>
+<meta name="og:title" content="Crudee | Nic's notes"/> <!-- 40 characters for mobile and 60 for desktop -->
+<link rel="canonical" href="https://notes.nicolasdeville.com/projects/crudee" />
+<meta name="twitter:title" content="Crudee | Nic's notes" /> <!-- max. 70 characters -->
+
+<meta name="description" content="Basic HTML CRUD app for SQLite database"/>
+<meta property="og:description" content="Basic HTML CRUD app for SQLite database"/>
+<meta name="twitter:description" content="Basic HTML CRUD app for SQLite database" /> <!-- max. 200 characters -->
+ 
+
+<meta property="article:published_time" content="2024-06-09 10:32:59.306279+02:00" />
+
+<meta property="article:modified_time" content="2024-06-09 10:32:59.306279+02:00" />
+
+<meta name="robots" content="all, follow" />
+
+<!-- Social -->
+<meta property="og:type" content="article" />
+
+<!-- <meta property="og:description" content="Messy online notebook covering B2B Sales, Leadership, Python programming, Automation, AI and more. I take these notes for myself (and my kids later) - perhaps they can help someone else..." /> min. 2 max. 4 sentences -->
+
+<meta property="og:url" content="https://notes.nicolasdeville.com/projects/crudee" /> <!-- canonical URL for your page without session variables, user id parameters or counters -->
+<meta property="og:site_name" content="Nic's notes" />
+<meta name="image" property="og:image" content="https://ik.imagekit.io/vhucnsp9j1u/images/notes-twitter-image.jpg" /> <!-- at least 600x315 pixels, preferable 1200x630 pixels -->
+
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:site" content="@ndeville" />
+
+<meta name="twitter:image" content="https://ik.imagekit.io/vhucnsp9j1u/images/notes-twitter-image.jpg" /> <!-- aspect ratio of 2:1 with minimum dimensions of 300x157 or maximum of 4096x4096 pixels. Going with 900x471 -->
+
+<!-- Logo -->
+<meta property="og:logo" content="https://notes.nicolasdeville.com/logo.svg">
+
+<!-- Favicon -->
+<link rel="icon" type="image/x-icon" href="https://notes.nicolasdeville.com/favicon.ico">
+<link rel="mask-icon" href="https://notes.nicolasdeville.com/favicon.svg" color="#FFFFFF">
+<link rel="alternate icon" class="js-site-favicon" type="image/png" href="https://notes.nicolasdeville.com/favicon.png">
+<link rel="icon" class="js-site-favicon" type="image/svg+xml" href="https://notes.nicolasdeville.com/favicon.svg">
+<link rel="fluid-icon" href="https://notes.nicolasdeville.com/favicon.png" title="Nic's notes">
+
+<!-- CSS -->
+<link rel="stylesheet" href="https://notes.nicolasdeville.com/theme/css/main.css" />
+
+<!-- Pagefind -->
+<link href="https://notes.nicolasdeville.com/theme/css/pagefind-ui-nic.css" rel="stylesheet">
+<script src="https://notes.nicolasdeville.com/pagefind/pagefind-ui.js" type="text/javascript"></script>
+
+<script>
+    window.addEventListener('DOMContentLoaded', (event) => {
+        new PagefindUI({ element: "#search" });
+    });
+</script>
+
+
+</head>
+
+<body id="index" class="body">
+        <header id="banner" class="body">
+
+            <div class="logo-and-search">
+                <a href="https://notes.nicolasdeville.com/"><img class="header_image" src="https://ik.imagekit.io/vhucnsp9j1u/images/nic_notes_header.svg" alt="Nic's notes" width="266"/></a>
+
+                <!-- Pagefind -->
+                <div class="search-input-block" id="search"></div>
+
+            </div>
+
+            
+
+            <div class="above-navbar">
+                <div class="last_updated">09 Jun 2024 | 13:31</div>
+                <div>
+                    <p class="notes_count">
+                        <a href="https://notes.nicolasdeville.com/tags">by tags</a>
+                        <span style="color:#C74350">|</span>
+                        <a href="https://notes.nicolasdeville.com/2020/">2020</a>
+                        <span style="color:#C74350">|</span>
+                        <a href="https://notes.nicolasdeville.com/2021/">2021</a>
+                        <span style="color:#C74350">|</span>
+                        <a href="https://notes.nicolasdeville.com/2022/">2022</a>
+                        <span style="color:#C74350">|</span>
+                        691 notes
+                    </p>
+                </div>
+            </div>
+
+            <nav><ul>
+                <li><a href="https://notes.nicolasdeville.com/ai/">ai</a></li>
+                <li><a href="https://notes.nicolasdeville.com/apps/">apps</a></li>
+                <li><a href="https://notes.nicolasdeville.com/b2b-sales/">b2b sales</a></li>
+                <li><a href="https://notes.nicolasdeville.com/books/">books</a></li>
+                <li><a href="https://notes.nicolasdeville.com/careerplaybook/">#careerplaybook</a></li>
+                <li><a href="https://notes.nicolasdeville.com/helpers/">helpers</a></li>
+                <li><a href="https://notes.nicolasdeville.com/home-office/">home office</a></li>
+                <li><a href="https://notes.nicolasdeville.com/interests/">interests</a></li>
+                <li><a href="https://notes.nicolasdeville.com/leadership/">leadership</a></li>
+                <li><a href="https://notes.nicolasdeville.com/learning/">learning</a></li>
+                <li><a href="https://notes.nicolasdeville.com/movies/">movies</a></li>
+                <li class="active"><a href="https://notes.nicolasdeville.com/projects/">projects</a></li>
+                <li><a href="https://notes.nicolasdeville.com/python/">python</a></li>
+                <li><a href="https://notes.nicolasdeville.com/random/">random</a></li>
+                <li><a href="https://notes.nicolasdeville.com/video/">video</a></li>
+            </ul></nav>
+        </header>
+
+        <!-- index.html injection -->
+<section id="content" class="body">
+    <article>
+        <header>
+            <h1 class="entry-title">
+                <main> <!-- for indexing by Stork -->
+                    <a href="https://notes.nicolasdeville.com/projects/crudee" rel="bookmark"
+                    title="Permalink to Crudee">Crudee
+                    </a>
+                </main>
+            </h1>
+            <p class="header_summary">
+                <main> <!-- for indexing by Stork -->
+                    <p>Basic HTML CRUD app for SQLite database</p>
+                </main>
+            </p>
+        </header>
+
+        <div class="entry-content">
+<footer class="post-info">
+
+    <p>
+        09 Jun 2024 
+        <span class="separator">|</span> in <a class="link_tag" href="https://notes.nicolasdeville.com/projects/"><span data-pagefind-filter="category">projects</span></a>
+
+
+        <!-- added 4/7 -->
+        <!-- 		<br />
+        <abbr class="modified" title="2024-06-09T10:32:59.306279+02:00">
+                Updated: 09 Jun 2024
+        </abbr>
+ -->
+
+    </p>
+
+    
+
+</footer>            <!-- for indexing by Stork -->
+            <!-- <main>  -->
+                <div class="toc"><span class="toctitle">Table of Contents</span><ul>
+<li><a href="#managing-port-conflicts">Managing port conflicts</a></li>
+</ul>
+</div>
+<p><span class="datestamp">09 Jun 2024</span>   </p>
+<p>Using Flask (Python) and SQLite, I created a basic HTML CRUD app for a SQLite database. The app allows me to read &amp; update records in a local SQLite database. </p>
+<h3 id="managing-port-conflicts">Managing port conflicts</h3>
+<p>My Flask app is supposed to run on port <code>5000</code>,ie <code>127.0.0.1:5000</code> though I have some issues.</p>
+<p>1) Conflict with Live Server extension in VS Code = deactivate the extension or ensure it is not running.<br>
+2) Conflict with another server process = identify and kill the conflicting process.</p>
+<p>To identify conflicting server processes on same port (<code>5000</code> in this case):</p>
+<div class="highlight"><pre><span></span><code>lsof -i :5000
+</code></pre></div>
+
+<p>eg.: </p>
+<div class="highlight"><pre><span></span><code>❯ lsof -i :5000
+COMMAND     PID USER   FD   TYPE             DEVICE SIZE/OFF NODE NAME
+ControlCe   <span class="m">441</span>  nic   10u  IPv4 0x4c4d559212e0967b      0t0  TCP *:commplex-main <span class="o">(</span>LISTEN<span class="o">)</span>
+ControlCe   <span class="m">441</span>  nic   11u  IPv6 0x4c4d5596df7b7b2b      0t0  TCP *:commplex-main <span class="o">(</span>LISTEN<span class="o">)</span>
+Python    <span class="m">20361</span>  nic    3u  IPv4 0x4c4d559212df7f7b      0t0  TCP localhost:commplex-main <span class="o">(</span>LISTEN<span class="o">)</span>
+Python    <span class="m">20828</span>  nic    3u  IPv4 0x4c4d559212df7f7b      0t0  TCP localhost:commplex-main <span class="o">(</span>LISTEN<span class="o">)</span>
+Python    <span class="m">20828</span>  nic    4u  IPv4 0x4c4d559212df7f7b      0t0  TCP localhost:commplex-main <span class="o">(</span>LISTEN<span class="o">)</span>
+</code></pre></div>
+
+<p>Output Breakdown</p>
+<div class="highlight"><pre><span></span><code><span class="mf">1.</span><span class="w">  </span><span class="n">COMMAND</span><span class="p">:</span><span class="w"> </span><span class="n">The</span><span class="w"> </span><span class="n">name</span><span class="w"> </span><span class="n">of</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">command</span><span class="w"> </span><span class="ow">or</span><span class="w"> </span><span class="n">process</span><span class="w"> </span><span class="n">using</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">port</span><span class="mf">.</span><span class="w"></span>
+<span class="mf">2.</span><span class="w">  </span><span class="n">PID</span><span class="p">:</span><span class="w"> </span><span class="n">The</span><span class="w"> </span><span class="n">Process</span><span class="w"> </span><span class="n">ID</span><span class="w"> </span><span class="n">of</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">command</span><span class="mf">.</span><span class="w"></span>
+<span class="mf">3.</span><span class="w">  </span><span class="n">USER</span><span class="p">:</span><span class="w"> </span><span class="n">The</span><span class="w"> </span><span class="n">user</span><span class="w"> </span><span class="n">who</span><span class="w"> </span><span class="n">started</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">process</span><span class="mf">.</span><span class="w"></span>
+<span class="mf">4.</span><span class="w">  </span><span class="n">FD</span><span class="p">:</span><span class="w"> </span><span class="n">File</span><span class="w"> </span><span class="n">descriptor</span><span class="w"> </span><span class="n">number</span><span class="mf">.</span><span class="w"></span>
+<span class="mf">5.</span><span class="w">  </span><span class="n">TYPE</span><span class="p">:</span><span class="w"> </span><span class="n">The</span><span class="w"> </span><span class="n">type</span><span class="w"> </span><span class="n">of</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">file</span><span class="w"> </span><span class="p">(</span><span class="n">in</span><span class="w"> </span><span class="n">this</span><span class="w"> </span><span class="n">case</span><span class="p">,</span><span class="w"> </span><span class="n">it</span><span class="w"> </span><span class="n">is</span><span class="w"> </span><span class="n">IPv4</span><span class="w"> </span><span class="ow">or</span><span class="w"> </span><span class="n">IPv6</span><span class="p">)</span><span class="mf">.</span><span class="w"></span>
+<span class="mf">6.</span><span class="w">  </span><span class="n">DEVICE</span><span class="p">:</span><span class="w"> </span><span class="nb">Int</span><span class="n">ernal</span><span class="w"> </span><span class="n">device</span><span class="w"> </span><span class="n">number</span><span class="mf">.</span><span class="w"></span>
+<span class="mf">7.</span><span class="w">  </span><span class="n">SIZE</span><span class="o">/</span><span class="n">OFF</span><span class="p">:</span><span class="w"> </span><span class="n">The</span><span class="w"> </span><span class="n">size</span><span class="w"> </span><span class="n">of</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">file</span><span class="w"> </span><span class="ow">or</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">offset</span><span class="mf">.</span><span class="w"></span>
+<span class="mf">8.</span><span class="w">  </span><span class="n">NODE</span><span class="p">:</span><span class="w"> </span><span class="n">The</span><span class="w"> </span><span class="n">inode</span><span class="w"> </span><span class="n">number</span><span class="mf">.</span><span class="w"></span>
+<span class="mf">9.</span><span class="w">  </span><span class="n">NAME</span><span class="p">:</span><span class="w"> </span><span class="n">The</span><span class="w"> </span><span class="n">name</span><span class="w"> </span><span class="n">of</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">port</span><span class="w"> </span><span class="p">(</span><span class="n">in</span><span class="w"> </span><span class="n">this</span><span class="w"> </span><span class="n">case</span><span class="p">,</span><span class="w"> </span><span class="n">it</span><span class="w"> </span><span class="n">is</span><span class="w"> </span><span class="n">commplex</span><span class="o">-</span><span class="n">main</span><span class="p">,</span><span class="w"> </span><span class="n">which</span><span class="w"> </span><span class="n">is</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="n">mapping</span><span class="w"> </span><span class="kr">for</span><span class="w"> </span><span class="n">port</span><span class="w"> </span><span class="mf">5000</span><span class="p">)</span><span class="mf">.</span><span class="w"></span>
+</code></pre></div>
+
+<p>Specific Processes</p>
+<div class="highlight"><pre><span></span><code>•   ControlCe: This process has PID 441 and is listening on both IPv4 and IPv6 interfaces.
+•   Python: Two Python processes with PIDs 20361 and 20828 are listening on the same port. The process with PID 20828 has multiple entries, which is common when a process has multiple threads or is restarted.
+</code></pre></div>
+
+<p>What It Means</p>
+<div class="highlight"><pre><span></span><code>•<span class="w">   </span><span class="nv">Port</span><span class="w"> </span><span class="mi">5000</span><span class="w"> </span><span class="nv">is</span><span class="w"> </span><span class="nv">in</span><span class="w"> </span><span class="nv">Use</span>:<span class="w"> </span><span class="nv">The</span><span class="w"> </span><span class="nv">fact</span><span class="w"> </span><span class="nv">that</span><span class="w"> </span><span class="nv">there</span><span class="w"> </span><span class="nv">are</span><span class="w"> </span><span class="nv">multiple</span><span class="w"> </span><span class="nv">entries</span><span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="nv">port</span><span class="w"> </span><span class="mi">5000</span><span class="w"> </span><span class="nv">means</span><span class="w"> </span><span class="nv">that</span><span class="w"> </span><span class="nv">this</span><span class="w"> </span><span class="nv">port</span><span class="w"> </span><span class="nv">is</span><span class="w"> </span><span class="nv">already</span><span class="w"> </span><span class="nv">in</span><span class="w"> </span><span class="nv">use</span><span class="w"> </span><span class="nv">by</span><span class="w"> </span><span class="nv">other</span><span class="w"> </span><span class="nv">processes</span>.<span class="w"> </span><span class="nv">This</span><span class="w"> </span><span class="nv">can</span><span class="w"> </span><span class="nv">cause</span><span class="w"> </span><span class="nv">conflicts</span><span class="w"> </span><span class="nv">when</span><span class="w"> </span><span class="nv">you</span><span class="w"> </span><span class="nv">try</span><span class="w"> </span><span class="nv">to</span><span class="w"> </span><span class="nv">run</span><span class="w"> </span><span class="nv">your</span><span class="w"> </span><span class="nv">Flask</span><span class="w"> </span><span class="nv">app</span><span class="w"> </span><span class="nv">on</span><span class="w"> </span><span class="nv">the</span><span class="w"> </span><span class="nv">same</span><span class="w"> </span><span class="nv">port</span>.<span class="w"></span>
+•<span class="w">   </span><span class="nv">ControlCe</span><span class="w"> </span><span class="nv">Process</span>:<span class="w"> </span><span class="nv">This</span><span class="w"> </span><span class="nv">might</span><span class="w"> </span><span class="nv">be</span><span class="w"> </span><span class="nv">a</span><span class="w"> </span><span class="nv">system</span><span class="w"> </span><span class="nv">control</span><span class="w"> </span><span class="nv">center</span><span class="w"> </span><span class="nv">or</span><span class="w"> </span><span class="nv">a</span><span class="w"> </span><span class="nv">service</span><span class="w"> </span><span class="nv">that</span><span class="w"> </span><span class="nv">is</span><span class="w"> </span><span class="nv">also</span><span class="w"> </span><span class="nv">using</span><span class="w"> </span><span class="nv">port</span><span class="w"> </span><span class="mi">5000</span>.<span class="w"></span>
+•<span class="w">   </span><span class="nv">Python</span><span class="w"> </span><span class="nv">Processes</span>:<span class="w"> </span><span class="nv">Multiple</span><span class="w"> </span><span class="nv">Python</span><span class="w"> </span><span class="nv">processes</span><span class="w"> </span><span class="nv">are</span><span class="w"> </span><span class="nv">listening</span><span class="w"> </span><span class="nv">on</span><span class="w"> </span><span class="nv">port</span><span class="w"> </span><span class="mi">5000</span>,<span class="w"> </span><span class="nv">which</span><span class="w"> </span><span class="nv">suggests</span><span class="w"> </span><span class="nv">that</span><span class="w"> </span><span class="nv">you</span><span class="w"> </span><span class="nv">might</span><span class="w"> </span><span class="nv">have</span><span class="w"> </span><span class="nv">multiple</span><span class="w"> </span><span class="nv">instances</span><span class="w"> </span><span class="nv">of</span><span class="w"> </span><span class="nv">your</span><span class="w"> </span><span class="nv">Flask</span><span class="w"> </span><span class="nv">app</span><span class="w"> </span><span class="nv">running</span><span class="w"> </span><span class="nv">or</span><span class="w"> </span><span class="nv">other</span><span class="w"> </span><span class="nv">Python</span><span class="w"> </span><span class="nv">applications</span><span class="w"> </span><span class="nv">using</span><span class="w"> </span><span class="nv">the</span><span class="w"> </span><span class="nv">same</span><span class="w"> </span><span class="nv">port</span>.<span class="w"></span>
+</code></pre></div>
+
+<p>Solution</p>
+<p>To resolve this issue, you need to terminate the processes using port 5000 and then run your Flask app. Here’s how you can do it:</p>
+<div class="highlight"><pre><span></span><code><span class="mf">1.</span><span class="w">  </span><span class="n">Terminate</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">Processes</span><span class="p">:</span><span class="w"> </span><span class="n">Use</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">kill</span><span class="w"> </span><span class="n">command</span><span class="w"> </span><span class="kr">to</span><span class="w"> </span><span class="n">terminate</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">processes</span><span class="w"> </span><span class="n">using</span><span class="w"> </span><span class="n">port</span><span class="w"> </span><span class="mf">5000.</span><span class="w"></span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="nb">kill</span> -9 <span class="m">441</span> <span class="m">20361</span> <span class="m">20828</span>
+</code></pre></div>
+            <!-- </main> -->
+        </div><!-- /.entry-content -->
+    </article>
+</section>
+
+        <!-- footer -->
+        <section id="extras" class="body" data-pagefind-ignore>
+
+        <!-- /.blogroll -->
+                <div class="blogroll">
+                        <h2>links</h2>
+                        <ul>
+                            <li><a href="https://btobsales.eu">Services: BtoBSales.EU</a></li>
+                            <li><a href="https://indeXall.io">Side project: indeXall.io</a></li>
+                            <li><a href="https://github.com/ndeville">Github: ndeville</a></li>
+                        </ul>
+                </div>
+
+        <!-- /.social -->
+                <div class="social">
+                        <h2>social</h2>
+                        <ul>
+
+                            <li><a href="https://www.linkedin.com/in/ndeville/">Linkedin</a></li>
+                            <li><a href="https://www.twitter.com/ndeville">Twitter</a></li>
+                        </ul>
+                </div>
+        </section><!-- /#extras -->
+
+        <footer id="contentinfo" class="body" data-pagefind-ignore>
+
+            <address id="about" class="vcard body">
+                <div class="content-row">
+                    <img src="https://ik.imagekit.io/vhucnsp9j1u/images/logos/pelican-logo.png" alt="pelican" width="16" height="16"> Powered by <a href="https://getpelican.com" target="_blank"> Pelican</a>
+                    <span class="separator">|</span>
+                    <img src="https://ik.imagekit.io/vhucnsp9j1u/images/logos/pagefind.png" alt="pagefind" width="16" height="16"> Search by <a href="https://pagefind.app" target="_blank"> Pagefind</a>
+                    <span class="separator">|</span>
+                    <img src="https://ik.imagekit.io/vhucnsp9j1u/images/logos/clearbit.png" alt="clearbit" width="16" height="16"> Logos by <a href="https://clearbit.com" target="_blank"> Clearbit</a>
+                    <span class="separator">|</span>
+                    <img src="https://ik.imagekit.io/vhucnsp9j1u/images/python.svg" alt="python_logo" width="16" height="16"> Made with <a href="https://www.python.org/" target="_blank"> Python</a>
+                </div>
+                <br>
+                <div class="content-row">
+                    <img src="https://notes.nicolasdeville.com/favicon.svg" alt="nic_logo" width="24"> Nic's notes
+                </div>
+            </address>
+
+        </footer><!-- /#contentinfo -->
+
+
+<!-- JS -->
+
+<!-- my JS script (with code block copy) -->
+<script src="https://notes.nicolasdeville.com/theme/js/nic.js"></script>
+
+</body>
+</html>
