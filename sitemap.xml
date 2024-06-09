@@ -4202,6 +4202,12 @@
     </url>
     
     <url>
+        <loc>https://notes.nicolasdeville.com/apps/tinyweb</loc>
+        <lastmod>2024-06-09</lastmod>
+        <priority>0.8</priority>        
+    </url>
+    
+    <url>
         <loc>https://notes.nicolasdeville.com/apps/fantastical</loc>
         <lastmod>2024-06-09</lastmod>
         <priority>0.8</priority>        
@@ -4622,12 +4628,6 @@
     </url>
     
     <url>
-        <loc>https://notes.nicolasdeville.com/helpers/ffmpeg-ffprobe</loc>
-        <lastmod>2024-06-09</lastmod>
-        <priority>0.8</priority>        
-    </url>
-    
-    <url>
         <loc>https://notes.nicolasdeville.com/helpers/ionos</loc>
         <lastmod>2024-06-09</lastmod>
         <priority>0.8</priority>        
@@ -4719,6 +4719,12 @@
     
     <url>
         <loc>https://notes.nicolasdeville.com/helpers/datev</loc>
+        <lastmod>2024-06-09</lastmod>
+        <priority>0.8</priority>        
+    </url>
+    
+    <url>
+        <loc>https://notes.nicolasdeville.com/helpers/api-hunter</loc>
         <lastmod>2024-06-09</lastmod>
         <priority>0.8</priority>        
     </url>
@@ -5067,6 +5073,12 @@
     
     <url>
         <loc>https://notes.nicolasdeville.com/helpers/iframe</loc>
+        <lastmod>2024-06-09</lastmod>
+        <priority>0.8</priority>        
+    </url>
+    
+    <url>
+        <loc>https://notes.nicolasdeville.com/helpers/ffmpeg</loc>
         <lastmod>2024-06-09</lastmod>
         <priority>0.8</priority>        
     </url>
