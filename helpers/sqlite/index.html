@@ -19,9 +19,9 @@
 <meta name="twitter:description" content="my database of choice for personal projects" /> <!-- max. 200 characters -->
  
 
-<meta property="article:published_time" content="2024-08-03 09:32:41.367758+02:00" />
+<meta property="article:published_time" content="2024-08-26 06:33:03.110246+02:00" />
 
-<meta property="article:modified_time" content="2024-08-03 09:32:41.367758+02:00" />
+<meta property="article:modified_time" content="2024-08-26 06:33:03.110246+02:00" />
 
 <meta name="robots" content="all, follow" />
 
@@ -79,7 +79,7 @@
             
 
             <div class="above-navbar">
-                <div class="last_updated">25 Aug 2024 | 22:29</div>
+                <div class="last_updated">26 Aug 2024 | 07:12</div>
                 <div>
                     <p class="notes_count">
                         <a href="https://notes.nicolasdeville.com/tags">by tags</a>
@@ -140,14 +140,14 @@
 <footer class="post-info">
 
     <p>
-        03 Aug 2024 
+        26 Aug 2024 
         <span class="separator">|</span> in <a class="link_tag" href="https://notes.nicolasdeville.com/helpers/"><span data-pagefind-filter="category">helpers</span></a>
 
 
         <!-- added 4/7 -->
         <!-- 		<br />
-        <abbr class="modified" title="2024-08-03T09:32:41.367758+02:00">
-                Updated: 03 Aug 2024
+        <abbr class="modified" title="2024-08-26T06:33:03.110246+02:00">
+                Updated: 26 Aug 2024
         </abbr>
  -->
 
@@ -158,6 +158,10 @@
 </footer>            <!-- for indexing by Stork -->
             <!-- <main>  -->
                 <div class="toc"><span class="toctitle">Table of Contents</span><ul>
+<li><a href="#create">Create</a><ul>
+<li><a href="#id-vs-rowid">id vs rowid</a></li>
+</ul>
+</li>
 <li><a href="#performance">Performance</a></li>
 <li><a href="#database-size">Database size</a></li>
 <li><a href="#journal-mode">Journal Mode</a><ul>
@@ -174,6 +178,23 @@
 <li><a href="#vector">Vector</a></li>
 </ul>
 </div>
+<h1 id="create">Create</h1>
+<p>in maCOS terminal:</p>
+<div class="highlight"><pre><span></span><code>sqlite3 path/to/mydatabase.db
+</code></pre></div>
+
+<p>and make sure to create a table for the file to be created:</p>
+<div class="highlight"><pre><span></span><code><span class="k">CREATE</span><span class="w"> </span><span class="k">TABLE</span><span class="w"> </span><span class="n">test</span><span class="w"> </span><span class="p">(</span><span class="n">id</span><span class="w"> </span><span class="nb">INTEGER</span><span class="w"> </span><span class="k">PRIMARY</span><span class="w"> </span><span class="k">KEY</span><span class="p">);</span><span class="w"></span>
+</code></pre></div>
+
+<h2 id="id-vs-rowid">id vs rowid</h2>
+<p>SQLite has a hidden "rowid" unique identifier.</p>
+<p>Best practice is to use an explicit "id" column as the primary key though, rather than relying on the implicit "rowid" column.</p>
+<p>You don't necessarily need an id column if you are fine with using SQLite's built-in rowid. However, there are reasons you might choose to define your own id column:</p>
+<p><strong>Clarity and Consistency</strong>: Having an id column makes it clear that it's the primary identifier for a row.<br>
+<strong>Portability</strong>: If you migrate to another database system, an id column is more consistent across platforms.<br>
+<strong>Customization</strong>: You can control the data type and constraints of an id column.</p>
+<p>If you prefer to use rowid, you can omit the id column and still have a unique identifier for each row.</p>
 <h1 id="performance">Performance</h1>
 <div class="link_border"><div class="link_logo_box"><img class="link_logo" src="https://ik.imagekit.io/vhucnsp9j1u/images/logos/stackoverflow.png" alt="logo"/></div><div class="link_content">
 <div class="link_title">What are the performance characteristics of sqlite with very large database files? - Stack Overflow</div>
