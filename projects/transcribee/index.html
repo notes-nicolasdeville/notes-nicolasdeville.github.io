@@ -19,9 +19,9 @@
 <meta name="twitter:description" content="End-to-end automated workflow from recordings to markdown note." /> <!-- max. 200 characters -->
  
 
-<meta property="article:published_time" content="2024-01-01 20:08:59.895744+01:00" />
+<meta property="article:published_time" content="2024-09-01 10:47:50.683349+02:00" />
 
-<meta property="article:modified_time" content="2024-01-01 20:08:59.895744+01:00" />
+<meta property="article:modified_time" content="2024-09-01 10:47:50.683349+02:00" />
 
 <meta name="robots" content="all, follow" />
 
@@ -79,7 +79,7 @@
             
 
             <div class="above-navbar">
-                <div class="last_updated">27 Aug 2024 | 09:26</div>
+                <div class="last_updated">01 Sep 2024 | 10:59</div>
                 <div>
                     <p class="notes_count">
                         <a href="https://notes.nicolasdeville.com/tags">by tags</a>
@@ -140,7 +140,7 @@
 <footer class="post-info">
 
     <p>
-        01 Jan 2024 
+        01 Sep 2024 
         <span class="separator">|</span> in <a class="link_tag" href="https://notes.nicolasdeville.com/projects/"><span data-pagefind-filter="category">projects</span></a>
 
  tags: <a class="link_tag" href="https://notes.nicolasdeville.com/tag/python.html">python</a>
@@ -148,8 +148,8 @@
 
         <!-- added 4/7 -->
         <!-- 		<br />
-        <abbr class="modified" title="2024-01-01T20:08:59.895744+01:00">
-                Updated: 01 Jan 2024
+        <abbr class="modified" title="2024-09-01T10:47:50.683349+02:00">
+                Updated: 01 Sep 2024
         </abbr>
  -->
 
@@ -174,6 +174,12 @@
 </ul>
 </li>
 <li><a href="#final-script">Final script</a></li>
+<li><a href="#optimisations">Optimisations</a><ul>
+<li><a href="#1-use-a-conda-environment-with-metal-support">1. Use a Conda Environment with Metal Support</a></li>
+<li><a href="#2-leverage-the-fp16-precision">2. Leverage the fp16 Precision</a></li>
+<li><a href="#3-segmented-transcription">3. Segmented Transcription</a></li>
+</ul>
+</li>
 </ul>
 </div>
 <p><span class="datestamp">01 Jan 2024</span> </p>
@@ -1296,6 +1302,107 @@ open quote|&quot;
 close quote|&quot;
 # every input lower case
 # always leave an empty line at the end
+</code></pre></div>
+
+<h1 id="optimisations">Optimisations</h1>
+<p><span class="datestamp">01 Sep 2024</span> </p>
+<p>Working on improvements:<br>
+- faster<br>
+- with formatted output<br>
+- with summary at the end</p>
+<p>Updated Whisper's library, which broke my script :/ </p>
+<p>Starting from scratch (blank page), and running speed tests first.</p>
+<p>Test video file: 49mns<br>
+Testing models:<br>
+Base - 3mns<br>
+Small - 30mns &amp; gibberish<br>
+Medium - 24mns &amp; good result<br>
+Large - 97mns (need to analyse quality difference)</p>
+<p>Potential optimisations:</p>
+<h2 id="1-use-a-conda-environment-with-metal-support">1. Use a Conda Environment with Metal Support</h2>
+<p>Whisper relies heavily on PyTorch for its operations, and PyTorch has a version optimized for Apple Silicon (M1/M2) that can leverage Apple’s Metal Performance Shaders. This can significantly speed up model inference. You should install PyTorch with Metal support via Conda.</p>
+<p>First, install Conda if you haven’t already. Then, create a new environment with PyTorch optimized for M1/M2:</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># Install Miniforge (Conda variant optimized for Apple Silicon)</span>
+curl -L https://github.com/conda-forge/miniforge/releases/latest/download/Miniforge3-MacOSX-arm64.sh -o Miniforge3-MacOSX-arm64.sh
+bash Miniforge3-MacOSX-arm64.sh
+
+<span class="c1"># Create a new environment with PyTorch and dependencies</span>
+conda create -n whisper-metal <span class="nv">python</span><span class="o">=</span><span class="m">3</span>.9
+conda activate whisper-metal
+
+<span class="c1"># Install PyTorch with Metal backend</span>
+conda install pytorch torchvision torchaudio -c pytorch-nightly -c conda-forge
+</code></pre></div>
+
+<p>Installed:</p>
+<div class="highlight"><pre><span></span><code>To activate this environment, use:
+
+    micromamba activate /Users/nic/Python/transcribee/miniforge3
+
+Or to execute a single <span class="nb">command</span> <span class="k">in</span> this environment, use:
+
+    micromamba run -p /Users/nic/Python/transcribee/miniforge3 mycommand
+
+installation finished.
+WARNING:
+    You currently have a PYTHONPATH environment variable set. This may cause
+    unexpected behavior when running the Python interpreter <span class="k">in</span> Miniforge3.
+    For best results, please verify that your PYTHONPATH only points to
+    directories of packages that are compatible with the Python interpreter
+    <span class="k">in</span> Miniforge3: /Users/nic/Python/transcribee/miniforge3
+Do you wish to update your shell profile to automatically initialize conda?
+This will activate conda on startup and change the <span class="nb">command</span> prompt when activated.
+If you<span class="s1">&#39;d prefer that conda&#39;</span>s base environment not be activated on startup,
+   run the following <span class="nb">command</span> when conda is activated:
+
+conda config --set auto_activate_base <span class="nb">false</span>
+
+You can undo this by running <span class="sb">`</span>conda init --reverse <span class="nv">$SHELL</span><span class="sb">`</span>? <span class="o">[</span>yes<span class="p">|</span>no<span class="o">]</span>
+</code></pre></div>
+
+<h2 id="2-leverage-the-fp16-precision">2. Leverage the fp16 Precision</h2>
+<p>Using fp16 (half-precision floating point) instead of fp32 (full precision) can speed up inference significantly.</p>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">whisper</span>
+
+<span class="k">def</span> <span class="nf">transcribe_file</span><span class="p">(</span><span class="n">file_path</span><span class="p">):</span>
+    <span class="n">model</span> <span class="o">=</span> <span class="n">whisper</span><span class="o">.</span><span class="n">load_model</span><span class="p">(</span><span class="s2">&quot;medium&quot;</span><span class="p">)</span>
+    <span class="n">options</span> <span class="o">=</span> <span class="n">whisper</span><span class="o">.</span><span class="n">DecodingOptions</span><span class="p">(</span><span class="n">fp16</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>  <span class="c1"># Force fp16 precision</span>
+    <span class="n">result</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">transcribe</span><span class="p">(</span><span class="n">file_path</span><span class="p">,</span> <span class="n">options</span><span class="o">=</span><span class="n">options</span><span class="p">)</span>
+
+    <span class="n">transcript</span> <span class="o">=</span> <span class="n">result</span><span class="p">[</span><span class="s1">&#39;text&#39;</span><span class="p">]</span>
+
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n\n</span><span class="s2">Transcript:</span><span class="se">\n</span><span class="si">{</span><span class="n">transcript</span><span class="si">}</span><span class="se">\n\n</span><span class="s2">&quot;</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">transcript</span>
+
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
+    <span class="n">transcribe_file</span><span class="p">(</span><span class="s1">&#39;/path/to/file.mp4&#39;</span><span class="p">)</span>
+</code></pre></div>
+
+<h2 id="3-segmented-transcription">3. Segmented Transcription</h2>
+<p>If the model still takes too long to process long files, consider breaking the audio into smaller segments. This would parallelize the transcription process if you use a multiprocessing approach.</p>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">whisper</span>
+<span class="kn">import</span> <span class="nn">multiprocessing</span>
+<span class="kn">from</span> <span class="nn">pydub</span> <span class="kn">import</span> <span class="n">AudioSegment</span>
+
+<span class="k">def</span> <span class="nf">transcribe_segment</span><span class="p">(</span><span class="n">segment</span><span class="p">):</span>
+    <span class="n">model</span> <span class="o">=</span> <span class="n">whisper</span><span class="o">.</span><span class="n">load_model</span><span class="p">(</span><span class="s2">&quot;medium&quot;</span><span class="p">)</span>
+    <span class="n">result</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">transcribe</span><span class="p">(</span><span class="n">segment</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">result</span><span class="p">[</span><span class="s1">&#39;text&#39;</span><span class="p">]</span>
+
+<span class="k">def</span> <span class="nf">transcribe_file</span><span class="p">(</span><span class="n">file_path</span><span class="p">,</span> <span class="n">segment_length</span><span class="o">=</span><span class="mi">300</span><span class="p">):</span>
+    <span class="n">audio</span> <span class="o">=</span> <span class="n">AudioSegment</span><span class="o">.</span><span class="n">from_file</span><span class="p">(</span><span class="n">file_path</span><span class="p">)</span>
+    <span class="n">segments</span> <span class="o">=</span> <span class="p">[</span><span class="n">audio</span><span class="p">[</span><span class="n">i</span><span class="p">:</span><span class="n">i</span> <span class="o">+</span> <span class="n">segment_length</span> <span class="o">*</span> <span class="mi">1000</span><span class="p">]</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">audio</span><span class="p">),</span> <span class="n">segment_length</span> <span class="o">*</span> <span class="mi">1000</span><span class="p">)]</span>
+
+    <span class="k">with</span> <span class="n">multiprocessing</span><span class="o">.</span><span class="n">Pool</span><span class="p">(</span><span class="n">processes</span><span class="o">=</span><span class="n">multiprocessing</span><span class="o">.</span><span class="n">cpu_count</span><span class="p">())</span> <span class="k">as</span> <span class="n">pool</span><span class="p">:</span>
+        <span class="n">results</span> <span class="o">=</span> <span class="n">pool</span><span class="o">.</span><span class="n">map</span><span class="p">(</span><span class="n">transcribe_segment</span><span class="p">,</span> <span class="n">segments</span><span class="p">)</span>
+
+    <span class="n">transcript</span> <span class="o">=</span> <span class="s1">&#39; &#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">results</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n\n</span><span class="s2">Transcript:</span><span class="se">\n</span><span class="si">{</span><span class="n">transcript</span><span class="si">}</span><span class="se">\n\n</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">transcript</span>
+
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
+    <span class="n">transcribe_file</span><span class="p">(</span><span class="s1">&#39;/path/to/file.mp4&#39;</span><span class="p">)</span>
 </code></pre></div>
 
 <hr>
